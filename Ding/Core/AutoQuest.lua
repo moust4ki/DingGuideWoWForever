@@ -12,6 +12,7 @@ Ding.AutoQuest = AQ
 local WINDOW = 5          -- steps looked at from the current one
 local AHEAD_LOG_LIMIT = 15  -- quests in the log from which nothing is taken ahead of the guide
 local RESELECT_DELAY = 2  -- seconds before the same quest can be selected again
+AQ.AHEAD_LOG_LIMIT = AHEAD_LOG_LIMIT
 
 local function enabled(kind)
     local ui = Ding.db and Ding.db.ui

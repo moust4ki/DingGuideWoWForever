@@ -412,22 +412,33 @@ accepted again from its giver.
 ### Quests an NPC offers (`UI/Offers.lua`)
 
 Yendi's question in game: the NPCs offer quests the guide does not ask for. Next to the game's
-window (gossip, greeting or quest details), a small Ding window lists each quest the NPC offers
-(its level and its name in the client's language, from DingDB) with what the guide does with it:
+window (gossip, greeting or quest details), a small Ding window, "Ding! · These quests and your
+guide", answers at a glance "should I take this quest now?". Each quest the NPC offers (its level
+and its name in the client's language, from DingDB) gets a verdict first, in color, then the
+reason in plain words:
 
-- **Now**: the steps at the player's place take it (AutoQuest's window, catch-ups included).
-- **Later in this guide (step N)**: a later step of the active section takes it.
-- **Take it: step N needs it**: no step takes it from here on, but a later step completes or
-  turns it in (the engine will ask to pick it up there). **Earlier in this guide (step N,
-  passed)**: only a step already passed takes it.
-- **In <section>**: another section of the active pack takes it (the first one after the active
-  section, else the last one before it); "(levels a-b)" is added when the title has no levels.
-- **Not in the guide**, with the reason when Ding can tell: the quest's steps are behind an
-  option that is off (elite or dungeon quests), or for another class or race (or the quest
-  itself is); an elite quest (an objective with elite monsters only, or the quest before it in
-  its chain: Mor'Ladim, The Daughter Who Lived); above the player's level by more than 2; a
-  WoW Forever quest (ids from 10000: Classic's end at 9665) the route leaves out; a gray quest
-  the guide skips ("Skip gray quests").
+- **Take it** (`done`): the steps at the player's place take it ("it is the current step", "the
+  guide takes it here, at step N", or a catch-up: "the guide's next quests need it"); or no step
+  takes it from here on but a later step completes or turns it in ("step N needs it and you do
+  not have it": the player missed it).
+- **You can take it** (`accent`): a later step of the active section takes it and AutoQuest would
+  take it on the way (not above the player's level, fewer than 15 quests in the log): "the guide
+  takes it at step N, this saves you a trip back".
+- **Not now** (`text`): a later step takes it but it is above the player's level or the log is
+  almost full; or a later section takes it: "the guide takes it later, in “<section>” (levels
+  a-b), when you come back".
+- **Optional** (`text.secondary`): the guide took it earlier, at a step already passed or in a
+  section before the active one.
+- **Not needed by the guide** (`text.muted`): elite or dungeon quest with its option off, for
+  another race or class, an elite quest (an objective with elite monsters only, or the quest
+  before it in its chain: Mor'Ladim, The Daughter Who Lived), too high (more than 2 levels
+  above), a WoW Forever quest (ids from 10000: Classic's end at 9665) the route leaves out, a gray
+  quest the guide skips ("Skip gray quests"), else "the route does not take it".
+
+A quest above the player's level adds both levels ("It is level 28, you are level 26.").
+**Shown only when it helps**: one quest at least that the steps at the player's place do not
+take; when the guide takes every quest offered right here, nothing shows. Then every quest of
+the window has its row, in the window's order; names and lines wrap, never cut.
 
 Steps are read without their conditions (`when` can hold later); each section is indexed once.
 The greeting window only gives titles: they are matched to the quests the NPC starts

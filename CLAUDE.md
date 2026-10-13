@@ -215,7 +215,8 @@ Contracts between modules:
   its entry for the player's faction when it is a table. `AutoQuest:PlaceEnd()`: the last step at
   the player's place (`Wanted` reads up to it). `Data:NpcQuests(npc)`: the quests an NPC starts.
   `Offers:Classify(q)` -> `{ kind = "now" | "later" | "needed" | "earlier" | "other" | "none",
-  step, guide, reason }`. `Engine:UnusedLogQuests()`: quests
+  step, guide, before, ahead, reason }`, `Offers:Verdict(r, q, ctx)` -> "take" | "can" | "notNow" |
+  "optional" | "useless" and the line under the quest. `Engine:UnusedLogQuests()`: quests
   of the log the active guide and the next ones never use (listed in the Guide tab; Ding never
   abandons them). `UI.Banner`, `UI.Ring`, `UI.ScreenCenter`: Ding's marks over the game's
   windows, which are only read. `QuestMobs.byNpc` (`[npc id]` = entries best first: `kind`
