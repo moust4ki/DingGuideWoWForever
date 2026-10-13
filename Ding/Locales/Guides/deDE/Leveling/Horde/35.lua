@@ -7,8 +7,6 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h35-felwood-and-winterspring", {
         "Reise zum Smaragdrefugium",
     ["Felwood: Emerald Sanctuary, in the south of the zone."] =
         "Teufelswald: Smaragdrefugium, im Süden des Gebiets.",
-    ["This one roams, so scan the surrounding area."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab.",
     ["The NPC is indoors."] =
         "Der NPC ist drinnen.",
     ["Hand these in afterwards for experience and reputation."] =

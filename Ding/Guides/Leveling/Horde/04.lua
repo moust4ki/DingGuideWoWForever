@@ -23,8 +23,7 @@ Ding.RegisterGuide({
           note = "Pick one Ferocious Grizzled Bear and tame it with Tame Beast. Release your current pet before this. Here you tame a pet to keep." },
         { go = { 1421, 45.59, 42.55 }, fly = true, talk = 2226, text = "Fly to The Sepulcher" }, -- level 13
         { go = { 1421, 45.59, 42.55 }, fly = true, talk = 2226, races = { "Scourge" }, text = "Fly to Undercity" }, -- level 14
-        { accept = 421, -- level 13
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 421 }, -- level 13
         { accept = 477 }, -- level 13
         { accept = 6321, races = { "Scourge" } }, -- level 14
         { go = { 1421, 43.04, 41.43 }, text = "Go down into the tomb" }, -- level 13
@@ -40,18 +39,17 @@ Ding.RegisterGuide({
         { turnin = 6321, accept = 6323, races = { "Scourge" } }, -- level 14
         { complete = 421, -- level 13
           note = "The targets are worgen." },
-        { turnin = 421, accept = 422, -- level 13
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 421, accept = 422 }, -- level 13
         { go = { 1421, 49.8, 30.02 }, text = "Walk over the span" }, -- level 13
         { complete = 422, -- level 13
-          note = "Be ready for a fight right away. The NPC is indoors, one floor up." },
+          note = "Be ready for a fight right away. The object is indoors, one floor up." },
         { turnin = 430, when = { log = 430 }, -- level 13
           note = "The NPC is indoors, one floor up." },
         { turnin = 91921 }, -- level 13
         { accept = 425, when = { done = 430 }, -- level 13
           note = "The quest giver stands outdoors, not indoors." },
         { complete = 425, when = { log = 425 }, -- level 13
-          note = "He has three ghouls at his side. Hold off until one steps out, then slay it. The NPC is indoors." },
+          note = "He has three ghouls at his side. Hold off until one steps out, then slay it. The target is indoors." },
         { turnin = 425, when = { log = 425 } }, -- level 13
         { complete = 437 }, -- level 13
         { complete = 437, sticky = 447, -- level 13
@@ -63,8 +61,7 @@ Ding.RegisterGuide({
           note = "Die to the monsters here on purpose. This is the quickest way over." },
         { deathskip = true, revive = { 1421, 44.34, 41.55 }, text = "Get yourself killed, then resurrect with the spirit healer" }, -- level 13
         { talk = 6491 }, -- level 13
-        { turnin = 422, accept = 423, -- level 13
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 422, accept = 423 }, -- level 13
         { go = { 1421, 43.04, 41.43 }, text = "Go down into the tomb" }, -- level 13
         { turnin = 437, accept = 438, -- level 13
           note = "This is below ground, on the crypt's lower floor." },
@@ -79,8 +76,7 @@ Ding.RegisterGuide({
           note = "With the coming turn-ins, this gets you to level 15." },
         { turnin = 478, accept = 481 }, -- level 14
         { accept = 98298 }, -- level 14
-        { turnin = { 423, 481 }, accept = 482, -- level 14
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = { 423, 481 }, accept = 482 }, -- level 14
         { turnin = 482 }, -- level 14
         { go = { 1421, 43.04, 41.43 }, text = "Go down into the tomb" }, -- level 14
         { turnin = 439, -- level 14
@@ -114,8 +110,7 @@ Ding.RegisterGuide({
         { accept = 1978, when = { done = 1899 }, races = { "Scourge" }, classes = { "ROGUE" } }, -- level 15
         { turnin = 1978, when = { log = 1978 }, races = { "Scourge" }, classes = { "ROGUE" } }, -- level 15
         { train = true, talk = 12042, races = { "Tauren" }, classes = { "DRUID" } }, -- level 15
-        { accept = { 5723, 5722 }, dungeon = "Ragefire Chasm", races = { "Tauren", "Skyborne" }, -- level 15
-          note = "This one roams, so scan the surrounding area." },
+        { accept = { 5723, 5722 }, dungeon = "Ragefire Chasm", races = { "Tauren", "Skyborne" } }, -- level 15
         { accept = 5726, dungeon = "Ragefire Chasm", -- level 15
           note = "The NPC is indoors." },
         { complete = 5726, dungeon = "Ragefire Chasm", -- level 15

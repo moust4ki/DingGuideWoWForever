@@ -12,11 +12,9 @@ Ding.RegisterGuide({
     steps    = {
         { go = { 1437, 8.55, 55.74 }, text = "Travel to Menethil Harbor", -- level 24
           note = "Wetlands: Menethil Harbor, on the west coast." },
-        { accept = 484, -- level 24
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 484 }, -- level 24
         { accept = 98189, races = { "NightElf", "Skyborne" } }, -- level 24
-        { accept = 279, -- level 24
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 279 }, -- level 24
         { train = true, talk = 7312, races = { "Human", "Gnome" }, classes = { "MAGE" }, -- level 24
           note = "The NPC is indoors." },
         { talk = 2489, races = { "Human", "Gnome" }, classes = { "MAGE" }, -- level 24
@@ -31,35 +29,31 @@ Ding.RegisterGuide({
           note = "The NPC waits on the lower level, indoors." },
         { turnin = 971, dungeon = "Blackfathom Deeps", -- level 24
           note = "The NPC waits on the lower level, indoors." },
-        { accept = 463, -- level 24
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 463 }, -- level 24
         { accept = 288, when = { item = 2594 } }, -- level 24
         { sethearth = "Deepwater Tavern", talk = 1464, -- level 24
-          note = "This one roams, so scan the surrounding area. The NPC is indoors." },
+          note = "The NPC is indoors." },
         { talk = 1464, buy = { { 2594, 1, 1464 } }, -- level 24
-          note = "This one roams, so scan the surrounding area. The NPC is indoors." },
+          note = "The NPC is indoors." },
         { turnin = 942, accept = 943, when = { log = 942 }, -- level 24
           note = "The NPC is indoors, one floor up." },
         { turnin = 942, accept = 943, when = { done = 942 }, -- level 24
           note = "The NPC is indoors, one floor up." },
-        { turnin = 288, when = { item = 2594 }, -- level 24
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 288, when = { item = 2594 } }, -- level 24
         { accept = 98282 }, -- level 24
         { accept = 470 }, -- level 24
         { accept = 98197 }, -- level 24
         { talk = 1448, buy = { { 4371, 1, 1448 } }, when = { noitem = 4371 }, -- level 24
-          note = "This one roams, so scan the surrounding area. The NPC is indoors. Do it only if you can." },
+          note = "The NPC is indoors. Do it only if you can." },
         { vendor = true, talk = 1448, when = { noitem = 4371 } }, -- level 24
-        { accept = 305, sticky = { 279, 484 }, -- level 24
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 305, sticky = { 279, 484 } }, -- level 24
         { complete = 98197 }, -- level 24
         { complete = 279, -- level 24
           note = "The target is a gray murloc. This one roams, so scan the surrounding area. The target appears at this spot." },
         { complete = 279 }, -- level 24
         { go = { 1437, 34.23, 41.15 }, text = "Go into Whelgar's Excavation Site" }, -- level 24
         { go = { 1437, 37.07, 43.02 }, text = "Climb the trail" }, -- level 24
-        { accept = 294, -- level 24
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 294 }, -- level 24
         { turnin = 305, accept = 306, -- level 24
           note = "Your objective lies in a little cavern." },
         { complete = 943, sticky = 943, when = { log = 943 }, -- level 24
@@ -70,34 +64,28 @@ Ding.RegisterGuide({
           note = "The targets are raptors." },
         { go = { 1437, 34.23, 41.15 }, text = "Go into Whelgar's Excavation Site" }, -- level 25
         { go = { 1437, 37.07, 43.02 }, text = "Climb the trail" }, -- level 25
-        { turnin = 294, sticky = 484, -- level 25
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 294, sticky = 484 }, -- level 25
         { go = { 1437, 34.07, 40.91 }, text = "Head out of Whelgar's Excavation Site" }, -- level 25
         { accept = 469 }, -- level 25
-        { turnin = 463, accept = 276, sticky = { 276, 484 }, -- level 25
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 463, accept = 276, sticky = { 276, 484 } }, -- level 25
         { complete = 98282 }, -- level 25
         { complete = 276 }, -- level 25
         { complete = 276 }, -- level 25
         { complete = 484 }, -- level 25
-        { turnin = 276, accept = 277, -- level 25
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 276, accept = 277 }, -- level 25
         { complete = 470, -- level 25
           note = "Targets are both in the tomb and around it." },
         { turnin = 943, when = { log = 943 }, -- level 25
           note = "The NPC is indoors, one floor up." },
         { turnin = 98282 }, -- level 25
         { turnin = 470 }, -- level 25
-        { turnin = 306, -- level 25
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 306 }, -- level 25
         { accept = 98072, races = { "Skyborne" } }, -- level 25
         { talk = 1448, buy = { { 4371, 1, 1448 } }, when = { noitem = 4371 }, -- level 25
-          note = "This one roams, so scan the surrounding area. The NPC is indoors. Do it only if you can." },
+          note = "The NPC is indoors. Do it only if you can." },
         { vendor = true, talk = 1448, when = { noitem = 4371 } }, -- level 25
-        { turnin = { 484, 469 }, -- level 25
-          note = "This one roams, so scan the surrounding area." },
-        { turnin = 279, -- level 25
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = { 484, 469 } }, -- level 25
+        { turnin = 279 }, -- level 25
         { talk = 8720, collect = { { 2458, 2 }, { 2455, 4 } }, -- level 25
           note = "Keep it; an upcoming task asks for it. The NPC is indoors." },
         { go = { 1455, 61.12, 89.58 }, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, text = "Learn Guns at the weapon master" }, -- level 25

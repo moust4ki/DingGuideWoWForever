@@ -7,8 +7,6 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h38-felwood-and-winterspring", {
         "前往血毒崗哨",
     ["Felwood: Bloodvenom Post, in the west of the zone."] =
         "費伍德森林：血毒崗哨，位於區域西部。",
-    ["This one roams, so scan the surrounding area."] =
-        "這個會四處走動，留意周圍一帶。",
     ["Hand these in afterwards for experience and reputation."] =
         "之後交付這些，換取經驗值和聲望。",
     ["Go into Jaedenar"] =
@@ -45,8 +43,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h38-felwood-and-winterspring", {
         "NPC在室內。",
     ["The quest wants yetis; seek them out. Targets are in the cavern and around its entrance too."] =
         "任務需要雪人；去找牠們。目標在洞穴裡，入口周圍也有。",
-    ["The NPC is a human spirit. This one roams, so scan the surrounding area."] =
-        "NPC是一個人類的靈魂。這個會四處走動，留意周圍一帶。",
+    ["The NPC is a human spirit."] =
+        "NPC是一個人類的靈魂。",
     ["Your targets are within the cavern."] =
         "目標在洞穴裡。",
     ["Let the conversation play out. Your targets are within the cavern."] =
@@ -65,8 +63,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h38-felwood-and-winterspring", {
         "每5個一組把物品交給納菲恩。每交付完整的一組可獲得50點聲望。把收集到的羽毛交給64.8, 8.1的NPC。",
     ["Raise Timbermaw Hold standing to Neutral"] =
         "將木喉要塞聲望提升到中立",
-    ["This one roams, so scan the surrounding area. The NPC stands within the passage."] =
-        "這個會四處走動，留意周圍一帶。NPC站在通道裡。",
+    ["The NPC stands within the passage."] =
+        "NPC站在通道裡。",
     ["The targets are 3 white furbolgs moving as one pack. The target patrols a long route beside the road. They appear near 28.1, 35.0 in Winterspring."] =
         "目標是3隻一起行動的白色熊怪。目標沿著道路旁的一條長路線巡邏。牠們出現在冬泉谷的28.1, 35.0附近。",
     ["This number shrinks while you kill monsters. Bring any feathers you collect to the NPC at 64.8, 8.1."] =

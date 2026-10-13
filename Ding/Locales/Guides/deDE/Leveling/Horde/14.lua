@@ -25,8 +25,6 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h14-thousand-needles", {
         "Die Gegner hier sind Skorpione.",
     ["Look for assorted mechanical pieces. Parts lie all across the Shimmering Flats."] =
         "Such nach verschiedenen mechanischen Teilen. Die Teile liegen überall in der Schimmernden Ebene.",
-    ["This one roams, so scan the surrounding area."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab.",
     ["The NPC is indoors, one floor up."] =
         "Der NPC ist drinnen, ein Stockwerk höher.",
     ["The NPC stands on the top tier of the pier. The NPC is indoors."] =

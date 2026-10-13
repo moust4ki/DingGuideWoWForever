@@ -15,8 +15,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a30-tanaris", {
         "Estes inimigos ficam furtivos.",
     ["Head down the passage that opens on Lost Rigger Cove"] =
         "Desça pela passagem que dá em Lost Rigger Cove",
-    ["The NPC is indoors, one floor up."] =
-        "O NPC está lá dentro, um andar acima.",
+    ["The object is indoors, one floor up."] =
+        "O objeto está lá dentro, um andar acima.",
     ["Few kills yield this item."] =
         "Poucos abates rendem este item.",
     ["Others can be found on raised wood platforms close by."] =

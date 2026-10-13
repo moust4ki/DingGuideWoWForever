@@ -35,8 +35,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a40-burning-steppes", {
         "Le PNJ est une vieille dame humaine. Le PNJ patrouille sur un long trajet : cherche-le tout du long. Si elle n'est pas là, elle peut être à l'étage de la maison, en 52.4, 42.1 à Hurlevent.",
     ["Walk over the rope bridge, then climb the trail"] =
         "Traverse le pont de corde, puis monte le sentier",
-    ["The NPC is up on the summit."] =
-        "Le PNJ est en haut, au sommet.",
+    ["The object is up on the summit."] =
+        "L'objet est en haut, au sommet.",
     ["Dungeon runs are a fine choice here too, as you like."] =
         "Faire des donjons ici est un bon choix aussi, comme tu préfères.",
 })

@@ -21,8 +21,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h28-tanaris-and-dustwallow-marsh
         "이 적들은 은신해 있습니다.",
     ["Head down the passage that opens on Lost Rigger Cove"] =
         "Lost Rigger Cove로 이어지는 통로를 따라 내려가세요",
-    ["The NPC is indoors, one floor up."] =
-        "NPC는 건물 안 한 층 위에 있습니다.",
+    ["The object is indoors, one floor up."] =
+        "그 물체는 건물 안 한 층 위에 있습니다.",
     ["Few kills yield this item."] =
         "이 아이템은 잘 떨어지지 않습니다.",
     ["Others can be found on raised wood platforms close by."] =

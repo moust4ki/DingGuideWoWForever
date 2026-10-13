@@ -43,6 +43,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h05-the-barrens-and-stonetalon-m
         "Mate harpias.",
     ["Up to two foes might jump you."] =
         "Até dois inimigos podem atacar você de surpresa.",
+    ["The target is indoors."] =
+        "O alvo está lá dentro.",
     ["Kill the purple raptors. Targets are found across the entire Barrens. Slay any you come across along the way."] =
         "Mate os raptores roxos. Os alvos ficam espalhados por todos os Sertões. Mate todos que encontrar pelo caminho.",
     ["Climb the trail"] =
@@ -55,8 +57,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h05-the-barrens-and-stonetalon-m
         "O NPC fica no nível mais alto desta construção.",
     ["Learn Staves at the weapon master"] =
         "Aprenda Báculos com o mestre de armas",
-    ["Steal from Gamon using Pick Pocket. The NPC is indoors."] =
-        "Roube de Gamon com Pick Pocket. O NPC está lá dentro.",
+    ["Steal from Gamon using Pick Pocket. The target is indoors."] =
+        "Roube de Gamon com Pick Pocket. O alvo está lá dentro.",
     ["Use it on Tazan's Satchel. The item is already in your inventory."] =
         "Use-o na Algibeira de Tazan. O item já está no seu inventário.",
     ["For this quest you guard an NPC on the move. If the NPC is gone, hold on until it reappears."] =
@@ -131,8 +133,6 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h05-the-barrens-and-stonetalon-m
         "Voe até o Penhasco do Trovão",
     ["Go into the cavern"] =
         "Entre na caverna",
-    ["This one roams, so scan the surrounding area. Your targets are within the cavern."] =
-        "Este se desloca, então procure pelos arredores. Seus alvos estão dentro da caverna.",
     ["Your targets are within the cavern."] =
         "Seus alvos estão dentro da caverna.",
     ["Head out of the cave"] =

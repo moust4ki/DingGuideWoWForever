@@ -47,8 +47,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a08-darkshore", {
         "Lass das Gespräch zu Ende laufen. Bleib bei Prospector Remtravel und verteidige ihn. Er ist schwach und stirbt schnell.",
     ["Look on top of the table."] =
         "Schau oben auf dem Tisch nach.",
-    ["For this quest you guard an NPC on the move. If she is absent, wait for her to reappear. This one roams, so scan the surrounding area."] =
-        "Bei dieser Quest beschützt du einen NPC, der unterwegs ist. Wenn sie nicht da ist, warte, bis sie wieder erscheint. Dieses Ziel wandert umher, also such die Umgebung ab.",
+    ["For this quest you guard an NPC on the move. If she is absent, wait for her to reappear."] =
+        "Bei dieser Quest beschützt du einen NPC, der unterwegs ist. Wenn sie nicht da ist, warte, bis sie wieder erscheint.",
     ["Let the conversation play out. Escort Therylune and defend her."] =
         "Lass das Gespräch zu Ende laufen. Begleite Therylune und verteidige sie.",
     ["For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears. Your objective lies in a little cavern."] =

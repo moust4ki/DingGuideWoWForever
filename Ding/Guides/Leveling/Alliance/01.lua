@@ -290,13 +290,13 @@ Ding.RegisterGuide({
           note = "The NPC waits on the lower level, indoors." },
         { level = 11, patrol = { { 1429, 70.25, 76.35 }, { 1429, 68.37, 75.46 }, { 1429, 68.23, 77.76 }, { 1429, 66.94, 80.17 }, { 1429, 68.44, 82.64 }, { 1429, 70.55, 80.55 }, { 1429, 72.06, 77.45 } } }, -- level 10
         { complete = 1688, classes = { "WARLOCK" }, -- level 10
-          note = "The NPC is indoors." },
+          note = "The target is indoors." },
         { go = { 1453, 42.28, 81.85 }, classes = { "WARLOCK" }, text = "Head indoors" }, -- level 10
         { turnin = 1688, when = { ready = 1688 }, classes = { "WARLOCK" }, -- level 10
           note = "The NPC waits on the lower level, indoors." },
         { accept = 1689, when = { done = 1688 }, classes = { "WARLOCK" } }, -- level 10
         { complete = 1689, useitem = 6928, when = { log = 1689 }, classes = { "WARLOCK" }, -- level 10
-          note = "Step onto the pink rune. Look within the tomb. The NPC waits on the lower level, indoors." },
+          note = "Step onto the pink rune. Look within the tomb. The target is on the lower level, indoors." },
         { turnin = 1689, when = { ready = 1689 }, classes = { "WARLOCK" }, -- level 10
           note = "The NPC stands one level over the crypt. The NPC waits on the lower level, indoors." },
         { sethearth = "Stormwind City", talk = 6740, -- level 11
@@ -308,11 +308,11 @@ Ding.RegisterGuide({
         { turnin = 1638, accept = 1639, classes = { "WARRIOR" }, -- level 11
           note = "The NPC is indoors." },
         { turnin = 1639, accept = 1640, classes = { "WARRIOR" }, -- level 11
-          note = "This one roams, so scan the surrounding area. The NPC is indoors. Be ready for a fight right away." },
+          note = "The NPC is indoors. Be ready for a fight right away." },
         { complete = 1640, classes = { "WARRIOR" }, -- level 11
-          note = "This one roams, so scan the surrounding area. The NPC is indoors." },
+          note = "The NPC is indoors." },
         { turnin = 1640, when = { ready = 1640 }, classes = { "WARRIOR" }, -- level 11
-          note = "This one roams, so scan the surrounding area. The NPC is indoors." },
+          note = "The NPC is indoors." },
         { accept = 1665, when = { done = 1640 }, classes = { "WARRIOR" } }, -- level 11
         { turnin = 1665, when = { log = 1665 }, classes = { "WARRIOR" }, -- level 11
           note = "The NPC is indoors." },

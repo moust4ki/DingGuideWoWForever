@@ -27,8 +27,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h40-winterspring", {
         "레각키에게 아이템을 사용하세요.",
     ["The NPC is indoors."] =
         "NPC는 건물 안에 있습니다.",
-    ["This one roams, so scan the surrounding area. The NPC stands within the passage."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요. NPC는 통로 안에 서 있습니다.",
+    ["The NPC stands within the passage."] =
+        "NPC는 통로 안에 서 있습니다.",
     ["Fly to Moonglade"] =
         "달의 숲으로 날아가세요",
     ["Head indoors"] =
@@ -37,8 +37,6 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h40-winterspring", {
         "NPC는 건물 안에 있습니다. 대화가 끝날 때까지 기다리세요",
     ["One last lengthy stretch of monster farming. Dungeon runs are a fine choice here too, as you like. This number shrinks while you kill monsters."] =
         "마지막으로 긴 몬스터 사냥 구간입니다. 원한다면 여기서도 던전을 도는 것이 좋은 선택입니다. 몬스터를 처치하면 이 수치가 줄어듭니다.",
-    ["The NPC stands within the passage."] =
-        "NPC는 통로 안에 서 있습니다.",
     ["You can also take it out of your bank."] =
         "은행에서 꺼내도 됩니다.",
     ["The NPC patrols a long route; look along it."] =

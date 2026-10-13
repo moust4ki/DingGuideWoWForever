@@ -61,8 +61,6 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a09-ashenvale-and-stonetalon-mou
         "La cible est une naga à la peau de jade et aux nageoires roses. Fait le tour de l'île dans le sens des aiguilles d'une montre, près du rivage. Elle se déplace avec deux gardes.",
     ["Hunt naga."] =
         "Chasse des nagas.",
-    ["This one roams, so scan the surrounding area."] =
-        "Celui-ci se déplace : fouille les environs.",
     ["The quest giver stands outdoors, not indoors."] =
         "Le donneur de quête est dehors, pas à l'intérieur.",
     ["Step into the cavern within the trunk"] =

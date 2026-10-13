@@ -7,16 +7,14 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a11-duskwood-and-redridge-mounta
         "Reise nach Dunkelhain",
     ["Duskwood: Darkshire, in the east of the zone."] =
         "Dämmerwald: Dunkelhain, im Osten des Gebiets.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab. Der NPC ist drinnen.",
     ["The NPC is indoors."] =
         "Der NPC ist drinnen.",
-    ["This one roams, so scan the surrounding area."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab.",
     ["Flight master at Darkshire"] =
         "Flugmeister in Dunkelhain",
-    ["The target is a ghoul with red skin. This one roams, so scan the surrounding area. The NPC can be indoors or out."] =
-        "Das Ziel ist ein Ghul mit roter Haut. Dieses Ziel wandert umher, also such die Umgebung ab. Der NPC kann drinnen oder draußen sein.",
+    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
+        "Dieses Ziel wandert umher, also such die Umgebung ab. Der NPC ist drinnen.",
+    ["The target is a ghoul with red skin. This one roams, so scan the surrounding area. The target can be indoors or out."] =
+        "Das Ziel ist ein Ghul mit roter Haut. Dieses Ziel wandert umher, also such die Umgebung ab. Das Ziel kann drinnen oder draußen sein.",
     ["Hunt spiders for it."] =
         "Jag dafür Spinnen.",
     ["The targets are ghouls. Targets are both in the tomb and around it."] =
@@ -27,8 +25,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a11-duskwood-and-redridge-mounta
         "Bestiehl eine Malformed Defias Drone mit Taschendiebstahl. Dieses Ziel wandert umher, also such die Umgebung ab.",
     ["Use Sap on Klaven Mortwake, then open the chest. Opening it puts a harmful effect on you. Climb to the highest floor of the building."] =
         "Belege Klaven Mortwake mit Kopfnuss, dann öffne die Truhe. Beim Öffnen bekommst du einen schädlichen Effekt. Steig ins oberste Stockwerk des Gebäudes.",
-    ["Be ready for a fight right away. The NPC is indoors."] =
-        "Mach dich sofort auf einen Kampf gefasst. Der NPC ist drinnen.",
+    ["Be ready for a fight right away. The object is indoors."] =
+        "Mach dich sofort auf einen Kampf gefasst. Das Objekt ist drinnen.",
     ["Climb the trail across the mountains"] =
         "Steig den Weg über die Berge hinauf",
     ["Take the trail that circles the peak"] =
@@ -43,6 +41,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a11-duskwood-and-redridge-mounta
         "Steig ins oberste Stockwerk des Gebäudes.",
     ["Beware of foes lurking in stealth."] =
         "Vorsicht vor getarnten Gegnern.",
+    ["The object is indoors, one floor up."] =
+        "Das Objekt ist drinnen, ein Stockwerk höher.",
     ["Head indoors"] =
         "Geh hinein",
     ["The NPC waits on the lower level, indoors."] =
@@ -87,6 +87,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a11-duskwood-and-redridge-mounta
         "Das Ziel ist der fünfte Boss des Dungeons.",
     ["You'll find them all over the instance."] =
         "Du findest sie überall in der Instanz.",
+    ["This one roams, so scan the surrounding area."] =
+        "Dieses Ziel wandert umher, also such die Umgebung ab.",
     ["Learn Guns, Two-Handed Axes and Two-Handed Maces at the weapon master"] =
         "Lerne Schusswaffen, Zweihandäxte und Zweihandstreitkolben beim Waffenmeister",
     ["Learn Two-Handed Axes at the weapon master"] =

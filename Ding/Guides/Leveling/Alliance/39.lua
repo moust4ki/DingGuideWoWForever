@@ -14,16 +14,14 @@ Ding.RegisterGuide({
           note = "Felwood: Emerald Sanctuary, in the south of the zone." },
         { collect = { { 21377, 1 }, { 11515, 6 } }, keep = { 21377, 11515 }, -- level 54
           note = "Hand these in afterwards for experience and reputation." },
-        { turnin = 5159, accept = 5165, -- level 54
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 5159, accept = 5165 }, -- level 54
         { turnin = 4441, -- level 54
           note = "The NPC is indoors." },
         { accept = 4442, -- level 54
           note = "Let the conversation play out. The NPC is indoors." },
         { turnin = 4442, -- level 54
           note = "The NPC is indoors." },
-        { accept = 5882, -- level 54
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 5882 }, -- level 54
         { turnin = 5882, when = { ready = 5882 } }, -- level 54
         { destroy = { 11445, 11511, 11516, 11515 } }, -- level 54
         { go = { 1448, 38.43, 59.8 }, text = "Go into Jaedenar" }, -- level 54
@@ -60,7 +58,7 @@ Ding.RegisterGuide({
           note = "Flee if things go badly." },
         { turnin = 5085, accept = 5086 }, -- level 55
         { turnin = 3912, accept = 3913, -- level 55
-          note = "The NPC is a human spirit. This one roams, so scan the surrounding area." },
+          note = "The NPC is a human spirit." },
         { turnin = 3913, accept = 3914 }, -- level 55
         { destroy = 11243 }, -- level 55
         { turnin = 3914, accept = 3941 }, -- level 55
@@ -70,8 +68,7 @@ Ding.RegisterGuide({
         { accept = 3942, -- level 55
           note = "Let the conversation play out. Your targets are within the cavern." },
         { go = { 1449, 43.41, 6.84 }, text = "Head out of the cave" }, -- level 55
-        { turnin = 5165, -- level 55
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 5165 }, -- level 55
         { turnin = 3942, accept = 4084, sticky = { 5086, 4084 }, -- level 55
           note = "The NPC is indoors." },
         { complete = 4084, -- level 55
@@ -125,7 +122,7 @@ Ding.RegisterGuide({
         { turnin = 8467, when = { item = { 21377, 5 }, ready = 8467 } }, -- level 55
         { accept = 8471, useitem = 20742, when = { item = 20742, maxlevel = 56 } }, -- level 55
         { turnin = 8470, when = { maxlevel = 56, ready = 8470 }, -- level 55
-          note = "This one roams, so scan the surrounding area. The NPC stands within the passage." },
+          note = "The NPC stands within the passage." },
         { turnin = 8471, when = { log = 8471, ready = 8471 } }, -- level 55
         { level = 56, patrol = { { 1448, 62.37, 12.64 }, { 1448, 61.45, 10.77 }, { 1448, 60.46, 8.57 }, { 1448, 59.95, 6.64 }, { 1448, 62.46, 7.63 }, { 1448, 63.54, 5.95 }, { 1448, 63.56, 9.55 } } }, -- level 55
         { train = true, talk = 12042, races = { "NightElf" }, classes = { "DRUID" } }, -- level 55
@@ -142,7 +139,7 @@ Ding.RegisterGuide({
           note = "The spot is on the lower floor of the hollow tree." },
         { train = true, talk = 4163, classes = { "ROGUE" } }, -- level 56
         { turnin = 4902, -- level 56
-          note = "This one roams, so scan the surrounding area. The NPC waits on the tower's highest floor." },
+          note = "The NPC waits on the tower's highest floor." },
         { train = true, talk = 7312, races = { "Human", "Gnome" }, classes = { "MAGE" }, -- level 56
           note = "The NPC is indoors." },
     },

@@ -35,8 +35,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h20-stranglethorn-vale-and-swamp
         "Maître de vol de Pierrêche",
     ["The NPC is indoors, one floor up."] =
         "Le PNJ est à l'intérieur, un étage plus haut.",
-    ["The target is a humanoid escorted by 2 guards. The NPC patrols a long route; look along it."] =
-        "La cible est un humanoïde escorté par 2 gardes. Le PNJ patrouille sur un long trajet : cherche-le tout du long.",
+    ["The target is a humanoid escorted by 2 guards. The target patrols a long route; look along it."] =
+        "La cible est un humanoïde escorté par 2 gardes. La cible patrouille sur un long trajet : cherche-la tout du long.",
     ["This one roams, so scan the surrounding area. The targets are spread over several spots."] =
         "Celui-ci se déplace : fouille les environs. Les cibles sont réparties sur plusieurs endroits.",
     ["For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears. Clear the monsters just south before you start."] =

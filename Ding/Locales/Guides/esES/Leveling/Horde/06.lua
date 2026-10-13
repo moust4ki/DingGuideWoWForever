@@ -35,20 +35,20 @@ Ding.RegisterGuideTranslation("esES", "leveling-h06-ashenvale", {
         "Este PNJ está abajo, en la Grieta de la Sombra.",
     ["The quest giver waits in the tent. This NPC is found down in the Cleft of Shadow."] =
         "El PNJ de misión espera en la tienda. Este PNJ está abajo, en la Grieta de la Sombra.",
-    ["Step onto the pink rune. The quest giver waits in the tent. This NPC is found down in the Cleft of Shadow."] =
-        "Pisa la runa rosa. El PNJ de misión espera en la tienda. Este PNJ está abajo, en la Grieta de la Sombra.",
+    ["Step onto the pink rune. The quest giver waits in the tent. The target is down in the Cleft of Shadow."] =
+        "Pisa la runa rosa. El PNJ de misión espera en la tienda. El objetivo está abajo, en la Grieta de la Sombra.",
     ["Let the conversation play out. The quest giver waits in the tent. This NPC is found down in the Cleft of Shadow."] =
         "Deja que termine la conversación. El PNJ de misión espera en la tienda. Este PNJ está abajo, en la Grieta de la Sombra.",
     ["Use it twice on Taskmaster Fizzule. A short way north of here. Target Taskmaster Fizzule and salute him."] =
         "Úsalo dos veces sobre Taskmaster Fizzule. Un poco al norte de aquí. Selecciona a Taskmaster Fizzule y hazle el saludo militar.",
     ["Rob Foreman Silixiz with Pick Pocket."] =
         "Usa Robar sobre Foreman Silixiz.",
-    ["Open with Ambush for a bigger hit. The NPC is indoors at street level."] =
-        "Abre con Emboscada para un golpe más fuerte. El PNJ está dentro, a pie de calle.",
-    ["Lean on Rupture for bonus damage. The NPC is indoors, on the central storey."] =
-        "Usa Ruptura para infligir daño extra. El PNJ está dentro, en el piso central.",
-    ["Eviscerate adds a burst of damage here. The objective is on the terrace above. The NPC is indoors, on the central storey."] =
-        "Eviscerar añade aquí una ráfaga de daño. El objetivo está en la terraza de arriba. El PNJ está dentro, en el piso central.",
+    ["Open with Ambush for a bigger hit. The target is indoors at street level."] =
+        "Abre con Emboscada para un golpe más fuerte. El objetivo está dentro, a pie de calle.",
+    ["Lean on Rupture for bonus damage. The target is indoors, on the central storey."] =
+        "Usa Ruptura para infligir daño extra. El objetivo está dentro, en el piso central.",
+    ["Eviscerate adds a burst of damage here. The objective is on the terrace above. The target is indoors, on the central storey."] =
+        "Eviscerar añade aquí una ráfaga de daño. El objetivo está en la terraza de arriba. El objetivo está dentro, en el piso central.",
     ["Open with Ambush for a bigger hit. Climb to the highest floor of the building."] =
         "Abre con Emboscada para un golpe más fuerte. Sube al piso más alto del edificio.",
     ["Use Pick Lock to open it. Climb to the highest floor of the building."] =

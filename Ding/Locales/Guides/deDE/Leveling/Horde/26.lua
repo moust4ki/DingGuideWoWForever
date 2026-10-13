@@ -35,8 +35,6 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h26-stranglethorn-vale", {
         "Der Gegenstand ist ein bräunliches Blatt Pergament. Die Ziele sind auf mehrere Stellen verteilt.",
     ["Look for a flat, white scroll lying open. The targets are spread over several spots."] =
         "Such nach einer flachen, weißen, offen liegenden Schriftrolle. Die Ziele sind auf mehrere Stellen verteilt.",
-    ["This one roams, so scan the surrounding area."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab.",
     ["The NPC is upstairs, out on the balcony."] =
         "Der NPC ist oben, draußen auf dem Balkon.",
     ["Take the road until the trail starts"] =

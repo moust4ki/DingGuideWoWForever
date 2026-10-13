@@ -43,6 +43,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h29-the-hinterlands", {
         "目標是潛行中的狼。",
     ["Slay them, then apply the item to their remains."] =
         "殺死牠們，然後對屍體使用這個物品。",
+    ["The object is indoors."] =
+        "這個物件在室內。",
     ["Steer clear of hostile Alliance NPCs. Warning: this turns on your PvP flag."] =
         "避開敵對的聯盟NPC。警告：這會開啟你的PvP標記。",
     ["Head into Shadra'Alor"] =

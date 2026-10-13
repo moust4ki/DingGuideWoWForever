@@ -29,6 +29,6 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h22-tanaris", {
         "전리품을 챙기세요.",
     ["Wait for the talking to finish"] =
         "대화가 끝날 때까지 기다리세요",
-    ["Hold on until Rizzle has fled. The NPC is indoors."] =
-        "리즐이 달아날 때까지 기다리세요. NPC는 건물 안에 있습니다.",
+    ["Hold on until Rizzle has fled. The object is indoors."] =
+        "리즐이 달아날 때까지 기다리세요. 그 물체는 건물 안에 있습니다.",
 })

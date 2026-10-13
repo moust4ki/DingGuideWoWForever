@@ -22,7 +22,7 @@ Ding.RegisterGuide({
         { turnin = 1302, -- level 33
           note = "The NPC is indoors, one floor up." },
         { turnin = 1264, accept = 1265, -- level 33
-          note = "This one roams, so scan the surrounding area. The NPC is indoors, one floor up." },
+          note = "The NPC is indoors, one floor up." },
         { turnin = 1282, -- level 33
           note = "The NPC is indoors, one floor up." },
         { complete = 1265, -- level 33
@@ -32,10 +32,9 @@ Ding.RegisterGuide({
         { accept = 1218, when = { item = 3713 } }, -- level 33
         { turnin = 1218, when = { item = 3713 } }, -- level 33
         { accept = 1219 }, -- level 33
-        { turnin = 1266, -- level 33
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 1266 }, -- level 33
         { accept = 1324, noauto = 1324, -- level 33
-          note = "This one roams, so scan the surrounding area. Expect several foes at once. Make Private Hendel your main target." },
+          note = "Expect several foes at once. Make Private Hendel your main target." },
         { complete = 1324, -- level 33
           note = "Wait for the talking to finish" },
         { turnin = 1324 }, -- level 33

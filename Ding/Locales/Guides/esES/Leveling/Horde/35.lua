@@ -7,8 +7,6 @@ Ding.RegisterGuideTranslation("esES", "leveling-h35-felwood-and-winterspring", {
         "Viaja al Santuario Esmeralda",
     ["Felwood: Emerald Sanctuary, in the south of the zone."] =
         "Frondavil: Santuario Esmeralda, al sur de la zona.",
-    ["This one roams, so scan the surrounding area."] =
-        "Este deambula, así que revisa los alrededores.",
     ["The NPC is indoors."] =
         "El PNJ está dentro.",
     ["Hand these in afterwards for experience and reputation."] =

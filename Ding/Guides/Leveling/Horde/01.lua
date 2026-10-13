@@ -78,8 +78,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { train = true, talk = 2122, classes = { "ROGUE" }, -- level 4
           note = "The NPC is indoors." },
-        { accept = 3902, -- level 4
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 3902 }, -- level 4
         { complete = 3902, -- level 4
           note = "Search stacks of brown crates. Check in and around the structures." },
         { complete = 380, -- level 4
@@ -93,8 +92,7 @@ Ding.RegisterGuide({
         { deathskip = true, revive = { 1420, 31.28, 64.93 }, text = "Get yourself killed, then resurrect with the spirit healer" }, -- level 4
         { talk = 6491 }, -- level 4
         { go = { 1420, 26.86, 59.46 }, text = "Exit the mine shaft" }, -- level 4
-        { turnin = 3902, -- level 4
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 3902 }, -- level 4
         { turnin = 380, accept = 381 }, -- level 4
         { complete = 381 }, -- level 5
         { collect = { { 16333, 1 } }, spots = { { 1420, 36.74, 61.61 } }, -- level 5
@@ -209,7 +207,7 @@ Ding.RegisterGuide({
           note = "Hunt the crabs." },
         { go = { 1411, 50.79, 79.17 }, text = "Stay on the trail" }, -- level 8
         { complete = 786, -- level 8
-          note = "The NPC is indoors." },
+          note = "The object is indoors." },
         { accept = 97223, races = { "Scourge" } }, -- level 8
         { complete = 786 }, -- level 8
         { complete = 786, -- level 8
@@ -223,11 +221,11 @@ Ding.RegisterGuide({
           note = "This one roams, so scan the surrounding area. The targets are spread over several spots." },
         { go = { 1411, 58.96, 58.33 }, text = "Head indoors" }, -- level 8
         { complete = 784, collect = { { 4882, 1 } }, -- level 8
-          note = "The NPC is indoors, one floor up. Consider bringing a group for this one." },
+          note = "The target is indoors, one floor up. Consider bringing a group for this one." },
         { complete = 96822, races = { "Scourge" } }, -- level 8
         { go = { 1411, 59.86, 57.81 }, text = "Stay on the trail and keep climbing the steps" }, -- level 8
         { collect = { { 4881, 1 } }, -- level 8
-          note = "The NPC stands on the highest level of this structure." },
+          note = "The object is on the highest level of this structure." },
         { accept = 830, useitem = 4881 }, -- level 8
         { complete = 791 }, -- level 8
         { complete = 784 }, -- level 8
@@ -375,9 +373,9 @@ Ding.RegisterGuide({
         { turnin = 1881, accept = 1882, sticky = { 374, 370 }, classes = { "MAGE" }, -- level 11
           note = "The NPC is indoors, one floor up." },
         { complete = 370, -- level 11
-          note = "The NPC is indoors." },
+          note = "The target is indoors." },
         { complete = 1473, classes = { "WARLOCK" }, -- level 11
-          note = "The NPC is indoors." },
+          note = "The object is indoors." },
         { complete = 374 }, -- level 11
         { complete = 370 }, -- level 11
         { turnin = 1473, when = { ready = 1473 }, classes = { "WARLOCK" } }, -- level 11
@@ -404,7 +402,7 @@ Ding.RegisterGuide({
         { accept = 361, useitem = 2839, sticky = 358, when = { item = 2839 } }, -- level 12
         { go = { 1420, 54.24, 31.72 }, text = "Drop down with care" }, -- level 12
         { complete = 398, -- level 12
-          note = "The NPC is indoors." },
+          note = "The target is indoors." },
         { complete = 368, sticky = 358, -- level 12
           note = "Fight the murlocs." },
         { complete = 97558, races = { "Scourge" } }, -- level 12
@@ -457,7 +455,7 @@ Ding.RegisterGuide({
         { complete = 1882, classes = { "MAGE" } }, -- level 13
         { complete = 356, sticky = 371 }, -- level 13
         { complete = 371, -- level 13
-          note = "The NPC is indoors." },
+          note = "The target is indoors." },
         { complete = 99156, races = { "Scourge" } }, -- level 13
         { complete = 371 }, -- level 13
         { complete = 369 }, -- level 13

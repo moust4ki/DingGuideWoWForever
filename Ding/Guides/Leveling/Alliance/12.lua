@@ -12,15 +12,13 @@ Ding.RegisterGuide({
     steps    = {
         { go = { 1437, 8.32, 58.57 }, text = "Travel to Menethil Harbor", -- level 28
           note = "Wetlands: Menethil Harbor, on the west coast." },
-        { accept = 281, -- level 28
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 281 }, -- level 28
         { accept = 98240, races = { "Skyborne" } }, -- level 28
-        { accept = 471, -- level 28
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 471 }, -- level 28
         { accept = 289, when = { done = 288 } }, -- level 28
         { turnin = 270, elite = true }, -- level 28
         { sethearth = "Deepwater Tavern", talk = 1464, -- level 28
-          note = "This one roams, so scan the surrounding area. The NPC is indoors." },
+          note = "The NPC is indoors." },
         { accept = 472 }, -- level 28
         { turnin = 98197 }, -- level 28
         { accept = 98221 }, -- level 28
@@ -39,15 +37,13 @@ Ding.RegisterGuide({
           note = "Your targets here are gnolls." },
         { go = { 1437, 34.23, 41.15 }, text = "Go into Whelgar's Excavation Site" }, -- level 28
         { go = { 1437, 37.07, 43.02 }, text = "Climb the trail" }, -- level 28
-        { accept = 295, races = { "Human", "Dwarf", "NightElf", "Gnome" }, -- level 28
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 295, races = { "Human", "Dwarf", "NightElf", "Gnome" } }, -- level 28
         { accept = 299, races = { "Human", "Dwarf", "NightElf", "Gnome" }, -- level 28
           note = "Your objective lies in a little cavern." },
         { complete = 295, races = { "Human", "Dwarf", "NightElf", "Gnome" } }, -- level 28
         { go = { 1437, 37.07, 43.02 }, races = { "Human", "Dwarf", "NightElf", "Gnome" }, text = "Climb the trail" }, -- level 28
         { turnin = 295, races = { "Human", "Dwarf", "NightElf", "Gnome" } }, -- level 28
-        { accept = 296, races = { "Human", "Dwarf", "NightElf", "Gnome" }, -- level 28
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 296, races = { "Human", "Dwarf", "NightElf", "Gnome" } }, -- level 28
         { go = { 1437, 31.93, 48.57 }, text = "Climb the trail" }, -- level 28
         { complete = 296, races = { "Human", "Dwarf", "NightElf", "Gnome" }, -- level 28
           note = "The target is a blue raptor. Look for it high on the clifftop. This one roams, so scan the surrounding area." },
@@ -60,8 +56,7 @@ Ding.RegisterGuide({
         { complete = 299, races = { "Human", "Dwarf", "NightElf", "Gnome" }, -- level 28
           note = "The target is a big stone container. The targets are spread over several spots. The item may also spawn on the high ledge by Sarltooth." },
         { go = { 1437, 37.07, 43.02 }, text = "Climb the trail" }, -- level 28
-        { turnin = 296, races = { "Human", "Dwarf", "NightElf", "Gnome" }, -- level 28
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 296, races = { "Human", "Dwarf", "NightElf", "Gnome" } }, -- level 28
         { turnin = 299, races = { "Human", "Dwarf", "NightElf", "Gnome" }, -- level 28
           note = "Your objective lies in a little cavern." },
         { go = { 1437, 34.07, 40.91 }, text = "Head out of Whelgar's Excavation Site" }, -- level 28
@@ -74,8 +69,7 @@ Ding.RegisterGuide({
         { complete = 98245 }, -- level 28
         { turnin = 98245 }, -- level 28
         { accept = 98283 }, -- level 28
-        { turnin = 277, accept = 275, -- level 28
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 277, accept = 275 }, -- level 28
         { complete = 98072, races = { "Skyborne" } }, -- level 28
         { complete = 98283 }, -- level 28
         { complete = 335, races = { "Dwarf", "NightElf" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "WARLOCK", "DRUID" } }, -- level 29
@@ -99,10 +93,8 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { train = true, talk = 5167, classes = { "ROGUE" }, -- level 29
           note = "The NPC is indoors." },
-        { turnin = 286, -- level 29
-          note = "This one roams, so scan the surrounding area." },
-        { turnin = 471, -- level 29
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 286 }, -- level 29
+        { turnin = 471 }, -- level 29
         { turnin = 98072, races = { "Skyborne" } }, -- level 29
         { turnin = 464, races = { "Human", "Dwarf", "NightElf", "Gnome" } }, -- level 29
         { turnin = 464, races = { "Skyborne" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 29
@@ -125,14 +117,13 @@ Ding.RegisterGuide({
           note = "With the coming hand-ins, this brings you to level 29." },
         { complete = 275, -- level 29
           note = "These foes hide in stealth. Most often found in or beside water." },
-        { turnin = 275, -- level 29
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 275 }, -- level 29
         { turnin = 98283 }, -- level 29
         { accept = 631 }, -- level 29
         { turnin = 472 }, -- level 29
         { go = { 1437, 51.31, 8.08 }, text = "Take the door on the bridge, then descend the steps" }, -- level 29
         { turnin = 631, accept = 632, -- level 29
-          note = "Be ready for a fight right away. The NPC is on the lower level within the bridge." },
+          note = "Be ready for a fight right away. The object is on the lower level within the bridge." },
         { turnin = 632, accept = 633 }, -- level 29
         { go = { 1437, 50.6, 8.48 }, text = "Leap from the span and splash down below" }, -- level 29
         { collect = { { 4433, 1 } }, -- level 29
@@ -146,8 +137,7 @@ Ding.RegisterGuide({
         { accept = 95646 }, -- level 29
         { complete = 95646 }, -- level 29
         { turnin = 95646 }, -- level 29
-        { turnin = 634, -- level 29
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 634 }, -- level 29
         { go = { 1417, 45.81, 46.15 }, fly = true, talk = 2835, text = "Fly to Refuge Pointe" }, -- level 29
         { go = { 1424, 49.4, 52.21 }, fly = true, talk = 2432, text = "Flight master at Southshore" }, -- level 29
         { accept = 98059 }, -- level 29

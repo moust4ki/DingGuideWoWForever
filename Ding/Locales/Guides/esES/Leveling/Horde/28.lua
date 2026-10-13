@@ -21,8 +21,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h28-tanaris-and-dustwallow-marsh
         "Estos enemigos se ocultan en sigilo.",
     ["Head down the passage that opens on Lost Rigger Cove"] =
         "Baja por el paso que da a Lost Rigger Cove",
-    ["The NPC is indoors, one floor up."] =
-        "El PNJ está dentro, un piso más arriba.",
+    ["The object is indoors, one floor up."] =
+        "El objeto está dentro, un piso más arriba.",
     ["Few kills yield this item."] =
         "Este objeto cae pocas veces.",
     ["Others can be found on raised wood platforms close by."] =

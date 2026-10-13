@@ -11,8 +11,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a27-tanaris", {
         "NPC는 건물 안에 있습니다.",
     ["Wait for the talking to finish"] =
         "대화가 끝날 때까지 기다리세요",
-    ["Hold on until Rizzle has fled. The NPC is indoors."] =
-        "리즐이 달아날 때까지 기다리세요. NPC는 건물 안에 있습니다.",
+    ["Hold on until Rizzle has fled. The object is indoors."] =
+        "리즐이 달아날 때까지 기다리세요. 그 물체는 건물 안에 있습니다.",
     ["Targets here are human."] =
         "여기의 대상은 인간입니다.",
     ["Targets here are human. Dungeon runs are a fine choice here too, as you like. Each set of 5 handed in at Gadgetzan gives 380 xp."] =

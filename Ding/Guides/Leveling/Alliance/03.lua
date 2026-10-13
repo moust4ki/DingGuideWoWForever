@@ -51,8 +51,7 @@ Ding.RegisterGuide({
           note = "The NPC stands high in the great tree. The NPC stands in an adjoining chamber." },
         { train = true, talk = 3597, classes = { "DRUID" }, -- level 2
           note = "The NPC stands high in the great tree. The NPC stands in an adjoining chamber." },
-        { turnin = 458, accept = 459, -- level 2
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 458, accept = 459 }, -- level 2
         { accept = 97977, races = { "NightElf" } }, -- level 2
         { complete = 97977, races = { "NightElf" } }, -- level 2
         { complete = 459, -- level 2
@@ -70,8 +69,7 @@ Ding.RegisterGuide({
         { go = { 1438, 56.72, 31.49 }, text = "Head out of the cave" }, -- level 4
         { turnin = 916, accept = 917 }, -- level 4
         { turnin = 457 }, -- level 4
-        { turnin = 459, -- level 4
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 459 }, -- level 4
         { turnin = 97977, races = { "NightElf" } }, -- level 5
         { turnin = 3519, accept = 3521 }, -- level 5
         { train = true, talk = 3593, classes = { "WARRIOR" }, -- level 5
@@ -125,8 +123,7 @@ Ding.RegisterGuide({
           note = "The NPC stands at the summit of the great tree. The NPC stands in an adjoining chamber." },
         { accept = 96630, races = { "NightElf" } }, -- level 6
         { accept = 2159 }, -- level 6
-        { accept = 488, sticky = 488, -- level 6
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 488, sticky = 488 }, -- level 6
         { accept = 96606, races = { "NightElf" } }, -- level 6
         { accept = 997 }, -- level 6
         { accept = 475 }, -- level 6
@@ -154,20 +151,18 @@ Ding.RegisterGuide({
         { go = { 1438, 57.68, 60.67 }, classes = { "DRUID" }, text = "Learn Herbalism from the trainer" }, -- level 6
         { talk = 3604, classes = { "DRUID" }, -- level 6
           note = "The NPC is indoors. Pick up 5 Earthroot while questing. A class quest further on requires this." },
-        { turnin = 997, -- level 6
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 997 }, -- level 6
         { accept = { 918, 919 }, sticky = 918, -- level 6
-          note = "Let the conversation play out. This one roams, so scan the surrounding area." },
+          note = "Let the conversation play out." },
         { complete = 919, -- level 6
           note = "Look for brown clumps of roots." },
         { complete = 918 }, -- level 6
-        { turnin = { 918, 919 }, accept = 922, sticky = 488, -- level 6
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = { 918, 919 }, accept = 922, sticky = 488 }, -- level 6
         { complete = 929, useitem = 5619 }, -- level 7
         { turnin = 475, accept = 476, -- level 7
           note = "The NPC is indoors, one floor up." },
         { complete = 2438, -- level 7
-          note = "The NPC is indoors." },
+          note = "The object is indoors." },
         { complete = 488 }, -- level 7
         { complete = 87288, races = { "NightElf" } }, -- level 7
         { complete = 488, -- level 7
@@ -177,8 +172,7 @@ Ding.RegisterGuide({
         { level = 7, xp = 3100, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" }, -- level 7
           note = "Together with the next turn-ins, this brings you to level 8." },
         { level = 7, xp = 3170, patrol = { { 1438, 59.43, 59.17 }, { 1438, 57.46, 56.45 }, { 1438, 60.36, 53.94 }, { 1438, 63.06, 56.63 }, { 1438, 63.14, 60.64 }, { 1438, 62.86, 63.64 }, { 1438, 66.83, 65.17 }, { 1438, 67.06, 61.66 } }, classes = { "PRIEST" } }, -- level 7
-        { turnin = 488, -- level 7
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 488 }, -- level 7
         { turnin = 96630, races = { "NightElf" } }, -- level 8
         { accept = 489 }, -- level 8
         { turnin = 476 }, -- level 8
@@ -206,8 +200,7 @@ Ding.RegisterGuide({
         { complete = 2459 }, -- level 8
         { complete = 489, -- level 8
           note = "Look for little brown pinecones giving off green smoke. Mostly found beside tree trunks." },
-        { turnin = 489, -- level 8
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 489 }, -- level 8
         { go = { 1438, 54.61, 52.48 }, text = "Go into the cavern" }, -- level 8
         { complete = 932, -- level 8
           note = "The target is a satyr. The targets are spread over several spots. Your targets are within the cavern." },
@@ -272,7 +265,7 @@ Ding.RegisterGuide({
         { accept = 5921, classes = { "DRUID" }, -- level 10
           note = "The NPC is indoors, on the central storey." },
         { turnin = 940, accept = 952, -- level 10
-          note = "This one roams, so scan the surrounding area. The NPC waits on the tower's highest floor." },
+          note = "The NPC waits on the tower's highest floor." },
         { train = true, talk = 4091, classes = { "PRIEST" }, -- level 10
           note = "The NPC is indoors." },
         { accept = 2518, -- level 10
@@ -292,8 +285,7 @@ Ding.RegisterGuide({
         { turnin = 6063, when = { ready = 6063 }, classes = { "HUNTER" } }, -- level 10
         { accept = 6101, when = { done = 6063 }, classes = { "HUNTER" } }, -- level 10
         { turnin = 7383, accept = 935 }, -- level 10
-        { turnin = { 931, 930 }, -- level 10
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = { 931, 930 } }, -- level 10
         { turnin = 99047, races = { "NightElf" } }, -- level 10
         { turnin = 99053, races = { "NightElf" } }, -- level 10
         { accept = 99050, races = { "NightElf" } }, -- level 10
@@ -333,7 +325,7 @@ Ding.RegisterGuide({
         { complete = 2518, -- level 10
           note = "The target is a big gray spider. This one roams, so scan the surrounding area. The targets are spread over several spots." },
         { complete = 2242, classes = { "ROGUE" }, -- level 10
-          note = "Target Sethir the Ancient and use Pickpocket. The target is a violet satyr. The NPC waits here, then strolls out onto the big branch close by." },
+          note = "Target Sethir the Ancient and use Pickpocket. The target is a violet satyr. The target waits here, then strolls out onto the big branch close by." },
         { complete = 923, -- level 10
           note = "Fight the elementals of the swamp." },
         { turnin = 99073, races = { "NightElf" } }, -- level 10
@@ -370,7 +362,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors, on the central storey." },
         { accept = 6001, when = { done = 5931 }, classes = { "DRUID" } }, -- level 11
         { turnin = 935, -- level 11
-          note = "This one roams, so scan the surrounding area. The NPC waits on the tower's highest floor." },
+          note = "The NPC waits on the tower's highest floor." },
         { turnin = 98391, races = { "NightElf" }, classes = { "PRIEST" } }, -- level 11
         { accept = 98046, races = { "NightElf" }, classes = { "PRIEST" } }, -- level 11
         { turnin = 2518, accept = 2520, -- level 11
@@ -378,7 +370,7 @@ Ding.RegisterGuide({
         { turnin = 5629, classes = { "PRIEST" }, -- level 11
           note = "The NPC is indoors, one floor up." },
         { complete = 2520, useitem = 8155, -- level 11
-          note = "The NPC is indoors." },
+          note = "The object is indoors." },
         { turnin = 2520, -- level 11
           note = "The NPC is indoors, one floor up." },
         { turnin = 98046, races = { "NightElf" }, classes = { "PRIEST" } }, -- level 11
@@ -530,11 +522,11 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { turnin = 1338 }, -- level 13
         { accept = 1640, classes = { "WARRIOR" }, -- level 14
-          note = "This one roams, so scan the surrounding area. The NPC is indoors. Be ready for a fight right away." },
+          note = "The NPC is indoors. Be ready for a fight right away." },
         { complete = 1640, classes = { "WARRIOR" }, -- level 14
-          note = "This one roams, so scan the surrounding area. The NPC is indoors." },
+          note = "The NPC is indoors." },
         { turnin = 1640, when = { ready = 1640 }, classes = { "WARRIOR" }, -- level 14
-          note = "This one roams, so scan the surrounding area. The NPC is indoors." },
+          note = "The NPC is indoors." },
         { accept = 1665, when = { done = 1640 }, classes = { "WARRIOR" } }, -- level 14
         { turnin = 1665, when = { log = 1665 }, classes = { "WARRIOR" }, -- level 14
           note = "The NPC is indoors." },

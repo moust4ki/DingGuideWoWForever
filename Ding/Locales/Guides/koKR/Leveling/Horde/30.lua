@@ -13,8 +13,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h30-feralas-and-ungoro-crater", 
         "대상은 히포그리프입니다. 처치한 다음 시체에 아이템을 사용하세요.",
     ["Slay them, then apply the item to their remains."] =
         "처치한 다음 시체에 아이템을 사용하세요.",
-    ["Fight the treants. The NPC patrols a long route; look along it. Slay them, then apply the item to their remains."] =
-        "나무정령과 싸우세요. NPC는 긴 경로를 순찰합니다. 경로를 따라 찾아보세요. 처치한 다음 시체에 아이템을 사용하세요.",
+    ["Fight the treants. The target patrols a long route; look along it. Slay them, then apply the item to their remains."] =
+        "나무정령과 싸우세요. 대상은 긴 경로를 순찰합니다. 경로를 따라 찾아보세요. 처치한 다음 시체에 아이템을 사용하세요.",
     ["Aim the item at the Strider foes. The targets are towering green giants. The item strips their elite status."] =
         "타조류 적에게 아이템을 사용하세요. 대상은 우뚝 솟은 녹색 거인입니다. 아이템을 쓰면 정예 상태가 사라집니다.",
     ["Hunt down the elementals formed of water."] =

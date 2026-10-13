@@ -19,8 +19,6 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a03-night-elf-starter", {
         "爬上大坡道",
     ["The NPC stands high in the great tree. The NPC stands in an adjoining chamber."] =
         "NPC在大树的高处。NPC在相邻的房间里。",
-    ["This one roams, so scan the surrounding area."] =
-        "它会四处游荡，在周围找找。",
     ["The targets are imps."] =
         "目标是小鬼。",
     ["Targets are in the cavern and around its entrance too."] =
@@ -59,10 +57,12 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a03-night-elf-starter", {
         "向训练师学习草药学",
     ["The NPC is indoors. Pick up 5 Earthroot while questing. A class quest further on requires this."] =
         "NPC在室内。做任务时采集5个地根草。后面的职业任务需要它。",
-    ["Let the conversation play out. This one roams, so scan the surrounding area."] =
-        "等对话结束。它会四处游荡，在周围找找。",
+    ["Let the conversation play out."] =
+        "等对话结束。",
     ["Look for brown clumps of roots."] =
         "寻找成团的棕色根须。",
+    ["The object is indoors."] =
+        "该物件在室内。",
     ["Kill black-furred tigers."] =
         "击杀黑色皮毛的老虎。",
     ["The targets are spiders with green bodies."] =
@@ -97,8 +97,6 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a03-night-elf-starter", {
         "位置在空心树的下层。别忘了学习搜索。留着它；接下来的任务需要它。",
     ["The NPC is indoors, on the central storey."] =
         "NPC在室内中间那层。",
-    ["This one roams, so scan the surrounding area. The NPC waits on the tower's highest floor."] =
-        "它会四处游荡，在周围找找。NPC在塔的顶层。",
     ["Fly to Moonglade"] =
         "飞往月光林地",
     ["Target a Webwood Lurker with it. The targets are spiders with green bodies."] =
@@ -117,8 +115,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a03-night-elf-starter", {
         "在这里驯服一只宠物",
     ["The target is a big gray spider. This one roams, so scan the surrounding area. The targets are spread over several spots."] =
         "目标是一只灰色大蜘蛛。它会四处游荡，在周围找找。目标分布在好几个地点。",
-    ["Target Sethir the Ancient and use Pickpocket. The target is a violet satyr. The NPC waits here, then strolls out onto the big branch close by."] =
-        "选中Sethir the Ancient并使用搜索。目标是一只紫色萨特。NPC在这里等候，然后会走到附近的大树枝上。",
+    ["Target Sethir the Ancient and use Pickpocket. The target is a violet satyr. The target waits here, then strolls out onto the big branch close by."] =
+        "选中Sethir the Ancient并使用搜索。目标是一只紫色萨特。目标在这里等候，然后会走到附近的大树枝上。",
     ["Fight the elementals of the swamp."] =
         "与沼泽中的元素战斗。",
     ["Use Herbalism's Track Herbs to spot them. Pick these up while questing around Teldrassil. Get your Herbalism skill to 15."] =
@@ -185,10 +183,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a03-night-elf-starter", {
         "对矿道老鼠使用该物品。寻找灰色的小老鼠。前往矿道地铁的铁炉堡站台。",
     ["Take the Deeprun Tram over to Stormwind City. The NPC stands by the wall on the central platform."] =
         "乘坐矿道地铁前往暴风城。NPC站在中间站台的墙边。",
-    ["This one roams, so scan the surrounding area. The NPC is indoors. Be ready for a fight right away."] =
-        "它会四处游荡，在周围找找。NPC在室内。准备好马上战斗。",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "它会四处游荡，在周围找找。NPC在室内。",
+    ["The NPC is indoors. Be ready for a fight right away."] =
+        "NPC在室内。准备好马上战斗。",
     ["Learn Two-Handed Swords at the weapon master"] =
         "向武器大师学习双手剑",
     ["Learn Swords at the weapon master"] =

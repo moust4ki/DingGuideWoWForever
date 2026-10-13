@@ -26,13 +26,12 @@ Ding.RegisterGuide({
         { accept = 1365 }, -- level 35
         { accept = 1368 }, -- level 35
         { complete = 1365, sticky = 1434, -- level 35
-          note = "The targets are spread over several spots. The NPC is indoors." },
+          note = "The targets are spread over several spots. The target is indoors." },
         { complete = 1481, -- level 35
           note = "Other satyrs use the same spawn points. Beware of foes lurking in stealth." },
         { complete = 1434, -- level 35
           note = "Beware of foes lurking in stealth." },
-        { accept = 5501, -- level 35
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 5501 }, -- level 35
         { go = { 1443, 55.93, 53.45 }, text = "Climb the trail" }, -- level 35
         { turnin = 1434 }, -- level 35
         { turnin = 1481, accept = 1482 }, -- level 35
@@ -63,12 +62,11 @@ Ding.RegisterGuide({
         { talk = 11105, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, text = "Get your companion back from the stable master." }, -- level 35
         { talk = 11105, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, -- level 35
           note = "Release the short-term pet you tamed." },
-        { turnin = 5501, sticky = 1435, -- level 35
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 5501, sticky = 1435 }, -- level 35
         { complete = 5741, -- level 35
-          note = "The NPC waits on the tower's highest floor." },
+          note = "The target is on the tower's highest floor." },
         { complete = 5381, object = 176581, -- level 35
-          note = "Defeat every foe in this chamber before starting. The NPC is indoors." },
+          note = "Defeat every foe in this chamber before starting. The target is indoors." },
         { complete = 1435, useitem = 6436, -- level 35
           note = "Target Burning Blade foes with the item. Wait for the foe to be badly hurt, then apply it." },
         { turnin = 5741, accept = 6027, -- level 35

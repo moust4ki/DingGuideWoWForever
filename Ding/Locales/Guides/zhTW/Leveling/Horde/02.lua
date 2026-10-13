@@ -13,10 +13,10 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h02-tauren-starter", {
         "NPC在室內。",
     ["With the coming hand-ins, this brings you to level 4."] =
         "加上接下來的交任務，這會讓你升到4級。",
-    ["This one roams, so scan the surrounding area."] =
-        "這個會四處走動，留意周圍一帶。",
     ["Traverse the passageway"] =
         "穿過通道",
+    ["The target is indoors."] =
+        "目標在室內。",
     ["Your objective lies in a little cavern."] =
         "目標在一個小洞穴裡。",
     ["Fight quilboars."] =
@@ -109,18 +109,20 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h02-tauren-starter", {
         "NPC在山頂等候。",
     ["Kill Water Seekers and Thornweavers."] =
         "擊殺尋水者和織棘者。",
+    ["This one roams, so scan the surrounding area."] =
+        "這個會四處走動，留意周圍一帶。",
     ["Your targets are within the cavern. The objective is at the far end."] =
         "目標在洞穴裡。目標位於最遠端。",
     ["Head out of the cave"] =
         "離開洞穴",
     ["Head indoors"] =
         "進入室內",
-    ["The NPC is indoors, one floor up. Consider bringing a group for this one."] =
-        "NPC在室內的樓上一層。這個可以考慮找隊伍一起做。",
+    ["The target is indoors, one floor up. Consider bringing a group for this one."] =
+        "目標在室內的樓上一層。這個可以考慮找隊伍一起做。",
     ["Stay on the trail and keep climbing the steps"] =
         "沿著小路走，繼續爬上台階",
-    ["The NPC stands on the highest level of this structure."] =
-        "NPC站在這座建築的最高層。",
+    ["The object is on the highest level of this structure."] =
+        "這個物件在這座建築的最高層。",
     ["The target is a troll in crimson robes. This one roams, so scan the surrounding area."] =
         "目標是一個穿著深紅長袍的食人妖。這個會四處走動，留意周圍一帶。",
     ["Look for the skull-shaped objects."] =
@@ -131,12 +133,14 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h02-tauren-starter", {
         "目標是龍蝦。",
     ["Hunt the crabs."] =
         "獵殺螃蟹。",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "這個會四處走動，留意周圍一帶。NPC在室內。",
     ["The NPC is up on the summit."] =
         "NPC在山頂上。",
     ["Receive Sapta Sight"] =
         "獲得Sapta Sight",
+    ["The target is up on the summit."] =
+        "目標在山頂上。",
+    ["The object is up on the summit."] =
+        "這個物件在山頂上。",
     ["Look for beige sacks."] =
         "尋找米色的袋子。",
     ["Stay on the trail, then cross the tunnel"] =

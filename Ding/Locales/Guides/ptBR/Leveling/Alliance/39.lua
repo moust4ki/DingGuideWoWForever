@@ -9,8 +9,6 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a39-winterspring-and-felwood", {
         "Selva Maleva: Santuário Esmeralda, no sul da zona.",
     ["Hand these in afterwards for experience and reputation."] =
         "Entregue-os depois por experiência e reputação.",
-    ["This one roams, so scan the surrounding area."] =
-        "Este se desloca, então procure pelos arredores.",
     ["The NPC is indoors."] =
         "O NPC está lá dentro.",
     ["Let the conversation play out. The NPC is indoors."] =
@@ -41,8 +39,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a39-winterspring-and-felwood", {
         "Com as próximas entregas, isso leva você ao nível 55. Uma missão difícil vem logo a seguir.",
     ["Flee if things go badly."] =
         "Fuja se as coisas derem errado.",
-    ["The NPC is a human spirit. This one roams, so scan the surrounding area."] =
-        "O NPC é um espírito humano. Este se desloca, então procure pelos arredores.",
+    ["The NPC is a human spirit."] =
+        "O NPC é um espírito humano.",
     ["Your targets are within the cavern."] =
         "Seus alvos estão dentro da caverna.",
     ["Let the conversation play out. Your targets are within the cavern."] =
@@ -69,14 +67,14 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a39-winterspring-and-felwood", {
         "Você também pode fazer masmorras até chegar ao nível 56. Entregue os itens a Nafien em pilhas de 5. Cada pilha completa entregue dá 50 de reputação.",
     ["Raise Timbermaw Hold standing to Neutral"] =
         "Suba a reputação com o Domínio dos Presamatos até Tolerado",
-    ["This one roams, so scan the surrounding area. The NPC stands within the passage."] =
-        "Este se desloca, então procure pelos arredores. O NPC fica dentro da passagem.",
+    ["The NPC stands within the passage."] =
+        "O NPC fica dentro da passagem.",
     ["The NPC is indoors, one floor up."] =
         "O NPC está lá dentro, um andar acima.",
     ["Step into the cavern within the trunk"] =
         "Entre na caverna dentro do tronco",
     ["The spot is on the lower floor of the hollow tree."] =
         "O local fica no andar de baixo da árvore oca.",
-    ["This one roams, so scan the surrounding area. The NPC waits on the tower's highest floor."] =
-        "Este se desloca, então procure pelos arredores. O NPC espera no último andar da torre.",
+    ["The NPC waits on the tower's highest floor."] =
+        "O NPC espera no último andar da torre.",
 })

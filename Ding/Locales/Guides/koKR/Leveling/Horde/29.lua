@@ -43,6 +43,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h29-the-hinterlands", {
         "대상은 은신한 늑대입니다.",
     ["Slay them, then apply the item to their remains."] =
         "처치한 다음 시체에 아이템을 사용하세요.",
+    ["The object is indoors."] =
+        "그 물체는 건물 안에 있습니다.",
     ["Steer clear of hostile Alliance NPCs. Warning: this turns on your PvP flag."] =
         "적대적인 얼라이언스 NPC는 피하세요. 주의: PvP 상태가 됩니다.",
     ["Head into Shadra'Alor"] =

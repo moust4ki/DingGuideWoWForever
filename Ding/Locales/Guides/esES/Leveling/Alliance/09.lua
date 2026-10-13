@@ -61,8 +61,6 @@ Ding.RegisterGuideTranslation("esES", "leveling-a09-ashenvale-and-stonetalon-mou
         "El objetivo es una naga de piel jade y aletas rosadas. Rodea la isla en el sentido de las agujas del reloj, cerca de la orilla. Va acompañada de dos guardias.",
     ["Hunt naga."] =
         "Caza nagas.",
-    ["This one roams, so scan the surrounding area."] =
-        "Este deambula, así que revisa los alrededores.",
     ["The quest giver stands outdoors, not indoors."] =
         "El PNJ de la misión está fuera, no dentro.",
     ["Step into the cavern within the trunk"] =

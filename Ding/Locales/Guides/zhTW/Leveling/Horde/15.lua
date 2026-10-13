@@ -15,14 +15,12 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h15-desolace", {
         "在高高的懸崖頂上找。",
     ["Climb the trail"] =
         "沿小路往上爬",
-    ["The targets are spread over several spots. The NPC is indoors."] =
-        "目標分散在好幾個地點。NPC在室內。",
+    ["The targets are spread over several spots. The target is indoors."] =
+        "目標分散在好幾個地點。目標在室內。",
     ["Other satyrs use the same spawn points. Beware of foes lurking in stealth."] =
         "其他薩特也使用相同的重生點。小心潛行中的敵人。",
     ["Beware of foes lurking in stealth."] =
         "小心潛行中的敵人。",
-    ["This one roams, so scan the surrounding area."] =
-        "這個會四處走動，留意周圍一帶。",
     ["The targets here are centaurs. Magram Pack Runners patrol with 2 hyena escorts; steer clear."] =
         "這裡的目標是半人馬。瑪格拉姆馴犬者會帶著2隻土狼護衛巡邏；避開它們。",
     ["Target kodos with the item. The kodos trail behind you. Lead them to Smeed Scrabblescrew, then speak with them there."] =
@@ -47,10 +45,10 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h15-desolace", {
         "從獸欄管理員那裡領回你的寵物。",
     ["Release the short-term pet you tamed."] =
         "放棄你馴服的臨時寵物。",
-    ["The NPC waits on the tower's highest floor."] =
-        "NPC在塔的最頂層。",
-    ["Defeat every foe in this chamber before starting. The NPC is indoors."] =
-        "開始前先擊敗這個房間裡的所有敵人。NPC在室內。",
+    ["The target is on the tower's highest floor."] =
+        "目標在塔的最頂層。",
+    ["Defeat every foe in this chamber before starting. The target is indoors."] =
+        "開始前先擊敗這個房間裡的所有敵人。目標在室內。",
     ["Target Burning Blade foes with the item. Wait for the foe to be badly hurt, then apply it."] =
         "將物品對準火刃敵人使用。等敵人受了重傷再使用它。",
     ["The quest starts from a little book."] =

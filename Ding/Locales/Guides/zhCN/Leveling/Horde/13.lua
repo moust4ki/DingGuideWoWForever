@@ -9,8 +9,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h13-arathi-highlands", {
         "离开洞穴",
     ["The targets are out in front of the cavern."] =
         "目标在洞穴前面。",
-    ["The NPC is indoors."] =
-        "NPC在室内。",
+    ["The target is indoors."] =
+        "目标在室内。",
     ["The targets are spread over several spots."] =
         "目标分布在好几个地点。",
     ["Flight master at Hammerfall"] =
@@ -23,6 +23,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h13-arathi-highlands", {
         "目标是迅猛龙。远离避难谷地。",
     ["Together with the next turn-ins, this brings you to level 33."] =
         "加上接下来交的任务，你会升到33级。",
+    ["The NPC is indoors."] =
+        "NPC在室内。",
     ["The NPC is indoors, one floor up."] =
         "NPC在室内楼上一层。",
     ["Take the trail downhill"] =

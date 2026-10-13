@@ -24,11 +24,9 @@ Ding.RegisterGuide({
           note = "Hunt hyenas for these. Scorpions spawn in the same spots." },
         { collect = { { 8393, 6 } }, spots = { { 1419, 47.57, 18.75 }, { 1419, 43.45, 26.35 }, { 1419, 44.35, 19.37 }, { 1419, 44.46, 22.44 }, { 1419, 44.37, 29.83 }, { 1419, 46.43, 15.45 }, { 1419, 47.34, 22.66 }, { 1419, 49.34, 16.44 }, { 1419, 49.55, 24.75 }, { 1419, 50.36, 29.04 }, { 1419, 58.46, 41.96 }, { 1419, 60.16, 35.86 }, { 1419, 61.55, 45.75 } }, -- level 50
           note = "The foes here are scorpions. Hyenas also use these spawn spots." },
-        { accept = 3501, when = { item = 10593 }, -- level 50
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 3501, when = { item = 10593 } }, -- level 50
         { accept = 2521, when = { item = 8244 } }, -- level 50
-        { turnin = 3501, when = { log = 3501, ready = 3501 }, -- level 50
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 3501, when = { log = 3501, ready = 3501 } }, -- level 50
         { turnin = 2521, when = { log = 2521, ready = 2521 } }, -- level 50
         { turnin = 2601, when = { ready = 2601 } }, -- level 50
         { turnin = 2603, when = { ready = 2603 } }, -- level 50

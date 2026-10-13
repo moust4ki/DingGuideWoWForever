@@ -21,7 +21,7 @@ Ding.RegisterGuide({
         { talk = 4209, bank = { 12724, 10444, 8526 }, -- level 52
           note = "The NPC is indoors." },
         { turnin = 3790, accept = 3764, -- level 52
-          note = "This one roams, so scan the surrounding area. Climb to the highest floor of the building." },
+          note = "Climb to the highest floor of the building." },
         { turnin = 3764, when = { ready = 3764 }, -- level 52
           note = "The quest giver stands outdoors, not indoors." },
         { turnin = 162, elite = true, when = { log = 162 } }, -- level 52
@@ -34,10 +34,8 @@ Ding.RegisterGuide({
         { turnin = { 5535, 5536 } }, -- level 52
         { vendor = true, talk = 14301, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 52
           note = "A lengthy stretch of questing lies ahead. This vendor sells no arrows or bullets." },
-        { accept = 4101, -- level 52
-          note = "This one roams, so scan the surrounding area." },
-        { accept = 5155, -- level 52
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 4101 }, -- level 52
+        { accept = 5155 }, -- level 52
         { accept = 4421, -- level 52
           note = "The NPC is indoors." },
         { accept = 8460 }, -- level 52
@@ -58,8 +56,7 @@ Ding.RegisterGuide({
           note = "Slay them, then apply the item to their remains." },
         { complete = 5155, -- level 52
           note = "Extra targets wait in the caves." },
-        { turnin = 5155, accept = 5157, -- level 52
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 5155, accept = 5157 }, -- level 52
         { turnin = 4421, accept = 4906, -- level 52
           note = "The NPC is indoors." },
         { accept = 5156, -- level 52
@@ -95,12 +92,9 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { turnin = { 939, 4906 }, accept = 4441, -- level 52
           note = "The NPC is indoors." },
-        { turnin = 5157, accept = 5158, -- level 52
-          note = "This one roams, so scan the surrounding area." },
-        { turnin = 4101, -- level 52
-          note = "This one roams, so scan the surrounding area." },
-        { talk = 9528, unbank = 11511, -- level 52
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 5157, accept = 5158 }, -- level 52
+        { turnin = 4101 }, -- level 52
+        { talk = 9528, unbank = 11511 }, -- level 52
         { talk = 11119, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, text = "Get your companion back from the stable master." }, -- level 52
         { talk = 10085, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 52
           note = "Release the short-term pet you tamed." },

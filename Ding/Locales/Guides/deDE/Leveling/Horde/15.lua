@@ -15,14 +15,12 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h15-desolace", {
         "Such es hoch oben auf der Klippe.",
     ["Climb the trail"] =
         "Steig den Weg hinauf",
-    ["The targets are spread over several spots. The NPC is indoors."] =
-        "Die Ziele sind auf mehrere Stellen verteilt. Der NPC ist drinnen.",
+    ["The targets are spread over several spots. The target is indoors."] =
+        "Die Ziele sind auf mehrere Stellen verteilt. Das Ziel ist drinnen.",
     ["Other satyrs use the same spawn points. Beware of foes lurking in stealth."] =
         "Andere Satyrn nutzen dieselben Spawnpunkte. Vorsicht vor getarnten Gegnern.",
     ["Beware of foes lurking in stealth."] =
         "Vorsicht vor getarnten Gegnern.",
-    ["This one roams, so scan the surrounding area."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab.",
     ["The targets here are centaurs. Magram Pack Runners patrol with 2 hyena escorts; steer clear."] =
         "Die Ziele hier sind Zentauren. Magram Pack Runners patrouillieren mit 2 Hyänen als Begleitung; halte dich fern.",
     ["Target kodos with the item. The kodos trail behind you. Lead them to Smeed Scrabblescrew, then speak with them there."] =
@@ -47,10 +45,10 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h15-desolace", {
         "Hol dein Tier beim Stallmeister ab.",
     ["Release the short-term pet you tamed."] =
         "Lass das kurzzeitig gezähmte Tier frei.",
-    ["The NPC waits on the tower's highest floor."] =
-        "Der NPC wartet im obersten Stockwerk des Turms.",
-    ["Defeat every foe in this chamber before starting. The NPC is indoors."] =
-        "Besiege vor dem Start alle Gegner in diesem Raum. Der NPC ist drinnen.",
+    ["The target is on the tower's highest floor."] =
+        "Das Ziel ist im obersten Stockwerk des Turms.",
+    ["Defeat every foe in this chamber before starting. The target is indoors."] =
+        "Besiege vor dem Start alle Gegner in diesem Raum. Das Ziel ist drinnen.",
     ["Target Burning Blade foes with the item. Wait for the foe to be badly hurt, then apply it."] =
         "Ziele mit dem Gegenstand auf Gegner der Brennenden Klinge. Warte, bis der Gegner schwer verletzt ist, dann benutze es.",
     ["The quest starts from a little book."] =

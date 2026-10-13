@@ -39,6 +39,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h03-orc-and-troll-starter", {
         "Os alvos são lagostas. Ande pela orla rumo ao sudoeste. Se a praia acabar antes, siga em frente sem ele.",
     ["Hunt the crabs."] =
         "Cace os caranguejos.",
+    ["The object is indoors."] =
+        "O objeto está lá dentro.",
     ["Keep to the trail as it curves."] =
         "Fique na trilha enquanto ela faz a curva.",
     ["Die on purpose at this spot"] =
@@ -61,12 +63,12 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h03-orc-and-troll-starter", {
         "Cure Bruta Kor'ja com o segundo grau de Cura Inferior. Aplique Palavra de Poder: Fortitude em Bruta Kor'ja.",
     ["Head indoors"] =
         "Vá para dentro",
-    ["The NPC is indoors, one floor up. Consider bringing a group for this one."] =
-        "O NPC está lá dentro, um andar acima. Considere chamar um grupo para esta.",
+    ["The target is indoors, one floor up. Consider bringing a group for this one."] =
+        "O alvo está lá dentro, um andar acima. Considere chamar um grupo para esta.",
     ["Stay on the trail and keep climbing the steps"] =
         "Fique na trilha e continue subindo os degraus",
-    ["The NPC stands on the highest level of this structure."] =
-        "O NPC fica no nível mais alto desta construção.",
+    ["The object is on the highest level of this structure."] =
+        "O objeto fica no nível mais alto desta construção.",
     ["Die to the monsters here on purpose. Dying costs you nothing this early. This is the quickest way over."] =
         "Deixe os monstros daqui te matarem de propósito. Neste início, morrer não custa nada. É o caminho mais rápido para chegar lá.",
     ["The NPC is out back, at the rear of the structure."] =
@@ -99,6 +101,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h03-orc-and-troll-starter", {
         "Este NPC fica lá embaixo, no Antro das Sombras.",
     ["This clears the quest's time limit."] =
         "Isto elimina o limite de tempo da missão.",
+    ["The NPC stands on the highest level of this structure."] =
+        "O NPC fica no nível mais alto desta construção.",
     ["Tame a pet here"] =
         "Dome um ajudante aqui",
     ["Find one Venomtail Scorpid and use Tame Beast on it. The foes here are scorpions. Here you tame a pet to keep."] =
@@ -117,10 +121,12 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h03-orc-and-troll-starter", {
         "Deixe os monstros daqui te matarem de propósito. É o caminho mais rápido para chegar lá.",
     ["Traverse the passageway"] =
         "Atravesse a passagem",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "Este se desloca, então procure pelos arredores. O NPC está lá dentro.",
     ["Receive Sapta Sight"] =
         "Receba a visão do sapta",
+    ["The target is up on the summit."] =
+        "O alvo está lá no topo.",
+    ["The object is up on the summit."] =
+        "O objeto está lá no topo.",
     ["The quest giver stands among the boulders."] =
         "Quem dá a missão fica entre os pedregulhos.",
     ["Learn Staves at the weapon master"] =
@@ -147,6 +153,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h03-orc-and-troll-starter", {
         "O alvo é um zumbi cambaleante. Este se desloca, então procure pelos arredores.",
     ["Drop down with care"] =
         "Desça com cuidado",
+    ["The target is indoors."] =
+        "O alvo está lá dentro.",
     ["Fight the murlocs."] =
         "Enfrente os murlocs.",
     ["Your targets here are gnolls."] =

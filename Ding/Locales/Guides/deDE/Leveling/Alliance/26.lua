@@ -27,6 +27,4 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a26-swamp-of-sorrows", {
         "Steig ins oberste Stockwerk des Gebäudes.",
     ["The NPC is indoors."] =
         "Der NPC ist drinnen.",
-    ["This one roams, so scan the surrounding area."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab.",
 })

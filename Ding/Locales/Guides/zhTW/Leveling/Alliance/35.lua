@@ -13,6 +13,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a35-western-plaguelands", {
         "加上接下來交付的任務，這會讓你升到52級。",
     ["The NPC is indoors, one floor up."] =
         "NPC在室內的樓上一層。",
+    ["The object is indoors."] =
+        "這個物件在室內。",
     ["The NPC is indoors."] =
         "NPC在室內。",
 })

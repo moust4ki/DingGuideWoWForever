@@ -19,8 +19,6 @@ Ding.RegisterGuideTranslation("esES", "leveling-a03-night-elf-starter", {
         "Sube la gran rampa",
     ["The NPC stands high in the great tree. The NPC stands in an adjoining chamber."] =
         "El PNJ está en lo alto del gran árbol. El PNJ está en una sala contigua.",
-    ["This one roams, so scan the surrounding area."] =
-        "Este deambula, así que revisa los alrededores.",
     ["The targets are imps."] =
         "Los objetivos son diablillos.",
     ["Targets are in the cavern and around its entrance too."] =
@@ -59,10 +57,12 @@ Ding.RegisterGuideTranslation("esES", "leveling-a03-night-elf-starter", {
         "Aprende Herboristería con el instructor",
     ["The NPC is indoors. Pick up 5 Earthroot while questing. A class quest further on requires this."] =
         "El PNJ está dentro. Recoge 5 Raíces terrestres mientras haces misiones. Lo necesitas para una misión de clase más adelante.",
-    ["Let the conversation play out. This one roams, so scan the surrounding area."] =
-        "Deja que termine la conversación. Este deambula, así que revisa los alrededores.",
+    ["Let the conversation play out."] =
+        "Deja que termine la conversación.",
     ["Look for brown clumps of roots."] =
         "Busca matas de raíces marrones.",
+    ["The object is indoors."] =
+        "El objeto está dentro.",
     ["Kill black-furred tigers."] =
         "Mata tigres de pelaje negro.",
     ["The targets are spiders with green bodies."] =
@@ -97,8 +97,6 @@ Ding.RegisterGuideTranslation("esES", "leveling-a03-night-elf-starter", {
         "El punto está en el piso inferior del árbol hueco. No olvides aprender Robar. Guárdalo; lo pide una próxima misión.",
     ["The NPC is indoors, on the central storey."] =
         "El PNJ está dentro, en el piso central.",
-    ["This one roams, so scan the surrounding area. The NPC waits on the tower's highest floor."] =
-        "Este deambula, así que revisa los alrededores. El PNJ espera en el piso más alto de la torre.",
     ["Fly to Moonglade"] =
         "Vuela al Claro de la Luna",
     ["Target a Webwood Lurker with it. The targets are spiders with green bodies."] =
@@ -117,8 +115,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a03-night-elf-starter", {
         "Domestica una mascota aquí",
     ["The target is a big gray spider. This one roams, so scan the surrounding area. The targets are spread over several spots."] =
         "El objetivo es una araña gris grande. Este deambula, así que revisa los alrededores. Los objetivos están repartidos en varios puntos.",
-    ["Target Sethir the Ancient and use Pickpocket. The target is a violet satyr. The NPC waits here, then strolls out onto the big branch close by."] =
-        "Toma como objetivo a Sethir el Anciano y usa Robar. El objetivo es un sátiro violeta. El PNJ espera aquí y luego sale paseando a la gran rama cercana.",
+    ["Target Sethir the Ancient and use Pickpocket. The target is a violet satyr. The target waits here, then strolls out onto the big branch close by."] =
+        "Toma como objetivo a Sethir el Anciano y usa Robar. El objetivo es un sátiro violeta. El objetivo espera aquí y luego sale paseando a la gran rama cercana.",
     ["Fight the elementals of the swamp."] =
         "Lucha contra los elementales del pantano.",
     ["Use Herbalism's Track Herbs to spot them. Pick these up while questing around Teldrassil. Get your Herbalism skill to 15."] =
@@ -185,10 +183,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a03-night-elf-starter", {
         "Usa el objeto sobre las Deeprun Rats. Busca pequeños roedores grises. Ve al andén de Forjaz del Tranvía Subterráneo.",
     ["Take the Deeprun Tram over to Stormwind City. The NPC stands by the wall on the central platform."] =
         "Toma el Tranvía Subterráneo hasta la Ciudad de Ventormenta. El PNJ está junto a la pared, en el andén central.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors. Be ready for a fight right away."] =
-        "Este deambula, así que revisa los alrededores. El PNJ está dentro. Prepárate para luchar de inmediato.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "Este deambula, así que revisa los alrededores. El PNJ está dentro.",
+    ["The NPC is indoors. Be ready for a fight right away."] =
+        "El PNJ está dentro. Prepárate para luchar de inmediato.",
     ["Learn Two-Handed Swords at the weapon master"] =
         "Aprende Espadas de dos manos con el maestro de armas",
     ["Learn Swords at the weapon master"] =

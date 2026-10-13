@@ -64,7 +64,7 @@ Ding.RegisterGuide({
         { complete = 879, when = { log = 879 }, -- level 24
           note = "This one roams, so scan the surrounding area. Beware of foes lurking in stealth." },
         { complete = 879, when = { log = 879 }, -- level 24
-          note = "Beware of foes lurking in stealth. The NPC is indoors." },
+          note = "Beware of foes lurking in stealth. The target is indoors." },
         { complete = 893, keep = 5093, -- level 24
           note = "Kill Stalkers and Pathfinders. Beware of foes lurking in stealth." },
         { complete = 893, keep = 5092, -- level 24
@@ -82,7 +82,7 @@ Ding.RegisterGuide({
         { turnin = 843, accept = 846, -- level 25
           note = "The NPC patrols the road; look along it." },
         { complete = 846, -- level 25
-          note = "The NPC can be indoors or out." },
+          note = "The target can be indoors or out." },
         { turnin = 846, accept = 849, -- level 25
           note = "The NPC patrols the road; look along it." },
         { complete = 849, -- level 25

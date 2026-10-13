@@ -7,8 +7,6 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h16-stranglethorn-vale", {
         "그롬골 주둔지로 이동",
     ["Stranglethorn Vale: Grom'gol Base Camp, on the west coast. The zeppelin from Orgrimmar lands there."] =
         "가시덤불 골짜기: 그롬골 주둔지는 서쪽 해안에 있습니다. 오그리마에서 오는 비행선이 여기에 도착합니다.",
-    ["This one roams, so scan the surrounding area."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요.",
     ["Flight master at Grom'gol"] =
         "그롬골 주둔지 비행 조련사",
     ["A lengthy stretch of quests is coming up."] =
@@ -31,10 +29,10 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h16-stranglethorn-vale", {
         "이 적들은 은신해 있습니다. 호랑이와 생성 위치를 나눠 씁니다.",
     ["These foes hide in stealth."] =
         "이 적들은 은신해 있습니다.",
-    ["The objective sits up on the raised deck. The NPC is indoors."] =
-        "목표는 높은 갑판 위에 있습니다. NPC는 건물 안에 있습니다.",
-    ["The NPC is indoors."] =
-        "NPC는 건물 안에 있습니다.",
+    ["The objective sits up on the raised deck. The target is indoors."] =
+        "목표는 높은 갑판 위에 있습니다. 대상은 건물 안에 있습니다.",
+    ["The object is indoors."] =
+        "그 물체는 건물 안에 있습니다.",
     ["The NPC is upstairs, out on the balcony."] =
         "NPC는 위층 발코니에 있습니다.",
     ["Climb to the highest floor of the building."] =

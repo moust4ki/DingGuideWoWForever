@@ -15,8 +15,6 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h11-thousand-needles", {
         "Fahr mit einem Aufzug hinunter nach Tausend Nadeln, folge der Straße zum Freiwindposten, dann mit einem Aufzug wieder hinauf",
     ["Fly to Freewind Post"] =
         "Flieg zum Freiwindposten",
-    ["This one roams, so scan the surrounding area."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab.",
     ["The NPC is indoors."] =
         "Der NPC ist drinnen.",
     ["Go into the cavern"] =
@@ -51,8 +49,10 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h11-thousand-needles", {
         "Such nach großen Eiern.",
     ["For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears. Keep away from Heartrazor."] =
         "Bei dieser Quest beschützt du einen NPC, der unterwegs ist. Wenn der NPC nicht da ist, bleib, bis er wieder erscheint. Halte dich von Heartrazor fern.",
-    ["Steelsnap is a brown hyena with 2 hyena escorts. The NPC patrols a long route; look along it. The target appears near 17.3, 22.2 in Thousand Needles."] =
-        "Steelsnap ist eine braune Hyäne mit 2 Hyänen als Begleitung. Der NPC patrouilliert eine lange Route; such entlang dieser Route. Das Ziel erscheint nahe 17.3, 22.2 in Tausend Nadeln.",
+    ["Steelsnap is a brown hyena with 2 hyena escorts. The target patrols a long route; look along it. The target appears near 17.3, 22.2 in Thousand Needles."] =
+        "Steelsnap ist eine braune Hyäne mit 2 Hyänen als Begleitung. Das Ziel patrouilliert eine lange Route; such entlang dieser Route. Das Ziel erscheint nahe 17.3, 22.2 in Tausend Nadeln.",
+    ["This one roams, so scan the surrounding area."] =
+        "Dieses Ziel wandert umher, also such die Umgebung ab.",
     ["The target is a centaur, black in color. It roams a wide route. Leave it out if you'd rather not hunt for it."] =
         "Das Ziel ist ein schwarzer Zentaur. Es läuft eine weite Route ab. Lass es aus, wenn du nicht danach suchen willst.",
     ["The target is a centaur, black in color. It roams a wide route. His patrol crosses this spot two times."] =
@@ -71,8 +71,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h11-thousand-needles", {
         "Steig den Pfad hinauf und überquere die Seilbrücken",
     ["Walk over the rope bridge"] =
         "Geh über die Hängebrücke",
-    ["The objective lies atop the mesa. The NPC is indoors."] =
-        "Das Ziel liegt oben auf dem Tafelberg. Der NPC ist drinnen.",
+    ["The objective lies atop the mesa. The object is indoors."] =
+        "Das Ziel liegt oben auf dem Tafelberg. Das Objekt ist drinnen.",
     ["The objective lies atop the mesa."] =
         "Das Ziel liegt oben auf dem Tafelberg.",
     ["The objective lies atop the mesa. Be ready for a fight right away. The target is a level 28 elite."] =

@@ -21,8 +21,6 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h04-silverpine-forest", {
         "飞往瑟伯切尔",
     ["Fly to Undercity"] =
         "飞往幽暗城",
-    ["This one roams, so scan the surrounding area."] =
-        "它会四处游荡，在周围找找。",
     ["Go down into the tomb"] =
         "下到墓穴里",
     ["This is below ground, on the crypt's lower floor."] =
@@ -33,14 +31,14 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h04-silverpine-forest", {
         "目标是狼人。",
     ["Walk over the span"] =
         "走过桥",
-    ["Be ready for a fight right away. The NPC is indoors, one floor up."] =
-        "准备好马上战斗。NPC在室内楼上一层。",
+    ["Be ready for a fight right away. The object is indoors, one floor up."] =
+        "准备好马上战斗。该物件在室内楼上一层。",
     ["The NPC is indoors, one floor up."] =
         "NPC在室内楼上一层。",
     ["The quest giver stands outdoors, not indoors."] =
         "任务发布者在室外，不在室内。",
-    ["He has three ghouls at his side. Hold off until one steps out, then slay it. The NPC is indoors."] =
-        "他身边有三个食尸鬼。等到有一只走出来，再杀掉它。NPC在室内。",
+    ["He has three ghouls at his side. Hold off until one steps out, then slay it. The target is indoors."] =
+        "他身边有三个食尸鬼。等到有一只走出来，再杀掉它。目标在室内。",
     ["Your targets here are gnolls. The target shows up here sooner or later."] =
         "这里的目标是豺狼人。目标迟早会在这里出现。",
     ["Hunt spiders for it. The targets roam the mine and the area around it."] =

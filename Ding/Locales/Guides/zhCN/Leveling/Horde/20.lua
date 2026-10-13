@@ -35,8 +35,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h20-stranglethorn-vale-and-swamp
         "斯通纳德的飞行管理员",
     ["The NPC is indoors, one floor up."] =
         "NPC在室内楼上一层。",
-    ["The target is a humanoid escorted by 2 guards. The NPC patrols a long route; look along it."] =
-        "目标是一个由2名卫兵护送的人型生物。NPC沿一条很长的路线巡逻；沿路寻找。",
+    ["The target is a humanoid escorted by 2 guards. The target patrols a long route; look along it."] =
+        "目标是一个由2名卫兵护送的人型生物。目标沿一条很长的路线巡逻；沿路寻找。",
     ["This one roams, so scan the surrounding area. The targets are spread over several spots."] =
         "它会四处游荡，在周围找找。目标分布在好几个地点。",
     ["For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears. Clear the monsters just south before you start."] =

@@ -35,8 +35,6 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h26-stranglethorn-vale", {
         "這個物品是一張偏棕色的羊皮紙。目標分散在好幾個地點。",
     ["Look for a flat, white scroll lying open. The targets are spread over several spots."] =
         "尋找一張攤開平放的白色卷軸。目標分散在好幾個地點。",
-    ["This one roams, so scan the surrounding area."] =
-        "這個會四處走動，留意周圍一帶。",
     ["The NPC is upstairs, out on the balcony."] =
         "NPC在樓上，位於外面的陽台。",
     ["Take the road until the trail starts"] =

@@ -43,6 +43,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h05-the-barrens-and-stonetalon-m
         "Mata arpías.",
     ["Up to two foes might jump you."] =
         "Pueden atacarte hasta dos enemigos.",
+    ["The target is indoors."] =
+        "El objetivo está dentro.",
     ["Kill the purple raptors. Targets are found across the entire Barrens. Slay any you come across along the way."] =
         "Mata a los raptores morados. Los objetivos están repartidos por todos Los Baldíos. Mata a los que encuentres por el camino.",
     ["Climb the trail"] =
@@ -55,8 +57,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h05-the-barrens-and-stonetalon-m
         "El PNJ está en el nivel más alto de esta estructura.",
     ["Learn Staves at the weapon master"] =
         "Aprende Bastones con el maestro de armas",
-    ["Steal from Gamon using Pick Pocket. The NPC is indoors."] =
-        "Roba a Gamon con Robar. El PNJ está dentro.",
+    ["Steal from Gamon using Pick Pocket. The target is indoors."] =
+        "Roba a Gamon con Robar. El objetivo está dentro.",
     ["Use it on Tazan's Satchel. The item is already in your inventory."] =
         "Úsalo sobre Tazan's Satchel. El objeto ya está en tu inventario.",
     ["For this quest you guard an NPC on the move. If the NPC is gone, hold on until it reappears."] =
@@ -131,8 +133,6 @@ Ding.RegisterGuideTranslation("esES", "leveling-h05-the-barrens-and-stonetalon-m
         "Vuela a Cima del Trueno",
     ["Go into the cavern"] =
         "Entra en la cueva",
-    ["This one roams, so scan the surrounding area. Your targets are within the cavern."] =
-        "Este deambula, así que revisa los alrededores. Tus objetivos están dentro de la cueva.",
     ["Your targets are within the cavern."] =
         "Tus objetivos están dentro de la cueva.",
     ["Head out of the cave"] =

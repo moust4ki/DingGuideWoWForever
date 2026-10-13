@@ -23,16 +23,16 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a17-stranglethorn-vale", {
         "Le PNJ attend au dernier étage de la tour.",
     ["If he is absent, move on without him. You may come back for it another time."] =
         "S'il n'est pas là, continue sans lui. Tu pourras y revenir une autre fois.",
-    ["The NPC is indoors, one floor up."] =
-        "Le PNJ est à l'intérieur, un étage plus haut.",
+    ["The object is indoors, one floor up."] =
+        "L'objet est à l'intérieur, un étage plus haut.",
     ["These foes heal both their allies and themselves."] =
         "Ces ennemis soignent leurs alliés et eux-mêmes.",
     ["When the targets run out, skip ahead. No rush; you may complete this afterwards."] =
         "Quand il n'y a plus de cibles, passe à la suite. Rien ne presse : tu peux le terminer plus tard.",
-    ["The objective sits up on the raised deck. The NPC is indoors."] =
-        "L'objectif est en haut, sur le pont surélevé. Le PNJ est à l'intérieur.",
-    ["The NPC is indoors."] =
-        "Le PNJ est à l'intérieur.",
+    ["The objective sits up on the raised deck. The target is indoors."] =
+        "L'objectif est en haut, sur le pont surélevé. La cible est à l'intérieur.",
+    ["The object is indoors."] =
+        "L'objet est à l'intérieur.",
     ["Search the riverbanks."] =
         "Fouille les berges de la rivière.",
     ["Die on purpose at this spot"] =
@@ -41,8 +41,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a17-stranglethorn-vale", {
         "Laisse-toi tuer exprès par les monstres d'ici. Mourir ne te coûte rien à ce stade. C'est le chemin le plus rapide.",
     ["Get yourself killed, then resurrect with the spirit healer"] =
         "Fais-toi tuer, puis ressuscite auprès du gardien des âmes",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "Celui-ci se déplace : fouille les environs. Le PNJ est à l'intérieur.",
+    ["The NPC is indoors."] =
+        "Le PNJ est à l'intérieur.",
     ["Go into the mine"] =
         "Entre dans la mine",
     ["The objective is underground, in the mine shaft."] =
@@ -53,6 +53,10 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a17-stranglethorn-vale", {
         "Va à l'intérieur",
     ["The NPC waits on the lower level, indoors."] =
         "Le PNJ attend au niveau inférieur, à l'intérieur.",
+    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
+        "Celui-ci se déplace : fouille les environs. Le PNJ est à l'intérieur.",
+    ["The NPC is indoors, one floor up."] =
+        "Le PNJ est à l'intérieur, un étage plus haut.",
     ["Head into Stormwind Keep"] =
         "Entre dans le donjon de Hurlevent",
 })

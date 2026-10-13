@@ -13,12 +13,10 @@ Ding.RegisterGuide({
         { go = { 1448, 34.21, 52.34 }, text = "Travel to Bloodvenom Post", -- level 54
           note = "Felwood: Bloodvenom Post, in the west of the zone." },
         { accept = 4506 }, -- level 54
-        { turnin = 5159, accept = 5165, -- level 54
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 5159, accept = 5165 }, -- level 54
         { collect = { { 21377, 1 }, { 11515, 6 } }, keep = { 21377, 11515 }, -- level 54
           note = "Hand these in afterwards for experience and reputation." },
-        { accept = 5887, -- level 54
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 5887 }, -- level 54
         { turnin = 5887, when = { ready = 5887 } }, -- level 54
         { destroy = { 11516, 11511, 11515 } }, -- level 54
         { go = { 1448, 38.43, 59.8 }, text = "Go into Jaedenar" }, -- level 54
@@ -73,7 +71,7 @@ Ding.RegisterGuide({
         { talk = 7799, collect = { { 11243, 3 } }, spots = { { 1446, 52.35, 28.88 } }, -- level 55
           note = "The NPC is indoors." },
         { turnin = 3912, accept = 3913, -- level 55
-          note = "The NPC is a human spirit. This one roams, so scan the surrounding area." },
+          note = "The NPC is a human spirit." },
         { turnin = 3913, accept = 3914 }, -- level 55
         { destroy = 11243 }, -- level 55
         { accept = 4504 }, -- level 55
@@ -95,8 +93,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { complete = 4842, -- level 55
           note = "Keep to the road the whole way." },
-        { turnin = 5165, -- level 55
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 5165 }, -- level 55
         { turnin = 3942, accept = 4084, sticky = { 5086, 4084 }, -- level 55
           note = "The NPC is indoors." },
         { complete = 4084, -- level 55
@@ -112,7 +109,7 @@ Ding.RegisterGuide({
         { accept = 8467, when = { item = { 21377, 5 } } }, -- level 55
         { turnin = 8467, when = { item = { 21377, 5 }, ready = 8467 } }, -- level 55
         { turnin = 8470, when = { maxlevel = 56, ready = 8470 }, -- level 55
-          note = "This one roams, so scan the surrounding area. The NPC stands within the passage." },
+          note = "The NPC stands within the passage." },
         { turnin = { 4842, 5086 }, accept = 5087 }, -- level 55
         { complete = 5087, patrol = { { 1452, 28.03, 35 }, { 1452, 27.98, 36.49 }, { 1452, 28.34, 37.4 }, { 1452, 28.5, 39.26 }, { 1452, 29.34, 40.72 }, { 1452, 29.75, 41.97 }, { 1452, 30.38, 42.62 }, { 1452, 31.69, 42.37 }, { 1452, 33.51, 41.96 }, { 1452, 34.28, 41.89 }, { 1452, 35.44, 42.1 }, { 1452, 36.1, 42.22 }, { 1452, 38.2, 41.94 }, { 1452, 40.06, 40.81 }, { 1452, 42.04, 39.99 }, { 1452, 44.29, 39.96 }, { 1452, 45.81, 39.75 }, { 1452, 47.21, 39.35 }, { 1452, 48.97, 38.45 }, { 1452, 50.4, 36.76 }, { 1452, 51.6, 36.23 }, { 1452, 52.6, 35.51 }, { 1452, 53.38, 34.42 } }, -- level 55
           note = "The targets are 3 white furbolgs moving as one pack. The target patrols a long route beside the road. They appear near 28.1, 35.0 in Winterspring." },

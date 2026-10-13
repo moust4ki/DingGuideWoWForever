@@ -40,8 +40,7 @@ Ding.RegisterGuide({
           note = "Climb to the highest floor of the building." },
         { accept = 2872, -- level 43
           note = "The NPC is indoors." },
-        { turnin = 623, -- level 43
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 623 }, -- level 43
         { turnin = 1258, -- level 43
           note = "The NPC is indoors." },
         { sethearth = "Theramore Isle", talk = 6272, -- level 43

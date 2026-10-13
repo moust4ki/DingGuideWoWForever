@@ -25,14 +25,12 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h18-alterac-mountains-and-arathi
         "Os alvos estão espalhados por vários pontos. O NPC está lá dentro. Procure também no andar de cima.",
     ["The NPC is indoors, one floor up."] =
         "O NPC está lá dentro, um andar acima.",
-    ["The NPC waits on the lower level, indoors. If it is not around, move on without it. No rush; you may complete this afterwards."] =
-        "O NPC espera no nível de baixo, lá dentro. Se não estiver por aqui, siga sem ele. Sem pressa; você pode concluir isso depois.",
-    ["This one roams, so scan the surrounding area."] =
-        "Este se desloca, então procure pelos arredores.",
+    ["The target is on the lower level, indoors. If it is not around, move on without it. No rush; you may complete this afterwards."] =
+        "O alvo está no nível de baixo, lá dentro. Se não estiver por aqui, siga sem ele. Sem pressa; você pode concluir isso depois.",
     ["Climb the slope, then leap the wall"] =
         "Suba a encosta, depois pule o muro",
-    ["The NPC is indoors, one floor up. Beware of foes lurking in stealth."] =
-        "O NPC está lá dentro, um andar acima. Cuidado com inimigos furtivos à espreita.",
+    ["The target is indoors, one floor up. Beware of foes lurking in stealth."] =
+        "O alvo está lá dentro, um andar acima. Cuidado com inimigos furtivos à espreita.",
     ["The targets are kobolds. Additional ones are in the cavern up the trail. The following step takes place in the cave."] =
         "Os alvos são kobolds. Há mais na caverna, subindo a trilha. A próxima etapa acontece na caverna.",
     ["Climb the trail to the cavern"] =
@@ -45,6 +43,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h18-alterac-mountains-and-arathi
         "Saia da caverna",
     ["The targets are raptors."] =
         "Os alvos são raptores.",
+    ["This one roams, so scan the surrounding area."] =
+        "Este se desloca, então procure pelos arredores.",
     ["Let the conversation play out. This one roams, so scan the surrounding area."] =
         "Deixe a conversa terminar. Este se desloca, então procure pelos arredores.",
     ["Take the trail across the peaks"] =

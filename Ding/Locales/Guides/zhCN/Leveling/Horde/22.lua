@@ -29,6 +29,6 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h22-tanaris", {
         "拾取战利品。",
     ["Wait for the talking to finish"] =
         "等对话结束",
-    ["Hold on until Rizzle has fled. The NPC is indoors."] =
-        "坚持到Rizzle逃跑。NPC在室内。",
+    ["Hold on until Rizzle has fled. The object is indoors."] =
+        "坚持到Rizzle逃跑。该物件在室内。",
 })

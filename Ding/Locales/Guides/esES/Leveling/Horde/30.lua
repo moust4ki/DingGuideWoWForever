@@ -13,8 +13,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h30-feralas-and-ungoro-crater", 
         "Los objetivos son hipogrifos. Mátalos y luego usa el objeto sobre sus restos.",
     ["Slay them, then apply the item to their remains."] =
         "Mátalos y luego usa el objeto sobre sus restos.",
-    ["Fight the treants. The NPC patrols a long route; look along it. Slay them, then apply the item to their remains."] =
-        "Lucha contra los antárboles. El PNJ patrulla una ruta larga; búscalo a lo largo de ella. Mátalos y luego usa el objeto sobre sus restos.",
+    ["Fight the treants. The target patrols a long route; look along it. Slay them, then apply the item to their remains."] =
+        "Lucha contra los antárboles. El objetivo patrulla una ruta larga; búscalo a lo largo de ella. Mátalos y luego usa el objeto sobre sus restos.",
     ["Aim the item at the Strider foes. The targets are towering green giants. The item strips their elite status."] =
         "Usa el objeto sobre los enemigos zancudos. Los objetivos son enormes gigantes verdes. El objeto les quita el estatus de élite.",
     ["Hunt down the elementals formed of water."] =

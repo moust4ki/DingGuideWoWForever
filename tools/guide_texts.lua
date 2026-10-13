@@ -66,6 +66,7 @@ local function split(text, dict)
     end
     return from(1)
 end
+M.phrases = split
 
 -- The translation of `text`, or nil when one of its phrases is not in the dictionary. A
 -- title ends with its level range, "Westfall (11-16)": the dictionary translates the name,

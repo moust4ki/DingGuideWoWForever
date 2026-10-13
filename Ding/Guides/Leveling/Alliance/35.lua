@@ -27,7 +27,7 @@ Ding.RegisterGuide({
         { accept = 5021, -- level 52
           note = "The NPC is indoors, one floor up." },
         { turnin = 5021, accept = 5022, -- level 52
-          note = "The NPC is indoors." },
+          note = "The object is indoors." },
         { turnin = 5217 }, -- level 52
         { train = true, talk = 12042, races = { "NightElf" }, classes = { "DRUID" } }, -- level 52
         { train = true, talk = 7312, races = { "Human", "Gnome" }, classes = { "MAGE" }, -- level 52

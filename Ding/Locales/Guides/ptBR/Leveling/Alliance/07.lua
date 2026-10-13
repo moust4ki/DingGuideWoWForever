@@ -13,8 +13,6 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a07-redridge-and-westfall", {
         "Voe até Vila Plácida",
     ["The NPC is indoors."] =
         "O NPC está lá dentro.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "Este se desloca, então procure pelos arredores. O NPC está lá dentro.",
     ["The NPC is indoors, one floor up."] =
         "O NPC está lá dentro, um andar acima.",
     ["Look for a big mound of brown earth. Your targets sit below the water's surface."] =
@@ -31,6 +29,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a07-redridge-and-westfall", {
         "Escolte o Traidor Défias e mantenha-o vivo.",
     ["Head indoors"] =
         "Vá para dentro",
+    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
+        "Este se desloca, então procure pelos arredores. O NPC está lá dentro.",
     ["The NPC waits on the lower level, indoors."] =
         "O NPC espera no nível de baixo, lá dentro.",
     ["The NPC waits on the tower's highest floor."] =
@@ -51,6 +51,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a07-redridge-and-westfall", {
         "Eleve a perícia de abrir fechaduras a 95",
     ["Look for little gray coffers of metal. The NPC is indoors."] =
         "Procure pequenos cofres de metal cinza. O NPC está lá dentro.",
+    ["The object is indoors."] =
+        "O objeto está lá dentro.",
     ["Go inside and stay on the trail"] =
         "Entre e siga a trilha",
     ["Your target is a ghoul. This one roams, so scan the surrounding area."] =

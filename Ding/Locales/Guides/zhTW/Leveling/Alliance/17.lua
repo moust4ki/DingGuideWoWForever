@@ -23,16 +23,16 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a17-stranglethorn-vale", {
         "NPC在塔的最頂層。",
     ["If he is absent, move on without him. You may come back for it another time."] =
         "如果他不在，就跳過他繼續前進。你可以改天再回來處理。",
-    ["The NPC is indoors, one floor up."] =
-        "NPC在室內的樓上一層。",
+    ["The object is indoors, one floor up."] =
+        "這個物件在室內的樓上一層。",
     ["These foes heal both their allies and themselves."] =
         "這些敵人會治療盟友和自己。",
     ["When the targets run out, skip ahead. No rush; you may complete this afterwards."] =
         "沒有目標可打時，就跳到下一步。不急；之後再完成也可以。",
-    ["The objective sits up on the raised deck. The NPC is indoors."] =
-        "目標在高起的甲板上。NPC在室內。",
-    ["The NPC is indoors."] =
-        "NPC在室內。",
+    ["The objective sits up on the raised deck. The target is indoors."] =
+        "目標在高起的甲板上。目標在室內。",
+    ["The object is indoors."] =
+        "這個物件在室內。",
     ["Search the riverbanks."] =
         "搜尋河岸。",
     ["Die on purpose at this spot"] =
@@ -41,8 +41,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a17-stranglethorn-vale", {
         "故意讓這裡的怪物殺死你。在這麼早期死亡沒有任何損失。這是過去最快的方法。",
     ["Get yourself killed, then resurrect with the spirit healer"] =
         "讓自己被殺，然後在靈魂醫者處復活",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "這個會四處走動，留意周圍一帶。NPC在室內。",
+    ["The NPC is indoors."] =
+        "NPC在室內。",
     ["Go into the mine"] =
         "進入礦坑",
     ["The objective is underground, in the mine shaft."] =
@@ -53,6 +53,10 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a17-stranglethorn-vale", {
         "進入室內",
     ["The NPC waits on the lower level, indoors."] =
         "NPC在室內的下層。",
+    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
+        "這個會四處走動，留意周圍一帶。NPC在室內。",
+    ["The NPC is indoors, one floor up."] =
+        "NPC在室內的樓上一層。",
     ["Head into Stormwind Keep"] =
         "進入暴風要塞",
 })

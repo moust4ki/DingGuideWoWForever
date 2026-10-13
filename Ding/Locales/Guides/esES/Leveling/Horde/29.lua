@@ -43,6 +43,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h29-the-hinterlands", {
         "Los objetivos son lobos ocultos en sigilo.",
     ["Slay them, then apply the item to their remains."] =
         "Mátalos y luego usa el objeto sobre sus restos.",
+    ["The object is indoors."] =
+        "El objeto está dentro.",
     ["Steer clear of hostile Alliance NPCs. Warning: this turns on your PvP flag."] =
         "Evita a los PNJ hostiles de la Alianza. Atención: esto activa tu marca JcJ.",
     ["Head into Shadra'Alor"] =

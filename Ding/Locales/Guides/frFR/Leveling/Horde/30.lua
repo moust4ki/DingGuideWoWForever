@@ -13,8 +13,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h30-feralas-and-ungoro-crater", 
         "Les cibles sont des hippogriffes. Tue-les, puis utilise l'objet sur leurs restes.",
     ["Slay them, then apply the item to their remains."] =
         "Tue-les, puis utilise l'objet sur leurs restes.",
-    ["Fight the treants. The NPC patrols a long route; look along it. Slay them, then apply the item to their remains."] =
-        "Combats les tréants. Le PNJ patrouille sur un long trajet : cherche-le tout du long. Tue-les, puis utilise l'objet sur leurs restes.",
+    ["Fight the treants. The target patrols a long route; look along it. Slay them, then apply the item to their remains."] =
+        "Combats les tréants. La cible patrouille sur un long trajet : cherche-la tout du long. Tue-les, puis utilise l'objet sur leurs restes.",
     ["Aim the item at the Strider foes. The targets are towering green giants. The item strips their elite status."] =
         "Utilise l'objet sur les trotteurs. Les cibles sont d'immenses géants verts. L'objet leur retire leur statut d'élite.",
     ["Hunt down the elementals formed of water."] =

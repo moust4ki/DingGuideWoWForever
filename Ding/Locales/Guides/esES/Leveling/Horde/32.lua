@@ -17,6 +17,4 @@ Ding.RegisterGuideTranslation("esES", "leveling-h32-blasted-lands", {
         "Caza hienas para conseguirlos. Los escorpiones aparecen en los mismos sitios.",
     ["The foes here are scorpions. Hyenas also use these spawn spots."] =
         "Aquí los enemigos son escorpiones. Las hienas también usan estos puntos de aparición.",
-    ["This one roams, so scan the surrounding area."] =
-        "Este deambula, así que revisa los alrededores.",
 })

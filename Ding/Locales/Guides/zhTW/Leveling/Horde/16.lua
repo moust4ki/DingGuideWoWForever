@@ -7,8 +7,6 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h16-stranglethorn-vale", {
         "前往格羅姆高營地",
     ["Stranglethorn Vale: Grom'gol Base Camp, on the west coast. The zeppelin from Orgrimmar lands there."] =
         "荊棘谷：格羅姆高營地，位於西岸。從奧格瑪出發的飛艇會在這裡降落。",
-    ["This one roams, so scan the surrounding area."] =
-        "這個會四處走動，留意周圍一帶。",
     ["Flight master at Grom'gol"] =
         "格羅姆高營地飛行管理員",
     ["A lengthy stretch of quests is coming up."] =
@@ -31,10 +29,10 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h16-stranglethorn-vale", {
         "這些敵人會潛行隱藏。老虎也在爭搶相同的重生點。",
     ["These foes hide in stealth."] =
         "這些敵人會潛行隱藏。",
-    ["The objective sits up on the raised deck. The NPC is indoors."] =
-        "目標在高起的甲板上。NPC在室內。",
-    ["The NPC is indoors."] =
-        "NPC在室內。",
+    ["The objective sits up on the raised deck. The target is indoors."] =
+        "目標在高起的甲板上。目標在室內。",
+    ["The object is indoors."] =
+        "這個物件在室內。",
     ["The NPC is upstairs, out on the balcony."] =
         "NPC在樓上，位於外面的陽台。",
     ["Climb to the highest floor of the building."] =

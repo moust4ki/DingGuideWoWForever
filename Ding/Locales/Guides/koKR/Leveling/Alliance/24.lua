@@ -11,8 +11,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a24-badlands", {
         "앞으로 있을 황야의 땅의 간단한 반납을 위해 구해 두세요. NPC는 건물 안에 있습니다.",
     ["This one roams, so scan the surrounding area. The NPC is indoors."] =
         "이 대상은 돌아다니므로 주변을 살펴보세요. NPC는 건물 안에 있습니다.",
-    ["The NPC or item sits on the rocky shelf above."] =
-        "NPC나 아이템은 위쪽 바위턱에 있습니다.",
+    ["The object sits on the rocky shelf above."] =
+        "그 물체는 위쪽 바위턱에 있습니다.",
     ["Fight the dwarves."] =
         "드워프와 싸우세요.",
     ["Look for a timber box. The targets are spread over several spots."] =

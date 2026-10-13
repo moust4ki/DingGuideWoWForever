@@ -17,8 +17,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a20-swamp-of-sorrows", {
         "它会四处游荡，在周围找找。NPC在室内。",
     ["Hunt the little winged dragonkin. When the targets run out, skip ahead. No rush; you may complete this afterwards."] =
         "猎杀带翅膀的小型龙类。目标没有了就跳过这一步。不急，可以之后再完成。",
-    ["The target is a humanoid escorted by 2 guards. The NPC patrols a long route; look along it."] =
-        "目标是一个由2名卫兵护送的人型生物。NPC沿一条很长的路线巡逻；沿路寻找。",
+    ["The target is a humanoid escorted by 2 guards. The target patrols a long route; look along it."] =
+        "目标是一个由2名卫兵护送的人型生物。目标沿一条很长的路线巡逻；沿路寻找。",
     ["Hunt spiders for it."] =
         "猎杀蜘蛛获取。",
     ["This one roams, so scan the surrounding area. The targets are spread over several spots."] =

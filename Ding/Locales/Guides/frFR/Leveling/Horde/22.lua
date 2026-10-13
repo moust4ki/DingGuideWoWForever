@@ -29,6 +29,6 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h22-tanaris", {
         "Ramasse le butin.",
     ["Wait for the talking to finish"] =
         "Attends la fin de la discussion",
-    ["Hold on until Rizzle has fled. The NPC is indoors."] =
-        "Attends que Rizzle se soit enfui. Le PNJ est à l'intérieur.",
+    ["Hold on until Rizzle has fled. The object is indoors."] =
+        "Attends que Rizzle se soit enfui. L'objet est à l'intérieur.",
 })

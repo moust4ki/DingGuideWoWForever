@@ -79,6 +79,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a28-feralas-and-tanaris", {
         "대상은 동굴 안에 있습니다.",
     ["Let the conversation play out. Your targets are within the cavern."] =
         "대화가 끝날 때까지 기다리세요. 대상은 동굴 안에 있습니다.",
+    ["The object is indoors, one floor up."] =
+        "그 물체는 건물 안 한 층 위에 있습니다.",
     ["Getting it here speeds up Un'Goro Crater. The NPC is indoors."] =
         "여기서 얻어 두면 운고로 분화구 진행이 빨라집니다. NPC는 건물 안에 있습니다.",
     ["Step into the cavern within the trunk"] =

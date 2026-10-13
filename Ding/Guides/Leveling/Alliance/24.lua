@@ -26,7 +26,7 @@ Ding.RegisterGuide({
         { accept = 719 }, -- level 41
         { accept = 718, sticky = 719 }, -- level 41
         { accept = 720, -- level 41
-          note = "The NPC or item sits on the rocky shelf above." },
+          note = "The object sits on the rocky shelf above." },
         { complete = 719, -- level 41
           note = "Fight the dwarves." },
         { complete = 718, -- level 41
@@ -47,23 +47,18 @@ Ding.RegisterGuide({
         { turnin = 1108 }, -- level 41
         { accept = 1137, -- level 41
           note = "Wait for the talking to finish" },
-        { accept = 710, -- level 41
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 710 }, -- level 41
         { accept = 713, when = { item = 3829 } }, -- level 41
-        { turnin = 713, when = { log = 713, ready = 713 }, -- level 41
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 713, when = { log = 713, ready = 713 } }, -- level 41
         { accept = 714, when = { item = 4389 } }, -- level 41
         { accept = 714, when = { item = 4389 } }, -- level 41
-        { turnin = 714, when = { item = 4389, ready = 714 }, -- level 41
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 714, when = { item = 4389, ready = 714 } }, -- level 41
         { accept = 715, when = { item = { { 929, 1 }, { 3823, 1 } } } }, -- level 41
         { turnin = 715, sticky = 2500, when = { item = 929, log = 715 } }, -- level 41
         { complete = 710 }, -- level 41
-        { turnin = 710, accept = 711, -- level 41
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 710, accept = 711 }, -- level 41
         { complete = 711 }, -- level 41
-        { turnin = 711, accept = 712, sticky = { 733, 2500 }, -- level 41
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 711, accept = 712, sticky = { 733, 2500 } }, -- level 41
         { complete = 712 }, -- level 41
         { complete = 2500 }, -- level 41
         { complete = 733, -- level 42
@@ -74,20 +69,17 @@ Ding.RegisterGuide({
         { turnin = 703, when = { ready = 703 } }, -- level 42
         { destroy = 3404 }, -- level 42
         { turnin = 733 }, -- level 42
-        { turnin = 712, -- level 42
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 712 }, -- level 42
         { accept = 734, when = { done = { 713, 714 } } }, -- level 42
         { turnin = 734, when = { done = { 713, 714 }, log = 734 } }, -- level 42
         { accept = 777, when = { done = { 713, 714 } } }, -- level 42
         { accept = 716, when = { item = 2868 } }, -- level 42
         { turnin = 716, when = { item = 2868, log = 716 } }, -- level 42
-        { turnin = 777, when = { done = { 713, 714 }, log = 777 }, -- level 42
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 777, when = { done = { 713, 714 }, log = 777 } }, -- level 42
         { accept = 778, when = { done = { 713, 714 } } }, -- level 42
         { complete = 778, when = { done = { 713, 714 }, log = 778 }, -- level 42
           note = "Wait for the talking to finish" },
-        { turnin = 778, when = { done = { 713, 714 }, log = 778 }, -- level 42
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 778, when = { done = { 713, 714 }, log = 778 } }, -- level 42
         { level = 41, xp = 89350, patrol = { { 1418, 20.83, 56.75 }, { 1418, 20.46, 50.75 }, { 1418, 16.86, 45.84 }, { 1418, 15.03, 54.25 }, { 1418, 10.43, 59.45 }, { 1418, 4.64, 57.16 }, { 1418, 6.45, 64.37 }, { 1418, 12.26, 66.16 }, { 1418, 17.75, 68.65 }, { 1418, 21.25, 73.76 }, { 1418, 27.46, 74.63 }, { 1418, 26.37, 68.46 }, { 1418, 32.64, 69.83 }, { 1418, 35.97, 64.86 }, { 1418, 41.76, 62.66 }, { 1418, 39.14, 70.25 }, { 1418, 44.83, 73.37 }, { 1418, 35.25, 75.77 }, { 1418, 22.45, 81.94 }, { 1418, 16.76, 78.84 }, { 1418, 13.26, 83.74 }, { 1418, 10.14, 78.34 }, { 1418, 13.65, 73.36 }, { 1418, 7.46, 70.97 }, { 1418, 16.17, 61.57 }, { 1418, 24.74, 62.23 }, { 1418, 30.75, 61.37 }, { 1418, 27.45, 56.34 }, { 1418, 32.45, 51.96 }, { 1418, 35.55, 57.44 }, { 1418, 40.97, 53.17 }, { 1418, 30.75, 45.15 }, { 1418, 26.44, 49.36 }, { 1418, 25.15, 42.46 } }, -- level 42
           note = "With the coming hand-ins, this brings you to level 42." },
         { go = { 1427, 67.77, 51.4 }, deathskip = true, text = "Die on purpose at this spot", -- level 42

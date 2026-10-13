@@ -7,8 +7,6 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h16-stranglethorn-vale", {
         "Reise zum Basislager von Grom'gol",
     ["Stranglethorn Vale: Grom'gol Base Camp, on the west coast. The zeppelin from Orgrimmar lands there."] =
         "Schlingendorntal: Basislager von Grom'gol, an der Westküste. Dort landet der Zeppelin aus Orgrimmar.",
-    ["This one roams, so scan the surrounding area."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab.",
     ["Flight master at Grom'gol"] =
         "Flugmeister in Grom'gol",
     ["A lengthy stretch of quests is coming up."] =
@@ -31,10 +29,10 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h16-stranglethorn-vale", {
         "Diese Gegner sind getarnt. Tiger konkurrieren um dieselben Spawnpunkte.",
     ["These foes hide in stealth."] =
         "Diese Gegner sind getarnt.",
-    ["The objective sits up on the raised deck. The NPC is indoors."] =
-        "Das Ziel ist oben auf dem erhöhten Deck. Der NPC ist drinnen.",
-    ["The NPC is indoors."] =
-        "Der NPC ist drinnen.",
+    ["The objective sits up on the raised deck. The target is indoors."] =
+        "Das Ziel ist oben auf dem erhöhten Deck. Das Ziel ist drinnen.",
+    ["The object is indoors."] =
+        "Das Objekt ist drinnen.",
     ["The NPC is upstairs, out on the balcony."] =
         "Der NPC ist oben, draußen auf dem Balkon.",
     ["Climb to the highest floor of the building."] =

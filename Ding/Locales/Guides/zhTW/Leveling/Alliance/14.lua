@@ -25,14 +25,16 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a14-duskwood-and-stranglethorn-v
         "NPC沿著道路巡邏；沿路尋找。",
     ["The targets are worgen."] =
         "目標是狼人。",
-    ["Be ready for a fight right away. The NPC is indoors, one floor up."] =
-        "準備好立刻戰鬥。NPC在室內的樓上一層。",
+    ["Be ready for a fight right away. The object is indoors, one floor up."] =
+        "準備好立刻戰鬥。這個物件在室內的樓上一層。",
     ["The targets are ghouls. Targets are both in the tomb and around it."] =
         "目標是食屍鬼。目標在墓穴內外都有。",
     ["Other ghouls occupy the same spawn points. Targets are both in the tomb and around it."] =
         "其他食屍鬼也會在相同的重生點出現。目標在墓穴內外都有。",
     ["Exit the tomb"] =
         "離開墓穴",
+    ["The object is indoors."] =
+        "這個物件在室內。",
     ["Go into the cavern"] =
         "進入洞穴",
     ["Your targets are within the cavern. The targets are spread over several spots."] =

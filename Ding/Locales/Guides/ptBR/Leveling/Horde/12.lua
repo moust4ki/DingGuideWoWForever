@@ -17,8 +17,6 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h12-hillsbrad-foothills", {
         "Espere a conversa terminar",
     ["The NPC is indoors."] =
         "O NPC está lá dentro.",
-    ["This one roams, so scan the surrounding area."] =
-        "Este se desloca, então procure pelos arredores.",
     ["The NPC is indoors. Head north along the river to reach the NPC."] =
         "O NPC está lá dentro. Siga para o norte ao longo do rio até o NPC.",
     ["Targets are in the cavern and around its entrance too."] =
@@ -27,10 +25,12 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h12-hillsbrad-foothills", {
         "Uma missão difícil vem logo a seguir. Os inimigos desta área têm nível acima do seu. Os alvos ficam na caverna e também em volta da entrada.",
     ["Head out of the cave"] =
         "Saia da caverna",
-    ["Draw foes one at a time if you can. Do not take on the whole group together. The NPC is indoors."] =
-        "Atraia os inimigos um de cada vez, se puder. Não enfrente o grupo todo de uma vez. O NPC está lá dentro.",
-    ["The NPC can be indoors or out."] =
-        "O NPC pode estar dentro ou fora.",
+    ["Draw foes one at a time if you can. Do not take on the whole group together. The target is indoors."] =
+        "Atraia os inimigos um de cada vez, se puder. Não enfrente o grupo todo de uma vez. O alvo está lá dentro.",
+    ["The target is indoors."] =
+        "O alvo está lá dentro.",
+    ["The target can be indoors or out."] =
+        "O alvo pode estar dentro ou fora.",
     ["Go into the cavern"] =
         "Entre na caverna",
     ["Descend the ramp, then stay on the trail"] =
@@ -47,8 +47,10 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h12-hillsbrad-foothills", {
         "O objetivo fica no subsolo, no poço da mina.",
     ["Targets here are human. The objective is underground, in the mine shaft."] =
         "Os alvos aqui são humanos. O objetivo fica no subsolo, no poço da mina.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "Este se desloca, então procure pelos arredores. O NPC está lá dentro.",
+    ["This one roams, so scan the surrounding area."] =
+        "Este se desloca, então procure pelos arredores.",
+    ["This one roams, so scan the surrounding area. The target is indoors."] =
+        "Este se desloca, então procure pelos arredores. O alvo está lá dentro.",
     ["Warden Belamoore stands guard over it. The target is a mage of level 36. Fight Kegan, breaking her line of sight with doors and stairways."] =
         "Vigia Belamore monta guarda sobre ele. O alvo é um mago de nível 36. Lute contra Kegan, quebrando a linha de visão dela com portas e escadas.",
     ["While Shield Guards glow, stop your melee attacks on them. Expect heavy damage from it. Targets here are human."] =

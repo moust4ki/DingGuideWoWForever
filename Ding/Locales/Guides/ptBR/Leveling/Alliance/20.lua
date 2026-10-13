@@ -17,8 +17,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a20-swamp-of-sorrows", {
         "Este se desloca, então procure pelos arredores. O NPC está lá dentro.",
     ["Hunt the little winged dragonkin. When the targets run out, skip ahead. No rush; you may complete this afterwards."] =
         "Cace os pequenos dracônicos alados. Quando os alvos acabarem, pule esta etapa. Sem pressa; você pode concluir isso depois.",
-    ["The target is a humanoid escorted by 2 guards. The NPC patrols a long route; look along it."] =
-        "O alvo é um humanoide escoltado por 2 guardas. O NPC patrulha uma rota longa; procure ao longo dela.",
+    ["The target is a humanoid escorted by 2 guards. The target patrols a long route; look along it."] =
+        "O alvo é um humanoide escoltado por 2 guardas. O alvo patrulha uma rota longa; procure ao longo dela.",
     ["Hunt spiders for it."] =
         "Cace aranhas para isso.",
     ["This one roams, so scan the surrounding area. The targets are spread over several spots."] =

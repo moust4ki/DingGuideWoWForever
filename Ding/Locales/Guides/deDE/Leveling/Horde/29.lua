@@ -43,6 +43,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h29-the-hinterlands", {
         "Die Ziele sind getarnte Wölfe.",
     ["Slay them, then apply the item to their remains."] =
         "Töte sie, dann benutze den Gegenstand an ihren Überresten.",
+    ["The object is indoors."] =
+        "Das Objekt ist drinnen.",
     ["Steer clear of hostile Alliance NPCs. Warning: this turns on your PvP flag."] =
         "Halte dich von feindlichen NPCs der Allianz fern. Achtung: Dadurch wirst du für PvP markiert.",
     ["Head into Shadra'Alor"] =

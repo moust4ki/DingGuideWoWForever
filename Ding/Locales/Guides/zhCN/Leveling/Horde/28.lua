@@ -21,8 +21,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h28-tanaris-and-dustwallow-marsh
         "这些敌人会潜行隐身。",
     ["Head down the passage that opens on Lost Rigger Cove"] =
         "沿通道下去，通往Lost Rigger Cove",
-    ["The NPC is indoors, one floor up."] =
-        "NPC在室内楼上一层。",
+    ["The object is indoors, one floor up."] =
+        "该物件在室内楼上一层。",
     ["Few kills yield this item."] =
         "这个物品掉率很低。",
     ["Others can be found on raised wood platforms close by."] =

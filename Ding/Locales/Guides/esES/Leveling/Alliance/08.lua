@@ -47,8 +47,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a08-darkshore", {
         "Deja que termine la conversación. Quédate con el Prospector Remtravel y defiéndelo. Es frágil y cae rápido.",
     ["Look on top of the table."] =
         "Busca encima de la mesa.",
-    ["For this quest you guard an NPC on the move. If she is absent, wait for her to reappear. This one roams, so scan the surrounding area."] =
-        "En esta misión proteges a un PNJ que se desplaza. Si no está, espera a que reaparezca. Este deambula, así que revisa los alrededores.",
+    ["For this quest you guard an NPC on the move. If she is absent, wait for her to reappear."] =
+        "En esta misión proteges a un PNJ que se desplaza. Si no está, espera a que reaparezca.",
     ["Let the conversation play out. Escort Therylune and defend her."] =
         "Deja que termine la conversación. Escolta a Therylune y defiéndela.",
     ["For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears. Your objective lies in a little cavern."] =

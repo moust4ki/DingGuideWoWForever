@@ -31,8 +31,6 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a25-stranglethorn-vale", {
         "走通道离开藏宝海湾",
     ["Take the tunnel into Booty Bay"] =
         "穿过隧道进入藏宝海湾",
-    ["This one roams, so scan the surrounding area."] =
-        "它会四处游荡，在周围找找。",
     ["Take the trail toward the Ruins of Aboraz"] =
         "沿小路前往阿博拉兹废墟",
     ["Gradually move toward the northeast."] =

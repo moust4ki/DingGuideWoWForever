@@ -94,7 +94,7 @@ Ding.RegisterGuide({
         { complete = 4224, talk = 9563 }, -- level 56
         { go = { 1428, 76.09, 38.01 }, text = "Walk over the rope bridge, then climb the trail" }, -- level 56
         { complete = 3825, -- level 56
-          note = "The NPC is up on the summit." },
+          note = "The object is up on the summit." },
         { go = { 1428, 82.79, 63.27 }, text = "Climb the trail to Morgan's Vigil" }, -- level 56
         { turnin = 3825 }, -- level 56
         { turnin = 4224 }, -- level 56

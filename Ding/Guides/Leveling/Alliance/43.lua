@@ -23,7 +23,7 @@ Ding.RegisterGuide({
         { accept = 8304, sticky = 1125, -- level 59
           note = "The NPC is on the house's raised terrace." },
         { complete = 5527, -- level 59
-          note = "The NPC is indoors." },
+          note = "The object is indoors." },
         { complete = 1125, -- level 59
           note = "Watch out: killing them can summon more foes." },
         { useitem = 20461, sticky = { 8277, 8280 }, when = { item = 20461 } }, -- level 59

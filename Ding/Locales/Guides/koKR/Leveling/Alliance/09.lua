@@ -61,8 +61,6 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a09-ashenvale-and-stonetalon-mou
         "대상은 비취색 피부와 장밋빛 지느러미의 나가입니다. 해안 가까이에서 섬을 시계 방향으로 돕니다. 경비병 두 명과 함께 다닙니다.",
     ["Hunt naga."] =
         "나가를 사냥하세요.",
-    ["This one roams, so scan the surrounding area."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요.",
     ["The quest giver stands outdoors, not indoors."] =
         "퀘스트 제공자는 건물 안이 아니라 바깥에 서 있습니다.",
     ["Step into the cavern within the trunk"] =

@@ -43,6 +43,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h29-the-hinterlands", {
         "Os alvos são lobos furtivos.",
     ["Slay them, then apply the item to their remains."] =
         "Mate-os, depois use o item nos restos deles.",
+    ["The object is indoors."] =
+        "O objeto está lá dentro.",
     ["Steer clear of hostile Alliance NPCs. Warning: this turns on your PvP flag."] =
         "Fique longe dos NPCs hostis da Aliança. Atenção: isto ativa sua marcação de JxJ.",
     ["Head into Shadra'Alor"] =

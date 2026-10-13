@@ -35,8 +35,6 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a05-darkshore", {
         "Deine Ziele sind unter der Wasseroberfläche.",
     ["The targets are sea creatures with long necks. Your targets sit below the water's surface."] =
         "Die Ziele sind Meereswesen mit langem Hals. Deine Ziele sind unter der Wasseroberfläche.",
-    ["This one roams, so scan the surrounding area."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab.",
     ["Head to the hilltop."] =
         "Geh auf die Hügelkuppe.",
     ["The targets are imps. Avoid slaying the satyrs if you can. You'll need this for the following quest."] =
@@ -63,6 +61,6 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a05-darkshore", {
         "Geh zum untersten Deck des Wracks. Schwimm durch ein Bullauge hinein.",
     ["Hunt the crabs."] =
         "Jag die Krabben.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors. Do it only if you can."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab. Der NPC ist drinnen. Mach das nur, wenn du kannst.",
+    ["The NPC is indoors. Do it only if you can."] =
+        "Der NPC ist drinnen. Mach das nur, wenn du kannst.",
 })

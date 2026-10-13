@@ -19,8 +19,6 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a34-blasted-lands-and-burning-st
         "獵殺土狼取得這些。蠍子也在相同的地點重生。",
     ["The foes here are scorpions. Hyenas also use these spawn spots."] =
         "這裡的敵人是蠍子。土狼也會使用這些重生點。",
-    ["This one roams, so scan the surrounding area."] =
-        "這個會四處走動，留意周圍一帶。",
     ["Climb the trail to Morgan's Vigil"] =
         "沿小路往上前往摩根崗哨",
     ["Flight master at Morgan's Vigil"] =

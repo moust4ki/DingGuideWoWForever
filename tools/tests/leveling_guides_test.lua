@@ -239,6 +239,92 @@ T.test("every trip has a text, and none comes right after the same trip", functi
     end
 end)
 
+-- A note that says "the NPC" is about the step's quest giver, ender or the NPC it talks to: on a
+-- step whose targets are only objects or monsters it sends the player looking for someone who
+-- is not there ("The object is...", "The target is..." instead). And "This one roams" is for a
+-- target that moves: a quest giver with a path in QuestieDB, a patrol, or monsters.
+T.test("notes: the NPC only where there is one, roaming only where someone moves", function()
+    local X = dofile(tools .. "/questiedb_export.lua")
+    local Texts = dofile(tools .. "/guide_texts.lua")
+    local QK = X.QUEST
+    local db = X.load(T.combined)
+    local dict = dofile(tools .. "/routes/locales/frFR.lua")
+    local ROAMS = "This one roams, so scan the surrounding area."
+    -- (Phrases about another NPC than the step's target.)
+    local ABOUT_OTHERS = {
+        ["Bring any feathers you collect to the NPC at 64.8, 8.1."] = true,
+        ["Steer clear of hostile Alliance NPCs."] = true,
+    }
+    local function targets(step)
+        local t = { npc = {}, monster = {}, object = {}, item = {} }
+        local function source(itemId)
+            local item = db.Item[itemId]
+            for _, id in ipairs(item and item[X.ITEM.npcDrops] or {}) do t.monster[id] = true end
+            for _, id in ipairs(item and item[X.ITEM.objectDrops] or {}) do t.object[id] = true end
+            for _, id in ipairs(item and item[X.ITEM.vendors] or {}) do t.npc[id] = true end
+        end
+        for _, q in ipairs(ids(step.accept)) do
+            local s = db.Quest[q] and db.Quest[q][QK.startedBy] or {}
+            for _, id in ipairs(s[1] or {}) do t.npc[id] = true end
+            for _, id in ipairs(s[2] or {}) do t.object[id] = true end
+            for _, id in ipairs(s[3] or {}) do t.item[id] = true end
+        end
+        for _, q in ipairs(ids(step.turnin)) do
+            local s = db.Quest[q] and db.Quest[q][QK.finishedBy] or {}
+            for _, id in ipairs(s[1] or {}) do t.npc[id] = true end
+            for _, id in ipairs(s[2] or {}) do t.object[id] = true end
+        end
+        for _, q in ipairs(ids(step.complete)) do
+            local quest = db.Quest[q]
+            local o = quest and quest[QK.objectives] or {}
+            for _, e in ipairs(o[1] or {}) do
+                local npc = db.Npc[e[1]]
+                -- (An objective on a quest giver or ender is someone to talk to.)
+                local talk = npc and (X.hasEntries(npc[10]) or X.hasEntries(npc[11]))
+                if talk then t.npc[e[1]] = true else t.monster[e[1]] = true end
+            end
+            for _, e in ipairs(o[2] or {}) do t.object[e[1]] = true end
+            for _, e in ipairs(o[3] or {}) do
+                if e[1] ~= (quest[QK.sourceItem] or 0) then source(e[1]) end
+            end
+            for _, e in ipairs(o[5] or {}) do
+                for _, id in ipairs(e[1] or {}) do t.monster[id] = true end
+            end
+        end
+        for _, id in ipairs(ids(step.talk)) do t.npc[id] = true end
+        for _, id in ipairs(ids(step.object)) do t.object[id] = true end
+        for _, p in ipairs(type(step.kill) == "table" and step.kill or {}) do t.monster[type(p) == "table" and p[1] or p] = true end
+        for _, p in ipairs(type(step.collect) == "table" and step.collect or {}) do source(type(p) == "table" and p[1] or p) end
+        t.service = step.vendor or step.train or step.repair or step.sethearth or step.fly or step.buy
+        return t
+    end
+    local function moves(set)
+        for id in pairs(set) do
+            if db.Npc[id] and X.hasEntries(db.Npc[id][8]) then return true end
+        end
+        return false
+    end
+    for _, f in ipairs(FACTIONS) do
+        for _, g in ipairs(f.guides) do
+            for i, step in ipairs(g.def.steps) do
+                local parts = step.note and Texts.phrases(step.note, dict) or {}
+                local t = targets(step)
+                local someone = next(t.npc) ~= nil or t.service
+                local other = next(t.monster) ~= nil or next(t.object) ~= nil or next(t.item) ~= nil
+                for _, p in ipairs(parts) do
+                    if (p:find("^The NPC") or p:find("^This NPC")) and not ABOUT_OTHERS[p] then
+                        T.ok(someone or not other, ("%s, step %d: \"%s\", but no NPC there"):format(g.def.id, i, p))
+                    end
+                    if p == ROAMS then
+                        local still = next(t.npc) ~= nil and not moves(t.npc) and not step.patrol and next(t.monster) == nil
+                        T.ok(not still, ("%s, step %d: roams, but its NPCs stand still"):format(g.def.id, i))
+                    end
+                end
+            end
+        end
+    end
+end)
+
 T.test("the zone guides keep route texts off the steps behind an option", function()
     -- (Off, the option takes its whole step away: a zone intro there would be lost.)
     for _, name in ipairs({ "human", "dwarf_gnome", "nightelf", "alliance", "orc_troll", "tauren", "undead", "horde" }) do

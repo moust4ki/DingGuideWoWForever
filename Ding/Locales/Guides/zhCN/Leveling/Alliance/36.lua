@@ -9,14 +9,12 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a36-azshara-and-felwood", {
         "泰达希尔：先到鲁瑟兰村，再到艾萨拉和费伍德森林。",
     ["The NPC is indoors."] =
         "NPC在室内。",
-    ["This one roams, so scan the surrounding area. Climb to the highest floor of the building."] =
-        "它会四处游荡，在周围找找。爬到建筑物的顶层。",
+    ["Climb to the highest floor of the building."] =
+        "爬到建筑物的顶层。",
     ["The quest giver stands outdoors, not indoors."] =
         "任务发布者在室外，不在室内。",
     ["A lengthy stretch of questing lies ahead. This vendor sells no arrows or bullets."] =
         "前面是一长段任务。这个商人不卖箭和子弹。",
-    ["This one roams, so scan the surrounding area."] =
-        "它会四处游荡，在周围找找。",
     ["Hand these in afterwards for experience and reputation."] =
         "之后把这些交掉，获取经验和声望。",
     ["Raise Timbermaw Hold standing to Unfriendly"] =
@@ -33,6 +31,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a36-azshara-and-felwood", {
         "沿小路走到加德纳尔",
     ["Climb the trail into Jadefire Run"] =
         "沿小路往上，进入碧火小径",
+    ["This one roams, so scan the surrounding area."] =
+        "它会四处游荡，在周围找找。",
     ["Fight the elementals of the swamp. Targets are in the cavern and around its entrance too."] =
         "与沼泽中的元素战斗。目标在洞穴里，洞口周围也有。",
     ["Head out of the cave"] =

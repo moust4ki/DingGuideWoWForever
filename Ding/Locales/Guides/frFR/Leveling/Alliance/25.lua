@@ -31,8 +31,6 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a25-stranglethorn-vale", {
         "Prends le passage pour sortir de Baie-du-Butin",
     ["Take the tunnel into Booty Bay"] =
         "Prends le tunnel pour entrer dans Baie-du-Butin",
-    ["This one roams, so scan the surrounding area."] =
-        "Celui-ci se déplace : fouille les environs.",
     ["Take the trail toward the Ruins of Aboraz"] =
         "Prends le sentier vers les ruines d'Aboraz",
     ["Gradually move toward the northeast."] =

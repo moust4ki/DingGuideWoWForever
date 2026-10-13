@@ -3238,4 +3238,41 @@ return {
         "Besuche den eingesperrten Stacheleber",
     ["Go to the corrupted moonwell"] =
         "Geh zum verderbten Mondbrunnen",
+    -- Ding - Leveling: where an object or a monster target is (notes)
+    ["The object is indoors."] =
+        "Das Objekt ist drinnen.",
+    ["The object is indoors, one floor up."] =
+        "Das Objekt ist drinnen, ein Stockwerk höher.",
+    ["The object is on the lower level, indoors."] =
+        "Das Objekt ist drinnen auf der unteren Ebene.",
+    ["The object is on the lower level within the bridge."] =
+        "Das Objekt ist auf der unteren Ebene im Inneren der Brücke.",
+    ["The object is on the highest level of this structure."] =
+        "Das Objekt ist auf der obersten Ebene dieses Gebäudes.",
+    ["The object is up on the summit."] =
+        "Das Objekt ist oben auf dem Gipfel.",
+    ["The object sits on the rocky shelf above."] =
+        "Das Objekt ist oben auf dem Felsvorsprung.",
+    ["The target is indoors."] =
+        "Das Ziel ist drinnen.",
+    ["The target is indoors, one floor up."] =
+        "Das Ziel ist drinnen, ein Stockwerk höher.",
+    ["The target is indoors at street level."] =
+        "Das Ziel ist drinnen, auf Straßenhöhe.",
+    ["The target is indoors, on the central storey."] =
+        "Das Ziel ist drinnen, im mittleren Stockwerk.",
+    ["The target is on the lower level, indoors."] =
+        "Das Ziel ist drinnen auf der unteren Ebene.",
+    ["The target is on the tower's highest floor."] =
+        "Das Ziel ist im obersten Stockwerk des Turms.",
+    ["The target is up on the summit."] =
+        "Das Ziel ist oben auf dem Gipfel.",
+    ["The target is down in the Cleft of Shadow."] =
+        "Das Ziel ist unten in der Kluft der Schatten.",
+    ["The target can be indoors or out."] =
+        "Das Ziel kann drinnen oder draußen sein.",
+    ["The target patrols a long route; look along it."] =
+        "Das Ziel patrouilliert eine lange Route; such entlang dieser Route.",
+    ["The target waits here, then strolls out onto the big branch close by."] =
+        "Das Ziel wartet hier und geht dann auf den großen Ast in der Nähe hinaus.",
 }

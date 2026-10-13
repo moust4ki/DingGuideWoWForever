@@ -35,8 +35,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a40-burning-steppes", {
         "NPC는 나이 든 인간 여성입니다. NPC는 긴 경로를 순찰합니다. 경로를 따라 찾아보세요. 없다면 스톰윈드 52.4, 42.1에 있는 집 위층에 있을 수 있습니다.",
     ["Walk over the rope bridge, then climb the trail"] =
         "밧줄 다리를 건넌 다음 길을 올라가세요",
-    ["The NPC is up on the summit."] =
-        "NPC는 정상에 있습니다.",
+    ["The object is up on the summit."] =
+        "그 물체는 정상에 있습니다.",
     ["Dungeon runs are a fine choice here too, as you like."] =
         "원한다면 여기서도 던전을 도는 것이 좋은 선택입니다.",
 })

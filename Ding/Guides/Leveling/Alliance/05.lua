@@ -59,8 +59,7 @@ Ding.RegisterGuide({
         { accept = 4762, races = { "NightElf" } }, -- level 16
         { turnin = 4761, accept = 954, races = { "Human", "Dwarf", "Gnome", "Skyborne" } }, -- level 15
         { accept = 4762, races = { "Human", "Dwarf", "Gnome", "Skyborne" } }, -- level 15
-        { accept = 4811, -- level 15
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 4811 }, -- level 15
         { sethearth = "Auberdine", talk = 6737, -- level 15
           note = "The NPC is indoors." },
         { complete = 4811, -- level 15
@@ -110,8 +109,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors, one floor up." },
         { train = true, talk = 4091, races = { "Human", "Dwarf", "NightElf" }, classes = { "PRIEST" }, -- level 16
           note = "The NPC is indoors." },
-        { turnin = 4811, accept = 4812, -- level 16
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 4811, accept = 4812 }, -- level 16
         { complete = 4812, useitem = 14338 }, -- level 16
         { turnin = 4762, -- level 16
           note = "The NPC is indoors." },
@@ -134,8 +132,7 @@ Ding.RegisterGuide({
         { accept = 1138 }, -- level 17
         { turnin = 963, -- level 17
           note = "The NPC stands on the pier." },
-        { turnin = 4813, -- level 17
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 4813 }, -- level 17
         { turnin = 985, -- level 17
           note = "The NPC is indoors." },
         { accept = 965, -- level 17
@@ -160,7 +157,7 @@ Ding.RegisterGuide({
         { turnin = 1138 }, -- level 18
         { turnin = 982 }, -- level 18
         { talk = 1448, buy = { { 4371, 1, 1448 } }, when = { noitem = 4371 }, -- level 18
-          note = "This one roams, so scan the surrounding area. The NPC is indoors. Do it only if you can." },
+          note = "The NPC is indoors. Do it only if you can." },
         { vendor = true, talk = 1448, when = { noitem = 4371 } }, -- level 18
         { train = true, talk = 7312, races = { "Human", "Gnome" }, classes = { "MAGE" }, -- level 18
           note = "The NPC is indoors." },

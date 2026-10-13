@@ -19,8 +19,6 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a03-night-elf-starter", {
         "Geh die große Rampe hinauf",
     ["The NPC stands high in the great tree. The NPC stands in an adjoining chamber."] =
         "Der NPC steht hoch oben im großen Baum. Der NPC steht in einem Nebenraum.",
-    ["This one roams, so scan the surrounding area."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab.",
     ["The targets are imps."] =
         "Die Ziele sind Wichtel.",
     ["Targets are in the cavern and around its entrance too."] =
@@ -59,10 +57,12 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a03-night-elf-starter", {
         "Lerne Kräuterkunde beim Lehrer",
     ["The NPC is indoors. Pick up 5 Earthroot while questing. A class quest further on requires this."] =
         "Der NPC ist drinnen. Sammle beim Questen 5 Erdwurzeln. Eine spätere Klassenquest braucht das.",
-    ["Let the conversation play out. This one roams, so scan the surrounding area."] =
-        "Lass das Gespräch zu Ende laufen. Dieses Ziel wandert umher, also such die Umgebung ab.",
+    ["Let the conversation play out."] =
+        "Lass das Gespräch zu Ende laufen.",
     ["Look for brown clumps of roots."] =
         "Such nach braunen Wurzelbüscheln.",
+    ["The object is indoors."] =
+        "Das Objekt ist drinnen.",
     ["Kill black-furred tigers."] =
         "Töte Tiger mit schwarzem Fell.",
     ["The targets are spiders with green bodies."] =
@@ -97,8 +97,6 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a03-night-elf-starter", {
         "Die Stelle ist auf der unteren Ebene des hohlen Baums. Vergiss nicht, Taschendiebstahl zu lernen. Behalte es; eine kommende Aufgabe verlangt es.",
     ["The NPC is indoors, on the central storey."] =
         "Der NPC ist drinnen, im mittleren Stockwerk.",
-    ["This one roams, so scan the surrounding area. The NPC waits on the tower's highest floor."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab. Der NPC wartet im obersten Stockwerk des Turms.",
     ["Fly to Moonglade"] =
         "Flieg zur Mondlichtung",
     ["Target a Webwood Lurker with it. The targets are spiders with green bodies."] =
@@ -117,8 +115,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a03-night-elf-starter", {
         "Zähme hier einen Begleiter",
     ["The target is a big gray spider. This one roams, so scan the surrounding area. The targets are spread over several spots."] =
         "Das Ziel ist eine große graue Spinne. Dieses Ziel wandert umher, also such die Umgebung ab. Die Ziele sind auf mehrere Stellen verteilt.",
-    ["Target Sethir the Ancient and use Pickpocket. The target is a violet satyr. The NPC waits here, then strolls out onto the big branch close by."] =
-        "Nimm Sethir the Ancient ins Ziel und benutze Taschendiebstahl. Das Ziel ist ein violetter Satyr. Der NPC wartet hier und geht dann auf den großen Ast in der Nähe hinaus.",
+    ["Target Sethir the Ancient and use Pickpocket. The target is a violet satyr. The target waits here, then strolls out onto the big branch close by."] =
+        "Nimm Sethir the Ancient ins Ziel und benutze Taschendiebstahl. Das Ziel ist ein violetter Satyr. Das Ziel wartet hier und geht dann auf den großen Ast in der Nähe hinaus.",
     ["Fight the elementals of the swamp."] =
         "Bekämpfe die Elementare des Sumpfs.",
     ["Use Herbalism's Track Herbs to spot them. Pick these up while questing around Teldrassil. Get your Herbalism skill to 15."] =
@@ -185,10 +183,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a03-night-elf-starter", {
         "Benutze den Gegenstand an den Tiefenbahnratten. Such nach kleinen grauen Nagern. Geh zum Bahnsteig der Tiefenbahn auf der Seite von Eisenschmiede.",
     ["Take the Deeprun Tram over to Stormwind City. The NPC stands by the wall on the central platform."] =
         "Nimm die Tiefenbahn nach Sturmwind. Der NPC steht an der Wand auf dem mittleren Bahnsteig.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors. Be ready for a fight right away."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab. Der NPC ist drinnen. Mach dich sofort auf einen Kampf gefasst.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab. Der NPC ist drinnen.",
+    ["The NPC is indoors. Be ready for a fight right away."] =
+        "Der NPC ist drinnen. Mach dich sofort auf einen Kampf gefasst.",
     ["Learn Two-Handed Swords at the weapon master"] =
         "Lerne Zweihandschwerter beim Waffenmeister",
     ["Learn Swords at the weapon master"] =

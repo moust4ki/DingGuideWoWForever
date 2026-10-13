@@ -35,8 +35,6 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h26-stranglethorn-vale", {
         "아이템은 갈색빛 양피지 한 장입니다. 대상은 여러 곳에 흩어져 있습니다.",
     ["Look for a flat, white scroll lying open. The targets are spread over several spots."] =
         "펼쳐져 있는 납작한 흰 두루마리를 찾으세요. 대상은 여러 곳에 흩어져 있습니다.",
-    ["This one roams, so scan the surrounding area."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요.",
     ["The NPC is upstairs, out on the balcony."] =
         "NPC는 위층 발코니에 있습니다.",
     ["Take the road until the trail starts"] =

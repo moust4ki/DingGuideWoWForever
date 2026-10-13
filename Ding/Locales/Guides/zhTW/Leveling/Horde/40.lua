@@ -27,8 +27,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h40-winterspring", {
         "對萊加奇使用這個物品。",
     ["The NPC is indoors."] =
         "NPC在室內。",
-    ["This one roams, so scan the surrounding area. The NPC stands within the passage."] =
-        "這個會四處走動，留意周圍一帶。NPC站在通道裡。",
+    ["The NPC stands within the passage."] =
+        "NPC站在通道裡。",
     ["Fly to Moonglade"] =
         "飛往月光林地",
     ["Head indoors"] =
@@ -37,8 +37,6 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h40-winterspring", {
         "NPC在室內。等對話結束",
     ["One last lengthy stretch of monster farming. Dungeon runs are a fine choice here too, as you like. This number shrinks while you kill monsters."] =
         "最後一段漫長的打怪。喜歡的話，這時去刷地城也是不錯的選擇。打怪時這個數字會逐漸減少。",
-    ["The NPC stands within the passage."] =
-        "NPC站在通道裡。",
     ["You can also take it out of your bank."] =
         "你也可以從銀行取出。",
     ["The NPC patrols a long route; look along it."] =

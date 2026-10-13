@@ -15,14 +15,12 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h15-desolace", {
         "Cherche-le tout en haut de la falaise.",
     ["Climb the trail"] =
         "Monte le chemin",
-    ["The targets are spread over several spots. The NPC is indoors."] =
-        "Les cibles sont réparties sur plusieurs endroits. Le PNJ est à l'intérieur.",
+    ["The targets are spread over several spots. The target is indoors."] =
+        "Les cibles sont réparties sur plusieurs endroits. La cible est à l'intérieur.",
     ["Other satyrs use the same spawn points. Beware of foes lurking in stealth."] =
         "D'autres satyres partagent les mêmes points d'apparition. Attention aux ennemis camouflés.",
     ["Beware of foes lurking in stealth."] =
         "Attention aux ennemis camouflés.",
-    ["This one roams, so scan the surrounding area."] =
-        "Celui-ci se déplace : fouille les environs.",
     ["The targets here are centaurs. Magram Pack Runners patrol with 2 hyena escorts; steer clear."] =
         "Ici, les cibles sont des centaures. Les Magram Pack Runners patrouillent avec 2 hyènes d'escorte : tiens-toi à l'écart.",
     ["Target kodos with the item. The kodos trail behind you. Lead them to Smeed Scrabblescrew, then speak with them there."] =
@@ -47,10 +45,10 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h15-desolace", {
         "Récupère ton familier auprès du maître des écuries.",
     ["Release the short-term pet you tamed."] =
         "Relâche le familier temporaire que tu as apprivoisé.",
-    ["The NPC waits on the tower's highest floor."] =
-        "Le PNJ attend au dernier étage de la tour.",
-    ["Defeat every foe in this chamber before starting. The NPC is indoors."] =
-        "Élimine tous les ennemis de cette salle avant de commencer. Le PNJ est à l'intérieur.",
+    ["The target is on the tower's highest floor."] =
+        "La cible est au dernier étage de la tour.",
+    ["Defeat every foe in this chamber before starting. The target is indoors."] =
+        "Élimine tous les ennemis de cette salle avant de commencer. La cible est à l'intérieur.",
     ["Target Burning Blade foes with the item. Wait for the foe to be badly hurt, then apply it."] =
         "Utilise l'objet sur les ennemis de la Lame ardente. Attends que l'ennemi soit bien blessé, puis utilise-le.",
     ["The quest starts from a little book."] =

@@ -113,7 +113,7 @@ Ding.RegisterGuide({
           note = "Up to two foes might jump you." },
         { turnin = 900, accept = 901 }, -- level 17
         { complete = 901, -- level 17
-          note = "The NPC is indoors." },
+          note = "The target is indoors." },
         { turnin = 901, accept = 902 }, -- level 17
         { complete = 869, -- level 17
           note = "Kill the purple raptors. Targets are found across the entire Barrens. Slay any you come across along the way." },
@@ -164,7 +164,7 @@ Ding.RegisterGuide({
         { turnin = 2379, accept = 2382, races = { "Orc", "Scourge", "Troll", "Skyborne" }, classes = { "ROGUE" }, -- level 18
           note = "The quest giver waits in the tent. This NPC is found down in the Cleft of Shadow." },
         { collect = { { 7208, 1 } }, spots = { { 1454, 53.95, 67.98 } }, races = { "Orc", "Scourge", "Troll" }, classes = { "ROGUE" }, -- level 18
-          note = "Steal from Gamon using Pick Pocket. The NPC is indoors." },
+          note = "Steal from Gamon using Pick Pocket. The target is indoors." },
         { useitem = 7208, when = { log = 1858 }, races = { "Orc", "Scourge", "Troll", "Skyborne" }, classes = { "ROGUE" }, -- level 18
           note = "Use it on Tazan's Satchel. The item is already in your inventory." },
         { complete = 1858, when = { log = 1858 }, races = { "Orc", "Troll" }, classes = { "ROGUE" } }, -- level 18
@@ -362,7 +362,7 @@ Ding.RegisterGuide({
           note = "The NPC waits on the tower's highest floor." },
         { go = { 1456, 29.79, 29.85 }, text = "Go into the cavern" }, -- level 21
         { accept = 264, -- level 21
-          note = "This one roams, so scan the surrounding area. Your targets are within the cavern." },
+          note = "Your targets are within the cavern." },
         { turnin = 853, -- level 21
           note = "Your targets are within the cavern." },
         { accept = 962, dungeon = "Wailing Caverns", -- level 21

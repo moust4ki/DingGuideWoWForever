@@ -43,6 +43,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h05-the-barrens-and-stonetalon-m
         "하피를 처치하세요.",
     ["Up to two foes might jump you."] =
         "최대 둘까지 적이 덮칠 수 있습니다.",
+    ["The target is indoors."] =
+        "대상은 건물 안에 있습니다.",
     ["Kill the purple raptors. Targets are found across the entire Barrens. Slay any you come across along the way."] =
         "보라색 랩터를 처치하세요. 대상은 불모의 땅 전역에 있습니다. 가는 길에 만나는 대로 처치하세요.",
     ["Climb the trail"] =
@@ -55,8 +57,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h05-the-barrens-and-stonetalon-m
         "NPC는 이 건물의 꼭대기 층에 서 있습니다.",
     ["Learn Staves at the weapon master"] =
         "무기 전문가에게서 지팡이를 배우세요",
-    ["Steal from Gamon using Pick Pocket. The NPC is indoors."] =
-        "소매치기로 가몬의 물건을 훔치세요. NPC는 건물 안에 있습니다.",
+    ["Steal from Gamon using Pick Pocket. The target is indoors."] =
+        "소매치기로 가몬의 물건을 훔치세요. 대상은 건물 안에 있습니다.",
     ["Use it on Tazan's Satchel. The item is already in your inventory."] =
         "타잔의 가방에 사용하세요. 아이템은 이미 가방에 있습니다.",
     ["For this quest you guard an NPC on the move. If the NPC is gone, hold on until it reappears."] =
@@ -131,8 +133,6 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h05-the-barrens-and-stonetalon-m
         "썬더 블러프로 날아가세요",
     ["Go into the cavern"] =
         "동굴에 들어가세요",
-    ["This one roams, so scan the surrounding area. Your targets are within the cavern."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요. 대상은 동굴 안에 있습니다.",
     ["Your targets are within the cavern."] =
         "대상은 동굴 안에 있습니다.",
     ["Head out of the cave"] =

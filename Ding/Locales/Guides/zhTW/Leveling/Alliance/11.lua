@@ -7,16 +7,14 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a11-duskwood-and-redridge-mounta
         "前往夜色鎮",
     ["Duskwood: Darkshire, in the east of the zone."] =
         "暮色森林：夜色鎮，位於區域東部。",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "這個會四處走動，留意周圍一帶。NPC在室內。",
     ["The NPC is indoors."] =
         "NPC在室內。",
-    ["This one roams, so scan the surrounding area."] =
-        "這個會四處走動，留意周圍一帶。",
     ["Flight master at Darkshire"] =
         "夜色鎮的飛行管理員",
-    ["The target is a ghoul with red skin. This one roams, so scan the surrounding area. The NPC can be indoors or out."] =
-        "目標是一隻紅色皮膚的食屍鬼。這個會四處走動，留意周圍一帶。NPC可能在室內，也可能在室外。",
+    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
+        "這個會四處走動，留意周圍一帶。NPC在室內。",
+    ["The target is a ghoul with red skin. This one roams, so scan the surrounding area. The target can be indoors or out."] =
+        "目標是一隻紅色皮膚的食屍鬼。這個會四處走動，留意周圍一帶。目標可能在室內，也可能在室外。",
     ["Hunt spiders for it."] =
         "獵殺蜘蛛取得。",
     ["The targets are ghouls. Targets are both in the tomb and around it."] =
@@ -27,8 +25,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a11-duskwood-and-redridge-mounta
         "對一名醜陋的迪菲亞懶漢使用偷竊。這個會四處走動，留意周圍一帶。",
     ["Use Sap on Klaven Mortwake, then open the chest. Opening it puts a harmful effect on you. Climb to the highest floor of the building."] =
         "對克拉文·摩特維克使用悶棍，然後打開箱子。打開它會讓你中一個負面效果。爬到建築的最頂樓。",
-    ["Be ready for a fight right away. The NPC is indoors."] =
-        "準備好立刻戰鬥。NPC在室內。",
+    ["Be ready for a fight right away. The object is indoors."] =
+        "準備好立刻戰鬥。這個物件在室內。",
     ["Climb the trail across the mountains"] =
         "沿小路翻越山脈",
     ["Take the trail that circles the peak"] =
@@ -43,6 +41,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a11-duskwood-and-redridge-mounta
         "爬到建築的最頂樓。",
     ["Beware of foes lurking in stealth."] =
         "小心潛行中的敵人。",
+    ["The object is indoors, one floor up."] =
+        "這個物件在室內的樓上一層。",
     ["Head indoors"] =
         "進入室內",
     ["The NPC waits on the lower level, indoors."] =
@@ -87,6 +87,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a11-duskwood-and-redridge-mounta
         "目標是地城的第五個首領。",
     ["You'll find them all over the instance."] =
         "整個副本到處都有。",
+    ["This one roams, so scan the surrounding area."] =
+        "這個會四處走動，留意周圍一帶。",
     ["Learn Guns, Two-Handed Axes and Two-Handed Maces at the weapon master"] =
         "向武器大師學習槍械、雙手斧和雙手錘",
     ["Learn Two-Handed Axes at the weapon master"] =

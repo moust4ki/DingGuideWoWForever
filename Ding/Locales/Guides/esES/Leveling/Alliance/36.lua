@@ -9,14 +9,12 @@ Ding.RegisterGuideTranslation("esES", "leveling-a36-azshara-and-felwood", {
         "Teldrassil: primero la Aldea Rut'theran y luego Azshara y Frondavil.",
     ["The NPC is indoors."] =
         "El PNJ está dentro.",
-    ["This one roams, so scan the surrounding area. Climb to the highest floor of the building."] =
-        "Este deambula, así que revisa los alrededores. Sube al piso más alto del edificio.",
+    ["Climb to the highest floor of the building."] =
+        "Sube al piso más alto del edificio.",
     ["The quest giver stands outdoors, not indoors."] =
         "El PNJ de la misión está fuera, no dentro.",
     ["A lengthy stretch of questing lies ahead. This vendor sells no arrows or bullets."] =
         "Te espera un largo tramo de misiones. Este vendedor no vende flechas ni balas.",
-    ["This one roams, so scan the surrounding area."] =
-        "Este deambula, así que revisa los alrededores.",
     ["Hand these in afterwards for experience and reputation."] =
         "Entrégalos después por experiencia y reputación.",
     ["Raise Timbermaw Hold standing to Unfriendly"] =
@@ -33,6 +31,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a36-azshara-and-felwood", {
         "Sigue el sendero hasta llegar a Jaedenar",
     ["Climb the trail into Jadefire Run"] =
         "Sube por el sendero hasta Jadefire Run",
+    ["This one roams, so scan the surrounding area."] =
+        "Este deambula, así que revisa los alrededores.",
     ["Fight the elementals of the swamp. Targets are in the cavern and around its entrance too."] =
         "Lucha contra los elementales del pantano. Los objetivos están en la cueva y también alrededor de la entrada.",
     ["Head out of the cave"] =

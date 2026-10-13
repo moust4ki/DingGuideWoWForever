@@ -12,8 +12,7 @@ Ding.RegisterGuide({
     steps    = {
         { go = { 1448, 51.21, 82.11 }, text = "Travel to Emerald Sanctuary", -- level 52
           note = "Felwood: Emerald Sanctuary, in the south of the zone." },
-        { accept = 5155, -- level 52
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 5155 }, -- level 52
         { accept = 5156, -- level 52
           note = "The NPC is indoors." },
         { accept = 8460 }, -- level 52
@@ -23,8 +22,7 @@ Ding.RegisterGuide({
         { collect = { { 21377, 1 } }, keep = 21377, -- level 52
           note = "Hand these in afterwards for experience and reputation." },
         { go = { 1448, 48.45, 89.23 }, text = "Raise Timbermaw Hold standing to Unfriendly" }, -- level 52
-        { accept = 4102, -- level 52
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 4102 }, -- level 52
         { complete = 5155, -- level 52
           note = "Extra targets wait in the caves." },
         { go = { 1448, 38.71, 57.36 }, text = "Stay on the trail" }, -- level 52
@@ -40,8 +38,7 @@ Ding.RegisterGuide({
         { complete = 6162 }, -- level 52
         { level = 52, xp = 155500, collect = { { 21377, 1 } }, keep = 21377, patrol = { { 1448, 48.45, 89.23 }, { 1448, 46.17, 89.24 }, { 1448, 46.76, 91.83 }, { 1448, 47.97, 93.45 }, { 1448, 49.46, 91.57 } }, -- level 52
           note = "Together with the next turn-ins, this brings you to level 53. Tougher foes are coming up next. Dungeon runs are a fine choice here too, as you like." },
-        { turnin = 5155, accept = 5157, -- level 52
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 5155, accept = 5157 }, -- level 52
         { go = { 1448, 38.49, 59.73 }, text = "Stay on the trail to reach Jaedenar" }, -- level 53
         { complete = 5157, useitem = 12922, sticky = 5156 }, -- level 53
         { complete = 5156 }, -- level 53
@@ -72,12 +69,9 @@ Ding.RegisterGuide({
         { turnin = 4505 }, -- level 53
         { go = { 1448, 39.04, 50.44 }, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, text = "Tame a beast here to learn the next rank of Claw", -- level 53
           note = "Tame an Angerclaw Mauler with your Tame Beast spell. Track down a plague-ridden bear with a chestnut coat." },
-        { turnin = 4102, -- level 53
-          note = "This one roams, so scan the surrounding area." },
-        { talk = 9529, collect = { { 11511, 1 } }, -- level 53
-          note = "This one roams, so scan the surrounding area." },
-        { turnin = 5157, accept = 5158, -- level 53
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 4102 }, -- level 53
+        { talk = 9529, collect = { { 11511, 1 } } }, -- level 53
+        { turnin = 5157, accept = 5158 }, -- level 53
         { turnin = 5156, -- level 53
           note = "The NPC is indoors." },
         { turnin = 3541, accept = 3563, -- level 53

@@ -62,7 +62,7 @@ Ding.RegisterGuide({
           note = "Slay them, then apply the item to their remains." },
         { complete = 7829, sticky = 7841 }, -- level 48
         { complete = 2995, -- level 48
-          note = "The NPC is indoors." },
+          note = "The object is indoors." },
         { complete = 2995 }, -- level 48
         { complete = 2995 }, -- level 48
         { complete = 7841 }, -- level 48

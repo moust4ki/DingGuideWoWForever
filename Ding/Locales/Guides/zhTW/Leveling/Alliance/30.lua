@@ -15,8 +15,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a30-tanaris", {
         "這些敵人會潛行隱藏。",
     ["Head down the passage that opens on Lost Rigger Cove"] =
         "沿通往Lost Rigger Cove的通道往下走",
-    ["The NPC is indoors, one floor up."] =
-        "NPC在室內的樓上一層。",
+    ["The object is indoors, one floor up."] =
+        "這個物件在室內的樓上一層。",
     ["Few kills yield this item."] =
         "這個物品的掉落率很低。",
     ["Others can be found on raised wood platforms close by."] =

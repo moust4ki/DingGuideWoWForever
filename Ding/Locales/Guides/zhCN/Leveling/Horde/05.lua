@@ -43,6 +43,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h05-the-barrens-and-stonetalon-m
         "击杀鹰身人。",
     ["Up to two foes might jump you."] =
         "最多可能有两个敌人突袭你。",
+    ["The target is indoors."] =
+        "目标在室内。",
     ["Kill the purple raptors. Targets are found across the entire Barrens. Slay any you come across along the way."] =
         "击杀紫色的迅猛龙。目标遍布整个贫瘠之地。路上遇到的都杀掉。",
     ["Climb the trail"] =
@@ -55,8 +57,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h05-the-barrens-and-stonetalon-m
         "NPC在这座建筑的最高层。",
     ["Learn Staves at the weapon master"] =
         "向武器大师学习法杖",
-    ["Steal from Gamon using Pick Pocket. The NPC is indoors."] =
-        "对Gamon使用搜索偷取。NPC在室内。",
+    ["Steal from Gamon using Pick Pocket. The target is indoors."] =
+        "对Gamon使用搜索偷取。目标在室内。",
     ["Use it on Tazan's Satchel. The item is already in your inventory."] =
         "对Tazan's Satchel使用它。物品已经在你的背包里了。",
     ["For this quest you guard an NPC on the move. If the NPC is gone, hold on until it reappears."] =
@@ -131,8 +133,6 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h05-the-barrens-and-stonetalon-m
         "飞往雷霆崖",
     ["Go into the cavern"] =
         "进入洞穴",
-    ["This one roams, so scan the surrounding area. Your targets are within the cavern."] =
-        "它会四处游荡，在周围找找。目标在洞穴里。",
     ["Your targets are within the cavern."] =
         "目标在洞穴里。",
     ["Head out of the cave"] =

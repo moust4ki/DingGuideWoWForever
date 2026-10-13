@@ -7,8 +7,6 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h35-felwood-and-winterspring", {
         "前往翡翠圣地",
     ["Felwood: Emerald Sanctuary, in the south of the zone."] =
         "费伍德森林：翡翠圣地，在该区域南部。",
-    ["This one roams, so scan the surrounding area."] =
-        "它会四处游荡，在周围找找。",
     ["The NPC is indoors."] =
         "NPC在室内。",
     ["Hand these in afterwards for experience and reputation."] =

@@ -7,8 +7,6 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h38-felwood-and-winterspring", {
         "Rejoins le poste de la Vénéneuse",
     ["Felwood: Bloodvenom Post, in the west of the zone."] =
         "Gangrebois : le poste de la Vénéneuse, à l'ouest de la zone.",
-    ["This one roams, so scan the surrounding area."] =
-        "Celui-ci se déplace : fouille les environs.",
     ["Hand these in afterwards for experience and reputation."] =
         "Rends-les ensuite pour l'expérience et la réputation.",
     ["Go into Jaedenar"] =
@@ -45,8 +43,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h38-felwood-and-winterspring", {
         "Le PNJ est à l'intérieur.",
     ["The quest wants yetis; seek them out. Targets are in the cavern and around its entrance too."] =
         "La quête demande des yétis : va les chercher. Les cibles sont dans la grotte et aussi autour de l'entrée.",
-    ["The NPC is a human spirit. This one roams, so scan the surrounding area."] =
-        "Le PNJ est un esprit humain. Celui-ci se déplace : fouille les environs.",
+    ["The NPC is a human spirit."] =
+        "Le PNJ est un esprit humain.",
     ["Your targets are within the cavern."] =
         "Tes cibles sont dans la grotte.",
     ["Let the conversation play out. Your targets are within the cavern."] =
@@ -65,8 +63,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h38-felwood-and-winterspring", {
         "Donne les objets à Nafien par lots de 5. Chaque lot complet rendu rapporte 50 points de réputation. Apporte les plumes que tu ramasses au PNJ en 64.8, 8.1.",
     ["Raise Timbermaw Hold standing to Neutral"] =
         "Monte ta réputation auprès des Grumegueules à Neutre",
-    ["This one roams, so scan the surrounding area. The NPC stands within the passage."] =
-        "Celui-ci se déplace : fouille les environs. Le PNJ se tient dans le passage.",
+    ["The NPC stands within the passage."] =
+        "Le PNJ se tient dans le passage.",
     ["The targets are 3 white furbolgs moving as one pack. The target patrols a long route beside the road. They appear near 28.1, 35.0 in Winterspring."] =
         "Les cibles sont 3 furbolgs blancs qui se déplacent en groupe. La cible patrouille sur un long trajet le long de la route. Ils apparaissent près de 28.1, 35.0 au Berceau-de-l'Hiver.",
     ["This number shrinks while you kill monsters. Bring any feathers you collect to the NPC at 64.8, 8.1."] =

@@ -11,14 +11,10 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a16-dustwallow-marsh-and-thousan
         "NPC는 건물 안에 있습니다.",
     ["The NPC is indoors, one floor up."] =
         "NPC는 건물 안 한 층 위에 있습니다.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors, one floor up."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요. NPC는 건물 안 한 층 위에 있습니다.",
     ["The NPC is indoors. This quest is buggy and may not show up. If it is not around, move on without it."] =
         "NPC는 건물 안에 있습니다. 이 퀘스트는 버그가 있어 나타나지 않을 수 있습니다. 없다면 그냥 넘어가세요.",
-    ["This one roams, so scan the surrounding area."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요.",
-    ["This one roams, so scan the surrounding area. Expect several foes at once. Make Private Hendel your main target."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요. 여러 적이 한꺼번에 덤빌 수 있습니다. 병사 헨델을 주 대상으로 삼으세요.",
+    ["Expect several foes at once. Make Private Hendel your main target."] =
+        "여러 적이 한꺼번에 덤빌 수 있습니다. 병사 헨델을 주 대상으로 삼으세요.",
     ["Wait for the talking to finish"] =
         "대화가 끝날 때까지 기다리세요",
     ["Steer clear of Brackenwall Village. Watch out: the foes here are above your level. Keep to the road the whole way."] =

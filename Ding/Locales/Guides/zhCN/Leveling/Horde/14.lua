@@ -25,8 +25,6 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h14-thousand-needles", {
         "这里的敌人是蝎子。",
     ["Look for assorted mechanical pieces. Parts lie all across the Shimmering Flats."] =
         "寻找各种机械零件。零件散落在整个闪光平原。",
-    ["This one roams, so scan the surrounding area."] =
-        "它会四处游荡，在周围找找。",
     ["The NPC is indoors, one floor up."] =
         "NPC在室内楼上一层。",
     ["The NPC stands on the top tier of the pier. The NPC is indoors."] =

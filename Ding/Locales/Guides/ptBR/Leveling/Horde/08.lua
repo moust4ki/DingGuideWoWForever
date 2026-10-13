@@ -33,8 +33,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h08-the-barrens", {
         "O alvo é um javatusco de veste vermelha. Este se desloca, então procure pelos arredores. O alvo aparece neste ponto.",
     ["This one roams, so scan the surrounding area. Beware of foes lurking in stealth."] =
         "Este se desloca, então procure pelos arredores. Cuidado com inimigos furtivos à espreita.",
-    ["Beware of foes lurking in stealth. The NPC is indoors."] =
-        "Cuidado com inimigos furtivos à espreita. O NPC está lá dentro.",
+    ["Beware of foes lurking in stealth. The target is indoors."] =
+        "Cuidado com inimigos furtivos à espreita. O alvo está lá dentro.",
     ["Kill Stalkers and Pathfinders. Beware of foes lurking in stealth."] =
         "Mate Espreitadores e Desbravadores. Cuidado com inimigos furtivos à espreita.",
     ["Beware of foes lurking in stealth."] =
@@ -45,8 +45,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h08-the-barrens", {
         "Este se desloca, então procure pelos arredores. Os alvos estão espalhados por vários pontos.",
     ["Climb the trail"] =
         "Suba a trilha",
-    ["The NPC can be indoors or out."] =
-        "O NPC pode estar dentro ou fora.",
+    ["The target can be indoors or out."] =
+        "O alvo pode estar dentro ou fora.",
     ["The objective sits up on the raised deck. Keep some range when you use the item."] =
         "O objetivo fica no convés elevado. Mantenha alguma distância ao usar o item.",
     ["With the coming hand-ins, this gets you to level 25."] =

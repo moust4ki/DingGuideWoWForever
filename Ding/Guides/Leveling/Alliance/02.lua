@@ -48,7 +48,7 @@ Ding.RegisterGuide({
         { accept = 3364 }, -- level 4
         { go = { 1426, 28.84, 69.11 }, text = "Head indoors" }, -- level 4
         { accept = 3361, -- level 4
-          note = "This one roams, so scan the surrounding area. The NPC is indoors." },
+          note = "The NPC is indoors." },
         { turnin = 98574, races = { "Gnome" }, classes = { "PRIEST" } }, -- level 4
         { turnin = 3364, accept = 3365, -- level 4
           note = "The NPC is indoors." },
@@ -125,7 +125,7 @@ Ding.RegisterGuide({
         { go = { 1426, 28.84, 69.11 }, text = "Head indoors" }, -- level 5
         { accept = 97277, races = { "Dwarf", "Gnome" } }, -- level 5
         { turnin = 3361, -- level 5
-          note = "This one roams, so scan the surrounding area. The NPC is indoors." },
+          note = "The NPC is indoors." },
         { complete = 97277, races = { "Dwarf", "Gnome" } }, -- level 6
         { turnin = 97277, races = { "Dwarf", "Gnome" } }, -- level 6
         { train = true, talk = 912, classes = { "WARRIOR" }, -- level 6
@@ -235,7 +235,7 @@ Ding.RegisterGuide({
         { talk = 1247, buy = { { 2686, 1, 1247 } }, -- level 8
           note = "The NPC is indoors." },
         { turnin = 310, accept = 311, -- level 8
-          note = "Give it a few seconds. The NPC waits on the lower level, indoors." },
+          note = "Give it a few seconds. The object is on the lower level, indoors." },
         { go = { 1426, 41.95, 47.28 }, text = "Stay on the trail" }, -- level 8
         { turnin = 311 }, -- level 8
         { turnin = { 319, 315 }, accept = { 320, 413 } }, -- level 8
@@ -354,7 +354,7 @@ Ding.RegisterGuide({
         { sethearth = "Stoutlager Inn", talk = 6734, -- level 11
           note = "The NPC is indoors." },
         { accept = 6387, -- level 11
-          note = "This one roams, so scan the surrounding area. The NPC can be indoors or out." },
+          note = "The NPC can be indoors or out." },
         { turnin = 6387, accept = 6391 }, -- level 11
         { go = { 1455, 61.12, 89.58 }, races = { "Gnome" }, classes = { "WARRIOR" }, text = "Learn Two-Handed Axes and Two-Handed Maces at the weapon master" }, -- level 11
         { go = { 1455, 61.12, 89.58 }, races = { "Dwarf" }, classes = { "WARRIOR" }, text = "Learn Two-Handed Maces at the weapon master" }, -- level 11
@@ -388,11 +388,11 @@ Ding.RegisterGuide({
         { turnin = 1638, accept = 1639, classes = { "WARRIOR" }, -- level 11
           note = "The NPC is indoors." },
         { turnin = 1639, accept = 1640, classes = { "WARRIOR" }, -- level 11
-          note = "This one roams, so scan the surrounding area. The NPC is indoors. Be ready for a fight right away." },
+          note = "The NPC is indoors. Be ready for a fight right away." },
         { complete = 1640, classes = { "WARRIOR" }, -- level 11
-          note = "This one roams, so scan the surrounding area. The NPC is indoors." },
+          note = "The NPC is indoors." },
         { turnin = 1640, when = { ready = 1640 }, classes = { "WARRIOR" }, -- level 11
-          note = "This one roams, so scan the surrounding area. The NPC is indoors." },
+          note = "The NPC is indoors." },
         { accept = 1665, when = { done = 1640 }, classes = { "WARRIOR" } }, -- level 11
         { turnin = 1665, when = { log = 1665 }, classes = { "WARRIOR" }, -- level 11
           note = "The NPC is indoors." },
@@ -481,7 +481,7 @@ Ding.RegisterGuide({
         { accept = 244, -- level 12
           note = "This one roams, so scan the surrounding area." },
         { turnin = 244, -- level 12
-          note = "Stay on the road and watch for danger. Foes in this area outlevel you. This one roams, so scan the surrounding area." },
+          note = "Stay on the road and watch for danger. Foes in this area outlevel you." },
         { go = { 1433, 25.46, 59.37 }, fly = true, talk = 931, text = "Fly to Lakeshire" }, -- level 12
         { go = { 1453, 42.28, 81.85 }, races = { "Gnome" }, classes = { "WARLOCK" }, text = "Head indoors", -- level 12
           note = "The NPC waits on the lower level, indoors." },
@@ -490,7 +490,7 @@ Ding.RegisterGuide({
           note = "The NPC waits on the lower level, indoors." },
         { accept = 1689, when = { done = 1688 }, races = { "Gnome" }, classes = { "WARLOCK" } }, -- level 12
         { complete = 1689, useitem = 6928, when = { log = 1689 }, races = { "Gnome" }, classes = { "WARLOCK" }, -- level 12
-          note = "Step onto the pink rune. Look within the tomb. The NPC waits on the lower level, indoors." },
+          note = "Step onto the pink rune. Look within the tomb. The target is on the lower level, indoors." },
         { turnin = 1689, when = { ready = 1689 }, races = { "Gnome" }, classes = { "WARLOCK" }, -- level 12
           note = "The NPC stands one level over the crypt. The NPC waits on the lower level, indoors." },
         { vendor = true, talk = 5520, races = { "Gnome" }, classes = { "WARLOCK" }, -- level 12
@@ -534,7 +534,7 @@ Ding.RegisterGuide({
         { accept = 416, patrol = { { 1432, 32.7, 49.76 }, { 1432, 33.3, 49.22 }, { 1432, 33.91, 48.42 }, { 1432, 34.36, 47.6 }, { 1432, 34.87, 47 }, { 1432, 35.6, 46.71 }, { 1432, 36.12, 46.32 }, { 1432, 37.14, 45.96 }, { 1432, 37.26, 45.56 }, { 1432, 37.33, 44.48 }, { 1432, 37.23, 43.29 }, { 1432, 36.68, 42.04 } }, -- level 12
           note = "The NPC patrols a long route; look along it." },
         { turnin = 6392, -- level 12
-          note = "This one roams, so scan the surrounding area. The NPC can be indoors or out." },
+          note = "The NPC can be indoors or out." },
         { complete = 416, -- level 12
           note = "The targets are rat-like humanoids." },
         { turnin = 353, -- level 12

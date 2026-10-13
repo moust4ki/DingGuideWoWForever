@@ -43,6 +43,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h05-the-barrens-and-stonetalon-m
         "Tue des harpies.",
     ["Up to two foes might jump you."] =
         "Jusqu'à deux ennemis peuvent te tomber dessus.",
+    ["The target is indoors."] =
+        "La cible est à l'intérieur.",
     ["Kill the purple raptors. Targets are found across the entire Barrens. Slay any you come across along the way."] =
         "Tue les raptors violets. Les cibles se trouvent partout dans les Tarides. Tue tous ceux que tu croises en chemin.",
     ["Climb the trail"] =
@@ -55,8 +57,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h05-the-barrens-and-stonetalon-m
         "Le PNJ se tient au plus haut niveau de ce bâtiment.",
     ["Learn Staves at the weapon master"] =
         "Apprends les Bâtons auprès du maître d'armes",
-    ["Steal from Gamon using Pick Pocket. The NPC is indoors."] =
-        "Vole Gamon avec Vol à la tire. Le PNJ est à l'intérieur.",
+    ["Steal from Gamon using Pick Pocket. The target is indoors."] =
+        "Vole Gamon avec Vol à la tire. La cible est à l'intérieur.",
     ["Use it on Tazan's Satchel. The item is already in your inventory."] =
         "Utilise-le sur la sacoche de Tazan. L'objet est déjà dans ton inventaire.",
     ["For this quest you guard an NPC on the move. If the NPC is gone, hold on until it reappears."] =
@@ -131,8 +133,6 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h05-the-barrens-and-stonetalon-m
         "Vole jusqu'aux Pitons-du-Tonnerre",
     ["Go into the cavern"] =
         "Entre dans la grotte",
-    ["This one roams, so scan the surrounding area. Your targets are within the cavern."] =
-        "Celui-ci se déplace : fouille les environs. Tes cibles sont dans la grotte.",
     ["Your targets are within the cavern."] =
         "Tes cibles sont dans la grotte.",
     ["Head out of the cave"] =

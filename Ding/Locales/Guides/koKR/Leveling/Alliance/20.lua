@@ -17,8 +17,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a20-swamp-of-sorrows", {
         "이 대상은 돌아다니므로 주변을 살펴보세요. NPC는 건물 안에 있습니다.",
     ["Hunt the little winged dragonkin. When the targets run out, skip ahead. No rush; you may complete this afterwards."] =
         "날개 달린 작은 용족을 사냥하세요. 대상이 더 없으면 다음으로 넘어가세요. 서두르지 않아도 됩니다. 나중에 완료해도 됩니다.",
-    ["The target is a humanoid escorted by 2 guards. The NPC patrols a long route; look along it."] =
-        "대상은 경비병 2명이 호위하는 인간형입니다. NPC는 긴 경로를 순찰합니다. 경로를 따라 찾아보세요.",
+    ["The target is a humanoid escorted by 2 guards. The target patrols a long route; look along it."] =
+        "대상은 경비병 2명이 호위하는 인간형입니다. 대상은 긴 경로를 순찰합니다. 경로를 따라 찾아보세요.",
     ["Hunt spiders for it."] =
         "거미를 사냥해서 얻으세요.",
     ["This one roams, so scan the surrounding area. The targets are spread over several spots."] =

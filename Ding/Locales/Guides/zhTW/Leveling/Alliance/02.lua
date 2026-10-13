@@ -19,8 +19,6 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a02-dwarf-and-gnome-starter", {
         "回到室外",
     ["The targets are wolves."] =
         "目標是狼。",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "這個會四處走動，留意周圍一帶。NPC在室內。",
     ["They are rare and scattered widely. Your targets are within the cavern."] =
         "數量稀少，分布很廣。目標在洞穴裡。",
     ["Die on purpose at this spot"] =
@@ -45,6 +43,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a02-dwarf-and-gnome-starter", {
         "用次級治療術（等級2）治療巡山人多爾夫。對巡山人多爾夫施放真言術：韌。",
     ["Learn Blacksmithing from the trainer"] =
         "向訓練師學習鍛造",
+    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
+        "這個會四處走動，留意周圍一帶。NPC在室內。",
     ["Learn Mining from the trainer"] =
         "向訓練師學習採礦",
     ["The NPC waits on the lower level, indoors."] =
@@ -65,8 +65,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a02-dwarf-and-gnome-starter", {
         "尋找木籃。",
     ["Die to the monsters here on purpose. Any spot around Brewnall Village works. Dying costs you nothing this early."] =
         "故意讓這裡的怪物殺死你。Brewnall Village周圍任何位置都可以。在這麼早期死亡沒有任何損失。",
-    ["Give it a few seconds. The NPC waits on the lower level, indoors."] =
-        "等幾秒鐘。NPC在室內的下層。",
+    ["Give it a few seconds. The object is on the lower level, indoors."] =
+        "等幾秒鐘。這個物件在室內的下層。",
     ["Head to the lower level of the cavern."] =
         "前往洞穴的下層。",
     ["With the coming turn-ins, this gets you to level 10."] =
@@ -111,8 +111,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a02-dwarf-and-gnome-starter", {
         "NPC沿著一條很長的路線巡邏；沿路尋找。",
     ["Die to the monsters here on purpose. This is the quickest way over."] =
         "故意讓這裡的怪物殺死你。這是過去最快的方法。",
-    ["This one roams, so scan the surrounding area. The NPC can be indoors or out."] =
-        "這個會四處走動，留意周圍一帶。NPC可能在室內，也可能在室外。",
+    ["The NPC can be indoors or out."] =
+        "NPC可能在室內，也可能在室外。",
     ["Learn Two-Handed Axes and Two-Handed Maces at the weapon master"] =
         "向武器大師學習雙手斧和雙手錘",
     ["Learn Two-Handed Maces at the weapon master"] =
@@ -129,8 +129,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a02-dwarf-and-gnome-starter", {
         "對礦道老鼠使用這個物品。尋找灰色的小老鼠。前往礦道地鐵的鐵爐堡月台。",
     ["Take the Deeprun Tram over to Stormwind City. The NPC stands by the wall on the central platform."] =
         "搭礦道地鐵前往暴風城。NPC站在中央月台的牆邊。",
-    ["This one roams, so scan the surrounding area. The NPC is indoors. Be ready for a fight right away."] =
-        "這個會四處走動，留意周圍一帶。NPC在室內。準備好立刻戰鬥。",
+    ["The NPC is indoors. Be ready for a fight right away."] =
+        "NPC在室內。準備好立刻戰鬥。",
     ["Learn Two-Handed Swords and Staves at the weapon master"] =
         "向武器大師學習雙手劍和法杖",
     ["Learn Two-Handed Swords at the weapon master"] =
@@ -153,12 +153,12 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a02-dwarf-and-gnome-starter", {
         "NPC在室外，位於建築正前方。",
     ["This one roams, so scan the surrounding area."] =
         "這個會四處走動，留意周圍一帶。",
-    ["Stay on the road and watch for danger. Foes in this area outlevel you. This one roams, so scan the surrounding area."] =
-        "沿著道路走，小心危險。這一帶的敵人等級比你高。這個會四處走動，留意周圍一帶。",
+    ["Stay on the road and watch for danger. Foes in this area outlevel you."] =
+        "沿著道路走，小心危險。這一帶的敵人等級比你高。",
     ["Fly to Lakeshire"] =
         "飛往湖畔鎮",
-    ["Step onto the pink rune. Look within the tomb. The NPC waits on the lower level, indoors."] =
-        "站上粉紅色的符文。在墓穴裡面找。NPC在室內的下層。",
+    ["Step onto the pink rune. Look within the tomb. The target is on the lower level, indoors."] =
+        "站上粉紅色的符文。在墓穴裡面找。目標在室內的下層。",
     ["The NPC stands one level over the crypt. The NPC waits on the lower level, indoors."] =
         "NPC站在地穴上方一層。NPC在室內的下層。",
     ["The NPC waits on the tower's highest floor."] =

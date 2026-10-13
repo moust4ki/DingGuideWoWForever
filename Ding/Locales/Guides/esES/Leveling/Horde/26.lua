@@ -35,8 +35,6 @@ Ding.RegisterGuideTranslation("esES", "leveling-h26-stranglethorn-vale", {
         "El objeto es una hoja de pergamino parduzca. Los objetivos están repartidos en varios puntos.",
     ["Look for a flat, white scroll lying open. The targets are spread over several spots."] =
         "Busca un pergamino blanco, plano y abierto. Los objetivos están repartidos en varios puntos.",
-    ["This one roams, so scan the surrounding area."] =
-        "Este deambula, así que revisa los alrededores.",
     ["The NPC is upstairs, out on the balcony."] =
         "El PNJ está arriba, fuera, en el balcón.",
     ["Take the road until the trail starts"] =

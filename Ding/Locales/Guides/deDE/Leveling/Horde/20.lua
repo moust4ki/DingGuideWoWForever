@@ -35,8 +35,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h20-stranglethorn-vale-and-swamp
         "Flugmeister in Steinard",
     ["The NPC is indoors, one floor up."] =
         "Der NPC ist drinnen, ein Stockwerk höher.",
-    ["The target is a humanoid escorted by 2 guards. The NPC patrols a long route; look along it."] =
-        "Das Ziel ist ein Humanoider mit 2 Wachen als Begleitung. Der NPC patrouilliert eine lange Route; such entlang dieser Route.",
+    ["The target is a humanoid escorted by 2 guards. The target patrols a long route; look along it."] =
+        "Das Ziel ist ein Humanoider mit 2 Wachen als Begleitung. Das Ziel patrouilliert eine lange Route; such entlang dieser Route.",
     ["This one roams, so scan the surrounding area. The targets are spread over several spots."] =
         "Dieses Ziel wandert umher, also such die Umgebung ab. Die Ziele sind auf mehrere Stellen verteilt.",
     ["For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears. Clear the monsters just south before you start."] =

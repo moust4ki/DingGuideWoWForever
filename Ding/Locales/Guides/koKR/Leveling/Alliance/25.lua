@@ -31,8 +31,6 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a25-stranglethorn-vale", {
         "통로를 지나 무법항을 나가세요",
     ["Take the tunnel into Booty Bay"] =
         "터널을 지나 무법항으로 들어가세요",
-    ["This one roams, so scan the surrounding area."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요.",
     ["Take the trail toward the Ruins of Aboraz"] =
         "길을 따라 Ruins of Aboraz 쪽으로 가세요",
     ["Gradually move toward the northeast."] =

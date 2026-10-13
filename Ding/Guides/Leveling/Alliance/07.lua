@@ -15,15 +15,14 @@ Ding.RegisterGuide({
         { accept = 244, races = { "NightElf", "Skyborne" }, -- level 19
           note = "This one roams, so scan the surrounding area." },
         { accept = 98407, races = { "NightElf", "Skyborne" } }, -- level 19
-        { turnin = 244, races = { "NightElf", "Skyborne" }, -- level 19
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 244, races = { "NightElf", "Skyborne" } }, -- level 19
         { go = { 1433, 25.46, 59.37 }, fly = true, talk = 931, races = { "NightElf" }, text = "Fly to Lakeshire" }, -- level 19
         { accept = 125 }, -- level 19
         { accept = 118 }, -- level 19
         { accept = 120, -- level 19
           note = "The NPC is indoors." },
         { accept = 129, -- level 19
-          note = "This one roams, so scan the surrounding area. The NPC is indoors." },
+          note = "The NPC is indoors." },
         { turnin = 65, accept = 132, -- level 19
           note = "The NPC is indoors, one floor up." },
         { accept = 92, -- level 19
@@ -61,8 +60,7 @@ Ding.RegisterGuide({
         { accept = 244, races = { "Human" } }, -- level 19
         { accept = 98407, races = { "Human" } }, -- level 19
         { turnin = 244, races = { "Human" } }, -- level 19
-        { accept = 246, -- level 19
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 246 }, -- level 19
         { complete = 98407, races = { "NightElf", "Skyborne" } }, -- level 19
         { accept = 98407, races = { "Dwarf", "Gnome" } }, -- level 19
         { complete = 98407, races = { "Dwarf", "Gnome" } }, -- level 19
@@ -73,8 +71,7 @@ Ding.RegisterGuide({
         { complete = 246 }, -- level 19
         { complete = 92, keep = 1081 }, -- level 19
         { level = 20, patrol = { { 1433, 16.97, 74.04 }, { 1433, 17.77, 70.57 }, { 1433, 14.66, 70.35 }, { 1433, 13.96, 67.43 }, { 1433, 14.34, 64.35 }, { 1433, 17.28, 67.35 }, { 1433, 11.37, 69.46 }, { 1433, 12.37, 72.46 }, { 1433, 9.28, 73.46 }, { 1433, 6.77, 71.76 }, { 1433, 5.76, 75.36 }, { 1433, 3.37, 73.34 }, { 1433, 3.34, 77.44 }, { 1433, 4.27, 80.35 }, { 1433, 6.76, 78.45 }, { 1433, 7.27, 81.43 }, { 1433, 5.66, 84.26 }, { 1433, 3.28, 86.24 }, { 1433, 9.77, 76.54 } } }, -- level 20
-        { turnin = 246, -- level 20
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 246 }, -- level 20
         { turnin = 98407, races = { "NightElf", "Skyborne" } }, -- level 20
         { turnin = 98407, races = { "Dwarf", "Gnome" } }, -- level 20
         { turnin = 98407, races = { "Human" } }, -- level 20
@@ -150,7 +147,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { turnin = 130, accept = 131 }, -- level 20
         { turnin = 131, sticky = 124, -- level 20
-          note = "This one roams, so scan the surrounding area. The NPC is indoors." },
+          note = "The NPC is indoors." },
         { complete = 89, -- level 20
           note = "Your targets here are gnolls. Skip Redridge Alphas; they don't carry them." },
         { complete = 124 }, -- level 20
@@ -158,7 +155,7 @@ Ding.RegisterGuide({
         { go = { 1433, 46.84, 45.28 }, classes = { "ROGUE" }, text = "Raise Lockpicking to 95", -- level 20
           note = "Look for little gray coffers of metal. The NPC is indoors." },
         { complete = 2282, classes = { "ROGUE" }, -- level 20
-          note = "The NPC is indoors." },
+          note = "The object is indoors." },
         { turnin = 124 }, -- level 20
         { turnin = 89 }, -- level 20
         { turnin = 2282, when = { ready = 2282 }, classes = { "ROGUE" } }, -- level 20

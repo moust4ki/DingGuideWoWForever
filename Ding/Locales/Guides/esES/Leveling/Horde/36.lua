@@ -27,8 +27,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h36-ungoro-crater", {
         "Búscalo en lo alto del acantilado.",
     ["Climb the trail"] =
         "Sube por el sendero",
-    ["The NPC is up on the summit."] =
-        "El PNJ está arriba, en la cima.",
+    ["The object is up on the summit."] =
+        "El objeto está arriba, en la cima.",
     ["The targets are flame elementals. An elite foe waits on the summit; steer clear."] =
         "Los objetivos son elementales de fuego. Hay un enemigo élite en la cumbre; mantente lejos.",
     ["For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears. Your objective lies in a little cavern."] =
@@ -51,6 +51,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h36-ungoro-crater", {
         "Sube a la enorme pendiente. Cuidado con los enemigos élite aquí. Después, huye.",
     ["Stand on the neighboring ledge, then hop into this crack in the wall"] =
         "Ponte en la repisa de al lado y luego salta a esta grieta de la pared",
+    ["The object is indoors."] =
+        "El objeto está dentro.",
     ["Finish the quest named The Videre Elixir. Keep the elixir in your bags; never consume it. You will die from it."] =
         "Termina la misión The Videre Elixir. Guarda el elixir en tus bolsas; no te lo bebas nunca. Te matará.",
     ["The NPC patrols a long route; look along it."] =

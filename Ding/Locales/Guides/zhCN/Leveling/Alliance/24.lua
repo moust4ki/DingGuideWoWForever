@@ -11,8 +11,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a24-badlands", {
         "拿上这些，之后在荒芜之地可以轻松交任务。NPC在室内。",
     ["This one roams, so scan the surrounding area. The NPC is indoors."] =
         "它会四处游荡，在周围找找。NPC在室内。",
-    ["The NPC or item sits on the rocky shelf above."] =
-        "NPC或物品在上方的岩石平台上。",
+    ["The object sits on the rocky shelf above."] =
+        "该物件在上方的岩石平台上。",
     ["Fight the dwarves."] =
         "与矮人战斗。",
     ["Look for a timber box. The targets are spread over several spots."] =

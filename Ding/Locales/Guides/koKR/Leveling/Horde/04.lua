@@ -21,8 +21,6 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h04-silverpine-forest", {
         "공동묘지로 날아가세요",
     ["Fly to Undercity"] =
         "언더시티로 날아가세요",
-    ["This one roams, so scan the surrounding area."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요.",
     ["Go down into the tomb"] =
         "무덤 안으로 내려가세요",
     ["This is below ground, on the crypt's lower floor."] =
@@ -33,14 +31,14 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h04-silverpine-forest", {
         "대상은 늑대인간입니다.",
     ["Walk over the span"] =
         "다리를 건너가세요",
-    ["Be ready for a fight right away. The NPC is indoors, one floor up."] =
-        "바로 전투가 시작되니 대비하세요. NPC는 건물 안 한 층 위에 있습니다.",
+    ["Be ready for a fight right away. The object is indoors, one floor up."] =
+        "바로 전투가 시작되니 대비하세요. 그 물체는 건물 안 한 층 위에 있습니다.",
     ["The NPC is indoors, one floor up."] =
         "NPC는 건물 안 한 층 위에 있습니다.",
     ["The quest giver stands outdoors, not indoors."] =
         "퀘스트 제공자는 건물 안이 아니라 바깥에 서 있습니다.",
-    ["He has three ghouls at his side. Hold off until one steps out, then slay it. The NPC is indoors."] =
-        "구울 셋을 곁에 데리고 있습니다. 한 마리가 나올 때까지 기다렸다가 처치하세요. NPC는 건물 안에 있습니다.",
+    ["He has three ghouls at his side. Hold off until one steps out, then slay it. The target is indoors."] =
+        "구울 셋을 곁에 데리고 있습니다. 한 마리가 나올 때까지 기다렸다가 처치하세요. 대상은 건물 안에 있습니다.",
     ["Your targets here are gnolls. The target shows up here sooner or later."] =
         "여기서 대상은 놀입니다. 대상은 조만간 여기에 나타납니다.",
     ["Hunt spiders for it. The targets roam the mine and the area around it."] =

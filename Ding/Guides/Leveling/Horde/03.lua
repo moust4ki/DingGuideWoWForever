@@ -146,7 +146,7 @@ Ding.RegisterGuide({
           note = "Hunt the crabs." },
         { go = { 1411, 50.79, 79.17 }, text = "Stay on the trail" }, -- level 6
         { complete = 786, -- level 6
-          note = "The NPC is indoors." },
+          note = "The object is indoors." },
         { accept = 99123, races = { "Orc", "Troll" } }, -- level 6
         { complete = 99123, races = { "Orc", "Troll" } }, -- level 6
         { complete = 786 }, -- level 6
@@ -186,11 +186,11 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { go = { 1411, 58.96, 58.33 }, text = "Head indoors" }, -- level 7
         { complete = 784, collect = { { 4882, 1 } }, -- level 7
-          note = "The NPC is indoors, one floor up. Consider bringing a group for this one." },
+          note = "The target is indoors, one floor up. Consider bringing a group for this one." },
         { complete = 96822, races = { "Orc", "Troll" } }, -- level 7
         { go = { 1411, 59.86, 57.81 }, text = "Stay on the trail and keep climbing the steps" }, -- level 7
         { collect = { { 4881, 1 } }, -- level 7
-          note = "The NPC stands on the highest level of this structure." },
+          note = "The object is on the highest level of this structure." },
         { accept = 830, useitem = 4881 }, -- level 7
         { complete = 791 }, -- level 7
         { complete = 784 }, -- level 8
@@ -347,8 +347,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { accept = 2983, classes = { "SHAMAN" }, -- level 10
           note = "The NPC is indoors." },
-        { turnin = 2983, accept = 1524, classes = { "SHAMAN" }, -- level 10
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 2983, accept = 1524, classes = { "SHAMAN" } }, -- level 10
         { go = { 1411, 36.64, 57.03 }, classes = { "SHAMAN" }, text = "Climb the trail" }, -- level 10
         { turnin = 1524, accept = 1525, classes = { "SHAMAN" }, -- level 10
           note = "The NPC is up on the summit." },
@@ -374,7 +373,7 @@ Ding.RegisterGuide({
         { complete = 97282, races = { "Orc", "Troll" } }, -- level 10
         { turnin = 97282, races = { "Orc", "Troll" } }, -- level 10
         { accept = 816, -- level 10
-          note = "This one roams, so scan the surrounding area. The NPC is indoors." },
+          note = "The NPC is indoors." },
         { complete = 816 }, -- level 10
         { go = { 1411, 36.64, 57.03 }, classes = { "SHAMAN" }, text = "Climb the trail" }, -- level 10
         { turnin = 1525, when = { ready = 1525 }, classes = { "SHAMAN" }, -- level 10
@@ -384,15 +383,14 @@ Ding.RegisterGuide({
           note = "The NPC is up on the summit." },
         { go = { 1411, 38.22, 58.5 }, classes = { "SHAMAN" }, text = "Receive Sapta Sight" }, -- level 10
         { complete = 1526, when = { log = 1526 }, classes = { "SHAMAN" }, -- level 10
-          note = "The NPC is up on the summit." },
+          note = "The target is up on the summit." },
         { turnin = 1526, when = { ready = 1526 }, classes = { "SHAMAN" }, -- level 10
-          note = "The NPC is up on the summit." },
+          note = "The object is up on the summit." },
         { accept = 1527, when = { done = 1526 }, classes = { "SHAMAN" } }, -- level 10
-        { turnin = 1527, when = { log = 1527 }, classes = { "SHAMAN" }, -- level 10
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 1527, when = { log = 1527 }, classes = { "SHAMAN" } }, -- level 10
         { level = 11, xp = 4400, patrol = { { 1411, 42.46, 40.56 }, { 1411, 41.16, 37.84 }, { 1411, 44.46, 35.95 } } }, -- level 11
         { turnin = 816, -- level 11
-          note = "This one roams, so scan the surrounding area. The NPC is indoors." },
+          note = "The NPC is indoors." },
         { accept = 812, classes = { "WARRIOR", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK", "DRUID" }, -- level 11
           note = "The quest giver stands among the boulders. Move fast: the clock is ticking on this one." },
         { go = { 1454, 45.1, 63.84 }, fly = true, talk = 3310, text = "Fly to Orgrimmar", -- level 11
@@ -494,7 +492,7 @@ Ding.RegisterGuide({
         { accept = 361, useitem = 2839, sticky = 358, when = { item = 2839 } }, -- level 12
         { go = { 1420, 54.24, 31.72 }, text = "Drop down with care" }, -- level 12
         { complete = 398, -- level 12
-          note = "The NPC is indoors." },
+          note = "The target is indoors." },
         { complete = 368, sticky = 358, -- level 12
           note = "Fight the murlocs." },
         { complete = 358 }, -- level 12

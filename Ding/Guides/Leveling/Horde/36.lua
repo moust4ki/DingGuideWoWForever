@@ -56,7 +56,7 @@ Ding.RegisterGuide({
         { accept = 974, sticky = 4502 }, -- level 53
         { go = { 1449, 46.26, 45.59 }, text = "Climb the trail" }, -- level 53
         { complete = 974, useitem = 12472, -- level 53
-          note = "The NPC is up on the summit." },
+          note = "The object is up on the summit." },
         { turnin = 974, accept = 980 }, -- level 53
         { complete = 4145, -- level 53
           note = "The targets are mobile plant monsters." },
@@ -127,7 +127,7 @@ Ding.RegisterGuide({
           note = "Get onto the massive incline. Watch out for elite foes here. Flee afterward." },
         { go = { 1444, 44.56, 9.85 }, text = "Stand on the neighboring ledge, then hop into this crack in the wall" }, -- level 54
         { collect = { { 11242, 1 } }, object = 164798, spots = { { 1444, 44.6, 10.18 } }, -- level 54
-          note = "The NPC is indoors." },
+          note = "The object is indoors." },
         { complete = 3909, talk = 7775, -- level 54
           note = "Finish the quest named The Videre Elixir. Keep the elixir in your bags; never consume it. You will die from it." },
         { train = true, talk = 12042, races = { "Tauren" }, classes = { "DRUID" } }, -- level 54

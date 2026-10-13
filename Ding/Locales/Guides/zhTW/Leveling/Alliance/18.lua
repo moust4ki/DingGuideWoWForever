@@ -31,16 +31,14 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a18-desolace", {
         "這個任務由一本小書開始。",
     ["The targets are lobsters. Your targets sit below the water's surface."] =
         "目標是龍蝦。目標在水面下。",
-    ["The NPC waits on the tower's highest floor."] =
-        "NPC在塔的最頂層。",
+    ["The target is on the tower's highest floor."] =
+        "目標在塔的最頂層。",
     ["For this quest you guard an NPC on the move. If she is absent, wait for her to reappear. The NPC is indoors."] =
         "這個任務要護送一名移動中的NPC。如果她不在，等她重生。NPC在室內。",
-    ["Draw him to the doorway so other foes stay out of it. The NPC is indoors."] =
-        "把他引到門口，免得其他敵人加入戰鬥。NPC在室內。",
+    ["Draw him to the doorway so other foes stay out of it. The target is indoors."] =
+        "把他引到門口，免得其他敵人加入戰鬥。目標在室內。",
     ["Let the conversation play out. Escort Dalinda Malem and keep her alive."] =
         "讓對話播完。護送黛琳達·瑪雷姆，並保住她的性命。",
-    ["This one roams, so scan the surrounding area."] =
-        "這個會四處走動，留意周圍一帶。",
     ["The targets here are centaurs. Magram Pack Runners patrol with 2 hyena escorts; steer clear."] =
         "這裡的目標是半人馬。瑪格拉姆馴犬者會帶著2隻土狼護衛巡邏；避開它們。",
     ["Stay away from Ghost Walker Post."] =

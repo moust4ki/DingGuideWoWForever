@@ -22,11 +22,9 @@ Ding.RegisterGuide({
           note = "If the NPC is absent, stay until he reappears." },
         { go = { 1441, 46.96, 48.28 }, text = "Take a lift down to Thousand Needles, walk the road toward Freewind Post, then a lift back up" }, -- level 28
         { go = { 1441, 45.09, 49.14 }, fly = true, talk = 4317, text = "Fly to Freewind Post" }, -- level 28
-        { accept = 4767, -- level 28
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 4767 }, -- level 28
         { accept = 4821 }, -- level 28
-        { turnin = 4542, accept = 4841, -- level 28
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 4542, accept = 4841 }, -- level 28
         { turnin = 1196, accept = 1197, sticky = 4841, -- level 28
           note = "The NPC is indoors." },
         { go = { 1441, 44.08, 37.31 }, text = "Go into the cavern" }, -- level 28
@@ -53,8 +51,7 @@ Ding.RegisterGuide({
           note = "With the coming hand-ins, this brings you to level 29." },
         { go = { 1441, 46.96, 48.28 }, text = "Take the lift upward" }, -- level 28
         { turnin = 4821, accept = 4865 }, -- level 28
-        { turnin = 4841, -- level 28
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 4841 }, -- level 28
         { turnin = 1197, -- level 28
           note = "The NPC is indoors." },
         { go = { 1441, 14.81, 32.87 }, text = "Climb the trail" }, -- level 29
@@ -65,7 +62,7 @@ Ding.RegisterGuide({
           note = "For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears. Keep away from Heartrazor." },
         { complete = 4770, elite = true }, -- level 29
         { complete = 1131, patrol = { { 1441, 18.27, 26.69 }, { 1441, 17.23, 29.56 }, { 1441, 14.7, 30.71 }, { 1441, 11.04, 22.54 }, { 1441, 13.33, 19.77 }, { 1441, 14.88, 19.55 }, { 1441, 17.23, 18.86 }, { 1441, 18.77, 24.75 } }, -- level 29
-          note = "Steelsnap is a brown hyena with 2 hyena escorts. The NPC patrols a long route; look along it. The target appears near 17.3, 22.2 in Thousand Needles." },
+          note = "Steelsnap is a brown hyena with 2 hyena escorts. The target patrols a long route; look along it. The target appears near 17.3, 22.2 in Thousand Needles." },
         { turnin = 4770, elite = true, when = { log = 4770 } }, -- level 29
         { turnin = 4865, accept = 5062, -- level 29
           note = "This one roams, so scan the surrounding area." },
@@ -87,10 +84,8 @@ Ding.RegisterGuide({
         { talk = 8356, bank = 5838, -- level 29
           note = "The NPC is indoors." },
         { turnin = 1153 }, -- level 29
-        { turnin = 4767, -- level 29
-          note = "This one roams, so scan the surrounding area." },
-        { accept = 5064, -- level 29
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 4767 }, -- level 29
+        { accept = 5064 }, -- level 29
         { accept = 5147 }, -- level 29
         { accept = 98070 }, -- level 29
         { complete = 98070 }, -- level 29
@@ -99,9 +94,9 @@ Ding.RegisterGuide({
         { go = { 1441, 31.29, 36.91 }, text = "Climb the trail and cross the rope bridges" }, -- level 30
         { go = { 1441, 35.05, 31.46 }, text = "Walk over the rope bridge" }, -- level 30
         { complete = 5064, -- level 30
-          note = "The objective lies atop the mesa. The NPC is indoors." },
+          note = "The objective lies atop the mesa. The object is indoors." },
         { complete = 5064, -- level 30
-          note = "The objective lies atop the mesa. The NPC is indoors." },
+          note = "The objective lies atop the mesa. The object is indoors." },
         { complete = 5064, -- level 30
           note = "The objective lies atop the mesa." },
         { go = { 1441, 35.73, 30.97 }, elite = true, text = "Walk over the rope bridge" }, -- level 30
@@ -124,8 +119,7 @@ Ding.RegisterGuide({
         { go = { 1441, 7.63, 10.58 }, text = "Climb the road into Feralas", -- level 30
           note = "Watch out: the foes here are above your level. Should you die, come back to life at Camp Mojache." },
         { go = { 1444, 75.42, 44.32 }, fly = true, talk = 8020, text = "Fly to Camp Mojache" }, -- level 30
-        { turnin = { 5064, 5147 }, -- level 30
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = { 5064, 5147 } }, -- level 30
         { sethearth = "Freewind Post", talk = 11116, -- level 30
           note = "The NPC is indoors." },
         { turnin = 4904, -- level 30

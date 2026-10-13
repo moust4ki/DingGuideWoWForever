@@ -7,16 +7,14 @@ Ding.RegisterGuideTranslation("esES", "leveling-a11-duskwood-and-redridge-mounta
         "Viaja a Villa Oscura",
     ["Duskwood: Darkshire, in the east of the zone."] =
         "Bosque del Ocaso: Villa Oscura, al este de la zona.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "Este deambula, así que revisa los alrededores. El PNJ está dentro.",
     ["The NPC is indoors."] =
         "El PNJ está dentro.",
-    ["This one roams, so scan the surrounding area."] =
-        "Este deambula, así que revisa los alrededores.",
     ["Flight master at Darkshire"] =
         "Maestro de vuelo de Villa Oscura",
-    ["The target is a ghoul with red skin. This one roams, so scan the surrounding area. The NPC can be indoors or out."] =
-        "El objetivo es un necrófago de piel roja. Este deambula, así que revisa los alrededores. El PNJ puede estar dentro o fuera.",
+    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
+        "Este deambula, así que revisa los alrededores. El PNJ está dentro.",
+    ["The target is a ghoul with red skin. This one roams, so scan the surrounding area. The target can be indoors or out."] =
+        "El objetivo es un necrófago de piel roja. Este deambula, así que revisa los alrededores. El objetivo puede estar dentro o fuera.",
     ["Hunt spiders for it."] =
         "Caza arañas para conseguirlo.",
     ["The targets are ghouls. Targets are both in the tomb and around it."] =
@@ -27,8 +25,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a11-duskwood-and-redridge-mounta
         "Usa Robar sobre un Malformed Defias Drone. Este deambula, así que revisa los alrededores.",
     ["Use Sap on Klaven Mortwake, then open the chest. Opening it puts a harmful effect on you. Climb to the highest floor of the building."] =
         "Usa Aporrear sobre Klaven Mortwake y luego abre el cofre. Al abrirlo recibes un efecto perjudicial. Sube al piso más alto del edificio.",
-    ["Be ready for a fight right away. The NPC is indoors."] =
-        "Prepárate para luchar de inmediato. El PNJ está dentro.",
+    ["Be ready for a fight right away. The object is indoors."] =
+        "Prepárate para luchar de inmediato. El objeto está dentro.",
     ["Climb the trail across the mountains"] =
         "Sube por el sendero a través de las montañas",
     ["Take the trail that circles the peak"] =
@@ -43,6 +41,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a11-duskwood-and-redridge-mounta
         "Sube al piso más alto del edificio.",
     ["Beware of foes lurking in stealth."] =
         "Cuidado con los enemigos ocultos en sigilo.",
+    ["The object is indoors, one floor up."] =
+        "El objeto está dentro, un piso más arriba.",
     ["Head indoors"] =
         "Ve al interior",
     ["The NPC waits on the lower level, indoors."] =
@@ -87,6 +87,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a11-duskwood-and-redridge-mounta
         "El objetivo es el quinto jefe de la mazmorra.",
     ["You'll find them all over the instance."] =
         "Los encontrarás por toda la instancia.",
+    ["This one roams, so scan the surrounding area."] =
+        "Este deambula, así que revisa los alrededores.",
     ["Learn Guns, Two-Handed Axes and Two-Handed Maces at the weapon master"] =
         "Aprende Armas de fuego, Hachas de dos manos y Mazas de dos manos con el maestro de armas",
     ["Learn Two-Handed Axes at the weapon master"] =

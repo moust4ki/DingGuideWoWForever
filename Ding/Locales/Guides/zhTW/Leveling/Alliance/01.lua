@@ -101,14 +101,14 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a01-human-starter", {
         "向武器大師學習單手劍和法杖",
     ["Head indoors"] =
         "進入室內",
-    ["Step onto the pink rune. Look within the tomb. The NPC waits on the lower level, indoors."] =
-        "站上粉紅色的符文。在墓穴裡面找。NPC在室內的下層。",
+    ["The target is indoors."] =
+        "目標在室內。",
+    ["Step onto the pink rune. Look within the tomb. The target is on the lower level, indoors."] =
+        "站上粉紅色的符文。在墓穴裡面找。目標在室內的下層。",
     ["The NPC stands one level over the crypt. The NPC waits on the lower level, indoors."] =
         "NPC站在地穴上方一層。NPC在室內的下層。",
-    ["This one roams, so scan the surrounding area. The NPC is indoors. Be ready for a fight right away."] =
-        "這個會四處走動，留意周圍一帶。NPC在室內。準備好立刻戰鬥。",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "這個會四處走動，留意周圍一帶。NPC在室內。",
+    ["The NPC is indoors. Be ready for a fight right away."] =
+        "NPC在室內。準備好立刻戰鬥。",
     ["Learn Blacksmithing from the trainer"] =
         "向訓練師學習鍛造",
     ["Learn Mining from the trainer"] =
@@ -183,6 +183,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a01-human-starter", {
         "離開碎石怪之谷，然後沿著道路走",
     ["The NPC waits on the tower's highest floor."] =
         "NPC在塔的最頂層。",
+    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
+        "這個會四處走動，留意周圍一帶。NPC在室內。",
     ["Head up the incline"] =
         "走上斜坡",
 })
