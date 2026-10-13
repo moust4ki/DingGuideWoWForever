@@ -107,7 +107,7 @@ return function(combined, opts)
             Ding.Finder.trip = nil
             Ding.Finder:Close()
         end
-        ui.autoEquip = false
+        ui.autoEquip, ui.suggestGear = false, true
         H.forgetSpells()
         H.setSkillLines({})
         if Ding.Directory then Ding.Directory:Forget() end

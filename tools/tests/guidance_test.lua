@@ -153,7 +153,13 @@ T.test("gear: a clear upgrade in the bags: banner, row, and the item button equi
     local row = rowOf("gear")
     T.ok(row, "no gear row")
     T.eq(row.kind, "use")
-    T.ok(row.counter and row.counter:find("^%+"), "no gain on the row")
+    -- How much better, in words (no bare "+4" counter, read as a quest's): clearly better than
+    -- the old vest, and how to equip it or say no.
+    T.eq(row.counter, nil, "a bare number on the row")
+    T.ok(H.plain(row.sub):find(H.plain(L.GEAR_CLEARLY:format(Ding.Compat.EquippedLink(5) or "")), 1, true),
+        "not said in words: " .. H.plain(row.sub))
+    local how = Ding.Gamepad:Active() and L.GEAR_ROW_PAD or L.GEAR_ROW_MOUSE
+    T.ok(H.plain(row.sub):find(how, 1, true), "how to equip it or say no is missing: " .. H.plain(row.sub))
     T.eq(B:Wanted(), MAIL_CHEST, "the item button does not offer it")
     T.eq(B.button:GetAttribute("item"), "item:" .. MAIL_CHEST)
     T.ok(H.plain(B.button.name:GetText()):find(L.EQUIP_ITEM:format(""), 1, true), "no \"Equip\" on the button")
@@ -228,6 +234,34 @@ T.test("gear: auto-equip, only an item already bound, out of combat", function()
     T.eq(H.equipped(5), OLD_CHEST, "equipped in combat")
     H.setCombat(false); H.fire("PLAYER_REGEN_ENABLED"); H.flush()
     T.eq(H.equipped(5), MAIL_CHEST, "not equipped after combat")
+end)
+
+T.test("gear: \"Suggest better gear\" off: no row, no banner, nothing on the item button; auto-equip apart", function()
+    start()
+    gear()
+    Ding.db.ui.suggestGear = false
+    H.putInBag(0, 1, MAIL_CHEST)
+    bagsChanged()
+    T.ok(Gear.upgrade and Gear.upgrade.id == MAIL_CHEST, "the bags are still looked at")
+    T.ok(not (Ding.GearHint.banner and Ding.GearHint.banner:IsShown()), "a banner with the option off")
+    T.eq(rowOf("gear"), nil, "a row with the option off")
+    T.ok(B:Wanted() ~= MAIL_CHEST, "the item button offers it with the option off")
+    -- Auto-equip is its own option: it still wears an item already bound.
+    Ding.db.ui.autoEquip = true
+    H.setItemInfo(MAIL_CHEST, { name = "Mail Hauberk", equipLoc = "INVTYPE_CHEST", classID = 4, subclassID = 3, bound = true,
+        stats = { ITEM_MOD_STRENGTH_SHORT = 4, ITEM_MOD_STAMINA_SHORT = 3, RESISTANCE0_NAME = 120 } })
+    Gear.upgrade = nil
+    bagsChanged()
+    T.eq(H.equipped(5), MAIL_CHEST, "auto-equip follows the option to suggest")
+    -- The option, in the Automation tab, on by default; back on, the row comes back.
+    T.eq(Ding.DEFAULTS.ui.suggestGear, true)
+    Ding.Config:Open("automation"); H.flush()
+    local found
+    for _, r in ipairs(Ding.Config.TABS[Ding.Config.TAB.automation].rows) do
+        if r.opts and r.opts.label == L.SUGGEST_GEAR then found = r end
+    end
+    T.ok(found, "no option in the Automation tab")
+    Ding.Config:Close(); H.flush()
 end)
 
 T.test("gear: the step's own item comes first on the button", function()

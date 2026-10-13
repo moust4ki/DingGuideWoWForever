@@ -155,7 +155,8 @@ local TAB_SETTINGS = {
     route = { { "ui", "hearth" }, { "ui", "deathSkip" }, { "ui", "elites" }, { "ui", "dungeons" },
         { "ui", "dungeonChoice" }, { "ui", "trainerSteps" }, { "ui", "flightSteps" }, { "ui", "serviceSteps" } },
     automation = { { "ui", "autoAccept" }, { "ui", "autoTurnin" }, { "ui", "offers" }, { "ui", "chooseReward" },
-        { "ui", "skipGrey" }, { "ui", "sellGrey" }, { "ui", "repair" }, { "ui", "autoEquip" }, { "ui", "autoFly" } },
+        { "ui", "skipGrey" }, { "ui", "sellGrey" }, { "ui", "repair" }, { "ui", "suggestGear" }, { "ui", "autoEquip" },
+        { "ui", "autoFly" } },
     arrow = { { "arrow", "shown" }, { "arrow", "style" }, { "arrow", "size" }, { "arrow", "loop" },
         { "arrow", "worldMap" }, { "minimap", "pins" }, { "ui", "markTarget" }, { "ui", "mobIcons" },
         { "ui", "mobTooltip" }, { "ui", "farPlates" }, { "arrow", "tomtom" }, { "arrow", "mode" } },
@@ -535,6 +536,12 @@ local function automationRows(canvas, width)
         check(L.SELL_GREY, "sellGrey", L.SELL_GREY_DESC),
         check(L.AUTO_REPAIR, "repair"),
         UI.HeaderRow(canvas, L.HEADER_EQUIPMENT, width),
+        -- The upgrade's row, banner and item button; auto-equip stays its own option.
+        check(L.SUGGEST_GEAR, "suggestGear", L.SUGGEST_GEAR_DESC, function(v)
+            if not v and Ding.GearHint then Ding.GearHint:Hide() end
+            if Ding.ItemButton and Ding.ItemButton.ScheduleUpdate then Ding.ItemButton.ScheduleUpdate() end
+            Ding.Panel:Update()
+        end),
         check(L.AUTO_EQUIP, "autoEquip", L.AUTO_EQUIP_DESC, function(v) if v then Ding.Gear:AutoEquip() end end),
     }
     local talent = talentRow(canvas, width)

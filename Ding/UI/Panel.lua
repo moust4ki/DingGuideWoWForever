@@ -69,6 +69,29 @@ local function inInstance()
 end
 
 local function link(s) return UI.Colored("accent", s) end
+
+-- A gear upgrade in words, not a bare "+4" that reads like a quest's counter (Yendi): how much
+-- better than what it replaces, for the class (Rewards:Compare).
+local GEAR_CLEARLY = 0.25    -- a gain of a quarter of what is worn or more: clearly better
+local function gearVerdict(up)
+    local cmp = Ding.Rewards:Compare(up.link, up.equipLoc)
+    if not (cmp and cmp.replaced) then return L.GEAR_EMPTY, cmp end
+    local clearly = cmp.before <= 0 or cmp.gain >= cmp.before * GEAR_CLEARLY
+    return (clearly and L.GEAR_CLEARLY or L.GEAR_SLIGHTLY):format(cmp.replaced), cmp
+end
+P.GearVerdict = gearVerdict
+
+-- "Agility +3, Stamina +2": the stats the class counts, the client's names.
+local function statsText(stats)
+    local parts = {}
+    for i, s in ipairs(stats) do
+        if i > 4 then break end
+        local value = math.abs(s.diff) % 1 == 0 and ("%d"):format(s.diff) or ("%.1f"):format(s.diff)
+        if s.diff > 0 then value = "+" .. value end
+        parts[#parts + 1] = tostring(_G[s.stat] or s.stat) .. " " .. value
+    end
+    return table.concat(parts, ", ")
+end
 local function quoted(q) return L.QUOTE:format(Ding.Data:QuestName(q)) end
 
 -- The quest with its level first, "[29] “Name”" (the name alone when the level is unknown).
@@ -730,14 +753,21 @@ end
 function P:ShowQuest(row, owner)
     local q = row and row.quest
     if row and row.action == "gear" and row.item then
-        -- The upgrade itself: the game's own card of the item, and what its "+12" counts.
+        -- The upgrade itself: the game's own card of the item, then in words what it replaces,
+        -- what changes and how the guide compares them.
         GameTooltip:SetOwner(owner, "ANCHOR_RIGHT")
         if not pcall(GameTooltip.SetItemByID, GameTooltip, row.item) then
             GameTooltip:SetText(Compat.ItemName(row.item) or "?")
         end
-        local up = Ding.Gear and Ding.Gear.upgrade
+        local up = Ding.Gear and Ding.Gear:Suggested()
         if up and up.id == row.item then
-            GameTooltip:AddLine(L.GEAR_GAIN:format(math.floor(up.gain + 0.5)), C.accent[1], C.accent[2], C.accent[3], true)
+            local verdict, cmp = gearVerdict(up)
+            GameTooltip:AddLine(verdict, C.accent[1], C.accent[2], C.accent[3], true)
+            if cmp and cmp.replaced then GameTooltip:AddLine(L.GEAR_REPLACES:format(cmp.replaced), 0.8, 0.8, 0.8, true) end
+            if cmp and #cmp.stats > 0 then
+                GameTooltip:AddLine(L.GEAR_STATS:format(statsText(cmp.stats)), 0.8, 0.8, 0.8, true)
+            end
+            GameTooltip:AddLine(L.GEAR_SCORE, 0.8, 0.8, 0.8, true)
         end
         addMeaning(row)
         GameTooltip:Show()
@@ -1527,11 +1557,12 @@ function P:Extras(step, content)
             text = (#weapon.weapons > 1 and L.WEAPONS_TO_LEARN or L.WEAPON_TO_LEARN):format(text, best.name or "?",
                 Ding.Directory:Place(best.point) or "?") }
     end
-    local up = Ding.Gear and Ding.Gear.upgrade
+    local up = Ding.Gear and Ding.Gear:Suggested()
     if up then
         local pad = Ding.Gamepad:Active()
+        -- How much better in words, then how to equip it or say no: sentences, no "+4" counter.
         content[#content + 1] = { action = "gear", item = up.id, text = L.GEAR_ROW:format(up.link or "?"),
-            counter = ("+%d"):format(math.floor(up.gain + 0.5)), sub = pad and L.GEAR_ROW_PAD or L.GEAR_ROW_MOUSE }
+            sub = gearVerdict(up) .. "\n" .. (pad and L.GEAR_ROW_PAD or L.GEAR_ROW_MOUSE) }
     end
     -- A quest found elsewhere in the guide (P:FindQuest): go there, or never mind.
     local offer = self.findOffer

@@ -41,6 +41,7 @@ local DEFAULTS = {
         chooseReward = false, sellGrey = true, repair = true, markTarget = true, serviceSteps = true,
         offers = true,   -- beside an NPC's window, what the guide does with its quests (UI/Offers.lua)
         trainerSteps = true, flightSteps = true, autoEquip = false, autoFly = false,
+        suggestGear = true,   -- a better piece of gear in the bags: row, banner, item button (Core/Gear.lua)
         -- Quest monsters (UI/QuestMobs.lua): marks on enemy nameplates, the tooltip line, and
         -- the enemy nameplates' distance raised to the client's maximum.
         mobIcons = true, mobTooltip = true, farPlates = false },
