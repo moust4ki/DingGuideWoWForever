@@ -644,7 +644,9 @@ accent #5BB4FF, the Noto Sans font shipped with the addon, rounded shapes from t
   "Ding · guide", minimize, close), step bar (previous / next bindings as gamepad
   chips, ‹ "Step 3 / 42" ›, zone), the step's lines and a progress bar.
   One line per action and per quest log objective: icon (check mark, ◆ kill, ● collect,
-  item, ? turn in, ! accept), text on two lines at most with names in blue, a "2/6" counter
+  item, ? turn in, ! accept), text wrapped whole with names in blue (no text of a row is ever
+  cut: the row grows, at every width; the minimized window's one line shows its row whole,
+  with its note, on hover), a "2/6" counter
   on the right, the guide note underneath. States: done (green), to do (red),
   impossible (gray: level too low, quest missing from the log). A quest is always named with
   its level first, "Accept [22] “quest”" (`L.QUEST_WITH_LEVEL`). A quest's objectives come
@@ -655,7 +657,7 @@ accent #5BB4FF, the Noto Sans font shipped with the addon, rounded shapes from t
   starts on the first row to do (past the header); the D-pad also stops on headers; the
   "target" binding (`DING_CYCLE`) passes over them.
 - **Notices** (state "notice", `action = "notice"`): what concerns the whole window rather than
-  one row of the step gets a box of its own (no icon, 11 Regular on up to three lines): right
+  one row of the step gets a box of its own (no icon, 11 Regular, wrapped whole): right
   under the step, the way there (`travel`: the travel hint, then the itinerary), a trip of the
   NPC directory (`trip`: with the way there in its box and "A: back to the guide"; A or a click
   on it ends the trip) and why steps were passed (`skipped`); after the rows added under

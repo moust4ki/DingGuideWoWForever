@@ -30,10 +30,10 @@ return function(opts)
     local Methods = {}
     for _, m in ipairs({ "SetFrameStrata", "SetClampedToScreen", "SetMovable", "EnableMouse",
         "RegisterForDrag", "StartMoving", "StopMovingOrSizing", "SetUserPlaced", "SetJustifyH",
-        "SetJustifyV", "SetWordWrap", "SetTexCoord",
+        "SetJustifyV", "SetTexCoord",
         "SetDesaturated", "SetStatusBarTexture", "SetStatusBarColor", "SetMinMaxValues",
         "SetNormalTexture", "SetPushedTexture", "SetDisabledTexture", "SetHighlightTexture",
-        "SetCheckedTexture", "UnregisterEvent", "SetBlendMode", "SetMaxLines",
+        "SetCheckedTexture", "UnregisterEvent", "SetBlendMode",
         "SetOrientation", "SetThumbTexture", "SetValueStep", "SetObeyStepOnDrag", "EnableMouseWheel",
         "RegisterForClicks", "EnableGamePadButton", "EnableKeyboard",
         "SetPropagateKeyboardInput", "SetShadowOffset", "SetShadowColor", "SetSpacing", "AddMaskTexture" }) do
@@ -169,12 +169,29 @@ return function(opts)
         if self.w and self.w > 0 then return math.min(full, self.w) end
         return full
     end
-    function Methods:GetStringHeight()
-        local plain = plainText(self)
-        if plain == "" then return 0 end
-        local width = (self.w and self.w > 0) and self.w or 300
+    -- Wrapping like the client: each "\n" starts a line, a long line wraps at the width set
+    -- (300 by default), a text that does not wrap stays on its lines, SetMaxLines caps them
+    -- (0 = no cap). Returns the lines shown and whether the end is cut (an ellipsis in game).
+    local function layoutLines(w)
+        local plain = plainText(w)
+        if plain == "" then return 0, false end
+        local width = (w.w and w.w > 0) and w.w or 300
         local perLine = math.max(1, math.floor(width / 6))
-        return (self.fontSize or 12) * math.ceil(#plain / perLine)
+        local segments, need, wide = 0, 0, false
+        for segment in (plain .. "\n"):gmatch("(.-)\n") do
+            segments = segments + 1
+            need = need + math.max(1, math.ceil(#segment / perLine))
+            if #segment > perLine then wide = true end
+        end
+        if w.wordWrap == false then return segments, wide and (w.w or 0) > 0 end
+        if w.maxLines and w.maxLines > 0 and need > w.maxLines then return w.maxLines, true end
+        return need, false
+    end
+    function Methods:SetWordWrap(v) self.wordWrap = v and true or false end
+    function Methods:SetMaxLines(n) self.maxLines = n end
+    function Methods:IsTruncated() return select(2, layoutLines(self)) end
+    function Methods:GetStringHeight()
+        return (self.fontSize or 12) * layoutLines(self)
     end
     function Methods:SetTexture(path)
         assert(type(path) == "string" or type(path) == "number", "texture path or file id expected")
