@@ -852,10 +852,24 @@ function E:FindQuest(q)
     return nil
 end
 
+-- The step turns in the quest the player has just turned in: the player is at that step.
+local JUST = 30    -- seconds: its next quest, from the same NPC, comes in that time
+local function turnedInHere(step)
+    local last = E.lastTurnIn
+    if not last or GetTime() - last.at > JUST then return false end
+    for _, q in ipairs(step.turnin or {}) do
+        if q == last.quest then return true end
+    end
+    return false
+end
+
 -- Resuming: a step the player left behind (no work left on a quest in the log, before the
--- player's place) is passed.
+-- player's place) is passed. Not one where the player just turned a quest in: its next quest
+-- comes a moment later, from the same NPC (in game, "Ormer's Revenge" turned in, its sequel
+-- not taken yet: the resume passed the step that takes it and the one that completes it).
 function E:LeftBehind(step, index)
     return self.resumeTo ~= nil and index < self.resumeTo and logKnown() and not backlog(step)
+        and not turnedInHere(step)
 end
 
 -- Why the guide passed a step for the character by itself, in a word the window says
@@ -1317,9 +1331,16 @@ function E:StepCandidates(step, index)
         end
     end
 
-    for _, q in ipairs(step.complete or {}) do
-        if isAccepted(q) and not isReady(q) then
-            for _, target in ipairs(pendingTargets(q)) do appendAll(points, target.points) end
+    -- Objectives to finish: the step's `complete` quests, and the quests it turns in that are
+    -- not ready yet (never straight to the turn-in of a quest whose objectives are not done:
+    -- in game, "Ormer's Revenge" without its raptor's talon).
+    local working = {}
+    for _, key in ipairs({ "complete", "turnin" }) do
+        for _, q in ipairs(step[key] or {}) do
+            if not working[q] and isAccepted(q) and not isReady(q) then
+                working[q] = true
+                for _, target in ipairs(pendingTargets(q)) do appendAll(points, target.points) end
+            end
         end
     end
     -- Goals without a quest: their monsters, items' sources, NPCs, objects, vendors.
@@ -1567,7 +1588,20 @@ function E:Describe(step, preview)
     end
     -- A quest to turn in or work on that is not in the log cannot be done yet.
     local function impossible(q) return not preview and not isAccepted(q) or nil end
+    local completes = {}
+    for _, q in ipairs(step.complete or {}) do completes[q] = true end
     for _, q in ipairs(step.turnin or {}) do
+        -- In the log, its objectives not done: they come first, never a bare "turn in" (in
+        -- game, "Ormer's Revenge" without its raptor's talon).
+        if not completes[q] and Compat.IsInLog(q) and not isReady(q) then
+            lines[#lines + 1] = { icon = ICON.complete, action = "complete", quest = q, done = false,
+                text = L.COMPLETE .. " " .. questLabel(q) }
+            for _, obj in ipairs(Compat.GetObjectives(q)) do
+                if obj.text and not obj.finished then
+                    lines[#lines + 1] = { indent = true, kind = "objective", text = obj.text }
+                end
+            end
+        end
         local who = Ding.Data:FinisherName(q)
         lines[#lines + 1] = { icon = ICON.turnin, action = "turnin", quest = q, done = isTurnedIn(q),
             impossible = impossible(q),
@@ -1788,7 +1822,10 @@ end
 E.ScheduleUpdate = scheduleUpdate
 
 Ding:On("QUEST_TURNED_IN", function(_, questID)
-    if questID then E.turnedIn[questID] = true end
+    if questID then
+        E.turnedIn[questID] = true
+        E.lastTurnIn = { quest = questID, at = GetTime() }
+    end
     scheduleUpdate()
 end)
 Ding:On("QUEST_ACCEPTED", scheduleUpdate)

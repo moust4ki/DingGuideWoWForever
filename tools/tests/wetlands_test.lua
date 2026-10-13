@@ -111,6 +111,66 @@ T.test("the step before the Cursed Crew's own does not list it as another quest"
     T.eq(#rowsOf(CURSED_CREW), 0, "listed as another quest under the step before its own")
 end)
 
+-- "Ormer's Revenge" (in game): asked to turn it in without its raptor's talon. Turning in the
+-- first part, its sequel came a moment later from the same NPC; the resume running (to step 73)
+-- had already passed the step that takes it and the one that completes it.
+local ORMER, ORMER_2, PAST = 295, 296, 299
+local TAKE_2 = stepOf(function(s) return has(s.accept, ORMER_2) end)
+local TALON = stepOf(function(s) return has(s.complete, ORMER_2) end)
+local TURNIN_2 = stepOf(function(s) return has(s.turnin, ORMER_2) end)
+
+-- The hunter at level 28 in the Wetlands, the Ormer quests and the fragments not done yet, no
+-- other quest of the log with work left before them.
+local function ormer()
+    arrive()
+    H.player.level = 28
+    for _, q in ipairs({ ORMER, ORMER_2, PAST, CURSED_CREW, 471, DOOMED_FLEET }) do H.setQuest(q, nil) end
+    H.setQuest(DOOMED_FLEET, "turnedin")
+    H.fire("QUEST_LOG_UPDATE"); H.flush()
+end
+
+T.test("Ormer's Revenge: the sequel taken a moment after the turn-in is not passed", function()
+    ormer()
+    H.accept(ORMER); H.complete(ORMER); H.accept(PAST); H.flush()
+    -- The section taken up again, the character had been further (a resume up to step 73).
+    Ding.char.lastStep[GUIDE] = 73
+    E:Resume(GUIDE, true); H.flush()
+    H.tick(11)
+    T.eq(E.index, TAKE_2, "premise: the resume stops on the turn-in of the first part")
+    H.turnin(ORMER); H.flush()
+    T.eq(E.index, TAKE_2, "the step that takes the sequel passed before it is taken")
+    H.accept(ORMER_2); H.flush()
+    T.eq(E.index, TALON, "the raptor's talon passed")
+end)
+
+T.test("Ormer's Revenge in the log without its talon: complete it first, never a bare turn-in", function()
+    ormer()
+    H.setQuest(ORMER, "turnedin")
+    H.accept(ORMER_2); H.flush()
+    E:SetGuide(GUIDE, TURNIN_2, true); H.flush()
+    H.tick(11)
+    T.eq(E.index, TURNIN_2)
+    local lines = E:Describe(E:CurrentStep())
+    T.eq(lines[1].action, "complete", "the turn-in comes before the quest's objectives")
+    T.eq(lines[1].quest, ORMER_2)
+    local rows = rowsOf(ORMER_2)
+    T.ok(rows[1] and rows[1].action == "objective" and rows[1].state == "todo", "the talon is not listed to do")
+    -- The arrow goes to the raptor, not to Ormer.
+    local ormer = Ding.Data:EndPoints(ORMER_2)[1]
+    T.ok(#E.candidates > 0, "no target")
+    for _, p in ipairs(E.candidates) do
+        T.ok(not (p.map == ormer.map and p.x == ormer.x and p.y == ormer.y), "the arrow goes to the turn-in")
+    end
+    -- The next steps preview says so too, from the fragments' step.
+    Ding.db.panel.preview = 3
+    E:SetGuide(GUIDE, TURNIN_2 - 2, true); H.flush()
+    local said
+    for _, row in ipairs(P.rowsShown) do
+        if row.preview and H.plain(row.text):find(Ding.Data:QuestName(ORMER_2), 1, true) then said = H.plain(row.text) end
+    end
+    T.ok(said and said:find(L.ROW_COMPLETE:match("^(.-)%%s"), 1, true) == 1, "the preview says turn in: " .. tostring(said))
+end)
+
 T.test("further on, the Cursed Crew is said as another quest of the log", function()
     arrive()
     E:SetGuide(GUIDE, APPRENTICE, true); H.flush()

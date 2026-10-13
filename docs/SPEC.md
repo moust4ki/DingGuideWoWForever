@@ -321,6 +321,10 @@ keys of section 2 above.
   blocking the rest of the guide.
 - If a step must complete or turn in a quest missing from the log (skipped for its level,
   abandoned…), Ding first shows "Accept …" and the arrow points to the quest giver.
+- A step that turns in a quest of the log whose objectives are not done never says only "Turn
+  in": "Complete …" and its objectives come first (the next steps preview too), and the arrow
+  goes to them, then to the NPC (in game, 13/10/2026: "Ormer's Revenge" to turn in without
+  its raptor's talon, its "complete" step passed by a resume).
 - **Catching up on prerequisite quests**: a guide quest that cannot be accepted yet because
   an earlier quest in its chain was never turned in (`preQuestSingle`: any one of the quests
   is enough, `preQuestGroup`: all of them, according to QuestieDB) first shows what is left to
@@ -380,7 +384,9 @@ keys of section 2 above.
   items are spent) are not asked again, but it **stops on any quest from the guide's past
   that is still in the log and remains to be completed or turned in** (a quest ready to turn
   in counts: Yendi's feedback, "Filthy Paws" skipped); a step whose log quests are only
-  accepted does not stop it. Then it carries on to the player's place. The steps left behind
+  accepted does not stop it; a step that turns in the quest the player has just turned in
+  (30 s) does: its sequel comes a moment later from the same NPC, and passing on would leave
+  the steps that take and complete it behind. Then it carries on to the player's place. The steps left behind
   remain reachable through "back to a skipped step". "Take this guide up where I am" forgets
   the marks and that place: what is not really done is to do again, the first step still to
   do comes first (a quest skipped earlier included: "Skip" passes it). A character saved
