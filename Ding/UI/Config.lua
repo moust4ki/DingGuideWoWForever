@@ -151,7 +151,7 @@ end
 -- The saved settings each tab shows ("Defaults for this tab" puts them back). The keys
 -- never change: only where they are shown.
 local TAB_SETTINGS = {
-    guide = { { "panel", "shown" }, { "panel", "preview" }, { "panel", "weaponReminder" } },
+    guide = { { "panel", "shown" }, { "panel", "preview" }, { "panel", "weaponReminder" }, { "panel", "why" } },
     route = { { "ui", "hearth" }, { "ui", "deathSkip" }, { "ui", "elites" }, { "ui", "dungeons" },
         { "ui", "dungeonChoice" }, { "ui", "trainerSteps" }, { "ui", "flightSteps" }, { "ui", "serviceSteps" } },
     automation = { { "ui", "autoAccept" }, { "ui", "autoTurnin" }, { "ui", "offers" }, { "ui", "chooseReward" },
@@ -338,6 +338,16 @@ local function guideRows(canvas, width)
             get = function() return panel.weaponReminder end,
             set = function(v)
                 panel.weaponReminder = v and true or false
+                P:Update()
+            end,
+        }, width),
+        -- Why the guide makes its choices (Core/Why.lua): a line under a surprising step, the
+        -- whole reason in the step's tooltips.
+        UI.CheckRow(canvas, Cfg, {
+            label = L.OPT_WHY, desc = L.OPT_WHY_DESC,
+            get = function() return panel.why ~= false end,
+            set = function(v)
+                panel.why = v and true or false
                 P:Update()
             end,
         }, width),

@@ -434,6 +434,13 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   level, one line), under it 16 lower what the guide does, 11 Regular, two lines at most:
   `done` for now, `accent` for a later step, `text.secondary` for another section or a step
   passed, `text.muted` for not in the guide; 6 between quests.
+- **Why the guide makes its choices** (not in the mockup, Core/Why.lua): a surprising step
+  (a detour, a quest taken now or never) gets one more sub-line under its first row still to
+  do, after the guide's note, in the note's style (11 Regular `text.secondary`, never cut): "Why
+  this detour (about 5 min): turning in “…” opens a chain of quests worth a lot of XP (about
+  13,000)." The tooltip of the step's rows (mouse, X in focus mode) ends with a blank line, "Why?"
+  in `accent`, then the reason's lines in light grey (wrapped); a row without a quest (a trip, a
+  level) gets that tooltip too, its text as title. Option "Guide explanations" (Guide tab, on).
 - **TomTom**: optional and **off by default**; Ding's arrow is enough (Yendi's request); the
   old settings are migrated to Ding's arrow.
 - **Minimap button** (Yendi's request): left click opens the settings, right click the guide;
@@ -637,6 +644,10 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   - The guide's focus mode has no button doing what a hint says: it does not change.
 
 ## To check in game (Forever 1.60)
+
+- Why the guide makes its choices: the line under the Duskwood step that turns in "The Legend of
+  Stalvan" at Moonbrook (Leveling, Alliance section 11), at 240 and 300 wide; the "Why?" part of
+  the row tooltips with the mouse and with X in focus mode; nothing more with the option off.
 
 - Quests an NPC offers: `GossipFrame` and `QuestFrame` (names, `GetLeft` / `GetRight` / `GetTop`)
   with the gamepad interface on; the order of `GOSSIP_CLOSED` and `QUEST_DETAIL` when a quest

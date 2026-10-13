@@ -28,6 +28,7 @@ local DEFAULTS = {
         shown = true, point = "TOPRIGHT", x = -260, y = -220, scale = 1, width = 300,
         locked = false, bgAlpha = 0.85, compactInCombat = true,
         hideInInstance = false, keyHints = true, itemButton = true, preview = 0, weaponReminder = true,
+        why = true,      -- why the guide makes its choices: lines under surprising steps, tooltips (Core/Why.lua)
     },
     arrow = { shown = true, point = "CENTER", x = 0, y = 120, size = 56, mode = 0, style = "ding", tomtom = false,
         loop = true, worldMap = true },

@@ -439,6 +439,40 @@ the window opens (the game shows it first; a quest AutoQuest takes closes it mea
 with it (`GOSSIP_CLOSED`, `QUEST_FINISHED`, or the window seen hidden). Option "Quests an NPC
 offers" (Automation tab, **on** by default).
 
+### Why the guide makes its choices (`Core/Why.lua`)
+
+Yendi in game: sent from Duskwood to Westfall and back without knowing why, he doubted the
+guide. The player must understand the guide's choices in plain words (never a color or a code),
+without drowning the window, and only with what is true:
+
+- **Under the step, one short line, only for a surprising choice** (a step's `why` with
+  `short = true`): a detour (a few steps in another zone, or one step far off the way: "Pourquoi
+  ce détour (environ 5 min) : rendre « La légende de Stalvan » ouvre une suite de quêtes qui
+  rapporte beaucoup d'XP (environ 13 000)."), a quest taken now or never (turned in on another
+  continent, the route never back here before). It goes after the guide's note, under the first
+  row still to do; never under the finished step kept on screen. "A lot of XP" from a quarter of
+  the player's current level; figures with "about".
+- **On demand, the whole reason**: the tooltip of the step's own rows (the mouse over a row; X
+  in focus mode), under "Why?": the detour's cost beyond the direct way, the quest it names and
+  the chain it opens (follow-ups the guide does next), the whole detour's XP; when a carried
+  quest is turned in; the levels of the quests after a level step; then "Figures are the
+  guide's estimates." A step without a reason: "The guide plans this step here." A row without a
+  quest (a trip, a level, a goal) gets a tooltip of its own (its text, then why).
+- **Quests left out**: a section's `leftOut` (`{ [quest] = reason }`) says why it does not take
+  a quest (too little XP for the detour, with its figures; its giver, objectives or turn-in off
+  the route; the log full there; a prerequisite or another version the route does not do...).
+  `Why:Quest(q)` reads the active section, then the other sections of its pack for the
+  character, for the panel beside an NPC's window (`UI/Offers.lua`).
+- **Honesty**: the Leveling routes come from older routes; for many choices only the measured
+  effect is known. The reasons are computed offline (`tools/route_why.lua`, §5) from the route's
+  simulation and QuestieDB's chains, and say nothing else: a detour that also visits a trainer, a
+  vendor, a bank, a flight master or an inn (what the simulation does not value) gets no reason;
+  a reason holds only when every race that plays the step finds it.
+- Option "Guide explanations" (`Ding.db.panel.why`, Guide tab, **on** by default): off, no line
+  under the steps and no "Why?" in the tooltips (`Why:Quest` still answers: the NPC panel has its
+  own option). Texts through `Ding.L` (`WHY_*`); a pack's own `why.text` and `leftOut` texts are
+  translated like notes (§2, Languages).
+
 ### Choosing the destination point
 
 | Current action | Candidate points |
@@ -1087,6 +1121,12 @@ Output: a guide file in the format above, and its translation.
    those concerned, a missing prerequisite on the same map is done first, a quest waits for
    its prerequisite's turn-in), and Forever's own quests are inserted where the detour is
    smallest, within the +2 / +1 caps (only they follow them). See `tools/README.md` §7.
+   **Reasons** (`tools/route_why.lua`): on the final simulation, the steps whose choice
+   surprises get a `why` (a detour costing 4 minutes or more beyond the direct way, with what
+   it brings: its turn-ins, the quests taken there and the chains they open; a quest taken now
+   or never), the others an on-demand one (smaller detours, quests carried an hour or more, level
+   steps followed by higher quests); the free-quests audit's verdicts become the sections'
+   `leftOut` (§3, "Why the guide makes its choices"). `--why` lists them.
    The zone guides' optimizer (`draft_guide.lua`) also builds guides over several zones
    (a level bracket over a pool of zones, the order across them optimized), for the
    Skyborne starts (one per side).

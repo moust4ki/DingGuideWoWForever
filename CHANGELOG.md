@@ -20,6 +20,11 @@ Nothing else to install: QuestieDB is no longer needed, and TomTom stays optiona
   count; a line in their tooltip; an option to see enemy nameplates from farther.
 - **Beside an NPC's window**: what the guide does with each quest the NPC offers: now, later in
   the guide, in another section, or not in the guide and why.
+- **Why the guide does this**: when the guide sends you out of your way (a trip to another zone
+  and back, a quest taken now for much later), one line under the step says why, with the XP
+  and the time ("Why this detour (about 5 min): turning in “The Legend of Stalvan” opens a chain
+  of quests worth a lot of XP (about 13,000)."). The whole reason shows in the tooltip of the
+  step's rows (mouse over a row, or X in focus mode). Option "Guide explanations" (Guide tab).
 - **Guide window**
   - Each quest's level and name above its objectives; the next steps show the quest's level too.
   - Texts are never cut: rows grow to show them whole.

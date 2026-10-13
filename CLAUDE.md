@@ -58,6 +58,9 @@ Ding/
                     hand, never run) and writer back to text
     Import.lua      Ding.Import: guides imported as text (checks, ids, DingDB.imported,
                     registered at login), export
+    Why.lua         Ding.Why: why the guide makes its choices, in plain words (a step's `why`, a
+                    section's `leftOut`): a short line under a surprising step, the whole reason
+                    on demand (row tooltips), why a quest is left out (Why:Quest)
     Commands.lua    /ding
   UI/
     Widgets.lua     Ding.UI: design tokens (UI.C), Noto Sans fonts (UI.Font), nine-slice kit
@@ -109,7 +112,9 @@ Ding/
                                 item worth getting off the route, for both sides (`faction`
                                 steps), hand-written
 examples/DingExamplePack/   example guide pack (a separate addon, not in the zip), tested
-tools/              offline scripts (Lua 5.1): list_zone, check_guides, smoke_test, run_tests
+tools/              offline scripts (Lua 5.1): list_zone, check_guides, smoke_test, run_tests;
+                    route_why.lua: the reasons of the Leveling guides (`why`, `leftOut`), measured
+                    on write_leveling.lua's simulation
   wow_mock.lua      mocked WoW API, shared by the smoke test and the unit tests
   tests/*_test.lua  unit tests (one process per file)
 docs/SPEC.md        specification and roadmap
@@ -149,7 +154,8 @@ Contracts between modules:
   "impossible" | "header" | "notice", `counter`, `sub`), built from `Describe` and the quest
   log objectives: a quest's objectives (`nested`) under a row `action = "header"` (its level
   and name) unless a row of the step names the quest; then the notices `action = "notice"`
-  (`notice` = "travel" | "trip" | "skipped"; `P:Content` lines of the same kind make one box),
+  (`notice` = "travel" | "trip" | "skipped"; `P:Content` lines of the same kind make one box;
+  the step's own rows carry `ofStep`: their tooltip says why, `P.shownStep`),
   then the rows `along = true` of `Along.shown` (objectives of other quests near the player,
   after the step's rows and its notes), the extras, the notices "bags" | "cleanup", and the
   preview.
@@ -215,7 +221,13 @@ Contracts between modules:
   its entry for the player's faction when it is a table. `AutoQuest:PlaceEnd()`: the last step at
   the player's place (`Wanted` reads up to it). `Data:NpcQuests(npc)`: the quests an NPC starts.
   `Offers:Classify(q)` -> `{ kind = "now" | "later" | "needed" | "earlier" | "other" | "none",
-  step, guide, reason }`. `Engine:UnusedLogQuests()`: quests
+  step, guide, reason }`. Reasons (`Core/Why.lua`): `Why:Step(step)` -> `{ short, lines,
+  estimates }` or nil (no `why`: the step has no reason), `Why:Short(step)` (the line under the
+  step, nil when not `short` or the option is off), `Why:Detail(step)` (the tooltip's lines,
+  `L.WHY_NONE` without a reason, nil when off), `Why:Quest(q[, guide])` -> text, entry, guide
+  (the section's `leftOut`, else another section of its pack for the character; nil: say
+  nothing), `Why.LeftOutText(entry)`, `Why.XPText(xp, plain)`, `Why.TimeText(seconds)`,
+  `Why.STEP` / `Why.LEFT` (kinds and keys, checked by Import; `check_guides.lua` has the same). `Engine:UnusedLogQuests()`: quests
   of the log the active guide and the next ones never use (listed in the Guide tab; Ding never
   abandons them). `UI.Banner`, `UI.Ring`, `UI.ScreenCenter`: Ding's marks over the game's
   windows, which are only read. `QuestMobs.byNpc` (`[npc id]` = entries best first: `kind`
@@ -279,7 +291,8 @@ Contracts between modules:
   `hearthInn` (`{ inn, name }`: bound during a sethearth step, the client's name of the inn),
   `worldMark` (`{ map, x, y }`: the map waypoint Ding set, not the player's).
   `Ding.db.panel.preview` (0-3 next steps shown), `Ding.db.panel.weaponReminder` (the weapon
-  to learn under the step), `Ding.db.minimap.pins`.
+  to learn under the step), `Ding.db.panel.why` (the guide's explanations, Core/Why.lua),
+  `Ding.db.minimap.pins`.
   The engine places the player only once the quest log has arrived (`Engine.logReady`).
 
 ## Data

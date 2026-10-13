@@ -345,6 +345,8 @@ function P:Rows(content)
         end
     end
     if #rows == 0 then return rows end
+    -- Why the guide makes a surprising choice here (Core/Why.lua): a short line after the note.
+    if content.why then notes[#notes + 1] = content.why end
     -- Objectives under a header naming their quest, unless a row of the step names it already.
     local named, headed, grouped = {}, {}, {}
     for _, row in ipairs(rows) do
@@ -366,6 +368,8 @@ function P:Rows(content)
         grouped[#grouped + 1] = row
     end
     rows = grouped
+    -- The step's own rows: their tooltip says why the guide plans the step (P:ShowQuest).
+    for _, row in ipairs(rows) do row.ofStep = true end
     -- A target in another zone: its zone (and its NPC) after the row's text.
     for _, row in ipairs(rows) do
         if row.state ~= "done" and row.action ~= "level" and row.action ~= "header" then
@@ -558,9 +562,19 @@ function P:Aim(row)
     if #points > 0 then Ding.Arrow:Focus(points) end
 end
 
--- The quest of a row, in a tooltip next to `owner`: name, level, objectives. Ding never
--- opens the game's quest log itself: driving Blizzard's frames from an addon spreads its
--- taint there, and on Forever their secret values then fail by the dozen.
+-- Why the guide plans the step on screen (Core/Why.lua), at the end of a row's tooltip: for the
+-- step's own rows, while the option is on.
+local function addWhy(row)
+    local lines = row and row.ofStep and Ding.Why:Detail(P.shownStep)
+    if not lines then return end
+    GameTooltip:AddLine(" ")
+    GameTooltip:AddLine(L.WHY_TITLE, C.accent[1], C.accent[2], C.accent[3])
+    for _, line in ipairs(lines) do GameTooltip:AddLine(line, 0.8, 0.8, 0.8, true) end
+end
+
+-- The quest of a row, in a tooltip next to `owner`: name, level, objectives, and why the guide
+-- plans its step. Ding never opens the game's quest log itself: driving Blizzard's frames from
+-- an addon spreads its taint there, and on Forever their secret values then fail by the dozen.
 function P:ShowQuest(row, owner)
     local q = row and row.quest
     if row and row.action == "gear" and row.item then
@@ -589,11 +603,21 @@ function P:ShowQuest(row, owner)
         GameTooltip:SetText(Ding.Data:NpcName(row.npc) or "?", 1, 0.82, 0)
         local info = Ding.Data:NpcInfo(row.npc)
         if info then GameTooltip:AddLine(npcLevels(info.minLevel, info.maxLevel), 0.8, 0.8, 0.8) end
+        addWhy(row)
         GameTooltip:AddLine(L.ROW_CLICK, 0.6, 0.6, 0.6, true)
         GameTooltip:Show()
         return
     end
-    if not q then return end
+    if not q then
+        -- A row of the step without a quest (a trip, a level, a goal): its text and why.
+        if not (row and row.ofStep and Ding.Why:Detail(self.shownStep)) then return end
+        GameTooltip:SetOwner(owner, "ANCHOR_RIGHT")
+        GameTooltip:SetText(UI.StripColors(row.text or ""), 1, 1, 1, 1, true)
+        addWhy(row)
+        if #self:PointsOf(row) > 0 then GameTooltip:AddLine(L.ROW_CLICK, 0.6, 0.6, 0.6, true) end
+        GameTooltip:Show()
+        return
+    end
     GameTooltip:SetOwner(owner, "ANCHOR_RIGHT")
     GameTooltip:SetText(Ding.Data:QuestName(q), 1, 0.82, 0)
     local level = Ding.Data:QuestLevel(q)
@@ -608,6 +632,7 @@ function P:ShowQuest(row, owner)
     else
         GameTooltip:AddLine(L.NOT_IN_LOG, 0.8, 0.8, 0.8, true)
     end
+    addWhy(row)
     -- noAim: a card shown elsewhere than in the guide window (settings).
     if not row.noAim then GameTooltip:AddLine(L.ROW_CLICK, 0.6, 0.6, 0.6, true) end
     GameTooltip:Show()
@@ -1148,6 +1173,7 @@ end
 -- end-of-guide messages.
 function P:Content()
     local E = Ding.Engine
+    self.shownStep = nil
     if not E.guide then
         return {
             { action = "info", text = L.NO_GUIDE },
@@ -1162,7 +1188,9 @@ function P:Content()
     end
     local step, held = E:CurrentStep(), self.holding
     if held then step = held.step end
+    self.shownStep = step
     local content = E:Describe(step)
+    content.why = not held and Ding.Why:Short(step) or nil
     local service = not held and E:ServiceDone(step)
     if service then
         content[#content + 1] = { indent = true, kind = "hint", text = serviceHint(service) }
@@ -1591,8 +1619,8 @@ end
 
 ---------------------------------------------------------------------------
 -- Focus mode (DING_FOCUS): the D-pad walks the rows, A points the arrow to a row (or
--- uses the quest item on its row), X shows its quest, LB / RB change step, Y minimizes,
--- B leaves.
+-- uses the quest item on its row), X shows its quest and why the step is there, LB / RB
+-- change step, Y minimizes, B leaves.
 -- Only these keys are taken; the others keep their game binding.
 ---------------------------------------------------------------------------
 function P:StartFocus()
