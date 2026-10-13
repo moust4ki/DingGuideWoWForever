@@ -6,16 +6,13 @@ TITLE  Ding! · Bois de la Pénombre et Carmines (25-27)
 STEP   < Étape 2 / 97 >   zone: Sombre-Comté
 
  1  accept  [todo] red background, red "!" icon, text white
-    Prendre {orange: [28] « La légende de Stalvan »}
+    Prendre {orange: [28] « La légende de Stalvan » (partie 1 sur 13)}
       > Le PNJ est à l'intérieur.
     card:
-      | La légende de Stalvan
+      | La légende de Stalvan (partie 1 sur 13)
       | À faire.
       | Quête de niveau 28, au-dessus du tien (25) : plus difficile, mais le guide la prévoit.
       | Pas encore dans ton journal de quêtes.
-      |  
-      | Pourquoi ?
-      | Le guide prévoit cette étape ici.
       | Clic : la flèche y va.
  2  accept  [todo] red background, red "!" icon, text white
     Prendre [25] « Le Totem d'affliction »
@@ -24,9 +21,6 @@ STEP   < Étape 2 / 97 >   zone: Sombre-Comté
       | À faire.
       | Quête de niveau 25
       | Pas encore dans ton journal de quêtes.
-      |  
-      | Pourquoi ?
-      | Le guide prévoit cette étape ici.
       | Clic : la flèche y va.
  3  previewHeader  [section] LINE ABOVE, no icon, text dim grey, semibold 11
     Étapes suivantes
@@ -36,16 +30,16 @@ STEP   < Étape 2 / 97 >   zone: Sombre-Comté
       | Lie ta pierre de foyer à Darkshire
       | Une étape plus loin : rien à faire pour l'instant.
  5  preview  [preview] grey "!" icon, text dim grey
-    Prendre [24] « Les Veilleurs »
+    Prendre [24] « Les Veilleurs » (partie 1 sur 3)
     card:
-      | Les Veilleurs
+      | Les Veilleurs (partie 1 sur 3)
       | Une étape plus loin : rien à faire pour l'instant.
       | Quête de niveau 24
       | Pas encore dans ton journal de quêtes.
  6  preview  [preview] grey "?" icon, text dim grey
-    Rendre [28] « La légende de Stalvan » et 1 autre quête
+    Rendre [28] « La légende de Stalvan » (partie 1 sur 13) et 1 autre quête
     card:
-      | La légende de Stalvan
+      | La légende de Stalvan (partie 1 sur 13)
       | Une étape plus loin : rien à faire pour l'instant.
       | Quête de niveau 28, au-dessus du tien (25) : plus difficile, mais le guide la prévoit.
       | Pas encore dans ton journal de quêtes.

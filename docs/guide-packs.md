@@ -264,7 +264,7 @@ it. `why` says it in plain words, never as a color or a code. Keep it for the ch
 surprise (a trip to another zone and back, a quest taken now and turned in much later):
 with `short = true`, one line under the step; otherwise only on demand, in the tooltip of the
 step's rows (the mouse over a row, or X in focus mode), under "Why?". A step without `why`
-says nothing more ("The guide plans this step here." on demand). The player can turn the
+says nothing more (no "Why?" in its tooltip either). The player can turn the
 explanations off (Guide tab, "Guide explanations"). Say only what is true: a reason you do not
 know is better left out.
 

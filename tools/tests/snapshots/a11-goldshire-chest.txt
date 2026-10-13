@@ -6,27 +6,21 @@ TITLE  Ding! · Bois de la Pénombre et Carmines (25-27)
 STEP   < Étape 43 / 97 >   zone: Comté-de-l'Or
 
  1  header  [header] no icon, text light grey, semibold 12
-    {orange: [28] « La légende de Stalvan »}
+    {orange: [28] « La légende de Stalvan » (partie 5 sur 13)}
     card:
-      | La légende de Stalvan
+      | La légende de Stalvan (partie 5 sur 13)
       | En cours : ses objectifs sont en dessous.
       | Quête de niveau 28, au-dessus du tien (27) : plus difficile, mais le guide la prévoit.
       | Une vieille lettre : 0/1
-      |  
-      | Pourquoi ?
-      | Le guide prévoit cette étape ici.
       | Clic : la flèche y va.
  2  objective  [todo] red background, red dot icon, text white, indented, counter 0/1 red
       Récupérer Une vieille lettre
         > L'objet est à l'intérieur, un étage plus haut.
       card:
-        | La légende de Stalvan
+        | Récupérer Une vieille lettre
         | À faire.
+        | Pour [28] « La légende de Stalvan » (partie 5 sur 13) : 0 sur 1 objectifs faits.
         | Quête de niveau 28, au-dessus du tien (27) : plus difficile, mais le guide la prévoit.
-        | Une vieille lettre : 0/1
-        |  
-        | Pourquoi ?
-        | Le guide prévoit cette étape ici.
         | Clic : la flèche y va.
 
 PROGRESS bar 43 / 97

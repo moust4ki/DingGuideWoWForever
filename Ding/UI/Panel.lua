@@ -96,11 +96,21 @@ local function quoted(q) return L.QUOTE:format(Ding.Data:QuestName(q)) end
 
 -- The quest with its level first, "[29] “Name”" (the name alone when the level is unknown).
 -- `color`: the name only, in that color.
+-- A quest of a chain whose parts share its name ("The Legend of Stalvan"): which part, so a
+-- turn-in and the next part's accept in one step read apart ("… (part 4 of 13)").
+local function partText(q)
+    local part, total = Ding.Data:QuestPart(q)
+    return part and L.QUEST_PART:format(part, total) or nil
+end
+
 local function leveledName(q, color)
     local level = Ding.Data:QuestLevel(q)
     local name = color and UI.Colored(color, quoted(q)) or quoted(q)
-    return level > 0 and L.QUEST_WITH_LEVEL:format(level, name) or name
+    local text = level > 0 and L.QUEST_WITH_LEVEL:format(level, name) or name
+    local part = partText(q)
+    return part and (text .. " " .. part) or text
 end
+P.QuestLabel = function(q) return leveledName(q) end
 
 -- A quest named in the window, with its level: "[29] “Name”", the name as a link. A quest
 -- above the player's level is shown, never held back (Yendi): all of it in orange. `plain`:
@@ -817,8 +827,10 @@ function P:ShowQuest(row, owner)
         return
     end
     if not q then return self:ShowRowText(row, owner) end
+    if row.action == "objective" then return self:ShowObjective(row, owner) end
     GameTooltip:SetOwner(owner, "ANCHOR_RIGHT")
-    GameTooltip:SetText(Ding.Data:QuestName(q), 1, 0.82, 0)
+    local part = partText(q)
+    GameTooltip:SetText(Ding.Data:QuestName(q) .. (part and (" " .. part) or ""), 1, 0.82, 0)
     addMeaning(row)
     -- "[29]" in the window is the quest's level; orange: above the player's.
     local level, mine = Ding.Data:QuestLevel(q), UnitLevel("player")
@@ -847,6 +859,49 @@ function P:ShowQuest(row, owner)
     if not row.noAim and not row.preview and not row.extra then clickLine() end
     -- Focus mode: Right finds the quest in the guide (the mouse has the step menu for it).
     if self.focusing and Ding.Gamepad:Active() and not row.noAim and not row.extra then
+        GameTooltip:AddLine(L.ROW_FIND_PAD:format(Ding.Gamepad:ButtonName("PADDRIGHT")), 0.6, 0.6, 0.6, true)
+    end
+    GameTooltip:Show()
+end
+
+-- How many of a quest's objectives are done: done, total (all of them once ready).
+local function objectivesDone(q)
+    local list = Compat.GetObjectives(q)
+    local ready = Compat.IsQuestReady(q)
+    local done = 0
+    for _, obj in ipairs(list) do
+        local have, need = objectiveCount(obj)
+        if ready or obj.finished or (have and need and need > 0 and have >= need) then done = done + 1 end
+    end
+    return done, #list
+end
+
+-- An objective's card, short (Yendi: every objective repeated the whole quest): the objective
+-- itself, what its look and its counter mean, then its quest in one line, why the step is there
+-- (when the guide has a reason) and what a click does.
+function P:ShowObjective(row, owner)
+    local q = row.quest
+    GameTooltip:SetOwner(owner, "ANCHOR_RIGHT")
+    GameTooltip:SetText(UI.StripColors(row.text or ""), 1, 1, 1, 1, true)
+    addMeaning(row)
+    local have, need = (row.counter or ""):match("^(%d+)/(%d+)$")
+    if have and row.state ~= "done" and tonumber(need) > 1 then
+        GameTooltip:AddLine(L.OBJECTIVE_SO_FAR:format(tonumber(have), tonumber(need)), 0.8, 0.8, 0.8, true)
+    end
+    if Compat.IsInLog(q) then
+        local done, total = objectivesDone(q)
+        GameTooltip:AddLine(L.CARD_QUEST_SUMMARY:format(leveledName(q), done, total), 0.8, 0.8, 0.8, true)
+    else
+        local text = Ding.Engine:IsTurnedIn(q) and L.QUEST_TURNED_IN or L.NOT_IN_LOG
+        GameTooltip:AddLine(L.CARD_FOR_QUEST:format(leveledName(q)) .. " " .. text, 0.8, 0.8, 0.8, true)
+    end
+    -- Orange in the window: why (the level line says it only then).
+    local level, mine = Ding.Data:QuestLevel(q), UnitLevel("player")
+    if level > mine then GameTooltip:AddLine(L.QUEST_LEVEL_ABOVE:format(level, mine), 0.8, 0.8, 0.8, true) end
+    if row.prequestOf then GameTooltip:AddLine(L.PREQUEST_DETAIL:format(quoted(row.prequestOf)), 0.8, 0.8, 0.8, true) end
+    addWhy(row)
+    clickLine()
+    if self.focusing and Ding.Gamepad:Active() then
         GameTooltip:AddLine(L.ROW_FIND_PAD:format(Ding.Gamepad:ButtonName("PADDRIGHT")), 0.6, 0.6, 0.6, true)
     end
     GameTooltip:Show()

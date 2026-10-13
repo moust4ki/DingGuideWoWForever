@@ -14,48 +14,29 @@ STEP   < Étape 15 / 97 >   zone: Sombre-Comté
       | Croc de goule : 3/7
       | Fiole de venin d'araignée : 0/7
       | Doigt de squelette : 7/7
-      |  
-      | Pourquoi ?
-      | Le guide prévoit cette étape ici.
       | Clic : la flèche y va.
  2  objective  [todo] red background, red dot icon, text white, indented, counter 3/7 red
       Récupérer 7 Croc de goule
       card:
-        | Le Totem d'affliction
+        | Récupérer 7 Croc de goule
         | À faire.
-        | Quête de niveau 25
-        | Croc de goule : 3/7
-        | Fiole de venin d'araignée : 0/7
-        | Doigt de squelette : 7/7
-        |  
-        | Pourquoi ?
-        | Le guide prévoit cette étape ici.
+        | 3 sur 7 pour l'instant.
+        | Pour [25] « Le Totem d'affliction » : 1 sur 3 objectifs faits.
         | Clic : la flèche y va.
  3  objective  [todo] red background, red dot icon, text white, indented, counter 0/7 red
       Récupérer 7 Fiole de venin d'araignée
       card:
-        | Le Totem d'affliction
+        | Récupérer 7 Fiole de venin d'araignée
         | À faire.
-        | Quête de niveau 25
-        | Croc de goule : 3/7
-        | Fiole de venin d'araignée : 0/7
-        | Doigt de squelette : 7/7
-        |  
-        | Pourquoi ?
-        | Le guide prévoit cette étape ici.
+        | 0 sur 7 pour l'instant.
+        | Pour [25] « Le Totem d'affliction » : 1 sur 3 objectifs faits.
         | Clic : la flèche y va.
  4  objective  [done] green background, green check icon, text light grey, indented, counter 7/7 green
       7 Doigt de squelette : fait
       card:
-        | Le Totem d'affliction
+        | 7 Doigt de squelette : fait
         | Fait.
-        | Quête de niveau 25
-        | Croc de goule : 3/7
-        | Fiole de venin d'araignée : 0/7
-        | Doigt de squelette : 7/7
-        |  
-        | Pourquoi ?
-        | Le guide prévoit cette étape ici.
+        | Pour [25] « Le Totem d'affliction » : 1 sur 3 objectifs faits.
         | Clic : la flèche y va.
 
 PROGRESS bar 15 / 97

@@ -7,14 +7,11 @@ STEP   < Étape 24 / 97 >   zone: Le cimetière de Raven Hill
 
  1  level  [todo] red background, red caret up icon, text white, counter 58 % red
     Atteins le niveau 26
-      > Encore 14,000 XP : environ 83 monstres.
+      > Encore 14 000 XP : environ 83 monstres.
     card:
       | Atteins le niveau 26
       | À faire.
       | 58 % de ce niveau déjà fait.
-      |  
-      | Pourquoi ?
-      | Le guide prévoit cette étape ici.
  2  grind  [todo] red background, red diamond icon, text white
     Tuer Solitaire putride · niveaux 25-26
       > La flèche fait le tour de 6 points : appuie sur Suivant une fois fini.
@@ -22,9 +19,6 @@ STEP   < Étape 24 / 97 >   zone: Le cimetière de Raven Hill
       | Solitaire putride
       | À faire.
       | niveaux 25-26
-      |  
-      | Pourquoi ?
-      | Le guide prévoit cette étape ici.
       | Clic : la flèche y va.
 
 PROGRESS bar 24 / 97

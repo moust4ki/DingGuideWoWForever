@@ -944,8 +944,18 @@ function C.PlayerMap()
 end
 
 -- "12,345" with the client's thousands separator when it has one.
+-- A whole number as the player's language writes it (L.NUMBER_GROUP between groups of three
+-- digits): "13,000" in English, "13 000" in French (a no-break space), "13.000" in German,
+-- Spanish and Portuguese. Not the client's BreakUpLargeNumbers: some clients write the
+-- English way whatever their language (Yendi: "environ 13,000 XP").
 function C.Number(n)
-    local ok, text = safe(BreakUpLargeNumbers, n)
-    if ok and type(text) == "string" then return text end
-    return tostring(n)
+    n = tonumber(n)
+    if not n then return "?" end
+    local digits = tostring(math.floor(math.abs(n) + 0.5))
+    local sep = Ding.L and Ding.L.NUMBER_GROUP or ","
+    local head = #digits % 3
+    local parts = {}
+    if head > 0 then parts[1] = digits:sub(1, head) end
+    for i = head + 1, #digits, 3 do parts[#parts + 1] = digits:sub(i, i + 2) end
+    return (n < 0 and "-" or "") .. table.concat(parts, sep)
 end

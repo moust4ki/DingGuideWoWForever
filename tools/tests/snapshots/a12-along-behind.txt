@@ -12,21 +12,15 @@ STEP   < Étape 16 / 87 >   zone: Les Paluns
       | En cours : ses objectifs sont en dessous.
       | Quête de niveau 23
       | Silex brut : 1/8
-      |  
-      | Pourquoi ?
-      | Le guide prévoit cette étape ici.
       | Clic : la flèche y va.
  2  objective  [todo] red background, red dot icon, text white, indented, counter 1/8 red
       Récupérer 8 Silex brut
         > Ici, tes cibles sont des gnolls.
       card:
-        | Feu interdit
+        | Récupérer 8 Silex brut
         | À faire.
-        | Quête de niveau 23
-        | Silex brut : 1/8
-        |  
-        | Pourquoi ?
-        | Le guide prévoit cette étape ici.
+        | 1 sur 8 pour l'instant.
+        | Pour [23] « Feu interdit » : 0 sur 1 objectifs faits.
         | Clic : la flèche y va.
  3  infoHeader  [section] LINE ABOVE, no icon, text dim grey, semibold 11
     À savoir
@@ -41,10 +35,10 @@ STEP   < Étape 16 / 87 >   zone: Les Paluns
  5  objective  [other] light grey dot icon, text light grey, indented, counter 2/8 light grey
       Récupérer 8 Peau de crocilisque géant
       card:
-        | Les devoirs de l'apprenti
+        | Récupérer 8 Peau de crocilisque géant
         | Pas le travail de cette étape : une autre quête de ton journal, dont les cibles sont tout autour de toi. Fais-la en chemin si tu veux.
-        | Quête de niveau 26
-        | Peau de crocilisque géant : 2/8
+        | 2 sur 8 pour l'instant.
+        | Pour [26] « Les devoirs de l'apprenti » : 0 sur 1 objectifs faits.
         | Clic : la flèche y va.
 
 PROGRESS bar 16 / 87

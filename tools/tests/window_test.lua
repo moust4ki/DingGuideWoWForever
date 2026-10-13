@@ -45,8 +45,7 @@ T.test("accept row: Accept \"[level] quest\", with the guide note below", functi
     start()
     local row = P.rowsShown[1]
     T.eq(row.state, "todo")
-    T.eq(H.plain(row.text), L.ROW_ACCEPT:format(L.QUEST_WITH_LEVEL:format(Ding.Data:QuestLevel(456),
-        L.QUOTE:format(Ding.Data:QuestName(456)))))
+    T.eq(H.plain(row.text), L.ROW_ACCEPT:format(T.questLabel(456)))
     T.ok(row.text:find("|cff5bb4ff", 1, true), "quest name not a blue link")
     T.eq(row.sub, "Guide note.")
 end)
@@ -250,7 +249,7 @@ T.test("objectives: under a header with their quest's level and name, unless the
     T.eq(header.action, "header")
     T.eq(header.state, "header")
     T.eq(header.quest, 456)
-    T.eq(H.plain(header.text), L.QUEST_WITH_LEVEL:format(Ding.Data:QuestLevel(456), L.QUOTE:format(Ding.Data:QuestName(456))))
+    T.eq(H.plain(header.text), T.questLabel(456))
     T.ok(header.text:find("|cff5bb4ff", 1, true), "quest name not a blue link")
     for i = 2, #P.rowsShown do
         local row = P.rowsShown[i]
@@ -306,7 +305,7 @@ T.test("objectives of two quests: one header each; the target binding passes ove
     P:StopFocus()
 end)
 
-T.test("click on an objective row: the arrow goes there, the quest card shows", function()
+T.test("click on an objective row: the arrow goes there, a short card: the objective, then its quest", function()
     start()
     H.accept(456); H.flush()
     local problems = H.problems()
@@ -314,10 +313,10 @@ T.test("click on an objective row: the arrow goes there, the quest card shows", 
     r.scripts.OnClick(r)
     T.ok(A.forced, "the arrow does not aim at the row")
     T.eq(GameTooltip:GetOwner(), r, "card not next to the row")
-    T.eq(GameTooltip.text, Ding.Data:QuestName(456), "card without the quest")
+    T.eq(GameTooltip.text, H.plain(P.rowsShown[2].text), "the objective is not the card's title")
     local lines = table.concat(GameTooltip.lines, " | ")
-    T.ok(lines:find(L.QUEST_LEVEL:format(Ding.Data:QuestLevel(456)), 1, true), "level missing: " .. lines)
-    T.ok(lines:find(P.rowsShown[2].target, 1, true), "objectives missing: " .. lines)
+    T.ok(lines:find(T.questLabel(456), 1, true), "its quest is missing: " .. lines)
+    T.ok(not lines:find(P.rowsShown[3].target, 1, true), "the other objectives repeated: " .. lines)
     -- Never the game's own windows (taint): the mock turns such calls into problems.
     T.eq(H.problems(), problems, "Ding touched the game's interface")
     r.scripts.OnLeave(r)
@@ -328,7 +327,7 @@ T.test("card of a quest not accepted yet: \"not in your log yet\"", function()
     start()
     local r = P.frame.rows[1]            -- "Accept" 456, not in the log
     r.scripts.OnEnter(r)
-    T.eq(GameTooltip.text, Ding.Data:QuestName(456))
+    T.eq(GameTooltip.text, Ding.Data:QuestName(456) .. " " .. L.QUEST_PART:format(Ding.Data:QuestPart(456)))
     T.ok(table.concat(GameTooltip.lines, " | "):find(L.NOT_IN_LOG, 1, true), "mention missing")
     r.scripts.OnLeave(r)
 end)
@@ -338,7 +337,7 @@ T.test("focus mode: X shows the quest card, the D-pad closes it", function()
     H.accept(456); H.flush()
     P:StartFocus()
     H.press("PAD3")
-    T.ok(GameTooltip:IsShown() and GameTooltip.text == Ding.Data:QuestName(456), "X does not show the quest")
+    T.ok(GameTooltip:IsShown() and GameTooltip.text == H.plain(P.rowsShown[2].text), "X does not show the objective")
     T.eq(GameTooltip:GetOwner(), P.frame.rows[2])
     -- On the quest's header too.
     H.press("PADDUP")
@@ -508,7 +507,7 @@ T.test("narrow window (240): the header, indented objectives and a notice box fi
         if data.action == "notice" then notice = r end
     end
     T.ok(notice, "no notice: " .. rowTexts())
-    T.eq(H.plain(notice.text:GetText()), L.SKIPPED_GREY:format(L.QUEST_WITH_LEVEL:format(Ding.Data:QuestLevel(916), L.QUOTE:format(Ding.Data:QuestName(916)))))
+    T.eq(H.plain(notice.text:GetText()), L.SKIPPED_GREY:format(T.questLabel(916)))
     T.eq(notice.text.fontObject, Ding.UI.Font("regular", 11))
     T.ok(not notice.icon:IsShown() and notice.bg:IsShown(), "a notice is a box without an icon")
     -- Not under the objectives.

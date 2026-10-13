@@ -6,31 +6,31 @@ TITLE  Ding! · Bois de la Pénombre et Carmines (25-27)
 STEP   < Étape 45 / 97 >   zone: Hurlevent
 
  1  turnin  [todo] red background, red "?" icon, text white
-    Rendre {orange: [28] « La légende de Stalvan »}
+    Rendre {orange: [28] « La légende de Stalvan » (partie 5 sur 13)}
     card:
-      | La légende de Stalvan
+      | La légende de Stalvan (partie 5 sur 13)
       | À faire.
       | Quête de niveau 28, au-dessus du tien (27) : plus difficile, mais le guide la prévoit.
       | Une vieille lettre : 1/1
       |  
       | Pourquoi ?
       | Ce détour ajoute environ 1 min au trajet.
-      | Rendre « La légende de Stalvan » ouvre 7 autres quêtes que le guide fait ensuite : environ 7,900 XP en tout.
-      | Tout le détour : environ 14,000 XP (11 quêtes).
+      | Rendre « La légende de Stalvan » ouvre 7 autres quêtes que le guide fait ensuite : environ 7 900 XP en tout.
+      | Tout le détour : environ 14 000 XP (11 quêtes).
       | Chiffres estimés par le guide.
       | Clic : la flèche y va.
  2  accept  [todo] red background, red "!" icon, text white
-    Prendre {orange: [28] « La légende de Stalvan »}
+    Prendre {orange: [28] « La légende de Stalvan » (partie 6 sur 13)}
     card:
-      | La légende de Stalvan
+      | La légende de Stalvan (partie 6 sur 13)
       | À faire.
       | Quête de niveau 28, au-dessus du tien (27) : plus difficile, mais le guide la prévoit.
       | Pas encore dans ton journal de quêtes.
       |  
       | Pourquoi ?
       | Ce détour ajoute environ 1 min au trajet.
-      | Rendre « La légende de Stalvan » ouvre 7 autres quêtes que le guide fait ensuite : environ 7,900 XP en tout.
-      | Tout le détour : environ 14,000 XP (11 quêtes).
+      | Rendre « La légende de Stalvan » ouvre 7 autres quêtes que le guide fait ensuite : environ 7 900 XP en tout.
+      | Tout le détour : environ 14 000 XP (11 quêtes).
       | Chiffres estimés par le guide.
       | Clic : la flèche y va.
 

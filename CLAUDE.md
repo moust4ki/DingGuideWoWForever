@@ -248,7 +248,7 @@ Contracts between modules:
   Reasons (`Core/Why.lua`): `Why:Step(step)` -> `{ short, lines,
   estimates }` or nil (no `why`: the step has no reason), `Why:Short(step)` (the line under the
   step, nil when not `short` or the option is off), `Why:Detail(step)` (the tooltip's lines,
-  `L.WHY_NONE` without a reason, nil when off), `Why:Quest(q[, guide])` -> clause, entry, guide
+  nil without a reason or when off), `Why:Quest(q[, guide])` -> clause, entry, guide
   (for `L.OFFER_NOT_DONE`; the section's `leftOut`, else another section of its pack for the character; nil: say
   nothing), `Why.LeftOutText(entry)`, `Why.XPText(xp, plain)`, `Why.TimeText(seconds)`,
   `Why.STEP` / `Why.LEFT` (kinds and keys, checked by Import; `check_guides.lua` has the same).

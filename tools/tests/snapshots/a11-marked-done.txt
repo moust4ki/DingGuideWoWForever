@@ -6,16 +6,13 @@ TITLE  Ding! · Bois de la Pénombre et Carmines (25-27)
 STEP   < Étape 4 / 97 >   zone: Sombre-Comté
 
  1  accept  [manual] violet background, violet check icon, text light grey
-    Prendre [24] « Les Veilleurs »
+    Prendre [24] « Les Veilleurs » (partie 1 sur 3)
       > Marquée comme faite à la main.
     card:
-      | Les Veilleurs
+      | Les Veilleurs (partie 1 sur 3)
       | Marquée faite à la main : le jeu ne l'a pas confirmé.
       | Quête de niveau 24
       | Pas encore dans ton journal de quêtes.
-      |  
-      | Pourquoi ?
-      | Le guide prévoit cette étape ici.
       | Clic : la flèche y va.
  2  unmark  [button] button background, no icon, text white
     Annuler : ce n'est pas fait

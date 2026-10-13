@@ -32,7 +32,9 @@ return function(tools, locale)
     local function leveled(q)
         local name = L.QUOTE:format(D:QuestName(q))
         local level = D:QuestLevel(q)
-        return level > 0 and L.QUEST_WITH_LEVEL:format(level, name) or name
+        local text = level > 0 and L.QUEST_WITH_LEVEL:format(level, name) or name
+        local part, total = D:QuestPart(q)
+        return part and (text .. " " .. L.QUEST_PART:format(part, total)) or text
     end
     -- The card of row i as the mouse's hover shows it: { title, lines... } in plain text, or nil.
     local function card(i)
@@ -179,6 +181,46 @@ return function(tools, locale)
         T.ok(find(function(r) return r.ofStep and has(r.sub, keep) end), "the reminder is not under the step: " .. keep)
     end)
 
+    T.test("2 an objective's card is short: the objective, then its quest in one line", function()
+        for _, name in ipairs({ "a11-darkshire-objectives", "a12-cursed-crew-carried", "a11-finished-seen-again" }) do
+            scene(name)
+            local list = all(function(r) return r.action == "objective" end)
+            T.ok(#list > 0, name .. ": no objective")
+            for _, i in ipairs(list) do
+                local row = rows()[i]
+                local c = card(i)
+                T.ok(c, name .. ": no card on " .. plain(row.text))
+                T.eq(c[1], plain(row.text), name .. ": the card does not start with the objective")
+                T.ok(cardHas(c, leveled(row.quest)), name .. ": its quest is not named: " .. table.concat(c, " | "))
+                -- The quest's other objectives are not listed again.
+                for _, j in ipairs(list) do
+                    local other = rows()[j]
+                    if other.quest == row.quest and other.index ~= row.index and other.target then
+                        T.ok(not cardHas(c, other.target), name .. ": another objective repeated: " .. other.target)
+                    end
+                end
+            end
+        end
+    end)
+
+    T.test("3 \"Why?\" only when the guide has a reason", function()
+        local seen = 0
+        for _, sc in ipairs(S) do
+            if not sc.compact and not sc.focus then
+                scene(sc.name)
+                local reason = P.shownStep and Ding.Why:Step(P.shownStep)
+                for i, row in ipairs(rows()) do
+                    local c = card(i)
+                    if cardHas(c, L.WHY_TITLE) then
+                        seen = seen + 1
+                        T.ok(reason, ("%s: \"Why?\" on row %d of a step without a reason"):format(sc.name, i))
+                    end
+                end
+            end
+        end
+        T.ok(seen > 0, "no scenario shows a reason")
+    end)
+
     T.test("3 why lines: only for a surprising step, after the note; the reason on demand; option off", function()
         local ctx = scene("a11-westfall-detour")
         local step = E:CurrentStep()
@@ -275,6 +317,28 @@ return function(tools, locale)
         scene("a11-bags-almost-full")
         local notice = find(function(r) return r.notice == "skipped" end)
         T.ok(notice and has(plain(notice.text), leveled(163)), "the passed quest without its level: " .. describe())
+    end)
+
+    T.test("5 a chain whose parts share a name: each row says its part (rows, next steps, cards)", function()
+        scene("a11-westfall-detour")
+        local turnin, i = find(function(r) return r.action == "turnin" end)
+        local accept, j = find(function(r) return r.action == "accept" end)
+        T.eq(D:QuestName(turnin.quest), D:QuestName(accept.quest), "not a same-name chain")
+        local p1, total = D:QuestPart(turnin.quest)
+        local p2 = D:QuestPart(accept.quest)
+        T.ok(p1 and p2 and p2 == p1 + 1, "parts: " .. tostring(p1) .. ", " .. tostring(p2))
+        T.ok(has(plain(turnin.text), L.QUEST_PART:format(p1, total)), plain(turnin.text))
+        T.ok(has(plain(accept.text), L.QUEST_PART:format(p2, total)), plain(accept.text))
+        T.ok(plain(turnin.text) ~= plain(accept.text):gsub("^" .. L.ROW_ACCEPT:match("^(.-)%%s"), L.ROW_TURNIN:match("^(.-)%%s")),
+            "the two rows read alike")
+        T.ok(has(card(i)[1], L.QUEST_PART:format(p1, total)), "the card's title has no part")
+        T.ok(has(card(j)[1], L.QUEST_PART:format(p2, total)), "the card's title has no part")
+        -- The next steps too.
+        scene("a11-darkshire-accepts")
+        local preview = find(function(r) return r.preview and r.quest == 66 end)
+        T.ok(preview and has(plain(preview.text), L.QUEST_PART:format(D:QuestPart(66))), describe())
+        -- A quest whose name is its own: nothing added.
+        T.eq(D:QuestPart(101), nil)
     end)
 
     ---------------------------------------------------------------------------
@@ -801,6 +865,27 @@ return function(tools, locale)
                         end
                     end
                     pad(false)
+                end
+            end
+        end
+    end)
+
+    T.test("25 numbers are written the language's way: no English separator in French", function()
+        local sep = ({ frFR = "\194\160", enUS = "," })[locale]   -- French: a no-break space
+        T.eq(Ding.Compat.Number(13000), "13" .. sep .. "000")
+        T.eq(Ding.Compat.Number(1234567), "1" .. sep .. "234" .. sep .. "567")
+        T.eq(Ding.Compat.Number(999), "999")
+        -- What the window shows: the why line's "about 13,000" / "environ 13 000".
+        scene("a11-westfall-detour")
+        T.ok(find(function(r) return r.sub and has(plain(r.sub), "13" .. sep .. "000") end), describe())
+        if locale == "frFR" then
+            for _, sc in ipairs(S) do
+                if not sc.compact then
+                    scene(sc.name)
+                    for i, row in ipairs(rows()) do
+                        local text = plain(row.text) .. " " .. plain(row.sub)
+                        T.ok(not text:find("%d,%d%d%d"), ("%s: row %d, an English number: %s"):format(sc.name, i, text))
+                    end
                 end
             end
         end
