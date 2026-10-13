@@ -21,17 +21,29 @@ local function enabled(kind)
     return not IsShiftKeyDown()
 end
 
--- Quests the guide wants right now: accept[q], turnin[q]. Steps from the current one,
--- up to WINDOW of them, stopping after a step that leaves the place (go, fly, hearth).
--- ahead[q]: a quest of a later step, taken on the way if the NPC offers it.
+-- The last step at the player's place: from the current one, up to WINDOW of them, stopping
+-- after a step that leaves the place (go, fly, hearth). 0 without a guide to follow.
+function AQ:PlaceEnd()
+    local E = Ding.Engine
+    local guide = E.guide
+    if not guide or E.finished then return 0 end
+    local last = math.min(#guide.steps, E.index + WINDOW - 1)
+    for i = E.index, last do
+        local step = guide.steps[i]
+        if Ding:StepApplies(step) and (step.go or step.fly or step.hearth) then return i end
+    end
+    return last
+end
+
+-- Quests the guide wants right now: accept[q], turnin[q], from the steps at the player's
+-- place (PlaceEnd). ahead[q]: a quest of a later step, taken on the way if the NPC offers it.
 function AQ:Wanted()
     local accept, turnin, ahead = {}, {}, {}
     local E = Ding.Engine
     local guide = E.guide
     if not guide or E.finished then return accept, turnin, ahead end
-    local last = math.min(#guide.steps, E.index + WINDOW - 1)
-    local stop = last
-    for i = E.index, last do
+    local stop = self:PlaceEnd()
+    for i = E.index, stop do
         local step = guide.steps[i]
         if Ding:StepApplies(step) then
             for _, q in ipairs(step.accept or {}) do accept[q] = true end
@@ -53,10 +65,6 @@ function AQ:Wanted()
                         accept[q] = true
                     end
                 end
-            end
-            if step.go or step.fly or step.hearth then
-                stop = i
-                break
             end
         end
     end

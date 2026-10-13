@@ -225,6 +225,22 @@ function D:QuestExists(questID)
     return ok and exists == true
 end
 
+-- Quests an NPC starts, by id: every quest's givers read once, the first time.
+local npcQuests
+function D:NpcQuests(npcID)
+    if not npcQuests then
+        npcQuests = {}
+        for _, q in ipairs(allIds("Quest")) do
+            local givers = get("Quest", "startedBy", q)
+            for _, npc in ipairs(type(givers) == "table" and givers[1] or {}) do
+                npcQuests[npc] = npcQuests[npc] or {}
+                table.insert(npcQuests[npc], q)
+            end
+        end
+    end
+    return npcQuests[npcID] or {}
+end
+
 function D:NpcName(id) return get("Npc", "name", id) end
 
 -- A monster's levels, rank (0 normal, 1 elite, 2 rare elite, 3 boss, 4 rare) and the

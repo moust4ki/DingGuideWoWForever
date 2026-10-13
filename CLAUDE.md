@@ -68,6 +68,8 @@ Ding/
     TaxiMap.lua     Ding.TaxiMap: banner and ring on the flight map's destination (own frames)
     Rewards.lua     Ding.RewardHint: banner and ring on the best quest reward (own frames);
                     Ding.GearHint: banner of a gear upgrade
+    Offers.lua      Ding.Offers: beside an NPC's window, what the guide does with each quest it
+                    offers (now, later, another section, not in the guide and why); read only
     Finder.lua      Ding.Finder: the NPC directory's window (DING_FINDER, /ding find, the guide
                     window's pin button), trip of the arrow to an NPC
     ImportWindow.lua Ding.ImportWindow: /ding import and /ding export (text box, report,
@@ -189,7 +191,8 @@ Contracts between modules:
   races and classes (`Ding:StepMatchesPlayer`, Registry) **and** its option (`sethearth` /
   `hearth` -> `ui.hearth`, `deathskip` -> `ui.deathSkip`, `dungeon` -> `ui.dungeons`,
   `elite` -> `ui.elites`, `vendor` / `repair` -> `ui.serviceSteps`, `train` -> `ui.trainerSteps`,
-  `fly` -> `ui.flightSteps`): every module asks this one. `Engine:TargetNames(max)`: the
+  `fly` -> `ui.flightSteps`): every module asks this one; `Ding:StepOptionOff(step)`: the
+  setting that hides a step ("elites", "dungeons"...) or nil. `Engine:TargetNames(max)`: the
   step's NPCs and monsters by name, nearest first (the target binding's macro).
   `Engine:FindQuest(q)` -> `{ guide, index, action }` (where the guide deals with `q`),
   `Panel:FindQuest(q)` / `Panel:Jump()` (the offer row). `Travel:AutoFly()` takes the planned
@@ -204,7 +207,10 @@ Contracts between modules:
   climbs to the parent zone), `Panel:Where(row)` (" — NPC, Zone" on a line), `Arrow:MarkWorld`
   (the client's map waypoint through `Compat.SetUserWaypoint`, else `TomTom:MarkWorld`;
   `taint_test` allows those three calls in Compat only). `Engine:NextGuide(guide)`: `next`, or
-  its entry for the player's faction when it is a table. `Engine:UnusedLogQuests()`: quests
+  its entry for the player's faction when it is a table. `AutoQuest:PlaceEnd()`: the last step at
+  the player's place (`Wanted` reads up to it). `Data:NpcQuests(npc)`: the quests an NPC starts.
+  `Offers:Classify(q)` -> `{ kind = "now" | "later" | "needed" | "earlier" | "other" | "none",
+  step, guide, reason }`. `Engine:UnusedLogQuests()`: quests
   of the log the active guide and the next ones never use (listed in the Guide tab; Ding never
   abandons them). `UI.Banner`, `UI.Ring`, `UI.ScreenCenter`: Ding's marks over the game's
   windows, which are only read. `QuestMobs.byNpc` (`[npc id]` = entries best first: `kind`
@@ -232,7 +238,7 @@ Contracts between modules:
   target as the client's map waypoint), `item` (position of the item button),
   `minimap` (`shown`, `angle`), `ui` (`buttonStyle`, `sound`, `welcomed`, `autoAccept`,
   `autoTurnin`, `skipGrey`, `hearth`, `deathSkip`, `dungeons`, `elites`, `chooseReward`,
-  `sellGrey`, `repair`, `markTarget`, `serviceSteps`, `trainerSteps`, `flightSteps`, `autoEquip`, `autoFly`, `dungeonChoice` (`[name] = bool`),
+  `sellGrey`, `repair`, `markTarget`, `serviceSteps`, `trainerSteps`, `flightSteps`, `autoEquip`, `autoFly`, `offers`, `dungeonChoice` (`[name] = bool`),
   `mobIcons`, `mobTooltip`, `farPlates`), `farPlatesFrom` (the nameplate distance before
   "Show enemy nameplates farther", put back when it goes off),
   `timings`, `flightTimes` (`["<from npc>:<to npc>"] = { seconds, count }`, flights measured),

@@ -399,6 +399,36 @@ accepted again from its giver.
   everything.
 - A selection that has no effect is retried only after 2 s (no loop on `GOSSIP_SHOW`).
 
+### Quests an NPC offers (`UI/Offers.lua`)
+
+Yendi's question in game: the NPCs offer quests the guide does not ask for. Next to the game's
+window (gossip, greeting or quest details), a small Ding window lists each quest the NPC offers
+(its level and its name in the client's language, from DingDB) with what the guide does with it:
+
+- **Now**: the steps at the player's place take it (AutoQuest's window, catch-ups included).
+- **Later in this guide (step N)**: a later step of the active section takes it.
+- **Take it: step N needs it**: no step takes it from here on, but a later step completes or
+  turns it in (the engine will ask to pick it up there). **Earlier in this guide (step N,
+  passed)**: only a step already passed takes it.
+- **In <section>**: another section of the active pack takes it (the first one after the active
+  section, else the last one before it); "(levels a-b)" is added when the title has no levels.
+- **Not in the guide**, with the reason when Ding can tell: the quest's steps are behind an
+  option that is off (elite or dungeon quests), or for another class or race (or the quest
+  itself is); an elite quest (an objective with elite monsters only, or the quest before it in
+  its chain: Mor'Ladim, The Daughter Who Lived); above the player's level by more than 2; a
+  WoW Forever quest (ids from 10000: Classic's end at 9665) the route leaves out; a gray quest
+  the guide skips ("Skip gray quests").
+
+Steps are read without their conditions (`when` can hold later); each section is indexed once.
+The greeting window only gives titles: they are matched to the quests the NPC starts
+(`Data:NpcQuests`), else to the pack's quests by name. Information only: no button, no mouse,
+nothing for the gamepad to press. The game's windows are only read (`GossipFrame`,
+`QuestFrame`: shown or not, where they stand), never anchored to, changed, shown nor hidden
+(with the gamepad interface, touching them taints the game's frame controls). Shown 0.2 s after
+the window opens (the game shows it first; a quest AutoQuest takes closes it meanwhile), hidden
+with it (`GOSSIP_CLOSED`, `QUEST_FINISHED`, or the window seen hidden). Option "Quests an NPC
+offers" (Automation tab, **on** by default).
+
 ### Choosing the destination point
 
 | Current action | Candidate points |
