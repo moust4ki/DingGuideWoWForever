@@ -79,6 +79,7 @@ end)
 T.test("death skip: off by default; on, done once dead and alive again", function()
     start()
     H.fire("HEARTHSTONE_BOUND"); H.flush()
+    H.tick(2)    -- the finished step stays 1.5 s on screen
     E:Next(); H.flush()
     T.eq(E.index, 7, "death skip, dungeon and elite steps not passed when off")
     Ding.db.ui.deathSkip = true
@@ -102,6 +103,7 @@ T.test("death skip: a death during another step does not count", function()
     T.eq(E.index, 2)
     H.setDead(true); H.fire("PLAYER_DEAD"); H.setDead(false); H.fire("PLAYER_ALIVE"); H.flush()
     H.fire("HEARTHSTONE_BOUND"); H.flush()
+    H.tick(2)    -- the finished step stays 1.5 s on screen
     E:Next(); H.flush()
     T.eq(E.index, 4)
     H.fire("PLAYER_UNGHOST"); H.flush()

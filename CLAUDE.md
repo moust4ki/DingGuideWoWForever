@@ -154,7 +154,8 @@ Contracts between modules:
   after the step's rows and its notes), the extras, the notices "bags" | "cleanup", and the
   preview.
   `Engine.autoMoved`: the engine moved on by itself (the window keeps the finished step for
-  1.5 s). `Engine:IsManual(step)` -> step validated by "next" only.
+  1.5 s; `Panel:EndHold()` ends it, and "next" or "skip" meanwhile does only that).
+  `Engine:IsManual(step)` -> step validated by "next" only.
 - Packs: `Ding:GuidePacks()` (packs that have sections: Ding's three, Leveling, Zones then
   Items, first, then by title),
   `Ding:GetGuidePack(id)`, `Ding:IterateGuides(packId)` (sections of a pack, in registration
@@ -256,7 +257,9 @@ Contracts between modules:
   imported guide goes back there), `packGuide` (`[pack] = guide id`: the section
   last followed in each pack), `step`, `manual`, `resumeTo` (resume in
   progress: `Engine:Resume` passes what is done or left behind up to the player's place, but
-  first finishes and turns in the quests of the guide's past still in the log), `guideSig`
+  first finishes and turns in the quests of the guide's past still in the log; never past the
+  work left on the quests the player took last, `resumeLimit`; `Engine:LeftBehind(step, i)`:
+  a step it passes, which `Engine:NextSteps` leaves out of the preview), `guideSig`
   (signature of the active guide: changed by an update, the guide is resumed), `early`
   (quests taken on the way by AutoQuest, ignored to place the player), `skipped` (skipped
   steps, per guide; cleared by "Take this guide up where I am", like `manual`), `killXP`
@@ -266,7 +269,8 @@ Contracts between modules:
   the inn of the hearthstone), `training` (`{ now, future = { [level] = cost }, level }`; nil
   before the first visit: even levels), `trainingReminded` (level of the last chat reminder
   near a class trainer), `gearDeclined` (`[itemID] = true`), `sticky` (`[questID] = true`,
-  persistent objectives), `wrapUp` (guide id in "turn in first" mode), `stay` (`[guide id] =
+  persistent objectives; a quest the active guide makes sticky only past the step shown
+  leaves it), `wrapUp` (guide id in "turn in first" mode), `stay` (`[guide id] =
   true`), `talentBuild` (id of the talent build followed, "off" for none, nil: the class's
   first), `taxiSeen` (`[continent] = true`: a flight map opened there), `goals`
   (`["<guide>#<step>"] = { kills, talked, gossiped, used, object, counts, progress }`), `keep`

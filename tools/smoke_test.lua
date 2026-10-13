@@ -377,6 +377,39 @@ ok, err = pcall(function()
 end)
 if not ok then problem("resume: " .. tostring(err)) end
 
+-- The second half of a section done earlier, in another guide: taken up again in the first
+-- half, the guide stays with the player's quests instead of jumping to the end (in game,
+-- Redridge done before Duskwood).
+ok, err = pcall(function()
+    local A1, A2, A3, A4, B1, B2 = 900901, 900902, 900903, 900904, 900905, 900906
+    Ding.RegisterGuide({ id = "smoke-order", title = "Order", races = { "NightElf" }, minLevel = 1, maxLevel = 5,
+        steps = {
+            { accept = A1 },                -- 1
+            { turnin = A1, accept = A2 },   -- 2 where the player is
+            { train = true },               -- 3
+            { accept = A3 },                -- 4
+            { turnin = A2 },                -- 5
+            { turnin = A3, accept = A4 },   -- 6
+            { turnin = A4 },                -- 7
+            { go = { 1438, 40, 40 } },      -- 8
+            { accept = B1 },                -- 9 done in another guide
+            { turnin = B1 },                -- 10
+            { accept = B2 },                -- 11
+            { turnin = B2 },                -- 12
+        } })
+    scenarioCharacter()
+    H.resetQuests()
+    E.turnedIn, Ding.char.manual, Ding.char.lastStep = {}, {}, nil
+    H.setQuest(A1, "ready"); H.setQuest(B1, "turnedin"); H.setQuest(B2, "turnedin")
+    E:Resume("smoke-order", true); flush()
+    expect(E.index == 2 and E.resumeTo == nil, ("order: step %d, resuming to %s"):format(E.index, tostring(E.resumeTo)))
+    H.setQuest(A1, "turnedin"); H.setQuest(A2, "log")
+    fire("QUEST_LOG_UPDATE"); flush()
+    expect(E.index == 3, ("order: the trainer passed (step %d)"):format(E.index))
+    checkPanel("order: a section's second half done earlier")
+end)
+if not ok then problem("order: " .. tostring(err)) end
+
 -- Skip a step to do it later, play the next one, come back to it, then finish the guide.
 ok, err = pcall(function()
     local guide = SCENARIO
@@ -407,6 +440,7 @@ ok, err = pcall(function()
         if not skipped and step.complete and not step.optional and nextStep
             and (nextStep.accept or nextStep.complete or nextStep.turnin) and not shares(step, nextStep) then
             skipped = index
+            tick(2)    -- the step is on screen (no longer the one just finished)
             E:Skip(); flush()
             expect(E.index == index + 1, ("skip: step %d instead of %d"):format(E.index, index + 1))
             checkPanel(("step %d skipped"):format(index))

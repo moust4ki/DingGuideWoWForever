@@ -1320,6 +1320,16 @@ function P:CheckHold()
     end)
 end
 
+-- "Next" (or "skip") while the finished step is still on screen: the step the engine moved
+-- to comes now, and nothing is marked, since the player has not seen it yet. Returns true
+-- when there was such a step.
+function P:EndHold()
+    if not self.holding then return false end
+    self.holding = nil
+    Ding:Safe(self.Update, self)
+    return true
+end
+
 -- Focus mode: A uses the quest item when the focused row is the item's (a secure click).
 local function syncItemKey()
     if Ding.Gamepad.owner ~= P.frame then return end

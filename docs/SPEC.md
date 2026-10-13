@@ -291,7 +291,9 @@ keys of section 2 above.
 - **Resuming**: for 10 s after a guide is loaded (login, guide change, "restart"), a manual
   step (`go`, `train`, `fly`…) counts as done if a quest further on in the guide is already
   **turned in**. Quest data that arrives after login therefore still realigns the guide. A
-  quest that is only accepted further on is not enough (it may have been picked up early).
+  quest that is only accepted further on is not enough (it may have been picked up early),
+  nor is a turn-in past a step with a quest of the log to complete or turn in (the player is
+  not past that step: those quests were done out of the guide's order).
   After that, a manual step is passed only by "Next" or by progress in the next 5 steps.
 - **Guide choice** for a character Ding does not know yet, among the compatible sections of
   Ding's Leveling pack (its Zones pack when Leveling has none for the character), or of the
@@ -348,7 +350,15 @@ keys of section 2 above.
   what the player left behind, but **stops on any quest from the guide's past that is still
   in the log and remains to be completed or turned in** (a quest ready to turn in counts:
   Yendi's feedback, "Filthy Paws" skipped); a step whose log quests are only accepted does not
-  stop it. Then it carries on to the player's place. The steps left behind remain reachable
+  stop it. Then it carries on to the player's place. **It never goes past the work left on
+  the quests the player took last**: from the furthest step that gives a quest still in the
+  log (not one taken early on the way), the first step with a quest of the log to complete
+  or turn in is as far as it goes, and the guide goes on step by step from there. Quests
+  turned in further on were done out of the guide's order (in game, 13/10/2026: Redridge
+  done before Duskwood put a hunter in the middle of Duskwood at the end of Redridge, 70
+  steps ahead; the guide then passed the class trainer, the chains' next quests and the
+  trips between the quests of the log, and "Next" passed several steps at a time). A resume
+  saved at login is held to the same limit. The steps left behind remain reachable
   through "back to a skipped step". A section picked again (guide list, another pack and
   back) is taken up at least to the step the character was on in it (`Ding.char.lastStep`,
   or where a resume still in progress was going), so the steps the game cannot check later
@@ -547,7 +557,11 @@ under every following step (with the along-the-way rows, first, "Still to do · 
 whatever the distance; never twice, never under a step that names the quest), and their targets
 are **low-priority arrow candidates** on the steps with quests (not on a trip: a `go` point
 must stay the arrow's to be validated): such a point counts as twice its distance plus 300
-yards. A quest turned in leaves the set.
+yards. A quest turned in leaves the set, and so does a quest the active guide only makes
+sticky further on than the step shown ("Previous", or the guide taken up earlier): never
+"Still to do" before its step. In game (13/10/2026), "The Night Watch" (57), made sticky by
+a jump past its step, listed its monsters in red under the finished "The Night Watch" (56).
+The quests of an earlier section stay.
 
 ### Section wrap-up
 
@@ -559,7 +573,8 @@ and "Stay in this section" (remembered, `Ding.char.stay`). A click or A in focus
 ### Next steps preview
 
 "Next steps shown" (Guide tab, 0 to 3, off by default): under the step's rows, one dimmed line
-(state "preview") per next step still to do: its first line still to do
+(state "preview") per next step still to do, the ones "Next" goes to one after the other (not
+the steps a resume in progress passes, `Engine:NextSteps`): its first line still to do
 (`Engine:Describe(step, true)`, without the quests the engine passes: level too low to take
 them, grey). A quest line names the quest with its level and how many other quests the step
 still deals with: "Turn in [2] “Name” +1" (`L.QUEST_WITH_LEVEL`, `L.PREVIEW_MORE`); a step
@@ -692,7 +707,9 @@ accent #5BB4FF, the Noto Sans font shipped with the addon, rounded shapes from t
   the list" or "Click: see the list": the settings open on the cleanup page). The guide's notes
   and the step's own hints (service, "press Next", marked by hand, option steps) stay under the
   step.
-  A step the player has just finished stays displayed for 1.5 s, in green. The objectives of
+  A step the player has just finished stays displayed for 1.5 s, in green; "Next" or "Skip"
+  meanwhile only brings the step the guide moved to, without marking it (the player has not
+  seen it yet: one press, one step). The objectives of
   a quest that is ready to turn in or already turned in are done (in green, full counter),
   even when the client resets them to 0 (quest turned in, past step reviewed with
   "Previous"); a full counter also counts as done when the client's flag is secret.
