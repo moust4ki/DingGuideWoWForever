@@ -41,7 +41,7 @@ T.test("sticky: the quest's objectives under every following step, wherever the 
     local sticky = rows(function(r) return r.sticky end)
     T.ok(#sticky >= 1, "the sticky objectives are not listed far from their monsters")
     T.eq(sticky[1].quest, 456)
-    T.ok(H.plain(sticky[1].sub):find(L.STICKY_WAY, 1, true), "no \"Still to do\": " .. H.plain(sticky[1].sub or ""))
+    T.ok(H.plain(sticky[1].sub):find(L.STICKY_FOR:match("^(.-)%%s"), 1, true), "not said as another quest: " .. H.plain(sticky[1].sub or ""))
     -- Its own step does not repeat them.
     E.index = 4; E:Refresh()
     T.eq(#rows(function(r) return r.along and r.quest == 456 end), 0, "repeated under its own step")

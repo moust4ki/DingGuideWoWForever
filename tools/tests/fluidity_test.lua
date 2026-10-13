@@ -125,7 +125,7 @@ T.test("along the way: the objective of another quest whose monsters are right h
     T.eq(rows[1].quest, 916)
     T.eq(rows[1].state, "todo")
     T.eq(rows[1].kind, "collect")
-    T.ok(H.plain(rows[1].sub):find(L.ALONG_WAY, 1, true), "no \"along the way\" mention: " .. H.plain(rows[1].sub or ""))
+    T.ok(H.plain(rows[1].sub):find(L.ALONG_FOR:match("^(.-)%%s"), 1, true), "not said as another quest: " .. H.plain(rows[1].sub or ""))
     T.ok(H.plain(rows[1].sub):find(Data:QuestName(916), 1, true), "its quest is not named")
     -- The step's own rows come first.
     T.eq(P.rowsShown[1].quest, 457)

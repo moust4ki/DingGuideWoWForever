@@ -40,6 +40,9 @@ local STATES = {
     notice = { row = C.subtle, text = C.secondary, counter = C.secondary },
     -- A control in the list (cancel the directory's trip): a button's background, no icon.
     button = { row = C.control, text = C.text, counter = C.text },
+    -- A row added under the step (a weapon to learn, training, a gear upgrade, a talent, the
+    -- section's end, a quest found elsewhere): an offer, not the step's work, so not in its red.
+    extra = { row = C.subtle, icon = C.accentBg, glyph = C.accent, text = C.text, counter = C.accent },
 }
 -- Rows without an icon: their text starts where the icons do.
 local ICONLESS = { header = true, notice = true, button = true }
@@ -425,10 +428,10 @@ function P:Rows(content)
         for _, row in ipairs(objectiveRows(line.quest, itemID, itemQuest, false)) do
             if row.index == line.objective then
                 row.along, row.sticky = true, line.sticky
-                local group = line.sticky and L.STICKY_WAY or L.ALONG_WAY
+                -- Said as another quest of the log, never as the step's own work.
+                local group = line.sticky and L.STICKY_FOR or L.ALONG_FOR
                 if row.quest ~= lastQuest or group ~= lastGroup then
-                    local forQuest = L.FOR_QUEST:format(questName(row.quest, true))
-                    row.sub = group ~= lastGroup and (group .. " · " .. forQuest) or forQuest
+                    row.sub = group:format(questName(row.quest, true))
                     lastQuest, lastGroup = row.quest, group
                 end
                 rows[#rows + 1] = row
@@ -439,6 +442,7 @@ function P:Rows(content)
     for _, line in ipairs(extra) do
         local row = questRow(line)
         row.extra = true
+        if row.state == "todo" then row.state = "extra" end
         rows[#rows + 1] = row
     end
     for _, row in ipairs(lastNotices) do rows[#rows + 1] = row end
@@ -1386,8 +1390,9 @@ function P:Content()
         content[#content + 1] = { indent = true, kind = "hint",
             text = mark == "manual" and L.STEP_MARKED_DONE or L.STEP_MARKED_SKIPPED }
     end
-    -- Objectives of other quests around the player (Core/Along.lua).
-    if not held and Ding.Along then
+    -- Objectives of other quests around the player (Core/Along.lua); not under a step the
+    -- player went back to with "Previous": they would look like that step's, still to do.
+    if not held and not E.hold and Ding.Along then
         for _, e in ipairs(Ding.Along.shown) do
             content[#content + 1] = { action = "along", quest = e.quest, objective = e.index, sticky = e.sticky }
         end

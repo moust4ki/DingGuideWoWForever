@@ -62,17 +62,33 @@ function C.IsQuestReady(questID)
 end
 
 -- { { text = "Young Nightsaber slain: 3/7", type = "monster", finished = false,
---     numFulfilled = 3, numRequired = 7 }, ... } (fields the client keeps secret: nil)
+--     numFulfilled = 3, numRequired = 7 }, ... } (fields the client keeps secret: nil). A count
+-- the client keeps secret comes from the text's "3/7" (its last one: "Sanglier : 2/6
+-- personnages tués" too), and then whether it is finished: an objective done must not read 0.
+local function textCount(text)
+    local have, need
+    for a, b in (text or ""):gmatch("(%d+)%s*/%s*(%d+)") do have, need = a, b end
+    return tonumber(have), tonumber(need)
+end
+
 function C.GetObjectives(questID)
     local out = {}
     if C_QuestLog and C_QuestLog.GetQuestObjectives then
         local ok, list = safe(C_QuestLog.GetQuestObjectives, questID)
         if ok and type(list) == "table" then
             for i, obj in ipairs(list) do
-                out[i] = {
+                local o = {
                     text = plain(obj.text), type = plain(obj.type), finished = plain(obj.finished),
                     numFulfilled = plain(obj.numFulfilled), numRequired = plain(obj.numRequired),
                 }
+                if o.numFulfilled == nil or o.numRequired == nil then
+                    local have, need = textCount(o.text)
+                    if o.numFulfilled == nil then o.numFulfilled = have end
+                    if o.numRequired == nil then o.numRequired = need end
+                end
+                local have, need = tonumber(o.numFulfilled), tonumber(o.numRequired)
+                if o.finished == nil and have and need and need > 0 then o.finished = have >= need end
+                out[i] = o
             end
         end
     end

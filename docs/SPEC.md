@@ -343,28 +343,27 @@ keys of section 2 above.
   (binding, right click on "Previous", `/ding back`) brings back the nearest step not done
   before the current step; once it is done, the guide moves forward again. Like any manual
   step, a skipped manual step counts as done as soon as a later step makes progress.
-- **Resume where I am** (settings, guide list, `/ding guide`, first guide): the player's
-  place is the last step where they turned in a quest, provided they have worked on (turned in
-  or in the log) at least half of the quest steps up to there: a quest done early does not
-  send them too far. The guide then starts over from the beginning: it passes what is done and
-  what the player left behind, but **stops on any quest from the guide's past that is still
-  in the log and remains to be completed or turned in** (a quest ready to turn in counts:
-  Yendi's feedback, "Filthy Paws" skipped); a step whose log quests are only accepted does not
-  stop it. Then it carries on to the player's place. **It never goes past the work left on
-  the quests the player took last**: from the furthest step that gives a quest still in the
-  log (not one taken early on the way), the first step with a quest of the log to complete
-  or turn in is as far as it goes, and the guide goes on step by step from there. Quests
-  turned in further on were done out of the guide's order (in game, 13/10/2026: Redridge
-  done before Duskwood put a hunter in the middle of Duskwood at the end of Redridge, 70
-  steps ahead; the guide then passed the class trainer, the chains' next quests and the
-  trips between the quests of the log, and "Next" passed several steps at a time). A resume
-  saved at login is held to the same limit. The steps left behind remain reachable
-  through "back to a skipped step". A section picked again (guide list, another pack and
-  back) is taken up at least to the step the character was on in it (`Ding.char.lastStep`,
-  or where a resume still in progress was going), so the steps the game cannot check later
-  (a trip, a trainer, the inn, a step behind an option turned on since, a goal whose items
-  are spent) are not asked again; "Take this guide up where I am" forgets it and starts from
-  the quests alone. A `sethearth` step whose bind happened during the step stays done while
+- **Resume where I am** (settings, guide list, `/ding guide`, first guide): the guide starts
+  over from the beginning and passes what the game shows done (quests turned in, accepted or
+  ready, level reached) and what the player marked. **The quests alone never place the
+  player further**: quests done out of the guide's order, in another guide, look like
+  progress (in game, 13/10/2026: Redridge done before Duskwood put a hunter in the middle of
+  Duskwood at the end of Redridge, 70 steps ahead; then the Wetlands done at level 24 put the
+  same hunter, back in Darkshire, at step 73 of the route's Wetlands; each time the guide
+  passed the quests, trainers and trips still to do, and "Next" passed several steps at a
+  time). A section picked again (guide list, another pack and back, an update of the guide)
+  is taken up to the step the character was on in it (`Ding.char.lastStep`): up to there
+  the guide also passes what the player left behind, so the steps the game cannot check
+  later (a trip, a trainer, the inn, a step behind an option turned on since, a goal whose
+  items are spent) are not asked again, but it **stops on any quest from the guide's past
+  that is still in the log and remains to be completed or turned in** (a quest ready to turn
+  in counts: Yendi's feedback, "Filthy Paws" skipped); a step whose log quests are only
+  accepted does not stop it. Then it carries on to the player's place. The steps left behind
+  remain reachable through "back to a skipped step". "Take this guide up where I am" forgets
+  the marks and that place: what is not really done is to do again, the first step still to
+  do comes first (a quest skipped earlier included: "Skip" passes it). A character saved
+  before v1.4.0 drops its resume in progress once and keeps the step it is on as its place
+  (`Ding.MigrateChar`). A `sethearth` step whose bind happened during the step stays done while
   the hearthstone is bound there (`Ding.char.hearthInn`: the client's own name of the inn
   then, so the language does not matter), also after "Take this guide up where I am".
 - **Login**: the quest log arrives a moment after login. The engine places the player only
@@ -372,8 +371,8 @@ keys of section 2 above.
   resume would believe every quest is missing and would skip the ones to turn in.
 - **Updated guide**: a new version of Ding can regenerate a guide and move its steps.
   `Ding.char.guideSig` keeps the signature of the active guide (its quest actions and its
-  level milestones, in order); if it changed at login, the guide is resumed where the player
-  is instead of staying on a step number that is now wrong.
+  level milestones, in order); if it changed at login, the guide is resumed (up to the
+  section's saved place, see above) instead of staying on a step number that is now wrong.
 - **Trips with nothing left at the end**: a step that only takes the player somewhere (`go`,
   `fly`, `hearth`, nothing else) is passed as soon as the next step for the player is already
   done by the game's own state (its quests turned in, accepted or ready, its level reached),
@@ -604,8 +603,11 @@ target (the nearest candidate) goes through a travel planner, the fastest way in
 
 A step's `sticky` quests join a per-character set (`Ding.char.sticky`) once the step is
 reached; while such a quest is in the log and not ready, its unfinished objectives are listed
-under every following step (with the along-the-way rows, first, "Still to do · For “quest”",
-whatever the distance; never twice, never under a step that names the quest), and their targets
+under every following step (with the along-the-way rows, first, "Another quest of your log, to
+finish along the way: [29] “quest”" — said as another quest, never as the step's work — whatever
+the distance; never twice, never under a step that names the quest, nor under a step seen again
+with "Previous": in game, 13/10/2026, "The Cursed Crew" listed at 0/13 in red under a step done
+read as that step's objectives), and their targets
 are **low-priority arrow candidates** on the steps with quests (not on a trip: a `go` point
 must stay the arrow's to be validated): such a point counts as twice its distance plus 300
 yards. A quest turned in leaves the set, and so does a quest the active guide only makes
@@ -728,7 +730,8 @@ Under the current step, the window lists the unfinished objectives of the other 
 log whose targets (monsters, objects, item sources) are within 100 yards of the player: they
 stay listed until the player is 160 yards away (no flicker), the objective is done or the
 quest leaves the log. Three at most, the guide's next quests first, after the step's own rows;
-the first one says "Along the way · For “quest”". Hovering, clicking (A in focus mode) works as
+the first one says "Another quest of your log, its targets are right here: [24] “quest”". Not
+under a step seen again with "Previous" (they would read as its objectives). Hovering, clicking (A in focus mode) works as
 for the step's objectives. The objective the level step already farms is not repeated. Looked
 at every 2 s while the window is shown, and on every quest log change.
 

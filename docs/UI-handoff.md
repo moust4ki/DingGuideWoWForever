@@ -578,7 +578,12 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
 - **New continent** (not in the mockup): an ordinary "other" row under the step, "New continent:
   talk to … (flight master) to learn its flight paths".
 - **Persistent objectives, wrap-up, preview** (not in the mockup): sticky objectives are along-the-way
-  rows whose first sub-line says "Still to do · For “quest”"; the wrap-up choices are three
+  rows whose first sub-line says "Another quest of your log, to finish along the way: “quest”"
+  (along the way: "…, its targets are right here: “quest”"); none under a step seen again with
+  "Previous". The rows added under the step (weapon to learn, training, gear upgrade, talent,
+  wrap-up, a quest found elsewhere) have a look of their own, state `extra`: row `subtle`, icon
+  `accent.bg` / glyph `accent`, text `text`, counter `accent` (they are offers, not the step's
+  work in red). The wrap-up choices are three
   ordinary rows (the first with "You are past this section's levels (up to N)."); the preview
   rows are dimmed: no background, icon `impossible.icon.bg` / glyph `text.disabled`, text
   `text.muted` without its links' colors, no counter; a quest's level in brackets before its

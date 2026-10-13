@@ -476,6 +476,8 @@ T.test("weapon reminder: a gun in the bags, a weapon master close by; its option
     local row = reminder()
     T.ok(row, "no reminder for a gun in the bags")
     T.eq(H.plain(row.text), L.WEAPON_TO_LEARN:format(L.WEAPON_GUNS, "Buliwyf Stonehand", "Ironforge"))
+    -- An offer under the step, not the step's work: not in the red of what is still to do.
+    T.eq(row.state, "extra", "the reminder looks like an objective of the step")
     -- Known: gone.
     H.learnSpell(266)
     H.fire("LEARNED_SPELL_IN_TAB"); H.flush()

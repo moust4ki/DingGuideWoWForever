@@ -292,10 +292,12 @@ Contracts between modules:
   away, a section of this pack, else of Ding's), `prevPack` (the pack before it: deleting an
   imported guide goes back there), `packGuide` (`[pack] = guide id`: the section
   last followed in each pack), `step`, `manual`, `resumeTo` (resume in
-  progress: `Engine:Resume` passes what is done or left behind up to the player's place, but
-  first finishes and turns in the quests of the guide's past still in the log; never past the
-  work left on the quests the player took last, `resumeLimit`; `Engine:LeftBehind(step, i)`:
-  a step it passes, which `Engine:NextSteps` leaves out of the preview), `guideSig`
+  progress: `Engine:Resume` passes what is done or left behind up to the step the character
+  was on in the section, `lastStep`, but first finishes and turns in the quests of the
+  guide's past still in the log; never further on the quests alone; `Engine:LeftBehind(step,
+  i)`: a step it passes, which `Engine:NextSteps` leaves out of the preview), `layout`
+  (version of the character's data, `Ding.MigrateChar`: a resume saved before v1.4.0 is
+  dropped once), `guideSig`
   (signature of the active guide: changed by an update, the guide is resumed), `early`
   (quests taken on the way by AutoQuest, ignored to place the player), `skipped` (skipped
   steps, per guide; cleared by "Take this guide up where I am", like `manual`), `killXP`
@@ -311,7 +313,8 @@ Contracts between modules:
   first), `taxiSeen` (`[continent] = true`: a flight map opened there), `goals`
   (`["<guide>#<step>"] = { kills, talked, gossiped, used, object, counts, progress }`), `keep`
   (`[itemID] = true`), `lastStep` (`[guide id] = step`: where the character was in each
-  section, `Engine:Resume` goes at least there; cleared by "Take this guide up where I am"),
+  section, `Engine:Resume` goes there and no further; cleared by "Take this guide up where I
+  am", which then takes the first step still to do),
   `hearthInn` (`{ inn, name }`: bound during a sethearth step, the client's name of the inn),
   `worldMark` (`{ map, x, y }`: the map waypoint Ding set, not the player's).
   `Ding.db.panel.preview` (0-3 next steps shown), `Ding.db.panel.weaponReminder` (the weapon
