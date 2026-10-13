@@ -116,7 +116,11 @@ T.test("Darkshire to Buliwyf: the row says flight, the arrow flies first, then w
     T.ok(trip and itinerary, "no trip line or no itinerary")
     T.ok(H.plain(trip.sub):find(A.hint, 1, true) and H.plain(trip.sub):find(itinerary, 1, true),
         "the way there is not under the trip's line: " .. H.plain(trip.sub or ""))
-    T.ok(H.plain(trip.sub):find(L.DIR_TRIP_PAD:format(Ding.Gamepad:ButtonName("PAD1")), 1, true), "no way back")
+    local cancel = false
+    for _, r in ipairs(P.rowsShown or {}) do
+        if r.action == "tripcancel" then cancel = true end
+    end
+    T.ok(cancel, "no way back")
     -- Landed in Ironforge: on foot to Buliwyf.
     H.land(1455, 55.5, 47.8)
     at(1455, 55.5, 47.8)

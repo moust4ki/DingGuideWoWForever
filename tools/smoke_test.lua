@@ -1052,8 +1052,9 @@ ok, err = pcall(function()
 end)
 if not ok then problem("rewards: " .. tostring(err)) end
 
--- Quests an NPC offers: beside its window, a quest of a later step ("step N") and one that is not
--- for the character (a Horde quest); gone with the window, and never shown with the option off.
+-- Quests an NPC offers: beside its window, a verdict on a quest of a later step ("step N") and on
+-- one that is not for the character (a Horde quest); nothing when the current step takes every
+-- quest offered; gone with the window, and never shown with the option off.
 ok, err = pcall(function()
     local O = Ding.Offers
     scenarioCharacter()
@@ -1063,7 +1064,7 @@ ok, err = pcall(function()
     db.ui.autoAccept, db.ui.autoTurnin = false, false
     E:SetGuide(SCENARIO.id, 1, true)
     tick(3)
-    local later, step, horde = nil, nil, 96874
+    local later, step, horde, current = nil, nil, 96874, nil
     for i = #SCENARIO.steps, 2, -1 do
         local accept = SCENARIO.steps[i].accept
         if accept and Ding:StepApplies(SCENARIO.steps[i]) then
@@ -1071,13 +1072,20 @@ ok, err = pcall(function()
             break
         end
     end
+    for _, q in ipairs(E:CurrentStep().accept or {}) do current = current or q end
+    if current then
+        H.talk({ gives = { current } })
+        flush()
+        expect(not (O.frame and O.frame:IsShown()), "offered quests: shown for the current step's quest alone")
+        H.closeDialog()
+    end
     H.talk({ gives = { later, horde } })
     flush()
     expect(O.frame and O.frame:IsShown() and #O.entries == 2, "offered quests: no panel beside the NPC window")
     local rows = O.entries or {}
     expect(rows[1] and rows[1].result.kind == "later" and rows[1].result.step == step,
         "offered quests: a later step's quest not placed at its step")
-    expect(rows[2] and rows[2].result.kind == "none" and rows[2].result.reason == "class" and rows[2].text ~= "",
+    expect(rows[2] and rows[2].verdict == "useless" and rows[2].result.reason == "class" and rows[2].text ~= "",
         "offered quests: a quest for the other side not said so")
     H.closeDialog()
     expect(not O.frame:IsShown(), "offered quests: the panel stays once the window closed")

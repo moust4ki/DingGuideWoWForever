@@ -189,7 +189,8 @@ Contracts between modules:
   `Engine:BackToIncomplete()` (nearest past step not done), `Engine:CatchUp(q, step)`
   (missing link of the chain of `q`), `Engine.skipNotes` (reasons of the last skip),
   `Engine:StepMark(index)` -> "manual" | "skipped" | nil (step marked done or skipped by
-  hand: colors `C.manual` / `C.skipped` in the window). `Travel:Leg(point)` -> nil (walk) or
+  hand: colors `C.manual` / `C.skipped` in the window), `Engine:Unmark([index])` (undoes it: back
+  to that step when it is still to do). `Travel:Leg(point)` -> nil (walk) or
   `{ kind = "fly" | "boat" | "zeppelin" | "tram" | "hearth" | "teleport" | "passage", point (flight
   master, dock, or a passage's entry, its far end once in it; nil for the hearthstone and a
   teleport), hint, to, flight, spell, passage }`, kept in `Travel.leg`
@@ -218,7 +219,9 @@ Contracts between modules:
   its entry for the player's faction when it is a table. `AutoQuest:PlaceEnd()`: the last step at
   the player's place (`Wanted` reads up to it). `Data:NpcQuests(npc)`: the quests an NPC starts.
   `Offers:Classify(q)` -> `{ kind = "now" | "later" | "needed" | "earlier" | "other" | "none",
-  step, guide, reason }`. `Engine:UnusedLogQuests()`: quests
+  step, guide, before, ahead, reason }`, `Offers:Verdict(r, q, ctx)` -> "take" | "can" | "notNow" |
+  "optional" | "useless" and plain sentences (no color code); `Offers:WhyLeftOut(q)`: the one
+  place that asks `Ding.Why:Quest(q)` for the route's reason (a clause, or `{ text }`). `Engine:UnusedLogQuests()`: quests
   of the log the active guide and the next ones never use (listed in the Guide tab; Ding never
   abandons them). `UI.Banner`, `UI.Ring`, `UI.ScreenCenter`: Ding's marks over the game's
   windows, which are only read. `QuestMobs.byNpc` (`[npc id]` = entries best first: `kind`
@@ -239,7 +242,9 @@ Contracts between modules:
   `reach:Route(point)` -> seconds, `{ "fly", "boat"... }` (one planner pass, many targets).
   A trip goes through `Travel:Leg` like any target of the arrow.
   `Finder.trip` = `{ kind, npc, name, point, label }` (`Finder:GoTo(entry, label)`,
-  `Finder:Go(kind)`, `Finder:Cancel()`), read by the arrow and the guide window.
+  `Finder:Go(kind)`, `Finder:Cancel([quiet])`), read by the arrow and the guide window; the
+  engine ends it whenever the player moves the guide (Next, Skip, Prev, BackToIncomplete,
+  SetGuide).
 - Presentation: `Intro:Open(page, back)` (`back` runs once the player closes it: the settings it
   came from, the first launch's Keybinds tab, one frame later), `Intro:Close(quiet)` (`quiet`:
   another Ding window takes over, `back` does not run; the settings, the directory and the import

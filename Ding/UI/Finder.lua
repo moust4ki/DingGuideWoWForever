@@ -61,10 +61,12 @@ function F:Go(kind)
     return self:GoTo(best)
 end
 
-function F:Cancel()
+-- Ends the trip: the arrow goes back to the guide. `quiet`: the caller refreshes (the engine,
+-- when the player moves the guide).
+function F:Cancel(quiet)
     if not self.trip then return end
     self.trip = nil
-    refresh()
+    if not quiet then refresh() end
 end
 
 -- The game window each kind of NPC opens; a gossip window counts for every kind.
@@ -151,7 +153,7 @@ function F:Rows(page)
     local function add(row) rows[#rows + 1] = row end
     if page.kind == "nearby" then
         if self.trip then
-            add({ label = L.FINDER_BACK, sub = L.FINDER_TRIP_NOW:format(self.trip.name or "?"), back = true })
+            add({ label = L.TRIP_CANCEL, sub = L.FINDER_TRIP_NOW:format(self.trip.name or "?"), back = true })
         end
         for _, e in ipairs(D:Entries()) do
             local name = L[e.category.label]
