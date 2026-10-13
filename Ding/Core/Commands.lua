@@ -40,6 +40,14 @@ SlashCmdList.DING = function(input)
     elseif cmd == "export" then
         -- A pack or a guide by its id (/ding list), else the active guide.
         Ding.ImportWindow:Open("export", rest ~= "" and rest or nil)
+    elseif cmd == "cancel" then
+        -- The trip of the NPC directory: the arrow goes back to the guide.
+        if Ding.Finder.trip then
+            Ding.Finder:Cancel()
+            Ding:Print(L.TRIP_CANCELLED)
+        else
+            Ding:Print(L.TRIP_NONE)
+        end
     elseif cmd == "find" then
         -- The NPC directory's search: a service, a weapon, a profession or a name.
         Ding.Finder:Find(rest)
