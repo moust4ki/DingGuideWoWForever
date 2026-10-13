@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("frFR", "horde-25-hillsbrad", {
         "Contreforts de Hautebrande (25-27)",
     ["Zeppelin from the tower outside Orgrimmar to Undercity, then the road south through Silverpine Forest to Tarren Mill: your base."] =
         "Zeppelin de la tour près d'Orgrimmar pour Fossoyeuse, puis la route du sud par la forêt des Pins-Argentés jusqu'à Moulin-de-Tarren : c'est ta base.",
+    ["Tarren Mill"] =
+        "Moulin-de-Tarren",
     ["If the starting item dropped: use it from your bags."] =
         "Si l'objet de départ est tombé : utilise-le depuis ton sac.",
 })

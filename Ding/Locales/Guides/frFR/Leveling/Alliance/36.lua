@@ -9,14 +9,16 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a36-azshara-and-felwood", {
         "Teldrassil : le village de Rut'theran d'abord, puis Azshara et Gangrebois.",
     ["The NPC is indoors."] =
         "Le PNJ est à l'intérieur.",
-    ["This one roams, so scan the surrounding area. Climb to the highest floor of the building."] =
-        "Celui-ci se déplace : fouille les environs. Monte au dernier étage du bâtiment.",
+    ["The NPC is indoors. You need them later for \"Good Natured Emma\", \"Arcane Runes\" and \"Sprinkle's Secret Ingredient\": keep them in the bank to free bag slots."] =
+        "Le PNJ est à l'intérieur. Tu en auras besoin plus tard pour « Emma la bonne pâte », « Les runes des arcanes » et « L'ingrédient secret de Sprinkle » : garde-les à la banque pour libérer de la place dans tes sacs.",
+    ["Climb to the highest floor of the building."] =
+        "Monte au dernier étage du bâtiment.",
     ["The quest giver stands outdoors, not indoors."] =
         "Le donneur de quête est dehors, pas à l'intérieur.",
+    ["Auberdine"] =
+        "Auberdine",
     ["A lengthy stretch of questing lies ahead. This vendor sells no arrows or bullets."] =
         "Une longue série de quêtes t'attend. Ce marchand ne vend ni flèches ni balles.",
-    ["This one roams, so scan the surrounding area."] =
-        "Celui-ci se déplace : fouille les environs.",
     ["Hand these in afterwards for experience and reputation."] =
         "Rends-les ensuite pour l'expérience et la réputation.",
     ["Raise Timbermaw Hold standing to Unfriendly"] =
@@ -33,6 +35,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a36-azshara-and-felwood", {
         "Reste sur le sentier pour atteindre Jaedenar",
     ["Climb the trail into Jadefire Run"] =
         "Monte le sentier jusqu'à Jadefire Run",
+    ["This one roams, so scan the surrounding area."] =
+        "Celui-ci se déplace : fouille les environs.",
     ["Fight the elementals of the swamp. Targets are in the cavern and around its entrance too."] =
         "Combats les élémentaires du marais. Les cibles sont dans la grotte et aussi autour de l'entrée.",
     ["Head out of the cave"] =

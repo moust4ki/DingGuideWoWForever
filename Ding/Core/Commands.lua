@@ -12,6 +12,9 @@ SlashCmdList.DING = function(input)
         Ding.Panel:Toggle()
     elseif cmd == "config" or cmd == "options" then
         Ding.Config:Open()
+    elseif cmd == "intro" then
+        -- The first launch's setup assistant, again.
+        Ding.Setup:Open()
     elseif cmd == "next" then
         E:Next()
     elseif cmd == "prev" then
@@ -40,6 +43,17 @@ SlashCmdList.DING = function(input)
     elseif cmd == "export" then
         -- A pack or a guide by its id (/ding list), else the active guide.
         Ding.ImportWindow:Open("export", rest ~= "" and rest or nil)
+    elseif cmd == "cancel" then
+        -- The trip of the NPC directory: the arrow goes back to the guide.
+        if Ding.Finder.trip then
+            Ding.Finder:Cancel()
+            Ding:Print(L.TRIP_CANCELLED)
+        else
+            Ding:Print(L.TRIP_NONE)
+        end
+    elseif cmd == "find" then
+        -- The NPC directory's search: a service, a weapon, a profession or a name.
+        Ding.Finder:Find(rest)
     elseif cmd == "where" then
         -- For guide authors: the player's position, written as a `go` step.
         local map, x, y = Ding.Compat.GetPlayerMapPosition()
@@ -48,6 +62,35 @@ SlashCmdList.DING = function(input)
         else
             Ding:Print(L.POSITION_UNKNOWN)
         end
+    elseif cmd == "passages" then
+        -- For testers: the walking passages nearest to the player (Core/Passages.lua), checked in
+        -- game or not, both ends as /ding where prints a point; the arrow points at the n-th.
+        local P, Compat = Ding.Passages, Ding.Compat
+        local map, x, y = Compat.GetPlayerMapPosition()
+        local continent, wx, wy = Compat.GetPlayerWorld()
+        if not (map and continent) then
+            Ding:Print(L.POSITION_UNKNOWN)
+            return
+        end
+        local here = { map = map, x = x, y = y, continent = continent, wx = wx, wy = wy }
+        local letter = ({ Alliance = "A", Horde = "H" })[UnitFactionGroup("player")]
+        local near = P.Near(here, 5, letter)
+        if #near == 0 then
+            Ding:Print(L.PASSAGES_NONE)
+            return
+        end
+        local pick = math.max(1, math.min(#near, tonumber(rest) or 1))
+        Ding:Print(L.PASSAGES_TITLE:format(pick))
+        for i, n in ipairs(near) do
+            local hint = P.Hint(n.passage, n.key == "a" and "b" or "a")
+            local ends = ("a = %s, b = %s"):format(P.Format(n.passage.a), P.Format(n.passage.b))
+            Ding:Print(L.PASSAGES_LINE:format(i, hint, math.floor(n.distance + 0.5),
+                n.passage.verified and L.PASSAGES_CHECKED or L.PASSAGES_UNCHECKED, ends))
+        end
+        local chosen = near[pick]
+        local e = P.End(chosen.passage, chosen.key)
+        Ding.Arrow:Focus({ { map = e.map, x = e.x, y = e.y,
+            label = P.Hint(chosen.passage, chosen.key == "a" and "b" or "a") } })
     elseif cmd == "scale" and rest ~= "" then
         local scale = Ding.Panel:SetScale(rest)
         if scale then Ding:Print(L.SCALE_SET:format(scale)) else Ding:Print(L.HELP) end

@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("ptBR", "horde-25-hillsbrad", {
         "Contraforte de Eira dos Montes (25-27)",
     ["Zeppelin from the tower outside Orgrimmar to Undercity, then the road south through Silverpine Forest to Tarren Mill: your base."] =
         "Zepelim da torre perto de Orgrimmar até a Cidade Baixa, depois a estrada para o sul pela Floresta de Pinhaprata até a Serraria Tarren: sua base.",
+    ["Tarren Mill"] =
+        "Serraria Tarren",
     ["If the starting item dropped: use it from your bags."] =
         "Se o item inicial caiu: use-o direto das bolsas.",
 })

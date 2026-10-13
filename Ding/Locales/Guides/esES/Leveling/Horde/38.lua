@@ -7,8 +7,6 @@ Ding.RegisterGuideTranslation("esES", "leveling-h38-felwood-and-winterspring", {
         "Viaja al Puesto del Veneno",
     ["Felwood: Bloodvenom Post, in the west of the zone."] =
         "Frondavil: Puesto del Veneno, al oeste de la zona.",
-    ["This one roams, so scan the surrounding area."] =
-        "Este deambula, así que revisa los alrededores.",
     ["Hand these in afterwards for experience and reputation."] =
         "Entrégalos después por experiencia y reputación.",
     ["Go into Jaedenar"] =
@@ -41,12 +39,16 @@ Ding.RegisterGuideTranslation("esES", "leveling-h38-felwood-and-winterspring", {
         "No dejes el camino en todo el trayecto.",
     ["Flee if things go badly."] =
         "Huye si las cosas van mal.",
-    ["The NPC is indoors."] =
-        "El PNJ está dentro.",
+    ["The NPC is indoors. You need them later for \"Delivery to Andron Gant\", \"A Grave Situation\" and \"Betrayed\": keep them in the bank to free bag slots."] =
+        "El PNJ está dentro. Los necesitarás más adelante para «Entrega a Andron Gant», «Una situación mortal» y «Traición»: déjalos en el banco para liberar huecos en las bolsas.",
     ["The quest wants yetis; seek them out. Targets are in the cavern and around its entrance too."] =
         "La misión pide yetis; búscalos. Los objetivos están en la cueva y también alrededor de la entrada.",
-    ["The NPC is a human spirit. This one roams, so scan the surrounding area."] =
-        "El PNJ es un espíritu humano. Este deambula, así que revisa los alrededores.",
+    ["The NPC is indoors."] =
+        "El PNJ está dentro.",
+    ["Everlook"] =
+        "Vista Eterna",
+    ["The NPC is a human spirit."] =
+        "El PNJ es un espíritu humano.",
     ["Your targets are within the cavern."] =
         "Tus objetivos están dentro de la cueva.",
     ["Let the conversation play out. Your targets are within the cavern."] =
@@ -55,6 +57,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h38-felwood-and-winterspring", {
         "Sal de la cueva",
     ["Fight the elementals of the swamp."] =
         "Lucha contra los elementales del pantano.",
+    ["The NPC is indoors. You need them later for \"The Everlook Report\" and \"Duke Nicholas Zverenhoff\": keep them in the bank to free bag slots."] =
+        "El PNJ está dentro. Los necesitarás más adelante para «El informe Vista Eterna» y «El duque Nicolas Zverenhoff»: déjalos en el banco para liberar huecos en las bolsas.",
     ["The targets are leafless trees that walk."] =
         "Los objetivos son árboles sin hojas que caminan.",
     ["Slay the greenish beings of living water."] =
@@ -65,16 +69,20 @@ Ding.RegisterGuideTranslation("esES", "leveling-h38-felwood-and-winterspring", {
         "Dale los objetos a Nafien en lotes de 5. Cada lote completo que entregas da 50 de reputación. Lleva las plumas que recojas al PNJ en 64.8, 8.1.",
     ["Raise Timbermaw Hold standing to Neutral"] =
         "Sube tu reputación con el Bastión Fauces de Madera a Neutral",
-    ["This one roams, so scan the surrounding area. The NPC stands within the passage."] =
-        "Este deambula, así que revisa los alrededores. El PNJ está dentro del paso.",
+    ["The NPC stands within the passage."] =
+        "El PNJ está dentro del paso.",
     ["The targets are 3 white furbolgs moving as one pack. The target patrols a long route beside the road. They appear near 28.1, 35.0 in Winterspring."] =
         "Los objetivos son 3 fúrbolgs blancos que van en grupo. El objetivo patrulla una larga ruta junto al camino. Aparecen cerca de 28.1, 35.0, en Cuna del Invierno.",
     ["This number shrinks while you kill monsters. Bring any feathers you collect to the NPC at 64.8, 8.1."] =
         "Este número baja a medida que matas monstruos. Lleva las plumas que recojas al PNJ en 64.8, 8.1.",
+    ["The NPC is indoors. You need it later for \"Aquementas\": keep it in the bank to free a bag slot."] =
+        "El PNJ está dentro. Lo necesitarás más adelante para «Aquementas»: déjalo en el banco para liberar un hueco en las bolsas.",
     ["This NPC is found down in the Cleft of Shadow."] =
         "Este PNJ está abajo, en la Grieta de la Sombra.",
     ["The NPC stands on the highest level of this structure."] =
         "El PNJ está en el nivel más alto de esta estructura.",
+    ["Orgrimmar"] =
+        "Orgrimmar",
     ["Take the trail downhill"] =
         "Baja por el sendero",
     ["Wait for the talking to finish"] =

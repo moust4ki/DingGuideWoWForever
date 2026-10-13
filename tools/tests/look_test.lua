@@ -214,11 +214,11 @@ T.test("rows: background, icon and text by state (done, to do, impossible)", fun
     T.ok(same(impossible.icon.bg.color, C.impossibleIconBg), "impossible row icon")
 end)
 
-T.test("settings: 560 x 440, six tabs by intent in order, LB and RB at the ends", function()
+T.test("settings: 560 x 392 (the design's 440, denser at the user's request), six tabs by intent in order, LB and RB at the ends", function()
     start()
     Cfg:Open("guide", 1); H.flush()
     local f = Cfg.frame
-    T.ok(f.w == 560 and f.h == 440, "window size")
+    T.ok(f.w == 560 and f.h == 392, "window size")
     local want = { L.TAB_GUIDE, L.TAB_ROUTE, L.TAB_AUTOMATION, L.TAB_ARROW, L.TAB_BINDINGS, L.TAB_APPEARANCE }
     T.eq(#f.tabs, #want)
     for i, b in ipairs(f.tabs) do T.eq(b.label:GetText(), want[i]) end

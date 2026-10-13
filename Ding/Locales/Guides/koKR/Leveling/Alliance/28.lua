@@ -7,6 +7,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a28-feralas-and-tanaris", {
         "타나리스: 가젯잔에 먼저 들른 다음 페랄라스: 페더문 요새로 가세요.",
     ["The NPC is indoors."] =
         "NPC는 건물 안에 있습니다.",
+    ["Feathermoon Stronghold"] =
+        "페더문 요새",
     ["The NPC is indoors, one floor up."] =
         "NPC는 건물 안 한 층 위에 있습니다.",
     ["Position yourself in its center."] =
@@ -79,14 +81,22 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a28-feralas-and-tanaris", {
         "대상은 동굴 안에 있습니다.",
     ["Let the conversation play out. Your targets are within the cavern."] =
         "대화가 끝날 때까지 기다리세요. 대상은 동굴 안에 있습니다.",
+    ["The object is indoors, one floor up."] =
+        "그 물체는 건물 안 한 층 위에 있습니다.",
+    ["You need them later for \"The Borrower\", \"Screecher Spirits\", \"The Super Egg-O-Matic\" and \"Rhapsody's Kalimdor Kocktail\": keep them in the bank to free bag slots."] =
+        "나중에 \"사진기 대여\", \"계곡천둥매의 영혼\", \"고성능 자동부화기\", \"랩소디의 칼림도어 칵테일\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["Getting it here speeds up Un'Goro Crater. The NPC is indoors."] =
         "여기서 얻어 두면 운고로 분화구 진행이 빨라집니다. NPC는 건물 안에 있습니다.",
+    ["You need them later for \"Crystals of Power\": keep them in the bank to free bag slots."] =
+        "나중에 \"마력의 수정\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["Step into the cavern within the trunk"] =
         "나무줄기 속 동굴에 들어가세요",
     ["The spot is on the lower floor of the hollow tree."] =
         "그 지점은 속이 빈 나무의 아래층에 있습니다.",
     ["Stay clear of the elite foes. Be ready for a fight right away."] =
         "정예 적은 피하세요. 바로 전투가 시작되니 대비하세요.",
+    ["Gadgetzan"] =
+        "가젯잔",
     ["The NPC waits on the lower level, indoors. A lengthy stretch of quests is coming up. This vendor sells no arrows or bullets."] =
         "NPC는 건물 안 아래층에서 기다립니다. 곧 긴 퀘스트 구간이 이어집니다. 이 상인은 화살이나 탄환을 팔지 않습니다.",
 })

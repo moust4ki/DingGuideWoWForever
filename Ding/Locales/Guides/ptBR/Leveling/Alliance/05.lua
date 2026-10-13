@@ -35,8 +35,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a05-darkshore", {
         "Seus alvos ficam abaixo da superfície da água.",
     ["The targets are sea creatures with long necks. Your targets sit below the water's surface."] =
         "Os alvos são criaturas marinhas de pescoço longo. Seus alvos ficam abaixo da superfície da água.",
-    ["This one roams, so scan the surrounding area."] =
-        "Este se desloca, então procure pelos arredores.",
+    ["Auberdine"] =
+        "Auberdine",
     ["Head to the hilltop."] =
         "Vá até o topo da colina.",
     ["The targets are imps. Avoid slaying the satyrs if you can. You'll need this for the following quest."] =
@@ -63,6 +63,6 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a05-darkshore", {
         "Vá até o convés mais baixo do naufrágio. Entre nadando por uma escotilha.",
     ["Hunt the crabs."] =
         "Cace os caranguejos.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors. Do it only if you can."] =
-        "Este se desloca, então procure pelos arredores. O NPC está lá dentro. Faça só se puder.",
+    ["The NPC is indoors. Do it only if you can."] =
+        "O NPC está lá dentro. Faça só se puder.",
 })

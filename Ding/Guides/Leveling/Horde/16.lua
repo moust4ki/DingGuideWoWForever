@@ -9,11 +9,19 @@ Ding.RegisterGuide({
     faction  = "Horde",
     minLevel = 36, maxLevel = 37,
     next     = "leveling-h17-dustwallow-marsh",
+    leftOut  = {
+        [348] = { kind = "far" },
+        [592] = { kind = "prereq" },
+        [670] = { kind = "far", turnin = true },
+        [3626] = { kind = "prereq" },
+        [3721] = { kind = "prereq" },
+        [8553] = { kind = "prereq" },
+        [8554] = { kind = "prereq" },
+    },
     steps    = {
         { go = { 1434, 32.17, 28.9 }, text = "Travel to Grom'gol Base Camp", -- level 36
           note = "Stranglethorn Vale: Grom'gol Base Camp, on the west coast. The zeppelin from Orgrimmar lands there." },
-        { accept = 568, -- level 36
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 568 }, -- level 36
         { go = { 1434, 32.48, 29.38 }, fly = true, talk = 1387, text = "Flight master at Grom'gol" }, -- level 36
         { accept = 581 }, -- level 36
         { accept = 596 }, -- level 36
@@ -41,7 +49,7 @@ Ding.RegisterGuide({
         { complete = 191 }, -- level 36
         { complete = 194 }, -- level 36
         { complete = 605 }, -- level 36
-        { complete = { 581, 189, 596 }, unbank = 4306, keep = { 3901, 1519, 3915, 4306 }, -- level 36
+        { complete = { 581, 189, 596 }, collect = { { 4306, 15 } }, keep = { 3901, 1519, 3915, 4306 }, -- level 36
           note = "The targets are trolls. Hang on to it; an upcoming quest uses it." },
         { turnin = 194, accept = 195 }, -- level 37
         { turnin = 187, accept = 188 }, -- level 37
@@ -52,8 +60,7 @@ Ding.RegisterGuide({
         { turnin = 581, accept = 582 }, -- level 37
         { turnin = 596 }, -- level 37
         { accept = 629, elite = true }, -- level 37
-        { turnin = 568, accept = 569, -- level 37
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 568, accept = 569 }, -- level 37
         { complete = 629, elite = true, -- level 37
           note = "Steer clear of elite murlocs. Your targets sit below the water's surface." },
         { complete = 582 }, -- level 37
@@ -70,17 +77,16 @@ Ding.RegisterGuide({
         { complete = 192, sticky = 213, -- level 37
           note = "These foes hide in stealth." },
         { collect = { { 5851, 1 } }, spots = { { 1434, 42.62, 18.29 } }, -- level 37
-          note = "The objective sits up on the raised deck. The NPC is indoors." },
+          note = "The objective sits up on the raised deck. The target is indoors." },
         { complete = 1182, -- level 37
-          note = "The NPC is indoors." },
+          note = "The object is indoors." },
         { complete = 213 }, -- level 37
         { turnin = 195, accept = 196 }, -- level 37
         { turnin = 188 }, -- level 37
         { turnin = 192 }, -- level 37
         { accept = 193, elite = true }, -- level 37
-        { accept = 638 }, -- level 37
-        { turnin = 569, -- level 37
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 638, why = { kind = "carry", quest = 638, seconds = 16080, xp = 700 } }, -- level 37
+        { turnin = 569 }, -- level 37
         { turnin = 570 }, -- level 37
         { turnin = 1182, -- level 37
           note = "The NPC is upstairs, out on the balcony." },

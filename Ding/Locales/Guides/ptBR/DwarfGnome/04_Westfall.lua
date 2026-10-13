@@ -7,4 +7,6 @@ Ding.RegisterGuideTranslation("ptBR", "dwarf-04-westfall", {
         "Metrô Correfundo de Altaforja até Ventobravo, depois a estrada para oeste por Vila d'Ouro até o Morro da Sentinela.",
     ["If the starting item dropped: use it from your bags."] =
         "Se o item inicial caiu: use-o direto das bolsas.",
+    ["Sentinel Hill"] =
+        "Morro da Sentinela",
 })

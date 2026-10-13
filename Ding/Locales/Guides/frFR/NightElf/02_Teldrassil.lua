@@ -5,4 +5,6 @@ Ding.RegisterGuideTranslation("frFR", "nightelf-02-dolanaar", {
         "Teldrassil (6-11)",
     ["Dolanaar is your base for Teldrassil: inn, class trainers and most quests."] =
         "Dolanaar est ta base pour Teldrassil : auberge, maîtres de classe et la plupart des quêtes.",
+    ["Dolanaar"] =
+        "Dolanaar",
 })

@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("esES", "horde-41-stv", {
         "Vega de Tuercespina (38-42)",
     ["Back to Stranglethorn for the end of its quests, from Grom'gol and Booty Bay. Finish the level on nearby monsters before moving on."] =
         "Vuelve a Tuercespina para acabar sus misiones, desde Grom'gol y Bahía del Botín. Termina el nivel con monstruos cercanos antes de seguir.",
+    ["Grom'gol"] =
+        "Grom'gol",
     ["Finish the level on nearby monsters before moving on."] =
         "Termina el nivel con monstruos cercanos antes de seguir.",
 })

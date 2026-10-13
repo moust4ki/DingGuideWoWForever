@@ -39,6 +39,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a09-ashenvale-and-stonetalon-mou
         "尋找白色的球體。",
     ["The target is a gray furbolg. This one roams, so scan the surrounding area."] =
         "目標是一隻灰色的熊怪。這個會四處走動，留意周圍一帶。",
+    ["Astranaar"] =
+        "阿斯特蘭納",
     ["Shrubs that glitter white."] =
         "閃著白光的灌木。",
     ["Exit Ruins of Stardust"] =
@@ -61,8 +63,6 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a09-ashenvale-and-stonetalon-mou
         "目標是一個玉色皮膚、玫瑰色鰭的納迦。它沿著岸邊順時針繞島移動。她帶著兩名護衛。",
     ["Hunt naga."] =
         "獵殺納迦。",
-    ["This one roams, so scan the surrounding area."] =
-        "這個會四處走動，留意周圍一帶。",
     ["The quest giver stands outdoors, not indoors."] =
         "任務NPC站在室外，不在室內。",
     ["Step into the cavern within the trunk"] =

@@ -13,8 +13,6 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a07-redridge-and-westfall", {
         "Flieg nach Seenhain",
     ["The NPC is indoors."] =
         "Der NPC ist drinnen.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab. Der NPC ist drinnen.",
     ["The NPC is indoors, one floor up."] =
         "Der NPC ist drinnen, ein Stockwerk höher.",
     ["Look for a big mound of brown earth. Your targets sit below the water's surface."] =
@@ -31,6 +29,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a07-redridge-and-westfall", {
         "Begleite den Verräter der Defias und halte ihn am Leben.",
     ["Head indoors"] =
         "Geh hinein",
+    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
+        "Dieses Ziel wandert umher, also such die Umgebung ab. Der NPC ist drinnen.",
     ["The NPC waits on the lower level, indoors."] =
         "Der NPC wartet drinnen auf der unteren Ebene.",
     ["The NPC waits on the tower's highest floor."] =
@@ -51,6 +51,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a07-redridge-and-westfall", {
         "Bring Schlossknacken auf 95",
     ["Look for little gray coffers of metal. The NPC is indoors."] =
         "Such nach kleinen grauen Metallkästchen. Der NPC ist drinnen.",
+    ["The object is indoors."] =
+        "Das Objekt ist drinnen.",
     ["Go inside and stay on the trail"] =
         "Geh hinein und bleib auf dem Weg",
     ["Your target is a ghoul. This one roams, so scan the surrounding area."] =

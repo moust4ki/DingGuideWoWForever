@@ -9,8 +9,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h13-arathi-highlands", {
         "Verlass die Höhle",
     ["The targets are out in front of the cavern."] =
         "Die Ziele sind draußen vor der Höhle.",
-    ["The NPC is indoors."] =
-        "Der NPC ist drinnen.",
+    ["The target is indoors."] =
+        "Das Ziel ist drinnen.",
     ["The targets are spread over several spots."] =
         "Die Ziele sind auf mehrere Stellen verteilt.",
     ["Flight master at Hammerfall"] =
@@ -23,6 +23,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h13-arathi-highlands", {
         "Die Ziele sind Raptoren. Halte dich von der Zuflucht fern.",
     ["Together with the next turn-ins, this brings you to level 33."] =
         "Zusammen mit den nächsten Abgaben bringt dich das auf Stufe 33.",
+    ["The NPC is indoors."] =
+        "Der NPC ist drinnen.",
     ["The NPC is indoors, one floor up."] =
         "Der NPC ist drinnen, ein Stockwerk höher.",
     ["Take the trail downhill"] =

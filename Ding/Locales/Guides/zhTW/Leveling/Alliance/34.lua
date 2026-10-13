@@ -19,8 +19,6 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a34-blasted-lands-and-burning-st
         "獵殺土狼取得這些。蠍子也在相同的地點重生。",
     ["The foes here are scorpions. Hyenas also use these spawn spots."] =
         "這裡的敵人是蠍子。土狼也會使用這些重生點。",
-    ["This one roams, so scan the surrounding area."] =
-        "這個會四處走動，留意周圍一帶。",
     ["Climb the trail to Morgan's Vigil"] =
         "沿小路往上前往摩根崗哨",
     ["Flight master at Morgan's Vigil"] =
@@ -29,8 +27,12 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a34-blasted-lands-and-burning-st
         "NPC在室內。",
     ["This one roams, so scan the surrounding area. The NPC is indoors."] =
         "這個會四處走動，留意周圍一帶。NPC在室內。",
+    ["Ironforge"] =
+        "鐵爐堡",
     ["The NPC is indoors. Hold on to it; a task in Un'Goro Crater calls for it later."] =
         "NPC在室內。留著它；安戈洛環形山的任務稍後需要。",
+    ["The NPC is indoors. You need them later for \"Chasing A-Me 01\" and \"Arcane Runes\": keep them in the bank to free bag slots."] =
+        "NPC在室內。之後的任務「找回A-Me 01」和「奧術符文」需要它們：先存進銀行，空出背包空間。",
     ["8 different quests will ask for it. You hand in 60 pieces of cloth for every quest. The NPC is indoors."] =
         "會有8個不同的任務需要它。每個任務要交付60塊布料。NPC在室內。",
     ["The NPC patrols a long route; look along it."] =

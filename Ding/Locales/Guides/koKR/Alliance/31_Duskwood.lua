@@ -5,4 +5,6 @@ Ding.RegisterGuideTranslation("koKR", "alliance-31-duskwood", {
         "그늘숲 (31-32)",
     ["Back to Duskwood for the end of its quests: Darkshire is still your base."] =
         "남은 퀘스트를 위해 그늘숲으로 돌아가세요: 거점은 여전히 다크샤이어입니다.",
+    ["Darkshire"] =
+        "다크샤이어",
 })

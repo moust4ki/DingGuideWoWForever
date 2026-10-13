@@ -7,4 +7,6 @@ Ding.RegisterGuideTranslation("deDE", "horde-48-hinterlands", {
         "Das Hinterland liegt östlich des Vorgebirges des Hügellands: Das Trolldorf der Revantusk ist an der Ostküste.",
     ["If the starting item dropped: use it from your bags."] =
         "Startgegenstand erbeutet? Benutze ihn aus deinen Taschen.",
+    ["Revantusk Village"] =
+        "Dorf der Revantusk",
 })

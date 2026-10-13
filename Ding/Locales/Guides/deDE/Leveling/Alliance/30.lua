@@ -15,8 +15,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a30-tanaris", {
         "Diese Gegner sind getarnt.",
     ["Head down the passage that opens on Lost Rigger Cove"] =
         "Geh den Durchgang hinunter, der nach Lost Rigger Cove führt",
-    ["The NPC is indoors, one floor up."] =
-        "Der NPC ist drinnen, ein Stockwerk höher.",
+    ["The object is indoors, one floor up."] =
+        "Das Objekt ist drinnen, ein Stockwerk höher.",
     ["Few kills yield this item."] =
         "Nur wenige Kills bringen diesen Gegenstand.",
     ["Others can be found on raised wood platforms close by."] =
@@ -31,6 +31,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a30-tanaris", {
         "Geh in die Höhle",
     ["Take the trail downhill"] =
         "Nimm den Weg bergab",
+    ["The NPC is indoors. You need it later for \"Deliver to MacKinley\": keep it in the bank to free a bag slot."] =
+        "Der NPC ist drinnen. Du brauchst es später für „Lieferung für MacKinley“: Lass es in der Bank, das spart einen Taschenplatz.",
     ["Your objective lies in a little cavern."] =
         "Dein Ziel liegt in einer kleinen Höhle.",
     ["Search the sand mounds."] =

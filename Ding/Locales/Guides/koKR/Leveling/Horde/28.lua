@@ -11,18 +11,20 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h28-tanaris-and-dustwallow-marsh
         "대화가 끝날 때까지 기다리세요",
     ["Stay clear of the elite foes. Be ready for a fight right away. Watch out for a pair of stronger monsters here."] =
         "정예 적은 피하세요. 바로 전투가 시작되니 대비하세요. 여기서는 더 강한 몬스터 둘을 조심하세요.",
-    ["The NPC is indoors."] =
-        "NPC는 건물 안에 있습니다.",
+    ["The NPC is indoors. You need them later for \"Testing the Vessel\" and \"Report Back to Fizzlebub\": keep them in the bank to free bag slots."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"단지 실험\", \"피즐버브에게 돌아가기\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["A lengthy grinding stretch is coming up. The NPC is indoors."] =
         "곧 긴 사냥 구간이 이어집니다. NPC는 건물 안에 있습니다.",
+    ["The NPC is indoors."] =
+        "NPC는 건물 안에 있습니다.",
     ["The target patrols a wide loop, turning counterclockwise. Watch for a pair of guards hiding in stealth. The target's spawn point is 58.9, 39.3 in Tanaris."] =
         "대상은 시계 반대 방향으로 넓게 돌며 순찰합니다. 은신한 경비병 두 명을 조심하세요. 대상의 생성 위치는 타나리스 58.9, 39.3입니다.",
     ["These foes hide in stealth."] =
         "이 적들은 은신해 있습니다.",
     ["Head down the passage that opens on Lost Rigger Cove"] =
         "Lost Rigger Cove로 이어지는 통로를 따라 내려가세요",
-    ["The NPC is indoors, one floor up."] =
-        "NPC는 건물 안 한 층 위에 있습니다.",
+    ["The object is indoors, one floor up."] =
+        "그 물체는 건물 안 한 층 위에 있습니다.",
     ["Few kills yield this item."] =
         "이 아이템은 잘 떨어지지 않습니다.",
     ["Others can be found on raised wood platforms close by."] =
@@ -33,16 +35,22 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h28-tanaris-and-dustwallow-marsh
         "다음에는 더 강한 적이 나옵니다. 원한다면 여기서도 던전을 도는 것이 좋은 선택입니다.",
     ["Take the passage out of Lost Rigger Cove"] =
         "통로를 지나 Lost Rigger Cove를 나가세요",
+    ["The NPC is indoors. You need it later for \"Deliver to MacKinley\": keep it in the bank to free a bag slot."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"맥킨리에게 배달\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["Your objective lies in a little cavern."] =
         "목표는 작은 동굴 안에 있습니다.",
     ["Search the sand mounds."] =
         "모래 더미를 찾아보세요.",
     ["It competes for spawn points."] =
         "다른 몬스터와 생성 위치를 두고 경쟁합니다.",
+    ["Gadgetzan"] =
+        "가젯잔",
     ["Go into the cavern"] =
         "동굴에 들어가세요",
     ["Take the trail downhill"] =
         "길을 따라 내려가세요",
+    ["The NPC is indoors. You need it later for \"Return to Apothecary Zinge\": keep it in the bank to free a bag slot."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"연금술사 진게에게 돌아가기\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["Targets here are human. Watch out for foes hidden in stealth. Zones with stronger foes lie just ahead."] =
         "여기의 대상은 인간입니다. 은신한 적을 조심하세요. 곧 더 강한 적이 있는 지역으로 갑니다.",
     ["Look for brown eggs covered in spikes."] =

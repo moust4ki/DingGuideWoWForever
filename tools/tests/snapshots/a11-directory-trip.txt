@@ -1,0 +1,25 @@
+# a11-directory-trip
+# A trip of the NPC directory to the class trainer: its notice, the way there, Cancel the trip
+# frFR, Dwarf HUNTER level 25, window 300 wide, scale 1, mouse
+
+TITLE  Ding! · Bois de la Pénombre et Carmines (25-27)
+STEP   < Étape 4 / 97 >   zone: Sombre-Comté
+
+ 1  accept  [todo] red background, red "!" icon, text white
+    Prendre [24] « Les Veilleurs » (partie 1 sur 3)
+    card:
+      | Les Veilleurs (partie 1 sur 3)
+      | À faire.
+      | Quête de niveau 24
+      | Pas encore dans ton journal de quêtes.
+      | Clic : la flèche y va.
+ 2  infoHeader  [section] LINE ABOVE, no icon, text dim grey, semibold 11
+    À savoir
+ 3  notice  [notice] grey box background, no icon, text light grey, regular 11
+    En route vers Tordrin Sternblade (Maître de classe) : le guide reprend une fois sur place.
+ 4  tripcancel  [button] button background, no icon, text white
+    Annuler le trajet
+
+PROGRESS bar 4 / 97
+MENU (right click on the window): Annuler le trajet vers Tordrin Sternblade | Fini avec Tordrin Sternblade : retour au guide | Marquer l'étape du guide comme faite | Passer l'étape du guide
+MENU (right click on a row with a quest): Annuler le trajet vers Tordrin Sternblade | Fini avec Tordrin Sternblade : retour au guide | Marquer l'étape du guide comme faite | Passer l'étape du guide | Trouver cette quête dans le guide

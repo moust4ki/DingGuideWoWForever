@@ -39,6 +39,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a09-ashenvale-and-stonetalon-mou
         "Such nach weißen Kugeln.",
     ["The target is a gray furbolg. This one roams, so scan the surrounding area."] =
         "Das Ziel ist ein grauer Furbolg. Dieses Ziel wandert umher, also such die Umgebung ab.",
+    ["Astranaar"] =
+        "Astranaar",
     ["Shrubs that glitter white."] =
         "Sträucher, die weiß glitzern.",
     ["Exit Ruins of Stardust"] =
@@ -61,8 +63,6 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a09-ashenvale-and-stonetalon-mou
         "Das Ziel ist eine Naga mit jadegrüner Haut und rosafarbenen Flossen. Es umrundet die Insel im Uhrzeigersinn, nah am Ufer. Sie ist mit zwei Wachen unterwegs.",
     ["Hunt naga."] =
         "Jag Naga.",
-    ["This one roams, so scan the surrounding area."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab.",
     ["The quest giver stands outdoors, not indoors."] =
         "Der Questgeber steht draußen, nicht drinnen.",
     ["Step into the cavern within the trunk"] =

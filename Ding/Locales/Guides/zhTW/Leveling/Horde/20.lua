@@ -25,6 +25,16 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h20-stranglethorn-vale-and-swamp
         "目標是食人妖。",
     ["The targets are in the water and along its edges."] =
         "目標在水中和岸邊。",
+    ["You need it later for \"Chapter I\": keep it in the bank to free a bag slot."] =
+        "之後的任務「荊棘谷的青山 - 第壹章」需要它：先存進銀行，空出背包空間。",
+    ["You need it later for \"Chapter II\": keep it in the bank to free a bag slot."] =
+        "之後的任務「荊棘谷的青山 - 第二章」需要它：先存進銀行，空出背包空間。",
+    ["You need it later for \"Chapter III\": keep it in the bank to free a bag slot."] =
+        "之後的任務「荊棘谷的青山 - 第三章」需要它：先存進銀行，空出背包空間。",
+    ["You need it later for \"Chapter IV\": keep it in the bank to free a bag slot."] =
+        "之後的任務「荊棘谷的青山 - 第四章」需要它：先存進銀行，空出背包空間。",
+    ["Booty Bay"] =
+        "藏寶海灣",
     ["Keep clear of Darkshire."] =
         "遠離夜色鎮。",
     ["Hunt the little winged dragonkin. When the targets run out, skip ahead. No rush; you may complete this afterwards."] =
@@ -35,8 +45,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h20-stranglethorn-vale-and-swamp
         "斯通納德飛行管理員",
     ["The NPC is indoors, one floor up."] =
         "NPC在室內的樓上一層。",
-    ["The target is a humanoid escorted by 2 guards. The NPC patrols a long route; look along it."] =
-        "目標是一個由2名護衛隨行的人型生物。NPC沿著一條很長的路線巡邏；沿路尋找。",
+    ["The target is a humanoid escorted by 2 guards. The target patrols a long route; look along it."] =
+        "目標是一個由2名護衛隨行的人型生物。目標沿著一條很長的路線巡邏；沿路尋找。",
     ["This one roams, so scan the surrounding area. The targets are spread over several spots."] =
         "這個會四處走動，留意周圍一帶。目標分散在好幾個地點。",
     ["For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears. Clear the monsters just south before you start."] =
@@ -51,4 +61,6 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h20-stranglethorn-vale-and-swamp
         "獵殺有翅膀的小型龍類。",
     ["Let the conversation play out. Climb to the highest floor of the building."] =
         "讓對話播完。爬到建築的最頂樓。",
+    ["Camp Taurajo"] =
+        "陶拉祖營地",
 })

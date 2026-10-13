@@ -39,6 +39,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h03-orc-and-troll-starter", {
         "目標是龍蝦。沿著海岸線往西南走。如果海灘先走到盡頭，就放棄它，繼續前進。",
     ["Hunt the crabs."] =
         "獵殺螃蟹。",
+    ["The object is indoors."] =
+        "這個物件在室內。",
     ["Keep to the trail as it curves."] =
         "沿著彎曲的小路走。",
     ["Die on purpose at this spot"] =
@@ -61,14 +63,16 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h03-orc-and-troll-starter", {
         "用等級2的次級治療術治療蠻兵科雅。為蠻兵科雅施加真言術：韌。",
     ["Head indoors"] =
         "進入室內",
-    ["The NPC is indoors, one floor up. Consider bringing a group for this one."] =
-        "NPC在室內的樓上一層。這個可以考慮找隊伍一起做。",
+    ["The target is indoors, one floor up. Consider bringing a group for this one."] =
+        "目標在室內的樓上一層。這個可以考慮找隊伍一起做。",
     ["Stay on the trail and keep climbing the steps"] =
         "沿著小路走，繼續爬上台階",
-    ["The NPC stands on the highest level of this structure."] =
-        "NPC站在這座建築的最高層。",
+    ["The object is on the highest level of this structure."] =
+        "這個物件在這座建築的最高層。",
     ["Die to the monsters here on purpose. Dying costs you nothing this early. This is the quickest way over."] =
         "故意讓這裡的怪物殺死你。在這麼早期死亡沒有任何損失。這是過去最快的方法。",
+    ["Razor Hill"] =
+        "剃刀嶺",
     ["The NPC is out back, at the rear of the structure."] =
         "NPC在外面，位於建築後方。",
     ["Learn First Aid from the trainer"] =
@@ -99,6 +103,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h03-orc-and-troll-starter", {
         "這個NPC在下方的暗影裂口裡。",
     ["This clears the quest's time limit."] =
         "這會解除任務的時間限制。",
+    ["The NPC stands on the highest level of this structure."] =
+        "NPC站在這座建築的最高層。",
     ["Tame a pet here"] =
         "在這裡馴服一隻寵物",
     ["Find one Venomtail Scorpid and use Tame Beast on it. The foes here are scorpions. Here you tame a pet to keep."] =
@@ -117,10 +123,12 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h03-orc-and-troll-starter", {
         "故意讓這裡的怪物殺死你。這是過去最快的方法。",
     ["Traverse the passageway"] =
         "穿過通道",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "這個會四處走動，留意周圍一帶。NPC在室內。",
     ["Receive Sapta Sight"] =
         "獲得Sapta Sight",
+    ["The target is up on the summit."] =
+        "目標在山頂上。",
+    ["The object is up on the summit."] =
+        "這個物件在山頂上。",
     ["The quest giver stands among the boulders."] =
         "任務給予者站在巨石之間。",
     ["Learn Staves at the weapon master"] =
@@ -147,6 +155,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h03-orc-and-troll-starter", {
         "目標是一隻蹣跚而行的殭屍。這個會四處走動，留意周圍一帶。",
     ["Drop down with care"] =
         "小心地跳下去",
+    ["The target is indoors."] =
+        "目標在室內。",
     ["Fight the murlocs."] =
         "與魚人戰鬥。",
     ["Your targets here are gnolls."] =

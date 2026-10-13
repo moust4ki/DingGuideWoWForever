@@ -15,8 +15,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a30-tanaris", {
         "Estes inimigos ficam furtivos.",
     ["Head down the passage that opens on Lost Rigger Cove"] =
         "Desça pela passagem que dá em Lost Rigger Cove",
-    ["The NPC is indoors, one floor up."] =
-        "O NPC está lá dentro, um andar acima.",
+    ["The object is indoors, one floor up."] =
+        "O objeto está lá dentro, um andar acima.",
     ["Few kills yield this item."] =
         "Poucos abates rendem este item.",
     ["Others can be found on raised wood platforms close by."] =
@@ -31,6 +31,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a30-tanaris", {
         "Entre na caverna",
     ["Take the trail downhill"] =
         "Desça pela trilha",
+    ["The NPC is indoors. You need it later for \"Deliver to MacKinley\": keep it in the bank to free a bag slot."] =
+        "O NPC está lá dentro. Você vai precisar dele mais tarde para \"Entrega para MacKinley\": guarde-o no banco para liberar espaço nas bolsas.",
     ["Your objective lies in a little cavern."] =
         "Seu objetivo fica em uma pequena caverna.",
     ["Search the sand mounds."] =

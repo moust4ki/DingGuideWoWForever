@@ -5,4 +5,6 @@ Ding.RegisterGuideTranslation("koKR", "human-04-lochmodan", {
         "모단 호수 (16-18)",
     ["Take the Deeprun Tram from Stormwind to Ironforge, then the road east through Dun Morogh to Thelsamar."] =
         "스톰윈드에서 깊은굴 지하철을 타고 아이언포지로 간 다음, 던 모로를 지나는 동쪽 길로 텔사마까지 가세요.",
+    ["Thelsamar"] =
+        "텔사마",
 })

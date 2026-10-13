@@ -41,7 +41,10 @@ T.test("sticky: the quest's objectives under every following step, wherever the 
     local sticky = rows(function(r) return r.sticky end)
     T.ok(#sticky >= 1, "the sticky objectives are not listed far from their monsters")
     T.eq(sticky[1].quest, 456)
-    T.ok(H.plain(sticky[1].sub):find(L.STICKY_WAY, 1, true), "no \"Still to do\": " .. H.plain(sticky[1].sub or ""))
+    -- Under a header that names it as another quest to finish on the way.
+    local header = rows(function(r) return r.action == "header" and r.other == "sticky" end)[1]
+    T.ok(header and header.quest == 456, "no header for the persistent quest")
+    T.ok(H.plain(header.text):find(L.OTHER_STICKY:match("^(.-)%%s"), 1, true), "no \"another quest\": " .. H.plain(header.text))
     -- Its own step does not repeat them.
     E.index = 4; E:Refresh()
     T.eq(#rows(function(r) return r.along and r.quest == 456 end), 0, "repeated under its own step")
@@ -172,8 +175,7 @@ T.test("preview: one to three dimmed lines of the next steps, off by default", f
     local preview = rows(function(r) return r.preview end)
     T.eq(#preview, 2)
     T.eq(preview[1].state, "preview")
-    T.eq(preview[1].text, L.ROW_ACCEPT:format(L.QUEST_WITH_LEVEL:format(Ding.Data:QuestLevel(458),
-        L.QUOTE:format(Ding.Data:QuestName(458)))))
+    T.eq(preview[1].text, L.ROW_ACCEPT:format(T.questLabel(458)))
     T.ok(P.rowsShown[#P.rowsShown].preview, "the preview is not last")
     Ding.db.panel.preview = 0
 end)
@@ -198,9 +200,8 @@ local function previews(index)
 end
 
 local function leveled(q)
-    local level = Ding.Data:QuestLevel(q)
-    T.ok(level > 0, "no level for quest " .. q)
-    return L.QUEST_WITH_LEVEL:format(level, L.QUOTE:format(Ding.Data:QuestName(q)))
+    T.ok(Ding.Data:QuestLevel(q) > 0, "no level for quest " .. q)
+    return T.questLabel(q)
 end
 
 T.test("preview: a quest step names the action and the quest with its level", function()
@@ -210,8 +211,8 @@ T.test("preview: a quest step names the action and the quest with its level", fu
     T.eq(#preview, 3)
     T.eq(preview[1].text, L.ROW_ACCEPT:format(leveled(456)))
     T.eq(preview[2].text, L.ROW_COMPLETE:format(leveled(456)))
-    -- Several quests: the first one, then how many others ("+1").
-    T.eq(preview[3].text, L.ROW_TURNIN:format(leveled(456)) .. " " .. L.PREVIEW_MORE:format(1))
+    -- Several quests: the first one, then how many others, in words ("and 1 more quest").
+    T.eq(preview[3].text, L.ROW_TURNIN:format(leveled(456)) .. " " .. Ding.UI.More(1, true))
     for _, row in ipairs(preview) do
         T.eq(row.state, "preview")
         T.eq(row.quest, 456, "the tooltip shows another quest")
@@ -232,7 +233,7 @@ T.test("preview: several quests, without the ones done or that the engine passes
     start("t-preview", 2)
     Ding.db.panel.preview = 1
     T.eq(Ding.Data:QuestRequiredLevel(916), 3)
-    T.eq(previews(4)[1].text, L.ROW_ACCEPT:format(leveled(4495)) .. " " .. L.PREVIEW_MORE:format(1))
+    T.eq(previews(4)[1].text, L.ROW_ACCEPT:format(leveled(4495)) .. " " .. Ding.UI.More(1, true))
     H.accept(4495); H.flush()
     local row = previews(4)[1]
     T.eq(row.quest, 458)

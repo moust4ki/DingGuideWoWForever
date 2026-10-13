@@ -31,10 +31,14 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a21-arathi-highlands-and-alterac
         "等对话结束。护送Kinelory，确保她活着。",
     ["The NPC is indoors."] =
         "NPC在室内。",
+    ["Southshore"] =
+        "南海镇",
     ["Wait for the talking to finish"] =
         "等对话结束",
-    ["Beware of foes lurking in stealth. The NPC is indoors."] =
-        "当心潜行中的敌人。NPC在室内。",
+    ["Beware of foes lurking in stealth. The target is indoors."] =
+        "当心潜行中的敌人。目标在室内。",
+    ["The target is indoors."] =
+        "目标在室内。",
     ["Beware of foes lurking in stealth."] =
         "当心潜行中的敌人。",
     ["The targets are ogres."] =
@@ -59,8 +63,6 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a21-arathi-highlands-and-alterac
         "沿小路翻过山峰",
     ["Take the passage to Faldir's Cove"] =
         "走通道到法迪尔海湾",
-    ["This one roams, so scan the surrounding area."] =
-        "它会四处游荡，在周围找找。",
     ["For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears."] =
         "这个任务需要保护一个行进中的NPC。如果NPC不在，就等到他重新出现。",
     ["Let the conversation play out. Escort Professor Phizzlethorpe and keep him alive."] =

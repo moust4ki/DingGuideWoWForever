@@ -5,4 +5,6 @@ Ding.RegisterGuideTranslation("ptBR", "alliance-43-stv", {
         "Selva do Espinhaço (41)",
     ["Back to Stranglethorn for the end of its quests, from Booty Bay."] =
         "De volta à Selva do Espinhaço para o fim das missões, a partir da Angra do Butim.",
+    ["Booty Bay"] =
+        "Angra do Butim",
 })

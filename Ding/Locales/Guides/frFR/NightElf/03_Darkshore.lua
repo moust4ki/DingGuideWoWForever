@@ -7,4 +7,6 @@ Ding.RegisterGuideTranslation("frFR", "nightelf-03-darkshore", {
         "Rut'theran (portail au pied de Darnassus), puis le bateau pour Auberdine : c'est ta base sur Sombrivage.",
     ["Finish the level on nearby monsters before moving on."] =
         "Finis le niveau sur les monstres du coin avant la suite.",
+    ["Auberdine"] =
+        "Auberdine",
 })

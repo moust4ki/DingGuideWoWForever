@@ -31,10 +31,14 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a21-arathi-highlands-and-alterac
         "대화가 끝날 때까지 기다리세요. 키넬로리를 호위하며 살려 두세요.",
     ["The NPC is indoors."] =
         "NPC는 건물 안에 있습니다.",
+    ["Southshore"] =
+        "사우스쇼어",
     ["Wait for the talking to finish"] =
         "대화가 끝날 때까지 기다리세요",
-    ["Beware of foes lurking in stealth. The NPC is indoors."] =
-        "은신해 숨어 있는 적을 조심하세요. NPC는 건물 안에 있습니다.",
+    ["Beware of foes lurking in stealth. The target is indoors."] =
+        "은신해 숨어 있는 적을 조심하세요. 대상은 건물 안에 있습니다.",
+    ["The target is indoors."] =
+        "대상은 건물 안에 있습니다.",
     ["Beware of foes lurking in stealth."] =
         "은신해 숨어 있는 적을 조심하세요.",
     ["The targets are ogres."] =
@@ -59,8 +63,6 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a21-arathi-highlands-and-alterac
         "길을 따라 봉우리를 넘어가세요",
     ["Take the passage to Faldir's Cove"] =
         "통로를 지나 팔디르의 만으로 가세요",
-    ["This one roams, so scan the surrounding area."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요.",
     ["For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears."] =
         "이 퀘스트에서는 이동하는 NPC를 보호합니다. NPC가 없다면 다시 나타날 때까지 기다리세요.",
     ["Let the conversation play out. Escort Professor Phizzlethorpe and keep him alive."] =

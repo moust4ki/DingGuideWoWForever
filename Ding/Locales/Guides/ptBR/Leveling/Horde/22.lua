@@ -27,8 +27,14 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h22-tanaris", {
         "Um inimigo mais difícil vem por aí.",
     ["Grab the loot."] =
         "Pegue o saque.",
+    ["Gadgetzan"] =
+        "Geringontzan",
+    ["The NPC is indoors. You need them later for \"Tanaris Field Sampling\" and \"Screecher Spirits\": keep them in the bank to free bag slots."] =
+        "O NPC está lá dentro. Você vai precisar deles mais tarde para \"Amostras de campo de Tanaris\" e \"Espíritos guinchadores\": guarde-os no banco para liberar espaço nas bolsas.",
     ["Wait for the talking to finish"] =
         "Espere a conversa terminar",
-    ["Hold on until Rizzle has fled. The NPC is indoors."] =
-        "Espere até Rebu fugir. O NPC está lá dentro.",
+    ["Hold on until Rizzle has fled. The object is indoors."] =
+        "Espere até Rebu fugir. O objeto está lá dentro.",
+    ["The NPC is indoors. You need it later for \"Back to Booty Bay\": keep it in the bank to free a bag slot."] =
+        "O NPC está lá dentro. Você vai precisar dele mais tarde para \"De volta à Angra do Butim\": guarde-o no banco para liberar espaço nas bolsas.",
 })

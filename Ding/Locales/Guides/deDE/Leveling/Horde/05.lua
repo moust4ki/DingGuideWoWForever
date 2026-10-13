@@ -27,10 +27,14 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h05-the-barrens-and-stonetalon-m
         "Durchsuche Stapel brauner Kisten. Die Ziele sind auf mehrere Stellen verteilt.",
     ["Flight master in Ratchet"] =
         "Flugmeister in Ratschet",
+    ["You need them later for \"The Disruption Ends\" and \"Supplies for the Crossroads\": keep them in the bank to free bag slots."] =
+        "Du brauchst sie später für „Das Ende der Unterbrechungen“ und „Vorräte für Crossroads“: Lass sie in der Bank, das spart Taschenplätze.",
     ["The target is a troll. This one roams, so scan the surrounding area."] =
         "Das Ziel ist ein Troll. Dieses Ziel wandert umher, also such die Umgebung ab.",
     ["The target is a human in a crimson long coat. This one roams, so scan the surrounding area. The targets are spread over several spots."] =
         "Das Ziel ist ein Mensch in einem purpurroten Mantel. Dieses Ziel wandert umher, also such die Umgebung ab. Die Ziele sind auf mehrere Stellen verteilt.",
+    ["Ratchet"] =
+        "Ratschet",
     ["The targets are the striped zhevras."] =
         "Die Ziele sind die gestreiften Zhevras.",
     ["Go into the water beside the rock that bubbles. Your targets sit below the water's surface."] =
@@ -43,22 +47,28 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h05-the-barrens-and-stonetalon-m
         "Töte Harpyien.",
     ["Up to two foes might jump you."] =
         "Bis zu zwei Gegner können dich angreifen.",
+    ["The target is indoors."] =
+        "Das Ziel ist drinnen.",
     ["Kill the purple raptors. Targets are found across the entire Barrens. Slay any you come across along the way."] =
         "Töte die violetten Raptoren. Ziele gibt es im ganzen Brachland. Töte alle, denen du unterwegs begegnest.",
     ["Climb the trail"] =
         "Steig den Weg hinauf",
     ["With the coming hand-ins, this gets you to level 18."] =
         "Mit den kommenden Abgaben bringt dich das auf Stufe 18.",
+    ["You need it later for \"Chen's Empty Keg\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Chens leeres Fässchen“: Lass es in der Bank, das spart einen Taschenplatz.",
     ["This NPC is found down in the Cleft of Shadow."] =
         "Dieser NPC ist unten in der Kluft der Schatten.",
     ["The NPC stands on the highest level of this structure."] =
         "Der NPC steht auf der obersten Ebene dieses Gebäudes.",
     ["Learn Staves at the weapon master"] =
         "Lerne Stäbe beim Waffenmeister",
-    ["Steal from Gamon using Pick Pocket. The NPC is indoors."] =
-        "Bestiehl Gamon mit Taschendiebstahl. Der NPC ist drinnen.",
+    ["Steal from Gamon using Pick Pocket. The target is indoors."] =
+        "Bestiehl Gamon mit Taschendiebstahl. Das Ziel ist drinnen.",
     ["Use it on Tazan's Satchel. The item is already in your inventory."] =
         "Benutze es an Tazan's Satchel. Der Gegenstand ist schon in deinem Inventar.",
+    ["The Crossroads"] =
+        "Das Wegekreuz",
     ["For this quest you guard an NPC on the move. If the NPC is gone, hold on until it reappears."] =
         "Bei dieser Quest beschützt du einen NPC, der unterwegs ist. Ist der NPC weg, warte, bis er wieder erscheint.",
     ["This one roams, so scan the surrounding area. Check the upper and lower tiers of the structure."] =
@@ -83,6 +93,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h05-the-barrens-and-stonetalon-m
         "Deine Ziele sind unter der Wasseroberfläche.",
     ["Defeat Kolkar foes around Stagnant Oasis. Sooner or later a yell shows up in the chat window. Watch for his yell: I am summoned! Verog arrives after a shout dares intruders to his tent to die."] =
         "Besiege Kolkar-Gegner rund um die Stagnant Oasis. Früher oder später erscheint ein Ruf im Chatfenster. Achte auf seinen Ruf: Ich wurde gerufen! Verog erscheint, nachdem ein Ruf Eindringlinge herausfordert, in sein Zelt zu kommen und zu sterben.",
+    ["Camp Taurajo"] =
+        "Camp Taurajo",
     ["Flight master at Camp Taurajo"] =
         "Flugmeister im Camp Taurajo",
     ["Circle the mountain on foot."] =
@@ -127,12 +139,12 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h05-the-barrens-and-stonetalon-m
         "Lerne Schusswaffen beim Waffenmeister",
     ["Learn Maces at the weapon master"] =
         "Lerne Streitkolben beim Waffenmeister",
+    ["Thunder Bluff"] =
+        "Donnerfels",
     ["Fly to Thunder Bluff"] =
         "Flieg nach Donnerfels",
     ["Go into the cavern"] =
         "Geh in die Höhle",
-    ["This one roams, so scan the surrounding area. Your targets are within the cavern."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab. Deine Ziele sind in der Höhle.",
     ["Your targets are within the cavern."] =
         "Deine Ziele sind in der Höhle.",
     ["Head out of the cave"] =

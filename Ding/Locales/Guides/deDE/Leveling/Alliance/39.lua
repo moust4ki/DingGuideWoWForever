@@ -9,8 +9,6 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a39-winterspring-and-felwood", {
         "Teufelswald: Smaragdrefugium, im Süden des Gebiets.",
     ["Hand these in afterwards for experience and reputation."] =
         "Gib sie danach für Erfahrung und Ruf ab.",
-    ["This one roams, so scan the surrounding area."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab.",
     ["The NPC is indoors."] =
         "Der NPC ist drinnen.",
     ["Let the conversation play out. The NPC is indoors."] =
@@ -41,8 +39,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a39-winterspring-and-felwood", {
         "Mit den nächsten Abgaben bringt dich das auf Stufe 55. Gleich kommt eine schwere Quest.",
     ["Flee if things go badly."] =
         "Flieh, wenn es schlecht läuft.",
-    ["The NPC is a human spirit. This one roams, so scan the surrounding area."] =
-        "Der NPC ist ein menschlicher Geist. Dieses Ziel wandert umher, also such die Umgebung ab.",
+    ["The NPC is a human spirit."] =
+        "Der NPC ist ein menschlicher Geist.",
     ["Your targets are within the cavern."] =
         "Deine Ziele sind in der Höhle.",
     ["Let the conversation play out. Your targets are within the cavern."] =
@@ -59,6 +57,10 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a39-winterspring-and-felwood", {
         "Die Ziele sind 3 weiße Furbolgs, die als Gruppe unterwegs sind. Das Ziel patrouilliert eine lange Strecke neben der Straße. Hast du es am Ende des Pfads nicht gesehen, mach weiter.",
     ["Be ready for a fight right away."] =
         "Mach dich sofort auf einen Kampf gefasst.",
+    ["Everlook"] =
+        "Ewige Warte",
+    ["The NPC is indoors. You need them later for \"Aquementas\", \"The Everlook Report\", \"Duke Nicholas Zverenhoff\" and \"Troubled Spirits of Kel'Theril\": keep them in the bank to free bag slots."] =
+        "Der NPC ist drinnen. Du brauchst sie später für „Aquementas“, „Der Everlook-Bericht“, „Fürst Nicholas Zverenhoff“ und „Die gequälten Seelen von Kel'Theril“: Lass sie in der Bank, das spart Taschenplätze.",
     ["For this quest you guard an NPC on the move. If she is absent, wait for her to reappear."] =
         "Bei dieser Quest beschützt du einen NPC, der unterwegs ist. Wenn sie nicht da ist, warte, bis sie wieder erscheint.",
     ["Let the conversation play out. Escort Ranshalla and guard her. Wait until the foes hit her before you strike."] =
@@ -69,14 +71,14 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a39-winterspring-and-felwood", {
         "Du kannst auch Dungeons laufen, bis du Stufe 56 erreichst. Gib Nafien die Gegenstände in 5er-Sätzen. Jeder volle Satz, den du abgibst, bringt 50 Ruf.",
     ["Raise Timbermaw Hold standing to Neutral"] =
         "Steigere deinen Ruf bei der Holzschlundfeste auf Neutral",
-    ["This one roams, so scan the surrounding area. The NPC stands within the passage."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab. Der NPC steht im Durchgang.",
+    ["The NPC stands within the passage."] =
+        "Der NPC steht im Durchgang.",
     ["The NPC is indoors, one floor up."] =
         "Der NPC ist drinnen, ein Stockwerk höher.",
     ["Step into the cavern within the trunk"] =
         "Geh in die Höhle im Baumstamm",
     ["The spot is on the lower floor of the hollow tree."] =
         "Die Stelle ist auf der unteren Ebene des hohlen Baums.",
-    ["This one roams, so scan the surrounding area. The NPC waits on the tower's highest floor."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab. Der NPC wartet im obersten Stockwerk des Turms.",
+    ["The NPC waits on the tower's highest floor."] =
+        "Der NPC wartet im obersten Stockwerk des Turms.",
 })

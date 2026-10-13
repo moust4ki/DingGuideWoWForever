@@ -29,6 +29,10 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a31-ungoro-crater", {
         "馬紹爾營地的飛行管理員",
     ["The NPC is indoors."] =
         "NPC在室內。",
+    ["The NPC is indoors. You need them later for \"The Bait for Lar'korwi\", \"Un'Goro Soil\", \"A Visit to Gregan\" and \"It's a Secret to Everybody\": keep them in the bank to free bag slots."] =
+        "NPC在室內。之後的任務「拉克維的誘餌」、「安戈洛的泥土」、「造訪格雷甘」和「無人知曉的秘密」需要它們：先存進銀行，空出背包空間。",
+    ["The NPC is indoors. You need it later for \"Rise of the Silithid\": keep it in the bank to free a bag slot."] =
+        "NPC在室內。之後的任務「異種蠍的威脅」需要它：先存進銀行，空出背包空間。",
     ["The NPC is on the house's raised terrace."] =
         "NPC在房子的高台上。",
     ["In the Maraudon Tunnels, the target is a centaur in violet armor. The targets are spread over several spots."] =

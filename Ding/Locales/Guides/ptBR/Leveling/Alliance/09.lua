@@ -39,6 +39,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a09-ashenvale-and-stonetalon-mou
         "Procure esferas brancas.",
     ["The target is a gray furbolg. This one roams, so scan the surrounding area."] =
         "O alvo é um pelurso cinza. Este se desloca, então procure pelos arredores.",
+    ["Astranaar"] =
+        "Astranaar",
     ["Shrubs that glitter white."] =
         "Arbustos com brilho branco.",
     ["Exit Ruins of Stardust"] =
@@ -61,8 +63,6 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a09-ashenvale-and-stonetalon-mou
         "O alvo é uma naga de pele cor de jade e barbatanas rosadas. Dá a volta na ilha no sentido horário, perto da costa. Ela anda com dois guardas.",
     ["Hunt naga."] =
         "Cace nagas.",
-    ["This one roams, so scan the surrounding area."] =
-        "Este se desloca, então procure pelos arredores.",
     ["The quest giver stands outdoors, not indoors."] =
         "Quem dá a missão está do lado de fora, não lá dentro.",
     ["Step into the cavern within the trunk"] =

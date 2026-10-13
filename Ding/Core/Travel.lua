@@ -1,7 +1,8 @@
 -- Travel engine: the fastest way to the arrow's target, in seconds, over walking, the flight
 -- paths the character knows, boats, zeppelins and the tram, and the hearthstone (where it is
 -- bound, its cooldown). The arrow follows the first leg that is not a walk: the flight master
--- to fly from, the dock to board at, or the hearthstone to use.
+-- to fly from, the dock to board at, the hearthstone to use, or the lift, tunnel, bridge, gate
+-- or portal a walk has to take (Core/Passages.lua).
 -- Data: flight masters from QuestieDB (npcFlags), zeppelin towers and the Booty Bay - Ratchet
 -- boat where their masters stand in QuestieDB, the tram where QuestieDB's dungeon table
 -- enters it; only the Alliance boats, with no NPC on their piers, come from this file.
@@ -21,6 +22,7 @@ local HEARTH_TIME = 30           -- cast and loading screen
 local HASSLE = 20                -- seconds a change of transport must save to be worth it
 local MATCH = 150                -- yards between a flight map node and its flight master
 local AT_NODE = 60               -- yards: the player stands at a flight master or a dock
+local AT_END = 25                -- yards: the player came out at a passage's far end
 local REPLAN_MOVE, REPLAN_TTL = 150, 15   -- the plan is made again past these yards or seconds
 local BOARDING_TIME = 5 * 60     -- seconds a crossing may last once the dock is left
 local UNKNOWN_FLIGHT = 60        -- seconds added to a flight from a flight master never seen
@@ -316,19 +318,38 @@ local function speed()
     return UnitLevel("player") >= MOUNT_LEVEL and MOUNT_SPEED or RUN_SPEED
 end
 
+-- The walking passages open to the player's side, both ends as graph nodes (`through`: the
+-- other end). Returns the ends the player can reach from inside a passage: standing on a lift
+-- or in a tunnel, the far end is a leg of its own.
+local function addPassages(nodes, start, letter)
+    local entered = {}
+    for _, passage in ipairs(Ding.Passages.Open(letter)) do
+        local pa, pb = Ding.Passages.End(passage, "a"), Ding.Passages.End(passage, "b")
+        local a = { point = pa, passage = passage, passageEnd = "a" }
+        local b = { point = pb, passage = passage, passageEnd = "b", through = a }
+        a.through = b
+        nodes[#nodes + 1] = a
+        nodes[#nodes + 1] = b
+        local out = Ding.Passages.Inside(passage, start, pa, pb)
+        if out then entered[out == "a" and a or b] = true end
+    end
+    return entered
+end
+
 -- Where the player starts from: on a flight, where it lands.
 function T:Start()
     if Compat.OnTaxi() and self.flyingTo then return self.flyingTo end
     return playerPoint()
 end
 
-function T:Plan(target)
-    local start = self:Start()
-    if not start or not target then return nil end
-    withWorld(target)
-    local transports = self:Docks()
+-- The graph from `start`: its nodes (1 = the start, 2 = the target when there is one, then the
+-- flight masters, teleports, docks and the inn) and leg(u, w): the seconds of the fastest
+-- single leg from node u to node w, and that leg's kind.
+local function graph(start, target)
+    local transports = T:Docks()
     local letter = factionLetter()
-    local nodes = { { point = start }, { point = target } }
+    local nodes = { { point = start } }
+    if target then nodes[2] = { point = target } end
     local knownFlights = known()
     for npc, name in pairs(knownFlights) do
         local fm = flightMaster(npc)
@@ -366,25 +387,31 @@ function T:Plan(target)
         inn = { point = bind, inn = true }
         nodes[#nodes + 1] = inn
     end
+    local entered = addPassages(nodes, start, letter)
 
     local v = speed()
     local level = UnitLevel("player")
     local measured = flightTimes()
-    -- Seconds from node u to node w, by the fastest single leg, and that leg's kind.
     local function leg(u, w)
         local best, kind
         local d = distance(u.point, w.point)
-        if d then
+        -- Never in a straight line from one side of a passage to the other.
+        if d and not Ding.Passages.Blocked(u, w) then
             best, kind = d * DETOUR / v, "walk"
             -- Through zones well above the player's level: slower, if at all.
             local risk = danger(u.point, w.point, level)
             if risk > 0 then best = best * (1 + DANGER_FACTOR * risk) end
         end
+        -- Through a passage, from one end to the other, or from inside it to its far end.
+        if d and (u.through == w or (u == nodes[1] and entered[w])) then
+            local t = w.passage.seconds or d * DETOUR / v
+            if not best or t < best then best, kind = t, "passage" end
+        end
         if u.flight and w.flight and not w.unknown and d then
             local real = measured[u.flight .. ":" .. w.flight]
             local t = (real and real.seconds or d * FLY_DETOUR / FLY_SPEED) + FLY_START + HASSLE
             if u.unknown then t = t + UNKNOWN_FLIGHT end
-            if t < best then best, kind = t, "fly" end
+            if not best or t < best then best, kind = t, "fly" end
         end
         if u == nodes[1] and links[w] then
             local t = TELEPORT_TIME + w.teleport.cooldown + HASSLE
@@ -400,14 +427,19 @@ function T:Plan(target)
         end
         return best, kind
     end
+    return nodes, leg
+end
 
+-- Dijkstra from node 1 over the graph, to node `stop` (or every node): the seconds to reach
+-- each node, the node before it and the kind of leg in between.
+local function shortest(nodes, leg, stop)
     local time, prev, how, done = { [1] = 0 }, {}, {}, {}
     while true do
         local u, best
         for i in ipairs(nodes) do
             if not done[i] and time[i] and (not best or time[i] < best) then u, best = i, time[i] end
         end
-        if not u or u == 2 then break end
+        if not u or u == stop then break end
         done[u] = true
         for w in ipairs(nodes) do
             if not done[w] then
@@ -418,6 +450,15 @@ function T:Plan(target)
             end
         end
     end
+    return time, prev, how
+end
+
+function T:Plan(target)
+    local start = self:Start()
+    if not start or not target then return nil end
+    withWorld(target)
+    local nodes, leg = graph(start, target)
+    local time, prev, how = shortest(nodes, leg, 2)
     if not time[2] then return nil end
     local legs, i = {}, 2
     while prev[i] do
@@ -430,10 +471,54 @@ function T:Plan(target)
     return { legs = legs, seconds = time[2], walk = direct, target = target, start = start }
 end
 
+-- Many targets at once (the NPC directory): one pass over the graph from the player, then
+-- reach:Seconds(point) gives the fewest seconds to any point (the same as Plan(point).seconds),
+-- or nil when nothing leads there, and reach:Route(point) those seconds with the ways taken
+-- ({ "fly", "boat", ... } in order, walks left out: the kinds of Plan's legs). Nil without a
+-- position.
+function T:Reach()
+    local start = self:Start()
+    if not start then return nil end
+    local nodes, leg = graph(start)
+    local time, prev, how = shortest(nodes, leg)
+    -- `jumps`: where the hearthstone or a teleport lands (what is near them may be fast too).
+    local reach = { jumps = {} }
+    for _, node in ipairs(nodes) do
+        if node.inn or node.teleport then reach.jumps[#reach.jumps + 1] = node.point end
+    end
+    function reach:Route(point)
+        if not point then return nil end
+        local target = { point = withWorld(point) }
+        local best, last, lastKind
+        for i, node in ipairs(nodes) do
+            if time[i] then
+                local t, kind = leg(node, target)
+                if t and (not best or time[i] + t < best) then best, last, lastKind = time[i] + t, i, kind end
+            end
+        end
+        if not best then return nil end
+        -- The ways besides walking: a passage is walked through too.
+        local kinds = {}
+        if lastKind ~= "walk" and lastKind ~= "passage" then kinds[1] = lastKind end
+        local i = last
+        while prev[i] do
+            if how[i] ~= "walk" and how[i] ~= "passage" then table.insert(kinds, 1, how[i]) end
+            i = prev[i]
+        end
+        return best, kinds
+    end
+    function reach:Seconds(point)
+        return (self:Route(point))
+    end
+    return reach
+end
+
 -- The plan as a line: "walk 1:20, fly 6:30 to Redridge Mountains, walk 0:40" and its total
 -- time; each leg that is not a walk names the zone it leads to.
 local ROUTE_PARTS = { walk = "ROUTE_WALK", fly = "ROUTE_FLY", boat = "ROUTE_BOAT", zeppelin = "ROUTE_ZEPPELIN",
     tram = "ROUTE_TRAM", hearth = "ROUTE_HEARTH", teleport = "ROUTE_TELEPORT" }
+local PASSAGE_PARTS = { lift = "ROUTE_LIFT", tunnel = "ROUTE_TUNNEL", bridge = "ROUTE_BRIDGE", gate = "ROUTE_GATE",
+    portal = "ROUTE_PORTAL" }
 local function clock(seconds)
     local s = math.floor(seconds + 0.5)
     return ("%d:%02d"):format(math.floor(s / 60), s % 60)
@@ -443,10 +528,10 @@ function T:Itinerary(plan)
     local parts, travel = {}, false
     for _, l in ipairs(plan.legs) do
         if l.kind ~= "walk" then travel = true end
-        local part = ROUTE_PARTS[l.kind]
+        local part = l.kind == "passage" and PASSAGE_PARTS[l.node.passage.kind] or ROUTE_PARTS[l.kind]
         if l.seconds >= 1 then
             local text = L[part]:format(clock(l.seconds))
-            local zone = l.kind ~= "walk" and l.to and Ding.Engine:ZoneOf(l.to.map)
+            local zone = l.kind ~= "walk" and l.to and Ding.Engine:ZoneOf(l.to.zone or l.to.map)
             if zone and zone.name then text = L.ROUTE_TO:format(text, zone.name) end
             parts[#parts + 1] = text
         end
@@ -469,6 +554,11 @@ local function legName(l)
 end
 
 local function describe(l, point)
+    if l.kind == "passage" then
+        local passage = l.node.passage
+        return { kind = "passage", point = point, hint = Ding.Passages.Hint(passage, l.node.passageEnd), to = l.to,
+            name = Compat.MapName(Ding.Passages.Zone(l.to)) or "?", passage = passage }
+    end
     local name = legName(l)
     -- From a flight master never seen, the flight is only likely: "Try to fly to …".
     local key = (l.kind == "fly" and l.start and l.start.unknown) and "TRAVEL_TRY_FLY" or HINT[l.kind]
@@ -476,13 +566,13 @@ local function describe(l, point)
         flight = l.kind == "fly" and l.node.flight or nil, spell = l.node.teleport and l.node.teleport.spell or nil }
 end
 
--- The plan for a target, made again when the target changes, the player moved far, or after
--- REPLAN_TTL seconds.
+-- The plan for a target, made again when the target changes, the player moved far or to
+-- another map (a lift goes up without moving on the map), or after REPLAN_TTL seconds.
 function T:PlanFor(target)
     local here = self:Start()
     local c = self.cache
     if c and c.target == target and here and c.from and (distance(here, c.from) or math.huge) < REPLAN_MOVE
-        and GetTime() - c.t < REPLAN_TTL and c.taxi == Compat.OnTaxi() then
+        and here.map == c.from.map and GetTime() - c.t < REPLAN_TTL and c.taxi == Compat.OnTaxi() then
         return c.plan
     end
     local plan = self:Plan(target)
@@ -491,7 +581,8 @@ function T:PlanFor(target)
 end
 
 -- What the arrow does for a target: nil to walk straight there, else { kind, point (the
--- flight master or dock to go to; nil for the hearthstone), hint, to }.
+-- flight master, dock or passage to go to; nil for the hearthstone), hint, to }. A passage
+-- leads the arrow to its entry, then, once the player is in it, to its far end.
 function T:Leg(target)
     if not target or not Ding.Data.available then
         self.leg = nil
@@ -513,17 +604,34 @@ function T:Leg(target)
     local plan = self:PlanFor(target)
     local result
     if plan and #plan.legs > 0 then
-        local first, second = plan.legs[1], plan.legs[2]
-        if first.kind ~= "walk" then
-            local here = first.kind == "hearth" or first.kind == "teleport"
-            result = describe(first, not here and first.from or nil)
-        elseif second and second.kind ~= "walk" and second.kind ~= "hearth" and second.kind ~= "teleport" then
-            result = describe(second, second.from)
+        -- Out of a passage already (a plan made a moment ago): what comes before is behind. Not a
+        -- lift, whose two ends share a spot: its ride changes the map, and the plan is made again.
+        local first = 1
+        for k, leg in ipairs(plan.legs) do
+            if leg.kind == "passage" and leg.node.passage.kind ~= "lift" and here
+                and (distance(here, leg.to) or math.huge) <= AT_END then
+                first = k + 1
+            end
+        end
+        -- The first leg that is not a walk (the walks before it lead to where it starts).
+        local i = first
+        while plan.legs[i] and plan.legs[i].kind == "walk" do i = i + 1 end
+        local l = plan.legs[i] or { kind = "walk" }
+        if l.kind == "passage" then
+            -- In the passage already (its first leg, or a plan made a moment ago): its far end.
+            local passage = l.node.passage
+            local inside = i == 1 or (here and Ding.Passages.Inside(passage, here, Ding.Passages.End(passage, "a"),
+                Ding.Passages.End(passage, "b")) == l.node.passageEnd)
+            result = describe(l, inside and l.to or l.from)
+        elseif l.kind == "hearth" or l.kind == "teleport" then
+            result = describe(l, nil)
+        elseif l.kind ~= "walk" then
+            result = describe(l, l.from)
         end
     end
     self.plan = result and plan or nil
-    if result and result.kind ~= "fly" and result.kind ~= "hearth" and result.kind ~= "teleport" and here
-        and (distance(here, result.point) or math.huge) <= AT_NODE then
+    if result and result.kind ~= "fly" and result.kind ~= "hearth" and result.kind ~= "teleport"
+        and result.kind ~= "passage" and here and (distance(here, result.point) or math.huge) <= AT_NODE then
         -- At the dock: from now on, the arrow waits for the far side.
         local onBoard = { kind = result.kind, point = result.to, hint = result.hint, to = result.to, name = result.name }
         self.boarding = { from = result.point, to = result.to, t = GetTime(), target = target, leg = onBoard }
@@ -537,6 +645,7 @@ function T:Reset()
     self.plan, self.flight = nil, nil
     flights, allFlights, docks = {}, nil, nil
     cells = {}
+    Ding.Passages.Reset()
 end
 
 ---------------------------------------------------------------------------

@@ -2,13 +2,24 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Horde/13.lua.
--- Simulated (warrior): Orc 32 (2%) -> 33 (7%) in 3 h 29, 11 quests turned in; Scourge 32 (2%) -> 33 (7%) in 3 h 29, 11 quests turned in; Tauren 32 (2%) -> 33 (7%) in 3 h 29, 11 quests turned in; Troll 32 (2%) -> 33 (7%) in 3 h 29, 11 quests turned in; Skyborne 32 (2%) -> 33 (7%) in 3 h 29, 11 quests turned in.
+-- Simulated (warrior): Orc 32 (4%) -> 33 (7%) in 3 h 25, 11 quests turned in; Scourge 32 (4%) -> 33 (7%) in 3 h 25, 11 quests turned in; Tauren 32 (4%) -> 33 (7%) in 3 h 25, 11 quests turned in; Troll 32 (4%) -> 33 (7%) in 3 h 25, 11 quests turned in; Skyborne 32 (4%) -> 33 (7%) in 3 h 25, 11 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-h13-arathi-highlands",
     title    = "Arathi Highlands (32-33)",
     faction  = "Horde",
     minLevel = 32, maxLevel = 33,
     next     = "leveling-h14-thousand-needles",
+    leftOut  = {
+        [640] = { kind = "prereq" },
+        [641] = { kind = "prereq" },
+        [643] = { kind = "prereq" },
+        [644] = { kind = "prereq" },
+        [673] = { kind = "version" },
+        [679] = { kind = "version" },
+        [687] = { kind = "prereq" },
+        [8120] = { kind = "away" },
+        [8171] = { kind = "away" },
+    },
     steps    = {
         { complete = 676, -- level 32
           note = "Arathi Highlands: Hammerfall, in the east of the zone. Your targets are within the cavern." },
@@ -17,11 +28,11 @@ Ding.RegisterGuide({
           note = "The targets are out in front of the cavern." },
         { go = { 1417, 34.77, 44.18 }, text = "Head out of the cave" }, -- level 32
         { complete = 1164, -- level 32
-          note = "The NPC is indoors." },
+          note = "The target is indoors." },
         { complete = 1164, -- level 32
           note = "The targets are spread over several spots." },
         { complete = 1164, -- level 32
-          note = "The NPC is indoors." },
+          note = "The target is indoors." },
         { accept = 642 }, -- level 32
         { go = { 1417, 73, 32.65 }, fly = true, talk = 2851, text = "Flight master at Hammerfall" }, -- level 32
         { turnin = 676, accept = 677 }, -- level 32
@@ -33,14 +44,14 @@ Ding.RegisterGuide({
         { complete = 672, -- level 32
           note = "The targets are raptors. Stay away from Refuge Pointe." },
         { complete = 677 }, -- level 32
-        { level = 32, xp = 43760, patrol = { { 1417, 65.74, 67.95 }, { 1417, 62.85, 67.63 }, { 1417, 65.36, 71.37 }, { 1417, 64.95, 73.64 }, { 1417, 66.94, 73.55 }, { 1417, 68.64, 71.84 }, { 1417, 70.43, 70.36 }, { 1417, 69.16, 68.36 }, { 1417, 69.84, 66.45 }, { 1417, 72.44, 65.74 }, { 1417, 71.35, 63.05 }, { 1417, 68.96, 61.34 }, { 1417, 66.44, 63.36 }, { 1417, 60.83, 72.25 } }, -- level 32
+        { level = 32, xp = 43760, patrol = { { 1417, 65.74, 67.95 }, { 1417, 62.85, 67.63 }, { 1417, 65.36, 71.37 }, { 1417, 64.95, 73.64 }, { 1417, 66.94, 73.55 }, { 1417, 68.64, 71.84 }, { 1417, 70.43, 70.36 }, { 1417, 69.16, 68.36 }, { 1417, 69.84, 66.45 }, { 1417, 72.44, 65.74 }, { 1417, 71.35, 63.05 }, { 1417, 68.96, 61.34 }, { 1417, 66.44, 63.36 }, { 1417, 60.83, 72.25 } }, why = { kind = "level", levels = { 28, 36 } }, -- level 32
           note = "Together with the next turn-ins, this brings you to level 33." },
         { turnin = { 671, 672 }, accept = 674 }, -- level 32
         { turnin = 674, accept = 675, -- level 32
           note = "This one roams, so scan the surrounding area." },
         { turnin = 675 }, -- level 32
         { turnin = 677 }, -- level 32
-        { turnin = 509, accept = 513, -- level 32
+        { turnin = 509, accept = 513, why = { chain = 1, kind = "detour", quest = 509, seconds = 60, xp = 3500 }, -- level 32
           note = "The NPC is indoors." },
         { train = true, talk = 4568, races = { "Scourge", "Troll" }, classes = { "MAGE" }, -- level 32
           note = "The NPC is indoors, one floor up." },

@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("frFR", "horde-41-stv", {
         "Strangleronce (38-42)",
     ["Back to Stranglethorn for the end of its quests, from Grom'gol and Booty Bay. Finish the level on nearby monsters before moving on."] =
         "Retour à Strangleronce pour la fin de ses quêtes, depuis Grom'gol et Baie-du-Butin. Finis le niveau sur les monstres du coin avant la suite.",
+    ["Grom'gol"] =
+        "Grom'gol",
     ["Finish the level on nearby monsters before moving on."] =
         "Finis le niveau sur les monstres du coin avant la suite.",
 })

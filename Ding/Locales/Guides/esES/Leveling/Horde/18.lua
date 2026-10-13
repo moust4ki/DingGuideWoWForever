@@ -25,14 +25,12 @@ Ding.RegisterGuideTranslation("esES", "leveling-h18-alterac-mountains-and-arathi
         "Los objetivos están repartidos en varios puntos. El PNJ está dentro. Mira también en el piso de arriba.",
     ["The NPC is indoors, one floor up."] =
         "El PNJ está dentro, un piso más arriba.",
-    ["The NPC waits on the lower level, indoors. If it is not around, move on without it. No rush; you may complete this afterwards."] =
-        "El PNJ espera en el nivel inferior, dentro. Si no está por aquí, pasa al siguiente paso. Sin prisa; puedes completarlo más tarde.",
-    ["This one roams, so scan the surrounding area."] =
-        "Este deambula, así que revisa los alrededores.",
+    ["The target is on the lower level, indoors. If it is not around, move on without it. No rush; you may complete this afterwards."] =
+        "El objetivo está en el nivel inferior, dentro. Si no está por aquí, pasa al siguiente paso. Sin prisa; puedes completarlo más tarde.",
     ["Climb the slope, then leap the wall"] =
         "Sube la pendiente y salta el muro",
-    ["The NPC is indoors, one floor up. Beware of foes lurking in stealth."] =
-        "El PNJ está dentro, un piso más arriba. Cuidado con los enemigos ocultos en sigilo.",
+    ["The target is indoors, one floor up. Beware of foes lurking in stealth."] =
+        "El objetivo está dentro, un piso más arriba. Cuidado con los enemigos ocultos en sigilo.",
     ["The targets are kobolds. Additional ones are in the cavern up the trail. The following step takes place in the cave."] =
         "Los objetivos son kóbolds. Hay más en la caverna, sendero arriba. El siguiente paso transcurre en la cueva.",
     ["Climb the trail to the cavern"] =
@@ -45,6 +43,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h18-alterac-mountains-and-arathi
         "Sal de la cueva",
     ["The targets are raptors."] =
         "Los objetivos son raptores.",
+    ["This one roams, so scan the surrounding area."] =
+        "Este deambula, así que revisa los alrededores.",
     ["Let the conversation play out. This one roams, so scan the surrounding area."] =
         "Deja que termine la conversación. Este deambula, así que revisa los alrededores.",
     ["Take the trail across the peaks"] =

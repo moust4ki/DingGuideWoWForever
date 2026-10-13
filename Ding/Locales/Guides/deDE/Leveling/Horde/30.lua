@@ -13,8 +13,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h30-feralas-and-ungoro-crater", 
         "Die Ziele sind Hippogryphen. Töte sie, dann benutze den Gegenstand an ihren Überresten.",
     ["Slay them, then apply the item to their remains."] =
         "Töte sie, dann benutze den Gegenstand an ihren Überresten.",
-    ["Fight the treants. The NPC patrols a long route; look along it. Slay them, then apply the item to their remains."] =
-        "Bekämpfe die Treants. Der NPC patrouilliert eine lange Route; such entlang dieser Route. Töte sie, dann benutze den Gegenstand an ihren Überresten.",
+    ["Fight the treants. The target patrols a long route; look along it. Slay them, then apply the item to their remains."] =
+        "Bekämpfe die Treants. Das Ziel patrouilliert eine lange Route; such entlang dieser Route. Töte sie, dann benutze den Gegenstand an ihren Überresten.",
     ["Aim the item at the Strider foes. The targets are towering green giants. The item strips their elite status."] =
         "Richte den Gegenstand auf die Schreiter-Gegner. Die Ziele sind turmhohe grüne Riesen. Der Gegenstand nimmt ihnen den Elitestatus.",
     ["Hunt down the elementals formed of water."] =
@@ -65,8 +65,12 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h30-feralas-and-ungoro-crater", 
         "Deine Ziele sind in der Höhle.",
     ["Flight master at Marshal's Refuge"] =
         "Flugmeister von Marschalls Zuflucht",
+    ["The NPC is indoors. You need them later for \"Bungle in the Jungle\", \"The Bait for Lar'korwi\" and \"It's a Secret to Everybody\": keep them in the bank to free bag slots."] =
+        "Der NPC ist drinnen. Du brauchst sie später für „Dschungelei“, „Ein Köder für Lar'korwi“ und „Es ist für jeden ein Geheimnis“: Lass sie in der Bank, das spart Taschenplätze.",
     ["This NPC is found down in the Cleft of Shadow."] =
         "Dieser NPC ist unten in der Kluft der Schatten.",
     ["The NPC is upstairs, out on the balcony."] =
         "Der NPC ist oben, draußen auf dem Balkon.",
+    ["Orgrimmar"] =
+        "Orgrimmar",
 })

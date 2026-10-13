@@ -9,6 +9,13 @@ Ding.RegisterGuide({
     faction  = "Horde",
     minLevel = 28, maxLevel = 30,
     next     = "leveling-h12-hillsbrad-foothills",
+    leftOut  = {
+        [1121] = { kind = "exclusive" },
+        [1150] = { kind = "log" },
+        [1151] = { kind = "prereq" },
+        [1152] = { kind = "prereq" },
+        [2770] = { kind = "away" },
+    },
     steps    = {
         { go = { 1413, 45.1, 57.68 }, text = "Travel to Camp Taurajo", -- level 28
           note = "The Barrens: Camp Taurajo first, then Thousand Needles: Freewind Post." },
@@ -22,11 +29,9 @@ Ding.RegisterGuide({
           note = "If the NPC is absent, stay until he reappears." },
         { go = { 1441, 46.96, 48.28 }, text = "Take a lift down to Thousand Needles, walk the road toward Freewind Post, then a lift back up" }, -- level 28
         { go = { 1441, 45.09, 49.14 }, fly = true, talk = 4317, text = "Fly to Freewind Post" }, -- level 28
-        { accept = 4767, -- level 28
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 4767 }, -- level 28
         { accept = 4821 }, -- level 28
-        { turnin = 4542, accept = 4841, -- level 28
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 4542, accept = 4841 }, -- level 28
         { turnin = 1196, accept = 1197, sticky = 4841, -- level 28
           note = "The NPC is indoors." },
         { go = { 1441, 44.08, 37.31 }, text = "Go into the cavern" }, -- level 28
@@ -49,12 +54,11 @@ Ding.RegisterGuide({
           note = "Look for a big, pale egg. The targets are spread over several spots." },
         { complete = 1153, -- level 28
           note = "Kill Surveyors and Diggers. The targets are kobolds. They are rare and scattered widely." },
-        { level = 28, xp = 34950, patrol = { { 1441, 44.46, 40.15 }, { 1441, 41.96, 37.96 }, { 1441, 39.03, 37.54 }, { 1441, 41.06, 41.24 }, { 1441, 45.45, 44.05 }, { 1441, 47.54, 40.95 }, { 1441, 43.35, 35.23 }, { 1441, 38.96, 32.23 } }, -- level 28
+        { level = 28, xp = 34950, patrol = { { 1441, 44.46, 40.15 }, { 1441, 41.96, 37.96 }, { 1441, 39.03, 37.54 }, { 1441, 41.06, 41.24 }, { 1441, 45.45, 44.05 }, { 1441, 47.54, 40.95 }, { 1441, 43.35, 35.23 }, { 1441, 38.96, 32.23 } }, why = { kind = "level", levels = { 26, 37 } }, -- level 28
           note = "With the coming hand-ins, this brings you to level 29." },
         { go = { 1441, 46.96, 48.28 }, text = "Take the lift upward" }, -- level 28
         { turnin = 4821, accept = 4865 }, -- level 28
-        { turnin = 4841, -- level 28
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 4841 }, -- level 28
         { turnin = 1197, -- level 28
           note = "The NPC is indoors." },
         { go = { 1441, 14.81, 32.87 }, text = "Climb the trail" }, -- level 29
@@ -65,7 +69,7 @@ Ding.RegisterGuide({
           note = "For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears. Keep away from Heartrazor." },
         { complete = 4770, elite = true }, -- level 29
         { complete = 1131, patrol = { { 1441, 18.27, 26.69 }, { 1441, 17.23, 29.56 }, { 1441, 14.7, 30.71 }, { 1441, 11.04, 22.54 }, { 1441, 13.33, 19.77 }, { 1441, 14.88, 19.55 }, { 1441, 17.23, 18.86 }, { 1441, 18.77, 24.75 } }, -- level 29
-          note = "Steelsnap is a brown hyena with 2 hyena escorts. The NPC patrols a long route; look along it. The target appears near 17.3, 22.2 in Thousand Needles." },
+          note = "Steelsnap is a brown hyena with 2 hyena escorts. The target patrols a long route; look along it. The target appears near 17.3, 22.2 in Thousand Needles." },
         { turnin = 4770, elite = true, when = { log = 4770 } }, -- level 29
         { turnin = 4865, accept = 5062, -- level 29
           note = "This one roams, so scan the surrounding area." },
@@ -85,23 +89,21 @@ Ding.RegisterGuide({
           note = "The quest giver waits in the tent." },
         { accept = 5088, elite = true }, -- level 29
         { talk = 8356, bank = 5838, -- level 29
-          note = "The NPC is indoors." },
-        { turnin = 1153 }, -- level 29
-        { turnin = 4767, -- level 29
-          note = "This one roams, so scan the surrounding area." },
-        { accept = 5064, -- level 29
-          note = "This one roams, so scan the surrounding area." },
+          note = "The NPC is indoors. You need it later for \"Frostmaw\": keep it in the bank to free a bag slot." },
+        { turnin = 1153, why = { kind = "detour", quest = 1153, seconds = 120, xp = 2400 } }, -- level 29
+        { turnin = 4767 }, -- level 29
+        { accept = 5064 }, -- level 29
         { accept = 5147 }, -- level 29
         { accept = 98070 }, -- level 29
         { complete = 98070 }, -- level 29
-        { level = 30, patrol = { { 1441, 44.46, 40.15 }, { 1441, 41.96, 37.96 }, { 1441, 39.03, 37.54 }, { 1441, 41.06, 41.24 }, { 1441, 45.45, 44.05 }, { 1441, 47.54, 40.95 }, { 1441, 43.35, 35.23 }, { 1441, 38.96, 32.23 } }, -- level 29
+        { level = 30, patrol = { { 1441, 44.46, 40.15 }, { 1441, 41.96, 37.96 }, { 1441, 39.03, 37.54 }, { 1441, 41.06, 41.24 }, { 1441, 45.45, 44.05 }, { 1441, 47.54, 40.95 }, { 1441, 43.35, 35.23 }, { 1441, 38.96, 32.23 } }, why = { kind = "level", levels = { 29, 36 } }, -- level 29
           note = "Hard quests are coming up. This spreads out the grinding so less is left later." },
         { go = { 1441, 31.29, 36.91 }, text = "Climb the trail and cross the rope bridges" }, -- level 30
         { go = { 1441, 35.05, 31.46 }, text = "Walk over the rope bridge" }, -- level 30
         { complete = 5064, -- level 30
-          note = "The objective lies atop the mesa. The NPC is indoors." },
+          note = "The objective lies atop the mesa. The object is indoors." },
         { complete = 5064, -- level 30
-          note = "The objective lies atop the mesa. The NPC is indoors." },
+          note = "The objective lies atop the mesa. The object is indoors." },
         { complete = 5064, -- level 30
           note = "The objective lies atop the mesa." },
         { go = { 1441, 35.73, 30.97 }, elite = true, text = "Walk over the rope bridge" }, -- level 30
@@ -124,8 +126,7 @@ Ding.RegisterGuide({
         { go = { 1441, 7.63, 10.58 }, text = "Climb the road into Feralas", -- level 30
           note = "Watch out: the foes here are above your level. Should you die, come back to life at Camp Mojache." },
         { go = { 1444, 75.42, 44.32 }, fly = true, talk = 8020, text = "Fly to Camp Mojache" }, -- level 30
-        { turnin = { 5064, 5147 }, -- level 30
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = { 5064, 5147 } }, -- level 30
         { sethearth = "Freewind Post", talk = 11116, -- level 30
           note = "The NPC is indoors." },
         { turnin = 4904, -- level 30
@@ -145,7 +146,7 @@ Ding.RegisterGuide({
           note = "Your targets are within the cavern." },
         { go = { 1456, 29.77, 29.79 }, text = "Head out of the cave" }, -- level 30
         { accept = 1145 }, -- level 30
-        { turnin = 1111, accept = 1112 }, -- level 30
+        { turnin = 1111, accept = 1112, why = { kind = "carry", quest = 1112, seconds = 33060, xp = 1400 } }, -- level 30
         { turnin = 220, when = { log = 220 }, races = { "Orc", "Tauren", "Troll", "Skyborne" }, classes = { "SHAMAN" } }, -- level 30
         { accept = 63, when = { done = 220 }, races = { "Orc", "Tauren", "Troll", "Skyborne" }, classes = { "SHAMAN" } }, -- level 30
         { talk = 5901, collect = { { 6637, 1 } }, spots = { { 1413, 65.86, 43.84 } }, races = { "Orc", "Tauren", "Troll" }, classes = { "SHAMAN" }, -- level 30
@@ -155,7 +156,8 @@ Ding.RegisterGuide({
           note = "Stand on the metal grating to begin the battle. Shows up once you defeat six challengers." },
         { turnin = 1719, when = { ready = 1719 }, classes = { "WARRIOR" } }, -- level 30
         { accept = 1791, when = { done = 1719 }, classes = { "WARRIOR" } }, -- level 30
-        { talk = 8119, bank = 5800 }, -- level 30
+        { talk = 8119, bank = 5800, -- level 30
+          note = "You need it later for \"Parts for Kravel\": keep it in the bank to free a bag slot." },
         { train = true, talk = 3328, races = { "Orc", "Scourge", "Troll" }, classes = { "ROGUE" }, -- level 30
           note = "This NPC is found down in the Cleft of Shadow." },
         { accept = 1431, -- level 30
@@ -168,7 +170,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { train = true, talk = 3344, races = { "Orc", "Tauren", "Troll" }, classes = { "SHAMAN" }, -- level 30
           note = "The NPC is indoors." },
-        { turnin = 1145, accept = 1146 }, -- level 30
+        { turnin = 1145, accept = 1146, why = { kind = "carry", quest = 1146, seconds = 32160, xp = 2000 } }, -- level 30
         { train = true, talk = 3352, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, -- level 30
           note = "The NPC stands on the highest level of this structure." },
         { train = true, talk = 10088, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, -- level 30
@@ -178,7 +180,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { train = true, talk = 6018, races = { "Scourge", "Troll" }, classes = { "PRIEST" }, -- level 30
           note = "The NPC is indoors." },
-        { turnin = 1431, accept = 1432, -- level 30
+        { turnin = 1431, accept = 1432, why = { kind = "carry", quest = 1432, seconds = 63360, xp = 1200 }, -- level 30
           note = "This one roams, so scan the surrounding area. The NPC is indoors." },
     },
 })

@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("esES", "horde-57-winterspring", {
         "Cuna del Invierno (55-56)",
     ["Winterspring is northeast of Felwood: Everlook is your base."] =
         "Cuna del Invierno está al noreste de Frondavil: Vista Eterna es tu base.",
+    ["Everlook"] =
+        "Vista Eterna",
     ["If the starting item dropped: use it from your bags."] =
         "Si tienes el objeto que inicia la misión: úsalo desde tus bolsas.",
     ["Finish the level on nearby monsters before moving on."] =

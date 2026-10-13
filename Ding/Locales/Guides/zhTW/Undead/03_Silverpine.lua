@@ -5,4 +5,6 @@ Ding.RegisterGuideTranslation("zhTW", "undead-03-silverpine", {
         "銀松森林 (13-15)",
     ["From Brill, take the road west then south over the bridge into Silverpine Forest: the Sepulcher is your base."] =
         "從布瑞爾沿道路往西，再往南過橋進入銀松森林：據點是瑟伯切爾。",
+    ["The Sepulcher"] =
+        "瑟伯切爾",
 })

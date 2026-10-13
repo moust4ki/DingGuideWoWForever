@@ -67,6 +67,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a01-human-starter", {
         "Deja que los monstruos de aquí te maten a propósito. A estos niveles morir no te cuesta nada. Es el camino más rápido para llegar.",
     ["Get yourself killed, then resurrect with the spirit healer"] =
         "Deja que te maten y resucita con el Ángel de la Resurrección",
+    ["Goldshire"] =
+        "Villadorada",
     ["Look for little stacks of brown wood. Look around tree trunks at ground level."] =
         "Busca pequeñas pilas de madera marrón. Busca alrededor de los troncos, a ras de suelo.",
     ["The targets are wolves."] =
@@ -101,14 +103,16 @@ Ding.RegisterGuideTranslation("esES", "leveling-a01-human-starter", {
         "Aprende Espadas y Bastones con el maestro de armas",
     ["Head indoors"] =
         "Ve al interior",
-    ["Step onto the pink rune. Look within the tomb. The NPC waits on the lower level, indoors."] =
-        "Pisa la runa rosa. Busca dentro de la tumba. El PNJ espera en el nivel inferior, dentro.",
+    ["The target is indoors."] =
+        "El objetivo está dentro.",
+    ["Step onto the pink rune. Look within the tomb. The target is on the lower level, indoors."] =
+        "Pisa la runa rosa. Busca dentro de la tumba. El objetivo está en el nivel inferior, dentro.",
     ["The NPC stands one level over the crypt. The NPC waits on the lower level, indoors."] =
         "El PNJ está un nivel por encima de la cripta. El PNJ espera en el nivel inferior, dentro.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors. Be ready for a fight right away."] =
-        "Este deambula, así que revisa los alrededores. El PNJ está dentro. Prepárate para luchar de inmediato.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "Este deambula, así que revisa los alrededores. El PNJ está dentro.",
+    ["Stormwind City"] =
+        "Ciudad de Ventormenta",
+    ["The NPC is indoors. Be ready for a fight right away."] =
+        "El PNJ está dentro. Prepárate para luchar de inmediato.",
     ["Learn Blacksmithing from the trainer"] =
         "Aprende Herrería con el instructor",
     ["Learn Mining from the trainer"] =
@@ -183,6 +187,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a01-human-starter", {
         "Sal de Stonesplinter Valley y sigue el camino",
     ["The NPC waits on the tower's highest floor."] =
         "El PNJ espera en el piso más alto de la torre.",
+    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
+        "Este deambula, así que revisa los alrededores. El PNJ está dentro.",
     ["Head up the incline"] =
         "Sube la cuesta",
 })

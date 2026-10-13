@@ -19,6 +19,10 @@ Ding.RegisterGuideTranslation("esES", "leveling-a42-winterspring", {
         "Abandona la mascota temporal que domesticaste.",
     ["The NPC is indoors."] =
         "El PNJ está dentro.",
+    ["The NPC is indoors. You need it later for \"Glyphed Oaken Branch\": keep it in the bank to free a bag slot."] =
+        "El PNJ está dentro. Lo necesitarás más adelante para «Rama de roble con inscripciones»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["Everlook"] =
+        "Vista Eterna",
     ["The quest wants yetis; seek them out. Targets are in the cavern and around its entrance too."] =
         "La misión pide yetis; búscalos. Los objetivos están en la cueva y también alrededor de la entrada.",
     ["Head out of the cave"] =

@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("frFR", "alliance-47-feralas", {
         "Féralas (47-48)",
     ["The Alliance stronghold of Feralas is on an island west of the zone."] =
         "Le bastion de l'Alliance de Féralas est sur une île à l'ouest de la zone.",
+    ["Feathermoon Stronghold"] =
+        "Bastion de Pennelune",
     ["If the starting item dropped: use it from your bags."] =
         "Si l'objet de départ est tombé : utilise-le depuis ton sac.",
 })

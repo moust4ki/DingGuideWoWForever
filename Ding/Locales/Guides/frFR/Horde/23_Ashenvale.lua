@@ -7,4 +7,6 @@ Ding.RegisterGuideTranslation("frFR", "horde-23-ashenvale", {
         "Orneval est au nord des Tarides : le poste de Bois-Brisé, à l'est de la forêt, est ta base.",
     ["Finish the level on nearby monsters before moving on."] =
         "Finis le niveau sur les monstres du coin avant la suite.",
+    ["Splintertree Post"] =
+        "Poste de Bois-Brisé",
 })

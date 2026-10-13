@@ -25,6 +25,16 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h20-stranglethorn-vale-and-swamp
         "Les cibles sont des trolls.",
     ["The targets are in the water and along its edges."] =
         "Les cibles sont dans l'eau et sur ses bords.",
+    ["You need it later for \"Chapter I\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Chapitre I » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need it later for \"Chapter II\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Chapitre II » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need it later for \"Chapter III\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Chapitre III » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need it later for \"Chapter IV\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Chapitre IV » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["Booty Bay"] =
+        "Baie-du-Butin",
     ["Keep clear of Darkshire."] =
         "Tiens-toi loin de Sombre-Comté.",
     ["Hunt the little winged dragonkin. When the targets run out, skip ahead. No rush; you may complete this afterwards."] =
@@ -35,8 +45,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h20-stranglethorn-vale-and-swamp
         "Maître de vol de Pierrêche",
     ["The NPC is indoors, one floor up."] =
         "Le PNJ est à l'intérieur, un étage plus haut.",
-    ["The target is a humanoid escorted by 2 guards. The NPC patrols a long route; look along it."] =
-        "La cible est un humanoïde escorté par 2 gardes. Le PNJ patrouille sur un long trajet : cherche-le tout du long.",
+    ["The target is a humanoid escorted by 2 guards. The target patrols a long route; look along it."] =
+        "La cible est un humanoïde escorté par 2 gardes. La cible patrouille sur un long trajet : cherche-la tout du long.",
     ["This one roams, so scan the surrounding area. The targets are spread over several spots."] =
         "Celui-ci se déplace : fouille les environs. Les cibles sont réparties sur plusieurs endroits.",
     ["For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears. Clear the monsters just south before you start."] =
@@ -51,4 +61,6 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h20-stranglethorn-vale-and-swamp
         "Chasse les petits draconiens ailés.",
     ["Let the conversation play out. Climb to the highest floor of the building."] =
         "Laisse la conversation se dérouler. Monte au dernier étage du bâtiment.",
+    ["Camp Taurajo"] =
+        "Camp Taurajo",
 })

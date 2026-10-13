@@ -31,10 +31,14 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a21-arathi-highlands-and-alterac
         "Lass das Gespräch zu Ende laufen. Begleite Kinelory und halte sie am Leben.",
     ["The NPC is indoors."] =
         "Der NPC ist drinnen.",
+    ["Southshore"] =
+        "Süderstade",
     ["Wait for the talking to finish"] =
         "Warte, bis das Gespräch endet",
-    ["Beware of foes lurking in stealth. The NPC is indoors."] =
-        "Vorsicht vor getarnten Gegnern. Der NPC ist drinnen.",
+    ["Beware of foes lurking in stealth. The target is indoors."] =
+        "Vorsicht vor getarnten Gegnern. Das Ziel ist drinnen.",
+    ["The target is indoors."] =
+        "Das Ziel ist drinnen.",
     ["Beware of foes lurking in stealth."] =
         "Vorsicht vor getarnten Gegnern.",
     ["The targets are ogres."] =
@@ -59,8 +63,6 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a21-arathi-highlands-and-alterac
         "Nimm den Pfad über die Gipfel",
     ["Take the passage to Faldir's Cove"] =
         "Nimm den Durchgang nach Faldirs Bucht",
-    ["This one roams, so scan the surrounding area."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab.",
     ["For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears."] =
         "Bei dieser Quest beschützt du einen NPC, der unterwegs ist. Wenn der NPC nicht da ist, bleib, bis er wieder erscheint.",
     ["Let the conversation play out. Escort Professor Phizzlethorpe and keep him alive."] =

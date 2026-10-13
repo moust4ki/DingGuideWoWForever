@@ -37,4 +37,6 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a29-the-hinterlands", {
         "Tue des monstres jusqu'à ce que ta pierre de foyer soit rechargée",
     ["Stay away from Gammerita. The quarry: a tough elite tortoise, azure-shelled. This one roams, so scan the surrounding area."] =
         "Ne t'approche pas de Gammerita. Ta proie : une tortue élite coriace, à carapace azur. Celui-ci se déplace : fouille les environs.",
+    ["The NPC is indoors. You need them later for \"Rhapsody's Tale\", \"The Super Snapper FX\", \"Whiskey Slim's Lost Grog\" and \"Favored of Elune?\": keep them in the bank to free bag slots."] =
+        "Le PNJ est à l'intérieur. Tu en auras besoin plus tard pour « L'histoire de Rhapsody », « Le Preneur d'images FX », « La bibine perdue de Whiskey Slim » et « Dans les faveurs d'Elune ? » : garde-les à la banque pour libérer de la place dans tes sacs.",
 })

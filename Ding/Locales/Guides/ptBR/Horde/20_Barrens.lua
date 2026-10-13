@@ -5,4 +5,8 @@ Ding.RegisterGuideTranslation("ptBR", "horde-20-barrens", {
         "Sertões e Torres de Pedra (19-20)",
     ["The Crossroads, in the middle of the Barrens, is your base; the Stonetalon Mountains are west of the Barrens."] =
         "A Encruzilhada, no centro dos Sertões, é sua base; a Cordilheira das Torres de Pedra fica a oeste dos Sertões.",
+    ["Ratchet"] =
+        "Vila Catraca",
+    ["Sun Rock Retreat"] =
+        "Retiro Rocha do Sol",
 })

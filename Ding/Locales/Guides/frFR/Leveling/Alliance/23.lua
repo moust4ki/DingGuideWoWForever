@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a23-desolace", {
         "Désolace : la combe de Nijel, dans le coin nord-est.",
     ["The NPC is indoors."] =
         "Le PNJ est à l'intérieur.",
+    ["Nijel's Point"] =
+        "Combe de Nijel",
     ["Stay away from Ghost Walker Post."] =
         "Ne t'approche pas du poste de Rôdeur-fantôme.",
     ["Hunt the felguards. This is the sole spot; wait for them to reappear."] =

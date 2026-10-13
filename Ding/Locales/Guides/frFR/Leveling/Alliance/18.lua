@@ -21,6 +21,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a18-desolace", {
         "Relâche le familier temporaire que tu as apprivoisé.",
     ["The NPC is indoors."] =
         "Le PNJ est à l'intérieur.",
+    ["Nijel's Point"] =
+        "Combe de Nijel",
     ["Hunt down satyrs. Beware of foes lurking in stealth."] =
         "Traque des satyres. Attention aux ennemis camouflés.",
     ["With the coming hand-ins, this brings you to level 36."] =
@@ -31,16 +33,14 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a18-desolace", {
         "La quête commence avec un petit livre.",
     ["The targets are lobsters. Your targets sit below the water's surface."] =
         "Les cibles sont des homards. Tes cibles sont sous la surface de l'eau.",
-    ["The NPC waits on the tower's highest floor."] =
-        "Le PNJ attend au dernier étage de la tour.",
+    ["The target is on the tower's highest floor."] =
+        "La cible est au dernier étage de la tour.",
     ["For this quest you guard an NPC on the move. If she is absent, wait for her to reappear. The NPC is indoors."] =
         "Dans cette quête, tu protèges un PNJ qui se déplace. Si elle n'est pas là, attends qu'elle réapparaisse. Le PNJ est à l'intérieur.",
-    ["Draw him to the doorway so other foes stay out of it. The NPC is indoors."] =
-        "Attire-le jusqu'à l'entrée pour que les autres ennemis restent à l'écart. Le PNJ est à l'intérieur.",
+    ["Draw him to the doorway so other foes stay out of it. The target is indoors."] =
+        "Attire-le jusqu'à l'entrée pour que les autres ennemis restent à l'écart. La cible est à l'intérieur.",
     ["Let the conversation play out. Escort Dalinda Malem and keep her alive."] =
         "Laisse la conversation se dérouler. Escorte Dalinda Malem et garde-la en vie.",
-    ["This one roams, so scan the surrounding area."] =
-        "Celui-ci se déplace : fouille les environs.",
     ["The targets here are centaurs. Magram Pack Runners patrol with 2 hyena escorts; steer clear."] =
         "Ici, les cibles sont des centaures. Les Magram Pack Runners patrouillent avec 2 hyènes d'escorte : tiens-toi à l'écart.",
     ["Stay away from Ghost Walker Post."] =
@@ -69,6 +69,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a18-desolace", {
         "Cherche des sacs beiges près des maisons. Certains ne sont pas utilisables. Les Magram Pack Runners patrouillent avec 2 hyènes d'escorte : tiens-toi à l'écart.",
     ["The foes here are scorpions. Basilisks compete for the same spawn points."] =
         "Ici, les ennemis sont des scorpions. Les basilics se disputent les mêmes points d'apparition.",
+    ["The NPC is indoors. You need it later for \"The Karnitol Shipwreck\": keep it in the bank to free a bag slot."] =
+        "Le PNJ est à l'intérieur. Tu en auras besoin plus tard pour « L'épave de Karnitol » : garde-le à la banque pour libérer une place dans tes sacs.",
     ["Wait for the talking to finish"] =
         "Attends la fin de la discussion",
 })

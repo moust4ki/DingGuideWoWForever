@@ -49,11 +49,11 @@ return {
     ["Elwynn Forest"] =
         "Forêt d'Elwynn",
     ["Goldshire is your base for the whole forest: inn, class trainers and quests."] =
-        "Comtelune est ta base pour toute la forêt : auberge, maîtres de classe et quêtes.",
+        "Comté-de-l'Or est ta base pour toute la forêt : auberge, maîtres de classe et quêtes.",
     ["Westfall"] =
         "Marche de l'Ouest",
     ["Head west on the Goldshire road, then to Sentinel Hill in the middle of Westfall."] =
-        "Direction l'ouest par la route de Comtelune, puis la colline des Sentinelles au centre de la Marche.",
+        "Direction l'ouest par la route de Comté-de-l'Or, puis la colline des Sentinelles au centre de la Marche.",
     ["Loch Modan"] =
         "Loch Modan",
     ["Take the Deeprun Tram from Stormwind to Ironforge, then the road east through Dun Morogh to Thelsamar."] =
@@ -70,7 +70,7 @@ return {
     ["Take the road east through the South Gate tunnel to Thelsamar."] =
         "Prends la route de l'est par le tunnel de la porte Sud jusqu'à Thelsamar.",
     ["Deeprun Tram from Ironforge to Stormwind, then the road west through Goldshire to Sentinel Hill."] =
-        "Tram des profondeurs de Forgefer à Hurlevent, puis la route de l'ouest par Comtelune jusqu'à la colline des Sentinelles.",
+        "Tram des profondeurs de Forgefer à Hurlevent, puis la route de l'ouest par Comté-de-l'Or jusqu'à la colline des Sentinelles.",
     -- nightelf
     ["Teldrassil"] =
         "Teldrassil",
@@ -3238,4 +3238,260 @@ return {
         "Va voir le huran en cage",
     ["Go to the corrupted moonwell"] =
         "Va au puits de lune corrompu",
+    -- Ding - Leveling: where an object or a monster target is (notes)
+    ["The object is indoors."] =
+        "L'objet est à l'intérieur.",
+    ["The object is indoors, one floor up."] =
+        "L'objet est à l'intérieur, un étage plus haut.",
+    ["The object is on the lower level, indoors."] =
+        "L'objet est au niveau inférieur, à l'intérieur.",
+    ["The object is on the lower level within the bridge."] =
+        "L'objet est au niveau inférieur, à l'intérieur du pont.",
+    ["The object is on the highest level of this structure."] =
+        "L'objet est au plus haut niveau de ce bâtiment.",
+    ["The object is up on the summit."] =
+        "L'objet est en haut, au sommet.",
+    ["The object sits on the rocky shelf above."] =
+        "L'objet est sur la corniche rocheuse au-dessus.",
+    ["The target is indoors."] =
+        "La cible est à l'intérieur.",
+    ["The target is indoors, one floor up."] =
+        "La cible est à l'intérieur, un étage plus haut.",
+    ["The target is indoors at street level."] =
+        "La cible est à l'intérieur, au niveau de la rue.",
+    ["The target is indoors, on the central storey."] =
+        "La cible est à l'intérieur, à l'étage du milieu.",
+    ["The target is on the lower level, indoors."] =
+        "La cible est au niveau inférieur, à l'intérieur.",
+    ["The target is on the tower's highest floor."] =
+        "La cible est au dernier étage de la tour.",
+    ["The target is up on the summit."] =
+        "La cible est en haut, au sommet.",
+    ["The target is down in the Cleft of Shadow."] =
+        "La cible est en bas, dans la Faille de l'ombre.",
+    ["The target can be indoors or out."] =
+        "La cible peut être dedans ou dehors.",
+    ["The target patrols a long route; look along it."] =
+        "La cible patrouille sur un long trajet : cherche-la tout du long.",
+    ["The target waits here, then strolls out onto the big branch close by."] =
+        "La cible attend ici, puis s'avance sur la grosse branche toute proche.",
+    -- Ding - Leveling: why an item goes to the bank (notes)
+    ["You need it later for \"The Legend of Stalvan\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « La légende de Stalvan » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need it later for \"Juice Delivery\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Livrer le Suc » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need it later for \"The Brassbolts Brothers\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Les frères Brassbolts » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need it later for \"A Noble Brew\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Un noble brassage » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need it later for \"Soothing Turtle Bisque\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Bisque de tortue apaisante » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need it later for \"Reassignment\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Nouvelle affectation » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need it later for \"Parts for Kravel\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Les pièces détachées de Kravel » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need them later for \"Goblin Sponsorship\" and \"The Hidden Key\": keep them in the bank to free bag slots."] =
+        "Tu en auras besoin plus tard pour « Mécénat gobelin » et « La clé cachée » : garde-les à la banque pour libérer de la place dans tes sacs.",
+    ["You need it later for \"Chapter I\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Chapitre I » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need it later for \"Chapter II\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Chapitre II » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need it later for \"Chapter III\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Chapitre III » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need it later for \"Chapter IV\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Chapitre IV » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need it later for \"The Karnitol Shipwreck\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « L'épave de Karnitol » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need them later for \"Magical Analysis\" and \"Caught!\": keep them in the bank to free bag slots."] =
+        "Tu en auras besoin plus tard pour « Analyse magique » et « Piégé ! » : garde-les à la banque pour libérer de la place dans tes sacs.",
+    ["You need it later for \"Rumors for Kravel\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Des rumeurs pour Kravel » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need it later for \"Ongeku\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Ongeku » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need it later for \"Sunken Treasure\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Le trésor englouti » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need them later for \"Back to Booty Bay\" and \"Safety First\": keep them in the bank to free bag slots."] =
+        "Tu en auras besoin plus tard pour « Retour à Baie-du-Butin » et « La sécurité d'abord » : garde-les à la banque pour libérer de la place dans tes sacs.",
+    ["You need them later for \"Report Back to Fizzlebub\" and \"Rhapsody's Kalimdor Kocktail\": keep them in the bank to free bag slots."] =
+        "Tu en auras besoin plus tard pour « Le compte rendu à Fizzlebub » et « Le Kocktail Kalimdor de Rhapsody » : garde-les à la banque pour libérer de la place dans tes sacs.",
+    ["You need them later for \"The Borrower\", \"Screecher Spirits\", \"The Super Egg-O-Matic\" and \"Rhapsody's Kalimdor Kocktail\": keep them in the bank to free bag slots."] =
+        "Tu en auras besoin plus tard pour « Le prêt », « Esprits de Hurleurs », « Le Super-Oeuf-O-Matic » et « Le Kocktail Kalimdor de Rhapsody » : garde-les à la banque pour libérer de la place dans tes sacs.",
+    ["You need them later for \"Crystals of Power\": keep them in the bank to free bag slots."] =
+        "Tu en auras besoin plus tard pour « Cristaux de puissance » : garde-les à la banque pour libérer de la place dans tes sacs.",
+    ["You need them later for \"Rhapsody's Tale\", \"The Super Snapper FX\", \"Whiskey Slim's Lost Grog\" and \"Favored of Elune?\": keep them in the bank to free bag slots."] =
+        "Tu en auras besoin plus tard pour « L'histoire de Rhapsody », « Le Preneur d'images FX », « La bibine perdue de Whiskey Slim » et « Dans les faveurs d'Elune ? » : garde-les à la banque pour libérer de la place dans tes sacs.",
+    ["You need it later for \"Deliver to MacKinley\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Livraison à MacKinley » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need them later for \"The Bait for Lar'korwi\", \"Un'Goro Soil\", \"A Visit to Gregan\" and \"It's a Secret to Everybody\": keep them in the bank to free bag slots."] =
+        "Tu en auras besoin plus tard pour « Un appât pour Lar'korwi », « La terre d'Un'Goro », « Visite à Gregan » et « C'est un Secret pour tout le monde » : garde-les à la banque pour libérer de la place dans tes sacs.",
+    ["You need it later for \"Rise of the Silithid\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « L'ascension des silithides » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need it later for \"A Taste of Flame\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Un goût de flammes » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need them later for \"Chasing A-Me 01\" and \"Arcane Runes\": keep them in the bank to free bag slots."] =
+        "Tu en auras besoin plus tard pour « À la poursuite d'A-mi 01 » et « Les runes des arcanes » : garde-les à la banque pour libérer de la place dans tes sacs.",
+    ["You need them later for \"Good Natured Emma\", \"Arcane Runes\" and \"Sprinkle's Secret Ingredient\": keep them in the bank to free bag slots."] =
+        "Tu en auras besoin plus tard pour « Emma la bonne pâte », « Les runes des arcanes » et « L'ingrédient secret de Sprinkle » : garde-les à la banque pour libérer de la place dans tes sacs.",
+    ["You need them later for \"The Stone Circle\", \"Felbound Ancients\", \"A Little Slime Goes a Long Way\", \"Moontouched Wildkin\" and \"Meet at the Grave\": keep them in the bank to free bag slots."] =
+        "Tu en auras besoin plus tard pour « Le Cercle de pierres », « Anciens corrompus », « Un grand périple pour une petite gelée », « Les Indomptables lunaires » et « Rendez-vous à la tombe » : garde-les à la banque pour libérer de la place dans tes sacs.",
+    ["You need it later for \"Return to Tymor\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Le retour vers Tymor » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need them later for \"Aquementas\", \"The Everlook Report\", \"Duke Nicholas Zverenhoff\" and \"Troubled Spirits of Kel'Theril\": keep them in the bank to free bag slots."] =
+        "Tu en auras besoin plus tard pour « Aquementas », « Le rapport de Long-guet », « Le duc Nicholas Zverenhoff » et « Les Esprits troublés de Kel'Theril » : garde-les à la banque pour libérer de la place dans tes sacs.",
+    ["You need it later for \"Felnok Steelspring\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Felnok Steelspring » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need it later for \"Glyphed Oaken Branch\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « La branche de chêne à glyphes » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need them later for \"The Disruption Ends\" and \"Supplies for the Crossroads\": keep them in the bank to free bag slots."] =
+        "Tu en auras besoin plus tard pour « La perturbation cesse » et « Ravitaillement pour la Croisée » : garde-les à la banque pour libérer de la place dans tes sacs.",
+    ["You need it later for \"Chen's Empty Keg\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Tonneau vide de Chen » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need it later for \"Egg Hunt\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « La chasse aux œufs » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need them later for \"Souvenirs of Death\" and \"Battle of Hillsbrad\": keep them in the bank to free bag slots."] =
+        "Tu en auras besoin plus tard pour « Souvenirs de morts » et « La bataille d'Hillsbrad » : garde-les à la banque pour libérer de la place dans tes sacs.",
+    ["You need it later for \"Frostmaw\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Gueule-glacée » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need it later for \"The Swarm Grows\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « L'essaim s'agrandit » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need them later for \"Martek the Exiled\" and \"Hemet Nesingwary\": keep them in the bank to free bag slots."] =
+        "Tu en auras besoin plus tard pour « Martek l'Exilé » et « Hemet Nesingwary » : garde-les à la banque pour libérer de la place dans tes sacs.",
+    ["You need it later for \"Caught!\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Piégé ! » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need them later for \"The Black Shield\" and \"Into the Field\": keep them in the bank to free bag slots."] =
+        "Tu en auras besoin plus tard pour « Le Bouclier noir » et « Sur le terrain » : garde-les à la banque pour libérer de la place dans tes sacs.",
+    ["You need them later for \"Tanaris Field Sampling\" and \"Screecher Spirits\": keep them in the bank to free bag slots."] =
+        "Tu en auras besoin plus tard pour « Les échantillons du désert de Tanaris » et « Esprits de Hurleurs » : garde-les à la banque pour libérer de la place dans tes sacs.",
+    ["You need it later for \"Back to Booty Bay\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Retour à Baie-du-Butin » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need them later for \"Deadmire\" and \"Safety First\": keep them in the bank to free bag slots."] =
+        "Tu en auras besoin plus tard pour « Mortebourbe » et « La sécurité d'abord » : garde-les à la banque pour libérer de la place dans tes sacs.",
+    ["You need them later for \"Another Message to the Wildhammer\", \"Screecher Spirits\" and \"The Super Egg-O-Matic\": keep them in the bank to free bag slots."] =
+        "Tu en auras besoin plus tard pour « Encore un message pour les Wildhammer », « Esprits de Hurleurs » et « Le Super-Oeuf-O-Matic » : garde-les à la banque pour libérer de la place dans tes sacs.",
+    ["You need it later for \"Return to Witch Doctor Uzer'i\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Retourner voir le sorcier-docteur Uzer'i » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need it later for \"The Atal'ai Exile\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « L'Exilé atal'ai » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need them later for \"Testing the Vessel\" and \"Report Back to Fizzlebub\": keep them in the bank to free bag slots."] =
+        "Tu en auras besoin plus tard pour « Test du récipient » et « Le compte rendu à Fizzlebub » : garde-les à la banque pour libérer de la place dans tes sacs.",
+    ["You need it later for \"Return to Apothecary Zinge\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « De retour vers l'Apothicaire Zinge » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need them later for \"The Stone Circle\" and \"Crystals of Power\": keep them in the bank to free bag slots."] =
+        "Tu en auras besoin plus tard pour « Le Cercle de pierres » et « Cristaux de puissance » : garde-les à la banque pour libérer de la place dans tes sacs.",
+    ["You need them later for \"Ripple Delivery\", \"Whiskey Slim's Lost Grog\" and \"Seeping Corruption\": keep them in the bank to free bag slots."] =
+        "Tu en auras besoin plus tard pour « La livraison de Houle », « La bibine perdue de Whiskey Slim » et « Corruption Suintante » : garde-les à la banque pour libérer de la place dans tes sacs.",
+    ["You need them later for \"Bungle in the Jungle\", \"The Bait for Lar'korwi\" and \"It's a Secret to Everybody\": keep them in the bank to free bag slots."] =
+        "Tu en auras besoin plus tard pour « Fiasco dans la jungle », « Un appât pour Lar'korwi » et « C'est un Secret pour tout le monde » : garde-les à la banque pour libérer de la place dans tes sacs.",
+    ["You need them later for \"Delivery to Magatha\" and \"Seeping Corruption\": keep them in the bank to free bag slots."] =
+        "Tu en auras besoin plus tard pour « Livraison à Magatha » et « Corruption Suintante » : garde-les à la banque pour libérer de la place dans tes sacs.",
+    ["You need it later for \"Jes'rimon's Payment to Jediga\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Le Paiement de Jes'rimon à Jediga » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need it later for \"Meet at the Grave\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Rendez-vous à la tombe » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need them later for \"Delivery to Andron Gant\", \"A Grave Situation\" and \"Betrayed\": keep them in the bank to free bag slots."] =
+        "Tu en auras besoin plus tard pour « Livraison à Andron Gant », « Une situation grave » et « Trahison » : garde-les à la banque pour libérer de la place dans tes sacs.",
+    ["You need them later for \"The Everlook Report\" and \"Duke Nicholas Zverenhoff\": keep them in the bank to free bag slots."] =
+        "Tu en auras besoin plus tard pour « Le rapport de Long-guet » et « Le duc Nicholas Zverenhoff » : garde-les à la banque pour libérer de la place dans tes sacs.",
+    ["You need it later for \"Aquementas\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Aquementas » : garde-le à la banque pour libérer une place dans tes sacs.",
+    -- Places of the hearthstone steps (`sethearth`): the town, as this language names it (an
+    -- inn's own name: its town).
+    ["Astranaar"] =
+        "Astranaar",
+    ["Auberdine"] =
+        "Auberdine",
+    ["Bloodhoof Village"] =
+        "Village de Sabot-de-Sang",
+    ["Booty Bay"] =
+        "Baie-du-Butin",
+    ["Brill"] =
+        "Brill",
+    ["Camp Mojache"] =
+        "Camp Mojache",
+    ["Camp Taurajo"] =
+        "Camp Taurajo",
+    ["Cenarion Hold"] =
+        "Fort Cénarien",
+    ["Coriella Calmbreeze"] =
+        "Coriella Calmbreeze",
+    ["Darkshire"] =
+        "Sombre-Comté",
+    ["Deepwater Tavern"] =
+        "Port de Menethil",
+    ["Dolanaar"] =
+        "Dolanaar",
+    ["Donaal Downbreeze"] =
+        "Donaal Downbreeze",
+    ["Everlook"] =
+        "Long-guet",
+    ["Feathermoon Stronghold"] =
+        "Bastion de Pennelune",
+    ["Freewind Post"] =
+        "Poste de Librevent",
+    ["Gadgetzan"] =
+        "Gadgetzan",
+    ["Gallows' End Tavern"] =
+        "Brill",
+    ["Goldshire"] =
+        "Comté-de-l'Or",
+    ["Grom'gol"] =
+        "Grom'gol",
+    ["Hammerfall"] =
+        "Trépas-d'Orgrim",
+    ["Ironforge"] =
+        "Forgefer",
+    ["Kargath"] =
+        "Kargath",
+    ["Kharanos"] =
+        "Kharanos",
+    ["Lakeshire"] =
+        "Comté-du-Lac",
+    ["Light's Hope Chapel"] =
+        "Chapelle de l'Espoir de Lumière",
+    ["Menethil Harbor"] =
+        "Port de Menethil",
+    ["Nijel's Point"] =
+        "Combe de Nijel",
+    ["Orgrimmar"] =
+        "Orgrimmar",
+    ["Ratchet"] =
+        "Cabestan",
+    ["Razor Hill"] =
+        "Tranchecolline",
+    ["Revantusk Village"] =
+        "Village de Vengebroche",
+    ["Sentinel Hill"] =
+        "Colline des Sentinelles",
+    ["Shadowprey Village"] =
+        "Village de Proie-de-l'Ombre",
+    ["Southshore"] =
+        "Austrivage",
+    ["Splintertree Post"] =
+        "Poste de Bois-Brisé",
+    ["Stonard"] =
+        "Pierrêche",
+    ["Stonetalon Peak"] =
+        "Pic des Serres-Rocheuses",
+    ["Stormwind City"] =
+        "Hurlevent",
+    ["Stoutlager Inn"] =
+        "Thelsamar",
+    ["Sun Rock Retreat"] =
+        "Retraite de Roche-Soleil",
+    ["Tarren Mill"] =
+        "Moulin-de-Tarren",
+    ["The Crossroads"] =
+        "La Croisée",
+    ["The Sepulcher"] =
+        "Le Sépulcre",
+    ["Thelsamar"] =
+        "Thelsamar",
+    ["Theramore"] =
+        "Theramore",
+    ["Theramore Isle"] =
+        "Île de Theramore",
+    ["Thunder Bluff"] =
+        "Pitons-du-Tonnerre",
+    ["Thunderbrew Distillery"] =
+        "Kharanos",
 }

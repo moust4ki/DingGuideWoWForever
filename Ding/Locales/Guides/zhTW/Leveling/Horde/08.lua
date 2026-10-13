@@ -5,8 +5,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h08-the-barrens", {
         "貧瘠之地 (24-25)",
     ["Thunder Bluff first, then the Barrens. The NPC is indoors."] =
         "先到雷霆崖，再前往貧瘠之地。NPC在室內。",
-    ["The NPC is indoors."] =
-        "NPC在室內。",
+    ["The NPC is indoors. You need them later for \"Souvenirs of Death\" and \"Battle of Hillsbrad\": keep them in the bank to free bag slots."] =
+        "NPC在室內。之後的任務「死亡的紀念品」和「希爾斯布萊德之戰」需要它們：先存進銀行，空出背包空間。",
     ["Go into the cavern"] =
         "進入洞穴",
     ["Your targets are within the cavern."] =
@@ -15,12 +15,16 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h08-the-barrens", {
         "讓對話播完。目標在洞穴裡。",
     ["Head out of the cave"] =
         "離開洞穴",
+    ["The NPC is indoors."] =
+        "NPC在室內。",
     ["This NPC is found down in the Cleft of Shadow."] =
         "這個NPC在下方的暗影裂口裡。",
     ["Visit the caged quilboar"] =
         "拜訪籠中的野豬人",
     ["Trade your Blood Shards to gain buffs. Trade any spare Blood Shards to him during your Barrens questing. Ask him for the Spirit of the Wind buff"] =
         "用你的血岩碎片換取增益效果。在貧瘠之地做任務期間，把多餘的血岩碎片都拿來跟他交換。向他要求風之魂增益效果",
+    ["Camp Taurajo"] =
+        "陶拉祖營地",
     ["The target is a dinosaur with blue hide. The targets are spread over several spots."] =
         "目標是一隻藍色皮膚的恐龍。目標分散在好幾個地點。",
     ["Look for big boulders oozing green fluid. Expect a possible ambush while you gather it."] =
@@ -33,8 +37,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h08-the-barrens", {
         "目標是一個穿紅袍的野豬人。這個會四處走動，留意周圍一帶。目標會在這個位置出現。",
     ["This one roams, so scan the surrounding area. Beware of foes lurking in stealth."] =
         "這個會四處走動，留意周圍一帶。小心潛行中的敵人。",
-    ["Beware of foes lurking in stealth. The NPC is indoors."] =
-        "小心潛行中的敵人。NPC在室內。",
+    ["Beware of foes lurking in stealth. The target is indoors."] =
+        "小心潛行中的敵人。目標在室內。",
     ["Kill Stalkers and Pathfinders. Beware of foes lurking in stealth."] =
         "擊殺潛獵者和探路者。小心潛行中的敵人。",
     ["Beware of foes lurking in stealth."] =
@@ -45,8 +49,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h08-the-barrens", {
         "這個會四處走動，留意周圍一帶。目標分散在好幾個地點。",
     ["Climb the trail"] =
         "沿小路往上爬",
-    ["The NPC can be indoors or out."] =
-        "NPC可能在室內，也可能在室外。",
+    ["The target can be indoors or out."] =
+        "目標可能在室內，也可能在室外。",
     ["The objective sits up on the raised deck. Keep some range when you use the item."] =
         "目標在高起的甲板上。使用物品時保持一點距離。",
     ["With the coming hand-ins, this gets you to level 25."] =

@@ -23,6 +23,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h25-feralas", {
         "À côté des cercles bleus brillants au sol. Cherche les tas de terre qui apparaissent. Ceux qui contiennent l'objet de quête brillent en bleu.",
     ["Fight the tauren."] =
         "Combats les taurens.",
+    ["Camp Mojache"] =
+        "Camp Mojache",
     ["A lengthy grinding stretch is coming up. The NPC is upstairs, out on the balcony."] =
         "Une longue phase à tuer des monstres arrive. Le PNJ est à l'étage, dehors sur le balcon.",
     ["The target is a winged green bug, level 47. You can likely beat it at your current level. The target circles in the air, so search around."] =
@@ -47,6 +49,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h25-feralas", {
         "Traverse le passage",
     ["The robot sits in the open ground linking the cave and the tunnel."] =
         "Le robot est dans l'espace dégagé entre la grotte et le tunnel.",
+    ["The NPC is indoors. You need them later for \"Another Message to the Wildhammer\", \"Screecher Spirits\" and \"The Super Egg-O-Matic\": keep them in the bank to free bag slots."] =
+        "Le PNJ est à l'intérieur. Tu en auras besoin plus tard pour « Encore un message pour les Wildhammer », « Esprits de Hurleurs » et « Le Super-Oeuf-O-Matic » : garde-les à la banque pour libérer de la place dans tes sacs.",
     ["This NPC is found down in the Cleft of Shadow."] =
         "Ce PNJ se trouve en bas, dans la Faille de l'ombre.",
     ["The quest giver waits in the tent. This NPC is found down in the Cleft of Shadow."] =
@@ -59,6 +63,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h25-feralas", {
         "Le PNJ est à l'intérieur, un étage plus haut.",
     ["If some pages are unavailable, go on without them. The NPC is indoors."] =
         "Si certaines pages manquent, continue sans elles. Le PNJ est à l'intérieur.",
+    ["The NPC is indoors. You need it later for \"Return to Witch Doctor Uzer'i\": keep it in the bank to free a bag slot."] =
+        "Le PNJ est à l'intérieur. Tu en auras besoin plus tard pour « Retourner voir le sorcier-docteur Uzer'i » : garde-le à la banque pour libérer une place dans tes sacs.",
     ["The NPC is indoors. You need Chapter I as well as Chapter II."] =
         "Le PNJ est à l'intérieur. Il te faut le Chapitre I et le Chapitre II.",
 })

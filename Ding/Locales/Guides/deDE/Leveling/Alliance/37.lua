@@ -19,22 +19,26 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a37-feralas-and-azshara", {
         "Verlass die Höhle",
     ["Stand on the neighboring ledge, then hop into this crack in the wall"] =
         "Stell dich auf den benachbarten Vorsprung, dann spring in diesen Spalt in der Mauer",
-    ["The NPC is indoors."] =
-        "Der NPC ist drinnen.",
+    ["The object is indoors."] =
+        "Das Objekt ist drinnen.",
     ["Hop onto the ledge"] =
         "Spring auf den Vorsprung",
     ["Leap over at this spot"] =
         "Spring hier hinüber",
     ["Leap up at this spot"] =
         "Spring hier hinauf",
-    ["The NPC or item sits on the rocky shelf above."] =
-        "Der NPC oder Gegenstand ist oben auf dem Felsvorsprung.",
+    ["The object sits on the rocky shelf above."] =
+        "Das Objekt ist oben auf dem Felsvorsprung.",
     ["Let the conversation play out. Shay Leafrunner trails behind you; keep her alive. Keep near her, as she tends to stray."] =
         "Lass das Gespräch zu Ende laufen. Shay Leafrunner folgt dir; halte sie am Leben. Bleib in ihrer Nähe, sie läuft gern weg.",
     ["Finish the quest named The Videre Elixir. Keep the elixir in your bags; never consume it. You will die from it."] =
         "Schließe die Quest The Videre Elixir ab. Behalte das Elixier in deinen Taschen; trink es nie. Du stirbst daran.",
-    ["Put these items in your bank vault."] =
-        "Leg diese Gegenstände in dein Bankfach.",
+    ["The NPC is indoors."] =
+        "Der NPC ist drinnen.",
+    ["Ratchet"] =
+        "Ratschet",
+    ["Put these items in your bank vault. You need them later for \"The Stone Circle\", \"Felbound Ancients\", \"A Little Slime Goes a Long Way\", \"Moontouched Wildkin\" and \"Meet at the Grave\": keep them in the bank to free bag slots."] =
+        "Leg diese Gegenstände in dein Bankfach. Du brauchst sie später für „Der runde Stein“, „Gebundene Urtume“, „Brühschleimer auf Abwegen“, „Mondbestrahltes Wildekin“ und „Treffen am Grab“: Lass sie in der Bank, das spart Taschenplätze.",
     ["The quest giver waits on the hilltop."] =
         "Der Questgeber wartet oben auf dem Hügel.",
     ["The targets are Myrmidons and Sirens. Hunt naga."] =

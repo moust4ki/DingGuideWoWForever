@@ -9,6 +9,23 @@ Ding.RegisterGuide({
     faction  = "Horde",
     minLevel = 51, maxLevel = 52,
     next     = "leveling-h35-felwood-and-winterspring",
+    leftOut  = {
+        [3509] = { kind = "prereq" },
+        [3510] = { kind = "prereq" },
+        [3511] = { kind = "prereq" },
+        [3621] = { kind = "prereq" },
+        [3822] = { kind = "far", turnin = true },
+        [4024] = { kind = "version" },
+        [4729] = { kind = "away" },
+        [4735] = { kind = "prereq" },
+        [4862] = { kind = "away" },
+        [6804] = { kind = "away" },
+        [6805] = { kind = "away" },
+        [6821] = { kind = "prereq" },
+        [6822] = { kind = "prereq" },
+        [6823] = { kind = "prereq" },
+        [6824] = { kind = "prereq" },
+    },
     steps    = {
         { go = { 1427, 34.84, 83.93 }, when = { notdone = 4726, notlog = 4726 }, text = "Pass through Blackrock Mountain into Burning Steppes", -- level 51
           note = "Burning Steppes: Flame Crest, in the east. The way in is through Blackrock Mountain." },
@@ -19,7 +36,7 @@ Ding.RegisterGuide({
         { go = { 1428, 75.36, 38.24 }, text = "Climb the trail" }, -- level 51
         { turnin = 3821, -- level 51
           note = "It lies atop a stone slab. The NPC is up on the summit. It shows up a short way off." },
-        { level = 52, sticky = 4726, patrol = { { 1428, 75.55, 49.95 }, { 1428, 74.34, 47.05 }, { 1428, 77.17, 45.35 }, { 1428, 79.76, 47.14 }, { 1428, 83.26, 47.26 }, { 1428, 86.35, 46.95 }, { 1428, 84.83, 44.17 }, { 1428, 81.34, 43.97 }, { 1428, 77.97, 41.75 }, { 1428, 77.77, 38.24 }, { 1428, 74.64, 38.05 }, { 1428, 76.37, 34.77 }, { 1428, 82.44, 36.45 }, { 1428, 85.57, 36.44 }, { 1428, 83.56, 39.94 }, { 1428, 82.44, 32.86 }, { 1428, 74.45, 43.26 }, { 1428, 84.06, 50.46 }, { 1428, 82.55, 53.45 }, { 1428, 79.65, 56.15 }, { 1428, 76.56, 55.95 } }, -- level 51
+        { level = 52, sticky = 4726, patrol = { { 1428, 75.55, 49.95 }, { 1428, 74.34, 47.05 }, { 1428, 77.17, 45.35 }, { 1428, 79.76, 47.14 }, { 1428, 83.26, 47.26 }, { 1428, 86.35, 46.95 }, { 1428, 84.83, 44.17 }, { 1428, 81.34, 43.97 }, { 1428, 77.97, 41.75 }, { 1428, 77.77, 38.24 }, { 1428, 74.64, 38.05 }, { 1428, 76.37, 34.77 }, { 1428, 82.44, 36.45 }, { 1428, 85.57, 36.44 }, { 1428, 83.56, 39.94 }, { 1428, 82.44, 32.86 }, { 1428, 74.45, 43.26 }, { 1428, 84.06, 50.46 }, { 1428, 82.55, 53.45 }, { 1428, 79.65, 56.15 }, { 1428, 76.56, 55.95 } }, why = { kind = "level", levels = { 47, 54 } }, -- level 51
           note = "The following quest needs you at level 52." },
         { accept = 4022, elite = true, when = { item = 10575 } }, -- level 51
         { accept = 4022, elite = true, when = { log = 4022 } }, -- level 51
@@ -33,7 +50,7 @@ Ding.RegisterGuide({
         { turnin = 4022, elite = true, when = { log = 4022 } }, -- level 51
         { complete = 4726, useitem = 12284, -- level 52
           note = "Target Black Broodlings with the item. The targets are little winged dragons. A red crystal hovers over each body." },
-        { turnin = 4726, accept = 4808 }, -- level 52
+        { turnin = 4726, accept = 4808, why = { continent = true, kind = "carry", quest = 4808, seconds = 34560, xp = 2700 } }, -- level 52
         { turnin = 4296 }, -- level 52
         { train = true, talk = 12042, races = { "Tauren" }, classes = { "DRUID" } }, -- level 52
         { train = true, talk = 5883, races = { "Scourge", "Troll" }, classes = { "MAGE" }, -- level 52
@@ -41,7 +58,7 @@ Ding.RegisterGuide({
         { talk = 3309, collect = { { 10695, 1 }, { 11133, 1 } }, spots = { { 1454, 49.62, 69.06 } }, -- level 52
           note = "The NPC is indoors." },
         { talk = 3309, bank = 12438, -- level 52
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need it later for \"Felnok Steelspring\": keep it in the bank to free a bag slot." },
         { train = true, talk = 6018, races = { "Scourge", "Troll" }, classes = { "PRIEST" }, -- level 52
           note = "The NPC is indoors." },
         { train = true, talk = 3344, races = { "Orc", "Tauren", "Troll" }, classes = { "SHAMAN" }, -- level 52
@@ -58,7 +75,7 @@ Ding.RegisterGuide({
         { train = true, talk = 3352, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, -- level 52
           note = "The NPC stands on the highest level of this structure." },
         { go = { 1454, 56.45, 56.87 }, text = "Climb the steps" }, -- level 52
-        { accept = 4494, -- level 52
+        { accept = 4494, why = { kind = "carry", quest = 4494, seconds = 35580, xp = 500 }, -- level 52
           note = "The NPC is indoors." },
         { vendor = true, talk = 3313, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, -- level 52
           note = "The NPC is indoors. A lengthy stretch of quests is coming up. Ammunition can't be bought here." },
@@ -87,7 +104,7 @@ Ding.RegisterGuide({
         { complete = 3568, useitem = 10690, -- level 52
           note = "Wade in to use it." },
         { go = { 1447, 46.04, 38.68 }, text = "Climb the trail" }, -- level 52
-        { turnin = 3517, accept = { 3518, 3541, 3561 } }, -- level 52
+        { turnin = 3517, accept = { 3518, 3541, 3561 }, why = { kind = "carry", quest = 3518, seconds = 45060, xp = 2600 } }, -- level 52
         { turnin = 3561, accept = 3565, -- level 52
           note = "This one roams, so scan the surrounding area. The NPC is in the tower, which has several floors." },
         { turnin = 3565 }, -- level 52

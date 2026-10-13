@@ -25,14 +25,12 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h18-alterac-mountains-and-arathi
         "대상은 여러 곳에 흩어져 있습니다. NPC는 건물 안에 있습니다. 위층도 찾아보세요.",
     ["The NPC is indoors, one floor up."] =
         "NPC는 건물 안 한 층 위에 있습니다.",
-    ["The NPC waits on the lower level, indoors. If it is not around, move on without it. No rush; you may complete this afterwards."] =
-        "NPC는 건물 안 아래층에서 기다립니다. 없다면 그냥 넘어가세요. 서두르지 않아도 됩니다. 나중에 완료해도 됩니다.",
-    ["This one roams, so scan the surrounding area."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요.",
+    ["The target is on the lower level, indoors. If it is not around, move on without it. No rush; you may complete this afterwards."] =
+        "대상은 건물 안 아래층에 있습니다. 없다면 그냥 넘어가세요. 서두르지 않아도 됩니다. 나중에 완료해도 됩니다.",
     ["Climb the slope, then leap the wall"] =
         "비탈을 오른 다음 벽을 뛰어넘으세요",
-    ["The NPC is indoors, one floor up. Beware of foes lurking in stealth."] =
-        "NPC는 건물 안 한 층 위에 있습니다. 은신해 숨어 있는 적을 조심하세요.",
+    ["The target is indoors, one floor up. Beware of foes lurking in stealth."] =
+        "대상은 건물 안 한 층 위에 있습니다. 은신해 숨어 있는 적을 조심하세요.",
     ["The targets are kobolds. Additional ones are in the cavern up the trail. The following step takes place in the cave."] =
         "대상은 코볼트입니다. 길 위쪽의 동굴에 더 있습니다. 다음 단계는 동굴 안에서 진행됩니다.",
     ["Climb the trail to the cavern"] =
@@ -45,6 +43,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h18-alterac-mountains-and-arathi
         "동굴을 나가세요",
     ["The targets are raptors."] =
         "대상은 랩터입니다.",
+    ["This one roams, so scan the surrounding area."] =
+        "이 대상은 돌아다니므로 주변을 살펴보세요.",
     ["Let the conversation play out. This one roams, so scan the surrounding area."] =
         "대화가 끝날 때까지 기다리세요. 이 대상은 돌아다니므로 주변을 살펴보세요.",
     ["Take the trail across the peaks"] =

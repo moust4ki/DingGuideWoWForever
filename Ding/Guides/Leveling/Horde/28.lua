@@ -9,6 +9,9 @@ Ding.RegisterGuide({
     faction  = "Horde",
     minLevel = 46, maxLevel = 48,
     next     = "leveling-h29-the-hinterlands",
+    leftOut  = {
+        [1189] = { kind = "detour", seconds = 120, xp = 800 },
+    },
     steps    = {
         { go = { 1441, 77.79, 77.27 }, text = "Travel to the Shimmering Flats", -- level 46
           note = "Thousand Needles: the Shimmering Flats first, then Tanaris and Dustwallow Marsh." },
@@ -16,7 +19,7 @@ Ding.RegisterGuide({
         { accept = 1120, when = { done = 1119 }, -- level 46
           note = "Wait for the talking to finish" },
         { turnin = 1120, when = { log = 1120 } }, -- level 46
-        { accept = 1122, when = { done = 1120 } }, -- level 46
+        { accept = 1122, when = { done = 1120 }, why = { continent = true, kind = "carry", quest = 1122, seconds = 88020, xp = 1500 } }, -- level 46
         { turnin = 1187, accept = 1188 }, -- level 46
         { accept = 3362 }, -- level 46
         { turnin = 1188 }, -- level 46
@@ -38,7 +41,7 @@ Ding.RegisterGuide({
         { accept = 5863 }, -- level 46
         { accept = 1691 }, -- level 46
         { talk = 7799, bank = { 9618, 5807 }, -- level 46
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need them later for \"Testing the Vessel\" and \"Report Back to Fizzlebub\": keep them in the bank to free bag slots." },
         { accept = 2605 }, -- level 46
         { accept = 8365 }, -- level 46
         { turnin = 3520 }, -- level 46
@@ -54,7 +57,7 @@ Ding.RegisterGuide({
           note = "These foes hide in stealth." },
         { go = { 1446, 68.56, 41.43 }, text = "Head down the passage that opens on Lost Rigger Cove" }, -- level 46
         { complete = 2873, -- level 46
-          note = "The NPC is indoors, one floor up." },
+          note = "The object is indoors, one floor up." },
         { complete = 2875 }, -- level 46
         { accept = 2876, collect = { { 9276, 1 }, { 9250, 1 } }, useitem = { 9276, 9250 }, when = { maxlevel = 46 }, -- level 46
           note = "Few kills yield this item." },
@@ -66,18 +69,18 @@ Ding.RegisterGuide({
           note = "Others can be found on raised wood platforms close by." },
         { complete = 8366, -- level 46
           note = "Others are indoors too." },
-        { level = 47, patrol = { { 1446, 73.84, 46.57 }, { 1446, 73.24, 48.64 }, { 1446, 70.96, 47.24 }, { 1446, 72.34, 45.04 }, { 1446, 70.34, 42.44 }, { 1446, 76.16, 45.57 } }, -- level 46
+        { level = 47, patrol = { { 1446, 73.84, 46.57 }, { 1446, 73.24, 48.64 }, { 1446, 70.96, 47.24 }, { 1446, 72.34, 45.04 }, { 1446, 70.34, 42.44 }, { 1446, 76.16, 45.57 } }, why = { kind = "level", levels = { 45, 51 } }, -- level 46
           note = "Tougher foes are coming up next. Dungeon runs are a fine choice here too, as you like." },
         { go = { 1446, 69.69, 42.33 }, text = "Take the passage out of Lost Rigger Cove" }, -- level 47
         { turnin = { 2875, 8366 }, -- level 47
           note = "The NPC is indoors." },
         { turnin = 2876, when = { log = 2876 } }, -- level 47
-        { turnin = 2873, accept = 2874, -- level 47
+        { turnin = 2873, accept = 2874, why = { continent = true, kind = "carry", quest = 2874, seconds = 64500, xp = 3900 }, -- level 47
           note = "The NPC is indoors." },
         { turnin = 8365 }, -- level 47
         { turnin = { 2781, 1691 } }, -- level 47
         { talk = 7799, bank = 9245, -- level 47
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need it later for \"Deliver to MacKinley\": keep it in the bank to free a bag slot." },
         { turnin = 3380, accept = { 3444, 3161 } }, -- level 47
         { complete = 5863, -- level 47
           note = "Your objective lies in a little cavern." },
@@ -99,18 +102,18 @@ Ding.RegisterGuide({
         { go = { 1446, 55.74, 68.86 }, text = "Go into the cavern" }, -- level 47
         { go = { 1446, 57.67, 70.72 }, text = "Take the trail downhill" }, -- level 47
         { complete = 10, elite = true, when = { log = 10 } }, -- level 47
-        { accept = 864, when = { done = 654 } }, -- level 47
+        { accept = 864, when = { done = 654 }, why = { continent = true, kind = "carry", once = true, quest = 864, seconds = 16980, short = true, xp = 5100 } }, -- level 47
         { talk = 7799, bank = 8527, -- level 47
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need it later for \"Return to Apothecary Zinge\": keep it in the bank to free a bag slot." },
         { turnin = 10, elite = true, when = { log = 10 } }, -- level 47
         { accept = 110, elite = true, when = { done = 10 } }, -- level 47
         { turnin = 110, elite = true, when = { log = 110 } }, -- level 47
         { accept = 113, elite = true, when = { done = 110 } }, -- level 47
         { turnin = 113, elite = true, when = { log = 113 } }, -- level 47
         { accept = 32, elite = true, when = { done = 113 } }, -- level 47
-        { level = 48, collect = { { 8483, 1 }, { 8483, 1 } }, patrol = { { 1446, 60.74, 36.66 }, { 1446, 58.37, 36.46 }, { 1446, 58.36, 38.44 }, { 1446, 60.46, 39.17 }, { 1446, 63.36, 39.76 }, { 1446, 65.14, 39.18 }, { 1446, 63.35, 37.46 }, { 1446, 61.85, 34.16 }, { 1446, 60.34, 32.37 } }, -- level 47
+        { level = 48, collect = { { 8483, 1 }, { 8483, 1 } }, patrol = { { 1446, 60.74, 36.66 }, { 1446, 58.37, 36.46 }, { 1446, 58.36, 38.44 }, { 1446, 60.46, 39.17 }, { 1446, 63.36, 39.76 }, { 1446, 65.14, 39.18 }, { 1446, 63.35, 37.46 }, { 1446, 61.85, 34.16 }, { 1446, 60.34, 32.37 } }, why = { kind = "level", levels = { 39, 52 } }, -- level 47
           note = "Targets here are human. Watch out for foes hidden in stealth. Zones with stronger foes lie just ahead." },
-        { accept = 1172, -- level 48
+        { accept = 1172, why = { chain = 1, kind = "detour", quest = 1172, seconds = 420, short = true, xp = 9700 }, -- level 48
           note = "Your objective lies in a little cavern." },
         { accept = 2846, dungeon = "Zul'Farrak", -- level 48
           note = "The NPC is indoors." },
@@ -138,7 +141,7 @@ Ding.RegisterGuide({
         { turnin = 3042, dungeon = "Zul'Farrak" }, -- level 48
         { turnin = 2846, dungeon = "Zul'Farrak", -- level 48
           note = "The NPC is indoors." },
-        { complete = 3444 }, -- level 48
+        { complete = 3444, why = { kind = "detour", quest = 98906, seconds = 120, xp = 600 } }, -- level 48
         { accept = 98906 }, -- level 48
         { turnin = 98906 }, -- level 48
         { train = true, talk = 12042, races = { "Tauren" }, classes = { "DRUID" } }, -- level 48

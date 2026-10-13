@@ -15,14 +15,12 @@ Ding.RegisterGuideTranslation("esES", "leveling-h15-desolace", {
         "Búscalo en lo alto del acantilado.",
     ["Climb the trail"] =
         "Sube por el sendero",
-    ["The targets are spread over several spots. The NPC is indoors."] =
-        "Los objetivos están repartidos en varios puntos. El PNJ está dentro.",
+    ["The targets are spread over several spots. The target is indoors."] =
+        "Los objetivos están repartidos en varios puntos. El objetivo está dentro.",
     ["Other satyrs use the same spawn points. Beware of foes lurking in stealth."] =
         "Otros sátiros usan los mismos puntos de aparición. Cuidado con los enemigos ocultos en sigilo.",
     ["Beware of foes lurking in stealth."] =
         "Cuidado con los enemigos ocultos en sigilo.",
-    ["This one roams, so scan the surrounding area."] =
-        "Este deambula, así que revisa los alrededores.",
     ["The targets here are centaurs. Magram Pack Runners patrol with 2 hyena escorts; steer clear."] =
         "Aquí los objetivos son centauros. Los Magram Pack Runners patrullan con 2 hienas de escolta; mantente lejos.",
     ["Target kodos with the item. The kodos trail behind you. Lead them to Smeed Scrabblescrew, then speak with them there."] =
@@ -47,10 +45,10 @@ Ding.RegisterGuideTranslation("esES", "leveling-h15-desolace", {
         "Pide al maestro de establos que te devuelva a tu compañero.",
     ["Release the short-term pet you tamed."] =
         "Abandona la mascota temporal que domesticaste.",
-    ["The NPC waits on the tower's highest floor."] =
-        "El PNJ espera en el piso más alto de la torre.",
-    ["Defeat every foe in this chamber before starting. The NPC is indoors."] =
-        "Antes de empezar, derrota a todos los enemigos de esta sala. El PNJ está dentro.",
+    ["The target is on the tower's highest floor."] =
+        "El objetivo está en el piso más alto de la torre.",
+    ["Defeat every foe in this chamber before starting. The target is indoors."] =
+        "Antes de empezar, derrota a todos los enemigos de esta sala. El objetivo está dentro.",
     ["Target Burning Blade foes with the item. Wait for the foe to be badly hurt, then apply it."] =
         "Usa el objeto sobre enemigos del Filo Ardiente. Espera a que el enemigo esté muy herido y entonces úsalo.",
     ["The quest starts from a little book."] =

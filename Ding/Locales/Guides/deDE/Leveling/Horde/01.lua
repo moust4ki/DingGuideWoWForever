@@ -19,8 +19,6 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h01-undead-starter", {
         "Die Ziele sind Fledermäuse.",
     ["With the coming hand-ins, this brings you to level 4."] =
         "Mit den nächsten Abgaben bringt dich das auf Stufe 4.",
-    ["This one roams, so scan the surrounding area."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab.",
     ["Search stacks of brown crates. Check in and around the structures."] =
         "Durchsuche Stapel brauner Kisten. Sieh in den Gebäuden und drumherum nach.",
     ["Just out of the mine."] =
@@ -45,6 +43,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h01-undead-starter", {
         "Warte, bis das Gespräch endet",
     ["The quest giver is an abomination. The NPC patrols the road; look along it. He may step off the road now and then to pick plants."] =
         "Der Questgeber ist eine Monstrosität. Der NPC patrouilliert auf der Straße; such entlang der Straße. Er verlässt ab und zu die Straße, um Pflanzen zu pflücken.",
+    ["Gallows' End Tavern"] =
+        "Brill",
     ["The NPC is indoors, one floor up."] =
         "Der NPC ist drinnen, ein Stockwerk höher.",
     ["Heal Deathguard Kel with Lesser Heal (Rank 2). Buff Deathguard Kel with Power Word: Fortitude."] =
@@ -79,18 +79,22 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h01-undead-starter", {
         "Jag die Krabben.",
     ["Stay on the trail"] =
         "Bleib auf dem Weg",
+    ["The object is indoors."] =
+        "Das Objekt ist drinnen.",
     ["Keep to the trail as it curves."] =
         "Folge dem Pfad durch seine Kurven.",
     ["Step into the flames. Dying costs you nothing this early. This is the quickest way over."] =
         "Tritt in die Flammen. So früh kostet dich der Tod nichts. Das ist der schnellste Weg hinüber.",
     ["Head indoors"] =
         "Geh hinein",
-    ["The NPC is indoors, one floor up. Consider bringing a group for this one."] =
-        "Der NPC ist drinnen, ein Stockwerk höher. Nimm dafür am besten eine Gruppe mit.",
+    ["The target is indoors, one floor up. Consider bringing a group for this one."] =
+        "Das Ziel ist drinnen, ein Stockwerk höher. Nimm dafür am besten eine Gruppe mit.",
     ["Stay on the trail and keep climbing the steps"] =
         "Bleib auf dem Pfad und steig weiter die Treppe hinauf",
-    ["The NPC stands on the highest level of this structure."] =
-        "Der NPC steht auf der obersten Ebene dieses Gebäudes.",
+    ["The object is on the highest level of this structure."] =
+        "Das Objekt ist auf der obersten Ebene dieses Gebäudes.",
+    ["This one roams, so scan the surrounding area."] =
+        "Dieses Ziel wandert umher, also such die Umgebung ab.",
     ["Learn First Aid from the trainer"] =
         "Lerne Erste Hilfe beim Lehrer",
     ["Loot the gray chests built from metal. Search in and around the sunken wrecks. Your targets sit below the water's surface."] =
@@ -105,6 +109,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h01-undead-starter", {
         "Mit den nächsten Abgaben bringt dich das auf Stufe 10.",
     ["The NPC is out back, at the rear of the structure."] =
         "Der NPC ist draußen auf der Rückseite des Gebäudes.",
+    ["Razor Hill"] =
+        "Klingenhügel",
     ["Look for beige sacks."] =
         "Such nach beigen Säcken.",
     ["Stay on the trail, then cross the tunnel"] =
@@ -123,6 +129,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h01-undead-starter", {
         "Such nach einer Eisenplatte mit einem Schädel darauf. Warte, bis das Gespräch endet",
     ["Learn Swords at the weapon master"] =
         "Lerne Schwerter beim Waffenmeister",
+    ["The target is indoors."] =
+        "Das Ziel ist drinnen.",
     ["Use the item at the pink marking."] =
         "Benutze den Gegenstand an der rosa Markierung.",
     ["Move gradually northwest toward Agamand Mills."] =

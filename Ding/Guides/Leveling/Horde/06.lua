@@ -2,17 +2,27 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Horde/06.lua.
--- Simulated (warrior): Orc 22 (17%) -> 22 (39%) in 44 min, 4 quests turned in; Scourge 22 (17%) -> 22 (39%) in 44 min, 4 quests turned in; Tauren 22 (11%) -> 22 (33%) in 44 min, 4 quests turned in; Troll 22 (17%) -> 22 (39%) in 44 min, 4 quests turned in; Skyborne 22 (18%) -> 22 (40%) in 44 min, 4 quests turned in.
+-- Simulated (warrior): Orc 22 (17%) -> 22 (54%) in 54 min, 6 quests turned in; Scourge 22 (17%) -> 22 (54%) in 54 min, 6 quests turned in; Tauren 22 (11%) -> 22 (48%) in 54 min, 6 quests turned in; Troll 22 (17%) -> 22 (54%) in 54 min, 6 quests turned in; Skyborne 22 (18%) -> 22 (55%) in 54 min, 6 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-h06-ashenvale",
     title    = "Ashenvale (21-22)",
     faction  = "Horde",
     minLevel = 21, maxLevel = 22,
     next     = "leveling-h07-hillsbrad-foothills",
+    leftOut  = {
+        [6565] = { kind = "prereq" },
+        [6571] = { kind = "far" },
+        [6621] = { kind = "log" },
+    },
     steps    = {
         { go = { 1442, 78.31, 42.46 }, text = "Take the passage and trace the lantern trail into Ashenvale", -- level 22
           note = "Ashenvale: Splintertree Post, in the east of the zone. The way in is the tunnel from Stonetalon. Stay clear of Astranaar." },
         { go = { 1442, 81.58, 30.07 }, text = "Exit the tunnel into Ashenvale" }, -- level 22
+        { accept = 98252 }, -- level 22
+        { accept = 98251 }, -- level 22
+        { complete = 98251 }, -- level 22
+        { turnin = 98251 }, -- level 22
+        { turnin = 98252 }, -- level 22
         { go = { 1440, 12.29, 33.86 }, fly = true, talk = 11901, text = "Flight master at Zoram'gar Outpost" }, -- level 22
         { turnin = 6562, -- level 22
           note = "The NPC is indoors." },
@@ -28,7 +38,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { train = true, talk = 12042, races = { "Tauren" }, classes = { "DRUID" } }, -- level 22
         { talk = 8356, bank = 5059, -- level 22
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need it later for \"Egg Hunt\": keep it in the bank to free a bag slot." },
         { train = true, talk = 3040, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, -- level 22
           note = "The NPC is indoors." },
         { train = true, talk = 3043, classes = { "WARRIOR" }, -- level 22
@@ -41,7 +51,7 @@ Ding.RegisterGuide({
         { accept = 1064, -- level 22
           note = "Let the conversation play out. The quest giver waits in the tent." },
         { go = { 1456, 29.77, 29.79 }, text = "Go into the cavern" }, -- level 22
-        { turnin = 1064, accept = 1065, -- level 22
+        { turnin = 1064, accept = 1065, why = { continent = true, kind = "carry", quest = 1065, seconds = 4260, xp = 1400 }, -- level 22
           note = "Your targets are within the cavern." },
         { train = true, talk = 3045, races = { "Scourge", "Troll" }, classes = { "PRIEST" }, -- level 22
           note = "Your targets are within the cavern." },
@@ -67,7 +77,7 @@ Ding.RegisterGuide({
         { turnin = 1512, accept = 1513, races = { "Orc", "Scourge", "Skyborne" }, classes = { "WARLOCK" }, -- level 22
           note = "The quest giver waits in the tent. This NPC is found down in the Cleft of Shadow." },
         { complete = 1513, useitem = 6626, races = { "Orc", "Scourge", "Skyborne" }, classes = { "WARLOCK" }, -- level 22
-          note = "Step onto the pink rune. The quest giver waits in the tent. This NPC is found down in the Cleft of Shadow." },
+          note = "Step onto the pink rune. The quest giver waits in the tent. The target is down in the Cleft of Shadow." },
         { turnin = 1513, when = { ready = 1513 }, races = { "Orc", "Scourge", "Skyborne" }, classes = { "WARLOCK" }, -- level 22
           note = "The quest giver waits in the tent. This NPC is found down in the Cleft of Shadow." },
         { go = { 1456, 29.77, 29.79 }, races = { "Orc", "Scourge", "Troll" }, classes = { "ROGUE" }, text = "Head out of the cave", -- level 22
@@ -87,11 +97,11 @@ Ding.RegisterGuide({
         { complete = 2478, when = { log = 2478 }, races = { "Orc", "Scourge", "Troll", "Skyborne" }, classes = { "ROGUE" }, -- level 22
           note = "Rob Foreman Silixiz with Pick Pocket." },
         { complete = 2478, when = { log = 2478 }, races = { "Orc", "Scourge", "Troll", "Skyborne" }, classes = { "ROGUE" }, -- level 22
-          note = "Open with Ambush for a bigger hit. The NPC is indoors at street level." },
+          note = "Open with Ambush for a bigger hit. The target is indoors at street level." },
         { complete = 2478, when = { log = 2478 }, races = { "Orc", "Scourge", "Troll", "Skyborne" }, classes = { "ROGUE" }, -- level 22
-          note = "Lean on Rupture for bonus damage. The NPC is indoors, on the central storey." },
+          note = "Lean on Rupture for bonus damage. The target is indoors, on the central storey." },
         { complete = 2478, when = { log = 2478 }, races = { "Orc", "Scourge", "Troll", "Skyborne" }, classes = { "ROGUE" }, -- level 22
-          note = "Eviscerate adds a burst of damage here. The objective is on the terrace above. The NPC is indoors, on the central storey." },
+          note = "Eviscerate adds a burst of damage here. The objective is on the terrace above. The target is indoors, on the central storey." },
         { complete = 2478, when = { log = 2478 }, races = { "Orc", "Scourge", "Troll", "Skyborne" }, classes = { "ROGUE" }, -- level 22
           note = "Open with Ambush for a bigger hit. Climb to the highest floor of the building." },
         { complete = 2478, when = { log = 2478 }, races = { "Orc", "Scourge", "Troll", "Skyborne" }, classes = { "ROGUE" }, -- level 22

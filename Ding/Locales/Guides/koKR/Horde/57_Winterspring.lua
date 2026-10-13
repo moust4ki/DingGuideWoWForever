@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("koKR", "horde-57-winterspring", {
         "여명의 설원 (55-56)",
     ["Winterspring is northeast of Felwood: Everlook is your base."] =
         "여명의 설원은 악령의 숲 북동쪽에 있습니다: 눈망루 마을이 거점입니다.",
+    ["Everlook"] =
+        "눈망루 마을",
     ["If the starting item dropped: use it from your bags."] =
         "시작 아이템을 얻었다면: 가방에서 사용하세요.",
     ["Finish the level on nearby monsters before moving on."] =

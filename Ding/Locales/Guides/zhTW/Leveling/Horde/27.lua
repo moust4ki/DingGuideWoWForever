@@ -19,6 +19,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h27-swamp-of-sorrows", {
         "離開洞穴",
     ["The NPC is indoors at street level."] =
         "NPC在室內，位於地面層。",
+    ["You need it later for \"The Atal'ai Exile\": keep it in the bank to free a bag slot."] =
+        "之後的任務「阿塔萊流放者」需要它：先存進銀行，空出背包空間。",
     ["This NPC is found down in the Cleft of Shadow."] =
         "這個NPC在下方的暗影裂口裡。",
     ["The NPC stands on the highest level of this structure."] =

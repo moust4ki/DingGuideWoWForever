@@ -13,10 +13,10 @@ Ding.RegisterGuideTranslation("esES", "leveling-h02-tauren-starter", {
         "El PNJ está dentro.",
     ["With the coming hand-ins, this brings you to level 4."] =
         "Con las próximas entregas, esto te lleva a nivel 4.",
-    ["This one roams, so scan the surrounding area."] =
-        "Este deambula, así que revisa los alrededores.",
     ["Traverse the passageway"] =
         "Atraviesa el pasadizo",
+    ["The target is indoors."] =
+        "El objetivo está dentro.",
     ["Your objective lies in a little cavern."] =
         "Tu objetivo está en una pequeña cueva.",
     ["Fight quilboars."] =
@@ -31,6 +31,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h02-tauren-starter", {
         "Deja que te maten y resucita con el Ángel de la Resurrección",
     ["Keep to the road the whole way."] =
         "No dejes el camino en todo el trayecto.",
+    ["Bloodhoof Village"] =
+        "Poblado Pezuña de Sangre",
     ["Look for little brown pinecones. Search close to the trunks."] =
         "Busca piñas marrones pequeñas. Busca cerca de los troncos.",
     ["Big birds that roam on foot."] =
@@ -93,6 +95,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h02-tauren-starter", {
         "Aprende Bastones con el maestro de armas",
     ["Learn Two-Handed Maces at the weapon master"] =
         "Aprende Mazas de dos manos con el maestro de armas",
+    ["Thunder Bluff"] =
+        "Cima del Trueno",
     ["This is food for your pet."] =
         "Es comida para tu mascota.",
     ["The NPC is indoors, one floor up."] =
@@ -109,18 +113,20 @@ Ding.RegisterGuideTranslation("esES", "leveling-h02-tauren-starter", {
         "El PNJ espera en la cima de la montaña.",
     ["Kill Water Seekers and Thornweavers."] =
         "Mata a Water Seekers y Thornweavers.",
+    ["This one roams, so scan the surrounding area."] =
+        "Este deambula, así que revisa los alrededores.",
     ["Your targets are within the cavern. The objective is at the far end."] =
         "Tus objetivos están dentro de la cueva. El objetivo está al fondo.",
     ["Head out of the cave"] =
         "Sal de la cueva",
     ["Head indoors"] =
         "Ve al interior",
-    ["The NPC is indoors, one floor up. Consider bringing a group for this one."] =
-        "El PNJ está dentro, un piso más arriba. Plantéate ir en grupo para esta.",
+    ["The target is indoors, one floor up. Consider bringing a group for this one."] =
+        "El objetivo está dentro, un piso más arriba. Plantéate ir en grupo para esta.",
     ["Stay on the trail and keep climbing the steps"] =
         "Sigue el sendero y sube los escalones",
-    ["The NPC stands on the highest level of this structure."] =
-        "El PNJ está en el nivel más alto de esta estructura.",
+    ["The object is on the highest level of this structure."] =
+        "El objeto está en el nivel más alto de esta estructura.",
     ["The target is a troll in crimson robes. This one roams, so scan the surrounding area."] =
         "El objetivo es un trol con túnica carmesí. Este deambula, así que revisa los alrededores.",
     ["Look for the skull-shaped objects."] =
@@ -131,12 +137,16 @@ Ding.RegisterGuideTranslation("esES", "leveling-h02-tauren-starter", {
         "Los objetivos son langostas.",
     ["Hunt the crabs."] =
         "Caza los cangrejos.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "Este deambula, así que revisa los alrededores. El PNJ está dentro.",
     ["The NPC is up on the summit."] =
         "El PNJ está arriba, en la cima.",
     ["Receive Sapta Sight"] =
         "Obtén Sapta Sight",
+    ["The target is up on the summit."] =
+        "El objetivo está arriba, en la cima.",
+    ["The object is up on the summit."] =
+        "El objeto está arriba, en la cima.",
+    ["Razor Hill"] =
+        "Cerrotajo",
     ["Look for beige sacks."] =
         "Busca sacos beis.",
     ["Stay on the trail, then cross the tunnel"] =

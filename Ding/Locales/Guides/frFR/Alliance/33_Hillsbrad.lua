@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("frFR", "alliance-33-hillsbrad", {
         "Contreforts de Hautebrande (32-34)",
     ["From Menethil, the road north crosses Thandol Span to the Foothills: Southshore is your base."] =
         "Depuis Menethil, la route du nord passe par le gouffre de Thandol jusqu'aux Contreforts : Austrivage est ta base.",
+    ["Southshore"] =
+        "Austrivage",
     ["Finish the level on nearby monsters before moving on."] =
         "Finis le niveau sur les monstres du coin avant la suite.",
 })

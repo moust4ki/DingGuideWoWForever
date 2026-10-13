@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a40-burning-steppes", {
         "先到铁炉堡，再到燃烧平原：摩根的岗哨，在东部。",
     ["The NPC is indoors."] =
         "NPC在室内。",
+    ["Ironforge"] =
+        "铁炉堡",
     ["Your objective lies in a little cavern. This foe is elite. Consider bringing a group for this one."] =
         "目标在一个小洞穴里。这个敌人是精英。这个可以考虑组队来做。",
     ["Your objective lies in a little cavern."] =
@@ -35,8 +37,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a40-burning-steppes", {
         "NPC是一位人类老妇人。NPC沿一条很长的路线巡逻；沿路寻找。如果不在，她可能在暴风城52.4, 42.1那栋房子的楼上。",
     ["Walk over the rope bridge, then climb the trail"] =
         "走过吊桥，再沿小路往上",
-    ["The NPC is up on the summit."] =
-        "NPC在山顶上。",
+    ["The object is up on the summit."] =
+        "该物件在山顶上。",
     ["Dungeon runs are a fine choice here too, as you like."] =
         "如果你愿意，这里也可以去刷副本。",
 })

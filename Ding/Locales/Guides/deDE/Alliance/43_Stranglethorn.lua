@@ -5,4 +5,6 @@ Ding.RegisterGuideTranslation("deDE", "alliance-43-stv", {
         "Schlingendorntal (41)",
     ["Back to Stranglethorn for the end of its quests, from Booty Bay."] =
         "Zurück ins Schlingendorntal für seine letzten Quests, ab Beutebucht.",
+    ["Booty Bay"] =
+        "Beutebucht",
 })

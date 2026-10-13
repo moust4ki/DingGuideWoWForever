@@ -13,8 +13,6 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a07-redridge-and-westfall", {
         "레이크샤이어로 날아가세요",
     ["The NPC is indoors."] =
         "NPC는 건물 안에 있습니다.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요. NPC는 건물 안에 있습니다.",
     ["The NPC is indoors, one floor up."] =
         "NPC는 건물 안 한 층 위에 있습니다.",
     ["Look for a big mound of brown earth. Your targets sit below the water's surface."] =
@@ -31,6 +29,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a07-redridge-and-westfall", {
         "데피아즈단 변절자를 호위하며 살려 두세요.",
     ["Head indoors"] =
         "건물 안으로 들어가세요",
+    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
+        "이 대상은 돌아다니므로 주변을 살펴보세요. NPC는 건물 안에 있습니다.",
     ["The NPC waits on the lower level, indoors."] =
         "NPC는 건물 안 아래층에서 기다립니다.",
     ["The NPC waits on the tower's highest floor."] =
@@ -51,6 +51,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a07-redridge-and-westfall", {
         "자물쇠 따기를 95까지 올리세요",
     ["Look for little gray coffers of metal. The NPC is indoors."] =
         "작은 회색 금속 함을 찾으세요. NPC는 건물 안에 있습니다.",
+    ["The object is indoors."] =
+        "그 물체는 건물 안에 있습니다.",
     ["Go inside and stay on the trail"] =
         "안으로 들어가 길을 계속 따라가세요",
     ["Your target is a ghoul. This one roams, so scan the surrounding area."] =

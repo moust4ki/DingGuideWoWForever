@@ -1,0 +1,22 @@
+# a11-skipped
+# A step skipped for later, seen again with Previous: amber, said in words, its undo
+# frFR, Dwarf HUNTER level 25, window 300 wide, scale 1, mouse
+
+TITLE  Ding! · Bois de la Pénombre et Carmines (25-27)
+STEP   < Étape 4 / 97 >   zone: Sombre-Comté
+
+ 1  accept  [skipped] amber background, amber "!" icon, text white
+    Prendre [24] « Les Veilleurs » (partie 1 sur 3)
+      > Passée : encore à faire.
+    card:
+      | Les Veilleurs (partie 1 sur 3)
+      | Passée pour plus tard : encore à faire.
+      | Quête de niveau 24
+      | Pas encore dans ton journal de quêtes.
+      | Clic : la flèche y va.
+ 2  unmark  [button] button background, no icon, text white
+    Annuler le report
+
+PROGRESS bar 4 / 97
+MENU (right click on the window): Annuler le report | Marquer comme fait
+MENU (right click on a row with a quest): Annuler le report | Marquer comme fait | Trouver cette quête dans le guide

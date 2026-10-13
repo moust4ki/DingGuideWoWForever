@@ -15,8 +15,6 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h11-thousand-needles", {
         "乘升降梯下到千针石林，沿道路走向乱风岗，再乘升降梯上去",
     ["Fly to Freewind Post"] =
         "飞往乱风岗",
-    ["This one roams, so scan the surrounding area."] =
-        "它会四处游荡，在周围找找。",
     ["The NPC is indoors."] =
         "NPC在室内。",
     ["Go into the cavern"] =
@@ -51,8 +49,10 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h11-thousand-needles", {
         "寻找大蛋。",
     ["For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears. Keep away from Heartrazor."] =
         "这个任务需要保护一个行进中的NPC。如果NPC不在，就等到他重新出现。远离Heartrazor。",
-    ["Steelsnap is a brown hyena with 2 hyena escorts. The NPC patrols a long route; look along it. The target appears near 17.3, 22.2 in Thousand Needles."] =
-        "Steelsnap是一只棕色土狼，身边有2只土狼护卫。NPC沿一条很长的路线巡逻；沿路寻找。目标出现在千针石林的17.3, 22.2附近。",
+    ["Steelsnap is a brown hyena with 2 hyena escorts. The target patrols a long route; look along it. The target appears near 17.3, 22.2 in Thousand Needles."] =
+        "Steelsnap是一只棕色土狼，身边有2只土狼护卫。目标沿一条很长的路线巡逻；沿路寻找。目标出现在千针石林的17.3, 22.2附近。",
+    ["This one roams, so scan the surrounding area."] =
+        "它会四处游荡，在周围找找。",
     ["The target is a centaur, black in color. It roams a wide route. Leave it out if you'd rather not hunt for it."] =
         "目标是一个黑色的半人马。它的游荡路线很长。如果不想去找它，就跳过。",
     ["The target is a centaur, black in color. It roams a wide route. His patrol crosses this spot two times."] =
@@ -65,14 +65,16 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h11-thousand-needles", {
         "寻找带刺的植物。目标在水下和岸边。",
     ["The quest giver waits in the tent."] =
         "任务发布者在帐篷里等候。",
+    ["The NPC is indoors. You need it later for \"Frostmaw\": keep it in the bank to free a bag slot."] =
+        "NPC在室内。之后的任务“霜喉雪人”需要它：先存进银行，腾出背包空间。",
     ["Hard quests are coming up. This spreads out the grinding so less is left later."] =
         "接下来是困难的任务。这样把刷怪分散开，之后要刷的就少了。",
     ["Climb the trail and cross the rope bridges"] =
         "沿小路往上爬，走过绳桥",
     ["Walk over the rope bridge"] =
         "走过吊桥",
-    ["The objective lies atop the mesa. The NPC is indoors."] =
-        "目标在台地顶上。NPC在室内。",
+    ["The objective lies atop the mesa. The object is indoors."] =
+        "目标在台地顶上。该物件在室内。",
     ["The objective lies atop the mesa."] =
         "目标在台地顶上。",
     ["The objective lies atop the mesa. Be ready for a fight right away. The target is a level 28 elite."] =
@@ -93,6 +95,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h11-thousand-needles", {
         "小心：这里的敌人等级比你高。如果死了，就在莫沙彻营地复活。",
     ["Fly to Camp Mojache"] =
         "飞往莫沙彻营地",
+    ["Freewind Post"] =
+        "乱风岗",
     ["Fly to Gadgetzan"] =
         "飞往加基森",
     ["Watch out: the foes here are above your level."] =
@@ -103,6 +107,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h11-thousand-needles", {
         "同时完成“Water Sapta”。",
     ["Stand on the metal grating to begin the battle. Shows up once you defeat six challengers."] =
         "站到金属格栅上开始战斗。击败六名挑战者后出现。",
+    ["You need it later for \"Parts for Kravel\": keep it in the bank to free a bag slot."] =
+        "之后的任务“给克拉维尔的零件”需要它：先存进银行，腾出背包空间。",
     ["This NPC is found down in the Cleft of Shadow."] =
         "该NPC在下面的暗影裂口里。",
     ["This one roams, so scan the surrounding area. This NPC is found down in the Cleft of Shadow."] =

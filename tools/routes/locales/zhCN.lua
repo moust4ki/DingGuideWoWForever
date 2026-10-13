@@ -3240,4 +3240,260 @@ return {
         "拜访笼中的野猪人",
     ["Go to the corrupted moonwell"] =
         "前往被污染的月亮井",
+    -- Ding - Leveling: where an object or a monster target is (notes)
+    ["The object is indoors."] =
+        "该物件在室内。",
+    ["The object is indoors, one floor up."] =
+        "该物件在室内楼上一层。",
+    ["The object is on the lower level, indoors."] =
+        "该物件在室内下层。",
+    ["The object is on the lower level within the bridge."] =
+        "该物件在桥内部的下层。",
+    ["The object is on the highest level of this structure."] =
+        "该物件在这座建筑的最高层。",
+    ["The object is up on the summit."] =
+        "该物件在山顶上。",
+    ["The object sits on the rocky shelf above."] =
+        "该物件在上方的岩石平台上。",
+    ["The target is indoors."] =
+        "目标在室内。",
+    ["The target is indoors, one floor up."] =
+        "目标在室内楼上一层。",
+    ["The target is indoors at street level."] =
+        "目标在室内，与街道同层。",
+    ["The target is indoors, on the central storey."] =
+        "目标在室内中间那层。",
+    ["The target is on the lower level, indoors."] =
+        "目标在室内下层。",
+    ["The target is on the tower's highest floor."] =
+        "目标在塔的顶层。",
+    ["The target is up on the summit."] =
+        "目标在山顶上。",
+    ["The target is down in the Cleft of Shadow."] =
+        "目标在下面的暗影裂口里。",
+    ["The target can be indoors or out."] =
+        "目标可能在室内，也可能在室外。",
+    ["The target patrols a long route; look along it."] =
+        "目标沿一条很长的路线巡逻；沿路寻找。",
+    ["The target waits here, then strolls out onto the big branch close by."] =
+        "目标在这里等候，然后会走到附近的大树枝上。",
+    -- Ding - Leveling: why an item goes to the bank (notes)
+    ["You need it later for \"The Legend of Stalvan\": keep it in the bank to free a bag slot."] =
+        "之后的任务“斯塔文的传说”需要它：先存进银行，腾出背包空间。",
+    ["You need it later for \"Juice Delivery\": keep it in the bank to free a bag slot."] =
+        "之后的任务“僵尸酒”需要它：先存进银行，腾出背包空间。",
+    ["You need it later for \"The Brassbolts Brothers\": keep it in the bank to free a bag slot."] =
+        "之后的任务“防撞头盔”需要它：先存进银行，腾出背包空间。",
+    ["You need it later for \"A Noble Brew\": keep it in the bank to free a bag slot."] =
+        "之后的任务“名酿”需要它：先存进银行，腾出背包空间。",
+    ["You need it later for \"Soothing Turtle Bisque\": keep it in the bank to free a bag slot."] =
+        "之后的任务“海龟汤”需要它：先存进银行，腾出背包空间。",
+    ["You need it later for \"Reassignment\": keep it in the bank to free a bag slot."] =
+        "之后的任务“人事调动”需要它：先存进银行，腾出背包空间。",
+    ["You need it later for \"Parts for Kravel\": keep it in the bank to free a bag slot."] =
+        "之后的任务“给克拉维尔的零件”需要它：先存进银行，腾出背包空间。",
+    ["You need them later for \"Goblin Sponsorship\" and \"The Hidden Key\": keep them in the bank to free bag slots."] =
+        "之后的任务“地精赞助商”和“隐藏的钥匙”需要它们：先存进银行，腾出背包空间。",
+    ["You need it later for \"Chapter I\": keep it in the bank to free a bag slot."] =
+        "之后的任务“荆棘谷的青山 - 第一章”需要它：先存进银行，腾出背包空间。",
+    ["You need it later for \"Chapter II\": keep it in the bank to free a bag slot."] =
+        "之后的任务“荆棘谷的青山 - 第二章”需要它：先存进银行，腾出背包空间。",
+    ["You need it later for \"Chapter III\": keep it in the bank to free a bag slot."] =
+        "之后的任务“荆棘谷的青山 - 第三章”需要它：先存进银行，腾出背包空间。",
+    ["You need it later for \"Chapter IV\": keep it in the bank to free a bag slot."] =
+        "之后的任务“荆棘谷的青山 - 第四章”需要它：先存进银行，腾出背包空间。",
+    ["You need it later for \"The Karnitol Shipwreck\": keep it in the bank to free a bag slot."] =
+        "之后的任务“卡尼托的背包”需要它：先存进银行，腾出背包空间。",
+    ["You need them later for \"Magical Analysis\" and \"Caught!\": keep them in the bank to free bag slots."] =
+        "之后的任务“魔法分析”和“被锁起来的矮人”需要它们：先存进银行，腾出背包空间。",
+    ["You need it later for \"Rumors for Kravel\": keep it in the bank to free a bag slot."] =
+        "之后的任务“地精的谣言”需要它：先存进银行，腾出背包空间。",
+    ["You need it later for \"Ongeku\": keep it in the bank to free a bag slot."] =
+        "之后的任务“盎格库尔”需要它：先存进银行，腾出背包空间。",
+    ["You need it later for \"Sunken Treasure\": keep it in the bank to free a bag slot."] =
+        "之后的任务“水下宝藏”需要它：先存进银行，腾出背包空间。",
+    ["You need them later for \"Back to Booty Bay\" and \"Safety First\": keep them in the bank to free bag slots."] =
+        "之后的任务“返回藏宝海湾”和“安全第一”需要它们：先存进银行，腾出背包空间。",
+    ["You need them later for \"Report Back to Fizzlebub\" and \"Rhapsody's Kalimdor Kocktail\": keep them in the bank to free bag slots."] =
+        "之后的任务“向菲兹巴布报告”和“拉普索迪的卡利姆多鸡尾酒”需要它们：先存进银行，腾出背包空间。",
+    ["You need them later for \"The Borrower\", \"Screecher Spirits\", \"The Super Egg-O-Matic\" and \"Rhapsody's Kalimdor Kocktail\": keep them in the bank to free bag slots."] =
+        "之后的任务“海龟照片”、“尖啸者的灵魂”、“超级测蛋器”和“拉普索迪的卡利姆多鸡尾酒”需要它们：先存进银行，腾出背包空间。",
+    ["You need them later for \"Crystals of Power\": keep them in the bank to free bag slots."] =
+        "之后的任务“能量水晶”需要它们：先存进银行，腾出背包空间。",
+    ["You need them later for \"Rhapsody's Tale\", \"The Super Snapper FX\", \"Whiskey Slim's Lost Grog\" and \"Favored of Elune?\": keep them in the bank to free bag slots."] =
+        "之后的任务“拉普索迪的故事”、“超级摄影器FX”、“威士忌斯利姆的酒”和“月神之兽？”需要它们：先存进银行，腾出背包空间。",
+    ["You need it later for \"Deliver to MacKinley\": keep it in the bank to free a bag slot."] =
+        "之后的任务“给马克基雷的货物”需要它：先存进银行，腾出背包空间。",
+    ["You need them later for \"The Bait for Lar'korwi\", \"Un'Goro Soil\", \"A Visit to Gregan\" and \"It's a Secret to Everybody\": keep them in the bank to free bag slots."] =
+        "之后的任务“拉克维的诱饵”、“安戈洛的泥土”、“造访格雷甘”和“无人知晓的秘密”需要它们：先存进银行，腾出背包空间。",
+    ["You need it later for \"Rise of the Silithid\": keep it in the bank to free a bag slot."] =
+        "之后的任务“异种蝎的威胁”需要它：先存进银行，腾出背包空间。",
+    ["You need it later for \"A Taste of Flame\": keep it in the bank to free a bag slot."] =
+        "之后的任务“烈焰精华”需要它：先存进银行，腾出背包空间。",
+    ["You need them later for \"Chasing A-Me 01\" and \"Arcane Runes\": keep them in the bank to free bag slots."] =
+        "之后的任务“找回A-Me 01”和“奥术符文”需要它们：先存进银行，腾出背包空间。",
+    ["You need them later for \"Good Natured Emma\", \"Arcane Runes\" and \"Sprinkle's Secret Ingredient\": keep them in the bank to free bag slots."] =
+        "之后的任务“善良的艾玛”、“奥术符文”和“斯普琳科的秘密佐料”需要它们：先存进银行，腾出背包空间。",
+    ["You need them later for \"The Stone Circle\", \"Felbound Ancients\", \"A Little Slime Goes a Long Way\", \"Moontouched Wildkin\" and \"Meet at the Grave\": keep them in the bank to free bag slots."] =
+        "之后的任务“石环”、“被禁锢的古树”、“远方的软泥怪”、“月光羽毛”和“墓地相见”需要它们：先存进银行，腾出背包空间。",
+    ["You need it later for \"Return to Tymor\": keep it in the bank to free a bag slot."] =
+        "之后的任务“向法师泰摩尔回复”需要它：先存进银行，腾出背包空间。",
+    ["You need them later for \"Aquementas\", \"The Everlook Report\", \"Duke Nicholas Zverenhoff\" and \"Troubled Spirits of Kel'Theril\": keep them in the bank to free bag slots."] =
+        "之后的任务“亚奎门塔斯”、“永望镇报告”、“尼古拉斯·瑟伦霍夫公爵”和“凯斯利尔的怨灵”需要它们：先存进银行，腾出背包空间。",
+    ["You need it later for \"Felnok Steelspring\": keep it in the bank to free a bag slot."] =
+        "之后的任务“菲诺克”需要它：先存进银行，腾出背包空间。",
+    ["You need it later for \"Glyphed Oaken Branch\": keep it in the bank to free a bag slot."] =
+        "之后的任务“雕文橡木枝”需要它：先存进银行，腾出背包空间。",
+    ["You need them later for \"The Disruption Ends\" and \"Supplies for the Crossroads\": keep them in the bank to free bag slots."] =
+        "之后的任务“野猪人的头目”和“十字路口的补给品”需要它们：先存进银行，腾出背包空间。",
+    ["You need it later for \"Chen's Empty Keg\": keep it in the bank to free a bag slot."] =
+        "之后的任务“老陈的空酒桶”需要它：先存进银行，腾出背包空间。",
+    ["You need it later for \"Egg Hunt\": keep it in the bank to free a bag slot."] =
+        "之后的任务“蝎卵”需要它：先存进银行，腾出背包空间。",
+    ["You need them later for \"Souvenirs of Death\" and \"Battle of Hillsbrad\": keep them in the bank to free bag slots."] =
+        "之后的任务“死亡的纪念品”和“希尔斯布莱德之战”需要它们：先存进银行，腾出背包空间。",
+    ["You need it later for \"Frostmaw\": keep it in the bank to free a bag slot."] =
+        "之后的任务“霜喉雪人”需要它：先存进银行，腾出背包空间。",
+    ["You need it later for \"The Swarm Grows\": keep it in the bank to free a bag slot."] =
+        "之后的任务“疯狂的虫群”需要它：先存进银行，腾出背包空间。",
+    ["You need them later for \"Martek the Exiled\" and \"Hemet Nesingwary\": keep them in the bank to free bag slots."] =
+        "之后的任务“流放者马特克”和“赫米特·奈辛瓦里”需要它们：先存进银行，腾出背包空间。",
+    ["You need it later for \"Caught!\": keep it in the bank to free a bag slot."] =
+        "之后的任务“被锁起来的矮人”需要它：先存进银行，腾出背包空间。",
+    ["You need them later for \"The Black Shield\" and \"Into the Field\": keep them in the bank to free bag slots."] =
+        "之后的任务“黑色盾牌”和“进入沙漠”需要它们：先存进银行，腾出背包空间。",
+    ["You need them later for \"Tanaris Field Sampling\" and \"Screecher Spirits\": keep them in the bank to free bag slots."] =
+        "之后的任务“塔纳利斯的样本”和“尖啸者的灵魂”需要它们：先存进银行，腾出背包空间。",
+    ["You need it later for \"Back to Booty Bay\": keep it in the bank to free a bag slot."] =
+        "之后的任务“返回藏宝海湾”需要它：先存进银行，腾出背包空间。",
+    ["You need them later for \"Deadmire\" and \"Safety First\": keep them in the bank to free bag slots."] =
+        "之后的任务“死沼巨鳄”和“安全第一”需要它们：先存进银行，腾出背包空间。",
+    ["You need them later for \"Another Message to the Wildhammer\", \"Screecher Spirits\" and \"The Super Egg-O-Matic\": keep them in the bank to free bag slots."] =
+        "之后的任务“又一个给蛮锤部族的警告”、“尖啸者的灵魂”和“超级测蛋器”需要它们：先存进银行，腾出背包空间。",
+    ["You need it later for \"Return to Witch Doctor Uzer'i\": keep it in the bank to free a bag slot."] =
+        "之后的任务“向巫医尤克里回复”需要它：先存进银行，腾出背包空间。",
+    ["You need it later for \"The Atal'ai Exile\": keep it in the bank to free a bag slot."] =
+        "之后的任务“阿塔莱流放者”需要它：先存进银行，腾出背包空间。",
+    ["You need them later for \"Testing the Vessel\" and \"Report Back to Fizzlebub\": keep them in the bank to free bag slots."] =
+        "之后的任务“测试容器”和“向菲兹巴布报告”需要它们：先存进银行，腾出背包空间。",
+    ["You need it later for \"Return to Apothecary Zinge\": keep it in the bank to free a bag slot."] =
+        "之后的任务“向药剂师金格回报”需要它：先存进银行，腾出背包空间。",
+    ["You need them later for \"The Stone Circle\" and \"Crystals of Power\": keep them in the bank to free bag slots."] =
+        "之后的任务“石环”和“能量水晶”需要它们：先存进银行，腾出背包空间。",
+    ["You need them later for \"Ripple Delivery\", \"Whiskey Slim's Lost Grog\" and \"Seeping Corruption\": keep them in the bank to free bag slots."] =
+        "之后的任务“送回蜜酒”、“威士忌斯利姆的酒”和“堕落之水”需要它们：先存进银行，腾出背包空间。",
+    ["You need them later for \"Bungle in the Jungle\", \"The Bait for Lar'korwi\" and \"It's a Secret to Everybody\": keep them in the bank to free bag slots."] =
+        "之后的任务“擒虫先擒王”、“拉克维的诱饵”和“无人知晓的秘密”需要它们：先存进银行，腾出背包空间。",
+    ["You need them later for \"Delivery to Magatha\" and \"Seeping Corruption\": keep them in the bank to free bag slots."] =
+        "之后的任务“玛加萨的石版”和“堕落之水”需要它们：先存进银行，腾出背包空间。",
+    ["You need it later for \"Jes'rimon's Payment to Jediga\": keep it in the bank to free a bag slot."] =
+        "之后的任务“杰斯雷蒙的报酬”需要它：先存进银行，腾出背包空间。",
+    ["You need it later for \"Meet at the Grave\": keep it in the bank to free a bag slot."] =
+        "之后的任务“墓地相见”需要它：先存进银行，腾出背包空间。",
+    ["You need them later for \"Delivery to Andron Gant\", \"A Grave Situation\" and \"Betrayed\": keep them in the bank to free bag slots."] =
+        "之后的任务“安德隆·甘特的石版”、“寻找墓碑”和“叛徒”需要它们：先存进银行，腾出背包空间。",
+    ["You need them later for \"The Everlook Report\" and \"Duke Nicholas Zverenhoff\": keep them in the bank to free bag slots."] =
+        "之后的任务“永望镇报告”和“尼古拉斯·瑟伦霍夫公爵”需要它们：先存进银行，腾出背包空间。",
+    ["You need it later for \"Aquementas\": keep it in the bank to free a bag slot."] =
+        "之后的任务“亚奎门塔斯”需要它：先存进银行，腾出背包空间。",
+    -- Places of the hearthstone steps (`sethearth`): the town, as this language names it (an
+    -- inn's own name: its town).
+    ["Astranaar"] =
+        "阿斯特兰纳",
+    ["Auberdine"] =
+        "奥伯丁",
+    ["Bloodhoof Village"] =
+        "血蹄村",
+    ["Booty Bay"] =
+        "藏宝海湾",
+    ["Brill"] =
+        "布瑞尔",
+    ["Camp Mojache"] =
+        "莫沙彻营地",
+    ["Camp Taurajo"] =
+        "陶拉祖营地",
+    ["Cenarion Hold"] =
+        "塞纳里奥要塞",
+    ["Coriella Calmbreeze"] =
+        "Coriella Calmbreeze",
+    ["Darkshire"] =
+        "夜色镇",
+    ["Deepwater Tavern"] =
+        "米奈希尔港",
+    ["Dolanaar"] =
+        "多兰纳尔",
+    ["Donaal Downbreeze"] =
+        "Donaal Downbreeze",
+    ["Everlook"] =
+        "永望镇",
+    ["Feathermoon Stronghold"] =
+        "羽月要塞",
+    ["Freewind Post"] =
+        "乱风岗",
+    ["Gadgetzan"] =
+        "加基森",
+    ["Gallows' End Tavern"] =
+        "布瑞尔",
+    ["Goldshire"] =
+        "闪金镇",
+    ["Grom'gol"] =
+        "格罗姆高营地",
+    ["Hammerfall"] =
+        "落锤镇",
+    ["Ironforge"] =
+        "铁炉堡",
+    ["Kargath"] =
+        "卡加斯",
+    ["Kharanos"] =
+        "卡拉诺斯",
+    ["Lakeshire"] =
+        "湖畔镇",
+    ["Light's Hope Chapel"] =
+        "圣光之愿礼拜堂",
+    ["Menethil Harbor"] =
+        "米奈希尔港",
+    ["Nijel's Point"] =
+        "尼耶尔前哨站",
+    ["Orgrimmar"] =
+        "奥格瑞玛",
+    ["Ratchet"] =
+        "棘齿城",
+    ["Razor Hill"] =
+        "剃刀岭",
+    ["Revantusk Village"] =
+        "恶齿村",
+    ["Sentinel Hill"] =
+        "哨兵岭",
+    ["Shadowprey Village"] =
+        "葬影村",
+    ["Southshore"] =
+        "南海镇",
+    ["Splintertree Post"] =
+        "碎木岗哨",
+    ["Stonard"] =
+        "斯通纳德",
+    ["Stonetalon Peak"] =
+        "石爪峰",
+    ["Stormwind City"] =
+        "暴风城",
+    ["Stoutlager Inn"] =
+        "塞尔萨玛",
+    ["Sun Rock Retreat"] =
+        "烈日石居",
+    ["Tarren Mill"] =
+        "塔伦米尔",
+    ["The Crossroads"] =
+        "十字路口",
+    ["The Sepulcher"] =
+        "瑟伯切尔",
+    ["Thelsamar"] =
+        "塞尔萨玛",
+    ["Theramore"] =
+        "塞拉摩",
+    ["Theramore Isle"] =
+        "塞拉摩岛",
+    ["Thunder Bluff"] =
+        "雷霆崖",
+    ["Thunderbrew Distillery"] =
+        "卡拉诺斯",
 }

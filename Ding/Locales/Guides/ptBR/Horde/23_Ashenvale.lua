@@ -7,4 +7,6 @@ Ding.RegisterGuideTranslation("ptBR", "horde-23-ashenvale", {
         "O Vale Gris fica ao norte dos Sertões: o Posto Machadada, no leste da floresta, é sua base.",
     ["Finish the level on nearby monsters before moving on."] =
         "Termine o nível nos monstros próximos antes de seguir.",
+    ["Splintertree Post"] =
+        "Posto Machadada",
 })

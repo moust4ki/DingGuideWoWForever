@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a40-burning-steppes", {
         "Primero Forjaz y luego las Estepas Ardientes: la Vigilia de Morgan, al este.",
     ["The NPC is indoors."] =
         "El PNJ está dentro.",
+    ["Ironforge"] =
+        "Forjaz",
     ["Your objective lies in a little cavern. This foe is elite. Consider bringing a group for this one."] =
         "Tu objetivo está en una pequeña cueva. Este enemigo es élite. Plantéate ir en grupo para esta.",
     ["Your objective lies in a little cavern."] =
@@ -35,8 +37,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a40-burning-steppes", {
         "El PNJ es una anciana humana. El PNJ patrulla una ruta larga; búscalo a lo largo de ella. Si no está, puede estar en el piso de arriba de la casa, en 52.4, 42.1, en Ciudad de Ventormenta.",
     ["Walk over the rope bridge, then climb the trail"] =
         "Cruza el puente de cuerda y luego sube por el sendero",
-    ["The NPC is up on the summit."] =
-        "El PNJ está arriba, en la cima.",
+    ["The object is up on the summit."] =
+        "El objeto está arriba, en la cima.",
     ["Dungeon runs are a fine choice here too, as you like."] =
         "Aquí también puedes hacer mazmorras, si quieres.",
 })

@@ -5,14 +5,16 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a24-badlands", {
         "Terres ingrates (41-42)",
     ["Ironforge first, then the Badlands. The NPC waits on the lower level, indoors. A lengthy stretch of quests is coming up. This vendor sells no arrows or bullets."] =
         "Forgefer d'abord, puis les Terres ingrates. Le PNJ attend au niveau inférieur, à l'intérieur. Une longue série de quêtes arrive. Ce marchand ne vend ni flèches ni balles.",
-    ["The NPC is indoors."] =
-        "Le PNJ est à l'intérieur.",
+    ["The NPC is indoors. You need them later for \"Back to Booty Bay\" and \"Safety First\": keep them in the bank to free bag slots."] =
+        "Le PNJ est à l'intérieur. Tu en auras besoin plus tard pour « Retour à Baie-du-Butin » et « La sécurité d'abord » : garde-les à la banque pour libérer de la place dans tes sacs.",
     ["Get these for simple Badlands turn-ins ahead. The NPC is indoors."] =
         "Prends-les pour des rendus faciles plus loin, dans les Terres ingrates. Le PNJ est à l'intérieur.",
     ["This one roams, so scan the surrounding area. The NPC is indoors."] =
         "Celui-ci se déplace : fouille les environs. Le PNJ est à l'intérieur.",
-    ["The NPC or item sits on the rocky shelf above."] =
-        "Le PNJ ou l'objet est sur la corniche rocheuse au-dessus.",
+    ["The NPC is indoors."] =
+        "Le PNJ est à l'intérieur.",
+    ["The object sits on the rocky shelf above."] =
+        "L'objet est sur la corniche rocheuse au-dessus.",
     ["Fight the dwarves."] =
         "Combats les nains.",
     ["Look for a timber box. The targets are spread over several spots."] =
@@ -37,4 +39,6 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a24-badlands", {
         "Fais-toi tuer, puis ressuscite auprès du gardien des âmes",
     ["Flight master at Thorium Point"] =
         "Maître de vol de la Halte du Thorium",
+    ["Stoutlager Inn"] =
+        "Thelsamar",
 })

@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Alliance/01.lua.
--- Simulated (warrior): Human 1 (0%) -> 13 (94%) in 7 h 17, 78 quests turned in.
+-- Simulated (warrior): Human 1 (0%) -> 13 (91%) in 7 h 13, 77 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-a01-human-starter",
     title    = "Human start (1-13)",
@@ -10,6 +10,66 @@ Ding.RegisterGuide({
     races    = { "Human" },
     minLevel = 1, maxLevel = 13,
     next     = "leveling-a04-westfall",
+    leftOut  = {
+        [46] = { kind = "prereq" },
+        [59] = { kind = "prereq" },
+        [88] = { kind = "away" },
+        [147] = { kind = "prereq" },
+        [212] = { kind = "log" },
+        [249] = { kind = "prereq" },
+        [314] = { kind = "away" },
+        [332] = { kind = "away" },
+        [333] = { kind = "away" },
+        [334] = { kind = "away" },
+        [344] = { kind = "prereq" },
+        [345] = { kind = "prereq" },
+        [346] = { kind = "prereq" },
+        [350] = { kind = "prereq" },
+        [392] = { kind = "prereq" },
+        [393] = { kind = "prereq" },
+        [394] = { kind = "prereq" },
+        [395] = { kind = "prereq" },
+        [396] = { kind = "prereq" },
+        [415] = { kind = "prereq" },
+        [466] = { kind = "away" },
+        [1015] = { kind = "exclusive" },
+        [1076] = { kind = "far" },
+        [1077] = { kind = "prereq" },
+        [1078] = { kind = "log" },
+        [1475] = { kind = "log" },
+        [2745] = { kind = "prereq" },
+        [2746] = { kind = "prereq" },
+        [2962] = { kind = "prereq" },
+        [3787] = { kind = "far", turnin = true },
+        [4126] = { kind = "away" },
+        [4766] = { kind = "log" },
+        [6141] = { kind = "log" },
+        [6187] = { kind = "prereq" },
+        [7494] = { kind = "log" },
+        [7496] = { kind = "prereq" },
+        [7782] = { kind = "prereq" },
+        [8394] = { kind = "away" },
+        [8396] = { kind = "away" },
+        [8401] = { kind = "away" },
+        [8403] = { kind = "away" },
+        [91724] = { kind = "version" },
+        [91743] = { kind = "prereq" },
+        [91745] = { kind = "prereq" },
+        [91752] = { kind = "prereq" },
+        [91775] = { kind = "prereq" },
+        [91777] = { kind = "prereq" },
+        [92124] = { kind = "prereq" },
+        [92456] = { kind = "away" },
+        [95065] = { kind = "away" },
+        [95214] = { kind = "prereq" },
+        [96393] = { kind = "prereq" },
+        [96608] = { kind = "away" },
+        [96629] = { kind = "prereq" },
+        [98021] = { kind = "prereq" },
+        [99130] = { kind = "prereq" },
+        [99131] = { kind = "prereq" },
+        [99161] = { kind = "version" },
+    },
     steps    = {
         { destroy = 6948, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "MAGE", "DRUID" }, -- level 1
           note = "Elwynn Forest: Northshire Abbey, where every human starts. This frees room in your bags. You receive one further along the route." },
@@ -42,7 +102,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { accept = 92479, races = { "Human" }, classes = { "HUNTER" } }, -- level 3
         { complete = 15 }, -- level 3
-        { level = 3, xp = 1110, patrol = { { 1429, 47.45, 36.95 }, { 1429, 47.14, 34.96 }, { 1429, 49.23, 35.26 }, { 1429, 48.77, 33.05 }, { 1429, 46.37, 32.35 }, { 1429, 50.45, 37.26 } }, -- level 3
+        { level = 3, xp = 1110, patrol = { { 1429, 47.45, 36.95 }, { 1429, 47.14, 34.96 }, { 1429, 49.23, 35.26 }, { 1429, 48.77, 33.05 }, { 1429, 46.37, 32.35 }, { 1429, 50.45, 37.26 } }, why = { kind = "level", levels = { 1, 5 } }, -- level 3
           note = "With the coming hand-ins, this brings you to level 4." },
         { turnin = 15, accept = 21, -- level 3
           note = "The NPC is indoors." },
@@ -78,7 +138,7 @@ Ding.RegisterGuide({
           note = "The quest giver stands outdoors, not indoors." },
         { complete = 21, -- level 4
           note = "The objective is underground, in the mine shaft." },
-        { level = 5, patrol = { { 1429, 47.63, 31.8 }, { 1429, 46.37, 32.35 }, { 1429, 47.34, 30.23 }, { 1429, 48.97, 29.03 }, { 1429, 48.43, 26.66 }, { 1429, 48.77, 33.05 }, { 1429, 49.23, 35.26 }, { 1429, 47.14, 34.96 }, { 1429, 47.45, 36.95 }, { 1429, 50.45, 37.26 } }, -- level 4
+        { level = 5, patrol = { { 1429, 47.63, 31.8 }, { 1429, 46.37, 32.35 }, { 1429, 47.34, 30.23 }, { 1429, 48.97, 29.03 }, { 1429, 48.43, 26.66 }, { 1429, 48.77, 33.05 }, { 1429, 49.23, 35.26 }, { 1429, 47.14, 34.96 }, { 1429, 47.45, 36.95 }, { 1429, 50.45, 37.26 } }, why = { kind = "level", levels = { 4, 7 } }, -- level 4
           note = "The targets roam the mine and the area around it." },
         { go = { 1429, 47.61, 31.83 }, text = "Exit the mine shaft" }, -- level 5
         { turnin = 3903, accept = 3904, -- level 5
@@ -91,7 +151,7 @@ Ding.RegisterGuide({
         { complete = 6 }, -- level 5
         { complete = 3904, -- level 5
           note = "Look for wooden pails. Leave it out if other players crowd the area." },
-        { level = 5, xp = 1700, patrol = { { 1429, 51.46, 46.96 }, { 1429, 54.16, 48.64 }, { 1429, 57.37, 48.17 }, { 1429, 53.94, 52.05 }, { 1429, 51.34, 50.35 }, { 1429, 53.76, 44.44 }, { 1429, 56.94, 42.46 }, { 1429, 54.16, 40.45 } }, -- level 5
+        { level = 5, xp = 1700, patrol = { { 1429, 51.46, 46.96 }, { 1429, 54.16, 48.64 }, { 1429, 57.37, 48.17 }, { 1429, 53.94, 52.05 }, { 1429, 51.34, 50.35 }, { 1429, 53.76, 44.44 }, { 1429, 56.94, 42.46 }, { 1429, 54.16, 40.45 } }, why = { kind = "level", levels = { 5, 7 } }, -- level 5
           note = "With the coming hand-ins, this gets you to level 6." },
         { abandon = 3904 }, -- level 5
         { turnin = 3904, accept = 3905, when = { log = 3904 }, -- level 5
@@ -165,11 +225,10 @@ Ding.RegisterGuide({
         { talk = 6491 }, -- level 7
         { turnin = 47, accept = 40 }, -- level 7
         { turnin = { 40, 62 }, accept = { 35, 76 } }, -- level 7
-        { turnin = { 60, 107 }, accept = { 61, 112 }, -- level 7
+        { turnin = { 60, 107 }, accept = { 61, 112 }, why = { kind = "carry", quest = 61, seconds = 6000, xp = 800 }, -- level 7
           note = "The NPC is indoors." },
         { sethearth = "Goldshire", talk = 295, -- level 8
           note = "The NPC is indoors." },
-        { accept = 91751, races = { "Human" } }, -- level 8
         { accept = 99127, races = { "Human" } }, -- level 8
         { complete = 99127, races = { "Human" } }, -- level 8
         { turnin = 99127, races = { "Human" } }, -- level 8
@@ -197,7 +256,6 @@ Ding.RegisterGuide({
         { complete = 76, -- level 8
           note = "The objective is underground, in the mine shaft." },
         { go = { 1429, 61.79, 53.93 }, text = "Exit the mine shaft" }, -- level 8
-        { complete = 91751, races = { "Human" } }, -- level 8
         { accept = 91723, races = { "Human" } }, -- level 8
         { complete = 91723, races = { "Human" } }, -- level 8
         { accept = 91725, races = { "Human" } }, -- level 8
@@ -208,9 +266,9 @@ Ding.RegisterGuide({
           note = "Look for little stacks of brown wood. Look around tree trunks at ground level." },
         { accept = 91732, races = { "Human" } }, -- level 8
         { complete = 52 }, -- level 8
-        { complete = 52, -- level 9
+        { complete = 52, -- level 8
           note = "The targets are wolves." },
-        { level = 9, patrol = { { 1429, 79.96, 59.23 }, { 1429, 83.37, 59.24 }, { 1429, 86.54, 59.84 }, { 1429, 87.64, 63.17 }, { 1429, 84.43, 62.66 }, { 1429, 85.34, 66.23 }, { 1429, 87.14, 68.97 }, { 1429, 87.65, 72.23 }, { 1429, 87.37, 75.36 }, { 1429, 89.74, 77.97 }, { 1429, 88.06, 80.76 }, { 1429, 85.57, 78.97 }, { 1429, 85.26, 82.46 }, { 1429, 85.76, 85.83 }, { 1429, 81.03, 84.03 }, { 1429, 78.04, 82.46 }, { 1429, 77.35, 78.86 }, { 1429, 80.44, 78.95 }, { 1429, 81.55, 76.17 }, { 1429, 78.34, 75.65 }, { 1429, 75.43, 76.45 }, { 1429, 75.36, 73.35 }, { 1429, 76.06, 64.76 }, { 1429, 72.37, 65.23 }, { 1429, 76.45, 60.75 }, { 1429, 78.95, 62.56 }, { 1429, 84.37, 71.16 } }, -- level 9
+        { level = 9, patrol = { { 1429, 79.96, 59.23 }, { 1429, 83.37, 59.24 }, { 1429, 86.54, 59.84 }, { 1429, 87.64, 63.17 }, { 1429, 84.43, 62.66 }, { 1429, 85.34, 66.23 }, { 1429, 87.14, 68.97 }, { 1429, 87.65, 72.23 }, { 1429, 87.37, 75.36 }, { 1429, 89.74, 77.97 }, { 1429, 88.06, 80.76 }, { 1429, 85.57, 78.97 }, { 1429, 85.26, 82.46 }, { 1429, 85.76, 85.83 }, { 1429, 81.03, 84.03 }, { 1429, 78.04, 82.46 }, { 1429, 77.35, 78.86 }, { 1429, 80.44, 78.95 }, { 1429, 81.55, 76.17 }, { 1429, 78.34, 75.65 }, { 1429, 75.43, 76.45 }, { 1429, 75.36, 73.35 }, { 1429, 76.06, 64.76 }, { 1429, 72.37, 65.23 }, { 1429, 76.45, 60.75 }, { 1429, 78.95, 62.56 }, { 1429, 84.37, 71.16 } }, why = { kind = "level", levels = { 9, 10 } }, -- level 8
           note = "The following step may be hard. One extra level makes it easier." },
         { turnin = 45, accept = 71 }, -- level 9
         { turnin = 5545 }, -- level 9
@@ -288,15 +346,15 @@ Ding.RegisterGuide({
         { go = { 1453, 42.28, 81.85 }, classes = { "WARLOCK" }, text = "Head indoors" }, -- level 10
         { turnin = 1685, accept = 1688, classes = { "WARLOCK" }, -- level 10
           note = "The NPC waits on the lower level, indoors." },
-        { level = 11, patrol = { { 1429, 70.25, 76.35 }, { 1429, 68.37, 75.46 }, { 1429, 68.23, 77.76 }, { 1429, 66.94, 80.17 }, { 1429, 68.44, 82.64 }, { 1429, 70.55, 80.55 }, { 1429, 72.06, 77.45 } } }, -- level 10
+        { level = 11, patrol = { { 1429, 70.25, 76.35 }, { 1429, 68.37, 75.46 }, { 1429, 68.23, 77.76 }, { 1429, 66.94, 80.17 }, { 1429, 68.44, 82.64 }, { 1429, 70.55, 80.55 }, { 1429, 72.06, 77.45 } }, why = { kind = "level", levels = { 10, 15 } } }, -- level 10
         { complete = 1688, classes = { "WARLOCK" }, -- level 10
-          note = "The NPC is indoors." },
+          note = "The target is indoors." },
         { go = { 1453, 42.28, 81.85 }, classes = { "WARLOCK" }, text = "Head indoors" }, -- level 10
         { turnin = 1688, when = { ready = 1688 }, classes = { "WARLOCK" }, -- level 10
           note = "The NPC waits on the lower level, indoors." },
         { accept = 1689, when = { done = 1688 }, classes = { "WARLOCK" } }, -- level 10
         { complete = 1689, useitem = 6928, when = { log = 1689 }, classes = { "WARLOCK" }, -- level 10
-          note = "Step onto the pink rune. Look within the tomb. The NPC waits on the lower level, indoors." },
+          note = "Step onto the pink rune. Look within the tomb. The target is on the lower level, indoors." },
         { turnin = 1689, when = { ready = 1689 }, classes = { "WARLOCK" }, -- level 10
           note = "The NPC stands one level over the crypt. The NPC waits on the lower level, indoors." },
         { sethearth = "Stormwind City", talk = 6740, -- level 11
@@ -308,11 +366,11 @@ Ding.RegisterGuide({
         { turnin = 1638, accept = 1639, classes = { "WARRIOR" }, -- level 11
           note = "The NPC is indoors." },
         { turnin = 1639, accept = 1640, classes = { "WARRIOR" }, -- level 11
-          note = "This one roams, so scan the surrounding area. The NPC is indoors. Be ready for a fight right away." },
+          note = "The NPC is indoors. Be ready for a fight right away." },
         { complete = 1640, classes = { "WARRIOR" }, -- level 11
-          note = "This one roams, so scan the surrounding area. The NPC is indoors." },
+          note = "The NPC is indoors." },
         { turnin = 1640, when = { ready = 1640 }, classes = { "WARRIOR" }, -- level 11
-          note = "This one roams, so scan the surrounding area. The NPC is indoors." },
+          note = "The NPC is indoors." },
         { accept = 1665, when = { done = 1640 }, classes = { "WARRIOR" } }, -- level 11
         { turnin = 1665, when = { log = 1665 }, classes = { "WARRIOR" }, -- level 11
           note = "The NPC is indoors." },
@@ -326,7 +384,7 @@ Ding.RegisterGuide({
         { go = { 1453, 59.3, 37.8 }, classes = { "WARRIOR", "PALADIN", "ROGUE" }, text = "Learn Mining from the trainer" }, -- level 11
         { talk = 5513, classes = { "WARRIOR", "PALADIN", "ROGUE" }, -- level 11
           note = "The NPC waits indoors, a floor above the entrance." },
-        { turnin = 1097, accept = 353, -- level 11
+        { turnin = 1097, accept = 353, why = { kind = "carry", quest = 353, seconds = 6360, xp = 1100 }, -- level 11
           note = "The NPC is indoors." },
         { go = { 1453, 69.09, 30.83 }, text = "Head down into the Deeprun Tram station", -- level 11
           note = "Pass through the portal to teleport." },
@@ -340,6 +398,7 @@ Ding.RegisterGuide({
         { talk = 13084, classes = { "WARRIOR" }, -- level 11
           note = "The NPC is indoors." },
         { go = { 1455, 61.12, 89.58 }, classes = { "WARRIOR" }, text = "Learn Two-Handed Maces at the weapon master" }, -- level 11
+        { accept = 95041, races = { "Human" } }, -- level 11
         { talk = 11865, classes = { "WARRIOR" }, -- level 11
           note = "The NPC is indoors." },
         { go = { 1455, 55.53, 47.78 }, fly = true, talk = 1573, text = "Fly to Ironforge" }, -- level 11
@@ -371,6 +430,7 @@ Ding.RegisterGuide({
           note = "Targets are in the cavern and around its entrance too." },
         { go = { 1426, 25.1, 50.95 }, text = "Head out of the cave" }, -- level 11
         { complete = 412 }, -- level 11
+        { complete = 95041, races = { "Human" } }, -- level 11
         { go = { 1426, 31.03, 32.59 }, text = "Climb the trail", -- level 11
           note = "Once in the Wetlands, head north. Leap down from the ledge. This makes Menethil Harbor quicker to get to." },
         { go = { 1426, 31.48, 32.3 }, text = "Keep climbing the trail" }, -- level 11
@@ -410,10 +470,7 @@ Ding.RegisterGuide({
         { go = { 1426, 70.67, 56.43 }, text = "Head out of the cave" }, -- level 12
         { turnin = 433 }, -- level 12
         { turnin = 432 }, -- level 12
-        { accept = 95217, races = { "Human" } }, -- level 12
         { go = { 1426, 68.34, 54.54 }, text = "Learn Cooking from the trainer" }, -- level 12
-        { complete = 95217, races = { "Human" } }, -- level 12
-        { turnin = 95217, races = { "Human" } }, -- level 12
         { talk = 1355, -- level 12
           note = "This one roams, so scan the surrounding area. Without this, one quest can't be picked up." },
         { accept = 419, -- level 12
@@ -441,11 +498,11 @@ Ding.RegisterGuide({
           note = "The NPC patrols a long route; look along it." },
         { turnin = 418, when = { ready = 418 }, -- level 12
           note = "The NPC is indoors." },
-        { accept = 224 }, -- level 13
-        { accept = 267, sticky = 224, -- level 13
+        { accept = 224 }, -- level 12
+        { accept = 267, sticky = 224, -- level 12
           note = "The NPC is indoors, one floor up." },
-        { go = { 1432, 29.26, 66.68 }, text = "Take the road to where the trail starts" }, -- level 13
-        { complete = 267 }, -- level 13
+        { go = { 1432, 29.26, 66.68 }, text = "Take the road to where the trail starts" }, -- level 12
+        { complete = 267 }, -- level 12
         { complete = 224 }, -- level 13
         { collect = { { 2589, 10 } }, keep = 2589, classes = { "PALADIN" }, -- level 13
           note = "A class quest coming up requires this." },

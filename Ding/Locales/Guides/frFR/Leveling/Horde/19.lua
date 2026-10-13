@@ -7,8 +7,6 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h19-badlands", {
         "Rejoins les Terres ingrates",
     ["Badlands: Kargath, at the western edge, is the Horde hub."] =
         "Terres ingrates : Kargath, à la bordure ouest, est la base de la Horde.",
-    ["This one roams, so scan the surrounding area."] =
-        "Celui-ci se déplace : fouille les environs.",
     ["The NPC waits on the tower's highest floor."] =
         "Le PNJ attend au dernier étage de la tour.",
     ["Fly to Kargath"] =

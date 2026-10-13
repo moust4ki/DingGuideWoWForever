@@ -35,8 +35,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a05-darkshore", {
         "대상은 수면 아래에 있습니다.",
     ["The targets are sea creatures with long necks. Your targets sit below the water's surface."] =
         "대상은 목이 긴 바다 생물입니다. 대상은 수면 아래에 있습니다.",
-    ["This one roams, so scan the surrounding area."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요.",
+    ["Auberdine"] =
+        "아우버다인",
     ["Head to the hilltop."] =
         "언덕 꼭대기로 가세요.",
     ["The targets are imps. Avoid slaying the satyrs if you can. You'll need this for the following quest."] =
@@ -63,6 +63,6 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a05-darkshore", {
         "난파선의 가장 아래 갑판으로 가세요. 현창을 통해 헤엄쳐 들어가세요.",
     ["Hunt the crabs."] =
         "게를 사냥하세요.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors. Do it only if you can."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요. NPC는 건물 안에 있습니다. 가능할 때만 하세요.",
+    ["The NPC is indoors. Do it only if you can."] =
+        "NPC는 건물 안에 있습니다. 가능할 때만 하세요.",
 })

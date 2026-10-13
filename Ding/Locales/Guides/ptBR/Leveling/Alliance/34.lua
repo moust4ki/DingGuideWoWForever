@@ -19,8 +19,6 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a34-blasted-lands-and-burning-st
         "Cace hienas para conseguir isso. Escorpiões surgem nos mesmos pontos.",
     ["The foes here are scorpions. Hyenas also use these spawn spots."] =
         "Os inimigos aqui são escorpiões. Hienas também surgem nesses pontos.",
-    ["This one roams, so scan the surrounding area."] =
-        "Este se desloca, então procure pelos arredores.",
     ["Climb the trail to Morgan's Vigil"] =
         "Suba a trilha até Morgan's Vigil",
     ["Flight master at Morgan's Vigil"] =
@@ -29,8 +27,12 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a34-blasted-lands-and-burning-st
         "O NPC está lá dentro.",
     ["This one roams, so scan the surrounding area. The NPC is indoors."] =
         "Este se desloca, então procure pelos arredores. O NPC está lá dentro.",
+    ["Ironforge"] =
+        "Altaforja",
     ["The NPC is indoors. Hold on to it; a task in Un'Goro Crater calls for it later."] =
         "O NPC está lá dentro. Guarde-o; uma tarefa na Cratera Un'Goro vai precisar dele depois.",
+    ["The NPC is indoors. You need them later for \"Chasing A-Me 01\" and \"Arcane Runes\": keep them in the bank to free bag slots."] =
+        "O NPC está lá dentro. Você vai precisar deles mais tarde para \"Procura-se A-Me 01\" e \"Runas arcanas\": guarde-os no banco para liberar espaço nas bolsas.",
     ["8 different quests will ask for it. You hand in 60 pieces of cloth for every quest. The NPC is indoors."] =
         "8 missões diferentes vão pedir isso. Você entrega 60 tecidos em cada missão. O NPC está lá dentro.",
     ["The NPC patrols a long route; look along it."] =

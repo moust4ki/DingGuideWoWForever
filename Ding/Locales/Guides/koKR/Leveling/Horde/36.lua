@@ -27,8 +27,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h36-ungoro-crater", {
         "높은 절벽 꼭대기에서 찾으세요.",
     ["Climb the trail"] =
         "길을 따라 올라가세요",
-    ["The NPC is up on the summit."] =
-        "NPC는 정상에 있습니다.",
+    ["The object is up on the summit."] =
+        "그 물체는 정상에 있습니다.",
     ["The targets are flame elementals. An elite foe waits on the summit; steer clear."] =
         "대상은 불의 정령입니다. 꼭대기에 정예 적이 있으니 피하세요.",
     ["For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears. Your objective lies in a little cavern."] =
@@ -51,8 +51,12 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h36-ungoro-crater", {
         "거대한 비탈 위로 올라가세요. 여기서는 정예 적을 조심하세요. 그다음 달아나세요.",
     ["Stand on the neighboring ledge, then hop into this crack in the wall"] =
         "옆 바위턱에 선 다음 벽의 이 틈으로 뛰어 들어가세요",
+    ["The object is indoors."] =
+        "그 물체는 건물 안에 있습니다.",
     ["Finish the quest named The Videre Elixir. Keep the elixir in your bags; never consume it. You will die from it."] =
         "앞날의 비약 퀘스트를 완료하세요. 비약은 가방에 보관하고 절대 마시지 마세요. 이것 때문에 죽게 됩니다.",
+    ["The NPC is indoors. You need it later for \"Meet at the Grave\": keep it in the bank to free a bag slot."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"무덤에서의 만남\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["The NPC patrols a long route; look along it."] =
         "NPC는 긴 경로를 순찰합니다. 경로를 따라 찾아보세요.",
     ["You no longer need these; vendor or discard them."] =

@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("koKR", "alliance-47-feralas", {
         "페랄라스 (47-48)",
     ["The Alliance stronghold of Feralas is on an island west of the zone."] =
         "페랄라스의 얼라이언스 요새는 지역 서쪽의 섬에 있습니다.",
+    ["Feathermoon Stronghold"] =
+        "페더문 요새",
     ["If the starting item dropped: use it from your bags."] =
         "시작 아이템을 얻었다면: 가방에서 사용하세요.",
 })

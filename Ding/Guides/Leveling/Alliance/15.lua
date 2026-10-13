@@ -2,30 +2,41 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Alliance/15.lua.
--- Simulated (warrior): Human 32 (90%) -> 33 (92%) in 2 h 42, 19 quests turned in; Dwarf 32 (96%) -> 33 (96%) in 2 h 42, 19 quests turned in; NightElf 33 (8%) -> 34 (7%) in 2 h 42, 19 quests turned in; Gnome 32 (96%) -> 33 (96%) in 2 h 42, 19 quests turned in; Skyborne 33 (2%) -> 33 (99%) in 2 h 42, 18 quests turned in.
+-- Simulated (warrior): Human 33 (0%) -> 34 (5%) in 2 h 40, 20 quests turned in; Dwarf 33 (16%) -> 34 (18%) in 2 h 42, 20 quests turned in; NightElf 33 (20%) -> 34 (23%) in 2 h 42, 20 quests turned in; Gnome 33 (24%) -> 34 (26%) in 2 h 42, 20 quests turned in; Skyborne 33 (17%) -> 34 (25%) in 2 h 42, 21 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-a15-hillsbrad-foothills-and-arathi-highlands",
     title    = "Hillsbrad and Arathi (32-33)",
     faction  = "Alliance",
     minLevel = 32, maxLevel = 33,
     next     = "leveling-a16-dustwallow-marsh-and-thousand-needles",
+    leftOut  = {
+        [523] = { kind = "prereq" },
+        [540] = { kind = "far" },
+        [542] = { kind = "prereq" },
+        [687] = { kind = "prereq" },
+        [695] = { kind = "prereq" },
+        [697] = { kind = "prereq" },
+        [8105] = { kind = "away" },
+        [8166] = { kind = "away" },
+        [98459] = { kind = "away" },
+    },
     steps    = {
-        { go = { 1424, 49.43, 55.53 }, text = "Travel to Southshore", -- level 32
+        { go = { 1424, 49.43, 55.53 }, text = "Travel to Southshore", -- level 33
           note = "Hillsbrad Foothills: Southshore, on the coast in the south." },
-        { accept = 565, when = { item = { { 3719, 1 }, { 2997, 1 } } } }, -- level 32
-        { talk = 2381, buy = { { 3713, 1, 2381 } }, -- level 32
+        { accept = 565, when = { item = { { 3719, 1 }, { 2997, 1 } } } }, -- level 33
+        { talk = 2381, buy = { { 3713, 1, 2381 } }, -- level 33
           note = "The NPC is indoors." },
-        { accept = 564 }, -- level 32
-        { turnin = 538 }, -- level 32
-        { sethearth = "Southshore", talk = 2352, -- level 32
+        { accept = 564 }, -- level 33
+        { turnin = 538 }, -- level 33
+        { sethearth = "Southshore", talk = 2352, -- level 33
           note = "The NPC is indoors." },
-        { accept = 536, -- level 32
+        { accept = 536, -- level 33
           note = "The NPC is indoors." },
-        { accept = 555, when = { item = 3713 }, -- level 32
+        { accept = 555, when = { item = 3713 }, -- level 33
           note = "The NPC is indoors." },
-        { turnin = 555, when = { item = 3713 }, -- level 32
+        { turnin = 555, when = { item = 3713 }, -- level 33
           note = "The NPC is indoors." },
-        { complete = 536, -- level 32
+        { complete = 536, -- level 33
           note = "You'll find extra ones swimming nearby as well." },
         { turnin = 536, accept = 559, -- level 33
           note = "The NPC is indoors." },
@@ -54,20 +65,20 @@ Ding.RegisterGuide({
           note = "The targets are spread over several spots." },
         { complete = 505 }, -- level 33
         { complete = 564 }, -- level 33
-        { accept = 563, -- level 33
+        { accept = 563, why = { kind = "carry", quest = 563, seconds = 25440, xp = 3200 }, -- level 33
           note = "The NPC is indoors." },
-        { turnin = 98219, races = { "Dwarf", "NightElf", "Gnome" }, classes = { "PALADIN" } }, -- level 33
+        { turnin = 98219, races = { "Human", "Dwarf", "NightElf", "Gnome" }, classes = { "PALADIN" } }, -- level 33
         { turnin = { 510, 505 }, -- level 33
           note = "The NPC is indoors." },
         { turnin = 511, accept = 514 }, -- level 33
         { turnin = 564 }, -- level 33
+        { turnin = 647, races = { "Human", "Skyborne" } }, -- level 33
         { talk = 2381, buy = { { 2321, 1, 2381 } }, when = { log = 565 }, -- level 33
           note = "The NPC is indoors." },
         { talk = 2381, buy = { { 2321, 1, 2381 } }, when = { done = 565 }, -- level 33
           note = "The NPC is indoors." },
         { turnin = 565, when = { item = 2997, log = 565 } }, -- level 33
-        { accept = 681, -- level 33
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 681, why = { chain = 4, kind = "detour", quest = 659, quests = 7, seconds = 480, short = true, total = 20000, xp = 13000 } }, -- level 33
         { turnin = 690, races = { "Dwarf", "NightElf" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "WARLOCK", "DRUID" } }, -- level 33
         { turnin = 690, races = { "Human", "Gnome", "Skyborne" } }, -- level 33
         { turnin = 659, accept = 658 }, -- level 33
@@ -75,18 +86,18 @@ Ding.RegisterGuide({
           note = "Beware of foes lurking in stealth. Further hidden ones lurk on the high ridgelines. Some are indoors as well." },
         { go = { 1425, 11.1, 46.2 }, fly = true, talk = 8018, text = "Fly to Aerie Peak", -- level 33
           note = "The NPC is at the summit of the trail. This spares you time further on." },
-        { turnin = 681, -- level 33
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 681, why = { kind = "detour", quest = 681, seconds = 240, short = true, xp = 2500 } }, -- level 33
         { turnin = 514, -- level 33
           note = "The NPC is indoors." },
+        { turnin = 98313 }, -- level 33
         { turnin = 689, -- level 33
-          note = "This one roams, so scan the surrounding area. The NPC is indoors." },
-        { accept = 700, -- level 33
-          note = "Let the conversation play out. The NPC is indoors. This one roams, so scan the surrounding area." },
-        { talk = 2461, bank = 3721, -- level 33
           note = "The NPC is indoors." },
-        { go = { 1455, 44.51, 49.54 }, text = "Stay on the trail" }, -- level 33
-        { turnin = 700 }, -- level 33
-        { turnin = 98300, races = { "Human", "Dwarf", "NightElf", "Gnome" } }, -- level 33
+        { accept = 700, -- level 34
+          note = "Let the conversation play out. The NPC is indoors." },
+        { talk = 2461, bank = 3721, -- level 34
+          note = "The NPC is indoors. You need it later for \"Reassignment\": keep it in the bank to free a bag slot." },
+        { go = { 1455, 44.51, 49.54 }, text = "Stay on the trail" }, -- level 34
+        { turnin = 700 }, -- level 34
+        { turnin = 98300, races = { "Dwarf", "NightElf", "Gnome", "Skyborne" } }, -- level 34
     },
 })

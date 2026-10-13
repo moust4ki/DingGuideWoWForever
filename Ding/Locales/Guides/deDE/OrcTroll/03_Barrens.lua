@@ -5,4 +5,10 @@ Ding.RegisterGuideTranslation("deDE", "orc-03-barrens", {
         "Brachland (11-19)",
     ["Cross the bridge west of Razor Hill into the Barrens, then follow the road to the Crossroads: your base."] =
         "Überquere die Brücke westlich vom Klingenhügel ins Brachland, dann folge der Straße zum Wegekreuz: deine Basis.",
+    ["The Crossroads"] =
+        "Das Wegekreuz",
+    ["Sun Rock Retreat"] =
+        "Sonnenfels",
+    ["Orgrimmar"] =
+        "Orgrimmar",
 })

@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("esES", "undead-02-tirisfal", {
         "Claros de Tirisfal (6-13)",
     ["Leave Deathknell by the road east to Brill: your base for Tirisfal Glades."] =
         "Sal de Camposanto por el camino del este hasta Rémol: tu base en los Claros de Tirisfal.",
+    ["Brill"] =
+        "Rémol",
     ["If the starting item dropped: use it from your bags."] =
         "Si tienes el objeto que inicia la misión: úsalo desde tus bolsas.",
     ["Finish the level on nearby monsters before moving on."] =

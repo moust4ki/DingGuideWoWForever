@@ -7,4 +7,6 @@ Ding.RegisterGuideTranslation("ptBR", "human-03-westfall", {
         "Siga para oeste pela estrada de Vila d'Ouro, depois até o Morro da Sentinela, no centro de Cerro Oeste.",
     ["If the starting item dropped: use it from your bags."] =
         "Se o item inicial caiu: use-o direto das bolsas.",
+    ["Sentinel Hill"] =
+        "Morro da Sentinela",
 })

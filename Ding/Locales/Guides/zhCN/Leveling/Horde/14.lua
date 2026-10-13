@@ -25,8 +25,6 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h14-thousand-needles", {
         "这里的敌人是蝎子。",
     ["Look for assorted mechanical pieces. Parts lie all across the Shimmering Flats."] =
         "寻找各种机械零件。零件散落在整个闪光平原。",
-    ["This one roams, so scan the surrounding area."] =
-        "它会四处游荡，在周围找找。",
     ["The NPC is indoors, one floor up."] =
         "NPC在室内楼上一层。",
     ["The NPC stands on the top tier of the pier. The NPC is indoors."] =
@@ -45,6 +43,10 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h14-thousand-needles", {
         "该NPC在下面的暗影裂口里。",
     ["The NPC stands on the highest level of this structure."] =
         "NPC在这座建筑的最高层。",
+    ["The NPC is indoors. You need them later for \"Martek the Exiled\" and \"Hemet Nesingwary\": keep them in the bank to free bag slots."] =
+        "NPC在室内。之后的任务“流放者马特克”和“赫米特·奈辛瓦里”需要它们：先存进银行，腾出背包空间。",
+    ["Orgrimmar"] =
+        "奥格瑞玛",
     ["The quest giver is in the Dormitory."] =
         "任务发布者在宿舍区。",
     ["Escort Kernobee to the portal at the dungeon's mouth."] =

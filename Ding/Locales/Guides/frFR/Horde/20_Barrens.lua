@@ -5,4 +5,8 @@ Ding.RegisterGuideTranslation("frFR", "horde-20-barrens", {
         "Les Tarides et les Serres-Rocheuses (19-20)",
     ["The Crossroads, in the middle of the Barrens, is your base; the Stonetalon Mountains are west of the Barrens."] =
         "La Croisée, au centre des Tarides, est ta base ; les Serres-Rocheuses sont à l'ouest des Tarides.",
+    ["Ratchet"] =
+        "Cabestan",
+    ["Sun Rock Retreat"] =
+        "Retraite de Roche-Soleil",
 })

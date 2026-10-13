@@ -29,8 +29,12 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a32-stranglethorn-vale", {
         "Ta proie est un tigre pâle, élite de niveau 43. Il appelle 2 petits renforts de plus bas niveau, aucun n'est élite. Quand il tombe à environ 50 % de vie.",
     ["Look underneath the bridge. Your targets sit below the water's surface."] =
         "Regarde sous le pont. Tes cibles sont sous la surface de l'eau.",
+    ["Booty Bay"] =
+        "Baie-du-Butin",
     ["Your objective lies in a little cavern."] =
         "Ton objectif est dans une petite grotte.",
+    ["Stormwind City"] =
+        "Hurlevent",
     ["Head down into the Deeprun Tram station"] =
         "Descends dans la station du tram des profondeurs",
     ["Pass through the portal to teleport."] =

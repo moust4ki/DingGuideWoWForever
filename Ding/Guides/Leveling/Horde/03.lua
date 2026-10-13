@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Horde/03.lua.
--- Simulated (warrior): Orc 1 (0%) -> 13 (85%) in 9 h 02, 68 quests turned in; Troll 1 (0%) -> 13 (85%) in 9 h 02, 68 quests turned in.
+-- Simulated (warrior): Orc 1 (0%) -> 13 (85%) in 9 h 01, 63 quests turned in; Troll 1 (0%) -> 13 (85%) in 9 h 01, 63 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-h03-orc-and-troll-starter",
     title    = "Orc and Troll start (1-13)",
@@ -10,6 +10,28 @@ Ding.RegisterGuide({
     races    = { "Orc", "Troll" },
     minLevel = 1, maxLevel = 13,
     next     = "leveling-h04-silverpine-forest",
+    leftOut  = {
+        [787] = { kind = "away" },
+        [809] = { kind = "prereq" },
+        [936] = { kind = "exclusive" },
+        [1018] = { kind = "exclusive" },
+        [1361] = { kind = "log" },
+        [2341] = { kind = "prereq" },
+        [2950] = { kind = "prereq" },
+        [4002] = { kind = "prereq" },
+        [4511] = { kind = "prereq" },
+        [4974] = { kind = "prereq" },
+        [5729] = { kind = "prereq" },
+        [5730] = { kind = "prereq" },
+        [6567] = { kind = "prereq" },
+        [7241] = { kind = "log" },
+        [7491] = { kind = "prereq" },
+        [7784] = { kind = "prereq" },
+        [7926] = { kind = "log" },
+        [8923] = { kind = "prereq" },
+        [8930] = { kind = "prereq" },
+        [98024] = { kind = "prereq" },
+    },
     steps    = {
         { accept = 4641, -- level 1
           note = "Durotar: the Valley of Trials, where orcs and trolls start." },
@@ -26,7 +48,7 @@ Ding.RegisterGuide({
         { train = true, talk = 3156, races = { "Orc" }, classes = { "WARLOCK" }, -- level 1
           note = "Your targets are within the cavern." },
         { complete = 788 }, -- level 1
-        { level = 2, xp = 450, patrol = { { 1411, 44.43, 63.24 }, { 1411, 47.04, 64.77 }, { 1411, 46.36, 68.17 }, { 1411, 43.83, 66.23 }, { 1411, 40.96, 64.17 }, { 1411, 42.16, 60.97 } } }, -- level 2
+        { level = 2, xp = 450, patrol = { { 1411, 44.43, 63.24 }, { 1411, 47.04, 64.77 }, { 1411, 46.36, 68.17 }, { 1411, 43.83, 66.23 }, { 1411, 40.96, 64.17 }, { 1411, 42.16, 60.97 } }, why = { kind = "level", levels = { 1, 5 } } }, -- level 2
         { complete = 1485, races = { "Orc" }, classes = { "WARLOCK" }, -- level 2
           note = "Stay out of the cave when you can. The following step is out of the cave." },
         { accept = 790 }, -- level 2
@@ -34,7 +56,7 @@ Ding.RegisterGuide({
           note = "Look for a dark-shelled scorpion. This one roams, so scan the surrounding area." },
         { turnin = 790, accept = 804 }, -- level 2
         { turnin = 97279, races = { "Orc", "Troll" } }, -- level 3
-        { level = 3, xp = 1080, patrol = { { 1411, 44.43, 63.24 }, { 1411, 47.04, 64.77 }, { 1411, 46.36, 68.17 }, { 1411, 43.83, 66.23 }, { 1411, 40.96, 64.17 }, { 1411, 42.16, 60.97 } }, -- level 3
+        { level = 3, xp = 1080, patrol = { { 1411, 44.43, 63.24 }, { 1411, 47.04, 64.77 }, { 1411, 46.36, 68.17 }, { 1411, 43.83, 66.23 }, { 1411, 40.96, 64.17 }, { 1411, 42.16, 60.97 } }, why = { kind = "level", levels = { 1, 5 } }, -- level 3
           note = "With the coming hand-ins, this brings you to level 4." },
         { turnin = 1485, when = { ready = 1485 }, races = { "Orc" }, classes = { "WARLOCK" } }, -- level 3
         { accept = 1499, races = { "Orc" }, classes = { "WARLOCK" } }, -- level 3
@@ -108,7 +130,7 @@ Ding.RegisterGuide({
         { complete = 794, -- level 5
           note = "Your targets are within the cavern." },
         { turnin = 98575, races = { "Troll" }, classes = { "WARLOCK" } }, -- level 5
-        { level = 6, patrol = { { 1411, 45.37, 56.4 }, { 1411, 43.23, 55.37 }, { 1411, 42.44, 53.43 }, { 1411, 44.77, 52.44 } }, -- level 5
+        { level = 6, patrol = { { 1411, 45.37, 56.4 }, { 1411, 43.23, 55.37 }, { 1411, 42.44, 53.43 }, { 1411, 44.77, 52.44 } }, why = { kind = "level", levels = { 5, 8 } }, -- level 5
           note = "Your targets are within the cavern." },
         { train = true, talk = 3153, classes = { "WARRIOR" } }, -- level 6
         { train = true, talk = 3154, classes = { "HUNTER" } }, -- level 6
@@ -146,7 +168,7 @@ Ding.RegisterGuide({
           note = "Hunt the crabs." },
         { go = { 1411, 50.79, 79.17 }, text = "Stay on the trail" }, -- level 6
         { complete = 786, -- level 6
-          note = "The NPC is indoors." },
+          note = "The object is indoors." },
         { accept = 99123, races = { "Orc", "Troll" } }, -- level 6
         { complete = 99123, races = { "Orc", "Troll" } }, -- level 6
         { complete = 786 }, -- level 6
@@ -186,11 +208,11 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { go = { 1411, 58.96, 58.33 }, text = "Head indoors" }, -- level 7
         { complete = 784, collect = { { 4882, 1 } }, -- level 7
-          note = "The NPC is indoors, one floor up. Consider bringing a group for this one." },
+          note = "The target is indoors, one floor up. Consider bringing a group for this one." },
         { complete = 96822, races = { "Orc", "Troll" } }, -- level 7
         { go = { 1411, 59.86, 57.81 }, text = "Stay on the trail and keep climbing the steps" }, -- level 7
         { collect = { { 4881, 1 } }, -- level 7
-          note = "The NPC stands on the highest level of this structure." },
+          note = "The object is on the highest level of this structure." },
         { accept = 830, useitem = 4881 }, -- level 7
         { complete = 791 }, -- level 7
         { complete = 784 }, -- level 8
@@ -203,7 +225,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { train = true, talk = 3170, classes = { "ROGUE" }, -- level 8
           note = "The NPC is indoors, one floor up." },
-        { turnin = { 784, 830 }, accept = { 825, 831 }, -- level 8
+        { turnin = { 784, 830 }, accept = { 825, 831 }, why = { kind = "carry", quest = 831, seconds = 9720, xp = 600 }, -- level 8
           note = "The NPC is indoors, one floor up." },
         { go = { 1411, 50.14, 42.95 }, text = "Climb the trail" }, -- level 8
         { turnin = 791, -- level 8
@@ -255,13 +277,6 @@ Ding.RegisterGuide({
         { turnin = 96652, races = { "Orc", "Troll" } }, -- level 9
         { accept = 99048, races = { "Orc", "Troll" } }, -- level 9
         { turnin = 99048, races = { "Orc", "Troll" } }, -- level 9
-        { accept = 97900, races = { "Orc", "Troll" } }, -- level 9
-        { accept = 97902, races = { "Orc", "Troll" } }, -- level 9
-        { accept = 97903, races = { "Orc", "Troll" } }, -- level 9
-        { accept = 97904, races = { "Orc", "Troll" } }, -- level 9
-        { complete = 97904, races = { "Orc", "Troll" } }, -- level 9
-        { turnin = 97904, races = { "Orc", "Troll" } }, -- level 9
-        { accept = 97907, races = { "Orc", "Troll" } }, -- level 9
         { accept = 99049, races = { "Orc", "Troll" } }, -- level 9
         { complete = 99049, races = { "Orc", "Troll" } }, -- level 9
         { turnin = 825, -- level 9
@@ -284,14 +299,6 @@ Ding.RegisterGuide({
         { turnin = 837, -- level 9
           note = "The NPC is indoors, one floor up." },
         { turnin = 96821, races = { "Orc", "Troll" } }, -- level 10
-        { complete = 97900, races = { "Orc", "Troll" } }, -- level 10
-        { turnin = 97900, races = { "Orc", "Troll" } }, -- level 10
-        { complete = 97902, races = { "Orc", "Troll" } }, -- level 10
-        { turnin = 97902, races = { "Orc", "Troll" } }, -- level 10
-        { complete = 97903, races = { "Orc", "Troll" } }, -- level 10
-        { turnin = 97903, races = { "Orc", "Troll" } }, -- level 10
-        { complete = 97907, races = { "Orc", "Troll" } }, -- level 10
-        { turnin = 97907, races = { "Orc", "Troll" } }, -- level 10
         { turnin = 99049, races = { "Orc", "Troll" } }, -- level 10
         { train = true, talk = 3706, races = { "Troll" }, classes = { "PRIEST" }, -- level 10
           note = "The NPC is indoors." },
@@ -347,8 +354,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { accept = 2983, classes = { "SHAMAN" }, -- level 10
           note = "The NPC is indoors." },
-        { turnin = 2983, accept = 1524, classes = { "SHAMAN" }, -- level 10
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 2983, accept = 1524, classes = { "SHAMAN" } }, -- level 10
         { go = { 1411, 36.64, 57.03 }, classes = { "SHAMAN" }, text = "Climb the trail" }, -- level 10
         { turnin = 1524, accept = 1525, classes = { "SHAMAN" }, -- level 10
           note = "The NPC is up on the summit." },
@@ -374,7 +380,7 @@ Ding.RegisterGuide({
         { complete = 97282, races = { "Orc", "Troll" } }, -- level 10
         { turnin = 97282, races = { "Orc", "Troll" } }, -- level 10
         { accept = 816, -- level 10
-          note = "This one roams, so scan the surrounding area. The NPC is indoors." },
+          note = "The NPC is indoors." },
         { complete = 816 }, -- level 10
         { go = { 1411, 36.64, 57.03 }, classes = { "SHAMAN" }, text = "Climb the trail" }, -- level 10
         { turnin = 1525, when = { ready = 1525 }, classes = { "SHAMAN" }, -- level 10
@@ -384,15 +390,14 @@ Ding.RegisterGuide({
           note = "The NPC is up on the summit." },
         { go = { 1411, 38.22, 58.5 }, classes = { "SHAMAN" }, text = "Receive Sapta Sight" }, -- level 10
         { complete = 1526, when = { log = 1526 }, classes = { "SHAMAN" }, -- level 10
-          note = "The NPC is up on the summit." },
+          note = "The target is up on the summit." },
         { turnin = 1526, when = { ready = 1526 }, classes = { "SHAMAN" }, -- level 10
-          note = "The NPC is up on the summit." },
+          note = "The object is up on the summit." },
         { accept = 1527, when = { done = 1526 }, classes = { "SHAMAN" } }, -- level 10
-        { turnin = 1527, when = { log = 1527 }, classes = { "SHAMAN" }, -- level 10
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 1527, when = { log = 1527 }, classes = { "SHAMAN" } }, -- level 10
         { level = 11, xp = 4400, patrol = { { 1411, 42.46, 40.56 }, { 1411, 41.16, 37.84 }, { 1411, 44.46, 35.95 } } }, -- level 11
         { turnin = 816, -- level 11
-          note = "This one roams, so scan the surrounding area. The NPC is indoors." },
+          note = "The NPC is indoors." },
         { accept = 812, classes = { "WARRIOR", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK", "DRUID" }, -- level 11
           note = "The quest giver stands among the boulders. Move fast: the clock is ticking on this one." },
         { go = { 1454, 45.1, 63.84 }, fly = true, talk = 3310, text = "Fly to Orgrimmar", -- level 11
@@ -408,7 +413,7 @@ Ding.RegisterGuide({
         { go = { 1411, 55.06, 9.82 }, text = "Head out of the cave" }, -- level 11
         { complete = 813, -- level 11
           note = "The foes here are scorpions." },
-        { turnin = 813, -- level 11
+        { turnin = 813, why = { back = true, kind = "detour", quest = 813, seconds = 240, xp = 400 }, -- level 11
           note = "This NPC is found down in the Cleft of Shadow." },
         { accept = 812, -- level 11
           note = "The quest giver stands among the boulders." },
@@ -494,7 +499,7 @@ Ding.RegisterGuide({
         { accept = 361, useitem = 2839, sticky = 358, when = { item = 2839 } }, -- level 12
         { go = { 1420, 54.24, 31.72 }, text = "Drop down with care" }, -- level 12
         { complete = 398, -- level 12
-          note = "The NPC is indoors." },
+          note = "The target is indoors." },
         { complete = 368, sticky = 358, -- level 12
           note = "Fight the murlocs." },
         { complete = 358 }, -- level 12

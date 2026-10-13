@@ -9,8 +9,6 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a39-winterspring-and-felwood", {
         "費伍德森林：翡翠聖地，位於區域南部。",
     ["Hand these in afterwards for experience and reputation."] =
         "之後交付這些，換取經驗值和聲望。",
-    ["This one roams, so scan the surrounding area."] =
-        "這個會四處走動，留意周圍一帶。",
     ["The NPC is indoors."] =
         "NPC在室內。",
     ["Let the conversation play out. The NPC is indoors."] =
@@ -41,8 +39,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a39-winterspring-and-felwood", {
         "加上接下來交付的任務，這會讓你升到55級。接下來是一個困難的任務。",
     ["Flee if things go badly."] =
         "情況不妙就逃跑。",
-    ["The NPC is a human spirit. This one roams, so scan the surrounding area."] =
-        "NPC是一個人類的靈魂。這個會四處走動，留意周圍一帶。",
+    ["The NPC is a human spirit."] =
+        "NPC是一個人類的靈魂。",
     ["Your targets are within the cavern."] =
         "目標在洞穴裡。",
     ["Let the conversation play out. Your targets are within the cavern."] =
@@ -59,6 +57,10 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a39-winterspring-and-felwood", {
         "目標是3隻一起行動的白色熊怪。目標沿著道路旁的一條長路線巡邏。走到小路盡頭還沒看到它的話，就繼續前進。",
     ["Be ready for a fight right away."] =
         "準備好立刻戰鬥。",
+    ["Everlook"] =
+        "永望鎮",
+    ["The NPC is indoors. You need them later for \"Aquementas\", \"The Everlook Report\", \"Duke Nicholas Zverenhoff\" and \"Troubled Spirits of Kel'Theril\": keep them in the bank to free bag slots."] =
+        "NPC在室內。之後的任務「亞奎門塔斯」、「永望鎮報告」、「尼古拉斯·瑟倫霍夫公爵」和「凱斯利爾的怨靈」需要它們：先存進銀行，空出背包空間。",
     ["For this quest you guard an NPC on the move. If she is absent, wait for her to reappear."] =
         "這個任務要護送一名移動中的NPC。如果她不在，等她重生。",
     ["Let the conversation play out. Escort Ranshalla and guard her. Wait until the foes hit her before you strike."] =
@@ -69,14 +71,14 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a39-winterspring-and-felwood", {
         "你也可以刷地城直到56級。每5個一組把物品交給納菲恩。每交付完整的一組可獲得50點聲望。",
     ["Raise Timbermaw Hold standing to Neutral"] =
         "將木喉要塞聲望提升到中立",
-    ["This one roams, so scan the surrounding area. The NPC stands within the passage."] =
-        "這個會四處走動，留意周圍一帶。NPC站在通道裡。",
+    ["The NPC stands within the passage."] =
+        "NPC站在通道裡。",
     ["The NPC is indoors, one floor up."] =
         "NPC在室內的樓上一層。",
     ["Step into the cavern within the trunk"] =
         "進入樹幹裡的洞穴",
     ["The spot is on the lower floor of the hollow tree."] =
         "位置在空心樹的下層。",
-    ["This one roams, so scan the surrounding area. The NPC waits on the tower's highest floor."] =
-        "這個會四處走動，留意周圍一帶。NPC在塔的最頂層。",
+    ["The NPC waits on the tower's highest floor."] =
+        "NPC在塔的最頂層。",
 })

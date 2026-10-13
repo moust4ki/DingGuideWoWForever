@@ -1,0 +1,25 @@
+# a11-level-step
+# A level step in the tomb: the level's counter, experience and kills left, the monster to farm
+# frFR, Dwarf HUNTER level 25, window 300 wide, scale 1, mouse
+
+TITLE  Ding! · Bois de la Pénombre et Carmines (25-27)
+STEP   < Étape 24 / 97 >   zone: Le cimetière de Raven Hill
+
+ 1  level  [todo] red background, red caret up icon, text white, counter 58 % red
+    Atteins le niveau 26
+      > Encore 14 000 XP : environ 83 monstres.
+    card:
+      | Atteins le niveau 26
+      | À faire.
+      | 58 % de ce niveau déjà fait.
+ 2  grind  [todo] red background, red diamond icon, text white
+    Tuer Solitaire putride · niveaux 25-26
+      > La flèche fait le tour de 6 points : appuie sur Suivant une fois fini.
+    card:
+      | Solitaire putride
+      | À faire.
+      | niveaux 25-26
+      | Clic : la flèche y va.
+
+PROGRESS bar 24 / 97
+MENU (right click on the window): Marquer comme fait | Passer, à faire plus tard

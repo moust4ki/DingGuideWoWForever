@@ -9,6 +9,34 @@ Ding.RegisterGuide({
     faction  = "Horde",
     minLevel = 39, maxLevel = 40,
     next     = "leveling-h20-stranglethorn-vale-and-swamp-of-sorrows",
+    leftOut  = {
+        [656] = { kind = "prereq" },
+        [692] = { kind = "prereq" },
+        [709] = { kind = "far" },
+        [712] = { kind = "version" },
+        [716] = { kind = "prereq" },
+        [728] = { kind = "prereq" },
+        [734] = { kind = "prereq" },
+        [777] = { kind = "prereq" },
+        [778] = { kind = "prereq" },
+        [782] = { kind = "far" },
+        [2202] = { kind = "far" },
+        [2338] = { kind = "prereq" },
+        [2339] = { kind = "prereq" },
+        [2340] = { kind = "prereq" },
+        [3907] = { kind = "prereq" },
+        [4061] = { kind = "away" },
+        [4062] = { kind = "prereq" },
+        [4063] = { kind = "prereq" },
+        [4082] = { kind = "prereq" },
+        [4122] = { kind = "prereq" },
+        [4132] = { kind = "prereq" },
+        [4134] = { kind = "away" },
+        [4724] = { kind = "away" },
+        [4768] = { kind = "away" },
+        [4903] = { kind = "away" },
+        [7201] = { kind = "prereq" },
+    },
     steps    = {
         { go = { 1418, 42.39, 52.93 }, text = "Travel to the Badlands", -- level 39
           note = "Badlands: Kargath, at the western edge, is the Horde hub." },
@@ -16,15 +44,12 @@ Ding.RegisterGuide({
         { accept = 703 }, -- level 39
         { turnin = 705, when = { log = 705, ready = 705 } }, -- level 39
         { turnin = 1106, accept = 1108 }, -- level 39
-        { accept = 710, -- level 39
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 710 }, -- level 39
         { accept = 713, when = { item = 3829 } }, -- level 39
-        { turnin = 713, when = { log = 713, ready = 713 }, -- level 39
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 713, when = { log = 713, ready = 713 } }, -- level 39
         { accept = 714, when = { item = 4389 } }, -- level 39
         { accept = 714, when = { item = 4389 } }, -- level 39
-        { turnin = 714, when = { item = 4389, log = 714 }, -- level 39
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 714, when = { item = 4389, log = 714 } }, -- level 39
         { accept = 715, when = { item = { { 929, 1 }, { 3823, 1 } } } }, -- level 39
         { turnin = 715, sticky = 710, when = { item = 929, log = 715 } }, -- level 39
         { accept = 1419, -- level 39
@@ -35,12 +60,10 @@ Ding.RegisterGuide({
         { complete = 703, keep = 3404, sticky = 2258, -- level 39
           note = "A cluster of them gathers here. More of them dot the surroundings." },
         { complete = 710 }, -- level 39
-        { turnin = 710, accept = 711, -- level 39
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 710, accept = 711 }, -- level 39
         { complete = 711 }, -- level 40
         { complete = 2258 }, -- level 40
-        { turnin = 711, sticky = { 2258, 1419 }, -- level 40
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 711, sticky = { 2258, 1419 } }, -- level 40
         { complete = 2258, -- level 40
           note = "A cluster of them gathers here. More of them dot the surroundings." },
         { complete = { 2258, 1419 } }, -- level 40
@@ -50,9 +73,9 @@ Ding.RegisterGuide({
         { complete = 1108, -- level 40
           note = "The targets are troggs." },
         { turnin = 1108 }, -- level 40
-        { accept = 1137, -- level 40
+        { accept = 1137, why = { continent = true, kind = "carry", quest = 1137, seconds = 21240, xp = 1500 }, -- level 40
           note = "Wait for the talking to finish" },
-        { turnin = 1419, accept = 1420, -- level 40
+        { turnin = 1419, accept = 1420, why = { kind = "carry", quest = 1420, seconds = 11460, xp = 2400 }, -- level 40
           note = "The NPC waits on the tower's highest floor." },
         { turnin = 2258, -- level 40
           note = "The NPC is indoors, one floor up." },

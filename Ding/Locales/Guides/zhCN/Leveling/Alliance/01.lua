@@ -67,6 +67,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a01-human-starter", {
         "故意让这里的怪物杀死你。这么早死亡没有任何损失。这是最快的过去方式。",
     ["Get yourself killed, then resurrect with the spirit healer"] =
         "让自己被杀，然后在灵魂医者处复活",
+    ["Goldshire"] =
+        "闪金镇",
     ["Look for little stacks of brown wood. Look around tree trunks at ground level."] =
         "寻找棕色的小木堆。在树干底部的地面附近找。",
     ["The targets are wolves."] =
@@ -101,14 +103,16 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a01-human-starter", {
         "向武器大师学习单手剑和法杖",
     ["Head indoors"] =
         "进入室内",
-    ["Step onto the pink rune. Look within the tomb. The NPC waits on the lower level, indoors."] =
-        "站到粉色符文上。在陵墓里找。NPC在室内下层。",
+    ["The target is indoors."] =
+        "目标在室内。",
+    ["Step onto the pink rune. Look within the tomb. The target is on the lower level, indoors."] =
+        "站到粉色符文上。在陵墓里找。目标在室内下层。",
     ["The NPC stands one level over the crypt. The NPC waits on the lower level, indoors."] =
         "NPC在墓穴上面一层。NPC在室内下层。",
-    ["This one roams, so scan the surrounding area. The NPC is indoors. Be ready for a fight right away."] =
-        "它会四处游荡，在周围找找。NPC在室内。准备好马上战斗。",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "它会四处游荡，在周围找找。NPC在室内。",
+    ["Stormwind City"] =
+        "暴风城",
+    ["The NPC is indoors. Be ready for a fight right away."] =
+        "NPC在室内。准备好马上战斗。",
     ["Learn Blacksmithing from the trainer"] =
         "向训练师学习锻造",
     ["Learn Mining from the trainer"] =
@@ -183,6 +187,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a01-human-starter", {
         "离开碎石怪之谷，然后沿道路走",
     ["The NPC waits on the tower's highest floor."] =
         "NPC在塔的顶层。",
+    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
+        "它会四处游荡，在周围找找。NPC在室内。",
     ["Head up the incline"] =
         "沿斜坡往上走",
 })

@@ -9,6 +9,9 @@ Ding.RegisterGuide({
     faction  = "Horde",
     minLevel = 49, maxLevel = 50,
     next     = "leveling-h31-stranglethorn-vale-and-swamp-of-sorrows",
+    leftOut  = {
+        [4148] = { kind = "prereq" },
+    },
     steps    = {
         { go = { 1444, 76.18, 43.83 }, text = "Travel to Camp Mojache", -- level 48
           note = "Feralas: Camp Mojache first, then Un'Goro Crater." },
@@ -25,7 +28,7 @@ Ding.RegisterGuide({
           note = "Slay them, then apply the item to their remains." },
         { turnin = 3125, accept = 3126 }, -- level 49
         { complete = { 3126, 3128 }, useitem = 9606, patrol = { { 1444, 68.43, 46.43 }, { 1444, 69.16, 45.35 }, { 1444, 69.46, 43.06 }, { 1444, 70.65, 41.74 }, { 1444, 71.75, 41.97 }, { 1444, 72.36, 41.26 }, { 1444, 72.94, 40.16 }, { 1444, 73.75, 38.76 }, { 1444, 74.74, 38.46 }, { 1444, 75.94, 39.75 }, { 1444, 77.45, 40.64 }, { 1444, 78.26, 41.34 }, { 1444, 78.36, 42.65 }, { 1444, 78.75, 44.23 }, { 1444, 81.06, 45.06 }, { 1444, 81.86, 45.14 }, { 1444, 82.65, 45.63 }, { 1444, 83.25, 46.22 } }, -- level 49
-          note = "Fight the treants. The NPC patrols a long route; look along it. Slay them, then apply the item to their remains." },
+          note = "Fight the treants. The target patrols a long route; look along it. Slay them, then apply the item to their remains." },
         { turnin = { 3126, 3128 } }, -- level 49
         { accept = 3127, elite = true }, -- level 49
         { accept = 7721, sticky = 7721 }, -- level 49
@@ -96,14 +99,14 @@ Ding.RegisterGuide({
           note = "The targets are raptors." },
         { accept = 3884, collect = { { 11116, 1 } }, useitem = 11116, -- level 49
           note = "Every creature in Un'Goro Crater can drop it." },
-        { level = 50, patrol = { { 1449, 64.96, 70.36 }, { 1449, 62.37, 72.05 }, { 1449, 59.35, 72.56 }, { 1449, 60.24, 75.57 }, { 1449, 63.14, 75.17 }, { 1449, 64.75, 78.14 }, { 1449, 61.74, 78.94 }, { 1449, 59.44, 80.95 }, { 1449, 62.04, 82.54 }, { 1449, 57.25, 77.35 }, { 1449, 60.34, 69.34 }, { 1449, 60.37, 66.35 }, { 1449, 63.74, 66.15 }, { 1449, 63.37, 62.84 }, { 1449, 62.23, 59.35 }, { 1449, 61.03, 56.54 }, { 1449, 63.66, 54.45 }, { 1449, 60.83, 52.35 }, { 1449, 60.66, 49.37 }, { 1449, 63.24, 47.77 }, { 1449, 65.25, 50.54 }, { 1449, 68.43, 49.76 }, { 1449, 69.95, 52.36 }, { 1449, 71.54, 54.97 }, { 1449, 68.84, 56.57 }, { 1449, 67.14, 53.95 }, { 1449, 65.44, 59.03 }, { 1449, 68.05, 61.63 }, { 1449, 70.43, 63.25 }, { 1449, 73.45, 62.86 }, { 1449, 70.65, 59.34 }, { 1449, 74.06, 57.25 }, { 1449, 75.43, 51.45 }, { 1449, 72.45, 49.75 }, { 1449, 70.25, 46.85 }, { 1449, 69.03, 43.56 }, { 1449, 71.96, 42.54 }, { 1449, 66.17, 41.95 }, { 1449, 63.44, 44.17 }, { 1449, 66.66, 46.14 }, { 1449, 67.37, 64.64 }, { 1449, 67.63, 68.34 }, { 1449, 67.03, 73.45 }, { 1449, 68.26, 77.96 } } }, -- level 49
+        { level = 50, patrol = { { 1449, 64.96, 70.36 }, { 1449, 62.37, 72.05 }, { 1449, 59.35, 72.56 }, { 1449, 60.24, 75.57 }, { 1449, 63.14, 75.17 }, { 1449, 64.75, 78.14 }, { 1449, 61.74, 78.94 }, { 1449, 59.44, 80.95 }, { 1449, 62.04, 82.54 }, { 1449, 57.25, 77.35 }, { 1449, 60.34, 69.34 }, { 1449, 60.37, 66.35 }, { 1449, 63.74, 66.15 }, { 1449, 63.37, 62.84 }, { 1449, 62.23, 59.35 }, { 1449, 61.03, 56.54 }, { 1449, 63.66, 54.45 }, { 1449, 60.83, 52.35 }, { 1449, 60.66, 49.37 }, { 1449, 63.24, 47.77 }, { 1449, 65.25, 50.54 }, { 1449, 68.43, 49.76 }, { 1449, 69.95, 52.36 }, { 1449, 71.54, 54.97 }, { 1449, 68.84, 56.57 }, { 1449, 67.14, 53.95 }, { 1449, 65.44, 59.03 }, { 1449, 68.05, 61.63 }, { 1449, 70.43, 63.25 }, { 1449, 73.45, 62.86 }, { 1449, 70.65, 59.34 }, { 1449, 74.06, 57.25 }, { 1449, 75.43, 51.45 }, { 1449, 72.45, 49.75 }, { 1449, 70.25, 46.85 }, { 1449, 69.03, 43.56 }, { 1449, 71.96, 42.54 }, { 1449, 66.17, 41.95 }, { 1449, 63.44, 44.17 }, { 1449, 66.66, 46.14 }, { 1449, 67.37, 64.64 }, { 1449, 67.63, 68.34 }, { 1449, 67.03, 73.45 }, { 1449, 68.26, 77.96 } }, why = { kind = "level", levels = { 43, 53 } } }, -- level 49
         { turnin = 4291, elite = true }, -- level 49
         { accept = 4292, elite = true }, -- level 49
         { collect = { { 11186, 7 }, { 11188, 7 }, { 11185, 7 }, { 11184, 7 } }, -- level 50
           note = "Gather from clumps of multicolored crystals. Spawn points are shared, so pick up every one you find. Gathering it causes other hues to show up." },
         { complete = 3845, useitem = 11107 }, -- level 50
         { destroy = { 11108, 3108 } }, -- level 50
-        { turnin = 3845, accept = 3908 }, -- level 50
+        { turnin = 3845, accept = 3908, why = { kind = "carry", quest = 3908, seconds = 74760, xp = 5100 } }, -- level 50
         { turnin = 3884 }, -- level 50
         { go = { 1449, 43.41, 6.84 }, text = "Go into the cavern" }, -- level 50
         { accept = 4284, -- level 50
@@ -113,7 +116,7 @@ Ding.RegisterGuide({
         { destroy = { 11186, 11188, 11185, 11184 } }, -- level 50
         { go = { 1449, 43.53, 6.78 }, text = "Head out of the cave" }, -- level 50
         { go = { 1449, 45.2, 5.8 }, fly = true, talk = 10583, text = "Flight master at Marshal's Refuge" }, -- level 50
-        { unbank = 11018, keep = 11018 }, -- level 50
+        { collect = { { 11018, 25 } }, keep = 11018 }, -- level 50
         { turnin = 3062, elite = true }, -- level 50
         { turnin = 3063, accept = 4120, -- level 50
           note = "The NPC is indoors." },
@@ -131,7 +134,7 @@ Ding.RegisterGuide({
         { talk = 3309, collect = { { 8685, 1 }, { 9245, 1 }, { 5807, 1 }, { 3900, 12 } }, spots = { { 1454, 49.62, 69.06 } }, -- level 50
           note = "The NPC is indoors." },
         { talk = 3309, bank = { 11018, 11568, 11133 }, -- level 50
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need them later for \"Bungle in the Jungle\", \"The Bait for Lar'korwi\" and \"It's a Secret to Everybody\": keep them in the bank to free bag slots." },
         { train = true, talk = 3344, races = { "Orc", "Tauren", "Troll" }, classes = { "SHAMAN" }, -- level 50
           note = "The NPC is indoors." },
         { train = true, talk = 3328, races = { "Orc", "Scourge", "Troll" }, classes = { "ROGUE" }, -- level 50

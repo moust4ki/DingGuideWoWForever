@@ -19,8 +19,6 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a13-stonetalon-mountains-and-ash
         "Pegue a estrada até esta trilha",
     ["Keep on the trail"] =
         "Continue na trilha",
-    ["This one roams, so scan the surrounding area."] =
-        "Este se desloca, então procure pelos arredores.",
     ["Fight the treants. Circle the mountain on foot."] =
         "Enfrente as árvores animadas. Contorne a montanha a pé.",
     ["Head uphill on the trail and across the passage"] =
@@ -29,6 +27,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a13-stonetalon-mountains-and-ash
         "Saia do Vale Uivante pelo túnel",
     ["Climb the trail"] =
         "Suba a trilha",
+    ["This one roams, so scan the surrounding area."] =
+        "Este se desloca, então procure pelos arredores.",
     ["Leave your pet with the stable master."] =
         "Deixe seu ajudante com o mestre do estábulo.",
     ["You will tame a short-term pet shortly. You pick up Claw (Rank 4) here."] =
@@ -47,12 +47,12 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a13-stonetalon-mountains-and-ash
         "Cuidado com inimigos furtivos à espreita.",
     ["Hunt down satyrs. Beware of foes lurking in stealth."] =
         "Cace sátiros. Cuidado com inimigos furtivos à espreita.",
-    ["Let the conversation play out. This one roams, so scan the surrounding area."] =
-        "Deixe a conversa terminar. Este se desloca, então procure pelos arredores.",
+    ["Let the conversation play out."] =
+        "Deixe a conversa terminar.",
     ["Circle the peak, then climb the twisting dirt trail to the shrine"] =
         "Contorne o pico e depois suba a trilha de terra sinuosa até o santuário",
-    ["The NPC is up on the summit."] =
-        "O NPC está lá no topo.",
+    ["The object is up on the summit."] =
+        "O objeto está lá no topo.",
     ["Circle the mountain, then stay on the trail"] =
         "Contorne a montanha e depois siga a trilha",
     ["Stand on the marked point, then apply the item."] =
@@ -67,14 +67,12 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a13-stonetalon-mountains-and-ash
         "Suba a ladeira",
     ["Walk over the span"] =
         "Atravesse a ponte",
-    ["The NPC is indoors, one floor up."] =
-        "O NPC está lá dentro, um andar acima.",
+    ["The object is indoors, one floor up."] =
+        "O objeto está lá dentro, um andar acima.",
     ["Wait for the talking to finish"] =
         "Espere a conversa terminar",
     ["Stay on the trail"] =
         "Siga a trilha",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "Este se desloca, então procure pelos arredores. O NPC está lá dentro.",
     ["The foes are gnomes. In Gnomeregan's outer halls, not in the instance itself."] =
         "Os inimigos são gnomos. Nos salões externos de Gnomeregan, não na instância em si.",
     ["Take the lift down, then head north. In Gnomeregan's outer halls, not in the instance itself."] =

@@ -7,6 +7,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a38-ungoro-crater", {
         "前往加基森",
     ["Tanaris: Gadgetzan first, then Un'Goro Crater."] =
         "塔纳利斯：先到加基森，再到安戈洛环形山。",
+    ["You need it later for \"Return to Tymor\": keep it in the bank to free a bag slot."] =
+        "之后的任务“向法师泰摩尔回复”需要它：先存进银行，腾出背包空间。",
     ["Wait for the talking to finish"] =
         "等对话结束",
     ["Go into the cavern"] =
@@ -23,8 +25,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a38-ungoro-crater", {
         "目标在洞穴里，洞口周围也有。",
     ["Climb the trail"] =
         "沿小路往上爬",
-    ["The NPC is up on the summit."] =
-        "NPC在山顶上。",
+    ["The object is up on the summit."] =
+        "该物件在山顶上。",
     ["The targets are flame elementals. An elite foe waits on the summit; steer clear."] =
         "目标是火焰元素。山顶上有一个精英敌人，避开它。",
     ["For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears. Your objective lies in a little cavern."] =
@@ -45,6 +47,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a38-ungoro-crater", {
         "你不再需要这些；卖给商人或丢弃。",
     ["The NPC is indoors."] =
         "NPC在室内。",
+    ["The object is indoors."] =
+        "该物件在室内。",
     ["The NPC patrols a long route; look along it."] =
         "NPC沿一条很长的路线巡逻；沿路寻找。",
     ["The NPC is indoors, one floor up."] =
@@ -55,8 +59,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a38-ungoro-crater", {
         "进入树干里的洞穴",
     ["The spot is on the lower floor of the hollow tree."] =
         "位置在空心树的下层。",
-    ["This one roams, so scan the surrounding area. Climb to the highest floor of the building."] =
-        "它会四处游荡，在周围找找。爬到建筑物的顶层。",
+    ["Climb to the highest floor of the building."] =
+        "爬到建筑物的顶层。",
     ["The NPC is indoors, on the central storey."] =
         "NPC在室内中间那层。",
 })

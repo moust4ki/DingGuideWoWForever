@@ -5,10 +5,14 @@ Ding.RegisterGuideTranslation("esES", "leveling-s01-skyborne-alliance", {
         "Inicio skyborne (1-13)",
     ["Everything starts on Zephras Isle: follow the arrow from NPC to NPC."] =
         "Todo empieza en la isla de Zephras: sigue la flecha de PNJ en PNJ.",
+    ["Coriella Calmbreeze"] =
+        "Coriella Calmbreeze",
     ["Finish the level on nearby monsters before moving on."] =
         "Termina el nivel con monstruos cercanos antes de seguir.",
     ["If the starting item dropped: use it from your bags."] =
         "Si tienes el objeto que inicia la misión: úsalo desde tus bolsas.",
+    ["Donaal Downbreeze"] =
+        "Donaal Downbreeze",
     ["Dalaran is reached through the Skyborne portal."] =
         "A Dalaran se llega por el portal skyborne.",
     ["Take the Skyborne portal to Stormwind"] =

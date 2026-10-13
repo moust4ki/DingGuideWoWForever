@@ -13,10 +13,10 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h02-tauren-starter", {
         "NPC在室内。",
     ["With the coming hand-ins, this brings you to level 4."] =
         "加上接下来的交任务，这能让你升到4级。",
-    ["This one roams, so scan the surrounding area."] =
-        "它会四处游荡，在周围找找。",
     ["Traverse the passageway"] =
         "穿过通道",
+    ["The target is indoors."] =
+        "目标在室内。",
     ["Your objective lies in a little cavern."] =
         "目标在一个小洞穴里。",
     ["Fight quilboars."] =
@@ -31,6 +31,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h02-tauren-starter", {
         "让自己被杀，然后在灵魂医者处复活",
     ["Keep to the road the whole way."] =
         "全程沿道路走。",
+    ["Bloodhoof Village"] =
+        "血蹄村",
     ["Look for little brown pinecones. Search close to the trunks."] =
         "寻找棕色的小松果。在树干附近寻找。",
     ["Big birds that roam on foot."] =
@@ -93,6 +95,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h02-tauren-starter", {
         "向武器大师学习法杖",
     ["Learn Two-Handed Maces at the weapon master"] =
         "向武器大师学习双手锤",
+    ["Thunder Bluff"] =
+        "雷霆崖",
     ["This is food for your pet."] =
         "这是给宠物的食物。",
     ["The NPC is indoors, one floor up."] =
@@ -109,18 +113,20 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h02-tauren-starter", {
         "该NPC在山顶等候。",
     ["Kill Water Seekers and Thornweavers."] =
         "击杀寻水者和织棘者。",
+    ["This one roams, so scan the surrounding area."] =
+        "它会四处游荡，在周围找找。",
     ["Your targets are within the cavern. The objective is at the far end."] =
         "目标在洞穴里。目标在最远端。",
     ["Head out of the cave"] =
         "离开洞穴",
     ["Head indoors"] =
         "进入室内",
-    ["The NPC is indoors, one floor up. Consider bringing a group for this one."] =
-        "NPC在室内楼上一层。这个可以考虑组队来做。",
+    ["The target is indoors, one floor up. Consider bringing a group for this one."] =
+        "目标在室内楼上一层。这个可以考虑组队来做。",
     ["Stay on the trail and keep climbing the steps"] =
         "沿小路走，继续爬台阶",
-    ["The NPC stands on the highest level of this structure."] =
-        "NPC在这座建筑的最高层。",
+    ["The object is on the highest level of this structure."] =
+        "该物件在这座建筑的最高层。",
     ["The target is a troll in crimson robes. This one roams, so scan the surrounding area."] =
         "目标是一个穿着深红色长袍的巨魔。它会四处游荡，在周围找找。",
     ["Look for the skull-shaped objects."] =
@@ -131,12 +137,16 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h02-tauren-starter", {
         "目标是龙虾。",
     ["Hunt the crabs."] =
         "猎杀螃蟹。",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "它会四处游荡，在周围找找。NPC在室内。",
     ["The NPC is up on the summit."] =
         "NPC在山顶上。",
     ["Receive Sapta Sight"] =
         "获得Sapta Sight",
+    ["The target is up on the summit."] =
+        "目标在山顶上。",
+    ["The object is up on the summit."] =
+        "该物件在山顶上。",
+    ["Razor Hill"] =
+        "剃刀岭",
     ["Look for beige sacks."] =
         "寻找米色的袋子。",
     ["Stay on the trail, then cross the tunnel"] =

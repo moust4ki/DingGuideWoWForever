@@ -7,6 +7,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a28-feralas-and-tanaris", {
         "Tanaris : Gadgetzan d'abord, puis Féralas : le bastion de Pennelune.",
     ["The NPC is indoors."] =
         "Le PNJ est à l'intérieur.",
+    ["Feathermoon Stronghold"] =
+        "Bastion de Pennelune",
     ["The NPC is indoors, one floor up."] =
         "Le PNJ est à l'intérieur, un étage plus haut.",
     ["Position yourself in its center."] =
@@ -79,14 +81,22 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a28-feralas-and-tanaris", {
         "Tes cibles sont dans la grotte.",
     ["Let the conversation play out. Your targets are within the cavern."] =
         "Laisse la conversation se dérouler. Tes cibles sont dans la grotte.",
+    ["The object is indoors, one floor up."] =
+        "L'objet est à l'intérieur, un étage plus haut.",
+    ["You need them later for \"The Borrower\", \"Screecher Spirits\", \"The Super Egg-O-Matic\" and \"Rhapsody's Kalimdor Kocktail\": keep them in the bank to free bag slots."] =
+        "Tu en auras besoin plus tard pour « Le prêt », « Esprits de Hurleurs », « Le Super-Oeuf-O-Matic » et « Le Kocktail Kalimdor de Rhapsody » : garde-les à la banque pour libérer de la place dans tes sacs.",
     ["Getting it here speeds up Un'Goro Crater. The NPC is indoors."] =
         "L'obtenir ici accélère le cratère d'Un'Goro. Le PNJ est à l'intérieur.",
+    ["You need them later for \"Crystals of Power\": keep them in the bank to free bag slots."] =
+        "Tu en auras besoin plus tard pour « Cristaux de puissance » : garde-les à la banque pour libérer de la place dans tes sacs.",
     ["Step into the cavern within the trunk"] =
         "Entre dans la cavité du tronc",
     ["The spot is on the lower floor of the hollow tree."] =
         "L'endroit est au niveau inférieur de l'arbre creux.",
     ["Stay clear of the elite foes. Be ready for a fight right away."] =
         "Tiens-toi loin des ennemis élites. Prépare-toi à combattre tout de suite.",
+    ["Gadgetzan"] =
+        "Gadgetzan",
     ["The NPC waits on the lower level, indoors. A lengthy stretch of quests is coming up. This vendor sells no arrows or bullets."] =
         "Le PNJ attend au niveau inférieur, à l'intérieur. Une longue série de quêtes arrive. Ce marchand ne vend ni flèches ni balles.",
 })

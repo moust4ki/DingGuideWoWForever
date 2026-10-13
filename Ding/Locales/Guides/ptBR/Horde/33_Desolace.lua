@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("ptBR", "horde-33-desolace", {
         "Desolação (32-34)",
     ["Desolace is south of the Stonetalon Mountains: the Horde village is on the west coast. Finish the level on nearby monsters before moving on."] =
         "Desolação fica ao sul da Cordilheira das Torres de Pedra: a aldeia da Horda está na costa oeste. Termine o nível nos monstros próximos antes de seguir.",
+    ["Shadowprey Village"] =
+        "Aldeia Pescassombra",
     ["Finish the level on nearby monsters before moving on."] =
         "Termine o nível nos monstros próximos antes de seguir.",
 })

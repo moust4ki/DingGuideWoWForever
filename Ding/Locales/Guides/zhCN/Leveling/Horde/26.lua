@@ -35,8 +35,6 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h26-stranglethorn-vale", {
         "物品是一张棕色的羊皮纸。目标分布在好几个地点。",
     ["Look for a flat, white scroll lying open. The targets are spread over several spots."] =
         "寻找一张摊开平放的白色卷轴。目标分布在好几个地点。",
-    ["This one roams, so scan the surrounding area."] =
-        "它会四处游荡，在周围找找。",
     ["The NPC is upstairs, out on the balcony."] =
         "NPC在楼上的阳台上。",
     ["Take the road until the trail starts"] =
@@ -49,4 +47,6 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h26-stranglethorn-vale", {
         "沿小路走",
     ["Circle the mountain on the trail, then climb it"] =
         "沿小路绕山，然后爬上去",
+    ["Booty Bay"] =
+        "藏宝海湾",
 })

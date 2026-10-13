@@ -19,8 +19,6 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a03-night-elf-starter", {
         "Suba a grande rampa",
     ["The NPC stands high in the great tree. The NPC stands in an adjoining chamber."] =
         "O NPC fica no alto da grande árvore. O NPC fica em uma sala ao lado.",
-    ["This one roams, so scan the surrounding area."] =
-        "Este se desloca, então procure pelos arredores.",
     ["The targets are imps."] =
         "Os alvos são diabretes.",
     ["Targets are in the cavern and around its entrance too."] =
@@ -59,10 +57,12 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a03-night-elf-starter", {
         "Aprenda Herborismo com o instrutor",
     ["The NPC is indoors. Pick up 5 Earthroot while questing. A class quest further on requires this."] =
         "O NPC está lá dentro. Colete 5 Raízes-telúricas durante as missões. Uma missão de classe mais adiante precisa disso.",
-    ["Let the conversation play out. This one roams, so scan the surrounding area."] =
-        "Deixe a conversa terminar. Este se desloca, então procure pelos arredores.",
+    ["Let the conversation play out."] =
+        "Deixe a conversa terminar.",
     ["Look for brown clumps of roots."] =
         "Procure tufos marrons de raízes.",
+    ["The object is indoors."] =
+        "O objeto está lá dentro.",
     ["Kill black-furred tigers."] =
         "Mate tigres de pelo preto.",
     ["The targets are spiders with green bodies."] =
@@ -81,6 +81,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a03-night-elf-starter", {
         "Com as próximas entregas, isso te leva ao nível 9. Seus alvos estão dentro da caverna.",
     ["Die to the monsters here on purpose. At this spot or a bit to the east. Dying costs you nothing this early."] =
         "Deixe os monstros daqui te matarem de propósito. Neste ponto ou um pouco a leste. Neste início, morrer não custa nada.",
+    ["Dolanaar"] =
+        "Dolanaar",
     ["The NPC patrols the road; look along it."] =
         "O NPC patrulha a estrada; procure ao longo dela.",
     ["For this quest you guard an NPC on the move. If she is absent, wait for her to reappear."] =
@@ -97,8 +99,6 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a03-night-elf-starter", {
         "O local fica no andar de baixo da árvore oca. Não se esqueça de treinar Pick Pocket. Guarde; uma missão mais à frente pede isso.",
     ["The NPC is indoors, on the central storey."] =
         "O NPC está lá dentro, no andar do meio.",
-    ["This one roams, so scan the surrounding area. The NPC waits on the tower's highest floor."] =
-        "Este se desloca, então procure pelos arredores. O NPC espera no último andar da torre.",
     ["Fly to Moonglade"] =
         "Voe até a Clareira da Lua",
     ["Target a Webwood Lurker with it. The targets are spiders with green bodies."] =
@@ -117,8 +117,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a03-night-elf-starter", {
         "Dome um ajudante aqui",
     ["The target is a big gray spider. This one roams, so scan the surrounding area. The targets are spread over several spots."] =
         "O alvo é uma grande aranha cinza. Este se desloca, então procure pelos arredores. Os alvos estão espalhados por vários pontos.",
-    ["Target Sethir the Ancient and use Pickpocket. The target is a violet satyr. The NPC waits here, then strolls out onto the big branch close by."] =
-        "Mire em Sethir, o Antigo, e use Pick Pocket. O alvo é um sátiro violeta. O NPC espera aqui e depois caminha até o grande galho próximo.",
+    ["Target Sethir the Ancient and use Pickpocket. The target is a violet satyr. The target waits here, then strolls out onto the big branch close by."] =
+        "Mire em Sethir, o Antigo, e use Pick Pocket. O alvo é um sátiro violeta. O alvo espera aqui e depois caminha até o grande galho próximo.",
     ["Fight the elementals of the swamp."] =
         "Enfrente os elementais do pântano.",
     ["Use Herbalism's Track Herbs to spot them. Pick these up while questing around Teldrassil. Get your Herbalism skill to 15."] =
@@ -147,6 +147,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a03-night-elf-starter", {
         "Seus alvos ficam abaixo da superfície da água.",
     ["Your objective lies in a little cavern."] =
         "Seu objetivo fica em uma pequena caverna.",
+    ["Auberdine"] =
+        "Auberdine",
     ["The spot is on the lower floor of the hollow tree."] =
         "O local fica no andar de baixo da árvore oca.",
     ["Learn Thrown at the weapon master"] =
@@ -185,10 +187,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a03-night-elf-starter", {
         "Use o item nos Ratos Correfundo. Procure pequenos roedores cinza. Vá até a plataforma de Altaforja do Metrô Correfundo.",
     ["Take the Deeprun Tram over to Stormwind City. The NPC stands by the wall on the central platform."] =
         "Pegue o Metrô Correfundo até a Cidade de Ventobravo. O NPC fica junto à parede, na plataforma central.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors. Be ready for a fight right away."] =
-        "Este se desloca, então procure pelos arredores. O NPC está lá dentro. Esteja pronto para lutar logo de cara.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "Este se desloca, então procure pelos arredores. O NPC está lá dentro.",
+    ["The NPC is indoors. Be ready for a fight right away."] =
+        "O NPC está lá dentro. Esteja pronto para lutar logo de cara.",
     ["Learn Two-Handed Swords at the weapon master"] =
         "Aprenda Espadas de Duas Mãos com o mestre de armas",
     ["Learn Swords at the weapon master"] =

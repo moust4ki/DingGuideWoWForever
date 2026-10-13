@@ -149,7 +149,7 @@ function W:Create()
     f:SetClampedToScreen(true)
     f:EnableMouse(true)
     f:SetSize(WIDTH, HEIGHT)
-    f:SetPoint("CENTER", UIParent, "CENTER", 0, 40)
+    UI.Dialog(f, 0, 40)
     f.look = UI.Window(f)
     f.title = UI.Text(f, "semibold", 13, C.text)
     f.title:SetPoint("TOPLEFT", f, "TOPLEFT", PAD, -10)
@@ -330,6 +330,7 @@ function W:Open(mode, id, back)
     local f = self.frame
     if Ding.Config.frame and Ding.Config.frame:IsShown() then Ding.Config:Close() end
     if Ding.Finder.frame and Ding.Finder.frame:IsShown() then Ding.Finder:Close() end
+    if Ding.Setup:IsShown() then Ding.Setup:Close(true) end
     if Ding.Panel.focusing then Ding.Panel:StopFocus() end
     self.mode, self.exportId, self.compact, self.imported = mode, id, false, nil
     self.back = back

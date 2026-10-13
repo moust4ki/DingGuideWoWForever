@@ -51,6 +51,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a33-searing-gorge", {
         "Suba a trilha até Thorium Point",
     ["The NPC is indoors."] =
         "O NPC está lá dentro.",
+    ["The NPC is indoors. You need it later for \"A Taste of Flame\": keep it in the bank to free a bag slot."] =
+        "O NPC está lá dentro. Você vai precisar dele mais tarde para \"O gosto das chamas\": guarde-o no banco para liberar espaço nas bolsas.",
     ["The NPC is indoors, one floor up."] =
         "O NPC está lá dentro, um andar acima.",
 })

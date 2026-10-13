@@ -71,8 +71,13 @@ missing field is `nil`.
 
 **NPC**: `name`, `subName` (its subtitle, English), `minLevel`, `maxLevel`, `rank` (0 normal,
 1 elite, 2 rare elite, 3 boss, 4 rare), `friendlyToFaction` (`"A"`, `"H"` or `"AH"`),
-`npcFlags` (services: vendor 4, flight master 8, trainer 16, innkeeper 128, repair 16384...),
-`spawns`, `dungeon`.
+`npcFlags` (services: vendor 4, flight master 8, trainer 16, innkeeper 128, banker 256,
+auctioneer 4096, stable master 8192, repair 16384...), `spawns`, `dungeon`, `weaponSkills`.
+
+`weaponSkills` (DingDB's own, set by `tools/data/corrections/10_weapon_masters.lua`): the weapon
+skills a weapon master teaches, as the game's skill line ids (43 Swords, 44 Axes, 45 Bows,
+46 Guns, 54 Maces, 55 Two-Handed Swords, 136 Staves, 160 Two-Handed Maces, 172 Two-Handed
+Axes, 173 Daggers, 176 Thrown, 226 Crossbows, 229 Polearms, 473 Fist Weapons).
 
 **Object**: `name`, `spawns`, `dungeon`.
 
@@ -80,7 +85,12 @@ missing field is `nil`.
 on a map outside; `LibDingDB.Entrances(dungeon)` gives the way in, and `zones.dungeonNames` the
 dungeon's English name. Ding leads to the entrance of such a target.
 
-**Item**: `name`, `npcDrops` and `objectDrops` (who drops it), `vendors` (NPCs that sell it).
+**Item**: `name`, `npcDrops` and `objectDrops` (who drops it), `vendors` (NPCs that sell it),
+`class` and `subClass` (the game's item class and subclass: 0 consumable, 2 weapon, 4 armor,
+5 reagent, 6 projectile with 2 arrow and 3 bullet, 7 trade goods, 15 miscellaneous...; no
+value when Questie's data has none), `requiredLevel` (to use or wear it), `flags` (the game's
+item flags, as Questie's data has them: food and drinks have none, poisons, lures, bandages
+and explosives have one).
 
 The files themselves (`Ding/DB/*.lua`) are positional records for size; `Ding.DB.LAYOUT` gives
 each field's position. You may copy them into your own GPL project: keep `CREDITS.md`.

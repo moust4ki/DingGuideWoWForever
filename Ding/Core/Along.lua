@@ -113,9 +113,17 @@ function AW:Rebuild()
     if not E.guide or E.finished or not Ding.Data.available then return end
     local current = E:CurrentStep()
     local grind = current and current.level and Ding.Grind.spot
-    -- Persistent objectives (a step's `sticky`): listed wherever the player is.
+    -- Persistent objectives (a step's `sticky`): listed wherever the player is, except a
+    -- quest the next step still to do works on: it comes right after, and listed now, far
+    -- from its monsters, its rows read as the step's (in game, "The Cursed Crew" under the
+    -- step that makes it sticky, the one before its own). Among its monsters, it is an
+    -- ordinary along-the-way row.
     local sticky = {}
     for _, q in ipairs(E:StickyQuests()) do sticky[q] = true end
+    local nextStep = E:NextSteps(1)[1]
+    for _, key in ipairs({ "complete", "turnin" }) do
+        for _, q in ipairs(nextStep and nextStep[key] or {}) do sticky[q] = nil end
+    end
     for _, q in ipairs(orderedQuests(E)) do
         if not E:IsReady(q) then
             for _, o in ipairs(self:Objectives(q, hasPoints)) do

@@ -7,6 +7,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a38-ungoro-crater", {
         "Reise nach Gadgetzan",
     ["Tanaris: Gadgetzan first, then Un'Goro Crater."] =
         "Tanaris: zuerst Gadgetzan, dann der Krater von Un'Goro.",
+    ["You need it later for \"Return to Tymor\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Rückkehr zu Magier Tymor“: Lass es in der Bank, das spart einen Taschenplatz.",
     ["Wait for the talking to finish"] =
         "Warte, bis das Gespräch endet",
     ["Go into the cavern"] =
@@ -23,8 +25,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a38-ungoro-crater", {
         "Ziele gibt es in der Höhle und auch rund um ihren Eingang.",
     ["Climb the trail"] =
         "Steig den Weg hinauf",
-    ["The NPC is up on the summit."] =
-        "Der NPC ist oben auf dem Gipfel.",
+    ["The object is up on the summit."] =
+        "Das Objekt ist oben auf dem Gipfel.",
     ["The targets are flame elementals. An elite foe waits on the summit; steer clear."] =
         "Die Ziele sind Feuerelementare. Auf dem Gipfel wartet ein Elitegegner; halte dich fern.",
     ["For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears. Your objective lies in a little cavern."] =
@@ -45,6 +47,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a38-ungoro-crater", {
         "Du brauchst sie nicht mehr; verkauf sie oder wirf sie weg.",
     ["The NPC is indoors."] =
         "Der NPC ist drinnen.",
+    ["The object is indoors."] =
+        "Das Objekt ist drinnen.",
     ["The NPC patrols a long route; look along it."] =
         "Der NPC patrouilliert eine lange Route; such entlang dieser Route.",
     ["The NPC is indoors, one floor up."] =
@@ -55,8 +59,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a38-ungoro-crater", {
         "Geh in die Höhle im Baumstamm",
     ["The spot is on the lower floor of the hollow tree."] =
         "Die Stelle ist auf der unteren Ebene des hohlen Baums.",
-    ["This one roams, so scan the surrounding area. Climb to the highest floor of the building."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab. Steig ins oberste Stockwerk des Gebäudes.",
+    ["Climb to the highest floor of the building."] =
+        "Steig ins oberste Stockwerk des Gebäudes.",
     ["The NPC is indoors, on the central storey."] =
         "Der NPC ist drinnen, im mittleren Stockwerk.",
 })

@@ -7,6 +7,8 @@ Ding.RegisterGuideTranslation("koKR", "horde-44-feralas", {
         "페랄라스는 버섯구름 봉우리 서쪽에 있습니다: 지역 동쪽의 모자케 야영지가 거점입니다.",
     ["Finish the level on nearby monsters before moving on."] =
         "다음으로 넘어가기 전에 주변 몬스터로 레벨을 마저 올리세요.",
+    ["Camp Mojache"] =
+        "모자케 야영지",
     ["If the starting item dropped: use it from your bags."] =
         "시작 아이템을 얻었다면: 가방에서 사용하세요.",
 })

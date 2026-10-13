@@ -11,6 +11,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h29-the-hinterlands", {
         "Pegar isso aqui agiliza a Cratera Un'Goro. O NPC está lá dentro.",
     ["The NPC is indoors."] =
         "O NPC está lá dentro.",
+    ["The NPC is indoors. You need them later for \"The Stone Circle\" and \"Crystals of Power\": keep them in the bank to free bag slots."] =
+        "O NPC está lá dentro. Você vai precisar deles mais tarde para \"O círculo de pedra\" e \"Cristais de poder\": guarde-os no banco para liberar espaço nas bolsas.",
     ["Take the trail downhill"] =
         "Desça pela trilha",
     ["Buy plenty of arrows or bullets. Stock up first: nobody in the Hinterlands sells arrows or bullets for level 40."] =
@@ -43,6 +45,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h29-the-hinterlands", {
         "Os alvos são lobos furtivos.",
     ["Slay them, then apply the item to their remains."] =
         "Mate-os, depois use o item nos restos deles.",
+    ["The object is indoors."] =
+        "O objeto está lá dentro.",
     ["Steer clear of hostile Alliance NPCs. Warning: this turns on your PvP flag."] =
         "Fique longe dos NPCs hostis da Aliança. Atenção: isto ativa sua marcação de JxJ.",
     ["Head into Shadra'Alor"] =
@@ -55,4 +59,6 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h29-the-hinterlands", {
         "Saia de Shadra'Alor",
     ["Wait for the talking to finish"] =
         "Espere a conversa terminar",
+    ["The NPC is indoors. You need them later for \"Ripple Delivery\", \"Whiskey Slim's Lost Grog\" and \"Seeping Corruption\": keep them in the bank to free bag slots."] =
+        "O NPC está lá dentro. Você vai precisar deles mais tarde para \"Entrega de suco gami\", \"O grogue perdido do Aldo Isque\" e \"Corrupção líquida\": guarde-os no banco para liberar espaço nas bolsas.",
 })

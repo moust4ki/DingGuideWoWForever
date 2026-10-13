@@ -7,6 +7,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a22-dustwallow-marsh", {
         "Primero Ventormenta y luego el Marjal Revolcafango: Isla Theramore. Guárdalo, lo usa una misión próxima.",
     ["The NPC is indoors."] =
         "El PNJ está dentro.",
+    ["The NPC is indoors. You need it later for \"Sunken Treasure\": keep it in the bank to free a bag slot."] =
+        "El PNJ está dentro. Lo necesitarás más adelante para «El tesoro sumergido»: déjalo en el banco para liberar un hueco en las bolsas.",
     ["Head indoors"] =
         "Ve al interior",
     ["Stay on the trail"] =

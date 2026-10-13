@@ -5,4 +5,10 @@ Ding.RegisterGuideTranslation("esES", "orc-03-barrens", {
         "Los Baldíos (11-19)",
     ["Cross the bridge west of Razor Hill into the Barrens, then follow the road to the Crossroads: your base."] =
         "Cruza el puente al oeste de Cerrotajo para entrar en Los Baldíos y sigue el camino hasta El Cruce: tu base.",
+    ["The Crossroads"] =
+        "El Cruce",
+    ["Sun Rock Retreat"] =
+        "Refugio Roca del Sol",
+    ["Orgrimmar"] =
+        "Orgrimmar",
 })

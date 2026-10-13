@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("esES", "horde-25-hillsbrad", {
         "Laderas de Trabalomas (25-27)",
     ["Zeppelin from the tower outside Orgrimmar to Undercity, then the road south through Silverpine Forest to Tarren Mill: your base."] =
         "Zepelín de la torre junto a Orgrimmar a Entrañas y luego el camino al sur por el Bosque de Argénteos hasta Molino Tarren: tu base.",
+    ["Tarren Mill"] =
+        "Molino Tarren",
     ["If the starting item dropped: use it from your bags."] =
         "Si tienes el objeto que inicia la misión: úsalo desde tus bolsas.",
 })

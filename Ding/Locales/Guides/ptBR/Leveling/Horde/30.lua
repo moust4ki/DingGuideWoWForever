@@ -13,8 +13,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h30-feralas-and-ungoro-crater", 
         "Os alvos são hipogrifos. Mate-os, depois use o item nos restos deles.",
     ["Slay them, then apply the item to their remains."] =
         "Mate-os, depois use o item nos restos deles.",
-    ["Fight the treants. The NPC patrols a long route; look along it. Slay them, then apply the item to their remains."] =
-        "Enfrente as árvores animadas. O NPC patrulha uma rota longa; procure ao longo dela. Mate-os, depois use o item nos restos deles.",
+    ["Fight the treants. The target patrols a long route; look along it. Slay them, then apply the item to their remains."] =
+        "Enfrente as árvores animadas. O alvo patrulha uma rota longa; procure ao longo dela. Mate-os, depois use o item nos restos deles.",
     ["Aim the item at the Strider foes. The targets are towering green giants. The item strips their elite status."] =
         "Use o item nas moas. Os alvos são gigantes verdes enormes. O item remove o status de elite deles.",
     ["Hunt down the elementals formed of water."] =
@@ -65,8 +65,12 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h30-feralas-and-ungoro-crater", 
         "Seus alvos estão dentro da caverna.",
     ["Flight master at Marshal's Refuge"] =
         "Mestre de voo do Refúgio do Marshal",
+    ["The NPC is indoors. You need them later for \"Bungle in the Jungle\", \"The Bait for Lar'korwi\" and \"It's a Secret to Everybody\": keep them in the bank to free bag slots."] =
+        "O NPC está lá dentro. Você vai precisar deles mais tarde para \"Sururu na selva\", \"A isca para Lar'korwi\" e \"É segredo para todo mundo\": guarde-os no banco para liberar espaço nas bolsas.",
     ["This NPC is found down in the Cleft of Shadow."] =
         "Este NPC fica lá embaixo, no Antro das Sombras.",
     ["The NPC is upstairs, out on the balcony."] =
         "O NPC está no andar de cima, na sacada.",
+    ["Orgrimmar"] =
+        "Orgrimmar",
 })

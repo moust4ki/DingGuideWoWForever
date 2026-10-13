@@ -99,6 +99,8 @@ function A:Create()
     -- Label: the target's name, then "119 yd · 0:08".
     f.label = UI.Text(f, "semibold", 13, C.text, "OVERLAY")
     f.label:SetJustifyH("CENTER")
+    -- Never cut: past LABEL_MAX the label goes on to a second line ("Boar · farming loop: 2 of 10").
+    UI.Wrap(f.label, 13)
     f.label:SetPoint("TOP", f, "BOTTOM", 0, -8)
     UI.Shadow(f.label)
     f.line = CreateFrame("Frame", nil, f)
@@ -225,7 +227,8 @@ end
 -- New candidates from the engine (or the player died, released, came back to life).
 -- The arrow goes with the guide window: closing the window hides both (Yendi), showing it
 -- again (minimap button, binding, /ding, settings) brings both back, and "hide in dungeons"
--- hides both there (no position in a dungeon: the arrow would only show its target and "?").
+-- hides both there (no position in a dungeon: the arrow would only show its target and
+-- "distance unknown").
 local function visible()
     return Ding.db.arrow.shown and Ding.Panel:Visible()
 end
@@ -545,7 +548,7 @@ function A:Tick()
         f.arrow:Hide()
         f.shadow:Hide()
         local zone = Ding.Engine:ZoneLabel(point)
-        f.distance:SetText((otherContinent and L.ANOTHER_CONTINENT or "?") .. (zone and (" · " .. zone) or ""))
+        f.distance:SetText((otherContinent and L.ANOTHER_CONTINENT or L.DISTANCE_UNKNOWN) .. (zone and (" · " .. zone) or ""))
         f.eta:Hide()
         layoutLine(f)
         return
@@ -581,7 +584,7 @@ function A:Tick()
         if wasFaded then UI.FadeIn(f, 0.2) end
         -- Far away in another zone: its name next to the distance.
         local zone = Ding.Engine:ZoneLabel(point)
-        f.distance:SetText(L.YARDS:format(distance) .. (zone and (" · " .. zone) or ""))
+        f.distance:SetText(L.YARDS:format(Compat.Number(distance)) .. (zone and (" · " .. zone) or ""))
         local time = not behind and eta(distance)
         f.eta:SetText(behind and (" · " .. L.TURN_AROUND) or (time and (" · " .. time) or ""))
         f.eta:Show()

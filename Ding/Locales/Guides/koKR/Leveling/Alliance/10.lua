@@ -7,18 +7,16 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a10-wetlands", {
         "메네실 항구로 이동",
     ["Wetlands: Menethil Harbor, on the west coast."] =
         "저습지: 메네실 항구는 서쪽 해안에 있습니다.",
-    ["This one roams, so scan the surrounding area."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요.",
     ["The NPC is indoors."] =
         "NPC는 건물 안에 있습니다.",
     ["The NPC waits on the lower level, indoors."] =
         "NPC는 건물 안 아래층에서 기다립니다.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요. NPC는 건물 안에 있습니다.",
+    ["Deepwater Tavern"] =
+        "메네실 항구",
     ["The NPC is indoors, one floor up."] =
         "NPC는 건물 안 한 층 위에 있습니다.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors. Do it only if you can."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요. NPC는 건물 안에 있습니다. 가능할 때만 하세요.",
+    ["The NPC is indoors. Do it only if you can."] =
+        "NPC는 건물 안에 있습니다. 가능할 때만 하세요.",
     ["The target is a gray murloc. This one roams, so scan the surrounding area. The target appears at this spot."] =
         "대상은 회색 멀록입니다. 이 대상은 돌아다니므로 주변을 살펴보세요. 대상은 이 지점에 나타납니다.",
     ["Go into Whelgar's Excavation Site"] =

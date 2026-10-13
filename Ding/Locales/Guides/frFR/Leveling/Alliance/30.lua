@@ -15,8 +15,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a30-tanaris", {
         "Ces ennemis sont camouflés.",
     ["Head down the passage that opens on Lost Rigger Cove"] =
         "Descends le passage qui s'ouvre sur Lost Rigger Cove",
-    ["The NPC is indoors, one floor up."] =
-        "Le PNJ est à l'intérieur, un étage plus haut.",
+    ["The object is indoors, one floor up."] =
+        "L'objet est à l'intérieur, un étage plus haut.",
     ["Few kills yield this item."] =
         "Cet objet tombe rarement.",
     ["Others can be found on raised wood platforms close by."] =
@@ -31,6 +31,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a30-tanaris", {
         "Entre dans la grotte",
     ["Take the trail downhill"] =
         "Descends le chemin",
+    ["The NPC is indoors. You need it later for \"Deliver to MacKinley\": keep it in the bank to free a bag slot."] =
+        "Le PNJ est à l'intérieur. Tu en auras besoin plus tard pour « Livraison à MacKinley » : garde-le à la banque pour libérer une place dans tes sacs.",
     ["Your objective lies in a little cavern."] =
         "Ton objectif est dans une petite grotte.",
     ["Search the sand mounds."] =

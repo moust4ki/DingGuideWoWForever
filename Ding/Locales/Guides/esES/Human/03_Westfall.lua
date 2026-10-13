@@ -7,4 +7,6 @@ Ding.RegisterGuideTranslation("esES", "human-03-westfall", {
         "Ve al oeste por el camino de Villadorada y luego a la Colina del Centinela, en el centro de los Páramos.",
     ["If the starting item dropped: use it from your bags."] =
         "Si tienes el objeto que inicia la misión: úsalo desde tus bolsas.",
+    ["Sentinel Hill"] =
+        "Colina del Centinela",
 })

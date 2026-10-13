@@ -7,6 +7,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a28-feralas-and-tanaris", {
         "塔纳利斯：先到加基森，再到菲拉斯：羽月要塞。",
     ["The NPC is indoors."] =
         "NPC在室内。",
+    ["Feathermoon Stronghold"] =
+        "羽月要塞",
     ["The NPC is indoors, one floor up."] =
         "NPC在室内楼上一层。",
     ["Position yourself in its center."] =
@@ -79,14 +81,22 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a28-feralas-and-tanaris", {
         "目标在洞穴里。",
     ["Let the conversation play out. Your targets are within the cavern."] =
         "等对话结束。目标在洞穴里。",
+    ["The object is indoors, one floor up."] =
+        "该物件在室内楼上一层。",
+    ["You need them later for \"The Borrower\", \"Screecher Spirits\", \"The Super Egg-O-Matic\" and \"Rhapsody's Kalimdor Kocktail\": keep them in the bank to free bag slots."] =
+        "之后的任务“海龟照片”、“尖啸者的灵魂”、“超级测蛋器”和“拉普索迪的卡利姆多鸡尾酒”需要它们：先存进银行，腾出背包空间。",
     ["Getting it here speeds up Un'Goro Crater. The NPC is indoors."] =
         "在这里拿到它能加快安戈洛环形山的进度。NPC在室内。",
+    ["You need them later for \"Crystals of Power\": keep them in the bank to free bag slots."] =
+        "之后的任务“能量水晶”需要它们：先存进银行，腾出背包空间。",
     ["Step into the cavern within the trunk"] =
         "进入树干里的洞穴",
     ["The spot is on the lower floor of the hollow tree."] =
         "位置在空心树的下层。",
     ["Stay clear of the elite foes. Be ready for a fight right away."] =
         "避开精英敌人。准备好马上战斗。",
+    ["Gadgetzan"] =
+        "加基森",
     ["The NPC waits on the lower level, indoors. A lengthy stretch of quests is coming up. This vendor sells no arrows or bullets."] =
         "NPC在室内下层。接下来是一长段任务。这个商人不卖箭和子弹。",
 })

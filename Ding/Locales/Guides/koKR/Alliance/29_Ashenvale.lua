@@ -7,4 +7,6 @@ Ding.RegisterGuideTranslation("koKR", "alliance-29-ashenvale", {
         "잿빛 골짜기의 마지막 퀘스트를 위해 아스트라나르로 돌아가세요. 다음으로 넘어가기 전에 주변 몬스터로 레벨을 마저 올리세요.",
     ["Finish the level on nearby monsters before moving on."] =
         "다음으로 넘어가기 전에 주변 몬스터로 레벨을 마저 올리세요.",
+    ["Auberdine"] =
+        "아우버다인",
 })

@@ -21,8 +21,6 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h07-hillsbrad-foothills", {
         "Laisse la conversation se dérouler. Le PNJ est à l'intérieur.",
     ["Get rid of your Touch of Zanzil."] =
         "Débarrasse-toi du Toucher de Zanzil.",
-    ["This one roams, so scan the surrounding area."] =
-        "Celui-ci se déplace : fouille les environs.",
     ["Leave your pet with the stable master."] =
         "Laisse ton familier au maître des écuries.",
     ["You will tame a short-term pet shortly. Pick up Claw (Rank 3) for your pet."] =
@@ -43,8 +41,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h07-hillsbrad-foothills", {
         "Celui-ci se déplace : fouille les environs. Les cibles sont réparties sur plusieurs endroits.",
     ["Look for it bound to the orc's leg."] =
         "Cherche-le attaché à la jambe de l'orc.",
-    ["Look for it bound to the orc's leg. The NPC is indoors."] =
-        "Cherche-le attaché à la jambe de l'orc. Le PNJ est à l'intérieur.",
+    ["Look for it bound to the orc's leg. The object is indoors."] =
+        "Cherche-le attaché à la jambe de l'orc. L'objet est à l'intérieur.",
     ["The targets are spiders with green bodies."] =
         "Les cibles sont des araignées au corps vert.",
     ["Together with the next turn-ins, this brings you to level 23."] =
@@ -53,14 +51,16 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h07-hillsbrad-foothills", {
         "Les cibles sont réparties sur plusieurs endroits. À l'intérieur ou dehors, dans les champs.",
     ["Check each of the two floors indoors. It may be found outdoors too."] =
         "Vérifie les deux étages à l'intérieur. On peut aussi le trouver dehors.",
-    ["The NPC is a little wolf. This one roams, so scan the surrounding area. He goes berserk and attacks you once the quest is handed in."] =
-        "Le PNJ est un petit loup. Celui-ci se déplace : fouille les environs. Il devient fou furieux et t'attaque une fois la quête rendue.",
+    ["The NPC is a little wolf. He goes berserk and attacks you once the quest is handed in."] =
+        "Le PNJ est un petit loup. Il devient fou furieux et t'attaque une fois la quête rendue.",
     ["A woman holding a pitchfork. This one roams, so scan the surrounding area."] =
         "Une femme qui tient une fourche. Celui-ci se déplace : fouille les environs.",
     ["The target patrols the trail between the houses. The target's spawn point is 30.5, 40.6 in Hillsbrad Foothills."] =
         "La cible patrouille sur le chemin entre les maisons. La cible apparaît en 30.5, 40.6 dans les Contreforts de Hautebrande.",
     ["With the coming hand-ins, this brings you to level 24. Tougher foes are coming up next."] =
         "Avec les prochains rendus de quête, tu passes niveau 24. Des ennemis plus coriaces arrivent ensuite.",
+    ["The target is indoors."] =
+        "La cible est à l'intérieur.",
     ["This one roams, so scan the surrounding area. The targets are spread over several spots. Some may be in the smithy."] =
         "Celui-ci se déplace : fouille les environs. Les cibles sont réparties sur plusieurs endroits. Certains peuvent être dans la forge.",
     ["Go down into the tomb"] =

@@ -15,6 +15,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h06-ashenvale", {
         "O NPC está lá dentro.",
     ["Hunt naga."] =
         "Cace nagas.",
+    ["The NPC is indoors. You need it later for \"Egg Hunt\": keep it in the bank to free a bag slot."] =
+        "O NPC está lá dentro. Você vai precisar dele mais tarde para \"Ovo tipo extra\": guarde-o no banco para liberar espaço nas bolsas.",
     ["Learn Two-Handed Axes at the weapon master"] =
         "Aprenda Machados de Duas Mãos com o mestre de armas",
     ["The quest giver waits in the tent."] =
@@ -35,20 +37,20 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h06-ashenvale", {
         "Este NPC fica lá embaixo, no Antro das Sombras.",
     ["The quest giver waits in the tent. This NPC is found down in the Cleft of Shadow."] =
         "Quem dá a missão espera na tenda. Este NPC fica lá embaixo, no Antro das Sombras.",
-    ["Step onto the pink rune. The quest giver waits in the tent. This NPC is found down in the Cleft of Shadow."] =
-        "Pise na runa rosa. Quem dá a missão espera na tenda. Este NPC fica lá embaixo, no Antro das Sombras.",
+    ["Step onto the pink rune. The quest giver waits in the tent. The target is down in the Cleft of Shadow."] =
+        "Pise na runa rosa. Quem dá a missão espera na tenda. O alvo fica lá embaixo, no Antro das Sombras.",
     ["Let the conversation play out. The quest giver waits in the tent. This NPC is found down in the Cleft of Shadow."] =
         "Deixe a conversa terminar. Quem dá a missão espera na tenda. Este NPC fica lá embaixo, no Antro das Sombras.",
     ["Use it twice on Taskmaster Fizzule. A short way north of here. Target Taskmaster Fizzule and salute him."] =
         "Use-o duas vezes em Capataz Arruela. Um pouco ao norte daqui. Selecione o Capataz Arruela e faça a expressão /salute para ele.",
     ["Rob Foreman Silixiz with Pick Pocket."] =
         "Roube o Capataz Biela com Pick Pocket.",
-    ["Open with Ambush for a bigger hit. The NPC is indoors at street level."] =
-        "Abra com Emboscada para um golpe maior. O NPC está lá dentro, no nível da rua.",
-    ["Lean on Rupture for bonus damage. The NPC is indoors, on the central storey."] =
-        "Use Ruptura para causar dano extra. O NPC está lá dentro, no andar do meio.",
-    ["Eviscerate adds a burst of damage here. The objective is on the terrace above. The NPC is indoors, on the central storey."] =
-        "Eviscerar acrescenta um pico de dano aqui. O objetivo fica no terraço de cima. O NPC está lá dentro, no andar do meio.",
+    ["Open with Ambush for a bigger hit. The target is indoors at street level."] =
+        "Abra com Emboscada para um golpe maior. O alvo está lá dentro, no nível da rua.",
+    ["Lean on Rupture for bonus damage. The target is indoors, on the central storey."] =
+        "Use Ruptura para causar dano extra. O alvo está lá dentro, no andar do meio.",
+    ["Eviscerate adds a burst of damage here. The objective is on the terrace above. The target is indoors, on the central storey."] =
+        "Eviscerar acrescenta um pico de dano aqui. O objetivo fica no terraço de cima. O alvo está lá dentro, no andar do meio.",
     ["Open with Ambush for a bigger hit. Climb to the highest floor of the building."] =
         "Abra com Emboscada para um golpe maior. Suba até o último andar do prédio.",
     ["Use Pick Lock to open it. Climb to the highest floor of the building."] =

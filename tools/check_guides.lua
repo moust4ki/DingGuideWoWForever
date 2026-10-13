@@ -11,7 +11,7 @@
 -- class, its prerequisites were turned in earlier in the chain, it is in the log before
 -- being worked on or turned in, it is not taken twice, the log never exceeds 20, the
 -- items of `use` exist, and no character gets the same trip (`go` alone) twice in a row; a
--- `go` without a text is a warning. Translations: every guide text (title, text, note) is translated
+-- `go` without a text is a warning. Translations: every guide text (title, text, note, sethearth) is translated
 -- in each language (Ding's: the shipped ones; a pack's: those it has translations for), and
 -- no translation is left without its English text.
 -- Exit code: 0 when there is no error, 1 otherwise, 2 on bad usage.
@@ -34,6 +34,8 @@ local STEP_KEYS = {
     kill = true, collect = true, spots = true, talk = true, gossip = true, useitem = true, buy = true,
     object = true, equip = true, destroy = true, bank = true, unbank = true, keep = true, abandon = true,
     when = true, noauto = true, revive = true, patrol = true, xp = true,
+    -- Why the guide plans the step (Ding/Core/Why.lua).
+    why = true,
 }
 local WHEN_KEYS = {
     done = true, notdone = true, log = true, notlog = true, ready = true, item = true, noitem = true,
@@ -42,7 +44,22 @@ local WHEN_KEYS = {
 local GUIDE_KEYS = {
     id = true, pack = true, title = true, faction = true, races = true, classes = true,
     minLevel = true, maxLevel = true, next = true, steps = true,
+    -- Quests the section leaves out, and why (Ding/Core/Why.lua).
+    leftOut = true,
 }
+-- `why` of a step and `leftOut` of a guide (docs/guide-packs.md, Ding/Core/Why.lua): the kinds
+-- and the keys of each value ("id": a quest, "count", "number", "flag", "levels", "action").
+local WHY_KINDS = { detour = true, carry = true, level = true }
+local WHY_KEYS = {
+    kind = "kind", text = "text", short = "flag", quest = "id", action = "action", chain = "count",
+    quests = "count", xp = "number", total = "number", seconds = "number", back = "flag", continent = "flag",
+    once = "flag", levels = "levels",
+}
+local LEFT_KINDS = {
+    detour = true, long = true, away = true, far = true, log = true, prereq = true, version = true,
+    exclusive = true, followup = true, unsure = true,
+}
+local LEFT_KEYS = { kind = "kind", text = "text", quest = "id", xp = "number", seconds = "number", turnin = "flag" }
 local PACK_KEYS = { id = true, title = true, author = true, category = true }
 -- Ding.GUIDE_CATEGORIES (Core/Registry.lua).
 local CATEGORIES = { leveling = true, items = true, reputations = true, professions = true, class = true }
@@ -160,6 +177,44 @@ end
 local function point(p)
     return type(p) == "table" and #p == 3 and type(p[1]) == "number" and type(p[2]) == "number"
         and type(p[3]) == "number" and p[2] >= 0 and p[2] <= 100 and p[3] >= 0 and p[3] <= 100
+end
+
+-- A value of `why` or of a `leftOut` entry, against its keys; kinds: the known kinds.
+local function checkReason(v, keys, kinds, at, what)
+    if type(v) == "string" then
+        if v == "" then report("error", at, what .. ": an empty text") end
+        return
+    end
+    if type(v) ~= "table" then return report("error", at, what .. " expects a text or { kind = ..., ... }") end
+    for key, x in pairs(v) do
+        local kind = keys[key]
+        local bad
+        if not kind then
+            report("warning", at, what .. ": unknown key " .. tostring(key))
+        elseif kind == "kind" then
+            if not kinds[x] then report("error", at, what .. ": unknown kind " .. tostring(x)) end
+        elseif kind == "text" then
+            bad = type(x) ~= "string" or x == ""
+        elseif kind == "flag" then
+            bad = x ~= true
+        elseif kind == "id" then
+            if type(x) ~= "number" then
+                bad = true
+            elseif not db.Quest[x] then
+                report("error", at, ("%s: quest %d is not in QuestieDB"):format(what, x))
+            end
+        elseif kind == "action" then
+            bad = x ~= "turnin" and x ~= "accept"
+        elseif kind == "count" then
+            bad = type(x) ~= "number" or x < 0 or x ~= math.floor(x)
+        elseif kind == "number" then
+            bad = type(x) ~= "number" or x <= 0
+        elseif kind == "levels" then
+            bad = type(x) ~= "table" or type(x[1]) ~= "number" or (x[2] ~= nil and type(x[2]) ~= "number")
+        end
+        if bad then report("error", at, what .. "." .. key .. ": wrong value") end
+    end
+    if v.kind == nil and v.text == nil then report("error", at, what .. " needs a kind or a text") end
 end
 
 -- The phase 9 keys of a step: shapes, and ids that QuestieDB knows (a warning otherwise).
@@ -362,6 +417,14 @@ function Ding.RegisterGuide(def)
             end
             if step.dungeon and step.elite then report("warning", at, "dungeon and elite on the same step") end
             checkGoals(step, at)
+            if step.why ~= nil then
+                checkReason(step.why, WHY_KEYS, WHY_KINDS, at, "why")
+                local why = step.why
+                if type(why) == "table" and (why.kind == "detour" or why.kind == "carry") and not why.text
+                    and not (why.quest and why.xp) then
+                    report("error", at, "why: a " .. why.kind .. " names its quest and its XP (quest, xp)")
+                end
+            end
             -- Off, an option takes its whole step away: a shortcut never carries the route.
             for _, key in ipairs({ "sethearth", "hearth", "deathskip" }) do
                 if step[key] then
@@ -392,6 +455,26 @@ function Ding.RegisterGuide(def)
     for _, q in ipairs(mixed) do
         report("warning", string.format("%s, step %d", def.id, plain[q]),
             questName(q) .. " has dungeon or elite steps: tag this one too")
+    end
+    -- Quests the section leaves out: not quests its own steps take.
+    if def.leftOut ~= nil then
+        if type(def.leftOut) ~= "table" then
+            report("error", where, "leftOut expects { [quest id] = reason }")
+        else
+            for q, entry in pairs(def.leftOut) do
+                local at = where .. ", leftOut"
+                if type(q) ~= "number" then
+                    report("error", at, "leftOut keys are quest ids")
+                else
+                    at = at .. " " .. q
+                    if not db.Quest[q] then report("warning", at, ("quest %d is not in QuestieDB"):format(q)) end
+                    if tagged[q] or plain[q] then
+                        report("warning", at, questName(q) .. " is left out, yet a step of the guide does it")
+                    end
+                    checkReason(entry, LEFT_KEYS, LEFT_KINDS, at, "leftOut")
+                end
+            end
+        end
     end
     if type(def.next) == "table" then
         for faction, id in pairs(def.next) do
@@ -965,6 +1048,14 @@ local function guideTexts(g)
     for _, step in ipairs(g.steps) do
         if type(step.text) == "string" then texts[step.text] = true end
         if type(step.note) == "string" then texts[step.note] = true end
+        if type(step.sethearth) == "string" then texts[step.sethearth] = true end
+        local why = step.why
+        if type(why) == "table" then why = why.text end
+        if type(why) == "string" then texts[why] = true end
+    end
+    for _, entry in pairs(type(g.leftOut) == "table" and g.leftOut or {}) do
+        local text = type(entry) == "table" and entry.text or entry
+        if type(text) == "string" then texts[text] = true end
     end
     return texts
 end

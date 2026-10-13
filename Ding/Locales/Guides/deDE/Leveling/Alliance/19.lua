@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a19-stranglethorn-vale", {
         "Schlingendorntal: Beutebucht, an der Südspitze.",
     ["The NPC is indoors at street level."] =
         "Der NPC ist drinnen, auf Straßenhöhe.",
+    ["Booty Bay"] =
+        "Beutebucht",
     ["Climb to the highest floor of the building."] =
         "Steig ins oberste Stockwerk des Gebäudes.",
     ["The NPC is upstairs, out on the balcony."] =
@@ -57,4 +59,14 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a19-stranglethorn-vale", {
         "Die Ziele sind Trolle.",
     ["With the coming hand-ins, this gets you to level 38."] =
         "Mit den nächsten Abgaben bringt dich das auf Stufe 38.",
+    ["You need them later for \"Magical Analysis\" and \"Caught!\": keep them in the bank to free bag slots."] =
+        "Du brauchst sie später für „Magische Analyse“ und „Eingesperrt!“: Lass sie in der Bank, das spart Taschenplätze.",
+    ["You need it later for \"Chapter I\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Kapitel I“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need it later for \"Chapter II\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Kapitel II“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need it later for \"Chapter III\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Kapitel III“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need it later for \"Chapter IV\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Kapitel IV“: Lass es in der Bank, das spart einen Taschenplatz.",
 })

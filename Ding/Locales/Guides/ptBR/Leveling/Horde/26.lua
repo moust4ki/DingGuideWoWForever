@@ -35,8 +35,6 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h26-stranglethorn-vale", {
         "O item é uma folha de pergaminho amarronzada. Os alvos estão espalhados por vários pontos.",
     ["Look for a flat, white scroll lying open. The targets are spread over several spots."] =
         "Procure um pergaminho branco, aberto e estendido. Os alvos estão espalhados por vários pontos.",
-    ["This one roams, so scan the surrounding area."] =
-        "Este se desloca, então procure pelos arredores.",
     ["The NPC is upstairs, out on the balcony."] =
         "O NPC está no andar de cima, na sacada.",
     ["Take the road until the trail starts"] =
@@ -49,4 +47,6 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h26-stranglethorn-vale", {
         "Siga a trilha",
     ["Circle the mountain on the trail, then climb it"] =
         "Contorne a montanha pela trilha, depois suba-a",
+    ["Booty Bay"] =
+        "Angra do Butim",
 })

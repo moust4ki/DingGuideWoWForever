@@ -5,4 +5,6 @@ Ding.RegisterGuideTranslation("zhTW", "horde-40-badlands", {
         "荒蕪之地 (38)",
     ["Fly from Hammerfall to Kargath, in the west of the Badlands."] =
         "從落錘鎮飛往荒蕪之地西部的卡加斯。",
+    ["Kargath"] =
+        "卡加斯",
 })

@@ -7,10 +7,10 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a12-wetlands", {
         "메네실 항구로 이동",
     ["Wetlands: Menethil Harbor, on the west coast."] =
         "저습지: 메네실 항구는 서쪽 해안에 있습니다.",
-    ["This one roams, so scan the surrounding area."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요. NPC는 건물 안에 있습니다.",
+    ["The NPC is indoors."] =
+        "NPC는 건물 안에 있습니다.",
+    ["Deepwater Tavern"] =
+        "메네실 항구",
     ["The NPC is indoors, one floor up."] =
         "NPC는 건물 안 한 층 위에 있습니다.",
     ["Your targets sit below the water's surface. Targets are within the wrecked vessel underwater."] =
@@ -37,8 +37,6 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a12-wetlands", {
         "Whelgar's Excavation Site를 나가세요",
     ["The targets are orcs."] =
         "대상은 오크입니다.",
-    ["The NPC is indoors."] =
-        "NPC는 건물 안에 있습니다.",
     ["The target is up on the boat's top deck. Climb the incline at the rear."] =
         "대상은 배의 맨 위 갑판에 있습니다. 뒤쪽 비탈을 올라가세요.",
     ["Go to the lowest deck of the ship. Your targets sit below the water's surface. Swim in via the gap at the base."] =
@@ -51,8 +49,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a12-wetlands", {
         "이 적들은 은신해 있습니다. 대개 물속이나 물가에 있습니다.",
     ["Take the door on the bridge, then descend the steps"] =
         "다리 위의 문으로 들어간 다음 계단을 내려가세요",
-    ["Be ready for a fight right away. The NPC is on the lower level within the bridge."] =
-        "바로 전투가 시작되니 대비하세요. NPC는 다리 안쪽 아래층에 있습니다.",
+    ["Be ready for a fight right away. The object is on the lower level within the bridge."] =
+        "바로 전투가 시작되니 대비하세요. 그 물체는 다리 안쪽 아래층에 있습니다.",
     ["Leap from the span and splash down below"] =
         "다리에서 뛰어내려 아래 물속으로 떨어지세요",
     ["Look for a pale, rolled scroll. A dwarf corpse grips it. Your targets sit below the water's surface."] =

@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a23-desolace", {
         "淒涼之地：尼耶爾前哨站，位於東北角。",
     ["The NPC is indoors."] =
         "NPC在室內。",
+    ["Nijel's Point"] =
+        "尼耶爾前哨站",
     ["Stay away from Ghost Walker Post."] =
         "遠離鬼旅崗哨。",
     ["Hunt the felguards. This is the sole spot; wait for them to reappear."] =

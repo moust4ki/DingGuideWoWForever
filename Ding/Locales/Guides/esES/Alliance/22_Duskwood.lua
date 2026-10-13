@@ -5,4 +5,6 @@ Ding.RegisterGuideTranslation("esES", "alliance-22-duskwood", {
         "Bosque del Ocaso (19-20)",
     ["Duskwood is south of Elwynn: Darkshire, in the east of the forest, is your base."] =
         "El Bosque del Ocaso está al sur de Elwynn: Villa Oscura, al este del bosque, es tu base.",
+    ["Darkshire"] =
+        "Villa Oscura",
 })

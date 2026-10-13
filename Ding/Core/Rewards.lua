@@ -78,6 +78,34 @@ function R:Gain(link, equipLoc)
 end
 R.SLOTS = SLOTS
 
+-- The same comparison in parts, for words (the guide window's upgrade row and its card):
+-- { gain, before, after, slot, replaced = link worn there or nil, stats = { { stat, diff,
+-- weighted }, ... } } with the stats that count for the class, the most weighted first; `stat`
+-- is the client's own stat name key ("ITEM_MOD_AGILITY_SHORT"...). Nil when not worn.
+function R:Compare(link, equipLoc)
+    if not SLOTS[equipLoc] then return nil end
+    local before, slot = equippedScore(self, equipLoc)
+    local after = self:Score(link, slot)
+    local replaced = Compat.EquippedLink(slot)
+    local weights = WEIGHTS[Compat.PlayerClass()] or WEIGHTS.WARRIOR
+    local new, old = Compat.ItemStats(link), replaced and Compat.ItemStats(replaced) or {}
+    local stats = {}
+    local keys = {}
+    for key, stat in pairs(STATS) do keys[#keys + 1] = { key = key, stat = stat, weight = weights[key] } end
+    keys[#keys + 1] = { key = "DPS", stat = DPS, weight = slot == RANGED_SLOT and weights.RANGED or weights.DPS }
+    for _, k in ipairs(keys) do
+        local diff = (new[k.stat] or 0) - (old[k.stat] or 0)
+        if diff ~= 0 and k.weight > 0 then
+            stats[#stats + 1] = { stat = k.stat, diff = diff, weighted = diff * k.weight }
+        end
+    end
+    table.sort(stats, function(a, b)
+        if a.weighted ~= b.weighted then return a.weighted > b.weighted end
+        return a.stat < b.stat
+    end)
+    return { gain = after - before, before = before, after = after, slot = slot, replaced = replaced, stats = stats }
+end
+
 -- The reward to take: { index, link, reason = "upgrade" | "price", gain } or nil; also nil
 -- (with `missing` true) while the client has not loaded every item.
 function R:Best()

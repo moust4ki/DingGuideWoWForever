@@ -17,7 +17,7 @@ Ding.RegisterGuide({
         { turnin = 2784, accept = 2621 }, -- level 45
         { turnin = 2621, accept = 2622, -- level 45
           note = "The NPC is indoors, one floor up." },
-        { accept = 1429, -- level 45
+        { accept = 1429, why = { kind = "carry", quest = 1429, seconds = 62880, xp = 3800 }, -- level 45
           note = "The NPC is indoors, one floor up." },
         { turnin = 2622, -- level 45
           note = "The NPC is indoors." },
@@ -31,7 +31,7 @@ Ding.RegisterGuide({
         { complete = 1426 }, -- level 45
         { turnin = 1426, accept = 1427 }, -- level 45
         { turnin = 1427 }, -- level 45
-        { level = 46, patrol = { { 1435, 85.16, 82.24 }, { 1435, 86.35, 79.46 }, { 1435, 89.17, 81.25 }, { 1435, 87.76, 84.75 }, { 1435, 86.26, 88.05 }, { 1435, 83.14, 87.25 }, { 1435, 81.46, 90.45 }, { 1435, 84.56, 90.83 }, { 1435, 82.94, 94.66 }, { 1435, 79.45, 93.34 } } }, -- level 45
+        { level = 46, patrol = { { 1435, 85.16, 82.24 }, { 1435, 86.35, 79.46 }, { 1435, 89.17, 81.25 }, { 1435, 87.76, 84.75 }, { 1435, 86.26, 88.05 }, { 1435, 83.14, 87.25 }, { 1435, 81.46, 90.45 }, { 1435, 84.56, 90.83 }, { 1435, 82.94, 94.66 }, { 1435, 79.45, 93.34 } }, why = { kind = "level", levels = { 44, 51 } } }, -- level 45
         { accept = 1428 }, -- level 46
         { complete = 1428, -- level 46
           note = "Your targets are within the cavern. Stay out of Swamp Talker's way. Hunt down the gray murloc; it is level 50." },
@@ -43,7 +43,8 @@ Ding.RegisterGuide({
         { accept = 1119, when = { done = 621 }, -- level 46
           note = "The NPC is indoors at street level." },
         { talk = 2625, collect = { { 9628, 1 }, { 5862, 1 }, { 10699, 1 }, { 8564, 1 } }, spots = { { 1434, 26.6, 76.53 } } }, -- level 46
-        { talk = 2625, bank = 6193 }, -- level 46
+        { talk = 2625, bank = 6193, -- level 46
+          note = "You need it later for \"The Atal'ai Exile\": keep it in the bank to free a bag slot." },
         { train = true, talk = 6018, races = { "Scourge", "Troll" }, classes = { "PRIEST" }, -- level 46
           note = "The NPC is indoors." },
         { train = true, talk = 3344, races = { "Orc", "Tauren", "Troll" }, classes = { "SHAMAN" }, -- level 46
@@ -58,8 +59,8 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { train = true, talk = 3352, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, -- level 46
           note = "The NPC stands on the highest level of this structure." },
-        { turnin = 3122 }, -- level 46
-        { accept = { 3123, 3380 }, -- level 46
+        { turnin = 3122, why = { chain = 5, kind = "detour", quest = 3122, quests = 8, seconds = 240, total = 31000, xp = 23000 } }, -- level 46
+        { accept = { 3123, 3380 }, why = { kind = "carry", once = true, quest = 3380, seconds = 23460, xp = 3700 }, -- level 46
           note = "Wait for the talking to finish" },
     },
 })

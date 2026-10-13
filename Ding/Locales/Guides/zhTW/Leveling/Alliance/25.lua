@@ -23,6 +23,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a25-stranglethorn-vale", {
         "NPC在室內的中間樓層。",
     ["The NPC is indoors at street level. The NPC is indoors."] =
         "NPC在室內，位於地面層。NPC在室內。",
+    ["Booty Bay"] =
+        "藏寶海灣",
     ["The NPC is indoors at street level."] =
         "NPC在室內，位於地面層。",
     ["Let the conversation play out. The NPC is indoors at street level."] =
@@ -31,8 +33,6 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a25-stranglethorn-vale", {
         "走通道離開藏寶海灣",
     ["Take the tunnel into Booty Bay"] =
         "走隧道進入藏寶海灣",
-    ["This one roams, so scan the surrounding area."] =
-        "這個會四處走動，留意周圍一帶。",
     ["Take the trail toward the Ruins of Aboraz"] =
         "走小路前往Ruins of Aboraz",
     ["Gradually move toward the northeast."] =
@@ -47,6 +47,14 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a25-stranglethorn-vale", {
         "做好準備：這些敵人是38級精英。海鱷也在相同的地點重生。",
     ["The object is a table made of stone. Your targets sit below the water's surface. Drag him up until he breaks the surface."] =
         "這個物件是一張石桌。目標在水面下。把他往上拉，直到他浮出水面。",
+    ["You need it later for \"Chapter I\": keep it in the bank to free a bag slot."] =
+        "之後的任務「荊棘谷的青山 - 第壹章」需要它：先存進銀行，空出背包空間。",
+    ["You need it later for \"Chapter II\": keep it in the bank to free a bag slot."] =
+        "之後的任務「荊棘谷的青山 - 第二章」需要它：先存進銀行，空出背包空間。",
+    ["You need it later for \"Chapter III\": keep it in the bank to free a bag slot."] =
+        "之後的任務「荊棘谷的青山 - 第三章」需要它：先存進銀行，空出背包空間。",
+    ["You need it later for \"Chapter IV\": keep it in the bank to free a bag slot."] =
+        "之後的任務「荊棘谷的青山 - 第四章」需要它：先存進銀行，空出背包空間。",
     ["The NPC stands on the top tier of the pier."] =
         "NPC站在碼頭的最上層。",
     ["Follow the shoreline"] =

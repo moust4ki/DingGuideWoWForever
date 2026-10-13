@@ -9,16 +9,14 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a16-dustwallow-marsh-and-thousan
         "Marécage d'Âprefange : l'île de Theramore, au large de la côte est.",
     ["The NPC is indoors."] =
         "Le PNJ est à l'intérieur.",
+    ["Theramore Isle"] =
+        "Île de Theramore",
     ["The NPC is indoors, one floor up."] =
         "Le PNJ est à l'intérieur, un étage plus haut.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors, one floor up."] =
-        "Celui-ci se déplace : fouille les environs. Le PNJ est à l'intérieur, un étage plus haut.",
     ["The NPC is indoors. This quest is buggy and may not show up. If it is not around, move on without it."] =
         "Le PNJ est à l'intérieur. Cette quête est buguée et peut ne pas apparaître. S'il n'est pas là, continue sans.",
-    ["This one roams, so scan the surrounding area."] =
-        "Celui-ci se déplace : fouille les environs.",
-    ["This one roams, so scan the surrounding area. Expect several foes at once. Make Private Hendel your main target."] =
-        "Celui-ci se déplace : fouille les environs. Attends-toi à plusieurs ennemis à la fois. Concentre-toi sur le soldat Hendel.",
+    ["Expect several foes at once. Make Private Hendel your main target."] =
+        "Attends-toi à plusieurs ennemis à la fois. Concentre-toi sur le soldat Hendel.",
     ["Wait for the talking to finish"] =
         "Attends la fin de la discussion",
     ["Steer clear of Brackenwall Village. Watch out: the foes here are above your level. Keep to the road the whole way."] =

@@ -9,10 +9,14 @@ Ding.RegisterGuideTranslation("esES", "leveling-a17-stranglethorn-vale", {
         "Vega de Tuercespina: Bahía del Botín, en el extremo sur. Allí llega el barco de Trinquete.",
     ["The NPC is indoors at street level."] =
         "El PNJ está dentro, a pie de calle.",
+    ["Booty Bay"] =
+        "Bahía del Botín",
     ["Climb to the highest floor of the building."] =
         "Sube al piso más alto del edificio.",
     ["The NPC is upstairs, out on the balcony."] =
         "El PNJ está arriba, fuera, en el balcón.",
+    ["You need it later for \"Parts for Kravel\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Las piezas de Kravel»: déjalo en el banco para liberar un hueco en las bolsas.",
     ["The NPC stands on the top tier of the pier. The NPC is indoors."] =
         "El PNJ está en el nivel superior del muelle. El PNJ está dentro.",
     ["Fly to Booty Bay"] =
@@ -23,16 +27,16 @@ Ding.RegisterGuideTranslation("esES", "leveling-a17-stranglethorn-vale", {
         "El PNJ espera en el piso más alto de la torre.",
     ["If he is absent, move on without him. You may come back for it another time."] =
         "Si no está, sigue sin él. Puedes volver a por ello en otro momento.",
-    ["The NPC is indoors, one floor up."] =
-        "El PNJ está dentro, un piso más arriba.",
+    ["The object is indoors, one floor up."] =
+        "El objeto está dentro, un piso más arriba.",
     ["These foes heal both their allies and themselves."] =
         "Estos enemigos se curan a sí mismos y a sus aliados.",
     ["When the targets run out, skip ahead. No rush; you may complete this afterwards."] =
         "Cuando se acaben los objetivos, sigue adelante. Sin prisa; puedes completarlo más tarde.",
-    ["The objective sits up on the raised deck. The NPC is indoors."] =
-        "El objetivo está arriba, en la cubierta elevada. El PNJ está dentro.",
-    ["The NPC is indoors."] =
-        "El PNJ está dentro.",
+    ["The objective sits up on the raised deck. The target is indoors."] =
+        "El objetivo está arriba, en la cubierta elevada. El objetivo está dentro.",
+    ["The object is indoors."] =
+        "El objeto está dentro.",
     ["Search the riverbanks."] =
         "Busca en las orillas del río.",
     ["Die on purpose at this spot"] =
@@ -41,8 +45,18 @@ Ding.RegisterGuideTranslation("esES", "leveling-a17-stranglethorn-vale", {
         "Deja que los monstruos de aquí te maten a propósito. A estos niveles morir no te cuesta nada. Es el camino más rápido para llegar.",
     ["Get yourself killed, then resurrect with the spirit healer"] =
         "Deja que te maten y resucita con el Ángel de la Resurrección",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "Este deambula, así que revisa los alrededores. El PNJ está dentro.",
+    ["You need them later for \"Goblin Sponsorship\" and \"The Hidden Key\": keep them in the bank to free bag slots."] =
+        "Los necesitarás más adelante para «Apoyo al goblin» y «La llave oculta»: déjalos en el banco para liberar huecos en las bolsas.",
+    ["You need it later for \"Chapter I\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Capítulo I»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need it later for \"Chapter II\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Capítulo II»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need it later for \"Chapter III\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Capítulo III»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need it later for \"Chapter IV\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Capítulo IV»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["The NPC is indoors."] =
+        "El PNJ está dentro.",
     ["Go into the mine"] =
         "Entra en la mina",
     ["The objective is underground, in the mine shaft."] =
@@ -53,6 +67,10 @@ Ding.RegisterGuideTranslation("esES", "leveling-a17-stranglethorn-vale", {
         "Ve al interior",
     ["The NPC waits on the lower level, indoors."] =
         "El PNJ espera en el nivel inferior, dentro.",
+    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
+        "Este deambula, así que revisa los alrededores. El PNJ está dentro.",
+    ["The NPC is indoors, one floor up."] =
+        "El PNJ está dentro, un piso más arriba.",
     ["Head into Stormwind Keep"] =
         "Entra en el Castillo de Ventormenta",
 })

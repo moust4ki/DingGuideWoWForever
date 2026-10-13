@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a19-stranglethorn-vale", {
         "Vega de Tuercespina: Bahía del Botín, en el extremo sur.",
     ["The NPC is indoors at street level."] =
         "El PNJ está dentro, a pie de calle.",
+    ["Booty Bay"] =
+        "Bahía del Botín",
     ["Climb to the highest floor of the building."] =
         "Sube al piso más alto del edificio.",
     ["The NPC is upstairs, out on the balcony."] =
@@ -57,4 +59,14 @@ Ding.RegisterGuideTranslation("esES", "leveling-a19-stranglethorn-vale", {
         "Los objetivos son trols.",
     ["With the coming hand-ins, this gets you to level 38."] =
         "Con las próximas entregas, esto te lleva a nivel 38.",
+    ["You need them later for \"Magical Analysis\" and \"Caught!\": keep them in the bank to free bag slots."] =
+        "Los necesitarás más adelante para «Análisis mágico» y «Atrapado»: déjalos en el banco para liberar huecos en las bolsas.",
+    ["You need it later for \"Chapter I\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Capítulo I»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need it later for \"Chapter II\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Capítulo II»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need it later for \"Chapter III\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Capítulo III»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need it later for \"Chapter IV\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Capítulo IV»: déjalo en el banco para liberar un hueco en las bolsas.",
 })

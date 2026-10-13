@@ -11,12 +11,14 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a27-tanaris", {
         "NPC는 건물 안에 있습니다.",
     ["Wait for the talking to finish"] =
         "대화가 끝날 때까지 기다리세요",
-    ["Hold on until Rizzle has fled. The NPC is indoors."] =
-        "리즐이 달아날 때까지 기다리세요. NPC는 건물 안에 있습니다.",
+    ["Hold on until Rizzle has fled. The object is indoors."] =
+        "리즐이 달아날 때까지 기다리세요. 그 물체는 건물 안에 있습니다.",
     ["Targets here are human."] =
         "여기의 대상은 인간입니다.",
     ["Targets here are human. Dungeon runs are a fine choice here too, as you like. Each set of 5 handed in at Gadgetzan gives 380 xp."] =
         "여기의 대상은 인간입니다. 원한다면 여기서도 던전을 도는 것이 좋은 선택입니다. 가젯잔에서 5개씩 반납할 때마다 경험치 380을 얻습니다.",
     ["Hunt the red-feathered birds. Hyenas also use these spawn spots."] =
         "붉은 깃털의 새를 사냥하세요. 하이에나도 이 생성 위치에 나타납니다.",
+    ["The NPC is indoors. You need them later for \"Report Back to Fizzlebub\" and \"Rhapsody's Kalimdor Kocktail\": keep them in the bank to free bag slots."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"피즐버브에게 돌아가기\", \"랩소디의 칼림도어 칵테일\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
 })

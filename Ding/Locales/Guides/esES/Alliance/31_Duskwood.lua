@@ -5,4 +5,6 @@ Ding.RegisterGuideTranslation("esES", "alliance-31-duskwood", {
         "Bosque del Ocaso (31-32)",
     ["Back to Duskwood for the end of its quests: Darkshire is still your base."] =
         "Vuelve al Bosque del Ocaso para acabar sus misiones: Villa Oscura sigue siendo tu base.",
+    ["Darkshire"] =
+        "Villa Oscura",
 })

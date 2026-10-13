@@ -179,6 +179,58 @@ function D:QuestPrereqs(questID)
     return get("Quest", "preQuestSingle", questID), get("Quest", "preQuestGroup", questID)
 end
 
+-- Chains of quests that share one name ("The Legend of Stalvan"): a quest's part and the
+-- chain's length, from the preQuestSingle links between quests of the same English name, so
+-- the window can tell "Turn in … (part 4 of 11)" from "Accept … (part 5 of 11)". Built once.
+local chainPart
+local function buildChains()
+    chainPart = {}
+    local nameOf, prevOf, nextOf = {}, {}, {}
+    local ids = allIds("Quest")
+    for _, q in ipairs(ids) do nameOf[q] = raw("Quest", "name", q) end
+    for _, q in ipairs(ids) do
+        local pre = get("Quest", "preQuestSingle", q)
+        for _, p in ipairs(type(pre) == "table" and pre or {}) do
+            if p ~= q and nameOf[p] ~= nil and nameOf[p] == nameOf[q] then
+                prevOf[q] = prevOf[q] or p
+                nextOf[p] = nextOf[p] or {}
+                table.insert(nextOf[p], q)
+            end
+        end
+    end
+    -- From each first part, every quest of the chain gets its depth; the chain's length is the
+    -- deepest (variants of a part for other races share its number).
+    for _, root in ipairs(ids) do
+        if nextOf[root] and not prevOf[root] then
+            local members, length, queue, seen = {}, 0, { { root, 1 } }, { [root] = true }
+            while #queue > 0 do
+                local item = table.remove(queue, 1)
+                local q, depth = item[1], item[2]
+                members[#members + 1] = { q, depth }
+                if depth > length then length = depth end
+                for _, n in ipairs(nextOf[q] or {}) do
+                    if not seen[n] then
+                        seen[n] = true
+                        queue[#queue + 1] = { n, depth + 1 }
+                    end
+                end
+            end
+            if length > 1 then
+                for _, m in ipairs(members) do chainPart[m[1]] = { m[2], length } end
+            end
+        end
+    end
+end
+
+-- part, length of the quest's same-name chain; nil when its name is its own.
+function D:QuestPart(questID)
+    if not self.available then return nil end
+    if not chainPart then buildChains() end
+    local p = chainPart[questID]
+    if p then return p[1], p[2] end
+    return nil
+end
+
 -- requiredRaces / requiredClasses bits, by the client's race and class file names.
 -- Masks can go beyond 32 bits: test bits with arithmetic, never 32-bit bit operations.
 local RACE_BITS = {
@@ -223,6 +275,22 @@ function D:QuestExists(questID)
     if self.backend == "ding" then return DB.quests[questID] ~= nil end
     local ok, exists = pcall(QuestDB.Exists, questID)
     return ok and exists == true
+end
+
+-- Quests an NPC starts, by id: every quest's givers read once, the first time.
+local npcQuests
+function D:NpcQuests(npcID)
+    if not npcQuests then
+        npcQuests = {}
+        for _, q in ipairs(allIds("Quest")) do
+            local givers = get("Quest", "startedBy", q)
+            for _, npc in ipairs(type(givers) == "table" and givers[1] or {}) do
+                npcQuests[npc] = npcQuests[npc] or {}
+                table.insert(npcQuests[npc], q)
+            end
+        end
+    end
+    return npcQuests[npcID] or {}
 end
 
 function D:NpcName(id) return get("Npc", "name", id) end
@@ -474,6 +542,35 @@ end
 
 -- Factions an NPC is friendly to: "A", "H", "AH" or nil.
 function D:NpcFriendly(id) return get("Npc", "friendlyToFaction", id) end
+
+---------------------------------------------------------------------------
+-- The NPC directory (Core/Directory.lua): every NPC, what it is, what it sells
+---------------------------------------------------------------------------
+function D:NpcIds() return allIds("Npc") end
+function D:ItemIds() return allIds("Item") end
+
+-- An NPC's services bits (npcFlags, 0 when unknown) and its subtitle in English ("Weapon
+-- Master", "Journeyman Alchemist"), whatever the client's language.
+function D:NpcFlags(id) return get("Npc", "npcFlags", id) or 0 end
+function D:NpcSubName(id) return raw("Npc", "subName", id) end
+
+-- The weapon skills a weapon master teaches (skill line ids), or nil: a field of DingDB's own.
+function D:NpcWeaponSkills(id)
+    local skills = get("Npc", "weaponSkills", id)
+    return type(skills) == "table" and skills or nil
+end
+
+-- What an item is: { class, subClass, requiredLevel, flags } (the game's item class and
+-- subclass; nil when the data does not say), or nil for an unknown item.
+function D:ItemInfo(id)
+    if self.backend == "ding" and not DB.items[id] then return nil end
+    local function number(field)
+        local v = get("Item", field, id)
+        return type(v) == "number" and v or nil
+    end
+    return { class = number("class"), subClass = number("subClass"), requiredLevel = number("requiredLevel"),
+        flags = number("flags") }
+end
 
 -- Every flight master: { npc, name, friendly ("A", "H", "AH"), points }.
 function D:FlightMasters()

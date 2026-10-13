@@ -23,6 +23,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a25-stranglethorn-vale", {
         "Der NPC ist drinnen, im mittleren Stockwerk.",
     ["The NPC is indoors at street level. The NPC is indoors."] =
         "Der NPC ist drinnen, auf Straßenhöhe. Der NPC ist drinnen.",
+    ["Booty Bay"] =
+        "Beutebucht",
     ["The NPC is indoors at street level."] =
         "Der NPC ist drinnen, auf Straßenhöhe.",
     ["Let the conversation play out. The NPC is indoors at street level."] =
@@ -31,8 +33,6 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a25-stranglethorn-vale", {
         "Nimm den Durchgang aus Beutebucht hinaus",
     ["Take the tunnel into Booty Bay"] =
         "Nimm den Tunnel nach Beutebucht",
-    ["This one roams, so scan the surrounding area."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab.",
     ["Take the trail toward the Ruins of Aboraz"] =
         "Nimm den Pfad zu den Ruinen von Aboraz",
     ["Gradually move toward the northeast."] =
@@ -47,6 +47,14 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a25-stranglethorn-vale", {
         "Sei bereit: Diese Gegner sind Elite der Stufe 38. Saltwater Crocolisks erscheinen an denselben Stellen.",
     ["The object is a table made of stone. Your targets sit below the water's surface. Drag him up until he breaks the surface."] =
         "Das Objekt ist ein Tisch aus Stein. Deine Ziele sind unter der Wasseroberfläche. Zieh ihn hoch, bis er die Wasseroberfläche durchbricht.",
+    ["You need it later for \"Chapter I\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Kapitel I“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need it later for \"Chapter II\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Kapitel II“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need it later for \"Chapter III\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Kapitel III“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need it later for \"Chapter IV\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Kapitel IV“: Lass es in der Bank, das spart einen Taschenplatz.",
     ["The NPC stands on the top tier of the pier."] =
         "Der NPC steht auf der obersten Ebene des Piers.",
     ["Follow the shoreline"] =

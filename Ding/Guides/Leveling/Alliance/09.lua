@@ -2,13 +2,29 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Alliance/09.lua.
--- Simulated (warrior): Human 22 (49%) -> 24 (70%) in 4 h 12, 34 quests turned in; Dwarf 22 (48%) -> 24 (69%) in 4 h 12, 35 quests turned in; NightElf 22 (52%) -> 24 (72%) in 4 h 06, 35 quests turned in; Gnome 22 (48%) -> 24 (69%) in 4 h 12, 35 quests turned in; Skyborne 22 (48%) -> 24 (70%) in 4 h 12, 35 quests turned in.
+-- Simulated (warrior): Human 22 (49%) -> 24 (71%) in 4 h 12, 35 quests turned in; Dwarf 22 (48%) -> 24 (71%) in 4 h 12, 36 quests turned in; NightElf 22 (52%) -> 24 (67%) in 3 h 59, 35 quests turned in; Gnome 22 (48%) -> 24 (71%) in 4 h 12, 36 quests turned in; Skyborne 22 (49%) -> 24 (71%) in 4 h 12, 36 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-a09-ashenvale-and-stonetalon-mountains",
     title    = "Ashenvale and Stonetalon (21-24)",
     faction  = "Alliance",
     minLevel = 21, maxLevel = 24,
     next     = "leveling-a10-wetlands",
+    leftOut  = {
+        [1012] = { kind = "far" },
+        [1017] = { kind = "far" },
+        [1081] = { kind = "prereq" },
+        [1082] = { kind = "prereq" },
+        [1083] = { kind = "prereq" },
+        [1084] = { kind = "prereq" },
+        [1091] = { kind = "prereq" },
+        [1092] = { kind = "prereq" },
+        [1094] = { kind = "log" },
+        [1096] = { kind = "prereq" },
+        [1167] = { kind = "far", turnin = true },
+        [2931] = { kind = "away" },
+        [79974] = { kind = "log" },
+        [95737] = { kind = "log" },
+    },
     steps    = {
         { turnin = 967, accept = 970, -- level 22
           note = "Ashenvale: Maestra's Post in the west, then Astranaar in the middle of the zone." },
@@ -23,15 +39,15 @@ Ding.RegisterGuide({
         { go = { 1440, 34.35, 47.96 }, fly = true, talk = 4267, text = "Fly to Astranaar", -- level 22
           note = "Keep to the road the whole way." },
         { accept = 1008 }, -- level 22
-        { accept = 1070 }, -- level 22
-        { accept = 1056 }, -- level 22
-        { accept = 991, -- level 22
-          note = "The NPC is indoors." },
+        { accept = 1070, why = { kind = "carry", quest = 1070, seconds = 6420, xp = 800 } }, -- level 22
+        { accept = 1056, why = { kind = "carry", quest = 1056, seconds = 10020, xp = 500 } }, -- level 22
         { accept = 1054, races = { "Dwarf" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "MAGE", "WARLOCK", "DRUID" } }, -- level 22
         { accept = 1054, races = { "Gnome" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 22
+        { accept = 991, races = { "Human", "Dwarf", "Gnome", "Skyborne" } }, -- level 22
         { accept = 1054, races = { "Human" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "MAGE", "DRUID" } }, -- level 22
-        { accept = 1054, races = { "NightElf" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "PRIEST", "MAGE", "WARLOCK" } }, -- level 22
-        { accept = 1054, races = { "Skyborne" } }, -- level 22
+        { accept = 991, races = { "NightElf" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "PRIEST", "MAGE", "WARLOCK" } }, -- level 22
+        { accept = 1054, races = { "Skyborne" }, -- level 22
+          note = "The NPC is indoors." },
         { talk = 10052, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, text = "Leave your pet with the stable master." }, -- level 22
         { talk = 10052, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 22
           note = "You will tame a short-term pet shortly. Pick up Claw (Rank 3) for your pet." },
@@ -53,13 +69,11 @@ Ding.RegisterGuide({
         { complete = 1054, races = { "Dwarf" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "MAGE", "WARLOCK", "DRUID" } }, -- level 22
         { complete = 1054, races = { "Gnome" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 22
         { complete = 1054, races = { "Human" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "MAGE", "DRUID" } }, -- level 22
-        { complete = 1054, races = { "NightElf" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "PRIEST", "MAGE", "WARLOCK" } }, -- level 22
         { complete = 1054, races = { "Skyborne" }, -- level 22
           note = "The target is a gray furbolg. This one roams, so scan the surrounding area." },
         { turnin = 1054, races = { "Dwarf" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "MAGE", "WARLOCK", "DRUID" } }, -- level 22
         { turnin = 1054, races = { "Gnome" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 22
         { turnin = 1054, races = { "Human" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "MAGE", "DRUID" } }, -- level 22
-        { turnin = 1054, races = { "NightElf" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "PRIEST", "MAGE", "WARLOCK" } }, -- level 22
         { turnin = 1054, races = { "Skyborne" }, -- level 22
           note = "The NPC is indoors." },
         { sethearth = "Astranaar", talk = 6738, -- level 22
@@ -78,22 +92,34 @@ Ding.RegisterGuide({
         { turnin = 973, -- level 22
           note = "Keep to the road the whole way." },
         { complete = 1738, races = { "Human", "Gnome", "Skyborne" }, classes = { "WARLOCK" } }, -- level 22
-        { turnin = 991, accept = 1023 }, -- level 22
+        { turnin = 991, races = { "Human", "Dwarf", "Gnome", "Skyborne" } }, -- level 23
+        { turnin = 991, races = { "NightElf" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "PRIEST", "MAGE", "WARLOCK" } }, -- level 22
+        { accept = 991, races = { "NightElf" }, classes = { "ROGUE", "DRUID" } }, -- level 22
+        { turnin = 991, races = { "NightElf" }, classes = { "ROGUE", "DRUID" } }, -- level 22
+        { accept = 1023 }, -- level 23
         { complete = 1023, -- level 23
           note = "Fight the murlocs." },
-        { accept = 1007, sticky = 1008, -- level 23
+        { accept = 1007, races = { "Human", "Dwarf", "Gnome", "Skyborne" }, -- level 23
           note = "Circle the mountain on foot." },
-        { complete = 1007 }, -- level 23
-        { turnin = 1007 }, -- level 23
-        { accept = 1009, -- level 23
+        { accept = 1007, races = { "NightElf" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "PRIEST", "MAGE", "WARLOCK" } }, -- level 23
+        { complete = 1007, races = { "Human", "Dwarf", "Gnome", "Skyborne" } }, -- level 23
+        { complete = 1007, races = { "NightElf" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "PRIEST", "MAGE", "WARLOCK" } }, -- level 23
+        { turnin = 1007, races = { "Human", "Dwarf", "Gnome", "Skyborne" } }, -- level 23
+        { turnin = 1007, races = { "NightElf" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "PRIEST", "MAGE", "WARLOCK" } }, -- level 23
+        { accept = 1009, races = { "Human", "Dwarf", "Gnome", "Skyborne" }, -- level 23
           note = "Wait for the talking to finish" },
-        { complete = 1009, -- level 23
+        { accept = 1009, races = { "NightElf" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "PRIEST", "MAGE", "WARLOCK" } }, -- level 23
+        { complete = 1009, races = { "Human", "Dwarf", "Gnome", "Skyborne" }, -- level 23
           note = "A yellowish naga; her fins look pinkish. The target is rare and seldom up. If it is not around, move on without it." },
-        { complete = 1009, -- level 23
+        { complete = 1009, races = { "NightElf" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "PRIEST", "MAGE", "WARLOCK" } }, -- level 23
+        { complete = 1009, races = { "Human", "Dwarf", "Gnome", "Skyborne" }, -- level 23
           note = "A yellowish naga; her fins look pinkish. The target is rare and seldom up. If it is not around, move on without it." },
-        { complete = 1009, -- level 23
+        { complete = 1009, races = { "NightElf" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "PRIEST", "MAGE", "WARLOCK" } }, -- level 23
+        { complete = 1009, races = { "Human", "Dwarf", "Gnome", "Skyborne" }, -- level 23
           note = "The target is a naga with jade skin and rose-colored fins. It circles the island clockwise, close to the shore. She travels with a pair of guards." },
-        { turnin = 1009 }, -- level 23
+        { complete = 1009, races = { "NightElf" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "PRIEST", "MAGE", "WARLOCK" } }, -- level 23
+        { turnin = 1009, races = { "Human", "Dwarf", "Gnome", "Skyborne" } }, -- level 23
+        { turnin = 1009, races = { "NightElf" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "PRIEST", "MAGE", "WARLOCK" } }, -- level 23
         { complete = 1008, -- level 23
           note = "Hunt naga." },
         { train = true, talk = 12042, races = { "NightElf" }, classes = { "DRUID" } }, -- level 23
@@ -104,13 +130,14 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { turnin = 1008, accept = 1134 }, -- level 23
         { turnin = { 4730, 4731, 4732, 4733 } }, -- level 23
-        { turnin = 4740, -- level 23
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 4740 }, -- level 23
         { turnin = 98025, races = { "Dwarf", "NightElf", "Gnome", "Skyborne" } }, -- level 23
+        { accept = 98461, why = { continent = true, kind = "carry", quest = 98461, seconds = 10320, xp = 1100 } }, -- level 23
         { turnin = 731, accept = 741, when = { log = 731 } }, -- level 23
         { turnin = 731, accept = 741, when = { done = 731 } }, -- level 23
         { turnin = 994, -- level 23
           note = "The NPC is indoors." },
+        { accept = 990, why = { kind = "carry", once = true, quest = 990, seconds = 9180, xp = 400 } }, -- level 23
         { turnin = 741, accept = 942, when = { log = 741 }, -- level 23
           note = "The quest giver stands outdoors, not indoors." },
         { accept = 5678, races = { "Human" }, classes = { "PRIEST" } }, -- level 23
@@ -151,9 +178,9 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { complete = 1093 }, -- level 23
         { complete = 1071 }, -- level 23
-        { turnin = 1093, -- level 24
+        { turnin = 1093, -- level 23
           note = "The NPC is indoors." },
-        { turnin = 1071, accept = { 1072, 1075 }, -- level 24
+        { turnin = 1071, accept = { 1072, 1075 }, why = { continent = true, kind = "carry", quest = 1072, seconds = 16200, xp = 800 }, -- level 24
           note = "Look for it high on the clifftop." },
         { complete = 1134, -- level 24
           note = "The targets are wyverns." },
@@ -196,6 +223,7 @@ Ding.RegisterGuide({
         { train = true, talk = 12042, races = { "NightElf" }, classes = { "DRUID" } }, -- level 24
         { turnin = 1025, -- level 24
           note = "The NPC is indoors." },
+        { turnin = 990 }, -- level 24
         { train = true, talk = 4089, classes = { "WARRIOR" } }, -- level 24
         { go = { 1457, 32.08, 16.4 }, classes = { "ROGUE" }, text = "Step into the cavern within the trunk", -- level 24
           note = "The spot is on the lower floor of the hollow tree." },

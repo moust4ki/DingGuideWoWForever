@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a19-stranglethorn-vale", {
         "荊棘谷：藏寶海灣，位於最南端。",
     ["The NPC is indoors at street level."] =
         "NPC在室內，位於地面層。",
+    ["Booty Bay"] =
+        "藏寶海灣",
     ["Climb to the highest floor of the building."] =
         "爬到建築的最頂樓。",
     ["The NPC is upstairs, out on the balcony."] =
@@ -57,4 +59,14 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a19-stranglethorn-vale", {
         "目標是食人妖。",
     ["With the coming hand-ins, this gets you to level 38."] =
         "加上接下來交付的任務，這會讓你升到38級。",
+    ["You need them later for \"Magical Analysis\" and \"Caught!\": keep them in the bank to free bag slots."] =
+        "之後的任務「魔法分析」和「被鎖起來的矮人」需要它們：先存進銀行，空出背包空間。",
+    ["You need it later for \"Chapter I\": keep it in the bank to free a bag slot."] =
+        "之後的任務「荊棘谷的青山 - 第壹章」需要它：先存進銀行，空出背包空間。",
+    ["You need it later for \"Chapter II\": keep it in the bank to free a bag slot."] =
+        "之後的任務「荊棘谷的青山 - 第二章」需要它：先存進銀行，空出背包空間。",
+    ["You need it later for \"Chapter III\": keep it in the bank to free a bag slot."] =
+        "之後的任務「荊棘谷的青山 - 第三章」需要它：先存進銀行，空出背包空間。",
+    ["You need it later for \"Chapter IV\": keep it in the bank to free a bag slot."] =
+        "之後的任務「荊棘谷的青山 - 第四章」需要它：先存進銀行，空出背包空間。",
 })

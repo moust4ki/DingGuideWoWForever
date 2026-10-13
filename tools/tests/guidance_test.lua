@@ -1,5 +1,5 @@
--- Guidance: the nearby services list (UI/Finder.lua), the class training reminder
--- (Core/Training.lua) and the gear upgrades of the bags (Core/Gear.lua).
+-- Guidance: the NPC directory's binding (the directory itself: directory_test.lua), the class
+-- training reminder (Core/Training.lua) and the gear upgrades of the bags (Core/Gear.lua).
 local tools = (arg[0]:match("^(.*)[/\\]") or ".") .. "/.."
 local T = dofile(tools .. "/testlib.lua")(arg[1], { locale = "enUS" })
 local Ding, H = T.Ding, T.H
@@ -26,79 +26,9 @@ local function rowOf(action)
 end
 
 ---------------------------------------------------------------------------
--- Nearby services
+-- NPC directory
 ---------------------------------------------------------------------------
-T.test("services: the nearest of each kind, on the player's side, with a time or a distance", function()
-    start()
-    for _, kind in ipairs(F.KINDS) do
-        local best = F:Best(kind)
-        T.ok(best, "no " .. kind .. " found on Teldrassil")
-        local friendly = NpcDB.friendlyToFaction(best.npc)
-        T.ok(friendly == "A" or friendly == "AH", kind .. " not on the Alliance side: " .. tostring(friendly))
-        T.ok(best.seconds or best.distance, "neither time nor distance")
-    end
-    local trainer = F:Best("trainer")
-    T.ok(NpcDB.GetRaw(trainer.npc, "subName"):find("Warrior", 1, true), "not a warrior trainer")
-end)
-
-T.test("services: the list with the gamepad: D-pad, A sends the arrow, then the guide again at the NPC", function()
-    start()
-    F:Toggle(); H.flush()
-    T.ok(F.frame:IsShown(), "the list does not open")
-    local map = H.overrides[F.frame]
-    T.ok(map and map.PADDUP and map.PADDDOWN and map.PAD1 and map.PAD2, "the list's keys are not taken")
-    T.eq(#F.entries, #F.KINDS)
-    T.eq(F.entries[1].kind, "vendor")
-    H.press("PADDDOWN"); H.press("PADDUP")
-    T.eq(F.focusIndex, 1)
-    H.press("PAD1")
-    T.ok(not F.frame:IsShown() and H.overrides[F.frame] == nil, "list or keys left after A")
-    local trip = F.trip
-    T.ok(trip and trip.kind == "vendor", "no trip to the vendor")
-    A.point = nil; A:Tick()
-    T.eq(A.point.npc, trip.npc, "the arrow does not go to the vendor")
-    local found = false
-    for _, row in ipairs(P.rowsShown or {}) do
-        if row.notice == "trip" and H.plain(row.text) == L.FINDER_TRIP:format(trip.name, L.FINDER_VENDOR) then found = true end
-    end
-    T.ok(found, "the window does not say where the arrow goes")
-    -- Another merchant does not end it; this one does.
-    H.setNpcName("Somebody Else"); H.openMerchant(); H.closeMerchant()
-    T.ok(F.trip, "another NPC's window ended the trip")
-    H.setNpcName(trip.name); H.openMerchant(); H.closeMerchant()
-    T.eq(F.trip, nil, "the trip does not end at the NPC")
-    A.point = nil; A:Tick()
-    T.ok(A.point.npc ~= trip.npc or A.point.label ~= trip.name, "the arrow does not come back to the guide")
-end)
-
-T.test("services: B during a trip takes the arrow back to the guide", function()
-    start()
-    T.ok(F:Go("trainer"))
-    F:Toggle(); H.flush()
-    T.eq(F.entries[1].kind, "guide", "no way back to the guide in the list")
-    H.press("PAD2")
-    T.eq(F.trip, nil)
-    T.ok(not F.frame:IsShown())
-end)
-
-T.test("services: with the mouse, a click goes, a right click closes; never in combat", function()
-    start()
-    F:Open(); H.flush()
-    local row = F.frame.rows[2]
-    row.scripts.OnClick(row, "LeftButton"); H.flush()
-    T.ok(F.trip and F.trip.kind == "repair")
-    F:Open(); H.flush()
-    row = F.frame.rows[1]
-    row.scripts.OnClick(row, "RightButton"); H.flush()
-    T.ok(not F.frame:IsShown(), "right click does not close")
-    T.ok(F.trip, "a right click ended the trip")
-    H.setCombat(true)
-    F:Open(); H.flush()
-    T.ok(not F.frame:IsShown(), "the list opens in combat")
-    H.setCombat(false)
-end)
-
-T.test("services: a binding in the Keybinds tab", function()
+T.test("directory: a binding in the Keybinds tab", function()
     start()
     T.eq(_G.BINDING_NAME_DING_FINDER, L.BIND_FINDER)
     Ding.Config:Open("bindings"); H.flush()
@@ -223,7 +153,13 @@ T.test("gear: a clear upgrade in the bags: banner, row, and the item button equi
     local row = rowOf("gear")
     T.ok(row, "no gear row")
     T.eq(row.kind, "use")
-    T.ok(row.counter and row.counter:find("^%+"), "no gain on the row")
+    -- How much better, in words (no bare "+4" counter, read as a quest's): clearly better than
+    -- the old vest, and how to equip it or say no.
+    T.eq(row.counter, nil, "a bare number on the row")
+    T.ok(H.plain(row.sub):find(H.plain(L.GEAR_CLEARLY:format(Ding.Compat.EquippedLink(5) or "")), 1, true),
+        "not said in words: " .. H.plain(row.sub))
+    local how = Ding.Gamepad:Active() and L.GEAR_ROW_PAD or L.GEAR_ROW_MOUSE
+    T.ok(H.plain(row.sub):find(how, 1, true), "how to equip it or say no is missing: " .. H.plain(row.sub))
     T.eq(B:Wanted(), MAIL_CHEST, "the item button does not offer it")
     T.eq(B.button:GetAttribute("item"), "item:" .. MAIL_CHEST)
     T.ok(H.plain(B.button.name:GetText()):find(L.EQUIP_ITEM:format(""), 1, true), "no \"Equip\" on the button")
@@ -298,6 +234,34 @@ T.test("gear: auto-equip, only an item already bound, out of combat", function()
     T.eq(H.equipped(5), OLD_CHEST, "equipped in combat")
     H.setCombat(false); H.fire("PLAYER_REGEN_ENABLED"); H.flush()
     T.eq(H.equipped(5), MAIL_CHEST, "not equipped after combat")
+end)
+
+T.test("gear: \"Suggest better gear\" off: no row, no banner, nothing on the item button; auto-equip apart", function()
+    start()
+    gear()
+    Ding.db.ui.suggestGear = false
+    H.putInBag(0, 1, MAIL_CHEST)
+    bagsChanged()
+    T.ok(Gear.upgrade and Gear.upgrade.id == MAIL_CHEST, "the bags are still looked at")
+    T.ok(not (Ding.GearHint.banner and Ding.GearHint.banner:IsShown()), "a banner with the option off")
+    T.eq(rowOf("gear"), nil, "a row with the option off")
+    T.ok(B:Wanted() ~= MAIL_CHEST, "the item button offers it with the option off")
+    -- Auto-equip is its own option: it still wears an item already bound.
+    Ding.db.ui.autoEquip = true
+    H.setItemInfo(MAIL_CHEST, { name = "Mail Hauberk", equipLoc = "INVTYPE_CHEST", classID = 4, subclassID = 3, bound = true,
+        stats = { ITEM_MOD_STRENGTH_SHORT = 4, ITEM_MOD_STAMINA_SHORT = 3, RESISTANCE0_NAME = 120 } })
+    Gear.upgrade = nil
+    bagsChanged()
+    T.eq(H.equipped(5), MAIL_CHEST, "auto-equip follows the option to suggest")
+    -- The option, in the Automation tab, on by default; back on, the row comes back.
+    T.eq(Ding.DEFAULTS.ui.suggestGear, true)
+    Ding.Config:Open("automation"); H.flush()
+    local found
+    for _, r in ipairs(Ding.Config.TABS[Ding.Config.TAB.automation].rows) do
+        if r.opts and r.opts.label == L.SUGGEST_GEAR then found = r end
+    end
+    T.ok(found, "no option in the Automation tab")
+    Ding.Config:Close(); H.flush()
 end)
 
 T.test("gear: the step's own item comes first on the button", function()

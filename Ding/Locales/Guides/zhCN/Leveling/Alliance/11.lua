@@ -7,16 +7,16 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a11-duskwood-and-redridge-mounta
         "前往夜色镇",
     ["Duskwood: Darkshire, in the east of the zone."] =
         "暮色森林：夜色镇，在该区域东部。",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "它会四处游荡，在周围找找。NPC在室内。",
     ["The NPC is indoors."] =
         "NPC在室内。",
-    ["This one roams, so scan the surrounding area."] =
-        "它会四处游荡，在周围找找。",
+    ["Darkshire"] =
+        "夜色镇",
     ["Flight master at Darkshire"] =
         "夜色镇的飞行管理员",
-    ["The target is a ghoul with red skin. This one roams, so scan the surrounding area. The NPC can be indoors or out."] =
-        "目标是一只红皮肤的食尸鬼。它会四处游荡，在周围找找。NPC可能在室内，也可能在室外。",
+    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
+        "它会四处游荡，在周围找找。NPC在室内。",
+    ["The target is a ghoul with red skin. This one roams, so scan the surrounding area. The target can be indoors or out."] =
+        "目标是一只红皮肤的食尸鬼。它会四处游荡，在周围找找。目标可能在室内，也可能在室外。",
     ["Hunt spiders for it."] =
         "猎杀蜘蛛获取。",
     ["The targets are ghouls. Targets are both in the tomb and around it."] =
@@ -27,8 +27,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a11-duskwood-and-redridge-mounta
         "对一个Malformed Defias Drone使用搜索。它会四处游荡，在周围找找。",
     ["Use Sap on Klaven Mortwake, then open the chest. Opening it puts a harmful effect on you. Climb to the highest floor of the building."] =
         "对Klaven Mortwake使用闷棍，然后打开箱子。打开它会让你中一个有害效果。爬到建筑物的顶层。",
-    ["Be ready for a fight right away. The NPC is indoors."] =
-        "准备好马上战斗。NPC在室内。",
+    ["Be ready for a fight right away. The object is indoors."] =
+        "准备好马上战斗。该物件在室内。",
     ["Climb the trail across the mountains"] =
         "沿小路翻越山脉",
     ["Take the trail that circles the peak"] =
@@ -43,6 +43,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a11-duskwood-and-redridge-mounta
         "爬到建筑物的顶层。",
     ["Beware of foes lurking in stealth."] =
         "当心潜行中的敌人。",
+    ["The object is indoors, one floor up."] =
+        "该物件在室内楼上一层。",
     ["Head indoors"] =
         "进入室内",
     ["The NPC waits on the lower level, indoors."] =
@@ -79,6 +81,10 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a11-duskwood-and-redridge-mounta
         "这个任务需要保护一个行进中的NPC。如果NPC不在，就等到他重新出现。目标在洞穴里。",
     ["Let the conversation play out. Keep Corporal Keeshan safe during the escort. At the cave's mouth, draw foes to him with care."] =
         "等对话结束。护送途中保护Corporal Keeshan的安全。在洞口时，小心地把敌人引到他身边。",
+    ["You need it later for \"The Legend of Stalvan\": keep it in the bank to free a bag slot."] =
+        "之后的任务“斯塔文的传说”需要它：先存进银行，腾出背包空间。",
+    ["You need it later for \"Juice Delivery\": keep it in the bank to free a bag slot."] =
+        "之后的任务“僵尸酒”需要它：先存进银行，腾出背包空间。",
     ["The NPC patrols a long route; look along it."] =
         "NPC沿一条很长的路线巡逻；沿路寻找。",
     ["It is the dungeon's 4th boss."] =
@@ -87,6 +93,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a11-duskwood-and-redridge-mounta
         "目标是副本的第五个首领。",
     ["You'll find them all over the instance."] =
         "副本里到处都有。",
+    ["This one roams, so scan the surrounding area."] =
+        "它会四处游荡，在周围找找。",
     ["Learn Guns, Two-Handed Axes and Two-Handed Maces at the weapon master"] =
         "向武器大师学习枪械、双手斧和双手锤",
     ["Learn Two-Handed Axes at the weapon master"] =

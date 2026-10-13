@@ -5,4 +5,6 @@ Ding.RegisterGuideTranslation("ptBR", "alliance-40-dustwallow", {
         "Pântano Vadeoso (40)",
     ["Boat from Menethil to Theramore, the Alliance base on the edge of the marsh."] =
         "Barco de Menethil para Theramore, a base da Aliança à beira do pântano.",
+    ["Theramore"] =
+        "Theramore",
 })

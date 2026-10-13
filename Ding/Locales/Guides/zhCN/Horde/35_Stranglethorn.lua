@@ -5,4 +5,8 @@ Ding.RegisterGuideTranslation("zhCN", "horde-35-stv", {
         "荆棘谷 (34-36)",
     ["Zeppelin from Orgrimmar to Grom'gol, the Horde camp in the north of Stranglethorn."] =
         "从奥格瑞玛乘飞艇到荆棘谷北部的部落营地格罗姆高。",
+    ["Grom'gol"] =
+        "格罗姆高营地",
+    ["Booty Bay"] =
+        "藏宝海湾",
 })

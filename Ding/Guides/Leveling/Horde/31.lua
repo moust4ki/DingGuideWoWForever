@@ -68,10 +68,10 @@ Ding.RegisterGuide({
           note = "Let the conversation play out. The target yields at roughly 30% health." },
         { turnin = 1173, -- level 50
           note = "Your objective lies in a little cavern." },
-        { turnin = 625, accept = 626, -- level 50
+        { turnin = 625, accept = 626, why = { continent = true, kind = "carry", once = true, quest = 626, seconds = 138720, short = true, xp = 6100 }, -- level 50
           note = "Your objective lies in a little cavern." },
         { talk = 3496, collect = { { 4306, 15 } } }, -- level 50
-        { turnin = 2623, accept = 2801 }, -- level 50
+        { turnin = 2623, accept = 2801, why = { kind = "detour", quest = 2623, quests = 2, seconds = 60, total = 6300, xp = 5700 } }, -- level 50
         { complete = 2801, talk = 7572 }, -- level 50
         { turnin = 2801 }, -- level 50
     },

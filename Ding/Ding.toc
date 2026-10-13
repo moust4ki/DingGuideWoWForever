@@ -47,22 +47,26 @@ Core\Timing.lua
 Core\Engine.lua
 Core\Grind.lua
 Core\Along.lua
+Core\Passages.lua
 Core\Travel.lua
 Core\Services.lua
 Core\Merchant.lua
 Core\Training.lua
 Core\Gear.lua
+Core\Directory.lua
 Core\Talents.lua
 Core\Goals.lua
 Core\AutoQuest.lua
 Core\Rewards.lua
 Core\GuideText.lua
 Core\Import.lua
+Core\Why.lua
 UI\Widgets.lua
 UI\Gamepad.lua
 UI\Arrow.lua
 UI\TaxiMap.lua
 UI\Rewards.lua
+UI\Offers.lua
 UI\Finder.lua
 UI\ImportWindow.lua
 UI\TomTom.lua
@@ -72,6 +76,7 @@ UI\Minimap.lua
 UI\MinimapPins.lua
 UI\QuestMobs.lua
 UI\Config.lua
+UI\Setup.lua
 Core\Commands.lua
 
 Guides\Leveling\Alliance\01.lua

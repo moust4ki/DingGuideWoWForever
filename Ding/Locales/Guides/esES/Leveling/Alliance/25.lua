@@ -23,6 +23,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a25-stranglethorn-vale", {
         "El PNJ está dentro, en el piso central.",
     ["The NPC is indoors at street level. The NPC is indoors."] =
         "El PNJ está dentro, a pie de calle. El PNJ está dentro.",
+    ["Booty Bay"] =
+        "Bahía del Botín",
     ["The NPC is indoors at street level."] =
         "El PNJ está dentro, a pie de calle.",
     ["Let the conversation play out. The NPC is indoors at street level."] =
@@ -31,8 +33,6 @@ Ding.RegisterGuideTranslation("esES", "leveling-a25-stranglethorn-vale", {
         "Toma el paso para salir de Bahía del Botín",
     ["Take the tunnel into Booty Bay"] =
         "Toma el túnel para entrar en Bahía del Botín",
-    ["This one roams, so scan the surrounding area."] =
-        "Este deambula, así que revisa los alrededores.",
     ["Take the trail toward the Ruins of Aboraz"] =
         "Toma el sendero hacia las Ruinas de Aboraz",
     ["Gradually move toward the northeast."] =
@@ -47,6 +47,14 @@ Ding.RegisterGuideTranslation("esES", "leveling-a25-stranglethorn-vale", {
         "Prepárate: estos rivales son élites de nivel 38. Los Saltwater Crocolisks aparecen en los mismos sitios.",
     ["The object is a table made of stone. Your targets sit below the water's surface. Drag him up until he breaks the surface."] =
         "El objeto es una mesa de piedra. Tus objetivos están bajo la superficie del agua. Súbelo hasta que salga a la superficie.",
+    ["You need it later for \"Chapter I\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Capítulo I»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need it later for \"Chapter II\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Capítulo II»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need it later for \"Chapter III\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Capítulo III»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need it later for \"Chapter IV\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Capítulo IV»: déjalo en el banco para liberar un hueco en las bolsas.",
     ["The NPC stands on the top tier of the pier."] =
         "El PNJ está en el nivel superior del muelle.",
     ["Follow the shoreline"] =

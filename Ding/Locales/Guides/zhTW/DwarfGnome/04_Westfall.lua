@@ -7,4 +7,6 @@ Ding.RegisterGuideTranslation("zhTW", "dwarf-04-westfall", {
         "從鐵爐堡搭礦道地鐵到暴風城，再沿西邊道路經閃金鎮前往哨兵嶺。",
     ["If the starting item dropped: use it from your bags."] =
         "若掉落了開始任務的物品：從背包使用。",
+    ["Sentinel Hill"] =
+        "哨兵嶺",
 })

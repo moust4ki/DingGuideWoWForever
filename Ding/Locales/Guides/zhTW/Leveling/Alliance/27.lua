@@ -11,12 +11,14 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a27-tanaris", {
         "NPC在室內。",
     ["Wait for the talking to finish"] =
         "等對話結束",
-    ["Hold on until Rizzle has fled. The NPC is indoors."] =
-        "等到瑞茲爾逃走。NPC在室內。",
+    ["Hold on until Rizzle has fled. The object is indoors."] =
+        "等到瑞茲爾逃走。這個物件在室內。",
     ["Targets here are human."] =
         "這裡的目標是人類。",
     ["Targets here are human. Dungeon runs are a fine choice here too, as you like. Each set of 5 handed in at Gadgetzan gives 380 xp."] =
         "這裡的目標是人類。喜歡的話，這時去刷地城也是不錯的選擇。在加基森每交付一組5個可獲得380點經驗值。",
     ["Hunt the red-feathered birds. Hyenas also use these spawn spots."] =
         "獵殺紅色羽毛的鳥。土狼也會使用這些重生點。",
+    ["The NPC is indoors. You need them later for \"Report Back to Fizzlebub\" and \"Rhapsody's Kalimdor Kocktail\": keep them in the bank to free bag slots."] =
+        "NPC在室內。之後的任務「向菲茲巴布報告」和「拉普索迪的卡利姆多雞尾酒」需要它們：先存進銀行，空出背包空間。",
 })

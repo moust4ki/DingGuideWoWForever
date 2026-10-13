@@ -29,6 +29,7 @@ local WEAPONS = {
     PRIEST = { 4, 10, 15, 19 }, SHAMAN = { 0, 1, 4, 5, 10, 13, 15 }, MAGE = { 7, 10, 15, 19 },
     WARLOCK = { 7, 10, 15, 19 }, DRUID = { 4, 5, 10, 13, 15 },
 }
+GR.WEAPONS = WEAPONS               -- the NPC directory's weapons to learn (Core/Directory.lua)
 local ARMOR_CLASS, WEAPON_CLASS = 4, 2
 
 -- The player's class can wear the item at their level.
@@ -88,13 +89,22 @@ function GR:Scan()
     return best
 end
 
--- Looks at the bags again; a new upgrade is announced (banner) and, with the option, worn.
+-- The upgrade the guide suggests (the guide window's row, the banner, the item button): none
+-- with "Suggest better gear" off. Auto-equip is its own option and reads `upgrade` itself.
+function GR:Suggested()
+    local ui = Ding.db and Ding.db.ui
+    if ui and ui.suggestGear == false then return nil end
+    return self.upgrade
+end
+
+-- Looks at the bags again; a new upgrade is announced (banner, with "Suggest better gear") and,
+-- with "Equip upgrades automatically", worn.
 function GR:Update()
     local before = self.upgrade
     self.upgrade = self:Scan()
     local up = self.upgrade
     if up and (not before or before.id ~= up.id) then
-        if Ding.GearHint then Ding:Safe(Ding.GearHint.Show, Ding.GearHint, up, BANNER_TIME) end
+        if Ding.GearHint and self:Suggested() then Ding:Safe(Ding.GearHint.Show, Ding.GearHint, up, BANNER_TIME) end
         self:AutoEquip()
     end
     if (before and before.id) ~= (up and up.id) then

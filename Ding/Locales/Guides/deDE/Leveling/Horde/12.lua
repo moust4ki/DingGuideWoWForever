@@ -3,8 +3,8 @@
 Ding.RegisterGuideTranslation("deDE", "leveling-h12-hillsbrad-foothills", {
     ["Hillsbrad Foothills (30-32)"] =
         "Vorgebirge des Hügellands (30-32)",
-    ["Undercity first, then Hillsbrad Foothills: Tarren Mill."] =
-        "Zuerst Unterstadt, dann das Vorgebirge des Hügellands: Tarrens Mühle.",
+    ["Undercity first, then Hillsbrad Foothills: Tarren Mill. You need it later for \"The Swarm Grows\": keep it in the bank to free a bag slot."] =
+        "Zuerst Unterstadt, dann das Vorgebirge des Hügellands: Tarrens Mühle. Du brauchst es später für „Der Schwarm wächst“: Lass es in der Bank, das spart einen Taschenplatz.",
     ["Learn Cooking from the trainer"] =
         "Lerne Kochkunst beim Lehrer",
     ["You'll need this to pick up an upcoming quest."] =
@@ -17,8 +17,6 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h12-hillsbrad-foothills", {
         "Warte, bis das Gespräch endet",
     ["The NPC is indoors."] =
         "Der NPC ist drinnen.",
-    ["This one roams, so scan the surrounding area."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab.",
     ["The NPC is indoors. Head north along the river to reach the NPC."] =
         "Der NPC ist drinnen. Geh am Fluss entlang nach Norden zum NPC.",
     ["Targets are in the cavern and around its entrance too."] =
@@ -27,10 +25,12 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h12-hillsbrad-foothills", {
         "Gleich kommt eine schwere Quest. Die Gegner in dieser Gegend haben eine höhere Stufe als du. Ziele gibt es in der Höhle und auch rund um ihren Eingang.",
     ["Head out of the cave"] =
         "Verlass die Höhle",
-    ["Draw foes one at a time if you can. Do not take on the whole group together. The NPC is indoors."] =
-        "Zieh die Gegner wenn möglich einzeln. Nimm es nicht mit der ganzen Gruppe gleichzeitig auf. Der NPC ist drinnen.",
-    ["The NPC can be indoors or out."] =
-        "Der NPC kann drinnen oder draußen sein.",
+    ["Draw foes one at a time if you can. Do not take on the whole group together. The target is indoors."] =
+        "Zieh die Gegner wenn möglich einzeln. Nimm es nicht mit der ganzen Gruppe gleichzeitig auf. Das Ziel ist drinnen.",
+    ["The target is indoors."] =
+        "Das Ziel ist drinnen.",
+    ["The target can be indoors or out."] =
+        "Das Ziel kann drinnen oder draußen sein.",
     ["Go into the cavern"] =
         "Geh in die Höhle",
     ["Descend the ramp, then stay on the trail"] =
@@ -47,8 +47,10 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h12-hillsbrad-foothills", {
         "Das Ziel ist unter der Erde, im Minenschacht.",
     ["Targets here are human. The objective is underground, in the mine shaft."] =
         "Die Ziele hier sind Menschen. Das Ziel ist unter der Erde, im Minenschacht.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab. Der NPC ist drinnen.",
+    ["This one roams, so scan the surrounding area."] =
+        "Dieses Ziel wandert umher, also such die Umgebung ab.",
+    ["This one roams, so scan the surrounding area. The target is indoors."] =
+        "Dieses Ziel wandert umher, also such die Umgebung ab. Das Ziel ist drinnen.",
     ["Warden Belamoore stands guard over it. The target is a mage of level 36. Fight Kegan, breaking her line of sight with doors and stairways."] =
         "Warden Belamoore bewacht es. Das Ziel ist ein Magier der Stufe 36. Kämpfe gegen Kegan und unterbrich ihre Sichtlinie mit Türen und Treppen.",
     ["While Shield Guards glow, stop your melee attacks on them. Expect heavy damage from it. Targets here are human."] =

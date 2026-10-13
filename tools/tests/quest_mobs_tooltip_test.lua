@@ -25,7 +25,7 @@ T.test("the OnTooltipSetUnit script, hooked: the same line", function()
     H.addPlate("nameplate1", { npc = NIGHTSABER, name = D:NpcName(NIGHTSABER) })
     local lines = H.mouseover("nameplate1")
     T.eq(#lines, 2)
-    T.eq(H.plain(lines[2]), "Ding! · « L'Equilibre de la nature » 5/7")
+    T.eq(H.plain(lines[2]), "Ding! · À tuer pour « L'Equilibre de la nature » 5/7 · étape en cours")
     -- Off: the hook stays, adds nothing.
     Ding.db.ui.mobTooltip = false
     T.eq(#H.mouseover("nameplate1"), 1)

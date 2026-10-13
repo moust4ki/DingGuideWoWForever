@@ -27,8 +27,14 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h22-tanaris", {
         "더 강한 적이 나옵니다.",
     ["Grab the loot."] =
         "전리품을 챙기세요.",
+    ["Gadgetzan"] =
+        "가젯잔",
+    ["The NPC is indoors. You need them later for \"Tanaris Field Sampling\" and \"Screecher Spirits\": keep them in the bank to free bag slots."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"타나리스 현장 견본 수집\", \"계곡천둥매의 영혼\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["Wait for the talking to finish"] =
         "대화가 끝날 때까지 기다리세요",
-    ["Hold on until Rizzle has fled. The NPC is indoors."] =
-        "리즐이 달아날 때까지 기다리세요. NPC는 건물 안에 있습니다.",
+    ["Hold on until Rizzle has fled. The object is indoors."] =
+        "리즐이 달아날 때까지 기다리세요. 그 물체는 건물 안에 있습니다.",
+    ["The NPC is indoors. You need it later for \"Back to Booty Bay\": keep it in the bank to free a bag slot."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"무법항으로의 귀환\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
 })

@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("ptBR", "horde-57-winterspring", {
         "Hibérnia (55-56)",
     ["Winterspring is northeast of Felwood: Everlook is your base."] =
         "Hibérnia fica a nordeste da Selva Maleva: Visteterna é sua base.",
+    ["Everlook"] =
+        "Visteterna",
     ["If the starting item dropped: use it from your bags."] =
         "Se o item inicial caiu: use-o direto das bolsas.",
     ["Finish the level on nearby monsters before moving on."] =

@@ -29,8 +29,12 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a32-stranglethorn-vale", {
         "猎物是一只白色老虎，43级精英。它会召唤2个等级较低的小怪，都不是精英。在它生命值降到约50%时。",
     ["Look underneath the bridge. Your targets sit below the water's surface."] =
         "在桥底下找。目标在水面以下。",
+    ["Booty Bay"] =
+        "藏宝海湾",
     ["Your objective lies in a little cavern."] =
         "目标在一个小洞穴里。",
+    ["Stormwind City"] =
+        "暴风城",
     ["Head down into the Deeprun Tram station"] =
         "下到矿道地铁站",
     ["Pass through the portal to teleport."] =

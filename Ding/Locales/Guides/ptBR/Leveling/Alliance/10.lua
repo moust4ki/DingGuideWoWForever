@@ -7,18 +7,16 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a10-wetlands", {
         "Viaje até o Porto de Menethil",
     ["Wetlands: Menethil Harbor, on the west coast."] =
         "Pantanal: Porto de Menethil, na costa oeste.",
-    ["This one roams, so scan the surrounding area."] =
-        "Este se desloca, então procure pelos arredores.",
     ["The NPC is indoors."] =
         "O NPC está lá dentro.",
     ["The NPC waits on the lower level, indoors."] =
         "O NPC espera no nível de baixo, lá dentro.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "Este se desloca, então procure pelos arredores. O NPC está lá dentro.",
+    ["Deepwater Tavern"] =
+        "Porto de Menethil",
     ["The NPC is indoors, one floor up."] =
         "O NPC está lá dentro, um andar acima.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors. Do it only if you can."] =
-        "Este se desloca, então procure pelos arredores. O NPC está lá dentro. Faça só se puder.",
+    ["The NPC is indoors. Do it only if you can."] =
+        "O NPC está lá dentro. Faça só se puder.",
     ["The target is a gray murloc. This one roams, so scan the surrounding area. The target appears at this spot."] =
         "O alvo é um murloc cinza. Este se desloca, então procure pelos arredores. O alvo aparece neste ponto.",
     ["Go into Whelgar's Excavation Site"] =

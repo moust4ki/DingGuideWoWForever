@@ -30,16 +30,29 @@ return function(combined, opts)
         T.H, T.Ding = H, Ding
 
         -- Boot like the game: saved variables, login, the quest log a moment later, then
-        -- close the first-launch window.
+        -- close the first-launch windows (the setup assistant, then the Keybinds tab it opens).
         _G.DingDB, _G.DingCharDB = nil, nil
         H.fire("ADDON_LOADED", "Ding")
         H.fire("PLAYER_LOGIN")
         H.fire("QUEST_LOG_UPDATE")
         H.tick(2.5)
+        if Ding.Setup then Ding.Setup:Close() end
+        H.flush()
         if Ding.Config.frame then Ding.Config:Close() end
     end
 
     function T.test(name, fn) tests[#tests + 1] = { name = name, fn = fn } end
+
+    -- A quest as the guide window names it: "[2] “The Balance of Nature” (part 1 of 2)" (its
+    -- level, its name quoted, its part of a chain that shares its name).
+    function T.questLabel(q)
+        local L, D = Ding.L, Ding.Data
+        local name = L.QUOTE:format(D:QuestName(q))
+        local level = D:QuestLevel(q)
+        local text = level > 0 and L.QUEST_WITH_LEVEL:format(level, name) or name
+        local part, total = D:QuestPart(q)
+        return part and (text .. " " .. L.QUEST_PART:format(part, total)) or text
+    end
 
     local function show(v)
         if type(v) == "string" then return ("%q"):format(v) end
@@ -75,7 +88,7 @@ return function(combined, opts)
         H.setCombat(false)
         local E = Ding.Engine
         E.guide, E.index, E.finished, E.hold = nil, 1, false, false
-        E.turnedIn = {}
+        E.turnedIn, E.lastTurnIn = {}, nil
         Ding.char.guide, Ding.char.step, Ding.char.manual, Ding.char.pack = nil, nil, {}, nil
         Ding.char.hearthInn, Ding.char.lastStep = nil, nil
         player.bind = nil
@@ -98,6 +111,7 @@ return function(combined, opts)
         H.setTrainerServices({})
         -- A class trainer already visited, nothing waiting (a test of the reminder sets nil).
         Ding.char.training, Ding.char.gearDeclined = { now = 0, future = {}, level = 1 }, nil
+        Ding.char.weaponsDismissed = nil
         Ding.char.trainingReminded = nil
         Ding.Gear.upgrade = nil
         if Ding.GearHint then Ding.GearHint:Hide() end
@@ -105,8 +119,10 @@ return function(combined, opts)
             Ding.Finder.trip = nil
             Ding.Finder:Close()
         end
-        ui.autoEquip = false
+        ui.autoEquip, ui.suggestGear = false, true
         H.forgetSpells()
+        H.setSkillLines({})
+        if Ding.Directory then Ding.Directory:Forget() end
         Ding.db.flightTimes = nil
         H.resetTalents()
         Ding.char.talentBuild, Ding.Talents.armed = nil, nil
@@ -133,7 +149,7 @@ return function(combined, opts)
         Ding.Config.unfolded = {}
         Ding.Panel.findOffer = nil
         -- Goals without a quest: their progress, the items to keep, an open dialogue.
-        Ding.char.goals, Ding.char.keep, Ding.Goals.gossipOpen = nil, nil, nil
+        Ding.char.goals, Ding.char.keep, Ding.Goals.gossipOpen, Ding.Goals.bankOpen = nil, nil, nil, nil
         Ding.Goals:HideGossip()
         Ding.Travel:Reset()
         if Ding.TaxiMap then Ding.TaxiMap:Hide() end

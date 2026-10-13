@@ -7,4 +7,6 @@ Ding.RegisterGuideTranslation("esES", "alliance-29-ashenvale", {
         "Vuelve a Astranaar para las últimas misiones de Vallefresno. Termina el nivel con monstruos cercanos antes de seguir.",
     ["Finish the level on nearby monsters before moving on."] =
         "Termina el nivel con monstruos cercanos antes de seguir.",
+    ["Auberdine"] =
+        "Auberdine",
 })

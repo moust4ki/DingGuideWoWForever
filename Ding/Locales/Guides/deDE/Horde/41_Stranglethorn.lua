@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("deDE", "horde-41-stv", {
         "Schlingendorntal (38-42)",
     ["Back to Stranglethorn for the end of its quests, from Grom'gol and Booty Bay. Finish the level on nearby monsters before moving on."] =
         "Zurück ins Schlingendorntal für seine letzten Quests, ab Grom'gol und Beutebucht. Beende die Stufe an nahen Monstern, bevor du weiterziehst.",
+    ["Grom'gol"] =
+        "Grom'gol",
     ["Finish the level on nearby monsters before moving on."] =
         "Beende die Stufe an nahen Monstern, bevor du weiterziehst.",
 })

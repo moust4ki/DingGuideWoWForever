@@ -7,6 +7,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a22-dustwallow-marsh", {
         "Zuerst Sturmwind, dann die Düstermarschen: Insel Theramore. Behalte es, eine kommende Quest braucht es.",
     ["The NPC is indoors."] =
         "Der NPC ist drinnen.",
+    ["The NPC is indoors. You need it later for \"Sunken Treasure\": keep it in the bank to free a bag slot."] =
+        "Der NPC ist drinnen. Du brauchst es später für „Versunkener Schatz“: Lass es in der Bank, das spart einen Taschenplatz.",
     ["Head indoors"] =
         "Geh hinein",
     ["Stay on the trail"] =

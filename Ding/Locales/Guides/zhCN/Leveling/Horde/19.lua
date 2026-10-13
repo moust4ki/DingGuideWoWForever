@@ -7,8 +7,6 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h19-badlands", {
         "前往荒芜之地",
     ["Badlands: Kargath, at the western edge, is the Horde hub."] =
         "荒芜之地：卡加斯，在西部边缘，是部落据点。",
-    ["This one roams, so scan the surrounding area."] =
-        "它会四处游荡，在周围找找。",
     ["The NPC waits on the tower's highest floor."] =
         "NPC在塔的顶层。",
     ["Fly to Kargath"] =

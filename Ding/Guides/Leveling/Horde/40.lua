@@ -9,6 +9,9 @@ Ding.RegisterGuide({
     faction  = "Horde",
     minLevel = 58, maxLevel = 59,
     next     = "leveling-h41-silithus",
+    leftOut  = {
+        [6606] = { kind = "detour", seconds = 60, xp = 700 },
+    },
     steps    = {
         { talk = 11119, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, text = "Leave your pet with the stable master.", -- level 58
           note = "Winterspring: Everlook, in the middle of the zone." },
@@ -25,36 +28,36 @@ Ding.RegisterGuide({
           note = "Either the patriarch or the matriarch yetis work. The quest wants yetis; seek them out. Targets are in the cavern and around its entrance too." },
         { go = { 1452, 67.61, 41.78 }, text = "Head out of the cave" }, -- level 58
         { go = { 1452, 65.89, 38.41 }, text = "Climb across the mountain to the far side" }, -- level 58
-        { accept = 8471, collect = { { 20742, 1 } }, useitem = 20742 }, -- level 58
+        { accept = 8471, collect = { { 20742, 1 } }, useitem = 20742, why = { kind = "carry", quest = 8471, seconds = 4980, xp = 5800 } }, -- level 58
         { complete = 8464, sticky = 4809 }, -- level 58
         { complete = 4741 }, -- level 58
         { turnin = 977 }, -- level 58
         { turnin = 4809, when = { ready = 4809 } }, -- level 58
-        { turnin = 4741, accept = 4721, sticky = { 4721, 4809 } }, -- level 58
+        { turnin = 4741, accept = 4721, sticky = { 4721, 4809 }, why = { back = true, chain = 3, kind = "detour", quest = 4741, seconds = 480, short = true, xp = 22000 } }, -- level 58
         { accept = 4882, collect = { { 12558, 1 } }, useitem = 12558 }, -- level 58
-        { complete = 4721 }, -- level 58
+        { complete = 4721, why = { action = "accept", kind = "detour", quest = 5163, seconds = 180, xp = 11000 } }, -- level 58
         { accept = 5163 }, -- level 58
         { complete = 5163, useitem = 12928, -- level 58
           note = "Target Legacki with the item." },
         { sethearth = "Everlook", talk = 11118, -- level 58
           note = "The NPC is indoors." },
         { turnin = 8464 }, -- level 58
-        { turnin = 8471, when = { ready = 8471 }, -- level 58
-          note = "This one roams, so scan the surrounding area. The NPC stands within the passage." },
+        { turnin = 8471, when = { ready = 8471 }, why = { kind = "detour", quest = 8471, seconds = 60, xp = 5800 }, -- level 58
+          note = "The NPC stands within the passage." },
         { go = { 1450, 32.05, 66.54 }, fly = true, talk = 12740, text = "Fly to Moonglade" }, -- level 58
-        { turnin = 1123, accept = 1124, -- level 58
+        { turnin = 1123, accept = 1124, why = { kind = "carry", quest = 1124, seconds = 29160, xp = 2800 }, -- level 58
           note = "The NPC is indoors." },
         { go = { 1450, 51.74, 45.12 }, text = "Head indoors" }, -- level 58
         { talk = 11801, -- level 58
           note = "The NPC is indoors. Wait for the talking to finish" },
         { accept = 5527, -- level 58
           note = "The NPC is indoors." },
-        { level = 59, collect = { { 21377, 1 } }, patrol = { { 1448, 63.56, 9.55 }, { 1448, 62.46, 7.63 }, { 1448, 63.54, 5.95 }, { 1448, 59.95, 6.64 }, { 1448, 60.46, 8.57 }, { 1448, 61.45, 10.77 }, { 1448, 62.37, 12.64 } }, -- level 58
+        { level = 59, collect = { { 21377, 1 } }, patrol = { { 1448, 63.56, 9.55 }, { 1448, 62.46, 7.63 }, { 1448, 63.54, 5.95 }, { 1448, 59.95, 6.64 }, { 1448, 60.46, 8.57 }, { 1448, 61.45, 10.77 }, { 1448, 62.37, 12.64 } }, why = { kind = "level", levels = { 55, 60 } }, -- level 58
           note = "One last lengthy stretch of monster farming. Dungeon runs are a fine choice here too, as you like. This number shrinks while you kill monsters." },
         { accept = 8467, when = { item = { 21377, 5 } } }, -- level 59
         { turnin = 8467, when = { item = { 21377, 5 }, ready = 8467 } }, -- level 59
         { turnin = 8470, when = { maxlevel = 56, ready = 8470 }, -- level 59
-          note = "This one roams, so scan the surrounding area. The NPC stands within the passage." },
+          note = "The NPC stands within the passage." },
         { collect = { { 14047, 30 } }, when = { maxlevel = 59 } }, -- level 59
         { accept = 6031, when = { item = { 14047, 30 }, maxlevel = 59 }, -- level 59
           note = "The NPC stands within the passage." },
@@ -81,7 +84,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { accept = 7492, patrol = { { 1456, 42.63, 59.47 }, { 1456, 39.28, 63.15 }, { 1456, 37.18, 59.82 }, { 1456, 36.35, 54.02 }, { 1456, 37.84, 51.05 }, { 1456, 42.82, 56.46 }, { 1456, 44.33, 68.45 }, { 1456, 46.23, 69.19 }, { 1456, 49.01, 66.7 }, { 1456, 49.79, 61.98 }, { 1456, 56.74, 61.7 }, { 1456, 56.22, 54.54 }, { 1456, 59, 52.27 }, { 1456, 57.7, 48.52 }, { 1456, 54.28, 48.48 }, { 1456, 52.54, 51.27 }, { 1456, 55.25, 54.57 } }, -- level 59
           note = "The NPC patrols a long route; look along it." },
-        { turnin = 7492, -- level 59
+        { turnin = 7492, why = { kind = "detour", quest = 7492, seconds = 120, xp = 1500 }, -- level 59
           note = "The NPC is indoors." },
         { complete = 5163, useitem = 12928, -- level 59
           note = "Target Sprinkle with it." },
@@ -90,7 +93,7 @@ Ding.RegisterGuide({
         { complete = 4005, useitem = 11169, -- level 59
           note = "Wait for the talking to finish" },
         { go = { 1446, 69.69, 42.33 }, text = "Take the passage out of Lost Rigger Cove" }, -- level 59
-        { go = { 1449, 43.41, 6.84 }, text = "Go into the cavern" }, -- level 59
+        { go = { 1449, 43.41, 6.84 }, text = "Go into the cavern", why = { kind = "detour", quest = 4005, quests = 2, seconds = 60, total = 8200, xp = 5500 } }, -- level 59
         { turnin = 4005, accept = 3961, -- level 59
           note = "Your targets are within the cavern." },
         { destroy = { 11173, 11172, 11169 } }, -- level 59

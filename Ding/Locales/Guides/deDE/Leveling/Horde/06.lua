@@ -15,6 +15,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h06-ashenvale", {
         "Der NPC ist drinnen.",
     ["Hunt naga."] =
         "Jag Naga.",
+    ["The NPC is indoors. You need it later for \"Egg Hunt\": keep it in the bank to free a bag slot."] =
+        "Der NPC ist drinnen. Du brauchst es später für „Eierjagd“: Lass es in der Bank, das spart einen Taschenplatz.",
     ["Learn Two-Handed Axes at the weapon master"] =
         "Lerne Zweihandäxte beim Waffenmeister",
     ["The quest giver waits in the tent."] =
@@ -35,20 +37,20 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h06-ashenvale", {
         "Dieser NPC ist unten in der Kluft der Schatten.",
     ["The quest giver waits in the tent. This NPC is found down in the Cleft of Shadow."] =
         "Der Questgeber wartet im Zelt. Dieser NPC ist unten in der Kluft der Schatten.",
-    ["Step onto the pink rune. The quest giver waits in the tent. This NPC is found down in the Cleft of Shadow."] =
-        "Stell dich auf die rosa Rune. Der Questgeber wartet im Zelt. Dieser NPC ist unten in der Kluft der Schatten.",
+    ["Step onto the pink rune. The quest giver waits in the tent. The target is down in the Cleft of Shadow."] =
+        "Stell dich auf die rosa Rune. Der Questgeber wartet im Zelt. Das Ziel ist unten in der Kluft der Schatten.",
     ["Let the conversation play out. The quest giver waits in the tent. This NPC is found down in the Cleft of Shadow."] =
         "Lass das Gespräch zu Ende laufen. Der Questgeber wartet im Zelt. Dieser NPC ist unten in der Kluft der Schatten.",
     ["Use it twice on Taskmaster Fizzule. A short way north of here. Target Taskmaster Fizzule and salute him."] =
         "Benutze es zweimal an Taskmaster Fizzule. Ein kurzes Stück nördlich von hier. Nimm Taskmaster Fizzule ins Ziel und salutiere vor ihm.",
     ["Rob Foreman Silixiz with Pick Pocket."] =
         "Bestiehl Vorarbeiter Silixiz mit Taschendiebstahl.",
-    ["Open with Ambush for a bigger hit. The NPC is indoors at street level."] =
-        "Eröffne mit Hinterhalt für einen stärkeren Treffer. Der NPC ist drinnen, auf Straßenhöhe.",
-    ["Lean on Rupture for bonus damage. The NPC is indoors, on the central storey."] =
-        "Setz auf Blutung für zusätzlichen Schaden. Der NPC ist drinnen, im mittleren Stockwerk.",
-    ["Eviscerate adds a burst of damage here. The objective is on the terrace above. The NPC is indoors, on the central storey."] =
-        "Ausweiden bringt hier einen Schadensschub. Das Ziel ist auf der Terrasse darüber. Der NPC ist drinnen, im mittleren Stockwerk.",
+    ["Open with Ambush for a bigger hit. The target is indoors at street level."] =
+        "Eröffne mit Hinterhalt für einen stärkeren Treffer. Das Ziel ist drinnen, auf Straßenhöhe.",
+    ["Lean on Rupture for bonus damage. The target is indoors, on the central storey."] =
+        "Setz auf Blutung für zusätzlichen Schaden. Das Ziel ist drinnen, im mittleren Stockwerk.",
+    ["Eviscerate adds a burst of damage here. The objective is on the terrace above. The target is indoors, on the central storey."] =
+        "Ausweiden bringt hier einen Schadensschub. Das Ziel ist auf der Terrasse darüber. Das Ziel ist drinnen, im mittleren Stockwerk.",
     ["Open with Ambush for a bigger hit. Climb to the highest floor of the building."] =
         "Eröffne mit Hinterhalt für einen stärkeren Treffer. Steig ins oberste Stockwerk des Gebäudes.",
     ["Use Pick Lock to open it. Climb to the highest floor of the building."] =

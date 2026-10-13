@@ -9,8 +9,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h13-arathi-highlands", {
         "동굴을 나가세요",
     ["The targets are out in front of the cavern."] =
         "대상은 동굴 앞에 있습니다.",
-    ["The NPC is indoors."] =
-        "NPC는 건물 안에 있습니다.",
+    ["The target is indoors."] =
+        "대상은 건물 안에 있습니다.",
     ["The targets are spread over several spots."] =
         "대상은 여러 곳에 흩어져 있습니다.",
     ["Flight master at Hammerfall"] =
@@ -23,6 +23,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h13-arathi-highlands", {
         "대상은 랩터입니다. 임시 주둔지는 피하세요.",
     ["Together with the next turn-ins, this brings you to level 33."] =
         "다음 퀘스트 완료와 함께 33레벨이 됩니다.",
+    ["The NPC is indoors."] =
+        "NPC는 건물 안에 있습니다.",
     ["The NPC is indoors, one floor up."] =
         "NPC는 건물 안 한 층 위에 있습니다.",
     ["Take the trail downhill"] =

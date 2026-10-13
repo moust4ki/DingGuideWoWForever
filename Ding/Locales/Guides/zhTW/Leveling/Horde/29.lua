@@ -11,6 +11,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h29-the-hinterlands", {
         "在這裡拿到它，可以加快安戈洛環形山的進度。NPC在室內。",
     ["The NPC is indoors."] =
         "NPC在室內。",
+    ["The NPC is indoors. You need them later for \"The Stone Circle\" and \"Crystals of Power\": keep them in the bank to free bag slots."] =
+        "NPC在室內。之後的任務「石環」和「能量水晶」需要它們：先存進銀行，空出背包空間。",
     ["Take the trail downhill"] =
         "沿小路下坡",
     ["Buy plenty of arrows or bullets. Stock up first: nobody in the Hinterlands sells arrows or bullets for level 40."] =
@@ -43,6 +45,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h29-the-hinterlands", {
         "目標是潛行中的狼。",
     ["Slay them, then apply the item to their remains."] =
         "殺死牠們，然後對屍體使用這個物品。",
+    ["The object is indoors."] =
+        "這個物件在室內。",
     ["Steer clear of hostile Alliance NPCs. Warning: this turns on your PvP flag."] =
         "避開敵對的聯盟NPC。警告：這會開啟你的PvP標記。",
     ["Head into Shadra'Alor"] =
@@ -55,4 +59,6 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h29-the-hinterlands", {
         "離開Shadra'Alor",
     ["Wait for the talking to finish"] =
         "等對話結束",
+    ["The NPC is indoors. You need them later for \"Ripple Delivery\", \"Whiskey Slim's Lost Grog\" and \"Seeping Corruption\": keep them in the bank to free bag slots."] =
+        "NPC在室內。之後的任務「送回蜜酒」、「威士忌斯利姆的酒」和「墮落之水」需要它們：先存進銀行，空出背包空間。",
 })

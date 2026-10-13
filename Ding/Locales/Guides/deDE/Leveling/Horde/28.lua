@@ -11,18 +11,20 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h28-tanaris-and-dustwallow-marsh
         "Warte, bis das Gespräch endet",
     ["Stay clear of the elite foes. Be ready for a fight right away. Watch out for a pair of stronger monsters here."] =
         "Halte dich von den Elitegegnern fern. Mach dich sofort auf einen Kampf gefasst. Achte hier auf zwei stärkere Monster.",
-    ["The NPC is indoors."] =
-        "Der NPC ist drinnen.",
+    ["The NPC is indoors. You need them later for \"Testing the Vessel\" and \"Report Back to Fizzlebub\": keep them in the bank to free bag slots."] =
+        "Der NPC ist drinnen. Du brauchst sie später für „Das Gefäß wird getestet“ und „Meldet Euch bei Fizzlebub“: Lass sie in der Bank, das spart Taschenplätze.",
     ["A lengthy grinding stretch is coming up. The NPC is indoors."] =
         "Gleich kommt eine lange Grindphase. Der NPC ist drinnen.",
+    ["The NPC is indoors."] =
+        "Der NPC ist drinnen.",
     ["The target patrols a wide loop, turning counterclockwise. Watch for a pair of guards hiding in stealth. The target's spawn point is 58.9, 39.3 in Tanaris."] =
         "Das Ziel patrouilliert eine weite Runde gegen den Uhrzeigersinn. Achte auf zwei getarnte Wachen. Der Spawnpunkt des Ziels ist bei 58.9, 39.3 in Tanaris.",
     ["These foes hide in stealth."] =
         "Diese Gegner sind getarnt.",
     ["Head down the passage that opens on Lost Rigger Cove"] =
         "Geh den Durchgang hinunter, der nach Lost Rigger Cove führt",
-    ["The NPC is indoors, one floor up."] =
-        "Der NPC ist drinnen, ein Stockwerk höher.",
+    ["The object is indoors, one floor up."] =
+        "Das Objekt ist drinnen, ein Stockwerk höher.",
     ["Few kills yield this item."] =
         "Nur wenige Kills bringen diesen Gegenstand.",
     ["Others can be found on raised wood platforms close by."] =
@@ -33,16 +35,22 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h28-tanaris-and-dustwallow-marsh
         "Als Nächstes kommen stärkere Gegner. Dungeons sind hier auch eine gute Wahl, ganz wie du magst.",
     ["Take the passage out of Lost Rigger Cove"] =
         "Nimm den Durchgang aus Lost Rigger Cove hinaus",
+    ["The NPC is indoors. You need it later for \"Deliver to MacKinley\": keep it in the bank to free a bag slot."] =
+        "Der NPC ist drinnen. Du brauchst es später für „Lieferung für MacKinley“: Lass es in der Bank, das spart einen Taschenplatz.",
     ["Your objective lies in a little cavern."] =
         "Dein Ziel liegt in einer kleinen Höhle.",
     ["Search the sand mounds."] =
         "Durchsuche die Sandhügel.",
     ["It competes for spawn points."] =
         "Es teilt sich Spawnpunkte mit anderen.",
+    ["Gadgetzan"] =
+        "Gadgetzan",
     ["Go into the cavern"] =
         "Geh in die Höhle",
     ["Take the trail downhill"] =
         "Nimm den Weg bergab",
+    ["The NPC is indoors. You need it later for \"Return to Apothecary Zinge\": keep it in the bank to free a bag slot."] =
+        "Der NPC ist drinnen. Du brauchst es später für „Kehrt zu Apothekerin Zinge zurück“: Lass es in der Bank, das spart einen Taschenplatz.",
     ["Targets here are human. Watch out for foes hidden in stealth. Zones with stronger foes lie just ahead."] =
         "Die Ziele hier sind Menschen. Achte auf getarnte Gegner. Gleich kommen Gebiete mit stärkeren Gegnern.",
     ["Look for brown eggs covered in spikes."] =

@@ -11,18 +11,20 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h28-tanaris-and-dustwallow-marsh
         "等對話結束",
     ["Stay clear of the elite foes. Be ready for a fight right away. Watch out for a pair of stronger monsters here."] =
         "避開精英敵人。準備好立刻戰鬥。小心這裡有兩隻較強的怪物。",
-    ["The NPC is indoors."] =
-        "NPC在室內。",
+    ["The NPC is indoors. You need them later for \"Testing the Vessel\" and \"Report Back to Fizzlebub\": keep them in the bank to free bag slots."] =
+        "NPC在室內。之後的任務「測試容器」和「向菲茲巴布報告」需要它們：先存進銀行，空出背包空間。",
     ["A lengthy grinding stretch is coming up. The NPC is indoors."] =
         "接下來要打怪很長一段時間。NPC在室內。",
+    ["The NPC is indoors."] =
+        "NPC在室內。",
     ["The target patrols a wide loop, turning counterclockwise. Watch for a pair of guards hiding in stealth. The target's spawn point is 58.9, 39.3 in Tanaris."] =
         "目標以逆時針方向繞著一大圈巡邏。小心兩名潛行中的護衛。目標的重生點在塔納利斯的58.9, 39.3。",
     ["These foes hide in stealth."] =
         "這些敵人會潛行隱藏。",
     ["Head down the passage that opens on Lost Rigger Cove"] =
         "沿通往Lost Rigger Cove的通道往下走",
-    ["The NPC is indoors, one floor up."] =
-        "NPC在室內的樓上一層。",
+    ["The object is indoors, one floor up."] =
+        "這個物件在室內的樓上一層。",
     ["Few kills yield this item."] =
         "這個物品的掉落率很低。",
     ["Others can be found on raised wood platforms close by."] =
@@ -33,16 +35,22 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h28-tanaris-and-dustwallow-marsh
         "接下來的敵人會更強。喜歡的話，這時去刷地城也是不錯的選擇。",
     ["Take the passage out of Lost Rigger Cove"] =
         "走通道離開Lost Rigger Cove",
+    ["The NPC is indoors. You need it later for \"Deliver to MacKinley\": keep it in the bank to free a bag slot."] =
+        "NPC在室內。之後的任務「給馬克基雷的貨物」需要它：先存進銀行，空出背包空間。",
     ["Your objective lies in a little cavern."] =
         "目標在一個小洞穴裡。",
     ["Search the sand mounds."] =
         "搜尋沙堆。",
     ["It competes for spawn points."] =
         "它和其他怪物共用重生點。",
+    ["Gadgetzan"] =
+        "加基森",
     ["Go into the cavern"] =
         "進入洞穴",
     ["Take the trail downhill"] =
         "沿小路下坡",
+    ["The NPC is indoors. You need it later for \"Return to Apothecary Zinge\": keep it in the bank to free a bag slot."] =
+        "NPC在室內。之後的任務「向藥劑師金格回報」需要它：先存進銀行，空出背包空間。",
     ["Targets here are human. Watch out for foes hidden in stealth. Zones with stronger foes lie just ahead."] =
         "這裡的目標是人類。小心潛行中的敵人。接下來的區域敵人更強。",
     ["Look for brown eggs covered in spikes."] =

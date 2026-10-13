@@ -19,8 +19,6 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a02-dwarf-and-gnome-starter", {
         "다시 밖으로 나가세요",
     ["The targets are wolves."] =
         "대상은 늑대입니다.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요. NPC는 건물 안에 있습니다.",
     ["They are rare and scattered widely. Your targets are within the cavern."] =
         "드물고 넓게 흩어져 있습니다. 대상은 동굴 안에 있습니다.",
     ["Die on purpose at this spot"] =
@@ -45,6 +43,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a02-dwarf-and-gnome-starter", {
         "하급 치유 (2 레벨)로 산악경비대 돌프를 치유하세요. 산악경비대 돌프에게 신의 권능: 인내를 걸어 주세요.",
     ["Learn Blacksmithing from the trainer"] =
         "상급자에게서 대장기술을 배우세요",
+    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
+        "이 대상은 돌아다니므로 주변을 살펴보세요. NPC는 건물 안에 있습니다.",
     ["Learn Mining from the trainer"] =
         "상급자에게서 채광을 배우세요",
     ["The NPC waits on the lower level, indoors."] =
@@ -65,8 +65,10 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a02-dwarf-and-gnome-starter", {
         "나무 바구니를 찾으세요.",
     ["Die to the monsters here on purpose. Any spot around Brewnall Village works. Dying costs you nothing this early."] =
         "여기 있는 몬스터에게 일부러 죽으세요. Brewnall Village 주변이라면 어디든 됩니다. 이 시점에는 죽어도 잃는 것이 없습니다.",
-    ["Give it a few seconds. The NPC waits on the lower level, indoors."] =
-        "몇 초 기다리세요. NPC는 건물 안 아래층에서 기다립니다.",
+    ["Thunderbrew Distillery"] =
+        "카라노스",
+    ["Give it a few seconds. The object is on the lower level, indoors."] =
+        "몇 초 기다리세요. 그 물체는 건물 안 아래층에 있습니다.",
     ["Head to the lower level of the cavern."] =
         "동굴 아래층으로 가세요.",
     ["With the coming turn-ins, this gets you to level 10."] =
@@ -111,8 +113,10 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a02-dwarf-and-gnome-starter", {
         "NPC는 긴 경로를 순찰합니다. 경로를 따라 찾아보세요.",
     ["Die to the monsters here on purpose. This is the quickest way over."] =
         "여기 있는 몬스터에게 일부러 죽으세요. 건너가는 가장 빠른 방법입니다.",
-    ["This one roams, so scan the surrounding area. The NPC can be indoors or out."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요. NPC는 건물 안이나 밖에 있을 수 있습니다.",
+    ["Stoutlager Inn"] =
+        "텔사마",
+    ["The NPC can be indoors or out."] =
+        "NPC는 건물 안이나 밖에 있을 수 있습니다.",
     ["Learn Two-Handed Axes and Two-Handed Maces at the weapon master"] =
         "무기 전문가에게서 양손 도끼와 양손 둔기를 배우세요",
     ["Learn Two-Handed Maces at the weapon master"] =
@@ -129,8 +133,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a02-dwarf-and-gnome-starter", {
         "깊은굴쥐에게 아이템을 사용하세요. 작은 회색 쥐를 찾으세요. 깊은굴 지하철의 아이언포지 쪽 승강장으로 가세요.",
     ["Take the Deeprun Tram over to Stormwind City. The NPC stands by the wall on the central platform."] =
         "깊은굴 지하철을 타고 스톰윈드로 가세요. NPC는 가운데 승강장의 벽 옆에 서 있습니다.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors. Be ready for a fight right away."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요. NPC는 건물 안에 있습니다. 바로 전투가 시작되니 대비하세요.",
+    ["The NPC is indoors. Be ready for a fight right away."] =
+        "NPC는 건물 안에 있습니다. 바로 전투가 시작되니 대비하세요.",
     ["Learn Two-Handed Swords and Staves at the weapon master"] =
         "무기 전문가에게서 양손 도검과 지팡이를 배우세요",
     ["Learn Two-Handed Swords at the weapon master"] =
@@ -153,12 +157,12 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a02-dwarf-and-gnome-starter", {
         "NPC는 건물 앞 바깥에서 기다립니다.",
     ["This one roams, so scan the surrounding area."] =
         "이 대상은 돌아다니므로 주변을 살펴보세요.",
-    ["Stay on the road and watch for danger. Foes in this area outlevel you. This one roams, so scan the surrounding area."] =
-        "길을 벗어나지 말고 위험에 주의하세요. 이 지역의 적은 당신보다 레벨이 높습니다. 이 대상은 돌아다니므로 주변을 살펴보세요.",
+    ["Stay on the road and watch for danger. Foes in this area outlevel you."] =
+        "길을 벗어나지 말고 위험에 주의하세요. 이 지역의 적은 당신보다 레벨이 높습니다.",
     ["Fly to Lakeshire"] =
         "레이크샤이어로 날아가세요",
-    ["Step onto the pink rune. Look within the tomb. The NPC waits on the lower level, indoors."] =
-        "분홍색 룬 위에 올라서세요. 무덤 안을 살펴보세요. NPC는 건물 안 아래층에서 기다립니다.",
+    ["Step onto the pink rune. Look within the tomb. The target is on the lower level, indoors."] =
+        "분홍색 룬 위에 올라서세요. 무덤 안을 살펴보세요. 대상은 건물 안 아래층에 있습니다.",
     ["The NPC stands one level over the crypt. The NPC waits on the lower level, indoors."] =
         "NPC는 납골당 한 층 위에 서 있습니다. NPC는 건물 안 아래층에서 기다립니다.",
     ["The NPC waits on the tower's highest floor."] =

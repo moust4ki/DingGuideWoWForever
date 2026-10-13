@@ -25,8 +25,6 @@ Ding.RegisterGuideTranslation("esES", "leveling-h14-thousand-needles", {
         "Aquí los enemigos son escorpiones.",
     ["Look for assorted mechanical pieces. Parts lie all across the Shimmering Flats."] =
         "Busca piezas mecánicas de todo tipo. Hay piezas por todo El Desierto de Sal.",
-    ["This one roams, so scan the surrounding area."] =
-        "Este deambula, así que revisa los alrededores.",
     ["The NPC is indoors, one floor up."] =
         "El PNJ está dentro, un piso más arriba.",
     ["The NPC stands on the top tier of the pier. The NPC is indoors."] =
@@ -45,6 +43,10 @@ Ding.RegisterGuideTranslation("esES", "leveling-h14-thousand-needles", {
         "Este PNJ está abajo, en la Grieta de la Sombra.",
     ["The NPC stands on the highest level of this structure."] =
         "El PNJ está en el nivel más alto de esta estructura.",
+    ["The NPC is indoors. You need them later for \"Martek the Exiled\" and \"Hemet Nesingwary\": keep them in the bank to free bag slots."] =
+        "El PNJ está dentro. Los necesitarás más adelante para «Martek el Exiliado» y «Hemet Decautela»: déjalos en el banco para liberar huecos en las bolsas.",
+    ["Orgrimmar"] =
+        "Orgrimmar",
     ["The quest giver is in the Dormitory."] =
         "El PNJ de misión está en la zona de dormitorios.",
     ["Escort Kernobee to the portal at the dungeon's mouth."] =

@@ -5,4 +5,6 @@ Ding.RegisterGuideTranslation("ptBR", "alliance-31-duskwood", {
         "Floresta do Crepúsculo (31-32)",
     ["Back to Duskwood for the end of its quests: Darkshire is still your base."] =
         "De volta à Floresta do Crepúsculo para o fim das missões: Vila Sombria segue como sua base.",
+    ["Darkshire"] =
+        "Vila Sombria",
 })

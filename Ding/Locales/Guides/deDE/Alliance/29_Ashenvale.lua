@@ -7,4 +7,6 @@ Ding.RegisterGuideTranslation("deDE", "alliance-29-ashenvale", {
         "Zurück nach Astranaar für die letzten Quests im Eschental. Beende die Stufe an nahen Monstern, bevor du weiterziehst.",
     ["Finish the level on nearby monsters before moving on."] =
         "Beende die Stufe an nahen Monstern, bevor du weiterziehst.",
+    ["Auberdine"] =
+        "Auberdine",
 })

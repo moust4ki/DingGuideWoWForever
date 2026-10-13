@@ -23,6 +23,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a25-stranglethorn-vale", {
         "NPC는 건물 안 가운데 층에 있습니다.",
     ["The NPC is indoors at street level. The NPC is indoors."] =
         "NPC는 건물 안 1층에 있습니다. NPC는 건물 안에 있습니다.",
+    ["Booty Bay"] =
+        "무법항",
     ["The NPC is indoors at street level."] =
         "NPC는 건물 안 1층에 있습니다.",
     ["Let the conversation play out. The NPC is indoors at street level."] =
@@ -31,8 +33,6 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a25-stranglethorn-vale", {
         "통로를 지나 무법항을 나가세요",
     ["Take the tunnel into Booty Bay"] =
         "터널을 지나 무법항으로 들어가세요",
-    ["This one roams, so scan the surrounding area."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요.",
     ["Take the trail toward the Ruins of Aboraz"] =
         "길을 따라 Ruins of Aboraz 쪽으로 가세요",
     ["Gradually move toward the northeast."] =
@@ -47,6 +47,14 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a25-stranglethorn-vale", {
         "대비하세요. 이 적들은 38레벨 정예입니다. 바다악어도 같은 곳에 나타납니다.",
     ["The object is a table made of stone. Your targets sit below the water's surface. Drag him up until he breaks the surface."] =
         "대상은 돌로 된 탁자입니다. 대상은 수면 아래에 있습니다. 물 위로 나올 때까지 끌어올리세요.",
+    ["You need it later for \"Chapter I\": keep it in the bank to free a bag slot."] =
+        "나중에 \"제 1 장\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Chapter II\": keep it in the bank to free a bag slot."] =
+        "나중에 \"제 2 장\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Chapter III\": keep it in the bank to free a bag slot."] =
+        "나중에 \"제 3 장\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Chapter IV\": keep it in the bank to free a bag slot."] =
+        "나중에 \"제 4 장\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["The NPC stands on the top tier of the pier."] =
         "NPC는 부두 맨 위층에 서 있습니다.",
     ["Follow the shoreline"] =

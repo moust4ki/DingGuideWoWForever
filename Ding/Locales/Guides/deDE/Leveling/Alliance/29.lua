@@ -37,4 +37,6 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a29-the-hinterlands", {
         "Töte Monster, bis dein Ruhestein wieder bereit ist",
     ["Stay away from Gammerita. The quarry: a tough elite tortoise, azure-shelled. This one roams, so scan the surrounding area."] =
         "Halte dich von Gammerita fern. Die Beute: eine zähe Eliteschildkröte mit azurblauem Panzer. Dieses Ziel wandert umher, also such die Umgebung ab.",
+    ["The NPC is indoors. You need them later for \"Rhapsody's Tale\", \"The Super Snapper FX\", \"Whiskey Slim's Lost Grog\" and \"Favored of Elune?\": keep them in the bank to free bag slots."] =
+        "Der NPC ist drinnen. Du brauchst sie später für „Rhapsodys Geschichte“, „Der Superschnapper FX“, „Whiskey Slim's verlorener Grog“ und „Elunes Lieblinge?“: Lass sie in der Bank, das spart Taschenplätze.",
 })

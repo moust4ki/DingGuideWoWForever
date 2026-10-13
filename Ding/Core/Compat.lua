@@ -62,17 +62,33 @@ function C.IsQuestReady(questID)
 end
 
 -- { { text = "Young Nightsaber slain: 3/7", type = "monster", finished = false,
---     numFulfilled = 3, numRequired = 7 }, ... } (fields the client keeps secret: nil)
+--     numFulfilled = 3, numRequired = 7 }, ... } (fields the client keeps secret: nil). A count
+-- the client keeps secret comes from the text's "3/7" (its last one: "Sanglier : 2/6
+-- personnages tués" too), and then whether it is finished: an objective done must not read 0.
+local function textCount(text)
+    local have, need
+    for a, b in (text or ""):gmatch("(%d+)%s*/%s*(%d+)") do have, need = a, b end
+    return tonumber(have), tonumber(need)
+end
+
 function C.GetObjectives(questID)
     local out = {}
     if C_QuestLog and C_QuestLog.GetQuestObjectives then
         local ok, list = safe(C_QuestLog.GetQuestObjectives, questID)
         if ok and type(list) == "table" then
             for i, obj in ipairs(list) do
-                out[i] = {
+                local o = {
                     text = plain(obj.text), type = plain(obj.type), finished = plain(obj.finished),
                     numFulfilled = plain(obj.numFulfilled), numRequired = plain(obj.numRequired),
                 }
+                if o.numFulfilled == nil or o.numRequired == nil then
+                    local have, need = textCount(o.text)
+                    if o.numFulfilled == nil then o.numFulfilled = have end
+                    if o.numRequired == nil then o.numRequired = need end
+                end
+                local have, need = tonumber(o.numFulfilled), tonumber(o.numRequired)
+                if o.finished == nil and have and need and need > 0 then o.finished = have >= need end
+                out[i] = o
             end
         end
     end
@@ -166,6 +182,18 @@ function C.SpellKnown(spellID)
     if ok then return plain(known) and true or false end
     ok, known = safe(IsPlayerSpell, spellID)
     return ok and plain(known) and true or false
+end
+
+-- The character has this spell, passive ones included (weapon skills): true or false, nil when
+-- the client cannot tell. IsPlayerSpell only: on Forever, IsSpellKnown says false for a weapon
+-- skill the character has (Polearms, 200, for a hunter who uses one).
+function C.PlayerSpell(spellID)
+    if type(IsPlayerSpell) ~= "function" then return nil end
+    local ok, known = safe(IsPlayerSpell, spellID)
+    if not ok then return nil end
+    known = plain(known)
+    if known == nil then return nil end
+    return known and true or false
 end
 
 -- Seconds before a spell can be cast again (0 when ready or unknown).
@@ -762,6 +790,29 @@ function C.MapName(uiMapID)
     return type(name) == "string" and name ~= "" and name or nil
 end
 
+-- Localized name of an area (AreaID: a town such as Booty Bay, 35), or nil.
+function C.AreaName(areaID)
+    if not (C_Map and C_Map.GetAreaInfo) then return nil end
+    local ok, name = safe(C_Map.GetAreaInfo, areaID)
+    name = ok and plain(name)
+    return type(name) == "string" and name ~= "" and name or nil
+end
+
+-- The names of the character's skill lines (the skills panel: weapons, professions...), as a
+-- set; empty when the client cannot tell.
+function C.SkillNames()
+    local out = {}
+    local ok, count = safe(GetNumSkillLines)
+    count = ok and plain(count)
+    if type(count) ~= "number" then return out end
+    for i = 1, count do
+        local okI, name, header = safe(GetSkillLineInfo, i)
+        name = okI and plain(name)
+        if type(name) == "string" and not plain(header) then out[name] = true end
+    end
+    return out
+end
+
 -- The zone (UiMap type 3) a map belongs to: the map itself, or its parent for a dungeon,
 -- a city's sub-map or a cave. Its id and localized name, or nil.
 function C.ZoneOf(uiMapID)
@@ -893,8 +944,18 @@ function C.PlayerMap()
 end
 
 -- "12,345" with the client's thousands separator when it has one.
+-- A whole number as the player's language writes it (L.NUMBER_GROUP between groups of three
+-- digits): "13,000" in English, "13 000" in French (a no-break space), "13.000" in German,
+-- Spanish and Portuguese. Not the client's BreakUpLargeNumbers: some clients write the
+-- English way whatever their language (Yendi: "environ 13,000 XP").
 function C.Number(n)
-    local ok, text = safe(BreakUpLargeNumbers, n)
-    if ok and type(text) == "string" then return text end
-    return tostring(n)
+    n = tonumber(n)
+    if not n then return "?" end
+    local digits = tostring(math.floor(math.abs(n) + 0.5))
+    local sep = Ding.L and Ding.L.NUMBER_GROUP or ","
+    local head = #digits % 3
+    local parts = {}
+    if head > 0 then parts[1] = digits:sub(1, head) end
+    for i = head + 1, #digits, 3 do parts[#parts + 1] = digits:sub(i, i + 2) end
+    return (n < 0 and "-" or "") .. table.concat(parts, sep)
 end

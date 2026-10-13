@@ -87,4 +87,6 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h10-ashenvale", {
         "Tes cibles sont dans la grotte.",
     ["Head out of the cave"] =
         "Sors de la grotte",
+    ["Thunder Bluff"] =
+        "Pitons-du-Tonnerre",
 })

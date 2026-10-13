@@ -2,13 +2,18 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Alliance/29.lua.
--- Simulated (warrior): Human 48 (57%) -> 49 (0%) in 3 h 10, 4 quests turned in; Dwarf 48 (57%) -> 49 (0%) in 3 h 10, 4 quests turned in; NightElf 48 (57%) -> 49 (0%) in 3 h 10, 4 quests turned in; Gnome 48 (57%) -> 49 (0%) in 3 h 10, 4 quests turned in; Skyborne 48 (57%) -> 49 (0%) in 3 h 10, 4 quests turned in.
+-- Simulated (warrior): Human 48 (57%) -> 49 (0%) in 3 h 09, 4 quests turned in; Dwarf 48 (57%) -> 49 (0%) in 3 h 09, 4 quests turned in; NightElf 48 (57%) -> 49 (0%) in 3 h 09, 4 quests turned in; Gnome 48 (57%) -> 49 (0%) in 3 h 09, 4 quests turned in; Skyborne 48 (57%) -> 49 (0%) in 3 h 09, 4 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-a29-the-hinterlands",
     title    = "The Hinterlands (48-49)",
     faction  = "Alliance",
     minLevel = 48, maxLevel = 49,
     next     = "leveling-a30-tanaris",
+    leftOut  = {
+        [2990] = { kind = "far", turnin = true },
+        [4297] = { kind = "prereq" },
+        [4298] = { kind = "prereq" },
+    },
     steps    = {
         { go = { 1425, 9.75, 44.47 }, text = "Travel to Aerie Peak", -- level 48
           note = "The Hinterlands: Aerie Peak, in the west of the zone." },
@@ -16,7 +21,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors. The NPC is at the summit of the trail." },
         { go = { 1425, 20.76, 47.85 }, text = "Climb the trail" }, -- level 48
         { turnin = 1452 }, -- level 48
-        { accept = 1469, sticky = 3661, -- level 48
+        { accept = 1469, sticky = 3661, why = { kind = "carry", quest = 1469, seconds = 31680, xp = 1600 }, -- level 48
           note = "Wait for the talking to finish" },
         { complete = 2988 }, -- level 48
         { complete = 2988 }, -- level 48
@@ -48,6 +53,6 @@ Ding.RegisterGuide({
         { go = { 1425, 78.17, 68.15 }, elite = true, text = "Kill mobs until your hearthstone is off cooldown", -- level 48
           note = "Stay away from Gammerita. The quarry: a tough elite tortoise, azure-shelled. This one roams, so scan the surrounding area." },
         { talk = 7799, bank = { 6287, 9328, 9330, 3900, 10819 }, -- level 49
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need them later for \"Rhapsody's Tale\", \"The Super Snapper FX\", \"Whiskey Slim's Lost Grog\" and \"Favored of Elune?\": keep them in the bank to free bag slots." },
     },
 })

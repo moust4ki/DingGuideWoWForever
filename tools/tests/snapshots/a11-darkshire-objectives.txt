@@ -1,0 +1,44 @@
+# a11-darkshire-objectives
+# Duskwood around Darkshire: a step's objectives under their quest, a quest the guide carries along
+# frFR, Dwarf HUNTER level 26, window 300 wide, scale 1, mouse
+
+TITLE  Ding! · Bois de la Pénombre et Carmines (25-27)
+STEP   < Étape 15 / 97 >   zone: Sombre-Comté
+
+ 1  header  [header] no icon, text light grey, semibold 12
+    [25] « Le Totem d'affliction »
+    card:
+      | Le Totem d'affliction
+      | En cours : ses objectifs sont en dessous.
+      | Quête de niveau 25
+      | Croc de goule : 3/7
+      | Fiole de venin d'araignée : 0/7
+      | Doigt de squelette : 7/7
+      | Clic : la flèche y va.
+ 2  objective  [todo] red background, red dot icon, text white, indented, counter 3/7 red
+      Récupérer 7 Croc de goule
+      card:
+        | Récupérer 7 Croc de goule
+        | À faire.
+        | 3 sur 7 pour l'instant.
+        | Pour [25] « Le Totem d'affliction » : 1 sur 3 objectifs faits.
+        | Clic : la flèche y va.
+ 3  objective  [todo] red background, red dot icon, text white, indented, counter 0/7 red
+      Récupérer 7 Fiole de venin d'araignée
+      card:
+        | Récupérer 7 Fiole de venin d'araignée
+        | À faire.
+        | 0 sur 7 pour l'instant.
+        | Pour [25] « Le Totem d'affliction » : 1 sur 3 objectifs faits.
+        | Clic : la flèche y va.
+ 4  objective  [done] green background, green check icon, text light grey, indented, counter 7/7 green
+      7 Doigt de squelette : fait
+      card:
+        | 7 Doigt de squelette : fait
+        | Fait.
+        | Pour [25] « Le Totem d'affliction » : 1 sur 3 objectifs faits.
+        | Clic : la flèche y va.
+
+PROGRESS bar 15 / 97
+MENU (right click on the window): Marquer comme fait | Passer, à faire plus tard
+MENU (right click on a row with a quest): Marquer comme fait | Passer, à faire plus tard | Trouver cette quête dans le guide

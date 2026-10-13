@@ -15,6 +15,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h41-silithus", {
         "세나리온 요새 비행 조련사",
     ["The NPC is on the house's raised terrace."] =
         "NPC는 집의 높은 테라스 위에 있습니다.",
+    ["The object is indoors."] =
+        "그 물체는 건물 안에 있습니다.",
     ["Watch out: killing them can summon more foes."] =
         "조심하세요, 처치하면 적이 더 소환될 수 있습니다.",
     ["The foes here are scorpions."] =

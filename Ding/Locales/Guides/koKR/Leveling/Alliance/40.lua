@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a40-burning-steppes", {
         "아이언포지에 먼저 들른 다음 불타는 평원: 동쪽의 모건의 터로 가세요.",
     ["The NPC is indoors."] =
         "NPC는 건물 안에 있습니다.",
+    ["Ironforge"] =
+        "아이언포지",
     ["Your objective lies in a little cavern. This foe is elite. Consider bringing a group for this one."] =
         "목표는 작은 동굴 안에 있습니다. 이 적은 정예입니다. 파티를 꾸려 하는 것도 고려하세요.",
     ["Your objective lies in a little cavern."] =
@@ -35,8 +37,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a40-burning-steppes", {
         "NPC는 나이 든 인간 여성입니다. NPC는 긴 경로를 순찰합니다. 경로를 따라 찾아보세요. 없다면 스톰윈드 52.4, 42.1에 있는 집 위층에 있을 수 있습니다.",
     ["Walk over the rope bridge, then climb the trail"] =
         "밧줄 다리를 건넌 다음 길을 올라가세요",
-    ["The NPC is up on the summit."] =
-        "NPC는 정상에 있습니다.",
+    ["The object is up on the summit."] =
+        "그 물체는 정상에 있습니다.",
     ["Dungeon runs are a fine choice here too, as you like."] =
         "원한다면 여기서도 던전을 도는 것이 좋은 선택입니다.",
 })

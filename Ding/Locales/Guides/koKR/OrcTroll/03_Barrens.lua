@@ -5,4 +5,10 @@ Ding.RegisterGuideTranslation("koKR", "orc-03-barrens", {
         "불모의 땅 (11-19)",
     ["Cross the bridge west of Razor Hill into the Barrens, then follow the road to the Crossroads: your base."] =
         "칼바위 언덕 서쪽의 다리를 건너 불모의 땅으로 들어간 다음, 길을 따라 크로스로드로 가세요: 거점입니다.",
+    ["The Crossroads"] =
+        "크로스로드",
+    ["Sun Rock Retreat"] =
+        "해바위 야영지",
+    ["Orgrimmar"] =
+        "오그리마",
 })

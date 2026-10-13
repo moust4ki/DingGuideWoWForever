@@ -2,13 +2,23 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Horde/07.lua.
--- Simulated (warrior): Orc 22 (39%) -> 24 (84%) in 5 h 20, 19 quests turned in; Scourge 22 (39%) -> 24 (84%) in 5 h 20, 19 quests turned in; Tauren 22 (33%) -> 24 (81%) in 5 h 19, 19 quests turned in; Troll 22 (39%) -> 24 (84%) in 5 h 20, 19 quests turned in; Skyborne 22 (40%) -> 24 (85%) in 5 h 20, 19 quests turned in.
+-- Simulated (warrior): Orc 22 (54%) -> 24 (96%) in 5 h 20, 19 quests turned in; Scourge 22 (54%) -> 24 (96%) in 5 h 20, 19 quests turned in; Tauren 22 (48%) -> 24 (91%) in 5 h 20, 19 quests turned in; Troll 22 (54%) -> 24 (96%) in 5 h 20, 19 quests turned in; Skyborne 22 (55%) -> 24 (97%) in 5 h 20, 19 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-h07-hillsbrad-foothills",
     title    = "Hillsbrad Foothills (22-24)",
     faction  = "Horde",
     minLevel = 22, maxLevel = 24,
     next     = "leveling-h08-the-barrens",
+    leftOut  = {
+        [517] = { kind = "version" },
+        [519] = { kind = "prereq" },
+        [520] = { kind = "prereq" },
+        [521] = { kind = "prereq" },
+        [524] = { kind = "prereq" },
+        [541] = { kind = "version" },
+        [2935] = { kind = "far", turnin = true },
+        [2938] = { kind = "prereq" },
+    },
     steps    = {
         { go = { 1421, 44.19, 42.67 }, text = "Travel to the Undercity", -- level 22
           note = "Undercity first, then Hillsbrad Foothills: Tarren Mill." },
@@ -48,8 +58,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { useitem = 8095, races = { "Orc", "Scourge", "Troll" }, classes = { "ROGUE" }, -- level 22
           note = "Get rid of your Touch of Zanzil." },
-        { turnin = 494, accept = 527, -- level 22
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 494, accept = 527 }, -- level 22
         { talk = 10057, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, text = "Leave your pet with the stable master." }, -- level 22
         { talk = 10057, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, -- level 22
           note = "You will tame a short-term pet shortly. Pick up Claw (Rank 3) for your pet." },
@@ -73,35 +82,33 @@ Ding.RegisterGuide({
         { collect = { { 3467, 1 } }, spots = { { 1424, 79.63, 41.79 }, { 1424, 75.35, 41.96 } }, -- level 22
           note = "This one roams, so scan the surrounding area. The targets are spread over several spots." },
         { complete = 498, -- level 22
-          note = "Look for it bound to the orc's leg. The NPC is indoors." },
+          note = "Look for it bound to the orc's leg. The object is indoors." },
         { complete = 1066 }, -- level 22
-        { complete = 549 }, -- level 22
-        { complete = 496, -- level 22
+        { complete = 549 }, -- level 23
+        { complete = 496, -- level 23
           note = "The targets are spiders with green bodies." },
         { complete = 496 }, -- level 23
         { level = 22, xp = 19570, patrol = { { 1424, 62.86, 34.25 }, { 1424, 60.34, 37.44 }, { 1424, 62.56, 39.63 }, { 1424, 69.23, 41.36 }, { 1424, 70.85, 38.35 }, { 1424, 70.43, 35.37 }, { 1424, 72.34, 44.26 }, { 1424, 68.65, 45.85 }, { 1424, 58.54, 33.34 }, { 1424, 61.24, 30.26 }, { 1424, 58.74, 26.03 }, { 1424, 57.24, 23.45 }, { 1424, 56.45, 28.86 }, { 1424, 66.36, 26.46 }, { 1424, 65.43, 22.46 }, { 1424, 67.55, 16.14 }, { 1424, 61.95, 15.57 }, { 1424, 57.96, 14.63 }, { 1424, 55.15, 17.03 }, { 1424, 55.85, 10.05 } }, -- level 23
           note = "Together with the next turn-ins, this brings you to level 23." },
-        { turnin = { 1066, 496 }, accept = { 499, 1067 }, -- level 23
+        { turnin = { 1066, 496 }, accept = { 499, 1067 }, why = { continent = true, kind = "carry", quest = 1067, seconds = 8280, xp = 1400 }, -- level 23
           note = "The NPC is indoors." },
         { turnin = 499, -- level 23
           note = "The NPC is indoors." },
-        { turnin = 549, -- level 23
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 549 }, -- level 23
         { turnin = 498, sticky = { 527, 501 }, -- level 23
           note = "The NPC is indoors." },
         { complete = 527, -- level 23
           note = "The targets are spread over several spots. Indoors or out in the open fields." },
-        { complete = 527, -- level 23
+        { complete = 527, -- level 24
           note = "Check each of the two floors indoors. It may be found outdoors too." },
-        { complete = 527 }, -- level 23
-        { complete = 501 }, -- level 23
+        { complete = 527 }, -- level 24
+        { complete = 501 }, -- level 24
         { turnin = 501, accept = 502, -- level 24
           note = "The NPC is indoors." },
-        { turnin = 527, accept = 528, -- level 24
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 527, accept = 528 }, -- level 24
         { accept = 546, sticky = { 567, 528, 546 } }, -- level 24
         { turnin = 502, -- level 24
-          note = "The NPC is a little wolf. This one roams, so scan the surrounding area. He goes berserk and attacks you once the quest is handed in." },
+          note = "The NPC is a little wolf. He goes berserk and attacks you once the quest is handed in." },
         { complete = 567, -- level 24
           note = "A woman holding a pitchfork. This one roams, so scan the surrounding area." },
         { complete = 567, patrol = { { 1424, 33, 39.61 }, { 1424, 34.2, 38.69 }, { 1424, 35.42, 38.78 }, { 1424, 36.47, 39.39 }, { 1424, 35.72, 38.78 }, { 1424, 34.02, 38.79 }, { 1424, 32.49, 40.05 }, { 1424, 32.64, 38.2 }, { 1424, 32.72, 36.93 }, { 1424, 32.56, 36 }, { 1424, 32.88, 35.23 }, { 1424, 32.63, 35.86 }, { 1424, 32.66, 37.01 }, { 1424, 32.61, 38.24 }, { 1424, 32.58, 39.46 }, { 1424, 32.68, 41.13 }, { 1424, 32.42, 42.49 }, { 1424, 31.34, 42.18 }, { 1424, 31.01, 41.77 }, { 1424, 30.49, 40.58 }, { 1424, 30.79, 41.67 }, { 1424, 31.26, 42.15 }, { 1424, 31.78, 42.2 }, { 1424, 32.48, 42.92 }, { 1424, 32.46, 44.74 }, { 1424, 32.34, 45.18 }, { 1424, 32.49, 44.14 }, { 1424, 32.59, 42.18 }, { 1424, 32.55, 41.2 } }, -- level 24
@@ -109,10 +116,9 @@ Ding.RegisterGuide({
         { complete = 528 }, -- level 24
         { level = 23, xp = 27400, patrol = { { 1424, 41.83, 37.57 }, { 1424, 42.34, 40.77 }, { 1424, 45.24, 39.45 }, { 1424, 46.37, 42.54 }, { 1424, 48.66, 40.25 }, { 1424, 51.06, 42.64 }, { 1424, 54.45, 42.14 }, { 1424, 57.36, 41.46 }, { 1424, 55.45, 36.94 }, { 1424, 52.06, 38.97 }, { 1424, 51.45, 35.65 }, { 1424, 48.46, 34.23 }, { 1424, 48.35, 31.17 }, { 1424, 53.23, 32.66 }, { 1424, 54.77, 29.65 }, { 1424, 44.65, 35.45 }, { 1424, 40.55, 34.44 }, { 1424, 38.05, 35.97 }, { 1424, 38.34, 39.25 }, { 1424, 39.77, 42.56 }, { 1424, 37.24, 44.24 }, { 1424, 39.24, 47.06 }, { 1424, 48.36, 45.65 }, { 1424, 52.15, 46.36 } }, -- level 24
           note = "With the coming hand-ins, this brings you to level 24. Tougher foes are coming up next." },
-        { turnin = 528, accept = 529, sticky = { 529, 546 }, -- level 24
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 528, accept = 529, sticky = { 529, 546 }, why = { back = true, chain = 3, kind = "detour", quest = 528, seconds = 360, short = true, xp = 8500 } }, -- level 24
         { complete = 529, -- level 24
-          note = "The NPC is indoors." },
+          note = "The target is indoors." },
         { complete = 529, -- level 24
           note = "This one roams, so scan the surrounding area. The targets are spread over several spots. Some may be in the smithy." },
         { complete = 529 }, -- level 24

@@ -2,18 +2,21 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Horde/08.lua.
--- Simulated (warrior): Orc 24 (84%) -> 25 (89%) in 1 h 58, 13 quests turned in; Scourge 24 (84%) -> 25 (89%) in 1 h 58, 13 quests turned in; Tauren 24 (81%) -> 25 (86%) in 1 h 58, 13 quests turned in; Troll 24 (84%) -> 25 (89%) in 1 h 58, 13 quests turned in; Skyborne 24 (85%) -> 25 (90%) in 1 h 58, 13 quests turned in.
+-- Simulated (warrior): Orc 24 (96%) -> 25 (99%) in 1 h 58, 13 quests turned in; Scourge 24 (96%) -> 25 (99%) in 1 h 58, 13 quests turned in; Tauren 24 (91%) -> 25 (95%) in 1 h 58, 13 quests turned in; Troll 24 (96%) -> 25 (99%) in 1 h 58, 13 quests turned in; Skyborne 24 (97%) -> 26 (0%) in 1 h 58, 13 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-h08-the-barrens",
     title    = "The Barrens (24-25)",
     faction  = "Horde",
     minLevel = 24, maxLevel = 25,
     next     = "leveling-h09-stonetalon-mountains",
+    leftOut  = {
+        [92706] = { kind = "detour", seconds = 120, xp = 1300 },
+    },
     steps    = {
         { talk = 8356, collect = { { 5059, 1 } }, spots = { { 1456, 47.19, 57.86 } }, -- level 24
           note = "Thunder Bluff first, then the Barrens. The NPC is indoors." },
         { talk = 8356, bank = { 3692, 3564 }, -- level 24
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need them later for \"Souvenirs of Death\" and \"Battle of Hillsbrad\": keep them in the bank to free bag slots." },
         { go = { 1456, 29.77, 29.79 }, text = "Go into the cavern" }, -- level 24
         { turnin = 1067, -- level 24
           note = "Your targets are within the cavern." },
@@ -64,25 +67,25 @@ Ding.RegisterGuide({
         { complete = 879, when = { log = 879 }, -- level 24
           note = "This one roams, so scan the surrounding area. Beware of foes lurking in stealth." },
         { complete = 879, when = { log = 879 }, -- level 24
-          note = "Beware of foes lurking in stealth. The NPC is indoors." },
+          note = "Beware of foes lurking in stealth. The target is indoors." },
         { complete = 893, keep = 5093, -- level 24
           note = "Kill Stalkers and Pathfinders. Beware of foes lurking in stealth." },
-        { complete = 893, keep = 5092, -- level 24
+        { complete = 893, keep = 5092, -- level 25
           note = "Beware of foes lurking in stealth." },
-        { complete = 893, keep = 5094, -- level 24
+        { complete = 893, keep = 5094, -- level 25
           note = "Beware of foes lurking in stealth." },
-        { collect = { { 5103, 1 } }, useitem = 5103, sticky = 843, -- level 24
+        { collect = { { 5103, 1 } }, useitem = 5103, sticky = 843, -- level 25
           note = "The target is a red winged serpent. The target roams; check the area." },
-        { accept = 885, races = { "Orc", "Tauren", "Troll" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK", "DRUID" } }, -- level 24
-        { accept = 885, races = { "Scourge", "Skyborne" } }, -- level 24
-        { complete = 843, -- level 24
+        { accept = 885, races = { "Orc", "Tauren", "Troll" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK", "DRUID" } }, -- level 25
+        { accept = 885, races = { "Scourge", "Skyborne" } }, -- level 25
+        { complete = 843, -- level 25
           note = "This one roams, so scan the surrounding area. The targets are spread over several spots." },
         { complete = 843 }, -- level 25
         { go = { 1413, 46.79, 84.83 }, text = "Climb the trail" }, -- level 25
         { turnin = 843, accept = 846, -- level 25
           note = "The NPC patrols the road; look along it." },
         { complete = 846, -- level 25
-          note = "The NPC can be indoors or out." },
+          note = "The target can be indoors or out." },
         { turnin = 846, accept = 849, -- level 25
           note = "The NPC patrols the road; look along it." },
         { complete = 849, -- level 25
@@ -95,7 +98,7 @@ Ding.RegisterGuide({
           note = "Watch out: the foes here are above your level." },
         { turnin = 893 }, -- level 25
         { turnin = 897, when = { log = 897 } }, -- level 25
-        { turnin = 884, accept = 6382 }, -- level 25
+        { turnin = 884, accept = 6382, why = { kind = "carry", quest = 6382, seconds = 11040, xp = 300 } }, -- level 25
         { turnin = 885, races = { "Orc", "Tauren", "Troll" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK", "DRUID" } }, -- level 25
         { turnin = 885, races = { "Scourge", "Skyborne" } }, -- level 25
         { turnin = 879, when = { log = 879 } }, -- level 25

@@ -5,4 +5,6 @@ Ding.RegisterGuideTranslation("koKR", "horde-40-badlands", {
         "황야의 땅 (38)",
     ["Fly from Hammerfall to Kargath, in the west of the Badlands."] =
         "해머폴에서 황야의 땅 서쪽의 카르가스로 날아가세요.",
+    ["Kargath"] =
+        "카르가스",
 })

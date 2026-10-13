@@ -19,8 +19,6 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a13-stonetalon-mountains-and-ash
         "沿道路走到这条小路",
     ["Keep on the trail"] =
         "继续沿小路走",
-    ["This one roams, so scan the surrounding area."] =
-        "它会四处游荡，在周围找找。",
     ["Fight the treants. Circle the mountain on foot."] =
         "与树人战斗。步行绕过这座山。",
     ["Head uphill on the trail and across the passage"] =
@@ -29,6 +27,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a13-stonetalon-mountains-and-ash
         "穿过隧道离开狼嚎谷",
     ["Climb the trail"] =
         "沿小路往上爬",
+    ["This one roams, so scan the surrounding area."] =
+        "它会四处游荡，在周围找找。",
     ["Leave your pet with the stable master."] =
         "把宠物寄存在兽栏管理员处。",
     ["You will tame a short-term pet shortly. You pick up Claw (Rank 4) here."] =
@@ -47,12 +47,12 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a13-stonetalon-mountains-and-ash
         "当心潜行中的敌人。",
     ["Hunt down satyrs. Beware of foes lurking in stealth."] =
         "猎杀萨特。当心潜行中的敌人。",
-    ["Let the conversation play out. This one roams, so scan the surrounding area."] =
-        "等对话结束。它会四处游荡，在周围找找。",
+    ["Let the conversation play out."] =
+        "等对话结束。",
     ["Circle the peak, then climb the twisting dirt trail to the shrine"] =
         "绕过山峰，然后沿蜿蜒的土路爬到神殿",
-    ["The NPC is up on the summit."] =
-        "NPC在山顶上。",
+    ["The object is up on the summit."] =
+        "该物件在山顶上。",
     ["Circle the mountain, then stay on the trail"] =
         "绕过山，然后沿小路走",
     ["Stand on the marked point, then apply the item."] =
@@ -67,14 +67,12 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a13-stonetalon-mountains-and-ash
         "沿斜坡往上走",
     ["Walk over the span"] =
         "走过桥",
-    ["The NPC is indoors, one floor up."] =
-        "NPC在室内楼上一层。",
+    ["The object is indoors, one floor up."] =
+        "该物件在室内楼上一层。",
     ["Wait for the talking to finish"] =
         "等对话结束",
     ["Stay on the trail"] =
         "沿小路走",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "它会四处游荡，在周围找找。NPC在室内。",
     ["The foes are gnomes. In Gnomeregan's outer halls, not in the instance itself."] =
         "敌人是侏儒。在诺莫瑞根的外部大厅，不在副本里。",
     ["Take the lift down, then head north. In Gnomeregan's outer halls, not in the instance itself."] =

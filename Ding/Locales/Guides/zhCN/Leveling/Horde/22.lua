@@ -27,8 +27,14 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h22-tanaris", {
         "接下来有一个更难对付的敌人。",
     ["Grab the loot."] =
         "拾取战利品。",
+    ["Gadgetzan"] =
+        "加基森",
+    ["The NPC is indoors. You need them later for \"Tanaris Field Sampling\" and \"Screecher Spirits\": keep them in the bank to free bag slots."] =
+        "NPC在室内。之后的任务“塔纳利斯的样本”和“尖啸者的灵魂”需要它们：先存进银行，腾出背包空间。",
     ["Wait for the talking to finish"] =
         "等对话结束",
-    ["Hold on until Rizzle has fled. The NPC is indoors."] =
-        "坚持到Rizzle逃跑。NPC在室内。",
+    ["Hold on until Rizzle has fled. The object is indoors."] =
+        "坚持到Rizzle逃跑。该物件在室内。",
+    ["The NPC is indoors. You need it later for \"Back to Booty Bay\": keep it in the bank to free a bag slot."] =
+        "NPC在室内。之后的任务“返回藏宝海湾”需要它：先存进银行，腾出背包空间。",
 })

@@ -25,14 +25,12 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h18-alterac-mountains-and-arathi
         "Les cibles sont réparties sur plusieurs endroits. Le PNJ est à l'intérieur. Regarde aussi à l'étage.",
     ["The NPC is indoors, one floor up."] =
         "Le PNJ est à l'intérieur, un étage plus haut.",
-    ["The NPC waits on the lower level, indoors. If it is not around, move on without it. No rush; you may complete this afterwards."] =
-        "Le PNJ attend au niveau inférieur, à l'intérieur. S'il n'est pas là, continue sans. Rien ne presse : tu peux le terminer plus tard.",
-    ["This one roams, so scan the surrounding area."] =
-        "Celui-ci se déplace : fouille les environs.",
+    ["The target is on the lower level, indoors. If it is not around, move on without it. No rush; you may complete this afterwards."] =
+        "La cible est au niveau inférieur, à l'intérieur. S'il n'est pas là, continue sans. Rien ne presse : tu peux le terminer plus tard.",
     ["Climb the slope, then leap the wall"] =
         "Monte la pente, puis saute le mur",
-    ["The NPC is indoors, one floor up. Beware of foes lurking in stealth."] =
-        "Le PNJ est à l'intérieur, un étage plus haut. Attention aux ennemis camouflés.",
+    ["The target is indoors, one floor up. Beware of foes lurking in stealth."] =
+        "La cible est à l'intérieur, un étage plus haut. Attention aux ennemis camouflés.",
     ["The targets are kobolds. Additional ones are in the cavern up the trail. The following step takes place in the cave."] =
         "Les cibles sont des kobolds. Il y en a d'autres dans la caverne en haut du sentier. L'étape suivante se passe dans la grotte.",
     ["Climb the trail to the cavern"] =
@@ -45,6 +43,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h18-alterac-mountains-and-arathi
         "Sors de la grotte",
     ["The targets are raptors."] =
         "Les cibles sont des raptors.",
+    ["This one roams, so scan the surrounding area."] =
+        "Celui-ci se déplace : fouille les environs.",
     ["Let the conversation play out. This one roams, so scan the surrounding area."] =
         "Laisse la conversation se dérouler. Celui-ci se déplace : fouille les environs.",
     ["Take the trail across the peaks"] =

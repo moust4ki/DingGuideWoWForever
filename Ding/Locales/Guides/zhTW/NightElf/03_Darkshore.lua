@@ -7,4 +7,6 @@ Ding.RegisterGuideTranslation("zhTW", "nightelf-03-darkshore", {
         "經達納蘇斯底部的傳送門前往魯瑟蘭村，再搭船到黑海岸的據點奧伯丁。",
     ["Finish the level on nearby monsters before moving on."] =
         "先在附近打怪升完這一級再繼續。",
+    ["Auberdine"] =
+        "奧伯丁",
 })

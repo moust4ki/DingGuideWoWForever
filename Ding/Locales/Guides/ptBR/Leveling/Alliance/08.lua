@@ -47,8 +47,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a08-darkshore", {
         "Deixe a conversa terminar. Fique com o Prospector Trilheiro e defenda-o. Ele é frágil e cai rápido.",
     ["Look on top of the table."] =
         "Procure em cima da mesa.",
-    ["For this quest you guard an NPC on the move. If she is absent, wait for her to reappear. This one roams, so scan the surrounding area."] =
-        "Nesta missão, você protege um NPC em movimento. Se ela não estiver lá, espere ela reaparecer. Este se desloca, então procure pelos arredores.",
+    ["For this quest you guard an NPC on the move. If she is absent, wait for her to reappear."] =
+        "Nesta missão, você protege um NPC em movimento. Se ela não estiver lá, espere ela reaparecer.",
     ["Let the conversation play out. Escort Therylune and defend her."] =
         "Deixe a conversa terminar. Escolte Therylune e defenda-a.",
     ["For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears. Your objective lies in a little cavern."] =

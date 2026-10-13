@@ -5,4 +5,6 @@ Ding.RegisterGuideTranslation("deDE", "alliance-40-dustwallow", {
         "Düstermarschen (40)",
     ["Boat from Menethil to Theramore, the Alliance base on the edge of the marsh."] =
         "Schiff von Menethil nach Theramore, der Basis der Allianz am Rand der Marschen.",
+    ["Theramore"] =
+        "Theramore",
 })

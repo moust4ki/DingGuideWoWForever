@@ -5,10 +5,20 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h17-dustwallow-marsh", {
         "먼지진흙 습지대 (37-38)",
     ["Orgrimmar first, then Dustwallow Marsh: Brackenwall Village. Hold on to it, an upcoming quest uses it."] =
         "오그리마에 먼저 들른 다음 먼지진흙 습지대: 담쟁이 마을로 가세요. 곧 할 퀘스트에 쓰니 보관하세요.",
-    ["The NPC is indoors."] =
-        "NPC는 건물 안에 있습니다.",
+    ["The NPC is indoors. You need it later for \"Caught!\": keep it in the bank to free a bag slot."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"화장실에 갇힌 사람\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Chapter I\": keep it in the bank to free a bag slot."] =
+        "나중에 \"제 1 장\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Chapter II\": keep it in the bank to free a bag slot."] =
+        "나중에 \"제 2 장\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Chapter III\": keep it in the bank to free a bag slot."] =
+        "나중에 \"제 3 장\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Chapter IV\": keep it in the bank to free a bag slot."] =
+        "나중에 \"제 4 장\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["Climb the steps"] =
         "계단을 오르세요",
+    ["The NPC is indoors."] =
+        "NPC는 건물 안에 있습니다.",
     ["A lengthy stretch of quests is coming up. You won't find an ammunition seller. The NPC is indoors."] =
         "곧 긴 퀘스트 구간이 이어집니다. 탄약 상인이 없습니다. NPC는 건물 안에 있습니다.",
     ["The quest starts from a small piece of metal."] =
@@ -57,6 +67,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h17-dustwallow-marsh", {
         "보관하세요. 전사의 소용돌이 무기 연계 퀘스트에 필요합니다.",
     ["Get these for simple Badlands turn-ins ahead. The NPC is indoors."] =
         "앞으로 있을 황야의 땅의 간단한 반납을 위해 구해 두세요. NPC는 건물 안에 있습니다.",
+    ["You need them later for \"The Black Shield\" and \"Into the Field\": keep them in the bank to free bag slots."] =
+        "나중에 \"검은 방패\", \"사막으로\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["Stay clear of Refuge Point."] =
         "임시 주둔지는 피하세요.",
 })

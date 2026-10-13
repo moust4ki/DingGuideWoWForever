@@ -19,20 +19,30 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a14-duskwood-and-stranglethorn-v
         "NPC站在水邊。",
     ["The NPC is indoors, one floor up."] =
         "NPC在室內的樓上一層。",
+    ["The NPC is indoors. You need it later for \"Soothing Turtle Bisque\": keep it in the bank to free a bag slot."] =
+        "NPC在室內。之後的任務「海龜湯」需要它：先存進銀行，空出背包空間。",
+    ["You need it later for \"The Brassbolts Brothers\": keep it in the bank to free a bag slot."] =
+        "之後的任務「防撞頭盔」需要它：先存進銀行，空出背包空間。",
+    ["You need it later for \"A Noble Brew\": keep it in the bank to free a bag slot."] =
+        "之後的任務「名釀」需要它：先存進銀行，空出背包空間。",
     ["This one roams, so scan the surrounding area."] =
         "這個會四處走動，留意周圍一帶。",
+    ["Darkshire"] =
+        "夜色鎮",
     ["The NPC patrols the road; look along it."] =
         "NPC沿著道路巡邏；沿路尋找。",
     ["The targets are worgen."] =
         "目標是狼人。",
-    ["Be ready for a fight right away. The NPC is indoors, one floor up."] =
-        "準備好立刻戰鬥。NPC在室內的樓上一層。",
+    ["Be ready for a fight right away. The object is indoors, one floor up."] =
+        "準備好立刻戰鬥。這個物件在室內的樓上一層。",
     ["The targets are ghouls. Targets are both in the tomb and around it."] =
         "目標是食屍鬼。目標在墓穴內外都有。",
     ["Other ghouls occupy the same spawn points. Targets are both in the tomb and around it."] =
         "其他食屍鬼也會在相同的重生點出現。目標在墓穴內外都有。",
     ["Exit the tomb"] =
         "離開墓穴",
+    ["The object is indoors."] =
+        "這個物件在室內。",
     ["Go into the cavern"] =
         "進入洞穴",
     ["Your targets are within the cavern. The targets are spread over several spots."] =

@@ -9,8 +9,6 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a39-winterspring-and-felwood", {
         "악령의 숲: 에메랄드 성소는 지역 남쪽에 있습니다.",
     ["Hand these in afterwards for experience and reputation."] =
         "나중에 반납해 경험치와 평판을 얻으세요.",
-    ["This one roams, so scan the surrounding area."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요.",
     ["The NPC is indoors."] =
         "NPC는 건물 안에 있습니다.",
     ["Let the conversation play out. The NPC is indoors."] =
@@ -41,8 +39,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a39-winterspring-and-felwood", {
         "곧 있을 반납까지 하면 55레벨이 됩니다. 곧 어려운 퀘스트가 있습니다.",
     ["Flee if things go badly."] =
         "상황이 나빠지면 도망치세요.",
-    ["The NPC is a human spirit. This one roams, so scan the surrounding area."] =
-        "NPC는 인간의 영혼입니다. 이 대상은 돌아다니므로 주변을 살펴보세요.",
+    ["The NPC is a human spirit."] =
+        "NPC는 인간의 영혼입니다.",
     ["Your targets are within the cavern."] =
         "대상은 동굴 안에 있습니다.",
     ["Let the conversation play out. Your targets are within the cavern."] =
@@ -59,6 +57,10 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a39-winterspring-and-felwood", {
         "대상은 한 무리로 다니는 흰 펄볼그 3마리입니다. 대상은 길옆으로 긴 경로를 순찰합니다. 길이 끝날 때까지 보이지 않으면 넘어가세요.",
     ["Be ready for a fight right away."] =
         "바로 전투가 시작되니 대비하세요.",
+    ["Everlook"] =
+        "눈망루 마을",
+    ["The NPC is indoors. You need them later for \"Aquementas\", \"The Everlook Report\", \"Duke Nicholas Zverenhoff\" and \"Troubled Spirits of Kel'Theril\": keep them in the bank to free bag slots."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"아쿠에멘타스\", \"눈망루 마을 보고서\", \"공작 니콜라스 즈바른호프\", \"켈테릴의 고통받는 영혼\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["For this quest you guard an NPC on the move. If she is absent, wait for her to reappear."] =
         "이 퀘스트에서는 이동하는 NPC를 보호합니다. 그녀가 없다면 다시 나타날 때까지 기다리세요.",
     ["Let the conversation play out. Escort Ranshalla and guard her. Wait until the foes hit her before you strike."] =
@@ -69,14 +71,14 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a39-winterspring-and-felwood", {
         "56레벨이 될 때까지 던전을 돌아도 됩니다. 나피엔에게 아이템을 5개씩 주세요. 한 묶음을 건넬 때마다 평판 50을 얻습니다.",
     ["Raise Timbermaw Hold standing to Neutral"] =
         "나무구렁 요새 평판을 중립까지 올리세요",
-    ["This one roams, so scan the surrounding area. The NPC stands within the passage."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요. NPC는 통로 안에 서 있습니다.",
+    ["The NPC stands within the passage."] =
+        "NPC는 통로 안에 서 있습니다.",
     ["The NPC is indoors, one floor up."] =
         "NPC는 건물 안 한 층 위에 있습니다.",
     ["Step into the cavern within the trunk"] =
         "나무줄기 속 동굴에 들어가세요",
     ["The spot is on the lower floor of the hollow tree."] =
         "그 지점은 속이 빈 나무의 아래층에 있습니다.",
-    ["This one roams, so scan the surrounding area. The NPC waits on the tower's highest floor."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요. NPC는 탑 꼭대기 층에서 기다립니다.",
+    ["The NPC waits on the tower's highest floor."] =
+        "NPC는 탑 꼭대기 층에서 기다립니다.",
 })

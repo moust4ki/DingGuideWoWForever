@@ -23,6 +23,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h25-feralas", {
         "在地上发光的蓝色圆环旁边。寻找冒出来的土堆。带有任务物品的会发出蓝光。",
     ["Fight the tauren."] =
         "与牛头人战斗。",
+    ["Camp Mojache"] =
+        "莫沙彻营地",
     ["A lengthy grinding stretch is coming up. The NPC is upstairs, out on the balcony."] =
         "接下来要刷很长一段时间的怪。NPC在楼上的阳台上。",
     ["The target is a winged green bug, level 47. You can likely beat it at your current level. The target circles in the air, so search around."] =
@@ -47,6 +49,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h25-feralas", {
         "穿过通道",
     ["The robot sits in the open ground linking the cave and the tunnel."] =
         "机器人在连接洞穴和隧道的空地上。",
+    ["The NPC is indoors. You need them later for \"Another Message to the Wildhammer\", \"Screecher Spirits\" and \"The Super Egg-O-Matic\": keep them in the bank to free bag slots."] =
+        "NPC在室内。之后的任务“又一个给蛮锤部族的警告”、“尖啸者的灵魂”和“超级测蛋器”需要它们：先存进银行，腾出背包空间。",
     ["This NPC is found down in the Cleft of Shadow."] =
         "该NPC在下面的暗影裂口里。",
     ["The quest giver waits in the tent. This NPC is found down in the Cleft of Shadow."] =
@@ -59,6 +63,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h25-feralas", {
         "NPC在室内楼上一层。",
     ["If some pages are unavailable, go on without them. The NPC is indoors."] =
         "如果有些书页拿不到，就不用管它们，继续前进。NPC在室内。",
+    ["The NPC is indoors. You need it later for \"Return to Witch Doctor Uzer'i\": keep it in the bank to free a bag slot."] =
+        "NPC在室内。之后的任务“向巫医尤克里回复”需要它：先存进银行，腾出背包空间。",
     ["The NPC is indoors. You need Chapter I as well as Chapter II."] =
         "NPC在室内。你需要第一章和第二章。",
 })

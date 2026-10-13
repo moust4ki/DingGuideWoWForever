@@ -19,8 +19,6 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a34-blasted-lands-and-burning-st
         "하이에나를 사냥해 구하세요. 전갈도 같은 위치에 나타납니다.",
     ["The foes here are scorpions. Hyenas also use these spawn spots."] =
         "여기의 적은 전갈입니다. 하이에나도 이 생성 위치에 나타납니다.",
-    ["This one roams, so scan the surrounding area."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요.",
     ["Climb the trail to Morgan's Vigil"] =
         "길을 올라 모건의 터로 가세요",
     ["Flight master at Morgan's Vigil"] =
@@ -29,8 +27,12 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a34-blasted-lands-and-burning-st
         "NPC는 건물 안에 있습니다.",
     ["This one roams, so scan the surrounding area. The NPC is indoors."] =
         "이 대상은 돌아다니므로 주변을 살펴보세요. NPC는 건물 안에 있습니다.",
+    ["Ironforge"] =
+        "아이언포지",
     ["The NPC is indoors. Hold on to it; a task in Un'Goro Crater calls for it later."] =
         "NPC는 건물 안에 있습니다. 보관하세요. 운고로 분화구의 임무에 나중에 필요합니다.",
+    ["The NPC is indoors. You need them later for \"Chasing A-Me 01\" and \"Arcane Runes\": keep them in the bank to free bag slots."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"에이미 01 추적\", \"고대 룬\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["8 different quests will ask for it. You hand in 60 pieces of cloth for every quest. The NPC is indoors."] =
         "서로 다른 퀘스트 8개에 필요합니다. 퀘스트마다 옷감 60개를 반납합니다. NPC는 건물 안에 있습니다.",
     ["The NPC patrols a long route; look along it."] =

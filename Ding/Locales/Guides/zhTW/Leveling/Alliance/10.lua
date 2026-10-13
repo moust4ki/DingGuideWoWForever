@@ -7,18 +7,16 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a10-wetlands", {
         "前往米奈希爾港",
     ["Wetlands: Menethil Harbor, on the west coast."] =
         "濕地：米奈希爾港，位於西岸。",
-    ["This one roams, so scan the surrounding area."] =
-        "這個會四處走動，留意周圍一帶。",
     ["The NPC is indoors."] =
         "NPC在室內。",
     ["The NPC waits on the lower level, indoors."] =
         "NPC在室內的下層。",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "這個會四處走動，留意周圍一帶。NPC在室內。",
+    ["Deepwater Tavern"] =
+        "米奈希爾港",
     ["The NPC is indoors, one floor up."] =
         "NPC在室內的樓上一層。",
-    ["This one roams, so scan the surrounding area. The NPC is indoors. Do it only if you can."] =
-        "這個會四處走動，留意周圍一帶。NPC在室內。能做到才做。",
+    ["The NPC is indoors. Do it only if you can."] =
+        "NPC在室內。能做到才做。",
     ["The target is a gray murloc. This one roams, so scan the surrounding area. The target appears at this spot."] =
         "目標是一隻灰色的魚人。這個會四處走動，留意周圍一帶。目標會在這個位置出現。",
     ["Go into Whelgar's Excavation Site"] =

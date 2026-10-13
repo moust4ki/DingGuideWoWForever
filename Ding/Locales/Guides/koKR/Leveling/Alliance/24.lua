@@ -5,14 +5,16 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a24-badlands", {
         "황야의 땅 (41-42)",
     ["Ironforge first, then the Badlands. The NPC waits on the lower level, indoors. A lengthy stretch of quests is coming up. This vendor sells no arrows or bullets."] =
         "아이언포지에 먼저 들른 다음 황야의 땅으로 가세요. NPC는 건물 안 아래층에서 기다립니다. 곧 긴 퀘스트 구간이 이어집니다. 이 상인은 화살이나 탄환을 팔지 않습니다.",
-    ["The NPC is indoors."] =
-        "NPC는 건물 안에 있습니다.",
+    ["The NPC is indoors. You need them later for \"Back to Booty Bay\" and \"Safety First\": keep them in the bank to free bag slots."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"무법항으로의 귀환\", \"안전 제일\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["Get these for simple Badlands turn-ins ahead. The NPC is indoors."] =
         "앞으로 있을 황야의 땅의 간단한 반납을 위해 구해 두세요. NPC는 건물 안에 있습니다.",
     ["This one roams, so scan the surrounding area. The NPC is indoors."] =
         "이 대상은 돌아다니므로 주변을 살펴보세요. NPC는 건물 안에 있습니다.",
-    ["The NPC or item sits on the rocky shelf above."] =
-        "NPC나 아이템은 위쪽 바위턱에 있습니다.",
+    ["The NPC is indoors."] =
+        "NPC는 건물 안에 있습니다.",
+    ["The object sits on the rocky shelf above."] =
+        "그 물체는 위쪽 바위턱에 있습니다.",
     ["Fight the dwarves."] =
         "드워프와 싸우세요.",
     ["Look for a timber box. The targets are spread over several spots."] =
@@ -37,4 +39,6 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a24-badlands", {
         "죽은 다음 영혼의 치유사에게서 부활하세요",
     ["Flight master at Thorium Point"] =
         "토륨 조합 거점 비행 조련사",
+    ["Stoutlager Inn"] =
+        "텔사마",
 })

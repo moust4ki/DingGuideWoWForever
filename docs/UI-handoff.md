@@ -18,6 +18,7 @@ The accepted deviations and what remains to be checked in game are at the end of
 | 04 Item button | `Ding/UI/ItemButton.lua` |
 | Gamepad chips, footer help, move mode | `Ding/UI/Gamepad.lua` |
 | Minimap button (not in the mockup) | `Ding/UI/Minimap.lua` |
+| Setup assistant (not in the mockup) | `Ding/UI/Setup.lua` |
 | Textures, font | `Ding/Media/Textures/*.tga`, `Ding/Media/Fonts/NotoSans-*.ttf` (OFL) |
 
 
@@ -408,8 +409,8 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   - Automation: accept, turn in, skip gray quests, collapse in combat, hide in dungeons,
     choose quest rewards, sell gray items, repair at merchants, mark the target (solo), then
     under the label "Steps the guide can offer": manage the hearthstone, death skips, dungeon
-    quests, elite quests, vendor and repair steps (36/44 rows with their description, like the
-    mockup's);
+    quests, elite quests, vendor and repair steps (rows with their description, like the
+    mockup's; 30 / 36 high since the density below);
   - Keybinds: "Open Ding settings" first, then next, previous, item, target the arrow's NPC or
     monster, browse the guide, show,
     collapse, skip, go back; button names; show gamepad buttons; game keybinds;
@@ -426,6 +427,20 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
 - **Quest rewards** (not in the mockup): with several rewards to choose from, the same banner as
   on the flight map ("Best reward: [item] (an upgrade)") and an accent ring over the reward's
   button in the game's quest window (read only).
+- **Quests an NPC offers** (not in the mockup): a 280-wide Ding window (window look, strata
+  HIGH, no mouse), its top level with the game's NPC window and 8 to its right (to its left
+  when the screen has no room), else at 370, -116 from the top left. Title 12 SemiBold
+  "Ding! · These quests and your guide" (Ding! in `accent`, the dot in `text.disabled`),
+  divider at 26; then per quest, padding 12: "[level] name" 12 Medium `text`, 2 lower one or
+  two plain sentences 11 Regular `text.secondary`, no color code (Yendi's feedback); both wrap
+  without a line limit; 8 between quests.
+- **Why the guide makes its choices** (not in the mockup, Core/Why.lua): a surprising step
+  (a detour, a quest taken now or never) gets one more sub-line under its first row still to
+  do, after the guide's note, in the note's style (11 Regular `text.secondary`, never cut): "Why
+  this detour (about 5 min): turning in “…” opens a chain of quests worth a lot of XP (about
+  13,000)." The tooltip of the step's rows (mouse, X in focus mode) ends with a blank line, "Why?"
+  in `accent`, then the reason's lines in light grey (wrapped); a row without a quest (a trip, a
+  level) gets that tooltip too, its text as title. Option "Guide explanations" (Guide tab, on).
 - **TomTom**: optional and **off by default**; Ding's arrow is enough (Yendi's request); the
   old settings are migrated to Ding's arrow.
 - **Minimap button** (Yendi's request): left click opens the settings, right click the guide;
@@ -453,7 +468,7 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   form an area. "You’re in the area" (the same green ring as "You’re here") as soon as the
   player is within 40 m of one of them; the player only leaves it beyond 60 m, so it does not
   flicker. With the farming loop (on by default) the arrow stays on the way instead, toward the
-  loop's next stop, its label "name · stop 2/6"; without a loop (fewer than 3 stops, option
+  loop's next stop, its label "name · farming loop: 2 of 6"; without a loop (fewer than 3 stops, option
   off) it fades out during the hunt and comes back on leaving.
 - **Death** (Yendi's feedback): a ghost is led to its corpse ("Your corpse", arrival at 30 m),
   then the arrow goes back to the guide.
@@ -478,15 +493,44 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   13 SemiBold, the destination in the accent color) at the top of the screen and a 34 px accent
   ring over the destination node, placed where the game's node button stands (read only).
 
-- **Nearby services** (not in the mockup): a 320-wide window like the settings (window look,
-  opaque), title "Ding · Nearby services" 12 SemiBold, then 32-high rows 2 apart (row background
-  `bg.control`, radius 4): the service 12 Medium, the NPC 11 Regular `text.secondary` under it,
-  the time 12 SemiBold accent on the right; the inset focus ring of list rows; the footer help
-  bar ("A Go · B Back", or the mouse text). Grayed service when none is known nearby.
-- **Guide window rows added under the step** (after "along the way"): "New spells at your class
+- **NPC directory** (not in the mockup; it replaces the "Nearby services" list): a 360-wide
+  window like the settings (window look, opaque). Title bar 28 high: "Ding! · Directory" 13
+  SemiBold (Ding! in `accent`, the dot `text.disabled`), the close cross on the right with the
+  round B chip before it (gamepad, on a tab's first page). Tab strip 28 high, the settings' tab
+  look (12 SemiBold, `text.secondary`, the active one `text` with a 2-unit accent underline):
+  LB chip, "Nearby", "Cities", RB chip (chips with a gamepad only), then a `border` divider.
+  Inside a list, a 26-high title row: accent left caret, the B chip (gamepad), the list's name
+  13 SemiBold; a click goes back. Rows 36 high, 2 apart, 6 from the sides (row background
+  `bg.control`, radius 4): the name 12 Medium, under it 11 Regular `text.secondary` ("Buliwyf
+  Stonehand · Ironforge · by flight", or what an NPC offers), both 8 in. On the right, 8 in: a
+  `text.secondary` right caret for a row that opens a list; 6 left of it (or of the edge), the
+  time 12 SemiBold accent ("8 min away", "under 1 min away"). The inset focus ring of list rows;
+  with a gamepad the focused row's A chip takes the caret's place, and every row keeps the
+  chip's room (the time sits left of it), so that nothing moves with the focus and the chip
+  never covers the time; the texts stop 8 before the time. A row with nothing to offer: its name
+  `text.disabled`. Nine rows shown, then the wheel or the focus scrolls. Footer 26 high under a
+  divider: with a gamepad, the plain text "Fastest way:
+  flights, boats, hearthstone." (every action has its chip); without one, the mouse help
+  ("Click: go · Right-click or Esc: close", "… : back" in a list).
+- **The guide window's directory button** (not in the mockup): a 20 × 20 icon button in the
+  title bar, left of minimize (a map pin: an 8-unit `text.secondary` circle with a 3-unit
+  `bg` dot, over a 7-unit downward caret); tooltip "NPC directory". In focus mode, up from the
+  first row: the outer focus ring around it and the A chip on its left (the title shortens).
+- **Information apart from the step** (Yendi's first rule for the window): after the step's own
+  rows, a 1-unit `divider` line across the list, then a section title "Good to know" (11 SemiBold
+  `text.muted`, no icon, padding 8 above, none below; "Next steps" has the same line and title),
+  then the notices, other quests' objectives and the rows added under the step, never with a
+  state's background.
+- **Guide window rows added under the step** (under "Good to know", after "along the way"),
+  with their own look, never the red or green of the step's rows: no background, the icon on
+  `accent.bg` with an `accent` glyph, text `text`, a counter `accent` (Yendi: the weapon to learn
+  passed for a red row to do): "Weapon to learn: Guns —
+  Buliwyf Stonehand, Ironforge" with sentences under it (why, how to go there or never see it
+  again); "New spells at your class
   trainer (cost)", or "New spells may wait at your class trainer (level N)" before the first
-  visit (glyph of an "other" row) and "Equip [item]" with the item's icon, its gain
-  as the counter ("+4") and a sub-line saying how to equip or ignore it. Focus mode also takes
+  visit (glyph of an "other" row) and "Equip [item]" with the item's icon, no counter (a bare
+  "+4" read like a quest's), and two sentences under it: how much better ("Clearly better than
+  [worn item] for your class.") and how to equip it or say no. Focus mode also takes
   **Left** (ignore the gear upgrade under focus); Right stays the game's. With a free talent
   point, "Talent: name" (glyph of a "level" row), the rank it reaches as the counter ("2/3") and
   a sub-line saying how to learn it ("Focus mode, A twice: learn it", then "A again: learn it"
@@ -500,21 +544,22 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   is named on a Ding banner (like the flight map's), "Pick “…”", while the dialogue is open.
 - **Settings by intent** (Yendi: "a huge mass of information; the dungeons are an endless
   list"), instead of screen 03's five tabs:
-  - Window 560 × 440 (was 520 × 420) so that **six tabs** fit: `Guide`, `Route`, `Automation`,
+  - Window 560 wide (was 520) so that **six tabs** fit: `Guide`, `Route`, `Automation`,
     `Arrow and maps`, `Keybinds`, `Appearance`; tab padding 12 down to 6, then 11-unit labels,
-    when a language is long. Every tab: padding 12, gap 4.
-  - **Block headers**: 24 high, 11 SemiBold `text.secondary`, bottom-aligned 8 in ("Quests",
+    when a language is long. 392 high since the density below (440 before, 420 in the mockup).
+    Every tab: padding 8, gap 2 (were 12 and 4).
+  - **Block headers**: 20 high, 11 SemiBold `text.secondary`, bottom-aligned 8 in ("Quests",
     "Merchant", "Equipment", "Flights"; "Travel", "Group content", "Stops"; "Arrow", "Maps",
     "Target"; "Window", "Item button", "Minimap and sound").
   - **Descriptions on one line** (11 Regular `text.secondary`, cut beyond), shortened.
   - **Long lists on a page**: a page row (label, the value on the right in 12 Medium, `caret`
     RIGHT 8 `text.secondary`, accent when focused; `A Open`) opens a page over the tab's content:
-    a title row (`caret` LEFT 8 accent, then the title 13 SemiBold, 30 high, a click goes back),
+    a title row (`caret` LEFT 8 accent, then the title 13 SemiBold, 26 high, a click goes back),
     then the list. "Dungeon quests: Off / All / 3 of 12" opens "All" and "None" (button rows),
     a "By level" header and one check row per dungeon, "name 17–21" (levels in
     `text.secondary`). B, Esc, a right click or the title go back to the row; LB / RB leave the
     page for a tab. The quest log cleanup is a page too.
-  - **Folded rows**: a fold row, 32 high, `caret` RIGHT (folded) or DOWN (open) 8 then the label
+  - **Folded rows**: a fold row, 28 high, `caret` RIGHT (folded) or DOWN (open) 8 then the label
     12 Regular `text.secondary` ("More options" / "Fewer options"; "Advanced" in Appearance);
     A or a click.
   - **"Defaults for this tab"**: a button row (confirmed) at the end of every tab but Keybinds.
@@ -523,20 +568,41 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
 - **Step language 2** (not in the mockup): the dungeons' page of the Route tab (above); the
   arrow's label on a patrol, "text · point 2 of 5"; as a ghost on a death skip with a spirit
   healer, "Spirit healer".
+- **Texts never cut** (Yendi's feedback: a step note ended in "un étage plus…" and could not be
+  read anywhere): the rows' text, sub-lines (notes, hints) and notices wrap with no line cap
+  (instead of "2 lines max" for the text and 3 for the sub-line); the row grows, at every width
+  from 240. The minimized window keeps its one line with an ellipsis; hovering it shows that
+  row whole with its note in a tooltip, and the gamepad's focus mode opens the window.
 - **Notices** (not in the mockup): what concerns the whole window (the way there, a trip to a
   service, steps passed, bags almost full, quest log almost full) is a box of its own instead of
   a sub-line of the last row: row background `#FFFFFF0A` (`subtle`), radius 4, no icon, text
-  11/14 Regular `text.secondary` at the icons' x on up to three lines, the other lines of the
+  11/14 Regular `text.secondary` at the icons' x, wrapped whole, the other lines of the
   same notice as its sub-line. The quest log's one adds "A: see the list" (mouse: "Click: see the
-  list") and opens the settings on the cleanup page.
+  list") and opens the settings on the cleanup page. A trip of the NPC directory: "On the way to
+  … (…): the guide resumes once there.", the travel hint and the route in the same box (no
+  travel box then); right under it, 2 apart, a "Cancel the trip" control: a row with the
+  `bg.control` background and the `hover` one under the mouse, no icon, 12 Regular `text`; in
+  focus mode, focused, the A chip on its right (gamepad). During a trip the step menu starts
+  with the trip's entries ("Cancel the trip to …", "Done with …: back to the guide"), then a
+  1-unit `divider` line (9 high with its space), then the guide's step said so ("Mark the
+  guide's step as done", "Skip the guide's step"); the menu widens to its longest text.
+- **Undo a mark** (not in the mockup): under a step marked done or skipped (seen again with
+  "Previous"), the same control as the trip's, "Undo: mark as not done" / "Undo the skip"; the
+  step menu starts with it too.
 - **New continent** (not in the mockup): an ordinary "other" row under the step, "New continent:
   talk to … (flight master) to learn its flight paths".
-- **Persistent objectives, wrap-up, preview** (not in the mockup): sticky objectives are along-the-way
-  rows whose first sub-line says "Still to do · For “quest”"; the wrap-up choices are three
-  ordinary rows (the first with "You are past this section's levels (up to N)."); the preview
-  rows are dimmed: no background, icon `impossible.icon.bg` / glyph `text.disabled`, text
-  `text.muted` without its links' colors, no counter; a quest's level in brackets before its
-  name, "+N" for the step's other quests.
+- **Other quests, wrap-up, preview** (not in the mockup): the objectives of another quest
+  (persistent, along the way) come under a header like a quest's (12 SemiBold `text.secondary`,
+  no icon, padding 8 above: a group starts) that says why they are there, "Another quest of your
+  log, to finish along the way: [29] “quest”" or "Another quest of your log, its targets are
+  right here: [26] “quest”", indented by 8, without the to-do look: no background, icon
+  `impossible.icon.bg` / glyph `text.secondary`, text and counter `text.secondary` (Yendi: "The
+  Cursed Crew" 0/13 in red passed for the step's work); none under a step seen again with
+  "Previous". The wrap-up choices are three rows besides the step (the first with "You are past
+  this section's levels (up to N)."); the preview rows are dimmed: no background, icon
+  `impossible.icon.bg` / glyph `text.disabled`, text `text.muted` without its links' colors, no
+  counter; a quest's level in brackets before its name, "and 1 more quest" for the step's other
+  quests, under a "Next steps" section title.
 - **Minimap pins** (not in the mockup): `ring` 14 px accent for the target, `circle` 6 px accent
   at 70 % for the spots (a farming loop's stops: up to 12), `caret_up` 12 px accent on the rim (6 inside), rotated toward the
   target.
@@ -570,7 +636,9 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   counter 11 SemiBold 4 after an 8 glyph column, 6 at the right; without a counter, an 18
   square with the glyph centered. Current step: glyph and border `accent`, counter `text`;
   another quest: glyph and counter `text.secondary`, border `border`, the mark at 80 %. In
-  the unit tooltip, one line per objective: "Ding!" in `accent`, then " · “Quest” 3/8" in
+  the unit tooltip, one line per objective: "Ding!" in `accent`, then " · Kill for “Quest” 3/8 ·
+  current step" (or "Loot for", "Quest to take:", "Quest to turn in:"; "current step" only on the
+  accent marks) in
   `text` (the step's) or `text.secondary` (another quest's).
 - **Target line** (not in the mockup): under the arrow's distance, gap 2, a glyph chip of the
   target binding then "Target: name" in 11 Regular `#A3A9B3` with the text shadow; only when
@@ -600,17 +668,109 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
     Open`, `◂ ▸ Adjust`, `Y Reset`, `A Bind` · `Y Unbind`…).
   - **Move mode plate**: Save (A), Cancel (B) and Reset (Y) buttons with their chips; the
     hints keep `◂▴▾▸ Move` and `LB RB Step 1 / 20`.
-  - Nearby services and the guide's focus mode have no button doing what a hint says: they do
-    not change.
+  - **NPC directory**: A on the focused row, B on the close cross (in a list: on the list's
+    title), LB / RB at the ends of the tabs; the footer keeps a plain text ("Fastest way:
+    flights, boats, hearthstone."), the mouse help without a gamepad.
+  - The guide's focus mode has no button doing what a hint says: its hint bar (below) lists A,
+    X and B; A is left out on a row that carries the A chip (a control) and on the directory's
+    button.
+- **Plain words** (Yendi, v1.4.0: "the player must understand"; no meaning carried only by a
+  color, an icon or shorthand; SPEC "Plain words"). What changes on screen:
+  - Every row of the guide window has a card (hover, X in focus mode): first what its look means
+    ("Still to do.", "Done.", "Not possible yet: …", "Marked done by hand: …", "Skipped for
+    later: …", "A step further on: …", "Not this step's work: …", "Not a step of the guide: …";
+    a quest header: where its quest stands), in `#CCCCCC` like the card's other lines; a quest's
+    "[29]" as "Quest level 29" (above the player's: why it is orange), "· before “Name”" in a
+    sentence. A row without a quest: its text whole in white, then those lines; section titles,
+    notices and controls have no card (their text says it).
+  - Quest lines done change verb ("Accepted / Turned in / Completed [2] “Name”").
+  - Next steps: a "Next steps" header row above them, the quest headers' style (12 SemiBold
+    `text.secondary`, no icon nor background).
+  - Focus mode (gamepad only): a hint bar 22 high under the progress, 6 below it, 8 from the
+    sides, plain hints (not buttons, so that three fit at 240: `A Arrow` · `X Details` · `B
+    Leave`); the window grows by its height. The directory's button, focused, shows its tooltip.
+  - Minimized window: hovering it always shows the card (row, note, state, "Step 3 of 42").
+  - Arrow: "distance unknown" instead of "?"; the label wraps under LABEL_MAX instead of
+    being cut ("name · farming loop: 2 of 6").
+  - Minimap pins: hovered, a tooltip ("Ding! · name" then what the pin is); they take the mouse's
+    motion only, the minimap keeps its clicks (`SetMouseClickEnabled(false)`; a client without
+    it: no hover).
+  - Item button tooltip: an accent line under the item's card: why it is there, its cooldown in
+    seconds, "Cannot be used right now." when dimmed. A gear upgrade's card in the window: its
+    "+12" in an accent line.
+  - NPC directory: "8 min away", "under 1 min away", "· by flight, boat", "and 2 more".
+  - Offers panel: "Name (level 24)" (the panel takes no mouse: no card to explain "[24]").
+  - Settings: "levels 10–20", "from level 20"; the minimap pins' and nameplate marks'
+    descriptions name their shapes.
+
+- **Setup assistant** (not in the mockup, `UI/Setup.lua`; Yendi: an onboarding of choices, not
+  of text, three choices at most per screen): a 460-wide window like the directory's (window look,
+  opaque, DIALOG). Title bar 28 high: "Ding! · Setup" 13 SemiBold (Ding! in `accent`, the dot `text.disabled`), the close
+  cross with the round B chip before it (gamepad). A screen, 14 in: its title 16 SemiBold
+  `text` (the arrow distance's size), 4 below one sentence 12 Regular `text`, both wrapped
+  whole; 8 below, the choices, 8 from the sides, 2 apart: rows of the settings' look (inset
+  focus: `accentBg` fill and the 2-unit accent ring; the A chip at the right, 8 in, gamepad),
+  at least 28 high, growing with their texts. In a row, 6 from the top and 8 in: a check box (the settings' 16-unit
+  box: `accent` with the check, or the `muted` outline), a radio (the 16-unit `ring` in `muted`,
+  an 8-unit accent `circle` when chosen), or, for a guide, the accent check on the current one;
+  the label 12 Regular `text` 34 in (`text.disabled` for a pack with nothing for the
+  character), under it 11 Regular `text.secondary` (a pack's levels or items), both wrapped; on
+  the right before the A chip's room, "Recommended" 11 SemiBold `accent`. The window is as high
+  as its tallest screen in the client's language, the same on every screen. Footer 70 high under
+  a divider, 8 from its edges: "Keep the recommended settings" across (24 high, `bg.control`, 12 Medium, the Y
+  chip before it), 6 below Previous on the left and Next on the right (24 high, radius 4, 12
+  Medium, at least 96 wide; Previous `bg.control`, `text.disabled` on the first screen; Next
+  `accent` with `onAccent` text, "Finish" on the last screen, its width that of the longer
+  label; LB and RB chips), the screen dots centered between them (14 wide and 2 apart: a 6-unit
+  `circle` in `text.disabled`, the current screen's 8 units in `accent`, hover `text.secondary`).
+- **Density** (v1.4.0; the user: "the preferences UI is too big, too airy; a bit denser, not
+  much"; a full redesign of the settings and the assistant comes later): the settings, the NPC
+  directory and the setup assistant share their sizes (`UI.SIZE` in `UI/Widgets.lua`), about
+  15 to 20 % tighter than above: title bars 28 (32), tab bars 28 (36 / 30), hint bars 26
+  (32 / 28), rows of one line 30 (36), of a label and its description 36 (44; the directory's
+  38), "More options" 28 (32), block headers 20 (24), a page's title 26 (30), padding 8 (12),
+  2 between rows (4); the sliders 66 high (78), the dropdown's field 28 (32) and its entries 24
+  (28), the Appearance preview 86 (100), the settings' push buttons 22 (24), the assistant's 24
+  (26). Texts are never cut (a description stays one line, as before), the focus rings keep
+  their 2 units, the rows stay as wide.
+- **Size of the settings windows** (v1.4.0; the user's screen draws the 520-unit mockup window
+  about 1.5 times bigger than the mockup they compared it with: the game's UI scale on a
+  high-resolution screen): the Appearance tab's "Settings windows size" slider, under a
+  "Settings windows" header, 60 % to 120 % by 5 %, 85 % by default, sets the scale of the
+  settings, the NPC directory, the setup assistant and import / export (`UI.Dialog`,
+  `Ding.db.ui.dialogScale`); not the guide window, which has its own "Window scale". The open
+  window follows at once (with the mouse, once it lets go of the thumb: the window would move
+  under it). The windows stay centered, as far from the screen's center whatever their size,
+  and on the screen.
+  No hint bar: every action has its control.
+- **Settings, Guide tab** (Help): a header "Help" and a button row "Run the setup assistant
+  again" ("How you play, automation, route and guide.", button "Open"), before "Defaults
+  for this tab".
 
 ## To check in game (Forever 1.60)
 
+- Why the guide makes its choices: the line under the Duskwood step that turns in "The Legend of
+  Stalvan" at Moonbrook (Leveling, Alliance section 11), at 240 and 300 wide; the "Why?" part of
+  the row tooltips with the mouse and with X in focus mode; nothing more with the option off.
+
+- Quests an NPC offers: `GossipFrame` and `QuestFrame` (names, `GetLeft` / `GetRight` / `GetTop`)
+  with the gamepad interface on; the order of `GOSSIP_CLOSED` and `QUEST_DETAIL` when a quest
+  is picked from a gossip; no "AddOn blocked" popup while the window shows.
+- Setup assistant: the window's height on its tallest screen (no text cut, in French and German
+  above all), the radio ring and the check boxes, Previous and Next clear of the dots with the
+  gamepad's chips, Y keeping the recommended settings, Esc and B closing it then the Keybinds tab
+  following at the first launch (not after "Keyboard and mouse").
 - Loading of the kit's TGAs and of the Noto Sans fonts (`Font:SetFont` on a file of the
   addon); otherwise the game font takes over.
 - Sharp nine-slices at 100 % scale (corners of 6, 4, 3, 2), shadows and halos.
 - Rotation of `caret_up` (◂ ▸ ▾), rounded mask of item icons (`CreateMaskTexture`).
 - `GetQuestObjectives` texts (type, counters) and `QUEST_MONSTERS_KILLED` patterns in French.
-- Focus mode: `SetOverrideBindingClick` to `DingItemButton` (A uses the item).
+- Focus mode: `SetOverrideBindingClick` to `DingItemButton` (A uses the item); its hint bar
+  (A, X, B) fits at 240 in every language.
+- Minimap pins: `SetMouseClickEnabled(false)` keeps the minimap's clicks (pings) under a pin
+  while hovering it shows its tooltip.
+- The arrow's label on two lines (a long farming loop or travel hint): centered, the distance
+  under it.
 - Item button: `PostClick`, right-click drag, `IsItemInRange`, `IsUsableItem`.
 - Minimap button: position around the round minimap, dragging.
 - `C_GamePad.IsEnabled` or the `GamePadEnable` variable to hide the chips without a gamepad.

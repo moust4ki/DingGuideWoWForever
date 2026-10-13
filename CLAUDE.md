@@ -14,7 +14,7 @@ key binding (`Bindings.xml`) or happen by itself.
 Ding/
   Ding.toc          load order; no hard dependency; optional: TomTom
   Bindings.xml      bindings DING_NEXT / DING_PREV / DING_TOGGLE / DING_CONFIG / DING_COMPACT,
-                    DING_FOCUS (focus mode), DING_SKIP / DING_UNSKIP, DING_FINDER (services),
+                    DING_FOCUS (focus mode), DING_SKIP / DING_UNSKIP, DING_FINDER (NPC directory),
                     DING_CYCLE (the arrow on the step's next target),
                     CLICK DingItemButton:LeftButton (quest item), CLICK DingItemButton:Target
                     (target the arrow's NPC or monster: the same secure button, virtual button)
@@ -34,13 +34,19 @@ Ding/
                     kills, rested included; the monster to farm and its spawns)
     Along.lua       Ding.Along: objectives of other log quests right around the player
                     ("along the way", sticky)
+    Passages.lua    Ding.Passages: walking passages (lifts, tunnels, bridges, city gates,
+                    portals) and the two sides each joins; a walk across never goes straight;
+                    islands (sides without a passage); `verified` per passage, /ding passages
     Travel.lua      Ding.Travel: fastest way to the arrow's target (walk, flight paths known or
-                    to learn, boats, zeppelins, tram, hearthstone, teleports; slower through
-                    zones above the player), flight times measured, itinerary
+                    to learn, boats, zeppelins, tram, hearthstone, teleports, walking passages;
+                    slower through zones above the player), flight times measured, itinerary
     Services.lua    Ding.Services: vendors, repairers, innkeepers, flight masters, class
                     trainers of the player's side (npcFlags), nearest first
     Merchant.lua    Ding.Merchant: grey items sold and repairs at merchants, bags almost full
     Training.lua    Ding.Training: what the class trainer offers and at which level
+    Directory.lua   Ding.Directory: the NPC directory's data: every NPC of DingDB by kind
+                    (services, class / weapon / profession trainers, what vendors sell),
+                    fastest first (Travel:Reach), cities, search, the weapon to learn
     Gear.lua        Ding.Gear: gear upgrades of the bags (scored like rewards), declined items
     Talents.lua     Ding.Talents: talent builds (Ding.RegisterTalentBuild), the next talent
                     when a point is free, learned on a confirmed press
@@ -52,6 +58,9 @@ Ding/
                     hand, never run) and writer back to text
     Import.lua      Ding.Import: guides imported as text (checks, ids, DingDB.imported,
                     registered at login), export
+    Why.lua         Ding.Why: why the guide makes its choices, in plain words (a step's `why`, a
+                    section's `leftOut`): a short line under a surprising step, the whole reason
+                    on demand (row tooltips), why a quest is left out (Why:Quest)
     Commands.lua    /ding
   UI/
     Widgets.lua     Ding.UI: design tokens (UI.C), Noto Sans fonts (UI.Font), nine-slice kit
@@ -65,7 +74,10 @@ Ding/
     TaxiMap.lua     Ding.TaxiMap: banner and ring on the flight map's destination (own frames)
     Rewards.lua     Ding.RewardHint: banner and ring on the best quest reward (own frames);
                     Ding.GearHint: banner of a gear upgrade
-    Finder.lua      Ding.Finder: nearby services list (DING_FINDER), trip of the arrow to one
+    Offers.lua      Ding.Offers: beside an NPC's window, what the guide does with each quest it
+                    offers (now, later, another section, not in the guide and why); read only
+    Finder.lua      Ding.Finder: the NPC directory's window (DING_FINDER, /ding find, the guide
+                    window's pin button), trip of the arrow to an NPC
     ImportWindow.lua Ding.ImportWindow: /ding import and /ding export (text box, report,
                     buttons)
     Panel.lua       Ding.Panel: guide window (lines of the step), compact version, focus mode
@@ -80,6 +92,10 @@ Ding/
     Config.lua      Ding.Config: settings window, six tabs by intent (Config.TAB keys: guide,
                     route, automation, arrow, bindings, appearance), titled blocks, pages for
                     long lists (OpenPage), folded rows, "Defaults for this tab"; first launch
+                    (after the setup assistant: Config:Welcome, the Keybinds tab)
+    Setup.lua       Ding.Setup: the setup assistant, four screens of choices (Setup.SCREENS), once
+                    per account at the first launch (Setup:FirstLaunch), again from the Guide tab
+                    or /ding intro
   Locales/
     enUS.lua        interface texts in English (reference, default language)
     <locale>.lua    interface texts of one language (frFR, deDE, esES, ptBR, koKR, zhCN, zhTW)
@@ -100,7 +116,9 @@ Ding/
                                 item worth getting off the route, for both sides (`faction`
                                 steps), hand-written
 examples/DingExamplePack/   example guide pack (a separate addon, not in the zip), tested
-tools/              offline scripts (Lua 5.1): list_zone, check_guides, smoke_test, run_tests
+tools/              offline scripts (Lua 5.1): list_zone, check_guides, smoke_test, run_tests;
+                    route_why.lua: the reasons of the Leveling guides (`why`, `leftOut`), measured
+                    on write_leveling.lua's simulation
   wow_mock.lua      mocked WoW API, shared by the smoke test and the unit tests
   tests/*_test.lua  unit tests (one process per file)
 docs/SPEC.md        specification and roadmap
@@ -137,15 +155,26 @@ Contracts between modules:
   spot's spawns, else the next place (without `isGo`). A trip (`go`, `fly`, `hearth` alone)
   is done when the next step for the player is already done by the game's state.
 - `Panel:Rows()` -> lines of the window (`kind`, `text`, `state` = "done" | "todo" |
-  "impossible" | "header" | "notice", `counter`, `sub`), built from `Describe` and the quest
+  "impossible" | "manual" | "skipped" | "header" | "section" | "notice" | "button" | "other" |
+  "extra" | "preview", `counter`, `sub`), built from `Describe` and the quest
   log objectives: a quest's objectives (`nested`) under a row `action = "header"` (its level
   and name) unless a row of the step names the quest; then the notices `action = "notice"`
-  (`notice` = "travel" | "trip" | "skipped"; `P:Content` lines of the same kind make one box),
-  then the rows `along = true` of `Along.shown` (objectives of other quests near the player,
-  after the step's rows and its notes), the extras, the notices "bags" | "cleanup", and the
-  preview.
+  (`notice` = "travel" | "trip" | "skipped"; `P:Content` lines of the same kind make one box;
+  the step's own rows carry `ofStep`: their tooltip says why, `P.shownStep`),
+  after the step's rows (and its `unmark` control), a row `action = "infoHeader"` (state
+  "section", "Good to know", a line above) and everything informational, `info = true`: the
+  first notices, the rows `along = true` of `Along.shown` (objectives of other quests, state
+  "other", `other` = "sticky" | "along", each quest under a row `action = "header"` with
+  `other`), the extras (`extra = true`, state "extra"), the notices "bags" | "cleanup"; then the
+  preview (under a row `action = "previewHeader"`, state
+  "section"). The rules of the window: SPEC "Guide window: rules" (`panel_rules_test`);
+  `tools/panel_snapshot.lua` writes it as text for a scenario of `tools/panel_scenarios.lua`. Plain words (SPEC): `Panel:RowMeaning(row)`
+  -> what a row's look means, in words, for its card (`Panel:ShowQuest`: hover, X in focus mode;
+  a grey row's `requires` or `waitsOn`); `UI.More(n, quests)` ("and 2 more", never "+2");
+  `QuestMobs:Words(e)`, `ItemButton:Explain()`, `MinimapPins:Explain(pin)`: their tooltips.
   `Engine.autoMoved`: the engine moved on by itself (the window keeps the finished step for
-  1.5 s). `Engine:IsManual(step)` -> step validated by "next" only.
+  1.5 s; `Panel:EndHold()` ends it, and "next" or "skip" meanwhile does only that).
+  `Engine:IsManual(step)` -> step validated by "next" only.
 - Packs: `Ding:GuidePacks()` (packs that have sections: Ding's three, Leveling, Zones then
   Items, first, then by title),
   `Ding:GetGuidePack(id)`, `Ding:IterateGuides(packId)` (sections of a pack, in registration
@@ -172,20 +201,30 @@ Contracts between modules:
   `Ding.UnregisterGuidePack(id)` (Registry); `Data:QuestOpenToRaces(q, races)`;
   `ImportWindow:Open("import" | "export", id, back)`.
 - `Engine.guide`, `Engine.index`, `Engine.finished`, `Engine:CurrentStep()`,
-  `Engine:Next()`, `Engine:Prev()`, `Engine:Skip()` (without validating),
+  `Engine:Next()` (while browsing back: the step right after, marking nothing; else
+  `Engine:MarkDone()`, the step menu's "Mark as done"), `Engine:Prev()` (browsing:
+  `Engine.browseFrom` = the guide's current step, `Engine:IsBrowsing()`,
+  `Engine:BrowseTo(index)` for "Go to step" behind), `Engine:Skip()` (without validating),
   `Engine:BackToIncomplete()` (nearest past step not done), `Engine:CatchUp(q, step)`
   (missing link of the chain of `q`), `Engine.skipNotes` (reasons of the last skip),
+  `Engine.passNotes` (`{ index, reason }`: steps passed by itself in play, never shown; the
+  window's "Step passed: …"), `Engine:StepNumber(index[, guide])` -> number, total among the
+  character's steps (`Ding:StepForCharacter`: race, class, options, without `when`): every
+  step number the player sees,
   `Engine:StepMark(index)` -> "manual" | "skipped" | nil (step marked done or skipped by
-  hand: colors `C.manual` / `C.skipped` in the window). `Travel:Leg(point)` -> nil (walk) or
-  `{ kind = "fly" | "boat" | "zeppelin" | "tram" | "hearth" | "teleport", point (flight master or
-  dock; nil for the hearthstone and a teleport), hint, to, flight, spell }`, kept in `Travel.leg`
+  hand: colors `C.manual` / `C.skipped` in the window), `Engine:Unmark([index])` (undoes it: back
+  to that step when it is still to do). `Travel:Leg(point)` -> nil (walk) or
+  `{ kind = "fly" | "boat" | "zeppelin" | "tram" | "hearth" | "teleport" | "passage", point (flight
+  master, dock, or a passage's entry, its far end once in it; nil for the hearthstone and a
+  teleport), hint, to, flight, spell, passage }`, kept in `Travel.leg`
   (its plan in `Travel.plan`, `Travel:Itinerary(plan)` -> the "Route: …" line or nil; the item
   button casts `leg.spell`); the arrow shows `leg.point` and
   `Arrow.hint`, still validating `go` steps on the target itself. `Ding:StepApplies(step)`: the step's
   races and classes (`Ding:StepMatchesPlayer`, Registry) **and** its option (`sethearth` /
   `hearth` -> `ui.hearth`, `deathskip` -> `ui.deathSkip`, `dungeon` -> `ui.dungeons`,
   `elite` -> `ui.elites`, `vendor` / `repair` -> `ui.serviceSteps`, `train` -> `ui.trainerSteps`,
-  `fly` -> `ui.flightSteps`): every module asks this one. `Engine:TargetNames(max)`: the
+  `fly` -> `ui.flightSteps`): every module asks this one; `Ding:StepOptionOff(step)`: the
+  setting that hides a step ("elites", "dungeons"...) or nil. `Engine:TargetNames(max)`: the
   step's NPCs and monsters by name, nearest first (the target binding's macro).
   `Engine:FindQuest(q)` -> `{ guide, index, action }` (where the guide deals with `q`),
   `Panel:FindQuest(q)` / `Panel:Jump()` (the offer row). `Travel:AutoFly()` takes the planned
@@ -200,7 +239,20 @@ Contracts between modules:
   climbs to the parent zone), `Panel:Where(row)` (" — NPC, Zone" on a line), `Arrow:MarkWorld`
   (the client's map waypoint through `Compat.SetUserWaypoint`, else `TomTom:MarkWorld`;
   `taint_test` allows those three calls in Compat only). `Engine:NextGuide(guide)`: `next`, or
-  its entry for the player's faction when it is a table. `Engine:UnusedLogQuests()`: quests
+  its entry for the player's faction when it is a table. `AutoQuest:PlaceEnd()`: the last step at
+  the player's place (`Wanted` reads up to it). `Data:NpcQuests(npc)`: the quests an NPC starts.
+  `Offers:Classify(q)` -> `{ kind = "now" | "later" | "needed" | "earlier" | "other" | "none",
+  step, guide, before, ahead, reason }`, `Offers:Verdict(r, q, ctx)` -> "take" | "can" | "notNow" |
+  "optional" | "useless" and plain sentences (no color code); `Offers:WhyLeftOut(q)`: the one
+  place that asks `Ding.Why:Quest(q)` for the route's reason (a clause, or `{ text }`).
+  Reasons (`Core/Why.lua`): `Why:Step(step)` -> `{ short, lines,
+  estimates }` or nil (no `why`: the step has no reason), `Why:Short(step)` (the line under the
+  step, nil when not `short` or the option is off), `Why:Detail(step)` (the tooltip's lines,
+  nil without a reason or when off), `Why:Quest(q[, guide])` -> clause, entry, guide
+  (for `L.OFFER_NOT_DONE`; the section's `leftOut`, else another section of its pack for the character; nil: say
+  nothing), `Why.LeftOutText(entry)`, `Why.XPText(xp, plain)`, `Why.TimeText(seconds)`,
+  `Why.STEP` / `Why.LEFT` (kinds and keys, checked by Import; `check_guides.lua` has the same).
+  `Engine:UnusedLogQuests()`: quests
   of the log the active guide and the next ones never use (listed in the Guide tab; Ding never
   abandons them). `UI.Banner`, `UI.Ring`, `UI.ScreenCenter`: Ding's marks over the game's
   windows, which are only read. `QuestMobs.byNpc` (`[npc id]` = entries best first: `kind`
@@ -211,13 +263,36 @@ Contracts between modules:
   `Along:StepQuests()`; `Data:ObjectiveTargets` gives each target `kind` and `npcs`;
   `Compat.UnitNpcID` (false for a player, nil when secret). `Panel:SetShown(v)`: the window and
   the arrow together (the arrow only shows with the window open).
+- NPC directory: `Directory:Ids(kind)` (the NPC ids of the player's side; kinds "vendor",
+  "repair", "food", "arrows", "bullets", "reagents", "poisons", "innkeeper", "flight", "trainer",
+  "weapon:<skill line>", "profession:<key>", "trade", "bank", "auction", "stable"),
+  `Directory:Best(kind[, within])` -> `{ kind, npc, name, point, seconds, means, distance }` (the
+  fewest seconds away, `means` the ways besides walking; `within`: a city's NPC set),
+  `Entries([within])`, `Cities()`, `CityNpcs(city)`, `CityList(city, category)`, `Search(text)`,
+  `WeaponReminder()`, `Place(point)`; `Travel:Reach()` -> `reach:Seconds(point)`,
+  `reach:Route(point)` -> seconds, `{ "fly", "boat"... }` (one planner pass, many targets).
+  A trip goes through `Travel:Leg` like any target of the arrow.
+  `Finder.trip` = `{ kind, npc, name, point, label }` (`Finder:GoTo(entry, label)`,
+  `Finder:Go(kind)`, `Finder:Cancel([quiet])`), read by the arrow and the guide window; the
+  engine ends it whenever the player moves the guide (Next, Skip, Prev, BackToIncomplete,
+  SetGuide).
+- Setup assistant: `Setup:Open(screen, back)` (`back(input)` runs once the player closes it, one
+  frame later, `input` = "xbox" | "ps" | "mouse": the settings it came from, the first launch's
+  Keybinds tab), `Setup:Close(quiet)` (`quiet`: another Ding window takes over, `back` does not
+  run; the settings, the directory and the import window call it), `Setup:FirstLaunch(after)`
+  (Config:Init: 2 s after login, the assistant then `after(input)`, or `after()` alone once
+  done), `Setup:Keep()` ("Keep the recommended settings": every setting not changed in this run
+  back to `Ding.DEFAULTS`), `Setup:IsShown()`. A choice of a screen: `{ kind = "check" | "radio"
+  | "go", id, label, sub, tag, setting = { get, set, recommended[, custom] }, value, run }`; a
+  check writes its setting at once, through the same calls as the settings window.
 - `Ding.db` (DingDB, account): `panel` (position, `scale` 0.5-1.5, `width` 240-420, `locked`,
   `bgAlpha`, `compactInCombat`, `hideInInstance`, `keyHints`, `itemButton`), `arrow`
   (position, `size` 40-80, `style`, `mode`, `tomtom`, `loop`: farming loop, `worldMap`: the
   target as the client's map waypoint), `item` (position of the item button),
-  `minimap` (`shown`, `angle`), `ui` (`buttonStyle`, `sound`, `welcomed`, `autoAccept`,
+  `minimap` (`shown`, `angle`), `ui` (`buttonStyle`, `sound`, `welcomed`, `setupDone` (the
+  setup assistant was closed by the player; a fight during the first launch's keeps it pending), `autoAccept`,
   `autoTurnin`, `skipGrey`, `hearth`, `deathSkip`, `dungeons`, `elites`, `chooseReward`,
-  `sellGrey`, `repair`, `markTarget`, `serviceSteps`, `trainerSteps`, `flightSteps`, `autoEquip`, `autoFly`, `dungeonChoice` (`[name] = bool`),
+  `sellGrey`, `repair`, `markTarget`, `serviceSteps`, `trainerSteps`, `flightSteps`, `autoEquip`, `autoFly`, `offers`, `dungeonChoice` (`[name] = bool`),
   `mobIcons`, `mobTooltip`, `farPlates`), `farPlatesFrom` (the nameplate distance before
   "Show enemy nameplates farther", put back when it goes off),
   `timings`, `flightTimes` (`["<from npc>:<to npc>"] = { seconds, count }`, flights measured),
@@ -230,8 +305,12 @@ Contracts between modules:
   away, a section of this pack, else of Ding's), `prevPack` (the pack before it: deleting an
   imported guide goes back there), `packGuide` (`[pack] = guide id`: the section
   last followed in each pack), `step`, `manual`, `resumeTo` (resume in
-  progress: `Engine:Resume` passes what is done or left behind up to the player's place, but
-  first finishes and turns in the quests of the guide's past still in the log), `guideSig`
+  progress: `Engine:Resume` passes what is done or left behind up to the step the character
+  was on in the section, `lastStep`, but first finishes and turns in the quests of the
+  guide's past still in the log; never further on the quests alone; `Engine:LeftBehind(step,
+  i)`: a step it passes, which `Engine:NextSteps` leaves out of the preview), `layout`
+  (version of the character's data, `Ding.MigrateChar`: a resume saved before v1.4.0 is
+  dropped once), `guideSig`
   (signature of the active guide: changed by an update, the guide is resumed), `early`
   (quests taken on the way by AutoQuest, ignored to place the player), `skipped` (skipped
   steps, per guide; cleared by "Take this guide up where I am", like `manual`), `killXP`
@@ -240,16 +319,23 @@ Contracts between modules:
   `flights` (`[npc]` = name of the flight path known, or true), `bind` (`{ map, x, y, name }`,
   the inn of the hearthstone), `training` (`{ now, future = { [level] = cost }, level }`; nil
   before the first visit: even levels), `trainingReminded` (level of the last chat reminder
-  near a class trainer), `gearDeclined` (`[itemID] = true`), `sticky` (`[questID] = true`,
-  persistent objectives), `wrapUp` (guide id in "turn in first" mode), `stay` (`[guide id] =
+  near a class trainer), `gearDeclined` (`[itemID] = true`), `weaponsDismissed` (`[skill line] =
+  true`: weapons the reminder never suggests again), `sticky` (`[questID] = true`,
+  persistent objectives; a quest the active guide makes sticky only past the step shown
+  leaves it), `wrapUp` (guide id in "turn in first" mode), `stay` (`[guide id] =
   true`), `talentBuild` (id of the talent build followed, "off" for none, nil: the class's
   first), `taxiSeen` (`[continent] = true`: a flight map opened there), `goals`
   (`["<guide>#<step>"] = { kills, talked, gossiped, used, object, counts, progress }`), `keep`
   (`[itemID] = true`), `lastStep` (`[guide id] = step`: where the character was in each
-  section, `Engine:Resume` goes at least there; cleared by "Take this guide up where I am"),
+  section, `Engine:Resume` goes there and no further; cleared by "Take this guide up where I
+  am", which then takes the first step still to do),
   `hearthInn` (`{ inn, name }`: bound during a sethearth step, the client's name of the inn),
   `worldMark` (`{ map, x, y }`: the map waypoint Ding set, not the player's).
-  `Ding.db.panel.preview` (0-3 next steps shown), `Ding.db.minimap.pins`.
+  `Ding.db.ui.suggestGear` (the gear upgrade's row, banner and item button:
+  `Gear:Suggested()`; `Gear.upgrade` stays for auto-equip), `Ding.db.panel.preview` (0-3 next steps shown), `Ding.db.panel.weaponReminder` (the weapon
+  to learn under the step), `Ding.db.panel.why` (the guide's explanations, Core/Why.lua),
+  `Ding.db.minimap.pins`, `Ding.db.ui.dialogScale` (the settings windows' size, 0.6-1.2:
+  `UI.Dialog` / `UI.SetDialogScale`). The dialog windows take their sizes from `UI.SIZE`.
   The engine places the player only once the quest log has arrived (`Engine.logReady`).
 
 ## Data
@@ -301,7 +387,8 @@ Contracts between modules:
   Korean (koKR), Simplified Chinese (zhCN) and Traditional Chinese (zhTW). Interface texts
   through `Ding.L`: a key added to `Locales/enUS.lua` **and** to every `Locales/<locale>.lua`
   (the `locales_test` test checks the keys and the `%d`/`%s`). Guide texts (`title`, `text`,
-  `note`) are written in English; their translations are in the dictionaries
+  `note`, the place of a `sethearth`: shown as `step.sethearthText`, the English name stays the
+  inn's key) are written in English; their translations are in the dictionaries
   `tools/routes/locales/<locale>.lua` ([English phrase] = translation), from which
   `tools/translate_guides.lua` writes `Locales/Guides/<locale>/` and the TOC (see SPEC §2,
   Languages). Korean and Chinese: the game's font (`UI.GAME_FONT`), Noto Sans does not have
@@ -384,6 +471,10 @@ for l in deDE esES ptBR koKR zhCN zhTW; do lua5.1 tools/smoke_test.lua ../Questi
 
 # Guide translations from tools/routes/locales/<locale>.lua (files and TOC)
 lua5.1 tools/translate_guides.lua
+
+# Free quests the Leveling routes leave out (write_leveling.lua warns about each one; --apply
+# adds them to the routes): tools/README.md, section 8
+lua5.1 tools/audit_free_quests.lua ../QuestieDB/src/corrections/Forever/combined
 
 # Kit texture missing from the handoff (once)
 python3 tools/media/textures.py Ding/Media/Textures

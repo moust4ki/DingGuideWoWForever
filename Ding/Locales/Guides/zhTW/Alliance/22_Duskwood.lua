@@ -5,4 +5,6 @@ Ding.RegisterGuideTranslation("zhTW", "alliance-22-duskwood", {
         "暮色森林 (19-20)",
     ["Duskwood is south of Elwynn: Darkshire, in the east of the forest, is your base."] =
         "暮色森林位於艾爾文森林南邊：據點是森林東部的夜色鎮。",
+    ["Darkshire"] =
+        "夜色鎮",
 })

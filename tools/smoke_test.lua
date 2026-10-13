@@ -35,14 +35,24 @@ local fire, flush, tick, press, hold, release = H.fire, H.flush, H.tick, H.press
 local padDown, focusOn, selectTab, play = H.padDown, H.focusOn, H.selectTab, H.play
 
 local function firstLaunch()
-    local C = Ding.Config
+    local C, S = Ding.Config, Ding.Setup
+    -- The setup assistant first (UI/Setup.lua): RB through its screens, Finish on the last one.
+    expect(S:IsShown() and S.screen == 1, "first launch: the setup assistant does not open")
+    expect(not (C.frame and C.frame:IsShown()), "first launch: the settings open over the setup assistant")
+    for _ = 1, #S.SCREENS do press("PADRSHOULDER") end
+    expect(not S:IsShown(), "first launch: Finish on the last screen does not close the setup assistant")
+    expect(Ding.db.ui.setupDone, "first launch: the setup assistant is not remembered")
+    expect(overrides[S.frame] == nil, "first launch: the setup assistant's temporary bindings are left")
+    -- Then the Keybinds tab (a gamepad is plugged in).
     expect(C.frame and C.frame:IsShown(), "first launch: the settings window does not open")
     if not (C.frame and C.frame:IsShown()) then return end
     expect(C.tab == C.TAB.bindings and C.focus and C.focus.opts.action == "DING_CONFIG",
         'first launch: focus expected on "Open Ding settings"')
     expect(Ding.db.ui.welcomed, "first launch not remembered")
     expect(#registered == 1, "AddOns > Ding category not registered")
-    expect(UISpecialFrames[1] == "DingConfigFrame", "Escape would not close the window")
+    local special = table.concat(UISpecialFrames, ",")
+    expect(special:find("DingConfigFrame", 1, true) and special:find("DingSetup", 1, true),
+        "Escape would not close the windows")
     press("PAD1")
     expect(C.capturing, "A does not start waiting for a button")
     padDown("PADLTRIGGER", { shift = true })
@@ -377,6 +387,39 @@ ok, err = pcall(function()
 end)
 if not ok then problem("resume: " .. tostring(err)) end
 
+-- The second half of a section done earlier, in another guide: taken up again in the first
+-- half, the guide stays with the player's quests instead of jumping to the end (in game,
+-- Redridge done before Duskwood).
+ok, err = pcall(function()
+    local A1, A2, A3, A4, B1, B2 = 900901, 900902, 900903, 900904, 900905, 900906
+    Ding.RegisterGuide({ id = "smoke-order", title = "Order", races = { "NightElf" }, minLevel = 1, maxLevel = 5,
+        steps = {
+            { accept = A1 },                -- 1
+            { turnin = A1, accept = A2 },   -- 2 where the player is
+            { train = true },               -- 3
+            { accept = A3 },                -- 4
+            { turnin = A2 },                -- 5
+            { turnin = A3, accept = A4 },   -- 6
+            { turnin = A4 },                -- 7
+            { go = { 1438, 40, 40 } },      -- 8
+            { accept = B1 },                -- 9 done in another guide
+            { turnin = B1 },                -- 10
+            { accept = B2 },                -- 11
+            { turnin = B2 },                -- 12
+        } })
+    scenarioCharacter()
+    H.resetQuests()
+    E.turnedIn, Ding.char.manual, Ding.char.lastStep = {}, {}, nil
+    H.setQuest(A1, "ready"); H.setQuest(B1, "turnedin"); H.setQuest(B2, "turnedin")
+    E:Resume("smoke-order", true); flush()
+    expect(E.index == 2 and E.resumeTo == nil, ("order: step %d, resuming to %s"):format(E.index, tostring(E.resumeTo)))
+    H.setQuest(A1, "turnedin"); H.setQuest(A2, "log")
+    fire("QUEST_LOG_UPDATE"); flush()
+    expect(E.index == 3, ("order: the trainer passed (step %d)"):format(E.index))
+    checkPanel("order: a section's second half done earlier")
+end)
+if not ok then problem("order: " .. tostring(err)) end
+
 -- Skip a step to do it later, play the next one, come back to it, then finish the guide.
 ok, err = pcall(function()
     local guide = SCENARIO
@@ -407,6 +450,7 @@ ok, err = pcall(function()
         if not skipped and step.complete and not step.optional and nextStep
             and (nextStep.accept or nextStep.complete or nextStep.turnin) and not shares(step, nextStep) then
             skipped = index
+            tick(2)    -- the step is on screen (no longer the one just finished)
             E:Skip(); flush()
             expect(E.index == index + 1, ("skip: step %d instead of %d"):format(E.index, index + 1))
             checkPanel(("step %d skipped"):format(index))
@@ -896,6 +940,7 @@ if not ok then problem("options: " .. tostring(err)) end
 -- step's place; then the boat to the other continent, from its dock to the far side.
 ok, err = pcall(function()
     local thor, ariena = Ding.Data:NpcPoints(523)[1], Ding.Data:NpcPoints(931)[1]
+    local menethil = Ding.Data:NpcPoints(1571)[1]
     Ding.RegisterGuide({ id = "smoke-travel", title = "Travel", races = { "Human" }, steps = {
         { go = { ariena.map, ariena.x + 1, ariena.y }, text = "Lakeshire" },
         { go = { 1439, 36, 46 }, text = "Auberdine" },
@@ -909,6 +954,7 @@ ok, err = pcall(function()
         return {
             { name = "Sentinel Hill, Westfall", state = 0, map = thor.map, x = thor.x, y = thor.y },
             { name = "Lakeshire, Redridge", state = 1, map = ariena.map, x = ariena.x, y = ariena.y },
+            { name = "Menethil Harbor, Wetlands", state = 1, map = menethil.map, x = menethil.x, y = menethil.y },
         }
     end
     H.openTaxi(nodes()); H.closeTaxi()
@@ -925,19 +971,18 @@ ok, err = pcall(function()
     H.land(ariena.map, ariena.x + 1, ariena.y)
     tick(2)
     expect(E.index == 2, "travel: the landing does not validate the step (" .. E.index .. ")")
-    -- To the other continent: back by air to the coast (the mock's Westfall lies next to the
-    -- Wetlands), then the boat.
+    -- To the other continent: by air to Menethil Harbor, then the boat.
     local kinds = {}
     for _, l in ipairs(Ding.Travel:PlanFor(E.candidates[1]).legs) do kinds[#kinds + 1] = l.kind end
     expect(table.concat(kinds, " "):find("fly walk boat", 1, true), "travel: route " .. table.concat(kinds, " "))
-    expect(A.hint == L.TRAVEL_FLY:format("Sentinel Hill, Westfall"), "travel: no flight back (" .. tostring(A.hint) .. ")")
+    expect(A.hint == L.TRAVEL_FLY:format("Menethil Harbor, Wetlands"), "travel: no flight to the harbor (" .. tostring(A.hint) .. ")")
     H.openTaxi({
         { name = "Lakeshire, Redridge", state = 0, map = ariena.map, x = ariena.x, y = ariena.y },
-        { name = "Sentinel Hill, Westfall", state = 1, map = thor.map, x = thor.x, y = thor.y },
+        { name = "Menethil Harbor, Wetlands", state = 1, map = menethil.map, x = menethil.x, y = menethil.y },
     })
     TakeTaxiNode(2)
     H.closeTaxi()
-    H.land(thor.map, thor.x, thor.y)
+    H.land(menethil.map, menethil.x, menethil.y)
     tick(2)
     expect(A.hint == L.TRAVEL_BOAT:format("Darkshore"), "travel: no boat to the other continent (" .. tostring(A.hint) .. ")")
     checkPanel("travel: boat")
@@ -1006,6 +1051,53 @@ ok, err = pcall(function()
     C:Close()
 end)
 if not ok then problem("rewards: " .. tostring(err)) end
+
+-- Quests an NPC offers: beside its window, a verdict on a quest of a later step ("step N") and on
+-- one that is not for the character (a Horde quest); nothing when the current step takes every
+-- quest offered; gone with the window, and never shown with the option off.
+ok, err = pcall(function()
+    local O = Ding.Offers
+    scenarioCharacter()
+    H.resetQuests()
+    E.turnedIn, Ding.char.manual = {}, {}
+    player.level = SCENARIO.minLevel
+    db.ui.autoAccept, db.ui.autoTurnin = false, false
+    E:SetGuide(SCENARIO.id, 1, true)
+    tick(3)
+    local later, step, horde, current = nil, nil, 96874, nil
+    for i = #SCENARIO.steps, 2, -1 do
+        local accept = SCENARIO.steps[i].accept
+        if accept and Ding:StepApplies(SCENARIO.steps[i]) then
+            later, step = accept[1], i
+            break
+        end
+    end
+    for _, q in ipairs(E:CurrentStep().accept or {}) do current = current or q end
+    if current then
+        H.talk({ gives = { current } })
+        flush()
+        expect(not (O.frame and O.frame:IsShown()), "offered quests: shown for the current step's quest alone")
+        H.closeDialog()
+    end
+    H.talk({ gives = { later, horde } })
+    flush()
+    expect(O.frame and O.frame:IsShown() and #O.entries == 2, "offered quests: no panel beside the NPC window")
+    local rows = O.entries or {}
+    expect(rows[1] and rows[1].result.kind == "later" and rows[1].result.step == step,
+        "offered quests: a later step's quest not placed at its step")
+    expect(rows[2] and rows[2].verdict == "useless" and rows[2].result.reason == "class" and rows[2].text ~= "",
+        "offered quests: a quest for the other side not said so")
+    H.closeDialog()
+    expect(not O.frame:IsShown(), "offered quests: the panel stays once the window closed")
+    db.ui.offers = false
+    H.talk({ gives = { later } })
+    flush()
+    expect(not O.frame:IsShown(), "offered quests: shown with the option off")
+    H.closeDialog()
+    db.ui.offers = true
+    db.ui.autoAccept, db.ui.autoTurnin = true, true
+end)
+if not ok then problem("offered quests: " .. tostring(err)) end
 
 -- Targets and service options: every monster of the objective in the target macro (the
 -- arrow's last), a `train` step done by a spell learned, a `fly` step gone with its option.
@@ -1105,8 +1197,9 @@ ok, err = pcall(function()
 end)
 if not ok then problem("training: " .. tostring(err)) end
 
--- Guidance: the nearby services list with the gamepad (a trip to the vendor, ended at its
--- window), the training reminder, a gear upgrade offered on the item button and declined.
+-- Guidance: the NPC directory with the gamepad (a trip to the vendor, ended at its window;
+-- the Cities tab and a city; /ding find and a trip ended with B), the training reminder, a
+-- gear upgrade offered on the item button and declined.
 ok, err = pcall(function()
     scenarioCharacter()
     H.resetQuests()
@@ -1126,6 +1219,18 @@ ok, err = pcall(function()
     checkPanel("guidance: trip")
     H.setNpcName(trip.name); H.openMerchant(); H.closeMerchant(); H.setNpcName(nil)
     expect(F.trip == nil, "guidance: the trip does not end at the vendor")
+    F:Toggle(); flush()
+    press("PADRSHOULDER"); press("PAD1")
+    expect(F:Page().kind == "city" and #F.rows > 0, "guidance: the directory's first city does not open")
+    press("PAD2"); press("PAD2")
+    expect(not F.frame:IsShown() and next(overrides) == nil, "guidance: the directory or its keys stay")
+    SlashCmdList.DING("find bank"); flush()
+    expect(F:Page().kind == "search" and F.rows[1] and F.rows[1].entry, "guidance: /ding find bank finds no bank")
+    press("PAD1")
+    expect(F.trip and F.trip.kind == "bank", "guidance: no trip to the bank")
+    checkPanel("guidance: trip to the bank")
+    F:Toggle(); flush(); press("PAD2")
+    expect(F.trip == nil, "guidance: B does not end the trip")
     H.setTrainerServices({ { name = "Battle Shout", category = "available", level = 4, cost = 100 } })
     H.openTrainer(false); H.closeTrainer()
     local reminder = false
@@ -1287,6 +1392,40 @@ ok, err = pcall(function()
     Ding.char.flights = nil
 end)
 if not ok then problem("travel2: " .. tostring(err)) end
+
+-- Walking passages: from Mulgore to Thunder Bluff, the arrow to a lift with its hint and the
+-- route under the step; on top, the step validates on its own place.
+ok, err = pcall(function()
+    Ding.RegisterGuide({ id = "smoke-passage", title = "Passage", races = { "Tauren" }, steps = {
+        { go = { 1456, 45, 55 }, text = "Thunder Bluff" },
+        { text = "End" },
+    } })
+    scenarioCharacter()
+    H.resetQuests()
+    E.turnedIn, Ding.char.manual = {}, {}
+    player.race, player.faction, player.class, player.level = "Tauren", "Horde", "WARRIOR", 10
+    player.map, player.x, player.y = 1412, 47.5, 58.5
+    Ding.Travel:Reset()
+    E:SetGuide("smoke-passage", 1, true)
+    tick(2)
+    local A = Ding.Arrow
+    local hint = L.PASSAGE_LIFT_UP:format(Ding.Compat.MapName(1456) or "?")
+    expect(A.hint == hint, "passage: no lift (" .. tostring(A.hint) .. ")")
+    local leg = Ding.Travel.leg
+    expect(leg and leg.point and leg.point.map == 1456, "passage: the arrow is not at a lift")
+    local route = Ding.Travel:Itinerary(Ding.Travel.plan)
+    local listed = false
+    for _, r in ipairs(P.rowsShown or {}) do
+        if route and r.sub and H.plain(r.sub):find(route, 1, true) then listed = true end
+    end
+    expect(listed, "passage: no route under the step")
+    checkPanel("passage: lift")
+    player.map, player.x, player.y = 1456, 45, 55
+    tick(2)
+    expect(E.index == 2, "passage: the step does not validate on top (" .. E.index .. ")")
+    expect(A.hint == nil, "passage: a hint left once there (" .. tostring(A.hint) .. ")")
+end)
+if not ok then problem("passage: " .. tostring(err)) end
 
 -- Talents: with a free point, the build's next talent under the step, learned with A twice
 -- in focus mode.
@@ -1549,6 +1688,50 @@ ok, err = pcall(function()
     db.ui.dungeonChoice = nil
 end)
 if not ok then problem("settings: " .. tostring(err)) end
+
+-- Why the guide makes its choices (Core/Why.lua): the line under a surprising step, the reason
+-- in the tooltip of its rows (the mouse, then X in focus mode), nothing under a plain step, and
+-- nothing at all with the option off.
+ok, err = pcall(function()
+    Ding.RegisterGuide({ id = "smoke-why", title = "Why", races = { "NightElf" }, steps = {
+        { accept = 456, why = { kind = "detour", quest = 456, xp = 900, seconds = 300, short = true } },
+        { accept = 916 }, { text = "End" },
+    } })
+    scenarioCharacter()
+    H.resetQuests()
+    E.turnedIn, Ding.char.manual = {}, {}
+    db.ui.autoAccept = false
+    db.panel.why = true
+    player.level, player.map, player.x, player.y = 5, 1438, 58.7, 44
+    E:SetGuide("smoke-why", 1, true)
+    tick(2)
+    local function under()
+        local out = {}
+        for _, r in ipairs(P.rowsShown or {}) do out[#out + 1] = r.sub or "" end
+        return plain(table.concat(out, " "))
+    end
+    local line = Ding.Why:Short(E:CurrentStep())
+    expect(line and under():find(line, 1, true), "why: no line under the detour")
+    checkPanel("why: the line under the step")
+    local r = P.frame.rows[1]
+    r.scripts.OnEnter(r)
+    expect(table.concat(GameTooltip.lines or {}, " "):find(L.WHY_TITLE, 1, true), "why: not in the row's tooltip")
+    r.scripts.OnLeave(r)
+    P:StartFocus()
+    press("PAD3")
+    expect(GameTooltip:IsShown() and table.concat(GameTooltip.lines or {}, " "):find(L.WHY_TITLE, 1, true),
+        "why: X shows no reason")
+    P:StopFocus()
+    db.panel.why = false
+    P:Update()
+    expect(not under():find(line, 1, true), "why: the line stays with the option off")
+    db.panel.why = true
+    E:SetGuide("smoke-why", 2, true)
+    tick(1)
+    expect(not under():find(L.WHY_DETOUR, 1, true), "why: a line under a step without a reason")
+    db.ui.autoAccept = true
+end)
+if not ok then problem("why: " .. tostring(err)) end
 
 print(("Result: %d problem(s)"):format(H.problems()))
 os.exit(H.problems() > 0 and 1 or 0)

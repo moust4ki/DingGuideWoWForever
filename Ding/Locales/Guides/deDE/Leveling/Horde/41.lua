@@ -15,6 +15,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h41-silithus", {
         "Flugmeister von Burg Cenarius",
     ["The NPC is on the house's raised terrace."] =
         "Der NPC ist auf der erhöhten Terrasse des Hauses.",
+    ["The object is indoors."] =
+        "Das Objekt ist drinnen.",
     ["Watch out: killing them can summon more foes."] =
         "Vorsicht: Wenn du sie tötest, können weitere Gegner erscheinen.",
     ["The foes here are scorpions."] =

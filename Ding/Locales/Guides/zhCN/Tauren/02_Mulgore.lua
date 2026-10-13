@@ -5,4 +5,6 @@ Ding.RegisterGuideTranslation("zhCN", "tauren-02-mulgore", {
         "莫高雷 (5-12)",
     ["Follow the road north out of Camp Narache to Bloodhoof Village: your base for Mulgore."] =
         "从纳拉其营地沿北边的道路到血蹄村：这是莫高雷的据点。",
+    ["Bloodhoof Village"] =
+        "血蹄村",
 })

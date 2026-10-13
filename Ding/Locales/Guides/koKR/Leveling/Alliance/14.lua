@@ -19,20 +19,30 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a14-duskwood-and-stranglethorn-v
         "NPC는 물가에 서 있습니다.",
     ["The NPC is indoors, one floor up."] =
         "NPC는 건물 안 한 층 위에 있습니다.",
+    ["The NPC is indoors. You need it later for \"Soothing Turtle Bisque\": keep it in the bank to free a bag slot."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"독특한 거북이 비스크\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"The Brassbolts Brothers\": keep it in the bank to free a bag slot."] =
+        "나중에 \"브라스볼츠 형제\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"A Noble Brew\": keep it in the bank to free a bag slot."] =
+        "나중에 \"귀족을 위한 술\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["This one roams, so scan the surrounding area."] =
         "이 대상은 돌아다니므로 주변을 살펴보세요.",
+    ["Darkshire"] =
+        "다크샤이어",
     ["The NPC patrols the road; look along it."] =
         "NPC는 길을 순찰합니다. 길을 따라 찾아보세요.",
     ["The targets are worgen."] =
         "대상은 늑대인간입니다.",
-    ["Be ready for a fight right away. The NPC is indoors, one floor up."] =
-        "바로 전투가 시작되니 대비하세요. NPC는 건물 안 한 층 위에 있습니다.",
+    ["Be ready for a fight right away. The object is indoors, one floor up."] =
+        "바로 전투가 시작되니 대비하세요. 그 물체는 건물 안 한 층 위에 있습니다.",
     ["The targets are ghouls. Targets are both in the tomb and around it."] =
         "대상은 구울입니다. 대상은 무덤 안과 주변 모두에 있습니다.",
     ["Other ghouls occupy the same spawn points. Targets are both in the tomb and around it."] =
         "다른 구울도 같은 위치에 나타납니다. 대상은 무덤 안과 주변 모두에 있습니다.",
     ["Exit the tomb"] =
         "무덤을 나가세요",
+    ["The object is indoors."] =
+        "그 물체는 건물 안에 있습니다.",
     ["Go into the cavern"] =
         "동굴에 들어가세요",
     ["Your targets are within the cavern. The targets are spread over several spots."] =

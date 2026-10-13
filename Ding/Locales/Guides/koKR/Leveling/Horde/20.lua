@@ -25,6 +25,16 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h20-stranglethorn-vale-and-swamp
         "대상은 트롤입니다.",
     ["The targets are in the water and along its edges."] =
         "대상은 물속과 물가에 있습니다.",
+    ["You need it later for \"Chapter I\": keep it in the bank to free a bag slot."] =
+        "나중에 \"제 1 장\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Chapter II\": keep it in the bank to free a bag slot."] =
+        "나중에 \"제 2 장\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Chapter III\": keep it in the bank to free a bag slot."] =
+        "나중에 \"제 3 장\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Chapter IV\": keep it in the bank to free a bag slot."] =
+        "나중에 \"제 4 장\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["Booty Bay"] =
+        "무법항",
     ["Keep clear of Darkshire."] =
         "다크샤이어는 피하세요.",
     ["Hunt the little winged dragonkin. When the targets run out, skip ahead. No rush; you may complete this afterwards."] =
@@ -35,8 +45,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h20-stranglethorn-vale-and-swamp
         "스토나드 비행 조련사",
     ["The NPC is indoors, one floor up."] =
         "NPC는 건물 안 한 층 위에 있습니다.",
-    ["The target is a humanoid escorted by 2 guards. The NPC patrols a long route; look along it."] =
-        "대상은 경비병 2명이 호위하는 인간형입니다. NPC는 긴 경로를 순찰합니다. 경로를 따라 찾아보세요.",
+    ["The target is a humanoid escorted by 2 guards. The target patrols a long route; look along it."] =
+        "대상은 경비병 2명이 호위하는 인간형입니다. 대상은 긴 경로를 순찰합니다. 경로를 따라 찾아보세요.",
     ["This one roams, so scan the surrounding area. The targets are spread over several spots."] =
         "이 대상은 돌아다니므로 주변을 살펴보세요. 대상은 여러 곳에 흩어져 있습니다.",
     ["For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears. Clear the monsters just south before you start."] =
@@ -51,4 +61,6 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h20-stranglethorn-vale-and-swamp
         "날개 달린 작은 용족을 사냥하세요.",
     ["Let the conversation play out. Climb to the highest floor of the building."] =
         "대화가 끝날 때까지 기다리세요. 건물 꼭대기 층으로 올라가세요.",
+    ["Camp Taurajo"] =
+        "타우라조 야영지",
 })

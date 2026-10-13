@@ -15,32 +15,36 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h39-western-and-eastern-plaguela
         "西瘟疫之地和东瘟疫之地的亡灵敌人都会掉落。保持Argent Dawn Commission效果一直生效。",
     ["The NPC is indoors, one floor up."] =
         "NPC在室内楼上一层。",
-    ["The NPC is indoors."] =
-        "NPC在室内。",
+    ["The object is indoors."] =
+        "该物件在室内。",
     ["Look for a white set of bones. This one roams, so scan the surrounding area. The targets appear in several places."] =
         "寻找一副白色的骨头。它会四处游荡，在周围找找。目标在多个地点出现。",
     ["Finish Locked Away to obtain this."] =
         "完成任务“Locked Away”来获得它。",
+    ["The object is indoors, one floor up."] =
+        "该物件在室内楼上一层。",
     ["Stand at the watchtower's doorway. An elite foe waits indoors; stay clear of it."] =
         "站在瞭望塔门口。室内有一个精英敌人，避开它。",
     ["Close to the big buildings lit in blue. A new one may appear when one is killed."] =
         "在亮着蓝光的大建筑附近。杀掉一个后可能会出现新的。",
     ["Look for little gray coffers of metal. The targets are in the ruined houses."] =
         "寻找灰色的小金属箱。目标在倒塌的房屋里。",
+    ["The NPC is indoors."] =
+        "NPC在室内。",
     ["This one roams, so scan the surrounding area. Targets are in the tower and around its base. If an elite stands on the tower's roof, hold back outside."] =
         "它会四处游荡，在周围找找。目标在塔里和塔底周围。如果塔顶站着精英，就在外面等着。",
     ["Spiders also appear at these spawn spots."] =
         "蜘蛛也会在这些刷新点出现。",
-    ["This one roams, so scan the surrounding area."] =
-        "它会四处游荡，在周围找找。",
-    ["This one roams, so scan the surrounding area. The NPC is within the ruined home."] =
-        "它会四处游荡，在周围找找。NPC在倒塌的房屋里。",
+    ["The NPC is within the ruined home."] =
+        "NPC在倒塌的房屋里。",
     ["Search within the houses here. Be ready for a fight right away."] =
         "在这里的房屋里搜寻。准备好马上战斗。",
     ["Look for big yellow grubs."] =
         "寻找黄色的大幼虫。",
     ["Fight undead foes. Beware of foes lurking in stealth. Elite human foes walk patrols here; stay clear."] =
         "与亡灵敌人战斗。当心潜行中的敌人。这里有人类精英敌人巡逻；避开它们。",
+    ["This one roams, so scan the surrounding area."] =
+        "它会四处游荡，在周围找找。",
     ["A lengthy stretch of quests is coming up. This one roams, so scan the surrounding area."] =
         "接下来是一长段任务。它会四处游荡，在周围找找。",
     ["Flight master at Light's Hope Chapel"] =
@@ -53,10 +57,10 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h39-western-and-eastern-plaguela
         "下到墓穴里",
     ["This is below ground, on the crypt's lower floor."] =
         "在地下，墓穴的下层。",
-    ["This one roams, so scan the surrounding area. Your character must be seated first."] =
-        "它会四处游荡，在周围找找。你的角色必须先坐下。",
-    ["This one roams, so scan the surrounding area. Check each of the two floors indoors."] =
-        "它会四处游荡，在周围找找。室内两层都要找。",
+    ["Your character must be seated first."] =
+        "你的角色必须先坐下。",
+    ["Check each of the two floors indoors."] =
+        "室内两层都要找。",
     ["Move the camera close and check which book is genuine. Some books are traps that summon foes. The genuine book can look two ways:"] =
         "把镜头拉近，看看哪本书是真的。有些书是陷阱，会召唤敌人。真书有两种样子：",
     ["The NPC hides beneath the staircase."] =
@@ -65,12 +69,14 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h39-western-and-eastern-plaguela
         "也可以从银行取出。",
     ["Your targets sit below the water's surface."] =
         "目标在水面以下。",
-    ["The NPC is indoors. It shows up on top of the box."] =
-        "NPC在室内。它会出现在箱子上面。",
+    ["The object is indoors. It shows up on top of the box."] =
+        "该物件在室内。它会出现在箱子上面。",
     ["The target is a ghoul armed with a hayfork. This one roams, so scan the surrounding area. It can appear at this spot."] =
         "目标是一个拿着干草叉的食尸鬼。它会四处游荡，在周围找找。它可能在这个位置出现。",
     ["You can also take it out of your bank. The NPC is indoors."] =
         "也可以从银行取出。NPC在室内。",
+    ["The NPC is indoors. You need it later for \"Glyphed Oaken Branch\": keep it in the bank to free a bag slot."] =
+        "NPC在室内。之后的任务“雕文橡木枝”需要它：先存进银行，腾出背包空间。",
     ["The NPC stands on the highest level of this structure."] =
         "NPC在这座建筑的最高层。",
     ["This NPC is found down in the Cleft of Shadow."] =

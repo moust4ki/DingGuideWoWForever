@@ -2,8 +2,9 @@
 -- of the step's nearest spots (dots), and an arrow on the minimap's edge when the target is
 -- farther than the minimap shows. Hidden in instances and with the guide window. No world
 -- map pins. The pins are Ding's frames on the minimap; the minimap is only read (its size
--- and zoom).
+-- and zoom). Hovered, a pin says what it is.
 local _, Ding = ...
+local L = Ding.L
 local UI = Ding.UI
 local C = UI.C
 local Compat = Ding.Compat
@@ -21,6 +22,39 @@ local INDOORS = { [0] = 300, 240, 180, 120, 80, 50 }
 
 local function minimap() return _G.Minimap end
 
+-- What a pin stands for, in words, when the mouse is over it: the target's or the spot's name,
+-- then the arrow's target, a spot of the step, a stop of the farming loop.
+function MP:Explain(f)
+    local point, line
+    if f == self.target or f == self.edge then
+        point, line = Ding.Arrow.shownPoint, f == self.edge and L.PIN_EDGE or L.PIN_TARGET
+    else
+        point, line = f.point, Ding.Arrow.farm and L.PIN_LOOP or L.PIN_SPOT
+    end
+    local label = point and point.label
+    return UI.Colored("accent", Ding.TITLE) .. (label and (" · " .. label) or ""), line
+end
+
+-- Hovered, a pin says what it is; the clicks go through to the minimap (motion only). A client
+-- that cannot split them keeps the pin out of the mouse's way.
+local function hoverable(f)
+    f:EnableMouse(true)
+    if not (f.SetMouseClickEnabled and pcall(f.SetMouseClickEnabled, f, false)) then
+        f:EnableMouse(false)
+        return
+    end
+    f:SetScript("OnEnter", function(self)
+        local title, line = MP:Explain(self)
+        GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+        GameTooltip:SetText(title, 1, 1, 1, 1, true)
+        GameTooltip:AddLine(line, 0.8, 0.8, 0.8, true)
+        GameTooltip:Show()
+    end)
+    f:SetScript("OnLeave", function(self)
+        if GameTooltip:GetOwner() == self then GameTooltip:Hide() end
+    end)
+end
+
 local function pin(texture, size, color, alpha)
     local f = CreateFrame("Frame", nil, minimap())
     f:SetSize(size, size)
@@ -28,6 +62,7 @@ local function pin(texture, size, color, alpha)
     f.tex = UI.Icon(f, texture, size, color, "OVERLAY")
     f.tex:SetPoint("CENTER", f, "CENTER", 0, 0)
     f:SetAlpha(alpha or 1)
+    hoverable(f)
     f:Hide()
     return f
 end
@@ -126,6 +161,7 @@ function MP:Update()
         if not inside then break end
         n = n + 1
         local dot = self.dots[n]
+        dot.point = s.p
         dot:ClearAllPoints()
         dot:SetPoint("CENTER", map, "CENTER", sx * r, sy * r)
         dot:Show()

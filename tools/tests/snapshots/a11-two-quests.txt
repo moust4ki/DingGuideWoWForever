@@ -1,0 +1,45 @@
+# a11-two-quests
+# Redridge: one step, two quests' objectives under their own headers
+# frFR, Dwarf HUNTER level 27, window 300 wide, scale 1, mouse
+
+TITLE  Ding! · Bois de la Pénombre et Carmines (25-27)
+STEP   < Étape 55 / 97 >   zone: Lac Everstill
+
+ 1  header  [header] no icon, text light grey, semibold 12
+    [20] « Les braconniers murlocs »
+    card:
+      | Les braconniers murlocs
+      | En cours : ses objectifs sont en dessous.
+      | Quête de niveau 20
+      | Aileron de murloc : 4/8
+      | Clic : la flèche y va.
+ 2  objective  [todo] red background, red dot icon, text white, indented, counter 4/8 red
+      Récupérer 8 Aileron de murloc
+        > Tu en trouveras d'autres qui nagent aussi tout près.
+      card:
+        | Récupérer 8 Aileron de murloc
+        | À faire.
+        | 4 sur 8 pour l'instant.
+        | Pour [20] « Les braconniers murlocs » : 0 sur 1 objectifs faits.
+        | Clic : la flèche y va.
+ 3  header  [header] no icon, text light grey, semibold 12
+    [21] « Criée aux poissons »
+    card:
+      | Criée aux poissons
+      | En cours : ses objectifs sont en dessous.
+      | Quête de niveau 21
+      | Poisson-lune : 10/10
+      | Clic : la flèche y va.
+ 4  objective  [done] green background, green check icon, text light grey, indented, counter 10/10 green
+      10 Poisson-lune : fait
+        > Garder Aileron de murloc : une étape plus loin en a besoin.
+        > Garder Poisson-lune : une étape plus loin en a besoin.
+      card:
+        | 10 Poisson-lune : fait
+        | Fait.
+        | Pour [21] « Criée aux poissons » : 1 sur 1 objectifs faits.
+        | Clic : la flèche y va.
+
+PROGRESS bar 55 / 97
+MENU (right click on the window): Marquer comme fait | Passer, à faire plus tard
+MENU (right click on a row with a quest): Marquer comme fait | Passer, à faire plus tard | Trouver cette quête dans le guide

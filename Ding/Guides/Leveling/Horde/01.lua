@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Horde/01.lua.
--- Simulated (warrior): Scourge 1 (0%) -> 14 (14%) in 9 h 10, 80 quests turned in.
+-- Simulated (warrior): Scourge 1 (0%) -> 14 (3%) in 8 h 55, 71 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-h01-undead-starter",
     title    = "Undead start (1-13)",
@@ -10,6 +10,55 @@ Ding.RegisterGuide({
     races    = { "Scourge" },
     minLevel = 1, maxLevel = 13,
     next     = "leveling-h04-silverpine-forest",
+    leftOut  = {
+        [105] = { kind = "prereq" },
+        [357] = { kind = "prereq" },
+        [366] = { kind = "prereq" },
+        [372] = { kind = "version" },
+        [405] = { kind = "detour", seconds = 60, xp = 100 },
+        [408] = { kind = "prereq" },
+        [411] = { kind = "prereq" },
+        [441] = { kind = "prereq" },
+        [446] = { kind = "prereq" },
+        [450] = { kind = "far" },
+        [530] = { kind = "prereq" },
+        [737] = { kind = "prereq" },
+        [827] = { kind = "prereq" },
+        [828] = { kind = "prereq" },
+        [829] = { kind = "prereq" },
+        [1004] = { kind = "exclusive" },
+        [1113] = { kind = "prereq" },
+        [1160] = { kind = "prereq" },
+        [1394] = { kind = "prereq" },
+        [2342] = { kind = "far" },
+        [2937] = { kind = "prereq" },
+        [3784] = { kind = "exclusive" },
+        [4133] = { kind = "log" },
+        [4642] = { kind = "prereq" },
+        [4769] = { kind = "away" },
+        [5511] = { kind = "prereq" },
+        [5804] = { kind = "prereq" },
+        [6521] = { kind = "prereq" },
+        [8430] = { kind = "away" },
+        [8439] = { kind = "away" },
+        [92421] = { kind = "away" },
+        [92422] = { kind = "away" },
+        [95216] = { kind = "away" },
+        [96607] = { kind = "away" },
+        [96658] = { kind = "prereq" },
+        [96896] = { kind = "away" },
+        [96899] = { kind = "far", turnin = true },
+        [97289] = { kind = "away" },
+        [97290] = { kind = "away" },
+        [97291] = { kind = "away" },
+        [97292] = { kind = "away" },
+        [97985] = { kind = "far" },
+        [98545] = { kind = "away" },
+        [99051] = { kind = "far" },
+        [99052] = { kind = "prereq" },
+        [99141] = { kind = "away" },
+        [99153] = { kind = "away" },
+    },
     steps    = {
         { destroy = 6948, -- level 1
           note = "Tirisfal Glades: Deathknell, where the undead rise. This frees room in your bags. You receive one further along the route." },
@@ -55,7 +104,7 @@ Ding.RegisterGuide({
           note = "The targets are wolves." },
         { complete = 376, -- level 3
           note = "The targets are bats." },
-        { level = 3, xp = 1000, patrol = { { 1420, 31.35, 58.35 }, { 1420, 29.46, 58.77 }, { 1420, 30.23, 62.14 }, { 1420, 29.26, 64.45 }, { 1420, 28.96, 67.76 }, { 1420, 32.43, 67.03 }, { 1420, 34.43, 66.35 }, { 1420, 34.45, 58.23 }, { 1420, 31.03, 55.46 } }, -- level 3
+        { level = 3, xp = 1000, patrol = { { 1420, 31.35, 58.35 }, { 1420, 29.46, 58.77 }, { 1420, 30.23, 62.14 }, { 1420, 29.26, 64.45 }, { 1420, 28.96, 67.76 }, { 1420, 32.43, 67.03 }, { 1420, 34.43, 66.35 }, { 1420, 34.45, 58.23 }, { 1420, 31.03, 55.46 } }, why = { kind = "level", levels = { 3, 6 } }, -- level 3
           note = "With the coming hand-ins, this brings you to level 4." },
         { turnin = 376, accept = 6395, -- level 3
           note = "The NPC is indoors." },
@@ -78,23 +127,21 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { train = true, talk = 2122, classes = { "ROGUE" }, -- level 4
           note = "The NPC is indoors." },
-        { accept = 3902, -- level 4
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 3902 }, -- level 4
         { complete = 3902, -- level 4
           note = "Search stacks of brown crates. Check in and around the structures." },
         { complete = 380, -- level 4
           note = "Just out of the mine." },
         { complete = 380, -- level 4
           note = "The objective is underground, in the mine shaft." },
-        { level = 4, xp = 1500, patrol = { { 1420, 26.87, 59.44 }, { 1420, 25.46, 59.66 }, { 1420, 23.37, 60.16 }, { 1420, 23.44, 58.17 }, { 1420, 27.23, 56.75 }, { 1420, 29.44, 57.45 }, { 1420, 29.25, 59.54 } }, -- level 4
+        { level = 4, xp = 1500, patrol = { { 1420, 26.87, 59.44 }, { 1420, 25.46, 59.66 }, { 1420, 23.37, 60.16 }, { 1420, 23.44, 58.17 }, { 1420, 27.23, 56.75 }, { 1420, 29.44, 57.45 }, { 1420, 29.25, 59.54 } }, why = { kind = "level", levels = { 4, 7 } }, -- level 4
           note = "With the coming hand-ins, this gets you to level 5. The targets roam the mine and the area around it." },
         { go = { 1420, 26.87, 59.44 }, deathskip = true, text = "Die on purpose at this spot", -- level 4
           note = "Die to the monsters here on purpose. Dying costs you nothing this early. This is the quickest way over." },
         { deathskip = true, revive = { 1420, 31.28, 64.93 }, text = "Get yourself killed, then resurrect with the spirit healer" }, -- level 4
         { talk = 6491 }, -- level 4
         { go = { 1420, 26.86, 59.46 }, text = "Exit the mine shaft" }, -- level 4
-        { turnin = 3902, -- level 4
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 3902 }, -- level 4
         { turnin = 380, accept = 381 }, -- level 4
         { complete = 381 }, -- level 5
         { collect = { { 16333, 1 } }, spots = { { 1420, 36.74, 61.61 } }, -- level 5
@@ -110,7 +157,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { turnin = 381, accept = 382 }, -- level 5
         { complete = 382 }, -- level 5
-        { level = 5, xp = 2150, patrol = { { 1420, 35.43, 65.86 }, { 1420, 37.04, 64.34 }, { 1420, 37.75, 66.65 }, { 1420, 38.66, 69.43 }, { 1420, 37.03, 70.84 }, { 1420, 35.45, 68.55 } }, -- level 5
+        { level = 5, xp = 2150, patrol = { { 1420, 35.43, 65.86 }, { 1420, 37.04, 64.34 }, { 1420, 37.75, 66.65 }, { 1420, 38.66, 69.43 }, { 1420, 37.03, 70.84 }, { 1420, 35.45, 68.55 } }, why = { kind = "level", levels = { 5, 7 } }, -- level 5
           note = "With the coming hand-ins, this gets you to level 6." },
         { turnin = 382, accept = 383 }, -- level 5
         { train = true, talk = 2124, classes = { "MAGE" }, -- level 5
@@ -152,7 +199,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { complete = 404, -- level 6
           note = "The targets are zombies." },
-        { level = 7, patrol = { { 1420, 49.96, 56.45 }, { 1420, 48.04, 57.87 }, { 1420, 48.94, 60.15 }, { 1420, 50.86, 58.94 }, { 1420, 53.44, 57.35 }, { 1420, 55.35, 57.95 }, { 1420, 56.05, 53.74 }, { 1420, 53.63, 52.66 }, { 1420, 52.67, 54.66 }, { 1420, 50.24, 53.93 }, { 1420, 48.26, 53.67 }, { 1420, 46.55, 52.43 }, { 1420, 45.74, 50.46 }, { 1420, 43.87, 51.84 }, { 1420, 44.44, 54.14 }, { 1420, 42.35, 54.24 }, { 1420, 41.37, 52.03 }, { 1420, 39.56, 50.66 }, { 1420, 39.73, 54.14 }, { 1420, 40.46, 57.45 }, { 1420, 41.57, 59.07 }, { 1420, 43.57, 59.76 }, { 1420, 45.47, 59.05 }, { 1420, 43.35, 57.44 }, { 1420, 45.25, 56.24 }, { 1420, 47.04, 61.45 }, { 1420, 51.35, 51.97 }, { 1420, 52.16, 49.85 } }, -- level 6
+        { level = 7, patrol = { { 1420, 49.96, 56.45 }, { 1420, 48.04, 57.87 }, { 1420, 48.94, 60.15 }, { 1420, 50.86, 58.94 }, { 1420, 53.44, 57.35 }, { 1420, 55.35, 57.95 }, { 1420, 56.05, 53.74 }, { 1420, 53.63, 52.66 }, { 1420, 52.67, 54.66 }, { 1420, 50.24, 53.93 }, { 1420, 48.26, 53.67 }, { 1420, 46.55, 52.43 }, { 1420, 45.74, 50.46 }, { 1420, 43.87, 51.84 }, { 1420, 44.44, 54.14 }, { 1420, 42.35, 54.24 }, { 1420, 41.37, 52.03 }, { 1420, 39.56, 50.66 }, { 1420, 39.73, 54.14 }, { 1420, 40.46, 57.45 }, { 1420, 41.57, 59.07 }, { 1420, 43.57, 59.76 }, { 1420, 45.47, 59.05 }, { 1420, 43.35, 57.44 }, { 1420, 45.25, 56.24 }, { 1420, 47.04, 61.45 }, { 1420, 51.35, 51.97 }, { 1420, 52.16, 49.85 } }, why = { kind = "level", levels = { 6, 9 } }, -- level 6
           note = "Progress westward as you go." },
         { complete = 5481, -- level 7
           note = "Look for wilted violet weeds. Progress westward as you go." },
@@ -160,7 +207,7 @@ Ding.RegisterGuide({
         { complete = 427 }, -- level 7
         { accept = 86784, races = { "Scourge" } }, -- level 7
         { complete = 86784, races = { "Scourge" } }, -- level 7
-        { level = 7, xp = 2535, patrol = { { 1420, 32.84, 50.37 }, { 1420, 29.76, 49.37 }, { 1420, 30.74, 46.37 }, { 1420, 33.55, 45.26 }, { 1420, 36.75, 47.94 } }, -- level 7
+        { level = 7, xp = 2535, patrol = { { 1420, 32.84, 50.37 }, { 1420, 29.76, 49.37 }, { 1420, 30.74, 46.37 }, { 1420, 33.55, 45.26 }, { 1420, 36.75, 47.94 } }, why = { kind = "level", levels = { 6, 9 } }, -- level 7
           note = "Together with the next turn-ins, this brings you to level 8." },
         { turnin = 427, accept = 370 }, -- level 7
         { turnin = 365, accept = 407, -- level 7
@@ -209,7 +256,7 @@ Ding.RegisterGuide({
           note = "Hunt the crabs." },
         { go = { 1411, 50.79, 79.17 }, text = "Stay on the trail" }, -- level 8
         { complete = 786, -- level 8
-          note = "The NPC is indoors." },
+          note = "The object is indoors." },
         { accept = 97223, races = { "Scourge" } }, -- level 8
         { complete = 786 }, -- level 8
         { complete = 786, -- level 8
@@ -223,16 +270,16 @@ Ding.RegisterGuide({
           note = "This one roams, so scan the surrounding area. The targets are spread over several spots." },
         { go = { 1411, 58.96, 58.33 }, text = "Head indoors" }, -- level 8
         { complete = 784, collect = { { 4882, 1 } }, -- level 8
-          note = "The NPC is indoors, one floor up. Consider bringing a group for this one." },
+          note = "The target is indoors, one floor up. Consider bringing a group for this one." },
         { complete = 96822, races = { "Scourge" } }, -- level 8
         { go = { 1411, 59.86, 57.81 }, text = "Stay on the trail and keep climbing the steps" }, -- level 8
         { collect = { { 4881, 1 } }, -- level 8
-          note = "The NPC stands on the highest level of this structure." },
+          note = "The object is on the highest level of this structure." },
         { accept = 830, useitem = 4881 }, -- level 8
         { complete = 791 }, -- level 8
         { complete = 784 }, -- level 8
         { turnin = 823 }, -- level 8
-        { turnin = { 784, 830 }, accept = { 825, 831, 837 }, -- level 9
+        { turnin = { 784, 830 }, accept = { 825, 831, 837 }, why = { kind = "carry", quest = 831, seconds = 5580, xp = 600 }, -- level 9
           note = "The NPC is indoors, one floor up." },
         { accept = 815, -- level 9
           note = "This one roams, so scan the surrounding area." },
@@ -271,15 +318,6 @@ Ding.RegisterGuide({
         { complete = 96604, races = { "Scourge" } }, -- level 10
         { turnin = 96604, races = { "Scourge" } }, -- level 10
         { complete = 96821, races = { "Scourge" } }, -- level 10
-        { accept = 97900, races = { "Scourge" } }, -- level 10
-        { accept = 97902, races = { "Scourge" } }, -- level 10
-        { accept = 97903, races = { "Scourge" } }, -- level 10
-        { complete = 97903, races = { "Scourge" } }, -- level 10
-        { turnin = 97903, races = { "Scourge" } }, -- level 10
-        { accept = 97904, races = { "Scourge" } }, -- level 10
-        { complete = 97904, races = { "Scourge" } }, -- level 10
-        { turnin = 97904, races = { "Scourge" } }, -- level 10
-        { accept = 97907, races = { "Scourge" } }, -- level 10
         { train = true, talk = 5880, classes = { "MAGE" }, -- level 10
           note = "The NPC is indoors." },
         { turnin = 825, -- level 10
@@ -311,21 +349,15 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { accept = 97282, races = { "Scourge" } }, -- level 10
         { complete = 97282, races = { "Scourge" } }, -- level 10
-        { complete = 97900, races = { "Scourge" } }, -- level 10
-        { turnin = 97900, races = { "Scourge" } }, -- level 10
-        { complete = 97902, races = { "Scourge" } }, -- level 10
-        { turnin = 97902, races = { "Scourge" } }, -- level 10
-        { complete = 97907, races = { "Scourge" } }, -- level 10
-        { turnin = 97907, races = { "Scourge" } }, -- level 10
         { accept = 834 }, -- level 10
         { complete = 834, -- level 10
           note = "Look for beige sacks." },
         { turnin = 834, accept = 835 }, -- level 10
-        { go = { 1411, 51.9, 27.41 }, text = "Stay on the trail, then cross the tunnel" }, -- level 11
-        { complete = 835 }, -- level 11
-        { go = { 1411, 53.23, 24.54 }, deathskip = true, text = "Die on purpose at this spot", -- level 11
+        { go = { 1411, 51.9, 27.41 }, text = "Stay on the trail, then cross the tunnel" }, -- level 10
+        { complete = 835 }, -- level 10
+        { go = { 1411, 53.23, 24.54 }, deathskip = true, text = "Die on purpose at this spot", -- level 10
           note = "Die to the monsters here on purpose. This is the quickest way over." },
-        { deathskip = true, revive = { 1411, 46.99, 17.63 }, text = "Get yourself killed, then resurrect with the spirit healer" }, -- level 11
+        { deathskip = true, revive = { 1411, 46.99, 17.63 }, text = "Get yourself killed, then resurrect with the spirit healer" }, -- level 10
         { talk = 6491 }, -- level 11
         { go = { 1411, 53.47, 27.83 }, text = "Traverse the passageway" }, -- level 11
         { turnin = 835 }, -- level 11
@@ -363,10 +395,6 @@ Ding.RegisterGuide({
         { turnin = 1820, when = { log = 1820 }, classes = { "WARRIOR" }, -- level 11
           note = "The NPC is indoors." },
         { accept = 97558, races = { "Scourge" } }, -- level 11
-        { accept = 97951, races = { "Scourge" } }, -- level 11
-        { accept = 97953, races = { "Scourge" } }, -- level 11
-        { accept = 97957, races = { "Scourge" } }, -- level 11
-        { accept = 97961, races = { "Scourge" } }, -- level 11
         { turnin = 1478, accept = 1473, classes = { "WARLOCK" } }, -- level 11
         { turnin = 1885, accept = 1886, classes = { "ROGUE" } }, -- level 11
         { go = { 1458, 57.26, 32.71 }, classes = { "ROGUE" }, text = "Learn Swords at the weapon master" }, -- level 11
@@ -375,9 +403,9 @@ Ding.RegisterGuide({
         { turnin = 1881, accept = 1882, sticky = { 374, 370 }, classes = { "MAGE" }, -- level 11
           note = "The NPC is indoors, one floor up." },
         { complete = 370, -- level 11
-          note = "The NPC is indoors." },
+          note = "The target is indoors." },
         { complete = 1473, classes = { "WARLOCK" }, -- level 11
-          note = "The NPC is indoors." },
+          note = "The object is indoors." },
         { complete = 374 }, -- level 11
         { complete = 370 }, -- level 11
         { turnin = 1473, when = { ready = 1473 }, classes = { "WARLOCK" } }, -- level 11
@@ -387,39 +415,35 @@ Ding.RegisterGuide({
         { turnin = 1471, when = { ready = 1471 }, classes = { "WARLOCK" } }, -- level 11
         { complete = 375, sticky = 426, -- level 11
           note = "Move gradually northwest toward Agamand Mills." },
-        { complete = 97961, races = { "Scourge" } }, -- level 11
-        { turnin = 97961, races = { "Scourge" } }, -- level 11
         { complete = 362, -- level 11
           note = "The target is a skeletal caster in armor. This one roams, so scan the surrounding area." },
         { complete = 354, -- level 11
           note = "The target is a banshee. This one roams, so scan the surrounding area. Check each of the two floors indoors." },
-        { complete = 354, -- level 12
+        { complete = 354, -- level 11
           note = "Your target is a ghoul. This one roams, so scan the surrounding area." },
-        { complete = 354, -- level 12
+        { complete = 354, -- level 11
           note = "The target is a shambling zombie. This one roams, so scan the surrounding area." },
-        { complete = 426, -- level 12
+        { complete = 426, -- level 11
           note = "The targets are skeletons in armor." },
-        { complete = 426, -- level 12
+        { complete = 426, -- level 11
           note = "The targets are skeletal mages." },
-        { accept = 361, useitem = 2839, sticky = 358, when = { item = 2839 } }, -- level 12
-        { go = { 1420, 54.24, 31.72 }, text = "Drop down with care" }, -- level 12
-        { complete = 398, -- level 12
-          note = "The NPC is indoors." },
-        { complete = 368, sticky = 358, -- level 12
+        { accept = 361, useitem = 2839, sticky = 358, when = { item = 2839 } }, -- level 11
+        { go = { 1420, 54.24, 31.72 }, text = "Drop down with care" }, -- level 11
+        { complete = 398, -- level 11
+          note = "The target is indoors." },
+        { complete = 368, sticky = 358, -- level 11
           note = "Fight the murlocs." },
         { complete = 97558, races = { "Scourge" } }, -- level 12
         { complete = 358, sticky = 5482 }, -- level 12
         { complete = 358 }, -- level 12
         { complete = 5482, -- level 12
           note = "Look for wilted violet weeds." },
-        { accept = 99142, races = { "Scourge" }, classes = { "WARRIOR", "HUNTER", "PRIEST", "SHAMAN", "WARLOCK", "DRUID" } }, -- level 12
+        { accept = 99142, races = { "Scourge" } }, -- level 12
         { complete = 358, -- level 12
           note = "Your targets here are gnolls." },
         { turnin = 5482, patrol = { { 1420, 59.31, 46.68 }, { 1420, 59.06, 47.14 }, { 1420, 58.76, 47.39 }, { 1420, 58.47, 47.66 }, { 1420, 58.21, 47.92 }, { 1420, 57.91, 48.07 }, { 1420, 57.64, 48.47 }, { 1420, 57.62, 48.75 }, { 1420, 57.63, 48.93 }, { 1420, 57.71, 49.4 }, { 1420, 57.79, 49.57 }, { 1420, 58.07, 49.79 }, { 1420, 58.24, 49.95 }, { 1420, 58.25, 50.46 }, { 1420, 58.23, 49.81 }, { 1420, 57.89, 49.59 }, { 1420, 57.57, 49.25 }, { 1420, 57.44, 49.37 }, { 1420, 57.33, 49.18 }, { 1420, 57.4, 49 }, { 1420, 57.55, 48.67 } }, -- level 12
           note = "The NPC patrols a long route; look along it." },
         { turnin = 426 }, -- level 12
-        { complete = 97951, races = { "Scourge" } }, -- level 12
-        { turnin = 97951, races = { "Scourge" } }, -- level 12
         { turnin = 368, accept = 369, -- level 12
           note = "The NPC is indoors." },
         { turnin = { 370, 398 }, accept = 371 }, -- level 12
@@ -431,24 +455,24 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { turnin = { 354, 362 }, accept = 355, -- level 12
           note = "The NPC is indoors." },
-        { turnin = 375, when = { item = 2320 }, -- level 13
+        { turnin = 375, when = { item = 2320 }, -- level 12
           note = "The NPC is indoors, one floor up." },
-        { accept = 96895, races = { "Scourge" } }, -- level 13
-        { accept = 99156, races = { "Scourge" } }, -- level 13
-        { train = true, talk = 2131, classes = { "WARRIOR" }, -- level 13
+        { accept = 96895, races = { "Scourge" } }, -- level 12
+        { accept = 99156, races = { "Scourge" } }, -- level 12
+        { train = true, talk = 2131, classes = { "WARRIOR" }, -- level 12
           note = "The NPC is indoors." },
-        { train = true, talk = 2128, classes = { "MAGE" }, -- level 13
+        { train = true, talk = 2128, classes = { "MAGE" }, -- level 12
           note = "The NPC is indoors, one floor up." },
-        { train = true, talk = 2127, classes = { "WARLOCK" }, -- level 13
+        { train = true, talk = 2127, classes = { "WARLOCK" }, -- level 12
           note = "The NPC is indoors, one floor up." },
-        { vendor = true, talk = 5750, classes = { "WARLOCK" }, -- level 13
+        { vendor = true, talk = 5750, classes = { "WARLOCK" }, -- level 12
           note = "The NPC is indoors, one floor up." },
-        { train = true, talk = 2129, classes = { "PRIEST" }, -- level 13
+        { train = true, talk = 2129, classes = { "PRIEST" }, -- level 12
           note = "The NPC is indoors, one floor up." },
-        { train = true, talk = 2130, classes = { "ROGUE" }, -- level 13
+        { train = true, talk = 2130, classes = { "ROGUE" }, -- level 12
           note = "The NPC is indoors, one floor up." },
-        { turnin = 359, accept = { 360, 356 }, sticky = 356 }, -- level 13
-        { complete = 99142, races = { "Scourge" }, classes = { "WARRIOR", "HUNTER", "PRIEST", "SHAMAN", "WARLOCK", "DRUID" } }, -- level 13
+        { turnin = 359, accept = { 360, 356 }, sticky = 356 }, -- level 12
+        { complete = 99142, races = { "Scourge" } }, -- level 13
         { turnin = 96895, races = { "Scourge" } }, -- level 13
         { accept = 96897, races = { "Scourge" } }, -- level 13
         { accept = 96898, races = { "Scourge" } }, -- level 13
@@ -457,7 +481,7 @@ Ding.RegisterGuide({
         { complete = 1882, classes = { "MAGE" } }, -- level 13
         { complete = 356, sticky = 371 }, -- level 13
         { complete = 371, -- level 13
-          note = "The NPC is indoors." },
+          note = "The target is indoors." },
         { complete = 99156, races = { "Scourge" } }, -- level 13
         { complete = 371 }, -- level 13
         { complete = 369 }, -- level 13
@@ -472,20 +496,16 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { turnin = 371 }, -- level 13
         { turnin = 99134, races = { "Scourge" } }, -- level 13
-        { complete = 97957, races = { "Scourge" } }, -- level 13
-        { turnin = 97957, races = { "Scourge" } }, -- level 13
         { turnin = 369, accept = { 492, 445 }, -- level 13
           note = "The NPC is indoors." },
-        { turnin = 492, -- level 14
+        { turnin = 492, -- level 13
           note = "The NPC waits on the lower level, indoors." },
-        { turnin = 96656, races = { "Scourge" } }, -- level 14
-        { turnin = 86784, races = { "Scourge" } }, -- level 14
-        { turnin = 99142, races = { "Scourge" }, classes = { "WARRIOR", "HUNTER", "PRIEST", "SHAMAN", "WARLOCK", "DRUID" } }, -- level 14
-        { complete = 97953, races = { "Scourge" } }, -- level 14
-        { turnin = 97953, races = { "Scourge" } }, -- level 14
-        { turnin = 1882, when = { ready = 1882 }, classes = { "MAGE" }, -- level 14
+        { turnin = 96656, races = { "Scourge" } }, -- level 13
+        { turnin = 86784, races = { "Scourge" } }, -- level 13
+        { turnin = 99142, races = { "Scourge" } }, -- level 13
+        { turnin = 1882, when = { ready = 1882 }, classes = { "MAGE" }, -- level 13
           note = "The NPC is indoors, one floor up." },
-        { complete = 1886, talk = 6497, patrol = { { 1420, 61.52, 53.08 }, { 1420, 61.63, 53.32 }, { 1420, 61.59, 53.51 }, { 1420, 61.54, 53.89 }, { 1420, 61.77, 54.57 }, { 1420, 62, 55.21 }, { 1420, 62.19, 55.49 }, { 1420, 62.46, 55.62 }, { 1420, 62.65, 55.56 }, { 1420, 62.97, 55.59 }, { 1420, 63.14, 55.76 }, { 1420, 63.34, 56.37 }, { 1420, 63.57, 57.1 }, { 1420, 63.67, 57.71 }, { 1420, 63.78, 58.43 }, { 1420, 63.66, 58.83 }, { 1420, 63.45, 59.56 }, { 1420, 63.4, 59.95 }, { 1420, 63.14, 60.33 }, { 1420, 62.34, 60.95 }, { 1420, 61.68, 61.73 }, { 1420, 61.23, 62.11 }, { 1420, 60.72, 62.66 }, { 1420, 59.86, 63.18 }, { 1420, 59.26, 63.83 }, { 1420, 58.81, 64.14 }, { 1420, 58.43, 64.25 }, { 1420, 57.41, 64.6 }, { 1420, 56.92, 65.07 }, { 1420, 56.43, 65.46 }, { 1420, 56.09, 66.08 }, { 1420, 55.87, 66.51 }, { 1420, 55.59, 68.19 }, { 1420, 55.4, 69.31 }, { 1420, 55.24, 69.87 }, { 1420, 55.08, 70.73 }, { 1420, 54.88, 72.49 }, { 1420, 54.61, 73.96 }, { 1420, 54.31, 75.09 }, { 1421, 67.78, 4.88 }, { 1421, 67.32, 5.86 }, { 1421, 66.47, 7.02 }, { 1421, 65.74, 8 }, { 1421, 64.57, 8.86 }, { 1421, 63.36, 9.69 }, { 1421, 63.03, 10.03 }, { 1421, 61.77, 10.71 }, { 1421, 60.85, 11.24 }, { 1421, 59.05, 11.72 }, { 1421, 58.08, 12.17 }, { 1421, 57.25, 12.8 }, { 1421, 56.7, 13.49 }, { 1421, 55.46, 15.28 }, { 1421, 54.88, 16.53 }, { 1421, 53.88, 18.73 }, { 1421, 53.11, 20.58 }, { 1421, 51.98, 22.21 }, { 1421, 51.28, 23.76 }, { 1421, 50.69, 25.36 }, { 1421, 50.28, 26.24 }, { 1421, 50.04, 26.9 }, { 1421, 49.8, 28.72 }, { 1421, 49.8, 30.19 }, { 1421, 49.62, 32.34 }, { 1421, 49.79, 32.99 }, { 1421, 49.93, 33.89 }, { 1421, 50.28, 34.46 }, { 1421, 50.73, 35.02 }, { 1421, 51.03, 35.74 }, { 1421, 51.07, 36.39 }, { 1421, 50.99, 36.64 }, { 1421, 50.61, 37.14 }, { 1421, 49.79, 37.79 }, { 1421, 49.04, 38.33 }, { 1421, 48.32, 38.83 }, { 1421, 47.98, 39.17 }, { 1421, 47.46, 39.75 } }, classes = { "ROGUE" }, -- level 14
+        { complete = 1886, talk = 6497, patrol = { { 1420, 61.52, 53.08 }, { 1420, 61.63, 53.32 }, { 1420, 61.59, 53.51 }, { 1420, 61.54, 53.89 }, { 1420, 61.77, 54.57 }, { 1420, 62, 55.21 }, { 1420, 62.19, 55.49 }, { 1420, 62.46, 55.62 }, { 1420, 62.65, 55.56 }, { 1420, 62.97, 55.59 }, { 1420, 63.14, 55.76 }, { 1420, 63.34, 56.37 }, { 1420, 63.57, 57.1 }, { 1420, 63.67, 57.71 }, { 1420, 63.78, 58.43 }, { 1420, 63.66, 58.83 }, { 1420, 63.45, 59.56 }, { 1420, 63.4, 59.95 }, { 1420, 63.14, 60.33 }, { 1420, 62.34, 60.95 }, { 1420, 61.68, 61.73 }, { 1420, 61.23, 62.11 }, { 1420, 60.72, 62.66 }, { 1420, 59.86, 63.18 }, { 1420, 59.26, 63.83 }, { 1420, 58.81, 64.14 }, { 1420, 58.43, 64.25 }, { 1420, 57.41, 64.6 }, { 1420, 56.92, 65.07 }, { 1420, 56.43, 65.46 }, { 1420, 56.09, 66.08 }, { 1420, 55.87, 66.51 }, { 1420, 55.59, 68.19 }, { 1420, 55.4, 69.31 }, { 1420, 55.24, 69.87 }, { 1420, 55.08, 70.73 }, { 1420, 54.88, 72.49 }, { 1420, 54.61, 73.96 }, { 1420, 54.31, 75.09 }, { 1421, 67.78, 4.88 }, { 1421, 67.32, 5.86 }, { 1421, 66.47, 7.02 }, { 1421, 65.74, 8 }, { 1421, 64.57, 8.86 }, { 1421, 63.36, 9.69 }, { 1421, 63.03, 10.03 }, { 1421, 61.77, 10.71 }, { 1421, 60.85, 11.24 }, { 1421, 59.05, 11.72 }, { 1421, 58.08, 12.17 }, { 1421, 57.25, 12.8 }, { 1421, 56.7, 13.49 }, { 1421, 55.46, 15.28 }, { 1421, 54.88, 16.53 }, { 1421, 53.88, 18.73 }, { 1421, 53.11, 20.58 }, { 1421, 51.98, 22.21 }, { 1421, 51.28, 23.76 }, { 1421, 50.69, 25.36 }, { 1421, 50.28, 26.24 }, { 1421, 50.04, 26.9 }, { 1421, 49.8, 28.72 }, { 1421, 49.8, 30.19 }, { 1421, 49.62, 32.34 }, { 1421, 49.79, 32.99 }, { 1421, 49.93, 33.89 }, { 1421, 50.28, 34.46 }, { 1421, 50.73, 35.02 }, { 1421, 51.03, 35.74 }, { 1421, 51.07, 36.39 }, { 1421, 50.99, 36.64 }, { 1421, 50.61, 37.14 }, { 1421, 49.79, 37.79 }, { 1421, 49.04, 38.33 }, { 1421, 48.32, 38.83 }, { 1421, 47.98, 39.17 }, { 1421, 47.46, 39.75 } }, classes = { "ROGUE" }, -- level 13
           note = "Fight undead foes. The target patrols the road from Brill to The Sepulcher. The target appears close to The Sepulcher, at 47.5, 39.8 in Silverpine Forest." },
     },
 })

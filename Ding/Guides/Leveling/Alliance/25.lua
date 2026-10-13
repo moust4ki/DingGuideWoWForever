@@ -2,28 +2,30 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Alliance/25.lua.
--- Simulated (warrior): Human 42 (25%) -> 43 (37%) in 4 h 23, 25 quests turned in; Dwarf 42 (25%) -> 43 (37%) in 4 h 23, 26 quests turned in; NightElf 42 (25%) -> 43 (37%) in 4 h 23, 24 quests turned in; Gnome 42 (25%) -> 43 (37%) in 4 h 23, 25 quests turned in; Skyborne 42 (25%) -> 43 (37%) in 4 h 23, 26 quests turned in.
+-- Simulated (warrior): Human 42 (25%) -> 43 (37%) in 4 h 23, 25 quests turned in; Dwarf 42 (25%) -> 43 (37%) in 4 h 23, 25 quests turned in; NightElf 42 (25%) -> 43 (37%) in 4 h 23, 24 quests turned in; Gnome 42 (25%) -> 43 (37%) in 4 h 23, 24 quests turned in; Skyborne 42 (25%) -> 43 (37%) in 4 h 23, 25 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-a25-stranglethorn-vale",
     title    = "Stranglethorn Vale (42-43)",
     faction  = "Alliance",
     minLevel = 42, maxLevel = 43,
     next     = "leveling-a26-swamp-of-sorrows",
+    leftOut  = {
+        [1271] = { kind = "unsure" },
+    },
     steps    = {
         { go = { 1455, 35.92, 60.14 }, text = "Travel to Stormwind", -- level 42
           note = "Stormwind first, then Stranglethorn Vale." },
         { talk = 2461, collect = { { 4502, 1 }, { 5826, 1 } }, spots = { { 1455, 35.87, 60.19 } }, -- level 42
           note = "The NPC is indoors." },
-        { accept = 1477, -- level 42
+        { accept = 1477, why = { action = "accept", kind = "detour", quest = 1364, quests = 4, seconds = 180, total = 5800, xp = 3300 }, -- level 42
           note = "The NPC waits on the tower's highest floor." },
-        { turnin = 78148, races = { "Human", "Dwarf", "Gnome", "Skyborne" } }, -- level 42
-        { turnin = 97286, races = { "Human" }, classes = { "MAGE" } }, -- level 42
+        { turnin = 78148, races = { "Human" } }, -- level 42
         { accept = 79536 }, -- level 42
         { turnin = 79536 }, -- level 42
         { go = { 1453, 51.56, 73.67 }, text = "Head indoors" }, -- level 42
-        { accept = 1364, races = { "Dwarf", "NightElf" }, -- level 42
+        { accept = 1364, races = { "Dwarf", "NightElf" }, why = { kind = "carry", once = true, quest = 1364, seconds = 19500, xp = 3300 }, -- level 42
           note = "The NPC is indoors, one floor up." },
-        { accept = 1364, races = { "Human", "Gnome", "Skyborne" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "WARLOCK", "DRUID" } }, -- level 42
+        { accept = 1364, races = { "Human", "Gnome", "Skyborne" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "WARLOCK", "DRUID" }, why = { kind = "carry", once = true, quest = 1364, seconds = 19500, xp = 3300 } }, -- level 42
         { accept = 209, -- level 42
           note = "Climb to the highest floor of the building." },
         { turnin = 669, -- level 42
@@ -53,8 +55,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors, on the central storey." },
         { turnin = 599, -- level 42
           note = "The NPC is upstairs, out on the balcony." },
-        { accept = 617, -- level 42
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 617 }, -- level 42
         { go = { 1434, 27.94, 73.5 }, text = "Take the passage out of Booty Bay" }, -- level 42
         { complete = 617, sticky = 621 }, -- level 42
         { complete = 609 }, -- level 42
@@ -91,24 +92,38 @@ Ding.RegisterGuide({
           note = "The NPC is upstairs, out on the balcony." },
         { turnin = 611, -- level 42
           note = "The NPC is upstairs, out on the balcony." },
-        { turnin = 617, accept = 623, -- level 42
-          note = "This one roams, so scan the surrounding area." },
-        { bank = 2725, when = { item = 2725 } }, -- level 42
-        { bank = 2728, when = { item = 2728 } }, -- level 42
-        { bank = 2730, when = { item = 2730 } }, -- level 42
-        { bank = 2732, when = { item = 2732 } }, -- level 42
-        { bank = 2734, when = { item = 2734 } }, -- level 42
-        { bank = 2735, when = { item = 2735 } }, -- level 42
-        { bank = 2738, when = { item = 2738 } }, -- level 42
-        { bank = 2740, when = { item = 2740 } }, -- level 42
-        { bank = 2742, when = { item = 2742 } }, -- level 42
-        { bank = 2744, when = { item = 2744 } }, -- level 42
-        { bank = 2745, when = { item = 2745 } }, -- level 42
-        { bank = 2748, when = { item = 2748 } }, -- level 42
-        { bank = 2749, when = { item = 2749 } }, -- level 42
-        { bank = 2750, when = { item = 2750 } }, -- level 42
-        { bank = 2751, when = { item = 2751 } }, -- level 42
+        { turnin = 617, accept = 623, why = { continent = true, kind = "carry", quest = 623, seconds = 10980, xp = 2700 } }, -- level 42
         { talk = 2625 }, -- level 42
+        { bank = 2725, when = { item = 2725 }, -- level 42
+          note = "You need it later for \"Chapter I\": keep it in the bank to free a bag slot." },
+        { bank = 2728, when = { item = 2728 }, -- level 42
+          note = "You need it later for \"Chapter I\": keep it in the bank to free a bag slot." },
+        { bank = 2730, when = { item = 2730 }, -- level 42
+          note = "You need it later for \"Chapter I\": keep it in the bank to free a bag slot." },
+        { bank = 2732, when = { item = 2732 }, -- level 42
+          note = "You need it later for \"Chapter I\": keep it in the bank to free a bag slot." },
+        { bank = 2734, when = { item = 2734 }, -- level 42
+          note = "You need it later for \"Chapter II\": keep it in the bank to free a bag slot." },
+        { bank = 2735, when = { item = 2735 }, -- level 42
+          note = "You need it later for \"Chapter II\": keep it in the bank to free a bag slot." },
+        { bank = 2738, when = { item = 2738 }, -- level 42
+          note = "You need it later for \"Chapter II\": keep it in the bank to free a bag slot." },
+        { bank = 2740, when = { item = 2740 }, -- level 42
+          note = "You need it later for \"Chapter II\": keep it in the bank to free a bag slot." },
+        { bank = 2742, when = { item = 2742 }, -- level 42
+          note = "You need it later for \"Chapter III\": keep it in the bank to free a bag slot." },
+        { bank = 2744, when = { item = 2744 }, -- level 42
+          note = "You need it later for \"Chapter III\": keep it in the bank to free a bag slot." },
+        { bank = 2745, when = { item = 2745 }, -- level 42
+          note = "You need it later for \"Chapter III\": keep it in the bank to free a bag slot." },
+        { bank = 2748, when = { item = 2748 }, -- level 42
+          note = "You need it later for \"Chapter III\": keep it in the bank to free a bag slot." },
+        { bank = 2749, when = { item = 2749 }, -- level 42
+          note = "You need it later for \"Chapter IV\": keep it in the bank to free a bag slot." },
+        { bank = 2750, when = { item = 2750 }, -- level 42
+          note = "You need it later for \"Chapter IV\": keep it in the bank to free a bag slot." },
+        { bank = 2751, when = { item = 2751 }, -- level 42
+          note = "You need it later for \"Chapter IV\": keep it in the bank to free a bag slot." },
         { turnin = 609, -- level 42
           note = "The NPC is indoors." },
         { turnin = 628, elite = true }, -- level 42

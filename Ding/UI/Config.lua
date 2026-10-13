@@ -12,8 +12,9 @@ local C = UI.C
 local Cfg = {}
 Ding.Config = Cfg
 
-local WIDTH, HEIGHT = 560, 440
-local TITLE_HEIGHT, TABS_HEIGHT, FOOTER_HEIGHT = 32, 36, 32
+local SIZE = UI.SIZE
+local WIDTH, HEIGHT = 560, 392      -- [560, 440]
+local TITLE_HEIGHT, TABS_HEIGHT, FOOTER_HEIGHT = SIZE.title, SIZE.tabs, SIZE.footer
 local CONTENT_TOP = TITLE_HEIGHT + 1 + TABS_HEIGHT + 1
 local CONTENT_HEIGHT = HEIGHT - CONTENT_TOP - FOOTER_HEIGHT - 1
 
@@ -44,6 +45,7 @@ end
 
 local function applyAllSettings()
     local P, A = Ding.Panel, Ding.Arrow
+    UI.SetDialogScale(Ding.db.ui.dialogScale)
     if P.frame then
         P.frame:SetScale(Ding.db.panel.scale)
         P:ApplyPosition()
@@ -55,6 +57,7 @@ local function applyAllSettings()
         A.point = nil
     end
     Ding.QuestMobs:Apply()
+    Ding.Offers:Apply()
     refreshAll()
 end
 
@@ -150,15 +153,16 @@ end
 -- The saved settings each tab shows ("Defaults for this tab" puts them back). The keys
 -- never change: only where they are shown.
 local TAB_SETTINGS = {
-    guide = { { "panel", "shown" }, { "panel", "preview" } },
+    guide = { { "panel", "shown" }, { "panel", "preview" }, { "panel", "weaponReminder" }, { "panel", "why" } },
     route = { { "ui", "hearth" }, { "ui", "deathSkip" }, { "ui", "elites" }, { "ui", "dungeons" },
         { "ui", "dungeonChoice" }, { "ui", "trainerSteps" }, { "ui", "flightSteps" }, { "ui", "serviceSteps" } },
-    automation = { { "ui", "autoAccept" }, { "ui", "autoTurnin" }, { "ui", "chooseReward" }, { "ui", "skipGrey" },
-        { "ui", "sellGrey" }, { "ui", "repair" }, { "ui", "autoEquip" }, { "ui", "autoFly" } },
+    automation = { { "ui", "autoAccept" }, { "ui", "autoTurnin" }, { "ui", "offers" }, { "ui", "chooseReward" },
+        { "ui", "skipGrey" }, { "ui", "sellGrey" }, { "ui", "repair" }, { "ui", "suggestGear" }, { "ui", "autoEquip" },
+        { "ui", "autoFly" } },
     arrow = { { "arrow", "shown" }, { "arrow", "style" }, { "arrow", "size" }, { "arrow", "loop" },
         { "arrow", "worldMap" }, { "minimap", "pins" }, { "ui", "markTarget" }, { "ui", "mobIcons" },
         { "ui", "mobTooltip" }, { "ui", "farPlates" }, { "arrow", "tomtom" }, { "arrow", "mode" } },
-    appearance = { { "panel", "bgAlpha" }, { "panel", "scale" }, { "panel", "locked" },
+    appearance = { { "panel", "bgAlpha" }, { "panel", "scale" }, { "ui", "dialogScale" }, { "panel", "locked" },
         { "panel", "compactInCombat" }, { "panel", "hideInInstance" }, { "panel", "itemButton" },
         { "minimap", "shown" }, { "ui", "sound" }, { nil, "debug" } },
 }
@@ -331,6 +335,25 @@ local function guideRows(canvas, width)
                 P:Update()
             end,
         }, width),
+        -- A weapon the class can use but does not know: its weapon master (Core/Directory.lua).
+        UI.CheckRow(canvas, Cfg, {
+            label = L.OPT_WEAPON_REMINDER, desc = L.OPT_WEAPON_REMINDER_DESC,
+            get = function() return panel.weaponReminder end,
+            set = function(v)
+                panel.weaponReminder = v and true or false
+                P:Update()
+            end,
+        }, width),
+        -- Why the guide makes its choices (Core/Why.lua): a line under a surprising step, the
+        -- whole reason in the step's tooltips.
+        UI.CheckRow(canvas, Cfg, {
+            label = L.OPT_WHY, desc = L.OPT_WHY_DESC,
+            get = function() return panel.why ~= false end,
+            set = function(v)
+                panel.why = v and true or false
+                P:Update()
+            end,
+        }, width),
     }
     local function add(row) rows[#rows + 1] = row end
     -- Section wrap-up: "Stay in this section" was chosen; the choices come back on demand.
@@ -363,6 +386,12 @@ local function guideRows(canvas, width)
             return count == 0 and L.IMPORTED_ZERO or L.IMPORTED_COUNT:format(count)
         end,
         open = function() Cfg:OpenPage(IMPORTED_PAGE) end,
+    }, width))
+    -- The first launch's setup assistant (UI/Setup.lua); closing it comes back here.
+    add(UI.HeaderRow(canvas, L.HEADER_HELP, width))
+    add(UI.ButtonRow(canvas, Cfg, {
+        label = L.SETUP_ROW, desc = L.SETUP_ROW_DESC, button = L.SETUP_BTN,
+        run = function() Ding.Setup:Open(1, function() Cfg:Open("guide") end) end,
     }, width))
     add(defaultsRow(canvas, width, "guide"))
     return rows
@@ -408,7 +437,7 @@ local function dungeonPage(canvas, width)
         UI.HeaderRow(canvas, L.DUNGEONS_BY_LEVEL, width),
     }
     for _, d in ipairs(Ding.Engine:DungeonInfo()) do
-        local levels = d.min and (" " .. UI.Colored("secondary", L.GUIDE_RANGE:format(d.min, d.max))) or ""
+        local levels = d.min and (" " .. UI.Colored("secondary", "· " .. L.GUIDE_RANGE:format(d.min, d.max))) or ""
         rows[#rows + 1] = UI.CheckRow(canvas, Cfg, {
             label = d.name .. levels,
             get = function() return Ding:DungeonWanted(d.name) end,
@@ -502,12 +531,19 @@ local function automationRows(canvas, width)
         UI.HeaderRow(canvas, L.HEADER_QUESTS, width),
         check(L.AUTO_ACCEPT, "autoAccept"),
         check(L.AUTO_TURNIN, "autoTurnin"),
+        check(L.OPT_OFFERS, "offers", L.OPT_OFFERS_DESC, function() Ding.Offers:Apply() end),
         check(L.CHOOSE_REWARD, "chooseReward", L.CHOOSE_REWARD_DESC),
         check(L.SKIP_GREY, "skipGrey", L.SKIP_GREY_DESC, function() Ding.Engine:Update() end),
         UI.HeaderRow(canvas, L.HEADER_MERCHANT, width),
         check(L.SELL_GREY, "sellGrey", L.SELL_GREY_DESC),
         check(L.AUTO_REPAIR, "repair"),
         UI.HeaderRow(canvas, L.HEADER_EQUIPMENT, width),
+        -- The upgrade's row, banner and item button; auto-equip stays its own option.
+        check(L.SUGGEST_GEAR, "suggestGear", L.SUGGEST_GEAR_DESC, function(v)
+            if not v and Ding.GearHint then Ding.GearHint:Hide() end
+            if Ding.ItemButton and Ding.ItemButton.ScheduleUpdate then Ding.ItemButton.ScheduleUpdate() end
+            Ding.Panel:Update()
+        end),
         check(L.AUTO_EQUIP, "autoEquip", L.AUTO_EQUIP_DESC, function(v) if v then Ding.Gear:AutoEquip() end end),
     }
     local talent = talentRow(canvas, width)
@@ -678,9 +714,9 @@ end
 -- Appearance preview: a scene with the minimized guide window, at the chosen opacity.
 local function previewRow(canvas, width)
     local row = CreateFrame("Frame", nil, canvas)
-    row:SetSize(width, 8 + 92)
+    row:SetSize(width, 6 + 80)      -- [8 + 92]
     local scene = CreateFrame("Frame", nil, row)
-    scene:SetPoint("TOPLEFT", row, "TOPLEFT", 0, -8)
+    scene:SetPoint("TOPLEFT", row, "TOPLEFT", 0, -6)
     scene:SetPoint("BOTTOMRIGHT", row, "BOTTOMRIGHT", 0, 0)
     UI.Shape(scene, "row", C.scene, "BACKGROUND"):Place(scene)
     local w = CreateFrame("Frame", nil, scene)
@@ -778,6 +814,22 @@ local function appearanceRows(canvas, width)
         label = L.MOVE_PANEL, button = L.MOVE_BTN,
         run = function() Cfg:StartMove(P:MoveTarget()) end,
     }, width))
+    -- This window, the NPC directory, the setup assistant, import / export: shown at once at
+    -- the new size, once the mouse lets go of the thumb (the window would move under it).
+    add(UI.HeaderRow(canvas, L.HEADER_DIALOGS, width))
+    local S = UI.DIALOG_SCALE
+    add(UI.SliderRow(canvas, Cfg, {
+        label = L.DIALOG_SCALE, min = S.min * 100, max = S.max * 100, step = 5, default = S.default * 100,
+        format = percent, help = L.SLIDER_HELP_STEP:format(5),
+        get = function() return math.floor(UI.DialogScale() * 100 + 0.5) end,
+        set = function(v, dragging)
+            if dragging then
+                ui.dialogScale = v / 100
+            else
+                UI.SetDialogScale(v / 100)
+            end
+        end,
+    }, width))
     add(UI.HeaderRow(canvas, L.HEADER_ITEM_BUTTON, width))
     add(UI.CheckRow(canvas, Cfg, {
         label = L.ITEM_BUTTON, desc = L.ITEM_BUTTON_DESC,
@@ -854,7 +906,7 @@ local TABS = {
 Cfg.TABS = TABS
 Cfg.TAB = {}
 for i, tab in ipairs(TABS) do
-    tab.pad, tab.gap = 12, 4
+    tab.pad, tab.gap = SIZE.pad, SIZE.gap
     Cfg.TAB[tab.key] = i
 end
 local BINDINGS_TAB = Cfg.TAB.bindings
@@ -914,7 +966,7 @@ function Cfg:Create()
     if self.frame then return end
     local f = CreateFrame("Frame", "DingConfigFrame", UIParent)
     f:SetSize(WIDTH, HEIGHT)
-    f:SetPoint("CENTER", UIParent, "CENTER", 0, 0)
+    UI.Dialog(f, 0, 0)
     f:SetFrameStrata("DIALOG")
     f:SetClampedToScreen(true)
     f:EnableMouse(true)
@@ -1043,7 +1095,7 @@ function Cfg:OpenPage(def)
     if self.focus then self.focus:SetFocused(false) end
     local again = self.page and self.page.def == def and self.page or nil
     if again then again.canvas:Hide() end
-    local page = { def = def, key = def.key, pad = 12, gap = 4, tab = again and again.tab or self.tab,
+    local page = { def = def, key = def.key, pad = SIZE.pad, gap = SIZE.gap, tab = again and again.tab or self.tab,
         from = again and again.from or self.focusIndex[self.tab], built = def.signature and def.signature() }
     local canvas = CreateFrame("Frame", nil, f.content)
     canvas:SetWidth(WIDTH)
@@ -1368,6 +1420,7 @@ function Cfg:Toggle()
 end
 
 function Cfg:OnShow()
+    if Ding.Setup:IsShown() then Ding.Setup:Close(true) end
     if Ding.Panel.focusing then Ding.Panel:StopFocus() end
     G():Take(self.frame, function(key) Cfg:OnKey(key) end, 0.4, 0.12)
     self:SelectTab(self.openTab or self.tab or 1, self.openFocus)
@@ -1417,24 +1470,36 @@ local function registerAddOnCategory()
     if InterfaceOptions_AddCategory then pcall(InterfaceOptions_AddCategory, panel) end
 end
 
+-- First launch: the setup assistant (once per account, UI/Setup.lua), then the Keybinds tab,
+-- unless the player plays with the keyboard and the mouse.
 function Cfg:Init()
     registerAddOnCategory()
+    Ding.Setup:FirstLaunch(function(input)
+        if input == "mouse" then
+            Ding.db.ui.welcomed = true
+        else
+            Cfg:Welcome()
+        end
+    end)
+end
+
+-- The Keybinds tab with its welcome banner, the focus on "Open Ding settings", until that
+-- binding is set.
+function Cfg:Welcome()
     local ui = Ding.db.ui
     if ui.welcomed or G():BindingKey("DING_CONFIG") then
         ui.welcomed = true
         return
     end
-    C_Timer.After(2, function()
-        if InCombatLockdown() or ui.welcomed then return end
-        ui.welcomed = true
-        Cfg.welcome = true
-        -- Focus "Open Ding settings" (binding rows are the tab's first focusable rows).
-        local focus = 1
-        for i, b in ipairs(BINDINGS) do
-            if b.action == "DING_CONFIG" then focus = i end
-        end
-        Cfg:Open(BINDINGS_TAB, focus)
-    end)
+    if InCombatLockdown() then return end
+    ui.welcomed = true
+    Cfg.welcome = true
+    -- Focus "Open Ding settings" (binding rows are the tab's first focusable rows).
+    local focus = 1
+    for i, b in ipairs(BINDINGS) do
+        if b.action == "DING_CONFIG" then focus = i end
+    end
+    Cfg:Open(BINDINGS_TAB, focus)
 end
 
 -- Closes before the combat lockdown starts (the override bindings must go now).

@@ -29,6 +29,10 @@ Ding.RegisterGuideTranslation("esES", "leveling-a31-ungoro-crater", {
         "Maestro de vuelo del Refugio de Marshal",
     ["The NPC is indoors."] =
         "El PNJ está dentro.",
+    ["The NPC is indoors. You need them later for \"The Bait for Lar'korwi\", \"Un'Goro Soil\", \"A Visit to Gregan\" and \"It's a Secret to Everybody\": keep them in the bank to free bag slots."] =
+        "El PNJ está dentro. Los necesitarás más adelante para «El cebo para Lar'korwi», «La tierra de Un'Goro», «Visita a Gregan» y «Un secreto bien guardado»: déjalos en el banco para liberar huecos en las bolsas.",
+    ["The NPC is indoors. You need it later for \"Rise of the Silithid\": keep it in the bank to free a bag slot."] =
+        "El PNJ está dentro. Lo necesitarás más adelante para «La sublevación de los silítidos»: déjalo en el banco para liberar un hueco en las bolsas.",
     ["The NPC is on the house's raised terrace."] =
         "El PNJ está en la terraza elevada de la casa.",
     ["In the Maraudon Tunnels, the target is a centaur in violet armor. The targets are spread over several spots."] =

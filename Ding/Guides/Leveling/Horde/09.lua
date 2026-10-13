@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Horde/09.lua.
--- Simulated (warrior): Orc 25 (89%) -> 26 (65%) in 2 h 26, 5 quests turned in; Scourge 25 (89%) -> 26 (65%) in 2 h 26, 5 quests turned in; Tauren 25 (86%) -> 26 (62%) in 2 h 26, 5 quests turned in; Troll 25 (89%) -> 26 (65%) in 2 h 26, 5 quests turned in; Skyborne 25 (90%) -> 26 (76%) in 2 h 34, 7 quests turned in.
+-- Simulated (warrior): Orc 25 (99%) -> 26 (73%) in 2 h 27, 5 quests turned in; Scourge 25 (99%) -> 26 (73%) in 2 h 27, 5 quests turned in; Tauren 25 (95%) -> 26 (70%) in 2 h 27, 5 quests turned in; Troll 25 (99%) -> 26 (73%) in 2 h 27, 5 quests turned in; Skyborne 26 (0%) -> 26 (85%) in 2 h 34, 7 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-h09-stonetalon-mountains",
     title    = "Stonetalon Mountains (25-26)",
@@ -14,20 +14,20 @@ Ding.RegisterGuide({
           note = "Stonetalon Mountains: Sun Rock Retreat, in the middle of the zone." },
         { accept = 1087, elite = true }, -- level 25
         { accept = 6301, elite = true }, -- level 25
-        { accept = { 5881, 6282 } }, -- level 25
+        { accept = { 5881, 6282 }, why = { kind = "carry", quest = 5881, seconds = 16740, xp = 1200 } }, -- level 25
         { accept = 86576 }, -- level 25
         { go = { 1442, 49.25, 61.94 }, text = "Climb the trail" }, -- level 25
         { accept = 6393, races = { "Orc", "Tauren", "Troll" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK", "DRUID" }, -- level 25
           note = "This one roams, so scan the surrounding area." },
         { accept = 6393, races = { "Scourge", "Skyborne" } }, -- level 25
-        { accept = 1096, races = { "Skyborne" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK", "DRUID" }, -- level 25
+        { accept = 1096, races = { "Skyborne" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK", "DRUID" }, -- level 26
           note = "The NPC is indoors." },
         { complete = 1086, useitem = 5638, -- level 25
           note = "The target is beneath the platform." },
         { go = { 1442, 68.91, 39.61 }, text = "Climb the trail" }, -- level 25
-        { complete = 1096, races = { "Skyborne" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK", "DRUID" }, -- level 25
+        { complete = 1096, races = { "Skyborne" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK", "DRUID" }, -- level 26
           note = "The target stands atop the timber platform. The targets are spread over several spots." },
-        { turnin = 1096, races = { "Skyborne" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK", "DRUID" }, -- level 25
+        { turnin = 1096, races = { "Skyborne" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK", "DRUID" }, -- level 26
           note = "The NPC is indoors." },
         { go = { 1442, 60.52, 70.16 }, text = "Exit Windshear Crag" }, -- level 25
         { complete = 6393, races = { "Orc", "Tauren", "Troll" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK", "DRUID" }, -- level 25
@@ -35,7 +35,7 @@ Ding.RegisterGuide({
         { complete = 6393, races = { "Scourge", "Skyborne" } }, -- level 25
         { accept = 79980, races = { "Skyborne" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK", "DRUID" } }, -- level 26
         { turnin = 79980, races = { "Skyborne" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK", "DRUID" } }, -- level 26
-        { complete = 1058, sticky = 1058, -- level 25
+        { complete = 1058, sticky = 1058, -- level 26
           note = "The targets are deer." },
         { complete = 1058, -- level 26
           note = "The targets are tiny blue dragons. They are rare and scattered widely." },

@@ -9,6 +9,8 @@ the guides; nothing here is loaded by the game.
 | `check_guides.lua` | Replays the guides and checks quests, prerequisites, quest log |
 | `smoke_test.lua` | Runs the addon with a simulated WoW API and plays the guides |
 | `run_tests.lua` | Runs the unit tests in `tests/` |
+| `panel_snapshot.lua` | Writes the guide window as plain text for a scenario, in a language (section 5) |
+| `panel_scenarios.lua` | Shared module: the guide window's scenarios (Leveling guides, reports in game) |
 | `wow_mock.lua` | Shared module: simulated WoW API, in-memory QuestieDB, loading of Ding |
 | `testlib.lua` | Shared module: small unit test framework |
 | `draft_guide.lua` | Writes the guides of a route (`routes/*.lua`) from the export |
@@ -16,12 +18,14 @@ the guides; nothing here is loaded by the game.
 | `check_data.lua` | Checks DingDB's corrections (`data/corrections/*.lua`, docs/dingdb.md) |
 | `audit_data.lua` | What the guides need that DingDB lacks (places of givers, NPCs, objectives) |
 | `write_leveling.lua` | Writes Ding! - Leveling from the Leveling routes (`routes/leveling/*.lua`) (section 7) |
+| `audit_free_quests.lua` | Free quests the Leveling routes leave out (almost no time on their way for their XP), and the steps that add them to a route (section 8) |
 | `fit_windows.lua` | Re-cuts the level windows of a route from the simulation: each guide starts where the previous one ends |
 | `route_model.lua` | Shared module: the optimizer's time and XP model (parameters to recalibrate) |
 | `route_data.lua` | Shared module: map geometry, spawn groups, target counts, drop rates |
 | `route_solver.lua` | Shared module: simulation of a tour, greedy tour, local search |
 | `route_travel.lua` | Shared module: travel network (flight masters of the faction, boats, zeppelins, tram), inn names |
 | `route_work.lua` | Shared module: spawn groups of an objective, ways to do a quest's objectives |
+| `route_free.lua` | Shared module: free quests of a simulated Leveling route (section 8) |
 | `questiedb_export.lua` | Shared module: reading the export, field indexes, masks |
 | `media/textures.py` | Python 3, no dependencies: draws the kit texture missing from the handoff and puts the origin of the TGAs at the bottom (`python3 tools/media/textures.py Ding/Media/Textures`) |
 | `translate_guides.lua` | Writes the translations of each guide in the TOC, one per language (`Ding/Locales/Guides/<locale>/`), from the `routes/locales/<locale>.lua` dictionaries, and their lines in `Ding.toc` (`lua5.1 tools/translate_guides.lua [locale...]`); exit code 1 if a translation is missing |
@@ -188,6 +192,26 @@ The test bench scenarios play Shadowglen by its id, not "the first guide".
 
 The unit tests check the fine-grained logic (when a step is done, choice of the guide,
 validation of the guides); the test bench checks the whole run with the gamepad.
+
+**The guide window as text.** `panel_snapshot.lua` puts the game and the guide in the state of a
+scenario of `panel_scenarios.lua` (a section and its step, the character, where they stand, the
+quests turned in or in the log with their counts, the window's width, focus mode...) and writes
+what the window shows: the title, the step bar, every row with its look in words ("red
+background, red diamond icon, counter 0/13 red"), its sub-lines, its card (hover, or X in
+focus mode) and the step menu.
+
+```sh
+lua5.1 tools/panel_snapshot.lua $QDB --list                    # the scenarios
+lua5.1 tools/panel_snapshot.lua $QDB a12-cursed-crew-ahead     # one, in French
+lua5.1 tools/panel_snapshot.lua $QDB --locale enUS             # all of them, in English
+lua5.1 tools/panel_snapshot.lua $QDB --write tools/tests/snapshots   # the French snapshots again
+```
+
+`tests/panel_snapshot_test.lua` compares the French text with `tests/snapshots/<scenario>.txt`:
+any change of the window shows in a review; after an intended change, write the snapshots again
+(last command) and read their diff. `tests/panel_rules_test.lua` (French) and
+`panel_rules_enus_test.lua` (English) check the rules of the window (SPEC, "Guide window:
+rules"), one test per rule, on the same scenarios (`tests/panel_rules.lua`).
 
 ## 6. Generating the guides of a route
 
@@ -377,6 +401,7 @@ The zone tracks:
 
 ```sh
 lua5.1 tools/write_leveling.lua $QDB tools/routes/leveling/alliance.lua [--report] [--dry-run] [--no-additions]
+                                  [--deviation] [--free-quests <file>] [--why]
 lua5.1 tools/write_leveling.lua $QDB tools/routes/leveling/horde.lua
 lua5.1 tools/translate_guides.lua
 ```
@@ -432,6 +457,14 @@ Forever:
   the others. Every `go` of a route says where or why in its `text`: `check_guides.lua` warns
   about a `go` without one and fails on the same trip twice in a row.
 
+A route note says "the NPC" only on a step with someone to see there (a quest giver or ender,
+an NPC to talk to, a service); for objects it says "the object", for monsters "the target".
+"This one roams" stays for targets that move: a quest giver with a path in QuestieDB, a
+`patrol`, monsters. A `bank` or `unbank` step is the banker's own step or comes right after
+it (a bank goal has no place of its own), and a `bank` note names the later quests that need
+the items. An item gathered for a later quest is a `collect` (with `keep`), not an `unbank`.
+`leveling_guides_test` checks all of this on the guides.
+
 A `fly` or `train` label becomes the step's `text` (texts are translated). `--report` lists
 the repairs, the quests left out with their reason, the Forever quests added and those that
 found no place. The route stays the place to change anything: the guides are written again
@@ -454,3 +487,83 @@ race that plays it, costed in route order and after `route_solver.lua`'s search 
 measure is indicative only (the optimizer does an objective in one visit where the base
 route may split it, and leaves out the steps without quests), so nothing is reordered yet:
 the route order stays everywhere.
+
+Every run also looks for **free quests** the route leaves out (section 8): it prints
+`Free quests left out: N, borderline: M` and a `warning:` line for each free one, with the route
+step it would follow. `--free-quests <file>` writes them all, borderline ones included, as a Lua
+table (what `audit_free_quests.lua` reads).
+
+**Reasons** (`tools/route_why.lua`, the window's "why": docs/guide-packs.md, section 6): on the
+final simulation, what a surprising step brings, measured and nothing else, written as the step's
+`why`:
+
+- **detour**: a run of at most 6 steps in another zone (back in the zone it left, or on to a
+  third), or one step far off the way in its own zone (5 minutes or more). Its cost: the time on
+  the way beyond the direct trip from the step before to the step after. What it brings: its
+  turn-ins, the quests taken there (turned in later) and the chains they open (follow-ups through
+  QuestieDB's prerequisites that the route turns in later), the monsters killed there for them;
+  the window names the quest whose chain brings the most. Said under the step from 4 minutes
+  (`short = true`), on demand below. A detour with a step for a trainer, a vendor, a bank, a
+  flight master, the inn or an NPC to talk to (for any class) gets no reason: the simulation
+  does not value those, so its quests would not be the whole reason.
+- **carry**: a quest taken here and turned in an hour of route or more later, in another zone;
+  said under the step when it is turned in on another continent and the route never comes back
+  to this zone first (taken now or never).
+- **level**: a level step, when the next quests taken after it are above its level (their
+  levels; no time: the window counts the kills left).
+
+A reason is kept when every race that plays the step finds the same (kind and quest); its figures
+are their average, rounded (XP to the hundred, to the thousand from 10,000; time to the minute).
+Each run prints `Reasons (tools/route_why.lua): N steps, M said under their step (...)`; `--why`
+lists them (stderr). The free-quests audit's verdicts on the quests the route leaves out
+become each section's `leftOut` (in the section where the audit measured the quest, else the
+first one on its giver's map): too little XP for the detour (`detour`, with the XP and the
+added time), too long a detour (`long`), giver, objectives or turn-in off the route (`away`,
+`far`), log full (`log`), a prerequisite not on the route (`prereq`), another version on the
+route (`version`), exclusive with a route quest (`exclusive`), its follow-up taken first
+(`followup`), objectives the data does not know (`unsure`). Reasons that are not the route's
+(class, profession, event, elite, dungeon...) stay out: the game or Ding tells those.
+
+## 8. Free quests
+
+```sh
+lua5.1 tools/audit_free_quests.lua $QDB                       # both Leveling routes
+lua5.1 tools/audit_free_quests.lua $QDB tools/routes/leveling/horde.lua
+lua5.1 tools/audit_free_quests.lua $QDB --apply [--also 1271,97222] [--passes 5]
+```
+
+A quest a Leveling route leaves out is **free** when it costs almost nothing on the route's way
+(`route_free.lua`, run by `write_leveling.lua` on its own simulation of each race):
+
+- **Where the game offers it**: open to the race, its prerequisites turned in by the route by
+  then (a breadcrumb only before the route takes the quest it leads to), required level reached,
+  at most 2 levels above the player, not grey; never a class, dungeon, elite, escort or event,
+  repeatable, profession, reputation or event-category quest, nor another version of a route
+  quest (same name, givers and enders), nor one in the route's `exclude` list.
+- **On the way**: its giver and its ender stand at a step's place, next to it, or between two
+  steps that follow each other, away from hostile elite monsters (40 yards); objectives by the
+  way too (objects, places, a purchase), or monsters the route already kills for its own quests
+  while this one is in the log (each kind of a job's monsters gets its share of its kills). A
+  new step goes after every step at its place (the Forever additions and repairs anchored
+  there included); the quest stays in the log 3 hours of the route at most, with room in it.
+- **Measured** with the simulation's own travel network (`route_travel.lua`), work
+  (`route_work.lua`, `route_model.lua`) and 3 seconds per extra accept or turn-in (Ding accepts
+  and turns in by itself); XP from QuestieDB's QuestXP table at the player's level (an estimate
+  when the table lacks the quest). Races placed at the same steps share one verdict, the average
+  of their measures.
+- **Free** when its XP per added second is at least 10 times the section's own pace (the
+  simulated section's XP per second, grinding included) and it adds 2 minutes at most;
+  **borderline** from 4 times (up to 4 minutes), after a borderline quest of its chain, or when
+  the data cannot tell what it asks (taken and handed in to the same one with no objective,
+  scripted objectives). The figures are `route_free.lua`'s `PARAMS`.
+
+The audit prints, per route, each free quest (section, XP, seconds added, times the section's
+pace, objectives, the route steps its accept, objectives and turn-in follow), the totals per
+section, the borderline ones with the reason, and why the side's other quests are not free.
+`--apply` writes a step per action into the route file (`{ accept = q }`, `{ complete = q }`
+when it has objectives, `{ turnin = q }`, with `races` when only some races get it), right after
+the route step named, then audits the route again: a quest added puts the route in new places,
+where more may be free (`--passes` runs at most, 5 by default). `--also` adds borderline quests a
+person chose. Then write the guides again (section 7, then `translate_guides.lua`) and check
+them. A free quest the route must keep out goes in its `exclude` list, with the reason:
+`write_leveling.lua` warns about every other one.

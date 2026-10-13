@@ -5,4 +5,8 @@ Ding.RegisterGuideTranslation("deDE", "tauren-03-barrens", {
         "Brachland (12-19)",
     ["Leave Mulgore by the road east into the Barrens, then north to the Crossroads: your base."] =
         "Verlasse Mulgore über die Straße nach Osten ins Brachland, dann nach Norden zum Wegekreuz: deine Basis.",
+    ["The Crossroads"] =
+        "Das Wegekreuz",
+    ["Camp Taurajo"] =
+        "Camp Taurajo",
 })

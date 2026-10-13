@@ -25,16 +25,14 @@ Ding.RegisterGuide({
         { vendor = true, talk = 8139, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" } }, -- level 49
         { go = { 1446, 68.56, 41.43 }, text = "Head down the passage that opens on Lost Rigger Cove" }, -- level 49
         { complete = 2873, -- level 49
-          note = "The NPC is indoors, one floor up." },
+          note = "The object is indoors, one floor up." },
         { complete = 2875 }, -- level 49
-        { collect = { { 9276, 1 }, { 9250, 1 } }, useitem = { 9276, 9250 }, when = { maxlevel = 49 }, -- level 49
+        { accept = 2876, collect = { { 9276, 1 }, { 9250, 1 } }, useitem = { 9276, 9250 }, when = { maxlevel = 49 }, -- level 49
           note = "Few kills yield this item." },
-        { accept = 2876, when = { maxlevel = 49 }, races = { "Human", "Dwarf", "Gnome", "Skyborne" } }, -- level 49
-        { accept = 2876, when = { maxlevel = 49 }, races = { "NightElf" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "WARLOCK", "DRUID" } }, -- level 49
         { collect = { { 8623, 1 } }, useitem = 8623, when = { maxlevel = 49 }, -- level 49
           note = "Few kills yield this item." },
-        { accept = 351, when = { maxlevel = 49 }, races = { "Gnome" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 49
-        { accept = 351, when = { maxlevel = 49 }, races = { "Human", "Dwarf", "Skyborne" } }, -- level 49
+        { accept = 351, when = { maxlevel = 49 }, races = { "Gnome", "Skyborne" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 49
+        { accept = 351, when = { maxlevel = 49 }, races = { "Human", "Dwarf" } }, -- level 49
         { complete = 8365 }, -- level 49
         { complete = 8366 }, -- level 49
         { complete = 8366, -- level 49
@@ -45,7 +43,7 @@ Ding.RegisterGuide({
         { turnin = { 2875, 8366 }, -- level 49
           note = "The NPC is indoors." },
         { turnin = 2876, when = { log = 2876 } }, -- level 49
-        { turnin = 2873, accept = 2874, -- level 49
+        { turnin = 2873, accept = 2874, why = { continent = true, kind = "carry", quest = 2874, seconds = 12240, xp = 3900 }, -- level 49
           note = "The NPC is indoors." },
         { turnin = 8365 }, -- level 49
         { turnin = 351, when = { log = 351 }, -- level 49
@@ -57,7 +55,7 @@ Ding.RegisterGuide({
         { talk = 7799, collect = { { 11186, 7 }, { 11188, 7 }, { 11185, 7 }, { 11184, 7 } }, -- level 49
           note = "The NPC is indoors." },
         { talk = 7799, bank = 9245, -- level 49
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need it later for \"Deliver to MacKinley\": keep it in the bank to free a bag slot." },
         { accept = 2605 }, -- level 49
         { turnin = 10, elite = true, when = { log = 10 } }, -- level 49
         { accept = 110, elite = true, when = { done = 10 } }, -- level 49

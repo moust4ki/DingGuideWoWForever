@@ -18,7 +18,7 @@ Ding.RegisterGuide({
         { accept = { 1110, 1114 }, -- level 33
           note = "Wait for the talking to finish" },
         { turnin = 1114, accept = 1104 }, -- level 33
-        { accept = 1115 }, -- level 33
+        { accept = 1115, why = { continent = true, kind = "carry", quest = 1115, seconds = 12720, xp = 1400 } }, -- level 33
         { accept = 1105 }, -- level 33
         { accept = 1176 }, -- level 33
         { accept = 1175 }, -- level 33
@@ -27,7 +27,7 @@ Ding.RegisterGuide({
         { go = { 1441, 66.29, 86.12 }, text = "Head out of the cave" }, -- level 33
         { complete = 1147, -- level 33
           note = "The targets are out in front of the cavern." },
-        { accept = 1148, collect = { { 5877, 1 } }, useitem = 5877, sticky = 1148, when = { log = 1147 }, -- level 33
+        { accept = 1148, collect = { { 5877, 1 } }, useitem = 5877, sticky = 1148, when = { log = 1147 }, why = { kind = "carry", quest = 1148, seconds = 10920, xp = 1400 }, -- level 33
           note = "Targets are in the cavern and around its entrance too." },
         { accept = 1148, collect = { { 5877, 1 } }, useitem = 5877, when = { done = 1147 }, -- level 33
           note = "Targets are in the cavern and around its entrance too." },
@@ -53,17 +53,16 @@ Ding.RegisterGuide({
         { complete = 1110, -- level 33
           note = "Look for assorted mechanical pieces. Parts lie all across the Shimmering Flats." },
         { turnin = 1147 }, -- level 33
-        { turnin = 1110, accept = 5762 }, -- level 33
+        { turnin = 1110, accept = 5762, why = { continent = true, kind = "carry", quest = 5762, seconds = 42000, xp = 1300 } }, -- level 33
         { turnin = 1104 }, -- level 33
         { turnin = 1105 }, -- level 33
-        { accept = 1106 }, -- level 33
-        { turnin = 1176, accept = 1178 }, -- level 33
+        { accept = 1106, why = { continent = true, kind = "carry", quest = 1106, seconds = 87780, xp = 1400 } }, -- level 33
+        { turnin = 1176, accept = 1178, why = { kind = "carry", quest = 1178, seconds = 4620, xp = 700 } }, -- level 33
         { turnin = 1175 }, -- level 33
-        { level = 34, patrol = { { 1441, 82.85, 55.16 }, { 1441, 83.64, 58.16 }, { 1441, 82.45, 61.03 }, { 1441, 85.37, 62.45 }, { 1441, 82.74, 66.46 }, { 1441, 82.46, 70.17 }, { 1441, 79.45, 70.16 }, { 1441, 76.24, 71.74 }, { 1441, 75.97, 67.84 }, { 1441, 74.76, 64.86 }, { 1441, 72.44, 61.44 }, { 1441, 69.14, 59.83 }, { 1441, 72.26, 57.35 }, { 1441, 75.26, 57.64 }, { 1441, 77.24, 54.45 }, { 1441, 78.16, 52.17 }, { 1441, 81.14, 52.34 }, { 1441, 79.03, 56.54 }, { 1441, 74.16, 53.43 }, { 1441, 71.26, 54.37 }, { 1441, 69.44, 64.45 }, { 1441, 69.76, 67.43 }, { 1441, 72.06, 69.37 }, { 1441, 86.74, 70.05 }, { 1441, 86.57, 57.46 } } }, -- level 33
+        { level = 34, patrol = { { 1441, 82.85, 55.16 }, { 1441, 83.64, 58.16 }, { 1441, 82.45, 61.03 }, { 1441, 85.37, 62.45 }, { 1441, 82.74, 66.46 }, { 1441, 82.46, 70.17 }, { 1441, 79.45, 70.16 }, { 1441, 76.24, 71.74 }, { 1441, 75.97, 67.84 }, { 1441, 74.76, 64.86 }, { 1441, 72.44, 61.44 }, { 1441, 69.14, 59.83 }, { 1441, 72.26, 57.35 }, { 1441, 75.26, 57.64 }, { 1441, 77.24, 54.45 }, { 1441, 78.16, 52.17 }, { 1441, 81.14, 52.34 }, { 1441, 79.03, 56.54 }, { 1441, 74.16, 53.43 }, { 1441, 71.26, 54.37 }, { 1441, 69.44, 64.45 }, { 1441, 69.76, 67.43 }, { 1441, 72.06, 69.37 }, { 1441, 86.74, 70.05 }, { 1441, 86.57, 57.46 } }, why = { kind = "level", levels = { 31, 37 } } }, -- level 33
         { train = true, talk = 12042, races = { "Tauren" }, classes = { "DRUID" } }, -- level 33
-        { accept = 5361, -- level 34
-          note = "This one roams, so scan the surrounding area." },
-        { turnin = 1148, accept = 1184 }, -- level 34
+        { accept = 5361, why = { kind = "carry", once = true, quest = 5361, seconds = 19200, xp = 2100 } }, -- level 34
+        { turnin = 1148, accept = 1184, why = { chain = 7, kind = "detour", quest = 1178, quests = 11, seconds = 180, total = 12000, xp = 9700 } }, -- level 34
         { turnin = 97003 }, -- level 34
         { destroy = 5877 }, -- level 34
         { turnin = 1178, accept = 1180, -- level 34
@@ -100,7 +99,7 @@ Ding.RegisterGuide({
         { train = true, talk = 3352, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, -- level 34
           note = "The NPC stands on the highest level of this structure." },
         { talk = 3309, bank = { 5827, 14542 }, -- level 34
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need them later for \"Martek the Exiled\" and \"Hemet Nesingwary\": keep them in the bank to free bag slots." },
         { sethearth = "Orgrimmar", talk = 6929, -- level 34
           note = "The NPC is indoors." },
         { accept = 2841, dungeon = "Gnomeregan", -- level 34

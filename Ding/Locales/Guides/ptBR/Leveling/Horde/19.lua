@@ -7,8 +7,6 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h19-badlands", {
         "Viaje até os Ermos",
     ["Badlands: Kargath, at the western edge, is the Horde hub."] =
         "Ermos: Karrath, na borda oeste, é a base da Horda.",
-    ["This one roams, so scan the surrounding area."] =
-        "Este se desloca, então procure pelos arredores.",
     ["The NPC waits on the tower's highest floor."] =
         "O NPC espera no último andar da torre.",
     ["Fly to Kargath"] =

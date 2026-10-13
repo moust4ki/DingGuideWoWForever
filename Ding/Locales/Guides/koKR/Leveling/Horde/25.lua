@@ -23,6 +23,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h25-feralas", {
         "땅 위의 빛나는 파란 고리 옆에 있습니다. 솟아오르는 흙더미를 찾으세요. 퀘스트 아이템을 가진 것은 파랗게 빛납니다.",
     ["Fight the tauren."] =
         "타우렌과 싸우세요.",
+    ["Camp Mojache"] =
+        "모자케 야영지",
     ["A lengthy grinding stretch is coming up. The NPC is upstairs, out on the balcony."] =
         "곧 긴 사냥 구간이 이어집니다. NPC는 위층 발코니에 있습니다.",
     ["The target is a winged green bug, level 47. You can likely beat it at your current level. The target circles in the air, so search around."] =
@@ -47,6 +49,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h25-feralas", {
         "통로를 지나가세요",
     ["The robot sits in the open ground linking the cave and the tunnel."] =
         "로봇은 동굴과 터널을 잇는 빈터에 있습니다.",
+    ["The NPC is indoors. You need them later for \"Another Message to the Wildhammer\", \"Screecher Spirits\" and \"The Super Egg-O-Matic\": keep them in the bank to free bag slots."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"또 다른 통첩장\", \"계곡천둥매의 영혼\", \"고성능 자동부화기\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["This NPC is found down in the Cleft of Shadow."] =
         "이 NPC는 아래쪽 어둠의 틈에 있습니다.",
     ["The quest giver waits in the tent. This NPC is found down in the Cleft of Shadow."] =
@@ -59,6 +63,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h25-feralas", {
         "NPC는 건물 안 한 층 위에 있습니다.",
     ["If some pages are unavailable, go on without them. The NPC is indoors."] =
         "일부 쪽을 구할 수 없으면 그냥 진행하세요. NPC는 건물 안에 있습니다.",
+    ["The NPC is indoors. You need it later for \"Return to Witch Doctor Uzer'i\": keep it in the bank to free a bag slot."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"의술사 우제리에게 돌아가기\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["The NPC is indoors. You need Chapter I as well as Chapter II."] =
         "NPC는 건물 안에 있습니다. 제1장과 제2장이 모두 필요합니다.",
 })

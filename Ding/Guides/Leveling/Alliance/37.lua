@@ -31,12 +31,12 @@ Ding.RegisterGuide({
         { accept = 2844 }, -- level 52
         { go = { 1444, 44.56, 9.85 }, text = "Stand on the neighboring ledge, then hop into this crack in the wall" }, -- level 52
         { collect = { { 11242, 1 } }, object = 164798, spots = { { 1444, 44.6, 10.18 } }, -- level 52
-          note = "The NPC is indoors." },
+          note = "The object is indoors." },
         { go = { 1444, 40.38, 11.01 }, text = "Hop onto the ledge" }, -- level 52
         { go = { 1444, 40.55, 11.48 }, text = "Leap over at this spot" }, -- level 52
         { go = { 1444, 40.94, 11.81 }, text = "Leap up at this spot" }, -- level 52
         { collect = { { 9257, 1 } }, spots = { { 1444, 40.6, 12.7 } }, -- level 52
-          note = "The NPC or item sits on the rocky shelf above." },
+          note = "The object sits on the rocky shelf above." },
         { collect = { { 9256, 1 } }, object = 142187, spots = { { 1444, 39.89, 9.41 } } }, -- level 52
         { collect = { { 9255, 1 } }, object = 142186, spots = { { 1444, 37.72, 12.14 } } }, -- level 52
         { collect = { { 9258, 1 } }, object = 142185, spots = { { 1444, 38.55, 15.85 } } }, -- level 52
@@ -50,8 +50,7 @@ Ding.RegisterGuide({
         { complete = 2845, useitem = 9189, -- level 52
           note = "Let the conversation play out. Shay Leafrunner trails behind you; keep her alive. Keep near her, as she tends to stray." },
         { turnin = 2845 }, -- level 52
-        { turnin = 4142, races = { "Human", "Dwarf", "Gnome", "Skyborne" } }, -- level 52
-        { turnin = 4142, races = { "NightElf" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "WARLOCK", "DRUID" } }, -- level 52
+        { turnin = 4142 }, -- level 52
         { complete = 3909, talk = 7775, -- level 52
           note = "Finish the quest named The Videre Elixir. Keep the elixir in your bags; never consume it. You will die from it." },
         { turnin = 2942, elite = true, when = { item = 9307 } }, -- level 52
@@ -64,7 +63,7 @@ Ding.RegisterGuide({
         { accept = 4502, elite = true }, -- level 53
         { talk = 3496, collect = { { 10445, 1 }, { 10444, 1 } }, spots = { { 1413, 62.58, 37.39 } } }, -- level 53
         { talk = 3496, bank = { 10556, 11682, 11947, 11949, 12383, 11243, 11511 }, -- level 53
-          note = "Put these items in your bank vault." },
+          note = "Put these items in your bank vault. You need them later for \"The Stone Circle\", \"Felbound Ancients\", \"A Little Slime Goes a Long Way\", \"Moontouched Wildkin\" and \"Meet at the Grave\": keep them in the bank to free bag slots." },
         { accept = 3601, -- level 53
           note = "The quest giver waits on the hilltop." },
         { turnin = 3601, when = { ready = 3601 }, -- level 53
@@ -82,7 +81,7 @@ Ding.RegisterGuide({
         { go = { 1447, 62.41, 82.04 }, text = "Skirt the Ruins of Eldarath, then take the bridge across" }, -- level 53
         { go = { 1447, 65.03, 82.27 }, text = "Walk over the span" }, -- level 53
         { go = { 1447, 74.01, 87.34 }, text = "Drop down with care" }, -- level 53
-        { turnin = 3449, accept = 3461, useitem = 10444, -- level 53
+        { turnin = 3449, accept = 3461, useitem = 10444, why = { continent = true, kind = "carry", once = true, quest = 3461, seconds = 70440, short = true, xp = 7600 }, -- level 53
           note = "The spot is the middle of the timber deck. It shows up close by after a while. At times it takes several minutes." },
         { destroy = 10444 }, -- level 53
     },

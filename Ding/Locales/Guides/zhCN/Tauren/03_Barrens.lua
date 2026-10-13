@@ -5,4 +5,8 @@ Ding.RegisterGuideTranslation("zhCN", "tauren-03-barrens", {
         "贫瘠之地 (12-19)",
     ["Leave Mulgore by the road east into the Barrens, then north to the Crossroads: your base."] =
         "沿东边的道路离开莫高雷进入贫瘠之地，再向北到十字路口：这是据点。",
+    ["The Crossroads"] =
+        "十字路口",
+    ["Camp Taurajo"] =
+        "陶拉祖营地",
 })

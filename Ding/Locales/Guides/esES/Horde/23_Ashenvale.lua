@@ -7,4 +7,6 @@ Ding.RegisterGuideTranslation("esES", "horde-23-ashenvale", {
         "Vallefresno está al norte de Los Baldíos: el Puesto del Hachazo, al este del bosque, es tu base.",
     ["Finish the level on nearby monsters before moving on."] =
         "Termina el nivel con monstruos cercanos antes de seguir.",
+    ["Splintertree Post"] =
+        "Puesto del Hachazo",
 })

@@ -17,6 +17,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a43-silithus", {
         "NPC在小路的顶端。",
     ["The NPC is on the house's raised terrace."] =
         "NPC在房子的高台上。",
+    ["The object is indoors."] =
+        "该物件在室内。",
     ["Watch out: killing them can summon more foes."] =
         "小心：杀死它们可能会召唤更多敌人。",
     ["The foes here are scorpions."] =

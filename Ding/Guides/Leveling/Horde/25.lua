@@ -41,7 +41,7 @@ Ding.RegisterGuide({
         { complete = 2974, -- level 43
           note = "Fight the tauren." },
         { turnin = 2903, accept = { 7730, 7731 } }, -- level 43
-        { turnin = 2974, accept = 2976 }, -- level 43
+        { turnin = 2974, accept = 2976, why = { kind = "carry", quest = 2976, seconds = 23100, xp = 4900 } }, -- level 43
         { destroy = 9460 }, -- level 43
         { sethearth = "Camp Mojache", talk = 7737 }, -- level 43
         { vendor = true, talk = 9548, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, -- level 43
@@ -54,12 +54,12 @@ Ding.RegisterGuide({
         { complete = 3520, talk = 8612, useitem = 10699, sticky = 2980, -- level 43
           note = "Hunt the crimson winged serpents. Slay them, then apply the item to their remains. The targets are ghosts that materialize." },
         { complete = 2980 }, -- level 43
-        { unbank = 4589, keep = 4589, -- level 43
+        { collect = { { 4589, 10 } }, keep = 4589, -- level 43
           note = "No drops come from Stagwings and Skystormers. Hang on to it; an upcoming quest uses it." },
-        { level = 44, xp = 35000, patrol = { { 1444, 56.96, 64.42 }, { 1444, 55.43, 63.45 }, { 1444, 56.64, 61.36 }, { 1444, 54.76, 60.17 }, { 1444, 55.76, 65.95 }, { 1444, 53.85, 66.15 } }, -- level 43
+        { level = 44, xp = 35000, patrol = { { 1444, 56.96, 64.42 }, { 1444, 55.43, 63.45 }, { 1444, 56.64, 61.36 }, { 1444, 54.76, 60.17 }, { 1444, 55.76, 65.95 }, { 1444, 53.85, 66.15 } }, why = { kind = "level", levels = { 45, 48 } }, -- level 43
           note = "Tougher foes are coming up next. Saves you some monster farming afterward. Dungeon runs are a fine choice here too, as you like." },
         { go = { 1444, 54.13, 68.28 }, text = "Climb the trail" }, -- level 44
-        { unbank = 8564, keep = 8564, sticky = 2980, -- level 44
+        { collect = { { 8564, 1 } }, keep = 8564, sticky = 2980, -- level 44
           note = "Look for a big, pale egg. The targets are spread over several spots. Hang on to it; an upcoming quest uses it." },
         { complete = 2979 }, -- level 44
         { complete = 2980 }, -- level 44
@@ -81,8 +81,8 @@ Ding.RegisterGuide({
         { talk = 8356, collect = { { 5945, 1 } }, spots = { { 1456, 47.19, 57.86 } }, -- level 44
           note = "The NPC is indoors." },
         { talk = 8356, bank = { 4589, 10699, 8564 }, -- level 44
-          note = "The NPC is indoors." },
-        { turnin = 1205 }, -- level 44
+          note = "The NPC is indoors. You need them later for \"Another Message to the Wildhammer\", \"Screecher Spirits\" and \"The Super Egg-O-Matic\": keep them in the bank to free bag slots." },
+        { turnin = 1205, why = { kind = "detour", quest = 1205, seconds = 120, xp = 3900 } }, -- level 44
         { train = true, talk = 5883, races = { "Scourge", "Troll" }, classes = { "MAGE" }, -- level 44
           note = "The NPC is indoors." },
         { turnin = 3002, -- level 44
@@ -97,7 +97,7 @@ Ding.RegisterGuide({
           note = "This NPC is found down in the Cleft of Shadow." },
         { vendor = true, talk = 5815, races = { "Orc", "Scourge" }, classes = { "WARLOCK" }, -- level 44
           note = "This NPC is found down in the Cleft of Shadow." },
-        { turnin = 3121, accept = 3122, -- level 44
+        { turnin = 3121, accept = 3122, why = { kind = "carry", quest = 3122, seconds = 24300, xp = 1000 }, -- level 44
           note = "The quest giver waits in the tent. This NPC is found down in the Cleft of Shadow." },
         { turnin = 2976 }, -- level 44
         { train = true, talk = 3353, classes = { "WARRIOR" }, -- level 44
@@ -110,7 +110,7 @@ Ding.RegisterGuide({
         { talk = 3309, collect = { { 2725, 1 }, { 2728, 1 }, { 2730, 1 }, { 2732, 1 }, { 2734, 1 }, { 2735, 1 }, { 2738, 1 }, { 2740, 1 }, { 2742, 1 }, { 2744, 1 }, { 2745, 1 }, { 2748, 1 }, { 2749, 1 }, { 2750, 1 }, { 2751, 1 } }, -- level 44
           note = "If some pages are unavailable, go on without them. The NPC is indoors." },
         { talk = 3309, bank = 9628, -- level 44
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need it later for \"Return to Witch Doctor Uzer'i\": keep it in the bank to free a bag slot." },
         { talk = 8673, collect = { { 2725, 1 }, { 2728, 1 }, { 2730, 1 }, { 2732, 1 }, { 2734, 1 }, { 2735, 1 }, { 2738, 1 }, { 2740, 1 }, { 2742, 1 }, { 2744, 1 }, { 2745, 1 }, { 2748, 1 }, { 2749, 1 }, { 2750, 1 }, { 2751, 1 } }, -- level 44
           note = "The NPC is indoors. You need Chapter I as well as Chapter II." },
     },

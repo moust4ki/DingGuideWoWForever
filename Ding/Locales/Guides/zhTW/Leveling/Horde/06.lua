@@ -15,6 +15,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h06-ashenvale", {
         "NPC在室內。",
     ["Hunt naga."] =
         "獵殺納迦。",
+    ["The NPC is indoors. You need it later for \"Egg Hunt\": keep it in the bank to free a bag slot."] =
+        "NPC在室內。之後的任務「蠍卵」需要它：先存進銀行，空出背包空間。",
     ["Learn Two-Handed Axes at the weapon master"] =
         "向武器大師學習雙手斧",
     ["The quest giver waits in the tent."] =
@@ -35,20 +37,20 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h06-ashenvale", {
         "這個NPC在下方的暗影裂口裡。",
     ["The quest giver waits in the tent. This NPC is found down in the Cleft of Shadow."] =
         "任務給予者在帳篷裡等候。這個NPC在下方的暗影裂口裡。",
-    ["Step onto the pink rune. The quest giver waits in the tent. This NPC is found down in the Cleft of Shadow."] =
-        "站上粉紅色的符文。任務給予者在帳篷裡等候。這個NPC在下方的暗影裂口裡。",
+    ["Step onto the pink rune. The quest giver waits in the tent. The target is down in the Cleft of Shadow."] =
+        "站上粉紅色的符文。任務給予者在帳篷裡等候。目標在下方的暗影裂口裡。",
     ["Let the conversation play out. The quest giver waits in the tent. This NPC is found down in the Cleft of Shadow."] =
         "讓對話播完。任務給予者在帳篷裡等候。這個NPC在下方的暗影裂口裡。",
     ["Use it twice on Taskmaster Fizzule. A short way north of here. Target Taskmaster Fizzule and salute him."] =
         "對監工費蘇勒使用兩次。在這裡往北不遠處。以監工費蘇勒為目標，向他敬禮。",
     ["Rob Foreman Silixiz with Pick Pocket."] =
         "用偷竊從工頭希里克斯身上偷東西。",
-    ["Open with Ambush for a bigger hit. The NPC is indoors at street level."] =
-        "以伏擊開場，打出更高的傷害。NPC在室內，位於地面層。",
-    ["Lean on Rupture for bonus damage. The NPC is indoors, on the central storey."] =
-        "多用割裂造成額外傷害。NPC在室內的中間樓層。",
-    ["Eviscerate adds a burst of damage here. The objective is on the terrace above. The NPC is indoors, on the central storey."] =
-        "剔骨在這裡能打出一波爆發傷害。目標在上方的露台。NPC在室內的中間樓層。",
+    ["Open with Ambush for a bigger hit. The target is indoors at street level."] =
+        "以伏擊開場，打出更高的傷害。目標在室內，位於地面層。",
+    ["Lean on Rupture for bonus damage. The target is indoors, on the central storey."] =
+        "多用割裂造成額外傷害。目標在室內的中間樓層。",
+    ["Eviscerate adds a burst of damage here. The objective is on the terrace above. The target is indoors, on the central storey."] =
+        "剔骨在這裡能打出一波爆發傷害。目標在上方的露台。目標在室內的中間樓層。",
     ["Open with Ambush for a bigger hit. Climb to the highest floor of the building."] =
         "以伏擊開場，打出更高的傷害。爬到建築的最頂樓。",
     ["Use Pick Lock to open it. Climb to the highest floor of the building."] =

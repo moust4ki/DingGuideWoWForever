@@ -9,6 +9,29 @@ Ding.RegisterGuide({
     faction  = "Alliance",
     minLevel = 57, maxLevel = 58,
     next     = "leveling-a42-winterspring",
+    leftOut  = {
+        [5168] = { kind = "far" },
+        [5213] = { kind = "prereq" },
+        [5246] = { kind = "log" },
+        [5247] = { kind = "prereq" },
+        [5248] = { kind = "prereq" },
+        [5263] = { kind = "prereq" },
+        [5264] = { kind = "prereq" },
+        [5265] = { kind = "prereq" },
+        [5465] = { kind = "prereq" },
+        [5503] = { kind = "exclusive" },
+        [5531] = { kind = "prereq" },
+        [5781] = { kind = "far" },
+        [5845] = { kind = "prereq" },
+        [5846] = { kind = "prereq" },
+        [5861] = { kind = "prereq" },
+        [5941] = { kind = "prereq" },
+        [5942] = { kind = "prereq" },
+        [8947] = { kind = "prereq" },
+        [9033] = { kind = "prereq" },
+        [9229] = { kind = "prereq" },
+        [9230] = { kind = "prereq" },
+    },
     steps    = {
         { go = { 1455, 32.21, 63.26 }, text = "Travel to Ironforge", -- level 57
           note = "Ironforge first, then the Plaguelands: Chillwind Camp and Light's Hope Chapel." },
@@ -16,18 +39,18 @@ Ding.RegisterGuide({
         { talk = 2461, collect = { { 15788, 1 }, { 15790, 1 }, { 12891, 1 }, { 12896, 1 }, { 12897, 1 }, { 12898, 1 }, { 12899, 1 } }, spots = { { 1455, 35.87, 60.19 } }, -- level 57
           note = "The NPC is indoors." },
         { talk = 2461, bank = 12438, -- level 57
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need it later for \"Felnok Steelspring\": keep it in the bank to free a bag slot." },
         { go = { 1455, 44.45, 49.53 }, text = "Stay on the trail" }, -- level 57
         { turnin = 3701 }, -- level 57
         { sethearth = "Southshore", talk = 2352, -- level 57
           note = "The NPC is indoors." },
-        { turnin = 7261 }, -- level 57
+        { turnin = 7261, why = { kind = "detour", quest = 7261, seconds = 120, xp = 6600 } }, -- level 57
         { accept = 5219 }, -- level 57
         { accept = 5097, elite = true }, -- level 57
         { turnin = 6028 }, -- level 57
         { turnin = 6184 }, -- level 57
         { accept = 5142, -- level 57
-          note = "This one roams, so scan the surrounding area. Check each of the two floors indoors." },
+          note = "Check each of the two floors indoors." },
         { complete = 5097, elite = true, useitem = 12815, -- level 57
           note = "Stand at the watchtower's doorway. An elite foe waits indoors; stay clear of it." },
         { accept = 4984, sticky = 4984, -- level 57
@@ -37,14 +60,14 @@ Ding.RegisterGuide({
         { complete = 4984, -- level 57
           note = "Spiders also appear at these spawn spots." },
         { accept = 5058, -- level 57
-          note = "The NPC is indoors." },
+          note = "The object is indoors." },
         { turnin = 5058 }, -- level 57
         { collect = { { 12738, 1 } }, -- level 57
           note = "Look for a white set of bones. This one roams, so scan the surrounding area. The targets appear in several places." },
         { collect = { { 12739, 1 } }, -- level 57
           note = "Finish Locked Away to obtain this." },
         { accept = 5060, -- level 57
-          note = "The NPC is indoors, one floor up." },
+          note = "The object is indoors, one floor up." },
         { turnin = 5060, when = { ready = 5060 } }, -- level 57
         { complete = 5219 }, -- level 57
         { turnin = 5219, accept = 5220 }, -- level 57
@@ -69,8 +92,7 @@ Ding.RegisterGuide({
         { turnin = 5222, accept = 5223 }, -- level 57
         { turnin = 4984, accept = 4985, sticky = 4985, -- level 57
           note = "The NPC is indoors." },
-        { accept = { 5542, 5543, 5544 }, sticky = { 5544, 5542, 5543 }, -- level 57
-          note = "This one roams, so scan the surrounding area." },
+        { accept = { 5542, 5543, 5544 }, sticky = { 5544, 5542, 5543 }, why = { kind = "carry", once = true, quest = 5542, seconds = 29160, xp = 5800 } }, -- level 57
         { complete = 6185, elite = true }, -- level 57
         { complete = 6185, elite = true, -- level 57
           note = "Elites roam close by; keep your distance." },
@@ -78,7 +100,7 @@ Ding.RegisterGuide({
           note = "Search the bones of a fallen person. Elites roam close by; keep your distance." },
         { complete = 6185, elite = true }, -- level 57
         { turnin = 5142, accept = 5149, -- level 57
-          note = "This one roams, so scan the surrounding area. The NPC is within the ruined home." },
+          note = "The NPC is within the ruined home." },
         { collect = { { 12886, 1 } }, object = 176116, spots = { { 1423, 32.57, 79.29 }, { 1423, 33.94, 77.32 }, { 1423, 33.93, 79.55 } }, -- level 57
           note = "Search within the houses here. Be ready for a fight right away." },
         { collect = { { 12887, 1 } }, object = 176142, spots = { { 1423, 32.57, 79.29 }, { 1423, 33.94, 77.32 }, { 1423, 33.93, 79.55 } }, -- level 57
@@ -87,12 +109,12 @@ Ding.RegisterGuide({
           note = "Search within the houses here. Be ready for a fight right away." },
         { complete = 5149, useitem = 12886 }, -- level 57
         { turnin = 5149, sticky = { 5542, 5543 }, when = { item = 12885 }, -- level 57
-          note = "This one roams, so scan the surrounding area. The NPC is within the ruined home." },
-        { accept = { 5152, 5241 }, when = { done = 5149 } }, -- level 57
+          note = "The NPC is within the ruined home." },
+        { accept = { 5152, 5241 }, when = { done = 5149 }, why = { kind = "carry", quest = 5152, seconds = 29340, xp = 2900 } }, -- level 57
         { complete = 5544, -- level 57
           note = "Look for big yellow grubs." },
         { complete = { 5542, 5543 } }, -- level 57
-        { level = 57, xp = 189550, patrol = { { 1423, 34.58, 71.45 }, { 1423, 31.85, 69.49 }, { 1423, 29.64, 71.46 }, { 1423, 26.38, 72.7 }, { 1423, 26.49, 66.21 }, { 1423, 28.83, 63.24 }, { 1423, 27.56, 58.92 }, { 1423, 24.85, 59.13 }, { 1423, 22.97, 56.78 }, { 1423, 24.3, 54.25 }, { 1423, 26.94, 54.15 }, { 1423, 21.72, 52.89 }, { 1423, 19.38, 54.34 }, { 1423, 16.74, 55.05 }, { 1423, 14.5, 57.77 }, { 1423, 16.76, 59.83 }, { 1423, 17.64, 62.46 }, { 1423, 13.5, 63.71 }, { 1423, 14.04, 67.13 }, { 1423, 17.94, 68.29 }, { 1423, 21.35, 59.28 }, { 1423, 13.15, 54.17 }, { 1423, 31.24, 58.22 }, { 1423, 35.1, 58.39 }, { 1423, 35.11, 55.52 }, { 1423, 38.78, 55.6 }, { 1423, 38.54, 61.27 }, { 1423, 40.95, 62.25 }, { 1423, 42.85, 66.13 }, { 1423, 39.69, 68.29 }, { 1423, 35.81, 67.41 }, { 1423, 36.55, 63.62 } }, -- level 57
+        { level = 57, xp = 189550, patrol = { { 1423, 34.58, 71.45 }, { 1423, 31.85, 69.49 }, { 1423, 29.64, 71.46 }, { 1423, 26.38, 72.7 }, { 1423, 26.49, 66.21 }, { 1423, 28.83, 63.24 }, { 1423, 27.56, 58.92 }, { 1423, 24.85, 59.13 }, { 1423, 22.97, 56.78 }, { 1423, 24.3, 54.25 }, { 1423, 26.94, 54.15 }, { 1423, 21.72, 52.89 }, { 1423, 19.38, 54.34 }, { 1423, 16.74, 55.05 }, { 1423, 14.5, 57.77 }, { 1423, 16.76, 59.83 }, { 1423, 17.64, 62.46 }, { 1423, 13.5, 63.71 }, { 1423, 14.04, 67.13 }, { 1423, 17.94, 68.29 }, { 1423, 21.35, 59.28 }, { 1423, 13.15, 54.17 }, { 1423, 31.24, 58.22 }, { 1423, 35.1, 58.39 }, { 1423, 35.11, 55.52 }, { 1423, 38.78, 55.6 }, { 1423, 38.54, 61.27 }, { 1423, 40.95, 62.25 }, { 1423, 42.85, 66.13 }, { 1423, 39.69, 68.29 }, { 1423, 35.81, 67.41 }, { 1423, 36.55, 63.62 } }, why = { kind = "level", levels = { 55, 60 } }, -- level 57
           note = "With the coming hand-ins, this gets you to level 58." },
         { complete = 5542 }, -- level 57
         { accept = { 6021, 5281 }, -- level 57
@@ -110,7 +132,7 @@ Ding.RegisterGuide({
         { accept = 6164, -- level 58
           note = "The NPC is indoors." },
         { complete = 6164, -- level 58
-          note = "The NPC is indoors, one floor up." },
+          note = "The object is indoors, one floor up." },
         { turnin = 6164, -- level 58
           note = "The NPC is indoors." },
         { complete = 5542 }, -- level 58
@@ -119,12 +141,10 @@ Ding.RegisterGuide({
         { go = { 1423, 23.38, 73.25 }, text = "Go down into the tomb" }, -- level 58
         { complete = 6021, -- level 58
           note = "This is below ground, on the crypt's lower floor." },
-        { turnin = { 5542, 5543, 5544 }, accept = 5742, -- level 58
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = { 5542, 5543, 5544 }, accept = 5742 }, -- level 58
         { complete = 5742, talk = 1855, -- level 58
-          note = "This one roams, so scan the surrounding area. Your character must be seated first." },
-        { turnin = 5742, -- level 58
-          note = "This one roams, so scan the surrounding area." },
+          note = "Your character must be seated first." },
+        { turnin = 5742 }, -- level 58
         { train = true, talk = 12042, races = { "NightElf" }, classes = { "DRUID" } }, -- level 58
         { turnin = 5223, accept = 5225 }, -- level 58
         { accept = 5537, elite = true }, -- level 58
@@ -133,7 +153,7 @@ Ding.RegisterGuide({
         { turnin = 5903, accept = 5904 }, -- level 58
         { destroy = 15043, sticky = 5537 }, -- level 58
         { turnin = 5152, when = { log = 5152 }, -- level 58
-          note = "This one roams, so scan the surrounding area. Check each of the two floors indoors." },
+          note = "Check each of the two floors indoors." },
         { accept = 5153, when = { done = 5152 } }, -- level 58
         { complete = 5153, when = { log = 5153 } }, -- level 58
         { complete = 5537, elite = true }, -- level 58
@@ -170,10 +190,10 @@ Ding.RegisterGuide({
         { turnin = 5225, accept = 5226 }, -- level 58
         { complete = 4985, -- level 58
           note = "Spiders also appear at these spawn spots." },
-        { turnin = 4985, accept = 4986, -- level 58
+        { turnin = 4985, accept = 4986, why = { continent = true, kind = "carry", quest = 4986, seconds = 10320, xp = 5800 }, -- level 58
           note = "The NPC is indoors." },
         { turnin = 5904, accept = 6389, -- level 58
-          note = "The NPC is indoors. It shows up on top of the box." },
+          note = "The object is indoors. It shows up on top of the box." },
         { accept = 6004 }, -- level 58
         { complete = 6004 }, -- level 58
         { complete = 6004 }, -- level 58
@@ -183,8 +203,8 @@ Ding.RegisterGuide({
         { complete = 6023, elite = true, -- level 58
           note = "This one roams, so scan the surrounding area. Targets are in the tower and around its base. If an elite stands on the tower's roof, hold back outside." },
         { turnin = 6023, elite = true }, -- level 58
-        { turnin = 5181, when = { log = 5181 } }, -- level 58
-        { turnin = 6389 }, -- level 58
+        { turnin = 5181, when = { log = 5181 }, why = { back = true, kind = "detour", quest = 5181, seconds = 60, xp = 6000 } }, -- level 58
+        { turnin = 6389, why = { kind = "detour", quest = 5237, quests = 3, seconds = 120, total = 18000, xp = 9300 } }, -- level 58
         { turnin = 5226 }, -- level 58
         { accept = 5237 }, -- level 58
         { turnin = 5237 }, -- level 58

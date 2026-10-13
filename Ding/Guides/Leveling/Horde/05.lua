@@ -2,13 +2,39 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Horde/05.lua.
--- Simulated (warrior): Orc 15 (25%) -> 22 (17%) in 12 h 42, 70 quests turned in; Scourge 15 (62%) -> 22 (17%) in 12 h 21, 66 quests turned in; Tauren 15 (47%) -> 22 (11%) in 12 h 27, 66 quests turned in; Troll 15 (25%) -> 22 (17%) in 12 h 42, 70 quests turned in; Skyborne 15 (7%) -> 22 (18%) in 13 h 10, 70 quests turned in.
+-- Simulated (warrior): Orc 15 (25%) -> 22 (17%) in 12 h 42, 70 quests turned in; Scourge 15 (52%) -> 22 (17%) in 12 h 29, 66 quests turned in; Tauren 15 (55%) -> 22 (11%) in 12 h 22, 66 quests turned in; Troll 15 (25%) -> 22 (17%) in 12 h 42, 70 quests turned in; Skyborne 15 (7%) -> 22 (18%) in 13 h 10, 70 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-h05-the-barrens-and-stonetalon-mountains",
     title    = "The Barrens and Stonetalon (15-21)",
     faction  = "Horde",
     minLevel = 15, maxLevel = 21,
     next     = "leveling-h06-ashenvale",
+    leftOut  = {
+        [857] = { kind = "away" },
+        [891] = { kind = "far" },
+        [1088] = { kind = "prereq" },
+        [1092] = { kind = "prereq" },
+        [1130] = { kind = "away" },
+        [1154] = { kind = "prereq" },
+        [1159] = { kind = "prereq" },
+        [1362] = { kind = "away" },
+        [3514] = { kind = "prereq" },
+        [3923] = { kind = "log" },
+        [6481] = { kind = "prereq" },
+        [6626] = { kind = "away" },
+        [79007] = { kind = "far", turnin = true },
+        [79192] = { kind = "log" },
+        [79974] = { kind = "away" },
+        [91899] = { kind = "away" },
+        [91900] = { kind = "away" },
+        [91904] = { kind = "away" },
+        [95495] = { kind = "detour", seconds = 60, xp = 1000 },
+        [95508] = { kind = "detour", seconds = 60, xp = 1000 },
+        [95621] = { kind = "far" },
+        [96339] = { kind = "away" },
+        [96383] = { kind = "away" },
+        [97250] = { kind = "far" },
+    },
     steps    = {
         { go = { 1411, 50.84, 43.59 }, text = "Travel to Razor Hill", -- level 15
           note = "Durotar: Razor Hill first, then the Barrens: the Crossroads, and Stonetalon Mountains." },
@@ -31,7 +57,7 @@ Ding.RegisterGuide({
         { accept = 871 }, -- level 15
         { go = { 1413, 51.45, 30.4 }, fly = true, talk = 3615, text = "Flight master at the Crossroads" }, -- level 15
         { turnin = 6365, accept = 6384, races = { "Orc", "Troll" } }, -- level 15
-        { turnin = 6384, accept = 6385, races = { "Orc", "Troll" }, -- level 15
+        { turnin = 6384, accept = 6385, races = { "Orc", "Troll" }, why = { back = true, chain = 1, kind = "detour", quest = 6385, quests = 3, seconds = 360, short = true, total = 1700, xp = 1300 }, -- level 15
           note = "The NPC is indoors." },
         { turnin = 6385, accept = 6386, races = { "Orc", "Troll" }, -- level 15
           note = "The NPC waits on the tower's highest floor." },
@@ -63,7 +89,8 @@ Ding.RegisterGuide({
         { go = { 1413, 63.03, 37.19 }, fly = true, talk = 16227, text = "Flight master in Ratchet" }, -- level 15
         { accept = 894 }, -- level 15
         { destroy = 5088 }, -- level 15
-        { talk = 3496, bank = { 5063, 12708 } }, -- level 15
+        { talk = 3496, bank = { 5063, 12708 }, -- level 15
+          note = "You need them later for \"The Disruption Ends\" and \"Supplies for the Crossroads\": keep them in the bank to free bag slots." },
         { accept = 895 }, -- level 15
         { turnin = 819, accept = 821, sticky = 887 }, -- level 15
         { complete = 97253 }, -- level 15
@@ -113,7 +140,7 @@ Ding.RegisterGuide({
           note = "Up to two foes might jump you." },
         { turnin = 900, accept = 901 }, -- level 17
         { complete = 901, -- level 17
-          note = "The NPC is indoors." },
+          note = "The target is indoors." },
         { turnin = 901, accept = 902 }, -- level 17
         { complete = 869, -- level 17
           note = "Kill the purple raptors. Targets are found across the entire Barrens. Slay any you come across along the way." },
@@ -123,7 +150,8 @@ Ding.RegisterGuide({
           note = "With the coming hand-ins, this gets you to level 18." },
         { train = true, talk = 12042, races = { "Tauren" }, classes = { "DRUID" } }, -- level 18
         { turnin = 896 }, -- level 18
-        { talk = 3496, bank = 4893 }, -- level 18
+        { talk = 3496, bank = 4893, -- level 18
+          note = "You need it later for \"Chen's Empty Keg\": keep it in the bank to free a bag slot." },
         { turnin = 902, accept = 3921 }, -- level 18
         { turnin = 848 }, -- level 18
         { turnin = 867, -- level 18
@@ -164,7 +192,7 @@ Ding.RegisterGuide({
         { turnin = 2379, accept = 2382, races = { "Orc", "Scourge", "Troll", "Skyborne" }, classes = { "ROGUE" }, -- level 18
           note = "The quest giver waits in the tent. This NPC is found down in the Cleft of Shadow." },
         { collect = { { 7208, 1 } }, spots = { { 1454, 53.95, 67.98 } }, races = { "Orc", "Scourge", "Troll" }, classes = { "ROGUE" }, -- level 18
-          note = "Steal from Gamon using Pick Pocket. The NPC is indoors." },
+          note = "Steal from Gamon using Pick Pocket. The target is indoors." },
         { useitem = 7208, when = { log = 1858 }, races = { "Orc", "Scourge", "Troll", "Skyborne" }, classes = { "ROGUE" }, -- level 18
           note = "Use it on Tazan's Satchel. The item is already in your inventory." },
         { complete = 1858, when = { log = 1858 }, races = { "Orc", "Troll" }, classes = { "ROGUE" } }, -- level 18
@@ -199,8 +227,9 @@ Ding.RegisterGuide({
         { turnin = 2382, accept = 2381, races = { "Orc", "Scourge", "Troll", "Skyborne" }, classes = { "ROGUE" } }, -- level 18
         { talk = 7166, collect = { { 5060, 1 } }, spots = { { 1413, 63.06, 36.28 } }, races = { "Orc", "Scourge", "Troll" }, classes = { "ROGUE" } }, -- level 18
         { talk = 7166, collect = { { 7970, 1 } }, spots = { { 1413, 63.06, 36.28 } }, races = { "Orc", "Scourge", "Troll" }, classes = { "ROGUE" } }, -- level 18
-        { turnin = 863, accept = 1483 }, -- level 18
-        { talk = 3496, bank = 4894 }, -- level 18
+        { turnin = 863, accept = 1483, why = { kind = "carry", quest = 1483, seconds = 4680, xp = 400 } }, -- level 18
+        { talk = 3496, bank = 4894, -- level 18
+          note = "You need it later for \"Chen's Empty Keg\": keep it in the bank to free a bag slot." },
         { accept = { 865, 1069 } }, -- level 18
         { complete = 2381, object = 123462, useitem = 7970, races = { "Orc", "Scourge", "Troll", "Skyborne" }, classes = { "ROGUE" }, -- level 18
           note = "A small chest made of wood. The objective is on the ship's center deck. Polly is the target for the item." },
@@ -234,12 +263,12 @@ Ding.RegisterGuide({
           note = "Circle the mountain on foot." },
         { accept = 6548 }, -- level 19
         { complete = 6548 }, -- level 19
-        { turnin = 6548, accept = 6629, sticky = 6629, -- level 19
+        { turnin = 6548, accept = 6629, sticky = 6629, why = { back = true, chain = 1, kind = "detour", quest = 6548, seconds = 120, xp = 2700 }, -- level 19
           note = "Keep to the road the whole way." },
         { go = { 1442, 71.55, 88.65 }, text = "Stay on the trail" }, -- level 19
         { complete = 6629 }, -- level 19
         { complete = 6629 }, -- level 19
-        { accept = 6523, noauto = 6523, -- level 19
+        { accept = 6523, noauto = 6523, why = { kind = "carry", quest = 6523, seconds = 17700, xp = 1400 }, -- level 19
           note = "For this quest you guard an NPC on the move. If she is absent, wait for her to reappear. The NPC is indoors." },
         { complete = 6523, -- level 19
           note = "Let the conversation play out. Escort Kaya Flathoof and keep her safe. Close to the finish, 3 foes ambush you together." },
@@ -256,9 +285,9 @@ Ding.RegisterGuide({
           note = "The targets are spiders with green bodies." },
         { complete = 1093 }, -- level 19
         { complete = 1062 }, -- level 19
-        { level = 19, xp = 19650, patrol = { { 1442, 66.54, 54.95 }, { 1442, 64.83, 52.35 }, { 1442, 67.37, 50.23 }, { 1442, 64.26, 49.05 }, { 1442, 63.35, 46.04 }, { 1442, 66.74, 46.46 }, { 1442, 71.94, 50.96 }, { 1442, 69.55, 53.24 }, { 1442, 70.24, 56.36 }, { 1442, 72.95, 54.16 }, { 1442, 64.14, 57.34 }, { 1442, 61.46, 54.95 }, { 1442, 59.43, 52.36 } }, -- level 19
+        { level = 19, xp = 19650, patrol = { { 1442, 66.54, 54.95 }, { 1442, 64.83, 52.35 }, { 1442, 67.37, 50.23 }, { 1442, 64.26, 49.05 }, { 1442, 63.35, 46.04 }, { 1442, 66.74, 46.46 }, { 1442, 71.94, 50.96 }, { 1442, 69.55, 53.24 }, { 1442, 70.24, 56.36 }, { 1442, 72.95, 54.16 }, { 1442, 64.14, 57.34 }, { 1442, 61.46, 54.95 }, { 1442, 59.43, 52.36 } }, why = { kind = "level", levels = { 15, 27 } }, -- level 19
           note = "Together with the next turn-ins, this brings you to level 20." },
-        { turnin = 1093, accept = 1094, -- level 19
+        { turnin = 1093, accept = 1094, why = { kind = "carry", once = true, quest = 1094, seconds = 5280, xp = 800 }, -- level 19
           note = "The NPC is indoors." },
         { train = true, talk = 12042, races = { "Tauren" }, classes = { "DRUID" } }, -- level 19
         { turnin = 3261, accept = 882 }, -- level 20
@@ -284,7 +313,7 @@ Ding.RegisterGuide({
         { turnin = 2381, when = { ready = 2381 }, races = { "Orc", "Scourge", "Troll", "Skyborne" }, classes = { "ROGUE" } }, -- level 20
         { turnin = 888, -- level 20
           note = "The NPC is indoors, one floor up." },
-        { turnin = 1094, accept = 1095 }, -- level 20
+        { turnin = 1094, accept = 1095, why = { kind = "carry", quest = 1095, seconds = 8100, xp = 1100 } }, -- level 20
         { talk = 3496, collect = { { 4894, 5 }, { 4893, 5 } }, spots = { { 1413, 62.58, 37.39 } } }, -- level 20
         { turnin = { 865, 1069 } }, -- level 20
         { destroy = 5570 }, -- level 20
@@ -294,7 +323,7 @@ Ding.RegisterGuide({
         { turnin = 899 }, -- level 20
         { turnin = 95774, races = { "Orc", "Scourge", "Troll", "Skyborne" } }, -- level 20
         { destroy = 5085 }, -- level 20
-        { turnin = 880, accept = { 1489, 3301 } }, -- level 20
+        { turnin = 880, accept = { 1489, 3301 }, why = { continent = true, kind = "carry", quest = 3301, seconds = 12420, xp = 600 } }, -- level 20
         { train = true, talk = 5883, races = { "Scourge", "Troll" }, classes = { "MAGE" }, -- level 20
           note = "The NPC is indoors." },
         { train = true, talk = 6018, races = { "Scourge", "Troll" }, classes = { "PRIEST" }, -- level 20
@@ -361,8 +390,8 @@ Ding.RegisterGuide({
         { go = { 1456, 46.92, 49.89 }, fly = true, talk = 2995, text = "Fly to Thunder Bluff", -- level 21
           note = "The NPC waits on the tower's highest floor." },
         { go = { 1456, 29.79, 29.85 }, text = "Go into the cavern" }, -- level 21
-        { accept = 264, -- level 21
-          note = "This one roams, so scan the surrounding area. Your targets are within the cavern." },
+        { accept = 264, why = { continent = true, kind = "carry", quest = 264, seconds = 5460, xp = 300 }, -- level 21
+          note = "Your targets are within the cavern." },
         { turnin = 853, -- level 21
           note = "Your targets are within the cavern." },
         { accept = 962, dungeon = "Wailing Caverns", -- level 21
@@ -468,13 +497,13 @@ Ding.RegisterGuide({
         { turnin = 962, dungeon = "Wailing Caverns", -- level 21
           note = "Your targets are within the cavern." },
         { go = { 1456, 29.92, 29.78 }, text = "Head out of the cave" }, -- level 21
-        { accept = 868 }, -- level 21
+        { accept = 868, why = { chain = 7, kind = "detour", quest = 1062, quests = 13, seconds = 540, short = true, total = 18000, xp = 11000 } }, -- level 21
         { complete = 852, -- level 21
           note = "A centaur flanked by two bodyguards. This one roams, so scan the surrounding area." },
         { turnin = 852, -- level 21
           note = "The NPC is indoors, one floor up." },
         { turnin = 1062 }, -- level 21
-        { accept = { 1063, 1068 }, -- level 21
+        { accept = { 1063, 1068 }, why = { kind = "carry", quest = 1063, seconds = 3900, xp = 700 }, -- level 21
           note = "Wait for the talking to finish" },
         { turnin = { 6523, 6629 }, accept = 6401 }, -- level 21
         { go = { 1442, 82.03, 98.62 }, text = "Climb the trail and cross the peaks" }, -- level 21

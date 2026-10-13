@@ -7,6 +7,8 @@ Ding.RegisterGuideTranslation("ptBR", "horde-44-feralas", {
         "Feralas fica a oeste de Mil Agulhas: a Aldeia Mojache, no leste da zona, é sua base.",
     ["Finish the level on nearby monsters before moving on."] =
         "Termine o nível nos monstros próximos antes de seguir.",
+    ["Camp Mojache"] =
+        "Aldeia Mojache",
     ["If the starting item dropped: use it from your bags."] =
         "Se o item inicial caiu: use-o direto das bolsas.",
 })

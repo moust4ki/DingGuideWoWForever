@@ -25,8 +25,6 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h14-thousand-needles", {
         "Die Gegner hier sind Skorpione.",
     ["Look for assorted mechanical pieces. Parts lie all across the Shimmering Flats."] =
         "Such nach verschiedenen mechanischen Teilen. Die Teile liegen überall in der Schimmernden Ebene.",
-    ["This one roams, so scan the surrounding area."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab.",
     ["The NPC is indoors, one floor up."] =
         "Der NPC ist drinnen, ein Stockwerk höher.",
     ["The NPC stands on the top tier of the pier. The NPC is indoors."] =
@@ -45,6 +43,10 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h14-thousand-needles", {
         "Dieser NPC ist unten in der Kluft der Schatten.",
     ["The NPC stands on the highest level of this structure."] =
         "Der NPC steht auf der obersten Ebene dieses Gebäudes.",
+    ["The NPC is indoors. You need them later for \"Martek the Exiled\" and \"Hemet Nesingwary\": keep them in the bank to free bag slots."] =
+        "Der NPC ist drinnen. Du brauchst sie später für „Martek der Verbannte“ und „Hemet Nesingwary“: Lass sie in der Bank, das spart Taschenplätze.",
+    ["Orgrimmar"] =
+        "Orgrimmar",
     ["The quest giver is in the Dormitory."] =
         "Der Questgeber ist im Schlafsaal.",
     ["Escort Kernobee to the portal at the dungeon's mouth."] =

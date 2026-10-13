@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("esES", "dwarf-02-dunmorogh", {
         "Dun Morogh (5-11)",
     ["Leave the valley through the tunnel to the northeast: Kharanos is your base for Dun Morogh."] =
         "Sal del valle por el túnel del noreste: Kharanos es tu base en Dun Morogh.",
+    ["Kharanos"] =
+        "Kharanos",
     ["Finish the level on nearby monsters before moving on."] =
         "Termina el nivel con monstruos cercanos antes de seguir.",
 })

@@ -19,6 +19,10 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a42-winterspring", {
         "放生你驯服的临时宠物。",
     ["The NPC is indoors."] =
         "NPC在室内。",
+    ["The NPC is indoors. You need it later for \"Glyphed Oaken Branch\": keep it in the bank to free a bag slot."] =
+        "NPC在室内。之后的任务“雕文橡木枝”需要它：先存进银行，腾出背包空间。",
+    ["Everlook"] =
+        "永望镇",
     ["The quest wants yetis; seek them out. Targets are in the cavern and around its entrance too."] =
         "任务需要雪人；去找它们。目标在洞穴里，洞口周围也有。",
     ["Head out of the cave"] =

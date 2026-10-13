@@ -9,8 +9,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h13-arathi-highlands", {
         "Sors de la grotte",
     ["The targets are out in front of the cavern."] =
         "Les cibles sont devant la caverne.",
-    ["The NPC is indoors."] =
-        "Le PNJ est à l'intérieur.",
+    ["The target is indoors."] =
+        "La cible est à l'intérieur.",
     ["The targets are spread over several spots."] =
         "Les cibles sont réparties sur plusieurs endroits.",
     ["Flight master at Hammerfall"] =
@@ -23,6 +23,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h13-arathi-highlands", {
         "Les cibles sont des raptors. Tiens-toi loin du Refuge de l'Ornière.",
     ["Together with the next turn-ins, this brings you to level 33."] =
         "Avec les prochains rendus de quête, tu passes niveau 33.",
+    ["The NPC is indoors."] =
+        "Le PNJ est à l'intérieur.",
     ["The NPC is indoors, one floor up."] =
         "Le PNJ est à l'intérieur, un étage plus haut.",
     ["Take the trail downhill"] =

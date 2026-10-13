@@ -87,4 +87,6 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h10-ashenvale", {
         "Deine Ziele sind in der Höhle.",
     ["Head out of the cave"] =
         "Verlass die Höhle",
+    ["Thunder Bluff"] =
+        "Donnerfels",
 })

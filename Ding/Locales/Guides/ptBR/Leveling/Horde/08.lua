@@ -5,8 +5,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h08-the-barrens", {
         "Sertões (24-25)",
     ["Thunder Bluff first, then the Barrens. The NPC is indoors."] =
         "Penhasco do Trovão primeiro, depois os Sertões. O NPC está lá dentro.",
-    ["The NPC is indoors."] =
-        "O NPC está lá dentro.",
+    ["The NPC is indoors. You need them later for \"Souvenirs of Death\" and \"Battle of Hillsbrad\": keep them in the bank to free bag slots."] =
+        "O NPC está lá dentro. Você vai precisar deles mais tarde para \"Lembrancinhas da morte\" e \"A batalha de Eira dos Montes\": guarde-os no banco para liberar espaço nas bolsas.",
     ["Go into the cavern"] =
         "Entre na caverna",
     ["Your targets are within the cavern."] =
@@ -15,12 +15,16 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h08-the-barrens", {
         "Deixe a conversa terminar. Seus alvos estão dentro da caverna.",
     ["Head out of the cave"] =
         "Saia da caverna",
+    ["The NPC is indoors."] =
+        "O NPC está lá dentro.",
     ["This NPC is found down in the Cleft of Shadow."] =
         "Este NPC fica lá embaixo, no Antro das Sombras.",
     ["Visit the caged quilboar"] =
         "Visite o javatusco enjaulado",
     ["Trade your Blood Shards to gain buffs. Trade any spare Blood Shards to him during your Barrens questing. Ask him for the Spirit of the Wind buff"] =
         "Troque seus Estilhaços de Sangue por bônus. Durante as missões nos Sertões, troque com ele os Estilhaços de Sangue que sobrarem. Peça a ele o bônus Espírito do Vento",
+    ["Camp Taurajo"] =
+        "Acampamento Taurajo",
     ["The target is a dinosaur with blue hide. The targets are spread over several spots."] =
         "O alvo é um dinossauro de couro azul. Os alvos estão espalhados por vários pontos.",
     ["Look for big boulders oozing green fluid. Expect a possible ambush while you gather it."] =
@@ -33,8 +37,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h08-the-barrens", {
         "O alvo é um javatusco de veste vermelha. Este se desloca, então procure pelos arredores. O alvo aparece neste ponto.",
     ["This one roams, so scan the surrounding area. Beware of foes lurking in stealth."] =
         "Este se desloca, então procure pelos arredores. Cuidado com inimigos furtivos à espreita.",
-    ["Beware of foes lurking in stealth. The NPC is indoors."] =
-        "Cuidado com inimigos furtivos à espreita. O NPC está lá dentro.",
+    ["Beware of foes lurking in stealth. The target is indoors."] =
+        "Cuidado com inimigos furtivos à espreita. O alvo está lá dentro.",
     ["Kill Stalkers and Pathfinders. Beware of foes lurking in stealth."] =
         "Mate Espreitadores e Desbravadores. Cuidado com inimigos furtivos à espreita.",
     ["Beware of foes lurking in stealth."] =
@@ -45,8 +49,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h08-the-barrens", {
         "Este se desloca, então procure pelos arredores. Os alvos estão espalhados por vários pontos.",
     ["Climb the trail"] =
         "Suba a trilha",
-    ["The NPC can be indoors or out."] =
-        "O NPC pode estar dentro ou fora.",
+    ["The target can be indoors or out."] =
+        "O alvo pode estar dentro ou fora.",
     ["The objective sits up on the raised deck. Keep some range when you use the item."] =
         "O objetivo fica no convés elevado. Mantenha alguma distância ao usar o item.",
     ["With the coming hand-ins, this gets you to level 25."] =

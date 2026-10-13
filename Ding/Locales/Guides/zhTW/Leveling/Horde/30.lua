@@ -13,8 +13,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h30-feralas-and-ungoro-crater", 
         "目標是角鷹獸。殺死牠們，然後對屍體使用這個物品。",
     ["Slay them, then apply the item to their remains."] =
         "殺死牠們，然後對屍體使用這個物品。",
-    ["Fight the treants. The NPC patrols a long route; look along it. Slay them, then apply the item to their remains."] =
-        "與樹人戰鬥。NPC沿著一條很長的路線巡邏；沿路尋找。殺死牠們，然後對屍體使用這個物品。",
+    ["Fight the treants. The target patrols a long route; look along it. Slay them, then apply the item to their remains."] =
+        "與樹人戰鬥。目標沿著一條很長的路線巡邏；沿路尋找。殺死牠們，然後對屍體使用這個物品。",
     ["Aim the item at the Strider foes. The targets are towering green giants. The item strips their elite status."] =
         "對Strider敵人使用這個物品。目標是高大的綠色巨人。這個物品會移除牠們的精英狀態。",
     ["Hunt down the elementals formed of water."] =
@@ -65,8 +65,12 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h30-feralas-and-ungoro-crater", 
         "目標在洞穴裡。",
     ["Flight master at Marshal's Refuge"] =
         "馬紹爾營地的飛行管理員",
+    ["The NPC is indoors. You need them later for \"Bungle in the Jungle\", \"The Bait for Lar'korwi\" and \"It's a Secret to Everybody\": keep them in the bank to free bag slots."] =
+        "NPC在室內。之後的任務「擒蟲先擒王」、「拉克維的誘餌」和「無人知曉的秘密」需要它們：先存進銀行，空出背包空間。",
     ["This NPC is found down in the Cleft of Shadow."] =
         "這個NPC在下方的暗影裂口裡。",
     ["The NPC is upstairs, out on the balcony."] =
         "NPC在樓上，位於外面的陽台。",
+    ["Orgrimmar"] =
+        "奧格瑪",
 })

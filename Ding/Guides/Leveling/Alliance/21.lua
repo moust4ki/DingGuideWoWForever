@@ -9,6 +9,16 @@ Ding.RegisterGuide({
     faction  = "Alliance",
     minLevel = 39, maxLevel = 40,
     next     = "leveling-a22-dustwallow-marsh",
+    leftOut  = {
+        [7081] = { kind = "away" },
+        [7102] = { kind = "away" },
+        [7122] = { kind = "away" },
+        [8271] = { kind = "prereq" },
+        [92432] = { kind = "detour", seconds = 60, xp = 2000 },
+        [92459] = { kind = "detour", seconds = 60, xp = 2000 },
+        [94947] = { kind = "away" },
+        [96137] = { kind = "away" },
+    },
     steps    = {
         { go = { 1417, 60.18, 53.85 }, text = "Travel to Refuge Pointe", -- level 39
           note = "Arathi Highlands: Refuge Pointe, in the middle of the zone." },
@@ -51,12 +61,12 @@ Ding.RegisterGuide({
         { turnin = 525, accept = { 537, 512 }, -- level 39
           note = "The NPC is indoors." },
         { turnin = 602 }, -- level 39
-        { accept = 603, sticky = 512, -- level 39
+        { accept = 603, sticky = 512, why = { kind = "carry", quest = 603, seconds = 43680, xp = 1400 }, -- level 39
           note = "Wait for the talking to finish" },
         { complete = 537, -- level 39
-          note = "Beware of foes lurking in stealth. The NPC is indoors." },
+          note = "Beware of foes lurking in stealth. The target is indoors." },
         { accept = 551, collect = { { 3706, 1 } }, useitem = 3706, -- level 39
-          note = "The NPC is indoors." },
+          note = "The target is indoors." },
         { complete = 512, -- level 39
           note = "Beware of foes lurking in stealth." },
         { complete = 500, -- level 39
@@ -65,7 +75,7 @@ Ding.RegisterGuide({
         { turnin = { 537, 512 }, -- level 39
           note = "The NPC is indoors." },
         { turnin = 551 }, -- level 39
-        { turnin = 1449, accept = 1450 }, -- level 39
+        { turnin = 1449, accept = 1450, why = { chain = 2, kind = "detour", quest = 1451, quests = 5, seconds = 360, short = true, total = 9700, xp = 7000 } }, -- level 39
         { turnin = 1450, accept = 1451, -- level 39
           note = "The NPC is indoors. The NPC is at the summit of the trail." },
         { go = { 1425, 20.76, 47.85 }, text = "Climb the trail" }, -- level 39
@@ -74,7 +84,7 @@ Ding.RegisterGuide({
         { go = { 1417, 53.78, 77.43 }, text = "Go into the cavern" }, -- level 39
         { complete = 693, -- level 39
           note = "Your targets are within the cavern." },
-        { level = 39, xp = 82700, patrol = { { 1417, 54.8, 81.93 }, { 1417, 51.56, 77.55 }, { 1417, 49.44, 75.34 }, { 1417, 51.25, 72.46 }, { 1417, 53.85, 74.55 } }, -- level 39
+        { level = 39, xp = 82700, patrol = { { 1417, 54.8, 81.93 }, { 1417, 51.56, 77.55 }, { 1417, 49.44, 75.34 }, { 1417, 51.25, 72.46 }, { 1417, 53.85, 74.55 } }, why = { kind = "level", levels = { 35, 40 } }, -- level 39
           note = "Together with the next turn-ins, this brings you to level 40. Targets are in the cavern and around its entrance too." },
         { go = { 1417, 53.65, 77.19 }, text = "Head out of the cave" }, -- level 39
         { turnin = 693 }, -- level 39
@@ -85,7 +95,7 @@ Ding.RegisterGuide({
           note = "A level 40 elite foe shows up shortly. Drink a second Nature Protection Potion mid-fight. Consume one ahead of time, so it has recharged once combat begins." },
         { complete = 1712, classes = { "WARRIOR" }, -- level 40
           note = "Head north, keeping to the riverbank. Get Essence of the Exile done as well." },
-        { turnin = 1712, noauto = 1713, when = { item = 3357 }, classes = { "WARRIOR" }, -- level 40
+        { turnin = 1712, noauto = 1713, when = { item = 3357 }, classes = { "WARRIOR" }, why = { back = true, kind = "detour", quest = 1712, seconds = 360, short = true, xp = 2400 }, -- level 40
           note = "The NPC is indoors. Be sure the cooldown on the Nature Protection Potion has ended." },
         { accept = 1713, elite = true, when = { done = 1712 }, classes = { "WARRIOR" } }, -- level 40
         { complete = 1713, elite = true, when = { item = 6052, log = 1713 }, classes = { "WARRIOR" }, -- level 40
@@ -97,11 +107,9 @@ Ding.RegisterGuide({
         { turnin = 651 }, -- level 40
         { go = { 1417, 31.28, 65.32 }, text = "Take the trail across the peaks" }, -- level 40
         { go = { 1417, 21.63, 75.58 }, text = "Take the passage to Faldir's Cove" }, -- level 40
-        { accept = 663, -- level 40
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 663 }, -- level 40
         { turnin = 663 }, -- level 40
-        { accept = 662, -- level 40
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 662 }, -- level 40
         { accept = 664 }, -- level 40
         { accept = 665, noauto = 665, -- level 40
           note = "For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears." },
@@ -126,13 +134,12 @@ Ding.RegisterGuide({
         { useitem = 5996, when = { item = 5996 }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "MAGE" } }, -- level 40
         { complete = 664, -- level 40
           note = "Your targets sit below the water's surface." },
-        { turnin = 662, -- level 40
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 662 }, -- level 40
         { turnin = 664 }, -- level 40
         { turnin = 666, accept = 668 }, -- level 40
-        { turnin = 668, accept = 669 }, -- level 40
+        { turnin = 668, accept = 669, why = { kind = "carry", once = true, quest = 669, seconds = 33180, xp = 3200 } }, -- level 40
         { train = true, talk = 12042, races = { "NightElf" }, classes = { "DRUID" } }, -- level 40
-        { accept = 554 }, -- level 40
+        { accept = 554, why = { action = "accept", kind = "detour", quest = 554, seconds = 60, xp = 1600 } }, -- level 40
         { train = true, talk = 7312, races = { "Human", "Gnome" }, classes = { "MAGE" }, -- level 40
           note = "The NPC is indoors." },
         { turnin = 554, -- level 40

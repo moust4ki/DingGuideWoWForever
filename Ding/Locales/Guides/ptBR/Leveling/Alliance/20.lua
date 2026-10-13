@@ -17,8 +17,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a20-swamp-of-sorrows", {
         "Este se desloca, então procure pelos arredores. O NPC está lá dentro.",
     ["Hunt the little winged dragonkin. When the targets run out, skip ahead. No rush; you may complete this afterwards."] =
         "Cace os pequenos dracônicos alados. Quando os alvos acabarem, pule esta etapa. Sem pressa; você pode concluir isso depois.",
-    ["The target is a humanoid escorted by 2 guards. The NPC patrols a long route; look along it."] =
-        "O alvo é um humanoide escoltado por 2 guardas. O NPC patrulha uma rota longa; procure ao longo dela.",
+    ["The target is a humanoid escorted by 2 guards. The target patrols a long route; look along it."] =
+        "O alvo é um humanoide escoltado por 2 guardas. O alvo patrulha uma rota longa; procure ao longo dela.",
     ["Hunt spiders for it."] =
         "Cace aranhas para isso.",
     ["This one roams, so scan the surrounding area. The targets are spread over several spots."] =
@@ -39,6 +39,10 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a20-swamp-of-sorrows", {
         "Suba até o último andar do prédio.",
     ["Let the conversation play out. Climb to the highest floor of the building."] =
         "Deixe a conversa terminar. Suba até o último andar do prédio.",
+    ["The NPC is indoors. You need it later for \"Rumors for Kravel\": keep it in the bank to free a bag slot."] =
+        "O NPC está lá dentro. Você vai precisar dele mais tarde para \"Rumores para Kravel\": guarde-o no banco para liberar espaço nas bolsas.",
+    ["You need it later for \"Ongeku\": keep it in the bank to free a bag slot."] =
+        "Você vai precisar dele mais tarde para \"Ongekan\": guarde-o no banco para liberar espaço nas bolsas.",
     ["Head down into the Deeprun Tram station"] =
         "Desça até a estação do Metrô Correfundo",
     ["Pass through the portal to teleport."] =

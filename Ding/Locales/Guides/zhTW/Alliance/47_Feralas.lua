@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("zhTW", "alliance-47-feralas", {
         "菲拉斯 (47-48)",
     ["The Alliance stronghold of Feralas is on an island west of the zone."] =
         "聯盟在菲拉斯的要塞位於區域西邊的島上。",
+    ["Feathermoon Stronghold"] =
+        "羽月要塞",
     ["If the starting item dropped: use it from your bags."] =
         "若掉落了開始任務的物品：從背包使用。",
 })

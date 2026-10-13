@@ -30,15 +30,18 @@ return function(opts)
     local Methods = {}
     for _, m in ipairs({ "SetFrameStrata", "SetClampedToScreen", "SetMovable", "EnableMouse",
         "RegisterForDrag", "StartMoving", "StopMovingOrSizing", "SetUserPlaced", "SetJustifyH",
-        "SetJustifyV", "SetWordWrap", "SetTexCoord",
+        "SetJustifyV", "SetTexCoord",
         "SetDesaturated", "SetStatusBarTexture", "SetStatusBarColor", "SetMinMaxValues",
         "SetNormalTexture", "SetPushedTexture", "SetDisabledTexture", "SetHighlightTexture",
-        "SetCheckedTexture", "UnregisterEvent", "SetBlendMode", "SetMaxLines",
+        "SetCheckedTexture", "UnregisterEvent", "SetBlendMode",
         "SetOrientation", "SetThumbTexture", "SetValueStep", "SetObeyStepOnDrag", "EnableMouseWheel",
         "RegisterForClicks", "EnableGamePadButton", "EnableKeyboard",
         "SetPropagateKeyboardInput", "SetShadowOffset", "SetShadowColor", "SetSpacing", "AddMaskTexture" }) do
         Methods[m] = noop
     end
+    -- Kept for the layout tests (tools/layout.lua) and the windows kept on the screen.
+    function Methods:SetJustifyH(justify) self.justifyH = justify end
+    function Methods:SetClampedToScreen(v) self.clamped = v and true or false end
     function Methods:SetVertexColor(r, g, b, a)
         assert(type(r) == "number" and type(g) == "number" and type(b) == "number", "SetVertexColor(r, g, b[, a])")
         self.vertexColor = { r, g, b, a or 1 }
@@ -47,8 +50,14 @@ return function(opts)
         assert(type(radians) == "number", "SetRotation expects radians")
         self.rotation = radians
     end
-    function Methods:EnableMouse(v) self.mouse = v and true or false end
+    function Methods:EnableMouse(v)
+        self.mouse = v and true or false
+        self.mouseClicks = self.mouse
+    end
     function Methods:IsMouseEnabled() return self.mouse == true end
+    -- Hover without taking the clicks (the minimap pins: the minimap keeps its clicks).
+    function Methods:SetMouseClickEnabled(v) self.mouseClicks = v and true or false end
+    function Methods:IsMouseClickEnabled() return self.mouseClicks == true end
     function Methods:GetCenter() return 400, 300 end
     function Methods:SetAlpha(a)
         assert(type(a) == "number" and a >= 0 and a <= 1, "SetAlpha expects 0-1")
@@ -169,12 +178,29 @@ return function(opts)
         if self.w and self.w > 0 then return math.min(full, self.w) end
         return full
     end
-    function Methods:GetStringHeight()
-        local plain = plainText(self)
-        if plain == "" then return 0 end
-        local width = (self.w and self.w > 0) and self.w or 300
+    -- Wrapping like the client: each "\n" starts a line, a long line wraps at the width set
+    -- (300 by default), a text that does not wrap stays on its lines, SetMaxLines caps them
+    -- (0 = no cap). Returns the lines shown and whether the end is cut (an ellipsis in game).
+    local function layoutLines(w)
+        local plain = plainText(w)
+        if plain == "" then return 0, false end
+        local width = (w.w and w.w > 0) and w.w or 300
         local perLine = math.max(1, math.floor(width / 6))
-        return (self.fontSize or 12) * math.ceil(#plain / perLine)
+        local segments, need, wide = 0, 0, false
+        for segment in (plain .. "\n"):gmatch("(.-)\n") do
+            segments = segments + 1
+            need = need + math.max(1, math.ceil(#segment / perLine))
+            if #segment > perLine then wide = true end
+        end
+        if w.wordWrap == false then return segments, wide and (w.w or 0) > 0 end
+        if w.maxLines and w.maxLines > 0 and need > w.maxLines then return w.maxLines, true end
+        return need, false
+    end
+    function Methods:SetWordWrap(v) self.wordWrap = v and true or false end
+    function Methods:SetMaxLines(n) self.maxLines = n end
+    function Methods:IsTruncated() return select(2, layoutLines(self)) end
+    function Methods:GetStringHeight()
+        return (self.fontSize or 12) * layoutLines(self)
     end
     function Methods:SetTexture(path)
         assert(type(path) == "string" or type(path) == "number", "texture path or file id expected")
@@ -539,7 +565,12 @@ return function(opts)
     _G.IsIndoors = function() return false end
     -- Spells the player knows (H.learnSpell) and their cooldowns (H.setSpellCooldown).
     local knownSpells, spellCooldowns = {}, {}
-    _G.IsSpellKnown = function(id) return knownSpells[id] == true end
+    -- Like Forever: IsPlayerSpell knows the weapon skills, IsSpellKnown says false for them.
+    local WEAPON_SKILL_SPELLS = { [196] = true, [197] = true, [198] = true, [199] = true, [200] = true, [201] = true,
+        [202] = true, [227] = true, [264] = true, [266] = true, [1180] = true, [2567] = true, [5011] = true,
+        [5009] = true, [15590] = true }
+    _G.IsSpellKnown = function(id) return knownSpells[id] == true and not WEAPON_SKILL_SPELLS[id] end
+    _G.IsPlayerSpell = function(id) return knownSpells[id] == true end
     _G.GetSpellCooldown = function(id)
         local c = spellCooldowns[id]
         return c and c.start or 0, c and c.duration or 0, 1
@@ -549,6 +580,16 @@ return function(opts)
         [18960] = "Teleport: Moonglade" }
     _G.GetSpellInfo = function(id) return SPELL_NAMES[id] or ("Spell " .. tostring(id)), nil, 136235 end
     _G.GetSpellTexture = function() return 136235 end
+    -- Skill lines (the skills panel): Forever has none (GetNumSkillLines is nil); a test gives
+    -- the client some with H.setSkillLines: a header, then those skills.
+    local skillLines = {}
+    local function getNumSkillLines() return #skillLines + 1 end
+    local function getSkillLineInfo(i)
+        if i == 1 then return "Weapon Skills", true end
+        local name = skillLines[i - 1]
+        if not name then return nil end
+        return name, false, false, 1, 0, 0, 300
+    end
     _G.IsUsableSpell = function(id) return knownSpells[id] == true, false end
     -- Talents: the same small tree for every class (made-up names), the points free
     -- (H.setTalentPoints) and the ranks learned; LearnTalent follows the client's rules
@@ -693,6 +734,9 @@ return function(opts)
     local items, specialItems, itemUses, macroUses = {}, {}, {}, {}
     local bagSlots    -- the bags' slots (defined with the bags, below)
     local hasTarget = false
+    -- Item facts (H.setItemInfo): { name, quality, equipLoc, sellPrice, stats, usable }; the
+    -- client answers by id or by link, nil for an item it has not loaded.
+    local itemInfo, equipped = {}, {}
     _G.C_Item = {
         -- Like the client: the copies in the bags (H.setItem's counts and H.putInBag's slots).
         GetItemCount = function(id)
@@ -703,7 +747,8 @@ return function(opts)
             return n
         end,
         GetItemIconByID = function(id) return items[id] and items[id].icon or 134400 end,
-        GetItemNameByID = function(id) return "item " .. id end,
+        -- The name H.setItemInfo gave it, else a made-up one.
+        GetItemNameByID = function(id) return itemInfo[id] and itemInfo[id].name or ("item " .. id) end,
         GetItemSpell = function(id)
             if items[id] and items[id].use then return "Use " .. id, 1000 + id end
             return nil
@@ -715,9 +760,6 @@ return function(opts)
             return items[id].range
         end,
     }
-    -- Item facts (H.setItemInfo): { name, quality, equipLoc, sellPrice, stats, usable }; the
-    -- client answers by id or by link, nil for an item it has not loaded.
-    local itemInfo, equipped = {}, {}
     local function itemID(item)
         if type(item) == "number" then return item end
         return tonumber(tostring(item):match("item:(%d+)"))
@@ -947,7 +989,11 @@ return function(opts)
         [1420] = "Tirisfal Glades", [1429] = "Elwynn Forest", [1434] = "Stranglethorn Vale", [1436] = "Westfall",
         [1437] = "Wetlands", [1438] = "Teldrassil", [1439] = "Darkshore", [1445] = "Dustwallow Marsh",
         [1453] = "Stormwind City", [1455] = "Ironforge", [1457] = "Darnassus", [1431] = "Duskwood",
-        [1433] = "Redridge Mountains" }
+        [1433] = "Redridge Mountains", [1412] = "Mulgore", [1426] = "Dun Morogh", [1446] = "Tanaris",
+        [1452] = "Winterspring", [1454] = "Orgrimmar", [1456] = "Thunder Bluff", [1458] = "Undercity",
+        [1432] = "Loch Modan", [1417] = "Arathi Highlands", [1441] = "Thousand Needles" }
+    -- Area names (C_Map.GetAreaInfo): the neutral towns.
+    local AREA_NAMES = { [35] = "Booty Bay", [976] = "Gadgetzan", [392] = "Ratchet", [2255] = "Everlook" }
     -- Sub-maps (a dungeon, a cave) of a zone: { name, mapType 4 or 5, parent zone }.
     local SUB_MAPS = { [1581] = { name = "The Deadmines", mapType = 4, parent = 1436 } }
     local function place(map)
@@ -976,6 +1022,7 @@ return function(opts)
             end
             return nil
         end,
+        GetAreaInfo = function(area) return AREA_NAMES[area] end,
         GetMapInfo = function(map)
             -- Real UiMapIDs are far below 90000: above, a map the client does not know.
             if type(map) ~= "number" or map >= 90000 then return nil end
@@ -1406,9 +1453,13 @@ return function(opts)
             for i, r in ipairs(rows) do
                 if plain(r.text) == "" then problem(("%s: row %d is empty"):format(label, i)) end
                 -- manual / skipped: a step the player marked done or skipped (Engine:StepMark);
-                -- header: a quest above its objectives; notice: a box for the whole window.
+                -- header: a quest above its objectives; notice: a box for the whole window;
+                -- button: a control (cancel the directory's trip); extra: a row added under the
+                -- step (a weapon to learn, training, gear, a talent, the wrap-up); other: another
+                -- quest's objective; section: a title ("Next steps", "Besides this step").
                 if not ({ done = true, todo = true, impossible = true, manual = true, skipped = true, preview = true,
-                    header = true, notice = true })[r.state] then
+                    header = true, notice = true, button = true, extra = true, other = true,
+                    section = true })[r.state] then
                     problem(("%s: row %d has no state (%s)"):format(label, i, tostring(r.state)))
                 end
             end
@@ -1896,6 +1947,12 @@ return function(opts)
     function H.talentCalls() return talentCalls end
     function H.resetTalents() talentRanks, talentPoints, talentCalls = {}, 0, {} end
     function H.forgetSpells() knownSpells, spellCooldowns = {}, {} end
+    function H.setSkillLines(names)
+        skillLines = names or {}
+        local any = names and #names > 0
+        _G.GetNumSkillLines = any and getNumSkillLines or nil
+        _G.GetSkillLineInfo = any and getSkillLineInfo or nil
+    end
     function H.setSpellCooldown(id, start, duration) spellCooldowns[id] = { start = start, duration = duration } end
     function H.setTrainerServices(list) trainerServices = list end
     function H.equipped(slot) return equipped[slot] end
@@ -1921,6 +1978,21 @@ return function(opts)
     -- What the player wears: H.equip(slot, item id or nil).
     function H.equip(slot, id) equipped[slot] = id end
     function H.clearEquipment() equipped = {} end
+    -- The game's NPC windows: the gossip, and the quest frame (greeting, details, progress,
+    -- reward), at the left panel's place. Ding only reads them (where they stand, whether they
+    -- are shown): any other method is missing, and writing a field fails.
+    local function npcWindow(kinds)
+        local left, top = 16, 652
+        return setmetatable({
+            IsVisible = function() return kinds[dialog.kind or ""] == true end,
+            GetLeft = function() return left end,
+            GetRight = function() return left + 338 end,
+            GetTop = function() return top end,
+            GetEffectiveScale = function() return 1 end,
+        }, { __newindex = function(_, key) error("Ding wrote " .. tostring(key) .. " on a game window", 2) end })
+    end
+    _G.GossipFrame = npcWindow({ gossip = true })
+    _G.QuestFrame = npcWindow({ greeting = true, detail = true, progress = true, complete = true })
     -- The quest window's reward buttons, like the client's (choices first).
     for i = 1, 6 do
         _G["QuestInfoRewardsFrameQuestInfoItem" .. i] = {

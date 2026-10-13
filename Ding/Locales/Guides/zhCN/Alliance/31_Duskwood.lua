@@ -5,4 +5,6 @@ Ding.RegisterGuideTranslation("zhCN", "alliance-31-duskwood", {
         "暮色森林 (31-32)",
     ["Back to Duskwood for the end of its quests: Darkshire is still your base."] =
         "返回暮色森林完成剩余任务：据点仍是夜色镇。",
+    ["Darkshire"] =
+        "夜色镇",
 })

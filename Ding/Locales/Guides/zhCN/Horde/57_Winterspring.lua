@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("zhCN", "horde-57-winterspring", {
         "冬泉谷 (55-56)",
     ["Winterspring is northeast of Felwood: Everlook is your base."] =
         "冬泉谷在费伍德森林东北：永望镇是据点。",
+    ["Everlook"] =
+        "永望镇",
     ["If the starting item dropped: use it from your bags."] =
         "如果掉落了任务起始物品：在背包中使用。",
     ["Finish the level on nearby monsters before moving on."] =

@@ -15,8 +15,6 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h11-thousand-needles", {
         "Desça de elevador até Mil Agulhas, siga a estrada rumo à Aldeia Vento Livre e suba de elevador",
     ["Fly to Freewind Post"] =
         "Voe até a Aldeia Vento Livre",
-    ["This one roams, so scan the surrounding area."] =
-        "Este se desloca, então procure pelos arredores.",
     ["The NPC is indoors."] =
         "O NPC está lá dentro.",
     ["Go into the cavern"] =
@@ -51,8 +49,10 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h11-thousand-needles", {
         "Procure ovos grandes.",
     ["For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears. Keep away from Heartrazor."] =
         "Nesta missão, você protege um NPC em movimento. Se o NPC não estiver lá, espere até ele reaparecer. Fique longe de Lamicárdio.",
-    ["Steelsnap is a brown hyena with 2 hyena escorts. The NPC patrols a long route; look along it. The target appears near 17.3, 22.2 in Thousand Needles."] =
-        "Steelsnap é uma hiena marrom com 2 hienas de escolta. O NPC patrulha uma rota longa; procure ao longo dela. O alvo aparece perto de 17.3, 22.2, em Mil Agulhas.",
+    ["Steelsnap is a brown hyena with 2 hyena escorts. The target patrols a long route; look along it. The target appears near 17.3, 22.2 in Thousand Needles."] =
+        "Steelsnap é uma hiena marrom com 2 hienas de escolta. O alvo patrulha uma rota longa; procure ao longo dela. O alvo aparece perto de 17.3, 22.2, em Mil Agulhas.",
+    ["This one roams, so scan the surrounding area."] =
+        "Este se desloca, então procure pelos arredores.",
     ["The target is a centaur, black in color. It roams a wide route. Leave it out if you'd rather not hunt for it."] =
         "O alvo é um centauro de cor preta. Ele percorre um trajeto amplo. Deixe de lado se preferir não procurá-lo.",
     ["The target is a centaur, black in color. It roams a wide route. His patrol crosses this spot two times."] =
@@ -65,14 +65,16 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h11-thousand-needles", {
         "Procure plantas espinhosas. Os alvos ficam debaixo d'água e ao longo da margem.",
     ["The quest giver waits in the tent."] =
         "Quem dá a missão espera na tenda.",
+    ["The NPC is indoors. You need it later for \"Frostmaw\": keep it in the bank to free a bag slot."] =
+        "O NPC está lá dentro. Você vai precisar dele mais tarde para \"Bocarragelo\": guarde-o no banco para liberar espaço nas bolsas.",
     ["Hard quests are coming up. This spreads out the grinding so less is left later."] =
         "Missões difíceis vêm por aí. Isso distribui a matança de monstros, e sobra menos para depois.",
     ["Climb the trail and cross the rope bridges"] =
         "Suba a trilha e atravesse as pontes de corda",
     ["Walk over the rope bridge"] =
         "Atravesse a ponte de corda",
-    ["The objective lies atop the mesa. The NPC is indoors."] =
-        "O objetivo fica no alto do platô. O NPC está lá dentro.",
+    ["The objective lies atop the mesa. The object is indoors."] =
+        "O objetivo fica no alto do platô. O objeto está lá dentro.",
     ["The objective lies atop the mesa."] =
         "O objetivo fica no alto do platô.",
     ["The objective lies atop the mesa. Be ready for a fight right away. The target is a level 28 elite."] =
@@ -93,6 +95,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h11-thousand-needles", {
         "Cuidado: os inimigos daqui têm nível acima do seu. Se morrer, volte à vida na Aldeia Mojache.",
     ["Fly to Camp Mojache"] =
         "Voe até a Aldeia Mojache",
+    ["Freewind Post"] =
+        "Aldeia Vento Livre",
     ["Fly to Gadgetzan"] =
         "Voe até Geringontzan",
     ["Watch out: the foes here are above your level."] =
@@ -103,6 +107,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h11-thousand-needles", {
         "Conclua também Water Sapta.",
     ["Stand on the metal grating to begin the battle. Shows up once you defeat six challengers."] =
         "Fique sobre a grade de metal para começar a batalha. Aparece depois que você derrota seis desafiantes.",
+    ["You need it later for \"Parts for Kravel\": keep it in the bank to free a bag slot."] =
+        "Você vai precisar dele mais tarde para \"Peças para Kravel\": guarde-o no banco para liberar espaço nas bolsas.",
     ["This NPC is found down in the Cleft of Shadow."] =
         "Este NPC fica lá embaixo, no Antro das Sombras.",
     ["This one roams, so scan the surrounding area. This NPC is found down in the Cleft of Shadow."] =

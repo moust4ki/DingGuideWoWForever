@@ -2,13 +2,17 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Alliance/08.lua.
--- Simulated (warrior): Human 20 (84%) -> 22 (49%) in 3 h 25, 17 quests turned in; Dwarf 20 (83%) -> 22 (48%) in 3 h 25, 17 quests turned in; NightElf 20 (84%) -> 22 (52%) in 3 h 25, 18 quests turned in; Gnome 20 (83%) -> 22 (48%) in 3 h 25, 17 quests turned in; Skyborne 20 (84%) -> 22 (48%) in 3 h 25, 17 quests turned in.
+-- Simulated (warrior): Human 20 (85%) -> 22 (49%) in 3 h 25, 17 quests turned in; Dwarf 20 (84%) -> 22 (48%) in 3 h 25, 17 quests turned in; NightElf 20 (85%) -> 22 (52%) in 3 h 25, 18 quests turned in; Gnome 20 (84%) -> 22 (48%) in 3 h 25, 17 quests turned in; Skyborne 20 (85%) -> 22 (49%) in 3 h 25, 17 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-a08-darkshore",
     title    = "Darkshore (20-21)",
     faction  = "Alliance",
     minLevel = 20, maxLevel = 21,
     next     = "leveling-a09-ashenvale-and-stonetalon-mountains",
+    leftOut  = {
+        [87760] = { kind = "detour", seconds = 180, xp = 1400 },
+        [98042] = { kind = "detour", seconds = 60, xp = 1100 },
+    },
     steps    = {
         { go = { 1439, 37.32, 43.64 }, text = "Travel to Auberdine", -- level 20
           note = "Darkshore: Auberdine, the port on the west coast." },
@@ -88,10 +92,10 @@ Ding.RegisterGuide({
         { destroy = 5251 }, -- level 22
         { turnin = 949, accept = 950 }, -- level 22
         { accept = 945, noauto = 945, -- level 22
-          note = "For this quest you guard an NPC on the move. If she is absent, wait for her to reappear. This one roams, so scan the surrounding area." },
+          note = "For this quest you guard an NPC on the move. If she is absent, wait for her to reappear." },
         { complete = 945, -- level 22
           note = "Let the conversation play out. Escort Therylune and defend her." },
-        { accept = 968, useitem = 5352, when = { item = 5352 } }, -- level 22
+        { accept = 968, useitem = 5352, when = { item = 5352 }, why = { continent = true, kind = "carry", quest = 968, seconds = 16800, xp = 2000 } }, -- level 22
         { turnin = 993, accept = 994, noauto = 994, -- level 22
           note = "For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears. Your objective lies in a little cavern." },
         { complete = 994, -- level 22

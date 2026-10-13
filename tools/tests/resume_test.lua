@@ -191,13 +191,31 @@ Ding.RegisterGuide({ id = "t-where", title = "Where I am", races = { "NightElf" 
     { turnin = P4, accept = P5 },       -- 9
 } })
 
-T.test("restart: picks up where we are, not at step 1 nor at the skipped quest", function()
+-- The character's place in the section (Ding.char.lastStep): where it was, as the engine
+-- saved it.
+local function wasAt(id, step)
+    Ding.char.lastStep = Ding.char.lastStep or {}
+    Ding.char.lastStep[id] = step
+end
+
+T.test("restart: the first step still to do, past the steps done", function()
     load({ [P1] = "turnedin", [P3] = "turnedin", [P4] = "log" }, 3, "t-where")
     E.index, E.hold = 1, true             -- the player went back to the start
     E:Reset(); H.flush()
-    T.eq(E.index, 8, "not realigned on the progress")
+    -- The quests alone never pass a step: P2 was never taken, it is still to do.
+    T.eq(E.index, 4, "a step still to do passed on the quests alone")
+    T.eq(E.resumeTo, nil)
+    E:Skip(); H.flush()
+    T.eq(E.index, 8, "the trainer and the steps done are not passed")
     T.ok(E:BackToIncomplete(), "the skipped step is no longer reachable")
     T.eq(E.index, 4, "back to the skipped step")
+end)
+
+T.test("a section picked again: up to the step the character was on, past what it left behind", function()
+    load({ [P1] = "turnedin", [P3] = "turnedin", [P4] = "log" }, 3, "t-resume")
+    wasAt("t-where", 8)
+    E:Resume("t-where", true); H.flush()
+    T.eq(E.index, 8, "not taken up where the character was")
 end)
 
 T.test("restart: a quest done ahead of time does not send us far into the guide", function()
@@ -208,16 +226,22 @@ end)
 
 T.test("restart: forgets the steps validated by hand, keeps the quests", function()
     load({ [P1] = "turnedin", [P3] = "turnedin", [P4] = "log" }, 3, "t-where")
-    Ding.char.manual["t-where"] = { [8] = true, [9] = true }
+    Ding.char.manual["t-where"] = { [4] = true, [9] = true }
     E:Reset(); H.flush()
     T.eq(Ding.char.manual["t-where"], nil)
-    T.eq(E.index, 8)
+    T.eq(E.index, 4)
 end)
 
+-- A section picked again with an old quest of it still in the log (P1 taken long ago, never
+-- finished; the character went on to step 8).
+local function oldQuest()
+    load({ [P1] = "log", [P3] = "turnedin", [P4] = "log" }, 3, "t-resume")
+    wasAt("t-where", 8)
+    E:Resume("t-where", true); H.flush()
+end
+
 T.test("resume: an old guide quest still in the log is finished first", function()
-    -- P1 taken long ago, never finished; the player went on (P3 turned in, P4 in the log).
-    load({ [P1] = "log", [P3] = "turnedin", [P4] = "log" }, 3, "t-where")
-    E:Reset(); H.flush()
+    oldQuest()
     T.eq(E.index, 2, "not led to the past quest to finish")
     T.quests({ [P1] = "ready" })
     T.eq(E.index, 3, "not led to the turn-in of the past quest")
@@ -228,22 +252,32 @@ T.test("resume: an old guide quest still in the log is finished first", function
     T.eq(Ding.char.resumeTo, nil)
 end)
 
-T.test("resume: kept after a reload, over if the quest is abandoned", function()
-    load({ [P1] = "log", [P3] = "turnedin", [P4] = "log" }, 3, "t-where")
-    E:Reset(); H.flush()
+T.test("resume: the next steps shown are the ones \"next\" goes to", function()
+    oldQuest()
     T.eq(E.index, 2)
-    T.ok(Ding.char.resumeTo and Ding.char.resumeTo.step == 7, "resume not saved")
+    T.ok(E:NextSteps(1)[1] == E.guide.steps[3], "the turn-in of the past quest is not shown next")
+    T.quests({ [P1] = "ready" })
+    T.eq(E.index, 3)
+    -- Steps 4 and 5 are left behind: the step after the turn-in is the player's place.
+    T.ok(E:NextSteps(1)[1] == E.guide.steps[8], "a step the resume passes is shown next")
+    E:Next(); H.flush()
+    T.eq(E.index, 8)
+end)
+
+T.test("resume: kept after a reload, over if the quest is abandoned", function()
+    oldQuest()
+    T.eq(E.index, 2)
+    T.ok(Ding.char.resumeTo and Ding.char.resumeTo.step == 8, "resume not saved")
     E.resumeTo = nil                     -- /reload: the engine starts again from the saved state
     E:Start(); H.flush()
-    T.eq(E.resumeTo, 7, "resume lost on reload")
+    T.eq(E.resumeTo, 8, "resume lost on reload")
     T.eq(E.index, 2)
     T.quests({ [P1] = false })           -- abandoned: nothing left to finish
     T.eq(E.index, 8)
 end)
 
 T.test("resume: \"back to a past step\" ends it", function()
-    load({ [P1] = "log", [P3] = "turnedin", [P4] = "log" }, 3, "t-where")
-    E:Reset(); H.flush()
+    oldQuest()
     E:Skip(); H.flush()
     T.eq(E.index, 3, "\"skip\" on the past quest")
     T.ok(E:BackToIncomplete())
@@ -264,9 +298,14 @@ Ding.RegisterGuide({ id = "t-backlog", title = "Backlog", races = { "NightElf" }
     { accept = R4 },                    -- 8
 } })
 
+local function backlogAt(states)
+    load(states, 3, "t-resume")
+    wasAt("t-backlog", 7)
+    E:Resume("t-backlog", true); H.flush()
+end
+
 T.test("resume: a past quest ready in the log is turned in first", function()
-    load({ [R1] = "ready", [R3] = "turnedin" }, 3, "t-backlog")
-    E:Reset(); H.flush()
+    backlogAt({ [R1] = "ready", [R3] = "turnedin" })
     T.eq(E.index, 5, "the turn-in of the past quest is skipped")
     T.quests({ [R1] = "turnedin" })
     T.eq(E.index, 8, "no return to the player's place")
@@ -274,14 +313,18 @@ end)
 
 T.test("resume: a past step whose quest is only accepted does not stop it", function()
     -- Step 1 has R1 in the log (taken: done) and R2 never taken: nothing to finish there.
-    load({ [R1] = "log", [R3] = "turnedin" }, 3, "t-backlog")
-    E:Reset(); H.flush()
+    backlogAt({ [R1] = "log", [R3] = "turnedin" })
     T.eq(E.index, 4, "stopped on a step with nothing to finish or turn in")
 end)
 
-T.test("login: the resume waits for the quest log before skipping steps", function()
-    load({ [P1] = "log", [P3] = "turnedin", [P4] = "log" }, 3, "t-where")
+T.test("restart: without the character's place, a quest never taken is still to do", function()
+    load({ [R1] = "ready", [R3] = "turnedin" }, 3, "t-backlog")
     E:Reset(); H.flush()
+    T.eq(E.index, 1, "R2, never taken, passed on the quests alone")
+end)
+
+T.test("login: the resume waits for the quest log before skipping steps", function()
+    oldQuest()
     T.eq(E.index, 2)
     -- Log in again: nothing known until the client sends the quest log.
     E.guide, E.index, E.resumeTo, E.logReady = nil, 1, nil, false
@@ -292,7 +335,7 @@ T.test("login: the resume waits for the quest log before skipping steps", functi
     H.fire("QUEST_LOG_UPDATE"); H.flush()
     T.eq(E.guide and E.guide.id, "t-where")
     T.eq(E.index, 2, "the past quest is skipped at login")
-    T.eq(E.resumeTo, 7, "resume lost")
+    T.eq(E.resumeTo, 8, "resume lost")
 end)
 
 T.test("login: with no log received, the guide still starts after a few seconds", function()
@@ -307,22 +350,26 @@ T.test("login: with no log received, the guide still starts after a few seconds"
 end)
 
 T.test("login: a guide changed by an update realigns the player's place", function()
-    load({ [P1] = "turnedin", [P3] = "turnedin", [P4] = "log" }, 3, "t-where")
-    E:Reset(); H.flush()
+    load({ [P1] = "turnedin", [P3] = "turnedin", [P4] = "log" }, 3, "t-resume")
+    wasAt("t-where", 8)
+    E:Resume("t-where", true); H.flush()
     T.eq(E.index, 8)
     T.eq(Ding.char.guideSig, E.Signature(E.guide))
     -- Same guide: the saved step is kept.
     Ding.char.step = 3
     E:Start(); H.flush()
     T.eq(E.index, 4, "saved step not kept")
-    -- The guide was regenerated: the saved step number means something else now.
-    Ding.char.step, Ding.char.guideSig = 3, Ding.char.guideSig + 1
+    -- The guide was regenerated: the saved step number means something else now. The guide
+    -- starts over and passes what is done, up to the section's saved place.
+    Ding.char.step, Ding.char.guideSig = 9, Ding.char.guideSig + 1
+    wasAt("t-where", 8)
     E:Start(); H.flush()
     T.eq(E.index, 8, "place not recomputed after the update")
 end)
 
 T.test("choosing a guide already started, or /ding guide: we resume where we are", function()
     load({ [P1] = "turnedin", [P3] = "turnedin", [P4] = "log" }, 3, "t-resume")
+    wasAt("t-where", 8)
     E:Resume("t-where", true); H.flush()
     T.eq(E.guide.id, "t-where")
     T.eq(E.index, 8)

@@ -15,8 +15,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a30-tanaris", {
         "這些敵人會潛行隱藏。",
     ["Head down the passage that opens on Lost Rigger Cove"] =
         "沿通往Lost Rigger Cove的通道往下走",
-    ["The NPC is indoors, one floor up."] =
-        "NPC在室內的樓上一層。",
+    ["The object is indoors, one floor up."] =
+        "這個物件在室內的樓上一層。",
     ["Few kills yield this item."] =
         "這個物品的掉落率很低。",
     ["Others can be found on raised wood platforms close by."] =
@@ -31,6 +31,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a30-tanaris", {
         "進入洞穴",
     ["Take the trail downhill"] =
         "沿小路下坡",
+    ["The NPC is indoors. You need it later for \"Deliver to MacKinley\": keep it in the bank to free a bag slot."] =
+        "NPC在室內。之後的任務「給馬克基雷的貨物」需要它：先存進銀行，空出背包空間。",
     ["Your objective lies in a little cavern."] =
         "目標在一個小洞穴裡。",
     ["Search the sand mounds."] =

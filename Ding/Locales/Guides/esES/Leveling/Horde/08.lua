@@ -5,8 +5,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h08-the-barrens", {
         "Los Baldíos (24-25)",
     ["Thunder Bluff first, then the Barrens. The NPC is indoors."] =
         "Primero Cima del Trueno y luego Los Baldíos. El PNJ está dentro.",
-    ["The NPC is indoors."] =
-        "El PNJ está dentro.",
+    ["The NPC is indoors. You need them later for \"Souvenirs of Death\" and \"Battle of Hillsbrad\": keep them in the bank to free bag slots."] =
+        "El PNJ está dentro. Los necesitarás más adelante para «Recuerdos de muerte» y «La batalla de Trabalomas»: déjalos en el banco para liberar huecos en las bolsas.",
     ["Go into the cavern"] =
         "Entra en la cueva",
     ["Your targets are within the cavern."] =
@@ -15,12 +15,16 @@ Ding.RegisterGuideTranslation("esES", "leveling-h08-the-barrens", {
         "Deja que termine la conversación. Tus objetivos están dentro de la cueva.",
     ["Head out of the cave"] =
         "Sal de la cueva",
+    ["The NPC is indoors."] =
+        "El PNJ está dentro.",
     ["This NPC is found down in the Cleft of Shadow."] =
         "Este PNJ está abajo, en la Grieta de la Sombra.",
     ["Visit the caged quilboar"] =
         "Visita al jabaespín enjaulado",
     ["Trade your Blood Shards to gain buffs. Trade any spare Blood Shards to him during your Barrens questing. Ask him for the Spirit of the Wind buff"] =
         "Cambia tus Fragmentos de sangre por beneficios. Mientras hagas misiones en Los Baldíos, cámbiale los Fragmentos de sangre que te sobren. Pídele el beneficio Spirit of the Wind",
+    ["Camp Taurajo"] =
+        "Campamento Taurajo",
     ["The target is a dinosaur with blue hide. The targets are spread over several spots."] =
         "El objetivo es un dinosaurio de piel azul. Los objetivos están repartidos en varios puntos.",
     ["Look for big boulders oozing green fluid. Expect a possible ambush while you gather it."] =
@@ -33,8 +37,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h08-the-barrens", {
         "El objetivo es un jabaespín con túnica roja. Este deambula, así que revisa los alrededores. El objetivo aparece en este punto.",
     ["This one roams, so scan the surrounding area. Beware of foes lurking in stealth."] =
         "Este deambula, así que revisa los alrededores. Cuidado con los enemigos ocultos en sigilo.",
-    ["Beware of foes lurking in stealth. The NPC is indoors."] =
-        "Cuidado con los enemigos ocultos en sigilo. El PNJ está dentro.",
+    ["Beware of foes lurking in stealth. The target is indoors."] =
+        "Cuidado con los enemigos ocultos en sigilo. El objetivo está dentro.",
     ["Kill Stalkers and Pathfinders. Beware of foes lurking in stealth."] =
         "Mata a acechadores y exploradores. Cuidado con los enemigos ocultos en sigilo.",
     ["Beware of foes lurking in stealth."] =
@@ -45,8 +49,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h08-the-barrens", {
         "Este deambula, así que revisa los alrededores. Los objetivos están repartidos en varios puntos.",
     ["Climb the trail"] =
         "Sube por el sendero",
-    ["The NPC can be indoors or out."] =
-        "El PNJ puede estar dentro o fuera.",
+    ["The target can be indoors or out."] =
+        "El objetivo puede estar dentro o fuera.",
     ["The objective sits up on the raised deck. Keep some range when you use the item."] =
         "El objetivo está arriba, en la cubierta elevada. Mantén algo de distancia al usar el objeto.",
     ["With the coming hand-ins, this gets you to level 25."] =

@@ -29,8 +29,12 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a32-stranglethorn-vale", {
         "목표는 43레벨 정예 흰 호랑이입니다. 레벨이 더 낮은 작은 몬스터 2마리를 불러냅니다. 둘 다 정예가 아닙니다. 생명력이 약 50%로 떨어졌을 때입니다.",
     ["Look underneath the bridge. Your targets sit below the water's surface."] =
         "다리 아래를 찾아보세요. 대상은 수면 아래에 있습니다.",
+    ["Booty Bay"] =
+        "무법항",
     ["Your objective lies in a little cavern."] =
         "목표는 작은 동굴 안에 있습니다.",
+    ["Stormwind City"] =
+        "스톰윈드",
     ["Head down into the Deeprun Tram station"] =
         "깊은굴 지하철 역으로 내려가세요",
     ["Pass through the portal to teleport."] =

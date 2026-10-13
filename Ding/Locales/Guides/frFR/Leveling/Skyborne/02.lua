@@ -5,8 +5,12 @@ Ding.RegisterGuideTranslation("frFR", "leveling-s02-skyborne-horde", {
         "Départ skyborne (1-13)",
     ["Everything starts on Zephras Isle: follow the arrow from NPC to NPC."] =
         "Tout commence sur l'île de Zephras : suis la flèche de PNJ en PNJ.",
+    ["Coriella Calmbreeze"] =
+        "Coriella Calmbreeze",
     ["Finish the level on nearby monsters before moving on."] =
         "Finis le niveau sur les monstres du coin avant la suite.",
+    ["Donaal Downbreeze"] =
+        "Donaal Downbreeze",
     ["If the starting item dropped: use it from your bags."] =
         "Si l'objet de départ est tombé : utilise-le depuis ton sac.",
 })

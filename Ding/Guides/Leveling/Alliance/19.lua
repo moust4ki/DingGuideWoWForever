@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Alliance/19.lua.
--- Simulated (warrior): Human 37 (21%) -> 38 (14%) in 4 h 00, 13 quests turned in; Dwarf 37 (21%) -> 38 (14%) in 3 h 56, 13 quests turned in; NightElf 37 (23%) -> 38 (14%) in 3 h 53, 13 quests turned in; Gnome 37 (21%) -> 38 (14%) in 3 h 56, 13 quests turned in; Skyborne 37 (21%) -> 38 (14%) in 3 h 56, 13 quests turned in.
+-- Simulated (warrior): Human 37 (22%) -> 38 (14%) in 3 h 58, 13 quests turned in; Dwarf 37 (32%) -> 38 (14%) in 3 h 24, 13 quests turned in; NightElf 37 (35%) -> 38 (14%) in 3 h 11, 13 quests turned in; Gnome 37 (38%) -> 38 (14%) in 3 h 02, 13 quests turned in; Skyborne 37 (37%) -> 38 (14%) in 3 h 06, 13 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-a19-stranglethorn-vale",
     title    = "Stranglethorn Vale (37-38)",
@@ -70,7 +70,7 @@ Ding.RegisterGuide({
           note = "The targets are on the cave floor." },
         { complete = 574, -- level 37
           note = "These foes hide in stealth. The targets are on the cave floor." },
-        { unbank = 4306, keep = 4306, -- level 37
+        { collect = { { 4306, 15 } }, keep = 4306, -- level 37
           note = "Targets are spread across the whole cavern. Hold on to it for a Searing Gorge task later." },
         { go = { 1434, 45.88, 8.15 }, elite = true, text = "Head out of the cave" }, -- level 37
         { complete = 192, elite = true, sticky = 195, -- level 37
@@ -91,7 +91,7 @@ Ding.RegisterGuide({
         { complete = 189, -- level 37
           note = "The targets are trolls." },
         { complete = 1712, classes = { "WARRIOR" } }, -- level 37
-        { level = 37, xp = 69700, patrol = { { 1434, 24.56, 11.34 }, { 1434, 22.76, 10.35 }, { 1434, 22.37, 13.17 }, { 1434, 25.43, 13.65 }, { 1434, 27.25, 11.15 }, { 1434, 29.43, 12.17 }, { 1434, 25.44, 9.14 } }, -- level 37
+        { level = 37, xp = 69700, patrol = { { 1434, 24.56, 11.34 }, { 1434, 22.76, 10.35 }, { 1434, 22.37, 13.17 }, { 1434, 25.43, 13.65 }, { 1434, 27.25, 11.15 }, { 1434, 29.43, 12.17 }, { 1434, 25.44, 9.14 } }, why = { kind = "level", levels = { 36, 41 } }, -- level 37
           note = "With the coming hand-ins, this gets you to level 38." },
         { turnin = 195, accept = 196 }, -- level 37
         { turnin = 188 }, -- level 37
@@ -107,24 +107,40 @@ Ding.RegisterGuide({
           note = "Climb to the highest floor of the building." },
         { turnin = 189, -- level 38
           note = "Climb to the highest floor of the building." },
-        { turnin = 601, accept = 602, -- level 38
+        { turnin = 601, accept = 602, why = { kind = "carry", quest = 602, seconds = 23940, xp = 1400 }, -- level 38
           note = "The NPC is upstairs, out on the balcony." },
-        { talk = 2625, bank = { 3960, 4306 } }, -- level 38
-        { bank = 2725, when = { item = 2725 } }, -- level 38
-        { bank = 2728, when = { item = 2728 } }, -- level 38
-        { bank = 2730, when = { item = 2730 } }, -- level 38
-        { bank = 2732, when = { item = 2732 } }, -- level 38
-        { bank = 2734, when = { item = 2734 } }, -- level 38
-        { bank = 2735, when = { item = 2735 } }, -- level 38
-        { bank = 2738, when = { item = 2738 } }, -- level 38
-        { bank = 2740, when = { item = 2740 } }, -- level 38
-        { bank = 2742, when = { item = 2742 } }, -- level 38
-        { bank = 2744, when = { item = 2744 } }, -- level 38
-        { bank = 2745, when = { item = 2745 } }, -- level 38
-        { bank = 2748, when = { item = 2748 } }, -- level 38
-        { bank = 2749, when = { item = 2749 } }, -- level 38
-        { bank = 2750, when = { item = 2750 } }, -- level 38
-        { bank = 2751, when = { item = 2751 } }, -- level 38
+        { talk = 2625, bank = { 3960, 4306 }, -- level 38
+          note = "You need them later for \"Magical Analysis\" and \"Caught!\": keep them in the bank to free bag slots." },
+        { bank = 2725, when = { item = 2725 }, -- level 38
+          note = "You need it later for \"Chapter I\": keep it in the bank to free a bag slot." },
+        { bank = 2728, when = { item = 2728 }, -- level 38
+          note = "You need it later for \"Chapter I\": keep it in the bank to free a bag slot." },
+        { bank = 2730, when = { item = 2730 }, -- level 38
+          note = "You need it later for \"Chapter I\": keep it in the bank to free a bag slot." },
+        { bank = 2732, when = { item = 2732 }, -- level 38
+          note = "You need it later for \"Chapter I\": keep it in the bank to free a bag slot." },
+        { bank = 2734, when = { item = 2734 }, -- level 38
+          note = "You need it later for \"Chapter II\": keep it in the bank to free a bag slot." },
+        { bank = 2735, when = { item = 2735 }, -- level 38
+          note = "You need it later for \"Chapter II\": keep it in the bank to free a bag slot." },
+        { bank = 2738, when = { item = 2738 }, -- level 38
+          note = "You need it later for \"Chapter II\": keep it in the bank to free a bag slot." },
+        { bank = 2740, when = { item = 2740 }, -- level 38
+          note = "You need it later for \"Chapter II\": keep it in the bank to free a bag slot." },
+        { bank = 2742, when = { item = 2742 }, -- level 38
+          note = "You need it later for \"Chapter III\": keep it in the bank to free a bag slot." },
+        { bank = 2744, when = { item = 2744 }, -- level 38
+          note = "You need it later for \"Chapter III\": keep it in the bank to free a bag slot." },
+        { bank = 2745, when = { item = 2745 }, -- level 38
+          note = "You need it later for \"Chapter III\": keep it in the bank to free a bag slot." },
+        { bank = 2748, when = { item = 2748 }, -- level 38
+          note = "You need it later for \"Chapter III\": keep it in the bank to free a bag slot." },
+        { bank = 2749, when = { item = 2749 }, -- level 38
+          note = "You need it later for \"Chapter IV\": keep it in the bank to free a bag slot." },
+        { bank = 2750, when = { item = 2750 }, -- level 38
+          note = "You need it later for \"Chapter IV\": keep it in the bank to free a bag slot." },
+        { bank = 2751, when = { item = 2751 }, -- level 38
+          note = "You need it later for \"Chapter IV\": keep it in the bank to free a bag slot." },
         { turnin = 577, -- level 38
           note = "The NPC stands on the top tier of the pier. The NPC is indoors." },
     },

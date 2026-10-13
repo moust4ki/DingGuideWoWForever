@@ -27,10 +27,14 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h05-the-barrens-and-stonetalon-m
         "搜查成堆的棕色箱子。目标分布在好几个地点。",
     ["Flight master in Ratchet"] =
         "棘齿城的飞行管理员",
+    ["You need them later for \"The Disruption Ends\" and \"Supplies for the Crossroads\": keep them in the bank to free bag slots."] =
+        "之后的任务“野猪人的头目”和“十字路口的补给品”需要它们：先存进银行，腾出背包空间。",
     ["The target is a troll. This one roams, so scan the surrounding area."] =
         "目标是一个巨魔。它会四处游荡，在周围找找。",
     ["The target is a human in a crimson long coat. This one roams, so scan the surrounding area. The targets are spread over several spots."] =
         "目标是一个穿着深红色长外套的人类。它会四处游荡，在周围找找。目标分布在好几个地点。",
+    ["Ratchet"] =
+        "棘齿城",
     ["The targets are the striped zhevras."] =
         "目标是带条纹的斑马。",
     ["Go into the water beside the rock that bubbles. Your targets sit below the water's surface."] =
@@ -43,22 +47,28 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h05-the-barrens-and-stonetalon-m
         "击杀鹰身人。",
     ["Up to two foes might jump you."] =
         "最多可能有两个敌人突袭你。",
+    ["The target is indoors."] =
+        "目标在室内。",
     ["Kill the purple raptors. Targets are found across the entire Barrens. Slay any you come across along the way."] =
         "击杀紫色的迅猛龙。目标遍布整个贫瘠之地。路上遇到的都杀掉。",
     ["Climb the trail"] =
         "沿小路往上爬",
     ["With the coming hand-ins, this gets you to level 18."] =
         "加上接下来交的任务，你会升到18级。",
+    ["You need it later for \"Chen's Empty Keg\": keep it in the bank to free a bag slot."] =
+        "之后的任务“老陈的空酒桶”需要它：先存进银行，腾出背包空间。",
     ["This NPC is found down in the Cleft of Shadow."] =
         "该NPC在下面的暗影裂口里。",
     ["The NPC stands on the highest level of this structure."] =
         "NPC在这座建筑的最高层。",
     ["Learn Staves at the weapon master"] =
         "向武器大师学习法杖",
-    ["Steal from Gamon using Pick Pocket. The NPC is indoors."] =
-        "对Gamon使用搜索偷取。NPC在室内。",
+    ["Steal from Gamon using Pick Pocket. The target is indoors."] =
+        "对Gamon使用搜索偷取。目标在室内。",
     ["Use it on Tazan's Satchel. The item is already in your inventory."] =
         "对Tazan's Satchel使用它。物品已经在你的背包里了。",
+    ["The Crossroads"] =
+        "十字路口",
     ["For this quest you guard an NPC on the move. If the NPC is gone, hold on until it reappears."] =
         "这个任务需要保护一个行进中的NPC。如果NPC不在，就等它重新出现。",
     ["This one roams, so scan the surrounding area. Check the upper and lower tiers of the structure."] =
@@ -83,6 +93,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h05-the-barrens-and-stonetalon-m
         "目标在水面以下。",
     ["Defeat Kolkar foes around Stagnant Oasis. Sooner or later a yell shows up in the chat window. Watch for his yell: I am summoned! Verog arrives after a shout dares intruders to his tent to die."] =
         "在死水绿洲周围击败科卡尔敌人。聊天窗口迟早会出现一句喊话。留意他的喊话：“我被召唤了！”有人喊话叫闯入者到他的帐篷来送死之后，Verog就会出现。",
+    ["Camp Taurajo"] =
+        "陶拉祖营地",
     ["Flight master at Camp Taurajo"] =
         "陶拉祖营地的飞行管理员",
     ["Circle the mountain on foot."] =
@@ -127,12 +139,12 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h05-the-barrens-and-stonetalon-m
         "向武器大师学习枪械",
     ["Learn Maces at the weapon master"] =
         "向武器大师学习单手锤",
+    ["Thunder Bluff"] =
+        "雷霆崖",
     ["Fly to Thunder Bluff"] =
         "飞往雷霆崖",
     ["Go into the cavern"] =
         "进入洞穴",
-    ["This one roams, so scan the surrounding area. Your targets are within the cavern."] =
-        "它会四处游荡，在周围找找。目标在洞穴里。",
     ["Your targets are within the cavern."] =
         "目标在洞穴里。",
     ["Head out of the cave"] =

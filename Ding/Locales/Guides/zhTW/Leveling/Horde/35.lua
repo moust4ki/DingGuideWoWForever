@@ -7,8 +7,6 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h35-felwood-and-winterspring", {
         "前往翡翠聖地",
     ["Felwood: Emerald Sanctuary, in the south of the zone."] =
         "費伍德森林：翡翠聖地，位於區域南部。",
-    ["This one roams, so scan the surrounding area."] =
-        "這個會四處走動，留意周圍一帶。",
     ["The NPC is indoors."] =
         "NPC在室內。",
     ["Hand these in afterwards for experience and reputation."] =
@@ -49,6 +47,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h35-felwood-and-winterspring", {
         "把寵物寄放在獸欄管理員那裡。",
     ["You will tame a short-term pet shortly. You pick up Claw (Rank 7) here."] =
         "你很快就要馴服一隻臨時寵物。你在這裡學到爪擊（等級7）。",
+    ["The NPC is indoors. You need them later for \"Delivery to Magatha\" and \"Seeping Corruption\": keep them in the bank to free bag slots."] =
+        "NPC在室內。之後的任務「瑪加薩的石版」和「墮落之水」需要它們：先存進銀行，空出背包空間。",
     ["Flight master at Everlook"] =
         "永望鎮的飛行管理員",
     ["Tame a beast here to learn the next rank of Claw"] =
@@ -59,8 +59,12 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h35-felwood-and-winterspring", {
         "NPC在樓上，位於外面的陽台。",
     ["The NPC is indoors. Hold on to it for a task in Un'Goro Crater later."] =
         "NPC在室內。留著它，之後在安戈洛環形山的任務會用到。",
+    ["The NPC is indoors. You need it later for \"Jes'rimon's Payment to Jediga\": keep it in the bank to free a bag slot."] =
+        "NPC在室內。之後的任務「傑斯雷蒙的報酬」需要它：先存進銀行，空出背包空間。",
     ["Get your companion back from the stable master."] =
         "從獸欄管理員那裡領回你的寵物。",
     ["Release the short-term pet you tamed."] =
         "放棄你馴服的臨時寵物。",
+    ["Camp Taurajo"] =
+        "陶拉祖營地",
 })

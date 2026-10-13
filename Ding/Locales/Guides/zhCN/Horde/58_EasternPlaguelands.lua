@@ -5,4 +5,6 @@ Ding.RegisterGuideTranslation("zhCN", "horde-58-epl", {
         "东瘟疫之地 (56)",
     ["The Eastern Plaguelands continue the Western ones to the east: Light's Hope Chapel is in the east."] =
         "东瘟疫之地紧邻西瘟疫之地东侧：圣光之愿礼拜堂在东部。",
+    ["Light's Hope Chapel"] =
+        "圣光之愿礼拜堂",
 })

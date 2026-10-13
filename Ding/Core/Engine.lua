@@ -103,17 +103,43 @@ function E:ConditionsHold(when)
     return true
 end
 
-function Ding:StepApplies(step)
-    if not self:StepMatchesPlayer(step) then return false end
+-- The setting that hides a step ("elites", "dungeons", "hearth"...), or nil.
+function Ding:StepOptionOff(step)
     local ui = self.db and self.db.ui
-    if ui then
-        for _, o in ipairs(STEP_OPTIONS) do
-            if step[o.key] and not ui[o.option] then return false end
-        end
-        if step.dungeon and not self:DungeonWanted(step.dungeon) then return false end
+    if not ui then return nil end
+    for _, o in ipairs(STEP_OPTIONS) do
+        if step[o.key] and not ui[o.option] then return o.option end
     end
+    if step.dungeon and not self:DungeonWanted(step.dungeon) then return "dungeons" end
+    return nil
+end
+
+function Ding:StepApplies(step)
+    if not self:StepForCharacter(step) then return false end
     if step.when and not E:ConditionsHold(step.when) then return false end
     return true
+end
+
+-- A step for this character: its race, class and options (StepApplies without the `when`
+-- conditions, which come and go with quests and items). The steps the window numbers.
+function Ding:StepForCharacter(step)
+    return self:StepMatchesPlayer(step) and not self:StepOptionOff(step)
+end
+
+-- The number of step `index` among the character's steps of `guide` (the active one by
+-- default), and how many there are: "Step 18 / 74", never the guide file's index, which
+-- counts the steps of other races, classes and options (Yendi read 111 -> 114 as a jump).
+function E:StepNumber(index, guide)
+    guide = guide or self.guide
+    if not guide then return 0, 0 end
+    local n, total = 0, 0
+    for i, s in ipairs(guide.steps) do
+        if Ding:StepForCharacter(s) then
+            total = total + 1
+            if i <= index then n = n + 1 end
+        end
+    end
+    return math.max(n, math.min(1, total)), total
 end
 
 -- Dungeons the active guide and the sections of its pack name (`dungeon`), in their order.
@@ -216,6 +242,7 @@ end
 local function isTurnedIn(q)
     return E.turnedIn[q] or Compat.IsQuestCompleted(q)
 end
+function E:IsTurnedIn(q) return isTurnedIn(q) and true or false end
 
 local function isAccepted(q)
     return isTurnedIn(q) or Compat.IsInLog(q)
@@ -505,15 +532,31 @@ function E:CatchUp(q, step)
     return found
 end
 
--- Resuming (guide just loaded, quest data may still arrive): a quest turned in anywhere
--- further down the guide means the player is past this step. Accepts don't count: a quest
--- can be picked up early, out of the guide's order.
+-- Work left on a quest the player has in the log: finishing it (complete) or turning it in.
+-- Resuming stops on such a step of the guide's past; accepts of quests never taken are
+-- left behind.
+local function backlog(step)
+    for _, q in ipairs(step.complete or {}) do
+        if Compat.IsInLog(q) and not isReady(q) then return true end
+    end
+    for _, q in ipairs(step.turnin or {}) do
+        if Compat.IsInLog(q) and not isTurnedIn(q) then return true end
+    end
+    return false
+end
+
+-- Resuming (guide just loaded, quest data may still arrive): a quest turned in further down
+-- the guide means the player is past this step. Accepts don't count: a quest can be picked
+-- up early, out of the guide's order. Nor do turn-ins past a step with work left on a quest
+-- of the log: the player is not past that one, and those quests were done out of the
+-- guide's order (a zone done earlier, the second half of the section).
 local function laterTurnIn(index)
     local steps = E.guide.steps
     for i = index + 1, #steps do
         local s = steps[i]
         if Ding:StepApplies(s) then
             for _, q in ipairs(s.turnin or {}) do if isTurnedIn(q) and not early(q) then return true end end
+            if backlog(s) then return false end
         end
     end
     return false
@@ -660,44 +703,6 @@ function E:GuideProgress(guide)
     return worked, left
 end
 
--- Where the player is in a guide, from quests only: the last step where they turned a
--- quest in, provided they worked on at least half of the quest steps up to there (turned
--- in, or in the log): a quest done early, out of the guide's order, must not send them far
--- ahead. 1 when not started.
-function E:ProgressStep(guide)
-    local best, steps, worked = 1, 0, 0
-    for i, step in ipairs(guide.steps) do
-        if not step.optional and hasQuestActions(step) and Ding:StepApplies(step) then
-            steps = steps + 1
-            local turned, touched = false, false
-            for _, key in ipairs({ "turnin", "accept", "complete" }) do
-                for _, q in ipairs(step[key] or {}) do
-                    if not early(q) then
-                        if isTurnedIn(q) then turned = true end
-                        if isAccepted(q) then touched = true end
-                    end
-                end
-            end
-            if touched then worked = worked + 1 end
-            if turned and worked * 2 >= steps then best = i end
-        end
-    end
-    return best
-end
-
--- Work left on a quest the player has in the log: finishing it (complete) or turning it in.
--- Resuming stops on such a step of the guide's past; accepts of quests never taken are
--- left behind.
-local function backlog(step)
-    for _, q in ipairs(step.complete or {}) do
-        if Compat.IsInLog(q) and not isReady(q) then return true end
-    end
-    for _, q in ipairs(step.turnin or {}) do
-        if Compat.IsInLog(q) and not isTurnedIn(q) then return true end
-    end
-    return false
-end
-
 -- Until the client has sent the quest log, every quest looks absent: resuming then would
 -- pass the very quests the player still has to turn in.
 local function logKnown()
@@ -722,8 +727,10 @@ E.Signature = signature
 -- The step the character is on, saved; and per section (Ding.char.lastStep) where the
 -- character was, or where a resume still in progress is going: picking a section again
 -- takes it up there, whatever the game cannot check on the way (a trip, a trainer, the
--- inn, a step behind an option turned on since, a goal whose items are spent).
+-- inn, a step behind an option turned on since, a goal whose items are spent). Browsing
+-- back with "Previous" (E.browseFrom) saves the guide's current step, not the one shown.
 local function saveStep(index)
+    if E.hold and E.browseFrom then index = math.max(index, E.browseFrom) end
     Ding.char.step = index
     local guide = E.guide
     if not guide then return end
@@ -740,17 +747,17 @@ end
 ---------------------------------------------------------------------------
 -- Navigation
 ---------------------------------------------------------------------------
--- Takes the guide up where the player is. From the first step, Advance passes what is
--- done and what the player left behind, but stops on any quest of the guide's past still
--- in the log with work left (to finish or to turn in): that is done first. Then the guide
--- goes on from the player's place: the furthest of E:ProgressStep (from the quests) and of
--- the step the character was on in this section before (saveStep).
+-- Takes the guide up where the player is. From the first step, Advance passes what the
+-- game shows done (quests turned in, accepted, ready; level reached) and what the player
+-- marked. Up to the step the character was on in this section before (saveStep), it also
+-- passes what the player left behind, but stops on any quest of the guide's past still in
+-- the log with work left (to finish or to turn in): that is done first. Never further on
+-- the quests alone: quests done out of the guide's order (a zone done earlier, in another
+-- guide) sent characters far ahead, past the quests, trainers and trips still to do
+-- (Redridge before Duskwood, then the Wetlands at level 24 before the route's Wetlands).
 function E:Resume(id, silent)
-    local guide = Ding:GetGuide(id)
-    local target = guide and self:ProgressStep(guide)
     local last = Ding.char.lastStep and Ding.char.lastStep[id]
-    if target and last and last > target then target = last end
-    return self:SetGuide(id, 1, silent, target)
+    return self:SetGuide(id, 1, silent, last)
 end
 
 -- Switches to a guide pack: the section the character last followed in it (Ding.char.packGuide)
@@ -774,6 +781,15 @@ function E:SetPack(packId)
     return self:Resume(guide.id)
 end
 
+-- The player moves the guide (next, skip, back, another step or section): a trip of the NPC
+-- directory (UI/Finder.lua) ends, and the refresh that follows gives the arrow back to the guide.
+local function endTrip()
+    local F = Ding.Finder
+    if not (F and F.trip) then return false end
+    F:Cancel(true)
+    return true
+end
+
 -- resumeTo: optional, see E:Resume.
 function E:SetGuide(id, index, silent, resumeTo)
     local guide = Ding:GetGuide(id)
@@ -781,10 +797,11 @@ function E:SetGuide(id, index, silent, resumeTo)
         Ding:Print(L.GUIDE_UNKNOWN:format(tostring(id)))
         return false
     end
+    endTrip()
     self.guide = guide
     self.index = index or 1
     setResumeTo(resumeTo and resumeTo > self.index and resumeTo or nil)
-    self.skipNotes = nil
+    self.skipNotes, self.passNotes = nil, nil
     self.hold = false
     self.finished = false
     Ding.char.guide = id
@@ -836,11 +853,54 @@ function E:FindQuest(q)
     return nil
 end
 
+-- The step turns in the quest the player has just turned in: the player is at that step.
+local JUST = 30    -- seconds: its next quest, from the same NPC, comes in that time
+local function turnedInHere(step)
+    local last = E.lastTurnIn
+    if not last or GetTime() - last.at > JUST then return false end
+    for _, q in ipairs(step.turnin or {}) do
+        if q == last.quest then return true end
+    end
+    return false
+end
+
+-- Resuming: a step the player left behind (no work left on a quest in the log, before the
+-- player's place) is passed. Not one where the player just turned a quest in: its next quest
+-- comes a moment later, from the same NPC (in game, "Ormer's Revenge" turned in, its sequel
+-- not taken yet: the resume passed the step that takes it and the one that completes it).
+function E:LeftBehind(step, index)
+    return self.resumeTo ~= nil and index < self.resumeTo and logKnown() and not backlog(step)
+        and not turnedInHere(step)
+end
+
+-- Why the guide passed a step for the character by itself, in a word the window says
+-- (Panel, "Step passed: … — you are already there."): "there" (a trip whose place was
+-- reached), "trip" (nothing left where it leads), "ahead" (the player is past it: later
+-- progress), "marked" (done by hand before), "optional", "notneeded" (its conditions do
+-- not hold), "done" (the game shows its quests done).
+local SEEN = 2    -- seconds on a step before the window has shown it (its hold is 1.5 s)
+local function passReason(step, index)
+    if not Ding:StepApplies(step) then return "notneeded" end
+    if isManuallyDone(index) then return step.go and "there" or "marked" end
+    if step.optional and not questActionsDone(step) then return "optional" end
+    if travelOnly(step) and pointlessTrip(index, 0) then return "trip" end
+    if step.go or step.sethearth or step.train or step.hearth or step.fly or not hasAutoActions(step) then
+        return "ahead"
+    end
+    return "done"
+end
+
 -- Move forward over every finished step. Returns true if the step changed.
+-- E.skipNotes: the quests passed (grey, level too low); E.passNotes: the steps for the
+-- character the guide passed by itself in play, never shown ({ index, reason }): a number
+-- that jumps is never silent. Not the step on screen (the window keeps it 1.5 s, done), unless
+-- it had only just come; none while a guide is taken up (the first seconds after loading).
 function E:Advance()
     if self.hold or not self.guide then return false end
     local startGuide, startIndex = self.guide, self.index
-    local notes = {}
+    local notes, passed = {}, {}
+    local fresh = self.since ~= nil and GetTime() - self.since < SEEN
+    local tell = not self:IsResuming() and not wrappingUp()
     while true do
         local step = self.guide.steps[self.index]
         if not step then
@@ -857,11 +917,14 @@ function E:Advance()
                 break
             end
         elseif self:IsStepDone(step, self.index) then
+            local before = #notes
             if Ding:StepApplies(step) then skipNotes(step, notes) end
+            if tell and #notes == before and self.guide == startGuide and Ding:StepForCharacter(step)
+                and (self.index > startIndex or fresh) then
+                passed[#passed + 1] = { index = self.index, reason = passReason(step, self.index) }
+            end
             self.index = self.index + 1
-        elseif self.resumeTo and self.index < self.resumeTo and logKnown() and not backlog(step) then
-            -- Resuming: a step the player left behind (no work left on a quest in the log)
-            -- is passed.
+        elseif self:LeftBehind(step, self.index) then
             self.index = self.index + 1
         else
             self.finished = false
@@ -871,19 +934,85 @@ function E:Advance()
     if self.resumeTo and self.index >= self.resumeTo then setResumeTo(nil) end
     saveStep(self.index)
     local moved = startGuide ~= self.guide or startIndex ~= self.index
-    if moved then self.skipNotes = notes end
+    if moved then self.skipNotes, self.passNotes, self.since = notes, passed, GetTime() end
     return moved
+end
+
+-- The window still shows the step the engine just finished (Panel:EndHold): "next" and
+-- "skip" only bring the step it moved to, which the player has not seen yet.
+local function heldOnScreen()
+    return Ding.Panel and Ding.Panel.EndHold and Ding.Panel:EndHold() or false
+end
+
+---------------------------------------------------------------------------
+-- Browsing: "Previous" shows the steps before the guide's current step (E.browseFrom) one
+-- at a time, done or not; "Next" then shows the step right after the one on screen (the next
+-- one for the character's race, class and options), marking nothing, until the current step
+-- is back. Only there does "Next" mean "mark done and move on".
+---------------------------------------------------------------------------
+function E:IsBrowsing()
+    return self.hold and self.browseFrom ~= nil and self.index < self.browseFrom
+end
+
+-- Shows step `index`, before the guide's current step, without moving the guide ("Go to
+-- step" on a step behind). False when it is not behind.
+function E:BrowseTo(index)
+    if not (self.guide and self.guide.steps[index]) then return false end
+    local current = self.hold and self.browseFrom or self.index
+    if index >= current then return false end
+    endTrip()
+    Ding.Timing:Cancel()
+    self.browseFrom = current
+    self.index, self.hold, self.finished, self.skipNotes, self.passNotes = index, true, false, nil, nil
+    saveStep(index)
+    self:Refresh()
+    return true
+end
+
+-- "Next" while browsing: the step right after the one on screen.
+local function browseNext()
+    local steps, i = E.guide.steps, E.index + 1
+    while i < E.browseFrom and not Ding:StepApplies(steps[i]) do i = i + 1 end
+    E.index, E.skipNotes, E.passNotes = i, nil, nil
+    if i >= E.browseFrom then
+        -- The guide's current step again: it goes on as before (done meanwhile, it moves on).
+        E.index, E.browseFrom, E.hold = E.browseFrom, nil, false
+        E:Advance()
+        Ding.Timing:Start(E.guide.id, E.index)
+    else
+        saveStep(i)
+    end
+    E:Refresh()
 end
 
 function E:Next()
     if not self.guide then return end
+    local ended = endTrip()
+    if heldOnScreen() then
+        if ended then self:Refresh() end
+        return
+    end
+    if self:IsBrowsing() then return browseNext() end
+    self:MarkDone()
+end
+
+-- Marks the step on screen done and moves on to the next step still to do (the step menu's
+-- "Mark as done"; "Next" on the guide's current step).
+function E:MarkDone()
+    if not self.guide then return end
+    local ended = endTrip()
+    if heldOnScreen() then
+        if ended then self:Refresh() end
+        return
+    end
     if self.guide.steps[self.index] then
         Ding.Timing:Finish(self.guide.id, self.index)
         setManuallyDone(self.index, true)
         setSkipped(self.index, false)
         self.index = self.index + 1
     end
-    self.hold = false
+    -- The step it comes to was never on screen: passed at once, the window says so.
+    self.hold, self.since, self.skipNotes, self.passNotes = false, GetTime(), nil, nil
     self:Advance()
     Ding.Timing:Start(self.guide.id, self.index)
     self:Refresh()
@@ -894,19 +1023,51 @@ end
 -- timed; BackToIncomplete (or Prev) returns to it.
 function E:Skip()
     if not self.guide or self.finished then return end
+    local ended = endTrip()
+    if heldOnScreen() then
+        if ended then self:Refresh() end
+        return
+    end
     local step = self.guide.steps[self.index]
     if step and not self:IsStepDone(step, self.index) then setSkipped(self.index, true) end
     self.index = self.index + 1
-    self.hold = false
+    self.hold, self.since, self.skipNotes, self.passNotes = false, GetTime(), nil, nil
     self:Advance()
     Ding.Timing:Start(self.guide.id, self.index)
     self:Refresh()
+end
+
+-- Undoes "mark as done" or "skip, do it later" on a step (the current one by default): its
+-- mark goes, it is to do again unless the game says it is done. Still to do, the guide goes
+-- back to it (like BackToIncomplete); done, the guide goes on from where the player is.
+-- Returns false when the step had no mark.
+function E:Unmark(index)
+    if not self.guide then return false end
+    index = index or self.index
+    if not self:StepMark(index) then return false end
+    endTrip()
+    setManuallyDone(index, false)
+    setSkipped(index, false)
+    local step = self.guide.steps[index]
+    if step and not self:IsStepDone(step, index) and index ~= self.index then
+        Ding.Timing:Cancel()
+        setResumeTo(nil)
+        self.index = index
+        self.finished = false
+        saveStep(index)
+        Ding.Timing:Start(self.guide.id, index)
+    end
+    self.hold = false
+    self:Advance()
+    self:Refresh()
+    return true
 end
 
 -- Back to the nearest earlier step still to do (one that was skipped). Returns false
 -- when every earlier step is done.
 function E:BackToIncomplete()
     if not self.guide then return false end
+    endTrip()
     local steps = self.guide.steps
     local from = math.min(self.index, #steps + 1) - 1
     for i = from, 1, -1 do
@@ -928,14 +1089,17 @@ end
 
 function E:Prev()
     if not self.guide or self.index <= 1 then return end
+    endTrip()
     Ding.Timing:Cancel()
+    -- The guide's current step, kept while the player browses back (E:IsBrowsing).
+    if not (self.hold and self.browseFrom) then self.browseFrom = self.index end
     self.index = self.index - 1
     -- Skip steps meant for other races or classes.
     while self.index > 1 and not Ding:StepApplies(self.guide.steps[self.index]) do
         self.index = self.index - 1
     end
     -- The step keeps how the player left it (marked done, skipped): the window shows it.
-    self.skipNotes = nil
+    self.skipNotes, self.passNotes = nil, nil
     self.hold = true
     self.finished = false
     saveStep(self.index)
@@ -1061,19 +1225,21 @@ local function stickySet()
     return Ding.char.sticky
 end
 
--- The sticky quests of the steps reached so far join the set; turned-in ones leave it.
+-- The sticky quests of the steps reached so far join the set; turned-in ones leave it, and
+-- so do the ones the active guide only makes sticky further on (the player went back to an
+-- earlier step): never "Still to do" before its step. Those of an earlier section stay.
 function E:NoteSticky()
     if not self.guide then return end
     local set = stickySet()
-    local steps = self.guide.steps
-    for i = 1, math.min(self.index, #steps) do
-        local s = steps[i]
+    local reached = {}    -- [q] = true when a step up to the current one makes q sticky
+    for i, s in ipairs(self.guide.steps) do
         if s.sticky and Ding:StepApplies(s) then
             for _, q in ipairs(asList(s.sticky)) do
-                if type(q) == "number" then set[q] = true end
+                if type(q) == "number" then reached[q] = reached[q] or i <= self.index end
             end
         end
     end
+    for q, now in pairs(reached) do set[q] = now or nil end
     for q in pairs(set) do
         if isTurnedIn(q) then set[q] = nil end
     end
@@ -1166,9 +1332,16 @@ function E:StepCandidates(step, index)
         end
     end
 
-    for _, q in ipairs(step.complete or {}) do
-        if isAccepted(q) and not isReady(q) then
-            for _, target in ipairs(pendingTargets(q)) do appendAll(points, target.points) end
+    -- Objectives to finish: the step's `complete` quests, and the quests it turns in that are
+    -- not ready yet (never straight to the turn-in of a quest whose objectives are not done:
+    -- in game, "Ormer's Revenge" without its raptor's talon).
+    local working = {}
+    for _, key in ipairs({ "complete", "turnin" }) do
+        for _, q in ipairs(step[key] or {}) do
+            if not working[q] and isAccepted(q) and not isReady(q) then
+                working[q] = true
+                for _, target in ipairs(pendingTargets(q)) do appendAll(points, target.points) end
+            end
         end
     end
     -- Goals without a quest: their monsters, items' sources, NPCs, objects, vendors.
@@ -1416,7 +1589,20 @@ function E:Describe(step, preview)
     end
     -- A quest to turn in or work on that is not in the log cannot be done yet.
     local function impossible(q) return not preview and not isAccepted(q) or nil end
+    local completes = {}
+    for _, q in ipairs(step.complete or {}) do completes[q] = true end
     for _, q in ipairs(step.turnin or {}) do
+        -- In the log, its objectives not done: they come first, never a bare "turn in" (in
+        -- game, "Ormer's Revenge" without its raptor's talon).
+        if not completes[q] and Compat.IsInLog(q) and not isReady(q) then
+            lines[#lines + 1] = { icon = ICON.complete, action = "complete", quest = q, done = false,
+                text = L.COMPLETE .. " " .. questLabel(q) }
+            for _, obj in ipairs(Compat.GetObjectives(q)) do
+                if obj.text and not obj.finished then
+                    lines[#lines + 1] = { indent = true, kind = "objective", text = obj.text }
+                end
+            end
+        end
         local who = Ding.Data:FinisherName(q)
         lines[#lines + 1] = { icon = ICON.turnin, action = "turnin", quest = q, done = isTurnedIn(q),
             impossible = impossible(q),
@@ -1454,8 +1640,8 @@ function E:Describe(step, preview)
         local status = current and Ding.Grind:Status(whole, into)
         if status then
             line.counter = L.LEVEL_PERCENT:format(status.percent)
-            line.sub = L.XP_LEFT:format(Compat.Number(status.missing)) .. " · "
-                .. (status.rested and L.KILLS_LEFT_RESTED or L.KILLS_LEFT):format(status.kills)
+            line.sub = (status.rested and L.LEVEL_LEFT_RESTED or L.LEVEL_LEFT):format(Compat.Number(status.missing),
+                status.kills)
         end
         local spot = current and not hasQuestActions(step) and Ding.Grind:Spot(self.index)
         if spot then
@@ -1465,7 +1651,10 @@ function E:Describe(step, preview)
         end
     end
     if step.sethearth then
-        lines[#lines + 1] = { icon = ICON.other, action = "manual", text = L.SETHEARTH:format(tostring(step.sethearth)) }
+        -- The place in the player's language (the guide's translation); `true`: the inn here.
+        local place = step.sethearthText or (type(step.sethearth) == "string" and step.sethearth or nil)
+        lines[#lines + 1] = { icon = ICON.other, action = "manual",
+            text = place and L.SETHEARTH:format(place) or L.SETHEARTH_HERE }
     end
     if step.train then
         lines[#lines + 1] = { icon = ICON.other, action = "manual", text = type(step.train) == "string" and step.train or L.TRAIN }
@@ -1571,13 +1760,22 @@ function E:WrapUp(choice)
     return true
 end
 
--- The next steps still to do after the current one (preview), `count` at most.
+-- The next steps still to do after the current one (preview), `count` at most: the ones
+-- "next" goes to, one after the other (not those a resume passes).
 function E:NextSteps(count)
     local out, steps = {}, self.guide and self.guide.steps or {}
+    local browsing = self:IsBrowsing()
     for i = self.index + 1, #steps do
         if #out >= count then break end
         local s = steps[i]
-        if not self:IsStepDone(s, i) then out[#out + 1] = s end
+        -- Browsing back: up to the guide's current step, every step for the character.
+        local shown
+        if browsing and i < self.browseFrom then
+            shown = Ding:StepApplies(s)
+        else
+            shown = not self:IsStepDone(s, i) and not self:LeftBehind(s, i)
+        end
+        if shown then out[#out + 1] = s end
     end
     return out
 end
@@ -1628,7 +1826,10 @@ end
 E.ScheduleUpdate = scheduleUpdate
 
 Ding:On("QUEST_TURNED_IN", function(_, questID)
-    if questID then E.turnedIn[questID] = true end
+    if questID then
+        E.turnedIn[questID] = true
+        E.lastTurnIn = { quest = questID, at = GetTime() }
+    end
     scheduleUpdate()
 end)
 Ding:On("QUEST_ACCEPTED", scheduleUpdate)

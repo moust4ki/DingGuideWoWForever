@@ -3,8 +3,8 @@
 Ding.RegisterGuideTranslation("zhCN", "leveling-h12-hillsbrad-foothills", {
     ["Hillsbrad Foothills (30-32)"] =
         "希尔斯布莱德丘陵 (30-32)",
-    ["Undercity first, then Hillsbrad Foothills: Tarren Mill."] =
-        "先到幽暗城，再到希尔斯布莱德丘陵：塔伦米尔。",
+    ["Undercity first, then Hillsbrad Foothills: Tarren Mill. You need it later for \"The Swarm Grows\": keep it in the bank to free a bag slot."] =
+        "先到幽暗城，再到希尔斯布莱德丘陵：塔伦米尔。之后的任务“疯狂的虫群”需要它：先存进银行，腾出背包空间。",
     ["Learn Cooking from the trainer"] =
         "向训练师学习烹饪",
     ["You'll need this to pick up an upcoming quest."] =
@@ -17,8 +17,6 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h12-hillsbrad-foothills", {
         "等对话结束",
     ["The NPC is indoors."] =
         "NPC在室内。",
-    ["This one roams, so scan the surrounding area."] =
-        "它会四处游荡，在周围找找。",
     ["The NPC is indoors. Head north along the river to reach the NPC."] =
         "NPC在室内。沿河向北走到该NPC处。",
     ["Targets are in the cavern and around its entrance too."] =
@@ -27,10 +25,12 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h12-hillsbrad-foothills", {
         "前面有一个困难的任务。这里的敌人等级比你高。目标在洞穴里，洞口周围也有。",
     ["Head out of the cave"] =
         "离开洞穴",
-    ["Draw foes one at a time if you can. Do not take on the whole group together. The NPC is indoors."] =
-        "尽量一次只引一个敌人。不要同时和一整群敌人打。NPC在室内。",
-    ["The NPC can be indoors or out."] =
-        "NPC可能在室内，也可能在室外。",
+    ["Draw foes one at a time if you can. Do not take on the whole group together. The target is indoors."] =
+        "尽量一次只引一个敌人。不要同时和一整群敌人打。目标在室内。",
+    ["The target is indoors."] =
+        "目标在室内。",
+    ["The target can be indoors or out."] =
+        "目标可能在室内，也可能在室外。",
     ["Go into the cavern"] =
         "进入洞穴",
     ["Descend the ramp, then stay on the trail"] =
@@ -47,8 +47,10 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h12-hillsbrad-foothills", {
         "目标在地下的矿井里。",
     ["Targets here are human. The objective is underground, in the mine shaft."] =
         "这里的目标是人类。目标在地下的矿井里。",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "它会四处游荡，在周围找找。NPC在室内。",
+    ["This one roams, so scan the surrounding area."] =
+        "它会四处游荡，在周围找找。",
+    ["This one roams, so scan the surrounding area. The target is indoors."] =
+        "它会四处游荡，在周围找找。目标在室内。",
     ["Warden Belamoore stands guard over it. The target is a mage of level 36. Fight Kegan, breaking her line of sight with doors and stairways."] =
         "Warden Belamoore守着它。目标是一个36级的法师。与Kegan战斗，利用门和楼梯卡她的视野。",
     ["While Shield Guards glow, stop your melee attacks on them. Expect heavy damage from it. Targets here are human."] =

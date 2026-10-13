@@ -7,6 +7,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a28-feralas-and-tanaris", {
         "Tanaris: zuerst Gadgetzan, dann Feralas: Mondfederfeste.",
     ["The NPC is indoors."] =
         "Der NPC ist drinnen.",
+    ["Feathermoon Stronghold"] =
+        "Mondfederfeste",
     ["The NPC is indoors, one floor up."] =
         "Der NPC ist drinnen, ein Stockwerk höher.",
     ["Position yourself in its center."] =
@@ -79,14 +81,22 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a28-feralas-and-tanaris", {
         "Deine Ziele sind in der Höhle.",
     ["Let the conversation play out. Your targets are within the cavern."] =
         "Lass das Gespräch zu Ende laufen. Deine Ziele sind in der Höhle.",
+    ["The object is indoors, one floor up."] =
+        "Das Objekt ist drinnen, ein Stockwerk höher.",
+    ["You need them later for \"The Borrower\", \"Screecher Spirits\", \"The Super Egg-O-Matic\" and \"Rhapsody's Kalimdor Kocktail\": keep them in the bank to free bag slots."] =
+        "Du brauchst sie später für „Der Borger“, „Kreischergeister“, „Der Super-Ei-O-Mat“ und „Rhapsodys Kalimdor-Cocktail“: Lass sie in der Bank, das spart Taschenplätze.",
     ["Getting it here speeds up Un'Goro Crater. The NPC is indoors."] =
         "Wenn du es hier holst, geht der Krater von Un'Goro schneller. Der NPC ist drinnen.",
+    ["You need them later for \"Crystals of Power\": keep them in the bank to free bag slots."] =
+        "Du brauchst sie später für „Machtkristalle“: Lass sie in der Bank, das spart Taschenplätze.",
     ["Step into the cavern within the trunk"] =
         "Geh in die Höhle im Baumstamm",
     ["The spot is on the lower floor of the hollow tree."] =
         "Die Stelle ist auf der unteren Ebene des hohlen Baums.",
     ["Stay clear of the elite foes. Be ready for a fight right away."] =
         "Halte dich von den Elitegegnern fern. Mach dich sofort auf einen Kampf gefasst.",
+    ["Gadgetzan"] =
+        "Gadgetzan",
     ["The NPC waits on the lower level, indoors. A lengthy stretch of quests is coming up. This vendor sells no arrows or bullets."] =
         "Der NPC wartet drinnen auf der unteren Ebene. Gleich kommt eine lange Questphase. Dieser Händler verkauft keine Pfeile oder Kugeln.",
 })

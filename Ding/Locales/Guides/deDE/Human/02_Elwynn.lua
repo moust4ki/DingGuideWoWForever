@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("deDE", "human-02-elwynn", {
         "Wald von Elwynn (5-12)",
     ["Goldshire is your base for the whole forest: inn, class trainers and quests."] =
         "Goldhain ist deine Basis für den ganzen Wald: Gasthaus, Klassenlehrer und Quests.",
+    ["Goldshire"] =
+        "Goldhain",
     ["If the starting item dropped: use it from your bags."] =
         "Startgegenstand erbeutet? Benutze ihn aus deinen Taschen.",
     ["Finish the level on nearby monsters before moving on."] =

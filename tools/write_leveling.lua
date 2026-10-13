@@ -1,7 +1,7 @@
 -- Ding - Leveling from the Leveling routes (tools/routes/leveling/<faction>.lua): the route's order is
 -- kept, and the script changes it as little as possible for Forever.
 -- usage: lua5.1 tools/write_leveling.lua <combined dir> <Leveling route> [--out <dir>] [--dry-run]
---                                    [--report] [--no-additions] [--deviation]
+--                                    [--report] [--no-additions] [--deviation] [--free-quests <file>] [--why]
 --
 -- 1. Tags: a quest done in a dungeon or against elites carries its tag on every one of its
 --    steps (split from untagged quests of the same step), and so do its follow-ups; the go
@@ -20,6 +20,12 @@
 --    warrior: the "-- level N" of each step is the lowest level a race reaches there.
 -- 5. A trip to the place the character's previous step already took it (the steps in between
 --    being for others) is left out for that character.
+-- 6. Free quests (tools/route_free.lua): a quest the route leaves out although it costs almost
+--    nothing on its way is a warning; --free-quests writes them, with the borderline ones, for
+--    tools/audit_free_quests.lua.
+-- 7. Reasons (tools/route_why.lua): a step whose choice surprises (a detour, a quest taken now
+--    or never) gets its `why`, measured on the simulation; the audit's verdicts on the quests
+--    the route leaves out become each section's `leftOut`. --why lists them.
 -- Writes Ding/Guides/<file> and its translations (tools/routes/locales).
 local here = arg[0]:match("^(.*)[/\\]") or "."
 local root = here:match("^(.*)[/\\]tools$") or (here == "." and "..") or (here .. "/..")
@@ -30,10 +36,13 @@ local Travel = dofile(here .. "/route_travel.lua")
 local Work = dofile(here .. "/route_work.lua")
 local Texts = dofile(here .. "/guide_texts.lua")
 local Solver = dofile(here .. "/route_solver.lua")
+local Free = dofile(here .. "/route_free.lua")
+local Why = dofile(here .. "/route_why.lua")
 local QK = X.QUEST
 local P = Model.PARAMS
 
-local COMBINED, ROUTE, OUT, DRY, REPORT, ADDITIONS, DEVIATION = nil, nil, nil, false, false, true, false
+local COMBINED, ROUTE, OUT, DRY, REPORT, ADDITIONS, DEVIATION, FREE_OUT = nil, nil, nil, false, false, true, false, nil
+local WHY_REPORT = false
 do
     local i = 1
     while arg[i] do
@@ -49,6 +58,11 @@ do
             ADDITIONS = false
         elseif a == "--deviation" then
             DEVIATION = true
+        elseif a == "--free-quests" then
+            i = i + 1
+            FREE_OUT = arg[i]
+        elseif a == "--why" then
+            WHY_REPORT = true
         elseif not COMBINED then
             COMBINED = a
         elseif not ROUTE then
@@ -59,7 +73,7 @@ do
 end
 if not COMBINED or not ROUTE then
     io.stderr:write("usage: lua5.1 tools/write_leveling.lua <combined dir> <Leveling route> [--out <dir>] [--dry-run]"
-        .. " [--report] [--no-additions] [--deviation]\n")
+        .. " [--report] [--no-additions] [--deviation] [--free-quests <file>] [--why]\n")
     os.exit(2)
 end
 local OUT_LOCALES = OUT and (OUT .. "/Locales")
@@ -1042,7 +1056,8 @@ local function nearest(points, pos, trip, level)
 end
 
 -- Plays a race's chain as a warrior: { levels = { [step uid] = level }, nodes = { { p, level,
--- step, section, log } }, sections = { [id] = { from, to, time, turnins } } }.
+-- step, section, log, time, work } }, sections = { [id] = { from, to, time, turnins } },
+-- accepted / turned = { [quest] = node } }; a node's `work`: the jobs of route_work.lua done there.
 -- A step's conditions in the simulation: the player holds what the route buys or carries
 -- (items are not simulated).
 local function simWhen(when, st)
@@ -1066,37 +1081,51 @@ local function simulate(race)
     local st = { level = ENTRIES[race] and ENTRIES[race].level or 1, xp = 0, time = 0, pos = nil, log = {},
         size = 0, done = {}, bind = nil,
         hearthReady = 0 }
-    local res = { levels = {}, nodes = {}, sections = {} }
+    local res = { levels = {}, nodes = {}, sections = {}, accepted = {}, turned = {}, visits = {}, xpOf = {} }
     local known = {}
     for _, a in ipairs(CAPITALS[FACTION]) do known[a] = true end
     local net, trip
+    -- The step being played, for tools/route_why.lua: its time on the way, grinding, XP,
+    -- quests and places (read only by the reasons, never by the route).
+    local cur
     local function gain(amount)
         if st.level >= 60 then return end
+        if cur then cur.xp = cur.xp + amount end
         st.level, st.xp = Model.addXP(st.level, st.xp, amount)
         if st.level >= 60 then st.level, st.xp = 60, 0 end
     end
     local function grindTo(target)
+        local from = st.time
         while st.level < target and st.level < 60 do
             local need = Model.xpTo(st.level, st.xp, st.level + 1)
             st.time = st.time + need / Model.grindRate(st.level)
             st.level, st.xp = st.level + 1, 0
         end
+        if cur then cur.grind = cur.grind + st.time - from end
     end
     local function moveTo(p, section, step)
         if not p then return end
+        local t = 0
         if st.pos then
-            local t = trip(st.pos, p, st.level)
+            t = trip(st.pos, p, st.level)
             if st.bind and st.time >= st.hearthReady then
                 local th = P.hearthTime + trip(st.bind, p, st.level)
                 if th + P.hearthGain < t then
                     t = th
                     st.hearthReady = st.time + P.hearthCooldown
+                    if cur then cur.hearth = true end
                 end
             end
             st.time = st.time + t
+            if cur then cur.travel = cur.travel + t end
+        end
+        if cur then
+            cur.places[#cur.places + 1] = p
+            cur.legs[#cur.legs + 1] = t
         end
         st.pos = p
-        res.nodes[#res.nodes + 1] = { p = p, level = st.level, step = step, section = section, log = st.size }
+        res.nodes[#res.nodes + 1] = { p = p, level = st.level, step = step, section = section, log = st.size,
+            time = st.time }
     end
     res.starts = {}
     for _, section in ipairs(chains[race]) do
@@ -1113,6 +1142,8 @@ local function simulate(race)
             if applies(section, step, race, SIM_CLASS) and not tagged(step) and not step.deathskip
                 and simWhen(step.when, st) then
                 res.levels[step.uid] = st.level
+                cur = { step = step, section = section, from = st.time, pos0 = st.pos, level = st.level, travel = 0,
+                    grind = 0, xp = 0, turned = {}, accepted = {}, places = {}, legs = {} }
                 if step.go then moveTo(D.point(step.go[1], step.go[2], step.go[3]), section, step) end
                 for _, q in ipairs(step.turnin or {}) do
                     local quest = db.Quest[q]
@@ -1143,6 +1174,7 @@ local function simulate(race)
                                 for _, o in ipairs(opts) do
                                     if o.entry == best then
                                         moveTo(o.entry, section, step)
+                                        res.nodes[#res.nodes].work = o.jobs
                                         st.time = st.time + o.time
                                         for _, j in ipairs(o.jobs) do
                                             if j.kills > 0 then gain(j.kills * Model.mobXP(j.mobLevel or st.level, st.level) * P.killXPMargin) end
@@ -1156,10 +1188,14 @@ local function simulate(race)
                         moveTo(nearest(questPoints(q, "e"), st.pos, trip, st.level), section, step)
                         st.time = st.time + P.npcTime
                         local xp, estimated = D.questXP(q, quest)
-                        gain(Model.questXP(xp, quest[QK.questLevel] or st.level, st.level) * (estimated and P.killXPMargin or 1))
+                        local amount = Model.questXP(xp, quest[QK.questLevel] or st.level, st.level) * (estimated and P.killXPMargin or 1)
+                        res.xpOf[q] = amount
+                        cur.turned[#cur.turned + 1] = q
+                        gain(amount)
                         st.log[q] = nil
                         st.size = st.size - 1
                         st.done[q] = true
+                        res.turned[q] = #res.nodes
                         stats.turnins = stats.turnins + 1
                     end
                 end
@@ -1173,6 +1209,8 @@ local function simulate(race)
                         st.time = st.time + P.npcTime
                         st.log[q] = X.hasObjectives(quest) and 1 or 2
                         st.size = st.size + 1
+                        res.accepted[q] = #res.nodes
+                        cur.accepted[#cur.accepted + 1] = q
                     end
                 end
                 for _, q in ipairs(step.complete or {}) do
@@ -1188,6 +1226,7 @@ local function simulate(race)
                             end
                             if best then
                                 moveTo(best.entry, section, step)
+                                res.nodes[#res.nodes].work = best.jobs
                                 st.time = st.time + best.time
                                 for _, j in ipairs(best.jobs) do
                                     if j.kills > 0 then gain(j.kills * Model.mobXP(j.mobLevel or st.level, st.level) * P.killXPMargin) end
@@ -1203,7 +1242,9 @@ local function simulate(race)
                     -- (level + xp, or a fraction of the level: grind that far into it.)
                     local want = step.xp or (step.level % 1) * (Model.XP_TO_LEVEL[st.level] or 0)
                     if st.level == math.floor(step.level) and want > st.xp then
-                        st.time = st.time + (want - st.xp) / Model.grindRate(st.level)
+                        local t = (want - st.xp) / Model.grindRate(st.level)
+                        st.time = st.time + t
+                        cur.grind = cur.grind + t
                         st.xp = want
                     end
                 end
@@ -1226,8 +1267,14 @@ local function simulate(race)
                     st.pos = st.bind
                     st.time = st.time + P.hearthTime
                     st.hearthReady = st.time + P.hearthCooldown
+                    cur.hearth, cur.travel = true, cur.travel + P.hearthTime
+                    cur.places[#cur.places + 1] = st.bind
+                    cur.legs[#cur.legs + 1] = P.hearthTime
                 end
                 if step.fly or step.train then st.time = st.time + P.npcTime end
+                cur.to, cur.pos, cur.levelTo = st.time, st.pos, st.level
+                res.visits[#res.visits + 1] = cur
+                cur = nil
             end
         end
         stats.to = st.level + st.xp / (Model.XP_TO_LEVEL[st.level] or 1)
@@ -1538,6 +1585,132 @@ if ADDITIONS then
     indexSections()
     for _, race in ipairs(RACES) do sims[race] = simulate(race) end
 end
+
+---------------------------------------------------------------------------
+-- 6. Free quests (tools/route_free.lua): left out by the route, almost free on its way
+---------------------------------------------------------------------------
+-- Where each step stands in the route: its section and the route step it comes after.
+local routePos = {}
+for _, section in ipairs(sections) do
+    local src = 0
+    for _, step in ipairs(section.out) do
+        if step.base and step.src then src = step.src end
+        routePos[step] = { section = section.id, after = src }
+    end
+end
+local free
+do
+    -- (The route's own quests, those the replay left out included, and Forever's added ones.)
+    local known = {}
+    for q in pairs(routeQuests) do known[q] = true end
+    for _, section in ipairs(sections) do
+        for _, step in ipairs(section.out) do
+            for _, k in ipairs(QUEST_KEYS) do
+                for _, q in ipairs(step[k] or {}) do known[q] = true end
+            end
+        end
+    end
+    local paths = {}
+    for _, race in ipairs(RACES) do
+        local sim = sims[race]
+        local trips, nodes = {}, {}
+        for id, start in pairs(sim.starts) do trips[id] = start.trip end
+        for _, n in ipairs(sim.nodes) do
+            nodes[#nodes + 1] = { p = n.p, level = n.level, log = n.log, time = n.time, step = n.step,
+                section = n.section.id, work = n.work }
+        end
+        paths[race] = { nodes = nodes, accepted = sim.accepted, turned = sim.turned, trips = trips }
+    end
+    free = Free.audit({
+        db = db, D = D, Jobs = Jobs, faction = FACTION, races = RACES, raceBit = RACE_BIT, logLimit = LOG_LIMIT,
+        known = known, exclude = route.exclude, paths = paths,
+        rate = function(race, id)
+            local s = sims[race].sections[id]
+            if not s or s.time <= 0 then return nil end
+            return (Free.totalXP(s.to) - Free.totalXP(s.from)) / s.time
+        end,
+        -- New steps follow a step every character of the race plays: no class, option nor condition.
+        anchor = function(step)
+            return not tagged(step) and not step.deathskip and not step.when and not step.optional and not step.classes
+        end,
+        position = function(step)
+            local pos = routePos[step]
+            return pos.section .. "#" .. pos.after
+        end,
+    })
+end
+---------------------------------------------------------------------------
+-- 7. Reasons (tools/route_why.lua): what a surprising step brings, measured on the simulation
+---------------------------------------------------------------------------
+local reasons = Why.reasons({ db = db, races = RACES, sims = sims })
+-- A detour also made for what the simulation does not value (a trainer, a vendor, a bank, a
+-- flight path, the inn, an NPC to talk to), on any step of it for any class: its quests are not
+-- the whole reason, so none is given.
+do
+    local order, at = {}, {}
+    for _, section in ipairs(sections) do
+        for _, step in ipairs(section.out) do
+            order[#order + 1] = step
+            at[step] = #order
+        end
+    end
+    local OTHER = { "train", "vendor", "repair", "buy", "bank", "unbank", "sethearth", "fly", "talk" }
+    for step, r in pairs(reasons) do
+        if r.kind == "detour" then
+            for i = at[step], at[r.last] or at[step] do
+                for _, k in ipairs(OTHER) do
+                    if order[i][k] ~= nil and not (k == "talk" and questActions(order[i]) > 0) then reasons[step] = nil end
+                end
+            end
+        end
+    end
+end
+-- Quests the audit looked at and left out, with the route's reason: in the section where it
+-- measured them, else the first section on the map of their giver.
+local leftOutBy, nLeftOut = {}, 0
+do
+    local firstOn = {}
+    for i, section in ipairs(sections) do
+        for _, m in ipairs(section.uiMaps or {}) do firstOn[m] = firstOn[m] or i end
+    end
+    for _, q in ipairs(sortedKeys(free.quests)) do
+        local o = free.quests[q]
+        local entry = Why.leftOut(o)
+        if entry then
+            local id = o.section
+            if not id then
+                local quest, best = db.Quest[q], nil
+                for _, p in ipairs(quest and D.giverPoints(quest[QK.startedBy]) or {}) do
+                    local i = firstOn[p.map]
+                    if i and (not best or i < best) then best = i end
+                end
+                id = best and sections[best].id
+            end
+            if id then
+                leftOutBy[id] = leftOutBy[id] or {}
+                leftOutBy[id][q] = entry
+                nLeftOut = nLeftOut + 1
+            end
+        end
+    end
+end
+if WHY_REPORT then
+    local list = {}
+    for step, r in pairs(reasons) do list[#list + 1] = { step = step, r = r, pos = routePos[step] } end
+    table.sort(list, function(a, b)
+        if a.pos.section ~= b.pos.section then return a.pos.section < b.pos.section end
+        return a.step.uid < b.step.uid
+    end)
+    for _, e in ipairs(list) do
+        local r = e.r
+        io.stderr:write(("why %-6s %-5s %-46s after %3d: %s %s, %s XP (named %s, chain %d, %d quests), %d s, level %d%s%s%s%s\n"):format(
+            r.kind, r.short and "SHORT" or "", e.pos.section, e.pos.after, tostring(r.action),
+            r.quest and questName(r.quest) or "-", Why.thousands(r.xp), Why.thousands(r.questXP), r.chain or 0,
+            #r.quests, r.seconds, r.level, r.steps and (" " .. r.steps .. " steps") or "", r.back and " back" or "",
+            r.continent and " continent" or "", r.next and (" next " .. r.next[1] .. "-" .. r.next[2]) or ""))
+    end
+end
+
 ---------------------------------------------------------------------------
 -- The 10 % rule (--deviation): would our optimizer gain that much on a section?
 ---------------------------------------------------------------------------
@@ -1827,6 +2000,7 @@ for _, race in ipairs(RACES) do
 end
 
 local DICTIONARIES = Texts.load(root .. "/tools/routes/locales")
+local whyWritten, whyShort = {}, {}
 local missingTexts = {}
 local summary = {}
 for _, section in ipairs(sections) do
@@ -1906,6 +2080,11 @@ for _, section in ipairs(sections) do
             if step.races then parts[#parts + 1] = "races = " .. strList(step.races) end
             if step.classes then parts[#parts + 1] = "classes = " .. strList(step.classes) end
             if text then parts[#parts + 1] = "text = " .. quote(text) end
+            if reasons[step] then
+                parts[#parts + 1] = "why = " .. luaValue(Why.data(reasons[step]))
+                whyWritten[reasons[step].kind] = (whyWritten[reasons[step].kind] or 0) + 1
+                if reasons[step].short then whyShort[reasons[step].kind] = (whyShort[reasons[step].kind] or 0) + 1 end
+            end
             local note = step.note
             if step == first and opening then note = note and (opening .. " " .. note) or opening end
             steps[#steps + 1] = { parts = parts, note = note, level = l, text = text }
@@ -1937,6 +2116,13 @@ for _, section in ipairs(sections) do
     if section.races then lines[#lines + 1] = "    races    = " .. strList(section.races) .. "," end
     lines[#lines + 1] = ("    minLevel = %d, maxLevel = %d,"):format(section.minLevel, section.maxLevel)
     if section.next then lines[#lines + 1] = "    next     = " .. quote(section.next) .. "," end
+    -- Quests the section leaves out, and why (the window beside an NPC says it).
+    local left = leftOutBy[section.id]
+    if left then
+        lines[#lines + 1] = "    leftOut  = {"
+        for _, q in ipairs(sortedKeys(left)) do lines[#lines + 1] = ("        [%d] = %s,"):format(q, luaValue(left[q])) end
+        lines[#lines + 1] = "    },"
+    end
     lines[#lines + 1] = "    steps    = {"
     for _, s in ipairs(steps) do
         local body = table.concat(s.parts, ", ")
@@ -2011,6 +2197,62 @@ end
 local nMissing = 0
 for _ in pairs(missingTexts) do nMissing = nMissing + 1 end
 if nMissing > 0 then print(("Texts without translation: %d (locale: text)"):format(nMissing)) end
+
+-- Free quests: a warning for each one, the file of the audit (tools/audit_free_quests.lua).
+local function stepLabel(step)
+    local parts = {}
+    for _, k in ipairs(QUEST_KEYS) do
+        if step[k] and #step[k] > 0 then parts[#parts + 1] = k .. " " .. table.concat(step[k], ",") end
+    end
+    if step.go then parts[#parts + 1] = ("go %d %s,%s"):format(step.go[1], step.go[2], step.go[3]) end
+    if step.level then parts[#parts + 1] = "level " .. step.level end
+    for _, k in ipairs({ "talk", "vendor", "train", "fly", "sethearth", "hearth" }) do
+        if step[k] then parts[#parts + 1] = k end
+    end
+    return #parts > 0 and table.concat(parts, ", ") or "?"
+end
+local freeOut, nFree, nBorder = {}, 0, 0
+for _, f in ipairs(free.findings) do
+    if f.kind == "free" then nFree = nFree + 1 else nBorder = nBorder + 1 end
+    local steps = {}
+    local function add(action, step)
+        local pos = routePos[step]
+        steps[#steps + 1] = { action = action, section = pos.section, after = pos.after, at = stepLabel(step) }
+    end
+    add("accept", f.accept)
+    if f.work then add("complete", f.work) end
+    add("turnin", f.turnin)
+    freeOut[#freeOut + 1] = { q = f.q, name = f.name, level = f.level, kind = f.kind, why = f.why, races = f.races,
+        xp = f.xp, estimated = f.estimated or nil, added = math.floor(f.added * 10 + 0.5) / 10,
+        rate = math.floor(f.rate * 1000 + 0.5) / 1000, ratio = math.floor(f.ratio * 10 + 0.5) / 10,
+        hold = math.floor(f.hold + 0.5), objectives = f.objectives, section = f.section, steps = steps }
+    if f.kind == "free" then
+        io.stderr:write(("warning: free quest left out: %s in %s, after route step %d: +%d XP for %.0f s (%.1f times"
+            .. " the section's pace); add it to the route, or to its exclude list with the reason\n"):format(
+            questName(f.q), f.section, steps[1].after, f.xp, f.added, f.ratio))
+    end
+end
+print(("Free quests left out: %d, borderline: %d (tools/audit_free_quests.lua)"):format(nFree, nBorder))
+do
+    local all, short = 0, 0
+    for _, n in pairs(whyWritten) do all = all + n end
+    for _, n in pairs(whyShort) do short = short + n end
+    print(("Reasons (tools/route_why.lua): %d steps, %d said under their step (%d detours, %d quests taken now"
+        .. " or never), %d level steps; %d quests left out with the route's reason"):format(all, short,
+        whyShort.detour or 0, whyShort.carry or 0, whyWritten.level or 0, nLeftOut))
+end
+if FREE_OUT then
+    local f = assert(io.open(FREE_OUT, "w"))
+    f:write("-- Free quests of ", ROUTE_NAME, " (tools/write_leveling.lua --free-quests)\n")
+    f:write("return {\n    route = ", quote(ROUTE_NAME), ", faction = ", quote(FACTION), ",\n    findings = {\n")
+    for _, r in ipairs(freeOut) do f:write("        ", luaValue(r), ",\n") end
+    f:write("    },\n    skipped = {\n")
+    for _, why in ipairs(sortedKeys(free.skipped)) do
+        f:write("        { why = ", quote(why), ", quests = ", free.skipped[why], " },\n")
+    end
+    f:write("    },\n}\n")
+    f:close()
+end
 if REPORT then
     print("\nRepairs:")
     for _, k in ipairs(sortedKeys(repairs)) do

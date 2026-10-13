@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("ptBR", "human-02-elwynn", {
         "Floresta de Elwynn (5-12)",
     ["Goldshire is your base for the whole forest: inn, class trainers and quests."] =
         "Vila d'Ouro é sua base na floresta toda: estalagem, instrutores de classe e missões.",
+    ["Goldshire"] =
+        "Vila d'Ouro",
     ["If the starting item dropped: use it from your bags."] =
         "Se o item inicial caiu: use-o direto das bolsas.",
     ["Finish the level on nearby monsters before moving on."] =

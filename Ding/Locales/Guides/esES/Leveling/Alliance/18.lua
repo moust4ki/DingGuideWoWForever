@@ -21,6 +21,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a18-desolace", {
         "Abandona la mascota temporal que domesticaste.",
     ["The NPC is indoors."] =
         "El PNJ está dentro.",
+    ["Nijel's Point"] =
+        "Punta de Nijel",
     ["Hunt down satyrs. Beware of foes lurking in stealth."] =
         "Caza sátiros. Cuidado con los enemigos ocultos en sigilo.",
     ["With the coming hand-ins, this brings you to level 36."] =
@@ -31,16 +33,14 @@ Ding.RegisterGuideTranslation("esES", "leveling-a18-desolace", {
         "La misión empieza con un librito.",
     ["The targets are lobsters. Your targets sit below the water's surface."] =
         "Los objetivos son langostas. Tus objetivos están bajo la superficie del agua.",
-    ["The NPC waits on the tower's highest floor."] =
-        "El PNJ espera en el piso más alto de la torre.",
+    ["The target is on the tower's highest floor."] =
+        "El objetivo está en el piso más alto de la torre.",
     ["For this quest you guard an NPC on the move. If she is absent, wait for her to reappear. The NPC is indoors."] =
         "En esta misión proteges a un PNJ que se desplaza. Si no está, espera a que reaparezca. El PNJ está dentro.",
-    ["Draw him to the doorway so other foes stay out of it. The NPC is indoors."] =
-        "Atráelo hasta la puerta para que los demás enemigos no se metan. El PNJ está dentro.",
+    ["Draw him to the doorway so other foes stay out of it. The target is indoors."] =
+        "Atráelo hasta la puerta para que los demás enemigos no se metan. El objetivo está dentro.",
     ["Let the conversation play out. Escort Dalinda Malem and keep her alive."] =
         "Deja que termine la conversación. Escolta a Dalinda Malem y mantenla con vida.",
-    ["This one roams, so scan the surrounding area."] =
-        "Este deambula, así que revisa los alrededores.",
     ["The targets here are centaurs. Magram Pack Runners patrol with 2 hyena escorts; steer clear."] =
         "Aquí los objetivos son centauros. Los Magram Pack Runners patrullan con 2 hienas de escolta; mantente lejos.",
     ["Stay away from Ghost Walker Post."] =
@@ -69,6 +69,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a18-desolace", {
         "Busca sacos de color tostado junto a las casas. Algunos no se pueden usar. Los Magram Pack Runners patrullan con 2 hienas de escolta; mantente lejos.",
     ["The foes here are scorpions. Basilisks compete for the same spawn points."] =
         "Aquí los enemigos son escorpiones. Los basiliscos comparten los mismos puntos de aparición.",
+    ["The NPC is indoors. You need it later for \"The Karnitol Shipwreck\": keep it in the bank to free a bag slot."] =
+        "El PNJ está dentro. Lo necesitarás más adelante para «El naufragio de Karnitol»: déjalo en el banco para liberar un hueco en las bolsas.",
     ["Wait for the talking to finish"] =
         "Espera a que termine la conversación",
 })

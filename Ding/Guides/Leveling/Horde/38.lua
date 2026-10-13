@@ -13,12 +13,10 @@ Ding.RegisterGuide({
         { go = { 1448, 34.21, 52.34 }, text = "Travel to Bloodvenom Post", -- level 54
           note = "Felwood: Bloodvenom Post, in the west of the zone." },
         { accept = 4506 }, -- level 54
-        { turnin = 5159, accept = 5165, -- level 54
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 5159, accept = 5165 }, -- level 54
         { collect = { { 21377, 1 }, { 11515, 6 } }, keep = { 21377, 11515 }, -- level 54
           note = "Hand these in afterwards for experience and reputation." },
-        { accept = 5887, -- level 54
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 5887 }, -- level 54
         { turnin = 5887, when = { ready = 5887 } }, -- level 54
         { destroy = { 11516, 11511, 11515 } }, -- level 54
         { go = { 1448, 38.43, 59.8 }, text = "Go into Jaedenar" }, -- level 54
@@ -49,7 +47,7 @@ Ding.RegisterGuide({
         { accept = 8461, -- level 54
           note = "Keep to the road the whole way." },
         { complete = 8461 }, -- level 54
-        { level = 55, patrol = { { 1448, 63.56, 9.55 }, { 1448, 62.46, 7.63 }, { 1448, 63.54, 5.95 }, { 1448, 59.95, 6.64 }, { 1448, 60.46, 8.57 }, { 1448, 61.45, 10.77 }, { 1448, 62.37, 12.64 } } }, -- level 54
+        { level = 55, patrol = { { 1448, 63.56, 9.55 }, { 1448, 62.46, 7.63 }, { 1448, 63.54, 5.95 }, { 1448, 59.95, 6.64 }, { 1448, 60.46, 8.57 }, { 1448, 61.45, 10.77 }, { 1448, 62.37, 12.64 } }, why = { kind = "level", levels = { 52, 56 } } }, -- level 54
         { turnin = 5084, accept = 5085, object = 176091, -- level 55
           note = "Flee if things go badly." },
         { turnin = 8461, accept = 8465, -- level 55
@@ -57,11 +55,11 @@ Ding.RegisterGuide({
         { accept = 8467, when = { item = { 21377, 5 } } }, -- level 55
         { turnin = 8467, when = { item = { 21377, 5 }, ready = 8467 } }, -- level 55
         { turnin = 8465 }, -- level 55
-        { turnin = { 980, 3909, 5085 }, accept = { 4842, 3912, 5086 } }, -- level 55
+        { turnin = { 980, 3909, 5085 }, accept = { 4842, 3912, 5086 }, why = { kind = "carry", quest = 3912, seconds = 3780, xp = 5100 } }, -- level 55
         { complete = 4521 }, -- level 55
         { accept = 3783 }, -- level 55
         { talk = 13917, bank = { 10540, 11136, 10597 }, sticky = 3783, -- level 55
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need them later for \"Delivery to Andron Gant\", \"A Grave Situation\" and \"Betrayed\": keep them in the bank to free bag slots." },
         { complete = 4521 }, -- level 55
         { complete = 3783, -- level 55
           note = "The quest wants yetis; seek them out. Targets are in the cavern and around its entrance too." },
@@ -72,12 +70,12 @@ Ding.RegisterGuide({
         { turnin = 4521, accept = 4741 }, -- level 55
         { talk = 7799, collect = { { 11243, 3 } }, spots = { { 1446, 52.35, 28.88 } }, -- level 55
           note = "The NPC is indoors." },
-        { turnin = 3912, accept = 3913, -- level 55
-          note = "The NPC is a human spirit. This one roams, so scan the surrounding area." },
+        { turnin = 3912, accept = 3913, why = { chain = 6, kind = "detour", quest = 3913, quests = 9, seconds = 300, short = true, total = 39000, xp = 28000 }, -- level 55
+          note = "The NPC is a human spirit." },
         { turnin = 3913, accept = 3914 }, -- level 55
         { destroy = 11243 }, -- level 55
         { accept = 4504 }, -- level 55
-        { turnin = 3914, accept = 3941 }, -- level 55
+        { turnin = 3914, accept = 3941, why = { back = true, chain = 4, kind = "detour", quest = 3941, quests = 6, seconds = 480, short = true, total = 33000, xp = 21000 } }, -- level 55
         { go = { 1449, 43.41, 6.84 }, text = "Go into the cavern" }, -- level 55
         { turnin = 3941, -- level 55
           note = "Your targets are within the cavern." },
@@ -87,16 +85,15 @@ Ding.RegisterGuide({
         { complete = 4504, -- level 55
           note = "Fight the elementals of the swamp." },
         { turnin = 4504 }, -- level 55
-        { accept = { 6029, 6030 }, -- level 55
+        { accept = { 6029, 6030 }, why = { continent = true, kind = "carry", quest = 6029, seconds = 21720, xp = 2600 }, -- level 55
           note = "The NPC is indoors." },
-        { accept = 5601, -- level 55
+        { accept = 5601, why = { continent = true, kind = "carry", quest = 5601, seconds = 25800, xp = 600 }, -- level 55
           note = "The NPC is indoors." },
         { talk = 13917, bank = { 15788, 15790 }, -- level 55
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need them later for \"The Everlook Report\" and \"Duke Nicholas Zverenhoff\": keep them in the bank to free bag slots." },
         { complete = 4842, -- level 55
           note = "Keep to the road the whole way." },
-        { turnin = 5165, -- level 55
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 5165 }, -- level 55
         { turnin = 3942, accept = 4084, sticky = { 5086, 4084 }, -- level 55
           note = "The NPC is indoors." },
         { complete = 4084, -- level 55
@@ -112,7 +109,7 @@ Ding.RegisterGuide({
         { accept = 8467, when = { item = { 21377, 5 } } }, -- level 55
         { turnin = 8467, when = { item = { 21377, 5 }, ready = 8467 } }, -- level 55
         { turnin = 8470, when = { maxlevel = 56, ready = 8470 }, -- level 55
-          note = "This one roams, so scan the surrounding area. The NPC stands within the passage." },
+          note = "The NPC stands within the passage." },
         { turnin = { 4842, 5086 }, accept = 5087 }, -- level 55
         { complete = 5087, patrol = { { 1452, 28.03, 35 }, { 1452, 27.98, 36.49 }, { 1452, 28.34, 37.4 }, { 1452, 28.5, 39.26 }, { 1452, 29.34, 40.72 }, { 1452, 29.75, 41.97 }, { 1452, 30.38, 42.62 }, { 1452, 31.69, 42.37 }, { 1452, 33.51, 41.96 }, { 1452, 34.28, 41.89 }, { 1452, 35.44, 42.1 }, { 1452, 36.1, 42.22 }, { 1452, 38.2, 41.94 }, { 1452, 40.06, 40.81 }, { 1452, 42.04, 39.99 }, { 1452, 44.29, 39.96 }, { 1452, 45.81, 39.75 }, { 1452, 47.21, 39.35 }, { 1452, 48.97, 38.45 }, { 1452, 50.4, 36.76 }, { 1452, 51.6, 36.23 }, { 1452, 52.6, 35.51 }, { 1452, 53.38, 34.42 } }, -- level 55
           note = "The targets are 3 white furbolgs moving as one pack. The target patrols a long route beside the road. They appear near 28.1, 35.0 in Winterspring." },
@@ -126,7 +123,7 @@ Ding.RegisterGuide({
         { talk = 13917, collect = { { 10597, 1 } }, spots = { { 1452, 61.51, 36.91 } }, -- level 56
           note = "The NPC is indoors." },
         { talk = 13917, bank = 11617, -- level 56
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need it later for \"Aquementas\": keep it in the bank to free a bag slot." },
         { train = true, talk = 5883, races = { "Scourge", "Troll" }, classes = { "MAGE" }, -- level 56
           note = "The NPC is indoors." },
         { train = true, talk = 6018, races = { "Scourge", "Troll" }, classes = { "PRIEST" }, -- level 56
@@ -147,7 +144,7 @@ Ding.RegisterGuide({
         { sethearth = "Orgrimmar", talk = 6929, -- level 56
           note = "The NPC is indoors." },
         { talk = 4549, collect = { { 10691, 1 }, { 10692, 1 }, { 10693, 1 }, { 10694, 1 }, { 10540, 1 }, { 15788, 1 }, { 15790, 1 } }, spots = { { 1458, 65.94, 44.78 } } }, -- level 56
-        { turnin = 3542, accept = 3564 }, -- level 56
+        { turnin = 3542, accept = 3564, why = { continent = true, kind = "carry", quest = 3564, seconds = 48720, xp = 3000 } }, -- level 56
         { go = { 1458, 52.8, 77.62 }, text = "Take the trail downhill" }, -- level 56
         { turnin = 3568 }, -- level 56
         { accept = 3569, -- level 56
@@ -157,7 +154,7 @@ Ding.RegisterGuide({
         { turnin = 3570 }, -- level 56
         { talk = 4549, unbank = 10679 }, -- level 56
         { accept = 7816, elite = true }, -- level 56
-        { turnin = 626, -- level 56
+        { turnin = 626, why = { back = true, kind = "detour", quest = 626, seconds = 780, short = true, xp = 6100 }, -- level 56
           note = "The spot is at the foot of the falls. Your targets sit below the water's surface." },
         { complete = 7816, elite = true, -- level 56
           note = "Hunt down an elite turtle of level 48 whose shell looks azure. This one roams, so scan the surrounding area." },

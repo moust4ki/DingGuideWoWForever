@@ -7,8 +7,6 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h35-felwood-and-winterspring", {
         "Viaje até o Santuário Esmeralda",
     ["Felwood: Emerald Sanctuary, in the south of the zone."] =
         "Selva Maleva: Santuário Esmeralda, no sul da zona.",
-    ["This one roams, so scan the surrounding area."] =
-        "Este se desloca, então procure pelos arredores.",
     ["The NPC is indoors."] =
         "O NPC está lá dentro.",
     ["Hand these in afterwards for experience and reputation."] =
@@ -49,6 +47,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h35-felwood-and-winterspring", {
         "Deixe seu ajudante com o mestre do estábulo.",
     ["You will tame a short-term pet shortly. You pick up Claw (Rank 7) here."] =
         "Em breve você vai domar um ajudante temporário. Aqui você obtém Garra (Grau 7).",
+    ["The NPC is indoors. You need them later for \"Delivery to Magatha\" and \"Seeping Corruption\": keep them in the bank to free bag slots."] =
+        "O NPC está lá dentro. Você vai precisar deles mais tarde para \"Entrega para Magatha\" e \"Corrupção líquida\": guarde-os no banco para liberar espaço nas bolsas.",
     ["Flight master at Everlook"] =
         "Mestre de voo de Visteterna",
     ["Tame a beast here to learn the next rank of Claw"] =
@@ -59,8 +59,12 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h35-felwood-and-winterspring", {
         "O NPC está no andar de cima, na sacada.",
     ["The NPC is indoors. Hold on to it for a task in Un'Goro Crater later."] =
         "O NPC está lá dentro. Guarde-o para uma tarefa na Cratera Un'Goro mais tarde.",
+    ["The NPC is indoors. You need it later for \"Jes'rimon's Payment to Jediga\": keep it in the bank to free a bag slot."] =
+        "O NPC está lá dentro. Você vai precisar dele mais tarde para \"O pagamento de Sona'rima para Jediga\": guarde-o no banco para liberar espaço nas bolsas.",
     ["Get your companion back from the stable master."] =
         "Recupere seu ajudante com o mestre do estábulo.",
     ["Release the short-term pet you tamed."] =
         "Liberte o ajudante temporário que você domou.",
+    ["Camp Taurajo"] =
+        "Acampamento Taurajo",
 })

@@ -67,6 +67,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a01-human-starter", {
         "여기 있는 몬스터에게 일부러 죽으세요. 이 시점에는 죽어도 잃는 것이 없습니다. 건너가는 가장 빠른 방법입니다.",
     ["Get yourself killed, then resurrect with the spirit healer"] =
         "죽은 다음 영혼의 치유사에게서 부활하세요",
+    ["Goldshire"] =
+        "골드샤이어",
     ["Look for little stacks of brown wood. Look around tree trunks at ground level."] =
         "작은 갈색 나무 더미를 찾으세요. 땅 높이의 나무줄기 주변을 살펴보세요.",
     ["The targets are wolves."] =
@@ -101,14 +103,16 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a01-human-starter", {
         "무기 전문가에게서 한손 도검과 지팡이를 배우세요",
     ["Head indoors"] =
         "건물 안으로 들어가세요",
-    ["Step onto the pink rune. Look within the tomb. The NPC waits on the lower level, indoors."] =
-        "분홍색 룬 위에 올라서세요. 무덤 안을 살펴보세요. NPC는 건물 안 아래층에서 기다립니다.",
+    ["The target is indoors."] =
+        "대상은 건물 안에 있습니다.",
+    ["Step onto the pink rune. Look within the tomb. The target is on the lower level, indoors."] =
+        "분홍색 룬 위에 올라서세요. 무덤 안을 살펴보세요. 대상은 건물 안 아래층에 있습니다.",
     ["The NPC stands one level over the crypt. The NPC waits on the lower level, indoors."] =
         "NPC는 납골당 한 층 위에 서 있습니다. NPC는 건물 안 아래층에서 기다립니다.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors. Be ready for a fight right away."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요. NPC는 건물 안에 있습니다. 바로 전투가 시작되니 대비하세요.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요. NPC는 건물 안에 있습니다.",
+    ["Stormwind City"] =
+        "스톰윈드",
+    ["The NPC is indoors. Be ready for a fight right away."] =
+        "NPC는 건물 안에 있습니다. 바로 전투가 시작되니 대비하세요.",
     ["Learn Blacksmithing from the trainer"] =
         "상급자에게서 대장기술을 배우세요",
     ["Learn Mining from the trainer"] =
@@ -183,6 +187,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a01-human-starter", {
         "가루바위 골짜기를 나간 다음 길을 따라가세요",
     ["The NPC waits on the tower's highest floor."] =
         "NPC는 탑 꼭대기 층에서 기다립니다.",
+    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
+        "이 대상은 돌아다니므로 주변을 살펴보세요. NPC는 건물 안에 있습니다.",
     ["Head up the incline"] =
         "비탈을 올라가세요",
 })

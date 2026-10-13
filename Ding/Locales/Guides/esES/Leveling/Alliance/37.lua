@@ -19,22 +19,26 @@ Ding.RegisterGuideTranslation("esES", "leveling-a37-feralas-and-azshara", {
         "Sal de la cueva",
     ["Stand on the neighboring ledge, then hop into this crack in the wall"] =
         "Ponte en la repisa de al lado y luego salta a esta grieta de la pared",
-    ["The NPC is indoors."] =
-        "El PNJ está dentro.",
+    ["The object is indoors."] =
+        "El objeto está dentro.",
     ["Hop onto the ledge"] =
         "Salta a la repisa",
     ["Leap over at this spot"] =
         "Salta al otro lado en este punto",
     ["Leap up at this spot"] =
         "Salta hacia arriba en este punto",
-    ["The NPC or item sits on the rocky shelf above."] =
-        "El PNJ o el objeto está en la repisa rocosa de arriba.",
+    ["The object sits on the rocky shelf above."] =
+        "El objeto está en la repisa rocosa de arriba.",
     ["Let the conversation play out. Shay Leafrunner trails behind you; keep her alive. Keep near her, as she tends to stray."] =
         "Deja que termine la conversación. Shay Leafrunner te sigue; mantenla con vida. Quédate cerca de ella, porque tiende a alejarse.",
     ["Finish the quest named The Videre Elixir. Keep the elixir in your bags; never consume it. You will die from it."] =
         "Termina la misión The Videre Elixir. Guarda el elixir en tus bolsas; no te lo bebas nunca. Te matará.",
-    ["Put these items in your bank vault."] =
-        "Guarda estos objetos en el banco.",
+    ["The NPC is indoors."] =
+        "El PNJ está dentro.",
+    ["Ratchet"] =
+        "Trinquete",
+    ["Put these items in your bank vault. You need them later for \"The Stone Circle\", \"Felbound Ancients\", \"A Little Slime Goes a Long Way\", \"Moontouched Wildkin\" and \"Meet at the Grave\": keep them in the bank to free bag slots."] =
+        "Guarda estos objetos en el banco. Los necesitarás más adelante para «El Círculo de Piedras», «Los Ancestros corrompidos», «Un largo camino para unas babosas», «Lechúcico Lunadón» y «Encuentro en la tumba»: déjalos en el banco para liberar huecos en las bolsas.",
     ["The quest giver waits on the hilltop."] =
         "El PNJ de la misión espera en lo alto de la colina.",
     ["The targets are Myrmidons and Sirens. Hunt naga."] =

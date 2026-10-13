@@ -1,9 +1,9 @@
 -- Quest monsters: a small mark above the nameplate of a monster that counts for a quest of
 -- the log (an objective to kill, or it drops an item a quest still needs) with the
--- objective's counter ("3/8"), and a line in its tooltip ("Ding! · “The Balance of Nature”
--- 3/8"). The current step's monsters stand out (accent); those of the log's other quests are
--- quieter. A finished objective loses its mark. On a friendly nameplate, the current step's
--- quest giver ("!") or turn-in NPC ("?").
+-- objective's counter ("3/8"), and a line in its tooltip that says the mark in words ("Ding! ·
+-- Kill for “The Balance of Nature” 3/8 · current step"). The current step's monsters stand out
+-- (accent); those of the log's other quests are quieter. A finished objective loses its mark.
+-- On a friendly nameplate, the current step's quest giver ("!") or turn-in NPC ("?").
 -- Ding never changes the game's nameplates: one frame of its own per plate is parented to it.
 -- A monster is known by its creature id (UnitGUID): when the client keeps the GUID secret (in
 -- combat, maybe), the plate keeps what was decided when it appeared, else its name is matched
@@ -299,13 +299,23 @@ end
 ---------------------------------------------------------------------------
 -- The unit tooltip: hooked, never replaced
 ---------------------------------------------------------------------------
+-- What the mark says, in words: kill or loot for a quest, a quest to take or to turn in (a goal
+-- or a level step names its own action), the counter, and "current step" for the accent ones.
+local KIND_TEXT = { kill = "MOB_KILL", drop = "MOB_DROP", accept = "MOB_ACCEPT", turnin = "MOB_TURNIN" }
+function QM:Words(e)
+    local text = e.quest and L[KIND_TEXT[e.kind]]:format(e.label) or e.label
+    local counter = counterText(e)
+    if counter then text = text .. " " .. counter end
+    if e.current then text = text .. " · " .. L.MOB_CURRENT end
+    return text
+end
+
 function QM:TooltipLines(info)
     local out = {}
     if ui().mobTooltip == false then return out end
     for i, e in ipairs(self:EntriesOf(info) or {}) do
         if i > MAX_LINES then break end
-        local counter = counterText(e)
-        out[#out + 1] = { text = UI.Colored("accent", Ding.TITLE) .. " · " .. e.label .. (counter and (" " .. counter) or ""),
+        out[#out + 1] = { text = UI.Colored("accent", Ding.TITLE) .. " · " .. self:Words(e),
             color = e.current and C.text or C.secondary }
     end
     return out

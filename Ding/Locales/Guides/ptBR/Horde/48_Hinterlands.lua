@@ -7,4 +7,6 @@ Ding.RegisterGuideTranslation("ptBR", "horde-48-hinterlands", {
         "As Terras Agrestes ficam a leste do Contraforte de Eira dos Montes: a Aldeia Revatusco, dos trolls, está na costa leste.",
     ["If the starting item dropped: use it from your bags."] =
         "Se o item inicial caiu: use-o direto das bolsas.",
+    ["Revantusk Village"] =
+        "Aldeia Revatusco",
 })

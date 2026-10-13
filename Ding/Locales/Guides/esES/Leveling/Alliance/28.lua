@@ -7,6 +7,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a28-feralas-and-tanaris", {
         "Tanaris: primero Gadgetzan y luego Feralas: Bastión Plumaluna.",
     ["The NPC is indoors."] =
         "El PNJ está dentro.",
+    ["Feathermoon Stronghold"] =
+        "Bastión Plumaluna",
     ["The NPC is indoors, one floor up."] =
         "El PNJ está dentro, un piso más arriba.",
     ["Position yourself in its center."] =
@@ -79,14 +81,22 @@ Ding.RegisterGuideTranslation("esES", "leveling-a28-feralas-and-tanaris", {
         "Tus objetivos están dentro de la cueva.",
     ["Let the conversation play out. Your targets are within the cavern."] =
         "Deja que termine la conversación. Tus objetivos están dentro de la cueva.",
+    ["The object is indoors, one floor up."] =
+        "El objeto está dentro, un piso más arriba.",
+    ["You need them later for \"The Borrower\", \"Screecher Spirits\", \"The Super Egg-O-Matic\" and \"Rhapsody's Kalimdor Kocktail\": keep them in the bank to free bag slots."] =
+        "Los necesitarás más adelante para «El préstamo», «Los espíritus de los estriadores», «El Superhuevomático» y «El cubata de Kalimdor de Rapsodio»: déjalos en el banco para liberar huecos en las bolsas.",
     ["Getting it here speeds up Un'Goro Crater. The NPC is indoors."] =
         "Conseguirlo aquí acelera el Cráter de Un'Goro. El PNJ está dentro.",
+    ["You need them later for \"Crystals of Power\": keep them in the bank to free bag slots."] =
+        "Los necesitarás más adelante para «Cristales de poder»: déjalos en el banco para liberar huecos en las bolsas.",
     ["Step into the cavern within the trunk"] =
         "Entra en la cueva del interior del tronco",
     ["The spot is on the lower floor of the hollow tree."] =
         "El punto está en el piso inferior del árbol hueco.",
     ["Stay clear of the elite foes. Be ready for a fight right away."] =
         "Evita a los enemigos élite. Prepárate para luchar de inmediato.",
+    ["Gadgetzan"] =
+        "Gadgetzan",
     ["The NPC waits on the lower level, indoors. A lengthy stretch of quests is coming up. This vendor sells no arrows or bullets."] =
         "El PNJ espera en el nivel inferior, dentro. Se acerca un largo tramo de misiones. Este vendedor no vende flechas ni balas.",
 })

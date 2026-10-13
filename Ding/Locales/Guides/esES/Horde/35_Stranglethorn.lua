@@ -5,4 +5,8 @@ Ding.RegisterGuideTranslation("esES", "horde-35-stv", {
         "Vega de Tuercespina (34-36)",
     ["Zeppelin from Orgrimmar to Grom'gol, the Horde camp in the north of Stranglethorn."] =
         "Zepelín de Orgrimmar a Grom'gol, el campamento de la Horda al norte de Tuercespina.",
+    ["Grom'gol"] =
+        "Grom'gol",
+    ["Booty Bay"] =
+        "Bahía del Botín",
 })

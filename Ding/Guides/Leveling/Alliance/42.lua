@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Alliance/42.lua.
--- Simulated (warrior): Human 58 (67%) -> 59 (4%) in 3 h 12, 10 quests turned in; Dwarf 58 (67%) -> 59 (4%) in 3 h 12, 10 quests turned in; NightElf 58 (67%) -> 59 (4%) in 3 h 12, 10 quests turned in; Gnome 58 (67%) -> 59 (4%) in 3 h 12, 10 quests turned in; Skyborne 58 (67%) -> 59 (4%) in 3 h 12, 10 quests turned in.
+-- Simulated (warrior): Human 58 (67%) -> 59 (4%) in 3 h 13, 11 quests turned in; Dwarf 58 (67%) -> 59 (4%) in 3 h 13, 11 quests turned in; NightElf 58 (67%) -> 59 (4%) in 3 h 13, 11 quests turned in; Gnome 58 (67%) -> 59 (4%) in 3 h 13, 11 quests turned in; Skyborne 58 (67%) -> 59 (4%) in 3 h 13, 11 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-a42-winterspring",
     title    = "Winterspring (58-59)",
@@ -22,7 +22,7 @@ Ding.RegisterGuide({
         { talk = 13917, collect = { { 12438, 1 } }, spots = { { 1452, 61.51, 36.91 } }, -- level 58
           note = "The NPC is indoors." },
         { talk = 13917, bank = 12663, -- level 58
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need it later for \"Glyphed Oaken Branch\": keep it in the bank to free a bag slot." },
         { turnin = 4808, accept = 4809 }, -- level 58
         { sethearth = "Everlook", talk = 11118, -- level 58
           note = "The NPC is indoors." },
@@ -39,9 +39,11 @@ Ding.RegisterGuide({
         { complete = 4809, -- level 58
           note = "Hunt the chimaeras." },
         { turnin = 977, accept = 5163 }, -- level 58
+        { accept = 6606 }, -- level 58
         { complete = 5163, useitem = 12928, -- level 58
           note = "Target Legacki with the item." },
         { turnin = 4809 }, -- level 58
+        { turnin = 6606 }, -- level 58
         { talk = 13917, collect = { { 12663, 1 }, { 11173, 1 }, { 11172, 11 } }, spots = { { 1452, 61.51, 36.91 } }, -- level 58
           note = "The NPC is indoors." },
         { turnin = 8464 }, -- level 58
@@ -53,9 +55,9 @@ Ding.RegisterGuide({
           note = "The NPC is indoors. Wait for the talking to finish" },
         { accept = 5527, -- level 58
           note = "The NPC is indoors." },
-        { turnin = 4084, accept = 4005, -- level 58
+        { turnin = 4084, accept = 4005, why = { chain = 2, kind = "detour", quest = 4084, seconds = 660, short = true, xp = 14000 }, -- level 58
           note = "The NPC is indoors." },
-        { turnin = 4986, -- level 58
+        { turnin = 4986, why = { kind = "detour", quest = 4986, seconds = 1080, short = true, xp = 5800 }, -- level 58
           note = "The NPC is indoors, on the central storey." },
         { complete = 5163, useitem = 12928, -- level 59
           note = "Target Sprinkle with it." },
@@ -64,7 +66,7 @@ Ding.RegisterGuide({
         { complete = 4005, useitem = 11169, -- level 59
           note = "Wait for the talking to finish" },
         { go = { 1446, 69.69, 42.33 }, text = "Take the passage out of Lost Rigger Cove" }, -- level 59
-        { go = { 1449, 43.41, 6.84 }, text = "Go into the cavern" }, -- level 59
+        { go = { 1449, 43.41, 6.84 }, text = "Go into the cavern", why = { kind = "detour", quest = 4005, quests = 2, seconds = 60, total = 8200, xp = 5500 } }, -- level 59
         { turnin = 4005, accept = 3961, -- level 59
           note = "Your targets are within the cavern." },
         { destroy = { 11173, 11172, 11169 } }, -- level 59

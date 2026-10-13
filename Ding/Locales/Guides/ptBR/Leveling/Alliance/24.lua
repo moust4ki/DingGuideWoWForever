@@ -5,14 +5,16 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a24-badlands", {
         "Ermos (41-42)",
     ["Ironforge first, then the Badlands. The NPC waits on the lower level, indoors. A lengthy stretch of quests is coming up. This vendor sells no arrows or bullets."] =
         "Altaforja primeiro, depois os Ermos. O NPC espera no nível de baixo, lá dentro. Vem aí um longo trecho de missões. Este vendedor não vende flechas nem balas.",
-    ["The NPC is indoors."] =
-        "O NPC está lá dentro.",
+    ["The NPC is indoors. You need them later for \"Back to Booty Bay\" and \"Safety First\": keep them in the bank to free bag slots."] =
+        "O NPC está lá dentro. Você vai precisar deles mais tarde para \"De volta à Angra do Butim\" e \"Segurança em primeiro lugar\": guarde-os no banco para liberar espaço nas bolsas.",
     ["Get these for simple Badlands turn-ins ahead. The NPC is indoors."] =
         "Pegue estes para entregas fáceis nos Ermos mais adiante. O NPC está lá dentro.",
     ["This one roams, so scan the surrounding area. The NPC is indoors."] =
         "Este se desloca, então procure pelos arredores. O NPC está lá dentro.",
-    ["The NPC or item sits on the rocky shelf above."] =
-        "O NPC ou item fica na saliência rochosa acima.",
+    ["The NPC is indoors."] =
+        "O NPC está lá dentro.",
+    ["The object sits on the rocky shelf above."] =
+        "O objeto fica na saliência rochosa acima.",
     ["Fight the dwarves."] =
         "Lute contra os anões.",
     ["Look for a timber box. The targets are spread over several spots."] =
@@ -37,4 +39,6 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a24-badlands", {
         "Deixe-se matar e depois ressuscite com o Anjo da Cura",
     ["Flight master at Thorium Point"] =
         "Mestre de voo de Thorium Point",
+    ["Stoutlager Inn"] =
+        "Thelsamar",
 })

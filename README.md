@@ -7,7 +7,7 @@ gamepad**.
 
 [Download on CurseForge](https://www.curseforge.com/wow/addons/ding-xp-and-leveling-guide)
 
-> **Version 1.1**, released during the Forever beta.
+> **Version 1.4**, released during the Forever beta.
 > **Alliance 1–60**: Human, Dwarf/Gnome and Night Elf starting zones up to level 20, then a
 > common route to 60. **Horde 1–60**: Orc/Troll, Tauren and Undead starting zones up to
 > level 20, then a common route to 60.
@@ -30,6 +30,12 @@ instead from the *Arrow* tab of the settings (off by default).
 - **Guides optimized for XP per hour.** The routes are generated offline from the game data:
   quests grouped to avoid back-and-forth, poor-value detours left out, never a quest above
   your level (one level above at most). The new quests of Forever are included.
+- **A setup assistant** at the first launch: four short screens, a few choices each, the
+  recommended ones already selected. How you play (gamepad or keyboard and mouse), what Ding
+  does for you (quests, gray items, repairs), your route (hearthstone, group quests, death
+  skips), then the guide to start with. "Keep the recommended settings" ends it from any
+  screen; everything else is on by default, and all of it can be changed later in the settings.
+  Run it again from the *Guide* tab ("Run the setup assistant again") or with `/ding intro`.
 - **Resumes where you really are.** Ding picks the guide for your race, class and level. When
   you resume, it first sends you to finish the guide's old quests still in your log, then
   skips what you have done.
@@ -37,7 +43,8 @@ instead from the *Arrow* tab of the settings (off by default).
   not yet possible states and the guide's notes. Hover a line to see its quest (name, level,
   objectives); click it to send the arrow there. Right-click the window to mark the step as
   done or skip it for later: steps left by hand keep their own color (violet: marked done,
-  amber: skipped). Minimizes to a single line, automatically in combat if you want. Closing it
+  amber: skipped); go back to such a step ("previous") to undo it, from the line under it or the
+  same menu. Minimizes to a single line, automatically in combat if you want. Closing it
   hides the arrow too; the minimap button brings both back.
 - **Waypoint arrow.** Distance and time to the target, red with "turn around" when it is
   behind you. Among the monsters you have to kill, it tells you you're in the area. When you
@@ -46,6 +53,18 @@ instead from the *Arrow* tab of the settings (off by default).
   choose your reward), catches up on missing prerequisite quests, can skip gray quests.
 - **Quest item button.** A floating button with the item the step needs: one press of a
   gamepad button uses it. Shows the cooldown and when you are out of range.
+- **NPC directory.** Bags full, out of food, a weapon to learn? The directory (its key
+  binding, the pin button of the guide window, or `/ding find`) lists, anywhere in the world,
+  the NPC of each kind that is the fewest seconds away: vendor, repair, food and drink,
+  ammunition, reagents, poisons, innkeeper, flight master, class trainer, weapon masters by
+  weapon, profession trainers by profession, trade supplies, bank, auction house, stable
+  master. A second tab lists the capitals of your side and the neutral towns (Booty Bay,
+  Gadgetzan, Ratchet, Everlook) with what each offers. Each row says how long it takes and by
+  which way (flight, boat, zeppelin, tram, hearthstone). Pick one: the arrow takes you there
+  leg by leg, the guide window says what to take, and the guide resumes once you talk to that
+  NPC. When you carry (or a quest offers) a weapon your class can use but you have not
+  learned, the guide window says so, why, and which weapon master teaches it; right-click it
+  (Left in focus mode) never to see that weapon suggested again.
 - **Minimap button.** Left-click for the settings, right-click to show or hide the guide.
 - **Community guides.** Ding runs other guides too: install a guide pack and pick it in the
   settings (*Guide* tab, first list), then its section in the second list. See
@@ -60,15 +79,24 @@ instead from the *Arrow* tab of the settings (off by default).
 
 ## With a gamepad
 
-On first launch, Ding opens its settings on the **Keybinds** tab: bind a button to "Open Ding
-settings" (for example LT+Start), then to "Next step", "Previous step" and "Use the quest item".
+On first launch, Ding opens its setup assistant (the D-pad picks a choice, A ticks it, LB / RB
+change screens, Y keeps the recommended settings, B closes), then its settings on the
+**Keybinds** tab: bind a button to "Open Ding settings" (for example LT+Start), then to "Next
+step", "Previous step" and "Use the quest item".
 In the settings window: A selects, B closes, LB / RB change tabs, the D-pad picks and adjusts,
 Y resets to default.
 
 The guide window never takes a button away from the game. To browse it with the gamepad,
 bind "Browse the guide with the gamepad" (focus mode): the D-pad picks a line, A sends the
 arrow there (or uses the item), X shows its quest, LB / RB change steps, Y minimizes the
-window, B gives the gamepad back to the game.
+window, B gives the gamepad back to the game. Up from the first line, the focus reaches the
+NPC directory's button.
+
+The NPC directory (bind "NPC directory", or use the guide window's pin button): LB / RB change
+tabs, the D-pad picks, A opens a list or sends the arrow, B goes back or closes. To cancel a trip:
+the "Cancel the trip" line under it in the guide window (a click, or A in focus mode), the first
+entry of the right-click menu, the directory's first row, or `/ding cancel`; moving the guide
+(next, skip, mark as done...) ends it too.
 
 The settings also move the window, the arrow and the item button with the D-pad, set the
 opacity and the size, minimize the guide in combat and pick the button names (Xbox or
@@ -81,15 +109,21 @@ Everything works without a gamepad too. In the settings, click to choose, toggle
 (click again when a button asks), right-click to put a setting back to its default or to
 unbind a key, and press Escape to close. To bind a key, click its row and press the key. To
 move the guide window, the arrow or the item button, drag it with the mouse, then click
-Save. The gamepad hints at the bottom ("A Open", "Y Reset"…) can be clicked too. Without a
+Save. In the setup assistant, click a choice, Previous, Next or "Keep the recommended settings";
+Escape closes it. Chosen "Keyboard and mouse" there, the Keybinds tab does not open after it.
+The gamepad hints at the bottom ("A Open", "Y Reset"…) can be clicked too. Without a
 gamepad plugged in, that help speaks of the mouse and the keyboard, and the buttons show no
 gamepad button.
 
 ## Commands
 
-`/ding` show/hide · `/ding config` settings · `/ding list` (guides and their sections) ·
-`/ding guide <id>` · `/ding where` (your position, for guide authors) · `/ding import` (a guide as
-text) · `/ding export [id]` (a guide as text) · `/ding next` · `/ding prev` · `/ding skip` · `/ding back` · `/ding reset` (take the guide up
+`/ding` show/hide · `/ding config` settings · `/ding intro` (the setup assistant again) · `/ding list` (guides and their sections) ·
+`/ding guide <id>` · `/ding where` (your position, for guide authors) · `/ding passages [n]` (the
+lifts, gates and tunnels near you, for testers; the arrow points at the n-th) · `/ding import` (a guide as
+text) · `/ding export [id]` (a guide as text) · `/ding find <text>` (the NPC directory: a service,
+a weapon, a profession or a name, in your game's language or in English, such as
+`/ding find gun`, `/ding find bank`, `/ding find Buliwyf`) · `/ding cancel` (end the directory's
+trip: the arrow follows the guide again) · `/ding next` · `/ding prev` · `/ding skip` · `/ding back` · `/ding reset` (take the guide up
 where you are) · `/ding scale <0.5-1.5>` · `/ding arrow` · `/ding arrowflip` ·
 `/ding minimap` · `/ding debug`
 

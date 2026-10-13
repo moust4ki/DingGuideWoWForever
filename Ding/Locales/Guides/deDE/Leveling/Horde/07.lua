@@ -21,8 +21,6 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h07-hillsbrad-foothills", {
         "Lass das Gespräch zu Ende laufen. Der NPC ist drinnen.",
     ["Get rid of your Touch of Zanzil."] =
         "Werde deinen Touch of Zanzil los.",
-    ["This one roams, so scan the surrounding area."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab.",
     ["Leave your pet with the stable master."] =
         "Stell dein Tier beim Stallmeister in den Stall.",
     ["You will tame a short-term pet shortly. Pick up Claw (Rank 3) for your pet."] =
@@ -43,8 +41,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h07-hillsbrad-foothills", {
         "Dieses Ziel wandert umher, also such die Umgebung ab. Die Ziele sind auf mehrere Stellen verteilt.",
     ["Look for it bound to the orc's leg."] =
         "Du findest es am Bein des Orcs festgebunden.",
-    ["Look for it bound to the orc's leg. The NPC is indoors."] =
-        "Du findest es am Bein des Orcs festgebunden. Der NPC ist drinnen.",
+    ["Look for it bound to the orc's leg. The object is indoors."] =
+        "Du findest es am Bein des Orcs festgebunden. Das Objekt ist drinnen.",
     ["The targets are spiders with green bodies."] =
         "Die Ziele sind Spinnen mit grünem Körper.",
     ["Together with the next turn-ins, this brings you to level 23."] =
@@ -53,14 +51,16 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h07-hillsbrad-foothills", {
         "Die Ziele sind auf mehrere Stellen verteilt. Drinnen oder draußen auf den offenen Feldern.",
     ["Check each of the two floors indoors. It may be found outdoors too."] =
         "Sieh dir drinnen beide Stockwerke an. Es kann auch draußen sein.",
-    ["The NPC is a little wolf. This one roams, so scan the surrounding area. He goes berserk and attacks you once the quest is handed in."] =
-        "Der NPC ist ein kleiner Wolf. Dieses Ziel wandert umher, also such die Umgebung ab. Nach der Abgabe der Quest dreht er durch und greift dich an.",
+    ["The NPC is a little wolf. He goes berserk and attacks you once the quest is handed in."] =
+        "Der NPC ist ein kleiner Wolf. Nach der Abgabe der Quest dreht er durch und greift dich an.",
     ["A woman holding a pitchfork. This one roams, so scan the surrounding area."] =
         "Eine Frau mit einer Mistgabel. Dieses Ziel wandert umher, also such die Umgebung ab.",
     ["The target patrols the trail between the houses. The target's spawn point is 30.5, 40.6 in Hillsbrad Foothills."] =
         "Das Ziel patrouilliert auf dem Weg zwischen den Häusern. Der Spawnpunkt des Ziels ist bei 30.5, 40.6 im Vorgebirge des Hügellands.",
     ["With the coming hand-ins, this brings you to level 24. Tougher foes are coming up next."] =
         "Mit den kommenden Abgaben bringt dich das auf Stufe 24. Als Nächstes kommen stärkere Gegner.",
+    ["The target is indoors."] =
+        "Das Ziel ist drinnen.",
     ["This one roams, so scan the surrounding area. The targets are spread over several spots. Some may be in the smithy."] =
         "Dieses Ziel wandert umher, also such die Umgebung ab. Die Ziele sind auf mehrere Stellen verteilt. Einige können in der Schmiede sein.",
     ["Go down into the tomb"] =

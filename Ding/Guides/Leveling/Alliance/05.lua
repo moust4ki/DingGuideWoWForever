@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Alliance/05.lua.
--- Simulated (warrior): Human 16 (1%) -> 18 (19%) in 3 h 00, 30 quests turned in; Dwarf 16 (21%) -> 18 (37%) in 3 h 09, 30 quests turned in; NightElf 16 (19%) -> 18 (13%) in 2 h 50, 21 quests turned in; Gnome 16 (16%) -> 18 (33%) in 3 h 09, 30 quests turned in; Skyborne 15 (40%) -> 18 (13%) in 3 h 48, 30 quests turned in.
+-- Simulated (warrior): Human 15 (99%) -> 18 (21%) in 3 h 00, 30 quests turned in; Dwarf 16 (7%) -> 18 (26%) in 3 h 09, 30 quests turned in; NightElf 16 (14%) -> 18 (13%) in 2 h 54, 21 quests turned in; Gnome 16 (7%) -> 18 (26%) in 3 h 09, 30 quests turned in; Skyborne 15 (40%) -> 18 (13%) in 3 h 48, 30 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-a05-darkshore",
     title    = "Darkshore (15-18)",
@@ -59,8 +59,7 @@ Ding.RegisterGuide({
         { accept = 4762, races = { "NightElf" } }, -- level 16
         { turnin = 4761, accept = 954, races = { "Human", "Dwarf", "Gnome", "Skyborne" } }, -- level 15
         { accept = 4762, races = { "Human", "Dwarf", "Gnome", "Skyborne" } }, -- level 15
-        { accept = 4811, -- level 15
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 4811 }, -- level 15
         { sethearth = "Auberdine", talk = 6737, -- level 15
           note = "The NPC is indoors." },
         { complete = 4811, -- level 15
@@ -110,8 +109,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors, one floor up." },
         { train = true, talk = 4091, races = { "Human", "Dwarf", "NightElf" }, classes = { "PRIEST" }, -- level 16
           note = "The NPC is indoors." },
-        { turnin = 4811, accept = 4812, -- level 16
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 4811, accept = 4812 }, -- level 16
         { complete = 4812, useitem = 14338 }, -- level 16
         { turnin = 4762, -- level 16
           note = "The NPC is indoors." },
@@ -134,8 +132,7 @@ Ding.RegisterGuide({
         { accept = 1138 }, -- level 17
         { turnin = 963, -- level 17
           note = "The NPC stands on the pier." },
-        { turnin = 4813, -- level 17
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 4813 }, -- level 17
         { turnin = 985, -- level 17
           note = "The NPC is indoors." },
         { accept = 965, -- level 17
@@ -143,6 +140,7 @@ Ding.RegisterGuide({
         { accept = 982 }, -- level 17
         { turnin = 958, -- level 17
           note = "The NPC is indoors." },
+        { accept = 97914, races = { "Human", "Dwarf", "Gnome", "Skyborne" }, why = { continent = true, kind = "carry", quest = 97914, seconds = 10260, xp = 800 } }, -- level 17
         { turnin = 957, when = { log = 957 } }, -- level 17
         { complete = 982, -- level 17
           note = "Go to the lowest deck of the wreck. Swim in by way of a porthole." },
@@ -154,13 +152,14 @@ Ding.RegisterGuide({
           note = "Hunt the crabs." },
         { turnin = 965, accept = 966 }, -- level 17
         { complete = 966 }, -- level 17
-        { turnin = 966, accept = 967 }, -- level 17
+        { turnin = 966, accept = 967, why = { kind = "carry", quest = 967, seconds = 30420, xp = 1000 } }, -- level 17
         { level = 18, patrol = { { 1439, 52.37, 32.37 }, { 1439, 52.46, 34.63 }, { 1439, 50.16, 34.36 } } }, -- level 17
         { train = true, talk = 12042, races = { "NightElf" }, classes = { "DRUID" } }, -- level 17
         { turnin = 1138 }, -- level 18
         { turnin = 982 }, -- level 18
+        { accept = 97914, races = { "NightElf" }, why = { continent = true, kind = "carry", once = true, quest = 97914, seconds = 8520, short = true, xp = 800 } }, -- level 18
         { talk = 1448, buy = { { 4371, 1, 1448 } }, when = { noitem = 4371 }, -- level 18
-          note = "This one roams, so scan the surrounding area. The NPC is indoors. Do it only if you can." },
+          note = "The NPC is indoors. Do it only if you can." },
         { vendor = true, talk = 1448, when = { noitem = 4371 } }, -- level 18
         { train = true, talk = 7312, races = { "Human", "Gnome" }, classes = { "MAGE" }, -- level 18
           note = "The NPC is indoors." },

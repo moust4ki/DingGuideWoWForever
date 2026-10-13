@@ -2,30 +2,46 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Alliance/27.lua.
--- Simulated (warrior): Human 43 (71%) -> 44 (14%) in 2 h 22, 11 quests turned in; Dwarf 43 (71%) -> 44 (14%) in 2 h 22, 11 quests turned in; NightElf 43 (71%) -> 44 (14%) in 2 h 23, 11 quests turned in; Gnome 43 (71%) -> 44 (14%) in 2 h 22, 11 quests turned in; Skyborne 43 (71%) -> 44 (14%) in 2 h 22, 11 quests turned in.
+-- Simulated (warrior): Human 43 (71%) -> 44 (14%) in 2 h 22, 11 quests turned in; Dwarf 43 (71%) -> 44 (14%) in 2 h 22, 11 quests turned in; NightElf 43 (71%) -> 44 (14%) in 2 h 23, 11 quests turned in; Gnome 43 (71%) -> 44 (14%) in 2 h 23, 11 quests turned in; Skyborne 43 (71%) -> 44 (14%) in 2 h 22, 11 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-a27-tanaris",
     title    = "Tanaris (43-44)",
     faction  = "Alliance",
     minLevel = 43, maxLevel = 44,
     next     = "leveling-a28-feralas-and-tanaris",
+    leftOut  = {
+        [4324] = { kind = "away" },
+        [4507] = { kind = "prereq" },
+        [4508] = { kind = "prereq" },
+        [4787] = { kind = "prereq" },
+        [4788] = { kind = "prereq" },
+        [5065] = { kind = "prereq" },
+        [5801] = { kind = "prereq" },
+        [8181] = { kind = "prereq" },
+        [8182] = { kind = "prereq" },
+        [8921] = { kind = "prereq" },
+        [8924] = { kind = "prereq" },
+        [8925] = { kind = "prereq" },
+        [8928] = { kind = "prereq" },
+        [8977] = { kind = "prereq" },
+    },
     steps    = {
         { go = { 1446, 52.3, 28.91 }, text = "Travel to Gadgetzan", -- level 43
           note = "Tanaris: Gadgetzan, in the north of the zone." },
         { talk = 7799, collect = { { 5862, 1 } }, spots = { { 1446, 52.35, 28.88 } }, -- level 43
           note = "The NPC is indoors." },
-        { turnin = 2864 }, -- level 43
+        { turnin = 2864, why = { chain = 1, kind = "detour", quest = 1188, quests = 3, seconds = 60, total = 2000, xp = 1600 } }, -- level 43
         { turnin = 1188, accept = 1189 }, -- level 43
         { turnin = 1119, when = { log = 1119 } }, -- level 43
         { accept = 1120, when = { done = 1119 }, -- level 43
           note = "Wait for the talking to finish" },
         { turnin = 1120, when = { log = 1120 } }, -- level 43
-        { accept = 1122, when = { done = 1120 } }, -- level 43
+        { accept = 1122, when = { done = 1120 }, why = { continent = true, kind = "carry", quest = 1122, seconds = 153480, xp = 1500 } }, -- level 43
         { turnin = 1137 }, -- level 43
         { accept = 1190 }, -- level 43
         { turnin = 1189 }, -- level 43
         { turnin = 1190, accept = 1194, -- level 43
-          note = "Hold on until Rizzle has fled. The NPC is indoors." },
+          note = "Hold on until Rizzle has fled. The object is indoors." },
         { turnin = 1194 }, -- level 43
         { destroy = 5866 }, -- level 43
         { accept = 1707 }, -- level 43
@@ -41,11 +57,11 @@ Ding.RegisterGuide({
         { complete = 1690 }, -- level 43
         { turnin = 1690 }, -- level 43
         { turnin = 1707 }, -- level 43
-        { level = 44, collect = { { 8483, 1 }, { 8483, 1 } }, patrol = { { 1446, 62.75, 30.36 }, { 1446, 63.17, 32.36 }, { 1446, 65.25, 32.76 }, { 1446, 63.25, 34.57 }, { 1446, 64.03, 28.35 }, { 1446, 59.84, 24.03 } }, -- level 43
+        { level = 44, collect = { { 8483, 1 }, { 8483, 1 } }, patrol = { { 1446, 62.75, 30.36 }, { 1446, 63.17, 32.36 }, { 1446, 65.25, 32.76 }, { 1446, 63.25, 34.57 }, { 1446, 64.03, 28.35 }, { 1446, 59.84, 24.03 } }, why = { kind = "level", levels = { 43, 47 } }, -- level 43
           note = "Targets here are human. Dungeon runs are a fine choice here too, as you like. Each set of 5 handed in at Gadgetzan gives 380 xp." },
         { complete = 1452, -- level 44
           note = "Hunt the red-feathered birds. Hyenas also use these spawn spots." },
         { talk = 7799, bank = { 5807, 6257 }, -- level 44
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need them later for \"Report Back to Fizzlebub\" and \"Rhapsody's Kalimdor Kocktail\": keep them in the bank to free bag slots." },
     },
 })

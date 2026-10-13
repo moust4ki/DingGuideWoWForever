@@ -5,8 +5,12 @@ Ding.RegisterGuideTranslation("koKR", "leveling-s02-skyborne-horde", {
         "Skyborne 시작 (1-13)",
     ["Everything starts on Zephras Isle: follow the arrow from NPC to NPC."] =
         "모든 것은 Zephras Isle에서 시작됩니다: 화살표를 따라 NPC를 차례로 찾아가세요.",
+    ["Coriella Calmbreeze"] =
+        "Coriella Calmbreeze",
     ["Finish the level on nearby monsters before moving on."] =
         "다음으로 넘어가기 전에 주변 몬스터로 레벨을 마저 올리세요.",
+    ["Donaal Downbreeze"] =
+        "Donaal Downbreeze",
     ["If the starting item dropped: use it from your bags."] =
         "시작 아이템을 얻었다면: 가방에서 사용하세요.",
 })

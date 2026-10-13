@@ -13,6 +13,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a35-western-plaguelands", {
         "다음 반납까지 하면 52레벨이 됩니다.",
     ["The NPC is indoors, one floor up."] =
         "NPC는 건물 안 한 층 위에 있습니다.",
+    ["The object is indoors."] =
+        "그 물체는 건물 안에 있습니다.",
     ["The NPC is indoors."] =
         "NPC는 건물 안에 있습니다.",
 })

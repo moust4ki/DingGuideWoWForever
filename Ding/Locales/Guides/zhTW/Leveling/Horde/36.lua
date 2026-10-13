@@ -27,8 +27,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h36-ungoro-crater", {
         "在高高的懸崖頂上找。",
     ["Climb the trail"] =
         "沿小路往上爬",
-    ["The NPC is up on the summit."] =
-        "NPC在山頂上。",
+    ["The object is up on the summit."] =
+        "這個物件在山頂上。",
     ["The targets are flame elementals. An elite foe waits on the summit; steer clear."] =
         "目標是火元素。山頂上有一個精英敵人；避開它。",
     ["For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears. Your objective lies in a little cavern."] =
@@ -51,8 +51,12 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h36-ungoro-crater", {
         "走上那道巨大的斜坡。小心這裡的精英敵人。之後逃離。",
     ["Stand on the neighboring ledge, then hop into this crack in the wall"] =
         "站在旁邊的岩架上，然後跳進牆上的這道裂縫",
+    ["The object is indoors."] =
+        "這個物件在室內。",
     ["Finish the quest named The Videre Elixir. Keep the elixir in your bags; never consume it. You will die from it."] =
         "完成名為「視靈藥劑」的任務。把藥劑留在背包裡；絕對不要喝。你會因此死亡。",
+    ["The NPC is indoors. You need it later for \"Meet at the Grave\": keep it in the bank to free a bag slot."] =
+        "NPC在室內。之後的任務「墓地相見」需要它：先存進銀行，空出背包空間。",
     ["The NPC patrols a long route; look along it."] =
         "NPC沿著一條很長的路線巡邏；沿路尋找。",
     ["You no longer need these; vendor or discard them."] =

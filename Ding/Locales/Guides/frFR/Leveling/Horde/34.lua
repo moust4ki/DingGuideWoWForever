@@ -21,6 +21,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h34-burning-steppes-and-azshara"
         "Utilise l'objet sur les Black Broodlings. Les cibles sont de petits dragons ailés. Un cristal rouge flotte au-dessus de chaque corps.",
     ["The NPC is indoors."] =
         "Le PNJ est à l'intérieur.",
+    ["The NPC is indoors. You need it later for \"Felnok Steelspring\": keep it in the bank to free a bag slot."] =
+        "Le PNJ est à l'intérieur. Tu en auras besoin plus tard pour « Felnok Steelspring » : garde-le à la banque pour libérer une place dans tes sacs.",
     ["This NPC is found down in the Cleft of Shadow."] =
         "Ce PNJ se trouve en bas, dans la Faille de l'ombre.",
     ["The NPC stands on the highest level of this structure."] =

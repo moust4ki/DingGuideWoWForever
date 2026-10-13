@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("zhTW", "horde-29-needles", {
         "千針石林 (28-30)",
     ["Thousand Needles is south of the Barrens, down the Great Lift: Freewind Post is your base."] =
         "千針石林位於貧瘠之地南邊，搭升降梯下去即達：據點是亂風崗。",
+    ["Freewind Post"] =
+        "亂風崗",
     ["Finish the level on nearby monsters before moving on."] =
         "先在附近打怪升完這一級再繼續。",
 })

@@ -7,4 +7,6 @@ Ding.RegisterGuideTranslation("koKR", "human-03-westfall", {
         "골드샤이어 길로 서쪽으로 간 다음, 서부 몰락지대 중앙의 감시의 언덕으로 가세요.",
     ["If the starting item dropped: use it from your bags."] =
         "시작 아이템을 얻었다면: 가방에서 사용하세요.",
+    ["Sentinel Hill"] =
+        "감시의 언덕",
 })
