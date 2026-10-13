@@ -305,6 +305,7 @@ function Dir:Reset()
     index, kindsOf, opened = nil, nil, {}
     self.cities = nil
     for _, city in ipairs(CITIES) do city.centre = nil end
+    Ding.Services:Reset()
     self:Forget()
 end
 
@@ -419,7 +420,8 @@ end
 
 -- The NPCs of a kind open to the player, the fewest seconds away first (the nearest ones
 -- priced with Core/Travel.lua; the others only by distance): entries { kind, npc, name, point,
--- seconds, distance }. `within`: a set of NPC ids (a city) to choose from, all priced.
+-- seconds, means (the ways taken: { "fly", "boat"... }), distance }. `within`: a set of NPC ids
+-- (a city) to choose from, all priced.
 function Dir:Fastest(kind, within)
     local reach = self:Reach()
     self.priced = self.priced or {}
@@ -450,7 +452,7 @@ function Dir:Fastest(kind, within)
     end
     for _, e in ipairs(priced) do
         e.name = Ding.Data:NpcName(e.npc)
-        e.seconds = reach and reach:Seconds(e.point) or nil
+        if reach then e.seconds, e.means = reach:Route(e.point) end
     end
     table.sort(priced, byCost)
     self.priced[key] = priced
@@ -501,8 +503,9 @@ function Dir:Cities()
     for _, city in ipairs(CITIES) do
         if not city.side or city.side == side then
             local centre = cityCentre(city)
-            out[#out + 1] = { city = city, name = self:CityName(city), point = centre,
-                seconds = centre and reach and reach:Seconds(centre) or nil }
+            local entry = { city = city, name = self:CityName(city), point = centre }
+            if centre and reach then entry.seconds, entry.means = reach:Route(centre) end
+            out[#out + 1] = entry
         end
     end
     return out
@@ -631,9 +634,10 @@ function Dir:WeaponReminder()
                 end
                 local point = spawnOf(near, continent, px, py)
                 local reach = self:Reach()
-                value = { weapons = weapons, best = { kind = weapons[1].kind, npc = near,
-                    name = Ding.Data:NpcName(near), point = point, distance = nearD,
-                    seconds = reach and reach:Seconds(point) or nil } }
+                local best = { kind = weapons[1].kind, npc = near, name = Ding.Data:NpcName(near), point = point,
+                    distance = nearD }
+                if reach then best.seconds, best.means = reach:Route(point) end
+                value = { weapons = weapons, best = best }
             end
         end
     end
@@ -827,7 +831,7 @@ function Dir:Search(text)
         end)
         for i = 1, math.min(SEARCH_NPCS, #found) do
             local e = found[i]
-            e.seconds = reach and reach:Seconds(e.point) or nil
+            if reach then e.seconds, e.means = reach:Route(e.point) end
             e.offers = self:Offers(e.npc)
             out[#out + 1] = e
         end

@@ -267,11 +267,18 @@ function P:Rows(content)
     content = content or self:Content()
     local itemID, itemQuest = Ding.ItemButton:Wanted()
     local rows, notes, hints, along, extra, preview = {}, {}, {}, {}, {}, {}
+    -- On a trip of the NPC directory, the way there goes under the trip's line.
+    local trip, travel = nil, {}
+    for _, line in ipairs(content) do
+        if line.action == "trip" then trip = line end
+    end
     for _, line in ipairs(content) do
         if line.indent then
             -- Objectives are listed from the quest log below; notes and hints become sub-lines.
             if line.kind == "note" then
                 notes[#notes + 1] = line.text
+            elseif line.kind == "hint" and line.travel and trip then
+                travel[#travel + 1] = line.text
             elseif line.kind == "hint" then
                 hints[#hints + 1] = line.text
             end
@@ -349,6 +356,9 @@ function P:Rows(content)
     for _, line in ipairs(extra) do
         local row = questRow(line)
         row.extra = true
+        if line == trip and #travel > 0 then
+            row.sub = table.concat(travel, "\n") .. (row.sub and ("\n" .. row.sub) or "")
+        end
         rows[#rows + 1] = row
     end
     -- The next steps, dimmed (option): what the step after this one will ask.
@@ -1075,10 +1085,10 @@ function P:Content()
     if not held then skippedLines(E, content) end
     -- The way there when walking is not the fastest (Core/Travel.lua, through the arrow).
     if not held and Ding.Arrow and Ding.Arrow.hint then
-        content[#content + 1] = { indent = true, kind = "hint", text = Ding.Arrow.hint }
+        content[#content + 1] = { indent = true, kind = "hint", text = Ding.Arrow.hint, travel = true }
         -- The whole way, leg by leg, with its total time.
         local route = Ding.Travel:Itinerary(Ding.Travel.plan)
-        if route then content[#content + 1] = { indent = true, kind = "hint", text = route } end
+        if route then content[#content + 1] = { indent = true, kind = "hint", text = route, travel = true } end
     end
     -- A log almost full, with quests the guide never uses: they can go (Guide tab).
     if not held and Compat.NumQuestsInLog() >= LOG_ALMOST_FULL then

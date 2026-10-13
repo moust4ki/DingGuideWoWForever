@@ -34,6 +34,9 @@ local function spawnsOf(npc)
 end
 S.SpawnsOf = spawnsOf
 
+-- The world positions are computed again (another database, another map of the world).
+function S:Reset() points = {} end
+
 -- NPC ids of a kind open to the player; "trainer" is the player's own class.
 function S:Npcs(kind)
     local all = Ding.Data:Services()

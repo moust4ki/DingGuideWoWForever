@@ -446,28 +446,41 @@ end
 
 -- Many targets at once (the NPC directory): one pass over the graph from the player, then
 -- reach:Seconds(point) gives the fewest seconds to any point (the same as Plan(point).seconds),
--- or nil when nothing leads there. Nil without a position.
+-- or nil when nothing leads there, and reach:Route(point) those seconds with the ways taken
+-- ({ "fly", "boat", ... } in order, walks left out: the kinds of Plan's legs). Nil without a
+-- position.
 function T:Reach()
     local start = self:Start()
     if not start then return nil end
     local nodes, leg = graph(start)
-    local time = shortest(nodes, leg)
+    local time, prev, how = shortest(nodes, leg)
     -- `jumps`: where the hearthstone or a teleport lands (what is near them may be fast too).
     local reach = { jumps = {} }
     for _, node in ipairs(nodes) do
         if node.inn or node.teleport then reach.jumps[#reach.jumps + 1] = node.point end
     end
-    function reach:Seconds(point)
+    function reach:Route(point)
         if not point then return nil end
         local target = { point = withWorld(point) }
-        local best
+        local best, last, lastKind
         for i, node in ipairs(nodes) do
             if time[i] then
-                local t = leg(node, target)
-                if t and (not best or time[i] + t < best) then best = time[i] + t end
+                local t, kind = leg(node, target)
+                if t and (not best or time[i] + t < best) then best, last, lastKind = time[i] + t, i, kind end
             end
         end
-        return best
+        if not best then return nil end
+        local kinds = {}
+        if lastKind ~= "walk" then kinds[1] = lastKind end
+        local i = last
+        while prev[i] do
+            if how[i] ~= "walk" then table.insert(kinds, 1, how[i]) end
+            i = prev[i]
+        end
+        return best, kinds
+    end
+    function reach:Seconds(point)
+        return (self:Route(point))
     end
     return reach
 end

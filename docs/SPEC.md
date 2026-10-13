@@ -713,12 +713,14 @@ accent #5BB4FF, the Noto Sans font shipped with the addon, rounded shapes from t
   then any point priced: walking, known and unseen flight paths, boats, zeppelins, the tram,
   the hearthstone, teleports), else the fewest yards. Priced: every NPC of a kind of 24 or fewer,
   else the 4 nearest on the player's continent and the 2 nearest to where the hearthstone or a
-  teleport lands. A row says where the NPC stands: the city or town (below), else the zone.
+  teleport lands. A row says where the NPC stands (the city or town, below, else the zone), the
+  ways besides walking (`reach:Route`: "· flight", "· boat, flight", "· zeppelin, flight",
+  tram, hearthstone, teleport) and the time ("8 min", "< 1 min"; yards without a time).
 
   The window ("Ding! · Directory", 360 wide) has two tabs, LB / RB or a click:
-  - **Nearby**: one row per category (name, "NPC · place", the time); a category with
+  - **Nearby**: one row per category (name, "NPC · place · ways", the time); a category with
     sub-choices (ammunition, weapon masters, profession trainers) shows the first ones and opens
-    their list, one row per choice ("Guns", "Buliwyf Stonehand · Ironforge", the time). A
+    their list, one row per choice ("Guns", "Buliwyf Stonehand · Ironforge · flight", "8 min"). A
     category without any NPC is grayed ("None known nearby").
   - **Cities**: the capitals of the player's side (Stormwind, Ironforge, Darnassus; Orgrimmar,
     Thunder Bluff, Undercity: on their own map) and the neutral towns (Booty Bay, Gadgetzan,
@@ -734,13 +736,17 @@ accent #5BB4FF, the Noto Sans font shipped with the addon, rounded shapes from t
 
   D-pad, A, B and the shoulders while it is open (temporary bindings, out of combat; never opens
   in combat), or the mouse: a click opens or goes, a right click or Esc goes back or closes, the
-  wheel scrolls (9 rows shown). A row chosen sends the arrow to its NPC: the guide window says
-  "On the way to … (Guns): the guide resumes once there." with "A: back to the guide" (or
-  "Click: …"); the trip ends when that NPC's window opens (by its creature id, else its name;
-  when the client tells neither, the window of its kind: merchant, trainer, bank, auction house,
-  stable, flight map), then the guide takes the arrow back. On the first page during a trip, a
-  row "Back to the guide"; B there closes the window and ends the trip too (a right click or Esc
-  only closes it). The trip line itself, clicked or pressed in focus mode, ends it.
+  wheel scrolls (9 rows shown). A row chosen sends the arrow to its NPC like any target of the
+  arrow, through the travel planner: the flight master, the dock or the hearthstone first, the
+  flight map's destination, the boarding (Travel above). The guide window says "On the way to …
+  (Guns): the guide resumes once there.", with under it what to take ("Fly to Ironforge"), the
+  whole way ("Route: walk 0:20, fly 7:56 to Ironforge, walk 0:37 (8:53 in all)") and "A: back to
+  the guide" (or "Click: …"); the trip ends when that NPC's window opens (by its creature id,
+  else its name; when the client tells neither, the window of its kind: merchant, trainer, bank,
+  auction house, stable, flight map), then the guide takes the arrow back. On the first page
+  during a trip, a row "Back to the guide"; B there closes the window and ends the trip too (a
+  right click or Esc only closes it). The trip line itself, clicked or pressed in focus mode, ends it. A weapon
+  master's trainer window is not taken for the class trainer's (`Training:Record`).
 - **Weapon to learn** (guide window, option "Weapon to learn" in the Guide tab, on by default):
   a row "Weapon to learn: Guns — Buliwyf Stonehand, Ironforge" when a weapon the class can use
   but does not know is in the bags or worn (its fastest weapon master), else when a weapon master

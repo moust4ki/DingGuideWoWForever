@@ -484,9 +484,9 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   Inside a list, a 30-high title row: accent left caret, the B chip (gamepad), the list's name
   13 SemiBold; a click goes back. Rows 38 high, 2 apart, 6 from the sides (row background
   `bg.control`, radius 4): the name 12 Medium, under it 11 Regular `text.secondary` ("Buliwyf
-  Stonehand · Ironforge", or what an NPC offers), on the right the time 12 SemiBold accent
-  ("4:10") or, for a row that opens a list, a `text.secondary` right caret; the inset focus ring
-  of list rows, with the A chip before the time or the caret (gamepad). A row with nothing to
+  Stonehand · Ironforge · flight", or what an NPC offers), on the right the time 12 SemiBold
+  accent ("8 min", "< 1 min") or, for a row that opens a list, a `text.secondary` right caret;
+  the inset focus ring of list rows, with the A chip before the time or the caret (gamepad). A row with nothing to
   offer: its name `text.disabled`. Nine rows shown, then the wheel or the focus scrolls. Footer
   28 high under a divider: with a gamepad, the plain text "Times by the fastest way: flights,
   boats, hearthstone." (every action has its chip); without one, the mouse help ("Click: go ·
@@ -496,8 +496,9 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   `bg` dot, over a 7-unit downward caret); tooltip "NPC directory". In focus mode, up from the
   first row: the outer focus ring around it and the A chip on its left (the title shortens).
 - **Guide window rows added under the step** (after "along the way"): during a trip of the NPC
-  directory, "On the way to … (…): the guide resumes once there." with a sub-line "A: back to
-  the guide" ("Click: …" without a gamepad); "Weapon to learn: Guns — Buliwyf Stonehand,
+  directory, "On the way to … (…): the guide resumes once there." with sub-lines: the travel
+  hint and the route (which otherwise go under the step's last row), then "A: back to the
+  guide" ("Click: …" without a gamepad); "Weapon to learn: Guns — Buliwyf Stonehand,
   Ironforge"; "New spells at your class
   trainer (cost)", or "New spells may wait at your class trainer (level N)" before the first
   visit (glyph of an "other" row) and "Equip [item]" with the item's icon, its gain

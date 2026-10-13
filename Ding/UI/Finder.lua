@@ -97,20 +97,36 @@ end
 ---------------------------------------------------------------------------
 -- What the pages show
 ---------------------------------------------------------------------------
--- "1:20" for seconds, "320 yd" without a time.
+-- "8 min" (the fastest way, Core/Travel.lua), "< 1 min"; "320 yd" without a time.
 local function cost(entry)
     if entry and entry.seconds then
-        local s = math.floor(entry.seconds + 0.5)
-        return ("%d:%02d"):format(math.floor(s / 60), s % 60)
+        if entry.seconds < 60 then return L.DIR_UNDER_MINUTE end
+        return L.DIR_MINUTES:format(math.floor(entry.seconds / 60 + 0.5))
     end
     if entry and entry.distance then return L.YARDS:format(entry.distance) end
     return ""
 end
 
--- "Buliwyf Stonehand · Ironforge"
+-- The ways the trip takes besides walking, after a line: "… · flight, boat".
+local MEANS = { fly = "DIR_BY_FLY", boat = "DIR_BY_BOAT", zeppelin = "DIR_BY_ZEPPELIN", tram = "DIR_BY_TRAM",
+    hearth = "DIR_BY_HEARTH", teleport = "DIR_BY_TELEPORT" }
+local function withMeans(text, entry)
+    local names, seen = {}, {}
+    for _, kind in ipairs(entry and entry.means or {}) do
+        local key = MEANS[kind]
+        if key and not seen[key] then
+            seen[key] = true
+            names[#names + 1] = L[key]
+        end
+    end
+    if #names == 0 then return text end
+    return text .. " · " .. table.concat(names, ", ")
+end
+
+-- "Buliwyf Stonehand · Ironforge · flight"
 local function npcLine(entry)
     local place = Dir():Place(entry.point)
-    return (entry.name or "?") .. (place and (" · " .. place) or "")
+    return withMeans((entry.name or "?") .. (place and (" · " .. place) or ""), entry)
 end
 
 -- "Guns, Bows, Thrown +2"
@@ -153,8 +169,8 @@ function F:Rows(page)
         end
     elseif page.kind == "cities" then
         for _, c in ipairs(D:Cities()) do
-            add({ label = c.name, sub = c.city.side and L.DIR_CAPITAL or L.DIR_TOWN, right = cost(c), caret = true,
-                open = { kind = "city", city = c.city, title = c.name } })
+            add({ label = c.name, sub = withMeans(c.city.side and L.DIR_CAPITAL or L.DIR_TOWN, c), right = cost(c),
+                caret = true, open = { kind = "city", city = c.city, title = c.name } })
         end
     elseif page.kind == "city" then
         local within = D:CityNpcs(page.city)
@@ -176,7 +192,8 @@ function F:Rows(page)
             if page.category.choices then
                 add({ label = e.label, sub = e.best.name, right = cost(e.best), entry = e.best, what = e.label })
             else
-                add({ label = e.name, sub = e.offers, right = cost(e), entry = e, what = L[page.category.label] })
+                add({ label = e.name, sub = withMeans(e.offers, e), right = cost(e), entry = e,
+                    what = L[page.category.label] })
             end
         end
     elseif page.kind == "search" then
@@ -187,8 +204,8 @@ function F:Rows(page)
                     open = { kind = "choices", category = r.category, all = true, title = name } })
             elseif r.kind == "npc" then
                 local place = D:Place(r.point)
-                add({ label = r.name, sub = r.offers .. (place and (" · " .. place) or ""), right = cost(r), entry = r,
-                    what = firstOffer(r.offers) })
+                local sub = withMeans(r.offers .. (place and (" · " .. place) or ""), r)
+                add({ label = r.name, sub = sub, right = cost(r), entry = r, what = firstOffer(r.offers) })
             elseif r.best then
                 add({ label = r.label, sub = npcLine(r.best), right = cost(r.best), entry = r.best, what = r.label })
             else

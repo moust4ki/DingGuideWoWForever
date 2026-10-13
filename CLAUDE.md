@@ -204,10 +204,12 @@ Contracts between modules:
 - NPC directory: `Directory:Ids(kind)` (the NPC ids of the player's side; kinds "vendor",
   "repair", "food", "arrows", "bullets", "reagents", "poisons", "innkeeper", "flight", "trainer",
   "weapon:<skill line>", "profession:<key>", "trade", "bank", "auction", "stable"),
-  `Directory:Best(kind[, within])` -> `{ kind, npc, name, point, seconds, distance }` (the
-  fewest seconds away; `within`: a city's NPC set), `Entries([within])`, `Cities()`,
-  `CityNpcs(city)`, `CityList(city, category)`, `Search(text)`, `WeaponReminder()`,
-  `Place(point)`; `Travel:Reach()` -> `reach:Seconds(point)` (one planner pass, many targets).
+  `Directory:Best(kind[, within])` -> `{ kind, npc, name, point, seconds, means, distance }` (the
+  fewest seconds away, `means` the ways besides walking; `within`: a city's NPC set),
+  `Entries([within])`, `Cities()`, `CityNpcs(city)`, `CityList(city, category)`, `Search(text)`,
+  `WeaponReminder()`, `Place(point)`; `Travel:Reach()` -> `reach:Seconds(point)`,
+  `reach:Route(point)` -> seconds, `{ "fly", "boat"... }` (one planner pass, many targets).
+  A trip goes through `Travel:Leg` like any target of the arrow.
   `Finder.trip` = `{ kind, npc, name, point, label }` (`Finder:GoTo(entry, label)`,
   `Finder:Go(kind)`, `Finder:Cancel()`), read by the arrow and the guide window.
 - `Ding.db` (DingDB, account): `panel` (position, `scale` 0.5-1.5, `width` 240-420, `locked`,

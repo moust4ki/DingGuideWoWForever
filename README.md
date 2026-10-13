@@ -52,8 +52,10 @@ instead from the *Arrow* tab of the settings (off by default).
   ammunition, reagents, poisons, innkeeper, flight master, class trainer, weapon masters by
   weapon, profession trainers by profession, trade supplies, bank, auction house, stable
   master. A second tab lists the capitals of your side and the neutral towns (Booty Bay,
-  Gadgetzan, Ratchet, Everlook) with what each offers. Pick one: the arrow takes you there by
-  the fastest way, and the guide resumes once you talk to that NPC. When a weapon you can use
+  Gadgetzan, Ratchet, Everlook) with what each offers. Each row says how long it takes and by
+  which way (flight, boat, zeppelin, tram, hearthstone). Pick one: the arrow takes you there
+  leg by leg, the guide window says what to take, and the guide resumes once you talk to that
+  NPC. When a weapon you can use
   but do not know is in your bags, or its weapon master is close by, the guide window says
   where to learn it.
 - **Minimap button.** Left-click for the settings, right-click to show or hide the guide.
