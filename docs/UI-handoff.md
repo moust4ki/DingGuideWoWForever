@@ -557,6 +557,15 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   that binding is bound and the arrow points to an NPC or a monster. In the Keybinds tab, an
   info row under the bindings (11 Regular `text.secondary`) suggests the game's "Interact with
   Target" key.
+- **Quest monster mark** (not in the mockup, `UI/QuestMobs.lua`): over an enemy nameplate,
+  bottom centered on the plate's top, 2 up; 18 high, the "small" shape (radius 3) in
+  `itemBg` with a 1.5 border; the glyph of the window's rows (diamond 7 for a kill, dot 7 for
+  a drop, "!" / "?" 12 Bold for a quest giver or a turn-in) 5 + 4 in from the left, then the
+  counter 11 SemiBold 4 after an 8 glyph column, 6 at the right; without a counter, an 18
+  square with the glyph centered. Current step: glyph and border `accent`, counter `text`;
+  another quest: glyph and counter `text.secondary`, border `border`, the mark at 80 %. In
+  the unit tooltip, one line per objective: "Ding!" in `accent`, then " · “Quest” 3/8" in
+  `text` (the step's) or `text.secondary` (another quest's).
 
 ## To check in game (Forever 1.60)
 
@@ -577,6 +586,11 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   the API and with TomTom: TomTom's pin, no TomTom arrow.
 - Zone names: localized zone names (`C_Map.GetMapInfo`), a dungeon or a city's sub-map named by
   its zone, nothing when the target is in your zone.
+- Quest monster marks: `NAME_PLATE_UNIT_ADDED` / `C_NamePlate.GetNamePlateForUnit`, the mark
+  above the plate (its size and place at every plate scale, over the name), the counter after
+  a kill, in combat (a GUID kept secret?); the tooltip line (`TooltipDataProcessor` or
+  `OnTooltipSetUnit`) inside the tooltip's background; `nameplateMaxDistance`: the distance the
+  client keeps (the chat says it) and the value back once off.
 - Teleports on the item button (`type` "spell", the spell's name): the cast, its icon and
   cooldown; `C_Spell.GetSpellName` / `GetSpellInfo`, `IsSpellKnown`.
 - Automatic flight (option on): `TakeTaxiNode(index)` from an addon when the flight map opens,

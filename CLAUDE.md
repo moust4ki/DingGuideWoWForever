@@ -73,6 +73,10 @@ Ding/
                     protected frame)
     Minimap.lua     Ding.Minimap: button around the minimap (settings, guide)
     MinimapPins.lua Ding.MinimapPins: the target, nearby spots and an edge arrow on the minimap
+    QuestMobs.lua   Ding.QuestMobs: a mark of Ding's over the enemy nameplates of the monsters a
+                    log quest needs (kill, drop) with the counter, the step's quest givers on
+                    friendly plates, a line in the unit tooltip (hooked), enemy nameplates
+                    farther (nameplateMaxDistance)
     Config.lua      Ding.Config: settings window, six tabs by intent (Config.TAB keys: guide,
                     route, automation, arrow, bindings, appearance), titled blocks, pages for
                     long lists (OpenPage), folded rows, "Defaults for this tab"; first launch
@@ -195,7 +199,13 @@ Contracts between modules:
   its entry for the player's faction when it is a table. `Engine:UnusedLogQuests()`: quests
   of the log the active guide and the next ones never use (listed in the Guide tab; Ding never
   abandons them). `UI.Banner`, `UI.Ring`, `UI.ScreenCenter`: Ding's marks over the game's
-  windows, which are only read. `Panel:SetShown(v)`: the window and
+  windows, which are only read. `QuestMobs.byNpc` (`[npc id]` = entries best first: `kind`
+  "kill" | "drop" | "accept" | "turnin", `quest`, `label`, `have`, `need`, `current`, `enemy`),
+  rebuilt by `Engine:Refresh` (`QuestMobs:Refresh`); `QuestMobs.plates` (`[unit token]` =
+  `{ plate, npc, name, attackable, badge }`, the monster read when the plate appears);
+  `Along:Objectives(q, accept)` (unfinished objectives with the DingDB target they name) and
+  `Along:StepQuests()`; `Data:ObjectiveTargets` gives each target `kind` and `npcs`;
+  `Compat.UnitNpcID` (false for a player, nil when secret). `Panel:SetShown(v)`: the window and
   the arrow together (the arrow only shows with the window open).
 - `Ding.db` (DingDB, account): `panel` (position, `scale` 0.5-1.5, `width` 240-420, `locked`,
   `bgAlpha`, `compactInCombat`, `hideInInstance`, `keyHints`, `itemButton`), `arrow`
@@ -203,7 +213,9 @@ Contracts between modules:
   target as the client's map waypoint), `item` (position of the item button),
   `minimap` (`shown`, `angle`), `ui` (`buttonStyle`, `sound`, `welcomed`, `autoAccept`,
   `autoTurnin`, `skipGrey`, `hearth`, `deathSkip`, `dungeons`, `elites`, `chooseReward`,
-  `sellGrey`, `repair`, `markTarget`, `serviceSteps`, `trainerSteps`, `flightSteps`, `autoEquip`, `autoFly`, `dungeonChoice` (`[name] = bool`)),
+  `sellGrey`, `repair`, `markTarget`, `serviceSteps`, `trainerSteps`, `flightSteps`, `autoEquip`, `autoFly`, `dungeonChoice` (`[name] = bool`),
+  `mobIcons`, `mobTooltip`, `farPlates`), `farPlatesFrom` (the nameplate distance before
+  "Show enemy nameplates farther", put back when it goes off),
   `timings`, `flightTimes` (`["<from npc>:<to npc>"] = { seconds, count }`, flights measured),
   `imported` (`[pack id] = { pack, guides, at }`: guides imported as text, kept by "restore
   all defaults"),

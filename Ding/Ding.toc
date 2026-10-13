@@ -70,6 +70,7 @@ UI\Panel.lua
 UI\ItemButton.lua
 UI\Minimap.lua
 UI\MinimapPins.lua
+UI\QuestMobs.lua
 UI\Config.lua
 Core\Commands.lua
 
