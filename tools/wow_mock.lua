@@ -725,6 +725,9 @@ return function(opts)
     local items, specialItems, itemUses, macroUses = {}, {}, {}, {}
     local bagSlots    -- the bags' slots (defined with the bags, below)
     local hasTarget = false
+    -- Item facts (H.setItemInfo): { name, quality, equipLoc, sellPrice, stats, usable }; the
+    -- client answers by id or by link, nil for an item it has not loaded.
+    local itemInfo, equipped = {}, {}
     _G.C_Item = {
         -- Like the client: the copies in the bags (H.setItem's counts and H.putInBag's slots).
         GetItemCount = function(id)
@@ -735,7 +738,8 @@ return function(opts)
             return n
         end,
         GetItemIconByID = function(id) return items[id] and items[id].icon or 134400 end,
-        GetItemNameByID = function(id) return "item " .. id end,
+        -- The name H.setItemInfo gave it, else a made-up one.
+        GetItemNameByID = function(id) return itemInfo[id] and itemInfo[id].name or ("item " .. id) end,
         GetItemSpell = function(id)
             if items[id] and items[id].use then return "Use " .. id, 1000 + id end
             return nil
@@ -747,9 +751,6 @@ return function(opts)
             return items[id].range
         end,
     }
-    -- Item facts (H.setItemInfo): { name, quality, equipLoc, sellPrice, stats, usable }; the
-    -- client answers by id or by link, nil for an item it has not loaded.
-    local itemInfo, equipped = {}, {}
     local function itemID(item)
         if type(item) == "number" then return item end
         return tonumber(tostring(item):match("item:(%d+)"))
