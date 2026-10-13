@@ -1214,21 +1214,34 @@ end
 -- the arrow takes them only when they are right there and the step's targets are not.
 local LOW_PENALTY = 300
 
-function E:NearestPoint(points)
+-- `prefer`: the label of the target the arrow already follows. It stays while no other is
+-- clearly nearer (under STICK_RATIO of its distance and STICK_YARDS closer): two objectives
+-- side by side do not make the arrow flip from one to the other as the player walks.
+local STICK_RATIO, STICK_YARDS = 0.5, 40
+E.STICK_RATIO, E.STICK_YARDS = STICK_RATIO, STICK_YARDS
+
+function E:NearestPoint(points, prefer)
     points = points or self.candidates
     if not points or #points == 0 then return nil end
     local continent, px, py = Compat.GetPlayerWorld()
     if not continent then return points[1], nil end
     local best, bestCost, bestDist
+    local kept, keptCost, keptDist
     for _, p in ipairs(points) do
         local c, wx, wy = worldOf(p)
         if c == continent and wx then
             local d = math.sqrt((wx - px) ^ 2 + (wy - py) ^ 2)
             local cost = p.low and (d * 2 + LOW_PENALTY) or d
             if not bestCost or cost < bestCost then best, bestCost, bestDist = p, cost, d end
+            if prefer and p.label == prefer and (not keptCost or cost < keptCost) then
+                kept, keptCost, keptDist = p, cost, d
+            end
         end
     end
     if not best then return points[1], nil, true end
+    if kept and kept ~= best and not (bestCost < keptCost * STICK_RATIO and keptCost - bestCost > STICK_YARDS) then
+        return kept, keptDist
+    end
     return best, bestDist
 end
 
