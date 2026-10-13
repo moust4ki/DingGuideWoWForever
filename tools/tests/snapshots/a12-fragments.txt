@@ -157,8 +157,8 @@ STEP   < Étape 29 / 87 >   zone: Les Paluns
     card:
       | Monte le chemin
       | Une étape plus loin : rien à faire pour l'instant.
-18  preview  [preview] grey "?" icon, text dim grey
-    Rendre [29] « La vengeance d'Ormer »
+18  preview  [preview] grey caret right icon, text dim grey
+    Faire [29] « La vengeance d'Ormer »
     card:
       | La vengeance d'Ormer
       | Une étape plus loin : rien à faire pour l'instant.
