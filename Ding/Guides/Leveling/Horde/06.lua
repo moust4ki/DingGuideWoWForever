@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Horde/06.lua.
--- Simulated (warrior): Orc 22 (11%) -> 22 (33%) in 44 min, 5 quests turned in; Scourge 22 (11%) -> 22 (33%) in 44 min, 5 quests turned in; Tauren 22 (7%) -> 22 (30%) in 44 min, 5 quests turned in; Troll 22 (11%) -> 22 (33%) in 44 min, 5 quests turned in; Skyborne 22 (18%) -> 22 (40%) in 44 min, 4 quests turned in.
+-- Simulated (warrior): Orc 22 (17%) -> 22 (39%) in 44 min, 4 quests turned in; Scourge 22 (17%) -> 22 (39%) in 44 min, 4 quests turned in; Tauren 22 (11%) -> 22 (33%) in 44 min, 4 quests turned in; Troll 22 (17%) -> 22 (39%) in 44 min, 4 quests turned in; Skyborne 22 (18%) -> 22 (40%) in 44 min, 4 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-h06-ashenvale",
     title    = "Ashenvale (21-22)",
@@ -34,9 +34,6 @@ Ding.RegisterGuide({
         { train = true, talk = 3043, classes = { "WARRIOR" }, -- level 22
           note = "The NPC is indoors." },
         { go = { 1454, 81.5, 19.65 }, classes = { "WARRIOR" } }, -- level 22
-        { turnin = 96874, races = { "Scourge" } }, -- level 22
-        { turnin = 96874, races = { "Tauren" } }, -- level 22
-        { turnin = 96874, races = { "Orc", "Troll" } }, -- level 22
         { talk = 2704, classes = { "WARRIOR" }, -- level 22
           note = "The NPC is indoors." },
         { turnin = 1063, -- level 22
