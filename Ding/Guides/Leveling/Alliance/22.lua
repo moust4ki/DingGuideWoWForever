@@ -17,7 +17,7 @@ Ding.RegisterGuide({
         { talk = 2461, -- level 40
           note = "The NPC is indoors." },
         { talk = 2461, bank = 4502, -- level 40
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need it later for \"Sunken Treasure\": keep it in the bank to free a bag slot." },
         { go = { 1453, 52.93, 51.05 }, races = { "Human", "Dwarf" }, classes = { "PALADIN" }, text = "Head indoors" }, -- level 40
         { accept = 1661, races = { "Human", "Dwarf" }, classes = { "PALADIN" }, -- level 40
           note = "The NPC is indoors." },

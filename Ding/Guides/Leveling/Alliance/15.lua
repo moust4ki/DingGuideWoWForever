@@ -82,7 +82,7 @@ Ding.RegisterGuide({
         { accept = 700, -- level 33
           note = "Let the conversation play out. The NPC is indoors." },
         { talk = 2461, bank = 3721, -- level 33
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need it later for \"Reassignment\": keep it in the bank to free a bag slot." },
         { go = { 1455, 44.51, 49.54 }, text = "Stay on the trail" }, -- level 33
         { turnin = 700 }, -- level 33
         { turnin = 98300, races = { "Human", "Dwarf", "NightElf", "Gnome" } }, -- level 33

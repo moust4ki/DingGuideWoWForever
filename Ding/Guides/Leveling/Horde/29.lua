@@ -17,7 +17,7 @@ Ding.RegisterGuide({
         { talk = 3309, collect = { { 4589, 10 }, { 8527, 1 }, { 6193, 1 }, { 9618, 1 } }, spots = { { 1454, 49.62, 69.06 } }, -- level 48
           note = "The NPC is indoors." },
         { talk = 3309, bank = { 10556, 11186, 11188, 11185, 11184 }, -- level 48
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need them later for \"The Stone Circle\" and \"Crystals of Power\": keep them in the bank to free bag slots." },
         { accept = 2995 }, -- level 48
         { go = { 1458, 52.8, 77.62 }, text = "Take the trail downhill" }, -- level 48
         { turnin = 864, when = { log = 864 } }, -- level 48
@@ -113,6 +113,6 @@ Ding.RegisterGuide({
         { turnin = 2662, -- level 48
           note = "Wait for the talking to finish" },
         { talk = 7799, bank = { 8685, 3900, 10695 }, -- level 48
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need them later for \"Ripple Delivery\", \"Whiskey Slim's Lost Grog\" and \"Seeping Corruption\": keep them in the bank to free bag slots." },
     },
 })

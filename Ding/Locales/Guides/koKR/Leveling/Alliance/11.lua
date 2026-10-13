@@ -79,6 +79,10 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a11-duskwood-and-redridge-mounta
         "이 퀘스트에서는 이동하는 NPC를 보호합니다. NPC가 없다면 다시 나타날 때까지 기다리세요. 대상은 동굴 안에 있습니다.",
     ["Let the conversation play out. Keep Corporal Keeshan safe during the escort. At the cave's mouth, draw foes to him with care."] =
         "대화가 끝날 때까지 기다리세요. 호위하는 동안 하사관 키샨을 보호하세요. 동굴 입구에서는 적을 조심해서 그에게 끌어오세요.",
+    ["You need it later for \"The Legend of Stalvan\": keep it in the bank to free a bag slot."] =
+        "나중에 \"스탈반의 전설\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Juice Delivery\": keep it in the bank to free a bag slot."] =
+        "나중에 \"좀비 독주 배달\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["The NPC patrols a long route; look along it."] =
         "NPC는 긴 경로를 순찰합니다. 경로를 따라 찾아보세요.",
     ["It is the dungeon's 4th boss."] =

@@ -57,7 +57,7 @@ Ding.RegisterGuide({
         { talk = 7799, collect = { { 11186, 7 }, { 11188, 7 }, { 11185, 7 }, { 11184, 7 } }, -- level 49
           note = "The NPC is indoors." },
         { talk = 7799, bank = 9245, -- level 49
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need it later for \"Deliver to MacKinley\": keep it in the bank to free a bag slot." },
         { accept = 2605 }, -- level 49
         { turnin = 10, elite = true, when = { log = 10 } }, -- level 49
         { accept = 110, elite = true, when = { done = 10 } }, -- level 49

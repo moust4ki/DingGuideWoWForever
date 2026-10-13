@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a36-azshara-and-felwood", {
         "Teldrassil : le village de Rut'theran d'abord, puis Azshara et Gangrebois.",
     ["The NPC is indoors."] =
         "Le PNJ est à l'intérieur.",
+    ["The NPC is indoors. You need them later for \"Good Natured Emma\", \"Arcane Runes\" and \"Sprinkle's Secret Ingredient\": keep them in the bank to free bag slots."] =
+        "Le PNJ est à l'intérieur. Tu en auras besoin plus tard pour « Emma la bonne pâte », « Les runes des arcanes » et « L'ingrédient secret de Sprinkle » : garde-les à la banque pour libérer de la place dans tes sacs.",
     ["Climb to the highest floor of the building."] =
         "Monte au dernier étage du bâtiment.",
     ["The quest giver stands outdoors, not indoors."] =

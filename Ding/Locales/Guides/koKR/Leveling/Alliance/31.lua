@@ -29,6 +29,10 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a31-ungoro-crater", {
         "마샬의 야영지 비행 조련사",
     ["The NPC is indoors."] =
         "NPC는 건물 안에 있습니다.",
+    ["The NPC is indoors. You need them later for \"The Bait for Lar'korwi\", \"Un'Goro Soil\", \"A Visit to Gregan\" and \"It's a Secret to Everybody\": keep them in the bank to free bag slots."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"라르코르위를 위한 미끼\", \"운고로 흙\", \"그레간 방문\", \"아무도 모르는 비밀\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["The NPC is indoors. You need it later for \"Rise of the Silithid\": keep it in the bank to free a bag slot."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"실리시드의 출현\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["The NPC is on the house's raised terrace."] =
         "NPC는 집의 높은 테라스 위에 있습니다.",
     ["In the Maraudon Tunnels, the target is a centaur in violet armor. The targets are spread over several spots."] =

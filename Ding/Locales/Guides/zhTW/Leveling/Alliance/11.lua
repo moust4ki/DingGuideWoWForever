@@ -79,6 +79,10 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a11-duskwood-and-redridge-mounta
         "這個任務要護送一名移動中的NPC。如果NPC不在，就等到他重生。目標在洞穴裡。",
     ["Let the conversation play out. Keep Corporal Keeshan safe during the escort. At the cave's mouth, draw foes to him with care."] =
         "讓對話播完。護送期間保護基沙恩下士的安全。在洞口小心地把敵人引到他身邊。",
+    ["You need it later for \"The Legend of Stalvan\": keep it in the bank to free a bag slot."] =
+        "之後的任務「斯塔文的傳說」需要它：先存進銀行，空出背包空間。",
+    ["You need it later for \"Juice Delivery\": keep it in the bank to free a bag slot."] =
+        "之後的任務「僵屍酒」需要它：先存進銀行，空出背包空間。",
     ["The NPC patrols a long route; look along it."] =
         "NPC沿著一條很長的路線巡邏；沿路尋找。",
     ["It is the dungeon's 4th boss."] =

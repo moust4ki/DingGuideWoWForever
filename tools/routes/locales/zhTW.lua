@@ -3277,4 +3277,123 @@ return {
         "目標沿著一條很長的路線巡邏；沿路尋找。",
     ["The target waits here, then strolls out onto the big branch close by."] =
         "目標在這裡等，然後走到附近的大樹枝上。",
+    -- Ding - Leveling: why an item goes to the bank (notes)
+    ["You need it later for \"The Legend of Stalvan\": keep it in the bank to free a bag slot."] =
+        "之後的任務「斯塔文的傳說」需要它：先存進銀行，空出背包空間。",
+    ["You need it later for \"Juice Delivery\": keep it in the bank to free a bag slot."] =
+        "之後的任務「僵屍酒」需要它：先存進銀行，空出背包空間。",
+    ["You need it later for \"The Brassbolts Brothers\": keep it in the bank to free a bag slot."] =
+        "之後的任務「防撞頭盔」需要它：先存進銀行，空出背包空間。",
+    ["You need it later for \"A Noble Brew\": keep it in the bank to free a bag slot."] =
+        "之後的任務「名釀」需要它：先存進銀行，空出背包空間。",
+    ["You need it later for \"Soothing Turtle Bisque\": keep it in the bank to free a bag slot."] =
+        "之後的任務「海龜湯」需要它：先存進銀行，空出背包空間。",
+    ["You need it later for \"Reassignment\": keep it in the bank to free a bag slot."] =
+        "之後的任務「人事調動」需要它：先存進銀行，空出背包空間。",
+    ["You need it later for \"Parts for Kravel\": keep it in the bank to free a bag slot."] =
+        "之後的任務「給克拉維爾的零件」需要它：先存進銀行，空出背包空間。",
+    ["You need them later for \"Goblin Sponsorship\" and \"The Hidden Key\": keep them in the bank to free bag slots."] =
+        "之後的任務「地精贊助商」和「隱藏的鑰匙」需要它們：先存進銀行，空出背包空間。",
+    ["You need it later for \"Chapter I\": keep it in the bank to free a bag slot."] =
+        "之後的任務「荊棘谷的青山 - 第壹章」需要它：先存進銀行，空出背包空間。",
+    ["You need it later for \"Chapter II\": keep it in the bank to free a bag slot."] =
+        "之後的任務「荊棘谷的青山 - 第二章」需要它：先存進銀行，空出背包空間。",
+    ["You need it later for \"Chapter III\": keep it in the bank to free a bag slot."] =
+        "之後的任務「荊棘谷的青山 - 第三章」需要它：先存進銀行，空出背包空間。",
+    ["You need it later for \"Chapter IV\": keep it in the bank to free a bag slot."] =
+        "之後的任務「荊棘谷的青山 - 第四章」需要它：先存進銀行，空出背包空間。",
+    ["You need it later for \"The Karnitol Shipwreck\": keep it in the bank to free a bag slot."] =
+        "之後的任務「卡尼托的背包」需要它：先存進銀行，空出背包空間。",
+    ["You need them later for \"Magical Analysis\" and \"Caught!\": keep them in the bank to free bag slots."] =
+        "之後的任務「魔法分析」和「被鎖起來的矮人」需要它們：先存進銀行，空出背包空間。",
+    ["You need it later for \"Rumors for Kravel\": keep it in the bank to free a bag slot."] =
+        "之後的任務「地精的謠言」需要它：先存進銀行，空出背包空間。",
+    ["You need it later for \"Ongeku\": keep it in the bank to free a bag slot."] =
+        "之後的任務「盎格庫爾」需要它：先存進銀行，空出背包空間。",
+    ["You need it later for \"Sunken Treasure\": keep it in the bank to free a bag slot."] =
+        "之後的任務「水下寶藏」需要它：先存進銀行，空出背包空間。",
+    ["You need them later for \"Back to Booty Bay\" and \"Safety First\": keep them in the bank to free bag slots."] =
+        "之後的任務「返回藏寶海灣」和「安全第壹」需要它們：先存進銀行，空出背包空間。",
+    ["You need them later for \"Report Back to Fizzlebub\" and \"Rhapsody's Kalimdor Kocktail\": keep them in the bank to free bag slots."] =
+        "之後的任務「向菲茲巴布報告」和「拉普索迪的卡利姆多雞尾酒」需要它們：先存進銀行，空出背包空間。",
+    ["You need them later for \"The Borrower\", \"Screecher Spirits\", \"The Super Egg-O-Matic\" and \"Rhapsody's Kalimdor Kocktail\": keep them in the bank to free bag slots."] =
+        "之後的任務「海龜照片」、「尖嘯者的靈魂」、「超級測蛋器」和「拉普索迪的卡利姆多雞尾酒」需要它們：先存進銀行，空出背包空間。",
+    ["You need them later for \"Crystals of Power\": keep them in the bank to free bag slots."] =
+        "之後的任務「能量水晶」需要它們：先存進銀行，空出背包空間。",
+    ["You need them later for \"Rhapsody's Tale\", \"The Super Snapper FX\", \"Whiskey Slim's Lost Grog\" and \"Favored of Elune?\": keep them in the bank to free bag slots."] =
+        "之後的任務「拉普索迪的故事」、「超級攝影器FX」、「威士忌斯利姆的酒」和「月神之獸？」需要它們：先存進銀行，空出背包空間。",
+    ["You need it later for \"Deliver to MacKinley\": keep it in the bank to free a bag slot."] =
+        "之後的任務「給馬克基雷的貨物」需要它：先存進銀行，空出背包空間。",
+    ["You need them later for \"The Bait for Lar'korwi\", \"Un'Goro Soil\", \"A Visit to Gregan\" and \"It's a Secret to Everybody\": keep them in the bank to free bag slots."] =
+        "之後的任務「拉克維的誘餌」、「安戈洛的泥土」、「造訪格雷甘」和「無人知曉的秘密」需要它們：先存進銀行，空出背包空間。",
+    ["You need it later for \"Rise of the Silithid\": keep it in the bank to free a bag slot."] =
+        "之後的任務「異種蠍的威脅」需要它：先存進銀行，空出背包空間。",
+    ["You need it later for \"A Taste of Flame\": keep it in the bank to free a bag slot."] =
+        "之後的任務「烈焰精華」需要它：先存進銀行，空出背包空間。",
+    ["You need them later for \"Chasing A-Me 01\" and \"Arcane Runes\": keep them in the bank to free bag slots."] =
+        "之後的任務「找回A-Me 01」和「奧術符文」需要它們：先存進銀行，空出背包空間。",
+    ["You need them later for \"Good Natured Emma\", \"Arcane Runes\" and \"Sprinkle's Secret Ingredient\": keep them in the bank to free bag slots."] =
+        "之後的任務「善良的艾瑪」、「奧術符文」和「斯普琳科的秘密佐料」需要它們：先存進銀行，空出背包空間。",
+    ["You need them later for \"The Stone Circle\", \"Felbound Ancients\", \"A Little Slime Goes a Long Way\", \"Moontouched Wildkin\" and \"Meet at the Grave\": keep them in the bank to free bag slots."] =
+        "之後的任務「石環」、「被禁錮的古樹」、「遠方的軟泥怪」、「月光羽毛」和「墓地相見」需要它們：先存進銀行，空出背包空間。",
+    ["You need it later for \"Return to Tymor\": keep it in the bank to free a bag slot."] =
+        "之後的任務「向法師泰摩爾回復」需要它：先存進銀行，空出背包空間。",
+    ["You need them later for \"Aquementas\", \"The Everlook Report\", \"Duke Nicholas Zverenhoff\" and \"Troubled Spirits of Kel'Theril\": keep them in the bank to free bag slots."] =
+        "之後的任務「亞奎門塔斯」、「永望鎮報告」、「尼古拉斯·瑟倫霍夫公爵」和「凱斯利爾的怨靈」需要它們：先存進銀行，空出背包空間。",
+    ["You need it later for \"Felnok Steelspring\": keep it in the bank to free a bag slot."] =
+        "之後的任務「菲諾克」需要它：先存進銀行，空出背包空間。",
+    ["You need it later for \"Glyphed Oaken Branch\": keep it in the bank to free a bag slot."] =
+        "之後的任務「雕文橡木枝」需要它：先存進銀行，空出背包空間。",
+    ["You need them later for \"The Disruption Ends\" and \"Supplies for the Crossroads\": keep them in the bank to free bag slots."] =
+        "之後的任務「野豬人的頭目」和「十字路口的補給品」需要它們：先存進銀行，空出背包空間。",
+    ["You need it later for \"Chen's Empty Keg\": keep it in the bank to free a bag slot."] =
+        "之後的任務「老陳的空酒桶」需要它：先存進銀行，空出背包空間。",
+    ["You need it later for \"Egg Hunt\": keep it in the bank to free a bag slot."] =
+        "之後的任務「蠍卵」需要它：先存進銀行，空出背包空間。",
+    ["You need them later for \"Souvenirs of Death\" and \"Battle of Hillsbrad\": keep them in the bank to free bag slots."] =
+        "之後的任務「死亡的紀念品」和「希爾斯布萊德之戰」需要它們：先存進銀行，空出背包空間。",
+    ["You need it later for \"Frostmaw\": keep it in the bank to free a bag slot."] =
+        "之後的任務「霜喉雪人」需要它：先存進銀行，空出背包空間。",
+    ["You need it later for \"The Swarm Grows\": keep it in the bank to free a bag slot."] =
+        "之後的任務「瘋狂的蟲群」需要它：先存進銀行，空出背包空間。",
+    ["You need them later for \"Martek the Exiled\" and \"Hemet Nesingwary\": keep them in the bank to free bag slots."] =
+        "之後的任務「流放者馬特克」和「赫米特·奈辛瓦裏」需要它們：先存進銀行，空出背包空間。",
+    ["You need it later for \"Caught!\": keep it in the bank to free a bag slot."] =
+        "之後的任務「被鎖起來的矮人」需要它：先存進銀行，空出背包空間。",
+    ["You need them later for \"The Black Shield\" and \"Into the Field\": keep them in the bank to free bag slots."] =
+        "之後的任務「黑色盾牌」和「進入沙漠」需要它們：先存進銀行，空出背包空間。",
+    ["You need them later for \"Tanaris Field Sampling\" and \"Screecher Spirits\": keep them in the bank to free bag slots."] =
+        "之後的任務「塔納利斯的樣本」和「尖嘯者的靈魂」需要它們：先存進銀行，空出背包空間。",
+    ["You need it later for \"Back to Booty Bay\": keep it in the bank to free a bag slot."] =
+        "之後的任務「返回藏寶海灣」需要它：先存進銀行，空出背包空間。",
+    ["You need them later for \"Deadmire\" and \"Safety First\": keep them in the bank to free bag slots."] =
+        "之後的任務「死沼巨鱷」和「安全第壹」需要它們：先存進銀行，空出背包空間。",
+    ["You need them later for \"Another Message to the Wildhammer\", \"Screecher Spirits\" and \"The Super Egg-O-Matic\": keep them in the bank to free bag slots."] =
+        "之後的任務「又壹個給蠻錘部族的警告」、「尖嘯者的靈魂」和「超級測蛋器」需要它們：先存進銀行，空出背包空間。",
+    ["You need it later for \"Return to Witch Doctor Uzer'i\": keep it in the bank to free a bag slot."] =
+        "之後的任務「向巫醫尤克裏回復」需要它：先存進銀行，空出背包空間。",
+    ["You need it later for \"The Atal'ai Exile\": keep it in the bank to free a bag slot."] =
+        "之後的任務「阿塔萊流放者」需要它：先存進銀行，空出背包空間。",
+    ["You need them later for \"Testing the Vessel\" and \"Report Back to Fizzlebub\": keep them in the bank to free bag slots."] =
+        "之後的任務「測試容器」和「向菲茲巴布報告」需要它們：先存進銀行，空出背包空間。",
+    ["You need it later for \"Return to Apothecary Zinge\": keep it in the bank to free a bag slot."] =
+        "之後的任務「向藥劑師金格回報」需要它：先存進銀行，空出背包空間。",
+    ["You need them later for \"The Stone Circle\" and \"Crystals of Power\": keep them in the bank to free bag slots."] =
+        "之後的任務「石環」和「能量水晶」需要它們：先存進銀行，空出背包空間。",
+    ["You need them later for \"Ripple Delivery\", \"Whiskey Slim's Lost Grog\" and \"Seeping Corruption\": keep them in the bank to free bag slots."] =
+        "之後的任務「送回蜜酒」、「威士忌斯利姆的酒」和「墮落之水」需要它們：先存進銀行，空出背包空間。",
+    ["You need them later for \"Bungle in the Jungle\", \"The Bait for Lar'korwi\" and \"It's a Secret to Everybody\": keep them in the bank to free bag slots."] =
+        "之後的任務「擒蟲先擒王」、「拉克維的誘餌」和「無人知曉的秘密」需要它們：先存進銀行，空出背包空間。",
+    ["You need them later for \"Delivery to Magatha\" and \"Seeping Corruption\": keep them in the bank to free bag slots."] =
+        "之後的任務「瑪加薩的石版」和「墮落之水」需要它們：先存進銀行，空出背包空間。",
+    ["You need it later for \"Jes'rimon's Payment to Jediga\": keep it in the bank to free a bag slot."] =
+        "之後的任務「傑斯雷蒙的報酬」需要它：先存進銀行，空出背包空間。",
+    ["You need it later for \"Meet at the Grave\": keep it in the bank to free a bag slot."] =
+        "之後的任務「墓地相見」需要它：先存進銀行，空出背包空間。",
+    ["You need them later for \"Delivery to Andron Gant\", \"A Grave Situation\" and \"Betrayed\": keep them in the bank to free bag slots."] =
+        "之後的任務「安德隆·甘特的石版」、「尋找墓碑」和「叛徒」需要它們：先存進銀行，空出背包空間。",
+    ["You need them later for \"The Everlook Report\" and \"Duke Nicholas Zverenhoff\": keep them in the bank to free bag slots."] =
+        "之後的任務「永望鎮報告」和「尼古拉斯·瑟倫霍夫公爵」需要它們：先存進銀行，空出背包空間。",
+    ["You need it later for \"Aquementas\": keep it in the bank to free a bag slot."] =
+        "之後的任務「亞奎門塔斯」需要它：先存進銀行，空出背包空間。",
 }

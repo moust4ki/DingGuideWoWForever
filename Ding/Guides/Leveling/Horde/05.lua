@@ -63,7 +63,8 @@ Ding.RegisterGuide({
         { go = { 1413, 63.03, 37.19 }, fly = true, talk = 16227, text = "Flight master in Ratchet" }, -- level 15
         { accept = 894 }, -- level 15
         { destroy = 5088 }, -- level 15
-        { talk = 3496, bank = { 5063, 12708 } }, -- level 15
+        { talk = 3496, bank = { 5063, 12708 }, -- level 15
+          note = "You need them later for \"The Disruption Ends\" and \"Supplies for the Crossroads\": keep them in the bank to free bag slots." },
         { accept = 895 }, -- level 15
         { turnin = 819, accept = 821, sticky = 887 }, -- level 15
         { complete = 97253 }, -- level 15
@@ -123,7 +124,8 @@ Ding.RegisterGuide({
           note = "With the coming hand-ins, this gets you to level 18." },
         { train = true, talk = 12042, races = { "Tauren" }, classes = { "DRUID" } }, -- level 18
         { turnin = 896 }, -- level 18
-        { talk = 3496, bank = 4893 }, -- level 18
+        { talk = 3496, bank = 4893, -- level 18
+          note = "You need it later for \"Chen's Empty Keg\": keep it in the bank to free a bag slot." },
         { turnin = 902, accept = 3921 }, -- level 18
         { turnin = 848 }, -- level 18
         { turnin = 867, -- level 18
@@ -200,7 +202,8 @@ Ding.RegisterGuide({
         { talk = 7166, collect = { { 5060, 1 } }, spots = { { 1413, 63.06, 36.28 } }, races = { "Orc", "Scourge", "Troll" }, classes = { "ROGUE" } }, -- level 18
         { talk = 7166, collect = { { 7970, 1 } }, spots = { { 1413, 63.06, 36.28 } }, races = { "Orc", "Scourge", "Troll" }, classes = { "ROGUE" } }, -- level 18
         { turnin = 863, accept = 1483 }, -- level 18
-        { talk = 3496, bank = 4894 }, -- level 18
+        { talk = 3496, bank = 4894, -- level 18
+          note = "You need it later for \"Chen's Empty Keg\": keep it in the bank to free a bag slot." },
         { accept = { 865, 1069 } }, -- level 18
         { complete = 2381, object = 123462, useitem = 7970, races = { "Orc", "Scourge", "Troll", "Skyborne" }, classes = { "ROGUE" }, -- level 18
           note = "A small chest made of wood. The objective is on the ship's center deck. Polly is the target for the item." },

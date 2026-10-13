@@ -81,8 +81,12 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a28-feralas-and-tanaris", {
         "等对话结束。目标在洞穴里。",
     ["The object is indoors, one floor up."] =
         "该物件在室内楼上一层。",
+    ["You need them later for \"The Borrower\", \"Screecher Spirits\", \"The Super Egg-O-Matic\" and \"Rhapsody's Kalimdor Kocktail\": keep them in the bank to free bag slots."] =
+        "之后的任务“海龟照片”、“尖啸者的灵魂”、“超级测蛋器”和“拉普索迪的卡利姆多鸡尾酒”需要它们：先存进银行，腾出背包空间。",
     ["Getting it here speeds up Un'Goro Crater. The NPC is indoors."] =
         "在这里拿到它能加快安戈洛环形山的进度。NPC在室内。",
+    ["You need them later for \"Crystals of Power\": keep them in the bank to free bag slots."] =
+        "之后的任务“能量水晶”需要它们：先存进银行，腾出背包空间。",
     ["Step into the cavern within the trunk"] =
         "进入树干里的洞穴",
     ["The spot is on the lower floor of the hollow tree."] =

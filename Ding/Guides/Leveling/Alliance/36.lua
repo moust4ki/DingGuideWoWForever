@@ -19,7 +19,7 @@ Ding.RegisterGuide({
         { talk = 4209, collect = { { 8594, 1 }, { 11133, 1 }, { 11316, 1 }, { 11018, 25 } }, spots = { { 1457, 39.54, 41.92 } }, -- level 52
           note = "The NPC is indoors." },
         { talk = 4209, bank = { 12724, 10444, 8526 }, -- level 52
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need them later for \"Good Natured Emma\", \"Arcane Runes\" and \"Sprinkle's Secret Ingredient\": keep them in the bank to free bag slots." },
         { turnin = 3790, accept = 3764, -- level 52
           note = "Climb to the highest floor of the building." },
         { turnin = 3764, when = { ready = 3764 }, -- level 52
@@ -94,7 +94,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { turnin = 5157, accept = 5158 }, -- level 52
         { turnin = 4101 }, -- level 52
-        { talk = 9528, unbank = 11511 }, -- level 52
+        { talk = 9528, collect = { { 11511, 1 } } }, -- level 52
         { talk = 11119, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, text = "Get your companion back from the stable master." }, -- level 52
         { talk = 10085, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 52
           note = "Release the short-term pet you tamed." },

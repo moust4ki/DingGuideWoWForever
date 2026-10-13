@@ -3,8 +3,8 @@
 Ding.RegisterGuideTranslation("ptBR", "leveling-h12-hillsbrad-foothills", {
     ["Hillsbrad Foothills (30-32)"] =
         "Contraforte de Eira dos Montes (30-32)",
-    ["Undercity first, then Hillsbrad Foothills: Tarren Mill."] =
-        "Cidade Baixa primeiro, depois o Contraforte de Eira dos Montes: Serraria Tarren.",
+    ["Undercity first, then Hillsbrad Foothills: Tarren Mill. You need it later for \"The Swarm Grows\": keep it in the bank to free a bag slot."] =
+        "Cidade Baixa primeiro, depois o Contraforte de Eira dos Montes: Serraria Tarren. Você vai precisar dele mais tarde para \"O enxame se adensa\": guarde-o no banco para liberar espaço nas bolsas.",
     ["Learn Cooking from the trainer"] =
         "Aprenda Culinária com o instrutor",
     ["You'll need this to pick up an upcoming quest."] =

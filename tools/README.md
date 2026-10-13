@@ -435,7 +435,10 @@ Forever:
 A route note says "the NPC" only on a step with someone to see there (a quest giver or ender,
 an NPC to talk to, a service); for objects it says "the object", for monsters "the target".
 "This one roams" stays for targets that move: a quest giver with a path in QuestieDB, a
-`patrol`, monsters. `leveling_guides_test` checks both on the guides.
+`patrol`, monsters. A `bank` or `unbank` step is the banker's own step or comes right after
+it (a bank goal has no place of its own), and a `bank` note names the later quests that need
+the items. An item gathered for a later quest is a `collect` (with `keep`), not an `unbank`.
+`leveling_guides_test` checks all of this on the guides.
 
 A `fly` or `train` label becomes the step's `text` (texts are translated). `--report` lists
 the repairs, the quests left out with their reason, the Forever quests added and those that

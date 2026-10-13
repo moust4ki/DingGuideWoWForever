@@ -47,6 +47,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h35-felwood-and-winterspring", {
         "야수 관리인에게 소환수를 맡기세요.",
     ["You will tame a short-term pet shortly. You pick up Claw (Rank 7) here."] =
         "곧 임시 소환수를 길들입니다. 여기서 할퀴기 (7 레벨)를 배웁니다.",
+    ["The NPC is indoors. You need them later for \"Delivery to Magatha\" and \"Seeping Corruption\": keep them in the bank to free bag slots."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"마가타에게 전달\", \"스며드는 타락\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["Flight master at Everlook"] =
         "눈망루 마을 비행 조련사",
     ["Tame a beast here to learn the next rank of Claw"] =
@@ -57,6 +59,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h35-felwood-and-winterspring", {
         "NPC는 위층 발코니에 있습니다.",
     ["The NPC is indoors. Hold on to it for a task in Un'Goro Crater later."] =
         "NPC는 건물 안에 있습니다. 나중에 운고로 분화구에서 쓸 일이 있으니 보관하세요.",
+    ["The NPC is indoors. You need it later for \"Jes'rimon's Payment to Jediga\": keep it in the bank to free a bag slot."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"제디가에 대한 제스리몬의 답례\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["Get your companion back from the stable master."] =
         "야수 관리인에게서 소환수를 찾아오세요.",
     ["Release the short-term pet you tamed."] =

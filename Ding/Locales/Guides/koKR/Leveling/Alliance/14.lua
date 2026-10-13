@@ -19,6 +19,12 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a14-duskwood-and-stranglethorn-v
         "NPC는 물가에 서 있습니다.",
     ["The NPC is indoors, one floor up."] =
         "NPC는 건물 안 한 층 위에 있습니다.",
+    ["The NPC is indoors. You need it later for \"Soothing Turtle Bisque\": keep it in the bank to free a bag slot."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"독특한 거북이 비스크\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"The Brassbolts Brothers\": keep it in the bank to free a bag slot."] =
+        "나중에 \"브라스볼츠 형제\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"A Noble Brew\": keep it in the bank to free a bag slot."] =
+        "나중에 \"귀족을 위한 술\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["This one roams, so scan the surrounding area."] =
         "이 대상은 돌아다니므로 주변을 살펴보세요.",
     ["The NPC patrols the road; look along it."] =

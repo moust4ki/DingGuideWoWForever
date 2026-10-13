@@ -65,6 +65,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h11-thousand-needles", {
         "尋找帶刺的植物。目標在水下和岸邊。",
     ["The quest giver waits in the tent."] =
         "任務給予者在帳篷裡等候。",
+    ["The NPC is indoors. You need it later for \"Frostmaw\": keep it in the bank to free a bag slot."] =
+        "NPC在室內。之後的任務「霜喉雪人」需要它：先存進銀行，空出背包空間。",
     ["Hard quests are coming up. This spreads out the grinding so less is left later."] =
         "接下來是困難的任務。這樣可以分散打怪的量，之後要打的就比較少。",
     ["Climb the trail and cross the rope bridges"] =
@@ -103,6 +105,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h11-thousand-needles", {
         "也把「Water Sapta」完成。",
     ["Stand on the metal grating to begin the battle. Shows up once you defeat six challengers."] =
         "站到金屬格柵上開始戰鬥。擊敗六名挑戰者後就會出現。",
+    ["You need it later for \"Parts for Kravel\": keep it in the bank to free a bag slot."] =
+        "之後的任務「給克拉維爾的零件」需要它：先存進銀行，空出背包空間。",
     ["This NPC is found down in the Cleft of Shadow."] =
         "這個NPC在下方的暗影裂口裡。",
     ["This one roams, so scan the surrounding area. This NPC is found down in the Cleft of Shadow."] =

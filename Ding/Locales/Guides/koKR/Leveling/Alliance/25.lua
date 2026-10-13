@@ -45,6 +45,14 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a25-stranglethorn-vale", {
         "대비하세요. 이 적들은 38레벨 정예입니다. 바다악어도 같은 곳에 나타납니다.",
     ["The object is a table made of stone. Your targets sit below the water's surface. Drag him up until he breaks the surface."] =
         "대상은 돌로 된 탁자입니다. 대상은 수면 아래에 있습니다. 물 위로 나올 때까지 끌어올리세요.",
+    ["You need it later for \"Chapter I\": keep it in the bank to free a bag slot."] =
+        "나중에 \"제 1 장\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Chapter II\": keep it in the bank to free a bag slot."] =
+        "나중에 \"제 2 장\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Chapter III\": keep it in the bank to free a bag slot."] =
+        "나중에 \"제 3 장\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Chapter IV\": keep it in the bank to free a bag slot."] =
+        "나중에 \"제 4 장\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["The NPC stands on the top tier of the pier."] =
         "NPC는 부두 맨 위층에 서 있습니다.",
     ["Follow the shoreline"] =

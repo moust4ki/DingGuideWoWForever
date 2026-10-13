@@ -207,12 +207,16 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { turnin = 128 }, -- level 28
         { destroy = 1962 }, -- level 28
-        { bank = 916, when = { log = 74 } }, -- level 28
-        { bank = 916, when = { done = 74 } }, -- level 28
-        { bank = 1451, when = { log = 159 } }, -- level 28
-        { bank = 1451, when = { done = 159 } }, -- level 28
         { talk = 2455, -- level 28
           note = "The NPC is indoors." },
+        { bank = 916, when = { log = 74 }, -- level 28
+          note = "You need it later for \"The Legend of Stalvan\": keep it in the bank to free a bag slot." },
+        { bank = 916, when = { done = 74 }, -- level 28
+          note = "You need it later for \"The Legend of Stalvan\": keep it in the bank to free a bag slot." },
+        { bank = 1451, when = { log = 159 }, -- level 28
+          note = "You need it later for \"Juice Delivery\": keep it in the bank to free a bag slot." },
+        { bank = 1451, when = { done = 159 }, -- level 28
+          note = "You need it later for \"Juice Delivery\": keep it in the bank to free a bag slot." },
         { go = { 1453, 52.93, 51.05 }, text = "Head indoors" }, -- level 28
         { accept = 95161 }, -- level 28
         { accept = 2923, dungeon = "Gnomeregan" }, -- level 28

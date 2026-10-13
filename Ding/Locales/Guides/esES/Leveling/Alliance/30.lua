@@ -31,6 +31,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a30-tanaris", {
         "Entra en la cueva",
     ["Take the trail downhill"] =
         "Baja por el sendero",
+    ["The NPC is indoors. You need it later for \"Deliver to MacKinley\": keep it in the bank to free a bag slot."] =
+        "El PNJ está dentro. Lo necesitarás más adelante para «Un envío para MacKinley»: déjalo en el banco para liberar un hueco en las bolsas.",
     ["Your objective lies in a little cavern."] =
         "Tu objetivo está en una pequeña cueva.",
     ["Search the sand mounds."] =

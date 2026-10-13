@@ -75,6 +75,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h39-western-and-eastern-plaguela
         "Das Ziel ist ein Ghul mit einer Heugabel. Dieses Ziel wandert umher, also such die Umgebung ab. Es kann an dieser Stelle erscheinen.",
     ["You can also take it out of your bank. The NPC is indoors."] =
         "Du kannst es auch aus deiner Bank holen. Der NPC ist drinnen.",
+    ["The NPC is indoors. You need it later for \"Glyphed Oaken Branch\": keep it in the bank to free a bag slot."] =
+        "Der NPC ist drinnen. Du brauchst es später für „Glyphenverzierter Eichenast“: Lass es in der Bank, das spart einen Taschenplatz.",
     ["The NPC stands on the highest level of this structure."] =
         "Der NPC steht auf der obersten Ebene dieses Gebäudes.",
     ["This NPC is found down in the Cleft of Shadow."] =

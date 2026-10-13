@@ -65,6 +65,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h11-thousand-needles", {
         "Such nach dornigen Pflanzen. Die Ziele sind unter Wasser und am Ufer.",
     ["The quest giver waits in the tent."] =
         "Der Questgeber wartet im Zelt.",
+    ["The NPC is indoors. You need it later for \"Frostmaw\": keep it in the bank to free a bag slot."] =
+        "Der NPC ist drinnen. Du brauchst es später für „Frostrachen“: Lass es in der Bank, das spart einen Taschenplatz.",
     ["Hard quests are coming up. This spreads out the grinding so less is left later."] =
         "Schwere Quests stehen bevor. So verteilt sich das Grinden, und später bleibt weniger übrig.",
     ["Climb the trail and cross the rope bridges"] =
@@ -103,6 +105,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h11-thousand-needles", {
         "Erledige auch Water Sapta.",
     ["Stand on the metal grating to begin the battle. Shows up once you defeat six challengers."] =
         "Stell dich auf das Metallgitter, um den Kampf zu beginnen. Erscheint, sobald du sechs Herausforderer besiegt hast.",
+    ["You need it later for \"Parts for Kravel\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Teile für Kravel“: Lass es in der Bank, das spart einen Taschenplatz.",
     ["This NPC is found down in the Cleft of Shadow."] =
         "Dieser NPC ist unten in der Kluft der Schatten.",
     ["This one roams, so scan the surrounding area. This NPC is found down in the Cleft of Shadow."] =

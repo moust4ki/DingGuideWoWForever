@@ -39,10 +39,12 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h38-felwood-and-winterspring", {
         "Bleib den ganzen Weg auf der Straße.",
     ["Flee if things go badly."] =
         "Flieh, wenn es schlecht läuft.",
-    ["The NPC is indoors."] =
-        "Der NPC ist drinnen.",
+    ["The NPC is indoors. You need them later for \"Delivery to Andron Gant\", \"A Grave Situation\" and \"Betrayed\": keep them in the bank to free bag slots."] =
+        "Der NPC ist drinnen. Du brauchst sie später für „Lieferung an Andron Gant“, „Grabesstille“ und „Verraten“: Lass sie in der Bank, das spart Taschenplätze.",
     ["The quest wants yetis; seek them out. Targets are in the cavern and around its entrance too."] =
         "Die Quest verlangt Yetis; such sie auf. Ziele gibt es in der Höhle und auch rund um ihren Eingang.",
+    ["The NPC is indoors."] =
+        "Der NPC ist drinnen.",
     ["The NPC is a human spirit."] =
         "Der NPC ist ein menschlicher Geist.",
     ["Your targets are within the cavern."] =
@@ -53,6 +55,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h38-felwood-and-winterspring", {
         "Verlass die Höhle",
     ["Fight the elementals of the swamp."] =
         "Bekämpfe die Elementare des Sumpfs.",
+    ["The NPC is indoors. You need them later for \"The Everlook Report\" and \"Duke Nicholas Zverenhoff\": keep them in the bank to free bag slots."] =
+        "Der NPC ist drinnen. Du brauchst sie später für „Der Everlook-Bericht“ und „Fürst Nicholas Zverenhoff“: Lass sie in der Bank, das spart Taschenplätze.",
     ["The targets are leafless trees that walk."] =
         "Die Ziele sind wandelnde Bäume ohne Blätter.",
     ["Slay the greenish beings of living water."] =
@@ -69,6 +73,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h38-felwood-and-winterspring", {
         "Die Ziele sind 3 weiße Furbolgs, die als Gruppe unterwegs sind. Das Ziel patrouilliert eine lange Strecke neben der Straße. Sie erscheinen nahe 28.1, 35.0 in Winterquell.",
     ["This number shrinks while you kill monsters. Bring any feathers you collect to the NPC at 64.8, 8.1."] =
         "Diese Zahl sinkt, während du Monster tötest. Bring alle gesammelten Federn zum NPC bei 64.8, 8.1.",
+    ["The NPC is indoors. You need it later for \"Aquementas\": keep it in the bank to free a bag slot."] =
+        "Der NPC ist drinnen. Du brauchst es später für „Aquementas“: Lass es in der Bank, das spart einen Taschenplatz.",
     ["This NPC is found down in the Cleft of Shadow."] =
         "Dieser NPC ist unten in der Kluft der Schatten.",
     ["The NPC stands on the highest level of this structure."] =

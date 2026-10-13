@@ -5,8 +5,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h08-the-barrens", {
         "Los Baldíos (24-25)",
     ["Thunder Bluff first, then the Barrens. The NPC is indoors."] =
         "Primero Cima del Trueno y luego Los Baldíos. El PNJ está dentro.",
-    ["The NPC is indoors."] =
-        "El PNJ está dentro.",
+    ["The NPC is indoors. You need them later for \"Souvenirs of Death\" and \"Battle of Hillsbrad\": keep them in the bank to free bag slots."] =
+        "El PNJ está dentro. Los necesitarás más adelante para «Recuerdos de muerte» y «La batalla de Trabalomas»: déjalos en el banco para liberar huecos en las bolsas.",
     ["Go into the cavern"] =
         "Entra en la cueva",
     ["Your targets are within the cavern."] =
@@ -15,6 +15,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h08-the-barrens", {
         "Deja que termine la conversación. Tus objetivos están dentro de la cueva.",
     ["Head out of the cave"] =
         "Sal de la cueva",
+    ["The NPC is indoors."] =
+        "El PNJ está dentro.",
     ["This NPC is found down in the Cleft of Shadow."] =
         "Este PNJ está abajo, en la Grieta de la Sombra.",
     ["Visit the caged quilboar"] =

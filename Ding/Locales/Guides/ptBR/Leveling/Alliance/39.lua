@@ -57,6 +57,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a39-winterspring-and-felwood", {
         "Os alvos são 3 pelursos brancos que andam em grupo. O alvo patrulha um longo trajeto ao lado da estrada. Siga em frente se não o tiver visto quando a trilha acabar.",
     ["Be ready for a fight right away."] =
         "Esteja pronto para lutar logo de cara.",
+    ["The NPC is indoors. You need them later for \"Aquementas\", \"The Everlook Report\", \"Duke Nicholas Zverenhoff\" and \"Troubled Spirits of Kel'Theril\": keep them in the bank to free bag slots."] =
+        "O NPC está lá dentro. Você vai precisar deles mais tarde para \"Aquementas\", \"O relatório de Visteterna\", \"Duque Nicolau Zverenhoff\" e \"Espíritos atormentados de Kel'Theril\": guarde-os no banco para liberar espaço nas bolsas.",
     ["For this quest you guard an NPC on the move. If she is absent, wait for her to reappear."] =
         "Nesta missão, você protege um NPC em movimento. Se ela não estiver lá, espere ela reaparecer.",
     ["Let the conversation play out. Escort Ranshalla and guard her. Wait until the foes hit her before you strike."] =

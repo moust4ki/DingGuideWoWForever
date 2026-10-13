@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a36-azshara-and-felwood", {
         "泰達希爾：先到魯瑟蘭村，再前往艾薩拉和費伍德森林。",
     ["The NPC is indoors."] =
         "NPC在室內。",
+    ["The NPC is indoors. You need them later for \"Good Natured Emma\", \"Arcane Runes\" and \"Sprinkle's Secret Ingredient\": keep them in the bank to free bag slots."] =
+        "NPC在室內。之後的任務「善良的艾瑪」、「奧術符文」和「斯普琳科的秘密佐料」需要它們：先存進銀行，空出背包空間。",
     ["Climb to the highest floor of the building."] =
         "爬到建築的最頂樓。",
     ["The quest giver stands outdoors, not indoors."] =

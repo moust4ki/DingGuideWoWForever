@@ -7,6 +7,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a22-dustwallow-marsh", {
         "先到暴風城，再前往塵泥沼澤：塞拉摩島。留著它，接下來的任務會用到。",
     ["The NPC is indoors."] =
         "NPC在室內。",
+    ["The NPC is indoors. You need it later for \"Sunken Treasure\": keep it in the bank to free a bag slot."] =
+        "NPC在室內。之後的任務「水下寶藏」需要它：先存進銀行，空出背包空間。",
     ["Head indoors"] =
         "進入室內",
     ["Stay on the trail"] =

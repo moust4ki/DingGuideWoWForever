@@ -21,6 +21,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h34-burning-steppes-and-azshara"
         "검은 새끼용에게 아이템을 사용하세요. 대상은 날개 달린 작은 용입니다. 시체마다 그 위에 붉은 수정이 떠 있습니다.",
     ["The NPC is indoors."] =
         "NPC는 건물 안에 있습니다.",
+    ["The NPC is indoors. You need it later for \"Felnok Steelspring\": keep it in the bank to free a bag slot."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"펠노크 스틸스프링\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["This NPC is found down in the Cleft of Shadow."] =
         "이 NPC는 아래쪽 어둠의 틈에 있습니다.",
     ["The NPC stands on the highest level of this structure."] =

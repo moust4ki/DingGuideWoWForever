@@ -11,10 +11,12 @@ Ding.RegisterGuideTranslation("esES", "leveling-h28-tanaris-and-dustwallow-marsh
         "Espera a que termine la conversación",
     ["Stay clear of the elite foes. Be ready for a fight right away. Watch out for a pair of stronger monsters here."] =
         "Evita a los enemigos élite. Prepárate para luchar de inmediato. Cuidado con dos monstruos más fuertes aquí.",
-    ["The NPC is indoors."] =
-        "El PNJ está dentro.",
+    ["The NPC is indoors. You need them later for \"Testing the Vessel\" and \"Report Back to Fizzlebub\": keep them in the bank to free bag slots."] =
+        "El PNJ está dentro. Los necesitarás más adelante para «Probar la vasija» y «Volver a informar a Pinchabujas,»: déjalos en el banco para liberar huecos en las bolsas.",
     ["A lengthy grinding stretch is coming up. The NPC is indoors."] =
         "Se acerca un largo tramo de matar monstruos. El PNJ está dentro.",
+    ["The NPC is indoors."] =
+        "El PNJ está dentro.",
     ["The target patrols a wide loop, turning counterclockwise. Watch for a pair of guards hiding in stealth. The target's spawn point is 58.9, 39.3 in Tanaris."] =
         "El objetivo patrulla un gran circuito, en sentido contrario a las agujas del reloj. Cuidado con dos guardias ocultos en sigilo. El objetivo aparece en 58.9, 39.3, en Tanaris.",
     ["These foes hide in stealth."] =
@@ -33,6 +35,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h28-tanaris-and-dustwallow-marsh
         "A continuación vienen enemigos más duros. Aquí también puedes hacer mazmorras, si quieres.",
     ["Take the passage out of Lost Rigger Cove"] =
         "Toma el paso para salir de Lost Rigger Cove",
+    ["The NPC is indoors. You need it later for \"Deliver to MacKinley\": keep it in the bank to free a bag slot."] =
+        "El PNJ está dentro. Lo necesitarás más adelante para «Un envío para MacKinley»: déjalo en el banco para liberar un hueco en las bolsas.",
     ["Your objective lies in a little cavern."] =
         "Tu objetivo está en una pequeña cueva.",
     ["Search the sand mounds."] =
@@ -43,6 +47,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h28-tanaris-and-dustwallow-marsh
         "Entra en la cueva",
     ["Take the trail downhill"] =
         "Baja por el sendero",
+    ["The NPC is indoors. You need it later for \"Return to Apothecary Zinge\": keep it in the bank to free a bag slot."] =
+        "El PNJ está dentro. Lo necesitarás más adelante para «Regresa junto a la boticaria Zinge»: déjalo en el banco para liberar un hueco en las bolsas.",
     ["Targets here are human. Watch out for foes hidden in stealth. Zones with stronger foes lie just ahead."] =
         "Aquí los objetivos son humanos. Cuidado con los enemigos ocultos en sigilo. Se acercan zonas con enemigos más fuertes.",
     ["Look for brown eggs covered in spikes."] =

@@ -75,6 +75,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h39-western-and-eastern-plaguela
         "La cible est une goule armée d'une fourche. Celui-ci se déplace : fouille les environs. Il peut apparaître à cet endroit.",
     ["You can also take it out of your bank. The NPC is indoors."] =
         "Tu peux aussi le retirer de ta banque. Le PNJ est à l'intérieur.",
+    ["The NPC is indoors. You need it later for \"Glyphed Oaken Branch\": keep it in the bank to free a bag slot."] =
+        "Le PNJ est à l'intérieur. Tu en auras besoin plus tard pour « La branche de chêne à glyphes » : garde-le à la banque pour libérer une place dans tes sacs.",
     ["The NPC stands on the highest level of this structure."] =
         "Le PNJ se tient au plus haut niveau de ce bâtiment.",
     ["This NPC is found down in the Cleft of Shadow."] =

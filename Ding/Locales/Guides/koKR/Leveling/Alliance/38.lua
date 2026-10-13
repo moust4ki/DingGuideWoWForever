@@ -7,6 +7,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a38-ungoro-crater", {
         "가젯잔으로 이동",
     ["Tanaris: Gadgetzan first, then Un'Goro Crater."] =
         "타나리스: 가젯잔에 먼저 들른 다음 운고로 분화구로 가세요.",
+    ["You need it later for \"Return to Tymor\": keep it in the bank to free a bag slot."] =
+        "나중에 \"티모르에게 돌아가기\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["Wait for the talking to finish"] =
         "대화가 끝날 때까지 기다리세요",
     ["Go into the cavern"] =

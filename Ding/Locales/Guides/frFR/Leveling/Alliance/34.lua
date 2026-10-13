@@ -29,6 +29,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a34-blasted-lands-and-burning-st
         "Celui-ci se déplace : fouille les environs. Le PNJ est à l'intérieur.",
     ["The NPC is indoors. Hold on to it; a task in Un'Goro Crater calls for it later."] =
         "Le PNJ est à l'intérieur. Garde-le : une tâche au cratère d'Un'Goro en aura besoin plus tard.",
+    ["The NPC is indoors. You need them later for \"Chasing A-Me 01\" and \"Arcane Runes\": keep them in the bank to free bag slots."] =
+        "Le PNJ est à l'intérieur. Tu en auras besoin plus tard pour « À la poursuite d'A-mi 01 » et « Les runes des arcanes » : garde-les à la banque pour libérer de la place dans tes sacs.",
     ["8 different quests will ask for it. You hand in 60 pieces of cloth for every quest. The NPC is indoors."] =
         "8 quêtes différentes vont le demander. Tu rends 60 pièces de tissu pour chaque quête. Le PNJ est à l'intérieur.",
     ["The NPC patrols a long route; look along it."] =

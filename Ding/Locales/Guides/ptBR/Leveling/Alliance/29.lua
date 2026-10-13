@@ -37,4 +37,6 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a29-the-hinterlands", {
         "Mate monstros até a recarga da Pedra de Regresso terminar",
     ["Stay away from Gammerita. The quarry: a tough elite tortoise, azure-shelled. This one roams, so scan the surrounding area."] =
         "Fique longe de Gammerita. A presa: uma tartaruga de elite resistente, de casco azul-celeste. Este se desloca, então procure pelos arredores.",
+    ["The NPC is indoors. You need them later for \"Rhapsody's Tale\", \"The Super Snapper FX\", \"Whiskey Slim's Lost Grog\" and \"Favored of Elune?\": keep them in the bank to free bag slots."] =
+        "O NPC está lá dentro. Você vai precisar deles mais tarde para \"O caso do Rapsódico\", \"A Superinstantânea FX\", \"O grogue perdido do Aldo Isque\" e \"Protegidos de Eluna?\": guarde-os no banco para liberar espaço nas bolsas.",
 })

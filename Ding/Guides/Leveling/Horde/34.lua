@@ -41,7 +41,7 @@ Ding.RegisterGuide({
         { talk = 3309, collect = { { 10695, 1 }, { 11133, 1 } }, spots = { { 1454, 49.62, 69.06 } }, -- level 52
           note = "The NPC is indoors." },
         { talk = 3309, bank = 12438, -- level 52
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need it later for \"Felnok Steelspring\": keep it in the bank to free a bag slot." },
         { train = true, talk = 6018, races = { "Scourge", "Troll" }, classes = { "PRIEST" }, -- level 52
           note = "The NPC is indoors." },
         { train = true, talk = 3344, races = { "Orc", "Tauren", "Troll" }, classes = { "SHAMAN" }, -- level 52

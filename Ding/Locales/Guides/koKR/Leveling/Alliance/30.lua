@@ -31,6 +31,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a30-tanaris", {
         "동굴에 들어가세요",
     ["Take the trail downhill"] =
         "길을 따라 내려가세요",
+    ["The NPC is indoors. You need it later for \"Deliver to MacKinley\": keep it in the bank to free a bag slot."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"맥킨리에게 배달\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["Your objective lies in a little cavern."] =
         "목표는 작은 동굴 안에 있습니다.",
     ["Search the sand mounds."] =

@@ -5,8 +5,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h08-the-barrens", {
         "Sertões (24-25)",
     ["Thunder Bluff first, then the Barrens. The NPC is indoors."] =
         "Penhasco do Trovão primeiro, depois os Sertões. O NPC está lá dentro.",
-    ["The NPC is indoors."] =
-        "O NPC está lá dentro.",
+    ["The NPC is indoors. You need them later for \"Souvenirs of Death\" and \"Battle of Hillsbrad\": keep them in the bank to free bag slots."] =
+        "O NPC está lá dentro. Você vai precisar deles mais tarde para \"Lembrancinhas da morte\" e \"A batalha de Eira dos Montes\": guarde-os no banco para liberar espaço nas bolsas.",
     ["Go into the cavern"] =
         "Entre na caverna",
     ["Your targets are within the cavern."] =
@@ -15,6 +15,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h08-the-barrens", {
         "Deixe a conversa terminar. Seus alvos estão dentro da caverna.",
     ["Head out of the cave"] =
         "Saia da caverna",
+    ["The NPC is indoors."] =
+        "O NPC está lá dentro.",
     ["This NPC is found down in the Cleft of Shadow."] =
         "Este NPC fica lá embaixo, no Antro das Sombras.",
     ["Visit the caged quilboar"] =

@@ -13,6 +13,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a17-stranglethorn-vale", {
         "Suba até o último andar do prédio.",
     ["The NPC is upstairs, out on the balcony."] =
         "O NPC está no andar de cima, na sacada.",
+    ["You need it later for \"Parts for Kravel\": keep it in the bank to free a bag slot."] =
+        "Você vai precisar dele mais tarde para \"Peças para Kravel\": guarde-o no banco para liberar espaço nas bolsas.",
     ["The NPC stands on the top tier of the pier. The NPC is indoors."] =
         "O NPC fica no nível mais alto do píer. O NPC está lá dentro.",
     ["Fly to Booty Bay"] =
@@ -41,6 +43,16 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a17-stranglethorn-vale", {
         "Deixe os monstros daqui te matarem de propósito. Neste início, morrer não custa nada. É o caminho mais rápido para chegar lá.",
     ["Get yourself killed, then resurrect with the spirit healer"] =
         "Deixe-se matar e depois ressuscite com o Anjo da Cura",
+    ["You need them later for \"Goblin Sponsorship\" and \"The Hidden Key\": keep them in the bank to free bag slots."] =
+        "Você vai precisar deles mais tarde para \"Patrocínio goblínico\" e \"A chave oculta\": guarde-os no banco para liberar espaço nas bolsas.",
+    ["You need it later for \"Chapter I\": keep it in the bank to free a bag slot."] =
+        "Você vai precisar dele mais tarde para \"Capítulo I\": guarde-o no banco para liberar espaço nas bolsas.",
+    ["You need it later for \"Chapter II\": keep it in the bank to free a bag slot."] =
+        "Você vai precisar dele mais tarde para \"Capítulo II\": guarde-o no banco para liberar espaço nas bolsas.",
+    ["You need it later for \"Chapter III\": keep it in the bank to free a bag slot."] =
+        "Você vai precisar dele mais tarde para \"Capítulo III\": guarde-o no banco para liberar espaço nas bolsas.",
+    ["You need it later for \"Chapter IV\": keep it in the bank to free a bag slot."] =
+        "Você vai precisar dele mais tarde para \"Capítulo IV\": guarde-o no banco para liberar espaço nas bolsas.",
     ["The NPC is indoors."] =
         "O NPC está lá dentro.",
     ["Go into the mine"] =

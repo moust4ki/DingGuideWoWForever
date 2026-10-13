@@ -142,7 +142,7 @@ Ding.RegisterGuide({
         { go = { 1424, 49.4, 52.21 }, fly = true, talk = 2432, text = "Flight master at Southshore" }, -- level 29
         { accept = 98059 }, -- level 29
         { turnin = 98059 }, -- level 29
-        { unbank = 3712, keep = 3712, -- level 29
+        { collect = { { 3712, 10 } }, keep = 3712, -- level 29
           note = "The targets are turtles. Head north, keeping to the riverbank." },
         { go = { 1422, 42.98, 85.09 }, fly = true, talk = 12596, text = "Flight master at Chillwind Camp", -- level 29
           note = "Keep to the road the whole way." },

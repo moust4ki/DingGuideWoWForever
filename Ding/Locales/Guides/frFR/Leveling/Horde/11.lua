@@ -65,6 +65,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h11-thousand-needles", {
         "Cherche des plantes épineuses. Les cibles sont sous l'eau et le long du rivage.",
     ["The quest giver waits in the tent."] =
         "Le donneur de quête attend dans la tente.",
+    ["The NPC is indoors. You need it later for \"Frostmaw\": keep it in the bank to free a bag slot."] =
+        "Le PNJ est à l'intérieur. Tu en auras besoin plus tard pour « Gueule-glacée » : garde-le à la banque pour libérer une place dans tes sacs.",
     ["Hard quests are coming up. This spreads out the grinding so less is left later."] =
         "Des quêtes difficiles arrivent. Cela répartit les monstres à tuer : il en restera moins plus tard.",
     ["Climb the trail and cross the rope bridges"] =
@@ -103,6 +105,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h11-thousand-needles", {
         "Termine aussi Water Sapta.",
     ["Stand on the metal grating to begin the battle. Shows up once you defeat six challengers."] =
         "Place-toi sur la grille métallique pour lancer le combat. Apparaît une fois six adversaires vaincus.",
+    ["You need it later for \"Parts for Kravel\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Les pièces détachées de Kravel » : garde-le à la banque pour libérer une place dans tes sacs.",
     ["This NPC is found down in the Cleft of Shadow."] =
         "Ce PNJ se trouve en bas, dans la Faille de l'ombre.",
     ["This one roams, so scan the surrounding area. This NPC is found down in the Cleft of Shadow."] =

@@ -27,6 +27,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a15-hillsbrad-foothills-and-arat
         "NPC는 길의 맨 꼭대기에 있습니다. 나중에 시간을 아낄 수 있습니다.",
     ["Let the conversation play out. The NPC is indoors."] =
         "대화가 끝날 때까지 기다리세요. NPC는 건물 안에 있습니다.",
+    ["The NPC is indoors. You need it later for \"Reassignment\": keep it in the bank to free a bag slot."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"전출\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["Stay on the trail"] =
         "길을 계속 따라가세요",
 })

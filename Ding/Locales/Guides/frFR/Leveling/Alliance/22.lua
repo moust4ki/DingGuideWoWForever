@@ -7,6 +7,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a22-dustwallow-marsh", {
         "Hurlevent d'abord, puis le marécage d'Âprefange : l'île de Theramore. Garde-le, une prochaine quête s'en sert.",
     ["The NPC is indoors."] =
         "Le PNJ est à l'intérieur.",
+    ["The NPC is indoors. You need it later for \"Sunken Treasure\": keep it in the bank to free a bag slot."] =
+        "Le PNJ est à l'intérieur. Tu en auras besoin plus tard pour « Le trésor englouti » : garde-le à la banque pour libérer une place dans tes sacs.",
     ["Head indoors"] =
         "Va à l'intérieur",
     ["Stay on the trail"] =

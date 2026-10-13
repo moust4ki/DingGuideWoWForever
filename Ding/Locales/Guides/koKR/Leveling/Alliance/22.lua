@@ -7,6 +7,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a22-dustwallow-marsh", {
         "스톰윈드에 먼저 들른 다음 먼지진흙 습지대: 테라모어 섬으로 가세요. 곧 할 퀘스트에 쓰니 보관하세요.",
     ["The NPC is indoors."] =
         "NPC는 건물 안에 있습니다.",
+    ["The NPC is indoors. You need it later for \"Sunken Treasure\": keep it in the bank to free a bag slot."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"가라앉은 보물\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["Head indoors"] =
         "건물 안으로 들어가세요",
     ["Stay on the trail"] =

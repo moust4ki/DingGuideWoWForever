@@ -13,6 +13,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a17-stranglethorn-vale", {
         "爬到建筑物的顶层。",
     ["The NPC is upstairs, out on the balcony."] =
         "NPC在楼上的阳台上。",
+    ["You need it later for \"Parts for Kravel\": keep it in the bank to free a bag slot."] =
+        "之后的任务“给克拉维尔的零件”需要它：先存进银行，腾出背包空间。",
     ["The NPC stands on the top tier of the pier. The NPC is indoors."] =
         "NPC站在码头的最上层。NPC在室内。",
     ["Fly to Booty Bay"] =
@@ -41,6 +43,16 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a17-stranglethorn-vale", {
         "故意让这里的怪物杀死你。这么早死亡没有任何损失。这是最快的过去方式。",
     ["Get yourself killed, then resurrect with the spirit healer"] =
         "让自己被杀，然后在灵魂医者处复活",
+    ["You need them later for \"Goblin Sponsorship\" and \"The Hidden Key\": keep them in the bank to free bag slots."] =
+        "之后的任务“地精赞助商”和“隐藏的钥匙”需要它们：先存进银行，腾出背包空间。",
+    ["You need it later for \"Chapter I\": keep it in the bank to free a bag slot."] =
+        "之后的任务“荆棘谷的青山 - 第一章”需要它：先存进银行，腾出背包空间。",
+    ["You need it later for \"Chapter II\": keep it in the bank to free a bag slot."] =
+        "之后的任务“荆棘谷的青山 - 第二章”需要它：先存进银行，腾出背包空间。",
+    ["You need it later for \"Chapter III\": keep it in the bank to free a bag slot."] =
+        "之后的任务“荆棘谷的青山 - 第三章”需要它：先存进银行，腾出背包空间。",
+    ["You need it later for \"Chapter IV\": keep it in the bank to free a bag slot."] =
+        "之后的任务“荆棘谷的青山 - 第四章”需要它：先存进银行，腾出背包空间。",
     ["The NPC is indoors."] =
         "NPC在室内。",
     ["Go into the mine"] =

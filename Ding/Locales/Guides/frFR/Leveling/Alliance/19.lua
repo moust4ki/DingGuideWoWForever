@@ -57,4 +57,14 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a19-stranglethorn-vale", {
         "Les cibles sont des trolls.",
     ["With the coming hand-ins, this gets you to level 38."] =
         "Avec les rendus à venir, tu atteins le niveau 38.",
+    ["You need them later for \"Magical Analysis\" and \"Caught!\": keep them in the bank to free bag slots."] =
+        "Tu en auras besoin plus tard pour « Analyse magique » et « Piégé ! » : garde-les à la banque pour libérer de la place dans tes sacs.",
+    ["You need it later for \"Chapter I\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Chapitre I » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need it later for \"Chapter II\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Chapitre II » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need it later for \"Chapter III\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Chapitre III » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need it later for \"Chapter IV\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Chapitre IV » : garde-le à la banque pour libérer une place dans tes sacs.",
 })

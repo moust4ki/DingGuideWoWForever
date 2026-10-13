@@ -27,6 +27,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h05-the-barrens-and-stonetalon-m
         "Registra las pilas de cajas marrones. Los objetivos están repartidos en varios puntos.",
     ["Flight master in Ratchet"] =
         "Maestro de vuelo de Trinquete",
+    ["You need them later for \"The Disruption Ends\" and \"Supplies for the Crossroads\": keep them in the bank to free bag slots."] =
+        "Los necesitarás más adelante para «El fin de las hostilidades» y «Suministros para El Cruce»: déjalos en el banco para liberar huecos en las bolsas.",
     ["The target is a troll. This one roams, so scan the surrounding area."] =
         "El objetivo es un trol. Este deambula, así que revisa los alrededores.",
     ["The target is a human in a crimson long coat. This one roams, so scan the surrounding area. The targets are spread over several spots."] =
@@ -51,6 +53,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h05-the-barrens-and-stonetalon-m
         "Sube por el sendero",
     ["With the coming hand-ins, this gets you to level 18."] =
         "Con las próximas entregas, esto te lleva al nivel 18.",
+    ["You need it later for \"Chen's Empty Keg\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «El barril vacío de Chen»: déjalo en el banco para liberar un hueco en las bolsas.",
     ["This NPC is found down in the Cleft of Shadow."] =
         "Este PNJ está abajo, en la Grieta de la Sombra.",
     ["The NPC stands on the highest level of this structure."] =

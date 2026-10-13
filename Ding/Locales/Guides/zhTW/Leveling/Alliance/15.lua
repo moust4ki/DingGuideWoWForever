@@ -27,6 +27,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a15-hillsbrad-foothills-and-arat
         "NPC在小路的最高處。這能為後面省下時間。",
     ["Let the conversation play out. The NPC is indoors."] =
         "讓對話播完。NPC在室內。",
+    ["The NPC is indoors. You need it later for \"Reassignment\": keep it in the bank to free a bag slot."] =
+        "NPC在室內。之後的任務「人事調動」需要它：先存進銀行，空出背包空間。",
     ["Stay on the trail"] =
         "沿著小路走",
 })

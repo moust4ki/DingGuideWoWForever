@@ -59,7 +59,7 @@ Ding.RegisterGuide({
         { complete = 4521 }, -- level 55
         { accept = 3783 }, -- level 55
         { talk = 13917, bank = { 10540, 11136, 10597 }, sticky = 3783, -- level 55
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need them later for \"Delivery to Andron Gant\", \"A Grave Situation\" and \"Betrayed\": keep them in the bank to free bag slots." },
         { complete = 4521 }, -- level 55
         { complete = 3783, -- level 55
           note = "The quest wants yetis; seek them out. Targets are in the cavern and around its entrance too." },
@@ -90,7 +90,7 @@ Ding.RegisterGuide({
         { accept = 5601, -- level 55
           note = "The NPC is indoors." },
         { talk = 13917, bank = { 15788, 15790 }, -- level 55
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need them later for \"The Everlook Report\" and \"Duke Nicholas Zverenhoff\": keep them in the bank to free bag slots." },
         { complete = 4842, -- level 55
           note = "Keep to the road the whole way." },
         { turnin = 5165 }, -- level 55
@@ -123,7 +123,7 @@ Ding.RegisterGuide({
         { talk = 13917, collect = { { 10597, 1 } }, spots = { { 1452, 61.51, 36.91 } }, -- level 56
           note = "The NPC is indoors." },
         { talk = 13917, bank = 11617, -- level 56
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need it later for \"Aquementas\": keep it in the bank to free a bag slot." },
         { train = true, talk = 5883, races = { "Scourge", "Troll" }, classes = { "MAGE" }, -- level 56
           note = "The NPC is indoors." },
         { train = true, talk = 6018, races = { "Scourge", "Troll" }, classes = { "PRIEST" }, -- level 56

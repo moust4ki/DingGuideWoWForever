@@ -19,6 +19,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a42-winterspring", {
         "Liberte o ajudante temporário que você domou.",
     ["The NPC is indoors."] =
         "O NPC está lá dentro.",
+    ["The NPC is indoors. You need it later for \"Glyphed Oaken Branch\": keep it in the bank to free a bag slot."] =
+        "O NPC está lá dentro. Você vai precisar dele mais tarde para \"Galho de carvalho com glifos\": guarde-o no banco para liberar espaço nas bolsas.",
     ["The quest wants yetis; seek them out. Targets are in the cavern and around its entrance too."] =
         "A missão pede yetis; vá atrás deles. Os alvos ficam na caverna e também em volta da entrada.",
     ["Head out of the cave"] =

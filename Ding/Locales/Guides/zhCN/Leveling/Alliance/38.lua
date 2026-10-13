@@ -7,6 +7,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a38-ungoro-crater", {
         "前往加基森",
     ["Tanaris: Gadgetzan first, then Un'Goro Crater."] =
         "塔纳利斯：先到加基森，再到安戈洛环形山。",
+    ["You need it later for \"Return to Tymor\": keep it in the bank to free a bag slot."] =
+        "之后的任务“向法师泰摩尔回复”需要它：先存进银行，腾出背包空间。",
     ["Wait for the talking to finish"] =
         "等对话结束",
     ["Go into the cavern"] =

@@ -55,6 +55,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h36-ungoro-crater", {
         "그 물체는 건물 안에 있습니다.",
     ["Finish the quest named The Videre Elixir. Keep the elixir in your bags; never consume it. You will die from it."] =
         "앞날의 비약 퀘스트를 완료하세요. 비약은 가방에 보관하고 절대 마시지 마세요. 이것 때문에 죽게 됩니다.",
+    ["The NPC is indoors. You need it later for \"Meet at the Grave\": keep it in the bank to free a bag slot."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"무덤에서의 만남\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["The NPC patrols a long route; look along it."] =
         "NPC는 긴 경로를 순찰합니다. 경로를 따라 찾아보세요.",
     ["You no longer need these; vendor or discard them."] =

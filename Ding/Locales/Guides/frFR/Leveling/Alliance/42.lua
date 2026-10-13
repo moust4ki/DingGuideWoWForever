@@ -19,6 +19,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a42-winterspring", {
         "Relâche le familier temporaire que tu as apprivoisé.",
     ["The NPC is indoors."] =
         "Le PNJ est à l'intérieur.",
+    ["The NPC is indoors. You need it later for \"Glyphed Oaken Branch\": keep it in the bank to free a bag slot."] =
+        "Le PNJ est à l'intérieur. Tu en auras besoin plus tard pour « La branche de chêne à glyphes » : garde-le à la banque pour libérer une place dans tes sacs.",
     ["The quest wants yetis; seek them out. Targets are in the cavern and around its entrance too."] =
         "La quête demande des yétis : va les chercher. Les cibles sont dans la grotte et aussi autour de l'entrée.",
     ["Head out of the cave"] =

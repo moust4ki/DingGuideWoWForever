@@ -11,7 +11,7 @@ Ding.RegisterGuide({
     next     = "leveling-h13-arathi-highlands",
     steps    = {
         { talk = 4549, bank = 5850, -- level 30
-          note = "Undercity first, then Hillsbrad Foothills: Tarren Mill." },
+          note = "Undercity first, then Hillsbrad Foothills: Tarren Mill. You need it later for \"The Swarm Grows\": keep it in the bank to free a bag slot." },
         { talk = 4549, collect = { { 3564, 1 }, { 3692, 1 } }, spots = { { 1458, 65.94, 44.78 } } }, -- level 30
         { go = { 1458, 62.08, 44.86 }, text = "Learn Cooking from the trainer" }, -- level 30
         { talk = 4552, -- level 30

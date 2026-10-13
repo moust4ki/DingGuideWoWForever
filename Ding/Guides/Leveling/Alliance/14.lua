@@ -37,12 +37,16 @@ Ding.RegisterGuide({
           note = "The NPC stands by the water's edge." },
         { turnin = 1242, accept = 1243, -- level 31
           note = "The NPC is indoors, one floor up." },
-        { bank = 5849, when = { log = 1179 } }, -- level 31
-        { bank = 5849, when = { done = 1179 } }, -- level 31
-        { bank = 2784, when = { log = 335 } }, -- level 31
-        { bank = 2784, when = { done = 335 } }, -- level 31
         { talk = 2455, bank = 3712, -- level 31
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need it later for \"Soothing Turtle Bisque\": keep it in the bank to free a bag slot." },
+        { bank = 5849, when = { log = 1179 }, -- level 31
+          note = "You need it later for \"The Brassbolts Brothers\": keep it in the bank to free a bag slot." },
+        { bank = 5849, when = { done = 1179 }, -- level 31
+          note = "You need it later for \"The Brassbolts Brothers\": keep it in the bank to free a bag slot." },
+        { bank = 2784, when = { log = 335 }, -- level 31
+          note = "You need it later for \"A Noble Brew\": keep it in the bank to free a bag slot." },
+        { bank = 2784, when = { done = 335 }, -- level 31
+          note = "You need it later for \"A Noble Brew\": keep it in the bank to free a bag slot." },
         { collect = { { 916, 1 } }, spots = { { 1453, 64.24, 80.81 } }, when = { log = 74 } }, -- level 31
         { collect = { { 916, 1 } }, spots = { { 1453, 64.24, 80.81 } }, when = { done = 74 } }, -- level 31
         { collect = { { 1451, 1 } }, spots = { { 1453, 64.24, 80.81 } }, when = { log = 159 } }, -- level 31

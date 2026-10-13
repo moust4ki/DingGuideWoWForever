@@ -19,6 +19,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h27-swamp-of-sorrows", {
         "Sal de la cueva",
     ["The NPC is indoors at street level."] =
         "El PNJ está dentro, a pie de calle.",
+    ["You need it later for \"The Atal'ai Exile\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «El exiliado Atal'ai»: déjalo en el banco para liberar un hueco en las bolsas.",
     ["This NPC is found down in the Cleft of Shadow."] =
         "Este PNJ está abajo, en la Grieta de la Sombra.",
     ["The NPC stands on the highest level of this structure."] =

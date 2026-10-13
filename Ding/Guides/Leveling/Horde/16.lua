@@ -40,7 +40,7 @@ Ding.RegisterGuide({
         { complete = 191 }, -- level 36
         { complete = 194 }, -- level 36
         { complete = 605 }, -- level 36
-        { complete = { 581, 189, 596 }, unbank = 4306, keep = { 3901, 1519, 3915, 4306 }, -- level 36
+        { complete = { 581, 189, 596 }, collect = { { 4306, 15 } }, keep = { 3901, 1519, 3915, 4306 }, -- level 36
           note = "The targets are trolls. Hang on to it; an upcoming quest uses it." },
         { turnin = 194, accept = 195 }, -- level 37
         { turnin = 187, accept = 188 }, -- level 37

@@ -22,7 +22,7 @@ Ding.RegisterGuide({
         { talk = 13917, collect = { { 12438, 1 } }, spots = { { 1452, 61.51, 36.91 } }, -- level 58
           note = "The NPC is indoors." },
         { talk = 13917, bank = 12663, -- level 58
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need it later for \"Glyphed Oaken Branch\": keep it in the bank to free a bag slot." },
         { turnin = 4808, accept = 4809 }, -- level 58
         { sethearth = "Everlook", talk = 11118, -- level 58
           note = "The NPC is indoors." },

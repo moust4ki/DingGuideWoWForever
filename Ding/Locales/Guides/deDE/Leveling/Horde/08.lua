@@ -5,8 +5,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h08-the-barrens", {
         "Brachland (24-25)",
     ["Thunder Bluff first, then the Barrens. The NPC is indoors."] =
         "Zuerst Donnerfels, dann das Brachland. Der NPC ist drinnen.",
-    ["The NPC is indoors."] =
-        "Der NPC ist drinnen.",
+    ["The NPC is indoors. You need them later for \"Souvenirs of Death\" and \"Battle of Hillsbrad\": keep them in the bank to free bag slots."] =
+        "Der NPC ist drinnen. Du brauchst sie später für „Andenken des Todes“ und „Kampf um Hillsbrad“: Lass sie in der Bank, das spart Taschenplätze.",
     ["Go into the cavern"] =
         "Geh in die Höhle",
     ["Your targets are within the cavern."] =
@@ -15,6 +15,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h08-the-barrens", {
         "Lass das Gespräch zu Ende laufen. Deine Ziele sind in der Höhle.",
     ["Head out of the cave"] =
         "Verlass die Höhle",
+    ["The NPC is indoors."] =
+        "Der NPC ist drinnen.",
     ["This NPC is found down in the Cleft of Shadow."] =
         "Dieser NPC ist unten in der Kluft der Schatten.",
     ["Visit the caged quilboar"] =

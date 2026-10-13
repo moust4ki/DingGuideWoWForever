@@ -19,6 +19,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a42-winterspring", {
         "길들인 임시 소환수를 풀어 주세요.",
     ["The NPC is indoors."] =
         "NPC는 건물 안에 있습니다.",
+    ["The NPC is indoors. You need it later for \"Glyphed Oaken Branch\": keep it in the bank to free a bag slot."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"문자가 새겨진 떡갈나무 가지\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["The quest wants yetis; seek them out. Targets are in the cavern and around its entrance too."] =
         "이 퀘스트의 대상은 설인입니다. 찾아다니세요. 대상은 동굴 안과 입구 주변에도 있습니다.",
     ["Head out of the cave"] =

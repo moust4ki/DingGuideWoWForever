@@ -82,7 +82,7 @@ Ding.RegisterGuide({
           note = "The quest giver waits in the tent." },
         { accept = 5088, elite = true }, -- level 29
         { talk = 8356, bank = 5838, -- level 29
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need it later for \"Frostmaw\": keep it in the bank to free a bag slot." },
         { turnin = 1153 }, -- level 29
         { turnin = 4767 }, -- level 29
         { accept = 5064 }, -- level 29
@@ -149,7 +149,8 @@ Ding.RegisterGuide({
           note = "Stand on the metal grating to begin the battle. Shows up once you defeat six challengers." },
         { turnin = 1719, when = { ready = 1719 }, classes = { "WARRIOR" } }, -- level 30
         { accept = 1791, when = { done = 1719 }, classes = { "WARRIOR" } }, -- level 30
-        { talk = 8119, bank = 5800 }, -- level 30
+        { talk = 8119, bank = 5800, -- level 30
+          note = "You need it later for \"Parts for Kravel\": keep it in the bank to free a bag slot." },
         { train = true, talk = 3328, races = { "Orc", "Scourge", "Troll" }, classes = { "ROGUE" }, -- level 30
           note = "This NPC is found down in the Cleft of Shadow." },
         { accept = 1431, -- level 30

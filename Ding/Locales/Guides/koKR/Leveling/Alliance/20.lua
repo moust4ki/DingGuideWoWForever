@@ -39,6 +39,10 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a20-swamp-of-sorrows", {
         "건물 꼭대기 층으로 올라가세요.",
     ["Let the conversation play out. Climb to the highest floor of the building."] =
         "대화가 끝날 때까지 기다리세요. 건물 꼭대기 층으로 올라가세요.",
+    ["The NPC is indoors. You need it later for \"Rumors for Kravel\": keep it in the bank to free a bag slot."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"크레이블을 위한 소문\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Ongeku\": keep it in the bank to free a bag slot."] =
+        "나중에 \"온게쿠\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["Head down into the Deeprun Tram station"] =
         "깊은굴 지하철 역으로 내려가세요",
     ["Pass through the portal to teleport."] =

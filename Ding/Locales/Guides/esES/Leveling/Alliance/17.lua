@@ -13,6 +13,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a17-stranglethorn-vale", {
         "Sube al piso más alto del edificio.",
     ["The NPC is upstairs, out on the balcony."] =
         "El PNJ está arriba, fuera, en el balcón.",
+    ["You need it later for \"Parts for Kravel\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Las piezas de Kravel»: déjalo en el banco para liberar un hueco en las bolsas.",
     ["The NPC stands on the top tier of the pier. The NPC is indoors."] =
         "El PNJ está en el nivel superior del muelle. El PNJ está dentro.",
     ["Fly to Booty Bay"] =
@@ -41,6 +43,16 @@ Ding.RegisterGuideTranslation("esES", "leveling-a17-stranglethorn-vale", {
         "Deja que los monstruos de aquí te maten a propósito. A estos niveles morir no te cuesta nada. Es el camino más rápido para llegar.",
     ["Get yourself killed, then resurrect with the spirit healer"] =
         "Deja que te maten y resucita con el Ángel de la Resurrección",
+    ["You need them later for \"Goblin Sponsorship\" and \"The Hidden Key\": keep them in the bank to free bag slots."] =
+        "Los necesitarás más adelante para «Apoyo al goblin» y «La llave oculta»: déjalos en el banco para liberar huecos en las bolsas.",
+    ["You need it later for \"Chapter I\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Capítulo I»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need it later for \"Chapter II\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Capítulo II»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need it later for \"Chapter III\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Capítulo III»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need it later for \"Chapter IV\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Capítulo IV»: déjalo en el banco para liberar un hueco en las bolsas.",
     ["The NPC is indoors."] =
         "El PNJ está dentro.",
     ["Go into the mine"] =

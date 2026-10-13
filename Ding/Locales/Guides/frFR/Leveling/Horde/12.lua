@@ -3,8 +3,8 @@
 Ding.RegisterGuideTranslation("frFR", "leveling-h12-hillsbrad-foothills", {
     ["Hillsbrad Foothills (30-32)"] =
         "Contreforts de Hautebrande (30-32)",
-    ["Undercity first, then Hillsbrad Foothills: Tarren Mill."] =
-        "Fossoyeuse d'abord, puis les Contreforts de Hautebrande : Moulin-de-Tarren.",
+    ["Undercity first, then Hillsbrad Foothills: Tarren Mill. You need it later for \"The Swarm Grows\": keep it in the bank to free a bag slot."] =
+        "Fossoyeuse d'abord, puis les Contreforts de Hautebrande : Moulin-de-Tarren. Tu en auras besoin plus tard pour « L'essaim s'agrandit » : garde-le à la banque pour libérer une place dans tes sacs.",
     ["Learn Cooking from the trainer"] =
         "Apprends la Cuisine auprès de l'entraîneur",
     ["You'll need this to pick up an upcoming quest."] =

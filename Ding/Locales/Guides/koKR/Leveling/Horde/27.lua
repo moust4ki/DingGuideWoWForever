@@ -19,6 +19,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h27-swamp-of-sorrows", {
         "동굴을 나가세요",
     ["The NPC is indoors at street level."] =
         "NPC는 건물 안 1층에 있습니다.",
+    ["You need it later for \"The Atal'ai Exile\": keep it in the bank to free a bag slot."] =
+        "나중에 \"추방된 아탈라이 트롤\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["This NPC is found down in the Cleft of Shadow."] =
         "이 NPC는 아래쪽 어둠의 틈에 있습니다.",
     ["The NPC stands on the highest level of this structure."] =

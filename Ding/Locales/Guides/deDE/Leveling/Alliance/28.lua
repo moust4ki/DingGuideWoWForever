@@ -81,8 +81,12 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a28-feralas-and-tanaris", {
         "Lass das Gespräch zu Ende laufen. Deine Ziele sind in der Höhle.",
     ["The object is indoors, one floor up."] =
         "Das Objekt ist drinnen, ein Stockwerk höher.",
+    ["You need them later for \"The Borrower\", \"Screecher Spirits\", \"The Super Egg-O-Matic\" and \"Rhapsody's Kalimdor Kocktail\": keep them in the bank to free bag slots."] =
+        "Du brauchst sie später für „Der Borger“, „Kreischergeister“, „Der Super-Ei-O-Mat“ und „Rhapsodys Kalimdor-Cocktail“: Lass sie in der Bank, das spart Taschenplätze.",
     ["Getting it here speeds up Un'Goro Crater. The NPC is indoors."] =
         "Wenn du es hier holst, geht der Krater von Un'Goro schneller. Der NPC ist drinnen.",
+    ["You need them later for \"Crystals of Power\": keep them in the bank to free bag slots."] =
+        "Du brauchst sie später für „Machtkristalle“: Lass sie in der Bank, das spart Taschenplätze.",
     ["Step into the cavern within the trunk"] =
         "Geh in die Höhle im Baumstamm",
     ["The spot is on the lower floor of the hollow tree."] =

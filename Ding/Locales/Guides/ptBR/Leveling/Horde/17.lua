@@ -5,10 +5,20 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h17-dustwallow-marsh", {
         "Pântano Vadeoso (37-38)",
     ["Orgrimmar first, then Dustwallow Marsh: Brackenwall Village. Hold on to it, an upcoming quest uses it."] =
         "Orgrimmar primeiro, depois o Pântano Vadeoso: Aldeia Muralha Verde. Guarde-o, uma missão mais adiante usa isso.",
-    ["The NPC is indoors."] =
-        "O NPC está lá dentro.",
+    ["The NPC is indoors. You need it later for \"Caught!\": keep it in the bank to free a bag slot."] =
+        "O NPC está lá dentro. Você vai precisar dele mais tarde para \"Calça arriada!\": guarde-o no banco para liberar espaço nas bolsas.",
+    ["You need it later for \"Chapter I\": keep it in the bank to free a bag slot."] =
+        "Você vai precisar dele mais tarde para \"Capítulo I\": guarde-o no banco para liberar espaço nas bolsas.",
+    ["You need it later for \"Chapter II\": keep it in the bank to free a bag slot."] =
+        "Você vai precisar dele mais tarde para \"Capítulo II\": guarde-o no banco para liberar espaço nas bolsas.",
+    ["You need it later for \"Chapter III\": keep it in the bank to free a bag slot."] =
+        "Você vai precisar dele mais tarde para \"Capítulo III\": guarde-o no banco para liberar espaço nas bolsas.",
+    ["You need it later for \"Chapter IV\": keep it in the bank to free a bag slot."] =
+        "Você vai precisar dele mais tarde para \"Capítulo IV\": guarde-o no banco para liberar espaço nas bolsas.",
     ["Climb the steps"] =
         "Suba os degraus",
+    ["The NPC is indoors."] =
+        "O NPC está lá dentro.",
     ["A lengthy stretch of quests is coming up. You won't find an ammunition seller. The NPC is indoors."] =
         "Vem aí um longo trecho de missões. Você não vai encontrar vendedor de munição. O NPC está lá dentro.",
     ["The quest starts from a small piece of metal."] =
@@ -57,6 +67,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h17-dustwallow-marsh", {
         "Guarde-o: a série de missões da arma Redemoinho do guerreiro pede isso.",
     ["Get these for simple Badlands turn-ins ahead. The NPC is indoors."] =
         "Pegue estes para entregas fáceis nos Ermos mais adiante. O NPC está lá dentro.",
+    ["You need them later for \"The Black Shield\" and \"Into the Field\": keep them in the bank to free bag slots."] =
+        "Você vai precisar deles mais tarde para \"O escudo negro\" e \"Trabalho de campo\": guarde-os no banco para liberar espaço nas bolsas.",
     ["Stay clear of Refuge Point."] =
         "Fique longe da Ponta do Refúgio.",
 })

@@ -47,6 +47,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h35-felwood-and-winterspring", {
         "把宠物寄存在兽栏管理员处。",
     ["You will tame a short-term pet shortly. You pick up Claw (Rank 7) here."] =
         "你马上要驯服一只临时宠物。在这里学会爪击（等级7）。",
+    ["The NPC is indoors. You need them later for \"Delivery to Magatha\" and \"Seeping Corruption\": keep them in the bank to free bag slots."] =
+        "NPC在室内。之后的任务“玛加萨的石版”和“堕落之水”需要它们：先存进银行，腾出背包空间。",
     ["Flight master at Everlook"] =
         "永望镇飞行管理员",
     ["Tame a beast here to learn the next rank of Claw"] =
@@ -57,6 +59,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h35-felwood-and-winterspring", {
         "NPC在楼上的阳台上。",
     ["The NPC is indoors. Hold on to it for a task in Un'Goro Crater later."] =
         "NPC在室内。留着它，之后在安戈洛环形山的任务要用。",
+    ["The NPC is indoors. You need it later for \"Jes'rimon's Payment to Jediga\": keep it in the bank to free a bag slot."] =
+        "NPC在室内。之后的任务“杰斯雷蒙的报酬”需要它：先存进银行，腾出背包空间。",
     ["Get your companion back from the stable master."] =
         "从兽栏管理员处取回你的宠物。",
     ["Release the short-term pet you tamed."] =

@@ -46,6 +46,6 @@ Ding.RegisterGuide({
         { complete = 1452, -- level 44
           note = "Hunt the red-feathered birds. Hyenas also use these spawn spots." },
         { talk = 7799, bank = { 5807, 6257 }, -- level 44
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need them later for \"Report Back to Fizzlebub\" and \"Rhapsody's Kalimdor Kocktail\": keep them in the bank to free bag slots." },
     },
 })

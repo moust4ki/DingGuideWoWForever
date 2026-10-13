@@ -67,6 +67,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a18-desolace", {
         "在房屋旁寻找棕褐色的袋子。其中有些无法使用。Magram Pack Runner带着2只土狼护卫巡逻，避开它们。",
     ["The foes here are scorpions. Basilisks compete for the same spawn points."] =
         "这里的敌人是蝎子。石化蜥蜴会占用相同的刷新点。",
+    ["The NPC is indoors. You need it later for \"The Karnitol Shipwreck\": keep it in the bank to free a bag slot."] =
+        "NPC在室内。之后的任务“卡尼托的背包”需要它：先存进银行，腾出背包空间。",
     ["Wait for the talking to finish"] =
         "等对话结束",
 })

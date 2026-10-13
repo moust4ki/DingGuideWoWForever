@@ -27,6 +27,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a15-hillsbrad-foothills-and-arat
         "El PNJ está en lo alto del sendero. Así ahorras tiempo más adelante.",
     ["Let the conversation play out. The NPC is indoors."] =
         "Deja que termine la conversación. El PNJ está dentro.",
+    ["The NPC is indoors. You need it later for \"Reassignment\": keep it in the bank to free a bag slot."] =
+        "El PNJ está dentro. Lo necesitarás más adelante para «Nueva asignación»: déjalo en el banco para liberar un hueco en las bolsas.",
     ["Stay on the trail"] =
         "Sigue el sendero",
 })

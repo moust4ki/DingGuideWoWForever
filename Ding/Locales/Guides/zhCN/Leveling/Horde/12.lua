@@ -3,8 +3,8 @@
 Ding.RegisterGuideTranslation("zhCN", "leveling-h12-hillsbrad-foothills", {
     ["Hillsbrad Foothills (30-32)"] =
         "希尔斯布莱德丘陵 (30-32)",
-    ["Undercity first, then Hillsbrad Foothills: Tarren Mill."] =
-        "先到幽暗城，再到希尔斯布莱德丘陵：塔伦米尔。",
+    ["Undercity first, then Hillsbrad Foothills: Tarren Mill. You need it later for \"The Swarm Grows\": keep it in the bank to free a bag slot."] =
+        "先到幽暗城，再到希尔斯布莱德丘陵：塔伦米尔。之后的任务“疯狂的虫群”需要它：先存进银行，腾出背包空间。",
     ["Learn Cooking from the trainer"] =
         "向训练师学习烹饪",
     ["You'll need this to pick up an upcoming quest."] =

@@ -13,7 +13,7 @@ Ding.RegisterGuide({
         { vendor = true, talk = 5101, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 41
           note = "Ironforge first, then the Badlands. The NPC waits on the lower level, indoors. A lengthy stretch of quests is coming up. This vendor sells no arrows or bullets." },
         { talk = 2461, bank = { 5826, 5862 }, -- level 41
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need them later for \"Back to Booty Bay\" and \"Safety First\": keep them in the bank to free bag slots." },
         { talk = 8720, collect = { { 4611, 9 }, { 3829, 1 }, { 4389, 1 }, { 929, 1 }, { 3823, 1 }, { 2868, 1 } }, when = { maxlevel = 45 }, -- level 41
           note = "Get these for simple Badlands turn-ins ahead. The NPC is indoors." },
         { turnin = 1467, -- level 41

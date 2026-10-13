@@ -99,7 +99,7 @@ Ding.RegisterGuide({
         { train = true, talk = 3352, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, -- level 34
           note = "The NPC stands on the highest level of this structure." },
         { talk = 3309, bank = { 5827, 14542 }, -- level 34
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need them later for \"Martek the Exiled\" and \"Hemet Nesingwary\": keep them in the bank to free bag slots." },
         { sethearth = "Orgrimmar", talk = 6929, -- level 34
           note = "The NPC is indoors." },
         { accept = 2841, dungeon = "Gnomeregan", -- level 34

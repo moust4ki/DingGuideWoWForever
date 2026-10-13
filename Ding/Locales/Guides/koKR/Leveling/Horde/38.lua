@@ -39,10 +39,12 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h38-felwood-and-winterspring", {
         "가는 내내 길을 벗어나지 마세요.",
     ["Flee if things go badly."] =
         "상황이 나빠지면 도망치세요.",
-    ["The NPC is indoors."] =
-        "NPC는 건물 안에 있습니다.",
+    ["The NPC is indoors. You need them later for \"Delivery to Andron Gant\", \"A Grave Situation\" and \"Betrayed\": keep them in the bank to free bag slots."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"안드론 건트에게 전달\", \"무덤의 상태\", \"배신\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["The quest wants yetis; seek them out. Targets are in the cavern and around its entrance too."] =
         "이 퀘스트의 대상은 설인입니다. 찾아다니세요. 대상은 동굴 안과 입구 주변에도 있습니다.",
+    ["The NPC is indoors."] =
+        "NPC는 건물 안에 있습니다.",
     ["The NPC is a human spirit."] =
         "NPC는 인간의 영혼입니다.",
     ["Your targets are within the cavern."] =
@@ -53,6 +55,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h38-felwood-and-winterspring", {
         "동굴을 나가세요",
     ["Fight the elementals of the swamp."] =
         "늪의 정령과 싸우세요.",
+    ["The NPC is indoors. You need them later for \"The Everlook Report\" and \"Duke Nicholas Zverenhoff\": keep them in the bank to free bag slots."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"눈망루 마을 보고서\", \"공작 니콜라스 즈바른호프\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["The targets are leafless trees that walk."] =
         "대상은 걸어 다니는 앙상한 나무입니다.",
     ["Slay the greenish beings of living water."] =
@@ -69,6 +73,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h38-felwood-and-winterspring", {
         "대상은 한 무리로 다니는 흰 펄볼그 3마리입니다. 대상은 길옆으로 긴 경로를 순찰합니다. 여명의 설원 28.1, 35.0 근처에 나타납니다.",
     ["This number shrinks while you kill monsters. Bring any feathers you collect to the NPC at 64.8, 8.1."] =
         "몬스터를 처치하면 이 수치가 줄어듭니다. 모은 깃털은 64.8, 8.1의 NPC에게 가져가세요.",
+    ["The NPC is indoors. You need it later for \"Aquementas\": keep it in the bank to free a bag slot."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"아쿠에멘타스\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["This NPC is found down in the Cleft of Shadow."] =
         "이 NPC는 아래쪽 어둠의 틈에 있습니다.",
     ["The NPC stands on the highest level of this structure."] =

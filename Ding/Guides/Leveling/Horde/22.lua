@@ -39,7 +39,7 @@ Ding.RegisterGuide({
         { sethearth = "Gadgetzan", talk = 7733, -- level 42
           note = "The NPC is indoors." },
         { talk = 7799, bank = { 8524, 10699 }, -- level 42
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need them later for \"Tanaris Field Sampling\" and \"Screecher Spirits\": keep them in the bank to free bag slots." },
         { turnin = 1117 }, -- level 42
         { accept = 1118, -- level 42
           note = "Wait for the talking to finish" },
@@ -54,6 +54,6 @@ Ding.RegisterGuide({
         { turnin = 79366, classes = { "SHAMAN" } }, -- level 42
         { destroy = 5866 }, -- level 42
         { talk = 7799, bank = 5826, -- level 42
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need it later for \"Back to Booty Bay\": keep it in the bank to free a bag slot." },
     },
 })

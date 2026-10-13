@@ -28,7 +28,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { train = true, talk = 12042, races = { "Tauren" }, classes = { "DRUID" } }, -- level 22
         { talk = 8356, bank = 5059, -- level 22
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need it later for \"Egg Hunt\": keep it in the bank to free a bag slot." },
         { train = true, talk = 3040, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, -- level 22
           note = "The NPC is indoors." },
         { train = true, talk = 3043, classes = { "WARRIOR" }, -- level 22
