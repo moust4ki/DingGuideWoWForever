@@ -187,6 +187,27 @@ T.test("Dun Algaz: in the tunnel, the arrow goes on to its far end", function()
     T.eq(Travel:Leg(thelsamar), nil)
 end)
 
+T.test("out of a tunnel, the arrow goes on at once, though the plan was made a moment ago", function()
+    -- A short tunnel across Elwynn Forest, from its western half to its eastern one.
+    local sides = { { { 1429, 0, 0, 50, 100 } }, { { 1429, 50, 0, 100, 100 } } }
+    Passages.SIDES.test = sides
+    Passages.LIST[#Passages.LIST + 1] = { sides = sides, kind = "tunnel", verified = false,
+        a = { 1429, 49, 50 }, b = { 1429, 51, 50 } }
+    local ok, err = pcall(function()
+        local target = point(1429, 80, 50)
+        start({ at = { 1429, 49, 50 } })             -- at the tunnel's western end
+        local leg = Travel:Leg(target)
+        T.ok(leg and leg.kind == "passage" and at(leg.point, 1429, 51, 50), "the arrow is not at the far end")
+        H.player.x = 51                              -- out at the far end, about 100 yards on
+        T.eq(Travel:Leg(target), nil, "the arrow stays on the tunnel's end")
+        T.eq(kinds(Travel.cache.plan), "passage walk", "the plan was made again")
+    end)
+    Passages.SIDES.test = nil
+    table.remove(Passages.LIST)
+    Travel:Reset()
+    if not ok then error(err, 0) end
+end)
+
 T.test("Thandol Span then Dun Algaz: from Arathi to Loch Modan, one passage after the other", function()
     alliance({ 1417, 46, 47 })                   -- Refuge Pointe
     local thelsamar = point(1432, 35, 47)

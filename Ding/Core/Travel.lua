@@ -22,6 +22,7 @@ local HEARTH_TIME = 30           -- cast and loading screen
 local HASSLE = 20                -- seconds a change of transport must save to be worth it
 local MATCH = 150                -- yards between a flight map node and its flight master
 local AT_NODE = 60               -- yards: the player stands at a flight master or a dock
+local AT_END = 25                -- yards: the player came out at a passage's far end
 local REPLAN_MOVE, REPLAN_TTL = 150, 15   -- the plan is made again past these yards or seconds
 local BOARDING_TIME = 5 * 60     -- seconds a crossing may last once the dock is left
 local UNKNOWN_FLIGHT = 60        -- seconds added to a flight from a flight master never seen
@@ -496,11 +497,12 @@ function T:Reach()
             end
         end
         if not best then return nil end
+        -- The ways besides walking: a passage is walked through too.
         local kinds = {}
-        if lastKind ~= "walk" then kinds[1] = lastKind end
+        if lastKind ~= "walk" and lastKind ~= "passage" then kinds[1] = lastKind end
         local i = last
         while prev[i] do
-            if how[i] ~= "walk" then table.insert(kinds, 1, how[i]) end
+            if how[i] ~= "walk" and how[i] ~= "passage" then table.insert(kinds, 1, how[i]) end
             i = prev[i]
         end
         return best, kinds
@@ -602,10 +604,19 @@ function T:Leg(target)
     local plan = self:PlanFor(target)
     local result
     if plan and #plan.legs > 0 then
+        -- Out of a passage already (a plan made a moment ago): what comes before is behind. Not a
+        -- lift, whose two ends share a spot: its ride changes the map, and the plan is made again.
+        local first = 1
+        for k, leg in ipairs(plan.legs) do
+            if leg.kind == "passage" and leg.node.passage.kind ~= "lift" and here
+                and (distance(here, leg.to) or math.huge) <= AT_END then
+                first = k + 1
+            end
+        end
         -- The first leg that is not a walk (the walks before it lead to where it starts).
-        local i = 1
-        while plan.legs[i + 1] and plan.legs[i].kind == "walk" do i = i + 1 end
-        local l = plan.legs[i]
+        local i = first
+        while plan.legs[i] and plan.legs[i].kind == "walk" do i = i + 1 end
+        local l = plan.legs[i] or { kind = "walk" }
         if l.kind == "passage" then
             -- In the passage already (its first leg, or a plan made a moment ago): its far end.
             local passage = l.node.passage

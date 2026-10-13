@@ -498,7 +498,9 @@ target (the nearest candidate) goes through a travel planner, the fastest way in
   or keeps the target with "Hearthstone to Goldshire" (the item button then offers the
   hearthstone), or to a passage's entry with "Take the lift up to Thunder Bluff", "Go through the
   tunnel to Loch Modan", "Enter Ironforge through its gates"; within 60 yards of a passage's line
-  (on the lift, in the tunnel; not a portal), to its far end, then on to the target. The window
+  (on the lift, in the tunnel; not a portal), to its far end, then on to the target: within 25
+  yards of a far end at once, even on a plan made a moment ago (a lift: once its ride changes
+  the map). The NPC directory's ways ("· flight, boat") leave passages out, like walks. The window
   repeats it in a notice under the step. Once at a dock, the arrow waits for the
   far side ("on board") until the player gets there (5 minutes at most after leaving the dock).
   On a flight, the plan starts where it lands (`TakeTaxiNode`, watched with `hooksecurefunc`).
