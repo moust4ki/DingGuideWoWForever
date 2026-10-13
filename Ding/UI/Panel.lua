@@ -589,8 +589,12 @@ function P:Jump()
     local offer = self.findOffer
     self.findOffer = nil
     if not offer then return end
-    if Ding.Engine:SetGuide(offer.guide, offer.index, true) then
-        Ding:Print(L.FIND_JUMPED:format(offer.index, Ding.Engine.guide.title))
+    -- A step behind in this section is shown like with "Previous" (the guide stays where it is);
+    -- another one becomes the guide's step.
+    local E = Ding.Engine
+    local behind = E.guide and offer.guide == E.guide.id and E:BrowseTo(offer.index)
+    if behind or E:SetGuide(offer.guide, offer.index, true) then
+        Ding:Print(L.FIND_JUMPED:format(offer.index, E.guide.title))
     end
     if self.focusing then self.focusIndex = 1 end
     self:Update()
@@ -1265,7 +1269,7 @@ function P:OpenStepMenu(row)
         m.line = m:CreateTexture(nil, "ARTWORK")
         m.line:SetColorTexture(unpack(C.divider))
         m.line:SetHeight(1)
-        m.done = menuItem(m, L.STEP_MENU_DONE, function() Ding.Engine:Next() end)
+        m.done = menuItem(m, L.STEP_MENU_DONE, function() Ding.Engine:MarkDone() end)
         m.skip = menuItem(m, L.STEP_MENU_SKIP, function() Ding.Engine:Skip() end)
         -- On a row with a quest: where the guide deals with it.
         m.find = menuItem(m, L.STEP_MENU_FIND, function() P:FindQuest(m.quest) end)

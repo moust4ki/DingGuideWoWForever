@@ -82,7 +82,7 @@ return function(tools, locale)
     -- Kinds of rows: a section title, a notice and a control say it all in their text.
     local SAYS_IT_ALL = { section = true, notice = true, button = true }
     local function pad(on) view.pad(on) end
-    -- A rule whose fix belongs to another branch (the engine's navigation, Core/Along.lua): its
+    -- A rule whose fix belongs to another branch (Core/Along.lua's choice of the rows): its
     -- failure is printed as PENDING, not counted, until that branch lands.
     local function pending(name, owner, fn)
         T.test(name .. " [pending: " .. owner .. "]", function()
@@ -426,7 +426,7 @@ return function(tools, locale)
     ---------------------------------------------------------------------------
     -- Moving through the guide, marks
     ---------------------------------------------------------------------------
-    pending("14 browsing: Previous and Next move one step at a time and mark nothing", "Engine, step-jumps", function()
+    T.test("14 browsing: Previous and Next move one step at a time and mark nothing", function()
         scene("a11-finished-seen-again")
         local shown = E.index
         E:Prev()

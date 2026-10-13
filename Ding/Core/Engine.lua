@@ -706,8 +706,10 @@ E.Signature = signature
 -- The step the character is on, saved; and per section (Ding.char.lastStep) where the
 -- character was, or where a resume still in progress is going: picking a section again
 -- takes it up there, whatever the game cannot check on the way (a trip, a trainer, the
--- inn, a step behind an option turned on since, a goal whose items are spent).
+-- inn, a step behind an option turned on since, a goal whose items are spent). Browsing
+-- back with "Previous" (E.browseFrom) saves the guide's current step, not the one shown.
 local function saveStep(index)
+    if E.hold and E.browseFrom then index = math.max(index, E.browseFrom) end
     Ding.char.step = index
     local guide = E.guide
     if not guide then return end
@@ -879,7 +881,61 @@ local function heldOnScreen()
     return Ding.Panel and Ding.Panel.EndHold and Ding.Panel:EndHold() or false
 end
 
+---------------------------------------------------------------------------
+-- Browsing: "Previous" shows the steps before the guide's current step (E.browseFrom) one
+-- at a time, done or not; "Next" then shows the step right after the one on screen (the next
+-- one for the character's race, class and options), marking nothing, until the current step
+-- is back. Only there does "Next" mean "mark done and move on".
+---------------------------------------------------------------------------
+function E:IsBrowsing()
+    return self.hold and self.browseFrom ~= nil and self.index < self.browseFrom
+end
+
+-- Shows step `index`, before the guide's current step, without moving the guide ("Go to
+-- step" on a step behind). False when it is not behind.
+function E:BrowseTo(index)
+    if not (self.guide and self.guide.steps[index]) then return false end
+    local current = self.hold and self.browseFrom or self.index
+    if index >= current then return false end
+    endTrip()
+    Ding.Timing:Cancel()
+    self.browseFrom = current
+    self.index, self.hold, self.finished, self.skipNotes = index, true, false, nil
+    saveStep(index)
+    self:Refresh()
+    return true
+end
+
+-- "Next" while browsing: the step right after the one on screen.
+local function browseNext()
+    local steps, i = E.guide.steps, E.index + 1
+    while i < E.browseFrom and not Ding:StepApplies(steps[i]) do i = i + 1 end
+    E.index, E.skipNotes = i, nil
+    if i >= E.browseFrom then
+        -- The guide's current step again: it goes on as before (done meanwhile, it moves on).
+        E.index, E.browseFrom, E.hold = E.browseFrom, nil, false
+        E:Advance()
+        Ding.Timing:Start(E.guide.id, E.index)
+    else
+        saveStep(i)
+    end
+    E:Refresh()
+end
+
 function E:Next()
+    if not self.guide then return end
+    local ended = endTrip()
+    if heldOnScreen() then
+        if ended then self:Refresh() end
+        return
+    end
+    if self:IsBrowsing() then return browseNext() end
+    self:MarkDone()
+end
+
+-- Marks the step on screen done and moves on to the next step still to do (the step menu's
+-- "Mark as done"; "Next" on the guide's current step).
+function E:MarkDone()
     if not self.guide then return end
     local ended = endTrip()
     if heldOnScreen() then
@@ -971,6 +1027,8 @@ function E:Prev()
     if not self.guide or self.index <= 1 then return end
     endTrip()
     Ding.Timing:Cancel()
+    -- The guide's current step, kept while the player browses back (E:IsBrowsing).
+    if not (self.hold and self.browseFrom) then self.browseFrom = self.index end
     self.index = self.index - 1
     -- Skip steps meant for other races or classes.
     while self.index > 1 and not Ding:StepApplies(self.guide.steps[self.index]) do
@@ -1619,10 +1677,18 @@ end
 -- "next" goes to, one after the other (not those a resume passes).
 function E:NextSteps(count)
     local out, steps = {}, self.guide and self.guide.steps or {}
+    local browsing = self:IsBrowsing()
     for i = self.index + 1, #steps do
         if #out >= count then break end
         local s = steps[i]
-        if not self:IsStepDone(s, i) and not self:LeftBehind(s, i) then out[#out + 1] = s end
+        -- Browsing back: up to the guide's current step, every step for the character.
+        local shown
+        if browsing and i < self.browseFrom then
+            shown = Ding:StepApplies(s)
+        else
+            shown = not self:IsStepDone(s, i) and not self:LeftBehind(s, i)
+        end
+        if shown then out[#out + 1] = s end
     end
     return out
 end

@@ -199,7 +199,10 @@ Contracts between modules:
   `Ding.UnregisterGuidePack(id)` (Registry); `Data:QuestOpenToRaces(q, races)`;
   `ImportWindow:Open("import" | "export", id, back)`.
 - `Engine.guide`, `Engine.index`, `Engine.finished`, `Engine:CurrentStep()`,
-  `Engine:Next()`, `Engine:Prev()`, `Engine:Skip()` (without validating),
+  `Engine:Next()` (while browsing back: the step right after, marking nothing; else
+  `Engine:MarkDone()`, the step menu's "Mark as done"), `Engine:Prev()` (browsing:
+  `Engine.browseFrom` = the guide's current step, `Engine:IsBrowsing()`,
+  `Engine:BrowseTo(index)` for "Go to step" behind), `Engine:Skip()` (without validating),
   `Engine:BackToIncomplete()` (nearest past step not done), `Engine:CatchUp(q, step)`
   (missing link of the chain of `q`), `Engine.skipNotes` (reasons of the last skip),
   `Engine:StepMark(index)` -> "manual" | "skipped" | nil (step marked done or skipped by
