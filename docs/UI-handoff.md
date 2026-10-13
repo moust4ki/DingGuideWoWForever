@@ -426,14 +426,13 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
 - **Quest rewards** (not in the mockup): with several rewards to choose from, the same banner as
   on the flight map ("Best reward: [item] (an upgrade)") and an accent ring over the reward's
   button in the game's quest window (read only).
-- **Quests an NPC offers** (not in the mockup): a 260-wide Ding window (window look, strata
+- **Quests an NPC offers** (not in the mockup): a 280-wide Ding window (window look, strata
   HIGH, no mouse), its top level with the game's NPC window and 8 to its right (to its left
   when the screen has no room), else at 370, -116 from the top left. Title 12 SemiBold
-  "Ding! · Quests offered" (Ding! in `accent`, the dot in `text.disabled`), divider at 26; then
-  per quest, padding 12: "[level] name" 12 Medium `text` (orange `above` over the player's
-  level, one line), under it 16 lower what the guide does, 11 Regular, two lines at most:
-  `done` for now, `accent` for a later step, `text.secondary` for another section or a step
-  passed, `text.muted` for not in the guide; 6 between quests.
+  "Ding! · These quests and your guide" (Ding! in `accent`, the dot in `text.disabled`),
+  divider at 26; then per quest, padding 12: "[level] name" 12 Medium `text`, 2 lower one or
+  two plain sentences 11 Regular `text.secondary`, no color code (Yendi's feedback); both wrap
+  without a line limit; 8 between quests.
 - **Why the guide makes its choices** (not in the mockup, Core/Why.lua): a surprising step
   (a detour, a quest taken now or never) gets one more sub-line under its first row still to
   do, after the guide's note, in the note's style (11 Regular `text.secondary`, never cut): "Why
@@ -566,7 +565,15 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   same notice as its sub-line. The quest log's one adds "A: see the list" (mouse: "Click: see the
   list") and opens the settings on the cleanup page. A trip of the NPC directory: "On the way to
   … (…): the guide resumes once there.", the travel hint and the route in the same box (no
-  travel box then), and "A: back to the guide" ("Click: …"); A or a click ends the trip.
+  travel box then); right under it, 2 apart, a "Cancel the trip" control: a row with the
+  `bg.control` background and the `hover` one under the mouse, no icon, 12 Regular `text`; in
+  focus mode, focused, the A chip on its right (gamepad). During a trip the step menu starts
+  with the trip's entries ("Cancel the trip to …", "Done with …: back to the guide"), then a
+  1-unit `divider` line (9 high with its space), then the guide's step said so ("Mark the
+  guide's step as done", "Skip the guide's step"); the menu widens to its longest text.
+- **Undo a mark** (not in the mockup): under a step marked done or skipped (seen again with
+  "Previous"), the same control as the trip's, "Undo: mark as not done" / "Undo the skip"; the
+  step menu starts with it too.
 - **New continent** (not in the mockup): an ordinary "other" row under the step, "New continent:
   talk to … (flight master) to learn its flight paths".
 - **Persistent objectives, wrap-up, preview** (not in the mockup): sticky objectives are along-the-way

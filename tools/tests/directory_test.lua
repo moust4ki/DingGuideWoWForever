@@ -322,7 +322,7 @@ T.test("gamepad: tabs with LB / RB, A opens a list or starts a trip, B goes back
     T.eq(A.point.npc, BULIWYF, "the arrow does not go to Buliwyf")
 end)
 
-T.test("trip: the guide window says it; the NPC's window ends it; B or the trip line cancel it", function()
+T.test("trip: the guide window says it; the NPC's window ends it; B or the cancel control end it", function()
     start(IRONFORGE)
     T.ok(F:Go("bank"))
     local trip = F.trip
@@ -332,7 +332,7 @@ T.test("trip: the guide window says it; the NPC's window ends it; B or the trip 
     end
     T.ok(row, "no trip line in the guide window")
     T.ok(H.plain(row.text):find(L.FINDER_TRIP:format(trip.name, L.DIR_BANK), 1, true), H.plain(row.text))
-    T.eq(row.sub, L.DIR_TRIP_PAD:format(Ding.Gamepad:ButtonName("PAD1")))
+    T.eq(row.sub, nil, "a walk: nothing under the trip's notice")
     -- Another NPC's dialogue does not end it; the bank window of an unknown NPC does.
     H.talk({ id = 295 }); H.closeDialog()
     T.ok(F.trip, "another NPC's gossip ended the trip")
@@ -346,20 +346,20 @@ T.test("trip: the guide window says it; the NPC's window ends it; B or the trip 
     -- B on the directory's first page cancels; a right click only closes.
     F:Go("vendor")
     F:Open(); H.flush()
-    T.eq(F.rows[1].label, L.FINDER_BACK, "no way back to the guide")
+    T.eq(F.rows[1].label, L.TRIP_CANCEL, "no way back to the guide")
     click(F.frame.rows[2], "RightButton")
     T.ok(not F.frame:IsShown() and F.trip, "a right click ended the trip")
     F:Open(); H.flush()
     H.press("PAD2")
     T.eq(F.trip, nil, "B does not end the trip")
-    -- The trip line: A in focus mode (or a click) takes the arrow back.
+    -- The cancel control under the trip's notice: A in focus mode (or a click).
     F:Go("vendor")
     P:StartFocus(); H.flush()
     for i, r in ipairs(P.rowsShown) do
-        if r.action == "notice" and r.notice == "trip" then P.focusIndex = i end
+        if r.action == "tripcancel" then P.focusIndex = i end
     end
     H.press("PAD1")
-    T.eq(F.trip, nil, "A on the trip line does not end it")
+    T.eq(F.trip, nil, "A on the cancel control does not end it")
     P:StopFocus()
 end)
 

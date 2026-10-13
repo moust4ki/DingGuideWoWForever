@@ -14,6 +14,9 @@ Nothing else to install: QuestieDB is no longer needed, and TomTom stays optiona
   - **Weapon masters, by weapon**: only the weapons your class can learn and does not know yet.
   - The arrow takes you there the fastest way, flights, boats and zeppelins included, and the
     guide window shows the whole way.
+  - Cancel the trip from the "Cancel the trip" line of the guide window, its right-click menu,
+    the directory or `/ding cancel`; moving the guide yourself (next, skip, mark as done) ends
+    it too.
 - **Weapon to learn**: a line in the guide window when your class can learn a new weapon, with
   the weapon master to see.
 - **Quest monsters**: a mark above the nameplate of the monsters your quests need, with the
@@ -30,6 +33,8 @@ Nothing else to install: QuestieDB is no longer needed, and TomTom stays optiona
   - Texts are never cut: rows grow to show them whole.
   - Messages about the whole window (quest log or bags almost full, the way there) get a box of
     their own; the quest log one opens the cleanup page.
+  - A step you marked as done or skipped by mistake: go back to it and undo it, from the line
+    under it or the right-click menu.
 - **Travel**
   - Walking passages (lifts, tunnels, bridges, city gates, portals) and islands: the arrow no
     longer points through a cliff or across the sea. The passages are not checked in game yet:

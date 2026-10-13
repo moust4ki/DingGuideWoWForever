@@ -412,22 +412,35 @@ accepted again from its giver.
 ### Quests an NPC offers (`UI/Offers.lua`)
 
 Yendi's question in game: the NPCs offer quests the guide does not ask for. Next to the game's
-window (gossip, greeting or quest details), a small Ding window lists each quest the NPC offers
-(its level and its name in the client's language, from DingDB) with what the guide does with it:
+window (gossip, greeting or quest details), a small Ding window, "Ding! · These quests and your
+guide", answers "should I take this quest now?" in plain sentences, without color codes (Yendi's
+feedback: colors are hard to decode). Each quest the NPC offers (its level and its name in the
+client's language, from DingDB, in the text color) gets one or two sentences:
 
-- **Now**: the steps at the player's place take it (AutoQuest's window, catch-ups included).
-- **Later in this guide (step N)**: a later step of the active section takes it.
-- **Take it: step N needs it**: no step takes it from here on, but a later step completes or
-  turns it in (the engine will ask to pick it up there). **Earlier in this guide (step N,
-  passed)**: only a step already passed takes it.
-- **In <section>**: another section of the active pack takes it (the first one after the active
-  section, else the last one before it); "(levels a-b)" is added when the title has no levels.
-- **Not in the guide**, with the reason when Ding can tell: the quest's steps are behind an
-  option that is off (elite or dungeon quests), or for another class or race (or the quest
-  itself is); an elite quest (an objective with elite monsters only, or the quest before it in
-  its chain: Mor'Ladim, The Daughter Who Lived); above the player's level by more than 2; a
-  WoW Forever quest (ids from 10000: Classic's end at 9665) the route leaves out; a gray quest
-  the guide skips ("Skip gray quests").
+- "Take it: it is the guide's current step." / "...: the guide takes it here, at step N." /
+  "...: the guide's next quests need it." (a catch-up) / "...: step N of the guide needs it and
+  you do not have it yet." (no step takes it from here on, a later step completes or turns it in).
+- "The guide does this quest later (step N)." then "You can take it now: it saves you a trip
+  back." when AutoQuest would take it on the way (not above the player's level, fewer than 15
+  quests in the log), else "It is too high for you for now (level X, you are level Y)." or "Your
+  quest log is almost full: keep it for later."
+- "The guide does this quest when you come back here, in “<section>” (levels a-b)." (a later
+  section of the active pack).
+- "The guide took this quest earlier (step N, already passed): do it if you like." or "..., in
+  “<section>” (levels a-b): ..." (a section before the active one).
+- "The guide does not do this quest: <reason>." with the **real** reason when Ding knows it: an
+  elite quest (option off), done in a dungeon (option off), for another race or class, an elite
+  quest for a group (an objective with elite monsters only, or the quest before it in its chain:
+  the generator's own rule), or the route's own reason through `Offers:WhyLeftOut(q)`, the one
+  place that asks `Ding.Why:Quest(q)` (the generator's reasons, when shipped: a clause or
+  `{ text }`). "The guide skips this quest: it is gray, too low for you." ("Skip gray quests").
+- Otherwise, honestly: "The guide does not plan this quest." (plus "It is too high for you for
+  now (level X, you are level Y)." as a fact, never as the reason).
+
+A quest above the player's level adds "It is level X, you are level Y." **Shown only when it
+helps**: one quest at least that the steps at the player's place do not take; when the guide
+takes every quest offered right here, nothing shows. Then every quest of the window has its
+row, in the window's order; names and sentences wrap, never cut.
 
 Steps are read without their conditions (`when` can hold later); each section is indexed once.
 The greeting window only gives titles: they are matched to the quests the NPC starts
@@ -737,8 +750,8 @@ accent #5BB4FF, the Noto Sans font shipped with the addon, rounded shapes from t
 - **Notices** (state "notice", `action = "notice"`): what concerns the whole window rather than
   one row of the step gets a box of its own (no icon, 11 Regular, wrapped whole): right
   under the step, the way there (`travel`: the travel hint, then the itinerary), a trip of the
-  NPC directory (`trip`: with the way there in its box and "A: back to the guide"; A or a click
-  on it ends the trip) and why steps were passed (`skipped`); after the rows added under
+  NPC directory (`trip`: with the way there in its box, and a "Cancel the trip" control under
+  it: A or a click on it ends the trip) and why steps were passed (`skipped`); after the rows added under
   the step, the bags almost full (`bags`) and the quest log almost full (`cleanup`, with "A: see
   the list" or "Click: see the list": the settings open on the cleanup page). The guide's notes
   and the step's own hints (service, "press Next", marked by hand, option steps) stay under the
@@ -749,8 +762,13 @@ accent #5BB4FF, the Noto Sans font shipped with the addon, rounded shapes from t
   a quest that is ready to turn in or already turned in are done (in green, full counter),
   even when the client resets them to 0 (quest turned in, past step reviewed with
   "Previous"); a full counter also counts as done when the client's flag is secret.
-- **Step menu** (right click on the window or a line): "Mark as done" (like "Next") or
-  "Skip, do it later" (like a right click on "Next"), and on a line with a quest "Find this
+- **Step menu** (right click on the window or a line): during a trip of the NPC directory, the
+  trip's own entries first, "Cancel the trip to …" and "Done with …: back to the guide" (both end
+  the trip and leave the guide's step as it is), then under a line the guide's step said so:
+  "Mark the guide's step as done", "Skip the guide's step" (Yendi took "Mark as done" for the
+  NPC and lost a step). Without a trip: "Mark as done" (like "Next") or
+  "Skip, do it later" (like a right click on "Next"). On a step marked done or skipped, its undo
+  first ("Undo: mark as not done", "Undo the skip"); on a line with a quest "Find this
   quest in the guide". On the gamepad, the "Next step" and
   "Skip step (do it later)" bindings do the same. A step settled by hand keeps its mark
   (`Engine:StepMark`: `Ding.char.manual`, `Ding.char.skipped`), visible when you come back to
@@ -758,7 +776,11 @@ accent #5BB4FF, the Noto Sans font shipped with the addon, rounded shapes from t
   **amber** if skipped (green stays reserved for what the game confirms), with a line
   "Marked as done by hand." / "Skipped: still to do.". "Previous" keeps the mark; coming back
   to do a skipped step clears its mark; "Take this guide up where I am" clears all of the
-  guide's marks, and whatever is not really done goes back to "to do".
+  guide's marks, and whatever is not really done goes back to "to do". **Undo**: under a marked
+  step on screen (browsing back with "Previous"), a control "Undo: mark as not done" / "Undo the
+  skip" (a click, A in focus mode), and the same first in the step menu (`Engine:Unmark`): the
+  mark goes; the step still to do, the guide goes back to it (like going back to a skipped
+  step); done in the game since, the guide goes on from there.
 - **Closing the window** (close button) also hides the arrow (and the TomTom waypoint); the
   minimap button, the binding, `/ding` or the "Show the guide and its arrow" checkbox (Guide
   tab) bring them back together. "Go" steps are still validated. With "Hide the guide in
@@ -896,13 +918,24 @@ accent #5BB4FF, the Noto Sans font shipped with the addon, rounded shapes from t
   flight map's destination, the boarding (Travel above). The guide window's `trip` notice says
   "On the way to … (Guns): the guide resumes once there.", with in its box what to take ("Fly to
   Ironforge"), the whole way ("Route: walk 0:20, fly 7:56 to Ironforge, walk 0:37 (8:53 in
-  all)"; no separate `travel` notice then) and "A: back to the guide" (or "Click: …"); the trip ends when that NPC's window opens (by its creature id,
-  else its name; when the client tells neither, the window of its kind: merchant, trainer, bank,
-  auction house, stable, flight map), then the guide takes the arrow back. On the first page
-  during a trip, a row "Back to the guide"; B there closes the window and ends the trip too (a
-  right click or Esc only closes it). The trip's notice itself, clicked or pressed in focus mode,
-  ends it. A weapon
-  master's trainer window is not taken for the class trainer's (`Training:Record`).
+  all)"; no separate `travel` notice then). The trip ends when that NPC's window opens (by its
+  creature id, else its name; when the client tells neither, the window of its kind: merchant,
+  trainer, bank, auction house, stable, flight map), then the guide takes the arrow back. It
+  also ends, the arrow back on the step at once, whenever the player moves the guide: next,
+  mark as done, skip, previous, back to a skipped step, another step ("Go to step N"), another
+  section or "Take this guide up where I am" (`Engine` → `Finder:Cancel(true)`; the guide's own
+  progress, quests done on the way, does not end it). And on demand (Yendi: "there must be a
+  clear way to cancel"):
+  - a "Cancel the trip" control right under the trip's notice (a row with a button's look:
+    `bg.control`, lighter under the mouse; in focus mode A on it, its chip on the right with a
+    gamepad); the notice itself only informs;
+  - "Cancel the trip to …" first in the step menu (right click on the window or a line);
+  - the directory's first row during a trip, "Cancel the trip" ("On the way to …"), focused when
+    the window opens (its binding or the pin button): A or a click; B there closes the window and
+    ends the trip too (a right click or Esc only closes it);
+  - `/ding cancel` ("Trip cancelled: the arrow follows the guide again.", or "No trip in
+    progress.").
+  A weapon master's trainer window is not taken for the class trainer's (`Training:Record`).
 - **Weapon to learn** (guide window, option "Weapon to learn" in the Guide tab, on by default):
   a row "Weapon to learn: Guns — Buliwyf Stonehand, Ironforge" when a weapon the class can use
   but does not know is in the bags or worn (its fastest weapon master), else when a weapon master

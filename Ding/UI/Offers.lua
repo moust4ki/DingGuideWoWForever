@@ -1,11 +1,14 @@
--- Quests an NPC offers (gossip, quest greeting, quest details): beside the game's window, what
--- the guide does with each one. Now (the steps at the player's place take it), later in this
--- section (its step), in another section of the pack, or not in the guide and why when Ding
--- can tell (an option off, another class or race, an elite quest, above the player's level, a
--- WoW Forever quest the route leaves out). Information only, nothing to press: Ding's own
--- frame on UIParent, without the mouse. The game's windows are only read (where they stand,
--- whether they are shown), never anchored to, changed, shown nor hidden: with the gamepad
--- interface on, touching them taints the game's frame controls.
+-- Quests an NPC offers (gossip, quest greeting, quest details): beside the game's window, a plain
+-- sentence per quest says whether to take it now and why, in the guide's terms (no color code:
+-- Yendi's feedback). Take it (the steps at the player's place take it, or a later step needs
+-- it), later in the guide (its step; you can take it now when AutoQuest would), when you come
+-- back in a later section, the guide took it earlier, or the guide does not do it and the real
+-- reason when Ding knows it (an option off, another race or class, an elite quest, gray; the
+-- route's own reasons through Ding.Why when it is there), else honestly that the guide does not
+-- plan it. Shown only when one quest at least is not for right now. Information only, nothing to
+-- press: Ding's own frame on UIParent, without the mouse. The game's windows are only read (where
+-- they stand, whether they are shown), never anchored to, changed, shown nor hidden: with the
+-- gamepad interface on, touching them taints the game's frame controls.
 local _, Ding = ...
 local L = Ding.L
 local UI = Ding.UI
@@ -15,12 +18,10 @@ local Compat = Ding.Compat
 local O = {}
 Ding.Offers = O
 
-local QUEST_ABOVE = 2           -- the routes take quests up to this many levels above the player
-local FOREVER_FIRST = 10000     -- WoW Forever's own quests: Classic's quest ids end at 9665
 local ELITE_RANKS = { [1] = true, [2] = true, [3] = true }   -- elite, rare elite, boss
 local SHOW_DELAY = 0.2          -- seconds: the game shows its window, AutoQuest may take a quest
 local WATCH = 0.2               -- seconds between two looks at the game's window
-local WIDTH, PAD, TITLE, NAME, ROW_GAP, GAP = 260, 12, 30, 16, 6, 8
+local WIDTH, PAD, TITLE, LINE_GAP, ROW_GAP, GAP = 280, 12, 30, 2, 8, 8
 local FALLBACK_X, FALLBACK_Y = 370, -116   -- beside the usual place of the NPC windows
 -- The game's window of each dialog.
 local WINDOWS = { gossip = "GossipFrame", greeting = "QuestFrame", detail = "QuestFrame" }
@@ -90,20 +91,21 @@ end
 O.IsElite = isElite
 
 -- What does not change from one quest of the window to the next: the quests the steps at the
--- player's place want (AutoQuest), the last of those steps, the player's level.
+-- player's place want and those AutoQuest takes ahead of the guide, the last of those steps,
+-- the player's level.
 function O:Context()
-    local AQ, ctx = Ding.AutoQuest, { now = {}, hereEnd = 0, level = UnitLevel("player") }
+    local AQ = Ding.AutoQuest
     local accept, _, ahead = AQ:Wanted()
+    local ctx = { now = {}, ahead = ahead, hereEnd = AQ:PlaceEnd(), level = UnitLevel("player") }
     for q in pairs(accept) do
         if not ahead[q] then ctx.now[q] = true end
     end
-    ctx.hereEnd = AQ:PlaceEnd()
     return ctx
 end
 
 -- In another section of the active pack: the first one after the active section, else the last
--- one before it. Returns { guide, step } or nil, and the first reason a section that takes the
--- quest is not for this character.
+-- one before it (`before`). Returns { guide, step, before } or nil, and the first reason a
+-- section that takes the quest is not for this character.
 local function otherSection(q, active)
     local after, before, blocked, past = nil, nil, nil, true
     for _, g in Ding:IterateGuides(active.pack) do
@@ -117,7 +119,7 @@ local function otherSection(q, active)
                 for _, i in ipairs(steps) do
                     local off = blockedBy(g.steps[i])
                     if not off then
-                        if past then before = { guide = g, step = i } else after = { guide = g, step = i } end
+                        if past then before = { guide = g, step = i, before = true } else after = { guide = g, step = i } end
                         break
                     end
                     blocked = blocked or off
@@ -128,23 +130,38 @@ local function otherSection(q, active)
     return after or before, blocked
 end
 
--- Why the guide leaves a quest out, when Ding can tell: a reason key or nil.
-local REASON_OF_OPTION = { class = "class", elites = "elitesOff", dungeons = "dungeonsOff" }
-local function whyNot(q, blocked, ctx)
-    if blocked and REASON_OF_OPTION[blocked] then return REASON_OF_OPTION[blocked] end
-    local D = Ding.Data
-    if D:QuestExists(q) and not D:QuestOpenToPlayer(q) then return "class" end
-    if isElite(q) then return "elite" end
-    if D:QuestLevel(q) > ctx.level + QUEST_ABOVE then return "above" end
-    if q >= FOREVER_FIRST then return "forever" end
+-- The route's own reason for leaving quest q out, as the generator wrote it (Ding.Why, when it is
+-- there): a clause in the client's language, or nil. The one place that asks: never guessed here.
+function O:WhyLeftOut(q)
+    local why = Ding.Why
+    if type(why) ~= "table" or type(why.Quest) ~= "function" then return nil end
+    local ok, text = pcall(why.Quest, why, q)
+    if ok and type(text) == "table" then text = text.text end
+    if ok and type(text) == "string" and text ~= "" then return text end
     return nil
 end
 
--- What the active guide does with quest q: { kind, step, guide, reason }, kind "now" (the steps
--- at the player's place take it), "later" (a later step of this section takes it), "needed" (a
--- later step works on it: Ding asks to pick it up there), "earlier" (a step already passed took
--- it), "other" (`guide`, another section of the pack, its `step`), "none" (`reason` or nil).
--- nil without a guide.
+-- Why the guide does not do a quest, when Ding knows it: a reason key ("class", "elitesOff",
+-- "dungeonsOff", "route" with the route's text, "elite") and that text, or nil. The player's own
+-- settings and race or class first, then the route's reason, then an elite quest (the generator
+-- leaves elite quests out unless a guide tags them).
+local REASON_OF_OPTION = { class = "class", elites = "elitesOff", dungeons = "dungeonsOff" }
+local function whyNot(q, blocked)
+    if blocked and REASON_OF_OPTION[blocked] then return REASON_OF_OPTION[blocked] end
+    local D = Ding.Data
+    if D:QuestExists(q) and not D:QuestOpenToPlayer(q) then return "class" end
+    local text = O:WhyLeftOut(q)
+    if text then return "route", text end
+    if isElite(q) then return "elite" end
+    return nil
+end
+
+-- What the active guide does with quest q: { kind, step, guide, before, ahead, reason }, kind
+-- "now" (the steps at the player's place take it), "later" (a later step of this section takes
+-- it; `ahead`: AutoQuest would take it on the way), "needed" (a later step works on it: Ding asks
+-- to pick it up there), "earlier" (a step already passed took it), "other" (`guide`, another
+-- section of the pack, its `step`; `before`: a section before the active one), "none" (`reason`
+-- or nil, `text`: the route's own words). nil without a guide.
 function O:Classify(q, ctx)
     local E = Ding.Engine
     local guide = E.guide
@@ -174,38 +191,76 @@ function O:Classify(q, ctx)
     end
     if (later or needed or ctx.now[q]) and E:IsGrey(q) then return { kind = "none", reason = "grey" } end
     if ctx.now[q] or (later and later <= ctx.hereEnd) then return { kind = "now", step = later } end
-    if later then return { kind = "later", step = later } end
+    if later then return { kind = "later", step = later, ahead = ctx.ahead[q] == true } end
     if needed then return { kind = "needed", step = needed } end
     if past then return { kind = "earlier", step = past } end
     local other, otherBlocked = otherSection(q, guide)
-    if other then return { kind = "other", guide = other.guide, step = other.step } end
-    return { kind = "none", reason = whyNot(q, blocked or otherBlocked, ctx) }
+    if other then return { kind = "other", guide = other.guide, step = other.step, before = other.before } end
+    local reason, text = whyNot(q, blocked or otherBlocked)
+    return { kind = "none", reason = reason, text = text }
 end
 
 local REASONS = { class = "OFFER_WHY_CLASS", elitesOff = "OFFER_WHY_ELITES_OFF",
-    dungeonsOff = "OFFER_WHY_DUNGEONS_OFF", elite = "OFFER_WHY_ELITE", forever = "OFFER_WHY_FOREVER",
-    grey = "OFFER_WHY_GREY" }
+    dungeonsOff = "OFFER_WHY_DUNGEONS_OFF", elite = "OFFER_WHY_ELITE" }
 
--- The line under the quest's name, and its color.
-function O:Describe(r, q)
-    if r.kind == "now" then return L.OFFER_NOW, C.done end
-    if r.kind == "later" then return L.OFFER_LATER:format(r.step), C.accent end
-    if r.kind == "needed" then return L.OFFER_NEEDED:format(r.step), C.accent end
-    if r.kind == "earlier" then return L.OFFER_EARLIER:format(r.step), C.secondary end
-    if r.kind == "other" then
+-- A section's title without the levels the Leveling sections end with, "(30-32)".
+local function sectionName(g)
+    return ((g.title or g.id):gsub("%s*%(%d+%-%d+%)%s*$", ""))
+end
+
+-- Whether to take quest q now, from what the guide does with it (Classify): the verdict ("take",
+-- "can", "notNow", "optional", "useless") and plain sentences for the player, without color
+-- codes. A quest above the player's level says both levels.
+function O:Verdict(r, q, ctx)
+    local level = q and Ding.Data:QuestLevel(q) or 0
+    local above = level > ctx.level
+    local verdict, text
+    if r.kind == "now" then
+        verdict = "take"
+        if not r.step then
+            text = L.OFFER_TAKE_CHAIN
+        elseif r.step <= Ding.Engine.index then
+            text = L.OFFER_TAKE_CURRENT
+        else
+            text = L.OFFER_TAKE_HERE:format(r.step)
+        end
+    elseif r.kind == "needed" then
+        verdict, text = "take", L.OFFER_TAKE_NEEDED:format(r.step)
+    elseif r.kind == "later" then
+        text = L.OFFER_LATER:format(r.step)
+        if r.ahead then
+            verdict, text = "can", L.OFFER_JOIN:format(text, L.OFFER_LATER_NOW)
+        elseif above then
+            -- AutoQuest leaves it for later: too high now.
+            verdict, text, above = "notNow", L.OFFER_JOIN:format(text, L.OFFER_TOO_HIGH:format(level, ctx.level)), false
+        elseif Compat.NumQuestsInLog() >= Ding.AutoQuest.AHEAD_LOG_LIMIT then
+            verdict, text = "notNow", L.OFFER_JOIN:format(text, L.OFFER_LOG_FULL)
+        else
+            verdict = "notNow"
+        end
+    elseif r.kind == "earlier" then
+        verdict, text = "optional", L.OFFER_EARLIER:format(r.step)
+    elseif r.kind == "other" then
         local g = r.guide
-        local title = g.title or g.id
-        -- The Leveling sections already end with their levels, "(30-32)".
-        if title:find("%(%d+%-%d+%)") then return L.OFFER_OTHER:format(title), C.secondary end
-        return L.OFFER_OTHER_LEVELS:format(title, g.minLevel or 1, g.maxLevel or 60), C.secondary
+        verdict = r.before and "optional" or "notNow"
+        text = (r.before and L.OFFER_EARLIER_SECTION or L.OFFER_COME_BACK)
+            :format(sectionName(g), g.minLevel or 1, g.maxLevel or 60)
+    else
+        verdict = "useless"
+        if r.reason == "grey" then
+            text = L.OFFER_GREY
+        elseif r.text or REASONS[r.reason] then
+            text = L.OFFER_NOT_DONE:format(r.text or L[REASONS[r.reason]])
+        else
+            -- No reason known: said as it is, never made up. Too high is a fact, not the reason.
+            text = L.OFFER_UNKNOWN
+            if above then
+                text, above = L.OFFER_JOIN:format(text, L.OFFER_TOO_HIGH:format(level, ctx.level)), false
+            end
+        end
     end
-    local why
-    if r.reason == "above" then
-        why = L.OFFER_WHY_ABOVE:format(q and Ding.Data:QuestLevel(q) or 0)
-    elseif r.reason then
-        why = L[REASONS[r.reason]]
-    end
-    return why and L.OFFER_NONE_WHY:format(why) or L.OFFER_NONE, C.muted
+    if above then text = L.OFFER_JOIN:format(text, L.OFFER_LEVEL_GAP:format(level, ctx.level)) end
+    return verdict, text
 end
 
 ---------------------------------------------------------------------------
@@ -265,7 +320,7 @@ function O:Offered(kind)
     return out
 end
 
--- The rows: { quest, name, above, text, color, result }.
+-- The rows: { quest, name, result, verdict, text }.
 function O:Entries(kind)
     local out = {}
     if not Ding.Engine.guide then return out end
@@ -275,12 +330,20 @@ function O:Entries(kind)
         local level = q and Ding.Data:QuestLevel(q) or 0
         local name = q and Ding.Data:QuestExists(q) and Ding.Data:QuestName(q) or offer.title or "?"
         e.name = level > 0 and L.QUEST_WITH_LEVEL:format(level, name) or name
-        e.above = level > ctx.level
         e.result = q and self:Classify(q, ctx) or { kind = "none" }
-        e.text, e.color = self:Describe(e.result, q)
+        e.verdict, e.text = self:Verdict(e.result, q, ctx)
         out[#out + 1] = e
     end
     return out
+end
+
+-- Worth showing: one quest at least that the steps at the player's place do not take (when the
+-- guide takes them all here, there is nothing to say).
+function O:Useful(entries)
+    for _, e in ipairs(entries) do
+        if e.result.kind ~= "now" then return true end
+    end
+    return false
 end
 
 ---------------------------------------------------------------------------
@@ -321,9 +384,11 @@ function O:Create()
     self.frame = f
 end
 
+-- Both texts wrap without a limit: never cut.
 local function newRow(f)
     local r = { name = UI.Text(f, "medium", 12, C.text), status = UI.Text(f, "regular", 11, C.secondary) }
-    UI.Wrap(r.status, 11, 2)
+    UI.Wrap(r.name, 12)
+    UI.Wrap(r.status, 11)
     return r
 end
 
@@ -337,15 +402,14 @@ function O:Layout(entries)
         r.name:SetPoint("TOPLEFT", f, "TOPLEFT", PAD, -y)
         r.name:SetWidth(inner)
         r.name:SetText(e.name)
-        r.name:SetTextColor(unpack(e.above and C.above or C.text))
+        y = y + r.name:GetStringHeight() + LINE_GAP
         r.status:ClearAllPoints()
-        r.status:SetPoint("TOPLEFT", f, "TOPLEFT", PAD, -(y + NAME))
+        r.status:SetPoint("TOPLEFT", f, "TOPLEFT", PAD, -y)
         r.status:SetWidth(inner)
         r.status:SetText(e.text)
-        r.status:SetTextColor(unpack(e.color))
         r.name:Show()
         r.status:Show()
-        y = y + NAME + r.status:GetStringHeight() + ROW_GAP
+        y = y + r.status:GetStringHeight() + ROW_GAP
     end
     for i = #entries + 1, #f.rows do
         f.rows[i].name:Hide()
@@ -374,7 +438,7 @@ function O:Show(kind)
     -- The window closed meanwhile (a quest taken, the player walked away): nothing to show.
     if not self:Enabled() or windowState(WINDOWS[kind]) == "hidden" then return end
     local entries = self:Entries(kind)
-    if #entries == 0 then return self:Hide() end
+    if not self:Useful(entries) then return self:Hide() end
     self:Create()
     self.kind, self.elapsed, self.entries = kind, 0, entries
     self:Layout(entries)
