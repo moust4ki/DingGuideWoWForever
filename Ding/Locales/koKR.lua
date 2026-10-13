@@ -74,7 +74,7 @@ Ding.Locales.koKR = {
     ARROW_MODE_SET = "화살표 방향: 설정 %d/4",
     DEBUG_ON = "디버그 모드 켜짐.",
     DEBUG_OFF = "디버그 모드 꺼짐.",
-    HELP = "명령어: /ding (표시/숨기기), /ding config, /ding list, /ding guide <id>, /ding where, /ding import, /ding export [id], /ding next, /ding prev, /ding skip, /ding back, /ding reset, /ding scale <0.5-1.5>, /ding arrow, /ding arrowflip, /ding minimap, /ding debug",
+    HELP = "명령어: /ding (표시/숨기기), /ding config, /ding list, /ding guide <id>, /ding where, /ding passages [n], /ding import, /ding export [id], /ding next, /ding prev, /ding skip, /ding back, /ding reset, /ding scale <0.5-1.5>, /ding arrow, /ding arrowflip, /ding minimap, /ding debug",
 
     -- Guide window
     QUOTE = "“%s”",
@@ -157,6 +157,11 @@ Ding.Locales.koKR = {
     ROUTE_BRIDGE = "다리 %s",
     ROUTE_GATE = "성문 %s",
     ROUTE_PORTAL = "차원문 %s",
+    PASSAGES_TITLE = "근처의 도보 통로 (화살표는 %d번을 가리킵니다):",
+    PASSAGES_LINE = "%d. %s, %d미터, %s: %s",
+    PASSAGES_CHECKED = "게임에서 확인됨",
+    PASSAGES_UNCHECKED = "아직 확인되지 않음",
+    PASSAGES_NONE = "이 대륙에는 도보 통로가 없습니다.",
     BAGS_ALMOST_FULL = "가방이 거의 찼습니다: 빈 칸 %d개",
     MERCHANT_SOLD = "회색 아이템 %d개를 %s에 판매",
     MERCHANT_REPAIRED = "%s에 수리",

@@ -2,8 +2,11 @@
 -- where the straight line meets a cliff or a wall. Each passage joins two sides of the world
 -- (`sides`: zones, or a box of a zone); a walk from one side to the other goes through one of
 -- the passages that join them (Core/Travel.lua), never in a straight line.
+-- Islands are pairs of sides with no passage: only a boat, a flight, a portal or the
+-- hearthstone leaves them, never a walk over the sea.
 -- Data: game facts noted by hand, in the form `/ding where` prints (UiMap, x, y in percent),
--- placed where the guards and NPCs of DingDB stand at each gate, lift and tunnel.
+-- placed where the guards and NPCs of DingDB stand at each gate, lift and tunnel; `verified`
+-- once someone checked the passage in game (`/ding passages` lists them).
 local _, Ding = ...
 local Compat = Ding.Compat
 local L = Ding.L
@@ -34,6 +37,9 @@ local SIDES = {
     orgrimmar = { { 1454 }, "*" },
     -- Rut'theran Village, on its island below Teldrassil: only the portal (or a boat) leaves it.
     rutTheran = { { { 1438, 50, 84, 64, 100 } }, "*" },
+    -- Islands, without a passage: Teldrassil with Darnassus, the Skyborne's Zephras Isle.
+    teldrassil = { { 1438, 1457 }, "*" },
+    zephras = { { 2521 }, "*" },
     -- Thandol Span: Arathi and the north; the Wetlands and the south.
     thandol = { NORTH_EK, join({ 1437 }, SOUTH_EK) },
     -- Dun Algaz: the Wetlands and the north; Loch Modan and the south.
@@ -49,35 +55,35 @@ P.SIDES = SIDES
 -- foot on the city's map). `kind`: "lift" (`up`: its upper end, "a" or "b"), "tunnel",
 -- "bridge", "gate" (a city's: `a` is inside), "portal". `seconds`: the time it takes (a lift's
 -- wait and ride, a portal); else the walk from one end to the other. `faction`: "A" or "H"
--- when only that side may take it.
+-- when only that side may take it. `verified`: checked in game (both ends, the arrow's way).
 P.LIST = {
     -- Thunder Bluff's lifts, to the south-west and to the north of the central mesa.
-    { sides = SIDES.thunderBluff, kind = "lift", up = "a", seconds = 45,
+    { sides = SIDES.thunderBluff, kind = "lift", verified = false, up = "a", seconds = 45,
         a = { 1456, 31.9, 66.6 }, b = { 1456, 31.9, 66.6, zone = 1412 } },
-    { sides = SIDES.thunderBluff, kind = "lift", up = "a", seconds = 45,
+    { sides = SIDES.thunderBluff, kind = "lift", verified = false, up = "a", seconds = 45,
         a = { 1456, 51.3, 31.4 }, b = { 1456, 51.3, 31.4, zone = 1412 } },
     -- The Undercity's three lifts, below the ruins of Lordaeron's throne room.
-    { sides = SIDES.undercity, kind = "lift", up = "b", seconds = 45,
+    { sides = SIDES.undercity, kind = "lift", verified = false, up = "b", seconds = 45,
         a = { 1458, 61.5, 45.6 }, b = { 1458, 61.5, 45.6, zone = 1420 } },
-    { sides = SIDES.undercity, kind = "lift", up = "b", seconds = 45,
+    { sides = SIDES.undercity, kind = "lift", verified = false, up = "b", seconds = 45,
         a = { 1458, 70.5, 42.5 }, b = { 1458, 70.5, 42.5, zone = 1420 } },
-    { sides = SIDES.undercity, kind = "lift", up = "b", seconds = 45,
+    { sides = SIDES.undercity, kind = "lift", verified = false, up = "b", seconds = 45,
         a = { 1458, 67.1, 50.9 }, b = { 1458, 67.1, 50.9, zone = 1420 } },
     -- The Gates of Ironforge, from Dun Morogh's road to the end of the entrance hall.
-    { sides = SIDES.ironforge, kind = "gate", a = { 1455, 21.5, 78.0 }, b = { 1426, 52.9, 36.2 } },
+    { sides = SIDES.ironforge, kind = "gate", verified = false, a = { 1455, 21.5, 78.0 }, b = { 1426, 52.9, 36.2 } },
     -- Stormwind's gate: from the bridge in Elwynn Forest through the Valley of Heroes.
-    { sides = SIDES.stormwind, kind = "gate", a = { 1453, 69.0, 82.5 }, b = { 1429, 32.3, 49.8 } },
+    { sides = SIDES.stormwind, kind = "gate", verified = false, a = { 1453, 69.0, 82.5 }, b = { 1429, 32.3, 49.8 } },
     -- Orgrimmar's front gate, to Durotar, and its western gate.
-    { sides = SIDES.orgrimmar, kind = "gate", a = { 1454, 49.4, 90.5 }, b = { 1411, 50.5, 13.6 } },
-    { sides = SIDES.orgrimmar, kind = "gate", a = { 1454, 20.0, 61.6 }, b = { 1454, 13.0, 61.8, zone = 1411 } },
+    { sides = SIDES.orgrimmar, kind = "gate", verified = false, a = { 1454, 49.4, 90.5 }, b = { 1411, 50.5, 13.6 } },
+    { sides = SIDES.orgrimmar, kind = "gate", verified = false, a = { 1454, 20.0, 61.6 }, b = { 1454, 13.0, 61.8, zone = 1411 } },
     -- The portal in the tree of Rut'theran Village, to Darnassus and back.
-    { sides = SIDES.rutTheran, kind = "portal", seconds = 10, a = { 1438, 55.9, 89.4 }, b = { 1457, 30.2, 41.4 } },
+    { sides = SIDES.rutTheran, kind = "portal", verified = false, seconds = 10, a = { 1438, 55.9, 89.4 }, b = { 1457, 30.2, 41.4 } },
     -- Thandol Span, between the Arathi Highlands and the Wetlands.
-    { sides = SIDES.thandol, kind = "bridge", a = { 1417, 44.2, 88.5 }, b = { 1437, 51.2, 10.5 } },
+    { sides = SIDES.thandol, kind = "bridge", verified = false, a = { 1417, 44.2, 88.5 }, b = { 1437, 51.2, 10.5 } },
     -- The Dun Algaz pass, between the Wetlands and Loch Modan's North Gate.
-    { sides = SIDES.dunAlgaz, kind = "tunnel", a = { 1437, 54.0, 83.5 }, b = { 1432, 25.3, 1.5 } },
+    { sides = SIDES.dunAlgaz, kind = "tunnel", verified = false, a = { 1437, 54.0, 83.5 }, b = { 1432, 25.3, 1.5 } },
     -- The Great Lift, from the Barrens down to Thousand Needles.
-    { sides = SIDES.greatLift, kind = "lift", up = "a", seconds = 45,
+    { sides = SIDES.greatLift, kind = "lift", verified = false, up = "a", seconds = 45,
         a = { 1441, 32.2, 22.3, zone = 1413 }, b = { 1441, 32.2, 22.3 } },
 }
 
@@ -169,6 +175,49 @@ function P.Inside(passage, start, a, b)
     return nil
 end
 
+-- Both ends of a passage as world points, resolved once: { map, x, y, zone, continent, wx, wy }.
+local ends = {}
+function P.End(passage, key)
+    local both = ends[passage]
+    if not both then
+        both = {}
+        for _, k in ipairs({ "a", "b" }) do
+            local e = passage[k]
+            local c, wx, wy = Compat.MapToWorld(e[1], e[2], e[3])
+            both[k] = { map = e[1], x = e[2], y = e[3], zone = e.zone, continent = c or false, wx = wx, wy = wy }
+        end
+        ends[passage] = both
+    end
+    return both[key]
+end
+
+-- The passages of the player's continent, nearest first (at most `max`): { passage, key (the
+-- end on the player's side, else the nearest), distance (yards) }.
+function P.Near(here, max, letter)
+    local out = {}
+    if not (here and here.continent and here.wx) then return out end
+    for _, passage in ipairs(P.Open(letter)) do
+        local best, bestD
+        local side = P.SideOf(passage.sides, here)
+        for i, key in ipairs({ "a", "b" }) do
+            local e = P.End(passage, key)
+            if e.continent == here.continent and e.wx then
+                local d = math.sqrt((e.wx - here.wx) ^ 2 + (e.wy - here.wy) ^ 2)
+                if side == i then d = d - 1e6 end   -- the end on the player's side first
+                if not bestD or d < bestD then best, bestD = key, d end
+            end
+        end
+        if best then
+            local e = P.End(passage, best)
+            out[#out + 1] = { passage = passage, key = best,
+                distance = math.sqrt((e.wx - here.wx) ^ 2 + (e.wy - here.wy) ^ 2) }
+        end
+    end
+    table.sort(out, function(u, w) return u.distance < w.distance end)
+    while #out > max do table.remove(out) end
+    return out
+end
+
 ---------------------------------------------------------------------------
 -- What the arrow says
 ---------------------------------------------------------------------------
@@ -205,6 +254,11 @@ function P.Open(letter)
     return out
 end
 
+-- An end as `/ding where` prints a point: "{ 1456, 31.9, 66.6 }".
+function P.Format(e)
+    return ("{ %d, %.1f, %.1f }"):format(e[1] or e.map, e[2] or e.x, e[3] or e.y)
+end
+
 function P.Reset()
-    zones = {}
+    zones, ends = {}, {}
 end

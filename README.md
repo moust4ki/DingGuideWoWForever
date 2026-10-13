@@ -88,7 +88,8 @@ gamepad button.
 ## Commands
 
 `/ding` show/hide · `/ding config` settings · `/ding list` (guides and their sections) ·
-`/ding guide <id>` · `/ding where` (your position, for guide authors) · `/ding import` (a guide as
+`/ding guide <id>` · `/ding where` (your position, for guide authors) · `/ding passages [n]` (the
+lifts, gates and tunnels near you, for testers; the arrow points at the n-th) · `/ding import` (a guide as
 text) · `/ding export [id]` (a guide as text) · `/ding next` · `/ding prev` · `/ding skip` · `/ding back` · `/ding reset` (take the guide up
 where you are) · `/ding scale <0.5-1.5>` · `/ding arrow` · `/ding arrowflip` ·
 `/ding minimap` · `/ding debug`

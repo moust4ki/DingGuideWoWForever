@@ -74,7 +74,7 @@ Ding.Locales.zhCN = {
     ARROW_MODE_SET = "箭头朝向：方案%d（共4种）",
     DEBUG_ON = "调试模式已开启。",
     DEBUG_OFF = "调试模式已关闭。",
-    HELP = "命令：/ding（显示/隐藏），/ding config，/ding list，/ding guide <id>，/ding where，/ding import，/ding export [id]，/ding next，/ding prev，/ding skip，/ding back，/ding reset，/ding scale <0.5-1.5>，/ding arrow，/ding arrowflip，/ding minimap，/ding debug",
+    HELP = "命令：/ding（显示/隐藏），/ding config，/ding list，/ding guide <id>，/ding where，/ding passages [n]，/ding import，/ding export [id]，/ding next，/ding prev，/ding skip，/ding back，/ding reset，/ding scale <0.5-1.5>，/ding arrow，/ding arrowflip，/ding minimap，/ding debug",
 
     -- Guide window
     QUOTE = "“%s”",
@@ -157,6 +157,11 @@ Ding.Locales.zhCN = {
     ROUTE_BRIDGE = "过桥%s",
     ROUTE_GATE = "大门%s",
     ROUTE_PORTAL = "传送门%s",
+    PASSAGES_TITLE = "附近的步行通道（箭头指向第%d个）：",
+    PASSAGES_LINE = "%d. %s，%d码，%s：%s",
+    PASSAGES_CHECKED = "已在游戏中确认",
+    PASSAGES_UNCHECKED = "尚未确认",
+    PASSAGES_NONE = "这片大陆上没有步行通道。",
     BAGS_ALMOST_FULL = "背包快满了：剩余%d个空位",
     MERCHANT_SOLD = "已出售%d件灰色物品，获得%s",
     MERCHANT_REPAIRED = "修理花费%s",

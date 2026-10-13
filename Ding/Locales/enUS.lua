@@ -74,7 +74,7 @@ Ding.Locales.enUS = {
     ARROW_MODE_SET = "Arrow orientation: setting %d of 4",
     DEBUG_ON = "Debug mode on.",
     DEBUG_OFF = "Debug mode off.",
-    HELP = "Commands: /ding (show/hide), /ding config, /ding list, /ding guide <id>, /ding where, /ding import, /ding export [id], /ding next, /ding prev, /ding skip, /ding back, /ding reset, /ding scale <0.5-1.5>, /ding arrow, /ding arrowflip, /ding minimap, /ding debug",
+    HELP = "Commands: /ding (show/hide), /ding config, /ding list, /ding guide <id>, /ding where, /ding passages [n], /ding import, /ding export [id], /ding next, /ding prev, /ding skip, /ding back, /ding reset, /ding scale <0.5-1.5>, /ding arrow, /ding arrowflip, /ding minimap, /ding debug",
 
     -- Guide window
     QUOTE = "“%s”",
@@ -157,6 +157,11 @@ Ding.Locales.enUS = {
     ROUTE_BRIDGE = "bridge %s",
     ROUTE_GATE = "gates %s",
     ROUTE_PORTAL = "portal %s",
+    PASSAGES_TITLE = "Walking passages near you (the arrow points at number %d):",
+    PASSAGES_LINE = "%d. %s, %d yards, %s: %s",
+    PASSAGES_CHECKED = "checked in game",
+    PASSAGES_UNCHECKED = "not checked yet",
+    PASSAGES_NONE = "No walking passage on this continent.",
     BAGS_ALMOST_FULL = "Bags almost full: %d free slots",
     MERCHANT_SOLD = "Sold %d gray items for %s",
     MERCHANT_REPAIRED = "repaired for %s",

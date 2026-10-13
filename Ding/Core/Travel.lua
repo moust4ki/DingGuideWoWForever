@@ -317,28 +317,13 @@ local function speed()
     return UnitLevel("player") >= MOUNT_LEVEL and MOUNT_SPEED or RUN_SPEED
 end
 
--- Both ends of a passage as world points, resolved once.
-local passageEnds = {}
-local function passageEnd(passage, key)
-    local ends = passageEnds[passage]
-    if not ends then
-        ends = {}
-        for _, k in ipairs({ "a", "b" }) do
-            local p = passage[k]
-            ends[k] = withWorld({ map = p[1], x = p[2], y = p[3], zone = p.zone })
-        end
-        passageEnds[passage] = ends
-    end
-    return ends[key]
-end
-
 -- The walking passages open to the player's side, both ends as graph nodes (`through`: the
 -- other end). Returns the ends the player can reach from inside a passage: standing on a lift
 -- or in a tunnel, the far end is a leg of its own.
 local function addPassages(nodes, start, letter)
     local entered = {}
     for _, passage in ipairs(Ding.Passages.Open(letter)) do
-        local pa, pb = passageEnd(passage, "a"), passageEnd(passage, "b")
+        local pa, pb = Ding.Passages.End(passage, "a"), Ding.Passages.End(passage, "b")
         local a = { point = pa, passage = passage, passageEnd = "a" }
         local b = { point = pb, passage = passage, passageEnd = "b", through = a }
         a.through = b
@@ -569,8 +554,8 @@ function T:Leg(target)
         if l.kind == "passage" then
             -- In the passage already (its first leg, or a plan made a moment ago): its far end.
             local passage = l.node.passage
-            local inside = i == 1 or (here and Ding.Passages.Inside(passage, here, passageEnd(passage, "a"),
-                passageEnd(passage, "b")) == l.node.passageEnd)
+            local inside = i == 1 or (here and Ding.Passages.Inside(passage, here, Ding.Passages.End(passage, "a"),
+                Ding.Passages.End(passage, "b")) == l.node.passageEnd)
             result = describe(l, inside and l.to or l.from)
         elseif l.kind == "hearth" or l.kind == "teleport" then
             result = describe(l, nil)
@@ -593,7 +578,7 @@ function T:Reset()
     self.cache, self.leg, self.boarding, self.flyingTo, self.taxiNodes = nil, nil, nil, nil, nil
     self.plan, self.flight = nil, nil
     flights, allFlights, docks = {}, nil, nil
-    cells, passageEnds = {}, {}
+    cells = {}
     Ding.Passages.Reset()
 end
 

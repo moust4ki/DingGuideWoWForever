@@ -74,7 +74,7 @@ Ding.Locales.ptBR = {
     ARROW_MODE_SET = "Orientação da seta: ajuste %d de 4",
     DEBUG_ON = "Depuração ativada.",
     DEBUG_OFF = "Depuração desativada.",
-    HELP = "Comandos: /ding (mostrar/ocultar), /ding config, /ding list, /ding guide <id>, /ding where, /ding import, /ding export [id], /ding next, /ding prev, /ding skip, /ding back, /ding reset, /ding scale <0.5-1.5>, /ding arrow, /ding arrowflip, /ding minimap, /ding debug",
+    HELP = "Comandos: /ding (mostrar/ocultar), /ding config, /ding list, /ding guide <id>, /ding where, /ding passages [n], /ding import, /ding export [id], /ding next, /ding prev, /ding skip, /ding back, /ding reset, /ding scale <0.5-1.5>, /ding arrow, /ding arrowflip, /ding minimap, /ding debug",
 
     -- Guide window
     QUOTE = "“%s”",
@@ -157,6 +157,11 @@ Ding.Locales.ptBR = {
     ROUTE_BRIDGE = "ponte %s",
     ROUTE_GATE = "portões %s",
     ROUTE_PORTAL = "portal %s",
+    PASSAGES_TITLE = "Passagens a pé perto de você (a seta aponta para o número %d):",
+    PASSAGES_LINE = "%d. %s, %d metros, %s: %s",
+    PASSAGES_CHECKED = "verificada no jogo",
+    PASSAGES_UNCHECKED = "ainda não verificada",
+    PASSAGES_NONE = "Nenhuma passagem a pé neste continente.",
     BAGS_ALMOST_FULL = "Bolsas quase cheias: %d espaços livres",
     MERCHANT_SOLD = "%d itens cinza vendidos por %s",
     MERCHANT_REPAIRED = "reparado por %s",

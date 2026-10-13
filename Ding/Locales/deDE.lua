@@ -73,7 +73,7 @@ Ding.Locales.deDE = {
     ARROW_MODE_SET = "Pfeilausrichtung: Einstellung %d von 4",
     DEBUG_ON = "Debugmodus an.",
     DEBUG_OFF = "Debugmodus aus.",
-    HELP = "Befehle: /ding (zeigen/verbergen), /ding config, /ding list, /ding guide <id>, /ding where, /ding import, /ding export [id], /ding next, /ding prev, /ding skip, /ding back, /ding reset, /ding scale <0.5-1.5>, /ding arrow, /ding arrowflip, /ding minimap, /ding debug",
+    HELP = "Befehle: /ding (zeigen/verbergen), /ding config, /ding list, /ding guide <id>, /ding where, /ding passages [n], /ding import, /ding export [id], /ding next, /ding prev, /ding skip, /ding back, /ding reset, /ding scale <0.5-1.5>, /ding arrow, /ding arrowflip, /ding minimap, /ding debug",
 
     -- Guide window
     QUOTE = "„%s“",
@@ -156,6 +156,11 @@ Ding.Locales.deDE = {
     ROUTE_BRIDGE = "Brücke %s",
     ROUTE_GATE = "Tore %s",
     ROUTE_PORTAL = "Portal %s",
+    PASSAGES_TITLE = "Durchgänge in deiner Nähe (der Pfeil zeigt auf Nummer %d):",
+    PASSAGES_LINE = "%d. %s, %d Meter, %s: %s",
+    PASSAGES_CHECKED = "im Spiel geprüft",
+    PASSAGES_UNCHECKED = "noch nicht geprüft",
+    PASSAGES_NONE = "Kein Durchgang auf diesem Kontinent.",
     BAGS_ALMOST_FULL = "Taschen fast voll: %d freie Plätze",
     MERCHANT_SOLD = "%d graue Gegenstände für %s verkauft",
     MERCHANT_REPAIRED = "für %s repariert",

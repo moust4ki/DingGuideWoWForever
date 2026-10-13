@@ -64,6 +64,7 @@ T.test("every passage joins its two sides: each end on its own side, a known kin
         end
         if p.kind == "lift" then T.ok(p.up == "a" or p.up == "b", "passage " .. i .. ": a lift without its upper end") end
         T.ok(not p.faction or p.faction == "A" or p.faction == "H", "passage " .. i .. ": faction " .. tostring(p.faction))
+        T.eq(type(p.verified), "boolean", "passage " .. i .. ": no verified flag")
     end
 end)
 
@@ -253,6 +254,47 @@ T.test("Rut'theran Village: the portal up to Darnassus, then on into Teldrassil"
 end)
 
 ---------------------------------------------------------------------------
+-- Islands: never a walk over the sea
+---------------------------------------------------------------------------
+-- The ways a plan takes besides walking (a passage by its kind); every walk stays on Teldrassil
+-- or off it.
+local function ways(plan)
+    local out = {}
+    for _, l in ipairs(plan and plan.legs or {}) do
+        if l.kind == "walk" then
+            T.eq(Passages.SideOf(Passages.SIDES.teldrassil, l.from), Passages.SideOf(Passages.SIDES.teldrassil, l.to),
+                "a walk between Teldrassil and the mainland")
+        else
+            out[#out + 1] = l.kind == "passage" and l.node.passage.kind or l.kind
+        end
+    end
+    return table.concat(out, " ")
+end
+
+T.test("Darnassus to Menethil Harbor: the portal, the boat to Auberdine, the boat to Menethil", function()
+    start({ at = { 1457, 40, 50 }, race = "NightElf" })
+    local plan = Travel:Plan(point(1437, 10.5, 60))
+    T.eq(ways(plan), "portal boat boat")
+    T.eq(plan.legs[4].to.map, 1439, "the first boat does not land in Darkshore")
+    T.eq(plan.legs[6].to.map, 1437, "the second boat does not land in the Wetlands")
+end)
+
+T.test("Darnassus to Ironforge: down the portal, two boats, never a walk over the sea", function()
+    -- (The mock's Stranglethorn lies next to Dun Morogh: there, the Booty Bay boat wins.)
+    start({ at = { 1457, 40, 50 }, race = "NightElf" })
+    local forge = point(1455, 55.5, 47.8)
+    local steps = ways(Travel:Plan(forge))
+    T.ok(steps:find("^portal boat boat ") and steps:find(" gate$"), steps)
+    local leg = Travel:Leg(forge)
+    T.eq(leg.hint, L.PASSAGE_PORTAL:format("Teldrassil"), "the arrow does not lead to the portal down")
+end)
+
+T.test("Darnassus to Auberdine: down the portal and over by boat, not a swim", function()
+    start({ at = { 1457, 40, 50 }, race = "NightElf" })
+    T.eq(kinds(Travel:Plan(point(1439, 36, 46))), "walk passage walk boat walk")
+end)
+
+---------------------------------------------------------------------------
 -- One faction's passage
 ---------------------------------------------------------------------------
 T.test("a passage for one faction only is never another's way", function()
@@ -296,9 +338,11 @@ T.test("the arrow leads to the lift with its hint, the window gives the route; t
         "no lift in the itinerary: " .. tostring(route))
     local said, routed = false, false
     for _, row in ipairs(P.rowsShown or {}) do
-        local sub = row.sub and H.plain(row.sub) or ""
-        if sub:find(hint, 1, true) then said = true end
-        if sub:find(route, 1, true) then routed = true end
+        if row.notice == "travel" then
+            local text = H.plain(row.text or "") .. " " .. H.plain(row.sub or "")
+            if text:find(hint, 1, true) then said = true end
+            if text:find(route, 1, true) then routed = true end
+        end
     end
     T.ok(said, "the window does not say to take the lift")
     T.ok(routed, "the window does not give the route")
@@ -307,6 +351,42 @@ T.test("the arrow leads to the lift with its hint, the window gives the route; t
     A.point = nil; A:Tick(); H.flush()
     T.eq(E.index, 2, "the go step does not validate")
     T.eq(A.hint, nil)
+end)
+
+---------------------------------------------------------------------------
+-- /ding passages: for testers
+---------------------------------------------------------------------------
+local function chat(fn)
+    local printed = {}
+    local add = DEFAULT_CHAT_FRAME.AddMessage
+    DEFAULT_CHAT_FRAME.AddMessage = function(_, msg) printed[#printed + 1] = H.plain(msg) end
+    local ok, err = pcall(fn)
+    DEFAULT_CHAT_FRAME.AddMessage = add
+    assert(ok, err)
+    return printed
+end
+
+T.test("/ding passages: the nearest passages, checked or not, their ends; the arrow on the one asked", function()
+    horde({ THUNDER_BLUFF, 32.5, 66 })      -- by the south-western lift, on top
+    E:SetGuide("t-passage", 1, true); H.flush()
+    local printed = chat(function() SlashCmdList.DING("passages") end)
+    T.ok(printed[1]:find(L.PASSAGES_TITLE:format(1), 1, true), printed[1])
+    T.eq(#printed, 6, "five passages listed")
+    local first = printed[2]
+    T.ok(first:find("1. " .. L.PASSAGE_LIFT_DOWN:format("Mulgore"), 1, true), first)
+    T.ok(first:find(L.PASSAGES_UNCHECKED, 1, true), first)
+    T.ok(first:find("a = { 1456, ", 1, true) and first:find("b = { 1456, ", 1, true), first)
+    -- The arrow points at that lift's foot, with what to do there.
+    A.point = nil; A:Tick(); H.flush()
+    T.ok(atTbLift(A.shownPoint), "the arrow is not at the lift")
+    T.eq(H.plain(A.frame.label:GetText()), L.PASSAGE_LIFT_DOWN:format("Mulgore"))
+    -- The second one on asking, a checked passage said so.
+    Passages.LIST[1].verified, Passages.LIST[2].verified = true, true
+    printed = chat(function() SlashCmdList.DING("passages 2") end)
+    Passages.LIST[1].verified, Passages.LIST[2].verified = false, false
+    T.ok(printed[1]:find(L.PASSAGES_TITLE:format(2), 1, true), printed[1])
+    T.ok(printed[2]:find(L.PASSAGES_CHECKED, 1, true), printed[2])
+    A:Unfocus()
 end)
 
 T.run()

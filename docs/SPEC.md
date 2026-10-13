@@ -452,8 +452,18 @@ target (the nearest candidate) goes through a travel planner, the fastest way in
   place lies in when it is read on another map, a lift's foot on its city's map); `faction` keeps
   a passage to one side. Data: Thunder Bluff's two lifts, the Undercity's three, the gates of
   Ironforge, Stormwind and Orgrimmar (two), the Rut'theran portal, Thandol Span, Dun Algaz and the
-  Great Lift. A lift whose two ends lie on the same map (Freewind Post) cannot be told apart
-  without the height and is left out.
+  Great Lift, placed where DingDB's guards and NPCs stand at each of them and where the Leveling
+  routes go through; each carries `verified` (false until someone checked it in game; the
+  planner takes it either way). A lift whose two ends lie on the same map (Freewind Post) cannot
+  be told apart without the height and is left out.
+- **Islands**: pairs of sides without a passage (Teldrassil with Darnassus, the Skyborne's
+  Zephras Isle): no walk over the sea, only a boat, a flight, a portal or the hearthstone.
+  Darnassus to Menethil Harbor: the portal down, the boat to Auberdine, the boat to Menethil.
+- **`/ding passages [n]`**, for testers: the five passages of the continent nearest to the
+  player, each with its hint, its distance, "checked in game" or "not checked yet", and both
+  ends as `/ding where` prints a point (`a = { 1456, 31.9, 66.6 }, b = …`); the arrow points at
+  the n-th (the nearest by default; the end on the player's side) until the step changes. A
+  wrong point is reported with `/ding where` standing on the right spot.
 - **Itinerary**: when the plan takes anything but a walk, the window writes it in the travel
   notice (under the step),
   "Route: walk 1:20, fly 6:30 to Redridge Mountains, walk 0:40 (8:30 in all)"

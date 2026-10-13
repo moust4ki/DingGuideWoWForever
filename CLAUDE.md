@@ -35,7 +35,8 @@ Ding/
     Along.lua       Ding.Along: objectives of other log quests right around the player
                     ("along the way", sticky)
     Passages.lua    Ding.Passages: walking passages (lifts, tunnels, bridges, city gates,
-                    portals) and the two sides each joins; a walk across never goes straight
+                    portals) and the two sides each joins; a walk across never goes straight;
+                    islands (sides without a passage); `verified` per passage, /ding passages
     Travel.lua      Ding.Travel: fastest way to the arrow's target (walk, flight paths known or
                     to learn, boats, zeppelins, tram, hearthstone, teleports, walking passages;
                     slower through zones above the player), flight times measured, itinerary

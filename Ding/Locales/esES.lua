@@ -76,7 +76,7 @@ Ding.Locales.esES = {
     ARROW_MODE_SET = "Orientación de la flecha: ajuste %d de 4",
     DEBUG_ON = "Depuración activada.",
     DEBUG_OFF = "Depuración desactivada.",
-    HELP = "Comandos: /ding (mostrar/ocultar), /ding config, /ding list, /ding guide <id>, /ding where, /ding import, /ding export [id], /ding next, /ding prev, /ding skip, /ding back, /ding reset, /ding scale <0.5-1.5>, /ding arrow, /ding arrowflip, /ding minimap, /ding debug",
+    HELP = "Comandos: /ding (mostrar/ocultar), /ding config, /ding list, /ding guide <id>, /ding where, /ding passages [n], /ding import, /ding export [id], /ding next, /ding prev, /ding skip, /ding back, /ding reset, /ding scale <0.5-1.5>, /ding arrow, /ding arrowflip, /ding minimap, /ding debug",
 
     -- Guide window
     QUOTE = "«%s»",
@@ -159,6 +159,11 @@ Ding.Locales.esES = {
     ROUTE_BRIDGE = "puente %s",
     ROUTE_GATE = "puertas %s",
     ROUTE_PORTAL = "portal %s",
+    PASSAGES_TITLE = "Pasos a pie cerca de ti (la flecha apunta al número %d):",
+    PASSAGES_LINE = "%d. %s, %d metros, %s: %s",
+    PASSAGES_CHECKED = "comprobado en el juego",
+    PASSAGES_UNCHECKED = "aún sin comprobar",
+    PASSAGES_NONE = "Ningún paso a pie en este continente.",
     BAGS_ALMOST_FULL = "Bolsas casi llenas: %d huecos libres",
     MERCHANT_SOLD = "%d objetos grises vendidos por %s",
     MERCHANT_REPAIRED = "reparado por %s",
