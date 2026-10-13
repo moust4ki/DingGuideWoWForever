@@ -3,7 +3,7 @@
 # frFR, Dwarf HUNTER level 27, window 240 wide, scale 1, mouse
 
 TITLE  Ding! · Bois de la Pénombre et Carmines (25-27)
-STEP   < Étape 58 / 160 >   zone: Comté-de-l'Or
+STEP   < Étape 43 / 97 >   zone: Comté-de-l'Or
 
  1  header  [header] no icon, text light grey, semibold 12
     {orange: [28] « La légende de Stalvan »}
@@ -29,6 +29,6 @@ STEP   < Étape 58 / 160 >   zone: Comté-de-l'Or
         | Le guide prévoit cette étape ici.
         | Clic : la flèche y va.
 
-PROGRESS bar 58 / 160
+PROGRESS bar 43 / 97
 MENU (right click on the window): Marquer comme fait | Passer, à faire plus tard
 MENU (right click on a row with a quest): Marquer comme fait | Passer, à faire plus tard | Trouver cette quête dans le guide

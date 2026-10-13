@@ -200,7 +200,7 @@ return function(tools, locale)
         T.eq(c[1], plain(data.text))
         T.ok(cardHas(c, plain(data.sub)), "the note is missing")
         T.ok(cardHas(c, P:RowMeaning(data)[1]), "the state is missing")
-        T.ok(cardHas(c, L.COMPACT_STEP:format(E.index, #E.guide.steps)), "\"Step N of M\" is missing")
+        T.ok(cardHas(c, L.COMPACT_STEP:format(E:StepNumber(E.index))), "\"Step N of M\" is missing")
     end)
 
     T.test("4 every quest carries its level; above the player's, orange and said in words", function()

@@ -208,6 +208,9 @@ local function sectionName(g)
     return ((g.title or g.id):gsub("%s*%(%d+%-%d+%)%s*$", ""))
 end
 
+-- A step's number as the window shows it: among the character's steps (Engine:StepNumber).
+local function stepNumber(index) return (Ding.Engine:StepNumber(index)) end
+
 -- Whether to take quest q now, from what the guide does with it (Classify): the verdict ("take",
 -- "can", "notNow", "optional", "useless") and plain sentences for the player, without color
 -- codes. A quest above the player's level says both levels.
@@ -222,12 +225,12 @@ function O:Verdict(r, q, ctx)
         elseif r.step <= Ding.Engine.index then
             text = L.OFFER_TAKE_CURRENT
         else
-            text = L.OFFER_TAKE_HERE:format(r.step)
+            text = L.OFFER_TAKE_HERE:format(stepNumber(r.step))
         end
     elseif r.kind == "needed" then
-        verdict, text = "take", L.OFFER_TAKE_NEEDED:format(r.step)
+        verdict, text = "take", L.OFFER_TAKE_NEEDED:format(stepNumber(r.step))
     elseif r.kind == "later" then
-        text = L.OFFER_LATER:format(r.step)
+        text = L.OFFER_LATER:format(stepNumber(r.step))
         if r.ahead then
             verdict, text = "can", L.OFFER_JOIN:format(text, L.OFFER_LATER_NOW)
         elseif above then
@@ -239,7 +242,7 @@ function O:Verdict(r, q, ctx)
             verdict = "notNow"
         end
     elseif r.kind == "earlier" then
-        verdict, text = "optional", L.OFFER_EARLIER:format(r.step)
+        verdict, text = "optional", L.OFFER_EARLIER:format(stepNumber(r.step))
     elseif r.kind == "other" then
         local g = r.guide
         verdict = r.before and "optional" or "notNow"

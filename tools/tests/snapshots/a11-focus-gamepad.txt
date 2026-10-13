@@ -3,7 +3,7 @@
 # frFR, Dwarf HUNTER level 26, window 300 wide, scale 1, gamepad
 
 TITLE  Ding! · Bois de la Pénombre et Carmines (25-27)
-STEP   [LB] < Étape 15 / 160 > [RB]   zone: Sombre-Comté
+STEP   [LB] < Étape 15 / 97 > [RB]   zone: Sombre-Comté
 
  1  header  [header] no icon, text light grey, semibold 12
     [25] « Le Totem d'affliction »
@@ -66,6 +66,6 @@ STEP   [LB] < Étape 15 / 160 > [RB]   zone: Sombre-Comté
         | Droite : trouver cette quête dans le guide.
       hint bar: A Flèche · X Détails · B Quitter
 
-PROGRESS bar 15 / 160
+PROGRESS bar 15 / 97
 MENU (right click on the window): Marquer comme fait | Passer, à faire plus tard
 MENU (right click on a row with a quest): Marquer comme fait | Passer, à faire plus tard | Trouver cette quête dans le guide

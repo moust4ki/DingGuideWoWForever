@@ -67,7 +67,8 @@ T.test("take it: the current step, or a later step that needs it", function()
     -- Past the steps that take it, a later step still needs it (and at step 3 the engine catches
     -- it up first: an earlier quest of ZOMBIE's chain).
     start(4)
-    T.eq(select(2, verdict(SUPPLIES)), "Prends-la : l'étape 8 du guide en a besoin et tu ne l'as pas encore.")
+    -- Step 8 of the file, the 5th for this warrior (the elite, mage and dungeon steps are not for it).
+    T.eq(select(2, verdict(SUPPLIES)), "Prends-la : l'étape 5 du guide en a besoin et tu ne l'as pas encore.")
 end)
 
 T.test("later in the guide: its step, and you can take it now when AutoQuest would", function()

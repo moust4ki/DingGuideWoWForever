@@ -3,7 +3,7 @@
 # frFR, Dwarf HUNTER level 28, window 300 wide, scale 1, mouse
 
 TITLE  Ding! · Bois de la Pénombre et Carmines (25-27)
-STEP   < Étape 133 / 160 >   zone: Hurlevent
+STEP   < Étape 90 / 97 >   zone: Hurlevent
 
  1  goal  [todo] red background, red caret right icon, text white, counter 1 red
     Mettre Une page de journal déchirée en banque
@@ -38,5 +38,5 @@ STEP   < Étape 133 / 160 >   zone: Hurlevent
       | Pas une étape du guide : une suggestion en plus de l'étape.
       | Clic : choisir ceci.
 
-PROGRESS bar 133 / 160
+PROGRESS bar 90 / 97
 MENU (right click on the window): Marquer comme fait | Passer, à faire plus tard

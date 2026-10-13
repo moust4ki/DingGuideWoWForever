@@ -229,8 +229,10 @@ function Snap.Bind(T)
             P:Update()
         end
         add("")
-        local current, total = E.index, E.guide and #E.guide.steps or 0
-        add(("PROGRESS bar %d / %d"):format(math.min(current, total), total))
+        -- The step among the character's steps, as the step bar counts them (Engine:StepNumber).
+        local current, total = 0, 0
+        if E.guide then current, total = E:StepNumber(math.min(E.index, #E.guide.steps)) end
+        add(("PROGRESS bar %d / %d"):format(current, total))
         local menu = stepMenu(nil)
         add("MENU (right click on the window): " .. (#menu > 0 and table.concat(menu, " | ") or "none"))
         for _, data in ipairs(P.rowsShown or {}) do

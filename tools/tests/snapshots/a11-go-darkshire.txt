@@ -3,7 +3,7 @@
 # frFR, Dwarf HUNTER level 25, window 300 wide, scale 1, mouse
 
 TITLE  Ding! · Bois de la Pénombre et Carmines (25-27)
-STEP   < (off) Étape 1 / 160 >   zone: Hurlevent
+STEP   < (off) Étape 1 / 97 >   zone: Hurlevent
 
  1  go  [todo] red background, red caret right icon, text white
     Rejoins Sombre-Comté — Duskwood
@@ -27,5 +27,5 @@ STEP   < (off) Étape 1 / 160 >   zone: Hurlevent
       | Pas une étape du guide : une suggestion en plus de l'étape.
       | Clic : la flèche y va.
 
-PROGRESS bar 1 / 160
+PROGRESS bar 1 / 97
 MENU (right click on the window): Marquer comme fait | Passer, à faire plus tard
