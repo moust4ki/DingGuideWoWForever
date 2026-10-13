@@ -45,7 +45,7 @@ T.test("/ding find in French, without accents, or in English", function()
         SlashCmdList.DING("find " .. text); H.flush()
         local i = rowIndex("Armes à feu")
         T.ok(i, text .. " does not find Armes à feu")
-        T.eq(F.rows[i].sub, "Buliwyf Stonehand · Ironforge")
+        T.eq(F.rows[i].sub, "Buliwyf Stonehand · Forgefer")
     end
     SlashCmdList.DING("find banque"); H.flush()
     T.eq(F.rows[1].label, "Banque")
@@ -67,7 +67,8 @@ T.test("the weapon reminder in French", function()
     for _, r in ipairs(P.rowsShown or {}) do
         if r.action == "weapon" then found = H.plain(r.text) end
     end
-    T.eq(found, "Arme à apprendre : Armes à feu — Buliwyf Stonehand, Ironforge")
+    -- The city in the client's language: "Forgefer", never the client map's English name.
+    T.eq(found, "Arme à apprendre : Armes à feu — Buliwyf Stonehand, Forgefer")
     H.clearItems()
 end)
 

@@ -513,11 +513,21 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   title bar, left of minimize (a map pin: an 8-unit `text.secondary` circle with a 3-unit
   `bg` dot, over a 7-unit downward caret); tooltip "NPC directory". In focus mode, up from the
   first row: the outer focus ring around it and the A chip on its left (the title shortens).
-- **Guide window rows added under the step** (after "along the way"): "Weapon to learn: Guns —
-  Buliwyf Stonehand, Ironforge" with a sub-line saying why and how to go or dismiss it; "New spells at your class
+- **Information apart from the step** (Yendi's first rule for the window): after the step's own
+  rows, a 1-unit `divider` line across the list, then a section title "Good to know" (11 SemiBold
+  `text.muted`, no icon, padding 8 above, none below; "Next steps" has the same line and title),
+  then the notices, other quests' objectives and the rows added under the step, never with a
+  state's background.
+- **Guide window rows added under the step** (under "Good to know", after "along the way"),
+  with their own look, never the red or green of the step's rows: no background, the icon on
+  `accent.bg` with an `accent` glyph, text `text`, a counter `accent` (Yendi: the weapon to learn
+  passed for a red row to do): "Weapon to learn: Guns —
+  Buliwyf Stonehand, Ironforge" with sentences under it (why, how to go there or never see it
+  again); "New spells at your class
   trainer (cost)", or "New spells may wait at your class trainer (level N)" before the first
-  visit (glyph of an "other" row) and "Equip [item]" with the item's icon, its gain
-  as the counter ("+4") and a sub-line saying how to equip or ignore it. Focus mode also takes
+  visit (glyph of an "other" row) and "Equip [item]" with the item's icon, no counter (a bare
+  "+4" read like a quest's), and two sentences under it: how much better ("Clearly better than
+  [worn item] for your class.") and how to equip it or say no. Focus mode also takes
   **Left** (ignore the gear upgrade under focus); Right stays the game's. With a free talent
   point, "Talent: name" (glyph of a "level" row), the rank it reaches as the counter ("2/3") and
   a sub-line saying how to learn it ("Focus mode, A twice: learn it", then "A again: learn it"
@@ -577,12 +587,18 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   step menu starts with it too.
 - **New continent** (not in the mockup): an ordinary "other" row under the step, "New continent:
   talk to … (flight master) to learn its flight paths".
-- **Persistent objectives, wrap-up, preview** (not in the mockup): sticky objectives are along-the-way
-  rows whose first sub-line says "Still to do · For “quest”"; the wrap-up choices are three
-  ordinary rows (the first with "You are past this section's levels (up to N)."); the preview
-  rows are dimmed: no background, icon `impossible.icon.bg` / glyph `text.disabled`, text
-  `text.muted` without its links' colors, no counter; a quest's level in brackets before its
-  name, "+N" for the step's other quests.
+- **Other quests, wrap-up, preview** (not in the mockup): the objectives of another quest
+  (persistent, along the way) come under a header like a quest's (12 SemiBold `text.secondary`,
+  no icon, padding 8 above: a group starts) that says why they are there, "Another quest of your
+  log, to finish along the way: [29] “quest”" or "Another quest of your log, its targets are
+  right here: [26] “quest”", indented by 8, without the to-do look: no background, icon
+  `impossible.icon.bg` / glyph `text.secondary`, text and counter `text.secondary` (Yendi: "The
+  Cursed Crew" 0/13 in red passed for the step's work); none under a step seen again with
+  "Previous". The wrap-up choices are three rows besides the step (the first with "You are past
+  this section's levels (up to N)."); the preview rows are dimmed: no background, icon
+  `impossible.icon.bg` / glyph `text.disabled`, text `text.muted` without its links' colors, no
+  counter; a quest's level in brackets before its name, "and 1 more quest" for the step's other
+  quests, under a "Next steps" section title.
 - **Minimap pins** (not in the mockup): `ring` 14 px accent for the target, `circle` 6 px accent
   at 70 % for the spots (a farming loop's stops: up to 12), `caret_up` 12 px accent on the rim (6 inside), rotated toward the
   target.
@@ -658,10 +674,11 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   color, an icon or shorthand; SPEC "Plain words"). What changes on screen:
   - Every row of the guide window has a card (hover, X in focus mode): first what its look means
     ("Still to do.", "Done.", "Not possible yet: …", "Marked done by hand: …", "Skipped for
-    later: …", "A step further on: …", "Along the way: …"), in `#CCCCCC` like the card's other
-    lines; a quest's "[29]" as "Quest level 29" (above the player's: why it is orange), "·
-    before “Name”" in a sentence. A row without a quest: its text whole in white, then those
-    lines; notices, controls and the extras have no card.
+    later: …", "A step further on: …", "Not this step's work: …", "Not a step of the guide: …";
+    a quest header: where its quest stands), in `#CCCCCC` like the card's other lines; a quest's
+    "[29]" as "Quest level 29" (above the player's: why it is orange), "· before “Name”" in a
+    sentence. A row without a quest: its text whole in white, then those lines; section titles,
+    notices and controls have no card (their text says it).
   - Quest lines done change verb ("Accepted / Turned in / Completed [2] “Name”").
   - Next steps: a "Next steps" header row above them, the quest headers' style (12 SemiBold
     `text.secondary`, no icon nor background).

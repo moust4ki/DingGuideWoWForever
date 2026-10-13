@@ -181,14 +181,15 @@ T.test("a row without a quest: its text and its state; along the way, still to d
     T.ok(c, "no card on a level row")
     T.eq(c.title, H.plain(row.text))
     T.ok(has(c.lines, L.STATE_TODO))
-    T.eq(P:RowMeaning({ state = "todo", along = true })[1], L.STATE_ALONG)
-    T.eq(P:RowMeaning({ state = "todo", along = true, sticky = true })[1], L.STATE_STICKY)
+    T.eq(P:RowMeaning({ state = "other", along = true, other = "along" })[1], L.STATE_ALONG)
+    T.eq(P:RowMeaning({ state = "other", along = true, sticky = true, other = "sticky" })[1], L.STATE_STICKY)
     local lines = P:RowMeaning({ state = "todo", goal = { kind = "destroy" }, counter = "4" })
     T.eq(lines[2], L.GOAL_LEFT:format(4))
-    -- Notices, controls and the extras say everything in their text: no card.
+    -- Notices and controls say everything in their text: no card. A row besides the step says
+    -- it is not a step of the guide.
     T.eq(#P:RowMeaning({ state = "notice", action = "notice" }), 0)
     T.eq(#P:RowMeaning({ state = "button", action = "unmark" }), 0)
-    T.eq(#P:RowMeaning({ state = "todo", action = "service", extra = true }), 0)
+    T.eq(P:RowMeaning({ state = "extra", action = "service", extra = true })[1], L.STATE_EXTRA)
 end)
 
 T.test("minimized: the card says the row, its state and \"Step 1 of 4\"", function()
@@ -363,7 +364,7 @@ end)
 local NEW_KEYS = { "ROW_ACCEPTED", "ROW_TURNEDIN", "ROW_COMPLETED", "ROW_CLICK_PAD", "ROW_FIND_PAD", "MORE_ONE",
     "MORE", "MORE_QUESTS_ONE", "MORE_QUESTS", "PREVIEW_HEADER", "STATE_TODO", "STATE_DONE", "STATE_LEVEL",
     "STATE_NOT_TAKEN", "STATE_CHAIN", "STATE_MANUAL", "STATE_SKIPPED", "STATE_PREVIEW", "STATE_ALONG",
-    "STATE_STICKY", "QUEST_LEVEL_ABOVE", "PREQUEST_DETAIL", "GOAL_LEFT", "GEAR_GAIN", "COMPACT_STEP",
+    "STATE_STICKY", "QUEST_LEVEL_ABOVE", "PREQUEST_DETAIL", "GOAL_LEFT", "GEAR_SLIGHTLY", "GEAR_CLEARLY", "GEAR_EMPTY", "COMPACT_STEP",
     "DISTANCE_UNKNOWN", "MOB_KILL", "MOB_DROP", "MOB_ACCEPT", "MOB_TURNIN", "MOB_CURRENT", "PIN_TARGET", "PIN_EDGE",
     "PIN_SPOT", "PIN_LOOP", "ITEM_FOR_QUEST", "ITEM_FOR_STEP", "ITEM_FASTEST", "ITEM_UPGRADE", "ITEM_COOLDOWN",
     "ITEM_UNUSABLE", "OFFER_NAME", "DIR_BY", "FOCUS_AIM", "FOCUS_USE", "FOCUS_DETAIL", "FOCUS_LEAVE" }

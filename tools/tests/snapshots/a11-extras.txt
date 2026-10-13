@@ -1,0 +1,42 @@
+# a11-extras
+# Rows added under the step: training waiting, a weapon to learn (Ironforge), a gear upgrade
+# frFR, Dwarf HUNTER level 26, window 300 wide, scale 1, mouse
+
+TITLE  Ding! · Bois de la Pénombre et Carmines (25-27)
+STEP   < Étape 4 / 97 >   zone: Forgefer
+
+ 1  accept  [todo] red background, red "!" icon, text white
+    Prendre [24] « Les Veilleurs » — Commandant Althea Ebonlocke, Duskwood
+    card:
+      | Les Veilleurs
+      | À faire.
+      | Quête de niveau 24
+      | Pas encore dans ton journal de quêtes.
+      |  
+      | Pourquoi ?
+      | Le guide prévoit cette étape ici.
+      | Clic : la flèche y va.
+ 2  infoHeader  [section] LINE ABOVE, no icon, text dim grey, semibold 11
+    À savoir
+ 3  notice  [notice] grey box background, no icon, text light grey, regular 11
+    Prends le tram pour Stormwind City
+      > Trajet : à pied 4:47, tram 1:50 vers Stormwind City, à pied 5:21, portes 50:06 vers Elwynn Forest, à pied 40:52 (102:56 en tout)
+ 4  service  [extra] blue caret right icon, text white
+    Nouveaux sorts chez ton maître de classe (26s)
+    card:
+      | Nouveaux sorts chez ton maître de classe (26s)
+      | Pas une étape du guide : une suggestion en plus de l'étape.
+      | Clic : la flèche y va.
+ 5  gear  [extra] item icon icon, text white
+    Équiper [Poignard]
+      > Tu ne portes rien à cet emplacement : mieux que rien.
+      > Pour l'équiper, clique sur le bouton d'objet à l'écran. Pour l'ignorer, fais un clic droit sur cette ligne.
+    card:
+      | item 2208
+      | Tu ne portes rien à cet emplacement : mieux que rien.
+      | Pour comparer, le guide pèse chaque caractéristique selon ta classe.
+      | Pas une étape du guide : une suggestion en plus de l'étape.
+
+PROGRESS bar 4 / 97
+MENU (right click on the window): Marquer comme fait | Passer, à faire plus tard
+MENU (right click on a row with a quest): Marquer comme fait | Passer, à faire plus tard | Trouver cette quête dans le guide

@@ -9,6 +9,8 @@ the guides; nothing here is loaded by the game.
 | `check_guides.lua` | Replays the guides and checks quests, prerequisites, quest log |
 | `smoke_test.lua` | Runs the addon with a simulated WoW API and plays the guides |
 | `run_tests.lua` | Runs the unit tests in `tests/` |
+| `panel_snapshot.lua` | Writes the guide window as plain text for a scenario, in a language (section 5) |
+| `panel_scenarios.lua` | Shared module: the guide window's scenarios (Leveling guides, reports in game) |
 | `wow_mock.lua` | Shared module: simulated WoW API, in-memory QuestieDB, loading of Ding |
 | `testlib.lua` | Shared module: small unit test framework |
 | `draft_guide.lua` | Writes the guides of a route (`routes/*.lua`) from the export |
@@ -190,6 +192,26 @@ The test bench scenarios play Shadowglen by its id, not "the first guide".
 
 The unit tests check the fine-grained logic (when a step is done, choice of the guide,
 validation of the guides); the test bench checks the whole run with the gamepad.
+
+**The guide window as text.** `panel_snapshot.lua` puts the game and the guide in the state of a
+scenario of `panel_scenarios.lua` (a section and its step, the character, where they stand, the
+quests turned in or in the log with their counts, the window's width, focus mode...) and writes
+what the window shows: the title, the step bar, every row with its look in words ("red
+background, red diamond icon, counter 0/13 red"), its sub-lines, its card (hover, or X in
+focus mode) and the step menu.
+
+```sh
+lua5.1 tools/panel_snapshot.lua $QDB --list                    # the scenarios
+lua5.1 tools/panel_snapshot.lua $QDB a12-cursed-crew-ahead     # one, in French
+lua5.1 tools/panel_snapshot.lua $QDB --locale enUS             # all of them, in English
+lua5.1 tools/panel_snapshot.lua $QDB --write tools/tests/snapshots   # the French snapshots again
+```
+
+`tests/panel_snapshot_test.lua` compares the French text with `tests/snapshots/<scenario>.txt`:
+any change of the window shows in a review; after an intended change, write the snapshots again
+(last command) and read their diff. `tests/panel_rules_test.lua` (French) and
+`panel_rules_enus_test.lua` (English) check the rules of the window (SPEC, "Guide window:
+rules"), one test per rule, on the same scenarios (`tests/panel_rules.lua`).
 
 ## 6. Generating the guides of a route
 

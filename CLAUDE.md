@@ -155,14 +155,20 @@ Contracts between modules:
   spot's spawns, else the next place (without `isGo`). A trip (`go`, `fly`, `hearth` alone)
   is done when the next step for the player is already done by the game's state.
 - `Panel:Rows()` -> lines of the window (`kind`, `text`, `state` = "done" | "todo" |
-  "impossible" | "header" | "notice", `counter`, `sub`), built from `Describe` and the quest
+  "impossible" | "manual" | "skipped" | "header" | "section" | "notice" | "button" | "other" |
+  "extra" | "preview", `counter`, `sub`), built from `Describe` and the quest
   log objectives: a quest's objectives (`nested`) under a row `action = "header"` (its level
   and name) unless a row of the step names the quest; then the notices `action = "notice"`
   (`notice` = "travel" | "trip" | "skipped"; `P:Content` lines of the same kind make one box;
   the step's own rows carry `ofStep`: their tooltip says why, `P.shownStep`),
-  then the rows `along = true` of `Along.shown` (objectives of other quests near the player,
-  after the step's rows and its notes), the extras, the notices "bags" | "cleanup", and the
-  preview (under a row `action = "previewHeader"`). Plain words (SPEC): `Panel:RowMeaning(row)`
+  after the step's rows (and its `unmark` control), a row `action = "infoHeader"` (state
+  "section", "Good to know", a line above) and everything informational, `info = true`: the
+  first notices, the rows `along = true` of `Along.shown` (objectives of other quests, state
+  "other", `other` = "sticky" | "along", each quest under a row `action = "header"` with
+  `other`), the extras (`extra = true`, state "extra"), the notices "bags" | "cleanup"; then the
+  preview (under a row `action = "previewHeader"`, state
+  "section"). The rules of the window: SPEC "Guide window: rules" (`panel_rules_test`);
+  `tools/panel_snapshot.lua` writes it as text for a scenario of `tools/panel_scenarios.lua`. Plain words (SPEC): `Panel:RowMeaning(row)`
   -> what a row's look means, in words, for its card (`Panel:ShowQuest`: hover, X in focus mode;
   a grey row's `requires` or `waitsOn`); `UI.More(n, quests)` ("and 2 more", never "+2");
   `QuestMobs:Words(e)`, `ItemButton:Explain()`, `MinimapPins:Explain(pin)`: their tooltips.
@@ -195,9 +201,16 @@ Contracts between modules:
   `Ding.UnregisterGuidePack(id)` (Registry); `Data:QuestOpenToRaces(q, races)`;
   `ImportWindow:Open("import" | "export", id, back)`.
 - `Engine.guide`, `Engine.index`, `Engine.finished`, `Engine:CurrentStep()`,
-  `Engine:Next()`, `Engine:Prev()`, `Engine:Skip()` (without validating),
+  `Engine:Next()` (while browsing back: the step right after, marking nothing; else
+  `Engine:MarkDone()`, the step menu's "Mark as done"), `Engine:Prev()` (browsing:
+  `Engine.browseFrom` = the guide's current step, `Engine:IsBrowsing()`,
+  `Engine:BrowseTo(index)` for "Go to step" behind), `Engine:Skip()` (without validating),
   `Engine:BackToIncomplete()` (nearest past step not done), `Engine:CatchUp(q, step)`
   (missing link of the chain of `q`), `Engine.skipNotes` (reasons of the last skip),
+  `Engine.passNotes` (`{ index, reason }`: steps passed by itself in play, never shown; the
+  window's "Step passed: …"), `Engine:StepNumber(index[, guide])` -> number, total among the
+  character's steps (`Ding:StepForCharacter`: race, class, options, without `when`): every
+  step number the player sees,
   `Engine:StepMark(index)` -> "manual" | "skipped" | nil (step marked done or skipped by
   hand: colors `C.manual` / `C.skipped` in the window), `Engine:Unmark([index])` (undoes it: back
   to that step when it is still to do). `Travel:Leg(point)` -> nil (walk) or
@@ -292,10 +305,12 @@ Contracts between modules:
   away, a section of this pack, else of Ding's), `prevPack` (the pack before it: deleting an
   imported guide goes back there), `packGuide` (`[pack] = guide id`: the section
   last followed in each pack), `step`, `manual`, `resumeTo` (resume in
-  progress: `Engine:Resume` passes what is done or left behind up to the player's place, but
-  first finishes and turns in the quests of the guide's past still in the log; never past the
-  work left on the quests the player took last, `resumeLimit`; `Engine:LeftBehind(step, i)`:
-  a step it passes, which `Engine:NextSteps` leaves out of the preview), `guideSig`
+  progress: `Engine:Resume` passes what is done or left behind up to the step the character
+  was on in the section, `lastStep`, but first finishes and turns in the quests of the
+  guide's past still in the log; never further on the quests alone; `Engine:LeftBehind(step,
+  i)`: a step it passes, which `Engine:NextSteps` leaves out of the preview), `layout`
+  (version of the character's data, `Ding.MigrateChar`: a resume saved before v1.4.0 is
+  dropped once), `guideSig`
   (signature of the active guide: changed by an update, the guide is resumed), `early`
   (quests taken on the way by AutoQuest, ignored to place the player), `skipped` (skipped
   steps, per guide; cleared by "Take this guide up where I am", like `manual`), `killXP`
@@ -312,10 +327,12 @@ Contracts between modules:
   first), `taxiSeen` (`[continent] = true`: a flight map opened there), `goals`
   (`["<guide>#<step>"] = { kills, talked, gossiped, used, object, counts, progress }`), `keep`
   (`[itemID] = true`), `lastStep` (`[guide id] = step`: where the character was in each
-  section, `Engine:Resume` goes at least there; cleared by "Take this guide up where I am"),
+  section, `Engine:Resume` goes there and no further; cleared by "Take this guide up where I
+  am", which then takes the first step still to do),
   `hearthInn` (`{ inn, name }`: bound during a sethearth step, the client's name of the inn),
   `worldMark` (`{ map, x, y }`: the map waypoint Ding set, not the player's).
-  `Ding.db.panel.preview` (0-3 next steps shown), `Ding.db.panel.weaponReminder` (the weapon
+  `Ding.db.ui.suggestGear` (the gear upgrade's row, banner and item button:
+  `Gear:Suggested()`; `Gear.upgrade` stays for auto-equip), `Ding.db.panel.preview` (0-3 next steps shown), `Ding.db.panel.weaponReminder` (the weapon
   to learn under the step), `Ding.db.panel.why` (the guide's explanations, Core/Why.lua),
   `Ding.db.minimap.pins`.
   The engine places the player only once the quest log has arrived (`Engine.logReady`).

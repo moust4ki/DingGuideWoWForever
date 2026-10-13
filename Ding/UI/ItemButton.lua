@@ -79,7 +79,7 @@ function B:Wanted()
         end
     end
     -- Nothing for the step: a gear upgrade of the bags (Core/Gear.lua); using it equips it.
-    local up = Ding.Gear and Ding.Gear.upgrade
+    local up = Ding.Gear and Ding.Gear:Suggested()
     if up and owned(up.id) then return up.id, nil end
     return nil
 end
@@ -99,7 +99,7 @@ function B:Explain()
     if not id then return lines end
     local wanted, q, kind = self:Wanted()
     local step = Ding.Engine:CurrentStep()
-    local up = Ding.Gear and Ding.Gear.upgrade
+    local up = Ding.Gear and Ding.Gear:Suggested()
     if wanted ~= id then
         lines[#lines + 1] = L.ITEM_FOR_STEP           -- in combat: the item it really uses
     elseif kind == "spell" or (id == B.HEARTHSTONE and not (step and step.hearth)) then
@@ -298,7 +298,7 @@ function B:Render()
     b.look.border:SetColor((usable and inRange) and C.strong or C.todoBorder)
     if inRange then
         local name = spell and (Compat.SpellName(spell) or "") or Compat.ItemName(id) or Ding.Data:ItemName(id) or ""
-        local up = Ding.Gear and Ding.Gear.upgrade
+        local up = Ding.Gear and Ding.Gear:Suggested()
         b.name:SetText(up and up.id == id and L.EQUIP_ITEM:format(name) or name)
         b.name:SetTextColor(unpack(C.text))
     else

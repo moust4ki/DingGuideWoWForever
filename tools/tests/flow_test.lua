@@ -41,7 +41,10 @@ T.test("sticky: the quest's objectives under every following step, wherever the 
     local sticky = rows(function(r) return r.sticky end)
     T.ok(#sticky >= 1, "the sticky objectives are not listed far from their monsters")
     T.eq(sticky[1].quest, 456)
-    T.ok(H.plain(sticky[1].sub):find(L.STICKY_WAY, 1, true), "no \"Still to do\": " .. H.plain(sticky[1].sub or ""))
+    -- Under a header that names it as another quest to finish on the way.
+    local header = rows(function(r) return r.action == "header" and r.other == "sticky" end)[1]
+    T.ok(header and header.quest == 456, "no header for the persistent quest")
+    T.ok(H.plain(header.text):find(L.OTHER_STICKY:match("^(.-)%%s"), 1, true), "no \"another quest\": " .. H.plain(header.text))
     -- Its own step does not repeat them.
     E.index = 4; E:Refresh()
     T.eq(#rows(function(r) return r.along and r.quest == 456 end), 0, "repeated under its own step")

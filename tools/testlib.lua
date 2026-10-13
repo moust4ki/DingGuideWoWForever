@@ -77,7 +77,7 @@ return function(combined, opts)
         H.setCombat(false)
         local E = Ding.Engine
         E.guide, E.index, E.finished, E.hold = nil, 1, false, false
-        E.turnedIn = {}
+        E.turnedIn, E.lastTurnIn = {}, nil
         Ding.char.guide, Ding.char.step, Ding.char.manual, Ding.char.pack = nil, nil, {}, nil
         Ding.char.hearthInn, Ding.char.lastStep = nil, nil
         player.bind = nil
@@ -108,7 +108,7 @@ return function(combined, opts)
             Ding.Finder.trip = nil
             Ding.Finder:Close()
         end
-        ui.autoEquip = false
+        ui.autoEquip, ui.suggestGear = false, true
         H.forgetSpells()
         H.setSkillLines({})
         if Ding.Directory then Ding.Directory:Forget() end

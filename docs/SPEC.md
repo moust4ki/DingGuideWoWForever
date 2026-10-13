@@ -321,6 +321,10 @@ keys of section 2 above.
   blocking the rest of the guide.
 - If a step must complete or turn in a quest missing from the log (skipped for its level,
   abandoned…), Ding first shows "Accept …" and the arrow points to the quest giver.
+- A step that turns in a quest of the log whose objectives are not done never says only "Turn
+  in": "Complete …" and its objectives come first (the next steps preview too), and the arrow
+  goes to them, then to the NPC (in game, 13/10/2026: "Ormer's Revenge" to turn in without
+  its raptor's talon, its "complete" step passed by a resume).
 - **Catching up on prerequisite quests**: a guide quest that cannot be accepted yet because
   an earlier quest in its chain was never turned in (`preQuestSingle`: any one of the quests
   is enough, `preQuestGroup`: all of them, according to QuestieDB) first shows what is left to
@@ -333,38 +337,61 @@ keys of section 2 above.
   Only on a leveling route: a guide of a pack of another category (items, reputations,
   professions, class; `Engine:KeepsGrey(guide)`) is followed for its reward and keeps them.
 - **Skip reason**: under the current step, the panel says why the guide just passed steps
-  without the player: "Skipped: … (gray quest)", "For later: … (level N required)"; two lines
-  at most, then "and N more".
+  without the player: "Skipped: … (gray quest)", "For later: … (level N required)"; and every
+  step for the character it passed by itself in play, never shown (`Engine.passNotes`): "Step
+  passed: “Climb the trail” — you are already there." (a trip whose place was reached), "…
+  — nothing is left to do there", "— you are already further on", "— already done", "—
+  marked as done by hand", "— optional", "— it does not concern you now"; two lines at most,
+  then "and N more", until the guide moves again. Not the step that was on screen (kept 1.5 s
+  in green), unless it had only just come; none in the first seconds after a guide is loaded.
+  In game (13/10/2026), the Wetlands' 30 -> 32 (the trail climbed already) went by without a
+  word and read as a jump.
+- **Step numbers**: the window ("Step 18 / 74"), the minimized window ("18/74"), "Go to step N"
+  and its chat line, and the NPC quests panel ("step N") number the character's steps only
+  (`Engine:StepNumber`, `Ding:StepForCharacter`: its race, class and options, not the `when`
+  conditions), never the guide file's index, which counted other classes' steps (Yendi read
+  111 -> 114 as a jump). The import and export reports, for guide authors, keep the file's.
 - An optional step is passed as soon as a later step makes progress, or right away if its
   quest was never accepted (starting item never dropped).
-- After "Previous", the engine stays on the displayed step until "Next".
+- After "Previous", the engine stays on the displayed step until "Next". **Browsing is one
+  step at a time both ways**: "Previous" shows the step before (the previous one for the
+  character's race, class and options), done or not; "Next" then shows the step right after
+  the one on screen, done or not, marking nothing, until the guide's current step is back
+  (`Engine.browseFrom`, `Engine:IsBrowsing()`); only there does "Next" mean "mark done and
+  move on" (in game, 13/10/2026: "Next" after "Previous" ×N marked the step shown and jumped
+  to the next step still to do). The preview under a step browsed back lists the steps
+  "Next" will show. "Go to step" on a step behind in the section shows it the same way
+  (`Engine:BrowseTo`), the gamepad's LB / RB in focus mode too; while browsing, the saved
+  step stays the guide's current one. The step menu's "Mark as done" (`Engine:MarkDone`)
+  still marks the step shown and goes on to the next step still to do.
 - **Skipping a step** (binding, right click on "Next", `/ding skip`): goes to the next step
   to do without validating this one, which is not timed. **Going back to a skipped step**
   (binding, right click on "Previous", `/ding back`) brings back the nearest step not done
   before the current step; once it is done, the guide moves forward again. Like any manual
   step, a skipped manual step counts as done as soon as a later step makes progress.
-- **Resume where I am** (settings, guide list, `/ding guide`, first guide): the player's
-  place is the last step where they turned in a quest, provided they have worked on (turned in
-  or in the log) at least half of the quest steps up to there: a quest done early does not
-  send them too far. The guide then starts over from the beginning: it passes what is done and
-  what the player left behind, but **stops on any quest from the guide's past that is still
-  in the log and remains to be completed or turned in** (a quest ready to turn in counts:
-  Yendi's feedback, "Filthy Paws" skipped); a step whose log quests are only accepted does not
-  stop it. Then it carries on to the player's place. **It never goes past the work left on
-  the quests the player took last**: from the furthest step that gives a quest still in the
-  log (not one taken early on the way), the first step with a quest of the log to complete
-  or turn in is as far as it goes, and the guide goes on step by step from there. Quests
-  turned in further on were done out of the guide's order (in game, 13/10/2026: Redridge
-  done before Duskwood put a hunter in the middle of Duskwood at the end of Redridge, 70
-  steps ahead; the guide then passed the class trainer, the chains' next quests and the
-  trips between the quests of the log, and "Next" passed several steps at a time). A resume
-  saved at login is held to the same limit. The steps left behind remain reachable
-  through "back to a skipped step". A section picked again (guide list, another pack and
-  back) is taken up at least to the step the character was on in it (`Ding.char.lastStep`,
-  or where a resume still in progress was going), so the steps the game cannot check later
-  (a trip, a trainer, the inn, a step behind an option turned on since, a goal whose items
-  are spent) are not asked again; "Take this guide up where I am" forgets it and starts from
-  the quests alone. A `sethearth` step whose bind happened during the step stays done while
+- **Resume where I am** (settings, guide list, `/ding guide`, first guide): the guide starts
+  over from the beginning and passes what the game shows done (quests turned in, accepted or
+  ready, level reached) and what the player marked. **The quests alone never place the
+  player further**: quests done out of the guide's order, in another guide, look like
+  progress (in game, 13/10/2026: Redridge done before Duskwood put a hunter in the middle of
+  Duskwood at the end of Redridge, 70 steps ahead; then the Wetlands done at level 24 put the
+  same hunter, back in Darkshire, at step 73 of the route's Wetlands; each time the guide
+  passed the quests, trainers and trips still to do, and "Next" passed several steps at a
+  time). A section picked again (guide list, another pack and back, an update of the guide)
+  is taken up to the step the character was on in it (`Ding.char.lastStep`): up to there
+  the guide also passes what the player left behind, so the steps the game cannot check
+  later (a trip, a trainer, the inn, a step behind an option turned on since, a goal whose
+  items are spent) are not asked again, but it **stops on any quest from the guide's past
+  that is still in the log and remains to be completed or turned in** (a quest ready to turn
+  in counts: Yendi's feedback, "Filthy Paws" skipped); a step whose log quests are only
+  accepted does not stop it; a step that turns in the quest the player has just turned in
+  (30 s) does: its sequel comes a moment later from the same NPC, and passing on would leave
+  the steps that take and complete it behind. Then it carries on to the player's place. The steps left behind
+  remain reachable through "back to a skipped step". "Take this guide up where I am" forgets
+  the marks and that place: what is not really done is to do again, the first step still to
+  do comes first (a quest skipped earlier included: "Skip" passes it). A character saved
+  before v1.4.0 drops its resume in progress once and keeps the step it is on as its place
+  (`Ding.MigrateChar`). A `sethearth` step whose bind happened during the step stays done while
   the hearthstone is bound there (`Ding.char.hearthInn`: the client's own name of the inn
   then, so the language does not matter), also after "Take this guide up where I am".
 - **Login**: the quest log arrives a moment after login. The engine places the player only
@@ -372,8 +399,8 @@ keys of section 2 above.
   resume would believe every quest is missing and would skip the ones to turn in.
 - **Updated guide**: a new version of Ding can regenerate a guide and move its steps.
   `Ding.char.guideSig` keeps the signature of the active guide (its quest actions and its
-  level milestones, in order); if it changed at login, the guide is resumed where the player
-  is instead of staying on a step number that is now wrong.
+  level milestones, in order); if it changed at login, the guide is resumed (up to the
+  section's saved place, see above) instead of staying on a step number that is now wrong.
 - **Trips with nothing left at the end**: a step that only takes the player somewhere (`go`,
   `fly`, `hearth`, nothing else) is passed as soon as the next step for the player is already
   done by the game's own state (its quests turned in, accepted or ready, its level reached),
@@ -604,8 +631,13 @@ target (the nearest candidate) goes through a travel planner, the fastest way in
 
 A step's `sticky` quests join a per-character set (`Ding.char.sticky`) once the step is
 reached; while such a quest is in the log and not ready, its unfinished objectives are listed
-under every following step (with the along-the-way rows, first, "Still to do · For “quest”",
-whatever the distance; never twice, never under a step that names the quest), and their targets
+under every following step (with the along-the-way rows, first, under a header "Another quest
+of your log, to finish along the way: [29] “quest”", whatever the distance; never twice, never
+under a step that names the quest, nor under a step seen again with "Previous": in game,
+13/10/2026, "The Cursed Crew" listed at 0/13 in red under a step done read as that step's
+objectives; nor, whatever the distance, while the next step still to do works on that quest: it
+comes right after, and among its monsters it is an ordinary along-the-way row; not the red of
+the step's work: Guide window rules 9 and 10), and their targets
 are **low-priority arrow candidates** on the steps with quests (not on a trip: a `go` point
 must stay the arrow's to be validated): such a point counts as twice its distance plus 300
 yards. A quest turned in leaves the set, and so does a quest the active guide only makes
@@ -642,14 +674,21 @@ clutters least:
   what the row's look means: "Still to do." (red), "Done." (green), "Not possible yet: level 12
   required." / "…: take the quest first." / "…: “Name” comes first in its chain." (grey; the
   row's `requires` or `waitsOn`), "Marked done by hand: the game has not confirmed it." (violet),
-  "Skipped for later: still to do." (amber), "A step further on…" (dimmed), "Along the way…",
-  "Still to do: the guide keeps it on screen…", a goal's lone number ("4 still in your bags.").
+  "Skipped for later: still to do." (amber), "A step further on…" (dimmed), "Not this step's
+  work: another quest of your log, whose targets are right around you…" (along the way), "Not
+  this step's work: another quest of your log, which the guide keeps on screen…" (persistent),
+  "Not a step of the guide: a suggestion besides this step." (training, weapon, upgrade, talent,
+  wrap-up, a quest found elsewhere), a quest header's quest: "In progress: its objectives are
+  below." / "Objectives done: ready to turn in." / "Turned in: no longer in your quest log.", a
+  goal's lone number ("4 still in your bags.").
   Then a quest's level ("Quest level 29", the window's "[29]"; above the player's, the orange:
   "Quest level 29, above yours (27): harder, but the guide plans it."), "· before “Name”" in a
   sentence, and the action in the gamepad's words in focus mode ("A: the arrow goes there.",
   "Right: find this quest in the guide."). A row without a quest gets a card too (its text and
-  these lines), except notices, controls and the extras, whose text says it all. A gear
-  upgrade's "+12": "+12 on the guide's score for your class".
+  these lines), except section titles, notices and controls, whose text says it all. A gear
+  upgrade says how much better in words, no bare "+12": "Clearly better than [worn item] for your
+  class."; its card: what it replaces, which stats change, "the guide weighs each stat for your
+  class".
 - **Quest lines done** say it in their text, like the objectives: "Accepted / Turned in /
   Completed [2] “Name”".
 - **Minimized window**: its card says the row, its state and "Step 3 of 42" (the "3/42").
@@ -664,6 +703,133 @@ clutters least:
   way…", "An upgrade…"), its cooldown and a dimmed look; the NPC directory's "8 min away" and
   "by flight, boat"; the offers panel's "Name (level 24)"; the settings' "levels 10–20" and
   "from level 20".
+
+### Guide window: rules
+
+The guide window is Ding's one interface the player looks at all the time: every rule below
+holds in every language, from 240 to 420 wide and at every scale (50-150 %), with the mouse and
+with a gamepad. `tools/tests/panel_rules_test.lua` (French) and `panel_rules_enus_test.lua`
+(English) check each one, the test named after its number, on the scenarios of
+`tools/panel_scenarios.lua` (Leveling guides, Yendi's reports in game); `tools/panel_snapshot.lua`
+writes the window as plain text (rows, their look in words, counters, sub-lines, notices,
+cards, the step menu), and the French snapshots of `tools/tests/snapshots/` show every change of
+the window in a review (`panel_snapshot_test.lua`).
+
+**Information apart from the step**
+
+1. **Informational messages are clearly separated from the quest steps** (Yendi's first rule):
+   the step's own work (its quest headers, objectives, accept / turn-in / complete rows, a trip,
+   a level, the trainer, its goals, with the guide's note, the step's hints and its why line as
+   their sub-lines, and the undo of its mark) comes first, in one block; then a 1-unit line and a
+   "Good to know" title (11 SemiBold, dimmed); then everything else, never with the look of an
+   objective (no to-do / done state, no state background): the way there, a trip of the NPC
+   directory and its "Cancel the trip", steps passed, other quests' objectives, the rows besides
+   the step, bags and quest log almost full. "Next steps" come last, under their own line and
+   title. None of these is ever above or between the step's rows.
+
+**Words**
+
+2. **Nothing said by a color or an icon alone.** Every row but a section header, a notice and a
+   control has a card (hover; X in focus mode) whose first line says what the row's look means
+   (Plain words, above): to do, done, not possible yet and why, marked by hand, skipped, a step
+   further on, another quest's objective and why it is there, a row besides the step; a quest
+   header says where its quest stands (in progress, ready to turn in, turned in, not taken). A
+   section header, a notice and a control say it all in their text.
+3. **Why lines** (`Ding.Why`): one line under the first row still to do, after the guide's note,
+   only for a step whose reason is marked short; the whole reason at the end of the cards of the
+   step's own rows, under "Why?"; neither with "Guide explanations" off; never under the finished
+   step kept on screen.
+4. **Texts never cut**: a row's text, its sub-lines and the notices wrap whole and the row grows,
+   at every width and scale. Minimized, the one line may end in an ellipsis: hovering it shows
+   the row whole, with its note, what its look means and "Step N of M".
+5. **Every quest carries its level**: "[28] « Name »" in the headers, the accept, turn-in and
+   complete rows, the next steps and the other quests' headers; a quest above the player's
+   level is orange and its card says why ("Quest level 29, above yours (27): harder, but the
+   guide plans it.").
+
+**The step's quests**
+
+6. A quest's objectives sit under a header "[level] « Name »" (no icon, no background,
+   SemiBold), indented by 8, unless a row of the step names the quest already.
+7. Accept, turn-in and complete rows say the action and the quest; done, in the past
+   ("Accepted / Turned in / Completed [28] « Name »").
+8. **A quest ready to turn in or turned in**: its objective rows are green, in the past tense,
+   with a full counter, whatever the client reports (counts back to 0, a secret "finished"),
+   also when the step is seen again with Previous; its card says it is turned in, never "not in
+   your log yet".
+
+**Other quests**
+
+9. Another quest's objectives (persistent `sticky`, along the way) are listed only when they are
+   relevant: never for a quest a row of the step names, never twice, never under a step seen
+   again with Previous; a persistent quest only from the step that makes it persistent on, and
+   not while the next step still to do works on it (it comes right after). Along the way lists
+   the log's quests whose targets are right around the player, the guide's next quests first.
+   *Open (Yendi's decision)*: whether along the way should also leave out a quest whose own step
+   is further on (Menethil, « The Cursed Crew » among its sailors at step 7); the test keeps that
+   case PENDING.
+10. **They never pass for the step's work**: under a header that names the other quest and says
+   why it is there ("Another quest to finish on the way: [29] « Name »", "Another quest, its
+   targets are here: …"), indented rows without the red of a row to do (no background, grey
+   icons and counters); their card begins "Not this step's work".
+
+**Notices, rows besides the step, next steps**
+
+11. **Window-wide messages are notices**: the way there, a trip of the NPC directory, steps
+    passed, bags almost full, quest log almost full: boxes of their own (grey box, no icon, 11
+    Regular), never a sub-line of a row; the guide's notes and the step's own hints stay under
+    the step.
+12. A trip of the NPC directory has a "Cancel the trip" control right under its notice.
+13. **Rows besides the step** (class training, weapon to learn, gear upgrade, talent, a new
+    continent's flight master, a quest found elsewhere in the guide, the section wrap-up) come
+    under "Good to know" and never look like its objectives: no red nor green, no state
+    background, a blue icon; their card says they are not a step of the guide and what a click (A)
+    does. A gear upgrade says how much better in words, never a bare "+4": "Clearly better than
+    [worn item] for your class."; its card says what it replaces, which stats change and that the
+    guide weighs each stat for the class. "Suggest better gear" (Automation tab, on) hides it, its
+    banner and the item button's offer; "Equip upgrades automatically" stays its own option.
+14. **Next steps**: under a "Next steps" header, one dimmed row per step, "Turn in [2] « Name »
+    and 1 more quest" (never "+1"), exactly the steps Next goes to, in that order.
+
+**Moving through the guide, marks**
+
+15. While browsing (after Previous), Previous and Next move **one step at a time**, done steps
+    included, and mark nothing; only on the guide's current step does Next mark the step done
+    and move on to the next step to do.
+16. A step just finished stays 1.5 s on screen, green; Next or Skip meanwhile only brings the
+    step the guide moved to.
+17. A step marked done by hand is violet, a skipped one amber; a line under it and the cards say
+    it in words; an "Undo" control under it, and first in the step menu, takes the mark away.
+18. **The step menu says what each entry acts on**: during a trip, the trip's entries first, then
+    "the guide's step"; an entry that would do what the step's mark already says is left out
+    (no "Mark as done" on a step marked done, no "Skip" on a skipped one); "Find this quest in
+    the guide" on a row with a quest.
+
+**Gamepad and mouse**
+
+19. **Each action once**: with a gamepad, a focused control carries its A chip and focus mode's
+    hint bar lists only what no control on screen does (A on a row, X when the row has a card,
+    B); LB / RB chips in the step bar with a gamepad only; without one, no chip and no hint bar.
+20. Focus mode reaches every row (quest headers, objectives, other quests, notices, controls,
+    rows besides the step) and the directory's button above them; X shows the focused row's
+    card; A does what a click does.
+21. The mouse does everything: a click = A, hovering = X, a right click = the step menu.
+
+**Frames and looks**
+
+22. **Own frames only**: the window never opens, closes nor drives a game window (quest log,
+    map, talents); plain frames, nothing protected, no taint (`taint_test`).
+23. **One look per kind**, the same everywhere, and **the step's own work stands out**: only the
+    step's rows have a state's background (red, green, violet, amber) and their icon; quest headers (12 SemiBold, no icon), section headers ("Good to know", "Next steps": 11
+    SemiBold, dimmed, no icon, a line above), notices (grey box, 11 Regular), controls (button
+    background, lighter under the mouse), rows besides the step (no background, blue icon), other
+    quests (no background, grey icon), next steps (dimmed). Colors only through `UI.C`.
+
+**Sentences**
+
+24. **Sub-lines are plain sentences**: no "Button: action · Button: action" shorthand under a row
+    (the upgrade, the talent, the offer to jump, the quest log's notice, the level's experience
+    left): "To equip it, use the item button on screen. To ignore it, press Left in focus mode."
 
 ### Minimap pins (`UI/MinimapPins.lua`)
 
@@ -727,9 +893,11 @@ now shows, on its row:
 Under the current step, the window lists the unfinished objectives of the other quests of the
 log whose targets (monsters, objects, item sources) are within 100 yards of the player: they
 stay listed until the player is 160 yards away (no flicker), the objective is done or the
-quest leaves the log. Three at most, the guide's next quests first, after the step's own rows;
-the first one says "Along the way · For “quest”". Hovering, clicking (A in focus mode) works as
-for the step's objectives. The objective the level step already farms is not repeated. Looked
+quest leaves the log. Three at most, the guide's next quests first, after the step's own rows,
+each quest under a header "Another quest of your log, its targets are right here: [26] “quest”",
+its rows grey (no background, grey icon and counter: not the step's work, Guide window rules 8
+and 9). Not under a step seen again with "Previous" (they would read as its objectives).
+Hovering, clicking (A in focus mode) works as for the step's objectives. The objective the level step already farms is not repeated. Looked
 at every 2 s while the window is shown, and on every quest log change.
 
 ### Quest monsters (`UI/QuestMobs.lua`)
@@ -784,8 +952,8 @@ accent #5BB4FF, the Noto Sans font shipped with the addon, rounded shapes from t
   starts on the first row to do (past the header); the D-pad also stops on headers; the
   "target" binding (`DING_CYCLE`) passes over them.
 - **Notices** (state "notice", `action = "notice"`): what concerns the whole window rather than
-  one row of the step gets a box of its own (no icon, 11 Regular, wrapped whole): right
-  under the step, the way there (`travel`: the travel hint, then the itinerary), a trip of the
+  one row of the step gets a box of its own (no icon, 11 Regular, wrapped whole), under the
+  "Good to know" title after the step's rows (Guide window rule 1): first the way there (`travel`: the travel hint, then the itinerary), a trip of the
   NPC directory (`trip`: with the way there in its box, and a "Cancel the trip" control under
   it: A or a click on it ends the trip) and why steps were passed (`skipped`); after the rows added under
   the step, the bags almost full (`bags`) and the quest log almost full (`cleanup`, with "A: see
@@ -804,7 +972,8 @@ accent #5BB4FF, the Noto Sans font shipped with the addon, rounded shapes from t
   "Mark the guide's step as done", "Skip the guide's step" (Yendi took "Mark as done" for the
   NPC and lost a step). Without a trip: "Mark as done" (like "Next") or
   "Skip, do it later" (like a right click on "Next"). On a step marked done or skipped, its undo
-  first ("Undo: mark as not done", "Undo the skip"); on a line with a quest "Find this
+  first ("Undo: mark as not done", "Undo the skip"), and not the entry the mark already says (no
+  "Mark as done" on a step marked done, no "Skip" on a skipped one); on a line with a quest "Find this
   quest in the guide". On the gamepad, the "Next step" and
   "Skip step (do it later)" bindings do the same. A step settled by hand keeps its mark
   (`Engine:StepMark`: `Ding.char.manual`, `Ding.char.skipped`), visible when you come back to
@@ -1003,9 +1172,14 @@ accent #5BB4FF, the Noto Sans font shipped with the addon, rounded shapes from t
 - **Gear upgrades** (`Core/Gear.lua`): each piece of gear in the bags that the class can wear at
   its level (armor and weapon proficiencies of Classic, `GetItemInfoInstant`) is scored like
   the quest rewards against what it would replace; one point of score or more is an upgrade.
-  The best one gets a 6 s banner ("Upgrade in your bags: [item]"), a row "Equip [item]" with
-  its gain under the step, and the item button offers it (using a piece of gear from the bags
-  wears it), when the step needs no item of its own. Declined (right click on the row, Left in
+  The best one gets a 6 s banner ("Upgrade in your bags: [item]"), a row "Equip [item]" under
+  "Good to know" saying in words how much better it is ("Slightly / Clearly better than [worn
+  item] for your class.", "You wear nothing there: better than nothing.": a gain of a quarter of
+  what is worn or more is clear, `Rewards:Compare`) and how to equip it or say no, and the item
+  button offers it (using a piece of gear from the bags wears it), when the step needs no item of
+  its own. "Suggest better gear" (Automation tab, on by default, `ui.suggestGear`): off, no row,
+  no banner, nothing on the item button (`Gear:Suggested`); the bags are still looked at for
+  "Equip upgrades automatically", its own option. Declined (right click on the row, Left in
   focus mode): remembered in `Ding.char.gearDeclined`. "Equip upgrades automatically" (off by
   default): out of combat, only an item already bound to the player (`C_Item.IsBound`), else the
   game would ask its confirmation. An item a quest of the log needs (objective, item handed

@@ -228,7 +228,7 @@ T.test("a guide's bank step in Darkshire: the arrow flies to Stormwind's bank, u
     H.tick(1)
     T.eq(E.index, index, "the bank step is passed")
     local bank = Dir:Best("bank")
-    T.eq(Dir:Place(bank.point), "Stormwind City", "not Stormwind's bank")
+    T.eq(Dir:Place(bank.point), L.CITY_STORMWIND, "not Stormwind's bank")
     T.eq(table.concat(bank.means, ","), "fly")
     at(1431, 75, 46)
     T.eq(A.point and A.point.npc, bank.npc, "the arrow does not lead to the bank")

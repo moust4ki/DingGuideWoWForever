@@ -221,7 +221,7 @@ T.test("grey quest never accepted: skipped, with the reason", function()
         local out = {}
         for _, l in ipairs(P:Content()) do out[#out + 1] = H.plain(l.text) end
         return out
-    end)(), L.SKIPPED_GREY:format(Data:QuestName(456))), "reason missing from the panel")
+    end)(), L.SKIPPED_GREY:format(L.QUEST_WITH_LEVEL:format(Data:QuestLevel(456), L.QUOTE:format(Data:QuestName(456))))), "reason missing from the panel")
 end)
 
 T.test("an item guide keeps its grey quests: shown, accepted, never skipped", function()
@@ -231,7 +231,7 @@ T.test("an item guide keeps its grey quests: shown, accepted, never skipped", fu
     T.ok(not E:KeepsGrey(Ding:GetGuide("t-grey")), "a leveling guide keeps grey quests")
     T.eq(E.index, 1, "the grey quest of an item guide was skipped")
     T.ok(not E:IsGrey(456))
-    T.ok(not hasText(texts(), L.SKIPPED_GREY:format(Data:QuestName(456))), "a grey reason on an item guide")
+    T.ok(not hasText(texts(), L.SKIPPED_GREY:format(L.QUEST_WITH_LEVEL:format(Data:QuestLevel(456), L.QUOTE:format(Data:QuestName(456))))), "a grey reason on an item guide")
     E:SetGuide("t-grey", 1, true); H.flush()
     T.eq(E.index, 2, "the same quest in a leveling guide is not skipped any more")
 end)
@@ -285,7 +285,7 @@ T.test("level too low: \"for later\" with the level", function()
     T.eq(E.skipNotes[1].reason, "level")
     local found = false
     for _, l in ipairs(P:Content()) do
-        if H.plain(l.text) == L.SKIPPED_LEVEL:format(Data:QuestName(916), 3) then found = true end
+        if H.plain(l.text) == L.SKIPPED_LEVEL:format(L.QUEST_WITH_LEVEL:format(Data:QuestLevel(916), L.QUOTE:format(Data:QuestName(916))), 3) then found = true end
     end
     T.ok(found, "reason missing from the panel")
 end)

@@ -123,10 +123,17 @@ T.test("along the way: the objective of another quest whose monsters are right h
     local rows = alongRows()
     T.eq(#rows, 1, "the spiders' objective is not listed")
     T.eq(rows[1].quest, 916)
-    T.eq(rows[1].state, "todo")
+    -- Not the red of the step's work: under a header that names the other quest and says why.
+    T.eq(rows[1].state, "other")
     T.eq(rows[1].kind, "collect")
-    T.ok(H.plain(rows[1].sub):find(L.ALONG_WAY, 1, true), "no \"along the way\" mention: " .. H.plain(rows[1].sub or ""))
-    T.ok(H.plain(rows[1].sub):find(Data:QuestName(916), 1, true), "its quest is not named")
+    local header
+    for _, row in ipairs(P.rowsShown) do
+        if row.action == "header" and row.other == "along" and row.quest == 916 then header = row end
+    end
+    T.ok(header, "no header for the other quest")
+    local prefix = L.OTHER_ALONG:match("^(.-)%%s")
+    T.ok(H.plain(header.text):find(prefix, 1, true), "no \"another quest\" mention: " .. H.plain(header.text))
+    T.ok(H.plain(header.text):find(Data:QuestName(916), 1, true), "its quest is not named")
     -- The step's own rows come first.
     T.eq(P.rowsShown[1].quest, 457)
     -- A click (or A in focus mode) sends the arrow there.

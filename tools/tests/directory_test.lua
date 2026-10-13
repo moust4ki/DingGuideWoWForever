@@ -242,7 +242,8 @@ T.test("cities: the player's capitals and the neutral towns; a city's categories
     start(IRONFORGE)
     local names = {}
     for _, c in ipairs(Dir:Cities()) do names[#names + 1] = c.name end
-    T.eq(table.concat(names, ","), "Stormwind City,Ironforge,Darnassus,Booty Bay,Gadgetzan,Ratchet,Everlook")
+    -- Ding's own names in the client's language (the client's map says "Stormwind City").
+    T.eq(table.concat(names, ","), "Stormwind,Ironforge,Darnassus,Booty Bay,Gadgetzan,Ratchet,Everlook")
     local IF = Dir:City("ironforge")
     local within = Dir:CityNpcs(IF)
     T.ok(within[BULIWYF] and within[BIXI], "Ironforge's weapon masters")
@@ -488,6 +489,8 @@ T.test("weapon reminder: only a weapon in hand, with why in plain words; A goes;
     local row = reminder()
     T.ok(row, "no reminder for a gun in the bags")
     T.eq(H.plain(row.text), L.WEAPON_TO_LEARN:format(L.WEAPON_GUNS, "Buliwyf Stonehand", "Ironforge"))
+    -- An offer under the step, not the step's work: not in the red of what is still to do.
+    T.eq(row.state, "extra", "the reminder looks like an objective of the step")
     local sub = H.plain(row.sub)
     T.ok(sub:find(H.plain(L.WEAPON_SOURCE_BAGS:format(Ding.Compat.ItemInfo(GUN).link)), 1, true), sub)
     T.ok(sub:find(L.WEAPON_WHY:format(L.WEAPON_GUNS), 1, true), sub)

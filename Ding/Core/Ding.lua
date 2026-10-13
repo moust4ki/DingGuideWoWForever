@@ -41,6 +41,7 @@ local DEFAULTS = {
         chooseReward = false, sellGrey = true, repair = true, markTarget = true, serviceSteps = true,
         offers = true,   -- beside an NPC's window, what the guide does with its quests (UI/Offers.lua)
         trainerSteps = true, flightSteps = true, autoEquip = false, autoFly = false,
+        suggestGear = true,   -- a better piece of gear in the bags: row, banner, item button (Core/Gear.lua)
         -- Quest monsters (UI/QuestMobs.lua): marks on enemy nameplates, the tooltip line, and
         -- the enemy nameplates' distance raised to the client's maximum.
         mobIcons = true, mobTooltip = true, farPlates = false },
@@ -61,6 +62,7 @@ local CHAR_DEFAULTS = {
     skipped = {},    -- [guideId] = { [stepIndex] = true } steps skipped, still to do
     killXP = {},     -- the last kills, as a share of a monster of the player's level (Grind)
     deathskip = nil, -- { guide, step }: died during a death skip step, done once alive again
+    layout = nil,    -- version of this character's data (Ding.MigrateChar)
 }
 
 local function applyDefaults(target, defaults)
@@ -108,6 +110,18 @@ local function migrate(db)
     db.layout = LAYOUT
 end
 Ding.Migrate = migrate
+
+-- A character saved before v1.4.0 (char layout 1), once: the place of a resume came from the
+-- quests alone and could be far ahead (a zone done earlier, in another guide). It is
+-- dropped, and the active section's place is the step the character is on.
+local CHAR_LAYOUT = 2
+local function migrateChar(c)
+    if (c.layout or 1) >= CHAR_LAYOUT then return end
+    c.resumeTo = nil
+    if c.guide and c.step and c.lastStep then c.lastStep[c.guide] = c.step end
+    c.layout = CHAR_LAYOUT
+end
+Ding.MigrateChar = migrateChar
 
 ---------------------------------------------------------------------------
 -- Event bus: several modules can listen to the same event.
@@ -173,6 +187,7 @@ Ding:On("ADDON_LOADED", function(_, name)
     applyDefaults(DingDB, DEFAULTS)
     applyDefaults(DingCharDB, CHAR_DEFAULTS)
     migrate(DingDB)
+    migrateChar(DingCharDB)
     Ding.db = DingDB
     Ding.char = DingCharDB
 end)

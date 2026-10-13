@@ -1,0 +1,13 @@
+# a11-minimized
+# The minimized window, 240 wide: one line, the hover card shows the row whole
+# frFR, Dwarf HUNTER level 27, window 240 wide, scale 1, mouse
+
+MINIMIZED
+  43/97 | red icon | Récupérer Une vieille lettre | 0/1
+  (the line is cut by an ellipsis: hover shows it whole)
+  hover card:
+    Récupérer Une vieille lettre
+    L'objet est à l'intérieur, un étage plus haut.
+    À faire.
+    Étape 43 sur 97
+  state of its row: todo

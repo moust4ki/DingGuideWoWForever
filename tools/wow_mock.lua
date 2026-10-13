@@ -731,6 +731,9 @@ return function(opts)
     local items, specialItems, itemUses, macroUses = {}, {}, {}, {}
     local bagSlots    -- the bags' slots (defined with the bags, below)
     local hasTarget = false
+    -- Item facts (H.setItemInfo): { name, quality, equipLoc, sellPrice, stats, usable }; the
+    -- client answers by id or by link, nil for an item it has not loaded.
+    local itemInfo, equipped = {}, {}
     _G.C_Item = {
         -- Like the client: the copies in the bags (H.setItem's counts and H.putInBag's slots).
         GetItemCount = function(id)
@@ -741,7 +744,8 @@ return function(opts)
             return n
         end,
         GetItemIconByID = function(id) return items[id] and items[id].icon or 134400 end,
-        GetItemNameByID = function(id) return "item " .. id end,
+        -- The name H.setItemInfo gave it, else a made-up one.
+        GetItemNameByID = function(id) return itemInfo[id] and itemInfo[id].name or ("item " .. id) end,
         GetItemSpell = function(id)
             if items[id] and items[id].use then return "Use " .. id, 1000 + id end
             return nil
@@ -753,9 +757,6 @@ return function(opts)
             return items[id].range
         end,
     }
-    -- Item facts (H.setItemInfo): { name, quality, equipLoc, sellPrice, stats, usable }; the
-    -- client answers by id or by link, nil for an item it has not loaded.
-    local itemInfo, equipped = {}, {}
     local function itemID(item)
         if type(item) == "number" then return item end
         return tonumber(tostring(item):match("item:(%d+)"))
@@ -1450,9 +1451,12 @@ return function(opts)
                 if plain(r.text) == "" then problem(("%s: row %d is empty"):format(label, i)) end
                 -- manual / skipped: a step the player marked done or skipped (Engine:StepMark);
                 -- header: a quest above its objectives; notice: a box for the whole window;
-                -- button: a control (cancel the directory's trip).
+                -- button: a control (cancel the directory's trip); extra: a row added under the
+                -- step (a weapon to learn, training, gear, a talent, the wrap-up); other: another
+                -- quest's objective; section: a title ("Next steps", "Besides this step").
                 if not ({ done = true, todo = true, impossible = true, manual = true, skipped = true, preview = true,
-                    header = true, notice = true, button = true })[r.state] then
+                    header = true, notice = true, button = true, extra = true, other = true,
+                    section = true })[r.state] then
                     problem(("%s: row %d has no state (%s)"):format(label, i, tostring(r.state)))
                 end
             end

@@ -173,6 +173,28 @@ T.test("objective with a full counter: done, even without the game's flag", func
     T.eq(rows[2].state, "todo", rowTexts())
 end)
 
+T.test("objective count kept secret: read from its text, done when full", function()
+    start()
+    H.accept(456); H.flush()
+    local api = _G.C_QuestLog.GetQuestObjectives
+    _G.C_QuestLog.GetQuestObjectives = function(q)
+        local list = api(q)
+        for i, obj in ipairs(list) do
+            -- Forever: the counts and the flag secret, only the text says "1/1".
+            if i == 1 then obj.text = obj.text:gsub("%d+/(%d+)", "%1/%1") end
+            obj.finished, obj.numFulfilled = H.SECRET, H.SECRET
+        end
+        return list
+    end
+    E:Refresh(); H.flush()
+    _G.C_QuestLog.GetQuestObjectives = api
+    local rows = objectiveRowsOf(456)
+    T.eq(rows[1].state, "done", rowTexts())
+    T.eq(rows[1].counter, "1/1", "an objective done read as 0")
+    T.eq(rows[2].state, "todo", rowTexts())
+    T.eq(rows[2].counter, "0/1")
+end)
+
 T.test("client objective formats: positions, |4…; grammar and Lua magic characters", function()
     local cases = {
         -- French client (Forever): positional placeholders and |4singular:plural;
@@ -486,7 +508,7 @@ T.test("narrow window (240): the header, indented objectives and a notice box fi
         if data.action == "notice" then notice = r end
     end
     T.ok(notice, "no notice: " .. rowTexts())
-    T.eq(H.plain(notice.text:GetText()), L.SKIPPED_GREY:format(Ding.Data:QuestName(916)))
+    T.eq(H.plain(notice.text:GetText()), L.SKIPPED_GREY:format(L.QUEST_WITH_LEVEL:format(Ding.Data:QuestLevel(916), L.QUOTE:format(Ding.Data:QuestName(916)))))
     T.eq(notice.text.fontObject, Ding.UI.Font("regular", 11))
     T.ok(not notice.icon:IsShown() and notice.bg:IsShown(), "a notice is a box without an icon")
     -- Not under the objectives.

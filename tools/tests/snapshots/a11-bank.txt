@@ -1,0 +1,36 @@
+# a11-bank
+# Stormwind, Olivia Burnside: a bank step (keep an item for later), its note
+# frFR, Dwarf HUNTER level 28, window 300 wide, scale 1, mouse
+
+TITLE  Ding! · Bois de la Pénombre et Carmines (25-27)
+STEP   < Étape 90 / 97 >   zone: Hurlevent
+
+ 1  goal  [todo] red background, red caret right icon, text white, counter 1 red
+    Mettre Une page de journal déchirée en banque
+      > Tu en auras besoin plus tard pour « La légende de Stalvan » : garde-le à la banque pour libérer une place dans tes sacs.
+    card:
+      | Mettre Une page de journal déchirée en banque
+      | À faire.
+      | Encore 1 dans tes sacs.
+      |  
+      | Pourquoi ?
+      | Le guide prévoit cette étape ici.
+      | Clic : la flèche y va.
+ 2  infoHeader  [section] LINE ABOVE, no icon, text dim grey, semibold 11
+    À savoir
+ 3  wrapup  [extra] blue caret right icon, text white
+    Section suivante : Les Paluns (27-29)
+      > Tu as dépassé les niveaux de cette section (jusqu'à 27).
+    card:
+      | Section suivante : Les Paluns (27-29)
+      | Pas une étape du guide : une suggestion en plus de l'étape.
+      | Clic : choisir ceci.
+ 4  wrapup  [extra] blue caret right icon, text white
+    Rester dans cette section
+    card:
+      | Rester dans cette section
+      | Pas une étape du guide : une suggestion en plus de l'étape.
+      | Clic : choisir ceci.
+
+PROGRESS bar 90 / 97
+MENU (right click on the window): Marquer comme fait | Passer, à faire plus tard

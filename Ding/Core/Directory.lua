@@ -492,7 +492,11 @@ function Dir:InCity(city, point)
         and (point.wx - centre.wx) ^ 2 + (point.wy - centre.wy) ^ 2 <= city.radius ^ 2
 end
 
+-- A city's name in the client's language: Ding's own ("Hurlevent" for a French client; the
+-- client's map names it "Stormwind City" or "Cité de Stormwind"), else the client's.
 function Dir:CityName(city)
+    local own = rawget(L, city.label)
+    if own then return own end
     return (city.map and Compat.MapName(city.map)) or Compat.AreaName(city.area) or L[city.label]
 end
 
