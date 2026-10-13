@@ -230,6 +230,45 @@ T.test("goals, conditions and progression keys: shapes and replay", function()
     remove(dir)
 end)
 
+-- A trip without a text only shows coordinates (a warning); the same trip twice in a row for
+-- a character shows the same line twice (an error). Trips for different classes, or with
+-- something to do there, are fine.
+T.test("trips: a text, and never the same trip twice in a row", function()
+    local dir = base .. "/Trips"
+    os.execute(shell((windows and "mkdir " or "mkdir -p ") .. quote(windows and dir:gsub("/", "\\") or dir)))
+    local file = dir .. "/Trips.lua"
+    write(file, table.concat({
+        'Ding.RegisterGuide({ id = "t-trips", title = "Trips", faction = "Alliance", races = { "NightElf" },',
+        '    minLevel = 1, maxLevel = 6, steps = {',
+        '    { go = { 1438, 50, 50 }, text = "Walk to the tree" },',                             -- 1 fine
+        '    { accept = 456 },',                                                                 -- 2 fine
+        '    { go = { 1438, 55, 50 }, classes = { "WARRIOR" }, text = "Learn Staves" },',       -- 3 fine
+        '    { go = { 1438, 55, 50 }, classes = { "HUNTER" }, text = "Learn Bows" },',          -- 4 fine: other class
+        '    { go = { 1438, 55, 50.05 }, text = "Wait here" },',                                 -- 5: after 3, after 4
+        '    { go = { 1438, 55, 50 } },',                                                         -- 6: after 5, no text
+        '    { go = { 1438, 55, 50 }, talk = 3514, text = "Talk to him" },',                     -- 7 fine: a goal there
+        '    { go = { 1438, 50, 50 }, when = { done = 999999 }, text = "Back to the tree" },', -- 8 never applies
+        '    { go = { 1438, 50, 50 }, text = "Back to the tree" },',                             -- 9 fine: after 7
+        '} })',
+    }, "\n"))
+    local pipe = io.popen(shell(table.concat({ quote(lua), quote(tools .. "/check_guides.lua"), quote(T.combined),
+        quote(file) }, " ") .. " 2>&1"))
+    local report = pipe:read("*a")
+    pipe:close()
+    for _, line in ipairs({
+        "[ERROR] t-trips, step 5: the same go as step 3, right before it: merge the two steps",
+        "[ERROR] t-trips, step 5: the same go as step 4, right before it: merge the two steps",
+        "[ERROR] t-trips, step 6: the same go as step 5, right before it: merge the two steps",
+        "[WARNING] t-trips, step 6: go without text: say where the player goes, or what for",
+    }) do
+        T.ok(report:find(line, 1, true), "missing: " .. line .. "\n" .. report)
+    end
+    for _, step in ipairs({ 1, 2, 3, 4, 7, 8, 9 }) do
+        T.ok(not report:find(("t-trips, step %d:"):format(step), 1, true), "step " .. step .. " is fine\n" .. report)
+    end
+    remove(dir)
+end)
+
 -- 174 Look To The Stars needs a Bronze Tube (4371), sold by vendors: bought first, or the
 -- turn-in applies only with the item, or the player is stuck.
 T.test("a turn-in that needs a carried item: bought first, or under when.item, else an error", function()

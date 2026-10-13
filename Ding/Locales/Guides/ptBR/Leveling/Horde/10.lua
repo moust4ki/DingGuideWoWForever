@@ -19,6 +19,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h10-ashenvale", {
         "Em breve você vai domar um ajudante temporário. Aqui você obtém Garra (Grau 4).",
     ["Flight master at Splintertree Post"] =
         "Mestre de voo do Posto Machadada",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Dome uma fera aqui para aprender o próximo grau de Garra",
     ["Tame any Elder Ashenvale Bear with Tame Beast."] =
         "Dome qualquer Urso Ancião do Vale Gris com Domar Fera.",
     ["Get your companion back from the stable master."] =

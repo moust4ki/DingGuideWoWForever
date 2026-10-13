@@ -95,7 +95,6 @@ Ding.RegisterGuide({
         { accept = 485, useitem = 8704, when = { item = 8704 } }, -- level 48
         { go = { 1425, 35.86, 64.24 }, when = { log = 485 }, text = "Get out of Shadra'Alor" }, -- level 48
         { turnin = 485, when = { log = 485 } }, -- level 48
-        { go = { 1425, 35.86, 64.24 }, when = { done = 485 }, text = "Get out of Shadra'Alor" }, -- level 48
         { go = { 1425, 35.86, 64.24 }, text = "Get out of Shadra'Alor" }, -- level 48
         { go = { 1425, 72.45, 66.04 }, text = "Take the road that circles the peak, then descend the trail" }, -- level 48
         { turnin = 7843, when = { log = 7843 }, -- level 48

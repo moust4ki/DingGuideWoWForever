@@ -33,6 +33,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a13-stonetalon-mountains-and-ash
         "Deja tu mascota con el maestro de establos.",
     ["You will tame a short-term pet shortly. You pick up Claw (Rank 4) here."] =
         "Pronto domesticarás una mascota temporal. Aquí consigues Garra (Rango 4).",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Domestica aquí una bestia para aprender el siguiente rango de Garra",
     ["Tame any Elder Ashenvale Bear with Tame Beast."] =
         "Domestica cualquier Elder Ashenvale Bear con Domesticar bestia.",
     ["Get your companion back from the stable master."] =

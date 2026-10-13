@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a42-winterspring", {
         "Cuna del Invierno: Vista Eterna, en el centro de la zona.",
     ["You will tame a short-term pet shortly. Pick up Claw (Rank 8) for your pet."] =
         "Pronto domesticarás una mascota temporal. Consigue Garra (Rango 8) para tu mascota.",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Domestica aquí una bestia para aprender el siguiente rango de Garra",
     ["Tame a Winterspring Screecher with the Tame Beast spell. Hunt the white owls."] =
         "Domestica un Winterspring Screecher con el hechizo Domesticar bestia. Caza a los búhos blancos.",
     ["Get your companion back from the stable master."] =
@@ -31,6 +33,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a42-winterspring", {
         "Usa el objeto sobre Legacki.",
     ["Fly to Moonglade"] =
         "Vuela al Claro de la Luna",
+    ["Head indoors"] =
+        "Ve al interior",
     ["The NPC is indoors. Wait for the talking to finish"] =
         "El PNJ está dentro. Espera a que termine la conversación",
     ["The NPC is indoors, on the central storey."] =

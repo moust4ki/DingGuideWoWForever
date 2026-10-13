@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a01-human-starter", {
         "인간 시작 (1-13)",
     ["Elwynn Forest: Northshire Abbey, where every human starts. This frees room in your bags. You receive one further along the route."] =
         "엘윈 숲: 노스샤이어 수도원은 모든 인간이 시작하는 곳입니다. 가방 공간을 확보할 수 있습니다. 경로를 더 진행하면 하나를 받습니다.",
+    ["Loot the beasts you kill on the way here"] =
+        "여기로 오면서 처치한 야수의 전리품을 챙기세요",
     ["Pick up anything that sells for 10 copper or more. You'll level faster with this."] =
         "판매가가 10코퍼 이상인 것은 모두 주우세요. 이렇게 하면 레벨업이 더 빨라집니다.",
     ["The NPC is outdoors, right beside the structure."] =
@@ -47,6 +49,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a01-human-starter", {
         "NPC는 건물 안 한 층 위에 있습니다.",
     ["Heal Guard Roberts using Lesser Heal (Rank 2). Buff Guard Roberts with Power Word: Fortitude."] =
         "하급 치유 (2 레벨)로 경비병 로버트를 치유하세요. 경비병 로버트에게 신의 권능: 인내를 걸어 주세요.",
+    ["Learn First Aid from the trainer"] =
+        "상급자에게서 응급치료를 배우세요",
     ["The NPC is indoors, one floor up. Do it only if you can."] =
         "NPC는 건물 안 한 층 위에 있습니다. 가능할 때만 하세요.",
     ["Go into the mine"] =
@@ -85,6 +89,16 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a01-human-starter", {
         "감시의 언덕으로 날아가세요",
     ["Fly to Stormwind City"] =
         "스톰윈드로 날아가세요",
+    ["Learn Two-Handed Swords at the weapon master"] =
+        "무기 전문가에게서 양손 도검을 배우세요",
+    ["Learn Swords at the weapon master"] =
+        "무기 전문가에게서 한손 도검을 배우세요",
+    ["Learn Staves at the weapon master"] =
+        "무기 전문가에게서 지팡이를 배우세요",
+    ["Learn Swords and Daggers at the weapon master"] =
+        "무기 전문가에게서 한손 도검과 단검을 배우세요",
+    ["Learn Swords and Staves at the weapon master"] =
+        "무기 전문가에게서 한손 도검과 지팡이를 배우세요",
     ["Head indoors"] =
         "건물 안으로 들어가세요",
     ["Step onto the pink rune. Look within the tomb. The NPC waits on the lower level, indoors."] =
@@ -95,6 +109,10 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a01-human-starter", {
         "이 대상은 돌아다니므로 주변을 살펴보세요. NPC는 건물 안에 있습니다. 바로 전투가 시작되니 대비하세요.",
     ["This one roams, so scan the surrounding area. The NPC is indoors."] =
         "이 대상은 돌아다니므로 주변을 살펴보세요. NPC는 건물 안에 있습니다.",
+    ["Learn Blacksmithing from the trainer"] =
+        "상급자에게서 대장기술을 배우세요",
+    ["Learn Mining from the trainer"] =
+        "상급자에게서 채광을 배우세요",
     ["The NPC waits indoors, a floor above the entrance."] =
         "NPC는 건물 안, 입구보다 한 층 위에서 기다립니다.",
     ["Head down into the Deeprun Tram station"] =
@@ -107,6 +125,10 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a01-human-starter", {
         "깊은굴쥐에게 아이템을 사용하세요. 작은 회색 쥐를 찾으세요. 깊은굴 지하철의 아이언포지 쪽 승강장으로 가세요.",
     ["The NPC stands by the wall on the central platform. Head to the Deeprun Tram's Ironforge platform."] =
         "NPC는 가운데 승강장의 벽 옆에 서 있습니다. 깊은굴 지하철의 아이언포지 쪽 승강장으로 가세요.",
+    ["Learn Thrown at the weapon master"] =
+        "무기 전문가에게서 투척 무기를 배우세요",
+    ["Learn Two-Handed Maces at the weapon master"] =
+        "무기 전문가에게서 양손 둔기를 배우세요",
     ["Fly to Ironforge"] =
         "아이언포지로 날아가세요",
     ["Stay on the trail"] =
@@ -135,6 +157,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a01-human-starter", {
         "메네실 항구로 날아가세요",
     ["Your targets are within the cavern."] =
         "대상은 동굴 안에 있습니다.",
+    ["Learn Cooking from the trainer"] =
+        "상급자에게서 요리를 배우세요",
     ["This one roams, so scan the surrounding area. Without this, one quest can't be picked up."] =
         "이 대상은 돌아다니므로 주변을 살펴보세요. 이것이 없으면 퀘스트 하나를 받을 수 없습니다.",
     ["The NPC is past the tunnel; stay on the road."] =

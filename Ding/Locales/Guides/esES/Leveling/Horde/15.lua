@@ -39,6 +39,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h15-desolace", {
         "El PNJ está dentro.",
     ["Fly to Shadowprey Village"] =
         "Vuela a la Aldea Cazasombras",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Domestica aquí una bestia para aprender el siguiente rango de Garra",
     ["Tame a Scorpashi Lasher with Tame Beast."] =
         "Domestica un Scorpashi Lasher con Domesticar bestia.",
     ["Get your companion back from the stable master."] =

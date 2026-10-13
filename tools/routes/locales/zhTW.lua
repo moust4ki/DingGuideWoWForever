@@ -3179,4 +3179,65 @@ return {
         "在戶外使用並站在上面不要移動：每睡一分鐘增加1%經驗，最多3%。",
     ["Try the sleeping bag"] =
         "試試睡袋",
+    -- Ding - Leveling: what each trip is for (trainers, weapon masters, pets)
+    ["Loot the beasts you kill on the way here"] =
+        "拾取你在來路上擊殺的野獸",
+    ["Learn First Aid from the trainer"] =
+        "向訓練師學習急救",
+    ["Learn Blacksmithing from the trainer"] =
+        "向訓練師學習鍛造",
+    ["Learn Mining from the trainer"] =
+        "向訓練師學習採礦",
+    ["Learn Cooking from the trainer"] =
+        "向訓練師學習烹飪",
+    ["Learn Herbalism from the trainer"] =
+        "向訓練師學習草藥學",
+    ["Learn Thrown at the weapon master"] =
+        "向武器大師學習投擲武器",
+    ["Learn Staves at the weapon master"] =
+        "向武器大師學習法杖",
+    ["Learn Swords at the weapon master"] =
+        "向武器大師學習單手劍",
+    ["Learn Maces at the weapon master"] =
+        "向武器大師學習單手錘",
+    ["Learn Bows at the weapon master"] =
+        "向武器大師學習弓",
+    ["Learn Guns at the weapon master"] =
+        "向武器大師學習槍械",
+    ["Learn Two-Handed Swords at the weapon master"] =
+        "向武器大師學習雙手劍",
+    ["Learn Two-Handed Axes at the weapon master"] =
+        "向武器大師學習雙手斧",
+    ["Learn Two-Handed Maces at the weapon master"] =
+        "向武器大師學習雙手錘",
+    ["Learn Swords and Daggers at the weapon master"] =
+        "向武器大師學習單手劍和匕首",
+    ["Learn Swords and Staves at the weapon master"] =
+        "向武器大師學習單手劍和法杖",
+    ["Learn Bows and Staves at the weapon master"] =
+        "向武器大師學習弓和法杖",
+    ["Learn Guns and Maces at the weapon master"] =
+        "向武器大師學習槍械和單手錘",
+    ["Learn Guns and Two-Handed Axes at the weapon master"] =
+        "向武器大師學習槍械和雙手斧",
+    ["Learn Two-Handed Swords and Staves at the weapon master"] =
+        "向武器大師學習雙手劍和法杖",
+    ["Learn Two-Handed Axes and Two-Handed Maces at the weapon master"] =
+        "向武器大師學習雙手斧和雙手錘",
+    ["Learn Two-Handed Maces and Staves at the weapon master"] =
+        "向武器大師學習雙手錘和法杖",
+    ["Learn Crossbows and Two-Handed Swords at the weapon master"] =
+        "向武器大師學習弩和雙手劍",
+    ["Learn Guns, Two-Handed Axes and Two-Handed Maces at the weapon master"] =
+        "向武器大師學習槍械、雙手斧和雙手錘",
+    ["Tame a pet here"] =
+        "在這裡馴服一隻寵物",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "在這裡馴服一隻野獸，學會下一級爪擊",
+    ["Head to the big cage"] =
+        "前往大籠子",
+    ["Visit the caged quilboar"] =
+        "拜訪籠中的野豬人",
+    ["Go to the corrupted moonwell"] =
+        "前往被汙染的月井",
 }

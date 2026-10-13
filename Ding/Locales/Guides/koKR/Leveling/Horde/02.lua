@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h02-tauren-starter", {
         "타우렌 시작 (1-13)",
     ["Mulgore: Camp Narache, where tauren start. This frees room in your bags. You receive one further along the route."] =
         "멀고어: 나라체 야영지는 타우렌이 시작하는 곳입니다. 가방 공간을 확보할 수 있습니다. 경로를 더 진행하면 하나를 받습니다.",
+    ["Loot the beasts you kill on the way here"] =
+        "여기로 오면서 처치한 야수의 전리품을 챙기세요",
     ["Pick up anything that sells for 10 copper or more. You'll level faster with this."] =
         "판매가가 10코퍼 이상인 것은 모두 주우세요. 이렇게 하면 레벨업이 더 빨라집니다.",
     ["The NPC is indoors."] =
@@ -47,6 +49,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h02-tauren-starter", {
         "대상은 늑대입니다.",
     ["With the coming hand-ins, this gets you to level 9."] =
         "이어지는 퀘스트 완료와 함께 9레벨이 됩니다.",
+    ["Learn First Aid from the trainer"] =
+        "상급자에게서 응급치료를 배우세요",
     ["Fight the dwarves."] =
         "드워프와 싸우세요.",
     ["Kill harpies."] =
@@ -69,6 +73,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h02-tauren-starter", {
         "긴발톱 초원늑대를 대상으로 사용하세요. 대상은 늑대입니다.",
     ["Use the item on any Swoop. Hunt the black-feathered birds."] =
         "아무 검독수리에게나 아이템을 사용하세요. 검은 깃털의 새를 사냥하세요.",
+    ["Tame a pet here"] =
+        "여기서 소환수를 길들이세요",
     ["Choose an animal of level 9-10 and make it your pet with the Tame Beast spell. This pet is temporary; a lasting one comes shortly."] =
         "9-10레벨 동물을 골라 야수 길들이기 주문으로 소환수로 삼으세요. 이 소환수는 임시입니다. 곧 계속 데리고 다닐 소환수를 얻습니다.",
     ["Flight master at Camp Taurajo"] =
@@ -79,6 +85,14 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h02-tauren-starter", {
         "길을 벗어나지 말고 주의하세요. 이 지역의 적은 당신보다 레벨이 높습니다.",
     ["Flight master at the Crossroads"] =
         "크로스로드 비행 조련사",
+    ["Learn Blacksmithing from the trainer"] =
+        "상급자에게서 대장기술을 배우세요",
+    ["Learn Mining from the trainer"] =
+        "상급자에게서 채광을 배우세요",
+    ["Learn Staves at the weapon master"] =
+        "무기 전문가에게서 지팡이를 배우세요",
+    ["Learn Two-Handed Maces at the weapon master"] =
+        "무기 전문가에게서 양손 둔기를 배우세요",
     ["This is food for your pet."] =
         "소환수에게 줄 먹이입니다.",
     ["The NPC is indoors, one floor up."] =
@@ -137,6 +151,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h02-tauren-starter", {
         "이 NPC는 아래쪽 어둠의 틈에 있습니다.",
     ["This clears the quest's time limit."] =
         "이렇게 하면 퀘스트 제한 시간이 사라집니다.",
+    ["Learn Bows at the weapon master"] =
+        "무기 전문가에게서 활을 배우세요",
     ["The foes here are scorpions."] =
         "여기의 적은 전갈입니다.",
     ["The quest giver stands among the boulders."] =

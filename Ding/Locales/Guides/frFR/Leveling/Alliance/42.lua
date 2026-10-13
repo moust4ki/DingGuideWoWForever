@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a42-winterspring", {
         "Berceau-de-l'Hiver : Long-guet, au centre de la zone.",
     ["You will tame a short-term pet shortly. Pick up Claw (Rank 8) for your pet."] =
         "Tu vas bientôt apprivoiser un familier temporaire. Obtiens Griffe (Rang 8) pour ton familier.",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Apprivoise ici une bête pour apprendre le rang suivant de Griffe",
     ["Tame a Winterspring Screecher with the Tame Beast spell. Hunt the white owls."] =
         "Apprivoise un Winterspring Screecher avec le sort Apprivoiser une bête. Chasse les chouettes blanches.",
     ["Get your companion back from the stable master."] =
@@ -31,6 +33,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a42-winterspring", {
         "Utilise l'objet sur Legacki.",
     ["Fly to Moonglade"] =
         "Vole jusqu'à Reflet-de-Lune",
+    ["Head indoors"] =
+        "Va à l'intérieur",
     ["The NPC is indoors. Wait for the talking to finish"] =
         "Le PNJ est à l'intérieur. Attends la fin de la discussion",
     ["The NPC is indoors, on the central storey."] =

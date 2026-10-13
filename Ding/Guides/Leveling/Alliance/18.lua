@@ -14,7 +14,7 @@ Ding.RegisterGuide({
           note = "Desolace: Nijel's Point, in the north-east corner, is the Alliance hub." },
         { talk = 11104, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 35
           note = "You will tame a short-term pet shortly. Here your pet picks up Claw (Rank 5)." },
-        { go = { 1443, 61.85, 44.37 }, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 35
+        { go = { 1443, 61.85, 44.37 }, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, text = "Tame a beast here to learn the next rank of Claw", -- level 35
           note = "Tame a Scorpashi Lasher with Tame Beast." },
         { go = { 1443, 67.44, 15.7 }, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, text = "Head uphill into Nijel's Point" }, -- level 35
         { talk = 11104, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, text = "Get your companion back from the stable master." }, -- level 35

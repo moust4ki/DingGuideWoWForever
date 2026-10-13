@@ -21,6 +21,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a09-ashenvale-and-stonetalon-mou
         "Du zähmst gleich ein Tier für kurze Zeit. Hol dir Klaue (Rang 3) für dein Tier.",
     ["Let the conversation play out. The NPC is indoors."] =
         "Lass das Gespräch zu Ende laufen. Der NPC ist drinnen.",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Zähme hier ein Tier, um den nächsten Rang von Klaue zu lernen",
     ["Tame an Ashenvale Bear with Tame Beast. Track down a chestnut-furred bear."] =
         "Zähme mit Wildtier zähmen einen Ashenvale Bear. Such einen Bären mit kastanienbraunem Fell.",
     ["Get your companion back from the stable master."] =

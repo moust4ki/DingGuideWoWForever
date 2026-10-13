@@ -109,6 +109,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h11-thousand-needles", {
         "Dieses Ziel wandert umher, also such die Umgebung ab. Dieser NPC ist unten in der Kluft der Schatten.",
     ["The NPC stands on the highest level of this structure."] =
         "Der NPC steht auf der obersten Ebene dieses Gebäudes.",
+    ["Learn Two-Handed Axes at the weapon master"] =
+        "Lerne Zweihandäxte beim Waffenmeister",
     ["This one roams, so scan the surrounding area. The NPC is indoors."] =
         "Dieses Ziel wandert umher, also such die Umgebung ab. Der NPC ist drinnen.",
 })

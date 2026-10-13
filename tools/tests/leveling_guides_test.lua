@@ -187,6 +187,58 @@ T.test("Skyborne: a start per side, then the faction's Leveling route", function
     T.ok(found, "Westfall: accept 64 for the Skyborne too")
 end)
 
+-- A trip says where it goes or what for (without a text, the window only shows coordinates),
+-- and no character gets the same trip twice in a row (steps under conditions:
+-- tools/check_guides.lua replays them).
+T.test("every trip has a text, and none comes right after the same trip", function()
+    local X = dofile(tools .. "/questiedb_export.lua")
+    local ACTIONS = { "accept", "turnin", "complete", "level", "sethearth", "hearth", "deathskip", "train", "fly",
+        "vendor", "repair", "kill", "collect", "talk", "gossip", "useitem", "buy", "object", "equip", "destroy", "bank",
+        "unbank", "abandon", "patrol" }
+    local function onlyTravels(step)
+        if not step.go then return false end
+        for _, k in ipairs(ACTIONS) do
+            if step[k] ~= nil then return false end
+        end
+        return true
+    end
+    local function has(list, v)
+        if not list then return true end
+        for _, x in ipairs(list) do if x == v then return true end end
+        return false
+    end
+    for _, f in ipairs(FACTIONS) do
+        local races = {}
+        for _, r in ipairs(X.FACTION_RACES[f.route.faction]) do races[#races + 1] = r end
+        for r in pairs(f.route.entries or {}) do races[#races + 1] = r end
+        for _, g in ipairs(f.guides) do
+            local def = g.def
+            for i, step in ipairs(def.steps) do
+                if step.go then
+                    T.ok(type(step.text) == "string" and step.text ~= "", ("%s, step %d: go without text"):format(def.id, i))
+                end
+            end
+            for _, race in ipairs(races) do
+                for _, class in ipairs(X.FACTION_CLASSES[f.route.faction]) do
+                    local previous
+                    for i, step in ipairs(def.steps) do
+                        if has(def.races, race) and has(step.races, race) and has(step.classes, class) then
+                            if previous and not previous.step.when and not step.when and onlyTravels(previous.step)
+                                and onlyTravels(step) and previous.step.go[1] == step.go[1]
+                                and math.abs(previous.step.go[2] - step.go[2]) <= 0.1
+                                and math.abs(previous.step.go[3] - step.go[3]) <= 0.1 then
+                                T.ok(false, ("%s, step %d (%s %s): the same trip as step %d"):format(def.id, i, race, class,
+                                    previous.index))
+                            end
+                            previous = { step = step, index = i }
+                        end
+                    end
+                end
+            end
+        end
+    end
+end)
+
 T.test("the zone guides keep route texts off the steps behind an option", function()
     -- (Off, the option takes its whole step away: a zone intro there would be lost.)
     for _, name in ipairs({ "human", "dwarf_gnome", "nightelf", "alliance", "orc_troll", "tauren", "undead", "horde" }) do

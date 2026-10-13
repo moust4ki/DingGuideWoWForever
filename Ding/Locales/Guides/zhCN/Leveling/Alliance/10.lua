@@ -35,6 +35,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a10-wetlands", {
         "目标在陵墓里和周围都有。",
     ["Keep it; an upcoming task asks for it. The NPC is indoors."] =
         "留着它；接下来的任务需要它。NPC在室内。",
+    ["Learn Guns at the weapon master"] =
+        "向武器大师学习枪械",
     ["Head down into the Deeprun Tram station"] =
         "下到矿道地铁站",
     ["Pass through the portal to teleport."] =

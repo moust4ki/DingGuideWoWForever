@@ -109,6 +109,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h11-thousand-needles", {
         "Este se desloca, então procure pelos arredores. Este NPC fica lá embaixo, no Antro das Sombras.",
     ["The NPC stands on the highest level of this structure."] =
         "O NPC fica no nível mais alto desta construção.",
+    ["Learn Two-Handed Axes at the weapon master"] =
+        "Aprenda Machados de Duas Mãos com o mestre de armas",
     ["This one roams, so scan the surrounding area. The NPC is indoors."] =
         "Este se desloca, então procure pelos arredores. O NPC está lá dentro.",
 })

@@ -3177,4 +3177,65 @@ return {
         "Utilise-le en extérieur et reste dessus sans bouger : chaque minute de sommeil ajoute 1 % d'expérience, jusqu'à 3 %.",
     ["Try the sleeping bag"] =
         "Essaie le sac de couchage",
+    -- Ding - Leveling: what each trip is for (trainers, weapon masters, pets)
+    ["Loot the beasts you kill on the way here"] =
+        "Fouille les bêtes que tu tues en chemin",
+    ["Learn First Aid from the trainer"] =
+        "Apprends le Secourisme auprès de l'entraîneur",
+    ["Learn Blacksmithing from the trainer"] =
+        "Apprends la Forge auprès de l'entraîneur",
+    ["Learn Mining from the trainer"] =
+        "Apprends le Minage auprès de l'entraîneur",
+    ["Learn Cooking from the trainer"] =
+        "Apprends la Cuisine auprès de l'entraîneur",
+    ["Learn Herbalism from the trainer"] =
+        "Apprends l'Herboristerie auprès de l'entraîneur",
+    ["Learn Thrown at the weapon master"] =
+        "Apprends les Armes de jet auprès du maître d'armes",
+    ["Learn Staves at the weapon master"] =
+        "Apprends les Bâtons auprès du maître d'armes",
+    ["Learn Swords at the weapon master"] =
+        "Apprends les Épées auprès du maître d'armes",
+    ["Learn Maces at the weapon master"] =
+        "Apprends les Masses auprès du maître d'armes",
+    ["Learn Bows at the weapon master"] =
+        "Apprends les Arcs auprès du maître d'armes",
+    ["Learn Guns at the weapon master"] =
+        "Apprends les Armes à feu auprès du maître d'armes",
+    ["Learn Two-Handed Swords at the weapon master"] =
+        "Apprends les Épées à deux mains auprès du maître d'armes",
+    ["Learn Two-Handed Axes at the weapon master"] =
+        "Apprends les Haches à deux mains auprès du maître d'armes",
+    ["Learn Two-Handed Maces at the weapon master"] =
+        "Apprends les Masses à deux mains auprès du maître d'armes",
+    ["Learn Swords and Daggers at the weapon master"] =
+        "Apprends les Épées et les Dagues auprès du maître d'armes",
+    ["Learn Swords and Staves at the weapon master"] =
+        "Apprends les Épées et les Bâtons auprès du maître d'armes",
+    ["Learn Bows and Staves at the weapon master"] =
+        "Apprends les Arcs et les Bâtons auprès du maître d'armes",
+    ["Learn Guns and Maces at the weapon master"] =
+        "Apprends les Armes à feu et les Masses auprès du maître d'armes",
+    ["Learn Guns and Two-Handed Axes at the weapon master"] =
+        "Apprends les Armes à feu et les Haches à deux mains auprès du maître d'armes",
+    ["Learn Two-Handed Swords and Staves at the weapon master"] =
+        "Apprends les Épées à deux mains et les Bâtons auprès du maître d'armes",
+    ["Learn Two-Handed Axes and Two-Handed Maces at the weapon master"] =
+        "Apprends les Haches à deux mains et les Masses à deux mains auprès du maître d'armes",
+    ["Learn Two-Handed Maces and Staves at the weapon master"] =
+        "Apprends les Masses à deux mains et les Bâtons auprès du maître d'armes",
+    ["Learn Crossbows and Two-Handed Swords at the weapon master"] =
+        "Apprends les Arbalètes et les Épées à deux mains auprès du maître d'armes",
+    ["Learn Guns, Two-Handed Axes and Two-Handed Maces at the weapon master"] =
+        "Apprends les Armes à feu, les Haches à deux mains et les Masses à deux mains auprès du maître d'armes",
+    ["Tame a pet here"] =
+        "Apprivoise un familier ici",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Apprivoise ici une bête pour apprendre le rang suivant de Griffe",
+    ["Head to the big cage"] =
+        "Rends-toi à la grande cage",
+    ["Visit the caged quilboar"] =
+        "Va voir le huran en cage",
+    ["Go to the corrupted moonwell"] =
+        "Va au puits de lune corrompu",
 }

@@ -53,6 +53,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h05-the-barrens-and-stonetalon-m
         "이 NPC는 아래쪽 어둠의 틈에 있습니다.",
     ["The NPC stands on the highest level of this structure."] =
         "NPC는 이 건물의 꼭대기 층에 서 있습니다.",
+    ["Learn Staves at the weapon master"] =
+        "무기 전문가에게서 지팡이를 배우세요",
     ["Steal from Gamon using Pick Pocket. The NPC is indoors."] =
         "소매치기로 가몬의 물건을 훔치세요. NPC는 건물 안에 있습니다.",
     ["Use it on Tazan's Satchel. The item is already in your inventory."] =
@@ -109,6 +111,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h05-the-barrens-and-stonetalon-m
         "대상은 거북입니다. 대상은 물속과 물가를 따라 있습니다.",
     ["The target is a raptor. It shows up a short way off."] =
         "대상은 랩터입니다. 조금 떨어진 곳에 나타납니다.",
+    ["Visit the caged quilboar"] =
+        "우리에 갇힌 가시멧돼지를 찾아가세요",
     ["Trade your Blood Shards to gain buffs. Trade any spare Blood Shards to him during your Barrens questing. Ask him for the Spirit of the Wind buff"] =
         "혈석 파편을 교환해 강화 효과를 받으세요. 불모의 땅 퀘스트 중에 남는 혈석 파편은 그와 교환하세요. 그에게 Spirit of the Wind 강화 효과를 받으세요",
     ["The quest giver waits on the hilltop."] =
@@ -117,6 +121,12 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h05-the-barrens-and-stonetalon-m
         "날개 달린 뱀을 사냥하세요.",
     ["Take the lift up into Thunder Bluff"] =
         "승강기를 타고 썬더 블러프로 올라가세요",
+    ["Learn Two-Handed Maces and Staves at the weapon master"] =
+        "무기 전문가에게서 양손 둔기와 지팡이를 배우세요",
+    ["Learn Guns at the weapon master"] =
+        "무기 전문가에게서 총을 배우세요",
+    ["Learn Maces at the weapon master"] =
+        "무기 전문가에게서 한손 둔기를 배우세요",
     ["Fly to Thunder Bluff"] =
         "썬더 블러프로 날아가세요",
     ["Go into the cavern"] =

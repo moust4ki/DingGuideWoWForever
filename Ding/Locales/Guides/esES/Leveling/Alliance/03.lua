@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a03-night-elf-starter", {
         "Inicio elfo de la noche (1-13)",
     ["Teldrassil: Shadowglen, where night elves start. This frees room in your bags. You receive one further along the route."] =
         "Teldrassil: Cañada Umbría, donde empiezan los elfos de la noche. Así liberas espacio en tus bolsas. Recibirás uno más adelante en la ruta.",
+    ["Loot the beasts you kill on the way here"] =
+        "Saquea las bestias que mates de camino aquí",
     ["Pick up anything that sells for 10 copper or more."] =
         "Recoge todo lo que se venda por 10 de cobre o más.",
     ["The NPC is indoors at street level."] =
@@ -45,12 +47,16 @@ Ding.RegisterGuideTranslation("esES", "leveling-a03-night-elf-starter", {
         "Sube al nivel superior de la cueva.",
     ["The NPC stands at the summit of the great tree. The NPC stands in an adjoining chamber."] =
         "El PNJ está en la cima del gran árbol. El PNJ está en una sala contigua.",
+    ["Learn First Aid from the trainer"] =
+        "Aprende Primeros auxilios con el instructor",
     ["The NPC is indoors at street level. Do it only if you can."] =
         "El PNJ está dentro, a pie de calle. Hazlo solo si puedes.",
     ["The NPC waits on the tower's highest floor."] =
         "El PNJ espera en el piso más alto de la torre.",
     ["Heal Sentinel Shaya with Lesser Heal (Rank 2). Buff Sentinel Shaya with Power Word: Fortitude."] =
         "Cura a la Centinela Shaya con Sanación inferior (Rango 2). Lanza Palabra de poder: entereza sobre la Centinela Shaya.",
+    ["Learn Herbalism from the trainer"] =
+        "Aprende Herboristería con el instructor",
     ["The NPC is indoors. Pick up 5 Earthroot while questing. A class quest further on requires this."] =
         "El PNJ está dentro. Recoge 5 Raíces terrestres mientras haces misiones. Lo necesitas para una misión de clase más adelante.",
     ["Let the conversation play out. This one roams, so scan the surrounding area."] =
@@ -63,6 +69,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a03-night-elf-starter", {
         "Los objetivos son arañas de cuerpo verde.",
     ["Together with the next turn-ins, this brings you to level 8."] =
         "Junto con las próximas entregas, esto te lleva a nivel 8.",
+    ["Learn Cooking from the trainer"] =
+        "Aprende Cocina con el instructor",
     ["Without this, one quest can't be picked up."] =
         "Sin esto, no podrás aceptar una misión.",
     ["Look for little brown pinecones giving off green smoke. Mostly found beside tree trunks."] =
@@ -105,6 +113,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a03-night-elf-starter", {
         "Entra en la cueva del árbol hueco",
     ["Your targets are within the cavern."] =
         "Tus objetivos están dentro de la cueva.",
+    ["Tame a pet here"] =
+        "Domestica una mascota aquí",
     ["The target is a big gray spider. This one roams, so scan the surrounding area. The targets are spread over several spots."] =
         "El objetivo es una araña gris grande. Este deambula, así que revisa los alrededores. Los objetivos están repartidos en varios puntos.",
     ["Target Sethir the Ancient and use Pickpocket. The target is a violet satyr. The NPC waits here, then strolls out onto the big branch close by."] =
@@ -117,12 +127,18 @@ Ding.RegisterGuideTranslation("esES", "leveling-a03-night-elf-starter", {
         "Junto con las próximas entregas, esto te lleva a nivel 11.",
     ["Circle the mountain, then climb the trail"] =
         "Rodea la montaña y sube por el sendero",
+    ["Learn Staves at the weapon master"] =
+        "Aprende Bastones con el maestro de armas",
     ["The NPC stands on the highest level of this structure."] =
         "El PNJ está en el nivel más alto de esta estructura.",
     ["Flight master in Auberdine"] =
         "Maestro de vuelo de Auberdine",
     ["Your pet will need this food shortly."] =
         "Tu mascota necesitará esta comida pronto.",
+    ["Learn Blacksmithing from the trainer"] =
+        "Aprende Herrería con el instructor",
+    ["Learn Mining from the trainer"] =
+        "Aprende Minería con el instructor",
     ["Hunt the crabs. You'll find extra ones swimming nearby as well."] =
         "Caza los cangrejos. También encontrarás más nadando cerca.",
     ["Use the item on any Rabid Thistle Bear. The targets are bears with grey fur. Keep from damaging the creature."] =
@@ -133,6 +149,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a03-night-elf-starter", {
         "Tu objetivo está en una pequeña cueva.",
     ["The spot is on the lower floor of the hollow tree."] =
         "El punto está en el piso inferior del árbol hueco.",
+    ["Learn Thrown at the weapon master"] =
+        "Aprende Armas arrojadizas con el maestro de armas",
     ["The targets are imps. Avoid slaying the satyrs if you can. You'll need this for the following quest."] =
         "Los objetivos son diablillos. Evita matar a los sátiros si puedes. Lo necesitarás para la siguiente misión.",
     ["Hunt down satyrs."] =
@@ -155,6 +173,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a03-night-elf-starter", {
         "Vuela a Thelsamar",
     ["The NPC patrols a long route; look along it."] =
         "El PNJ patrulla una ruta larga; búscalo a lo largo de ella.",
+    ["Learn Two-Handed Axes and Two-Handed Maces at the weapon master"] =
+        "Aprende Hachas de dos manos y Mazas de dos manos con el maestro de armas",
     ["Head down into the Deeprun Tram station"] =
         "Baja a la estación del Tranvía Subterráneo",
     ["Pass through the portal to teleport."] =
@@ -169,6 +189,10 @@ Ding.RegisterGuideTranslation("esES", "leveling-a03-night-elf-starter", {
         "Este deambula, así que revisa los alrededores. El PNJ está dentro. Prepárate para luchar de inmediato.",
     ["This one roams, so scan the surrounding area. The NPC is indoors."] =
         "Este deambula, así que revisa los alrededores. El PNJ está dentro.",
+    ["Learn Two-Handed Swords at the weapon master"] =
+        "Aprende Espadas de dos manos con el maestro de armas",
+    ["Learn Swords at the weapon master"] =
+        "Aprende Espadas con el maestro de armas",
     ["Head up the incline"] =
         "Sube la cuesta",
     ["Flight master in Stormwind"] =

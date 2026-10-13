@@ -29,4 +29,6 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a04-westfall", {
         "Flieg zur Mondlichtung",
     ["Flight master at Rut'theran Village"] =
         "Flugmeister in Rut'theran",
+    ["Learn Bows and Staves at the weapon master"] =
+        "Lerne Bogen und Stäbe beim Waffenmeister",
 })

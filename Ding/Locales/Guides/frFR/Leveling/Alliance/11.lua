@@ -87,4 +87,12 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a11-duskwood-and-redridge-mounta
         "La cible est le cinquième boss du donjon.",
     ["You'll find them all over the instance."] =
         "Tu en trouveras partout dans l'instance.",
+    ["Learn Guns, Two-Handed Axes and Two-Handed Maces at the weapon master"] =
+        "Apprends les Armes à feu, les Haches à deux mains et les Masses à deux mains auprès du maître d'armes",
+    ["Learn Two-Handed Axes at the weapon master"] =
+        "Apprends les Haches à deux mains auprès du maître d'armes",
+    ["Learn Guns and Two-Handed Axes at the weapon master"] =
+        "Apprends les Armes à feu et les Haches à deux mains auprès du maître d'armes",
+    ["Learn Guns and Maces at the weapon master"] =
+        "Apprends les Armes à feu et les Masses auprès du maître d'armes",
 })

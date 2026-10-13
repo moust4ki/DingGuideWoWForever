@@ -5,8 +5,12 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h12-hillsbrad-foothills", {
         "Contraforte de Eira dos Montes (30-32)",
     ["Undercity first, then Hillsbrad Foothills: Tarren Mill."] =
         "Cidade Baixa primeiro, depois o Contraforte de Eira dos Montes: Serraria Tarren.",
+    ["Learn Cooking from the trainer"] =
+        "Aprenda Culinária com o instrutor",
     ["You'll need this to pick up an upcoming quest."] =
         "Você vai precisar disto para pegar uma missão mais adiante.",
+    ["Learn Crossbows and Two-Handed Swords at the weapon master"] =
+        "Aprenda Bestas e Espadas de Duas Mãos com o mestre de armas",
     ["Leap up and take the trail behind that tree"] =
         "Pule para cima e pegue a trilha atrás daquela árvore",
     ["Wait for the talking to finish"] =

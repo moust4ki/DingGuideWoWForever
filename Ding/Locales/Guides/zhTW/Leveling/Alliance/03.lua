@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a03-night-elf-starter", {
         "夜精靈起始區 (1-13)",
     ["Teldrassil: Shadowglen, where night elves start. This frees room in your bags. You receive one further along the route."] =
         "泰達希爾：幽影谷，夜精靈的起點。這能騰出背包空間。路線後面會拿到一個。",
+    ["Loot the beasts you kill on the way here"] =
+        "拾取你在來路上擊殺的野獸",
     ["Pick up anything that sells for 10 copper or more."] =
         "拾取所有能賣10銅幣以上的物品。",
     ["The NPC is indoors at street level."] =
@@ -45,12 +47,16 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a03-night-elf-starter", {
         "爬到洞穴的上層。",
     ["The NPC stands at the summit of the great tree. The NPC stands in an adjoining chamber."] =
         "NPC站在大樹的頂端。NPC站在隔壁的房間裡。",
+    ["Learn First Aid from the trainer"] =
+        "向訓練師學習急救",
     ["The NPC is indoors at street level. Do it only if you can."] =
         "NPC在室內，位於地面層。能做到才做。",
     ["The NPC waits on the tower's highest floor."] =
         "NPC在塔的最頂層。",
     ["Heal Sentinel Shaya with Lesser Heal (Rank 2). Buff Sentinel Shaya with Power Word: Fortitude."] =
         "用次級治療術（等級2）治療哨兵莎恩雅。對哨兵莎恩雅施放真言術：韌。",
+    ["Learn Herbalism from the trainer"] =
+        "向訓練師學習草藥學",
     ["The NPC is indoors. Pick up 5 Earthroot while questing. A class quest further on requires this."] =
         "NPC在室內。做任務時採集5株地根草。後面的職業任務需要這個。",
     ["Let the conversation play out. This one roams, so scan the surrounding area."] =
@@ -63,6 +69,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a03-night-elf-starter", {
         "目標是綠色身體的蜘蛛。",
     ["Together with the next turn-ins, this brings you to level 8."] =
         "加上接下來的交任務，這會讓你升到8級。",
+    ["Learn Cooking from the trainer"] =
+        "向訓練師學習烹飪",
     ["Without this, one quest can't be picked up."] =
         "沒有這個就無法接其中一個任務。",
     ["Look for little brown pinecones giving off green smoke. Mostly found beside tree trunks."] =
@@ -105,6 +113,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a03-night-elf-starter", {
         "進入空心樹的洞穴",
     ["Your targets are within the cavern."] =
         "目標在洞穴裡。",
+    ["Tame a pet here"] =
+        "在這裡馴服一隻寵物",
     ["The target is a big gray spider. This one roams, so scan the surrounding area. The targets are spread over several spots."] =
         "目標是一隻灰色大蜘蛛。這個會四處走動，留意周圍一帶。目標分散在好幾個地點。",
     ["Target Sethir the Ancient and use Pickpocket. The target is a violet satyr. The NPC waits here, then strolls out onto the big branch close by."] =
@@ -117,12 +127,18 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a03-night-elf-starter", {
         "加上接下來的交任務，這會讓你升到11級。",
     ["Circle the mountain, then climb the trail"] =
         "繞過山，然後沿小路往上爬",
+    ["Learn Staves at the weapon master"] =
+        "向武器大師學習法杖",
     ["The NPC stands on the highest level of this structure."] =
         "NPC站在這座建築的最高層。",
     ["Flight master in Auberdine"] =
         "奧伯丁的飛行管理員",
     ["Your pet will need this food shortly."] =
         "你的寵物很快就需要這些食物。",
+    ["Learn Blacksmithing from the trainer"] =
+        "向訓練師學習鍛造",
+    ["Learn Mining from the trainer"] =
+        "向訓練師學習採礦",
     ["Hunt the crabs. You'll find extra ones swimming nearby as well."] =
         "獵殺螃蟹。附近水裡也有更多在游動。",
     ["Use the item on any Rabid Thistle Bear. The targets are bears with grey fur. Keep from damaging the creature."] =
@@ -133,6 +149,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a03-night-elf-starter", {
         "目標在一個小洞穴裡。",
     ["The spot is on the lower floor of the hollow tree."] =
         "位置在空心樹的下層。",
+    ["Learn Thrown at the weapon master"] =
+        "向武器大師學習投擲武器",
     ["The targets are imps. Avoid slaying the satyrs if you can. You'll need this for the following quest."] =
         "目標是小鬼。盡量不要殺死薩特。下一個任務會需要這個。",
     ["Hunt down satyrs."] =
@@ -155,6 +173,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a03-night-elf-starter", {
         "飛往塞爾薩瑪",
     ["The NPC patrols a long route; look along it."] =
         "NPC沿著一條很長的路線巡邏；沿路尋找。",
+    ["Learn Two-Handed Axes and Two-Handed Maces at the weapon master"] =
+        "向武器大師學習雙手斧和雙手錘",
     ["Head down into the Deeprun Tram station"] =
         "往下進入礦道地鐵車站",
     ["Pass through the portal to teleport."] =
@@ -169,6 +189,10 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a03-night-elf-starter", {
         "這個會四處走動，留意周圍一帶。NPC在室內。準備好立刻戰鬥。",
     ["This one roams, so scan the surrounding area. The NPC is indoors."] =
         "這個會四處走動，留意周圍一帶。NPC在室內。",
+    ["Learn Two-Handed Swords at the weapon master"] =
+        "向武器大師學習雙手劍",
+    ["Learn Swords at the weapon master"] =
+        "向武器大師學習單手劍",
     ["Head up the incline"] =
         "走上斜坡",
     ["Flight master in Stormwind"] =

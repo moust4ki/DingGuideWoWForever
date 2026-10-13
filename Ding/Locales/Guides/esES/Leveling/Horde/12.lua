@@ -5,8 +5,12 @@ Ding.RegisterGuideTranslation("esES", "leveling-h12-hillsbrad-foothills", {
         "Laderas de Trabalomas (30-32)",
     ["Undercity first, then Hillsbrad Foothills: Tarren Mill."] =
         "Primero Entrañas y luego las Laderas de Trabalomas: Molino Tarren.",
+    ["Learn Cooking from the trainer"] =
+        "Aprende Cocina con el instructor",
     ["You'll need this to pick up an upcoming quest."] =
         "Lo necesitarás para aceptar una misión más adelante.",
+    ["Learn Crossbows and Two-Handed Swords at the weapon master"] =
+        "Aprende Ballestas y Espadas de dos manos con el maestro de armas",
     ["Leap up and take the trail behind that tree"] =
         "Salta arriba y toma el sendero detrás de ese árbol",
     ["Wait for the talking to finish"] =

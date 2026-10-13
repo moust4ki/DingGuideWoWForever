@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h02-tauren-starter", {
         "Départ tauren (1-13)",
     ["Mulgore: Camp Narache, where tauren start. This frees room in your bags. You receive one further along the route."] =
         "Mulgore : le camp Narache, où commencent les taurens. Ça libère de la place dans tes sacs. Tu en reçois un plus loin sur le parcours.",
+    ["Loot the beasts you kill on the way here"] =
+        "Fouille les bêtes que tu tues en chemin",
     ["Pick up anything that sells for 10 copper or more. You'll level faster with this."] =
         "Ramasse tout ce qui se vend 10 pièces de cuivre ou plus. Tu monteras de niveau plus vite avec ça.",
     ["The NPC is indoors."] =
@@ -47,6 +49,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h02-tauren-starter", {
         "Les cibles sont des loups.",
     ["With the coming hand-ins, this gets you to level 9."] =
         "Avec les prochains rendus, ça te mène au niveau 9.",
+    ["Learn First Aid from the trainer"] =
+        "Apprends le Secourisme auprès de l'entraîneur",
     ["Fight the dwarves."] =
         "Combats les nains.",
     ["Kill harpies."] =
@@ -69,6 +73,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h02-tauren-starter", {
         "Cible un Prairie Stalker avec. Les cibles sont des loups.",
     ["Use the item on any Swoop. Hunt the black-feathered birds."] =
         "Utilise l'objet sur n'importe quel Swoop. Chasse les oiseaux aux plumes noires.",
+    ["Tame a pet here"] =
+        "Apprivoise un familier ici",
     ["Choose an animal of level 9-10 and make it your pet with the Tame Beast spell. This pet is temporary; a lasting one comes shortly."] =
         "Choisis un animal de niveau 9-10 et fais-en ton familier avec le sort Apprivoiser une bête. Ce familier est temporaire ; un familier durable arrive bientôt.",
     ["Flight master at Camp Taurajo"] =
@@ -79,6 +85,14 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h02-tauren-starter", {
         "Reste sur la route et sois sur tes gardes. Les ennemis du coin ont un niveau supérieur au tien.",
     ["Flight master at the Crossroads"] =
         "Maître de vol de la Croisée",
+    ["Learn Blacksmithing from the trainer"] =
+        "Apprends la Forge auprès de l'entraîneur",
+    ["Learn Mining from the trainer"] =
+        "Apprends le Minage auprès de l'entraîneur",
+    ["Learn Staves at the weapon master"] =
+        "Apprends les Bâtons auprès du maître d'armes",
+    ["Learn Two-Handed Maces at the weapon master"] =
+        "Apprends les Masses à deux mains auprès du maître d'armes",
     ["This is food for your pet."] =
         "C'est de la nourriture pour ton familier.",
     ["The NPC is indoors, one floor up."] =
@@ -137,6 +151,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h02-tauren-starter", {
         "Ce PNJ se trouve en bas, dans la Faille de l'ombre.",
     ["This clears the quest's time limit."] =
         "Ça supprime la limite de temps de la quête.",
+    ["Learn Bows at the weapon master"] =
+        "Apprends les Arcs auprès du maître d'armes",
     ["The foes here are scorpions."] =
         "Ici, les ennemis sont des scorpions.",
     ["The quest giver stands among the boulders."] =

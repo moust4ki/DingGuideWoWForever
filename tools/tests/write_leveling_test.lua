@@ -66,6 +66,10 @@ return {
               { turnin = 4495, accept = 4495 },
               { kill = { { 2031, 6 } }, keep = 5168, patrol = { { 1438, 58, 40 }, { 1438, 60, 42 } } },
               { accept = 457, when = { notdone = 457 } },
+              { go = { 1438, 55, 50 }, text = "Walk to the well" },
+              { talk = 3514, races = { "Human" } },
+              { go = { 1438, 55, 50 }, text = "Walk to the well" },
+              { go = { 1438, 55, 50 }, text = "Walk to the well" },
           } },
     },
 }
@@ -122,6 +126,16 @@ T.test("goals are written as they are; sticky keeps the quests taken by then; a 
     T.ok(shared:find("{ complete = 457, sticky = { 457 } }", 1, true), shared)
     -- (457 is turned in by then: the branch never applies, and is not "repaired" away.)
     T.ok(shared:find("{ accept = 457, when = { notdone = 457 } }", 1, true), shared)
+end)
+
+-- The night elves never talk to that NPC: they are at the well already when the route walks
+-- there again; then the same trip right after itself is left out for everyone.
+T.test("a trip right after the same trip: kept for those who need it, else left out", function()
+    T.ok(shared:find('{ go = { 1438, 55, 50 }, text = "Walk to the well" }, -- level', 1, true), shared)
+    T.ok(shared:find('{ talk = 3514, races = { "Human" } }', 1, true), shared)
+    T.ok(shared:find('{ go = { 1438, 55, 50 }, races = { "Human" }, text = "Walk to the well" }', 1, true), shared)
+    local _, trips = shared:gsub("go = { 1438, 55, 50 }", "")
+    T.eq(trips, 2, shared)
 end)
 
 T.test("the guides pass check_guides", function()

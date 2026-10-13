@@ -87,4 +87,12 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a11-duskwood-and-redridge-mounta
         "Das Ziel ist der fünfte Boss des Dungeons.",
     ["You'll find them all over the instance."] =
         "Du findest sie überall in der Instanz.",
+    ["Learn Guns, Two-Handed Axes and Two-Handed Maces at the weapon master"] =
+        "Lerne Schusswaffen, Zweihandäxte und Zweihandstreitkolben beim Waffenmeister",
+    ["Learn Two-Handed Axes at the weapon master"] =
+        "Lerne Zweihandäxte beim Waffenmeister",
+    ["Learn Guns and Two-Handed Axes at the weapon master"] =
+        "Lerne Schusswaffen und Zweihandäxte beim Waffenmeister",
+    ["Learn Guns and Maces at the weapon master"] =
+        "Lerne Schusswaffen und Streitkolben beim Waffenmeister",
 })

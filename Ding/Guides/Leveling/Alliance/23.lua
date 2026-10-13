@@ -49,7 +49,7 @@ Ding.RegisterGuide({
         { talk = 9985, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, text = "Leave your pet with the stable master." }, -- level 41
         { talk = 9985, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 41
           note = "You will tame a short-term pet shortly. Your pet picks up Claw (Rank 6) here." },
-        { go = { 1446, 50.06, 30.96 }, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 41
+        { go = { 1446, 50.06, 30.96 }, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, text = "Tame a beast here to learn the next rank of Claw", -- level 41
           note = "Tame a Scorpid Hunter with Tame Beast. The foes here are scorpions." },
         { talk = 9985, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, text = "Get your companion back from the stable master." }, -- level 41
         { talk = 9985, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 41

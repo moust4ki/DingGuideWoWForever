@@ -21,6 +21,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a09-ashenvale-and-stonetalon-mou
         "Em breve você vai domar um ajudante temporário. Obtenha Garra (Grau 3) para o seu ajudante.",
     ["Let the conversation play out. The NPC is indoors."] =
         "Deixe a conversa terminar. O NPC está lá dentro.",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Dome uma fera aqui para aprender o próximo grau de Garra",
     ["Tame an Ashenvale Bear with Tame Beast. Track down a chestnut-furred bear."] =
         "Dome um Urso do Vale Gris com Domar Fera. Encontre um urso de pelo castanho.",
     ["Get your companion back from the stable master."] =

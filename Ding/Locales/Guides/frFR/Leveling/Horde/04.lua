@@ -13,6 +13,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h04-silverpine-forest", {
         "Laisse la conversation se dérouler. Escorte le nécrotraqueur Erland et garde-le en vie.",
     ["Hunt the wolves whose fur is jet black."] =
         "Chasse les loups au pelage noir de jais.",
+    ["Tame a pet here"] =
+        "Apprivoise un familier ici",
     ["Pick one Ferocious Grizzled Bear and tame it with Tame Beast. Release your current pet before this. Here you tame a pet to keep."] =
         "Choisis un Ferocious Grizzled Bear et apprivoise-le avec Apprivoiser une bête. Libère d'abord ton familier actuel. Ici, tu apprivoises un familier à garder.",
     ["Fly to The Sepulcher"] =

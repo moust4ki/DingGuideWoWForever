@@ -19,6 +19,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h10-ashenvale", {
         "Du zähmst gleich ein Tier für kurze Zeit. Hier bekommst du Klaue (Rang 4).",
     ["Flight master at Splintertree Post"] =
         "Flugmeister im Splitterholzposten",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Zähme hier ein Tier, um den nächsten Rang von Klaue zu lernen",
     ["Tame any Elder Ashenvale Bear with Tame Beast."] =
         "Zähme mit Wildtier zähmen einen beliebigen Elder Ashenvale Bear.",
     ["Get your companion back from the stable master."] =

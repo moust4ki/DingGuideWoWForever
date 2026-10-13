@@ -87,4 +87,12 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a11-duskwood-and-redridge-mounta
         "대상은 던전의 다섯 번째 우두머리입니다.",
     ["You'll find them all over the instance."] =
         "인스턴스 곳곳에 있습니다.",
+    ["Learn Guns, Two-Handed Axes and Two-Handed Maces at the weapon master"] =
+        "무기 전문가에게서 총, 양손 도끼, 양손 둔기를 배우세요",
+    ["Learn Two-Handed Axes at the weapon master"] =
+        "무기 전문가에게서 양손 도끼를 배우세요",
+    ["Learn Guns and Two-Handed Axes at the weapon master"] =
+        "무기 전문가에게서 총과 양손 도끼를 배우세요",
+    ["Learn Guns and Maces at the weapon master"] =
+        "무기 전문가에게서 총과 한손 둔기를 배우세요",
 })

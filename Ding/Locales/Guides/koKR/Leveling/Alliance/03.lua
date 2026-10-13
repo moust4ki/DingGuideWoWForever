@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a03-night-elf-starter", {
         "나이트 엘프 시작 (1-13)",
     ["Teldrassil: Shadowglen, where night elves start. This frees room in your bags. You receive one further along the route."] =
         "텔드랏실: 그늘 협곡은 나이트 엘프가 시작하는 곳입니다. 가방 공간을 확보할 수 있습니다. 경로를 더 진행하면 하나를 받습니다.",
+    ["Loot the beasts you kill on the way here"] =
+        "여기로 오면서 처치한 야수의 전리품을 챙기세요",
     ["Pick up anything that sells for 10 copper or more."] =
         "판매가가 10코퍼 이상인 것은 모두 주우세요.",
     ["The NPC is indoors at street level."] =
@@ -45,12 +47,16 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a03-night-elf-starter", {
         "동굴 위층으로 올라가세요.",
     ["The NPC stands at the summit of the great tree. The NPC stands in an adjoining chamber."] =
         "NPC는 거대한 나무 꼭대기에 서 있습니다. NPC는 옆방에 서 있습니다.",
+    ["Learn First Aid from the trainer"] =
+        "상급자에게서 응급치료를 배우세요",
     ["The NPC is indoors at street level. Do it only if you can."] =
         "NPC는 건물 안 1층에 있습니다. 가능할 때만 하세요.",
     ["The NPC waits on the tower's highest floor."] =
         "NPC는 탑 꼭대기 층에서 기다립니다.",
     ["Heal Sentinel Shaya with Lesser Heal (Rank 2). Buff Sentinel Shaya with Power Word: Fortitude."] =
         "하급 치유 (2 레벨)로 파수꾼 샤야를 치유하세요. 파수꾼 샤야에게 신의 권능: 인내를 걸어 주세요.",
+    ["Learn Herbalism from the trainer"] =
+        "상급자에게서 약초채집을 배우세요",
     ["The NPC is indoors. Pick up 5 Earthroot while questing. A class quest further on requires this."] =
         "NPC는 건물 안에 있습니다. 퀘스트를 하면서 뱀뿌리 5개를 모으세요. 나중에 할 직업 퀘스트에 필요합니다.",
     ["Let the conversation play out. This one roams, so scan the surrounding area."] =
@@ -63,6 +69,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a03-night-elf-starter", {
         "대상은 몸이 초록색인 거미입니다.",
     ["Together with the next turn-ins, this brings you to level 8."] =
         "다음 퀘스트 완료와 함께 8레벨이 됩니다.",
+    ["Learn Cooking from the trainer"] =
+        "상급자에게서 요리를 배우세요",
     ["Without this, one quest can't be picked up."] =
         "이것이 없으면 퀘스트 하나를 받을 수 없습니다.",
     ["Look for little brown pinecones giving off green smoke. Mostly found beside tree trunks."] =
@@ -105,6 +113,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a03-night-elf-starter", {
         "속이 빈 나무의 동굴에 들어가세요",
     ["Your targets are within the cavern."] =
         "대상은 동굴 안에 있습니다.",
+    ["Tame a pet here"] =
+        "여기서 소환수를 길들이세요",
     ["The target is a big gray spider. This one roams, so scan the surrounding area. The targets are spread over several spots."] =
         "대상은 큰 회색 거미입니다. 이 대상은 돌아다니므로 주변을 살펴보세요. 대상은 여러 곳에 흩어져 있습니다.",
     ["Target Sethir the Ancient and use Pickpocket. The target is a violet satyr. The NPC waits here, then strolls out onto the big branch close by."] =
@@ -117,12 +127,18 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a03-night-elf-starter", {
         "다음 퀘스트 완료와 함께 11레벨이 됩니다.",
     ["Circle the mountain, then climb the trail"] =
         "산을 돌아간 다음 길을 따라 올라가세요",
+    ["Learn Staves at the weapon master"] =
+        "무기 전문가에게서 지팡이를 배우세요",
     ["The NPC stands on the highest level of this structure."] =
         "NPC는 이 건물의 꼭대기 층에 서 있습니다.",
     ["Flight master in Auberdine"] =
         "아우버다인 비행 조련사",
     ["Your pet will need this food shortly."] =
         "곧 소환수에게 이 먹이가 필요합니다.",
+    ["Learn Blacksmithing from the trainer"] =
+        "상급자에게서 대장기술을 배우세요",
+    ["Learn Mining from the trainer"] =
+        "상급자에게서 채광을 배우세요",
     ["Hunt the crabs. You'll find extra ones swimming nearby as well."] =
         "게를 사냥하세요. 근처에서 헤엄치는 것들도 더 있습니다.",
     ["Use the item on any Rabid Thistle Bear. The targets are bears with grey fur. Keep from damaging the creature."] =
@@ -133,6 +149,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a03-night-elf-starter", {
         "목표는 작은 동굴 안에 있습니다.",
     ["The spot is on the lower floor of the hollow tree."] =
         "그 지점은 속이 빈 나무의 아래층에 있습니다.",
+    ["Learn Thrown at the weapon master"] =
+        "무기 전문가에게서 투척 무기를 배우세요",
     ["The targets are imps. Avoid slaying the satyrs if you can. You'll need this for the following quest."] =
         "대상은 임프입니다. 가능하면 사티로스를 죽이지 마세요. 다음 퀘스트에 필요합니다.",
     ["Hunt down satyrs."] =
@@ -155,6 +173,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a03-night-elf-starter", {
         "텔사마로 날아가세요",
     ["The NPC patrols a long route; look along it."] =
         "NPC는 긴 경로를 순찰합니다. 경로를 따라 찾아보세요.",
+    ["Learn Two-Handed Axes and Two-Handed Maces at the weapon master"] =
+        "무기 전문가에게서 양손 도끼와 양손 둔기를 배우세요",
     ["Head down into the Deeprun Tram station"] =
         "깊은굴 지하철 역으로 내려가세요",
     ["Pass through the portal to teleport."] =
@@ -169,6 +189,10 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a03-night-elf-starter", {
         "이 대상은 돌아다니므로 주변을 살펴보세요. NPC는 건물 안에 있습니다. 바로 전투가 시작되니 대비하세요.",
     ["This one roams, so scan the surrounding area. The NPC is indoors."] =
         "이 대상은 돌아다니므로 주변을 살펴보세요. NPC는 건물 안에 있습니다.",
+    ["Learn Two-Handed Swords at the weapon master"] =
+        "무기 전문가에게서 양손 도검을 배우세요",
+    ["Learn Swords at the weapon master"] =
+        "무기 전문가에게서 한손 도검을 배우세요",
     ["Head up the incline"] =
         "비탈을 올라가세요",
     ["Flight master in Stormwind"] =

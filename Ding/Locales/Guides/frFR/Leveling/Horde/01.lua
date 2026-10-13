@@ -7,6 +7,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h01-undead-starter", {
         "Clairières de Tirisfal : le Glas, où se relèvent les morts-vivants. Ça libère de la place dans tes sacs. Tu en reçois un plus loin sur le parcours.",
     ["The NPC stands outdoors, next to the crypt."] =
         "Le PNJ se tient dehors, à côté de la crypte.",
+    ["Loot the beasts you kill on the way here"] =
+        "Fouille les bêtes que tu tues en chemin",
     ["Pick up anything that sells for 10 copper or more. You'll level faster with this."] =
         "Ramasse tout ce qui se vend 10 pièces de cuivre ou plus. Tu monteras de niveau plus vite avec ça.",
     ["The NPC is indoors."] =
@@ -61,6 +63,10 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h01-undead-starter", {
         "Le PNJ patrouille sur un long trajet : cherche-le tout du long.",
     ["The NPC waits on the lower level, indoors."] =
         "Le PNJ attend au niveau inférieur, à l'intérieur.",
+    ["Learn Mining from the trainer"] =
+        "Apprends le Minage auprès de l'entraîneur",
+    ["Learn Blacksmithing from the trainer"] =
+        "Apprends la Forge auprès de l'entraîneur",
     ["Climb the trail"] =
         "Monte le chemin",
     ["The NPC waits on the tower's highest floor."] =
@@ -85,6 +91,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h01-undead-starter", {
         "Reste sur le chemin et continue de monter les marches",
     ["The NPC stands on the highest level of this structure."] =
         "Le PNJ se tient au plus haut niveau de ce bâtiment.",
+    ["Learn First Aid from the trainer"] =
+        "Apprends le Secourisme auprès de l'entraîneur",
     ["Loot the gray chests built from metal. Search in and around the sunken wrecks. Your targets sit below the water's surface."] =
         "Fouille les coffres gris en métal. Cherche dans les épaves englouties et autour. Tes cibles sont sous la surface de l'eau.",
     ["The target is a troll in crimson robes. This one roams, so scan the surrounding area."] =
@@ -107,10 +115,14 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h01-undead-starter", {
         "Traverse le passage",
     ["Fly to Orgrimmar"] =
         "Vole jusqu'à Orgrimmar",
+    ["Learn Staves at the weapon master"] =
+        "Apprends les Bâtons auprès du maître d'armes",
     ["The quest comes from a bounty sign."] =
         "La quête vient d'un avis de recherche.",
     ["Look for an iron slab marked with a skull. Wait for the talking to finish"] =
         "Cherche une plaque de fer marquée d'un crâne. Attends la fin de la discussion",
+    ["Learn Swords at the weapon master"] =
+        "Apprends les Épées auprès du maître d'armes",
     ["Use the item at the pink marking."] =
         "Utilise l'objet sur la marque rose.",
     ["Move gradually northwest toward Agamand Mills."] =

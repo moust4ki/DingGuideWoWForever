@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h03-orc-and-troll-starter", {
         "오크와 트롤 시작 (1-13)",
     ["Durotar: the Valley of Trials, where orcs and trolls start."] =
         "듀로타: 시험의 골짜기는 오크와 트롤이 시작하는 곳입니다.",
+    ["Loot the beasts you kill on the way here"] =
+        "여기로 오면서 처치한 야수의 전리품을 챙기세요",
     ["Pick up anything that sells for 10 copper or more. You'll level faster with this."] =
         "판매가가 10코퍼 이상인 것은 모두 주우세요. 이렇게 하면 레벨업이 더 빨라집니다.",
     ["Your targets are within the cavern."] =
@@ -51,6 +53,10 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h03-orc-and-troll-starter", {
         "이 대상은 돌아다니므로 주변을 살펴보세요.",
     ["The NPC waits on the tower's highest floor."] =
         "NPC는 탑 꼭대기 층에서 기다립니다.",
+    ["Learn Mining from the trainer"] =
+        "상급자에게서 채광을 배우세요",
+    ["Learn Blacksmithing from the trainer"] =
+        "상급자에게서 대장기술을 배우세요",
     ["Heal Grunt Kor'ja with the second rank of Lesser Heal. Buff Grunt Kor'ja with Power Word: Fortitude."] =
         "하급 치유 2 레벨로 그런트 코르자를 치유하세요. 그런트 코르자에게 신의 권능: 인내를 걸어 주세요.",
     ["Head indoors"] =
@@ -65,6 +71,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h03-orc-and-troll-starter", {
         "여기 있는 몬스터에게 일부러 죽으세요. 이 시점에는 죽어도 잃는 것이 없습니다. 건너가는 가장 빠른 방법입니다.",
     ["The NPC is out back, at the rear of the structure."] =
         "NPC는 건물 뒤쪽 바깥에 있습니다.",
+    ["Learn First Aid from the trainer"] =
+        "상급자에게서 응급치료를 배우세요",
     ["Loot the gray chests built from metal. Search in and around the sunken wrecks. Your targets sit below the water's surface."] =
         "금속으로 만든 회색 상자에서 전리품을 챙기세요. 가라앉은 난파선 안과 주변을 찾아보세요. 대상은 수면 아래에 있습니다.",
     ["The target is a troll in crimson robes. This one roams, so scan the surrounding area."] =
@@ -91,6 +99,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h03-orc-and-troll-starter", {
         "이 NPC는 아래쪽 어둠의 틈에 있습니다.",
     ["This clears the quest's time limit."] =
         "이렇게 하면 퀘스트 제한 시간이 사라집니다.",
+    ["Tame a pet here"] =
+        "여기서 소환수를 길들이세요",
     ["Find one Venomtail Scorpid and use Tame Beast on it. The foes here are scorpions. Here you tame a pet to keep."] =
         "맹독전갈 한 마리를 찾아 야수 길들이기를 사용하세요. 여기의 적은 전갈입니다. 여기서 계속 데리고 다닐 소환수를 길들입니다.",
     ["Kill Water Seekers and Thornweavers."] =
@@ -113,12 +123,16 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h03-orc-and-troll-starter", {
         "대지의 정기 효과를 받으세요",
     ["The quest giver stands among the boulders."] =
         "퀘스트를 주는 NPC는 바위들 사이에 서 있습니다.",
+    ["Learn Staves at the weapon master"] =
+        "무기 전문가에게서 지팡이를 배우세요",
     ["Fly to Undercity"] =
         "언더시티로 날아가세요",
     ["The quest comes from a bounty sign."] =
         "퀘스트는 현상수배 게시판에서 받습니다.",
     ["Look for an iron slab marked with a skull. Wait for the talking to finish"] =
         "해골이 새겨진 철판을 찾으세요. 대화가 끝날 때까지 기다리세요",
+    ["Learn Swords at the weapon master"] =
+        "무기 전문가에게서 한손 도검을 배우세요",
     ["Use the item at the pink marking."] =
         "분홍색 표시에서 아이템을 사용하세요.",
     ["The targets are gray, demon-like hounds. This leads to a quest for later levels."] =

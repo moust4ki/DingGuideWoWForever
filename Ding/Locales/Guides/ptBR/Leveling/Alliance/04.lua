@@ -29,4 +29,6 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a04-westfall", {
         "Voe até a Clareira da Lua",
     ["Flight master at Rut'theran Village"] =
         "Mestre de voo na Vila de Rut'theran",
+    ["Learn Bows and Staves at the weapon master"] =
+        "Aprenda Arcos e Báculos com o mestre de armas",
 })

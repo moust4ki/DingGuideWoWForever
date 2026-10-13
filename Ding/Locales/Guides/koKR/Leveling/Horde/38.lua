@@ -29,6 +29,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h38-felwood-and-winterspring", {
         "길을 올라 동굴을 나가세요",
     ["Circle the mountain, then stay on the trail"] =
         "산을 돌아간 다음 길을 계속 따라가세요",
+    ["Go to the corrupted moonwell"] =
+        "타락한 달샘으로 가세요",
     ["A green cat, a Corrupted Saber, appears when you use it. Hold on until it begins to trail you. Beware of foes lurking in stealth."] =
         "사용하면 녹색 고양이인 오염된 호랑이가 나타납니다. 당신을 따라오기 시작할 때까지 기다리세요. 은신해 숨어 있는 적을 조심하세요.",
     ["Walk west beside the river"] =

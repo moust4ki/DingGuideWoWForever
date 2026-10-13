@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a01-human-starter", {
         "Inicio humano (1-13)",
     ["Elwynn Forest: Northshire Abbey, where every human starts. This frees room in your bags. You receive one further along the route."] =
         "Bosque de Elwynn: Abadía de Villanorte, donde empiezan todos los humanos. Así liberas espacio en tus bolsas. Recibirás uno más adelante en la ruta.",
+    ["Loot the beasts you kill on the way here"] =
+        "Saquea las bestias que mates de camino aquí",
     ["Pick up anything that sells for 10 copper or more. You'll level faster with this."] =
         "Recoge todo lo que se venda por 10 de cobre o más. Con esto subirás de nivel más rápido.",
     ["The NPC is outdoors, right beside the structure."] =
@@ -47,6 +49,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a01-human-starter", {
         "El PNJ está dentro, un piso más arriba.",
     ["Heal Guard Roberts using Lesser Heal (Rank 2). Buff Guard Roberts with Power Word: Fortitude."] =
         "Cura al Guardia Roberts con Sanación inferior (Rango 2). Lanza Palabra de poder: entereza sobre el Guardia Roberts.",
+    ["Learn First Aid from the trainer"] =
+        "Aprende Primeros auxilios con el instructor",
     ["The NPC is indoors, one floor up. Do it only if you can."] =
         "El PNJ está dentro, un piso más arriba. Hazlo solo si puedes.",
     ["Go into the mine"] =
@@ -85,6 +89,16 @@ Ding.RegisterGuideTranslation("esES", "leveling-a01-human-starter", {
         "Vuela a la Colina del Centinela",
     ["Fly to Stormwind City"] =
         "Vuela a la Ciudad de Ventormenta",
+    ["Learn Two-Handed Swords at the weapon master"] =
+        "Aprende Espadas de dos manos con el maestro de armas",
+    ["Learn Swords at the weapon master"] =
+        "Aprende Espadas con el maestro de armas",
+    ["Learn Staves at the weapon master"] =
+        "Aprende Bastones con el maestro de armas",
+    ["Learn Swords and Daggers at the weapon master"] =
+        "Aprende Espadas y Dagas con el maestro de armas",
+    ["Learn Swords and Staves at the weapon master"] =
+        "Aprende Espadas y Bastones con el maestro de armas",
     ["Head indoors"] =
         "Ve al interior",
     ["Step onto the pink rune. Look within the tomb. The NPC waits on the lower level, indoors."] =
@@ -95,6 +109,10 @@ Ding.RegisterGuideTranslation("esES", "leveling-a01-human-starter", {
         "Este deambula, así que revisa los alrededores. El PNJ está dentro. Prepárate para luchar de inmediato.",
     ["This one roams, so scan the surrounding area. The NPC is indoors."] =
         "Este deambula, así que revisa los alrededores. El PNJ está dentro.",
+    ["Learn Blacksmithing from the trainer"] =
+        "Aprende Herrería con el instructor",
+    ["Learn Mining from the trainer"] =
+        "Aprende Minería con el instructor",
     ["The NPC waits indoors, a floor above the entrance."] =
         "El PNJ espera dentro, un piso por encima de la entrada.",
     ["Head down into the Deeprun Tram station"] =
@@ -107,6 +125,10 @@ Ding.RegisterGuideTranslation("esES", "leveling-a01-human-starter", {
         "Usa el objeto sobre las Deeprun Rats. Busca pequeños roedores grises. Ve al andén de Forjaz del Tranvía Subterráneo.",
     ["The NPC stands by the wall on the central platform. Head to the Deeprun Tram's Ironforge platform."] =
         "El PNJ está junto a la pared, en el andén central. Ve al andén de Forjaz del Tranvía Subterráneo.",
+    ["Learn Thrown at the weapon master"] =
+        "Aprende Armas arrojadizas con el maestro de armas",
+    ["Learn Two-Handed Maces at the weapon master"] =
+        "Aprende Mazas de dos manos con el maestro de armas",
     ["Fly to Ironforge"] =
         "Vuela a Forjaz",
     ["Stay on the trail"] =
@@ -135,6 +157,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a01-human-starter", {
         "Vuela al Puerto de Menethil",
     ["Your targets are within the cavern."] =
         "Tus objetivos están dentro de la cueva.",
+    ["Learn Cooking from the trainer"] =
+        "Aprende Cocina con el instructor",
     ["This one roams, so scan the surrounding area. Without this, one quest can't be picked up."] =
         "Este deambula, así que revisa los alrededores. Sin esto, no podrás aceptar una misión.",
     ["The NPC is past the tunnel; stay on the road."] =

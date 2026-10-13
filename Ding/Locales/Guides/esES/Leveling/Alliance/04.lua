@@ -29,4 +29,6 @@ Ding.RegisterGuideTranslation("esES", "leveling-a04-westfall", {
         "Vuela al Claro de la Luna",
     ["Flight master at Rut'theran Village"] =
         "Maestro de vuelo de la Aldea Rut'theran",
+    ["Learn Bows and Staves at the weapon master"] =
+        "Aprende Arcos y Bastones con el maestro de armas",
 })

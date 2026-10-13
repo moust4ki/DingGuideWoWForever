@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a42-winterspring", {
         "여명의 설원: 눈망루 마을은 지역 중앙에 있습니다.",
     ["You will tame a short-term pet shortly. Pick up Claw (Rank 8) for your pet."] =
         "곧 임시 소환수를 길들입니다. 소환수용 할퀴기 (8 레벨)를 배우세요.",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "여기서 야수를 길들여 할퀴기의 다음 등급을 배우세요",
     ["Tame a Winterspring Screecher with the Tame Beast spell. Hunt the white owls."] =
         "야수 길들이기 주문으로 비명소리 여명의설원 올빼미를 길들이세요. 흰 올빼미를 사냥하세요.",
     ["Get your companion back from the stable master."] =
@@ -31,6 +33,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a42-winterspring", {
         "레각키에게 아이템을 사용하세요.",
     ["Fly to Moonglade"] =
         "달의 숲으로 날아가세요",
+    ["Head indoors"] =
+        "건물 안으로 들어가세요",
     ["The NPC is indoors. Wait for the talking to finish"] =
         "NPC는 건물 안에 있습니다. 대화가 끝날 때까지 기다리세요",
     ["The NPC is indoors, on the central storey."] =

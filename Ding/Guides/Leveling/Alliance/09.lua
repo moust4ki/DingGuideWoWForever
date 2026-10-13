@@ -39,7 +39,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { accept = 1033, -- level 22
           note = "Let the conversation play out. The NPC is indoors." },
-        { go = { 1440, 36.37, 59.75 }, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 22
+        { go = { 1440, 36.37, 59.75 }, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, text = "Tame a beast here to learn the next rank of Claw", -- level 22
           note = "Tame an Ashenvale Bear with Tame Beast. Track down a chestnut-furred bear." },
         { talk = 10052, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, text = "Get your companion back from the stable master." }, -- level 22
         { talk = 10052, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 22
