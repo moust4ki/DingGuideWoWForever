@@ -176,13 +176,12 @@ return function(tools, locale)
         for _, sc in ipairs(S) do
             if not sc.compact then
                 scene(sc.name)
-                for _, width in ipairs({ 240, 300, 420 }) do
-                    for _, scale in ipairs({ 0.5, 1, 1.5 }) do
-                        P:SetWidth(width)
-                        P:SetScale(scale)
-                        P:Update()
-                        wholeTexts(("%s, %d wide, scale %s"):format(sc.name, width, scale))
-                    end
+                -- The narrowest at the largest scale, the widest at the smallest, and the default.
+                for _, case in ipairs({ { 240, 1.5 }, { 300, 1 }, { 420, 0.5 } }) do
+                    P:SetWidth(case[1])
+                    P:SetScale(case[2])
+                    P:Update()
+                    wholeTexts(("%s, %d wide, scale %s"):format(sc.name, case[1], case[2]))
                 end
                 P:SetScale(1)
             end
@@ -296,15 +295,41 @@ return function(tools, locale)
             T.ok(not seen[key], "listed twice: " .. key)
             seen[key] = true
         end
-        -- The step that works on it: its own rows, no "other quest".
+        -- The step that works on it, the guide's current step: its own rows, no "other quest".
         local guide = E.guide
         local index = S.FindStep(Ding, guide, { complete = 289 })
-        E.index, E.hold = index, true
-        E:Refresh()
+        E:SetGuide(guide.id, index, true)
+        H.flush()
+        T.eq(E.index, index)
         T.eq(#all(function(r) return r.other and r.quest == 289 end), 0, "the step's own quest as another quest")
     end)
 
-    pending("8 other quests: never while the quest's own step is further on", "Core/Along.lua, step-jumps", function()
+    T.test("8 other quests: none under a step seen again with Previous", function()
+        scene("a12-cursed-crew-carried")
+        T.ok(#all(function(r) return r.other end) > 0, "nothing to hide: " .. describe())
+        E:Prev()
+        H.flush()
+        T.eq(#all(function(r) return r.other end), 0, "another quest's rows under a step seen again: " .. describe())
+    end)
+
+    T.test("8 a persistent quest: not before the step that makes it persistent, nor when its own step is next", function()
+        -- Menethil, step 7, away from the wreck: the step that keeps it on screen (13) is ahead.
+        scene("a12-cursed-crew-ahead")
+        H.player.x, H.player.y = 18, 40
+        H.tick(2.5)
+        E:Refresh()
+        H.flush()
+        T.eq(#all(function(r) return r.quest == 289 end), 0, "kept on screen before its step: " .. describe())
+        -- Step 13 makes it persistent, step 14 works on it: not listed under 13.
+        scene("a12-cursed-crew-next")
+        T.eq(#all(function(r) return r.quest == 289 end), 0, "listed right before its own step: " .. describe())
+        -- Further on, it is.
+        scene("a12-cursed-crew-carried")
+        T.ok(#all(function(r) return r.quest == 289 and r.other == "sticky" end) > 0, "not kept on screen: " .. describe())
+    end)
+
+    pending("8 along the way: a quest whose own step is further on (open: Yendi's decision)",
+        "Core/Along.lua, a decision first", function()
         scene("a12-cursed-crew-ahead")
         T.eq(#all(function(r) return r.quest == 289 end), 0,
             "« The Cursed Crew » listed while its step is further on: " .. describe())
@@ -686,6 +711,50 @@ return function(tools, locale)
         T.ok(looks.extra:find("^nil, icon"), looks.extra)
         T.ok(looks.other:find("^nil, icon"), looks.other)
         T.ok(looks["next step"]:find("^nil, icon, DingFont_regular12, dim grey"), looks["next step"])
+    end)
+
+    T.test("22 the step's own work stands out: only its rows have a state's background", function()
+        local STATE_BG = { red = true, green = true, violet = true, amber = true }
+        for _, sc in ipairs(S) do
+            if not sc.compact then
+                scene(sc.name)
+                for i, row in ipairs(rows()) do
+                    if STATE_BG[bg(i) or ""] then
+                        T.ok(row.ofStep, ("%s: row %d (%s) has the step's %s background"):format(sc.name, i,
+                            plain(row.text), bg(i)))
+                    end
+                end
+            end
+        end
+    end)
+
+    ---------------------------------------------------------------------------
+    -- Sentences
+    ---------------------------------------------------------------------------
+    -- A sentence ends like one, in every language.
+    local function sentence(line) return line:find("[%.!%?]$") or line:find("。$") or line:find("%)$") end
+
+    T.test("23 sub-lines are plain sentences, with the mouse and with a gamepad", function()
+        for _, on in ipairs({ false, true }) do
+            for _, sc in ipairs(S) do
+                if not sc.compact and not sc.focus then
+                    scene(sc.name)
+                    pad(on)
+                    P:Update()
+                    for i, row in ipairs(rows()) do
+                        local sub = row.sub and plain(row.sub)
+                        if sub and row.action ~= "notice" then
+                            T.ok(not sub:find(" · ", 1, true), ("%s: row %d, a shorthand sub-line: %s"):format(sc.name, i, sub))
+                        end
+                        if sub and (row.extra or row.notice == "cleanup") then
+                            local last = sub:match("([^\n]*)$")
+                            T.ok(sentence(last), ("%s: row %d, not a sentence: %s"):format(sc.name, i, last))
+                        end
+                    end
+                    pad(false)
+                end
+            end
+        end
     end)
 
     T.run()

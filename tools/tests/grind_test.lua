@@ -64,7 +64,7 @@ T.test("level step: experience left, percent of the level, kills from the formul
     T.eq(H.plain(row.text), L.REACH_LEVEL:format(4))
     T.eq(row.counter, "50%")
     T.ok(H.plain(row.sub):find("1,850 XP to go", 1, true), "experience left: " .. H.plain(row.sub or ""))
-    T.ok(H.plain(row.sub):find(L.KILLS_LEFT:format(34), 1, true), "kills left: " .. H.plain(row.sub or ""))
+    T.ok(H.plain(row.sub):find(L.LEVEL_LEFT:format("1,850", 34), 1, true), "kills left: " .. H.plain(row.sub or ""))
     T.ok(H.plain(row.sub):find("Finish the level", 1, true), "the guide note goes under the level row")
 end)
 
@@ -90,7 +90,7 @@ T.test("rested: the bonus is left out of the measure, and halves the kills left"
     local s = Grind:Status(4)
     T.ok(s.rested, "rested not reported")
     T.eq(s.kills, math.ceil((s.missing / 2) / 40))
-    T.ok(H.plain(levelRow().sub):find(L.KILLS_LEFT_RESTED:format(s.kills), 1, true), "rested kills not shown")
+    T.ok(H.plain(levelRow().sub):find(L.LEVEL_LEFT_RESTED:format(Ding.Compat.Number(s.missing), s.kills), 1, true), "rested kills not shown")
     -- Not enough rest for the whole way: the rested part counts twice, the rest once.
     H.player.rested = 400
     s = Grind:Status(4)

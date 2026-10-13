@@ -35,7 +35,7 @@ STEP   < Étape 4 / 160 >   zone: Forgefer
       | Clic : la flèche y va.
  6  gear  [extra] item icon icon, text white, counter +12 blue
     Équiper [Poignard]
-      > Bouton d'objet : équiper · Clic droit : ignorer
+      > Pour l'équiper, clique sur le bouton d'objet à l'écran. Pour l'ignorer, fais un clic droit sur cette ligne.
     card:
       | item 2208
       | Mieux que ce que tu portes : +12 au score du guide pour ta classe.

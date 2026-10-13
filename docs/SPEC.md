@@ -729,9 +729,13 @@ the window in a review (`panel_snapshot_test.lua`).
 **Other quests**
 
 8. Another quest's objectives (persistent `sticky`, along the way) are listed only when they are
-   relevant: never for a quest a row of the step names, never twice, never while that quest's
-   own step (the step that makes it persistent, else the first one that works on it) is further
-   on than the step shown.
+   relevant: never for a quest a row of the step names, never twice, never under a step seen
+   again with Previous; a persistent quest only from the step that makes it persistent on, and
+   not while the next step still to do works on it (it comes right after). Along the way lists
+   the log's quests whose targets are right around the player, the guide's next quests first.
+   *Open (Yendi's decision)*: whether along the way should also leave out a quest whose own step
+   is further on (Menethil, « The Cursed Crew » among its sailors at step 7); the test keeps that
+   case PENDING.
 9. **They never pass for the step's work**: under a header that names the other quest and says
    why it is there ("Another quest to finish on the way: [29] « Name »", "Another quest, its
    targets are here: …"), indented rows without the red of a row to do (no background, grey
@@ -780,11 +784,17 @@ the window in a review (`panel_snapshot_test.lua`).
 
 21. **Own frames only**: the window never opens, closes nor drives a game window (quest log,
     map, talents); plain frames, nothing protected, no taint (`taint_test`).
-22. **One look per kind**, the same everywhere: the step's rows (the state's background, its
-    icon), quest headers (12 SemiBold, no icon), section headers ("Next steps", "Besides this
+22. **One look per kind**, the same everywhere, and **the step's own work stands out**: only the
+    step's rows have a state's background (red, green, violet, amber) and their icon; quest headers (12 SemiBold, no icon), section headers ("Next steps", "Besides this
     step": 11 SemiBold, dimmed, no icon), notices (grey box, 11 Regular), controls (button
     background, lighter under the mouse), rows besides the step (no background, blue icon), other
     quests (no background, grey icon), next steps (dimmed). Colors only through `UI.C`.
+
+**Sentences**
+
+23. **Sub-lines are plain sentences**: no "Button: action · Button: action" shorthand under a row
+    (the upgrade, the talent, the offer to jump, the quest log's notice, the level's experience
+    left): "To equip it, use the item button on screen. To ignore it, press Left in focus mode."
 
 ### Minimap pins (`UI/MinimapPins.lua`)
 

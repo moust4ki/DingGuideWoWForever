@@ -1556,8 +1556,8 @@ function E:Describe(step, preview)
         local status = current and Ding.Grind:Status(whole, into)
         if status then
             line.counter = L.LEVEL_PERCENT:format(status.percent)
-            line.sub = L.XP_LEFT:format(Compat.Number(status.missing)) .. " · "
-                .. (status.rested and L.KILLS_LEFT_RESTED or L.KILLS_LEFT):format(status.kills)
+            line.sub = (status.rested and L.LEVEL_LEFT_RESTED or L.LEVEL_LEFT):format(Compat.Number(status.missing),
+                status.kills)
         end
         local spot = current and not hasQuestActions(step) and Ding.Grind:Spot(self.index)
         if spot then

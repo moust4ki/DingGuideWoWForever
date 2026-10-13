@@ -7,7 +7,7 @@ STEP   < Étape 24 / 160 >   zone: Le cimetière de Raven Hill
 
  1  level  [todo] red background, red caret up icon, text white, counter 58 % red
     Atteins le niveau 26
-      > 14,000 XP restants · environ 83 monstres
+      > Encore 14,000 XP : environ 83 monstres.
     card:
       | Atteins le niveau 26
       | À faire.

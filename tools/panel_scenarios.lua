@@ -203,8 +203,46 @@ local list = {
         place = { objective = 471 }, zone = { frFR = "Les Paluns", enUS = "Wetlands" },
         done = { 288, 281, 284, 285 }, log = { [471] = { { 2, 8 } }, [277] = { { 1, 8 } } },
     },
+    {
+        name = "a12-cursed-crew-next",
+        about = "Wetlands, the step that makes « The Cursed Crew » persistent: its own step comes next, not listed",
+        guide = A12, step = { turnin = 285 }, char = hunter(28),
+        place = { map = 1437, x = 18, y = 40 }, zone = { frFR = "Les Paluns", enUS = "Wetlands" },
+        done = { 288, 281, 284 }, log = { [289] = { { 0, 13 }, { 0, 5 }, { 0, 1 } }, [285] = "ready", [471] = true },
+    },
+    {
+        name = "a12-fragments",
+        about = "In game, Wetlands step 30: three fragments found, another quest's banners close by, a weapon "
+            .. "to learn, an upgrade, the log almost full, the next steps",
+        guide = A12, step = { complete = 299, nth = 4 }, char = hunter(28), preview = 2,
+        place = { objective = 464 }, zone = { frFR = "Les Paluns", enUS = "Wetlands" },
+        done = { 288, 281, 284, 285, 286, 295 },
+        log = { [299] = { { 1, 1 }, { 1, 1 }, { 1, 1 }, { 0, 1 } }, [464] = { { 0, 8 } }, [296] = true, [289] = true,
+            [471] = true, [277] = true },
+        setup = function(ctx) S.WetlandsExtras(ctx) end,
+    },
+    {
+        name = "a12-ormer-turnin",
+        about = "In game, Wetlands step 32: the step's own turn-in stands out from what comes besides it",
+        guide = A12, step = { turnin = 296 }, char = hunter(28),
+        place = { ends = 296 }, zone = { frFR = "Les Paluns", enUS = "Wetlands" },
+        done = { 288, 281, 284, 285, 286, 295 },
+        log = { [296] = "ready", [464] = { { 3, 8 } }, [299] = "ready" },
+        setup = function(ctx) S.WetlandsExtras(ctx) end,
+    },
 }
 for _, sc in ipairs(list) do S[#S + 1] = sc end
+
+-- What came besides the step in Yendi's Wetlands screenshots: a polearm in the bags (a weapon to
+-- learn), a gear upgrade, and a quest log almost full of quests the guide never uses.
+function S.WetlandsExtras(ctx)
+    local H = ctx.H
+    H.setItemInfo(950200, { name = "Hallebarde", classID = 2, subclassID = 6, equipLoc = "INVTYPE_2HWEAPON" })
+    H.putInBag(0, 1, 950200, 1)
+    ctx.Ding.Directory:Forget()
+    ctx.Ding.Gear.upgrade = { id = 15231, link = "[Hachette trancheuse du loup]", gain = 4 }
+    for _, q in ipairs({ 7, 15, 18, 21, 33, 35, 40, 46, 47, 52 }) do H.setQuest(q, "log") end
+end
 
 ---------------------------------------------------------------------------
 -- Setting a scenario up

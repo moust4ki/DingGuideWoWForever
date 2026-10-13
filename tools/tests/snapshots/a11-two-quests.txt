@@ -41,8 +41,8 @@ STEP   < Étape 90 / 160 >   zone: Lac Everstill
       | Clic : la flèche y va.
  4  objective  [done] green background, green check icon, text light grey, indented, counter 10/10 green
       10 Poisson-lune : fait
-        > Garder Aileron de murloc : une étape plus loin en a besoin
-        > Garder Poisson-lune : une étape plus loin en a besoin
+        > Garder Aileron de murloc : une étape plus loin en a besoin.
+        > Garder Poisson-lune : une étape plus loin en a besoin.
       card:
         | Criée aux poissons
         | Fait.

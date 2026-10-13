@@ -1532,7 +1532,8 @@ function P:Extras(step, content)
         local g = Ding:GetGuide(offer.guide)
         content[#content + 1] = { action = "jump", quest = offer.quest,
             text = L.FIND_JUMP:format(offer.index, g and g.title or offer.guide),
-            sub = L["FIND_" .. offer.action:upper()]:format(leveledName(offer.quest)) .. " · "
+            -- What that step does with the quest, then how to go there or leave it, a sentence.
+            sub = L["FIND_" .. offer.action:upper()]:format(leveledName(offer.quest)) .. "\n"
                 .. (pad and L.FIND_JUMP_PAD:format(Ding.Gamepad:ButtonName("PAD1")) or L.FIND_JUMP_MOUSE) }
     end
     -- A flight master next to the player on a continent where no flight map was opened yet.
