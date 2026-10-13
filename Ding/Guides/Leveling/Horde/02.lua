@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Horde/02.lua.
--- Simulated (warrior): Tauren 1 (0%) -> 14 (13%) in 10 h 18, 79 quests turned in.
+-- Simulated (warrior): Tauren 1 (0%) -> 14 (22%) in 10 h 24, 78 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-h02-tauren-starter",
     title    = "Tauren start (1-13)",
@@ -191,6 +191,7 @@ Ding.RegisterGuide({
         { turnin = 99080, races = { "Tauren" } }, -- level 10
         { turnin = 99101, races = { "Tauren" } }, -- level 10
         { turnin = 758 }, -- level 10
+        { accept = 98435 }, -- level 10
         { accept = 6061, classes = { "HUNTER" } }, -- level 10
         { train = true, talk = 3065, classes = { "HUNTER" } }, -- level 10
         { complete = 6061, useitem = 15914, classes = { "HUNTER" }, -- level 10
@@ -268,6 +269,7 @@ Ding.RegisterGuide({
         { accept = 6002, when = { done = 5932 }, classes = { "DRUID" } }, -- level 11
         { turnin = 6363, accept = 6364, -- level 11
           note = "The NPC waits on the tower's highest floor." },
+        { turnin = 98435 }, -- level 11
         { complete = 6002, talk = 12144, useitem = 15710, when = { log = 6002 }, classes = { "DRUID" }, -- level 11
           note = "A spirit shows up after this." },
         { turnin = 6002, when = { ready = 6002 }, classes = { "DRUID" }, -- level 11
@@ -302,13 +304,8 @@ Ding.RegisterGuide({
         { turnin = 96822, races = { "Tauren" } }, -- level 11
         { turnin = 99048, races = { "Tauren" } }, -- level 11
         { accept = 96655, races = { "Tauren" } }, -- level 11
-        { accept = 97900, races = { "Tauren" } }, -- level 11
-        { accept = 97902, races = { "Tauren" } }, -- level 11
-        { accept = 97903, races = { "Tauren" } }, -- level 11
-        { complete = 97903, races = { "Tauren" } }, -- level 11
-        { turnin = 97903, races = { "Tauren" } }, -- level 11
-        { accept = 97904, races = { "Tauren" } }, -- level 11
-        { accept = 97907, races = { "Tauren" } }, -- level 11
+        { accept = 99049, races = { "Tauren" } }, -- level 11
+        { complete = 99049, races = { "Tauren" } }, -- level 11
         { go = { 1411, 58.96, 58.33 }, text = "Head indoors" }, -- level 11
         { complete = 784, collect = { { 4882, 1 } }, -- level 11
           note = "The target is indoors, one floor up. Consider bringing a group for this one." },
@@ -324,11 +321,8 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { accept = 97225, races = { "Tauren" } }, -- level 11
         { accept = 818 }, -- level 11
-        { accept = { 808, 826 }, sticky = { 815, 817, 826, 818 } }, -- level 11
-        { accept = 823, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK", "DRUID" } }, -- level 11
-        { accept = 97223, races = { "Tauren" }, classes = { "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK" } }, -- level 11
-        { complete = 97904, races = { "Tauren" } }, -- level 11
-        { turnin = 97904, races = { "Tauren" } }, -- level 11
+        { accept = { 808, 826, 823 }, sticky = { 815, 817, 826, 818 } }, -- level 11
+        { accept = 97223, races = { "Tauren" } }, -- level 11
         { complete = 826, -- level 11
           note = "The target is a troll in crimson robes. This one roams, so scan the surrounding area." },
         { complete = 808, -- level 11
@@ -339,13 +333,13 @@ Ding.RegisterGuide({
         { complete = 815, -- level 11
           note = "The targets are clumps of purple eggs. Search close to the trunks." },
         { complete = 817 }, -- level 11
-        { complete = 97223, races = { "Tauren" }, classes = { "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK" } }, -- level 11
+        { complete = 97223, races = { "Tauren" } }, -- level 11
         { complete = 818, -- level 11
           note = "The targets are lobsters." },
         { complete = 818, -- level 11
           note = "Hunt the crabs." },
         { turnin = { 808, 826 } }, -- level 11
-        { turnin = 97223, races = { "Tauren" }, classes = { "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK" } }, -- level 11
+        { turnin = 97223, races = { "Tauren" } }, -- level 12
         { turnin = 97225, races = { "Tauren" } }, -- level 12
         { turnin = 818 }, -- level 12
         { turnin = 817, -- level 12
@@ -395,14 +389,9 @@ Ding.RegisterGuide({
         { turnin = { 784, 837, 830 }, accept = 831, -- level 13
           note = "The NPC is indoors, one floor up." },
         { turnin = 96821, races = { "Tauren" } }, -- level 13
-        { turnin = 823, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK", "DRUID" } }, -- level 13
+        { turnin = 823 }, -- level 13
         { accept = 97282, races = { "Tauren" } }, -- level 13
-        { complete = 97900, races = { "Tauren" } }, -- level 13
-        { turnin = 97900, races = { "Tauren" } }, -- level 13
-        { complete = 97902, races = { "Tauren" } }, -- level 13
-        { turnin = 97902, races = { "Tauren" } }, -- level 13
-        { complete = 97907, races = { "Tauren" } }, -- level 13
-        { turnin = 97907, races = { "Tauren" } }, -- level 13
+        { turnin = 99049, races = { "Tauren" } }, -- level 13
         { train = true, talk = 3169, classes = { "WARRIOR" }, -- level 13
           note = "The NPC is indoors." },
         { train = true, talk = 3173, classes = { "SHAMAN" }, -- level 13
@@ -437,6 +426,8 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { complete = 813, -- level 13
           note = "The foes here are scorpions." },
+        { accept = 97246 }, -- level 13
+        { turnin = 97246 }, -- level 13
         { turnin = 813, -- level 13
           note = "This NPC is found down in the Cleft of Shadow." },
         { accept = 812, -- level 13
@@ -451,13 +442,13 @@ Ding.RegisterGuide({
         { complete = 1819, classes = { "WARRIOR" }, -- level 13
           note = "Look for an iron slab marked with a skull. Wait for the talking to finish" },
         { turnin = 1819, when = { ready = 1819 }, classes = { "WARRIOR" } }, -- level 13
-        { accept = 1820, when = { done = 1819 }, classes = { "WARRIOR" } }, -- level 13
-        { turnin = 1820, when = { log = 1820 }, classes = { "WARRIOR" }, -- level 13
+        { accept = 1820, when = { done = 1819 }, classes = { "WARRIOR" } }, -- level 14
+        { turnin = 1820, when = { log = 1820 }, classes = { "WARRIOR" }, -- level 14
           note = "The NPC is indoors." },
-        { accept = 445, -- level 13
+        { accept = 445, -- level 14
           note = "The NPC is indoors." },
-        { accept = 96895, races = { "Tauren" } }, -- level 13
-        { turnin = 96895, races = { "Tauren" } }, -- level 13
+        { accept = 96895, races = { "Tauren" } }, -- level 14
+        { turnin = 96895, races = { "Tauren" } }, -- level 14
         { accept = 96897, races = { "Tauren" } }, -- level 14
         { complete = 96897, races = { "Tauren" } }, -- level 14
         { turnin = 96897, races = { "Tauren" } }, -- level 14

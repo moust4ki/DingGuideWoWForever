@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Alliance/03.lua.
--- Simulated (warrior): NightElf 1 (0%) -> 14 (11%) in 8 h 14, 86 quests turned in.
+-- Simulated (warrior): NightElf 1 (0%) -> 14 (5%) in 8 h 05, 85 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-a03-night-elf-starter",
     title    = "Night Elf start (1-13)",
@@ -461,7 +461,6 @@ Ding.RegisterGuide({
         { complete = 432, -- level 13
           note = "Targets are in the cavern and around its entrance too." },
         { go = { 1426, 70.67, 56.43 }, text = "Head out of the cave" }, -- level 13
-        { accept = 95217, races = { "NightElf" } }, -- level 13
         { accept = 96392, races = { "NightElf" } }, -- level 13
         { complete = 96392, races = { "NightElf" } }, -- level 13
         { turnin = 96392, races = { "NightElf" } }, -- level 13
@@ -482,8 +481,6 @@ Ding.RegisterGuide({
         { accept = 95212, races = { "NightElf" } }, -- level 13
         { complete = 95212, races = { "NightElf" } }, -- level 13
         { turnin = 95212, races = { "NightElf" } }, -- level 13
-        { complete = 95217, races = { "NightElf" } }, -- level 13
-        { turnin = 95217, races = { "NightElf" } }, -- level 13
         { accept = 96408, races = { "NightElf" } }, -- level 13
         { turnin = 96408, races = { "NightElf" } }, -- level 13
         { accept = 99160, races = { "NightElf" } }, -- level 13

@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Horde/12.lua.
--- Simulated (warrior): Orc 30 (34%) -> 32 (2%) in 5 h 28, 11 quests turned in; Scourge 30 (34%) -> 32 (2%) in 5 h 28, 11 quests turned in; Tauren 30 (34%) -> 32 (2%) in 5 h 28, 11 quests turned in; Troll 30 (34%) -> 32 (2%) in 5 h 28, 11 quests turned in; Skyborne 30 (34%) -> 32 (2%) in 5 h 28, 11 quests turned in.
+-- Simulated (warrior): Orc 30 (34%) -> 32 (4%) in 5 h 28, 12 quests turned in; Scourge 30 (34%) -> 32 (4%) in 5 h 28, 12 quests turned in; Tauren 30 (34%) -> 32 (4%) in 5 h 28, 12 quests turned in; Troll 30 (34%) -> 32 (4%) in 5 h 28, 12 quests turned in; Skyborne 30 (34%) -> 32 (4%) in 5 h 28, 12 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-h12-hillsbrad-foothills",
     title    = "Hillsbrad Foothills (30-32)",
@@ -94,10 +94,12 @@ Ding.RegisterGuide({
         { accept = 676 }, -- level 31
         { turnin = 546 }, -- level 31
         { turnin = { 539, 567 } }, -- level 31
+        { accept = 98094 }, -- level 31
         { turnin = 533, -- level 31
           note = "The NPC is indoors." },
         { accept = 98095 }, -- level 31
-        { turnin = 98095 }, -- level 31
+        { turnin = 98094 }, -- level 31
+        { turnin = 98095 }, -- level 32
         { complete = 509, -- level 32
           note = "Gather the big fungi." },
     },

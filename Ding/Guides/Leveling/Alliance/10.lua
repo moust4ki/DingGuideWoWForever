@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Alliance/10.lua.
--- Simulated (warrior): Human 24 (70%) -> 25 (91%) in 2 h 58, 16 quests turned in; Dwarf 24 (69%) -> 25 (91%) in 2 h 58, 16 quests turned in; NightElf 24 (72%) -> 25 (94%) in 2 h 58, 16 quests turned in; Gnome 24 (69%) -> 25 (91%) in 2 h 58, 16 quests turned in; Skyborne 24 (70%) -> 25 (91%) in 2 h 59, 16 quests turned in.
+-- Simulated (warrior): Human 24 (71%) -> 25 (96%) in 2 h 59, 17 quests turned in; Dwarf 24 (71%) -> 25 (96%) in 2 h 58, 17 quests turned in; NightElf 24 (67%) -> 25 (92%) in 2 h 58, 17 quests turned in; Gnome 24 (71%) -> 25 (96%) in 2 h 58, 17 quests turned in; Skyborne 24 (71%) -> 25 (96%) in 2 h 58, 17 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-a10-wetlands",
     title    = "Wetlands (24-25)",
@@ -13,7 +13,7 @@ Ding.RegisterGuide({
         { go = { 1437, 8.55, 55.74 }, text = "Travel to Menethil Harbor", -- level 24
           note = "Wetlands: Menethil Harbor, on the west coast." },
         { accept = 484 }, -- level 24
-        { accept = 98189, races = { "NightElf", "Skyborne" } }, -- level 24
+        { accept = 98189, races = { "Dwarf", "NightElf", "Gnome", "Skyborne" } }, -- level 24
         { accept = 279 }, -- level 24
         { train = true, talk = 7312, races = { "Human", "Gnome" }, classes = { "MAGE" }, -- level 24
           note = "The NPC is indoors." },
@@ -43,6 +43,7 @@ Ding.RegisterGuide({
         { accept = 98282 }, -- level 24
         { accept = 470 }, -- level 24
         { accept = 98197 }, -- level 24
+        { turnin = 98461 }, -- level 24
         { talk = 1448, buy = { { 4371, 1, 1448 } }, when = { noitem = 4371 }, -- level 24
           note = "The NPC is indoors. Do it only if you can." },
         { vendor = true, talk = 1448, when = { noitem = 4371 } }, -- level 24
@@ -80,7 +81,7 @@ Ding.RegisterGuide({
         { turnin = 98282 }, -- level 25
         { turnin = 470 }, -- level 25
         { turnin = 306 }, -- level 25
-        { accept = 98072, races = { "Skyborne" } }, -- level 25
+        { accept = 98072, races = { "Dwarf", "NightElf", "Gnome", "Skyborne" } }, -- level 25
         { talk = 1448, buy = { { 4371, 1, 1448 } }, when = { noitem = 4371 }, -- level 25
           note = "The NPC is indoors. Do it only if you can." },
         { vendor = true, talk = 1448, when = { noitem = 4371 } }, -- level 25
@@ -105,8 +106,7 @@ Ding.RegisterGuide({
         { talk = 15659, buy = { { 4371, 1, 15659 } }, -- level 25
           note = "The NPC is indoors. Buy it now; a task in Duskwood needs it before long." },
         { turnin = 1075 }, -- level 25
-        { accept = 78148, races = { "Human", "Dwarf", "Gnome", "Skyborne" } }, -- level 25
-        { accept = 97286, races = { "Human" }, classes = { "MAGE" } }, -- level 25
+        { accept = 78148, races = { "Human" } }, -- level 25
         { talk = 2485, races = { "Human", "Gnome" }, classes = { "MAGE" }, -- level 25
           note = "The NPC is on an upper floor of the tower." },
         { go = { 1453, 42.28, 81.85 }, races = { "Human", "Gnome" }, classes = { "WARLOCK" }, text = "Head indoors" }, -- level 25

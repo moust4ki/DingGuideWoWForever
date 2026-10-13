@@ -415,6 +415,10 @@ for l in deDE esES ptBR koKR zhCN zhTW; do lua5.1 tools/smoke_test.lua ../Questi
 # Guide translations from tools/routes/locales/<locale>.lua (files and TOC)
 lua5.1 tools/translate_guides.lua
 
+# Free quests the Leveling routes leave out (write_leveling.lua warns about each one; --apply
+# adds them to the routes): tools/README.md, section 8
+lua5.1 tools/audit_free_quests.lua ../QuestieDB/src/corrections/Forever/combined
+
 # Kit texture missing from the handoff (once)
 python3 tools/media/textures.py Ding/Media/Textures
 

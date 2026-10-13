@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Horde/07.lua.
--- Simulated (warrior): Orc 22 (39%) -> 24 (84%) in 5 h 20, 19 quests turned in; Scourge 22 (39%) -> 24 (84%) in 5 h 20, 19 quests turned in; Tauren 22 (33%) -> 24 (81%) in 5 h 19, 19 quests turned in; Troll 22 (39%) -> 24 (84%) in 5 h 20, 19 quests turned in; Skyborne 22 (40%) -> 24 (85%) in 5 h 20, 19 quests turned in.
+-- Simulated (warrior): Orc 22 (54%) -> 24 (96%) in 5 h 20, 19 quests turned in; Scourge 22 (54%) -> 24 (96%) in 5 h 20, 19 quests turned in; Tauren 22 (48%) -> 24 (91%) in 5 h 20, 19 quests turned in; Troll 22 (54%) -> 24 (96%) in 5 h 20, 19 quests turned in; Skyborne 22 (55%) -> 24 (97%) in 5 h 20, 19 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-h07-hillsbrad-foothills",
     title    = "Hillsbrad Foothills (22-24)",
@@ -74,8 +74,8 @@ Ding.RegisterGuide({
         { complete = 498, -- level 22
           note = "Look for it bound to the orc's leg. The object is indoors." },
         { complete = 1066 }, -- level 22
-        { complete = 549 }, -- level 22
-        { complete = 496, -- level 22
+        { complete = 549 }, -- level 23
+        { complete = 496, -- level 23
           note = "The targets are spiders with green bodies." },
         { complete = 496 }, -- level 23
         { level = 22, xp = 19570, patrol = { { 1424, 62.86, 34.25 }, { 1424, 60.34, 37.44 }, { 1424, 62.56, 39.63 }, { 1424, 69.23, 41.36 }, { 1424, 70.85, 38.35 }, { 1424, 70.43, 35.37 }, { 1424, 72.34, 44.26 }, { 1424, 68.65, 45.85 }, { 1424, 58.54, 33.34 }, { 1424, 61.24, 30.26 }, { 1424, 58.74, 26.03 }, { 1424, 57.24, 23.45 }, { 1424, 56.45, 28.86 }, { 1424, 66.36, 26.46 }, { 1424, 65.43, 22.46 }, { 1424, 67.55, 16.14 }, { 1424, 61.95, 15.57 }, { 1424, 57.96, 14.63 }, { 1424, 55.15, 17.03 }, { 1424, 55.85, 10.05 } }, -- level 23
@@ -89,10 +89,10 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { complete = 527, -- level 23
           note = "The targets are spread over several spots. Indoors or out in the open fields." },
-        { complete = 527, -- level 23
+        { complete = 527, -- level 24
           note = "Check each of the two floors indoors. It may be found outdoors too." },
-        { complete = 527 }, -- level 23
-        { complete = 501 }, -- level 23
+        { complete = 527 }, -- level 24
+        { complete = 501 }, -- level 24
         { turnin = 501, accept = 502, -- level 24
           note = "The NPC is indoors." },
         { turnin = 527, accept = 528 }, -- level 24

@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Alliance/06.lua.
--- Simulated (warrior): Human 18 (19%) -> 19 (18%) in 1 h 58, 9 quests turned in; Dwarf 18 (37%) -> 19 (18%) in 1 h 34, 9 quests turned in; NightElf 18 (13%) -> 19 (18%) in 1 h 59, 10 quests turned in; Gnome 18 (33%) -> 19 (18%) in 1 h 39, 9 quests turned in; Skyborne 18 (13%) -> 19 (18%) in 2 h 06, 9 quests turned in.
+-- Simulated (warrior): Human 18 (21%) -> 19 (23%) in 1 h 57, 10 quests turned in; Dwarf 18 (26%) -> 19 (23%) in 1 h 49, 10 quests turned in; NightElf 18 (13%) -> 19 (23%) in 2 h 00, 11 quests turned in; Gnome 18 (26%) -> 19 (23%) in 1 h 49, 10 quests turned in; Skyborne 18 (13%) -> 19 (23%) in 2 h 07, 10 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-a06-loch-modan",
     title    = "Loch Modan (18-19)",
@@ -45,6 +45,8 @@ Ding.RegisterGuide({
         { complete = 297, -- level 19
           note = "The targets are troggs." },
         { turnin = 297 }, -- level 19
+        { accept = 86614 }, -- level 19
+        { turnin = 86614 }, -- level 19
         { turnin = 298, accept = 301, -- level 19
           note = "The NPC waits on the lower level, indoors." },
         { turnin = 301 }, -- level 19

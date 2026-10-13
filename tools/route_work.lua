@@ -55,7 +55,8 @@ function M.new(D)
             local list = {}
             for _, c in ipairs(W.jobGroups(job, radius)) do
                 -- The monsters' level where this group is: the player picks the group in reach.
-                local o = { at = c.at, time = 0, kills = 0, perKill = 0, npc = job.npc, mobLevel = c.mobLevel or job.mobLevel }
+                local o = { at = c.at, time = 0, kills = 0, perKill = 0, npc = job.npc, npcs = job.npcs, label = job.label,
+                    mobLevel = c.mobLevel or job.mobLevel }
                 if job.kind == "kill" then
                     o.time = Model.workTime(level, job.count, c.n, c.spacing, false)
                     o.kills, o.perKill = job.count, Model.targetTime(level, c.spacing, false)
@@ -68,7 +69,9 @@ function M.new(D)
             end
             per[j] = list
         end
-        local function jobOf(o) return { npc = o.npc, kills = o.kills, mobLevel = o.mobLevel, perKill = o.perKill } end
+        local function jobOf(o)
+            return { npc = o.npc, npcs = o.npcs, label = o.label, kills = o.kills, mobLevel = o.mobLevel, perKill = o.perKill }
+        end
         local options = {}
         if #jobs == 1 then
             for _, o in ipairs(per[1]) do

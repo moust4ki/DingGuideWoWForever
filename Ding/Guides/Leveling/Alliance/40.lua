@@ -83,7 +83,6 @@ Ding.RegisterGuide({
           note = "The NPC is indoors, one floor up." },
         { turnin = 5022, accept = 5048, -- level 56
           note = "The NPC is indoors, one floor up." },
-        { turnin = 98191, races = { "Human" }, classes = { "PALADIN" } }, -- level 56
         { turnin = 5048, accept = 5050, patrol = { { 1453, 60.22, 56.88 }, { 1453, 57.07, 62.4 }, { 1453, 58.52, 64.27 }, { 1453, 62.3, 61.28 }, { 1453, 64.33, 61.4 }, { 1453, 65.94, 64.29 }, { 1453, 64.26, 67.18 }, { 1453, 66.62, 71.15 }, { 1453, 63.94, 66.53 }, { 1453, 63.88, 66.47 }, { 1453, 62.71, 65.77 }, { 1453, 60.45, 67.07 }, { 1453, 59.08, 64.32 }, { 1453, 58.15, 64.39 }, { 1453, 57, 61.88 } }, -- level 56
           note = "The NPC is an elderly human lady. The NPC patrols a long route; look along it. If absent, she can be on the house's upper floor, at 52.4, 42.1 in Stormwind City." },
         { turnin = 4186, accept = 4223, -- level 56

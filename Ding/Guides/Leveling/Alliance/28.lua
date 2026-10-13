@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Alliance/28.lua.
--- Simulated (warrior): Human 44 (14%) -> 48 (57%) in 31 h 53, 28 quests turned in; Dwarf 44 (14%) -> 48 (57%) in 31 h 53, 28 quests turned in; NightElf 44 (14%) -> 48 (57%) in 31 h 53, 28 quests turned in; Gnome 44 (14%) -> 48 (57%) in 31 h 53, 28 quests turned in; Skyborne 44 (14%) -> 48 (57%) in 31 h 53, 28 quests turned in.
+-- Simulated (warrior): Human 44 (14%) -> 48 (57%) in 31 h 53, 29 quests turned in; Dwarf 44 (14%) -> 48 (57%) in 31 h 53, 29 quests turned in; NightElf 44 (14%) -> 48 (57%) in 31 h 53, 29 quests turned in; Gnome 44 (14%) -> 48 (57%) in 31 h 53, 29 quests turned in; Skyborne 44 (14%) -> 48 (57%) in 31 h 53, 29 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-a28-feralas-and-tanaris",
     title    = "Feralas and Tanaris (44-48)",
@@ -71,8 +71,8 @@ Ding.RegisterGuide({
         { turnin = 3520, accept = 3527, dungeon = "Zul'Farrak" }, -- level 46
         { accept = 2768, dungeon = "Zul'Farrak" }, -- level 46
         { accept = 2865, dungeon = "Zul'Farrak" }, -- level 46
-        { accept = 3042, dungeon = "Zul'Farrak", races = { "Human", "Dwarf", "Gnome", "Skyborne" } }, -- level 46
-        { accept = 3042, dungeon = "Zul'Farrak", races = { "NightElf" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "WARLOCK", "DRUID" } }, -- level 46
+        { accept = 3042, dungeon = "Zul'Farrak", races = { "Gnome", "Skyborne" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 46
+        { accept = 3042, dungeon = "Zul'Farrak", races = { "Human", "Dwarf" } }, -- level 46
         { complete = 3527, dungeon = "Zul'Farrak", -- level 46
           note = "The target is the dungeon's second boss." },
         { complete = 2768, dungeon = "Zul'Farrak", -- level 46
@@ -81,14 +81,14 @@ Ding.RegisterGuide({
           note = "Take the trail to the southeast. Inside a big room around a central pool. This one roams, so scan the surrounding area." },
         { complete = 2865, dungeon = "Zul'Farrak", -- level 46
           note = "You'll find them all over the instance. Most of them are in Theka the Martyr's scarab chamber." },
-        { complete = 3042, dungeon = "Zul'Farrak", races = { "Human", "Dwarf", "Gnome", "Skyborne" }, -- level 46
+        { complete = 3042, dungeon = "Zul'Farrak", races = { "Gnome", "Skyborne" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 46
+        { complete = 3042, dungeon = "Zul'Farrak", races = { "Human", "Dwarf" }, -- level 46
           note = "The targets are trolls. You'll find them all over the instance. It could take a few trips through the instance." },
-        { complete = 3042, dungeon = "Zul'Farrak", races = { "NightElf" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "WARLOCK", "DRUID" } }, -- level 46
         { turnin = 3527, dungeon = "Zul'Farrak" }, -- level 46
         { turnin = 2768, dungeon = "Zul'Farrak" }, -- level 46
         { turnin = 2865, dungeon = "Zul'Farrak" }, -- level 46
-        { turnin = 3042, dungeon = "Zul'Farrak", races = { "Human", "Dwarf", "Gnome", "Skyborne" } }, -- level 46
-        { turnin = 3042, dungeon = "Zul'Farrak", races = { "NightElf" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "WARLOCK", "DRUID" } }, -- level 46
+        { turnin = 3042, dungeon = "Zul'Farrak", races = { "Gnome", "Skyborne" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 46
+        { turnin = 3042, dungeon = "Zul'Farrak", races = { "Human", "Dwarf" } }, -- level 46
         { level = 48, dungeon = "Zul'Farrak", sticky = { 2821, 1452 }, -- level 46
           note = "Zones with stronger foes lie just ahead. The quests alone won't give you the level you need. Do more Zul'Farrak runs." },
         { go = { 1444, 55.19, 56.33 }, text = "Keep to the road, then cross the tunnel" }, -- level 46
@@ -173,6 +173,7 @@ Ding.RegisterGuide({
         { train = true, talk = 7312, races = { "Human", "Gnome" }, classes = { "MAGE" }, -- level 46
           note = "The NPC is indoors." },
         { turnin = 4281 }, -- level 48
+        { turnin = 98155 }, -- level 48
         { talk = 7799, collect = { { 9329, 1 }, { 8564, 1 } }, spots = { { 1446, 52.35, 28.88 } }, -- level 48
           note = "The NPC is indoors." },
         { accept = 2741 }, -- level 48

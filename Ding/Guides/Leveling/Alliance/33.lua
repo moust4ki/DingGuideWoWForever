@@ -33,8 +33,8 @@ Ding.RegisterGuide({
         { collect = { { 11818, 1 } }, -- level 50
           note = "Targets are spread across the whole cavern." },
         { useitem = 11818 }, -- level 50
-        { accept = 4451, races = { "Gnome" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 50
-        { accept = 4451, races = { "Human", "Dwarf", "Skyborne" } }, -- level 50
+        { accept = 4451, races = { "Gnome", "Skyborne" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 50
+        { accept = 4451, races = { "Human", "Dwarf" } }, -- level 50
         { complete = 3443, -- level 50
           note = "Slave Workers can drop them too. Targets are spread across the whole cavern." },
         { complete = 7729, sticky = { 7724, 7723 }, -- level 50
@@ -64,30 +64,30 @@ Ding.RegisterGuide({
         { go = { 1427, 52.52, 58.01 }, elite = true, text = "Walk over the rope bridge" }, -- level 50
         { complete = 3463, elite = true, equip = 10515, -- level 50
           note = "The spot is at the tower's upper level. Beware, this foe is elite." },
-        { turnin = 4451, accept = 4449, races = { "Gnome" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 50
-        { turnin = 4451, accept = 4449, races = { "Human", "Dwarf", "Skyborne" } }, -- level 50
-        { complete = 4449, races = { "Gnome" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" }, -- level 50
+        { turnin = 4451, accept = 4449, races = { "Gnome", "Skyborne" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 50
+        { turnin = 4451, accept = 4449, races = { "Human", "Dwarf" } }, -- level 50
+        { complete = 4449, races = { "Gnome", "Skyborne" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 50
+        { complete = 4449, races = { "Human", "Dwarf" }, -- level 50
           note = "When the targets run out, skip ahead. No rush; you may complete this afterwards." },
-        { complete = 4449, races = { "Human", "Dwarf", "Skyborne" } }, -- level 50
         { elite = true, collect = { { 10000, 1 } }, patrol = { { 1427, 69.94, 76.41 }, { 1427, 70.58, 74.73 }, { 1427, 70.48, 73.22 }, { 1427, 68.74, 71.72 }, { 1427, 73.43, 74 }, { 1427, 73.22, 76.31 }, { 1427, 72.76, 78.36 }, { 1427, 72.91, 80.35 }, { 1427, 73.54, 82.37 } }, -- level 50
           note = "Hunt the elite azure saurian; it stands at level 48. The target wanders the trail. Consider bringing a group for this one." },
         { useitem = 10000 }, -- level 50
-        { complete = 4449, races = { "Gnome" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 50
-        { complete = 4449, races = { "Human", "Dwarf", "Skyborne" } }, -- level 50
-        { complete = 4449, races = { "Gnome" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 50
-        { complete = 4449, races = { "Human", "Dwarf", "Skyborne" } }, -- level 50
-        { turnin = 4449, races = { "Gnome" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 50
-        { turnin = 4449, races = { "Human", "Dwarf", "Skyborne" } }, -- level 50
-        { accept = 3367, races = { "Gnome" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" }, -- level 50
+        { complete = 4449, races = { "Gnome", "Skyborne" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 50
+        { complete = 4449, races = { "Human", "Dwarf" } }, -- level 50
+        { complete = 4449, races = { "Gnome", "Skyborne" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 50
+        { complete = 4449, races = { "Human", "Dwarf" } }, -- level 50
+        { turnin = 4449, races = { "Gnome", "Skyborne" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 50
+        { turnin = 4449, races = { "Human", "Dwarf" } }, -- level 50
+        { accept = 3367, races = { "Gnome", "Skyborne" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 50
+        { accept = 3367, races = { "Human", "Dwarf" }, -- level 50
           note = "For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears. Defeat every foe close by before you begin." },
-        { accept = 3367, races = { "Human", "Dwarf", "Skyborne" } }, -- level 50
-        { complete = 3367, races = { "Gnome" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" }, -- level 50
+        { complete = 3367, races = { "Gnome", "Skyborne" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 50
+        { complete = 3367, races = { "Human", "Dwarf" }, -- level 50
           note = "Let the conversation play out. Escort Dorius Stonetender and keep him safe." },
-        { complete = 3367, races = { "Human", "Dwarf", "Skyborne" } }, -- level 50
-        { turnin = 3367, races = { "Gnome" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 50
-        { turnin = 3367, races = { "Human", "Dwarf", "Skyborne" } }, -- level 50
-        { accept = 3368, races = { "Gnome" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 50
-        { accept = 3368, races = { "Human", "Dwarf", "Skyborne" } }, -- level 50
+        { turnin = 3367, races = { "Gnome", "Skyborne" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 50
+        { turnin = 3367, races = { "Human", "Dwarf" } }, -- level 50
+        { accept = 3368, races = { "Gnome", "Skyborne" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 50
+        { accept = 3368, races = { "Human", "Dwarf" } }, -- level 50
         { turnin = 3463, elite = true }, -- level 50
         { destroy = 10515 }, -- level 50
         { accept = 3481, elite = true }, -- level 50

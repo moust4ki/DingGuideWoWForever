@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Alliance/11.lua.
--- Simulated (warrior): Human 25 (91%) -> 28 (41%) in 6 h 48, 44 quests turned in; Dwarf 25 (91%) -> 28 (41%) in 6 h 47, 42 quests turned in; NightElf 25 (94%) -> 28 (42%) in 6 h 47, 42 quests turned in; Gnome 25 (91%) -> 28 (41%) in 6 h 47, 42 quests turned in; Skyborne 25 (91%) -> 28 (41%) in 6 h 47, 42 quests turned in.
+-- Simulated (warrior): Human 25 (96%) -> 28 (44%) in 6 h 47, 43 quests turned in; Dwarf 25 (96%) -> 28 (43%) in 6 h 47, 42 quests turned in; NightElf 25 (92%) -> 28 (41%) in 6 h 47, 42 quests turned in; Gnome 25 (96%) -> 28 (43%) in 6 h 47, 42 quests turned in; Skyborne 25 (96%) -> 28 (44%) in 6 h 47, 42 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-a11-duskwood-and-redridge-mountains",
     title    = "Duskwood and Redridge (25-27)",
@@ -55,8 +55,7 @@ Ding.RegisterGuide({
           note = "Use Sap on Klaven Mortwake, then open the chest. Opening it puts a harmful effect on you. Climb to the highest floor of the building." },
         { turnin = 67, accept = 68, -- level 26
           note = "Be ready for a fight right away. The object is indoors." },
-        { accept = 79008 }, -- level 26
-        { accept = 79192, races = { "Dwarf", "NightElf", "Gnome", "Skyborne" } }, -- level 26
+        { accept = 79192 }, -- level 26
         { go = { 1436, 52.69, 72.3 }, races = { "Human", "Dwarf" }, classes = { "PALADIN" }, text = "Climb the trail across the mountains" }, -- level 26
         { go = { 1436, 38.79, 83.76 }, races = { "Human", "Dwarf" }, classes = { "PALADIN" }, text = "Take the trail that circles the peak" }, -- level 26
         { turnin = 1650, accept = 1651, races = { "Human", "Dwarf" }, classes = { "PALADIN" } }, -- level 26
@@ -75,7 +74,7 @@ Ding.RegisterGuide({
           note = "Climb to the highest floor of the building." },
         { turnin = 5, accept = 93, -- level 26
           note = "The NPC is indoors." },
-        { turnin = 93, when = { ready = 93 }, -- level 26
+        { turnin = 93, when = { ready = 93 }, -- level 27
           note = "The NPC is indoors." },
         { accept = 240, when = { done = 93 } }, -- level 27
         { destroy = 2251 }, -- level 27
@@ -101,7 +100,6 @@ Ding.RegisterGuide({
           note = "The object is indoors, one floor up." },
         { turnin = 95998, races = { "Human" } }, -- level 27
         { complete = 96606, races = { "NightElf" } }, -- level 27
-        { turnin = 91751, races = { "Human" } }, -- level 27
         { go = { 1453, 52.93, 51.05 }, races = { "Human", "Dwarf" }, classes = { "PALADIN" }, text = "Head indoors" }, -- level 27
         { turnin = 1652, when = { log = 1652 }, races = { "Human", "Dwarf" }, classes = { "PALADIN" }, -- level 27
           note = "The NPC is indoors." },
@@ -141,13 +139,10 @@ Ding.RegisterGuide({
           note = "The NPC waits on the tower's highest floor." },
         { accept = 20 }, -- level 27
         { accept = { 127, 150 } }, -- level 27
-        { accept = 34, races = { "Human", "Dwarf", "NightElf", "Gnome" } }, -- level 27
-        { accept = 34, races = { "Skyborne" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 27
-        { complete = 34, races = { "Human", "Dwarf", "NightElf", "Gnome" }, -- level 27
+        { accept = 34 }, -- level 27
+        { complete = 34, -- level 27
           note = "The target is a boar whose hide is a deeper shade of brown. This one roams, so scan the surrounding area." },
-        { complete = 34, races = { "Skyborne" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 27
-        { turnin = 34, races = { "Human", "Dwarf", "NightElf", "Gnome" } }, -- level 27
-        { turnin = 34, races = { "Skyborne" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 27
+        { turnin = 34 }, -- level 27
         { complete = 20, -- level 27
           note = "The targets are orcs." },
         { complete = { 150, 127 }, keep = { 1468, 1467 }, -- level 27
@@ -182,6 +177,9 @@ Ding.RegisterGuide({
         { accept = 377, dungeon = "The Stockade", -- level 27
           note = "The NPC is indoors." },
         { accept = 128 }, -- level 27
+        { accept = 124, races = { "NightElf" }, classes = { "ROGUE", "DRUID" } }, -- level 27
+        { complete = 124, races = { "NightElf" }, classes = { "ROGUE", "DRUID" } }, -- level 27
+        { turnin = 124, races = { "NightElf" }, classes = { "ROGUE", "DRUID" } }, -- level 27
         { accept = 126 }, -- level 27
         { accept = 91, -- level 27
           note = "The NPC is indoors." },
@@ -190,7 +188,7 @@ Ding.RegisterGuide({
           note = "The target is a sword-wielding gnoll. This one roams, so scan the surrounding area. The targets are spread over several spots." },
         { complete = 180, -- level 27
           note = "The target is a gnoll in a crimson robe, wielding a lengthy blade. This one roams, so scan the surrounding area. Beware: nearby foes join when you attack him." },
-        { turnin = 94 }, -- level 27
+        { turnin = 94 }, -- level 28
         { complete = 91, -- level 28
           note = "Your targets here are gnolls." },
         { complete = 128, -- level 28

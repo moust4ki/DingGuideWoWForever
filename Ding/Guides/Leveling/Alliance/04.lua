@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Alliance/04.lua.
--- Simulated (warrior): Human 13 (94%) -> 16 (1%) in 2 h 54, 11 quests turned in; Dwarf 14 (9%) -> 16 (21%) in 3 h 01, 14 quests turned in; NightElf 14 (11%) -> 16 (19%) in 2 h 44, 13 quests turned in; Gnome 14 (3%) -> 16 (16%) in 3 h 01, 14 quests turned in; Skyborne 13 (0%) -> 15 (40%) in 2 h 57, 13 quests turned in.
+-- Simulated (warrior): Human 13 (91%) -> 15 (99%) in 2 h 54, 11 quests turned in; Dwarf 13 (88%) -> 16 (7%) in 3 h 01, 14 quests turned in; NightElf 14 (5%) -> 16 (14%) in 2 h 44, 13 quests turned in; Gnome 13 (88%) -> 16 (7%) in 3 h 01, 14 quests turned in; Skyborne 13 (0%) -> 15 (40%) in 2 h 57, 13 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-a04-westfall",
     title    = "Westfall (13-15)",
@@ -10,9 +10,9 @@ Ding.RegisterGuide({
     minLevel = 13, maxLevel = 15,
     next     = "leveling-a05-darkshore",
     steps    = {
-        { go = { 1436, 53.98, 52.98 }, text = "Travel to Westfall", -- level 14
+        { go = { 1436, 53.98, 52.98 }, text = "Travel to Westfall", -- level 13
           note = "Westfall: Sentinel Hill is the hub, in the middle of the zone. The first stop is the farm in the north." },
-        { turnin = 184, when = { log = 184 }, races = { "Dwarf", "NightElf", "Gnome", "Skyborne" } }, -- level 14
+        { turnin = 184, when = { log = 184 }, races = { "Dwarf", "NightElf", "Gnome", "Skyborne" } }, -- level 13
         { accept = 64, races = { "Dwarf", "NightElf", "Gnome", "Skyborne" } }, -- level 13
         { accept = 109, races = { "NightElf", "Skyborne" } }, -- level 13
         { accept = { 36, 151 }, races = { "Dwarf", "NightElf", "Gnome", "Skyborne" } }, -- level 13

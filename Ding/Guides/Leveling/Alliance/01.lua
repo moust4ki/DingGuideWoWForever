@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Alliance/01.lua.
--- Simulated (warrior): Human 1 (0%) -> 13 (94%) in 7 h 17, 78 quests turned in.
+-- Simulated (warrior): Human 1 (0%) -> 13 (91%) in 7 h 13, 77 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-a01-human-starter",
     title    = "Human start (1-13)",
@@ -169,7 +169,6 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { sethearth = "Goldshire", talk = 295, -- level 8
           note = "The NPC is indoors." },
-        { accept = 91751, races = { "Human" } }, -- level 8
         { accept = 99127, races = { "Human" } }, -- level 8
         { complete = 99127, races = { "Human" } }, -- level 8
         { turnin = 99127, races = { "Human" } }, -- level 8
@@ -197,7 +196,6 @@ Ding.RegisterGuide({
         { complete = 76, -- level 8
           note = "The objective is underground, in the mine shaft." },
         { go = { 1429, 61.79, 53.93 }, text = "Exit the mine shaft" }, -- level 8
-        { complete = 91751, races = { "Human" } }, -- level 8
         { accept = 91723, races = { "Human" } }, -- level 8
         { complete = 91723, races = { "Human" } }, -- level 8
         { accept = 91725, races = { "Human" } }, -- level 8
@@ -208,9 +206,9 @@ Ding.RegisterGuide({
           note = "Look for little stacks of brown wood. Look around tree trunks at ground level." },
         { accept = 91732, races = { "Human" } }, -- level 8
         { complete = 52 }, -- level 8
-        { complete = 52, -- level 9
+        { complete = 52, -- level 8
           note = "The targets are wolves." },
-        { level = 9, patrol = { { 1429, 79.96, 59.23 }, { 1429, 83.37, 59.24 }, { 1429, 86.54, 59.84 }, { 1429, 87.64, 63.17 }, { 1429, 84.43, 62.66 }, { 1429, 85.34, 66.23 }, { 1429, 87.14, 68.97 }, { 1429, 87.65, 72.23 }, { 1429, 87.37, 75.36 }, { 1429, 89.74, 77.97 }, { 1429, 88.06, 80.76 }, { 1429, 85.57, 78.97 }, { 1429, 85.26, 82.46 }, { 1429, 85.76, 85.83 }, { 1429, 81.03, 84.03 }, { 1429, 78.04, 82.46 }, { 1429, 77.35, 78.86 }, { 1429, 80.44, 78.95 }, { 1429, 81.55, 76.17 }, { 1429, 78.34, 75.65 }, { 1429, 75.43, 76.45 }, { 1429, 75.36, 73.35 }, { 1429, 76.06, 64.76 }, { 1429, 72.37, 65.23 }, { 1429, 76.45, 60.75 }, { 1429, 78.95, 62.56 }, { 1429, 84.37, 71.16 } }, -- level 9
+        { level = 9, patrol = { { 1429, 79.96, 59.23 }, { 1429, 83.37, 59.24 }, { 1429, 86.54, 59.84 }, { 1429, 87.64, 63.17 }, { 1429, 84.43, 62.66 }, { 1429, 85.34, 66.23 }, { 1429, 87.14, 68.97 }, { 1429, 87.65, 72.23 }, { 1429, 87.37, 75.36 }, { 1429, 89.74, 77.97 }, { 1429, 88.06, 80.76 }, { 1429, 85.57, 78.97 }, { 1429, 85.26, 82.46 }, { 1429, 85.76, 85.83 }, { 1429, 81.03, 84.03 }, { 1429, 78.04, 82.46 }, { 1429, 77.35, 78.86 }, { 1429, 80.44, 78.95 }, { 1429, 81.55, 76.17 }, { 1429, 78.34, 75.65 }, { 1429, 75.43, 76.45 }, { 1429, 75.36, 73.35 }, { 1429, 76.06, 64.76 }, { 1429, 72.37, 65.23 }, { 1429, 76.45, 60.75 }, { 1429, 78.95, 62.56 }, { 1429, 84.37, 71.16 } }, -- level 8
           note = "The following step may be hard. One extra level makes it easier." },
         { turnin = 45, accept = 71 }, -- level 9
         { turnin = 5545 }, -- level 9
@@ -340,6 +338,7 @@ Ding.RegisterGuide({
         { talk = 13084, classes = { "WARRIOR" }, -- level 11
           note = "The NPC is indoors." },
         { go = { 1455, 61.12, 89.58 }, classes = { "WARRIOR" }, text = "Learn Two-Handed Maces at the weapon master" }, -- level 11
+        { accept = 95041, races = { "Human" } }, -- level 11
         { talk = 11865, classes = { "WARRIOR" }, -- level 11
           note = "The NPC is indoors." },
         { go = { 1455, 55.53, 47.78 }, fly = true, talk = 1573, text = "Fly to Ironforge" }, -- level 11
@@ -371,6 +370,7 @@ Ding.RegisterGuide({
           note = "Targets are in the cavern and around its entrance too." },
         { go = { 1426, 25.1, 50.95 }, text = "Head out of the cave" }, -- level 11
         { complete = 412 }, -- level 11
+        { complete = 95041, races = { "Human" } }, -- level 11
         { go = { 1426, 31.03, 32.59 }, text = "Climb the trail", -- level 11
           note = "Once in the Wetlands, head north. Leap down from the ledge. This makes Menethil Harbor quicker to get to." },
         { go = { 1426, 31.48, 32.3 }, text = "Keep climbing the trail" }, -- level 11
@@ -410,10 +410,7 @@ Ding.RegisterGuide({
         { go = { 1426, 70.67, 56.43 }, text = "Head out of the cave" }, -- level 12
         { turnin = 433 }, -- level 12
         { turnin = 432 }, -- level 12
-        { accept = 95217, races = { "Human" } }, -- level 12
         { go = { 1426, 68.34, 54.54 }, text = "Learn Cooking from the trainer" }, -- level 12
-        { complete = 95217, races = { "Human" } }, -- level 12
-        { turnin = 95217, races = { "Human" } }, -- level 12
         { talk = 1355, -- level 12
           note = "This one roams, so scan the surrounding area. Without this, one quest can't be picked up." },
         { accept = 419, -- level 12
@@ -441,11 +438,11 @@ Ding.RegisterGuide({
           note = "The NPC patrols a long route; look along it." },
         { turnin = 418, when = { ready = 418 }, -- level 12
           note = "The NPC is indoors." },
-        { accept = 224 }, -- level 13
-        { accept = 267, sticky = 224, -- level 13
+        { accept = 224 }, -- level 12
+        { accept = 267, sticky = 224, -- level 12
           note = "The NPC is indoors, one floor up." },
-        { go = { 1432, 29.26, 66.68 }, text = "Take the road to where the trail starts" }, -- level 13
-        { complete = 267 }, -- level 13
+        { go = { 1432, 29.26, 66.68 }, text = "Take the road to where the trail starts" }, -- level 12
+        { complete = 267 }, -- level 12
         { complete = 224 }, -- level 13
         { collect = { { 2589, 10 } }, keep = 2589, classes = { "PALADIN" }, -- level 13
           note = "A class quest coming up requires this." },
