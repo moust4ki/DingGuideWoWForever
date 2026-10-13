@@ -42,7 +42,9 @@ end
 -- The window's rows as the player reads them: "label | sub | right".
 local function screen()
     local out = {}
-    for i, r in ipairs(F.rows or {}) do out[i] = (r.label or "") .. " | " .. (r.sub or "") .. " | " .. (r.right or "") end
+    for i, r in ipairs(F.rows or {}) do
+        out[i] = (r.label or "") .. " | " .. (r.sub or "") .. " | " .. (r.right or "")
+    end
     return table.concat(out, "\n")
 end
 
@@ -64,8 +66,8 @@ T.test("Travel:Reach prices any point like Travel:Plan, in one pass", function()
     start(IRONFORGE)
     Ding.char.flights = { [1573] = true }
     local reach = Ding.Travel:Reach()
-    for _, point in ipairs({ { map = 1455, x = 61, y = 89 }, { map = 1426, x = 47, y = 52 }, { map = 1429, x = 43, y = 65 },
-        { map = 1438, x = 55, y = 50 } }) do
+    for _, point in ipairs({ { map = 1455, x = 61, y = 89 }, { map = 1426, x = 47, y = 52 },
+        { map = 1429, x = 43, y = 65 }, { map = 1438, x = 55, y = 50 } }) do
         local plan = Ding.Travel:Plan({ map = point.map, x = point.x, y = point.y })
         local seconds = reach:Seconds({ map = point.map, x = point.x, y = point.y })
         T.ok(plan and seconds and math.abs(plan.seconds - seconds) < 1e-6,
@@ -129,13 +131,16 @@ T.test("vendors by what they sell: ammunition, food and drink, reagents, poisons
             local friendly = side(npc)
             if (friendly == "A" or friendly == "AH") and not listed(kind, npc) then
                 local sub = NpcDB.GetRaw(npc, "subName") or ""
-                T.ok(sub:find("Smokywood", 1, true) or sub:find("Darkmoon", 1, true), kind .. ": " .. npc .. " left out")
+                T.ok(sub:find("Smokywood", 1, true) or sub:find("Darkmoon", 1, true),
+                    kind .. ": " .. npc .. " left out")
             end
         end
     end
     -- Deadly Poison (2892) is not food: its vendors are listed only when they sell food too.
     for _, npc in ipairs(Ding.Data:ItemVendors(2892)) do
-        if listed("food", npc) then T.ok(sells(npc, 117) or sells(npc, 159) or sells(npc, 4540), "a poison vendor as food") end
+        if listed("food", npc) then
+            T.ok(sells(npc, 117) or sells(npc, 159) or sells(npc, 4540), "a poison vendor as food")
+        end
     end
     T.eq(Dir.GoodsKind({ class = 0, subClass = 0, flags = 64, requiredLevel = 20 }), nil, "a poison")
     T.eq(Dir.GoodsKind({ class = 0, subClass = 0, requiredLevel = 0 }), nil, "alcohol")
@@ -144,7 +149,8 @@ T.test("vendors by what they sell: ammunition, food and drink, reagents, poisons
     for class, items in pairs(Dir.REAGENTS) do
         for _, item in ipairs(items) do
             local info = Ding.Data:ItemInfo(item)
-            T.ok(info and (info.class == 5 or (info.class == 15 and info.subClass == 1)), class .. ": " .. item .. " is not a reagent")
+            T.ok(info and (info.class == 5 or (info.class == 15 and info.subClass == 1)),
+                class .. ": " .. item .. " is not a reagent")
         end
     end
     -- A mage's reagents; a rogue's poisons.
@@ -357,7 +363,8 @@ T.test("mouse: no chips, clicks open and go, right click and Esc go back, the wh
     start(IRONFORGE)
     H.setGamepadConnected(false)
     F:Open(1); H.flush()
-    T.ok(not F.frame.rows[1].key:IsShown() and not F.frame.back:IsShown() and not F.frame.lb:IsShown(), "chips without a gamepad")
+    T.ok(not F.frame.rows[1].key:IsShown() and not F.frame.back:IsShown() and not F.frame.lb:IsShown(),
+        "chips without a gamepad")
     T.eq(F.frame.help.items[1].label:GetText(), L.FINDER_MOUSE)
     T.ok(#F.rows > 9, "a hunter's list scrolls")
     F.frame.list.scripts.OnMouseWheel(F.frame.list, -1)

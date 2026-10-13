@@ -168,7 +168,8 @@ function F:Rows(page)
                 sub = (e.best.name or "?") .. (count > 1 and (" " .. L.PREVIEW_MORE:format(count - 1)) or "")
             end
             add({ label = name, sub = sub, right = cost(e.best), caret = true,
-                open = { kind = "citylist", city = page.city, category = e.category, title = page.title .. " · " .. name } })
+                open = { kind = "citylist", city = page.city, category = e.category,
+                    title = page.title .. " · " .. name } })
         end
     elseif page.kind == "citylist" then
         for _, e in ipairs(D:CityList(page.city, page.category)) do

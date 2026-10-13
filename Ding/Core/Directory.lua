@@ -631,8 +631,9 @@ function Dir:WeaponReminder()
                 end
                 local point = spawnOf(near, continent, px, py)
                 local reach = self:Reach()
-                value = { weapons = weapons, best = { kind = weapons[1].kind, npc = near, name = Ding.Data:NpcName(near),
-                    point = point, distance = nearD, seconds = reach and reach:Seconds(point) or nil } }
+                value = { weapons = weapons, best = { kind = weapons[1].kind, npc = near,
+                    name = Ding.Data:NpcName(near), point = point, distance = nearD,
+                    seconds = reach and reach:Seconds(point) or nil } }
             end
         end
     end
@@ -815,7 +816,8 @@ function Dir:Search(text)
         for _, npc in ipairs(npcs) do
             local point, d = spawnOf(npc, continent, px, py)
             if point then
-                found[#found + 1] = { kind = "npc", npc = npc, name = Ding.Data:NpcName(npc), point = point, distance = d }
+                found[#found + 1] = { kind = "npc", npc = npc, name = Ding.Data:NpcName(npc), point = point,
+                    distance = d }
             end
         end
         table.sort(found, function(a, b)
