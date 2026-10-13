@@ -33,6 +33,8 @@ local C = {
     accentBg = { 0.357, 0.706, 1, 0.122 },
     accentHalo = { 0.357, 0.706, 1, 0.2 },
     onAccent = { 0.043, 0.047, 0.055, 1 },
+    -- A gamepad chip on an accent button: a dark disc under a letter in the label's color.
+    glyphOnAccent = { 0.043, 0.047, 0.055, 0.2 },
     done = { 0.298, 0.765, 0.541, 1 },
     doneIconBg = { 0.298, 0.765, 0.541, 0.2 },
     doneRowBg = { 0.298, 0.765, 0.541, 0.122 },
@@ -515,6 +517,54 @@ function UI.Glyph(parent, style)
 end
 
 ---------------------------------------------------------------------------
+-- Gamepad buttons on a push button, before its label: "(A) Import", "(B) Cancel". With a
+-- gamepad, a button carries the buttons that press it and no hint repeats it (Yendi: the same
+-- action shown twice, once as a hint, once as a button).
+---------------------------------------------------------------------------
+local measure
+
+-- Width the chips of `keys` take before a label, the gap to the label included.
+function UI.KeysWidth(keys)
+    if not keys or #keys == 0 then return 0 end
+    measure = measure or UI.Glyph(UIParent)
+    measure:Hide()
+    local width = 6 + 3 * (#keys - 1)
+    for _, key in ipairs(keys) do
+        measure:SetKey(key)
+        width = width + measure:GetWidth()
+    end
+    return width
+end
+
+-- Chips of `keys` ({} or nil: none) before `b.text`, chips and label centered together in
+-- `b`; on an accent button (`accent`), the chips take the label's dark color. Returns the
+-- width of the chips (UI.KeysWidth).
+function UI.ButtonKeys(b, keys, accent)
+    b.keyGlyphs = b.keyGlyphs or {}
+    local count = keys and #keys or 0
+    local anchor, gap = b.text, 6
+    for i = count, 1, -1 do
+        local g = b.keyGlyphs[i]
+        if not g then
+            g = UI.Glyph(b)
+            b.keyGlyphs[i] = g
+        end
+        g:SetKey(keys[i])
+        g.padKey = keys[i]
+        g:SetColors(accent and C.glyphOnAccent or C.glyphBg, accent and C.onAccent or C.glyph)
+        g:ClearAllPoints()
+        g:SetPoint("RIGHT", anchor, "LEFT", -gap, 0)
+        g:Show()
+        anchor, gap = g, 3
+    end
+    for i = count + 1, #b.keyGlyphs do b.keyGlyphs[i]:Hide() end
+    local width = UI.KeysWidth(keys)
+    b.text:ClearAllPoints()
+    b.text:SetPoint("CENTER", b, "CENTER", math.floor(width / 2 + 0.5), 0)
+    return width
+end
+
+---------------------------------------------------------------------------
 -- Settings rows (Ding.Config). A row is a Button as wide as the content; the whole line
 -- is the target. Focusable rows implement Activate (A), Left / Right (D-pad), Reset (Y),
 -- Cancel, Refresh, SetFocused, and Hints() for the footer.
@@ -624,7 +674,8 @@ function UI.CheckRow(parent, owner, opts, width)
         opts.set(not opts.get())
         self:Refresh()
     end
-    function row:Hints() return { hint("PAD1", L.HINT_TOGGLE) } end
+    -- A is on the row (its corner chip): the footer does not repeat it.
+    function row:Hints() return {} end
     row:Refresh()
     return row
 end
@@ -815,10 +866,15 @@ function UI.ButtonRow(parent, owner, opts, width)
     b.text:SetPoint("CENTER", b, "CENTER", 0, 0)
     b:SetPoint("RIGHT", row, "RIGHT", -8, 0)
     row.button = b
+    -- With a gamepad, the focused row's button carries A (the footer does not repeat it); every
+    -- button keeps room for it, so that it does not grow with the focus. A confirmation names
+    -- the button in its text ("Confirm? (A)").
     local function setButton(text, color)
         b.text:SetText(text)
         b.text:SetTextColor(unpack(color or C.text))
-        b:SetWidth(math.max(72, b.text:GetStringWidth() + 24))
+        local pad = Ding.Gamepad:Active() and not row.confirming
+        UI.ButtonKeys(b, pad and row.focused and { "PAD1" } or nil)
+        b:SetWidth(math.max(72, b.text:GetStringWidth() + 24 + (pad and UI.KeysWidth({ "PAD1" }) or 0)))
     end
     setButton(opts.button)
     placeLabel(row, 8, 160)
@@ -848,10 +904,17 @@ function UI.ButtonRow(parent, owner, opts, width)
         opts.run()
         self.owner:RefreshRows()
     end
-    function row:Hints()
-        if self.confirming then return { hint("PAD1", L.HINT_CONFIRM) } end
-        return { hint("PAD1", opts.hint or L.HINT_RUN) }
+    local refresh, setFocused = row.Refresh, row.SetFocused
+    function row:Refresh()
+        refresh(self)
+        if not self.confirming then setButton(opts.button) end
     end
+    function row:SetFocused(focused)
+        setFocused(self, focused)
+        if not self.confirming then setButton(opts.button) end
+    end
+    -- A is on the button, or in its text while it asks to confirm.
+    function row:Hints() return {} end
     return row
 end
 
@@ -907,17 +970,31 @@ function UI.FoldRow(parent, owner, opts, width)
 end
 
 -- Title of a page opened from a PageRow: a back caret and the page's name; a click goes
--- back. Not focusable: B, Esc or a right click go back too.
+-- back. Not focusable: B, Esc or a right click go back too. With a gamepad, the B chip sits
+-- between the caret and the name (ShowKey): the footer does not repeat it.
 function UI.PageTitleRow(parent, text, width, back)
     local row = CreateFrame("Button", nil, parent)
     row:SetSize(width, 30)
     row:RegisterForClicks("LeftButtonUp", "RightButtonUp")
     row.caret = UI.Caret(row, "LEFT", 8, C.accent)
     row.caret:SetPoint("LEFT", row, "LEFT", 8, 0)
+    row.key = UI.Glyph(row)
+    row.key:SetPoint("LEFT", row.caret, "RIGHT", 8, 0)
+    row.key:SetKey("PAD2")
     row.label = UI.Text(row, "semibold", 13, C.text)
-    row.label:SetPoint("LEFT", row.caret, "RIGHT", 8, 0)
     row.label:SetText(text)
     row:SetScript("OnClick", function() back() end)
+    function row:ShowKey(shown)
+        self.key:SetKey("PAD2")
+        self.key:SetShown(shown)
+        self.label:ClearAllPoints()
+        if shown then
+            self.label:SetPoint("LEFT", self.key, "RIGHT", 6, 0)
+        else
+            self.label:SetPoint("LEFT", self.caret, "RIGHT", 8, 0)
+        end
+    end
+    row:ShowKey(false)
     function row:Refresh() end
     return row
 end

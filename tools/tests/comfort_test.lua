@@ -294,13 +294,23 @@ T.test("merchant: no repair without the money", function()
     H.closeMerchant()
 end)
 
-T.test("bags almost full: a warning under the step", function()
+T.test("bags almost full: a warning in a box of its own, not under the step", function()
     start(7)
-    T.ok(not P.rowsShown[#P.rowsShown].sub or not P.rowsShown[#P.rowsShown].sub:find(L.BAGS_ALMOST_FULL:format(4), 1, true))
+    local function warning()
+        for _, row in ipairs(P.rowsShown) do
+            if row.action == "notice" and row.notice == "bags" then return row end
+        end
+    end
+    T.eq(warning(), nil)
     for slot = 1, 12 do H.putInBag(0, slot, WHITE, 1) end
     H.fire("BAG_UPDATE", 0); H.tick(1)
-    local sub = P.rowsShown[#P.rowsShown].sub or ""
-    T.ok(sub:find(L.BAGS_ALMOST_FULL:format(4), 1, true), "no warning: " .. sub)
+    local row = warning()
+    T.ok(row, "no warning")
+    T.eq(row.text, L.BAGS_ALMOST_FULL:format(4))
+    T.eq(row.state, "notice")
+    for _, r in ipairs(P.rowsShown) do
+        T.ok(not (r.sub and r.sub:find(L.BAGS_ALMOST_FULL:format(4), 1, true)), "the warning under a row: " .. r.text)
+    end
 end)
 
 T.run()

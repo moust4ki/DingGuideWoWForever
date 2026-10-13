@@ -3,7 +3,9 @@
 -- under it in a second box (plain text, to copy back to whoever wrote the guide), and the
 -- buttons. Gamepad: D-pad left / right between the buttons, A presses the focused one, Y
 -- selects the text (or the report) for Ctrl+C, B closes; temporary bindings, out of combat
--- only. Mouse and keyboard: the buttons are clicked, Esc closes.
+-- only. Each action shows once: a button carries its chips (A when focused, B on the one that
+-- closes), the hint bar the actions without a button. Mouse and keyboard: the buttons are
+-- clicked, Esc closes.
 local _, Ding = ...
 local L = Ding.L
 local UI = Ding.UI
@@ -175,10 +177,19 @@ function W:Create()
     self.frame = f
 end
 
--- The buttons of the moment: { label, run, primary }, laid out from the right.
+-- The buttons of the moment: { label, run, primary, key }, laid out from the right; `key`:
+-- the gamepad button that presses it wherever the focus is (B for the one that closes).
 function W:SetButtons(list)
-    local f = self.frame
     self.actions = list
+    self:LayoutButtons()
+    self:SetFocus(1)
+end
+
+-- With a gamepad, every button keeps room for its chips (A, and its own key), so that it does
+-- not grow when the focus comes to it.
+function W:LayoutButtons()
+    local f, list = self.frame, self.actions
+    local pad = G():Active()
     local x = -PAD
     for i = #list, 1, -1 do
         local b = f.buttons[i] or newButton(f, i)
@@ -187,34 +198,67 @@ function W:SetButtons(list)
         b.text:SetText(action.label)
         b.bg:SetColor(action.primary and C.accent or C.control)
         b.text:SetTextColor(unpack(action.primary and C.onAccent or C.text))
-        b:SetWidth(math.max(88, b.text:GetStringWidth() + 28))
+        local room = pad and UI.KeysWidth({ "PAD1", action.key }) or 0
+        b:SetWidth(math.max(88, b.text:GetStringWidth() + 28 + room))
         b:ClearAllPoints()
         b:SetPoint("BOTTOMRIGHT", f, "BOTTOMRIGHT", x, 8)
         x = x - b:GetWidth() - 8
         b:Show()
     end
     for i = #list + 1, #f.buttons do f.buttons[i]:Hide() end
-    self:SetFocus(1)
+    self.buttonsWidth = -x - PAD - 8
 end
 
 function W:SetFocus(index)
     self.focusIndex = math.max(1, math.min(index or 1, #(self.actions or {})))
     local pad = G():Active()
-    for i, b in ipairs(self.frame.buttons) do b.focus:SetShown(pad and i == self.focusIndex and b:IsShown()) end
+    for i, b in ipairs(self.frame.buttons) do
+        local action = self.actions[i]
+        local focused = i == self.focusIndex and b:IsShown()
+        b.focus:SetShown(pad and focused)
+        local keys = {}
+        if pad and focused then keys[#keys + 1] = "PAD1" end
+        if pad and action and action.key then keys[#keys + 1] = action.key end
+        UI.ButtonKeys(b, keys, action and action.primary)
+    end
     self:UpdateHelp()
 end
 
+-- The hint bar: what has no button (Y selects for Ctrl+C, unless a button does it), or the
+-- mouse help. Left of the buttons, or on a line of its own above them when it does not fit
+-- there (long languages, three buttons): the window grows by that line.
+local LINE = 30
 function W:UpdateHelp()
-    local action = self.actions and self.actions[self.focusIndex]
+    local f = self.frame
+    local hints
     if G():Active() then
-        self.frame.hints:SetHints({
-            UI.Hint("PAD1", action and action.label or ""),
-            UI.Hint("PAD4", L.IMPORT_SELECT),
-            UI.Hint("PAD2", L.IMPORT_CLOSE),
-        })
+        hints = {}
+        local selects = false
+        for _, action in ipairs(self.actions or {}) do
+            if action.key == "PAD4" then selects = true end
+        end
+        if not selects then hints[#hints + 1] = UI.Hint("PAD4", L.IMPORT_SELECT) end
     else
-        self.frame.hints:SetHints({ UI.Hint(nil, self.mode == "export" and L.EXPORT_MOUSE or L.IMPORT_MOUSE) })
+        hints = { UI.Hint(nil, self.mode == "export" and L.EXPORT_MOUSE or L.IMPORT_MOUSE) }
     end
+    local full = WIDTH - 2 * PAD
+    f.hints:SetRoom(math.max(0, full - (self.buttonsWidth or 0) - 16))
+    f.hints:SetHints(hints)
+    local below = f.hints.shown < #hints
+    if below then
+        f.hints:SetRoom(full)
+        f.hints:SetHints(hints)
+    end
+    f.hints:ClearAllPoints()
+    f.hints:SetPoint("BOTTOMLEFT", f, "BOTTOMLEFT", PAD, 9 + (below and LINE or 0))
+    f:SetHeight(HEIGHT + (below and LINE or 0))
+end
+
+-- A gamepad plugged in or out (Ding.Gamepad): chips and help again.
+function W:Refresh()
+    if not self.actions then return end
+    self:LayoutButtons()
+    self:SetFocus(self.focusIndex)
 end
 
 function W:Press(index)
@@ -251,7 +295,7 @@ function W:Import()
     self:SetButtons({
         { label = L.IMPORT_FOLLOW, primary = true, run = function() W:Follow() end },
         { label = L.IMPORT_ANOTHER, run = function() W:Open("import", nil, W.back) end },
-        { label = L.IMPORT_CLOSE, run = function() W:Close() end },
+        { label = L.IMPORT_CLOSE, key = "PAD2", run = function() W:Close() end },
     })
     return true
 end
@@ -296,9 +340,9 @@ function W:Open(mode, id, back)
         f.help:SetText(L.EXPORT_HELP)
         f.text:SetValue(text, true)
         self:SetButtons({
-            { label = L.EXPORT_SELECT, primary = true, run = function() W.frame.text:SelectAll() end },
+            { label = L.EXPORT_SELECT, primary = true, key = "PAD4", run = function() W.frame.text:SelectAll() end },
             { label = L.EXPORT_ONE_LINE, run = function() W:ToggleCompact() end },
-            { label = L.IMPORT_CLOSE, run = function() W:Close() end },
+            { label = L.IMPORT_CLOSE, key = "PAD2", run = function() W:Close() end },
         })
     else
         f.title:SetText(UI.Colored("accent", Ding.TITLE) .. UI.Colored("disabled", " · ") .. L.IMPORT_TITLE)
@@ -306,7 +350,7 @@ function W:Open(mode, id, back)
         f.text:SetValue("")
         self:SetButtons({
             { label = L.IMPORT_BUTTON, primary = true, run = function() W:Import() end },
-            { label = L.IMPORT_CANCEL, run = function() W:Close() end },
+            { label = L.IMPORT_CANCEL, key = "PAD2", run = function() W:Close() end },
         })
     end
     if not f:IsShown() then

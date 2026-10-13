@@ -225,16 +225,35 @@ T.test("cleanup: nothing to clean, the tab says so", function()
     Cfg:Close(); H.flush()
 end)
 
-T.test("cleanup: a log almost full points out the quests that can go", function()
+T.test("cleanup: a log almost full points out the quests that can go, A or a click lists them", function()
     local extra = {}
     for i = 1, 12 do extra[#extra + 1] = 900800 + i end
     startClean(extra)
     T.ok(#H.logOrder() >= 16)
-    local found = false
-    for _, row in ipairs(P.rowsShown or {}) do
-        if row.sub and H.plain(row.sub):find(L.CLEANUP_HINT:format(14), 1, true) then found = true end
+    local found
+    for i, row in ipairs(P.rowsShown or {}) do
+        if row.action == "notice" and row.notice == "cleanup" then found = i end
+        T.ok(not (row.sub and H.plain(row.sub):find(L.CLEANUP_HINT:format(14), 1, true)), "the notice under a row")
     end
-    T.ok(found, "no hint about the quests that can go")
+    T.ok(found, "no notice about the quests that can go")
+    local row = P.rowsShown[found]
+    T.eq(row.text, L.CLEANUP_HINT:format(14))
+    T.ok(row.sub and row.sub:find(L.NOTICE_OPEN_PAD:format(Ding.Gamepad:ButtonName("PAD1")), 1, true), tostring(row.sub))
+    -- A click (A in focus mode): the settings, on the cleanup page.
+    local r = P.frame.rows[found]
+    r.scripts.OnClick(r, "LeftButton"); H.flush()
+    T.ok(Cfg.frame:IsShown(), "the settings do not open")
+    T.eq(Cfg.page and Cfg.page.key, "cleanup", "not on the cleanup page")
+    Cfg:Close(); H.flush()
+    -- Without a gamepad, the notice speaks of the mouse.
+    local getCVar = _G.GetCVar
+    _G.GetCVar = function(name) if name == "GamePadEnable" then return "0" end return getCVar(name) end
+    E:Refresh()
+    for _, r2 in ipairs(P.rowsShown) do
+        if r2.notice == "cleanup" then T.ok(r2.sub:find(L.NOTICE_OPEN_MOUSE, 1, true), r2.sub) end
+    end
+    _G.GetCVar = getCVar
+    E:Refresh()
 end)
 
 T.run()

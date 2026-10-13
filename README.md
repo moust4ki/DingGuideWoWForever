@@ -81,8 +81,9 @@ Everything works without a gamepad too. In the settings, click to choose, toggle
 (click again when a button asks), right-click to put a setting back to its default or to
 unbind a key, and press Escape to close. To bind a key, click its row and press the key. To
 move the guide window, the arrow or the item button, drag it with the mouse, then click
-Save. The hints at the bottom ("A Select", "B Back"…) can be clicked too. Without a gamepad
-plugged in, that help speaks of the mouse and the keyboard.
+Save. The gamepad hints at the bottom ("A Open", "Y Reset"…) can be clicked too. Without a
+gamepad plugged in, that help speaks of the mouse and the keyboard, and the buttons show no
+gamepad button.
 
 ## Commands
 
