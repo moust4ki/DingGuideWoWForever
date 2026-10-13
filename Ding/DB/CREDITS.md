@@ -13,6 +13,9 @@ change and share them under the same terms.
 
 What changed from the source: only the fields Ding reads are kept, the spawns are converted from
 AreaIDs to UiMapIDs (two decimals), and the names in each language are kept in one file per
-language. The release used is written at the top of each file (`Ding.DB.source`).
+language. The release used is written at the top of each file (`Ding.DB.source`). DingDB's own
+corrections and additions (`tools/data/corrections` in Ding's repository) are applied on top;
+the weapon skills of the weapon masters were checked against the trainer lists of
+[cMaNGOS classic-db](https://github.com/cmangos/classic-db) (GNU General Public License v3).
 
 Names and texts of the game belong to Blizzard Entertainment.

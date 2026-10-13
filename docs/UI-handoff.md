@@ -475,12 +475,30 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   13 SemiBold, the destination in the accent color) at the top of the screen and a 34 px accent
   ring over the destination node, placed where the game's node button stands (read only).
 
-- **Nearby services** (not in the mockup): a 320-wide window like the settings (window look,
-  opaque), title "Ding · Nearby services" 12 SemiBold, then 32-high rows 2 apart (row background
-  `bg.control`, radius 4): the service 12 Medium, the NPC 11 Regular `text.secondary` under it,
-  the time 12 SemiBold accent on the right; the inset focus ring of list rows; the footer help
-  bar ("A Go · B Back", or the mouse text). Grayed service when none is known nearby.
-- **Guide window rows added under the step** (after "along the way"): "New spells at your class
+- **NPC directory** (not in the mockup; it replaces the "Nearby services" list): a 360-wide
+  window like the settings (window look, opaque). Title bar 32 high: "Ding! · Directory" 13
+  SemiBold (Ding! in `accent`, the dot `text.disabled`), the close cross on the right with the
+  round B chip before it (gamepad, on a tab's first page). Tab strip 30 high, the settings' tab
+  look (12 SemiBold, `text.secondary`, the active one `text` with a 2-unit accent underline):
+  LB chip, "Nearby", "Cities", RB chip (chips with a gamepad only), then a `border` divider.
+  Inside a list, a 30-high title row: accent left caret, the B chip (gamepad), the list's name
+  13 SemiBold; a click goes back. Rows 38 high, 2 apart, 6 from the sides (row background
+  `bg.control`, radius 4): the name 12 Medium, under it 11 Regular `text.secondary` ("Buliwyf
+  Stonehand · Ironforge", or what an NPC offers), on the right the time 12 SemiBold accent
+  ("4:10") or, for a row that opens a list, a `text.secondary` right caret; the inset focus ring
+  of list rows, with the A chip before the time or the caret (gamepad). A row with nothing to
+  offer: its name `text.disabled`. Nine rows shown, then the wheel or the focus scrolls. Footer
+  28 high under a divider: with a gamepad, the plain text "Times by the fastest way: flights,
+  boats, hearthstone." (every action has its chip); without one, the mouse help ("Click: go ·
+  Right-click or Esc: close", "… : back" in a list).
+- **The guide window's directory button** (not in the mockup): a 20 × 20 icon button in the
+  title bar, left of minimize (a map pin: an 8-unit `text.secondary` circle with a 3-unit
+  `bg` dot, over a 7-unit downward caret); tooltip "NPC directory". In focus mode, up from the
+  first row: the outer focus ring around it and the A chip on its left (the title shortens).
+- **Guide window rows added under the step** (after "along the way"): during a trip of the NPC
+  directory, "On the way to … (…): the guide resumes once there." with a sub-line "A: back to
+  the guide" ("Click: …" without a gamepad); "Weapon to learn: Guns — Buliwyf Stonehand,
+  Ironforge"; "New spells at your class
   trainer (cost)", or "New spells may wait at your class trainer (level N)" before the first
   visit (glyph of an "other" row) and "Equip [item]" with the item's icon, its gain
   as the counter ("+4") and a sub-line saying how to equip or ignore it. Focus mode also takes

@@ -14,7 +14,7 @@ key binding (`Bindings.xml`) or happen by itself.
 Ding/
   Ding.toc          load order; no hard dependency; optional: TomTom
   Bindings.xml      bindings DING_NEXT / DING_PREV / DING_TOGGLE / DING_CONFIG / DING_COMPACT,
-                    DING_FOCUS (focus mode), DING_SKIP / DING_UNSKIP, DING_FINDER (services),
+                    DING_FOCUS (focus mode), DING_SKIP / DING_UNSKIP, DING_FINDER (NPC directory),
                     DING_CYCLE (the arrow on the step's next target),
                     CLICK DingItemButton:LeftButton (quest item), CLICK DingItemButton:Target
                     (target the arrow's NPC or monster: the same secure button, virtual button)
@@ -41,6 +41,9 @@ Ding/
                     trainers of the player's side (npcFlags), nearest first
     Merchant.lua    Ding.Merchant: grey items sold and repairs at merchants, bags almost full
     Training.lua    Ding.Training: what the class trainer offers and at which level
+    Directory.lua   Ding.Directory: the NPC directory's data: every NPC of DingDB by kind
+                    (services, class / weapon / profession trainers, what vendors sell),
+                    fastest first (Travel:Reach), cities, search, the weapon to learn
     Gear.lua        Ding.Gear: gear upgrades of the bags (scored like rewards), declined items
     Talents.lua     Ding.Talents: talent builds (Ding.RegisterTalentBuild), the next talent
                     when a point is free, learned on a confirmed press
@@ -65,7 +68,8 @@ Ding/
     TaxiMap.lua     Ding.TaxiMap: banner and ring on the flight map's destination (own frames)
     Rewards.lua     Ding.RewardHint: banner and ring on the best quest reward (own frames);
                     Ding.GearHint: banner of a gear upgrade
-    Finder.lua      Ding.Finder: nearby services list (DING_FINDER), trip of the arrow to one
+    Finder.lua      Ding.Finder: the NPC directory's window (DING_FINDER, /ding find, the guide
+                    window's pin button), trip of the arrow to an NPC
     ImportWindow.lua Ding.ImportWindow: /ding import and /ding export (text box, report,
                     buttons)
     Panel.lua       Ding.Panel: guide window (lines of the step), compact version, focus mode
@@ -197,6 +201,15 @@ Contracts between modules:
   abandons them). `UI.Banner`, `UI.Ring`, `UI.ScreenCenter`: Ding's marks over the game's
   windows, which are only read. `Panel:SetShown(v)`: the window and
   the arrow together (the arrow only shows with the window open).
+- NPC directory: `Directory:Ids(kind)` (the NPC ids of the player's side; kinds "vendor",
+  "repair", "food", "arrows", "bullets", "reagents", "poisons", "innkeeper", "flight", "trainer",
+  "weapon:<skill line>", "profession:<key>", "trade", "bank", "auction", "stable"),
+  `Directory:Best(kind[, within])` -> `{ kind, npc, name, point, seconds, distance }` (the
+  fewest seconds away; `within`: a city's NPC set), `Entries([within])`, `Cities()`,
+  `CityNpcs(city)`, `CityList(city, category)`, `Search(text)`, `WeaponReminder()`,
+  `Place(point)`; `Travel:Reach()` -> `reach:Seconds(point)` (one planner pass, many targets).
+  `Finder.trip` = `{ kind, npc, name, point, label }` (`Finder:GoTo(entry, label)`,
+  `Finder:Go(kind)`, `Finder:Cancel()`), read by the arrow and the guide window.
 - `Ding.db` (DingDB, account): `panel` (position, `scale` 0.5-1.5, `width` 240-420, `locked`,
   `bgAlpha`, `compactInCombat`, `hideInInstance`, `keyHints`, `itemButton`), `arrow`
   (position, `size` 40-80, `style`, `mode`, `tomtom`, `loop`: farming loop, `worldMap`: the
@@ -233,7 +246,8 @@ Contracts between modules:
   section, `Engine:Resume` goes at least there; cleared by "Take this guide up where I am"),
   `hearthInn` (`{ inn, name }`: bound during a sethearth step, the client's name of the inn),
   `worldMark` (`{ map, x, y }`: the map waypoint Ding set, not the player's).
-  `Ding.db.panel.preview` (0-3 next steps shown), `Ding.db.minimap.pins`.
+  `Ding.db.panel.preview` (0-3 next steps shown), `Ding.db.panel.weaponReminder` (the weapon
+  to learn under the step), `Ding.db.minimap.pins`.
   The engine places the player only once the quest log has arrived (`Engine.logReady`).
 
 ## Data

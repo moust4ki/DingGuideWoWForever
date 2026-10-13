@@ -46,6 +46,16 @@ instead from the *Arrow* tab of the settings (off by default).
   choose your reward), catches up on missing prerequisite quests, can skip gray quests.
 - **Quest item button.** A floating button with the item the step needs: one press of a
   gamepad button uses it. Shows the cooldown and when you are out of range.
+- **NPC directory.** Bags full, out of food, a weapon to learn? The directory (its key
+  binding, the pin button of the guide window, or `/ding find`) lists, anywhere in the world,
+  the NPC of each kind that is the fewest seconds away: vendor, repair, food and drink,
+  ammunition, reagents, poisons, innkeeper, flight master, class trainer, weapon masters by
+  weapon, profession trainers by profession, trade supplies, bank, auction house, stable
+  master. A second tab lists the capitals of your side and the neutral towns (Booty Bay,
+  Gadgetzan, Ratchet, Everlook) with what each offers. Pick one: the arrow takes you there by
+  the fastest way, and the guide resumes once you talk to that NPC. When a weapon you can use
+  but do not know is in your bags, or its weapon master is close by, the guide window says
+  where to learn it.
 - **Minimap button.** Left-click for the settings, right-click to show or hide the guide.
 - **Community guides.** Ding runs other guides too: install a guide pack and pick it in the
   settings (*Guide* tab, first list), then its section in the second list. See
@@ -68,7 +78,12 @@ Y resets to default.
 The guide window never takes a button away from the game. To browse it with the gamepad,
 bind "Browse the guide with the gamepad" (focus mode): the D-pad picks a line, A sends the
 arrow there (or uses the item), X shows its quest, LB / RB change steps, Y minimizes the
-window, B gives the gamepad back to the game.
+window, B gives the gamepad back to the game. Up from the first line, the focus reaches the
+NPC directory's button.
+
+The NPC directory (bind "NPC directory", or use the guide window's pin button): LB / RB change
+tabs, the D-pad picks, A opens a list or sends the arrow, B goes back or closes; during a trip,
+B on the first page takes the arrow back to the guide.
 
 The settings also move the window, the arrow and the item button with the D-pad, set the
 opacity and the size, minimize the guide in combat and pick the button names (Xbox or
@@ -88,7 +103,9 @@ plugged in, that help speaks of the mouse and the keyboard.
 
 `/ding` show/hide · `/ding config` settings · `/ding list` (guides and their sections) ·
 `/ding guide <id>` · `/ding where` (your position, for guide authors) · `/ding import` (a guide as
-text) · `/ding export [id]` (a guide as text) · `/ding next` · `/ding prev` · `/ding skip` · `/ding back` · `/ding reset` (take the guide up
+text) · `/ding export [id]` (a guide as text) · `/ding find <text>` (the NPC directory: a service,
+a weapon, a profession or a name, in your game's language or in English, such as
+`/ding find gun`, `/ding find bank`, `/ding find Buliwyf`) · `/ding next` · `/ding prev` · `/ding skip` · `/ding back` · `/ding reset` (take the guide up
 where you are) · `/ding scale <0.5-1.5>` · `/ding arrow` · `/ding arrowflip` ·
 `/ding minimap` · `/ding debug`
 
