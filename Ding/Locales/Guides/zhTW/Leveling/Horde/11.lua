@@ -95,6 +95,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h11-thousand-needles", {
         "小心：這裡的敵人等級比你高。如果你死了，就在莫沙徹營地復活。",
     ["Fly to Camp Mojache"] =
         "飛往莫沙徹營地",
+    ["Freewind Post"] =
+        "亂風崗",
     ["Fly to Gadgetzan"] =
         "飛往加基森",
     ["Watch out: the foes here are above your level."] =

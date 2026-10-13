@@ -15,6 +15,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a36-azshara-and-felwood", {
         "Sube al piso más alto del edificio.",
     ["The quest giver stands outdoors, not indoors."] =
         "El PNJ de la misión está fuera, no dentro.",
+    ["Auberdine"] =
+        "Auberdine",
     ["A lengthy stretch of questing lies ahead. This vendor sells no arrows or bullets."] =
         "Te espera un largo tramo de misiones. Este vendedor no vende flechas ni balas.",
     ["Hand these in afterwards for experience and reputation."] =

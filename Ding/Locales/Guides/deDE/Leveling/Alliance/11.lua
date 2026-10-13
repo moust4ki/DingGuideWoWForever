@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a11-duskwood-and-redridge-mounta
         "Dämmerwald: Dunkelhain, im Osten des Gebiets.",
     ["The NPC is indoors."] =
         "Der NPC ist drinnen.",
+    ["Darkshire"] =
+        "Dunkelhain",
     ["Flight master at Darkshire"] =
         "Flugmeister in Dunkelhain",
     ["This one roams, so scan the surrounding area. The NPC is indoors."] =

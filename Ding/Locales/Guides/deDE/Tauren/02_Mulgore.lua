@@ -5,4 +5,6 @@ Ding.RegisterGuideTranslation("deDE", "tauren-02-mulgore", {
         "Mulgore (5-12)",
     ["Follow the road north out of Camp Narache to Bloodhoof Village: your base for Mulgore."] =
         "Folge der Straße vom Camp Narache nach Norden zum Dorf der Bluthufe: deine Basis für Mulgore.",
+    ["Bloodhoof Village"] =
+        "Dorf der Bluthufe",
 })

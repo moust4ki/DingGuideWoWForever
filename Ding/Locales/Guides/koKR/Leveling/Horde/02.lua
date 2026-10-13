@@ -31,6 +31,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h02-tauren-starter", {
         "죽은 다음 영혼의 치유사에게서 부활하세요",
     ["Keep to the road the whole way."] =
         "가는 내내 길을 벗어나지 마세요.",
+    ["Bloodhoof Village"] =
+        "블러드후프 마을",
     ["Look for little brown pinecones. Search close to the trunks."] =
         "작은 갈색 솔방울을 찾으세요. 나무줄기 가까이를 찾아보세요.",
     ["Big birds that roam on foot."] =
@@ -93,6 +95,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h02-tauren-starter", {
         "무기 전문가에게서 지팡이를 배우세요",
     ["Learn Two-Handed Maces at the weapon master"] =
         "무기 전문가에게서 양손 둔기를 배우세요",
+    ["Thunder Bluff"] =
+        "썬더 블러프",
     ["This is food for your pet."] =
         "소환수에게 줄 먹이입니다.",
     ["The NPC is indoors, one floor up."] =
@@ -141,6 +145,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h02-tauren-starter", {
         "대상은 정상에 있습니다.",
     ["The object is up on the summit."] =
         "그 물체는 정상에 있습니다.",
+    ["Razor Hill"] =
+        "칼바위 언덕",
     ["Look for beige sacks."] =
         "베이지색 자루를 찾으세요.",
     ["Stay on the trail, then cross the tunnel"] =

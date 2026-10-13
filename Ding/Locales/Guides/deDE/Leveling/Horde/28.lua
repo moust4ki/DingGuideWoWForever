@@ -43,6 +43,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h28-tanaris-and-dustwallow-marsh
         "Durchsuche die Sandhügel.",
     ["It competes for spawn points."] =
         "Es teilt sich Spawnpunkte mit anderen.",
+    ["Gadgetzan"] =
+        "Gadgetzan",
     ["Go into the cavern"] =
         "Geh in die Höhle",
     ["Take the trail downhill"] =

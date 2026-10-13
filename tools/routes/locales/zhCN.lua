@@ -3396,4 +3396,104 @@ return {
         "之后的任务“永望镇报告”和“尼古拉斯·瑟伦霍夫公爵”需要它们：先存进银行，腾出背包空间。",
     ["You need it later for \"Aquementas\": keep it in the bank to free a bag slot."] =
         "之后的任务“亚奎门塔斯”需要它：先存进银行，腾出背包空间。",
+    -- Places of the hearthstone steps (`sethearth`): the town, as this language names it (an
+    -- inn's own name: its town).
+    ["Astranaar"] =
+        "阿斯特兰纳",
+    ["Auberdine"] =
+        "奥伯丁",
+    ["Bloodhoof Village"] =
+        "血蹄村",
+    ["Booty Bay"] =
+        "藏宝海湾",
+    ["Brill"] =
+        "布瑞尔",
+    ["Camp Mojache"] =
+        "莫沙彻营地",
+    ["Camp Taurajo"] =
+        "陶拉祖营地",
+    ["Cenarion Hold"] =
+        "塞纳里奥要塞",
+    ["Coriella Calmbreeze"] =
+        "Coriella Calmbreeze",
+    ["Darkshire"] =
+        "夜色镇",
+    ["Deepwater Tavern"] =
+        "米奈希尔港",
+    ["Dolanaar"] =
+        "多兰纳尔",
+    ["Donaal Downbreeze"] =
+        "Donaal Downbreeze",
+    ["Everlook"] =
+        "永望镇",
+    ["Feathermoon Stronghold"] =
+        "羽月要塞",
+    ["Freewind Post"] =
+        "乱风岗",
+    ["Gadgetzan"] =
+        "加基森",
+    ["Gallows' End Tavern"] =
+        "布瑞尔",
+    ["Goldshire"] =
+        "闪金镇",
+    ["Grom'gol"] =
+        "格罗姆高营地",
+    ["Hammerfall"] =
+        "落锤镇",
+    ["Ironforge"] =
+        "铁炉堡",
+    ["Kargath"] =
+        "卡加斯",
+    ["Kharanos"] =
+        "卡拉诺斯",
+    ["Lakeshire"] =
+        "湖畔镇",
+    ["Light's Hope Chapel"] =
+        "圣光之愿礼拜堂",
+    ["Menethil Harbor"] =
+        "米奈希尔港",
+    ["Nijel's Point"] =
+        "尼耶尔前哨站",
+    ["Orgrimmar"] =
+        "奥格瑞玛",
+    ["Ratchet"] =
+        "棘齿城",
+    ["Razor Hill"] =
+        "剃刀岭",
+    ["Revantusk Village"] =
+        "恶齿村",
+    ["Sentinel Hill"] =
+        "哨兵岭",
+    ["Shadowprey Village"] =
+        "葬影村",
+    ["Southshore"] =
+        "南海镇",
+    ["Splintertree Post"] =
+        "碎木岗哨",
+    ["Stonard"] =
+        "斯通纳德",
+    ["Stonetalon Peak"] =
+        "石爪峰",
+    ["Stormwind City"] =
+        "暴风城",
+    ["Stoutlager Inn"] =
+        "塞尔萨玛",
+    ["Sun Rock Retreat"] =
+        "烈日石居",
+    ["Tarren Mill"] =
+        "塔伦米尔",
+    ["The Crossroads"] =
+        "十字路口",
+    ["The Sepulcher"] =
+        "瑟伯切尔",
+    ["Thelsamar"] =
+        "塞尔萨玛",
+    ["Theramore"] =
+        "塞拉摩",
+    ["Theramore Isle"] =
+        "塞拉摩岛",
+    ["Thunder Bluff"] =
+        "雷霆崖",
+    ["Thunderbrew Distillery"] =
+        "卡拉诺斯",
 }

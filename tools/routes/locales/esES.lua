@@ -3396,4 +3396,104 @@ return {
         "Los necesitarás más adelante para «El informe Vista Eterna» y «El duque Nicolas Zverenhoff»: déjalos en el banco para liberar huecos en las bolsas.",
     ["You need it later for \"Aquementas\": keep it in the bank to free a bag slot."] =
         "Lo necesitarás más adelante para «Aquementas»: déjalo en el banco para liberar un hueco en las bolsas.",
+    -- Places of the hearthstone steps (`sethearth`): the town, as this language names it (an
+    -- inn's own name: its town).
+    ["Astranaar"] =
+        "Astranaar",
+    ["Auberdine"] =
+        "Auberdine",
+    ["Bloodhoof Village"] =
+        "Poblado Pezuña de Sangre",
+    ["Booty Bay"] =
+        "Bahía del Botín",
+    ["Brill"] =
+        "Rémol",
+    ["Camp Mojache"] =
+        "Campamento Mojache",
+    ["Camp Taurajo"] =
+        "Campamento Taurajo",
+    ["Cenarion Hold"] =
+        "Fuerte Cenarion",
+    ["Coriella Calmbreeze"] =
+        "Coriella Calmbreeze",
+    ["Darkshire"] =
+        "Villa Oscura",
+    ["Deepwater Tavern"] =
+        "Puerto de Menethil",
+    ["Dolanaar"] =
+        "Dolanaar",
+    ["Donaal Downbreeze"] =
+        "Donaal Downbreeze",
+    ["Everlook"] =
+        "Vista Eterna",
+    ["Feathermoon Stronghold"] =
+        "Bastión Plumaluna",
+    ["Freewind Post"] =
+        "Poblado Viento Libre",
+    ["Gadgetzan"] =
+        "Gadgetzan",
+    ["Gallows' End Tavern"] =
+        "Rémol",
+    ["Goldshire"] =
+        "Villadorada",
+    ["Grom'gol"] =
+        "Grom'gol",
+    ["Hammerfall"] =
+        "Sentencia",
+    ["Ironforge"] =
+        "Forjaz",
+    ["Kargath"] =
+        "Kargath",
+    ["Kharanos"] =
+        "Kharanos",
+    ["Lakeshire"] =
+        "Villa del Lago",
+    ["Light's Hope Chapel"] =
+        "Capilla de la Esperanza de la Luz",
+    ["Menethil Harbor"] =
+        "Puerto de Menethil",
+    ["Nijel's Point"] =
+        "Punta de Nijel",
+    ["Orgrimmar"] =
+        "Orgrimmar",
+    ["Ratchet"] =
+        "Trinquete",
+    ["Razor Hill"] =
+        "Cerrotajo",
+    ["Revantusk Village"] =
+        "Poblado Sañadiente",
+    ["Sentinel Hill"] =
+        "Colina del Centinela",
+    ["Shadowprey Village"] =
+        "Aldea Cazasombras",
+    ["Southshore"] =
+        "Costasur",
+    ["Splintertree Post"] =
+        "Puesto del Hachazo",
+    ["Stonard"] =
+        "Rocal",
+    ["Stonetalon Peak"] =
+        "Cima del Espolón",
+    ["Stormwind City"] =
+        "Ciudad de Ventormenta",
+    ["Stoutlager Inn"] =
+        "Thelsamar",
+    ["Sun Rock Retreat"] =
+        "Refugio Roca del Sol",
+    ["Tarren Mill"] =
+        "Molino Tarren",
+    ["The Crossroads"] =
+        "El Cruce",
+    ["The Sepulcher"] =
+        "El Sepulcro",
+    ["Thelsamar"] =
+        "Thelsamar",
+    ["Theramore"] =
+        "Theramore",
+    ["Theramore Isle"] =
+        "Isla Theramore",
+    ["Thunder Bluff"] =
+        "Cima del Trueno",
+    ["Thunderbrew Distillery"] =
+        "Kharanos",
 }

@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a12-wetlands", {
         "Pantanal: Porto de Menethil, na costa oeste.",
     ["The NPC is indoors."] =
         "O NPC está lá dentro.",
+    ["Deepwater Tavern"] =
+        "Porto de Menethil",
     ["The NPC is indoors, one floor up."] =
         "O NPC está lá dentro, um andar acima.",
     ["Your targets sit below the water's surface. Targets are within the wrecked vessel underwater."] =

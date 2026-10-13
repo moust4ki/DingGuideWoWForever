@@ -5,4 +5,8 @@ Ding.RegisterGuideTranslation("esES", "horde-20-barrens", {
         "Los Baldíos y Sierra Espolón (19-20)",
     ["The Crossroads, in the middle of the Barrens, is your base; the Stonetalon Mountains are west of the Barrens."] =
         "El Cruce, en el centro de Los Baldíos, es tu base; la Sierra Espolón está al oeste de Los Baldíos.",
+    ["Ratchet"] =
+        "Trinquete",
+    ["Sun Rock Retreat"] =
+        "Refugio Roca del Sol",
 })

@@ -31,6 +31,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h02-tauren-starter", {
         "Deja que te maten y resucita con el Ángel de la Resurrección",
     ["Keep to the road the whole way."] =
         "No dejes el camino en todo el trayecto.",
+    ["Bloodhoof Village"] =
+        "Poblado Pezuña de Sangre",
     ["Look for little brown pinecones. Search close to the trunks."] =
         "Busca piñas marrones pequeñas. Busca cerca de los troncos.",
     ["Big birds that roam on foot."] =
@@ -93,6 +95,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h02-tauren-starter", {
         "Aprende Bastones con el maestro de armas",
     ["Learn Two-Handed Maces at the weapon master"] =
         "Aprende Mazas de dos manos con el maestro de armas",
+    ["Thunder Bluff"] =
+        "Cima del Trueno",
     ["This is food for your pet."] =
         "Es comida para tu mascota.",
     ["The NPC is indoors, one floor up."] =
@@ -141,6 +145,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h02-tauren-starter", {
         "El objetivo está arriba, en la cima.",
     ["The object is up on the summit."] =
         "El objeto está arriba, en la cima.",
+    ["Razor Hill"] =
+        "Cerrotajo",
     ["Look for beige sacks."] =
         "Busca sacos beis.",
     ["Stay on the trail, then cross the tunnel"] =

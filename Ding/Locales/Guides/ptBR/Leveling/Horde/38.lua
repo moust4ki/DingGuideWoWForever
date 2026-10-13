@@ -45,6 +45,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h38-felwood-and-winterspring", {
         "A missão pede yetis; vá atrás deles. Os alvos ficam na caverna e também em volta da entrada.",
     ["The NPC is indoors."] =
         "O NPC está lá dentro.",
+    ["Everlook"] =
+        "Visteterna",
     ["The NPC is a human spirit."] =
         "O NPC é um espírito humano.",
     ["Your targets are within the cavern."] =
@@ -79,6 +81,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h38-felwood-and-winterspring", {
         "Este NPC fica lá embaixo, no Antro das Sombras.",
     ["The NPC stands on the highest level of this structure."] =
         "O NPC fica no nível mais alto desta construção.",
+    ["Orgrimmar"] =
+        "Orgrimmar",
     ["Take the trail downhill"] =
         "Desça pela trilha",
     ["Wait for the talking to finish"] =

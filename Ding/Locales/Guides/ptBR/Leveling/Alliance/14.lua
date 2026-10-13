@@ -27,6 +27,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a14-duskwood-and-stranglethorn-v
         "Você vai precisar dele mais tarde para \"Uma bebida para poucos\": guarde-o no banco para liberar espaço nas bolsas.",
     ["This one roams, so scan the surrounding area."] =
         "Este se desloca, então procure pelos arredores.",
+    ["Darkshire"] =
+        "Vila Sombria",
     ["The NPC patrols the road; look along it."] =
         "O NPC patrulha a estrada; procure ao longo dela.",
     ["The targets are worgen."] =

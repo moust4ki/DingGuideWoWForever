@@ -39,6 +39,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a09-ashenvale-and-stonetalon-mou
         "Cherche des sphères blanches.",
     ["The target is a gray furbolg. This one roams, so scan the surrounding area."] =
         "La cible est un furbolg gris. Celui-ci se déplace : fouille les environs.",
+    ["Astranaar"] =
+        "Astranaar",
     ["Shrubs that glitter white."] =
         "Buissons qui scintillent en blanc.",
     ["Exit Ruins of Stardust"] =

@@ -64,6 +64,8 @@ Nothing else to install: QuestieDB is no longer needed, and TomTom stays optiona
   - Hover cards are shorter: an objective's card shows that objective and its quest in one line;
     "Why?" only appears when the guide has a reason.
   - Numbers are written your language's way ("13 000" in French).
+  - Hearthstone steps name the place in your language ("Set your hearthstone at the inn:
+    Darkshire" reads "… : Sombre-Comté" in French).
   - A quest you turned in, seen again with "Previous", says so; a "keep this item" reminder is
     a line under the step, not a line to do.
 - **Settings windows** (the settings, the NPC directory, the setup assistant, import / export)

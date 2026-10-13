@@ -11,6 +11,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a10-wetlands", {
         "Le PNJ est à l'intérieur.",
     ["The NPC waits on the lower level, indoors."] =
         "Le PNJ attend au niveau inférieur, à l'intérieur.",
+    ["Deepwater Tavern"] =
+        "Port de Menethil",
     ["The NPC is indoors, one floor up."] =
         "Le PNJ est à l'intérieur, un étage plus haut.",
     ["The NPC is indoors. Do it only if you can."] =

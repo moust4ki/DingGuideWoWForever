@@ -43,6 +43,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h28-tanaris-and-dustwallow-marsh
         "Procure nos montes de areia.",
     ["It competes for spawn points."] =
         "Disputa os pontos de surgimento.",
+    ["Gadgetzan"] =
+        "Geringontzan",
     ["Go into the cavern"] =
         "Entre na caverna",
     ["Take the trail downhill"] =

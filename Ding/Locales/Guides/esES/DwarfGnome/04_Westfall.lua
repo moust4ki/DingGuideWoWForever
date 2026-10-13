@@ -7,4 +7,6 @@ Ding.RegisterGuideTranslation("esES", "dwarf-04-westfall", {
         "Tranvía Subterráneo de Forjaz a Ventormenta y luego el camino al oeste por Villadorada hasta la Colina del Centinela.",
     ["If the starting item dropped: use it from your bags."] =
         "Si tienes el objeto que inicia la misión: úsalo desde tus bolsas.",
+    ["Sentinel Hill"] =
+        "Colina del Centinela",
 })

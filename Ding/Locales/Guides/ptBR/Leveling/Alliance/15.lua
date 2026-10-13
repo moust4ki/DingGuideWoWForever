@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a15-hillsbrad-foothills-and-arat
         "Contraforte de Eira dos Montes: Costa Sul, no litoral sul.",
     ["The NPC is indoors."] =
         "O NPC está lá dentro.",
+    ["Southshore"] =
+        "Costa Sul",
     ["You'll find extra ones swimming nearby as well."] =
         "Você também encontra outros nadando por perto.",
     ["Search for gray rocks standing up beside the walls. Your targets are within the cavern."] =

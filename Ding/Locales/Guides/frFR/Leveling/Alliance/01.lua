@@ -67,6 +67,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a01-human-starter", {
         "Laisse-toi tuer exprès par les monstres d'ici. Mourir ne te coûte rien à ce stade. C'est le chemin le plus rapide.",
     ["Get yourself killed, then resurrect with the spirit healer"] =
         "Fais-toi tuer, puis ressuscite auprès du gardien des âmes",
+    ["Goldshire"] =
+        "Comté-de-l'Or",
     ["Look for little stacks of brown wood. Look around tree trunks at ground level."] =
         "Cherche de petites piles de bois brun. Regarde au pied des troncs d'arbres.",
     ["The targets are wolves."] =
@@ -107,6 +109,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a01-human-starter", {
         "Monte sur la rune rose. Regarde dans la tombe. La cible est au niveau inférieur, à l'intérieur.",
     ["The NPC stands one level over the crypt. The NPC waits on the lower level, indoors."] =
         "Le PNJ se tient un niveau au-dessus de la crypte. Le PNJ attend au niveau inférieur, à l'intérieur.",
+    ["Stormwind City"] =
+        "Hurlevent",
     ["The NPC is indoors. Be ready for a fight right away."] =
         "Le PNJ est à l'intérieur. Prépare-toi à combattre tout de suite.",
     ["Learn Blacksmithing from the trainer"] =

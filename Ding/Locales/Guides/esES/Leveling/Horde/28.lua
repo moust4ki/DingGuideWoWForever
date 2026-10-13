@@ -43,6 +43,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h28-tanaris-and-dustwallow-marsh
         "Busca en los montículos de arena.",
     ["It competes for spawn points."] =
         "Comparte puntos de aparición.",
+    ["Gadgetzan"] =
+        "Gadgetzan",
     ["Go into the cavern"] =
         "Entra en la cueva",
     ["Take the trail downhill"] =

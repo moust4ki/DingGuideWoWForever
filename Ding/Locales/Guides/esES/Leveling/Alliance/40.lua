@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a40-burning-steppes", {
         "Primero Forjaz y luego las Estepas Ardientes: la Vigilia de Morgan, al este.",
     ["The NPC is indoors."] =
         "El PNJ está dentro.",
+    ["Ironforge"] =
+        "Forjaz",
     ["Your objective lies in a little cavern. This foe is elite. Consider bringing a group for this one."] =
         "Tu objetivo está en una pequeña cueva. Este enemigo es élite. Plantéate ir en grupo para esta.",
     ["Your objective lies in a little cavern."] =

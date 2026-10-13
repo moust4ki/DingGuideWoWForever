@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a16-dustwallow-marsh-and-thousan
         "Marécage d'Âprefange : l'île de Theramore, au large de la côte est.",
     ["The NPC is indoors."] =
         "Le PNJ est à l'intérieur.",
+    ["Theramore Isle"] =
+        "Île de Theramore",
     ["The NPC is indoors, one floor up."] =
         "Le PNJ est à l'intérieur, un étage plus haut.",
     ["The NPC is indoors. This quest is buggy and may not show up. If it is not around, move on without it."] =

@@ -23,6 +23,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h08-the-barrens", {
         "拜訪籠中的野豬人",
     ["Trade your Blood Shards to gain buffs. Trade any spare Blood Shards to him during your Barrens questing. Ask him for the Spirit of the Wind buff"] =
         "用你的血岩碎片換取增益效果。在貧瘠之地做任務期間，把多餘的血岩碎片都拿來跟他交換。向他要求風之魂增益效果",
+    ["Camp Taurajo"] =
+        "陶拉祖營地",
     ["The target is a dinosaur with blue hide. The targets are spread over several spots."] =
         "目標是一隻藍色皮膚的恐龍。目標分散在好幾個地點。",
     ["Look for big boulders oozing green fluid. Expect a possible ambush while you gather it."] =

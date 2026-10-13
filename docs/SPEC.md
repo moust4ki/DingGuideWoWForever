@@ -198,8 +198,8 @@ in the client's language, from QuestieDB. The guide does not need to spell out t
 
 ### Languages
 
-The texts of a guide (`title`, `text`, `note`) are written **in English**, the default
-language. Their translation lives in a separate file, `Ding/Locales/Guides/<locale>/<same
+The texts of a guide (`title`, `text`, `note`, the place of a `sethearth`) are written **in
+English**, the default language. Their translation lives in a separate file, `Ding/Locales/Guides/<locale>/<same
 path as the guide>.lua`, loaded after the guides in `Ding.toc`:
 
 ```lua
@@ -209,7 +209,12 @@ Ding.RegisterGuideTranslation("frFR", "nightelf-01-shadowglen", {
 ```
 
 The key is the exact English text. A client in that language sees the translated text; any
-other client, or a text with no translation, keeps the English. If the English text changes,
+other client, or a text with no translation, keeps the English. A `sethearth` place keeps its
+English name in the step (the engine knows the inn by it, `Ding.char.hearthInn`); its
+translation is what the window shows ("Lie ta pierre de foyer à l'auberge : Sombre-Comté",
+`step.sethearthText`). An inn named for itself in English ("Deepwater Tavern") is translated as
+its town ("Port de Menethil"). `tools/translate_guides.lua` fails when a place has no
+translation, and `guide_texts_test` when one is left in English. If the English text changes,
 the translation no longer applies: `tools/check_guides.lua` reports untranslated texts
 and orphaned translations.
 

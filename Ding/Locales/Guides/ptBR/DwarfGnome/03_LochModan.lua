@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("ptBR", "dwarf-03-lochmodan", {
         "Loch Modan (11-14)",
     ["Take the road east through the South Gate tunnel to Thelsamar."] =
         "Pegue a estrada para o leste pelo túnel de South Gate até Thelsamar.",
+    ["Thelsamar"] =
+        "Thelsamar",
     ["Finish the level on nearby monsters before moving on."] =
         "Termine o nível nos monstros próximos antes de seguir.",
 })

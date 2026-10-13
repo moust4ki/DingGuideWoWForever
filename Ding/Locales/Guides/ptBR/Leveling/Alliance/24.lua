@@ -39,4 +39,6 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a24-badlands", {
         "Deixe-se matar e depois ressuscite com o Anjo da Cura",
     ["Flight master at Thorium Point"] =
         "Mestre de voo de Thorium Point",
+    ["Stoutlager Inn"] =
+        "Thelsamar",
 })

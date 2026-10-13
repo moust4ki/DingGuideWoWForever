@@ -31,6 +31,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a21-arathi-highlands-and-alterac
         "Deixe a conversa terminar. Escolte Kinelory e mantenha-a viva.",
     ["The NPC is indoors."] =
         "O NPC está lá dentro.",
+    ["Southshore"] =
+        "Costa Sul",
     ["Wait for the talking to finish"] =
         "Espere a conversa terminar",
     ["Beware of foes lurking in stealth. The target is indoors."] =

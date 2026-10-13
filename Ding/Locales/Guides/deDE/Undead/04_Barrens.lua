@@ -5,4 +5,6 @@ Ding.RegisterGuideTranslation("deDE", "undead-04-barrens", {
         "Brachland (15-20)",
     ["Zeppelin from the towers outside Undercity to Orgrimmar, then the road west and south to the Crossroads: your base for the Barrens."] =
         "Zeppelin von den Türmen vor Unterstadt nach Orgrimmar, dann die Straße nach Westen und Süden zum Wegekreuz: deine Basis im Brachland.",
+    ["The Crossroads"] =
+        "Das Wegekreuz",
 })

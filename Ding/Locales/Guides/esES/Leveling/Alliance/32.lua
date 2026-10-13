@@ -29,8 +29,12 @@ Ding.RegisterGuideTranslation("esES", "leveling-a32-stranglethorn-vale", {
         "La presa es un tigre pálido, élite de nivel 43. Llama a 2 esbirros pequeños de nivel inferior; ninguno es élite. Cuando baja a cerca del 50% de salud.",
     ["Look underneath the bridge. Your targets sit below the water's surface."] =
         "Mira debajo del puente. Tus objetivos están bajo la superficie del agua.",
+    ["Booty Bay"] =
+        "Bahía del Botín",
     ["Your objective lies in a little cavern."] =
         "Tu objetivo está en una pequeña cueva.",
+    ["Stormwind City"] =
+        "Ciudad de Ventormenta",
     ["Head down into the Deeprun Tram station"] =
         "Baja a la estación del Tranvía Subterráneo",
     ["Pass through the portal to teleport."] =

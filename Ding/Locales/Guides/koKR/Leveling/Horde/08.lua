@@ -23,6 +23,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h08-the-barrens", {
         "우리에 갇힌 가시멧돼지를 찾아가세요",
     ["Trade your Blood Shards to gain buffs. Trade any spare Blood Shards to him during your Barrens questing. Ask him for the Spirit of the Wind buff"] =
         "혈석 파편을 교환해 강화 효과를 받으세요. 불모의 땅 퀘스트 중에 남는 혈석 파편은 그와 교환하세요. 그에게 Spirit of the Wind 강화 효과를 받으세요",
+    ["Camp Taurajo"] =
+        "타우라조 야영지",
     ["The target is a dinosaur with blue hide. The targets are spread over several spots."] =
         "대상은 파란 가죽의 공룡입니다. 대상은 여러 곳에 흩어져 있습니다.",
     ["Look for big boulders oozing green fluid. Expect a possible ambush while you gather it."] =

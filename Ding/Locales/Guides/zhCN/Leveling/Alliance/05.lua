@@ -35,6 +35,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a05-darkshore", {
         "目标在水面以下。",
     ["The targets are sea creatures with long necks. Your targets sit below the water's surface."] =
         "目标是长脖子的海洋生物。目标在水面以下。",
+    ["Auberdine"] =
+        "奥伯丁",
     ["Head to the hilltop."] =
         "前往山顶。",
     ["The targets are imps. Avoid slaying the satyrs if you can. You'll need this for the following quest."] =

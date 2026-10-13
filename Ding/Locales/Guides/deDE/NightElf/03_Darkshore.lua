@@ -7,4 +7,6 @@ Ding.RegisterGuideTranslation("deDE", "nightelf-03-darkshore", {
         "Rut'theran (Portal am Fuß von Darnassus), dann das Schiff nach Auberdine: deine Basis an der Dunkelküste.",
     ["Finish the level on nearby monsters before moving on."] =
         "Beende die Stufe an nahen Monstern, bevor du weiterziehst.",
+    ["Auberdine"] =
+        "Auberdine",
 })

@@ -23,6 +23,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a25-stranglethorn-vale", {
         "O NPC está lá dentro, no andar do meio.",
     ["The NPC is indoors at street level. The NPC is indoors."] =
         "O NPC está lá dentro, no nível da rua. O NPC está lá dentro.",
+    ["Booty Bay"] =
+        "Angra do Butim",
     ["The NPC is indoors at street level."] =
         "O NPC está lá dentro, no nível da rua.",
     ["Let the conversation play out. The NPC is indoors at street level."] =

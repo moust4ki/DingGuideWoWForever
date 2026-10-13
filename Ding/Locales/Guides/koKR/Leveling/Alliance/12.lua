@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a12-wetlands", {
         "저습지: 메네실 항구는 서쪽 해안에 있습니다.",
     ["The NPC is indoors."] =
         "NPC는 건물 안에 있습니다.",
+    ["Deepwater Tavern"] =
+        "메네실 항구",
     ["The NPC is indoors, one floor up."] =
         "NPC는 건물 안 한 층 위에 있습니다.",
     ["Your targets sit below the water's surface. Targets are within the wrecked vessel underwater."] =

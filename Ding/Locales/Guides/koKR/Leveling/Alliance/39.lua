@@ -57,6 +57,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a39-winterspring-and-felwood", {
         "대상은 한 무리로 다니는 흰 펄볼그 3마리입니다. 대상은 길옆으로 긴 경로를 순찰합니다. 길이 끝날 때까지 보이지 않으면 넘어가세요.",
     ["Be ready for a fight right away."] =
         "바로 전투가 시작되니 대비하세요.",
+    ["Everlook"] =
+        "눈망루 마을",
     ["The NPC is indoors. You need them later for \"Aquementas\", \"The Everlook Report\", \"Duke Nicholas Zverenhoff\" and \"Troubled Spirits of Kel'Theril\": keep them in the bank to free bag slots."] =
         "NPC는 건물 안에 있습니다. 나중에 \"아쿠에멘타스\", \"눈망루 마을 보고서\", \"공작 니콜라스 즈바른호프\", \"켈테릴의 고통받는 영혼\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["For this quest you guard an NPC on the move. If she is absent, wait for her to reappear."] =

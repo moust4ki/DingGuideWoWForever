@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a40-burning-steppes", {
         "Altaforja primeiro, depois as Estepes Ardentes: Morgan's Vigil, no leste.",
     ["The NPC is indoors."] =
         "O NPC está lá dentro.",
+    ["Ironforge"] =
+        "Altaforja",
     ["Your objective lies in a little cavern. This foe is elite. Consider bringing a group for this one."] =
         "Seu objetivo fica em uma pequena caverna. Este inimigo é de elite. Considere chamar um grupo para esta.",
     ["Your objective lies in a little cavern."] =

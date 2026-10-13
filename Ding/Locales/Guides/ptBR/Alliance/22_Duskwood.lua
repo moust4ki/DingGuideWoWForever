@@ -5,4 +5,6 @@ Ding.RegisterGuideTranslation("ptBR", "alliance-22-duskwood", {
         "Floresta do Crepúsculo (19-20)",
     ["Duskwood is south of Elwynn: Darkshire, in the east of the forest, is your base."] =
         "A Floresta do Crepúsculo fica ao sul de Elwynn: Vila Sombria, no leste da floresta, é sua base.",
+    ["Darkshire"] =
+        "Vila Sombria",
 })

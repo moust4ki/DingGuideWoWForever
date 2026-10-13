@@ -33,6 +33,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h20-stranglethorn-vale-and-swamp
         "나중에 \"제 3 장\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["You need it later for \"Chapter IV\": keep it in the bank to free a bag slot."] =
         "나중에 \"제 4 장\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["Booty Bay"] =
+        "무법항",
     ["Keep clear of Darkshire."] =
         "다크샤이어는 피하세요.",
     ["Hunt the little winged dragonkin. When the targets run out, skip ahead. No rush; you may complete this afterwards."] =
@@ -59,4 +61,6 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h20-stranglethorn-vale-and-swamp
         "날개 달린 작은 용족을 사냥하세요.",
     ["Let the conversation play out. Climb to the highest floor of the building."] =
         "대화가 끝날 때까지 기다리세요. 건물 꼭대기 층으로 올라가세요.",
+    ["Camp Taurajo"] =
+        "타우라조 야영지",
 })

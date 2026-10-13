@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("deDE", "horde-39-arathi", {
         "Arathihochland (37-38)",
     ["Back to the Arathi Highlands: Hammerfall is in the east of the zone."] =
         "Zurück ins Arathihochland: Hammerfall liegt im Osten des Gebiets.",
+    ["Hammerfall"] =
+        "Hammerfall",
     ["If the starting item dropped: use it from your bags."] =
         "Startgegenstand erbeutet? Benutze ihn aus deinen Taschen.",
     ["Finish the level on nearby monsters before moving on."] =

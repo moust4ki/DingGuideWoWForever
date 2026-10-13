@@ -21,6 +21,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a18-desolace", {
         "Abandona la mascota temporal que domesticaste.",
     ["The NPC is indoors."] =
         "El PNJ está dentro.",
+    ["Nijel's Point"] =
+        "Punta de Nijel",
     ["Hunt down satyrs. Beware of foes lurking in stealth."] =
         "Caza sátiros. Cuidado con los enemigos ocultos en sigilo.",
     ["With the coming hand-ins, this brings you to level 36."] =

@@ -5,4 +5,6 @@ Ding.RegisterGuideTranslation("koKR", "alliance-43-stv", {
         "가시덤불 골짜기 (41)",
     ["Back to Stranglethorn for the end of its quests, from Booty Bay."] =
         "남은 퀘스트를 위해 가시덤불 골짜기로 돌아가세요. 무법항에서 시작합니다.",
+    ["Booty Bay"] =
+        "무법항",
 })

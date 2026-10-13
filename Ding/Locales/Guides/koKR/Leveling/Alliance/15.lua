@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a15-hillsbrad-foothills-and-arat
         "힐스브래드 구릉지: 사우스쇼어는 남쪽 해안에 있습니다.",
     ["The NPC is indoors."] =
         "NPC는 건물 안에 있습니다.",
+    ["Southshore"] =
+        "사우스쇼어",
     ["You'll find extra ones swimming nearby as well."] =
         "근처에서 헤엄치는 것들도 더 있습니다.",
     ["Search for gray rocks standing up beside the walls. Your targets are within the cavern."] =

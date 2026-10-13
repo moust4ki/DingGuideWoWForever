@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("zhTW", "alliance-57-wpl", {
         "西瘟疫之地 (54-55)",
     ["The Western Plaguelands are north of Hillsbrad Foothills: the Alliance camp is in the south of the zone."] =
         "西瘟疫之地位於希爾斯布萊德丘陵北邊：聯盟營地在區域南部。",
+    ["Ironforge"] =
+        "鐵爐堡",
     ["Finish the level on nearby monsters before moving on."] =
         "先在附近打怪升完這一級再繼續。",
 })

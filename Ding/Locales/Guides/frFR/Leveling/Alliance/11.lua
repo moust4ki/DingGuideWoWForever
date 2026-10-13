@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a11-duskwood-and-redridge-mounta
         "Bois de la Pénombre : Sombre-Comté, à l'est de la zone.",
     ["The NPC is indoors."] =
         "Le PNJ est à l'intérieur.",
+    ["Darkshire"] =
+        "Sombre-Comté",
     ["Flight master at Darkshire"] =
         "Maître de vol de Sombre-Comté",
     ["This one roams, so scan the surrounding area. The NPC is indoors."] =

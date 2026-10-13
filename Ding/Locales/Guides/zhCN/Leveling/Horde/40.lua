@@ -27,6 +27,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h40-winterspring", {
         "对Legacki使用该物品。",
     ["The NPC is indoors."] =
         "NPC在室内。",
+    ["Everlook"] =
+        "永望镇",
     ["The NPC stands within the passage."] =
         "NPC站在通道里。",
     ["Fly to Moonglade"] =

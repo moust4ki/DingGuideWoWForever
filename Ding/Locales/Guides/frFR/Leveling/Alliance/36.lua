@@ -15,6 +15,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a36-azshara-and-felwood", {
         "Monte au dernier étage du bâtiment.",
     ["The quest giver stands outdoors, not indoors."] =
         "Le donneur de quête est dehors, pas à l'intérieur.",
+    ["Auberdine"] =
+        "Auberdine",
     ["A lengthy stretch of questing lies ahead. This vendor sells no arrows or bullets."] =
         "Une longue série de quêtes t'attend. Ce marchand ne vend ni flèches ni balles.",
     ["Hand these in afterwards for experience and reputation."] =

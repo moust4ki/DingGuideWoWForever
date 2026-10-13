@@ -13,6 +13,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a41-western-and-eastern-plaguela
         "El PNJ está dentro. Lo necesitarás más adelante para «Felnok Acerovera»: déjalo en el banco para liberar un hueco en las bolsas.",
     ["Stay on the trail"] =
         "Sigue el sendero",
+    ["Southshore"] =
+        "Costasur",
     ["Check each of the two floors indoors."] =
         "Mira en los dos pisos del interior.",
     ["Stand at the watchtower's doorway. An elite foe waits indoors; stay clear of it."] =
@@ -63,6 +65,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a41-western-and-eastern-plaguela
         "Cerca de los grandes edificios iluminados de azul. Puede aparecer otro cuando matas a uno.",
     ["Look for little gray coffers of metal. The targets are in the ruined houses."] =
         "Busca pequeños cofres grises de metal. Los objetivos están en las casas en ruinas.",
+    ["Light's Hope Chapel"] =
+        "Capilla de la Esperanza de la Luz",
     ["Your targets sit below the water's surface."] =
         "Tus objetivos están bajo la superficie del agua.",
     ["The object is indoors. It shows up on top of the box."] =

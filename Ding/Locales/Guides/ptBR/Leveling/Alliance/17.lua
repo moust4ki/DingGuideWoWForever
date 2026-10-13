@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a17-stranglethorn-vale", {
         "Selva do Espinhaço: Angra do Butim, na ponta sul. O barco de Vila Catraca chega lá.",
     ["The NPC is indoors at street level."] =
         "O NPC está lá dentro, no nível da rua.",
+    ["Booty Bay"] =
+        "Angra do Butim",
     ["Climb to the highest floor of the building."] =
         "Suba até o último andar do prédio.",
     ["The NPC is upstairs, out on the balcony."] =

@@ -5,4 +5,6 @@ Ding.RegisterGuideTranslation("deDE", "alliance-31-duskwood", {
         "Dämmerwald (31-32)",
     ["Back to Duskwood for the end of its quests: Darkshire is still your base."] =
         "Zurück in den Dämmerwald für seine letzten Quests: Dunkelhain bleibt deine Basis.",
+    ["Darkshire"] =
+        "Dunkelhain",
 })

@@ -7,4 +7,6 @@ Ding.RegisterGuideTranslation("zhCN", "horde-48-hinterlands", {
         "辛特兰在希尔斯布莱德丘陵以东：巨魔村庄恶齿村在东海岸。",
     ["If the starting item dropped: use it from your bags."] =
         "如果掉落了任务起始物品：在背包中使用。",
+    ["Revantusk Village"] =
+        "恶齿村",
 })

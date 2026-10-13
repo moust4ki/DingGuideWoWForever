@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a17-stranglethorn-vale", {
         "荊棘谷：藏寶海灣，位於最南端。從棘齒城出發的船會在這裡靠岸。",
     ["The NPC is indoors at street level."] =
         "NPC在室內，位於地面層。",
+    ["Booty Bay"] =
+        "藏寶海灣",
     ["Climb to the highest floor of the building."] =
         "爬到建築的最頂樓。",
     ["The NPC is upstairs, out on the balcony."] =

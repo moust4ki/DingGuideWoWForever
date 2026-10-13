@@ -81,6 +81,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a03-night-elf-starter", {
         "加上接下來的交任務，這會讓你升到9級。目標在洞穴裡。",
     ["Die to the monsters here on purpose. At this spot or a bit to the east. Dying costs you nothing this early."] =
         "故意讓這裡的怪物殺死你。在這個位置或稍微偏東。在這麼早期死亡沒有任何損失。",
+    ["Dolanaar"] =
+        "多蘭納爾",
     ["The NPC patrols the road; look along it."] =
         "NPC沿著道路巡邏；沿路尋找。",
     ["For this quest you guard an NPC on the move. If she is absent, wait for her to reappear."] =
@@ -145,6 +147,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a03-night-elf-starter", {
         "目標在水面下。",
     ["Your objective lies in a little cavern."] =
         "目標在一個小洞穴裡。",
+    ["Auberdine"] =
+        "奧伯丁",
     ["The spot is on the lower floor of the hollow tree."] =
         "位置在空心樹的下層。",
     ["Learn Thrown at the weapon master"] =

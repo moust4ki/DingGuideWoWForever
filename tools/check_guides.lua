@@ -11,7 +11,7 @@
 -- class, its prerequisites were turned in earlier in the chain, it is in the log before
 -- being worked on or turned in, it is not taken twice, the log never exceeds 20, the
 -- items of `use` exist, and no character gets the same trip (`go` alone) twice in a row; a
--- `go` without a text is a warning. Translations: every guide text (title, text, note) is translated
+-- `go` without a text is a warning. Translations: every guide text (title, text, note, sethearth) is translated
 -- in each language (Ding's: the shipped ones; a pack's: those it has translations for), and
 -- no translation is left without its English text.
 -- Exit code: 0 when there is no error, 1 otherwise, 2 on bad usage.
@@ -1048,6 +1048,7 @@ local function guideTexts(g)
     for _, step in ipairs(g.steps) do
         if type(step.text) == "string" then texts[step.text] = true end
         if type(step.note) == "string" then texts[step.note] = true end
+        if type(step.sethearth) == "string" then texts[step.sethearth] = true end
         local why = step.why
         if type(why) == "table" then why = why.text end
         if type(why) == "string" then texts[why] = true end

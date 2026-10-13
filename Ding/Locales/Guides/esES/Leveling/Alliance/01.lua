@@ -67,6 +67,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a01-human-starter", {
         "Deja que los monstruos de aquí te maten a propósito. A estos niveles morir no te cuesta nada. Es el camino más rápido para llegar.",
     ["Get yourself killed, then resurrect with the spirit healer"] =
         "Deja que te maten y resucita con el Ángel de la Resurrección",
+    ["Goldshire"] =
+        "Villadorada",
     ["Look for little stacks of brown wood. Look around tree trunks at ground level."] =
         "Busca pequeñas pilas de madera marrón. Busca alrededor de los troncos, a ras de suelo.",
     ["The targets are wolves."] =
@@ -107,6 +109,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a01-human-starter", {
         "Pisa la runa rosa. Busca dentro de la tumba. El objetivo está en el nivel inferior, dentro.",
     ["The NPC stands one level over the crypt. The NPC waits on the lower level, indoors."] =
         "El PNJ está un nivel por encima de la cripta. El PNJ espera en el nivel inferior, dentro.",
+    ["Stormwind City"] =
+        "Ciudad de Ventormenta",
     ["The NPC is indoors. Be ready for a fight right away."] =
         "El PNJ está dentro. Prepárate para luchar de inmediato.",
     ["Learn Blacksmithing from the trainer"] =

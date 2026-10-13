@@ -352,8 +352,10 @@ Ding.RegisterGuideTranslation("frFR", "mypack-01-shadowglen", {
 - Arguments: the language, the section id, then `[English text] = translated text`.
 - The key is the **exact** English text of the section. If you change the English text,
   change the key too, or the translation no longer applies.
-- Only `title`, `text`, `note` and the texts of `why` and `leftOut` are translated. `train`,
-  `fly` and `sethearth` texts are shown as written.
+- `title`, `text`, `note`, the place of a `sethearth` and the texts of `why` and `leftOut` are
+  translated. A `sethearth` place keeps its English name in the section (Ding knows the inn by
+  it); the translation is only what the window shows: `["Darkshire"] = "Sombre-Comté"`. `train`
+  and `fly` texts are shown as written.
 - A client in another language ignores the file. Languages: `frFR`, `deDE`, `esES` (also
   used by Latin American clients), `ptBR`, `koKR`, `zhCN`, `zhTW`.
 

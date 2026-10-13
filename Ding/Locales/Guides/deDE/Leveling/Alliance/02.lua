@@ -65,6 +65,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a02-dwarf-and-gnome-starter", {
         "Such nach den Holzkörben.",
     ["Die to the monsters here on purpose. Any spot around Brewnall Village works. Dying costs you nothing this early."] =
         "Lass dich hier absichtlich von den Monstern töten. Jede Stelle rund um Brewnall Village geht. So früh kostet dich der Tod nichts.",
+    ["Thunderbrew Distillery"] =
+        "Kharanos",
     ["Give it a few seconds. The object is on the lower level, indoors."] =
         "Warte ein paar Sekunden. Das Objekt ist drinnen auf der unteren Ebene.",
     ["Head to the lower level of the cavern."] =
@@ -111,6 +113,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a02-dwarf-and-gnome-starter", {
         "Der NPC patrouilliert eine lange Route; such entlang dieser Route.",
     ["Die to the monsters here on purpose. This is the quickest way over."] =
         "Lass dich hier absichtlich von den Monstern töten. Das ist der schnellste Weg hinüber.",
+    ["Stoutlager Inn"] =
+        "Thelsamar",
     ["The NPC can be indoors or out."] =
         "Der NPC kann drinnen oder draußen sein.",
     ["Learn Two-Handed Axes and Two-Handed Maces at the weapon master"] =

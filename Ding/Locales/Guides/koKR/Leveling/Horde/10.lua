@@ -87,4 +87,6 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h10-ashenvale", {
         "대상은 동굴 안에 있습니다.",
     ["Head out of the cave"] =
         "동굴을 나가세요",
+    ["Thunder Bluff"] =
+        "썬더 블러프",
 })

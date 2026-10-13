@@ -27,6 +27,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h40-winterspring", {
         "Benutze den Gegenstand an Legacki.",
     ["The NPC is indoors."] =
         "Der NPC ist drinnen.",
+    ["Everlook"] =
+        "Ewige Warte",
     ["The NPC stands within the passage."] =
         "Der NPC steht im Durchgang.",
     ["Fly to Moonglade"] =

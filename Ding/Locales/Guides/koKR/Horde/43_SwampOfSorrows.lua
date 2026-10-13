@@ -5,4 +5,6 @@ Ding.RegisterGuideTranslation("koKR", "horde-43-swamp", {
         "슬픔의 늪 (42)",
     ["The Swamp of Sorrows is east of Deadwind Pass: Stonard is your base."] =
         "슬픔의 늪은 죽음의 고개 동쪽에 있습니다: 스토나드가 거점입니다.",
+    ["Stonard"] =
+        "스토나드",
 })

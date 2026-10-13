@@ -45,6 +45,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h38-felwood-and-winterspring", {
         "La misión pide yetis; búscalos. Los objetivos están en la cueva y también alrededor de la entrada.",
     ["The NPC is indoors."] =
         "El PNJ está dentro.",
+    ["Everlook"] =
+        "Vista Eterna",
     ["The NPC is a human spirit."] =
         "El PNJ es un espíritu humano.",
     ["Your targets are within the cavern."] =
@@ -79,6 +81,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h38-felwood-and-winterspring", {
         "Este PNJ está abajo, en la Grieta de la Sombra.",
     ["The NPC stands on the highest level of this structure."] =
         "El PNJ está en el nivel más alto de esta estructura.",
+    ["Orgrimmar"] =
+        "Orgrimmar",
     ["Take the trail downhill"] =
         "Baja por el sendero",
     ["Wait for the talking to finish"] =

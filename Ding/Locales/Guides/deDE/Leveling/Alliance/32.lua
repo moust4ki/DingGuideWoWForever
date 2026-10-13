@@ -29,8 +29,12 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a32-stranglethorn-vale", {
         "Die Beute ist ein blasser Tiger, Elite der Stufe 43. Er ruft 2 kleine Helfer niedrigerer Stufe; keiner davon ist Elite. Wenn er auf etwa 50% Gesundheit fällt.",
     ["Look underneath the bridge. Your targets sit below the water's surface."] =
         "Schau unter der Brücke nach. Deine Ziele sind unter der Wasseroberfläche.",
+    ["Booty Bay"] =
+        "Beutebucht",
     ["Your objective lies in a little cavern."] =
         "Dein Ziel liegt in einer kleinen Höhle.",
+    ["Stormwind City"] =
+        "Sturmwind",
     ["Head down into the Deeprun Tram station"] =
         "Geh hinunter in die Station der Tiefenbahn",
     ["Pass through the portal to teleport."] =

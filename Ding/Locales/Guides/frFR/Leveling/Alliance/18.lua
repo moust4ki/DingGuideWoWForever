@@ -21,6 +21,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a18-desolace", {
         "Relâche le familier temporaire que tu as apprivoisé.",
     ["The NPC is indoors."] =
         "Le PNJ est à l'intérieur.",
+    ["Nijel's Point"] =
+        "Combe de Nijel",
     ["Hunt down satyrs. Beware of foes lurking in stealth."] =
         "Traque des satyres. Attention aux ennemis camouflés.",
     ["With the coming hand-ins, this brings you to level 36."] =

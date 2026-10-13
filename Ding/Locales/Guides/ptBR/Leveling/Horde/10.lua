@@ -87,4 +87,6 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h10-ashenvale", {
         "Seus alvos estão dentro da caverna.",
     ["Head out of the cave"] =
         "Saia da caverna",
+    ["Thunder Bluff"] =
+        "Penhasco do Trovão",
 })

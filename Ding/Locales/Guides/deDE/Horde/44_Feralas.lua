@@ -7,6 +7,8 @@ Ding.RegisterGuideTranslation("deDE", "horde-44-feralas", {
         "Feralas liegt westlich von Tausend Nadeln: Camp Mojache im Osten des Gebiets ist deine Basis.",
     ["Finish the level on nearby monsters before moving on."] =
         "Beende die Stufe an nahen Monstern, bevor du weiterziehst.",
+    ["Camp Mojache"] =
+        "Camp Mojache",
     ["If the starting item dropped: use it from your bags."] =
         "Startgegenstand erbeutet? Benutze ihn aus deinen Taschen.",
 })

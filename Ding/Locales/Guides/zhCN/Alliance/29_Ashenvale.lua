@@ -7,4 +7,6 @@ Ding.RegisterGuideTranslation("zhCN", "alliance-29-ashenvale", {
         "返回阿斯特兰纳，完成灰谷最后的任务。先在附近打怪升完这一级再继续。",
     ["Finish the level on nearby monsters before moving on."] =
         "先在附近打怪升完这一级再继续。",
+    ["Auberdine"] =
+        "奥伯丁",
 })

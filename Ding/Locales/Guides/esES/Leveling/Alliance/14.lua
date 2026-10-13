@@ -27,6 +27,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a14-duskwood-and-stranglethorn-v
         "Lo necesitarás más adelante para «Una noble cerveza»: déjalo en el banco para liberar un hueco en las bolsas.",
     ["This one roams, so scan the surrounding area."] =
         "Este deambula, así que revisa los alrededores.",
+    ["Darkshire"] =
+        "Villa Oscura",
     ["The NPC patrols the road; look along it."] =
         "El PNJ patrulla el camino; búscalo a lo largo de él.",
     ["The targets are worgen."] =

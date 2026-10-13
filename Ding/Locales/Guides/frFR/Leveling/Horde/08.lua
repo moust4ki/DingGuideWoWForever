@@ -23,6 +23,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h08-the-barrens", {
         "Va voir le huran en cage",
     ["Trade your Blood Shards to gain buffs. Trade any spare Blood Shards to him during your Barrens questing. Ask him for the Spirit of the Wind buff"] =
         "Échange tes éclats de sang contre des bonus. Pendant tes quêtes dans les Tarides, échange-lui tes éclats de sang en trop. Demande-lui le bonus Spirit of the Wind",
+    ["Camp Taurajo"] =
+        "Camp Taurajo",
     ["The target is a dinosaur with blue hide. The targets are spread over several spots."] =
         "La cible est un dinosaure à la peau bleue. Les cibles sont réparties sur plusieurs endroits.",
     ["Look for big boulders oozing green fluid. Expect a possible ambush while you gather it."] =

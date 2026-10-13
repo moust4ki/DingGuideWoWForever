@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a12-wetlands", {
         "濕地：米奈希爾港，位於西岸。",
     ["The NPC is indoors."] =
         "NPC在室內。",
+    ["Deepwater Tavern"] =
+        "米奈希爾港",
     ["The NPC is indoors, one floor up."] =
         "NPC在室內的樓上一層。",
     ["Your targets sit below the water's surface. Targets are within the wrecked vessel underwater."] =

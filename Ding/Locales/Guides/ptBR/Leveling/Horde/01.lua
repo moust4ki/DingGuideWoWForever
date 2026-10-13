@@ -43,6 +43,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h01-undead-starter", {
         "Espere a conversa terminar",
     ["The quest giver is an abomination. The NPC patrols the road; look along it. He may step off the road now and then to pick plants."] =
         "Quem dá a missão é uma abominação. O NPC patrulha a estrada; procure ao longo dela. De vez em quando ele pode sair da estrada para colher plantas.",
+    ["Gallows' End Tavern"] =
+        "Montalvo",
     ["The NPC is indoors, one floor up."] =
         "O NPC está lá dentro, um andar acima.",
     ["Heal Deathguard Kel with Lesser Heal (Rank 2). Buff Deathguard Kel with Power Word: Fortitude."] =
@@ -107,6 +109,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h01-undead-starter", {
         "Com as próximas entregas, isso te leva ao nível 10.",
     ["The NPC is out back, at the rear of the structure."] =
         "O NPC está lá fora, nos fundos da construção.",
+    ["Razor Hill"] =
+        "Monte Navalha",
     ["Look for beige sacks."] =
         "Procure sacos bege.",
     ["Stay on the trail, then cross the tunnel"] =

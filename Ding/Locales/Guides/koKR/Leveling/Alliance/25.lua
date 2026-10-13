@@ -23,6 +23,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a25-stranglethorn-vale", {
         "NPC는 건물 안 가운데 층에 있습니다.",
     ["The NPC is indoors at street level. The NPC is indoors."] =
         "NPC는 건물 안 1층에 있습니다. NPC는 건물 안에 있습니다.",
+    ["Booty Bay"] =
+        "무법항",
     ["The NPC is indoors at street level."] =
         "NPC는 건물 안 1층에 있습니다.",
     ["Let the conversation play out. The NPC is indoors at street level."] =

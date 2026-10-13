@@ -3395,4 +3395,104 @@ return {
         "Você vai precisar deles mais tarde para \"O relatório de Visteterna\" e \"Duque Nicolau Zverenhoff\": guarde-os no banco para liberar espaço nas bolsas.",
     ["You need it later for \"Aquementas\": keep it in the bank to free a bag slot."] =
         "Você vai precisar dele mais tarde para \"Aquementas\": guarde-o no banco para liberar espaço nas bolsas.",
+    -- Places of the hearthstone steps (`sethearth`): the town, as this language names it (an
+    -- inn's own name: its town).
+    ["Astranaar"] =
+        "Astranaar",
+    ["Auberdine"] =
+        "Auberdine",
+    ["Bloodhoof Village"] =
+        "Aldeia Casco Sangrento",
+    ["Booty Bay"] =
+        "Angra do Butim",
+    ["Brill"] =
+        "Montalvo",
+    ["Camp Mojache"] =
+        "Aldeia Mojache",
+    ["Camp Taurajo"] =
+        "Acampamento Taurajo",
+    ["Cenarion Hold"] =
+        "Forte Cenariano",
+    ["Coriella Calmbreeze"] =
+        "Coriella Calmbreeze",
+    ["Darkshire"] =
+        "Vila Sombria",
+    ["Deepwater Tavern"] =
+        "Porto de Menethil",
+    ["Dolanaar"] =
+        "Dolanaar",
+    ["Donaal Downbreeze"] =
+        "Donaal Downbreeze",
+    ["Everlook"] =
+        "Visteterna",
+    ["Feathermoon Stronghold"] =
+        "Domínio de Plumaluna",
+    ["Freewind Post"] =
+        "Aldeia Vento Livre",
+    ["Gadgetzan"] =
+        "Geringontzan",
+    ["Gallows' End Tavern"] =
+        "Montalvo",
+    ["Goldshire"] =
+        "Vila d'Ouro",
+    ["Grom'gol"] =
+        "Grom'gol",
+    ["Hammerfall"] =
+        "Ruína do Martelo",
+    ["Ironforge"] =
+        "Altaforja",
+    ["Kargath"] =
+        "Karrath",
+    ["Kharanos"] =
+        "Kharanos",
+    ["Lakeshire"] =
+        "Vila Plácida",
+    ["Light's Hope Chapel"] =
+        "Capela Esperança da Luz",
+    ["Menethil Harbor"] =
+        "Porto de Menethil",
+    ["Nijel's Point"] =
+        "Posto do Nijel",
+    ["Orgrimmar"] =
+        "Orgrimmar",
+    ["Ratchet"] =
+        "Vila Catraca",
+    ["Razor Hill"] =
+        "Monte Navalha",
+    ["Revantusk Village"] =
+        "Aldeia Revatusco",
+    ["Sentinel Hill"] =
+        "Morro da Sentinela",
+    ["Shadowprey Village"] =
+        "Aldeia Pescassombra",
+    ["Southshore"] =
+        "Costa Sul",
+    ["Splintertree Post"] =
+        "Posto Machadada",
+    ["Stonard"] =
+        "Pedregal",
+    ["Stonetalon Peak"] =
+        "Morro das Torres de Pedra",
+    ["Stormwind City"] =
+        "Cidade de Ventobravo",
+    ["Stoutlager Inn"] =
+        "Thelsamar",
+    ["Sun Rock Retreat"] =
+        "Retiro Rocha do Sol",
+    ["Tarren Mill"] =
+        "Serraria Tarren",
+    ["The Crossroads"] =
+        "A Encruzilhada",
+    ["The Sepulcher"] =
+        "O Sepulcro",
+    ["Thelsamar"] =
+        "Thelsamar",
+    ["Theramore"] =
+        "Theramore",
+    ["Theramore Isle"] =
+        "Ilha de Theramore",
+    ["Thunder Bluff"] =
+        "Penhasco do Trovão",
+    ["Thunderbrew Distillery"] =
+        "Kharanos",
 }

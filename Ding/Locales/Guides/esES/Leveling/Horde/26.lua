@@ -47,4 +47,6 @@ Ding.RegisterGuideTranslation("esES", "leveling-h26-stranglethorn-vale", {
         "Sigue el sendero",
     ["Circle the mountain on the trail, then climb it"] =
         "Rodea la montaña por el sendero y luego súbela",
+    ["Booty Bay"] =
+        "Bahía del Botín",
 })

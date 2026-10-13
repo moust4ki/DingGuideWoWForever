@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("ptBR", "alliance-24-wetlands", {
         "Pantanal (20-26)",
     ["The Wetlands are north of Loch Modan: Menethil Harbor, on the west coast, is your base."] =
         "O Pantanal fica ao norte de Loch Modan: o Porto de Menethil, na costa oeste, é sua base.",
+    ["Menethil Harbor"] =
+        "Porto de Menethil",
     ["Finish the level on nearby monsters before moving on."] =
         "Termine o nível nos monstros próximos antes de seguir.",
 })

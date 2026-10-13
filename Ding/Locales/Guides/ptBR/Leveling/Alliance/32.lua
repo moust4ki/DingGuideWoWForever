@@ -29,8 +29,12 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a32-stranglethorn-vale", {
         "A presa é um tigre claro, de elite de nível 43. Ele chama 2 pequenos reforços de nível mais baixo; nenhum é de elite. Quando a vida dele cair para cerca de 50%.",
     ["Look underneath the bridge. Your targets sit below the water's surface."] =
         "Procure embaixo da ponte. Seus alvos ficam abaixo da superfície da água.",
+    ["Booty Bay"] =
+        "Angra do Butim",
     ["Your objective lies in a little cavern."] =
         "Seu objetivo fica em uma pequena caverna.",
+    ["Stormwind City"] =
+        "Cidade de Ventobravo",
     ["Head down into the Deeprun Tram station"] =
         "Desça até a estação do Metrô Correfundo",
     ["Pass through the portal to teleport."] =

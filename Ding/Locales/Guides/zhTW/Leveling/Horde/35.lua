@@ -65,4 +65,6 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h35-felwood-and-winterspring", {
         "從獸欄管理員那裡領回你的寵物。",
     ["Release the short-term pet you tamed."] =
         "放棄你馴服的臨時寵物。",
+    ["Camp Taurajo"] =
+        "陶拉祖營地",
 })

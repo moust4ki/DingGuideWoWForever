@@ -39,4 +39,6 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a24-badlands", {
         "죽은 다음 영혼의 치유사에게서 부활하세요",
     ["Flight master at Thorium Point"] =
         "토륨 조합 거점 비행 조련사",
+    ["Stoutlager Inn"] =
+        "텔사마",
 })

@@ -71,4 +71,6 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h30-feralas-and-ungoro-crater", 
         "Ce PNJ se trouve en bas, dans la Faille de l'ombre.",
     ["The NPC is upstairs, out on the balcony."] =
         "Le PNJ est à l'étage, dehors sur le balcon.",
+    ["Orgrimmar"] =
+        "Orgrimmar",
 })

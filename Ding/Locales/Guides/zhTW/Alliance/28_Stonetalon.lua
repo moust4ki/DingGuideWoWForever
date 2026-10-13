@@ -5,4 +5,6 @@ Ding.RegisterGuideTranslation("zhTW", "alliance-28-stonetalon", {
         "石爪山脈 (27)",
     ["The Stonetalon Mountains are west of Ashenvale."] =
         "石爪山脈位於梣谷西邊。",
+    ["Stonetalon Peak"] =
+        "石爪峰",
 })

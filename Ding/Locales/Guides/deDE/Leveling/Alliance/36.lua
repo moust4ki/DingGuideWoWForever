@@ -15,6 +15,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a36-azshara-and-felwood", {
         "Steig ins oberste Stockwerk des Gebäudes.",
     ["The quest giver stands outdoors, not indoors."] =
         "Der Questgeber steht draußen, nicht drinnen.",
+    ["Auberdine"] =
+        "Auberdine",
     ["A lengthy stretch of questing lies ahead. This vendor sells no arrows or bullets."] =
         "Eine lange Questphase liegt vor dir. Dieser Händler verkauft keine Pfeile oder Kugeln.",
     ["Hand these in afterwards for experience and reputation."] =

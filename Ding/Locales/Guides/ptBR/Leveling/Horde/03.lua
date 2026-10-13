@@ -71,6 +71,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h03-orc-and-troll-starter", {
         "O objeto fica no nível mais alto desta construção.",
     ["Die to the monsters here on purpose. Dying costs you nothing this early. This is the quickest way over."] =
         "Deixe os monstros daqui te matarem de propósito. Neste início, morrer não custa nada. É o caminho mais rápido para chegar lá.",
+    ["Razor Hill"] =
+        "Monte Navalha",
     ["The NPC is out back, at the rear of the structure."] =
         "O NPC está lá fora, nos fundos da construção.",
     ["Learn First Aid from the trainer"] =

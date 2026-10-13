@@ -65,4 +65,6 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h35-felwood-and-winterspring", {
         "Hol dein Tier beim Stallmeister ab.",
     ["Release the short-term pet you tamed."] =
         "Lass das kurzzeitig gezähmte Tier frei.",
+    ["Camp Taurajo"] =
+        "Camp Taurajo",
 })

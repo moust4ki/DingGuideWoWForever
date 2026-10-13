@@ -5,4 +5,8 @@ Ding.RegisterGuideTranslation("deDE", "horde-20-barrens", {
         "Brachland und Steinkrallengebirge (19-20)",
     ["The Crossroads, in the middle of the Barrens, is your base; the Stonetalon Mountains are west of the Barrens."] =
         "Das Wegekreuz mitten im Brachland ist deine Basis; das Steinkrallengebirge liegt westlich des Brachlands.",
+    ["Ratchet"] =
+        "Ratschet",
+    ["Sun Rock Retreat"] =
+        "Sonnenfels",
 })

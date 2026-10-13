@@ -7,6 +7,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a28-feralas-and-tanaris", {
         "塔纳利斯：先到加基森，再到菲拉斯：羽月要塞。",
     ["The NPC is indoors."] =
         "NPC在室内。",
+    ["Feathermoon Stronghold"] =
+        "羽月要塞",
     ["The NPC is indoors, one floor up."] =
         "NPC在室内楼上一层。",
     ["Position yourself in its center."] =
@@ -93,6 +95,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a28-feralas-and-tanaris", {
         "位置在空心树的下层。",
     ["Stay clear of the elite foes. Be ready for a fight right away."] =
         "避开精英敌人。准备好马上战斗。",
+    ["Gadgetzan"] =
+        "加基森",
     ["The NPC waits on the lower level, indoors. A lengthy stretch of quests is coming up. This vendor sells no arrows or bullets."] =
         "NPC在室内下层。接下来是一长段任务。这个商人不卖箭和子弹。",
 })

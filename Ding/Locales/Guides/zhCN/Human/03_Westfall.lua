@@ -7,4 +7,6 @@ Ding.RegisterGuideTranslation("zhCN", "human-03-westfall", {
         "沿闪金镇的道路向西，再前往西部荒野中部的哨兵岭。",
     ["If the starting item dropped: use it from your bags."] =
         "如果掉落了任务起始物品：在背包中使用。",
+    ["Sentinel Hill"] =
+        "哨兵岭",
 })

@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("frFR", "horde-33-desolace", {
         "Désolace (32-34)",
     ["Desolace is south of the Stonetalon Mountains: the Horde village is on the west coast. Finish the level on nearby monsters before moving on."] =
         "Désolace est au sud des Serres-Rocheuses : le village de la Horde est sur la côte ouest. Finis le niveau sur les monstres du coin avant la suite.",
+    ["Shadowprey Village"] =
+        "Village de Proie-de-l'Ombre",
     ["Finish the level on nearby monsters before moving on."] =
         "Finis le niveau sur les monstres du coin avant la suite.",
 })

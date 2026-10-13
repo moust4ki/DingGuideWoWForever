@@ -65,6 +65,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a02-dwarf-and-gnome-starter", {
         "寻找木篮子。",
     ["Die to the monsters here on purpose. Any spot around Brewnall Village works. Dying costs you nothing this early."] =
         "故意让这里的怪物杀死你。Brewnall Village周围任意位置都可以。这么早死亡没有任何损失。",
+    ["Thunderbrew Distillery"] =
+        "卡拉诺斯",
     ["Give it a few seconds. The object is on the lower level, indoors."] =
         "等几秒钟。该物件在室内下层。",
     ["Head to the lower level of the cavern."] =
@@ -111,6 +113,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a02-dwarf-and-gnome-starter", {
         "NPC沿一条很长的路线巡逻；沿路寻找。",
     ["Die to the monsters here on purpose. This is the quickest way over."] =
         "故意让这里的怪物杀死你。这是最快的过去方式。",
+    ["Stoutlager Inn"] =
+        "塞尔萨玛",
     ["The NPC can be indoors or out."] =
         "NPC可能在室内，也可能在室外。",
     ["Learn Two-Handed Axes and Two-Handed Maces at the weapon master"] =

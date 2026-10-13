@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("esES", "orc-02-durotar", {
         "Durotar (5-11)",
     ["Leave the valley by the road east, then north to Razor Hill: your base for Durotar."] =
         "Sal del valle por el camino del este y sube al norte hasta Cerrotajo: tu base en Durotar.",
+    ["Razor Hill"] =
+        "Cerrotajo",
     ["If the starting item dropped: use it from your bags."] =
         "Si tienes el objeto que inicia la misión: úsalo desde tus bolsas.",
 })

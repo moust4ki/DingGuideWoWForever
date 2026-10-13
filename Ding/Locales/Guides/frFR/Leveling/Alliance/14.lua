@@ -27,6 +27,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a14-duskwood-and-stranglethorn-v
         "Tu en auras besoin plus tard pour « Un noble brassage » : garde-le à la banque pour libérer une place dans tes sacs.",
     ["This one roams, so scan the surrounding area."] =
         "Celui-ci se déplace : fouille les environs.",
+    ["Darkshire"] =
+        "Sombre-Comté",
     ["The NPC patrols the road; look along it."] =
         "Le PNJ patrouille sur la route : cherche-le tout du long.",
     ["The targets are worgen."] =

@@ -95,6 +95,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h11-thousand-needles", {
         "조심하세요: 여기 적은 당신보다 레벨이 높습니다. 죽으면 모자케 야영지에서 되살아나세요.",
     ["Fly to Camp Mojache"] =
         "모자케 야영지로 날아가세요",
+    ["Freewind Post"] =
+        "높새바람 봉우리",
     ["Fly to Gadgetzan"] =
         "가젯잔으로 날아가세요",
     ["Watch out: the foes here are above your level."] =

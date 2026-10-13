@@ -5,4 +5,6 @@ Ding.RegisterGuideTranslation("frFR", "undead-03-silverpine", {
         "Forêt des Pins-Argentés (13-15)",
     ["From Brill, take the road west then south over the bridge into Silverpine Forest: the Sepulcher is your base."] =
         "Depuis Brill, prends la route de l'ouest puis du sud, par le pont, jusqu'à la forêt des Pins-Argentés : le Sépulcre est ta base.",
+    ["The Sepulcher"] =
+        "Le Sépulcre",
 })

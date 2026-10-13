@@ -27,6 +27,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h22-tanaris", {
         "Se acerca un enemigo más duro.",
     ["Grab the loot."] =
         "Recoge el botín.",
+    ["Gadgetzan"] =
+        "Gadgetzan",
     ["The NPC is indoors. You need them later for \"Tanaris Field Sampling\" and \"Screecher Spirits\": keep them in the bank to free bag slots."] =
         "El PNJ está dentro. Los necesitarás más adelante para «Recogida de muestras en Tanaris» y «Los espíritus de los estriadores»: déjalos en el banco para liberar huecos en las bolsas.",
     ["Wait for the talking to finish"] =

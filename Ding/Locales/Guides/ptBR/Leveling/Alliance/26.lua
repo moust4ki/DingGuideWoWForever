@@ -27,4 +27,6 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a26-swamp-of-sorrows", {
         "Suba até o último andar do prédio.",
     ["The NPC is indoors."] =
         "O NPC está lá dentro.",
+    ["Theramore Isle"] =
+        "Ilha de Theramore",
 })

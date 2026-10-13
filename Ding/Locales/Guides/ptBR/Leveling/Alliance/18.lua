@@ -21,6 +21,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a18-desolace", {
         "Liberte o ajudante temporário que você domou.",
     ["The NPC is indoors."] =
         "O NPC está lá dentro.",
+    ["Nijel's Point"] =
+        "Posto do Nijel",
     ["Hunt down satyrs. Beware of foes lurking in stealth."] =
         "Cace sátiros. Cuidado com inimigos furtivos à espreita.",
     ["With the coming hand-ins, this brings you to level 36."] =

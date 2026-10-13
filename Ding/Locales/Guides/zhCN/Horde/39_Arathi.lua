@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("zhCN", "horde-39-arathi", {
         "阿拉希高地 (37-38)",
     ["Back to the Arathi Highlands: Hammerfall is in the east of the zone."] =
         "返回阿拉希高地：落锤镇在该区域东部。",
+    ["Hammerfall"] =
+        "落锤镇",
     ["If the starting item dropped: use it from your bags."] =
         "如果掉落了任务起始物品：在背包中使用。",
     ["Finish the level on nearby monsters before moving on."] =

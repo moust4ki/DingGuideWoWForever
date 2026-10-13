@@ -27,6 +27,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h40-winterspring", {
         "레각키에게 아이템을 사용하세요.",
     ["The NPC is indoors."] =
         "NPC는 건물 안에 있습니다.",
+    ["Everlook"] =
+        "눈망루 마을",
     ["The NPC stands within the passage."] =
         "NPC는 통로 안에 서 있습니다.",
     ["Fly to Moonglade"] =

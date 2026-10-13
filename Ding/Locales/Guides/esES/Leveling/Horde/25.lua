@@ -23,6 +23,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h25-feralas", {
         "Junto a los anillos azules brillantes del suelo. Busca montículos de tierra que aparecen. Los que tienen el objeto de misión brillan en azul.",
     ["Fight the tauren."] =
         "Lucha contra los tauren.",
+    ["Camp Mojache"] =
+        "Campamento Mojache",
     ["A lengthy grinding stretch is coming up. The NPC is upstairs, out on the balcony."] =
         "Se acerca un largo tramo de matar monstruos. El PNJ está arriba, fuera, en el balcón.",
     ["The target is a winged green bug, level 47. You can likely beat it at your current level. The target circles in the air, so search around."] =

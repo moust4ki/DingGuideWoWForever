@@ -27,6 +27,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a14-duskwood-and-stranglethorn-v
         "Du brauchst es später für „Ein nobles Bräu“: Lass es in der Bank, das spart einen Taschenplatz.",
     ["This one roams, so scan the surrounding area."] =
         "Dieses Ziel wandert umher, also such die Umgebung ab.",
+    ["Darkshire"] =
+        "Dunkelhain",
     ["The NPC patrols the road; look along it."] =
         "Der NPC patrouilliert auf der Straße; such entlang der Straße.",
     ["The targets are worgen."] =

@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("deDE", "undead-02-tirisfal", {
         "Tirisfal (6-13)",
     ["Leave Deathknell by the road east to Brill: your base for Tirisfal Glades."] =
         "Verlasse Todesend über die Straße nach Osten bis Brill: deine Basis für Tirisfal.",
+    ["Brill"] =
+        "Brill",
     ["If the starting item dropped: use it from your bags."] =
         "Startgegenstand erbeutet? Benutze ihn aus deinen Taschen.",
     ["Finish the level on nearby monsters before moving on."] =

@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("koKR", "horde-39-arathi", {
         "아라시 고원 (37-38)",
     ["Back to the Arathi Highlands: Hammerfall is in the east of the zone."] =
         "아라시 고원으로 돌아가세요: 해머폴은 지역 동쪽에 있습니다.",
+    ["Hammerfall"] =
+        "해머폴",
     ["If the starting item dropped: use it from your bags."] =
         "시작 아이템을 얻었다면: 가방에서 사용하세요.",
     ["Finish the level on nearby monsters before moving on."] =

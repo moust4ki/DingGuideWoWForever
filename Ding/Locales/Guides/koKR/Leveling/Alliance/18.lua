@@ -21,6 +21,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a18-desolace", {
         "길들인 임시 소환수를 풀어 주세요.",
     ["The NPC is indoors."] =
         "NPC는 건물 안에 있습니다.",
+    ["Nijel's Point"] =
+        "나이젤의 야영지",
     ["Hunt down satyrs. Beware of foes lurking in stealth."] =
         "사티로스를 사냥하세요. 은신해 숨어 있는 적을 조심하세요.",
     ["With the coming hand-ins, this brings you to level 36."] =

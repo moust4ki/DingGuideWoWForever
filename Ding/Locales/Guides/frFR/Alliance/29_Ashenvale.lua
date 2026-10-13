@@ -7,4 +7,6 @@ Ding.RegisterGuideTranslation("frFR", "alliance-29-ashenvale", {
         "Retour à Astranaar pour les quêtes de fin d'Orneval. Finis le niveau sur les monstres du coin avant la suite.",
     ["Finish the level on nearby monsters before moving on."] =
         "Finis le niveau sur les monstres du coin avant la suite.",
+    ["Auberdine"] =
+        "Auberdine",
 })

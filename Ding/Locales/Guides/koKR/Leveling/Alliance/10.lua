@@ -11,6 +11,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a10-wetlands", {
         "NPC는 건물 안에 있습니다.",
     ["The NPC waits on the lower level, indoors."] =
         "NPC는 건물 안 아래층에서 기다립니다.",
+    ["Deepwater Tavern"] =
+        "메네실 항구",
     ["The NPC is indoors, one floor up."] =
         "NPC는 건물 안 한 층 위에 있습니다.",
     ["The NPC is indoors. Do it only if you can."] =

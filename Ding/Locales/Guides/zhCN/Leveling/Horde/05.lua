@@ -33,6 +33,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h05-the-barrens-and-stonetalon-m
         "目标是一个巨魔。它会四处游荡，在周围找找。",
     ["The target is a human in a crimson long coat. This one roams, so scan the surrounding area. The targets are spread over several spots."] =
         "目标是一个穿着深红色长外套的人类。它会四处游荡，在周围找找。目标分布在好几个地点。",
+    ["Ratchet"] =
+        "棘齿城",
     ["The targets are the striped zhevras."] =
         "目标是带条纹的斑马。",
     ["Go into the water beside the rock that bubbles. Your targets sit below the water's surface."] =
@@ -65,6 +67,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h05-the-barrens-and-stonetalon-m
         "对Gamon使用搜索偷取。目标在室内。",
     ["Use it on Tazan's Satchel. The item is already in your inventory."] =
         "对Tazan's Satchel使用它。物品已经在你的背包里了。",
+    ["The Crossroads"] =
+        "十字路口",
     ["For this quest you guard an NPC on the move. If the NPC is gone, hold on until it reappears."] =
         "这个任务需要保护一个行进中的NPC。如果NPC不在，就等它重新出现。",
     ["This one roams, so scan the surrounding area. Check the upper and lower tiers of the structure."] =
@@ -89,6 +93,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h05-the-barrens-and-stonetalon-m
         "目标在水面以下。",
     ["Defeat Kolkar foes around Stagnant Oasis. Sooner or later a yell shows up in the chat window. Watch for his yell: I am summoned! Verog arrives after a shout dares intruders to his tent to die."] =
         "在死水绿洲周围击败科卡尔敌人。聊天窗口迟早会出现一句喊话。留意他的喊话：“我被召唤了！”有人喊话叫闯入者到他的帐篷来送死之后，Verog就会出现。",
+    ["Camp Taurajo"] =
+        "陶拉祖营地",
     ["Flight master at Camp Taurajo"] =
         "陶拉祖营地的飞行管理员",
     ["Circle the mountain on foot."] =
@@ -133,6 +139,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h05-the-barrens-and-stonetalon-m
         "向武器大师学习枪械",
     ["Learn Maces at the weapon master"] =
         "向武器大师学习单手锤",
+    ["Thunder Bluff"] =
+        "雷霆崖",
     ["Fly to Thunder Bluff"] =
         "飞往雷霆崖",
     ["Go into the cavern"] =

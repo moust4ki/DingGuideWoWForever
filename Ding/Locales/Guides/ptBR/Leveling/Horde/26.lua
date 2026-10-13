@@ -47,4 +47,6 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h26-stranglethorn-vale", {
         "Siga a trilha",
     ["Circle the mountain on the trail, then climb it"] =
         "Contorne a montanha pela trilha, depois suba-a",
+    ["Booty Bay"] =
+        "Angra do Butim",
 })

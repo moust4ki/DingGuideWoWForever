@@ -45,6 +45,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h38-felwood-and-winterspring", {
         "任务需要雪人；去找它们。目标在洞穴里，洞口周围也有。",
     ["The NPC is indoors."] =
         "NPC在室内。",
+    ["Everlook"] =
+        "永望镇",
     ["The NPC is a human spirit."] =
         "NPC是一个人类的灵魂。",
     ["Your targets are within the cavern."] =
@@ -79,6 +81,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h38-felwood-and-winterspring", {
         "该NPC在下面的暗影裂口里。",
     ["The NPC stands on the highest level of this structure."] =
         "NPC在这座建筑的最高层。",
+    ["Orgrimmar"] =
+        "奥格瑞玛",
     ["Take the trail downhill"] =
         "沿小路下山",
     ["Wait for the talking to finish"] =

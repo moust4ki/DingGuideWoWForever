@@ -23,6 +23,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h08-the-barrens", {
         "Besuche den eingesperrten Stacheleber",
     ["Trade your Blood Shards to gain buffs. Trade any spare Blood Shards to him during your Barrens questing. Ask him for the Spirit of the Wind buff"] =
         "Tausch deine Blutsplitter gegen Buffs ein. Gib ihm beim Questen im Brachland deine übrigen Blutsplitter. Bitte ihn um den Buff Geist des Windes",
+    ["Camp Taurajo"] =
+        "Camp Taurajo",
     ["The target is a dinosaur with blue hide. The targets are spread over several spots."] =
         "Das Ziel ist ein Dinosaurier mit blauer Haut. Die Ziele sind auf mehrere Stellen verteilt.",
     ["Look for big boulders oozing green fluid. Expect a possible ambush while you gather it."] =

@@ -5,4 +5,6 @@ Ding.RegisterGuideTranslation("esES", "alliance-43-stv", {
         "Vega de Tuercespina (41)",
     ["Back to Stranglethorn for the end of its quests, from Booty Bay."] =
         "Vuelve a Tuercespina para acabar sus misiones, desde Bahía del Botín.",
+    ["Booty Bay"] =
+        "Bahía del Botín",
 })

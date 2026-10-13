@@ -33,6 +33,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h05-the-barrens-and-stonetalon-m
         "Das Ziel ist ein Troll. Dieses Ziel wandert umher, also such die Umgebung ab.",
     ["The target is a human in a crimson long coat. This one roams, so scan the surrounding area. The targets are spread over several spots."] =
         "Das Ziel ist ein Mensch in einem purpurroten Mantel. Dieses Ziel wandert umher, also such die Umgebung ab. Die Ziele sind auf mehrere Stellen verteilt.",
+    ["Ratchet"] =
+        "Ratschet",
     ["The targets are the striped zhevras."] =
         "Die Ziele sind die gestreiften Zhevras.",
     ["Go into the water beside the rock that bubbles. Your targets sit below the water's surface."] =
@@ -65,6 +67,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h05-the-barrens-and-stonetalon-m
         "Bestiehl Gamon mit Taschendiebstahl. Das Ziel ist drinnen.",
     ["Use it on Tazan's Satchel. The item is already in your inventory."] =
         "Benutze es an Tazan's Satchel. Der Gegenstand ist schon in deinem Inventar.",
+    ["The Crossroads"] =
+        "Das Wegekreuz",
     ["For this quest you guard an NPC on the move. If the NPC is gone, hold on until it reappears."] =
         "Bei dieser Quest beschützt du einen NPC, der unterwegs ist. Ist der NPC weg, warte, bis er wieder erscheint.",
     ["This one roams, so scan the surrounding area. Check the upper and lower tiers of the structure."] =
@@ -89,6 +93,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h05-the-barrens-and-stonetalon-m
         "Deine Ziele sind unter der Wasseroberfläche.",
     ["Defeat Kolkar foes around Stagnant Oasis. Sooner or later a yell shows up in the chat window. Watch for his yell: I am summoned! Verog arrives after a shout dares intruders to his tent to die."] =
         "Besiege Kolkar-Gegner rund um die Stagnant Oasis. Früher oder später erscheint ein Ruf im Chatfenster. Achte auf seinen Ruf: Ich wurde gerufen! Verog erscheint, nachdem ein Ruf Eindringlinge herausfordert, in sein Zelt zu kommen und zu sterben.",
+    ["Camp Taurajo"] =
+        "Camp Taurajo",
     ["Flight master at Camp Taurajo"] =
         "Flugmeister im Camp Taurajo",
     ["Circle the mountain on foot."] =
@@ -133,6 +139,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h05-the-barrens-and-stonetalon-m
         "Lerne Schusswaffen beim Waffenmeister",
     ["Learn Maces at the weapon master"] =
         "Lerne Streitkolben beim Waffenmeister",
+    ["Thunder Bluff"] =
+        "Donnerfels",
     ["Fly to Thunder Bluff"] =
         "Flieg nach Donnerfels",
     ["Go into the cavern"] =

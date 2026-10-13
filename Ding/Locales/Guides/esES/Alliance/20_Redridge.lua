@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("esES", "alliance-20-redridge", {
         "Montañas Crestagrana (18-19)",
     ["Redridge is east of Elwynn Forest: follow the road east to Lakeshire. Night Elves: boat from Auberdine to Menethil, Ironforge, then the tram to Stormwind."] =
         "Crestagrana está al este del Bosque de Elwynn: sigue el camino al este hasta Villa del Lago. Elfos de la noche: barco de Auberdine a Menethil, Forjaz y luego el tranvía a Ventormenta.",
+    ["Lakeshire"] =
+        "Villa del Lago",
     ["Finish the level on nearby monsters before moving on."] =
         "Termina el nivel con monstruos cercanos antes de seguir.",
 })

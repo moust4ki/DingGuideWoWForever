@@ -7,6 +7,8 @@ Ding.RegisterGuideTranslation("zhTW", "horde-44-feralas", {
         "菲拉斯位於千針石林西邊：據點是區域東部的莫沙徹營地。",
     ["Finish the level on nearby monsters before moving on."] =
         "先在附近打怪升完這一級再繼續。",
+    ["Camp Mojache"] =
+        "莫沙徹營地",
     ["If the starting item dropped: use it from your bags."] =
         "若掉落了開始任務的物品：從背包使用。",
 })

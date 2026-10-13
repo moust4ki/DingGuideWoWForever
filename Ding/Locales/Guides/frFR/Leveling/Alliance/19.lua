@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a19-stranglethorn-vale", {
         "Vallée de Strangleronce : Baie-du-Butin, à la pointe sud.",
     ["The NPC is indoors at street level."] =
         "Le PNJ est à l'intérieur, au niveau de la rue.",
+    ["Booty Bay"] =
+        "Baie-du-Butin",
     ["Climb to the highest floor of the building."] =
         "Monte au dernier étage du bâtiment.",
     ["The NPC is upstairs, out on the balcony."] =

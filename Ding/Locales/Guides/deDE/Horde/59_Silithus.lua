@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("deDE", "horde-59-silithus", {
         "Silithus (56-60)",
     ["Silithus is south of Un'Goro Crater: Cenarion Hold is in the north of the zone."] =
         "Silithus liegt südlich des Kraters von Un'Goro: Burg Cenarius ist im Norden des Gebiets.",
+    ["Cenarion Hold"] =
+        "Burg Cenarius",
     ["Finish the level on nearby monsters before moving on."] =
         "Beende die Stufe an nahen Monstern, bevor du weiterziehst.",
 })

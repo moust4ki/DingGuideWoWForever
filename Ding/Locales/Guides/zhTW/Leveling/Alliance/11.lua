@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a11-duskwood-and-redridge-mounta
         "暮色森林：夜色鎮，位於區域東部。",
     ["The NPC is indoors."] =
         "NPC在室內。",
+    ["Darkshire"] =
+        "夜色鎮",
     ["Flight master at Darkshire"] =
         "夜色鎮的飛行管理員",
     ["This one roams, so scan the surrounding area. The NPC is indoors."] =

@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("frFR", "horde-29-needles", {
         "Mille pointes (28-30)",
     ["Thousand Needles is south of the Barrens, down the Great Lift: Freewind Post is your base."] =
         "Mille pointes est au sud des Tarides, en bas du Grand ascenseur : le poste de Librevent est ta base.",
+    ["Freewind Post"] =
+        "Poste de Librevent",
     ["Finish the level on nearby monsters before moving on."] =
         "Finis le niveau sur les monstres du coin avant la suite.",
 })

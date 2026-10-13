@@ -1651,7 +1651,10 @@ function E:Describe(step, preview)
         end
     end
     if step.sethearth then
-        lines[#lines + 1] = { icon = ICON.other, action = "manual", text = L.SETHEARTH:format(tostring(step.sethearth)) }
+        -- The place in the player's language (the guide's translation); `true`: the inn here.
+        local place = step.sethearthText or (type(step.sethearth) == "string" and step.sethearth or nil)
+        lines[#lines + 1] = { icon = ICON.other, action = "manual",
+            text = place and L.SETHEARTH:format(place) or L.SETHEARTH_HERE }
     end
     if step.train then
         lines[#lines + 1] = { icon = ICON.other, action = "manual", text = type(step.train) == "string" and step.train or L.TRAIN }

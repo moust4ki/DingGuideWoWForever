@@ -23,6 +23,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a25-stranglethorn-vale", {
         "NPC在室内中间那层。",
     ["The NPC is indoors at street level. The NPC is indoors."] =
         "NPC在室内，与街道同层。NPC在室内。",
+    ["Booty Bay"] =
+        "藏宝海湾",
     ["The NPC is indoors at street level."] =
         "NPC在室内，与街道同层。",
     ["Let the conversation play out. The NPC is indoors at street level."] =

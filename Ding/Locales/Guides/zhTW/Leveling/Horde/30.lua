@@ -71,4 +71,6 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h30-feralas-and-ungoro-crater", 
         "這個NPC在下方的暗影裂口裡。",
     ["The NPC is upstairs, out on the balcony."] =
         "NPC在樓上，位於外面的陽台。",
+    ["Orgrimmar"] =
+        "奧格瑪",
 })

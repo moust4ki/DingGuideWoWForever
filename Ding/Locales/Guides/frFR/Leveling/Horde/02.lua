@@ -31,6 +31,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h02-tauren-starter", {
         "Fais-toi tuer, puis ressuscite auprès du gardien des âmes",
     ["Keep to the road the whole way."] =
         "Reste sur la route tout du long.",
+    ["Bloodhoof Village"] =
+        "Village de Sabot-de-Sang",
     ["Look for little brown pinecones. Search close to the trunks."] =
         "Cherche des petites pommes de pin brunes. Cherche près des troncs.",
     ["Big birds that roam on foot."] =
@@ -93,6 +95,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h02-tauren-starter", {
         "Apprends les Bâtons auprès du maître d'armes",
     ["Learn Two-Handed Maces at the weapon master"] =
         "Apprends les Masses à deux mains auprès du maître d'armes",
+    ["Thunder Bluff"] =
+        "Pitons-du-Tonnerre",
     ["This is food for your pet."] =
         "C'est de la nourriture pour ton familier.",
     ["The NPC is indoors, one floor up."] =
@@ -141,6 +145,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h02-tauren-starter", {
         "La cible est en haut, au sommet.",
     ["The object is up on the summit."] =
         "L'objet est en haut, au sommet.",
+    ["Razor Hill"] =
+        "Tranchecolline",
     ["Look for beige sacks."] =
         "Cherche des sacs beiges.",
     ["Stay on the trail, then cross the tunnel"] =

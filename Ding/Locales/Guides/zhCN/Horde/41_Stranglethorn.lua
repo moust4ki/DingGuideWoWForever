@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("zhCN", "horde-41-stv", {
         "荆棘谷 (38-42)",
     ["Back to Stranglethorn for the end of its quests, from Grom'gol and Booty Bay. Finish the level on nearby monsters before moving on."] =
         "返回荆棘谷，从格罗姆高和藏宝海湾出发完成剩余任务。先在附近打怪升完这一级再继续。",
+    ["Grom'gol"] =
+        "格罗姆高营地",
     ["Finish the level on nearby monsters before moving on."] =
         "先在附近打怪升完这一级再继续。",
 })

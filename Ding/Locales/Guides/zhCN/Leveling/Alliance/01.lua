@@ -67,6 +67,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a01-human-starter", {
         "故意让这里的怪物杀死你。这么早死亡没有任何损失。这是最快的过去方式。",
     ["Get yourself killed, then resurrect with the spirit healer"] =
         "让自己被杀，然后在灵魂医者处复活",
+    ["Goldshire"] =
+        "闪金镇",
     ["Look for little stacks of brown wood. Look around tree trunks at ground level."] =
         "寻找棕色的小木堆。在树干底部的地面附近找。",
     ["The targets are wolves."] =
@@ -107,6 +109,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a01-human-starter", {
         "站到粉色符文上。在陵墓里找。目标在室内下层。",
     ["The NPC stands one level over the crypt. The NPC waits on the lower level, indoors."] =
         "NPC在墓穴上面一层。NPC在室内下层。",
+    ["Stormwind City"] =
+        "暴风城",
     ["The NPC is indoors. Be ready for a fight right away."] =
         "NPC在室内。准备好马上战斗。",
     ["Learn Blacksmithing from the trainer"] =

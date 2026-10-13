@@ -43,6 +43,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h28-tanaris-and-dustwallow-marsh
         "모래 더미를 찾아보세요.",
     ["It competes for spawn points."] =
         "다른 몬스터와 생성 위치를 두고 경쟁합니다.",
+    ["Gadgetzan"] =
+        "가젯잔",
     ["Go into the cavern"] =
         "동굴에 들어가세요",
     ["Take the trail downhill"] =

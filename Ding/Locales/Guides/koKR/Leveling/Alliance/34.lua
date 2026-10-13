@@ -27,6 +27,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a34-blasted-lands-and-burning-st
         "NPC는 건물 안에 있습니다.",
     ["This one roams, so scan the surrounding area. The NPC is indoors."] =
         "이 대상은 돌아다니므로 주변을 살펴보세요. NPC는 건물 안에 있습니다.",
+    ["Ironforge"] =
+        "아이언포지",
     ["The NPC is indoors. Hold on to it; a task in Un'Goro Crater calls for it later."] =
         "NPC는 건물 안에 있습니다. 보관하세요. 운고로 분화구의 임무에 나중에 필요합니다.",
     ["The NPC is indoors. You need them later for \"Chasing A-Me 01\" and \"Arcane Runes\": keep them in the bank to free bag slots."] =

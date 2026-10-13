@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("zhCN", "human-02-elwynn", {
         "艾尔文森林 (5-12)",
     ["Goldshire is your base for the whole forest: inn, class trainers and quests."] =
         "闪金镇是整片森林的据点：旅店、职业训练师和任务都在这里。",
+    ["Goldshire"] =
+        "闪金镇",
     ["If the starting item dropped: use it from your bags."] =
         "如果掉落了任务起始物品：在背包中使用。",
     ["Finish the level on nearby monsters before moving on."] =

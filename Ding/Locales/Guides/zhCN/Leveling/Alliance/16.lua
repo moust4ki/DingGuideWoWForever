@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a16-dustwallow-marsh-and-thousan
         "尘泥沼泽：塞拉摩岛，在东海岸外。",
     ["The NPC is indoors."] =
         "NPC在室内。",
+    ["Theramore Isle"] =
+        "塞拉摩岛",
     ["The NPC is indoors, one floor up."] =
         "NPC在室内楼上一层。",
     ["The NPC is indoors. This quest is buggy and may not show up. If it is not around, move on without it."] =

@@ -49,11 +49,11 @@ return {
     ["Elwynn Forest"] =
         "Forêt d'Elwynn",
     ["Goldshire is your base for the whole forest: inn, class trainers and quests."] =
-        "Comtelune est ta base pour toute la forêt : auberge, maîtres de classe et quêtes.",
+        "Comté-de-l'Or est ta base pour toute la forêt : auberge, maîtres de classe et quêtes.",
     ["Westfall"] =
         "Marche de l'Ouest",
     ["Head west on the Goldshire road, then to Sentinel Hill in the middle of Westfall."] =
-        "Direction l'ouest par la route de Comtelune, puis la colline des Sentinelles au centre de la Marche.",
+        "Direction l'ouest par la route de Comté-de-l'Or, puis la colline des Sentinelles au centre de la Marche.",
     ["Loch Modan"] =
         "Loch Modan",
     ["Take the Deeprun Tram from Stormwind to Ironforge, then the road east through Dun Morogh to Thelsamar."] =
@@ -70,7 +70,7 @@ return {
     ["Take the road east through the South Gate tunnel to Thelsamar."] =
         "Prends la route de l'est par le tunnel de la porte Sud jusqu'à Thelsamar.",
     ["Deeprun Tram from Ironforge to Stormwind, then the road west through Goldshire to Sentinel Hill."] =
-        "Tram des profondeurs de Forgefer à Hurlevent, puis la route de l'ouest par Comtelune jusqu'à la colline des Sentinelles.",
+        "Tram des profondeurs de Forgefer à Hurlevent, puis la route de l'ouest par Comté-de-l'Or jusqu'à la colline des Sentinelles.",
     -- nightelf
     ["Teldrassil"] =
         "Teldrassil",
@@ -3394,4 +3394,104 @@ return {
         "Tu en auras besoin plus tard pour « Le rapport de Long-guet » et « Le duc Nicholas Zverenhoff » : garde-les à la banque pour libérer de la place dans tes sacs.",
     ["You need it later for \"Aquementas\": keep it in the bank to free a bag slot."] =
         "Tu en auras besoin plus tard pour « Aquementas » : garde-le à la banque pour libérer une place dans tes sacs.",
+    -- Places of the hearthstone steps (`sethearth`): the town, as this language names it (an
+    -- inn's own name: its town).
+    ["Astranaar"] =
+        "Astranaar",
+    ["Auberdine"] =
+        "Auberdine",
+    ["Bloodhoof Village"] =
+        "Village de Sabot-de-Sang",
+    ["Booty Bay"] =
+        "Baie-du-Butin",
+    ["Brill"] =
+        "Brill",
+    ["Camp Mojache"] =
+        "Camp Mojache",
+    ["Camp Taurajo"] =
+        "Camp Taurajo",
+    ["Cenarion Hold"] =
+        "Fort Cénarien",
+    ["Coriella Calmbreeze"] =
+        "Coriella Calmbreeze",
+    ["Darkshire"] =
+        "Sombre-Comté",
+    ["Deepwater Tavern"] =
+        "Port de Menethil",
+    ["Dolanaar"] =
+        "Dolanaar",
+    ["Donaal Downbreeze"] =
+        "Donaal Downbreeze",
+    ["Everlook"] =
+        "Long-guet",
+    ["Feathermoon Stronghold"] =
+        "Bastion de Pennelune",
+    ["Freewind Post"] =
+        "Poste de Librevent",
+    ["Gadgetzan"] =
+        "Gadgetzan",
+    ["Gallows' End Tavern"] =
+        "Brill",
+    ["Goldshire"] =
+        "Comté-de-l'Or",
+    ["Grom'gol"] =
+        "Grom'gol",
+    ["Hammerfall"] =
+        "Trépas-d'Orgrim",
+    ["Ironforge"] =
+        "Forgefer",
+    ["Kargath"] =
+        "Kargath",
+    ["Kharanos"] =
+        "Kharanos",
+    ["Lakeshire"] =
+        "Comté-du-Lac",
+    ["Light's Hope Chapel"] =
+        "Chapelle de l'Espoir de Lumière",
+    ["Menethil Harbor"] =
+        "Port de Menethil",
+    ["Nijel's Point"] =
+        "Combe de Nijel",
+    ["Orgrimmar"] =
+        "Orgrimmar",
+    ["Ratchet"] =
+        "Cabestan",
+    ["Razor Hill"] =
+        "Tranchecolline",
+    ["Revantusk Village"] =
+        "Village de Vengebroche",
+    ["Sentinel Hill"] =
+        "Colline des Sentinelles",
+    ["Shadowprey Village"] =
+        "Village de Proie-de-l'Ombre",
+    ["Southshore"] =
+        "Austrivage",
+    ["Splintertree Post"] =
+        "Poste de Bois-Brisé",
+    ["Stonard"] =
+        "Pierrêche",
+    ["Stonetalon Peak"] =
+        "Pic des Serres-Rocheuses",
+    ["Stormwind City"] =
+        "Hurlevent",
+    ["Stoutlager Inn"] =
+        "Thelsamar",
+    ["Sun Rock Retreat"] =
+        "Retraite de Roche-Soleil",
+    ["Tarren Mill"] =
+        "Moulin-de-Tarren",
+    ["The Crossroads"] =
+        "La Croisée",
+    ["The Sepulcher"] =
+        "Le Sépulcre",
+    ["Thelsamar"] =
+        "Thelsamar",
+    ["Theramore"] =
+        "Theramore",
+    ["Theramore Isle"] =
+        "Île de Theramore",
+    ["Thunder Bluff"] =
+        "Pitons-du-Tonnerre",
+    ["Thunderbrew Distillery"] =
+        "Kharanos",
 }

@@ -43,6 +43,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h01-undead-starter", {
         "대화가 끝날 때까지 기다리세요",
     ["The quest giver is an abomination. The NPC patrols the road; look along it. He may step off the road now and then to pick plants."] =
         "퀘스트를 주는 NPC는 누더기골렘입니다. NPC는 길을 순찰합니다. 길을 따라 찾아보세요. 가끔 식물을 캐려고 길에서 벗어날 수 있습니다.",
+    ["Gallows' End Tavern"] =
+        "브릴",
     ["The NPC is indoors, one floor up."] =
         "NPC는 건물 안 한 층 위에 있습니다.",
     ["Heal Deathguard Kel with Lesser Heal (Rank 2). Buff Deathguard Kel with Power Word: Fortitude."] =
@@ -107,6 +109,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h01-undead-starter", {
         "이어지는 퀘스트 완료와 함께 10레벨이 됩니다.",
     ["The NPC is out back, at the rear of the structure."] =
         "NPC는 건물 뒤쪽 바깥에 있습니다.",
+    ["Razor Hill"] =
+        "칼바위 언덕",
     ["Look for beige sacks."] =
         "베이지색 자루를 찾으세요.",
     ["Stay on the trail, then cross the tunnel"] =

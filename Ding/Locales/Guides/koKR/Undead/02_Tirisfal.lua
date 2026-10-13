@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("koKR", "undead-02-tirisfal", {
         "티리스팔 숲 (6-13)",
     ["Leave Deathknell by the road east to Brill: your base for Tirisfal Glades."] =
         "동쪽 길로 데스넬을 나가 브릴로 가세요: 티리스팔 숲의 거점입니다.",
+    ["Brill"] =
+        "브릴",
     ["If the starting item dropped: use it from your bags."] =
         "시작 아이템을 얻었다면: 가방에서 사용하세요.",
     ["Finish the level on nearby monsters before moving on."] =

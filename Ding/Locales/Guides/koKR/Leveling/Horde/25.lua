@@ -23,6 +23,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h25-feralas", {
         "땅 위의 빛나는 파란 고리 옆에 있습니다. 솟아오르는 흙더미를 찾으세요. 퀘스트 아이템을 가진 것은 파랗게 빛납니다.",
     ["Fight the tauren."] =
         "타우렌과 싸우세요.",
+    ["Camp Mojache"] =
+        "모자케 야영지",
     ["A lengthy grinding stretch is coming up. The NPC is upstairs, out on the balcony."] =
         "곧 긴 사냥 구간이 이어집니다. NPC는 위층 발코니에 있습니다.",
     ["The target is a winged green bug, level 47. You can likely beat it at your current level. The target circles in the air, so search around."] =

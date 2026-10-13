@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a16-dustwallow-marsh-and-thousan
         "먼지진흙 습지대: 테라모어 섬은 동쪽 해안 앞바다에 있습니다.",
     ["The NPC is indoors."] =
         "NPC는 건물 안에 있습니다.",
+    ["Theramore Isle"] =
+        "테라모어 섬",
     ["The NPC is indoors, one floor up."] =
         "NPC는 건물 안 한 층 위에 있습니다.",
     ["The NPC is indoors. This quest is buggy and may not show up. If it is not around, move on without it."] =

@@ -65,4 +65,6 @@ Ding.RegisterGuideTranslation("esES", "leveling-h35-felwood-and-winterspring", {
         "Pide al maestro de establos que te devuelva a tu compañero.",
     ["Release the short-term pet you tamed."] =
         "Abandona la mascota temporal que domesticaste.",
+    ["Camp Taurajo"] =
+        "Campamento Taurajo",
 })

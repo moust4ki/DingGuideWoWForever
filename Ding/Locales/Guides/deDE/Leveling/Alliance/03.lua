@@ -81,6 +81,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a03-night-elf-starter", {
         "Mit den nächsten Abgaben bringt dich das auf Stufe 9. Deine Ziele sind in der Höhle.",
     ["Die to the monsters here on purpose. At this spot or a bit to the east. Dying costs you nothing this early."] =
         "Lass dich hier absichtlich von den Monstern töten. An dieser Stelle oder etwas weiter östlich. So früh kostet dich der Tod nichts.",
+    ["Dolanaar"] =
+        "Dolanaar",
     ["The NPC patrols the road; look along it."] =
         "Der NPC patrouilliert auf der Straße; such entlang der Straße.",
     ["For this quest you guard an NPC on the move. If she is absent, wait for her to reappear."] =
@@ -145,6 +147,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a03-night-elf-starter", {
         "Deine Ziele sind unter der Wasseroberfläche.",
     ["Your objective lies in a little cavern."] =
         "Dein Ziel liegt in einer kleinen Höhle.",
+    ["Auberdine"] =
+        "Auberdine",
     ["The spot is on the lower floor of the hollow tree."] =
         "Die Stelle ist auf der unteren Ebene des hohlen Baums.",
     ["Learn Thrown at the weapon master"] =

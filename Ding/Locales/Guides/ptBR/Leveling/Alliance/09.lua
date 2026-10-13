@@ -39,6 +39,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a09-ashenvale-and-stonetalon-mou
         "Procure esferas brancas.",
     ["The target is a gray furbolg. This one roams, so scan the surrounding area."] =
         "O alvo é um pelurso cinza. Este se desloca, então procure pelos arredores.",
+    ["Astranaar"] =
+        "Astranaar",
     ["Shrubs that glitter white."] =
         "Arbustos com brilho branco.",
     ["Exit Ruins of Stardust"] =

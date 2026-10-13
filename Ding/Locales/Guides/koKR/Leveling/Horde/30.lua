@@ -71,4 +71,6 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h30-feralas-and-ungoro-crater", 
         "이 NPC는 아래쪽 어둠의 틈에 있습니다.",
     ["The NPC is upstairs, out on the balcony."] =
         "NPC는 위층 발코니에 있습니다.",
+    ["Orgrimmar"] =
+        "오그리마",
 })

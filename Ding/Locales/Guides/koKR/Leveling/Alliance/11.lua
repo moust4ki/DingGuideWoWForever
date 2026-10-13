@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a11-duskwood-and-redridge-mounta
         "그늘숲: 다크샤이어는 지역 동쪽에 있습니다.",
     ["The NPC is indoors."] =
         "NPC는 건물 안에 있습니다.",
+    ["Darkshire"] =
+        "다크샤이어",
     ["Flight master at Darkshire"] =
         "다크샤이어 비행 조련사",
     ["This one roams, so scan the surrounding area. The NPC is indoors."] =

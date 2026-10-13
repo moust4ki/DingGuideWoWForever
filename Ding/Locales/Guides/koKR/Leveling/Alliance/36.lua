@@ -15,6 +15,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a36-azshara-and-felwood", {
         "건물 꼭대기 층으로 올라가세요.",
     ["The quest giver stands outdoors, not indoors."] =
         "퀘스트 제공자는 건물 안이 아니라 바깥에 서 있습니다.",
+    ["Auberdine"] =
+        "아우버다인",
     ["A lengthy stretch of questing lies ahead. This vendor sells no arrows or bullets."] =
         "앞으로 긴 퀘스트 구간이 이어집니다. 이 상인은 화살이나 탄환을 팔지 않습니다.",
     ["Hand these in afterwards for experience and reputation."] =

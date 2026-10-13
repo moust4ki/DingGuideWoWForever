@@ -39,6 +39,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a09-ashenvale-and-stonetalon-mou
         "寻找白色球体。",
     ["The target is a gray furbolg. This one roams, so scan the surrounding area."] =
         "目标是一只灰色熊怪。它会四处游荡，在周围找找。",
+    ["Astranaar"] =
+        "阿斯特兰纳",
     ["Shrubs that glitter white."] =
         "闪着白光的灌木。",
     ["Exit Ruins of Stardust"] =

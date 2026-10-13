@@ -7,4 +7,6 @@ Ding.RegisterGuideTranslation("zhTW", "horde-48-hinterlands", {
         "辛特蘭位於希爾斯布萊德丘陵東邊：食人妖的惡齒村在東岸。",
     ["If the starting item dropped: use it from your bags."] =
         "若掉落了開始任務的物品：從背包使用。",
+    ["Revantusk Village"] =
+        "惡齒村",
 })

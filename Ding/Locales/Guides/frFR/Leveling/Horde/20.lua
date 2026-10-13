@@ -33,6 +33,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h20-stranglethorn-vale-and-swamp
         "Tu en auras besoin plus tard pour « Chapitre III » : garde-le à la banque pour libérer une place dans tes sacs.",
     ["You need it later for \"Chapter IV\": keep it in the bank to free a bag slot."] =
         "Tu en auras besoin plus tard pour « Chapitre IV » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["Booty Bay"] =
+        "Baie-du-Butin",
     ["Keep clear of Darkshire."] =
         "Tiens-toi loin de Sombre-Comté.",
     ["Hunt the little winged dragonkin. When the targets run out, skip ahead. No rush; you may complete this afterwards."] =
@@ -59,4 +61,6 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h20-stranglethorn-vale-and-swamp
         "Chasse les petits draconiens ailés.",
     ["Let the conversation play out. Climb to the highest floor of the building."] =
         "Laisse la conversation se dérouler. Monte au dernier étage du bâtiment.",
+    ["Camp Taurajo"] =
+        "Camp Taurajo",
 })

@@ -27,6 +27,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a34-blasted-lands-and-burning-st
         "Der NPC ist drinnen.",
     ["This one roams, so scan the surrounding area. The NPC is indoors."] =
         "Dieses Ziel wandert umher, also such die Umgebung ab. Der NPC ist drinnen.",
+    ["Ironforge"] =
+        "Eisenschmiede",
     ["The NPC is indoors. Hold on to it; a task in Un'Goro Crater calls for it later."] =
         "Der NPC ist drinnen. Behalte es; eine Aufgabe im Krater von Un'Goro braucht es später.",
     ["The NPC is indoors. You need them later for \"Chasing A-Me 01\" and \"Arcane Runes\": keep them in the bank to free bag slots."] =

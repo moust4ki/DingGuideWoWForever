@@ -33,6 +33,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h05-the-barrens-and-stonetalon-m
         "La cible est un troll. Celui-ci se déplace : fouille les environs.",
     ["The target is a human in a crimson long coat. This one roams, so scan the surrounding area. The targets are spread over several spots."] =
         "La cible est un humain en long manteau cramoisi. Celui-ci se déplace : fouille les environs. Les cibles sont réparties sur plusieurs endroits.",
+    ["Ratchet"] =
+        "Cabestan",
     ["The targets are the striped zhevras."] =
         "Les cibles sont les zhévras rayés.",
     ["Go into the water beside the rock that bubbles. Your targets sit below the water's surface."] =
@@ -65,6 +67,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h05-the-barrens-and-stonetalon-m
         "Vole Gamon avec Vol à la tire. La cible est à l'intérieur.",
     ["Use it on Tazan's Satchel. The item is already in your inventory."] =
         "Utilise-le sur la sacoche de Tazan. L'objet est déjà dans ton inventaire.",
+    ["The Crossroads"] =
+        "La Croisée",
     ["For this quest you guard an NPC on the move. If the NPC is gone, hold on until it reappears."] =
         "Dans cette quête, tu protèges un PNJ qui se déplace. Si le PNJ n'est pas là, attends qu'il réapparaisse.",
     ["This one roams, so scan the surrounding area. Check the upper and lower tiers of the structure."] =
@@ -89,6 +93,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h05-the-barrens-and-stonetalon-m
         "Tes cibles sont sous la surface de l'eau.",
     ["Defeat Kolkar foes around Stagnant Oasis. Sooner or later a yell shows up in the chat window. Watch for his yell: I am summoned! Verog arrives after a shout dares intruders to his tent to die."] =
         "Vaincs les ennemis kolkar autour de l'oasis Stagnante. Tôt ou tard, un cri apparaît dans la fenêtre de discussion. Guette son cri, qui annonce qu'il est invoqué. Verog arrive après un cri qui défie les intrus de venir mourir dans sa tente.",
+    ["Camp Taurajo"] =
+        "Camp Taurajo",
     ["Flight master at Camp Taurajo"] =
         "Maître de vol du camp Taurajo",
     ["Circle the mountain on foot."] =
@@ -133,6 +139,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h05-the-barrens-and-stonetalon-m
         "Apprends les Armes à feu auprès du maître d'armes",
     ["Learn Maces at the weapon master"] =
         "Apprends les Masses auprès du maître d'armes",
+    ["Thunder Bluff"] =
+        "Pitons-du-Tonnerre",
     ["Fly to Thunder Bluff"] =
         "Vole jusqu'aux Pitons-du-Tonnerre",
     ["Go into the cavern"] =

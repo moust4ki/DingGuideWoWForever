@@ -95,6 +95,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h11-thousand-needles", {
         "Cuidado: aquí los enemigos son de nivel superior al tuyo. Si mueres, resucita en el Campamento Mojache.",
     ["Fly to Camp Mojache"] =
         "Vuela al Campamento Mojache",
+    ["Freewind Post"] =
+        "Poblado Viento Libre",
     ["Fly to Gadgetzan"] =
         "Vuela a Gadgetzan",
     ["Watch out: the foes here are above your level."] =

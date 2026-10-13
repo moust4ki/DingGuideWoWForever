@@ -67,6 +67,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a01-human-starter", {
         "Lass dich hier absichtlich von den Monstern töten. So früh kostet dich der Tod nichts. Das ist der schnellste Weg hinüber.",
     ["Get yourself killed, then resurrect with the spirit healer"] =
         "Lass dich töten, dann lass dich vom Geistheiler wiederbeleben",
+    ["Goldshire"] =
+        "Goldhain",
     ["Look for little stacks of brown wood. Look around tree trunks at ground level."] =
         "Such nach kleinen Stapeln aus braunem Holz. Such am Boden rund um die Baumstämme.",
     ["The targets are wolves."] =
@@ -107,6 +109,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a01-human-starter", {
         "Stell dich auf die rosa Rune. Such im Grabmal. Das Ziel ist drinnen auf der unteren Ebene.",
     ["The NPC stands one level over the crypt. The NPC waits on the lower level, indoors."] =
         "Der NPC steht eine Ebene über der Krypta. Der NPC wartet drinnen auf der unteren Ebene.",
+    ["Stormwind City"] =
+        "Sturmwind",
     ["The NPC is indoors. Be ready for a fight right away."] =
         "Der NPC ist drinnen. Mach dich sofort auf einen Kampf gefasst.",
     ["Learn Blacksmithing from the trainer"] =

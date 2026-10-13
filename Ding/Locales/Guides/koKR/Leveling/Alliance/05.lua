@@ -35,6 +35,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a05-darkshore", {
         "대상은 수면 아래에 있습니다.",
     ["The targets are sea creatures with long necks. Your targets sit below the water's surface."] =
         "대상은 목이 긴 바다 생물입니다. 대상은 수면 아래에 있습니다.",
+    ["Auberdine"] =
+        "아우버다인",
     ["Head to the hilltop."] =
         "언덕 꼭대기로 가세요.",
     ["The targets are imps. Avoid slaying the satyrs if you can. You'll need this for the following quest."] =

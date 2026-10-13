@@ -5,4 +5,6 @@ Ding.RegisterGuideTranslation("frFR", "horde-40-badlands", {
         "Terres ingrates (38)",
     ["Fly from Hammerfall to Kargath, in the west of the Badlands."] =
         "Vol de Trépas-d'Orgrim pour Kargath, à l'ouest des Terres ingrates.",
+    ["Kargath"] =
+        "Kargath",
 })

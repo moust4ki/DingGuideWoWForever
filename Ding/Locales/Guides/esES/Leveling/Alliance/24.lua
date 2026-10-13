@@ -39,4 +39,6 @@ Ding.RegisterGuideTranslation("esES", "leveling-a24-badlands", {
         "Deja que te maten y resucita con el Ángel de la Resurrección",
     ["Flight master at Thorium Point"] =
         "Maestro de vuelo del Puesto del Torio",
+    ["Stoutlager Inn"] =
+        "Thelsamar",
 })

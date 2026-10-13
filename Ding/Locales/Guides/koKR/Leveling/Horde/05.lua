@@ -33,6 +33,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h05-the-barrens-and-stonetalon-m
         "대상은 트롤입니다. 이 대상은 돌아다니므로 주변을 살펴보세요.",
     ["The target is a human in a crimson long coat. This one roams, so scan the surrounding area. The targets are spread over several spots."] =
         "대상은 진홍색 긴 외투를 입은 인간입니다. 이 대상은 돌아다니므로 주변을 살펴보세요. 대상은 여러 곳에 흩어져 있습니다.",
+    ["Ratchet"] =
+        "톱니항",
     ["The targets are the striped zhevras."] =
         "대상은 줄무늬 얼룩말입니다.",
     ["Go into the water beside the rock that bubbles. Your targets sit below the water's surface."] =
@@ -65,6 +67,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h05-the-barrens-and-stonetalon-m
         "소매치기로 가몬의 물건을 훔치세요. 대상은 건물 안에 있습니다.",
     ["Use it on Tazan's Satchel. The item is already in your inventory."] =
         "타잔의 가방에 사용하세요. 아이템은 이미 가방에 있습니다.",
+    ["The Crossroads"] =
+        "크로스로드",
     ["For this quest you guard an NPC on the move. If the NPC is gone, hold on until it reappears."] =
         "이 퀘스트에서는 이동하는 NPC를 보호합니다. NPC가 없으면 다시 나타날 때까지 기다리세요.",
     ["This one roams, so scan the surrounding area. Check the upper and lower tiers of the structure."] =
@@ -89,6 +93,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h05-the-barrens-and-stonetalon-m
         "대상은 수면 아래에 있습니다.",
     ["Defeat Kolkar foes around Stagnant Oasis. Sooner or later a yell shows up in the chat window. Watch for his yell: I am summoned! Verog arrives after a shout dares intruders to his tent to die."] =
         "죽은 오아시스 주변의 콜카르일족 적을 처치하세요. 조만간 대화창에 외침이 나타납니다. 그의 외침을 기다리세요: 내가 소환되었다! 침입자들에게 천막으로 와서 죽으라는 외침이 들린 뒤 베로그가 나타납니다.",
+    ["Camp Taurajo"] =
+        "타우라조 야영지",
     ["Flight master at Camp Taurajo"] =
         "타우라조 야영지 비행 조련사",
     ["Circle the mountain on foot."] =
@@ -133,6 +139,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h05-the-barrens-and-stonetalon-m
         "무기 전문가에게서 총을 배우세요",
     ["Learn Maces at the weapon master"] =
         "무기 전문가에게서 한손 둔기를 배우세요",
+    ["Thunder Bluff"] =
+        "썬더 블러프",
     ["Fly to Thunder Bluff"] =
         "썬더 블러프로 날아가세요",
     ["Go into the cavern"] =

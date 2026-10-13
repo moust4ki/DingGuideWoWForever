@@ -5,4 +5,6 @@ Ding.RegisterGuideTranslation("ptBR", "horde-43-swamp", {
         "Pântano das Mágoas (42)",
     ["The Swamp of Sorrows is east of Deadwind Pass: Stonard is your base."] =
         "O Pântano das Mágoas fica a leste da Trilha do Vento Morto: Pedregal é sua base.",
+    ["Stonard"] =
+        "Pedregal",
 })

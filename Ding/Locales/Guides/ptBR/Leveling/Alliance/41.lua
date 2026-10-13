@@ -13,6 +13,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a41-western-and-eastern-plaguela
         "O NPC está lá dentro. Você vai precisar dele mais tarde para \"Felnok Molaço\": guarde-o no banco para liberar espaço nas bolsas.",
     ["Stay on the trail"] =
         "Siga a trilha",
+    ["Southshore"] =
+        "Costa Sul",
     ["Check each of the two floors indoors."] =
         "Confira os dois andares lá dentro.",
     ["Stand at the watchtower's doorway. An elite foe waits indoors; stay clear of it."] =
@@ -63,6 +65,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a41-western-and-eastern-plaguela
         "Perto dos grandes prédios iluminados de azul. Um novo pode aparecer quando um é morto.",
     ["Look for little gray coffers of metal. The targets are in the ruined houses."] =
         "Procure pequenos cofres de metal cinza. Os alvos estão nas casas em ruínas.",
+    ["Light's Hope Chapel"] =
+        "Capela Esperança da Luz",
     ["Your targets sit below the water's surface."] =
         "Seus alvos ficam abaixo da superfície da água.",
     ["The object is indoors. It shows up on top of the box."] =

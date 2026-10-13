@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("zhTW", "horde-59-silithus", {
         "希利蘇斯 (56-60)",
     ["Silithus is south of Un'Goro Crater: Cenarion Hold is in the north of the zone."] =
         "希利蘇斯位於安戈洛環形山南邊：塞納里奧城堡在區域北部。",
+    ["Cenarion Hold"] =
+        "塞納里奧城堡",
     ["Finish the level on nearby monsters before moving on."] =
         "先在附近打怪升完這一級再繼續。",
 })

@@ -387,7 +387,8 @@ Contracts between modules:
   Korean (koKR), Simplified Chinese (zhCN) and Traditional Chinese (zhTW). Interface texts
   through `Ding.L`: a key added to `Locales/enUS.lua` **and** to every `Locales/<locale>.lua`
   (the `locales_test` test checks the keys and the `%d`/`%s`). Guide texts (`title`, `text`,
-  `note`) are written in English; their translations are in the dictionaries
+  `note`, the place of a `sethearth`: shown as `step.sethearthText`, the English name stays the
+  inn's key) are written in English; their translations are in the dictionaries
   `tools/routes/locales/<locale>.lua` ([English phrase] = translation), from which
   `tools/translate_guides.lua` writes `Locales/Guides/<locale>/` and the TOC (see SPEC §2,
   Languages). Korean and Chinese: the game's font (`UI.GAME_FONT`), Noto Sans does not have

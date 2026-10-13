@@ -43,6 +43,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h01-undead-starter", {
         "Espera a que termine la conversación",
     ["The quest giver is an abomination. The NPC patrols the road; look along it. He may step off the road now and then to pick plants."] =
         "El PNJ de misión es una abominación. El PNJ patrulla el camino; búscalo a lo largo de él. A veces se sale del camino para recoger plantas.",
+    ["Gallows' End Tavern"] =
+        "Rémol",
     ["The NPC is indoors, one floor up."] =
         "El PNJ está dentro, un piso más arriba.",
     ["Heal Deathguard Kel with Lesser Heal (Rank 2). Buff Deathguard Kel with Power Word: Fortitude."] =
@@ -107,6 +109,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h01-undead-starter", {
         "Con las próximas entregas, esto te lleva a nivel 10.",
     ["The NPC is out back, at the rear of the structure."] =
         "El PNJ está detrás, en la parte trasera del edificio.",
+    ["Razor Hill"] =
+        "Cerrotajo",
     ["Look for beige sacks."] =
         "Busca sacos beis.",
     ["Stay on the trail, then cross the tunnel"] =

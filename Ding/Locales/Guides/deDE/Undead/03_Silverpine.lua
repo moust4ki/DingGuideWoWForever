@@ -5,4 +5,6 @@ Ding.RegisterGuideTranslation("deDE", "undead-03-silverpine", {
         "Silberwald (13-15)",
     ["From Brill, take the road west then south over the bridge into Silverpine Forest: the Sepulcher is your base."] =
         "Nimm ab Brill die Straße nach Westen, dann nach Süden über die Brücke in den Silberwald: Das Grabmal ist deine Basis.",
+    ["The Sepulcher"] =
+        "Das Grabmal",
 })

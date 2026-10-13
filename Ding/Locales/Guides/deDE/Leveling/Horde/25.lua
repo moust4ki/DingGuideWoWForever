@@ -23,6 +23,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h25-feralas", {
         "Neben den leuchtend blauen Ringen am Boden. Such nach Erdhügeln, die aus dem Boden auftauchen. Die mit dem Questgegenstand leuchten blau.",
     ["Fight the tauren."] =
         "Kämpfe gegen die Tauren.",
+    ["Camp Mojache"] =
+        "Camp Mojache",
     ["A lengthy grinding stretch is coming up. The NPC is upstairs, out on the balcony."] =
         "Gleich kommt eine lange Grindphase. Der NPC ist oben, draußen auf dem Balkon.",
     ["The target is a winged green bug, level 47. You can likely beat it at your current level. The target circles in the air, so search around."] =

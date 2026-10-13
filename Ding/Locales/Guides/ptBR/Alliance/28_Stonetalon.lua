@@ -5,4 +5,6 @@ Ding.RegisterGuideTranslation("ptBR", "alliance-28-stonetalon", {
         "Cordilheira das Torres de Pedra (27)",
     ["The Stonetalon Mountains are west of Ashenvale."] =
         "A Cordilheira das Torres de Pedra fica a oeste do Vale Gris.",
+    ["Stonetalon Peak"] =
+        "Morro das Torres de Pedra",
 })

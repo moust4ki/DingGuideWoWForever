@@ -47,4 +47,6 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h26-stranglethorn-vale", {
         "Bleib auf dem Weg",
     ["Circle the mountain on the trail, then climb it"] =
         "Umrunde den Berg auf dem Pfad, dann steig hinauf",
+    ["Booty Bay"] =
+        "Beutebucht",
 })

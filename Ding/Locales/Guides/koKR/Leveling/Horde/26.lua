@@ -47,4 +47,6 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h26-stranglethorn-vale", {
         "길을 계속 따라가세요",
     ["Circle the mountain on the trail, then climb it"] =
         "길을 따라 산을 돈 다음 올라가세요",
+    ["Booty Bay"] =
+        "무법항",
 })

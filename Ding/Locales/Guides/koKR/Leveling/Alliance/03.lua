@@ -81,6 +81,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a03-night-elf-starter", {
         "이어지는 퀘스트 완료와 함께 9레벨이 됩니다. 대상은 동굴 안에 있습니다.",
     ["Die to the monsters here on purpose. At this spot or a bit to the east. Dying costs you nothing this early."] =
         "여기 있는 몬스터에게 일부러 죽으세요. 이 지점이나 조금 동쪽에 있습니다. 이 시점에는 죽어도 잃는 것이 없습니다.",
+    ["Dolanaar"] =
+        "돌라나르",
     ["The NPC patrols the road; look along it."] =
         "NPC는 길을 순찰합니다. 길을 따라 찾아보세요.",
     ["For this quest you guard an NPC on the move. If she is absent, wait for her to reappear."] =
@@ -145,6 +147,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a03-night-elf-starter", {
         "대상은 수면 아래에 있습니다.",
     ["Your objective lies in a little cavern."] =
         "목표는 작은 동굴 안에 있습니다.",
+    ["Auberdine"] =
+        "아우버다인",
     ["The spot is on the lower floor of the hollow tree."] =
         "그 지점은 속이 빈 나무의 아래층에 있습니다.",
     ["Learn Thrown at the weapon master"] =

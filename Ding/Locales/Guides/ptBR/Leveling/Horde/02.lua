@@ -31,6 +31,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h02-tauren-starter", {
         "Deixe-se matar e depois ressuscite com o Anjo da Cura",
     ["Keep to the road the whole way."] =
         "Fique na estrada o caminho todo.",
+    ["Bloodhoof Village"] =
+        "Aldeia Casco Sangrento",
     ["Look for little brown pinecones. Search close to the trunks."] =
         "Procure pequenas pinhas marrons. Procure perto dos troncos.",
     ["Big birds that roam on foot."] =
@@ -93,6 +95,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h02-tauren-starter", {
         "Aprenda Báculos com o mestre de armas",
     ["Learn Two-Handed Maces at the weapon master"] =
         "Aprenda Maças de Duas Mãos com o mestre de armas",
+    ["Thunder Bluff"] =
+        "Penhasco do Trovão",
     ["This is food for your pet."] =
         "Isto é comida para o seu ajudante.",
     ["The NPC is indoors, one floor up."] =
@@ -141,6 +145,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h02-tauren-starter", {
         "O alvo está lá no topo.",
     ["The object is up on the summit."] =
         "O objeto está lá no topo.",
+    ["Razor Hill"] =
+        "Monte Navalha",
     ["Look for beige sacks."] =
         "Procure sacos bege.",
     ["Stay on the trail, then cross the tunnel"] =

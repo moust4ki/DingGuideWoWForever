@@ -45,6 +45,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h38-felwood-and-winterspring", {
         "La quête demande des yétis : va les chercher. Les cibles sont dans la grotte et aussi autour de l'entrée.",
     ["The NPC is indoors."] =
         "Le PNJ est à l'intérieur.",
+    ["Everlook"] =
+        "Long-guet",
     ["The NPC is a human spirit."] =
         "Le PNJ est un esprit humain.",
     ["Your targets are within the cavern."] =
@@ -79,6 +81,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h38-felwood-and-winterspring", {
         "Ce PNJ se trouve en bas, dans la Faille de l'ombre.",
     ["The NPC stands on the highest level of this structure."] =
         "Le PNJ se tient au plus haut niveau de ce bâtiment.",
+    ["Orgrimmar"] =
+        "Orgrimmar",
     ["Take the trail downhill"] =
         "Descends le chemin",
     ["Wait for the talking to finish"] =

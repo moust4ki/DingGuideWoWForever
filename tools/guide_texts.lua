@@ -82,8 +82,8 @@ function M.translate(text, dict, locale)
     return table.concat(out, JOIN[locale] or " ")
 end
 
--- English texts of a guide to translate, in order: title, then each step's text, note and the
--- text of its `why`, then the texts of `leftOut` (by quest id).
+-- English texts of a guide to translate, in order: title, then each step's text, note, the
+-- place of its `sethearth` and the text of its `why`, then the texts of `leftOut` (by quest id).
 function M.texts(guide)
     local list, seen = {}, {}
     local function add(text)
@@ -96,6 +96,7 @@ function M.texts(guide)
     for _, step in ipairs(guide.steps or {}) do
         add(step.text)
         add(step.note)
+        add(step.sethearth)
         add(type(step.why) == "table" and step.why.text or step.why)
     end
     local left = type(guide.leftOut) == "table" and guide.leftOut or {}

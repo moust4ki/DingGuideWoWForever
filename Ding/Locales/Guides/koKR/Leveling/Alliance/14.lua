@@ -27,6 +27,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a14-duskwood-and-stranglethorn-v
         "나중에 \"귀족을 위한 술\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["This one roams, so scan the surrounding area."] =
         "이 대상은 돌아다니므로 주변을 살펴보세요.",
+    ["Darkshire"] =
+        "다크샤이어",
     ["The NPC patrols the road; look along it."] =
         "NPC는 길을 순찰합니다. 길을 따라 찾아보세요.",
     ["The targets are worgen."] =

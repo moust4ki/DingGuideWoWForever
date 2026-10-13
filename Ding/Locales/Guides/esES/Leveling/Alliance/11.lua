@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a11-duskwood-and-redridge-mounta
         "Bosque del Ocaso: Villa Oscura, al este de la zona.",
     ["The NPC is indoors."] =
         "El PNJ está dentro.",
+    ["Darkshire"] =
+        "Villa Oscura",
     ["Flight master at Darkshire"] =
         "Maestro de vuelo de Villa Oscura",
     ["This one roams, so scan the surrounding area. The NPC is indoors."] =

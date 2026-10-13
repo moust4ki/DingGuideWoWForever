@@ -95,6 +95,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h11-thousand-needles", {
         "小心：这里的敌人等级比你高。如果死了，就在莫沙彻营地复活。",
     ["Fly to Camp Mojache"] =
         "飞往莫沙彻营地",
+    ["Freewind Post"] =
+        "乱风岗",
     ["Fly to Gadgetzan"] =
         "飞往加基森",
     ["Watch out: the foes here are above your level."] =

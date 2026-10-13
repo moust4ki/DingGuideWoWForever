@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a15-hillsbrad-foothills-and-arat
         "Contreforts de Hautebrande : Austrivage, sur la côte au sud.",
     ["The NPC is indoors."] =
         "Le PNJ est à l'intérieur.",
+    ["Southshore"] =
+        "Austrivage",
     ["You'll find extra ones swimming nearby as well."] =
         "Tu en trouveras d'autres qui nagent aussi tout près.",
     ["Search for gray rocks standing up beside the walls. Your targets are within the cavern."] =

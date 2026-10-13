@@ -31,6 +31,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a21-arathi-highlands-and-alterac
         "讓對話播完。護送基恩洛，並保住她的性命。",
     ["The NPC is indoors."] =
         "NPC在室內。",
+    ["Southshore"] =
+        "南海鎮",
     ["Wait for the talking to finish"] =
         "等對話結束",
     ["Beware of foes lurking in stealth. The target is indoors."] =

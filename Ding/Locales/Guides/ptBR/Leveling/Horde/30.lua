@@ -71,4 +71,6 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h30-feralas-and-ungoro-crater", 
         "Este NPC fica lá embaixo, no Antro das Sombras.",
     ["The NPC is upstairs, out on the balcony."] =
         "O NPC está no andar de cima, na sacada.",
+    ["Orgrimmar"] =
+        "Orgrimmar",
 })

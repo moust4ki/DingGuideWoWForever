@@ -7,6 +7,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a28-feralas-and-tanaris", {
         "타나리스: 가젯잔에 먼저 들른 다음 페랄라스: 페더문 요새로 가세요.",
     ["The NPC is indoors."] =
         "NPC는 건물 안에 있습니다.",
+    ["Feathermoon Stronghold"] =
+        "페더문 요새",
     ["The NPC is indoors, one floor up."] =
         "NPC는 건물 안 한 층 위에 있습니다.",
     ["Position yourself in its center."] =
@@ -93,6 +95,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a28-feralas-and-tanaris", {
         "그 지점은 속이 빈 나무의 아래층에 있습니다.",
     ["Stay clear of the elite foes. Be ready for a fight right away."] =
         "정예 적은 피하세요. 바로 전투가 시작되니 대비하세요.",
+    ["Gadgetzan"] =
+        "가젯잔",
     ["The NPC waits on the lower level, indoors. A lengthy stretch of quests is coming up. This vendor sells no arrows or bullets."] =
         "NPC는 건물 안 아래층에서 기다립니다. 곧 긴 퀘스트 구간이 이어집니다. 이 상인은 화살이나 탄환을 팔지 않습니다.",
 })

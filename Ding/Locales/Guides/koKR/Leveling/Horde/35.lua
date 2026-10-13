@@ -65,4 +65,6 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h35-felwood-and-winterspring", {
         "야수 관리인에게서 소환수를 찾아오세요.",
     ["Release the short-term pet you tamed."] =
         "길들인 임시 소환수를 풀어 주세요.",
+    ["Camp Taurajo"] =
+        "타우라조 야영지",
 })

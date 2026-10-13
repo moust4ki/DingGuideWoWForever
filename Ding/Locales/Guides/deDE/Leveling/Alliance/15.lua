@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a15-hillsbrad-foothills-and-arat
         "Vorgebirge des Hügellands: Süderstade, an der Küste im Süden.",
     ["The NPC is indoors."] =
         "Der NPC ist drinnen.",
+    ["Southshore"] =
+        "Süderstade",
     ["You'll find extra ones swimming nearby as well."] =
         "Weitere schwimmen auch in der Nähe.",
     ["Search for gray rocks standing up beside the walls. Your targets are within the cavern."] =

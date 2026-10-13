@@ -21,6 +21,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a18-desolace", {
         "Lass das kurzzeitig gezähmte Tier frei.",
     ["The NPC is indoors."] =
         "Der NPC ist drinnen.",
+    ["Nijel's Point"] =
+        "Nijelspitze",
     ["Hunt down satyrs. Beware of foes lurking in stealth."] =
         "Jag Satyrn. Vorsicht vor getarnten Gegnern.",
     ["With the coming hand-ins, this brings you to level 36."] =

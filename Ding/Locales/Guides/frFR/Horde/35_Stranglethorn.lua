@@ -5,4 +5,8 @@ Ding.RegisterGuideTranslation("frFR", "horde-35-stv", {
         "Strangleronce (34-36)",
     ["Zeppelin from Orgrimmar to Grom'gol, the Horde camp in the north of Stranglethorn."] =
         "Zeppelin d'Orgrimmar pour Grom'gol, le camp de la Horde au nord de Strangleronce.",
+    ["Grom'gol"] =
+        "Grom'gol",
+    ["Booty Bay"] =
+        "Baie-du-Butin",
 })

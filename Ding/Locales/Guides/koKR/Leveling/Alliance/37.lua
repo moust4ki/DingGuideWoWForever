@@ -35,6 +35,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a37-feralas-and-azshara", {
         "앞날의 비약 퀘스트를 완료하세요. 비약은 가방에 보관하고 절대 마시지 마세요. 이것 때문에 죽게 됩니다.",
     ["The NPC is indoors."] =
         "NPC는 건물 안에 있습니다.",
+    ["Ratchet"] =
+        "톱니항",
     ["Put these items in your bank vault. You need them later for \"The Stone Circle\", \"Felbound Ancients\", \"A Little Slime Goes a Long Way\", \"Moontouched Wildkin\" and \"Meet at the Grave\": keep them in the bank to free bag slots."] =
         "이 아이템들을 은행 금고에 맡기세요. 나중에 \"돌무리\", \"저주받은 고대 수호자\", \"수액괴물 견본 수집\", \"달빛의 올빼미야수\", \"무덤에서의 만남\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["The quest giver waits on the hilltop."] =

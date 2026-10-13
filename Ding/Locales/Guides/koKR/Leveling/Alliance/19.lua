@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a19-stranglethorn-vale", {
         "가시덤불 골짜기: 무법항은 남쪽 끝에 있습니다.",
     ["The NPC is indoors at street level."] =
         "NPC는 건물 안 1층에 있습니다.",
+    ["Booty Bay"] =
+        "무법항",
     ["Climb to the highest floor of the building."] =
         "건물 꼭대기 층으로 올라가세요.",
     ["The NPC is upstairs, out on the balcony."] =

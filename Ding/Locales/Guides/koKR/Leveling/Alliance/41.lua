@@ -13,6 +13,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a41-western-and-eastern-plaguela
         "NPC는 건물 안에 있습니다. 나중에 \"펠노크 스틸스프링\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["Stay on the trail"] =
         "길을 계속 따라가세요",
+    ["Southshore"] =
+        "사우스쇼어",
     ["Check each of the two floors indoors."] =
         "실내 두 층을 각각 확인하세요.",
     ["Stand at the watchtower's doorway. An elite foe waits indoors; stay clear of it."] =
@@ -63,6 +65,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a41-western-and-eastern-plaguela
         "파랗게 불이 켜진 큰 건물 근처에 있습니다. 하나를 처치하면 새로 나타날 수 있습니다.",
     ["Look for little gray coffers of metal. The targets are in the ruined houses."] =
         "작은 회색 금속 함을 찾으세요. 대상은 폐허가 된 집에 있습니다.",
+    ["Light's Hope Chapel"] =
+        "희망의 빛 예배당",
     ["Your targets sit below the water's surface."] =
         "대상은 수면 아래에 있습니다.",
     ["The object is indoors. It shows up on top of the box."] =

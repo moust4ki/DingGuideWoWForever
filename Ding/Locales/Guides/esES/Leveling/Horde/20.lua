@@ -33,6 +33,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h20-stranglethorn-vale-and-swamp
         "Lo necesitarás más adelante para «Capítulo III»: déjalo en el banco para liberar un hueco en las bolsas.",
     ["You need it later for \"Chapter IV\": keep it in the bank to free a bag slot."] =
         "Lo necesitarás más adelante para «Capítulo IV»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["Booty Bay"] =
+        "Bahía del Botín",
     ["Keep clear of Darkshire."] =
         "Mantente lejos de Villa Oscura.",
     ["Hunt the little winged dragonkin. When the targets run out, skip ahead. No rush; you may complete this afterwards."] =
@@ -59,4 +61,6 @@ Ding.RegisterGuideTranslation("esES", "leveling-h20-stranglethorn-vale-and-swamp
         "Caza a los pequeños dragonantes alados.",
     ["Let the conversation play out. Climb to the highest floor of the building."] =
         "Deja que termine la conversación. Sube al piso más alto del edificio.",
+    ["Camp Taurajo"] =
+        "Campamento Taurajo",
 })

@@ -27,6 +27,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a14-duskwood-and-stranglethorn-v
         "之后的任务“名酿”需要它：先存进银行，腾出背包空间。",
     ["This one roams, so scan the surrounding area."] =
         "它会四处游荡，在周围找找。",
+    ["Darkshire"] =
+        "夜色镇",
     ["The NPC patrols the road; look along it."] =
         "NPC在道路上巡逻；沿路寻找。",
     ["The targets are worgen."] =

@@ -7,6 +7,8 @@ Ding.RegisterGuideTranslation("frFR", "horde-44-feralas", {
         "Féralas est à l'ouest de Mille pointes : le camp Mojache, à l'est de la zone, est ta base.",
     ["Finish the level on nearby monsters before moving on."] =
         "Finis le niveau sur les monstres du coin avant la suite.",
+    ["Camp Mojache"] =
+        "Camp Mojache",
     ["If the starting item dropped: use it from your bags."] =
         "Si l'objet de départ est tombé : utilise-le depuis ton sac.",
 })

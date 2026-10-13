@@ -27,4 +27,6 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a26-swamp-of-sorrows", {
         "건물 꼭대기 층으로 올라가세요.",
     ["The NPC is indoors."] =
         "NPC는 건물 안에 있습니다.",
+    ["Theramore Isle"] =
+        "테라모어 섬",
 })

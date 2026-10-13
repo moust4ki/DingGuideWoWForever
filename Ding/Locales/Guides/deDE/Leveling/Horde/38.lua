@@ -45,6 +45,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h38-felwood-and-winterspring", {
         "Die Quest verlangt Yetis; such sie auf. Ziele gibt es in der Höhle und auch rund um ihren Eingang.",
     ["The NPC is indoors."] =
         "Der NPC ist drinnen.",
+    ["Everlook"] =
+        "Ewige Warte",
     ["The NPC is a human spirit."] =
         "Der NPC ist ein menschlicher Geist.",
     ["Your targets are within the cavern."] =
@@ -79,6 +81,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h38-felwood-and-winterspring", {
         "Dieser NPC ist unten in der Kluft der Schatten.",
     ["The NPC stands on the highest level of this structure."] =
         "Der NPC steht auf der obersten Ebene dieses Gebäudes.",
+    ["Orgrimmar"] =
+        "Orgrimmar",
     ["Take the trail downhill"] =
         "Nimm den Weg bergab",
     ["Wait for the talking to finish"] =

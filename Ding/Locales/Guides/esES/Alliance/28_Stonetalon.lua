@@ -5,4 +5,6 @@ Ding.RegisterGuideTranslation("esES", "alliance-28-stonetalon", {
         "Sierra Espolón (27)",
     ["The Stonetalon Mountains are west of Ashenvale."] =
         "La Sierra Espolón está al oeste de Vallefresno.",
+    ["Stonetalon Peak"] =
+        "Cima del Espolón",
 })

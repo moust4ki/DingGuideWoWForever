@@ -43,6 +43,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h28-tanaris-and-dustwallow-marsh
         "搜尋沙堆。",
     ["It competes for spawn points."] =
         "它和其他怪物共用重生點。",
+    ["Gadgetzan"] =
+        "加基森",
     ["Go into the cavern"] =
         "進入洞穴",
     ["Take the trail downhill"] =

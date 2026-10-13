@@ -31,6 +31,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h02-tauren-starter", {
         "Lass dich töten, dann lass dich vom Geistheiler wiederbeleben",
     ["Keep to the road the whole way."] =
         "Bleib den ganzen Weg auf der Straße.",
+    ["Bloodhoof Village"] =
+        "Dorf der Bluthufe",
     ["Look for little brown pinecones. Search close to the trunks."] =
         "Such nach kleinen braunen Tannenzapfen. Such nahe den Baumstämmen.",
     ["Big birds that roam on foot."] =
@@ -93,6 +95,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h02-tauren-starter", {
         "Lerne Stäbe beim Waffenmeister",
     ["Learn Two-Handed Maces at the weapon master"] =
         "Lerne Zweihandstreitkolben beim Waffenmeister",
+    ["Thunder Bluff"] =
+        "Donnerfels",
     ["This is food for your pet."] =
         "Das ist Futter für dein Tier.",
     ["The NPC is indoors, one floor up."] =
@@ -141,6 +145,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h02-tauren-starter", {
         "Das Ziel ist oben auf dem Gipfel.",
     ["The object is up on the summit."] =
         "Das Objekt ist oben auf dem Gipfel.",
+    ["Razor Hill"] =
+        "Klingenhügel",
     ["Look for beige sacks."] =
         "Such nach beigen Säcken.",
     ["Stay on the trail, then cross the tunnel"] =

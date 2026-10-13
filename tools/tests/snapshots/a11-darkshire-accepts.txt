@@ -25,9 +25,9 @@ STEP   < Étape 2 / 97 >   zone: Sombre-Comté
  3  previewHeader  [section] LINE ABOVE, no icon, text dim grey, semibold 11
     Étapes suivantes
  4  preview  [preview] grey caret right icon, text dim grey
-    Lie ta pierre de foyer à Darkshire
+    Lie ta pierre de foyer à l'auberge : Sombre-Comté
     card:
-      | Lie ta pierre de foyer à Darkshire
+      | Lie ta pierre de foyer à l'auberge : Sombre-Comté
       | Une étape plus loin : rien à faire pour l'instant.
  5  preview  [preview] grey "!" icon, text dim grey
     Prendre [24] « Les Veilleurs » (partie 1 sur 3)

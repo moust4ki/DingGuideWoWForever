@@ -294,6 +294,27 @@ return function(tools, locale)
         T.ok(cardHas(c, L.COMPACT_STEP:format(E:StepNumber(E.index))), "\"Step N of M\" is missing")
     end)
 
+    T.test("5 the hearthstone's place in the player's language; the inn is still known by its English name", function()
+        scene("a11-darkshire-accepts")
+        local guide = E.guide
+        local index = S.FindStep(Ding, guide, { sethearth = "Darkshire" })
+        T.ok(index, "no hearthstone step at Darkshire")
+        E:SetGuide(guide.id, index, true)
+        H.flush()
+        local place = ({ frFR = "Sombre-Comté", enUS = "Darkshire" })[locale]
+        local row = find(function(r) return r.action == "manual" end)
+        T.ok(row, describe())
+        T.eq(plain(row.text), L.SETHEARTH:format(place))
+        -- Bound there: the step is done, the inn remembered by the guide's own key.
+        H.player.bind = place
+        H.fire("HEARTHSTONE_BOUND")
+        H.flush()
+        T.ok(E.index > index, "binding does not validate the step")
+        T.eq(Ding.char.hearthInn and Ding.char.hearthInn.inn, "Darkshire")
+        T.eq(Ding.char.hearthInn and Ding.char.hearthInn.name, place)
+        H.player.bind = nil
+    end)
+
     T.test("5 every quest carries its level; above the player's, orange and said in words", function()
         local NAMED = { accept = true, turnin = true, complete = true, header = true, preview = true }
         for _, sc in ipairs(S) do

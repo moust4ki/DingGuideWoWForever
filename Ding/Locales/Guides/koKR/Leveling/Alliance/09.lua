@@ -39,6 +39,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a09-ashenvale-and-stonetalon-mou
         "흰색 구체를 찾으세요.",
     ["The target is a gray furbolg. This one roams, so scan the surrounding area."] =
         "대상은 회색 펄볼그입니다. 이 대상은 돌아다니므로 주변을 살펴보세요.",
+    ["Astranaar"] =
+        "아스트라나르",
     ["Shrubs that glitter white."] =
         "하얗게 반짝이는 덤불입니다.",
     ["Exit Ruins of Stardust"] =

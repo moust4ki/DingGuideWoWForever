@@ -27,6 +27,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a34-blasted-lands-and-burning-st
         "El PNJ está dentro.",
     ["This one roams, so scan the surrounding area. The NPC is indoors."] =
         "Este deambula, así que revisa los alrededores. El PNJ está dentro.",
+    ["Ironforge"] =
+        "Forjaz",
     ["The NPC is indoors. Hold on to it; a task in Un'Goro Crater calls for it later."] =
         "El PNJ está dentro. Guárdalo; una tarea en el Cráter de Un'Goro lo pedirá más adelante.",
     ["The NPC is indoors. You need them later for \"Chasing A-Me 01\" and \"Arcane Runes\": keep them in the bank to free bag slots."] =

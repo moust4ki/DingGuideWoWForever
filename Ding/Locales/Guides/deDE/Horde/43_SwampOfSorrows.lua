@@ -5,4 +5,6 @@ Ding.RegisterGuideTranslation("deDE", "horde-43-swamp", {
         "Sümpfe des Elends (42)",
     ["The Swamp of Sorrows is east of Deadwind Pass: Stonard is your base."] =
         "Sümpfe des Elends, östlich vom Gebirgspass der Totenwinde: Steinard ist deine Basis.",
+    ["Stonard"] =
+        "Steinard",
 })

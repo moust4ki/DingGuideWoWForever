@@ -23,6 +23,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h08-the-barrens", {
         "Visita al jabaespín enjaulado",
     ["Trade your Blood Shards to gain buffs. Trade any spare Blood Shards to him during your Barrens questing. Ask him for the Spirit of the Wind buff"] =
         "Cambia tus Fragmentos de sangre por beneficios. Mientras hagas misiones en Los Baldíos, cámbiale los Fragmentos de sangre que te sobren. Pídele el beneficio Spirit of the Wind",
+    ["Camp Taurajo"] =
+        "Campamento Taurajo",
     ["The target is a dinosaur with blue hide. The targets are spread over several spots."] =
         "El objetivo es un dinosaurio de piel azul. Los objetivos están repartidos en varios puntos.",
     ["Look for big boulders oozing green fluid. Expect a possible ambush while you gather it."] =

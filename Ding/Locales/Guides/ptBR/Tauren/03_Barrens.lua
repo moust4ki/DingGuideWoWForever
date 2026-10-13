@@ -5,4 +5,8 @@ Ding.RegisterGuideTranslation("ptBR", "tauren-03-barrens", {
         "Sertões (12-19)",
     ["Leave Mulgore by the road east into the Barrens, then north to the Crossroads: your base."] =
         "Saia de Mulgore pela estrada do leste rumo aos Sertões, depois siga ao norte até a Encruzilhada: sua base.",
+    ["The Crossroads"] =
+        "A Encruzilhada",
+    ["Camp Taurajo"] =
+        "Acampamento Taurajo",
 })

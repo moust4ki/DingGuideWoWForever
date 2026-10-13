@@ -43,6 +43,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h01-undead-starter", {
         "Warte, bis das Gespräch endet",
     ["The quest giver is an abomination. The NPC patrols the road; look along it. He may step off the road now and then to pick plants."] =
         "Der Questgeber ist eine Monstrosität. Der NPC patrouilliert auf der Straße; such entlang der Straße. Er verlässt ab und zu die Straße, um Pflanzen zu pflücken.",
+    ["Gallows' End Tavern"] =
+        "Brill",
     ["The NPC is indoors, one floor up."] =
         "Der NPC ist drinnen, ein Stockwerk höher.",
     ["Heal Deathguard Kel with Lesser Heal (Rank 2). Buff Deathguard Kel with Power Word: Fortitude."] =
@@ -107,6 +109,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h01-undead-starter", {
         "Mit den nächsten Abgaben bringt dich das auf Stufe 10.",
     ["The NPC is out back, at the rear of the structure."] =
         "Der NPC ist draußen auf der Rückseite des Gebäudes.",
+    ["Razor Hill"] =
+        "Klingenhügel",
     ["Look for beige sacks."] =
         "Such nach beigen Säcken.",
     ["Stay on the trail, then cross the tunnel"] =

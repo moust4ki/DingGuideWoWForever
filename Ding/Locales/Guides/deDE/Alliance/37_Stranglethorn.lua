@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("deDE", "alliance-37-stv", {
         "Schlingendorntal (37-39)",
     ["Stranglethorn Vale is south of Duskwood: Rebel Camp in the north, Booty Bay in the south."] =
         "Das Schlingendorntal liegt südlich des Dämmerwalds: Rebellenlager im Norden, Beutebucht im Süden.",
+    ["Booty Bay"] =
+        "Beutebucht",
     ["Finish the level on nearby monsters before moving on."] =
         "Beende die Stufe an nahen Monstern, bevor du weiterziehst.",
 })

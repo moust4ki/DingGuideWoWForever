@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("ptBR", "alliance-59-silithus", {
         "Silithus (56-60)",
     ["Silithus is south of Un'Goro Crater: Cenarion Hold is in the north of the zone."] =
         "Silithus fica ao sul da Cratera Un'Goro: o Forte Cenariano está no norte da zona.",
+    ["Cenarion Hold"] =
+        "Forte Cenariano",
     ["Finish the level on nearby monsters before moving on."] =
         "Termine o nível nos monstros próximos antes de seguir.",
 })

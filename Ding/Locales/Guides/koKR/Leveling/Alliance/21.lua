@@ -31,6 +31,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a21-arathi-highlands-and-alterac
         "대화가 끝날 때까지 기다리세요. 키넬로리를 호위하며 살려 두세요.",
     ["The NPC is indoors."] =
         "NPC는 건물 안에 있습니다.",
+    ["Southshore"] =
+        "사우스쇼어",
     ["Wait for the talking to finish"] =
         "대화가 끝날 때까지 기다리세요",
     ["Beware of foes lurking in stealth. The target is indoors."] =

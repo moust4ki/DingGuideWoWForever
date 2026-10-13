@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a40-burning-steppes", {
         "先到鐵爐堡，再前往燃燒平原：東部的摩根崗哨。",
     ["The NPC is indoors."] =
         "NPC在室內。",
+    ["Ironforge"] =
+        "鐵爐堡",
     ["Your objective lies in a little cavern. This foe is elite. Consider bringing a group for this one."] =
         "目標在一個小洞穴裡。這個敵人是精英。這個可以考慮找隊伍一起做。",
     ["Your objective lies in a little cavern."] =

@@ -7,4 +7,6 @@ Ding.RegisterGuideTranslation("zhCN", "horde-23-ashenvale", {
         "灰谷在贫瘠之地以北：森林东部的碎木岗哨是据点。",
     ["Finish the level on nearby monsters before moving on."] =
         "先在附近打怪升完这一级再继续。",
+    ["Splintertree Post"] =
+        "碎木岗哨",
 })

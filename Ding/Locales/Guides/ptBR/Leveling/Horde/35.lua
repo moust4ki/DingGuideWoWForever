@@ -65,4 +65,6 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h35-felwood-and-winterspring", {
         "Recupere seu ajudante com o mestre do estábulo.",
     ["Release the short-term pet you tamed."] =
         "Liberte o ajudante temporário que você domou.",
+    ["Camp Taurajo"] =
+        "Acampamento Taurajo",
 })

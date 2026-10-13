@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("deDE", "alliance-24-wetlands", {
         "Sumpfland (20-26)",
     ["The Wetlands are north of Loch Modan: Menethil Harbor, on the west coast, is your base."] =
         "Das Sumpfland liegt nördlich von Loch Modan: Der Hafen von Menethil an der Westküste ist deine Basis.",
+    ["Menethil Harbor"] =
+        "Hafen von Menethil",
     ["Finish the level on nearby monsters before moving on."] =
         "Beende die Stufe an nahen Monstern, bevor du weiterziehst.",
 })

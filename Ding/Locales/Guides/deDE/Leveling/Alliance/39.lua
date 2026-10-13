@@ -57,6 +57,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a39-winterspring-and-felwood", {
         "Die Ziele sind 3 weiße Furbolgs, die als Gruppe unterwegs sind. Das Ziel patrouilliert eine lange Strecke neben der Straße. Hast du es am Ende des Pfads nicht gesehen, mach weiter.",
     ["Be ready for a fight right away."] =
         "Mach dich sofort auf einen Kampf gefasst.",
+    ["Everlook"] =
+        "Ewige Warte",
     ["The NPC is indoors. You need them later for \"Aquementas\", \"The Everlook Report\", \"Duke Nicholas Zverenhoff\" and \"Troubled Spirits of Kel'Theril\": keep them in the bank to free bag slots."] =
         "Der NPC ist drinnen. Du brauchst sie später für „Aquementas“, „Der Everlook-Bericht“, „Fürst Nicholas Zverenhoff“ und „Die gequälten Seelen von Kel'Theril“: Lass sie in der Bank, das spart Taschenplätze.",
     ["For this quest you guard an NPC on the move. If she is absent, wait for her to reappear."] =

@@ -5,4 +5,6 @@ Ding.RegisterGuideTranslation("frFR", "horde-58-epl", {
         "Maleterres de l'Est (56)",
     ["The Eastern Plaguelands continue the Western ones to the east: Light's Hope Chapel is in the east."] =
         "Les Maleterres de l'Est prolongent celles de l'Ouest vers l'est : la chapelle de l'Espoir de Lumière est à l'est.",
+    ["Light's Hope Chapel"] =
+        "Chapelle de l'Espoir de Lumière",
 })

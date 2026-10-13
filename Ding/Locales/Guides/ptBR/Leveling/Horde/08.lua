@@ -23,6 +23,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h08-the-barrens", {
         "Visite o javatusco enjaulado",
     ["Trade your Blood Shards to gain buffs. Trade any spare Blood Shards to him during your Barrens questing. Ask him for the Spirit of the Wind buff"] =
         "Troque seus Estilhaços de Sangue por bônus. Durante as missões nos Sertões, troque com ele os Estilhaços de Sangue que sobrarem. Peça a ele o bônus Espírito do Vento",
+    ["Camp Taurajo"] =
+        "Acampamento Taurajo",
     ["The target is a dinosaur with blue hide. The targets are spread over several spots."] =
         "O alvo é um dinossauro de couro azul. Os alvos estão espalhados por vários pontos.",
     ["Look for big boulders oozing green fluid. Expect a possible ambush while you gather it."] =

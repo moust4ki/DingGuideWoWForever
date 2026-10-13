@@ -7,4 +7,6 @@ Ding.RegisterGuideTranslation("esES", "horde-48-hinterlands", {
         "Las Tierras del Interior están al este de las Laderas de Trabalomas: el poblado trol Sañadiente está en la costa este.",
     ["If the starting item dropped: use it from your bags."] =
         "Si tienes el objeto que inicia la misión: úsalo desde tus bolsas.",
+    ["Revantusk Village"] =
+        "Poblado Sañadiente",
 })

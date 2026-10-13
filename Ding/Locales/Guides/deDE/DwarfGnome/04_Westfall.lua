@@ -7,4 +7,6 @@ Ding.RegisterGuideTranslation("deDE", "dwarf-04-westfall", {
         "Tiefenbahn von Eisenschmiede nach Sturmwind, dann die Straße nach Westen über Goldhain zur Späherkuppe.",
     ["If the starting item dropped: use it from your bags."] =
         "Startgegenstand erbeutet? Benutze ihn aus deinen Taschen.",
+    ["Sentinel Hill"] =
+        "Späherkuppe",
 })

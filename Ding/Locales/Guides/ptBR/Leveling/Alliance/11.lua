@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a11-duskwood-and-redridge-mounta
         "Floresta do Crepúsculo: Vila Sombria, no leste da zona.",
     ["The NPC is indoors."] =
         "O NPC está lá dentro.",
+    ["Darkshire"] =
+        "Vila Sombria",
     ["Flight master at Darkshire"] =
         "Mestre de voo em Vila Sombria",
     ["This one roams, so scan the surrounding area. The NPC is indoors."] =

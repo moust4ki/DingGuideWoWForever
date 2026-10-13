@@ -33,6 +33,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h20-stranglethorn-vale-and-swamp
         "之后的任务“荆棘谷的青山 - 第三章”需要它：先存进银行，腾出背包空间。",
     ["You need it later for \"Chapter IV\": keep it in the bank to free a bag slot."] =
         "之后的任务“荆棘谷的青山 - 第四章”需要它：先存进银行，腾出背包空间。",
+    ["Booty Bay"] =
+        "藏宝海湾",
     ["Keep clear of Darkshire."] =
         "避开夜色镇。",
     ["Hunt the little winged dragonkin. When the targets run out, skip ahead. No rush; you may complete this afterwards."] =
@@ -59,4 +61,6 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h20-stranglethorn-vale-and-swamp
         "猎杀带翅膀的小型龙类。",
     ["Let the conversation play out. Climb to the highest floor of the building."] =
         "等对话结束。爬到建筑物的顶层。",
+    ["Camp Taurajo"] =
+        "陶拉祖营地",
 })

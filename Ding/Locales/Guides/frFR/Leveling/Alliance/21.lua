@@ -31,6 +31,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a21-arathi-highlands-and-alterac
         "Laisse la conversation se dérouler. Escorte Kinelory et garde-la en vie.",
     ["The NPC is indoors."] =
         "Le PNJ est à l'intérieur.",
+    ["Southshore"] =
+        "Austrivage",
     ["Wait for the talking to finish"] =
         "Attends la fin de la discussion",
     ["Beware of foes lurking in stealth. The target is indoors."] =

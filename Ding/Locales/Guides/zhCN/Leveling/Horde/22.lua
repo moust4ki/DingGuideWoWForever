@@ -27,6 +27,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h22-tanaris", {
         "接下来有一个更难对付的敌人。",
     ["Grab the loot."] =
         "拾取战利品。",
+    ["Gadgetzan"] =
+        "加基森",
     ["The NPC is indoors. You need them later for \"Tanaris Field Sampling\" and \"Screecher Spirits\": keep them in the bank to free bag slots."] =
         "NPC在室内。之后的任务“塔纳利斯的样本”和“尖啸者的灵魂”需要它们：先存进银行，腾出背包空间。",
     ["Wait for the talking to finish"] =

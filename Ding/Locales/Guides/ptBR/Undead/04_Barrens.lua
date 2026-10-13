@@ -5,4 +5,6 @@ Ding.RegisterGuideTranslation("ptBR", "undead-04-barrens", {
         "Sertões (15-20)",
     ["Zeppelin from the towers outside Undercity to Orgrimmar, then the road west and south to the Crossroads: your base for the Barrens."] =
         "Zepelim das torres perto da Cidade Baixa até Orgrimmar, depois a estrada para oeste e sul até a Encruzilhada: sua base nos Sertões.",
+    ["The Crossroads"] =
+        "A Encruzilhada",
 })

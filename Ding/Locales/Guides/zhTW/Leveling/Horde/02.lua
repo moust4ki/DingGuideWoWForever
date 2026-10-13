@@ -31,6 +31,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h02-tauren-starter", {
         "讓自己被殺，然後在靈魂醫者處復活",
     ["Keep to the road the whole way."] =
         "全程沿著道路走。",
+    ["Bloodhoof Village"] =
+        "血蹄村",
     ["Look for little brown pinecones. Search close to the trunks."] =
         "尋找棕色的小松果。在樹幹附近搜尋。",
     ["Big birds that roam on foot."] =
@@ -93,6 +95,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h02-tauren-starter", {
         "向武器大師學習法杖",
     ["Learn Two-Handed Maces at the weapon master"] =
         "向武器大師學習雙手錘",
+    ["Thunder Bluff"] =
+        "雷霆崖",
     ["This is food for your pet."] =
         "這是給你寵物的食物。",
     ["The NPC is indoors, one floor up."] =
@@ -141,6 +145,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h02-tauren-starter", {
         "目標在山頂上。",
     ["The object is up on the summit."] =
         "這個物件在山頂上。",
+    ["Razor Hill"] =
+        "剃刀嶺",
     ["Look for beige sacks."] =
         "尋找米色的袋子。",
     ["Stay on the trail, then cross the tunnel"] =

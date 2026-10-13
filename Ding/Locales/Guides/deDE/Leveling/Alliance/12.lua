@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a12-wetlands", {
         "Sumpfland: Hafen von Menethil, an der Westküste.",
     ["The NPC is indoors."] =
         "Der NPC ist drinnen.",
+    ["Deepwater Tavern"] =
+        "Hafen von Menethil",
     ["The NPC is indoors, one floor up."] =
         "Der NPC ist drinnen, ein Stockwerk höher.",
     ["Your targets sit below the water's surface. Targets are within the wrecked vessel underwater."] =

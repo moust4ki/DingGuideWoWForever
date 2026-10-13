@@ -27,6 +27,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a34-blasted-lands-and-burning-st
         "NPC在室内。",
     ["This one roams, so scan the surrounding area. The NPC is indoors."] =
         "它会四处游荡，在周围找找。NPC在室内。",
+    ["Ironforge"] =
+        "铁炉堡",
     ["The NPC is indoors. Hold on to it; a task in Un'Goro Crater calls for it later."] =
         "NPC在室内。留着它；安戈洛环形山的任务稍后需要。",
     ["The NPC is indoors. You need them later for \"Chasing A-Me 01\" and \"Arcane Runes\": keep them in the bank to free bag slots."] =

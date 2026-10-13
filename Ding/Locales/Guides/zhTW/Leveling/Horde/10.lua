@@ -87,4 +87,6 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h10-ashenvale", {
         "目標在洞穴裡。",
     ["Head out of the cave"] =
         "離開洞穴",
+    ["Thunder Bluff"] =
+        "雷霆崖",
 })

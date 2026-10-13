@@ -57,6 +57,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a39-winterspring-and-felwood", {
         "Los objetivos son 3 fúrbolgs blancos que van en grupo. El objetivo patrulla una larga ruta junto al camino. Sigue adelante si no lo has visto al final del sendero.",
     ["Be ready for a fight right away."] =
         "Prepárate para luchar de inmediato.",
+    ["Everlook"] =
+        "Vista Eterna",
     ["The NPC is indoors. You need them later for \"Aquementas\", \"The Everlook Report\", \"Duke Nicholas Zverenhoff\" and \"Troubled Spirits of Kel'Theril\": keep them in the bank to free bag slots."] =
         "El PNJ está dentro. Los necesitarás más adelante para «Aquementas», «El informe Vista Eterna», «El duque Nicolas Zverenhoff» y «Espíritus condenados de Kel'Theril»: déjalos en el banco para liberar huecos en las bolsas.",
     ["For this quest you guard an NPC on the move. If she is absent, wait for her to reappear."] =

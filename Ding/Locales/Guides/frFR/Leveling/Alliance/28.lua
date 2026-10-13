@@ -7,6 +7,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a28-feralas-and-tanaris", {
         "Tanaris : Gadgetzan d'abord, puis Féralas : le bastion de Pennelune.",
     ["The NPC is indoors."] =
         "Le PNJ est à l'intérieur.",
+    ["Feathermoon Stronghold"] =
+        "Bastion de Pennelune",
     ["The NPC is indoors, one floor up."] =
         "Le PNJ est à l'intérieur, un étage plus haut.",
     ["Position yourself in its center."] =
@@ -93,6 +95,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a28-feralas-and-tanaris", {
         "L'endroit est au niveau inférieur de l'arbre creux.",
     ["Stay clear of the elite foes. Be ready for a fight right away."] =
         "Tiens-toi loin des ennemis élites. Prépare-toi à combattre tout de suite.",
+    ["Gadgetzan"] =
+        "Gadgetzan",
     ["The NPC waits on the lower level, indoors. A lengthy stretch of quests is coming up. This vendor sells no arrows or bullets."] =
         "Le PNJ attend au niveau inférieur, à l'intérieur. Une longue série de quêtes arrive. Ce marchand ne vend ni flèches ni balles.",
 })

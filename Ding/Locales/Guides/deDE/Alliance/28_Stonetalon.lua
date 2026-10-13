@@ -5,4 +5,6 @@ Ding.RegisterGuideTranslation("deDE", "alliance-28-stonetalon", {
         "Steinkrallengebirge (27)",
     ["The Stonetalon Mountains are west of Ashenvale."] =
         "Das Steinkrallengebirge liegt westlich des Eschentals.",
+    ["Stonetalon Peak"] =
+        "Steinkrallengipfel",
 })

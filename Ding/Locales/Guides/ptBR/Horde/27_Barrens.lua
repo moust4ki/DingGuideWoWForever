@@ -5,4 +5,8 @@ Ding.RegisterGuideTranslation("ptBR", "horde-27-barrens", {
         "Sertões e Torres de Pedra (27-28)",
     ["Zeppelin back to Orgrimmar for the higher quests of the Barrens and the Stonetalon Mountains."] =
         "Zepelim de volta a Orgrimmar para as missões mais altas dos Sertões e da Cordilheira das Torres de Pedra.",
+    ["Sun Rock Retreat"] =
+        "Retiro Rocha do Sol",
+    ["Camp Taurajo"] =
+        "Acampamento Taurajo",
 })

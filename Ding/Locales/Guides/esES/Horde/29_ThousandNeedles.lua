@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("esES", "horde-29-needles", {
         "Las Mil Agujas (28-30)",
     ["Thousand Needles is south of the Barrens, down the Great Lift: Freewind Post is your base."] =
         "Las Mil Agujas están al sur de Los Baldíos, bajando por el Gran Elevador: el Poblado Viento Libre es tu base.",
+    ["Freewind Post"] =
+        "Poblado Viento Libre",
     ["Finish the level on nearby monsters before moving on."] =
         "Termina el nivel con monstruos cercanos antes de seguir.",
 })

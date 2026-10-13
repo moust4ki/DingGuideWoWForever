@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("ptBR", "horde-41-stv", {
         "Selva do Espinhaço (38-42)",
     ["Back to Stranglethorn for the end of its quests, from Grom'gol and Booty Bay. Finish the level on nearby monsters before moving on."] =
         "De volta à Selva do Espinhaço para o fim das missões, a partir de Grom'gol e da Angra do Butim. Termine o nível nos monstros próximos antes de seguir.",
+    ["Grom'gol"] =
+        "Grom'gol",
     ["Finish the level on nearby monsters before moving on."] =
         "Termine o nível nos monstros próximos antes de seguir.",
 })

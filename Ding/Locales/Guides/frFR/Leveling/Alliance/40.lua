@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a40-burning-steppes", {
         "Forgefer d'abord, puis les Steppes ardentes : la Veille de Morgan, à l'est.",
     ["The NPC is indoors."] =
         "Le PNJ est à l'intérieur.",
+    ["Ironforge"] =
+        "Forgefer",
     ["Your objective lies in a little cavern. This foe is elite. Consider bringing a group for this one."] =
         "Ton objectif est dans une petite grotte. Cet ennemi est élite. Pense à venir en groupe pour celle-ci.",
     ["Your objective lies in a little cavern."] =

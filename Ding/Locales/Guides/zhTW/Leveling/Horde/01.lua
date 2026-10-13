@@ -43,6 +43,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h01-undead-starter", {
         "等對話結束",
     ["The quest giver is an abomination. The NPC patrols the road; look along it. He may step off the road now and then to pick plants."] =
         "任務給予者是一隻憎惡。NPC沿著道路巡邏；沿路尋找。他偶爾會離開道路去採集植物。",
+    ["Gallows' End Tavern"] =
+        "布瑞爾",
     ["The NPC is indoors, one floor up."] =
         "NPC在室內的樓上一層。",
     ["Heal Deathguard Kel with Lesser Heal (Rank 2). Buff Deathguard Kel with Power Word: Fortitude."] =
@@ -107,6 +109,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h01-undead-starter", {
         "加上接下來的交任務，這會讓你升到10級。",
     ["The NPC is out back, at the rear of the structure."] =
         "NPC在外面，位於建築後方。",
+    ["Razor Hill"] =
+        "剃刀嶺",
     ["Look for beige sacks."] =
         "尋找米色的袋子。",
     ["Stay on the trail, then cross the tunnel"] =

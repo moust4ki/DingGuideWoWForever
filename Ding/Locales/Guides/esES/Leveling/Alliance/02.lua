@@ -65,6 +65,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a02-dwarf-and-gnome-starter", {
         "Busca las cestas de madera.",
     ["Die to the monsters here on purpose. Any spot around Brewnall Village works. Dying costs you nothing this early."] =
         "Deja que los monstruos de aquí te maten a propósito. Sirve cualquier punto alrededor de Brewnall Village. A estos niveles morir no te cuesta nada.",
+    ["Thunderbrew Distillery"] =
+        "Kharanos",
     ["Give it a few seconds. The object is on the lower level, indoors."] =
         "Espera unos segundos. El objeto está en el nivel inferior, dentro.",
     ["Head to the lower level of the cavern."] =
@@ -111,6 +113,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a02-dwarf-and-gnome-starter", {
         "El PNJ patrulla una ruta larga; búscalo a lo largo de ella.",
     ["Die to the monsters here on purpose. This is the quickest way over."] =
         "Deja que los monstruos de aquí te maten a propósito. Es el camino más rápido para llegar.",
+    ["Stoutlager Inn"] =
+        "Thelsamar",
     ["The NPC can be indoors or out."] =
         "El PNJ puede estar dentro o fuera.",
     ["Learn Two-Handed Axes and Two-Handed Maces at the weapon master"] =

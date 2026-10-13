@@ -13,6 +13,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a41-western-and-eastern-plaguela
         "Der NPC ist drinnen. Du brauchst es später für „Felnok Steelspring“: Lass es in der Bank, das spart einen Taschenplatz.",
     ["Stay on the trail"] =
         "Bleib auf dem Weg",
+    ["Southshore"] =
+        "Süderstade",
     ["Check each of the two floors indoors."] =
         "Sieh dir drinnen beide Stockwerke an.",
     ["Stand at the watchtower's doorway. An elite foe waits indoors; stay clear of it."] =
@@ -63,6 +65,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a41-western-and-eastern-plaguela
         "Nahe den großen, blau beleuchteten Gebäuden. Wenn einer getötet wird, kann ein neuer erscheinen.",
     ["Look for little gray coffers of metal. The targets are in the ruined houses."] =
         "Such nach kleinen grauen Metallkästchen. Die Ziele sind in den zerstörten Häusern.",
+    ["Light's Hope Chapel"] =
+        "Kapelle des Hoffnungsvollen Lichts",
     ["Your targets sit below the water's surface."] =
         "Deine Ziele sind unter der Wasseroberfläche.",
     ["The object is indoors. It shows up on top of the box."] =

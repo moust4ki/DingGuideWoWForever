@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a23-desolace", {
         "잊혀진 땅: 나이젤의 야영지는 북동쪽 구석에 있습니다.",
     ["The NPC is indoors."] =
         "NPC는 건물 안에 있습니다.",
+    ["Nijel's Point"] =
+        "나이젤의 야영지",
     ["Stay away from Ghost Walker Post."] =
         "침묵의 초소에는 가까이 가지 마세요.",
     ["Hunt the felguards. This is the sole spot; wait for them to reappear."] =

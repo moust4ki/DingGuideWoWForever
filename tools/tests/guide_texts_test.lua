@@ -32,4 +32,41 @@ T.test("the shipped dictionaries name each zone once, without its levels", funct
     end
 end)
 
+-- Names that every language writes the English way (proper names); the Skyborne innkeepers
+-- have no name of their own in any language. Anything else left in English is an oversight.
+local SAME = {
+    Astranaar = true, Auberdine = true, Dolanaar = true, Kharanos = true, Thelsamar = true, Gadgetzan = true,
+    Kargath = true, Orgrimmar = true, Theramore = true, ["Grom'gol"] = true, Brill = true, Hammerfall = true,
+    ["Camp Mojache"] = true, ["Camp Taurajo"] = true, ["Coriella Calmbreeze"] = true, ["Donaal Downbreeze"] = true,
+    -- The German dictionary's name, as the rest of its guides say it (to check in game).
+    ["Shadowprey Village"] = true,
+}
+
+T.test("every hearthstone step's place, in every language: never left in English", function()
+    local root = tools .. "/.."
+    local places = {}
+    local toc = assert(io.open(root .. "/Ding/Ding.toc", "rb")):read("*a")
+    -- The guides' own lines of the TOC (not their translations, Locales\Guides\...).
+    for line in toc:gmatch("[^\r\n]+") do
+        local file = line:match("^Guides\\(.+%.lua)$")
+        if file then
+            local def
+            _G.Ding = { RegisterGuide = function(d) def = d return d end }
+            dofile(root .. "/Ding/Guides/" .. file:gsub("\\", "/"))
+            _G.Ding = nil
+            for _, step in ipairs(def and def.steps or {}) do
+                if type(step.sethearth) == "string" then places[step.sethearth] = file end
+            end
+        end
+    end
+    T.ok(next(places), "no hearthstone step in the shipped guides")
+    for locale, d in pairs(Texts.load(tools .. "/routes/locales")) do
+        for place, file in pairs(places) do
+            local text = d[place]
+            T.ok(text and text ~= "", ("%s: no name for the hearthstone place %q (%s)"):format(locale, place, file))
+            T.ok(text ~= place or SAME[place], ("%s: the hearthstone place %q left in English (%s)"):format(locale, place, file))
+        end
+    end
+end)
+
 T.run()

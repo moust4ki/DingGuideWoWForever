@@ -35,6 +35,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a37-feralas-and-azshara", {
         "完成名為「視靈藥劑」的任務。把藥劑留在背包裡；絕對不要喝。你會因此死亡。",
     ["The NPC is indoors."] =
         "NPC在室內。",
+    ["Ratchet"] =
+        "棘齒城",
     ["Put these items in your bank vault. You need them later for \"The Stone Circle\", \"Felbound Ancients\", \"A Little Slime Goes a Long Way\", \"Moontouched Wildkin\" and \"Meet at the Grave\": keep them in the bank to free bag slots."] =
         "把這些物品放進你的銀行。之後的任務「石環」、「被禁錮的古樹」、「遠方的軟泥怪」、「月光羽毛」和「墓地相見」需要它們：先存進銀行，空出背包空間。",
     ["The quest giver waits on the hilltop."] =

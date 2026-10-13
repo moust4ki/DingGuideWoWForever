@@ -81,6 +81,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a03-night-elf-starter", {
         "Con las próximas entregas, esto te lleva a nivel 9. Tus objetivos están dentro de la cueva.",
     ["Die to the monsters here on purpose. At this spot or a bit to the east. Dying costs you nothing this early."] =
         "Deja que los monstruos de aquí te maten a propósito. En este punto o un poco más al este. A estos niveles morir no te cuesta nada.",
+    ["Dolanaar"] =
+        "Dolanaar",
     ["The NPC patrols the road; look along it."] =
         "El PNJ patrulla el camino; búscalo a lo largo de él.",
     ["For this quest you guard an NPC on the move. If she is absent, wait for her to reappear."] =
@@ -145,6 +147,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a03-night-elf-starter", {
         "Tus objetivos están bajo la superficie del agua.",
     ["Your objective lies in a little cavern."] =
         "Tu objetivo está en una pequeña cueva.",
+    ["Auberdine"] =
+        "Auberdine",
     ["The spot is on the lower floor of the hollow tree."] =
         "El punto está en el piso inferior del árbol hueco.",
     ["Learn Thrown at the weapon master"] =

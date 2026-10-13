@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a40-burning-steppes", {
         "Zuerst Eisenschmiede, dann die Brennende Steppe: Morgans Wacht, im Osten.",
     ["The NPC is indoors."] =
         "Der NPC ist drinnen.",
+    ["Ironforge"] =
+        "Eisenschmiede",
     ["Your objective lies in a little cavern. This foe is elite. Consider bringing a group for this one."] =
         "Dein Ziel liegt in einer kleinen Höhle. Dieser Gegner ist Elite. Nimm dafür am besten eine Gruppe mit.",
     ["Your objective lies in a little cavern."] =

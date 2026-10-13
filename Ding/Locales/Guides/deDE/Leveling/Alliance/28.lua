@@ -7,6 +7,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a28-feralas-and-tanaris", {
         "Tanaris: zuerst Gadgetzan, dann Feralas: Mondfederfeste.",
     ["The NPC is indoors."] =
         "Der NPC ist drinnen.",
+    ["Feathermoon Stronghold"] =
+        "Mondfederfeste",
     ["The NPC is indoors, one floor up."] =
         "Der NPC ist drinnen, ein Stockwerk höher.",
     ["Position yourself in its center."] =
@@ -93,6 +95,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a28-feralas-and-tanaris", {
         "Die Stelle ist auf der unteren Ebene des hohlen Baums.",
     ["Stay clear of the elite foes. Be ready for a fight right away."] =
         "Halte dich von den Elitegegnern fern. Mach dich sofort auf einen Kampf gefasst.",
+    ["Gadgetzan"] =
+        "Gadgetzan",
     ["The NPC waits on the lower level, indoors. A lengthy stretch of quests is coming up. This vendor sells no arrows or bullets."] =
         "Der NPC wartet drinnen auf der unteren Ebene. Gleich kommt eine lange Questphase. Dieser Händler verkauft keine Pfeile oder Kugeln.",
 })

@@ -7,6 +7,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a28-feralas-and-tanaris", {
         "Tanaris: primero Gadgetzan y luego Feralas: Bastión Plumaluna.",
     ["The NPC is indoors."] =
         "El PNJ está dentro.",
+    ["Feathermoon Stronghold"] =
+        "Bastión Plumaluna",
     ["The NPC is indoors, one floor up."] =
         "El PNJ está dentro, un piso más arriba.",
     ["Position yourself in its center."] =
@@ -93,6 +95,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a28-feralas-and-tanaris", {
         "El punto está en el piso inferior del árbol hueco.",
     ["Stay clear of the elite foes. Be ready for a fight right away."] =
         "Evita a los enemigos élite. Prepárate para luchar de inmediato.",
+    ["Gadgetzan"] =
+        "Gadgetzan",
     ["The NPC waits on the lower level, indoors. A lengthy stretch of quests is coming up. This vendor sells no arrows or bullets."] =
         "El PNJ espera en el nivel inferior, dentro. Se acerca un largo tramo de misiones. Este vendedor no vende flechas ni balas.",
 })

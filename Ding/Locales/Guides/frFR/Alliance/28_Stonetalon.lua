@@ -5,4 +5,6 @@ Ding.RegisterGuideTranslation("frFR", "alliance-28-stonetalon", {
         "Les Serres-Rocheuses (27)",
     ["The Stonetalon Mountains are west of Ashenvale."] =
         "Les Serres-Rocheuses sont à l'ouest d'Orneval.",
+    ["Stonetalon Peak"] =
+        "Pic des Serres-Rocheuses",
 })

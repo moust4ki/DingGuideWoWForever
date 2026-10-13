@@ -23,6 +23,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h25-feralas", {
         "在地上發著藍光的圓環旁邊。尋找突然冒出來的土堆。持有任務物品的會發出藍光。",
     ["Fight the tauren."] =
         "與牛頭人戰鬥。",
+    ["Camp Mojache"] =
+        "莫沙徹營地",
     ["A lengthy grinding stretch is coming up. The NPC is upstairs, out on the balcony."] =
         "接下來要打怪很長一段時間。NPC在樓上，位於外面的陽台。",
     ["The target is a winged green bug, level 47. You can likely beat it at your current level. The target circles in the air, so search around."] =

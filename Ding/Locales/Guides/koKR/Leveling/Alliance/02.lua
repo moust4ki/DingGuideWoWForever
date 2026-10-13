@@ -65,6 +65,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a02-dwarf-and-gnome-starter", {
         "나무 바구니를 찾으세요.",
     ["Die to the monsters here on purpose. Any spot around Brewnall Village works. Dying costs you nothing this early."] =
         "여기 있는 몬스터에게 일부러 죽으세요. Brewnall Village 주변이라면 어디든 됩니다. 이 시점에는 죽어도 잃는 것이 없습니다.",
+    ["Thunderbrew Distillery"] =
+        "카라노스",
     ["Give it a few seconds. The object is on the lower level, indoors."] =
         "몇 초 기다리세요. 그 물체는 건물 안 아래층에 있습니다.",
     ["Head to the lower level of the cavern."] =
@@ -111,6 +113,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a02-dwarf-and-gnome-starter", {
         "NPC는 긴 경로를 순찰합니다. 경로를 따라 찾아보세요.",
     ["Die to the monsters here on purpose. This is the quickest way over."] =
         "여기 있는 몬스터에게 일부러 죽으세요. 건너가는 가장 빠른 방법입니다.",
+    ["Stoutlager Inn"] =
+        "텔사마",
     ["The NPC can be indoors or out."] =
         "NPC는 건물 안이나 밖에 있을 수 있습니다.",
     ["Learn Two-Handed Axes and Two-Handed Maces at the weapon master"] =

@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a23-desolace", {
         "Desolação: Posto do Nijel, no canto nordeste.",
     ["The NPC is indoors."] =
         "O NPC está lá dentro.",
+    ["Nijel's Point"] =
+        "Posto do Nijel",
     ["Stay away from Ghost Walker Post."] =
         "Fique longe do Entreposto do Espírito que Anda.",
     ["Hunt the felguards. This is the sole spot; wait for them to reappear."] =

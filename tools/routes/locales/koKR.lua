@@ -3395,4 +3395,104 @@ return {
         "나중에 \"눈망루 마을 보고서\", \"공작 니콜라스 즈바른호프\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["You need it later for \"Aquementas\": keep it in the bank to free a bag slot."] =
         "나중에 \"아쿠에멘타스\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    -- Places of the hearthstone steps (`sethearth`): the town, as this language names it (an
+    -- inn's own name: its town).
+    ["Astranaar"] =
+        "아스트라나르",
+    ["Auberdine"] =
+        "아우버다인",
+    ["Bloodhoof Village"] =
+        "블러드후프 마을",
+    ["Booty Bay"] =
+        "무법항",
+    ["Brill"] =
+        "브릴",
+    ["Camp Mojache"] =
+        "모자케 야영지",
+    ["Camp Taurajo"] =
+        "타우라조 야영지",
+    ["Cenarion Hold"] =
+        "세나리온 요새",
+    ["Coriella Calmbreeze"] =
+        "Coriella Calmbreeze",
+    ["Darkshire"] =
+        "다크샤이어",
+    ["Deepwater Tavern"] =
+        "메네실 항구",
+    ["Dolanaar"] =
+        "돌라나르",
+    ["Donaal Downbreeze"] =
+        "Donaal Downbreeze",
+    ["Everlook"] =
+        "눈망루 마을",
+    ["Feathermoon Stronghold"] =
+        "페더문 요새",
+    ["Freewind Post"] =
+        "높새바람 봉우리",
+    ["Gadgetzan"] =
+        "가젯잔",
+    ["Gallows' End Tavern"] =
+        "브릴",
+    ["Goldshire"] =
+        "골드샤이어",
+    ["Grom'gol"] =
+        "그롬골 주둔지",
+    ["Hammerfall"] =
+        "해머폴",
+    ["Ironforge"] =
+        "아이언포지",
+    ["Kargath"] =
+        "카르가스",
+    ["Kharanos"] =
+        "카라노스",
+    ["Lakeshire"] =
+        "레이크샤이어",
+    ["Light's Hope Chapel"] =
+        "희망의 빛 예배당",
+    ["Menethil Harbor"] =
+        "메네실 항구",
+    ["Nijel's Point"] =
+        "나이젤의 야영지",
+    ["Orgrimmar"] =
+        "오그리마",
+    ["Ratchet"] =
+        "톱니항",
+    ["Razor Hill"] =
+        "칼바위 언덕",
+    ["Revantusk Village"] =
+        "레반터스크 마을",
+    ["Sentinel Hill"] =
+        "감시의 언덕",
+    ["Shadowprey Village"] =
+        "그늘수렵 마을",
+    ["Southshore"] =
+        "사우스쇼어",
+    ["Splintertree Post"] =
+        "토막나무 주둔지",
+    ["Stonard"] =
+        "스토나드",
+    ["Stonetalon Peak"] =
+        "돌발톱 봉우리",
+    ["Stormwind City"] =
+        "스톰윈드",
+    ["Stoutlager Inn"] =
+        "텔사마",
+    ["Sun Rock Retreat"] =
+        "해바위 야영지",
+    ["Tarren Mill"] =
+        "타렌 밀농장",
+    ["The Crossroads"] =
+        "크로스로드",
+    ["The Sepulcher"] =
+        "공동묘지",
+    ["Thelsamar"] =
+        "텔사마",
+    ["Theramore"] =
+        "테라모어",
+    ["Theramore Isle"] =
+        "테라모어 섬",
+    ["Thunder Bluff"] =
+        "썬더 블러프",
+    ["Thunderbrew Distillery"] =
+        "카라노스",
 }

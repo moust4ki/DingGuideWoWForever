@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("frFR", "alliance-24-wetlands", {
         "Les Paluns (20-26)",
     ["The Wetlands are north of Loch Modan: Menethil Harbor, on the west coast, is your base."] =
         "Les Paluns sont au nord de Loch Modan : Menethil, sur la côte ouest, est ta base.",
+    ["Menethil Harbor"] =
+        "Port de Menethil",
     ["Finish the level on nearby monsters before moving on."] =
         "Finis le niveau sur les monstres du coin avant la suite.",
 })

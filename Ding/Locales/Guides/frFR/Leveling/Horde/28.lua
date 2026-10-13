@@ -43,6 +43,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h28-tanaris-and-dustwallow-marsh
         "Fouille les monticules de sable.",
     ["It competes for spawn points."] =
         "Il partage ses points d'apparition.",
+    ["Gadgetzan"] =
+        "Gadgetzan",
     ["Go into the cavern"] =
         "Entre dans la grotte",
     ["Take the trail downhill"] =

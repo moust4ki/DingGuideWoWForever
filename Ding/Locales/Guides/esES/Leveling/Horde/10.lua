@@ -87,4 +87,6 @@ Ding.RegisterGuideTranslation("esES", "leveling-h10-ashenvale", {
         "Tus objetivos están dentro de la cueva.",
     ["Head out of the cave"] =
         "Sal de la cueva",
+    ["Thunder Bluff"] =
+        "Cima del Trueno",
 })

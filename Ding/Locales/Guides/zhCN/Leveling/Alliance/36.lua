@@ -15,6 +15,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a36-azshara-and-felwood", {
         "爬到建筑物的顶层。",
     ["The quest giver stands outdoors, not indoors."] =
         "任务发布者在室外，不在室内。",
+    ["Auberdine"] =
+        "奥伯丁",
     ["A lengthy stretch of questing lies ahead. This vendor sells no arrows or bullets."] =
         "前面是一长段任务。这个商人不卖箭和子弹。",
     ["Hand these in afterwards for experience and reputation."] =

@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a15-hillsbrad-foothills-and-arat
         "希尔斯布莱德丘陵：南海镇，在南部海岸。",
     ["The NPC is indoors."] =
         "NPC在室内。",
+    ["Southshore"] =
+        "南海镇",
     ["You'll find extra ones swimming nearby as well."] =
         "附近水里也有更多在游动。",
     ["Search for gray rocks standing up beside the walls. Your targets are within the cavern."] =

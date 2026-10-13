@@ -39,4 +39,6 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a24-badlands", {
         "Fais-toi tuer, puis ressuscite auprès du gardien des âmes",
     ["Flight master at Thorium Point"] =
         "Maître de vol de la Halte du Thorium",
+    ["Stoutlager Inn"] =
+        "Thelsamar",
 })

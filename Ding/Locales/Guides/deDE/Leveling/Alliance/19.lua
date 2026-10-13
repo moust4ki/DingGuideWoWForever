@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a19-stranglethorn-vale", {
         "Schlingendorntal: Beutebucht, an der Südspitze.",
     ["The NPC is indoors at street level."] =
         "Der NPC ist drinnen, auf Straßenhöhe.",
+    ["Booty Bay"] =
+        "Beutebucht",
     ["Climb to the highest floor of the building."] =
         "Steig ins oberste Stockwerk des Gebäudes.",
     ["The NPC is upstairs, out on the balcony."] =

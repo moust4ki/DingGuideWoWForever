@@ -39,4 +39,6 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a24-badlands", {
         "Lass dich töten, dann lass dich vom Geistheiler wiederbeleben",
     ["Flight master at Thorium Point"] =
         "Flugmeister der Thoriumspitze",
+    ["Stoutlager Inn"] =
+        "Thelsamar",
 })

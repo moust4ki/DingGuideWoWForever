@@ -7,4 +7,6 @@ Ding.RegisterGuideTranslation("ptBR", "alliance-29-ashenvale", {
         "De volta a Astranaar para as últimas missões do Vale Gris. Termine o nível nos monstros próximos antes de seguir.",
     ["Finish the level on nearby monsters before moving on."] =
         "Termine o nível nos monstros próximos antes de seguir.",
+    ["Auberdine"] =
+        "Auberdine",
 })

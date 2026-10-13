@@ -71,6 +71,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h03-orc-and-troll-starter", {
         "그 물체는 이 건물의 꼭대기 층에 있습니다.",
     ["Die to the monsters here on purpose. Dying costs you nothing this early. This is the quickest way over."] =
         "여기 있는 몬스터에게 일부러 죽으세요. 이 시점에는 죽어도 잃는 것이 없습니다. 건너가는 가장 빠른 방법입니다.",
+    ["Razor Hill"] =
+        "칼바위 언덕",
     ["The NPC is out back, at the rear of the structure."] =
         "NPC는 건물 뒤쪽 바깥에 있습니다.",
     ["Learn First Aid from the trainer"] =

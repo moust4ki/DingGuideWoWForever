@@ -54,7 +54,8 @@ end
 
 -- Guide texts (title, step text and note, the texts of `why` and `leftOut`) are written in
 -- English; a translation replaces them in place, whichever of the guide and its translation
--- loads first.
+-- loads first. A `sethearth` place keeps its English name (the engine knows the inn by it) and
+-- gets `sethearthText`, the name the window shows.
 local function translate(def)
     local map = translations[def.id]
     if not map then return end
@@ -62,6 +63,7 @@ local function translate(def)
     for _, step in ipairs(def.steps) do
         if step.text then step.text = map[step.text] or step.text end
         if step.note then step.note = map[step.note] or step.note end
+        if type(step.sethearth) == "string" then step.sethearthText = map[step.sethearth] end
         if type(step.why) == "string" then
             step.why = map[step.why] or step.why
         elseif type(step.why) == "table" and type(step.why.text) == "string" then

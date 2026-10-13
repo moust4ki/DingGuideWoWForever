@@ -11,6 +11,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a10-wetlands", {
         "NPC在室內。",
     ["The NPC waits on the lower level, indoors."] =
         "NPC在室內的下層。",
+    ["Deepwater Tavern"] =
+        "米奈希爾港",
     ["The NPC is indoors, one floor up."] =
         "NPC在室內的樓上一層。",
     ["The NPC is indoors. Do it only if you can."] =

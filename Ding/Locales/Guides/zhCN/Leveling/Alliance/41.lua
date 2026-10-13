@@ -13,6 +13,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a41-western-and-eastern-plaguela
         "NPC在室内。之后的任务“菲诺克”需要它：先存进银行，腾出背包空间。",
     ["Stay on the trail"] =
         "沿小路走",
+    ["Southshore"] =
+        "南海镇",
     ["Check each of the two floors indoors."] =
         "室内两层都要找。",
     ["Stand at the watchtower's doorway. An elite foe waits indoors; stay clear of it."] =
@@ -63,6 +65,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a41-western-and-eastern-plaguela
         "在亮着蓝光的大建筑附近。杀掉一个后可能会出现新的。",
     ["Look for little gray coffers of metal. The targets are in the ruined houses."] =
         "寻找灰色的小金属箱。目标在倒塌的房屋里。",
+    ["Light's Hope Chapel"] =
+        "圣光之愿礼拜堂",
     ["Your targets sit below the water's surface."] =
         "目标在水面以下。",
     ["The object is indoors. It shows up on top of the box."] =

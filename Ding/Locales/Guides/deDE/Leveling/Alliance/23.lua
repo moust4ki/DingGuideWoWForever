@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a23-desolace", {
         "Desolace: Nijelspitze, in der Nordostecke.",
     ["The NPC is indoors."] =
         "Der NPC ist drinnen.",
+    ["Nijel's Point"] =
+        "Nijelspitze",
     ["Stay away from Ghost Walker Post."] =
         "Halte dich vom Geistwandlerposten fern.",
     ["Hunt the felguards. This is the sole spot; wait for them to reappear."] =

@@ -45,6 +45,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h38-felwood-and-winterspring", {
         "이 퀘스트의 대상은 설인입니다. 찾아다니세요. 대상은 동굴 안과 입구 주변에도 있습니다.",
     ["The NPC is indoors."] =
         "NPC는 건물 안에 있습니다.",
+    ["Everlook"] =
+        "눈망루 마을",
     ["The NPC is a human spirit."] =
         "NPC는 인간의 영혼입니다.",
     ["Your targets are within the cavern."] =
@@ -79,6 +81,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h38-felwood-and-winterspring", {
         "이 NPC는 아래쪽 어둠의 틈에 있습니다.",
     ["The NPC stands on the highest level of this structure."] =
         "NPC는 이 건물의 꼭대기 층에 서 있습니다.",
+    ["Orgrimmar"] =
+        "오그리마",
     ["Take the trail downhill"] =
         "길을 따라 내려가세요",
     ["Wait for the talking to finish"] =

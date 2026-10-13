@@ -5,4 +5,6 @@ Ding.RegisterGuideTranslation("deDE", "alliance-22-duskwood", {
         "Dämmerwald (19-20)",
     ["Duskwood is south of Elwynn: Darkshire, in the east of the forest, is your base."] =
         "Der Dämmerwald liegt südlich von Elwynn: Dunkelhain im Osten des Waldes ist deine Basis.",
+    ["Darkshire"] =
+        "Dunkelhain",
 })

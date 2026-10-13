@@ -35,6 +35,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a37-feralas-and-azshara", {
         "完成任务“The Videre Elixir”。把药剂留在背包里，千万别喝。你会因此死亡。",
     ["The NPC is indoors."] =
         "NPC在室内。",
+    ["Ratchet"] =
+        "棘齿城",
     ["Put these items in your bank vault. You need them later for \"The Stone Circle\", \"Felbound Ancients\", \"A Little Slime Goes a Long Way\", \"Moontouched Wildkin\" and \"Meet at the Grave\": keep them in the bank to free bag slots."] =
         "把这些物品存进银行。之后的任务“石环”、“被禁锢的古树”、“远方的软泥怪”、“月光羽毛”和“墓地相见”需要它们：先存进银行，腾出背包空间。",
     ["The quest giver waits on the hilltop."] =

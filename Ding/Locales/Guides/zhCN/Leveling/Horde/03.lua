@@ -71,6 +71,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h03-orc-and-troll-starter", {
         "该物件在这座建筑的最高层。",
     ["Die to the monsters here on purpose. Dying costs you nothing this early. This is the quickest way over."] =
         "故意让这里的怪物杀死你。这么早死亡没有任何损失。这是最快的过去方式。",
+    ["Razor Hill"] =
+        "剃刀岭",
     ["The NPC is out back, at the rear of the structure."] =
         "NPC在建筑物后方的室外。",
     ["Learn First Aid from the trainer"] =

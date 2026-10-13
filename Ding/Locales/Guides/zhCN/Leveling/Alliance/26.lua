@@ -27,4 +27,6 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a26-swamp-of-sorrows", {
         "爬到建筑物的顶层。",
     ["The NPC is indoors."] =
         "NPC在室内。",
+    ["Theramore Isle"] =
+        "塞拉摩岛",
 })

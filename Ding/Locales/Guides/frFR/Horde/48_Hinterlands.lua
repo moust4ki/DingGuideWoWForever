@@ -7,4 +7,6 @@ Ding.RegisterGuideTranslation("frFR", "horde-48-hinterlands", {
         "Les Hinterlands sont à l'est des Contreforts de Hautebrande : le village troll de Vengebroche est sur la côte est.",
     ["If the starting item dropped: use it from your bags."] =
         "Si l'objet de départ est tombé : utilise-le depuis ton sac.",
+    ["Revantusk Village"] =
+        "Village de Vengebroche",
 })

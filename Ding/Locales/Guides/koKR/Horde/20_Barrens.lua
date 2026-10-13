@@ -5,4 +5,8 @@ Ding.RegisterGuideTranslation("koKR", "horde-20-barrens", {
         "불모의 땅과 돌발톱 산맥 (19-20)",
     ["The Crossroads, in the middle of the Barrens, is your base; the Stonetalon Mountains are west of the Barrens."] =
         "불모의 땅 중앙의 크로스로드가 거점입니다. 돌발톱 산맥은 불모의 땅 서쪽에 있습니다.",
+    ["Ratchet"] =
+        "톱니항",
+    ["Sun Rock Retreat"] =
+        "해바위 야영지",
 })

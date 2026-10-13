@@ -21,6 +21,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a18-desolace", {
         "放生你驯服的临时宠物。",
     ["The NPC is indoors."] =
         "NPC在室内。",
+    ["Nijel's Point"] =
+        "尼耶尔前哨站",
     ["Hunt down satyrs. Beware of foes lurking in stealth."] =
         "猎杀萨特。当心潜行中的敌人。",
     ["With the coming hand-ins, this brings you to level 36."] =

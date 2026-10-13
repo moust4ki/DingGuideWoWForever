@@ -65,4 +65,6 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h35-felwood-and-winterspring", {
         "Récupère ton familier auprès du maître des écuries.",
     ["Release the short-term pet you tamed."] =
         "Relâche le familier temporaire que tu as apprivoisé.",
+    ["Camp Taurajo"] =
+        "Camp Taurajo",
 })

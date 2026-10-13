@@ -81,6 +81,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a03-night-elf-starter", {
         "Avec les prochains rendus, ça te mène au niveau 9. Tes cibles sont dans la grotte.",
     ["Die to the monsters here on purpose. At this spot or a bit to the east. Dying costs you nothing this early."] =
         "Laisse-toi tuer exprès par les monstres d'ici. À cet endroit ou un peu plus à l'est. Mourir ne te coûte rien à ce stade.",
+    ["Dolanaar"] =
+        "Dolanaar",
     ["The NPC patrols the road; look along it."] =
         "Le PNJ patrouille sur la route : cherche-le tout du long.",
     ["For this quest you guard an NPC on the move. If she is absent, wait for her to reappear."] =
@@ -145,6 +147,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a03-night-elf-starter", {
         "Tes cibles sont sous la surface de l'eau.",
     ["Your objective lies in a little cavern."] =
         "Ton objectif est dans une petite grotte.",
+    ["Auberdine"] =
+        "Auberdine",
     ["The spot is on the lower floor of the hollow tree."] =
         "L'endroit est au niveau inférieur de l'arbre creux.",
     ["Learn Thrown at the weapon master"] =

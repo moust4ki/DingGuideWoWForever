@@ -5,4 +5,6 @@ Ding.RegisterGuideTranslation("frFR", "alliance-26-ashenvale", {
         "Orneval (26-27)",
     ["Boat from Menethil to Auberdine, then the road south to Ashenvale: Astranaar is your base."] =
         "Bateau de Menethil pour Auberdine, puis la route du sud jusqu'à Orneval : Astranaar est ta base.",
+    ["Astranaar"] =
+        "Astranaar",
 })

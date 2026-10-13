@@ -39,4 +39,6 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a24-badlands", {
         "让自己被杀，然后在灵魂医者处复活",
     ["Flight master at Thorium Point"] =
         "瑟银哨塔飞行管理员",
+    ["Stoutlager Inn"] =
+        "塞尔萨玛",
 })

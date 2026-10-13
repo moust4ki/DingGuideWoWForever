@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a15-hillsbrad-foothills-and-arat
         "Laderas de Trabalomas: Costasur, en la costa sur.",
     ["The NPC is indoors."] =
         "El PNJ está dentro.",
+    ["Southshore"] =
+        "Costasur",
     ["You'll find extra ones swimming nearby as well."] =
         "También encontrarás más nadando cerca.",
     ["Search for gray rocks standing up beside the walls. Your targets are within the cavern."] =

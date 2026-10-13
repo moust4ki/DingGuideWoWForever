@@ -47,4 +47,6 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h26-stranglethorn-vale", {
         "沿著小路走",
     ["Circle the mountain on the trail, then climb it"] =
         "沿著小路繞山，然後往上爬",
+    ["Booty Bay"] =
+        "藏寶海灣",
 })

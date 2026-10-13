@@ -5,4 +5,6 @@ Ding.RegisterGuideTranslation("esES", "horde-40-badlands", {
         "Tierras Inhóspitas (38)",
     ["Fly from Hammerfall to Kargath, in the west of the Badlands."] =
         "Vuela de Sentencia a Kargath, al oeste de las Tierras Inhóspitas.",
+    ["Kargath"] =
+        "Kargath",
 })

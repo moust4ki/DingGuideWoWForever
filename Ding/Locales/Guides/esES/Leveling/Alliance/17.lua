@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a17-stranglethorn-vale", {
         "Vega de Tuercespina: Bahía del Botín, en el extremo sur. Allí llega el barco de Trinquete.",
     ["The NPC is indoors at street level."] =
         "El PNJ está dentro, a pie de calle.",
+    ["Booty Bay"] =
+        "Bahía del Botín",
     ["Climb to the highest floor of the building."] =
         "Sube al piso más alto del edificio.",
     ["The NPC is upstairs, out on the balcony."] =

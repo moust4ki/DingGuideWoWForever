@@ -57,6 +57,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a39-winterspring-and-felwood", {
         "目标是3只结伴行动的白色熊怪。目标沿道路旁的一条长路线巡逻。如果走到小路尽头还没见到它，就继续前进。",
     ["Be ready for a fight right away."] =
         "准备好马上战斗。",
+    ["Everlook"] =
+        "永望镇",
     ["The NPC is indoors. You need them later for \"Aquementas\", \"The Everlook Report\", \"Duke Nicholas Zverenhoff\" and \"Troubled Spirits of Kel'Theril\": keep them in the bank to free bag slots."] =
         "NPC在室内。之后的任务“亚奎门塔斯”、“永望镇报告”、“尼古拉斯·瑟伦霍夫公爵”和“凯斯利尔的怨灵”需要它们：先存进银行，腾出背包空间。",
     ["For this quest you guard an NPC on the move. If she is absent, wait for her to reappear."] =

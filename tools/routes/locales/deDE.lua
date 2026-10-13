@@ -3394,4 +3394,104 @@ return {
         "Du brauchst sie später für „Der Everlook-Bericht“ und „Fürst Nicholas Zverenhoff“: Lass sie in der Bank, das spart Taschenplätze.",
     ["You need it later for \"Aquementas\": keep it in the bank to free a bag slot."] =
         "Du brauchst es später für „Aquementas“: Lass es in der Bank, das spart einen Taschenplatz.",
+    -- Places of the hearthstone steps (`sethearth`): the town, as this language names it (an
+    -- inn's own name: its town).
+    ["Astranaar"] =
+        "Astranaar",
+    ["Auberdine"] =
+        "Auberdine",
+    ["Bloodhoof Village"] =
+        "Dorf der Bluthufe",
+    ["Booty Bay"] =
+        "Beutebucht",
+    ["Brill"] =
+        "Brill",
+    ["Camp Mojache"] =
+        "Camp Mojache",
+    ["Camp Taurajo"] =
+        "Camp Taurajo",
+    ["Cenarion Hold"] =
+        "Burg Cenarius",
+    ["Coriella Calmbreeze"] =
+        "Coriella Calmbreeze",
+    ["Darkshire"] =
+        "Dunkelhain",
+    ["Deepwater Tavern"] =
+        "Hafen von Menethil",
+    ["Dolanaar"] =
+        "Dolanaar",
+    ["Donaal Downbreeze"] =
+        "Donaal Downbreeze",
+    ["Everlook"] =
+        "Ewige Warte",
+    ["Feathermoon Stronghold"] =
+        "Mondfederfeste",
+    ["Freewind Post"] =
+        "Freiwindposten",
+    ["Gadgetzan"] =
+        "Gadgetzan",
+    ["Gallows' End Tavern"] =
+        "Brill",
+    ["Goldshire"] =
+        "Goldhain",
+    ["Grom'gol"] =
+        "Grom'gol",
+    ["Hammerfall"] =
+        "Hammerfall",
+    ["Ironforge"] =
+        "Eisenschmiede",
+    ["Kargath"] =
+        "Kargath",
+    ["Kharanos"] =
+        "Kharanos",
+    ["Lakeshire"] =
+        "Seenhain",
+    ["Light's Hope Chapel"] =
+        "Kapelle des Hoffnungsvollen Lichts",
+    ["Menethil Harbor"] =
+        "Hafen von Menethil",
+    ["Nijel's Point"] =
+        "Nijelspitze",
+    ["Orgrimmar"] =
+        "Orgrimmar",
+    ["Ratchet"] =
+        "Ratschet",
+    ["Razor Hill"] =
+        "Klingenhügel",
+    ["Revantusk Village"] =
+        "Dorf der Revantusk",
+    ["Sentinel Hill"] =
+        "Späherkuppe",
+    ["Shadowprey Village"] =
+        "Shadowprey Village",
+    ["Southshore"] =
+        "Süderstade",
+    ["Splintertree Post"] =
+        "Splitterholzposten",
+    ["Stonard"] =
+        "Steinard",
+    ["Stonetalon Peak"] =
+        "Steinkrallengipfel",
+    ["Stormwind City"] =
+        "Sturmwind",
+    ["Stoutlager Inn"] =
+        "Thelsamar",
+    ["Sun Rock Retreat"] =
+        "Sonnenfels",
+    ["Tarren Mill"] =
+        "Tarrens Mühle",
+    ["The Crossroads"] =
+        "Das Wegekreuz",
+    ["The Sepulcher"] =
+        "Das Grabmal",
+    ["Thelsamar"] =
+        "Thelsamar",
+    ["Theramore"] =
+        "Theramore",
+    ["Theramore Isle"] =
+        "Insel Theramore",
+    ["Thunder Bluff"] =
+        "Donnerfels",
+    ["Thunderbrew Distillery"] =
+        "Kharanos",
 }

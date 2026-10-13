@@ -45,6 +45,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h14-thousand-needles", {
         "Le PNJ se tient au plus haut niveau de ce bâtiment.",
     ["The NPC is indoors. You need them later for \"Martek the Exiled\" and \"Hemet Nesingwary\": keep them in the bank to free bag slots."] =
         "Le PNJ est à l'intérieur. Tu en auras besoin plus tard pour « Martek l'Exilé » et « Hemet Nesingwary » : garde-les à la banque pour libérer de la place dans tes sacs.",
+    ["Orgrimmar"] =
+        "Orgrimmar",
     ["The quest giver is in the Dormitory."] =
         "Le donneur de quête est dans le dortoir.",
     ["Escort Kernobee to the portal at the dungeon's mouth."] =

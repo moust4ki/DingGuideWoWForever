@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("zhCN", "alliance-33-hillsbrad", {
         "希尔斯布莱德丘陵 (32-34)",
     ["From Menethil, the road north crosses Thandol Span to the Foothills: Southshore is your base."] =
         "从米奈希尔港沿北边的道路跨过萨多尔大桥到丘陵：南海镇是据点。",
+    ["Southshore"] =
+        "南海镇",
     ["Finish the level on nearby monsters before moving on."] =
         "先在附近打怪升完这一级再继续。",
 })

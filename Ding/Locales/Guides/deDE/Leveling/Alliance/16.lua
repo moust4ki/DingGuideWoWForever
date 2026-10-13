@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a16-dustwallow-marsh-and-thousan
         "Düstermarschen: Insel Theramore, vor der Ostküste.",
     ["The NPC is indoors."] =
         "Der NPC ist drinnen.",
+    ["Theramore Isle"] =
+        "Insel Theramore",
     ["The NPC is indoors, one floor up."] =
         "Der NPC ist drinnen, ein Stockwerk höher.",
     ["The NPC is indoors. This quest is buggy and may not show up. If it is not around, move on without it."] =

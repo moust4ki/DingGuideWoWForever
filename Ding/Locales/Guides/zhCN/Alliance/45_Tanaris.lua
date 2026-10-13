@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("zhCN", "alliance-45-tanaris", {
         "塔纳利斯 (41-47)",
     ["Gadgetzan, in the north of Tanaris, is your base. Boat from Booty Bay to Ratchet, or fly from Theramore."] =
         "塔纳利斯北部的加基森是据点。从藏宝海湾坐船到棘齿城，或从塞拉摩飞过去。",
+    ["Gadgetzan"] =
+        "加基森",
     ["Finish the level on nearby monsters before moving on."] =
         "先在附近打怪升完这一级再继续。",
     ["If the starting item dropped: use it from your bags."] =

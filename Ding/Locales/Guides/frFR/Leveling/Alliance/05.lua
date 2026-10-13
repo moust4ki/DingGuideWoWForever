@@ -35,6 +35,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a05-darkshore", {
         "Tes cibles sont sous la surface de l'eau.",
     ["The targets are sea creatures with long necks. Your targets sit below the water's surface."] =
         "Les cibles sont des créatures marines au long cou. Tes cibles sont sous la surface de l'eau.",
+    ["Auberdine"] =
+        "Auberdine",
     ["Head to the hilltop."] =
         "Va au sommet de la colline.",
     ["The targets are imps. Avoid slaying the satyrs if you can. You'll need this for the following quest."] =
