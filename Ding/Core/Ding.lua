@@ -37,6 +37,7 @@ local DEFAULTS = {
     ui = { buttonStyle = "xbox", sound = true, welcomed = false, autoAccept = true, autoTurnin = true,
         skipGrey = false, hearth = true, deathSkip = false, dungeons = false, elites = false,
         chooseReward = false, sellGrey = true, repair = true, markTarget = true, serviceSteps = true,
+        offers = true,   -- beside an NPC's window, what the guide does with its quests (UI/Offers.lua)
         trainerSteps = true, flightSteps = true, autoEquip = false, autoFly = false },
     timings = {},
     imported = {},   -- [pack id] = { pack, guides, at }: guides imported as text (Import)

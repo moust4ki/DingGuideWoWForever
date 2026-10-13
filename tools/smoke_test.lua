@@ -941,6 +941,45 @@ ok, err = pcall(function()
 end)
 if not ok then problem("rewards: " .. tostring(err)) end
 
+-- Quests an NPC offers: beside its window, a quest of a later step ("step N") and one that is not
+-- for the character (a Horde quest); gone with the window, and never shown with the option off.
+ok, err = pcall(function()
+    local O = Ding.Offers
+    scenarioCharacter()
+    H.resetQuests()
+    E.turnedIn, Ding.char.manual = {}, {}
+    player.level = SCENARIO.minLevel
+    db.ui.autoAccept, db.ui.autoTurnin = false, false
+    E:SetGuide(SCENARIO.id, 1, true)
+    tick(3)
+    local later, step, horde = nil, nil, 96874
+    for i = #SCENARIO.steps, 2, -1 do
+        local accept = SCENARIO.steps[i].accept
+        if accept and Ding:StepApplies(SCENARIO.steps[i]) then
+            later, step = accept[1], i
+            break
+        end
+    end
+    H.talk({ gives = { later, horde } })
+    flush()
+    expect(O.frame and O.frame:IsShown() and #O.entries == 2, "offered quests: no panel beside the NPC window")
+    local rows = O.entries or {}
+    expect(rows[1] and rows[1].result.kind == "later" and rows[1].result.step == step,
+        "offered quests: a later step's quest not placed at its step")
+    expect(rows[2] and rows[2].result.kind == "none" and rows[2].result.reason == "class" and rows[2].text ~= "",
+        "offered quests: a quest for the other side not said so")
+    H.closeDialog()
+    expect(not O.frame:IsShown(), "offered quests: the panel stays once the window closed")
+    db.ui.offers = false
+    H.talk({ gives = { later } })
+    flush()
+    expect(not O.frame:IsShown(), "offered quests: shown with the option off")
+    H.closeDialog()
+    db.ui.offers = true
+    db.ui.autoAccept, db.ui.autoTurnin = true, true
+end)
+if not ok then problem("offered quests: " .. tostring(err)) end
+
 -- Targets and service options: every monster of the objective in the target macro (the
 -- arrow's last), a `train` step done by a spell learned, a `fly` step gone with its option.
 ok, err = pcall(function()

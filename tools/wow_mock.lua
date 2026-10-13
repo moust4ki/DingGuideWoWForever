@@ -1842,6 +1842,21 @@ return function(opts)
     -- What the player wears: H.equip(slot, item id or nil).
     function H.equip(slot, id) equipped[slot] = id end
     function H.clearEquipment() equipped = {} end
+    -- The game's NPC windows: the gossip, and the quest frame (greeting, details, progress,
+    -- reward), at the left panel's place. Ding only reads them (where they stand, whether they
+    -- are shown): any other method is missing, and writing a field fails.
+    local function npcWindow(kinds)
+        local left, top = 16, 652
+        return setmetatable({
+            IsVisible = function() return kinds[dialog.kind or ""] == true end,
+            GetLeft = function() return left end,
+            GetRight = function() return left + 338 end,
+            GetTop = function() return top end,
+            GetEffectiveScale = function() return 1 end,
+        }, { __newindex = function(_, key) error("Ding wrote " .. tostring(key) .. " on a game window", 2) end })
+    end
+    _G.GossipFrame = npcWindow({ gossip = true })
+    _G.QuestFrame = npcWindow({ greeting = true, detail = true, progress = true, complete = true })
     -- The quest window's reward buttons, like the client's (choices first).
     for i = 1, 6 do
         _G["QuestInfoRewardsFrameQuestInfoItem" .. i] = {

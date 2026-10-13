@@ -103,15 +103,20 @@ function E:ConditionsHold(when)
     return true
 end
 
+-- The setting that hides a step ("elites", "dungeons", "hearth"...), or nil.
+function Ding:StepOptionOff(step)
+    local ui = self.db and self.db.ui
+    if not ui then return nil end
+    for _, o in ipairs(STEP_OPTIONS) do
+        if step[o.key] and not ui[o.option] then return o.option end
+    end
+    if step.dungeon and not self:DungeonWanted(step.dungeon) then return "dungeons" end
+    return nil
+end
+
 function Ding:StepApplies(step)
     if not self:StepMatchesPlayer(step) then return false end
-    local ui = self.db and self.db.ui
-    if ui then
-        for _, o in ipairs(STEP_OPTIONS) do
-            if step[o.key] and not ui[o.option] then return false end
-        end
-        if step.dungeon and not self:DungeonWanted(step.dungeon) then return false end
-    end
+    if self:StepOptionOff(step) then return false end
     if step.when and not E:ConditionsHold(step.when) then return false end
     return true
 end

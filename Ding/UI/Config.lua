@@ -54,6 +54,7 @@ local function applyAllSettings()
         A:ApplyStyle()
         A.point = nil
     end
+    Ding.Offers:Apply()
     refreshAll()
 end
 
@@ -152,8 +153,8 @@ local TAB_SETTINGS = {
     guide = { { "panel", "shown" }, { "panel", "preview" } },
     route = { { "ui", "hearth" }, { "ui", "deathSkip" }, { "ui", "elites" }, { "ui", "dungeons" },
         { "ui", "dungeonChoice" }, { "ui", "trainerSteps" }, { "ui", "flightSteps" }, { "ui", "serviceSteps" } },
-    automation = { { "ui", "autoAccept" }, { "ui", "autoTurnin" }, { "ui", "chooseReward" }, { "ui", "skipGrey" },
-        { "ui", "sellGrey" }, { "ui", "repair" }, { "ui", "autoEquip" }, { "ui", "autoFly" } },
+    automation = { { "ui", "autoAccept" }, { "ui", "autoTurnin" }, { "ui", "offers" }, { "ui", "chooseReward" },
+        { "ui", "skipGrey" }, { "ui", "sellGrey" }, { "ui", "repair" }, { "ui", "autoEquip" }, { "ui", "autoFly" } },
     arrow = { { "arrow", "shown" }, { "arrow", "style" }, { "arrow", "size" }, { "arrow", "loop" },
         { "arrow", "worldMap" }, { "minimap", "pins" }, { "ui", "markTarget" }, { "arrow", "tomtom" },
         { "arrow", "mode" } },
@@ -495,6 +496,7 @@ local function automationRows(canvas, width)
         UI.HeaderRow(canvas, L.HEADER_QUESTS, width),
         check(L.AUTO_ACCEPT, "autoAccept"),
         check(L.AUTO_TURNIN, "autoTurnin"),
+        check(L.OPT_OFFERS, "offers", L.OPT_OFFERS_DESC, function() Ding.Offers:Apply() end),
         check(L.CHOOSE_REWARD, "chooseReward", L.CHOOSE_REWARD_DESC),
         check(L.SKIP_GREY, "skipGrey", L.SKIP_GREY_DESC, function() Ding.Engine:Update() end),
         UI.HeaderRow(canvas, L.HEADER_MERCHANT, width),

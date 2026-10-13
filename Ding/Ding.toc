@@ -63,6 +63,7 @@ UI\Gamepad.lua
 UI\Arrow.lua
 UI\TaxiMap.lua
 UI\Rewards.lua
+UI\Offers.lua
 UI\Finder.lua
 UI\ImportWindow.lua
 UI\TomTom.lua

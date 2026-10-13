@@ -426,6 +426,14 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
 - **Quest rewards** (not in the mockup): with several rewards to choose from, the same banner as
   on the flight map ("Best reward: [item] (an upgrade)") and an accent ring over the reward's
   button in the game's quest window (read only).
+- **Quests an NPC offers** (not in the mockup): a 260-wide Ding window (window look, strata
+  HIGH, no mouse), its top level with the game's NPC window and 8 to its right (to its left
+  when the screen has no room), else at 370, -116 from the top left. Title 12 SemiBold
+  "Ding! · Quests offered" (Ding! in `accent`, the dot in `text.disabled`), divider at 26; then
+  per quest, padding 12: "[level] name" 12 Medium `text` (orange `above` over the player's
+  level, one line), under it 16 lower what the guide does, 11 Regular, two lines at most:
+  `done` for now, `accent` for a later step, `text.secondary` for another section or a step
+  passed, `text.muted` for not in the guide; 6 between quests.
 - **TomTom**: optional and **off by default**; Ding's arrow is enough (Yendi's request); the
   old settings are migrated to Ding's arrow.
 - **Minimap button** (Yendi's request): left click opens the settings, right click the guide;
@@ -560,6 +568,9 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
 
 ## To check in game (Forever 1.60)
 
+- Quests an NPC offers: `GossipFrame` and `QuestFrame` (names, `GetLeft` / `GetRight` / `GetTop`)
+  with the gamepad interface on; the order of `GOSSIP_CLOSED` and `QUEST_DETAIL` when a quest
+  is picked from a gossip; no "AddOn blocked" popup while the window shows.
 - Loading of the kit's TGAs and of the Noto Sans fonts (`Font:SetFont` on a file of the
   addon); otherwise the game font takes over.
 - Sharp nine-slices at 100 % scale (corners of 6, 4, 3, 2), shadows and halos.
