@@ -489,11 +489,11 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   `bg.control`, radius 4): the name 12 Medium, under it 11 Regular `text.secondary` ("Buliwyf
   Stonehand · Ironforge · flight", or what an NPC offers), on the right the time 12 SemiBold
   accent ("8 min", "< 1 min") or, for a row that opens a list, a `text.secondary` right caret;
-  the inset focus ring of list rows, with the A chip before the time or the caret (gamepad). A row with nothing to
-  offer: its name `text.disabled`. Nine rows shown, then the wheel or the focus scrolls. Footer
-  28 high under a divider: with a gamepad, the plain text "Times by the fastest way: flights,
-  boats, hearthstone." (every action has its chip); without one, the mouse help ("Click: go ·
-  Right-click or Esc: close", "… : back" in a list).
+  the inset focus ring of list rows, with the A chip before the time or the caret (gamepad). A
+  row with nothing to offer: its name `text.disabled`. Nine rows shown, then the wheel or the
+  focus scrolls. Footer 28 high under a divider: with a gamepad, the plain text "Fastest way:
+  flights, boats, hearthstone." (every action has its chip); without one, the mouse help
+  ("Click: go · Right-click or Esc: close", "… : back" in a list).
 - **The guide window's directory button** (not in the mockup): a 20 × 20 icon button in the
   title bar, left of minimize (a map pin: an 8-unit `text.secondary` circle with a 3-unit
   `bg` dot, over a 7-unit downward caret); tooltip "NPC directory". In focus mode, up from the

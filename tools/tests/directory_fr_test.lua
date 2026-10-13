@@ -30,6 +30,12 @@ T.test("the window in French", function()
     T.eq(F.frame.tabs[2].label:GetText(), "Villes")
     T.eq(F.rows[1].label, "Marchand")
     T.ok(rowIndex("Maîtres d'armes") and rowIndex("Banque") and rowIndex("Maître des écuries"), "French categories")
+    -- The footer's text fits (gamepad), and the mouse help.
+    T.ok(F.frame.help.items[1].label:IsShown(), "the footer's text does not fit")
+    H.setGamepadConnected(false)
+    H.fire("GAME_PAD_DISCONNECTED"); H.flush()
+    T.ok(F.frame.help.items[1].label:IsShown(), "the mouse help does not fit")
+    H.setGamepadConnected(true)
     F:Close(); H.flush()
 end)
 
