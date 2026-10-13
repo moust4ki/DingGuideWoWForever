@@ -115,10 +115,31 @@ function Ding:StepOptionOff(step)
 end
 
 function Ding:StepApplies(step)
-    if not self:StepMatchesPlayer(step) then return false end
-    if self:StepOptionOff(step) then return false end
+    if not self:StepForCharacter(step) then return false end
     if step.when and not E:ConditionsHold(step.when) then return false end
     return true
+end
+
+-- A step for this character: its race, class and options (StepApplies without the `when`
+-- conditions, which come and go with quests and items). The steps the window numbers.
+function Ding:StepForCharacter(step)
+    return self:StepMatchesPlayer(step) and not self:StepOptionOff(step)
+end
+
+-- The number of step `index` among the character's steps of `guide` (the active one by
+-- default), and how many there are: "Step 18 / 74", never the guide file's index, which
+-- counts the steps of other races, classes and options (Yendi read 111 -> 114 as a jump).
+function E:StepNumber(index, guide)
+    guide = guide or self.guide
+    if not guide then return 0, 0 end
+    local n, total = 0, 0
+    for i, s in ipairs(guide.steps) do
+        if Ding:StepForCharacter(s) then
+            total = total + 1
+            if i <= index then n = n + 1 end
+        end
+    end
+    return math.max(n, math.min(1, total)), total
 end
 
 -- Dungeons the active guide and the sections of its pack name (`dungeon`), in their order.
@@ -779,7 +800,7 @@ function E:SetGuide(id, index, silent, resumeTo)
     self.guide = guide
     self.index = index or 1
     setResumeTo(resumeTo and resumeTo > self.index and resumeTo or nil)
-    self.skipNotes = nil
+    self.skipNotes, self.passNotes = nil, nil
     self.hold = false
     self.finished = false
     Ding.char.guide = id
@@ -837,11 +858,34 @@ function E:LeftBehind(step, index)
     return self.resumeTo ~= nil and index < self.resumeTo and logKnown() and not backlog(step)
 end
 
+-- Why the guide passed a step for the character by itself, in a word the window says
+-- (Panel, "Step passed: … — you are already there."): "there" (a trip whose place was
+-- reached), "trip" (nothing left where it leads), "ahead" (the player is past it: later
+-- progress), "marked" (done by hand before), "optional", "notneeded" (its conditions do
+-- not hold), "done" (the game shows its quests done).
+local SEEN = 2    -- seconds on a step before the window has shown it (its hold is 1.5 s)
+local function passReason(step, index)
+    if not Ding:StepApplies(step) then return "notneeded" end
+    if isManuallyDone(index) then return step.go and "there" or "marked" end
+    if step.optional and not questActionsDone(step) then return "optional" end
+    if travelOnly(step) and pointlessTrip(index, 0) then return "trip" end
+    if step.go or step.sethearth or step.train or step.hearth or step.fly or not hasAutoActions(step) then
+        return "ahead"
+    end
+    return "done"
+end
+
 -- Move forward over every finished step. Returns true if the step changed.
+-- E.skipNotes: the quests passed (grey, level too low); E.passNotes: the steps for the
+-- character the guide passed by itself in play, never shown ({ index, reason }): a number
+-- that jumps is never silent. Not the step on screen (the window keeps it 1.5 s, done), unless
+-- it had only just come; none while a guide is taken up (the first seconds after loading).
 function E:Advance()
     if self.hold or not self.guide then return false end
     local startGuide, startIndex = self.guide, self.index
-    local notes = {}
+    local notes, passed = {}, {}
+    local fresh = self.since ~= nil and GetTime() - self.since < SEEN
+    local tell = not self:IsResuming() and not wrappingUp()
     while true do
         local step = self.guide.steps[self.index]
         if not step then
@@ -858,7 +902,12 @@ function E:Advance()
                 break
             end
         elseif self:IsStepDone(step, self.index) then
+            local before = #notes
             if Ding:StepApplies(step) then skipNotes(step, notes) end
+            if tell and #notes == before and self.guide == startGuide and Ding:StepForCharacter(step)
+                and (self.index > startIndex or fresh) then
+                passed[#passed + 1] = { index = self.index, reason = passReason(step, self.index) }
+            end
             self.index = self.index + 1
         elseif self:LeftBehind(step, self.index) then
             self.index = self.index + 1
@@ -870,7 +919,7 @@ function E:Advance()
     if self.resumeTo and self.index >= self.resumeTo then setResumeTo(nil) end
     saveStep(self.index)
     local moved = startGuide ~= self.guide or startIndex ~= self.index
-    if moved then self.skipNotes = notes end
+    if moved then self.skipNotes, self.passNotes, self.since = notes, passed, GetTime() end
     return moved
 end
 
@@ -899,7 +948,7 @@ function E:BrowseTo(index)
     endTrip()
     Ding.Timing:Cancel()
     self.browseFrom = current
-    self.index, self.hold, self.finished, self.skipNotes = index, true, false, nil
+    self.index, self.hold, self.finished, self.skipNotes, self.passNotes = index, true, false, nil, nil
     saveStep(index)
     self:Refresh()
     return true
@@ -909,7 +958,7 @@ end
 local function browseNext()
     local steps, i = E.guide.steps, E.index + 1
     while i < E.browseFrom and not Ding:StepApplies(steps[i]) do i = i + 1 end
-    E.index, E.skipNotes = i, nil
+    E.index, E.skipNotes, E.passNotes = i, nil, nil
     if i >= E.browseFrom then
         -- The guide's current step again: it goes on as before (done meanwhile, it moves on).
         E.index, E.browseFrom, E.hold = E.browseFrom, nil, false
@@ -947,7 +996,8 @@ function E:MarkDone()
         setSkipped(self.index, false)
         self.index = self.index + 1
     end
-    self.hold = false
+    -- The step it comes to was never on screen: passed at once, the window says so.
+    self.hold, self.since, self.skipNotes, self.passNotes = false, GetTime(), nil, nil
     self:Advance()
     Ding.Timing:Start(self.guide.id, self.index)
     self:Refresh()
@@ -966,7 +1016,7 @@ function E:Skip()
     local step = self.guide.steps[self.index]
     if step and not self:IsStepDone(step, self.index) then setSkipped(self.index, true) end
     self.index = self.index + 1
-    self.hold = false
+    self.hold, self.since, self.skipNotes, self.passNotes = false, GetTime(), nil, nil
     self:Advance()
     Ding.Timing:Start(self.guide.id, self.index)
     self:Refresh()
@@ -1034,7 +1084,7 @@ function E:Prev()
         self.index = self.index - 1
     end
     -- The step keeps how the player left it (marked done, skipped): the window shows it.
-    self.skipNotes = nil
+    self.skipNotes, self.passNotes = nil, nil
     self.hold = true
     self.finished = false
     saveStep(self.index)

@@ -333,8 +333,20 @@ keys of section 2 above.
   Only on a leveling route: a guide of a pack of another category (items, reputations,
   professions, class; `Engine:KeepsGrey(guide)`) is followed for its reward and keeps them.
 - **Skip reason**: under the current step, the panel says why the guide just passed steps
-  without the player: "Skipped: … (gray quest)", "For later: … (level N required)"; two lines
-  at most, then "and N more".
+  without the player: "Skipped: … (gray quest)", "For later: … (level N required)"; and every
+  step for the character it passed by itself in play, never shown (`Engine.passNotes`): "Step
+  passed: “Climb the trail” — you are already there." (a trip whose place was reached), "…
+  — nothing is left to do there", "— you are already further on", "— already done", "—
+  marked as done by hand", "— optional", "— it does not concern you now"; two lines at most,
+  then "and N more", until the guide moves again. Not the step that was on screen (kept 1.5 s
+  in green), unless it had only just come; none in the first seconds after a guide is loaded.
+  In game (13/10/2026), the Wetlands' 30 -> 32 (the trail climbed already) went by without a
+  word and read as a jump.
+- **Step numbers**: the window ("Step 18 / 74"), the minimized window ("18/74"), "Go to step N"
+  and its chat line, and the NPC quests panel ("step N") number the character's steps only
+  (`Engine:StepNumber`, `Ding:StepForCharacter`: its race, class and options, not the `when`
+  conditions), never the guide file's index, which counted other classes' steps (Yendi read
+  111 -> 114 as a jump). The import and export reports, for guide authors, keep the file's.
 - An optional step is passed as soon as a later step makes progress, or right away if its
   quest was never accepted (starting item never dropped).
 - After "Previous", the engine stays on the displayed step until "Next". **Browsing is one

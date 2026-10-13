@@ -568,7 +568,7 @@ function P:Jump()
     local E = Ding.Engine
     local behind = E.guide and offer.guide == E.guide.id and E:BrowseTo(offer.index)
     if behind or E:SetGuide(offer.guide, offer.index, true) then
-        Ding:Print(L.FIND_JUMPED:format(offer.index, E.guide.title))
+        Ding:Print(L.FIND_JUMPED:format(E:StepNumber(offer.index), E.guide.title))
     end
     if self.focusing then self.focusIndex = 1 end
     self:Update()
@@ -752,11 +752,11 @@ local function hideQuest(owner)
     if GameTooltip:GetOwner() == owner then GameTooltip:Hide() end
 end
 
--- Step shown and total: the held step while it stays on screen.
+-- Step shown and total, among the character's steps (Engine:StepNumber): the held step while
+-- it stays on screen.
 local function progress(E, held)
-    local total = #E.guide.steps
-    if held then return held.index, total end
-    return E.finished and total or math.min(E.index, total), total
+    if held then return E:StepNumber(held.index, held.guide) end
+    return E:StepNumber(E.finished and #E.guide.steps or E.index)
 end
 
 -- The minimized window keeps one line (design): hovering it shows that row whole, with its
@@ -1322,8 +1322,7 @@ end
 -- Why the guide just passed steps the player did not do (grey quests, level too low).
 local MAX_SKIP_LINES = 2
 local function skippedLines(E, content)
-    local notes = E.skipNotes
-    if not notes or #notes == 0 then return end
+    local notes = E.skipNotes or {}
     for i = 1, math.min(#notes, MAX_SKIP_LINES) do
         local note = notes[i]
         local name = Ding.Data:QuestName(note.quest)
@@ -1333,6 +1332,19 @@ local function skippedLines(E, content)
     end
     if #notes > MAX_SKIP_LINES then
         content[#content + 1] = { action = "notice", notice = "skipped", text = UI.More(#notes - MAX_SKIP_LINES) }
+    end
+    -- The steps the guide passed by itself, never shown: a number that jumps says why.
+    local passed = E.passNotes
+    if not passed or #passed == 0 then return end
+    for i = 1, math.min(#passed, MAX_SKIP_LINES) do
+        local p = passed[i]
+        local step = E.guide.steps[p.index]
+        local title = step and UI.StripColors(E:Summary(step)) or "?"
+        content[#content + 1] = { action = "notice", notice = "skipped",
+            text = L.PASSED_STEP:format(L.QUOTE:format(title), L["PASSED_" .. p.reason:upper()] or "") }
+    end
+    if #passed > MAX_SKIP_LINES then
+        content[#content + 1] = { action = "notice", notice = "skipped", text = UI.More(#passed - MAX_SKIP_LINES) }
     end
 end
 
@@ -1457,7 +1469,7 @@ function P:Extras(step, content)
         local pad = Ding.Gamepad:Active()
         local g = Ding:GetGuide(offer.guide)
         content[#content + 1] = { action = "jump", quest = offer.quest,
-            text = L.FIND_JUMP:format(offer.index, g and g.title or offer.guide),
+            text = L.FIND_JUMP:format(E:StepNumber(offer.index, g), g and g.title or offer.guide),
             sub = L["FIND_" .. offer.action:upper()]:format(Ding.Data:QuestName(offer.quest) or "?") .. " · "
                 .. (pad and L.FIND_JUMP_PAD:format(Ding.Gamepad:ButtonName("PAD1")) or L.FIND_JUMP_MOUSE) }
     end

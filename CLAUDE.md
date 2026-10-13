@@ -201,6 +201,10 @@ Contracts between modules:
   `Engine:BrowseTo(index)` for "Go to step" behind), `Engine:Skip()` (without validating),
   `Engine:BackToIncomplete()` (nearest past step not done), `Engine:CatchUp(q, step)`
   (missing link of the chain of `q`), `Engine.skipNotes` (reasons of the last skip),
+  `Engine.passNotes` (`{ index, reason }`: steps passed by itself in play, never shown; the
+  window's "Step passed: …"), `Engine:StepNumber(index[, guide])` -> number, total among the
+  character's steps (`Ding:StepForCharacter`: race, class, options, without `when`): every
+  step number the player sees,
   `Engine:StepMark(index)` -> "manual" | "skipped" | nil (step marked done or skipped by
   hand: colors `C.manual` / `C.skipped` in the window), `Engine:Unmark([index])` (undoes it: back
   to that step when it is still to do). `Travel:Leg(point)` -> nil (walk) or
