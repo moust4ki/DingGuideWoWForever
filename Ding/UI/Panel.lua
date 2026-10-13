@@ -33,7 +33,18 @@ local STATES = {
     skipped = { row = C.skippedRowBg, icon = C.skippedIconBg, glyph = C.skipped, text = C.text, counter = C.skipped },
     -- A step further on (preview of the next steps): dimmed, no background.
     preview = { icon = C.impossibleIconBg, glyph = C.disabled, text = C.muted, counter = C.disabled },
+    -- A quest above its objectives (its level and name): no background nor icon.
+    header = { text = C.secondary, counter = C.secondary },
+    -- A notice for the whole window (travel, bags, quest log): a box of its own, no icon.
+    notice = { row = C.subtle, text = C.secondary, counter = C.secondary },
 }
+-- Rows without an icon: their text starts where the icons do.
+local ICONLESS = { header = true, notice = true }
+-- Text of a row: weight, size, lines at most. A quest's header in SemiBold; a notice like
+-- an info line, 11 Regular on up to three lines (the narrowest window is 240 wide).
+local TEXT_STYLE = { "regular", 12, 2 }
+local TEXT_STYLES = { header = { "semibold", 12, 2 }, notice = { "regular", 11, 3 } }
+local INDENT = 8             -- objectives under their quest's header
 
 local function clamp(v, low, high) return math.max(low, math.min(high, v)) end
 
@@ -45,20 +56,21 @@ end
 local function link(s) return UI.Colored("accent", s) end
 local function quoted(q) return L.QUOTE:format(Ding.Data:QuestName(q)) end
 
--- A quest above the player's level is shown, never held back (Yendi): its name in orange,
--- with its level. `plain`: the name without the blue of a link otherwise (sub-lines).
-local function questName(q, plain)
+-- The quest with its level first, "[29] “Name”" (the name alone when the level is unknown).
+-- `color`: the name only, in that color.
+local function leveledName(q, color)
     local level = Ding.Data:QuestLevel(q)
-    if level > 0 and level > UnitLevel("player") then
-        return UI.Colored("above", quoted(q) .. " · " .. L.QUEST_LEVEL:format(level))
-    end
-    return plain and quoted(q) or link(quoted(q))
+    local name = color and UI.Colored(color, quoted(q)) or quoted(q)
+    return level > 0 and L.QUEST_WITH_LEVEL:format(level, name) or name
 end
 
--- The quest with its level first, "[29] “Name”" (the next steps' preview).
-local function leveledName(q)
+-- A quest named in the window, with its level: "[29] “Name”", the name as a link. A quest
+-- above the player's level is shown, never held back (Yendi): all of it in orange. `plain`:
+-- the name without the blue of a link otherwise (sub-lines).
+local function questName(q, plain)
     local level = Ding.Data:QuestLevel(q)
-    return level > 0 and L.QUEST_WITH_LEVEL:format(level, quoted(q)) or quoted(q)
+    if level > 0 and level > UnitLevel("player") then return UI.Colored("above", leveledName(q)) end
+    return leveledName(q, not plain and "accent" or nil)
 end
 
 ---------------------------------------------------------------------------
@@ -262,11 +274,41 @@ local function previewRow(step)
     return row
 end
 
--- Rows of the step on screen, with the guide's notes and Ding's hints as sub-lines.
+-- Notices shown right under the step (its way there, why steps were passed); the others
+-- (bags, quest log) come after the rows of the step's surroundings.
+local NOTICE_FIRST = { travel = true, trip = true, skipped = true }
+
+-- Notice lines of P:Content as rows, one box per kind: its first line, the others under it.
+-- The quest log's notice opens the settings' cleanup page (A or a click).
+local function noticeRows(lines)
+    local first, last, byKind = {}, {}, {}
+    for _, line in ipairs(lines) do
+        local row = byKind[line.notice]
+        if row then
+            row.sub = row.sub and (row.sub .. "\n" .. line.text) or line.text
+        else
+            row = { action = "notice", notice = line.notice, kind = "notice", state = "notice", text = line.text }
+            byKind[line.notice] = row
+            local list = NOTICE_FIRST[line.notice] and first or last
+            list[#list + 1] = row
+        end
+    end
+    local cleanup = byKind.cleanup
+    if cleanup then
+        local open = Ding.Gamepad:Active() and L.NOTICE_OPEN_PAD:format(Ding.Gamepad:ButtonName("PAD1"))
+            or L.NOTICE_OPEN_MOUSE
+        cleanup.sub = cleanup.sub and (cleanup.sub .. "\n" .. open) or open
+    end
+    return first, last
+end
+
+-- Rows of the step on screen: each quest's objectives under a header with its level and
+-- name, the guide's notes and Ding's hints as sub-lines, then the notices for the whole
+-- window in boxes of their own.
 function P:Rows(content)
     content = content or self:Content()
     local itemID, itemQuest = Ding.ItemButton:Wanted()
-    local rows, notes, hints, along, extra, preview = {}, {}, {}, {}, {}, {}
+    local rows, notes, hints, along, extra, preview, notices = {}, {}, {}, {}, {}, {}, {}
     for _, line in ipairs(content) do
         if line.indent then
             -- Objectives are listed from the quest log below; notes and hints become sub-lines.
@@ -275,6 +317,8 @@ function P:Rows(content)
             elseif line.kind == "hint" then
                 hints[#hints + 1] = line.text
             end
+        elseif line.action == "notice" then
+            notices[#notices + 1] = line
         elseif line.action == "along" then
             along[#along + 1] = line
         elseif line.action == "service" or line.action == "gear" or line.action == "talent" or line.action == "wrapup"
@@ -284,6 +328,7 @@ function P:Rows(content)
             preview[#preview + 1] = line
         elseif line.action == "complete" and line.quest and not line.impossible then
             local list = objectiveRows(line.quest, itemID, itemQuest, line.done)
+            for _, row in ipairs(list) do row.prequestOf = line.prequestOf end
             if #list == 0 then list = { questRow(line) } end
             for _, row in ipairs(list) do rows[#rows + 1] = row end
         else
@@ -291,21 +336,30 @@ function P:Rows(content)
         end
     end
     if #rows == 0 then return rows end
-    -- Objectives say which quest they are for, unless a row of the step names it already.
-    local named, seen = {}, {}
+    -- Objectives under a header naming their quest, unless a row of the step names it already.
+    local named, headed, grouped = {}, {}, {}
     for _, row in ipairs(rows) do
         if row.quest and row.action ~= "objective" then named[row.quest] = true end
     end
     for _, row in ipairs(rows) do
         local q = row.quest
-        if q and row.action == "objective" and not named[q] and not seen[q] then
-            seen[q] = true
-            row.sub = L.FOR_QUEST:format(questName(q, true))
+        if q and row.action == "objective" and not named[q] then
+            if not headed[q] then
+                headed[q] = true
+                local text = questName(q)
+                if row.prequestOf then
+                    text = text .. UI.Colored("secondary", " · " .. L.PREQUEST_OF:format(Ding.Data:QuestName(row.prequestOf)))
+                end
+                grouped[#grouped + 1] = { action = "header", quest = q, kind = "header", state = "header", text = text }
+            end
+            row.nested = true
         end
+        grouped[#grouped + 1] = row
     end
+    rows = grouped
     -- A target in another zone: its zone (and its NPC) after the row's text.
     for _, row in ipairs(rows) do
-        if row.state ~= "done" and row.action ~= "level" then
+        if row.state ~= "done" and row.action ~= "level" and row.action ~= "header" then
             local where = self:Where(row)
             if where then row.text = row.text .. UI.Colored("secondary", " — " .. where) end
         end
@@ -328,6 +382,8 @@ function P:Rows(content)
             if row.state == "todo" or row.state == "impossible" then row.state = content.mark end
         end
     end
+    local firstNotices, lastNotices = noticeRows(notices)
+    for _, row in ipairs(firstNotices) do rows[#rows + 1] = row end
     -- Along the way: objectives of other quests right around the player, after the step;
     -- the persistent ones ("Still to do") wherever the player is.
     local lastQuest, lastGroup
@@ -351,6 +407,7 @@ function P:Rows(content)
         row.extra = true
         rows[#rows + 1] = row
     end
+    for _, row in ipairs(lastNotices) do rows[#rows + 1] = row end
     -- The next steps, dimmed (option): what the step after this one will ask.
     for _, line in ipairs(preview) do
         rows[#rows + 1] = previewRow(line.step)
@@ -399,7 +456,7 @@ function P:CycleTarget()
     local E, stops = Ding.Engine, {}
     for i, row in ipairs(self.rowsShown or {}) do
         if not (row.preview or row.along or row.sticky) and row.action ~= "wrapup" and row.action ~= "service"
-            and row.action ~= "gear" then
+            and row.action ~= "gear" and row.action ~= "header" and row.action ~= "notice" then
             local points = self:PointsOf(row)
             if #points > 0 then stops[#stops + 1] = { index = i, points = points } end
         end
@@ -475,6 +532,11 @@ function P:Aim(row)
     if row and row.action == "service" then return Ding.Finder:Go(row.service) end
     if row and row.action == "wrapup" then return Ding.Engine:WrapUp(row.wrap) end
     if row and row.action == "preview" then return end
+    -- A notice: the quest log's opens the settings' cleanup page, the others only inform.
+    if row and row.action == "notice" then
+        if row.notice == "cleanup" then Ding.Config:OpenCleanup() end
+        return
+    end
     if row and row.action == "gear" then return end
     if row and row.action == "jump" then return self:Jump() end
     -- A talent suggestion: the first press asks to confirm, the second learns it.
@@ -1018,14 +1080,16 @@ local function skippedLines(E, content)
         local name = Ding.Data:QuestName(note.quest)
         local text = note.reason == "grey" and L.SKIPPED_GREY:format(name)
             or L.SKIPPED_LEVEL:format(name, Ding.Data:QuestRequiredLevel(note.quest))
-        content[#content + 1] = { indent = true, kind = "hint", text = text }
+        content[#content + 1] = { action = "notice", notice = "skipped", text = text }
     end
     if #notes > MAX_SKIP_LINES then
-        content[#content + 1] = { indent = true, kind = "hint", text = L.SKIPPED_MORE:format(#notes - MAX_SKIP_LINES) }
+        content[#content + 1] = { action = "notice", notice = "skipped", text = L.SKIPPED_MORE:format(#notes - MAX_SKIP_LINES) }
     end
 end
 
--- Lines of the step on screen (Engine:Describe), or the no-guide / end-of-guide messages.
+-- Lines of the step on screen (Engine:Describe) and the notices for the whole window
+-- (`action = "notice"`: travel, passed steps, bags, quest log), or the no-guide /
+-- end-of-guide messages.
 function P:Content()
     local E = Ding.Engine
     if not E.guide then
@@ -1052,19 +1116,19 @@ function P:Content()
     -- Bags almost full (Core/Merchant.lua).
     local free = not held and Ding.Merchant and Ding.Merchant:BagWarning()
     if Ding.Merchant then Ding.Merchant.shownWarning = free or nil end
-    if free then content[#content + 1] = { indent = true, kind = "hint", text = L.BAGS_ALMOST_FULL:format(free) } end
+    if free then content[#content + 1] = { action = "notice", notice = "bags", text = L.BAGS_ALMOST_FULL:format(free) } end
     if not held then skippedLines(E, content) end
     -- The way there when walking is not the fastest (Core/Travel.lua, through the arrow).
     if not held and Ding.Arrow and Ding.Arrow.hint then
-        content[#content + 1] = { indent = true, kind = "hint", text = Ding.Arrow.hint }
+        content[#content + 1] = { action = "notice", notice = "travel", text = Ding.Arrow.hint }
         -- The whole way, leg by leg, with its total time.
         local route = Ding.Travel:Itinerary(Ding.Travel.plan)
-        if route then content[#content + 1] = { indent = true, kind = "hint", text = route } end
+        if route then content[#content + 1] = { action = "notice", notice = "travel", text = route } end
     end
     -- A log almost full, with quests the guide never uses: they can go (Guide tab).
     if not held and Compat.NumQuestsInLog() >= LOG_ALMOST_FULL then
         local unused = #E:UnusedLogQuests()
-        if unused > 0 then content[#content + 1] = { indent = true, kind = "hint", text = L.CLEANUP_HINT:format(unused) } end
+        if unused > 0 then content[#content + 1] = { action = "notice", notice = "cleanup", text = L.CLEANUP_HINT:format(unused) } end
     end
     local mark = not held and E:StepMark() or nil
     if mark then
@@ -1094,7 +1158,7 @@ end
 function P:Extras(step, content)
     local trip = Ding.Finder and Ding.Finder.trip
     if trip then
-        content[#content + 1] = { indent = true, kind = "hint",
+        content[#content + 1] = { action = "notice", notice = "trip",
             text = L.FINDER_TRIP:format(trip.name or "?", Ding.Finder:Label(trip.kind)) }
     end
     local due = Ding.Training and not (step and step.train) and Ding.Training:Due()
@@ -1225,8 +1289,11 @@ local function layoutRow(f, i, data, y, width)
     r.data = data
     local focused = P.focusing and P.focusIndex == i
     local look = STATES[data.state] or STATES.todo
+    -- Objectives under their quest's header are indented.
+    local indent = data.nested and INDENT or 0
+    width = width - indent
     r:ClearAllPoints()
-    r:SetPoint("TOPLEFT", f, "TOPLEFT", LIST_PAD, y)
+    r:SetPoint("TOPLEFT", f, "TOPLEFT", LIST_PAD + indent, y)
     r:SetWidth(width)
     if look.row then
         r.bg:SetColor(look.row)
@@ -1235,7 +1302,18 @@ local function layoutRow(f, i, data, y, width)
         r.bg:Hide()
     end
     r.focus:SetShown(focused)
-    setIcon(r.icon, data, look)
+    local iconless = ICONLESS[data.state]
+    r.icon:SetShown(not iconless)
+    if not iconless then setIcon(r.icon, data, look) end
+    local textX = iconless and ROW_PAD_X or (ROW_PAD_X + ICON + ROW_GAP_X)
+    r.text:ClearAllPoints()
+    r.text:SetPoint("TOPLEFT", r, "TOPLEFT", textX, -ROW_PAD_Y)
+    local style = TEXT_STYLES[data.state] or TEXT_STYLE
+    if r.style ~= style then
+        r.style = style
+        r.text:SetFontObject(UI.Font(style[1], style[2]))
+        UI.Wrap(r.text, style[2], style[3])
+    end
 
     local counterWidth = 0
     if data.counter and data.state ~= "impossible" then
@@ -1247,7 +1325,7 @@ local function layoutRow(f, i, data, y, width)
     else
         r.counter:Hide()
     end
-    local textWidth = width - ROW_PAD_X * 2 - ICON - ROW_GAP_X - (counterWidth > 0 and counterWidth + ROW_GAP_X or 0)
+    local textWidth = width - textX - ROW_PAD_X - (counterWidth > 0 and counterWidth + ROW_GAP_X or 0)
     r.text:SetWidth(textWidth)
     local text = data.text or ""
     if data.state == "impossible" or data.state == "preview" then text = UI.StripColors(text) end
@@ -1262,7 +1340,11 @@ local function layoutRow(f, i, data, y, width)
     else
         r.sub:Hide()
     end
-    height = ROW_PAD_Y * 2 + math.max(ICON, height)
+    if data.state == "header" then
+        height = ROW_PAD_Y + height          -- its objectives follow right under it
+    else
+        height = ROW_PAD_Y * 2 + (iconless and height or math.max(ICON, height))
+    end
     r:SetHeight(height)
     r:Show()
     return height

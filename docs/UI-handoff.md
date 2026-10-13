@@ -457,8 +457,12 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   off) it fades out during the hunt and comes back on leaving.
 - **Death** (Yendi's feedback): a ghost is led to its corpse ("Your corpse", arrival at 30 m),
   then the arrow goes back to the guide.
-- **Quest of an objective** (Yendi's feedback): under the first objective of a quest, the
-  sub-line "For “quest”" when no row of the step names it. Hovering or clicking a row (X in
+- **Quest of an objective** (Yendi's feedback): a header row above a quest's objectives, its
+  level and name "[22] “quest”" in 12 SemiBold (the level `text.secondary`, the name a link, or
+  all of it in `above` orange over the player's level), no icon nor background, text at the
+  icons' x, padding 4 above and none below; its objectives indented by 8. No header when a row
+  of the step names the quest; a quest is named with its level everywhere in the window
+  ("Accept [22] “quest”"). Hovering or clicking a row (X in
   focus mode): the quest's card in a tooltip (name, level, objectives and counters); clicking
   also sends the arrow there. Ding **never opens the game's quest log** or any Blizzard
   window: called from an addon, they are tainted and, on Forever, their secret values fail en
@@ -468,9 +472,8 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
 
 - **Travel** (not in the mockup): the arrow's label line 1 says what to take ("Fly to …",
   "Try to fly to …" from a flight master never seen, "Take the boat to …", "Hearthstone to …",
-  "Teleport to …") when walking is not the fastest; the window repeats it as a hint under the
-  step, then the itinerary as a second hint ("Route: walk 1:20, fly 6:30 (8:30 in all)", same
-  style). For a teleport, the item button shows the spell (its icon, name and cooldown, like
+  "Teleport to …") when walking is not the fastest; the window repeats it in a notice under
+  the step, the itinerary under it ("Route: walk 1:20, fly 6:30 (8:30 in all)"). For a teleport, the item button shows the spell (its icon, name and cooldown, like
   an item). On the game's flight map, a 300 × 32 Ding banner (window look,
   13 SemiBold, the destination in the accent color) at the top of the screen and a 34 px accent
   ring over the destination node, placed where the game's node button stands (read only).
@@ -515,11 +518,17 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
     12 Regular `text.secondary` ("More options" / "Fewer options"; "Advanced" in Appearance);
     A or a click.
   - **"Defaults for this tab"**: a button row (confirmed) at the end of every tab but Keybinds.
-  - Footer: on a page, `B Back` stays the last-but-one hint; the mouse help says "Click: change
-    · Right-click or Esc: back".
+  - Footer: on a page, B goes back: its chip sits on the page's title (below, "Each action
+    once"); the mouse help says "Click: change · Right-click or Esc: back".
 - **Step language 2** (not in the mockup): the dungeons' page of the Route tab (above); the
   arrow's label on a patrol, "text · point 2 of 5"; as a ghost on a death skip with a spirit
   healer, "Spirit healer".
+- **Notices** (not in the mockup): what concerns the whole window (the way there, a trip to a
+  service, steps passed, bags almost full, quest log almost full) is a box of its own instead of
+  a sub-line of the last row: row background `#FFFFFF0A` (`subtle`), radius 4, no icon, text
+  11/14 Regular `text.secondary` at the icons' x on up to three lines, the other lines of the
+  same notice as its sub-line. The quest log's one adds "A: see the list" (mouse: "Click: see the
+  list") and opens the settings on the cleanup page.
 - **New continent** (not in the mockup): an ordinary "other" row under the step, "New continent:
   talk to … (flight master) to learn its flight paths".
 - **Persistent objectives, wrap-up, preview** (not in the mockup): sticky objectives are along-the-way
@@ -539,8 +548,10 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   game's chat still has the keyboard), the report in a second box
   (104 high, 11 Regular `text.secondary`, read-only, hidden when empty), buttons at the bottom
   right (26 high, radius 4, 12 Medium, the first one `accent` with `onAccent` text; focus: outer
-  ring and halo, gamepad only), the hint bar at the bottom left (A the focused button, Y
-  Select for Ctrl+C, B Close; without a gamepad "Ctrl+V: paste · Esc: close"). The Guide tab:
+  ring and halo, gamepad only; A on the focused one, B on the one that closes, Y on "Select
+  all"), the hint bar at the bottom left (`Y Select for Ctrl+C` while no button selects;
+  without a gamepad "Ctrl+V: paste · Esc: close"), on a line of its own above the buttons, the
+  window 30 higher, when it does not fit beside them. The Guide tab:
   a header "Guides as text" and a page row "Import and export" (value "None" / "2 imported");
   its page: "Import a guide", "Export the active guide" (button rows), a header "Imported
   guides", one button row per imported guide ("Delete", confirmed; its steps, category and id
@@ -552,11 +563,45 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   `text.secondary` 8 in (no check column), never focused nor picked; the D-pad, a page jump
   and the mouse pass over it. Opening the list scrolls a header into view with the first item
   under it.
+- **Quest monster mark** (not in the mockup, `UI/QuestMobs.lua`): over an enemy nameplate,
+  bottom centered on the plate's top, 2 up; 18 high, the "small" shape (radius 3) in
+  `itemBg` with a 1.5 border; the glyph of the window's rows (diamond 7 for a kill, dot 7 for
+  a drop, "!" / "?" 12 Bold for a quest giver or a turn-in) 5 + 4 in from the left, then the
+  counter 11 SemiBold 4 after an 8 glyph column, 6 at the right; without a counter, an 18
+  square with the glyph centered. Current step: glyph and border `accent`, counter `text`;
+  another quest: glyph and counter `text.secondary`, border `border`, the mark at 80 %. In
+  the unit tooltip, one line per objective: "Ding!" in `accent`, then " · “Quest” 3/8" in
+  `text` (the step's) or `text.secondary` (another quest's).
 - **Target line** (not in the mockup): under the arrow's distance, gap 2, a glyph chip of the
   target binding then "Target: name" in 11 Regular `#A3A9B3` with the text shadow; only when
   that binding is bound and the arrow points to an NPC or a monster. In the Keybinds tab, an
   info row under the bindings (11 Regular `text.secondary`) suggests the game's "Interact with
   Target" key.
+- **Each action once** (Yendi, in game: "the gamepad interface and the mouse interface coexist,
+  so I get duplicate buttons": `A Import` in the hint bar next to the Import button). With a
+  gamepad, a button carries the chips of the gamepad buttons that press it, and the hint bar
+  keeps only what no button on screen does; without one, the buttons alone and the mouse help
+  (no chip anywhere). Switching (a gamepad plugged in or out) updates an open window.
+  - **Chips on a button** (`UI.ButtonKeys`): the 14-high chips before the label, 6 between the
+    last chip and the label, 3 between chips, chips and label centered together. On a
+    `bg.control` button the hint bar's colors; on an `accent` button a dark disc
+    (`glyphOnAccent`, `#0B0C0E33`) and the `onAccent` letter. A button keeps room for every
+    chip it can carry, so that it does not grow when the focus comes to it.
+  - **Import window**: A on the focused button, B on Cancel / Close (A and B on it when it has
+    the focus), Y on "Select all" (export); the hint bar keeps `Y Select for Ctrl+C` (import)
+    or nothing (export).
+  - **Settings**: the footer no longer shows `B Back` nor `LB RB Tabs` (screen 03's footer):
+    the round B chip of the title bar and the LB / RB chips of the tabs say it, and show only
+    while those buttons do that (not while the guide list is open, a button is awaited or a
+    binding conflict asks). On a page the B chip moves from the title bar to the page's title
+    (between the caret and the name). The focused check row shows A in its corner (screen
+    03), the focused button row A on its button: their footer is empty. A confirmation: the
+    button says "Confirm? (A)", the footer `B Cancel` only. Other rows keep their footer (`A
+    Open`, `◂ ▸ Adjust`, `Y Reset`, `A Bind` · `Y Unbind`…).
+  - **Move mode plate**: Save (A), Cancel (B) and Reset (Y) buttons with their chips; the
+    hints keep `◂▴▾▸ Move` and `LB RB Step 1 / 20`.
+  - Nearby services and the guide's focus mode have no button doing what a hint says: they do
+    not change.
 
 ## To check in game (Forever 1.60)
 
@@ -577,6 +622,11 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   the API and with TomTom: TomTom's pin, no TomTom arrow.
 - Zone names: localized zone names (`C_Map.GetMapInfo`), a dungeon or a city's sub-map named by
   its zone, nothing when the target is in your zone.
+- Quest monster marks: `NAME_PLATE_UNIT_ADDED` / `C_NamePlate.GetNamePlateForUnit`, the mark
+  above the plate (its size and place at every plate scale, over the name), the counter after
+  a kill, in combat (a GUID kept secret?); the tooltip line (`TooltipDataProcessor` or
+  `OnTooltipSetUnit`) inside the tooltip's background; `nameplateMaxDistance`: the distance the
+  client keeps (the chat says it) and the value back once off.
 - Teleports on the item button (`type` "spell", the spell's name): the cast, its icon and
   cooldown; `C_Spell.GetSpellName` / `GetSpellInfo`, `IsSpellKnown`.
 - Automatic flight (option on): `TakeTaxiNode(index)` from an addon when the flight map opens,

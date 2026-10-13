@@ -73,6 +73,10 @@ Ding/
                     protected frame)
     Minimap.lua     Ding.Minimap: button around the minimap (settings, guide)
     MinimapPins.lua Ding.MinimapPins: the target, nearby spots and an edge arrow on the minimap
+    QuestMobs.lua   Ding.QuestMobs: a mark of Ding's over the enemy nameplates of the monsters a
+                    log quest needs (kill, drop) with the counter, the step's quest givers on
+                    friendly plates, a line in the unit tooltip (hooked), enemy nameplates
+                    farther (nameplateMaxDistance)
     Config.lua      Ding.Config: settings window, six tabs by intent (Config.TAB keys: guide,
                     route, automation, arrow, bindings, appearance), titled blocks, pages for
                     long lists (OpenPage), folded rows, "Defaults for this tab"; first launch
@@ -133,9 +137,13 @@ Contracts between modules:
   spot's spawns, else the next place (without `isGo`). A trip (`go`, `fly`, `hearth` alone)
   is done when the next step for the player is already done by the game's state.
 - `Panel:Rows()` -> lines of the window (`kind`, `text`, `state` = "done" | "todo" |
-  "impossible", `counter`, `sub`), built from `Describe` and the quest log objectives;
+  "impossible" | "header" | "notice", `counter`, `sub`), built from `Describe` and the quest
+  log objectives: a quest's objectives (`nested`) under a row `action = "header"` (its level
+  and name) unless a row of the step names the quest; then the notices `action = "notice"`
+  (`notice` = "travel" | "trip" | "skipped"; `P:Content` lines of the same kind make one box),
   then the rows `along = true` of `Along.shown` (objectives of other quests near the player,
-  after the step's rows and its notes).
+  after the step's rows and its notes), the extras, the notices "bags" | "cleanup", and the
+  preview.
   `Engine.autoMoved`: the engine moved on by itself (the window keeps the finished step for
   1.5 s; `Panel:EndHold()` ends it, and "next" or "skip" meanwhile does only that).
   `Engine:IsManual(step)` -> step validated by "next" only.
@@ -196,7 +204,13 @@ Contracts between modules:
   its entry for the player's faction when it is a table. `Engine:UnusedLogQuests()`: quests
   of the log the active guide and the next ones never use (listed in the Guide tab; Ding never
   abandons them). `UI.Banner`, `UI.Ring`, `UI.ScreenCenter`: Ding's marks over the game's
-  windows, which are only read. `Panel:SetShown(v)`: the window and
+  windows, which are only read. `QuestMobs.byNpc` (`[npc id]` = entries best first: `kind`
+  "kill" | "drop" | "accept" | "turnin", `quest`, `label`, `have`, `need`, `current`, `enemy`),
+  rebuilt by `Engine:Refresh` (`QuestMobs:Refresh`); `QuestMobs.plates` (`[unit token]` =
+  `{ plate, npc, name, attackable, badge }`, the monster read when the plate appears);
+  `Along:Objectives(q, accept)` (unfinished objectives with the DingDB target they name) and
+  `Along:StepQuests()`; `Data:ObjectiveTargets` gives each target `kind` and `npcs`;
+  `Compat.UnitNpcID` (false for a player, nil when secret). `Panel:SetShown(v)`: the window and
   the arrow together (the arrow only shows with the window open).
 - `Ding.db` (DingDB, account): `panel` (position, `scale` 0.5-1.5, `width` 240-420, `locked`,
   `bgAlpha`, `compactInCombat`, `hideInInstance`, `keyHints`, `itemButton`), `arrow`
@@ -204,7 +218,9 @@ Contracts between modules:
   target as the client's map waypoint), `item` (position of the item button),
   `minimap` (`shown`, `angle`), `ui` (`buttonStyle`, `sound`, `welcomed`, `autoAccept`,
   `autoTurnin`, `skipGrey`, `hearth`, `deathSkip`, `dungeons`, `elites`, `chooseReward`,
-  `sellGrey`, `repair`, `markTarget`, `serviceSteps`, `trainerSteps`, `flightSteps`, `autoEquip`, `autoFly`, `dungeonChoice` (`[name] = bool`)),
+  `sellGrey`, `repair`, `markTarget`, `serviceSteps`, `trainerSteps`, `flightSteps`, `autoEquip`, `autoFly`, `dungeonChoice` (`[name] = bool`),
+  `mobIcons`, `mobTooltip`, `farPlates`), `farPlatesFrom` (the nameplate distance before
+  "Show enemy nameplates farther", put back when it goes off),
   `timings`, `flightTimes` (`["<from npc>:<to npc>"] = { seconds, count }`, flights measured),
   `imported` (`[pack id] = { pack, guides, at }`: guides imported as text, kept by "restore
   all defaults"),
@@ -327,6 +343,9 @@ Contracts between modules:
   cancel, Escape = B, clickable buttons in move mode). Without an active gamepad
   (`Gamepad:Active`), the help and the messages speak of the mouse and the keyboard;
   `mouse_test` checks it (SPEC §3, Keyboard and mouse).
+- Each action shows once: with a gamepad, a button carries its chips (`UI.ButtonKeys`: A on the
+  focused one, B on the one that closes) and a hint bar only lists what no button on screen
+  does; `single_action_test` checks every window, with and without a gamepad, in every language.
 - Anchors: to stretch a region, `TOPLEFT`/`TOPRIGHT` pairs (never `TOPLEFT` + `RIGHT`, which
   also fixes the vertical center); the smoke test checks it.
 - Temporary bindings (`SetOverrideBindingClick`) only out of combat; anything that sets them

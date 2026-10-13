@@ -526,7 +526,14 @@ ok, err = pcall(function()
                 press("PAD2")
                 expect(not row.confirming and C.frame:IsShown(), "B does not cancel the confirmation: " .. row.opts.label)
             end
-            expect((C.frame.help.shown or 0) > 0, "empty help bar")
+            -- The footer lists what no chip on screen says (each action once): all of it fits,
+            -- and a row with an empty footer carries its A (check box corner, button).
+            local help = C.frame.help
+            expect((help.shown or 0) == #(help.list or {}), "help bar cut")
+            if #(help.list or {}) == 0 then
+                local chip = row.aGlyph or (row.button and row.button.keyGlyphs and row.button.keyGlyphs[1])
+                expect(chip and chip:IsShown(), "empty help bar and no A on the row: " .. tostring(row.opts.label))
+            end
             press("PADDDOWN")
         until C.focus == first or seen > 40
         expect(seen > 1, "tab " .. t .. ": the d-pad does not go through the elements")
@@ -801,6 +808,65 @@ ok, err = pcall(function()
     player.rested = 0
 end)
 if not ok then problem("grind: " .. tostring(err)) end
+
+-- Quest monsters: the marks on the enemy nameplates follow the first quests of Shadowglen
+-- (the step's monsters, the counter of each kill, in combat too, no mark once an objective is
+-- done), the tooltip line, and the plates go away without leaving a mark behind.
+ok, err = pcall(function()
+    Ding.RegisterGuide({ id = "smoke-mobs", title = "Quest monsters", races = { "NightElf" }, steps = {
+        { accept = { 456, 916 } },
+        { complete = 456 },
+        { complete = 916 },
+        { turnin = { 456, 916 } },
+    } })
+    local QM, D = Ding.QuestMobs, Ding.Data
+    scenarioCharacter()
+    H.resetQuests()
+    E.turnedIn, Ding.char.manual, Ding.char.early = {}, {}, {}
+    player.level, player.map, player.x, player.y = 5, 1438, 58.7, 43.3
+    E:SetGuide("smoke-mobs", 1, true)
+    tick(2)
+    H.accept(456); H.accept(916); flush()
+    tick(2)
+    expect(E.index == 2, "quest monsters: not on the first quest (" .. E.index .. ")")
+    -- Young nightsaber, young thistle boar, Webwood Spider, and a monster no quest needs.
+    local units = { nameplate1 = 2031, nameplate2 = 1984, nameplate3 = 1986, nameplate4 = 1988 }
+    for unit, npc in pairs(units) do H.addPlate(unit, { npc = npc, name = D:NpcName(npc) }) end
+    local function shown(unit)
+        local info = QM.plates[unit]
+        return info and info.badge and info.badge:IsShown() and info.badge or nil
+    end
+    expect(shown("nameplate1") and shown("nameplate2") and shown("nameplate3") and not shown("nameplate4"),
+        "quest monsters: wrong marks")
+    local spider = shown("nameplate3")
+    expect(spider and spider:GetAlpha() < 1, "quest monsters: another quest's monster stands out")
+    -- The nightsabers, one at a time, in combat.
+    H.setCombat(true); fire("PLAYER_REGEN_DISABLED"); flush()
+    for have = 1, 7 do
+        H.setObjective(456, 1, have, 7)
+        fire("QUEST_LOG_UPDATE")
+        tick(0.3)
+        local b = shown("nameplate1")
+        expect(have == 7 and not b or b and b.counter:GetText() == ("%d/7"):format(have),
+            "quest monsters: the counter after kill " .. have)
+    end
+    expect(shown("nameplate2"), "quest monsters: the boars lost their mark")
+    local lines = H.mouseover("nameplate2")
+    expect(#lines == 2 and plain(lines[2]):find(D:QuestName(456), 1, true),
+        "quest monsters: no tooltip line in combat")
+    H.setCombat(false); fire("PLAYER_REGEN_ENABLED"); flush()
+    H.complete(456); flush()
+    tick(2)
+    expect(E.index == 3, "quest monsters: not on the venom (" .. E.index .. ")")
+    expect(not shown("nameplate2"), "quest monsters: a mark for a quest ready to turn in")
+    spider = shown("nameplate3")
+    expect(spider and spider:GetAlpha() == 1, "quest monsters: the step's spiders do not stand out")
+    for unit in pairs(units) do H.removePlate(unit) end
+    expect(next(QM.plates) == nil and not spider:IsShown(), "quest monsters: a mark left after the plates")
+    H.complete(916); flush()
+    tick(2)
+end)
+if not ok then problem("quest monsters: " .. tostring(err)) end
 
 -- Steps behind options, then a `next` by faction: options off, their steps are passed;
 -- on, they are played (inn, hearthstone cast, death and back to life, dungeon and elite
