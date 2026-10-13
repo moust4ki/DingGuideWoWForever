@@ -41,6 +41,7 @@ DB\Locales\ruRU.lua
 DB\Locales\zhCN.lua
 DB\Locales\zhTW.lua
 Core\Data.lua
+Core\DingDB.lua
 Core\Registry.lua
 Core\Timing.lua
 Core\Engine.lua

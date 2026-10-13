@@ -56,9 +56,15 @@ local function npcFacts(id)
         points(D:NpcPoints(id)) }, "\n")
 end
 
+-- Every id of a kind, except those DingDB's own corrections changed on purpose
+-- (tools/data/corrections, Ding.DB.corrected): dingdb_corrections_test checks those.
 local function ids(kind)
+    local skip = {}
+    for _, id in ipairs(Ding.DB.corrected and Ding.DB.corrected[kind] or {}) do skip[id] = true end
     local list = {}
-    for id in pairs(Ding.DB[kind]) do list[#list + 1] = id end
+    for id in pairs(Ding.DB[kind]) do
+        if not skip[id] then list[#list + 1] = id end
+    end
     table.sort(list)
     return list
 end

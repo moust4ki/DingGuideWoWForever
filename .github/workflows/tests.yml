@@ -29,6 +29,16 @@ jobs:
           git clone --depth 1 --branch "$tag" https://github.com/Questie/QuestieDB.git ../QuestieDB
           cd ../QuestieDB && lua5.1 tools/export-forever.lua --include-authored
 
+      - name: DingDB corrections
+        run: lua5.1 tools/check_data.lua
+
+      # Ding/DB must be exactly what build_data.lua writes from that release and the corrections.
+      - name: DingDB up to date
+        run: |
+          tag=$(grep -o 'source = "QuestieDB v[0-9.]*"' Ding/DB/DB.lua | grep -o 'v[0-9.]*')
+          lua5.1 tools/build_data.lua ../QuestieDB/src/corrections/Forever/combined --source "QuestieDB $tag" --out /tmp/dingdb
+          diff -r -x CREDITS.md /tmp/dingdb Ding/DB || { echo "Ding/DB is out of date: run tools/build_data.lua (tools/README.md, section 1)"; exit 1; }
+
       - name: Guide validation
         run: lua5.1 tools/check_guides.lua ../QuestieDB/src/corrections/Forever/combined
 
