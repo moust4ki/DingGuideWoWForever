@@ -95,7 +95,7 @@ local function insert(text, adds)
     -- Steps of each section: { [id] = { open = line of `steps = {`, steps = { line... }, indent } }.
     local sections, current = {}, nil
     for n, line in ipairs(lines) do
-        local id = line:match('^%s*id = "([^"]+)"')
+        local id = line:match('^%s*{?%s*id = "([^"]+)"')
         if id then current = { steps = {} }; sections[id] = current end
         if current and not current.open and line:match("^%s*steps = {%s*$") then
             current.open = n
