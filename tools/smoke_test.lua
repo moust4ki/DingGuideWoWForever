@@ -830,6 +830,7 @@ if not ok then problem("options: " .. tostring(err)) end
 -- step's place; then the boat to the other continent, from its dock to the far side.
 ok, err = pcall(function()
     local thor, ariena = Ding.Data:NpcPoints(523)[1], Ding.Data:NpcPoints(931)[1]
+    local menethil = Ding.Data:NpcPoints(1571)[1]
     Ding.RegisterGuide({ id = "smoke-travel", title = "Travel", races = { "Human" }, steps = {
         { go = { ariena.map, ariena.x + 1, ariena.y }, text = "Lakeshire" },
         { go = { 1439, 36, 46 }, text = "Auberdine" },
@@ -843,6 +844,7 @@ ok, err = pcall(function()
         return {
             { name = "Sentinel Hill, Westfall", state = 0, map = thor.map, x = thor.x, y = thor.y },
             { name = "Lakeshire, Redridge", state = 1, map = ariena.map, x = ariena.x, y = ariena.y },
+            { name = "Menethil Harbor, Wetlands", state = 1, map = menethil.map, x = menethil.x, y = menethil.y },
         }
     end
     H.openTaxi(nodes()); H.closeTaxi()
@@ -859,19 +861,18 @@ ok, err = pcall(function()
     H.land(ariena.map, ariena.x + 1, ariena.y)
     tick(2)
     expect(E.index == 2, "travel: the landing does not validate the step (" .. E.index .. ")")
-    -- To the other continent: back by air to the coast (the mock's Westfall lies next to the
-    -- Wetlands), then the boat.
+    -- To the other continent: by air to Menethil Harbor, then the boat.
     local kinds = {}
     for _, l in ipairs(Ding.Travel:PlanFor(E.candidates[1]).legs) do kinds[#kinds + 1] = l.kind end
     expect(table.concat(kinds, " "):find("fly walk boat", 1, true), "travel: route " .. table.concat(kinds, " "))
-    expect(A.hint == L.TRAVEL_FLY:format("Sentinel Hill, Westfall"), "travel: no flight back (" .. tostring(A.hint) .. ")")
+    expect(A.hint == L.TRAVEL_FLY:format("Menethil Harbor, Wetlands"), "travel: no flight to the harbor (" .. tostring(A.hint) .. ")")
     H.openTaxi({
         { name = "Lakeshire, Redridge", state = 0, map = ariena.map, x = ariena.x, y = ariena.y },
-        { name = "Sentinel Hill, Westfall", state = 1, map = thor.map, x = thor.x, y = thor.y },
+        { name = "Menethil Harbor, Wetlands", state = 1, map = menethil.map, x = menethil.x, y = menethil.y },
     })
     TakeTaxiNode(2)
     H.closeTaxi()
-    H.land(thor.map, thor.x, thor.y)
+    H.land(menethil.map, menethil.x, menethil.y)
     tick(2)
     expect(A.hint == L.TRAVEL_BOAT:format("Darkshore"), "travel: no boat to the other continent (" .. tostring(A.hint) .. ")")
     checkPanel("travel: boat")
@@ -1221,6 +1222,40 @@ ok, err = pcall(function()
     Ding.char.flights = nil
 end)
 if not ok then problem("travel2: " .. tostring(err)) end
+
+-- Walking passages: from Mulgore to Thunder Bluff, the arrow to a lift with its hint and the
+-- route under the step; on top, the step validates on its own place.
+ok, err = pcall(function()
+    Ding.RegisterGuide({ id = "smoke-passage", title = "Passage", races = { "Tauren" }, steps = {
+        { go = { 1456, 45, 55 }, text = "Thunder Bluff" },
+        { text = "End" },
+    } })
+    scenarioCharacter()
+    H.resetQuests()
+    E.turnedIn, Ding.char.manual = {}, {}
+    player.race, player.faction, player.class, player.level = "Tauren", "Horde", "WARRIOR", 10
+    player.map, player.x, player.y = 1412, 47.5, 58.5
+    Ding.Travel:Reset()
+    E:SetGuide("smoke-passage", 1, true)
+    tick(2)
+    local A = Ding.Arrow
+    local hint = L.PASSAGE_LIFT_UP:format(Ding.Compat.MapName(1456) or "?")
+    expect(A.hint == hint, "passage: no lift (" .. tostring(A.hint) .. ")")
+    local leg = Ding.Travel.leg
+    expect(leg and leg.point and leg.point.map == 1456, "passage: the arrow is not at a lift")
+    local route = Ding.Travel:Itinerary(Ding.Travel.plan)
+    local listed = false
+    for _, r in ipairs(P.rowsShown or {}) do
+        if route and r.sub and H.plain(r.sub):find(route, 1, true) then listed = true end
+    end
+    expect(listed, "passage: no route under the step")
+    checkPanel("passage: lift")
+    player.map, player.x, player.y = 1456, 45, 55
+    tick(2)
+    expect(E.index == 2, "passage: the step does not validate on top (" .. E.index .. ")")
+    expect(A.hint == nil, "passage: a hint left once there (" .. tostring(A.hint) .. ")")
+end)
+if not ok then problem("passage: " .. tostring(err)) end
 
 -- Talents: with a free point, the build's next talent under the step, learned with A twice
 -- in focus mode.

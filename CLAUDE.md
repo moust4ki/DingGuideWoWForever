@@ -34,9 +34,11 @@ Ding/
                     kills, rested included; the monster to farm and its spawns)
     Along.lua       Ding.Along: objectives of other log quests right around the player
                     ("along the way", sticky)
+    Passages.lua    Ding.Passages: walking passages (lifts, tunnels, bridges, city gates,
+                    portals) and the two sides each joins; a walk across never goes straight
     Travel.lua      Ding.Travel: fastest way to the arrow's target (walk, flight paths known or
-                    to learn, boats, zeppelins, tram, hearthstone, teleports; slower through
-                    zones above the player), flight times measured, itinerary
+                    to learn, boats, zeppelins, tram, hearthstone, teleports, walking passages;
+                    slower through zones above the player), flight times measured, itinerary
     Services.lua    Ding.Services: vendors, repairers, innkeepers, flight masters, class
                     trainers of the player's side (npcFlags), nearest first
     Merchant.lua    Ding.Merchant: grey items sold and repairs at merchants, bags almost full
@@ -169,8 +171,9 @@ Contracts between modules:
   (missing link of the chain of `q`), `Engine.skipNotes` (reasons of the last skip),
   `Engine:StepMark(index)` -> "manual" | "skipped" | nil (step marked done or skipped by
   hand: colors `C.manual` / `C.skipped` in the window). `Travel:Leg(point)` -> nil (walk) or
-  `{ kind = "fly" | "boat" | "zeppelin" | "tram" | "hearth" | "teleport", point (flight master or
-  dock; nil for the hearthstone and a teleport), hint, to, flight, spell }`, kept in `Travel.leg`
+  `{ kind = "fly" | "boat" | "zeppelin" | "tram" | "hearth" | "teleport" | "passage", point (flight
+  master, dock, or a passage's entry, its far end once in it; nil for the hearthstone and a
+  teleport), hint, to, flight, spell, passage }`, kept in `Travel.leg`
   (its plan in `Travel.plan`, `Travel:Itinerary(plan)` -> the "Route: …" line or nil; the item
   button casts `leg.spell`); the arrow shows `leg.point` and
   `Arrow.hint`, still validating `go` steps on the target itself. `Ding:StepApplies(step)`: the step's

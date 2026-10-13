@@ -47,6 +47,7 @@ Core\Timing.lua
 Core\Engine.lua
 Core\Grind.lua
 Core\Along.lua
+Core\Passages.lua
 Core\Travel.lua
 Core\Services.lua
 Core\Merchant.lua

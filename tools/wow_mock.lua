@@ -870,7 +870,9 @@ return function(opts)
         [1420] = "Tirisfal Glades", [1429] = "Elwynn Forest", [1434] = "Stranglethorn Vale", [1436] = "Westfall",
         [1437] = "Wetlands", [1438] = "Teldrassil", [1439] = "Darkshore", [1445] = "Dustwallow Marsh",
         [1453] = "Stormwind City", [1455] = "Ironforge", [1457] = "Darnassus", [1431] = "Duskwood",
-        [1433] = "Redridge Mountains" }
+        [1433] = "Redridge Mountains", [1412] = "Mulgore", [1456] = "Thunder Bluff", [1426] = "Dun Morogh",
+        [1432] = "Loch Modan", [1417] = "Arathi Highlands", [1458] = "Undercity", [1454] = "Orgrimmar",
+        [1441] = "Thousand Needles" }
     -- Sub-maps (a dungeon, a cave) of a zone: { name, mapType 4 or 5, parent zone }.
     local SUB_MAPS = { [1581] = { name = "The Deadmines", mapType = 4, parent = 1436 } }
     local function place(map)
