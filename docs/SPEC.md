@@ -137,8 +137,8 @@ a bare id are read too):
 | `useitem` | item id(s) | its spell cast (`UNIT_SPELLCAST_SUCCEEDED` = `C_Item.GetItemSpell`), its count below the step's start, or the objectives of the step's `complete` quests advanced; offered on the item button |
 | `object` | object id(s) | `LOOT_OPENED`, `GOSSIP_SHOW`, `QUEST_DETAIL` or `ITEM_TEXT_BEGIN` within 20 yards of one of its spawns (or `spots`) |
 | `equip` | item id(s) | worn in any slot (`GetInventoryItemID`); offered on the item button |
-| `destroy`, `bank` | item id(s) | none left in the bags (never done by Ding) |
-| `unbank` | item id(s) | in the bags |
+| `destroy`, `bank` | item id(s) | none left in the bags (never done by Ding); `bank`: the arrow on the bank the fewest seconds away (`Directory:Best("bank")`, the travel planner), not while the bank's window is open (`BANKFRAME_OPENED` / `_CLOSED`) |
+| `unbank` | item id(s) | in the bags; the arrow on the bank like `bank` |
 | `abandon` | quest id(s) | out of the log (never done by Ding) |
 | `keep` | item id(s) | reminder only: `Ding.char.keep`, never sold as a grey item (`Core/Merchant.lua`) |
 | `spots` | `{ uiMapId, x, y }` list | authored places for `kill`, `collect`, `object` (an area) instead of QuestieDB's spawns |
@@ -653,8 +653,9 @@ accent #5BB4FF, the Noto Sans font shipped with the addon, rounded shapes from t
   "target" binding (`DING_CYCLE`) passes over them.
 - **Notices** (state "notice", `action = "notice"`): what concerns the whole window rather than
   one row of the step gets a box of its own (no icon, 11 Regular on up to three lines): right
-  under the step, the way there (`travel`: the travel hint, then the itinerary), a trip to a
-  nearby service (`trip`) and why steps were passed (`skipped`); after the rows added under
+  under the step, the way there (`travel`: the travel hint, then the itinerary), a trip of the
+  NPC directory (`trip`: with the way there in its box and "A: back to the guide"; A or a click
+  on it ends the trip) and why steps were passed (`skipped`); after the rows added under
   the step, the bags almost full (`bags`) and the quest log almost full (`cleanup`, with "A: see
   the list" or "Click: see the list": the settings open on the cleanup page). The guide's notes
   and the step's own hints (service, "press Next", marked by hand, option steps) stay under the
@@ -744,15 +745,85 @@ accent #5BB4FF, the Noto Sans font shipped with the addon, rounded shapes from t
   `npcFlags`: vendor 4, flight master 8, trainer 16, innkeeper 128, repair 16384; a class
   trainer is a trainer whose English subtitle names the player's class) and end by themselves
   (table above); the window says so instead of "press Next".
-- **Nearby services** (binding "Nearby services", `DING_FINDER`, `UI/Finder.lua`): a small list
-  of the vendor, repairer, innkeeper, flight master and class trainer of the player's side
-  (QuestieDB flags, see above) that are the fewest seconds away (the travel planner, over the 4
-  nearest of each), else the fewest yards; each row gives the NPC and the time. D-pad and A
-  (temporary bindings while the list is open, out of combat), or a click; B, Esc or a right
-  click closes it. A row chosen: the arrow goes to that NPC ("On the way to … (vendor): the
-  guide resumes once there." under the step) until that NPC's window opens (merchant, gossip,
-  flight map, trainer), then the guide takes the arrow back. During such a trip the list starts
-  with "Back to the guide", and B also ends the trip.
+- **NPC directory** (binding "NPC directory", `DING_FINDER`; the guide window's pin button;
+  `/ding find <text>`; `Core/Directory.lua` finds, `UI/Finder.lua` shows): every NPC of DingDB
+  that offers something, anywhere in the world, small outposts included. Only NPCs of the
+  player's side (or neutral), with a spawn outside a dungeon; vendors of seasonal events (English
+  subtitle with "Smokywood Pastures", "Darkmoon Faire", "Hallow's End", "Festival", "Holiday",
+  "Sweet Treats", "Fishing Extravaganza" or "Fishing Promoter") are left out. The categories, in
+  this order, and what puts an NPC in each:
+  - Vendor, repair, innkeeper, flight master, bank, auction house, stable master: its `npcFlags`
+    (4, 16384, 128, 8, 256, 4096, 8192). Stable master for hunters only.
+  - Class trainer: the trainer flag (16) and the player's class in its English subtitle (as for
+    service steps).
+  - Weapon masters, **by weapon**: DingDB's `weaponSkills` (`tools/data/corrections/
+    10_weapon_masters.lua`, the eight weapon masters). Only the weapons the class can use (the
+    gear table of `Core/Gear.lua`), that the character does not know (its proficiency spell is
+    known, or the skill lines list the weapon's name), from the level the master asks (polearms:
+    20), and that a weapon master of its side teaches. The category goes when nothing is left.
+  - Profession trainers, **by profession**: the trainer flag and a word of the profession in the
+    English subtitle ("Alchem", "Blacksmith", "Enchant", "Engineer", "Herbalis", "Leatherwork" /
+    "Leathercraft", "Mining", "Skinning", "Tailor", "Cook", "First Aid" / "Physician" / "Medic",
+    "Fishing" / "Fisherman" / "Fisher"); the specialists of a branch (Dragonscale, Elemental,
+    Tribal, Gnome, Goblin, Shadoweave, Mithril Order) are left out.
+  - What vendors sell (DingDB's item `vendors`, `class`, `subClass`, `requiredLevel`, `flags`):
+    **ammunition** (hunters, warriors, rogues), by choice: arrows (class 6, subclass 2) and
+    bullets (6, 3); **food and drink**: consumables (class 0, subclass 0, or 5 for Forever's new
+    food) with no item flag (poisons, lures, bandages and explosives have one) from level 1
+    (alcohol is level 0); **trade supplies**: trade goods (class 7).
+  - **Reagents** (mages, priests, paladins, shamans, druids, warlocks): the vendors of the
+    class's reagents, a list of item ids per class in `Core/Directory.lua` (Arcane Powder, runes,
+    Light Feather; candles; symbols; Ankh, Fish Oil, Shiny Fish Scales; berries, thornroot and
+    seeds; Infernal Stone, Demonic Figurine), each a reagent item in DingDB (class 5, or 15/1).
+  - **Poisons** (rogues): the vendors of the reagents only poisons use (Essence of Pain,
+    Deathweed, Essence of Agony, Dust of Deterioration), of Flash Powder, or of a poison.
+
+  Each kind of NPC is a list built once per session (`Directory:Ids(kind)`). The NPC to go to is
+  the one the fewest seconds away (`Travel:Reach()`: one pass of the planner from the player,
+  then any point priced: walking, known and unseen flight paths, boats, zeppelins, the tram,
+  the hearthstone, teleports), else the fewest yards. Priced: every NPC of a kind of 24 or fewer,
+  else the 4 nearest on the player's continent and the 2 nearest to where the hearthstone or a
+  teleport lands. A row says where the NPC stands (the city or town, below, else the zone), the
+  ways besides walking (`reach:Route`: "· flight", "· boat, flight", "· zeppelin, flight",
+  tram, hearthstone, teleport) and the time ("8 min", "< 1 min"; yards without a time).
+
+  The window ("Ding! · Directory", 360 wide) has two tabs, LB / RB or a click:
+  - **Nearby**: one row per category (name, "NPC · place · ways", the time); a category with
+    sub-choices (ammunition, weapon masters, profession trainers) shows the first ones and opens
+    their list, one row per choice ("Guns", "Buliwyf Stonehand · Ironforge · flight", "8 min"). A
+    category without any NPC is grayed ("None known nearby").
+  - **Cities**: the capitals of the player's side (Stormwind, Ironforge, Darnassus; Orgrimmar,
+    Thunder Bluff, Undercity: on their own map) and the neutral towns (Booty Bay, Gadgetzan,
+    Ratchet, Everlook: within 260, 200, 200 and 160 yards of their inn), with the time to reach
+    them; a city opens its categories (the NPC fewest seconds away, "+N" others), a category its
+    NPCs with what each offers ("Vendor, Repair, Food and drink"; a weapon master's or a
+    trainer's list by weapon or profession).
+  - `/ding find <text>`: the categories, weapons, professions and services whose name holds the
+    text (in the client's language or in English, without case nor accents; or each word of it
+    starts a word of the name: "arme a feu" finds "Armes à feu"), then up to 20 NPCs by name,
+    nearest first, each with what it offers. The results open over the Nearby tab ("Search: …";
+    B goes back to it); nothing found: one grayed row and a chat line. Without text, the usage.
+
+  D-pad, A, B and the shoulders while it is open (temporary bindings, out of combat; never opens
+  in combat), or the mouse: a click opens or goes, a right click or Esc goes back or closes, the
+  wheel scrolls (9 rows shown). A row chosen sends the arrow to its NPC like any target of the
+  arrow, through the travel planner: the flight master, the dock or the hearthstone first, the
+  flight map's destination, the boarding (Travel above). The guide window's `trip` notice says
+  "On the way to … (Guns): the guide resumes once there.", with in its box what to take ("Fly to
+  Ironforge"), the whole way ("Route: walk 0:20, fly 7:56 to Ironforge, walk 0:37 (8:53 in
+  all)"; no separate `travel` notice then) and "A: back to the guide" (or "Click: …"); the trip ends when that NPC's window opens (by its creature id,
+  else its name; when the client tells neither, the window of its kind: merchant, trainer, bank,
+  auction house, stable, flight map), then the guide takes the arrow back. On the first page
+  during a trip, a row "Back to the guide"; B there closes the window and ends the trip too (a
+  right click or Esc only closes it). The trip's notice itself, clicked or pressed in focus mode,
+  ends it. A weapon
+  master's trainer window is not taken for the class trainer's (`Training:Record`).
+- **Weapon to learn** (guide window, option "Weapon to learn" in the Guide tab, on by default):
+  a row "Weapon to learn: Guns — Buliwyf Stonehand, Ironforge" when a weapon the class can use
+  but does not know is in the bags or worn (its fastest weapon master), else when a weapon master
+  who could teach the player something stands within 800 yards ("Weapons to learn: Axes, Guns
+  — Buliwyf Stonehand, Ironforge"). A click (A in focus mode) sends the arrow there. Not during
+  a trip.
 - **Class training reminder** (`Core/Training.lua`): when a class trainer's window is open, Ding
   notes what can be learned now and at which level the rest comes, with its cost
   (`GetTrainerServiceInfo`, `…LevelReq`, `…Cost`; only what the trainer's list shows, its filters
@@ -870,15 +941,17 @@ gamepad buttons). Every gamepad action therefore has an equivalent:
 
 - Game bindings: next / previous step, show the guide, minimize the guide, open the
   settings, use the quest item, target the arrow's NPC or monster, browse the guide (focus
-  mode), skip the step, go back to a skipped step, nearby services, the arrow on the step's next target. They work in combat,
-  except opening the settings, focus mode and the services list.
+  mode), skip the step, go back to a skipped step, the NPC directory, the arrow on the step's next target. They work in combat,
+  except opening the settings, focus mode and the NPC directory.
 - No window captures a button permanently: the guide window stays displayed without
   taking anything away from the game.
 - Focus mode of the guide window: the D-pad moves through the lines, A points the arrow at
   the line (or uses the item on the item's line, equips a gear upgrade), X shows its quest's
   card, Left ignores the gear upgrade under focus, LB / RB change step, Y minimizes, B exits.
   On a talent suggestion, A twice learns the talent. Right, on a row with a quest, finds that
-  quest in the guide; Left drops the offer.
+  quest in the guide; Left drops the offer. Up from the first line, the focus goes to the
+  NPC directory's button of the title bar (outer focus ring, A beside it): A opens the
+  directory.
   Only these buttons are taken; the mode stops in combat.
 - Settings window: temporary bindings (`SetOverrideBindingClick`) set when it opens
   and removed when it closes. A confirms, B closes or cancels, Y resets to default or clears,

@@ -3,7 +3,7 @@
 -- button). With a gamepad, a button carries its chips (A on the focused one, B on the one
 -- that closes, Y where a button selects) and the hint bar keeps only what has no button;
 -- without one, the buttons alone and the mouse help. Checked in every window with a hint bar
--- (import / export, settings, move mode, nearby services), gamepad plugged in and not, while
+-- (import / export, settings, move mode, the NPC directory), gamepad plugged in and not, while
 -- it is plugged in or out, and in every language (buttons and hints fit).
 local tools = (arg[0]:match("^(.*)[/\\]") or ".") .. "/.."
 local T = dofile(tools .. "/testlib.lua")(arg[1])
@@ -279,7 +279,7 @@ T.test("settings, gamepad: a confirmation, an open list and a page show each act
 end)
 
 ---------------------------------------------------------------------------
--- Move mode, nearby services
+-- Move mode, the NPC directory
 ---------------------------------------------------------------------------
 local function startMove()
     local plate = G.plate
@@ -324,16 +324,46 @@ T.test("move mode: chips on Save, Cancel and Reset with a gamepad, none without;
     closeAll()
 end)
 
-T.test("nearby services: no button, the hints with a gamepad, the mouse help without; it follows", function()
+-- The NPC directory (UI/Finder.lua): its chips as buttons for `once` (the focused row's A, B on
+-- the close cross or on a list's title, LB / RB at the ends of the tabs).
+local function directoryButtons()
+    local f, out = F.frame, {}
+    for _, r in ipairs(f.rows) do
+        if r:IsShown() and r.key:IsShown() then out[#out + 1] = { label = r.label:GetText(), keys = { PAD1 = true } } end
+    end
+    if f.back:IsShown() then out[#out + 1] = { keys = { PAD2 = true } } end
+    if f.pageTitle:IsShown() and f.pageTitle.key:IsShown() then
+        out[#out + 1] = { label = f.pageTitle.label:GetText(), keys = { PAD2 = true } }
+    end
+    if f.lb:IsShown() then out[#out + 1] = { keys = { PADLSHOULDER = true } } end
+    if f.rb:IsShown() then out[#out + 1] = { keys = { PADRSHOULDER = true } } end
+    return out
+end
+
+T.test("NPC directory: A on the focused row, B on the cross or the list's title, LB RB on the tabs", function()
     start()
-    F:Open(); H.flush()
+    F:Open(1); H.flush()
     local hints = hintsOf(F.frame.help)
-    T.ok(#hints == 2 and hints[1].keys.PAD1 and hints[2].keys.PAD2, "A Go · B Back")
+    T.ok(#hints == 1 and hints[1].label == L.DIR_TIMES and not anyKey(hints[1].keys), "the footer is a text")
+    local buttons = directoryButtons()
+    once("directory", hints, buttons)
+    local keys = {}
+    for _, b in ipairs(buttons) do
+        for key in pairs(b.keys) do keys[key] = (keys[key] or 0) + 1 end
+    end
+    T.ok(keys.PAD1 == 1 and keys.PAD2 == 1 and keys.PADLSHOULDER == 1 and keys.PADRSHOULDER == 1, "A, B, LB, RB once")
+    -- A list: B moves to its title.
+    for i, row in ipairs(F.rows) do
+        if row.open then F:Activate(i) break end
+    end
+    H.flush()
+    T.ok(F.frame.pageTitle.key:IsShown() and not F.frame.back:IsShown(), "B on the list's title only")
+    once("directory list", hintsOf(F.frame.help), directoryButtons())
     pad(false)
-    mouseOnly("services, unplugged", F.frame.help, {})
-    T.eq(hintsOf(F.frame.help)[1].label, L.FINDER_MOUSE, "the help did not switch to the mouse")
+    mouseOnly("directory, unplugged", F.frame.help, directoryButtons())
+    T.eq(hintsOf(F.frame.help)[1].label, L.DIR_MOUSE_PAGE, "the help did not switch to the mouse")
     pad(true)
-    T.ok(hintsOf(F.frame.help)[1].keys.PAD1, "the help did not switch back to the gamepad")
+    T.ok(F.frame.rows[F:Page().focus].key:IsShown(), "the chips did not come back")
     closeAll()
 end)
 

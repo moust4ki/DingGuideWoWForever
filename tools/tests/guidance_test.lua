@@ -1,5 +1,5 @@
--- Guidance: the nearby services list (UI/Finder.lua), the class training reminder
--- (Core/Training.lua) and the gear upgrades of the bags (Core/Gear.lua).
+-- Guidance: the NPC directory's binding (the directory itself: directory_test.lua), the class
+-- training reminder (Core/Training.lua) and the gear upgrades of the bags (Core/Gear.lua).
 local tools = (arg[0]:match("^(.*)[/\\]") or ".") .. "/.."
 local T = dofile(tools .. "/testlib.lua")(arg[1], { locale = "enUS" })
 local Ding, H = T.Ding, T.H
@@ -26,79 +26,9 @@ local function rowOf(action)
 end
 
 ---------------------------------------------------------------------------
--- Nearby services
+-- NPC directory
 ---------------------------------------------------------------------------
-T.test("services: the nearest of each kind, on the player's side, with a time or a distance", function()
-    start()
-    for _, kind in ipairs(F.KINDS) do
-        local best = F:Best(kind)
-        T.ok(best, "no " .. kind .. " found on Teldrassil")
-        local friendly = NpcDB.friendlyToFaction(best.npc)
-        T.ok(friendly == "A" or friendly == "AH", kind .. " not on the Alliance side: " .. tostring(friendly))
-        T.ok(best.seconds or best.distance, "neither time nor distance")
-    end
-    local trainer = F:Best("trainer")
-    T.ok(NpcDB.GetRaw(trainer.npc, "subName"):find("Warrior", 1, true), "not a warrior trainer")
-end)
-
-T.test("services: the list with the gamepad: D-pad, A sends the arrow, then the guide again at the NPC", function()
-    start()
-    F:Toggle(); H.flush()
-    T.ok(F.frame:IsShown(), "the list does not open")
-    local map = H.overrides[F.frame]
-    T.ok(map and map.PADDUP and map.PADDDOWN and map.PAD1 and map.PAD2, "the list's keys are not taken")
-    T.eq(#F.entries, #F.KINDS)
-    T.eq(F.entries[1].kind, "vendor")
-    H.press("PADDDOWN"); H.press("PADDUP")
-    T.eq(F.focusIndex, 1)
-    H.press("PAD1")
-    T.ok(not F.frame:IsShown() and H.overrides[F.frame] == nil, "list or keys left after A")
-    local trip = F.trip
-    T.ok(trip and trip.kind == "vendor", "no trip to the vendor")
-    A.point = nil; A:Tick()
-    T.eq(A.point.npc, trip.npc, "the arrow does not go to the vendor")
-    local found = false
-    for _, row in ipairs(P.rowsShown or {}) do
-        if row.notice == "trip" and H.plain(row.text) == L.FINDER_TRIP:format(trip.name, L.FINDER_VENDOR) then found = true end
-    end
-    T.ok(found, "the window does not say where the arrow goes")
-    -- Another merchant does not end it; this one does.
-    H.setNpcName("Somebody Else"); H.openMerchant(); H.closeMerchant()
-    T.ok(F.trip, "another NPC's window ended the trip")
-    H.setNpcName(trip.name); H.openMerchant(); H.closeMerchant()
-    T.eq(F.trip, nil, "the trip does not end at the NPC")
-    A.point = nil; A:Tick()
-    T.ok(A.point.npc ~= trip.npc or A.point.label ~= trip.name, "the arrow does not come back to the guide")
-end)
-
-T.test("services: B during a trip takes the arrow back to the guide", function()
-    start()
-    T.ok(F:Go("trainer"))
-    F:Toggle(); H.flush()
-    T.eq(F.entries[1].kind, "guide", "no way back to the guide in the list")
-    H.press("PAD2")
-    T.eq(F.trip, nil)
-    T.ok(not F.frame:IsShown())
-end)
-
-T.test("services: with the mouse, a click goes, a right click closes; never in combat", function()
-    start()
-    F:Open(); H.flush()
-    local row = F.frame.rows[2]
-    row.scripts.OnClick(row, "LeftButton"); H.flush()
-    T.ok(F.trip and F.trip.kind == "repair")
-    F:Open(); H.flush()
-    row = F.frame.rows[1]
-    row.scripts.OnClick(row, "RightButton"); H.flush()
-    T.ok(not F.frame:IsShown(), "right click does not close")
-    T.ok(F.trip, "a right click ended the trip")
-    H.setCombat(true)
-    F:Open(); H.flush()
-    T.ok(not F.frame:IsShown(), "the list opens in combat")
-    H.setCombat(false)
-end)
-
-T.test("services: a binding in the Keybinds tab", function()
+T.test("directory: a binding in the Keybinds tab", function()
     start()
     T.eq(_G.BINDING_NAME_DING_FINDER, L.BIND_FINDER)
     Ding.Config:Open("bindings"); H.flush()

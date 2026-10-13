@@ -1106,8 +1106,9 @@ ok, err = pcall(function()
 end)
 if not ok then problem("training: " .. tostring(err)) end
 
--- Guidance: the nearby services list with the gamepad (a trip to the vendor, ended at its
--- window), the training reminder, a gear upgrade offered on the item button and declined.
+-- Guidance: the NPC directory with the gamepad (a trip to the vendor, ended at its window;
+-- the Cities tab and a city; /ding find and a trip ended with B), the training reminder, a
+-- gear upgrade offered on the item button and declined.
 ok, err = pcall(function()
     scenarioCharacter()
     H.resetQuests()
@@ -1127,6 +1128,18 @@ ok, err = pcall(function()
     checkPanel("guidance: trip")
     H.setNpcName(trip.name); H.openMerchant(); H.closeMerchant(); H.setNpcName(nil)
     expect(F.trip == nil, "guidance: the trip does not end at the vendor")
+    F:Toggle(); flush()
+    press("PADRSHOULDER"); press("PAD1")
+    expect(F:Page().kind == "city" and #F.rows > 0, "guidance: the directory's first city does not open")
+    press("PAD2"); press("PAD2")
+    expect(not F.frame:IsShown() and next(overrides) == nil, "guidance: the directory or its keys stay")
+    SlashCmdList.DING("find bank"); flush()
+    expect(F:Page().kind == "search" and F.rows[1] and F.rows[1].entry, "guidance: /ding find bank finds no bank")
+    press("PAD1")
+    expect(F.trip and F.trip.kind == "bank", "guidance: no trip to the bank")
+    checkPanel("guidance: trip to the bank")
+    F:Toggle(); flush(); press("PAD2")
+    expect(F.trip == nil, "guidance: B does not end the trip")
     H.setTrainerServices({ { name = "Battle Shout", category = "available", level = 4, cost = 100 } })
     H.openTrainer(false); H.closeTrainer()
     local reminder = false

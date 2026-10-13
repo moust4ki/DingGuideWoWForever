@@ -341,13 +341,14 @@ function T:Start()
     return playerPoint()
 end
 
-function T:Plan(target)
-    local start = self:Start()
-    if not start or not target then return nil end
-    withWorld(target)
-    local transports = self:Docks()
+-- The graph from `start`: its nodes (1 = the start, 2 = the target when there is one, then the
+-- flight masters, teleports, docks and the inn) and leg(u, w): the seconds of the fastest
+-- single leg from node u to node w, and that leg's kind.
+local function graph(start, target)
+    local transports = T:Docks()
     local letter = factionLetter()
-    local nodes = { { point = start }, { point = target } }
+    local nodes = { { point = start } }
+    if target then nodes[2] = { point = target } end
     local knownFlights = known()
     for npc, name in pairs(knownFlights) do
         local fm = flightMaster(npc)
@@ -390,7 +391,6 @@ function T:Plan(target)
     local v = speed()
     local level = UnitLevel("player")
     local measured = flightTimes()
-    -- Seconds from node u to node w, by the fastest single leg, and that leg's kind.
     local function leg(u, w)
         local best, kind
         local d = distance(u.point, w.point)
@@ -426,14 +426,19 @@ function T:Plan(target)
         end
         return best, kind
     end
+    return nodes, leg
+end
 
+-- Dijkstra from node 1 over the graph, to node `stop` (or every node): the seconds to reach
+-- each node, the node before it and the kind of leg in between.
+local function shortest(nodes, leg, stop)
     local time, prev, how, done = { [1] = 0 }, {}, {}, {}
     while true do
         local u, best
         for i in ipairs(nodes) do
             if not done[i] and time[i] and (not best or time[i] < best) then u, best = i, time[i] end
         end
-        if not u or u == 2 then break end
+        if not u or u == stop then break end
         done[u] = true
         for w in ipairs(nodes) do
             if not done[w] then
@@ -444,6 +449,15 @@ function T:Plan(target)
             end
         end
     end
+    return time, prev, how
+end
+
+function T:Plan(target)
+    local start = self:Start()
+    if not start or not target then return nil end
+    withWorld(target)
+    local nodes, leg = graph(start, target)
+    local time, prev, how = shortest(nodes, leg, 2)
     if not time[2] then return nil end
     local legs, i = {}, 2
     while prev[i] do
@@ -454,6 +468,47 @@ function T:Plan(target)
     end
     local direct = leg(nodes[1], nodes[2])
     return { legs = legs, seconds = time[2], walk = direct, target = target, start = start }
+end
+
+-- Many targets at once (the NPC directory): one pass over the graph from the player, then
+-- reach:Seconds(point) gives the fewest seconds to any point (the same as Plan(point).seconds),
+-- or nil when nothing leads there, and reach:Route(point) those seconds with the ways taken
+-- ({ "fly", "boat", ... } in order, walks left out: the kinds of Plan's legs). Nil without a
+-- position.
+function T:Reach()
+    local start = self:Start()
+    if not start then return nil end
+    local nodes, leg = graph(start)
+    local time, prev, how = shortest(nodes, leg)
+    -- `jumps`: where the hearthstone or a teleport lands (what is near them may be fast too).
+    local reach = { jumps = {} }
+    for _, node in ipairs(nodes) do
+        if node.inn or node.teleport then reach.jumps[#reach.jumps + 1] = node.point end
+    end
+    function reach:Route(point)
+        if not point then return nil end
+        local target = { point = withWorld(point) }
+        local best, last, lastKind
+        for i, node in ipairs(nodes) do
+            if time[i] then
+                local t, kind = leg(node, target)
+                if t and (not best or time[i] + t < best) then best, last, lastKind = time[i] + t, i, kind end
+            end
+        end
+        if not best then return nil end
+        local kinds = {}
+        if lastKind ~= "walk" then kinds[1] = lastKind end
+        local i = last
+        while prev[i] do
+            if how[i] ~= "walk" then table.insert(kinds, 1, how[i]) end
+            i = prev[i]
+        end
+        return best, kinds
+    end
+    function reach:Seconds(point)
+        return (self:Route(point))
+    end
+    return reach
 end
 
 -- The plan as a line: "walk 1:20, fly 6:30 to Redridge Mountains, walk 0:40" and its total

@@ -200,7 +200,7 @@ local function questRow(line)
     local q = line.quest
     local row = { action = action, quest = q, kind = line.glyph or GLYPH_OF[action] or "other", counter = line.counter,
         sub = line.sub, service = line.service, item = line.item, wrap = line.wrap, talent = line.talent,
-        goal = line.goal, goalStep = line.goalStep }
+        goal = line.goal, goalStep = line.goalStep, entry = line.entry, what = line.what }
     if action == "gear" then row.kind = "use" end
     if action == "talent" then row.kind = "level" end
     if action == "accept" then
@@ -293,6 +293,13 @@ local function noticeRows(lines)
             list[#list + 1] = row
         end
     end
+    -- The trip of the NPC directory: A (a click) takes the arrow back to the guide.
+    local trip = byKind.trip
+    if trip then
+        local back = Ding.Gamepad:Active() and L.DIR_TRIP_PAD:format(Ding.Gamepad:ButtonName("PAD1"))
+            or L.DIR_TRIP_MOUSE
+        trip.sub = trip.sub and (trip.sub .. "\n" .. back) or back
+    end
     local cleanup = byKind.cleanup
     if cleanup then
         local open = Ding.Gamepad:Active() and L.NOTICE_OPEN_PAD:format(Ding.Gamepad:ButtonName("PAD1"))
@@ -322,7 +329,7 @@ function P:Rows(content)
         elseif line.action == "along" then
             along[#along + 1] = line
         elseif line.action == "service" or line.action == "gear" or line.action == "talent" or line.action == "wrapup"
-            or line.action == "jump" then
+            or line.action == "jump" or line.action == "weapon" then
             extra[#extra + 1] = line
         elseif line.action == "preview" then
             preview[#preview + 1] = line
@@ -528,13 +535,17 @@ end
 
 -- Mouse click or A in focus mode: the arrow points to this row's target.
 function P:Aim(row)
-    -- A service row (training): the nearest trainer, through the service finder.
+    -- A service row (training): the nearest trainer, through the NPC directory.
     if row and row.action == "service" then return Ding.Finder:Go(row.service) end
+    -- A weapon to learn: its weapon master.
+    if row and row.action == "weapon" then return Ding.Finder:GoTo(row.entry, row.what) end
     if row and row.action == "wrapup" then return Ding.Engine:WrapUp(row.wrap) end
     if row and row.action == "preview" then return end
-    -- A notice: the quest log's opens the settings' cleanup page, the others only inform.
+    -- A notice: the quest log's opens the settings' cleanup page, the trip's takes the arrow
+    -- back to the guide (UI/Finder.lua), the others only inform.
     if row and row.action == "notice" then
         if row.notice == "cleanup" then Ding.Config:OpenCleanup() end
+        if row.notice == "trip" then Ding.Finder:Cancel() end
         return
     end
     if row and row.action == "gear" then return end
@@ -752,12 +763,28 @@ function P:Create()
     f.minimize.tooltip = L.BIND_COMPACT
     f.minimize:SetScript("OnClick", function() P:SetCompact(true) end)
 
+    -- The NPC directory (UI/Finder.lua): a map pin. In focus mode, above the first row.
+    f.finder = UI.IconButton(f, 20)
+    f.finder:SetPoint("TOPRIGHT", f, "TOPRIGHT", -52, -2)
+    local head = UI.Icon(f.finder, "circle", 8, C.secondary)
+    head:SetPoint("CENTER", f.finder, "CENTER", 0, 2)
+    local tip = UI.Caret(f.finder, "DOWN", 7, C.secondary)
+    tip:SetPoint("CENTER", f.finder, "CENTER", 0, -3)
+    local hole = UI.Icon(f.finder, "circle", 3, C.bg, "OVERLAY")
+    hole:SetPoint("CENTER", head, "CENTER", 0, 0)
+    f.finder.tooltip = L.BIND_FINDER
+    f.finder:SetScript("OnClick", function() Ding.Finder:Toggle() end)
+    f.finder.focus = UI.Focus(f.finder, true)
+    f.finder.key = UI.Glyph(f)
+    f.finder.key:SetPoint("RIGHT", f.finder, "LEFT", -6, 0)
+    f.finder.key:Hide()
+
     f.title = UI.Text(f, "semibold", 12, C.text)
     f.title:SetPoint("TOPLEFT", f, "TOPLEFT", 28, -4)
     -- The title area drags the window; its tooltip gives the full guide name.
     f.titleArea = CreateFrame("Button", nil, f)
     f.titleArea:SetPoint("TOPLEFT", f, "TOPLEFT", 28, 0)
-    f.titleArea:SetPoint("BOTTOMRIGHT", f, "TOPRIGHT", -52, -TITLE_HEIGHT)
+    f.titleArea:SetPoint("BOTTOMRIGHT", f, "TOPRIGHT", -76, -TITLE_HEIGHT)
     f.titleArea:RegisterForDrag("LeftButton")
     f.titleArea:SetScript("OnDragStart", startDrag)
     f.titleArea:SetScript("OnDragStop", stopDrag)
@@ -1087,6 +1114,14 @@ local function skippedLines(E, content)
     end
 end
 
+-- The way there as notices of a kind: what to take ("Fly to …"), then the whole way, leg by
+-- leg, with its total time.
+local function travelNotices(content, kind)
+    content[#content + 1] = { action = "notice", notice = kind, text = Ding.Arrow.hint }
+    local route = Ding.Travel:Itinerary(Ding.Travel.plan)
+    if route then content[#content + 1] = { action = "notice", notice = kind, text = route } end
+end
+
 -- Lines of the step on screen (Engine:Describe) and the notices for the whole window
 -- (`action = "notice"`: travel, passed steps, bags, quest log), or the no-guide /
 -- end-of-guide messages.
@@ -1118,12 +1153,10 @@ function P:Content()
     if Ding.Merchant then Ding.Merchant.shownWarning = free or nil end
     if free then content[#content + 1] = { action = "notice", notice = "bags", text = L.BAGS_ALMOST_FULL:format(free) } end
     if not held then skippedLines(E, content) end
-    -- The way there when walking is not the fastest (Core/Travel.lua, through the arrow).
-    if not held and Ding.Arrow and Ding.Arrow.hint then
-        content[#content + 1] = { action = "notice", notice = "travel", text = Ding.Arrow.hint }
-        -- The whole way, leg by leg, with its total time.
-        local route = Ding.Travel:Itinerary(Ding.Travel.plan)
-        if route then content[#content + 1] = { action = "notice", notice = "travel", text = route } end
+    -- The way there when walking is not the fastest (Core/Travel.lua, through the arrow); on a
+    -- trip of the NPC directory, under the trip's notice (P:Extras).
+    if not held and Ding.Arrow and Ding.Arrow.hint and not (Ding.Finder and Ding.Finder.trip) then
+        travelNotices(content, "travel")
     end
     -- A log almost full, with quests the guide never uses: they can go (Guide tab).
     if not held and Compat.NumQuestsInLog() >= LOG_ALMOST_FULL then
@@ -1152,20 +1185,35 @@ function P:Content()
     return content
 end
 
--- Under the step: the trip to a service (UI/Finder.lua), training waiting at the class
--- trainer (Core/Training.lua), a gear upgrade in the bags (Core/Gear.lua), the next talent
+-- Under the step: the trip to an NPC of the directory (UI/Finder.lua; a press takes the arrow
+-- back), training waiting at the class trainer (Core/Training.lua), a weapon to learn
+-- (Core/Directory.lua), a gear upgrade in the bags (Core/Gear.lua), the next talent
 -- (Core/Talents.lua).
 function P:Extras(step, content)
     local trip = Ding.Finder and Ding.Finder.trip
     if trip then
         content[#content + 1] = { action = "notice", notice = "trip",
-            text = L.FINDER_TRIP:format(trip.name or "?", Ding.Finder:Label(trip.kind)) }
+            text = L.FINDER_TRIP:format(trip.name or "?", trip.label or "?") }
+        if Ding.Arrow and Ding.Arrow.hint then travelNotices(content, "trip") end
     end
     local due = Ding.Training and not (step and step.train) and Ding.Training:Due()
     if due then
         content[#content + 1] = { action = "service", service = "trainer",
             text = type(due) == "number" and L.TRAINING_DUE:format(Compat.MoneyText(due))
                 or L.TRAINING_DUE_GUESS:format(UnitLevel("player")) }
+    end
+    local weapon = Ding.db.panel.weaponReminder and not trip and Ding.Directory and Ding.Directory:WeaponReminder()
+    if weapon then
+        local names = {}
+        for i, w in ipairs(weapon.weapons) do
+            if i <= 3 then names[i] = w.label end
+        end
+        local text = table.concat(names, ", ")
+        if #weapon.weapons > 3 then text = text .. " " .. L.PREVIEW_MORE:format(#weapon.weapons - 3) end
+        local best = weapon.best
+        content[#content + 1] = { action = "weapon", entry = best, what = weapon.weapons[1].label,
+            text = (#weapon.weapons > 1 and L.WEAPONS_TO_LEARN or L.WEAPON_TO_LEARN):format(text, best.name or "?",
+                Ding.Directory:Place(best.point) or "?") }
     end
     local up = Ding.Gear and Ding.Gear.upgrade
     if up then
@@ -1344,11 +1392,17 @@ function P:LayoutFull()
     local f, db, E = self.frame, Ding.db.panel, Ding.Engine
     local width, guide, held = db.width, E.guide, self.holding
     f.mini:Hide()
-    for _, region in ipairs({ f.menu, f.close, f.minimize, f.title, f.titleArea, f.titleDivider, f.stepDivider,
-        f.prev, f.next, f.stepText, f.stepTotal, f.zone }) do
+    for _, region in ipairs({ f.menu, f.close, f.minimize, f.finder, f.title, f.titleArea, f.titleDivider,
+        f.stepDivider, f.prev, f.next, f.stepText, f.stepTotal, f.zone }) do
         region:Show()
     end
-    f.title:SetWidth(width - 28 - 52)
+    -- In focus mode, the directory's button can take the focus (above the first row): A on it.
+    local onFinder = self.focusing and self.focusIndex == 0
+    f.finder.focus:SetShown(onFinder)
+    local finderKey = onFinder and Ding.Gamepad:Active()
+    if finderKey then f.finder.key:SetKey("PAD1") end
+    f.finder.key:SetShown(finderKey and true or false)
+    f.title:SetWidth(width - 28 - 76 - (finderKey and (f.finder.key:GetWidth() + 6) or 0))
     f.title:SetText(UI.Colored("accent", Ding.TITLE) .. UI.Colored("disabled", " · ") .. (guide and guide.title or L.GUIDE_NONE))
 
     -- Step bar
@@ -1392,7 +1446,7 @@ function P:LayoutFull()
     self.rowsShown = rows
     if self.focusing then
         -- The step may have changed under the focus: keep it on a row, and A on its target.
-        self.focusIndex = clamp(self.focusIndex or 1, 1, math.max(1, #rows))
+        self.focusIndex = clamp(self.focusIndex or 1, self.focusIndex == 0 and 0 or 1, math.max(1, #rows))
         syncItemKey()
     end
     y = -LIST_TOP - LIST_PAD
@@ -1420,8 +1474,9 @@ end
 function P:LayoutCompact()
     local f, E = self.frame, Ding.Engine
     local width, m = Ding.db.panel.width, f.mini
-    for _, region in ipairs({ f.menu, f.close, f.minimize, f.title, f.titleArea, f.titleDivider, f.stepDivider,
-        f.prev, f.next, f.stepText, f.stepTotal, f.zone, f.lb, f.rb, f.trackHolder, f.fillHolder }) do
+    f.finder.key:Hide()
+    for _, region in ipairs({ f.menu, f.close, f.minimize, f.finder, f.title, f.titleArea, f.titleDivider,
+        f.stepDivider, f.prev, f.next, f.stepText, f.stepTotal, f.zone, f.lb, f.rb, f.trackHolder, f.fillHolder }) do
         region:Hide()
     end
     for _, r in ipairs(f.rows) do r:Hide() end
@@ -1543,11 +1598,16 @@ function P:OnFocusKey(key)
     if key == "PADDUP" or key == "PADDDOWN" then
         if count > 0 then
             for _, row in ipairs(self.frame.rows) do hideQuest(row) end
-            self.focusIndex = clamp((self.focusIndex or 1) + (key == "PADDUP" and -1 or 1), 1, count)
+            -- Above the first row: the directory's button.
+            self.focusIndex = clamp((self.focusIndex or 1) + (key == "PADDUP" and -1 or 1), 0, count)
             syncItemKey()
             self:Update()
         end
     elseif key == "PAD1" then
+        if self.focusIndex == 0 then
+            self:StopFocus()
+            return Ding.Finder:Open()
+        end
         self:Aim(self.rowsShown and self.rowsShown[self.focusIndex])
     elseif key == "PAD3" then
         local row = self.frame.rows[self.focusIndex]

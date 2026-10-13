@@ -19,6 +19,9 @@ local NEAR_CHECK = 3             -- seconds between two looks for a trainer arou
 -- future = { [level] = cost }, level = the player's level then }.
 function TR:Record()
     if Compat.ProfessionTrainer() then return end
+    -- A weapon master's list (the NPC directory sends players there) is not class training.
+    local npc = Compat.NpcUnitID()
+    if npc and Ding.Data:NpcWeaponSkills(npc) then return end
     local ok, count = Compat.Call("GetNumTrainerServices")
     count = ok and Compat.Plain(count)
     if type(count) ~= "number" then return end

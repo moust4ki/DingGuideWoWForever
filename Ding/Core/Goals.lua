@@ -199,6 +199,12 @@ function GO:PartPoints(step, part)
         for _, npc in ipairs(D:ItemVendors(part.id)) do D:NpcPoints(npc, out) end
         if #out > 0 then return out end
         return Ding.Services and Ding.Services:StepPoints({ vendor = true }) or {}
+    elseif part.kind == "bank" or part.kind == "unbank" then
+        -- The bank the fewest seconds away (the NPC directory, by the travel planner), while
+        -- its window is not open.
+        if GO.bankOpen or not Ding.Directory then return {} end
+        local best = Ding.Directory:Best("bank")
+        return best and { best.point } or {}
     end
     return {}
 end
@@ -393,6 +399,15 @@ end
 for _, event in ipairs({ "LOOT_OPENED", "GOSSIP_SHOW", "QUEST_DETAIL", "ITEM_TEXT_BEGIN" }) do
     Ding:On(event, onObjectWindow)
 end
+-- The bank's window open: bank and unbank goals no longer lead anywhere until it closes.
+Ding:On("BANKFRAME_OPENED", function()
+    GO.bankOpen = true
+    changed()
+end)
+Ding:On("BANKFRAME_CLOSED", function()
+    GO.bankOpen = nil
+    changed()
+end)
 
 -- The dialogue line to pick: named on a banner while the dialogue is open (Ding never
 -- clicks it); done once the dialogue, shown during the step, closes.

@@ -197,8 +197,8 @@ parts are). A "pair" is `{ id, count }`; write a list of pairs, `kill = { { 1984
 | `object` | object id or list (any one) | a window opens within 20 yards of one of its spawns (loot, gossip, quest, book), or "next" | its spawns |
 | `equip` | item id or list | each is worn. The item button offers it (using it from the bags wears it) | |
 | `destroy` | item id or list | none left in the bags. Ding never destroys anything: the player does | |
-| `bank` | item id or list | none left in the bags (put in the bank) | |
-| `unbank` | item id or list | it is in the bags again | |
+| `bank` | item id or list | none left in the bags (put in the bank) | the bank the fewest seconds away, until its window opens |
+| `unbank` | item id or list | it is in the bags again | the bank the fewest seconds away, until its window opens |
 | `abandon` | quest id or list | the quest has left the log: the player abandons it in the game's quest log, Ding never does | |
 | `keep` | item id or list | not a goal: from this step on, Ding never sells these items at a merchant, and the step says to keep them | |
 | `spots` | list of `{ uiMapId, x, y }` | not a goal: your own places for the step's `kill`, `collect` and `object` goals, used instead of QuestieDB's spawns | those places |

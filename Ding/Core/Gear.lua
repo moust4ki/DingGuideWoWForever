@@ -29,6 +29,7 @@ local WEAPONS = {
     PRIEST = { 4, 10, 15, 19 }, SHAMAN = { 0, 1, 4, 5, 10, 13, 15 }, MAGE = { 7, 10, 15, 19 },
     WARLOCK = { 7, 10, 15, 19 }, DRUID = { 4, 5, 10, 13, 15 },
 }
+GR.WEAPONS = WEAPONS               -- the NPC directory's weapons to learn (Core/Directory.lua)
 local ARMOR_CLASS, WEAPON_CLASS = 4, 2
 
 -- The player's class can wear the item at their level.

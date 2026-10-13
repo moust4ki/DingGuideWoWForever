@@ -27,7 +27,7 @@ local DEFAULTS = {
     panel = {
         shown = true, point = "TOPRIGHT", x = -260, y = -220, scale = 1, width = 300,
         locked = false, bgAlpha = 0.85, compactInCombat = true,
-        hideInInstance = false, keyHints = true, itemButton = true, preview = 0,
+        hideInInstance = false, keyHints = true, itemButton = true, preview = 0, weaponReminder = true,
     },
     arrow = { shown = true, point = "CENTER", x = 0, y = 120, size = 56, mode = 0, style = "ding", tomtom = false,
         loop = true, worldMap = true },

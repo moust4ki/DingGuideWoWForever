@@ -38,19 +38,22 @@ source = source or "QuestieDB"
 correctionsDir = correctionsDir or (here .. "/data/corrections")
 local qdbRoot = combined:gsub("[/\\]src[/\\]corrections[/\\]Forever[/\\]combined[/\\]?$", "")
 
--- The fields Ding reads (Core/Data.lua), by the export's indexes (QuestieDB src/meta/*Meta.lua).
+-- The fields Ding reads (Core/Data.lua), by the export's indexes (QuestieDB src/meta/*Meta.lua);
+-- false: a field of DingDB's own, only set by its corrections.
 local FIELDS = {
     Quest = { "name", 1, "startedBy", 2, "finishedBy", 3, "requiredLevel", 4, "questLevel", 5,
         "requiredRaces", 6, "requiredClasses", 7, "triggerEnd", 9, "objectives", 10, "sourceItemId", 11,
         "preQuestGroup", 12, "preQuestSingle", 13 },
     Npc = { "name", 1, "minLevel", 4, "maxLevel", 5, "rank", 6, "spawns", 7, "friendlyToFaction", 13,
-        "subName", 14, "npcFlags", 15, "dungeon", "spawns:7" },
+        "subName", 14, "npcFlags", 15, "dungeon", "spawns:7", "weaponSkills", false },
     Object = { "name", 1, "spawns", 4, "dungeon", "spawns:4" },
-    Item = { "name", 1, "npcDrops", 2, "objectDrops", 3, "vendors", 14 },
+    Item = { "name", 1, "npcDrops", 2, "objectDrops", 3, "vendors", 14, "class", 12, "subClass", 13,
+        "requiredLevel", 10, "flags", 7 },
 }
 -- Our layout: the position of each field in a record (Core/Data.lua reads the same table).
 -- `dungeon` is ours: the AreaID of the dungeon an NPC or object is only found in (its spawns are
--- all inside it), so that Ding can lead to the dungeon's entrance.
+-- all inside it), so that Ding can lead to the dungeon's entrance. `weaponSkills` is ours too:
+-- the weapon skills a weapon master teaches (tools/data/corrections).
 local LAYOUT = {}
 for kind, list in pairs(FIELDS) do
     LAYOUT[kind] = {}
@@ -163,7 +166,9 @@ local function convert(kind, row)
     local rec = {}
     for i, f in ipairs(LAYOUT[kind]) do
         local v
-        if f.name == "dungeon" then
+        if f.from == false then
+            v = nil
+        elseif f.name == "dungeon" then
             v = dungeonOf(row[tonumber(f.from:match("%d+"))])
         else
             v = row[f.from]

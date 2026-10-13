@@ -619,7 +619,7 @@ local function gamepadChanged()
     local W = Ding.ImportWindow
     if W and W.frame and W.frame:IsShown() then Ding:Safe(W.Refresh, W) end
     local F = Ding.Finder
-    if F and F.frame and F.frame:IsShown() then Ding:Safe(F.UpdateHelp, F) end
+    if F and F.frame and F.frame:IsShown() then Ding:Safe(F.Layout, F) end
     if G.moving then Ding:Safe(plateHelp, G.plate) end
     if Ding.Panel and Ding.Panel.Update then Ding:Safe(Ding.Panel.Update, Ding.Panel) end
 end
