@@ -135,9 +135,13 @@ Contracts between modules:
   spot's spawns, else the next place (without `isGo`). A trip (`go`, `fly`, `hearth` alone)
   is done when the next step for the player is already done by the game's state.
 - `Panel:Rows()` -> lines of the window (`kind`, `text`, `state` = "done" | "todo" |
-  "impossible", `counter`, `sub`), built from `Describe` and the quest log objectives;
+  "impossible" | "header" | "notice", `counter`, `sub`), built from `Describe` and the quest
+  log objectives: a quest's objectives (`nested`) under a row `action = "header"` (its level
+  and name) unless a row of the step names the quest; then the notices `action = "notice"`
+  (`notice` = "travel" | "trip" | "skipped"; `P:Content` lines of the same kind make one box),
   then the rows `along = true` of `Along.shown` (objectives of other quests near the player,
-  after the step's rows and its notes).
+  after the step's rows and its notes), the extras, the notices "bags" | "cleanup", and the
+  preview.
   `Engine.autoMoved`: the engine moved on by itself (the window keeps the finished step for
   1.5 s). `Engine:IsManual(step)` -> step validated by "next" only.
 - Packs: `Ding:GuidePacks()` (packs that have sections: Ding's three, Leveling, Zones then

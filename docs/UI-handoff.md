@@ -465,8 +465,12 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   off) it fades out during the hunt and comes back on leaving.
 - **Death** (Yendi's feedback): a ghost is led to its corpse ("Your corpse", arrival at 30 m),
   then the arrow goes back to the guide.
-- **Quest of an objective** (Yendi's feedback): under the first objective of a quest, the
-  sub-line "For “quest”" when no row of the step names it. Hovering or clicking a row (X in
+- **Quest of an objective** (Yendi's feedback): a header row above a quest's objectives, its
+  level and name "[22] “quest”" in 12 SemiBold (the level `text.secondary`, the name a link, or
+  all of it in `above` orange over the player's level), no icon nor background, text at the
+  icons' x, padding 4 above and none below; its objectives indented by 8. No header when a row
+  of the step names the quest; a quest is named with its level everywhere in the window
+  ("Accept [22] “quest”"). Hovering or clicking a row (X in
   focus mode): the quest's card in a tooltip (name, level, objectives and counters); clicking
   also sends the arrow there. Ding **never opens the game's quest log** or any Blizzard
   window: called from an addon, they are tainted and, on Forever, their secret values fail en
@@ -476,9 +480,8 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
 
 - **Travel** (not in the mockup): the arrow's label line 1 says what to take ("Fly to …",
   "Try to fly to …" from a flight master never seen, "Take the boat to …", "Hearthstone to …",
-  "Teleport to …") when walking is not the fastest; the window repeats it as a hint under the
-  step, then the itinerary as a second hint ("Route: walk 1:20, fly 6:30 (8:30 in all)", same
-  style). For a teleport, the item button shows the spell (its icon, name and cooldown, like
+  "Teleport to …") when walking is not the fastest; the window repeats it in a notice under
+  the step, the itinerary under it ("Route: walk 1:20, fly 6:30 (8:30 in all)"). For a teleport, the item button shows the spell (its icon, name and cooldown, like
   an item). On the game's flight map, a 300 × 32 Ding banner (window look,
   13 SemiBold, the destination in the accent color) at the top of the screen and a 34 px accent
   ring over the destination node, placed where the game's node button stands (read only).
@@ -528,6 +531,12 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
 - **Step language 2** (not in the mockup): the dungeons' page of the Route tab (above); the
   arrow's label on a patrol, "text · point 2 of 5"; as a ghost on a death skip with a spirit
   healer, "Spirit healer".
+- **Notices** (not in the mockup): what concerns the whole window (the way there, a trip to a
+  service, steps passed, bags almost full, quest log almost full) is a box of its own instead of
+  a sub-line of the last row: row background `#FFFFFF0A` (`subtle`), radius 4, no icon, text
+  11/14 Regular `text.secondary` at the icons' x on up to three lines, the other lines of the
+  same notice as its sub-line. The quest log's one adds "A: see the list" (mouse: "Click: see the
+  list") and opens the settings on the cleanup page.
 - **New continent** (not in the mockup): an ordinary "other" row under the step, "New continent:
   talk to … (flight master) to learn its flight paths".
 - **Persistent objectives, wrap-up, preview** (not in the mockup): sticky objectives are along-the-way

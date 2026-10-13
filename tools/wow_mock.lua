@@ -1328,8 +1328,10 @@ return function(opts)
             if #rows == 0 then problem(label .. ": no row in the window") end
             for i, r in ipairs(rows) do
                 if plain(r.text) == "" then problem(("%s: row %d is empty"):format(label, i)) end
-                -- manual / skipped: a step the player marked done or skipped (Engine:StepMark).
-                if not ({ done = true, todo = true, impossible = true, manual = true, skipped = true, preview = true })[r.state] then
+                -- manual / skipped: a step the player marked done or skipped (Engine:StepMark);
+                -- header: a quest above its objectives; notice: a box for the whole window.
+                if not ({ done = true, todo = true, impossible = true, manual = true, skipped = true, preview = true,
+                    header = true, notice = true })[r.state] then
                     problem(("%s: row %d has no state (%s)"):format(label, i, tostring(r.state)))
                 end
             end
@@ -1337,7 +1339,7 @@ return function(opts)
         if QUIET then return end
         print(("== %s | %s | %s%s | %d px"):format(label, plain(f.title.text), plain(f.stepText.text),
             plain(f.stepTotal.text), f.h))
-        local marks = { done = "[x] ", todo = "[ ] ", impossible = "[-] " }
+        local marks = { done = "[x] ", todo = "[ ] ", impossible = "[-] ", notice = "(i) " }
         for _, r in ipairs(rows) do
             print("    " .. (marks[r.state] or "") .. plain(r.text) .. (r.counter and ("  " .. r.counter) or ""))
             if r.sub then print("        " .. (plain(r.sub):gsub("\n", " / "))) end

@@ -202,7 +202,10 @@ T.test("along the way: the minimized window keeps the step's own objective", fun
     H.tick(2.5)
     T.eq(#alongRows(), 1)
     P:SetCompact(true)
-    local first = P:Rows()[1]
+    local first
+    for _, row in ipairs(P:Rows()) do
+        if row.state == "todo" then first = first or row end
+    end
     T.eq(first.quest, 457)
     T.eq(H.plain(P.frame.mini.text.text), H.plain(first.text))
     P:SetCompact(false)
