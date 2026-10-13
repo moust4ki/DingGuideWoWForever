@@ -9,6 +9,13 @@ Ding.RegisterGuide({
     faction  = "Alliance",
     minLevel = 19, maxLevel = 20,
     next     = "leveling-a08-darkshore",
+    leftOut  = {
+        [152] = { kind = "detour", seconds = 900, xp = 1500 },
+        [399] = { kind = "detour", seconds = 120, xp = 1100 },
+        [97222] = { kind = "unsure" },
+        [97234] = { kind = "detour", seconds = 240, xp = 1000 },
+        [98386] = { kind = "detour", seconds = 420, xp = 1200 },
+    },
     steps    = {
         { go = { 1433, 27.05, 48.64 }, text = "Travel to Redridge Mountains", -- level 19
           note = "Redridge Mountains: Lakeshire is the hub, by the lake. The first stop is the western pass from Elwynn Forest." },
@@ -18,7 +25,7 @@ Ding.RegisterGuide({
         { turnin = 244, races = { "NightElf", "Skyborne" } }, -- level 19
         { go = { 1433, 25.46, 59.37 }, fly = true, talk = 931, races = { "NightElf" }, text = "Fly to Lakeshire" }, -- level 19
         { accept = 125 }, -- level 19
-        { accept = 118 }, -- level 19
+        { accept = 118, why = { kind = "carry", quest = 118, seconds = 6060, xp = 300 } }, -- level 19
         { accept = 120, -- level 19
           note = "The NPC is indoors." },
         { accept = 129, -- level 19
@@ -31,12 +38,12 @@ Ding.RegisterGuide({
         { complete = 3741, -- level 19
           note = "Look for a big mound of brown earth. Your targets sit below the water's surface." },
         { turnin = 3741 }, -- level 19
-        { turnin = 132, accept = 135 }, -- level 19
-        { turnin = 120, accept = 121 }, -- level 19
+        { turnin = 132, accept = 135, why = { chain = 4, kind = "detour", quest = 132, seconds = 180, xp = 4800 } }, -- level 19
+        { turnin = 120, accept = 121, why = { back = true, chain = 3, kind = "detour", quest = 135, quests = 9, seconds = 600, short = true, total = 7200, xp = 4100 } }, -- level 19
         { turnin = 135, accept = 141, -- level 19
           note = "The NPC is indoors, one floor up." },
-        { accept = 97894 }, -- level 19
-        { accept = 97926 }, -- level 19
+        { accept = 97894, why = { continent = true, kind = "carry", quest = 97894, seconds = 9180, xp = 800 } }, -- level 19
+        { accept = 97926, why = { continent = true, kind = "carry", quest = 97926, seconds = 19320, xp = 800 } }, -- level 19
         { turnin = 97914 }, -- level 19
         { accept = 97220, races = { "NightElf" } }, -- level 19
         { turnin = 141, accept = 142 }, -- level 19
@@ -114,13 +121,13 @@ Ding.RegisterGuide({
         { talk = 2485, races = { "Human", "Gnome" }, classes = { "MAGE" }, -- level 20
           note = "The NPC is on an upper floor of the tower." },
         { train = true, talk = 5504, races = { "NightElf" }, classes = { "DRUID" } }, -- level 20
-        { accept = 3765 }, -- level 20
-        { turnin = 118, accept = 119, -- level 20
+        { accept = 3765, why = { action = "accept", kind = "detour", quest = 3765, seconds = 180, xp = 1500 } }, -- level 20
+        { turnin = 118, accept = 119, why = { chain = 4, kind = "detour", quest = 118, quests = 8, seconds = 540, short = true, total = 6700, xp = 5900 }, -- level 20
           note = "The NPC is indoors." },
         { turnin = 91723, races = { "Human" } }, -- level 20
         { complete = 91732, races = { "Human" } }, -- level 20
         { complete = 91732, races = { "Dwarf", "Gnome" } }, -- level 20
-        { accept = 94, -- level 20
+        { accept = 94, why = { kind = "carry", quest = 94, seconds = 63000, xp = 800 }, -- level 20
           note = "The NPC waits on the tower's highest floor." },
         { complete = 91725, races = { "Human" } }, -- level 20
         { turnin = 91725, races = { "Human" } }, -- level 20

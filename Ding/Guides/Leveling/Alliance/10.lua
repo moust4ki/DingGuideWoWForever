@@ -9,6 +9,14 @@ Ding.RegisterGuide({
     faction  = "Alliance",
     minLevel = 24, maxLevel = 25,
     next     = "leveling-a11-duskwood-and-redridge-mountains",
+    leftOut  = {
+        [274] = { kind = "prereq" },
+        [473] = { kind = "prereq" },
+        [526] = { kind = "prereq" },
+        [1132] = { kind = "log" },
+        [98190] = { kind = "log" },
+        [98209] = { kind = "log" },
+    },
     steps    = {
         { go = { 1437, 8.55, 55.74 }, text = "Travel to Menethil Harbor", -- level 24
           note = "Wetlands: Menethil Harbor, on the west coast." },
@@ -25,7 +33,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { vendor = true, talk = 6382, races = { "Human", "Gnome" }, classes = { "WARLOCK" }, -- level 24
           note = "The NPC is indoors." },
-        { turnin = 968, when = { log = 968 }, -- level 24
+        { turnin = 968, when = { log = 968 }, why = { back = true, kind = "detour", quest = 968, seconds = 240, short = true, xp = 2000 }, -- level 24
           note = "The NPC waits on the lower level, indoors." },
         { turnin = 971, dungeon = "Blackfathom Deeps", -- level 24
           note = "The NPC waits on the lower level, indoors." },
@@ -105,7 +113,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { talk = 15659, buy = { { 4371, 1, 15659 } }, -- level 25
           note = "The NPC is indoors. Buy it now; a task in Duskwood needs it before long." },
-        { turnin = 1075 }, -- level 25
+        { turnin = 1075, why = { kind = "detour", quest = 1075, seconds = 120, xp = 800 } }, -- level 25
         { accept = 78148, races = { "Human" } }, -- level 25
         { talk = 2485, races = { "Human", "Gnome" }, classes = { "MAGE" }, -- level 25
           note = "The NPC is on an upper floor of the tower." },

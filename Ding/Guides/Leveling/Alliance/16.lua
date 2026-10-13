@@ -9,6 +9,13 @@ Ding.RegisterGuide({
     faction  = "Alliance",
     minLevel = 33, maxLevel = 34,
     next     = "leveling-a17-stranglethorn-vale",
+    leftOut  = {
+        [1121] = { kind = "exclusive" },
+        [1133] = { kind = "away" },
+        [2770] = { kind = "away" },
+        [3842] = { kind = "prereq" },
+        [3843] = { kind = "prereq" },
+    },
     steps    = {
         { go = { 1445, 67.52, 51.25 }, fly = true, talk = 4321, text = "Flight master at Theramore", -- level 34
           note = "Dustwallow Marsh: Theramore Isle, off the east coast." },
@@ -46,7 +53,7 @@ Ding.RegisterGuide({
         { accept = 1252, -- level 34
           note = "The quest starts from a small piece of metal." },
         { accept = 1253 }, -- level 34
-        { go = { 1441, 32.18, 22.29 }, text = "Take the lift down" }, -- level 34
+        { go = { 1441, 32.18, 22.29 }, text = "Take the lift down", why = { action = "accept", kind = "detour", quest = 1100, seconds = 60, xp = 1400 } }, -- level 34
         { collect = { { 5791, 1 } }, -- level 34
           note = "Look for a little brown tome. The item is held by a dwarf corpse." },
         { accept = 1100, useitem = 5791 }, -- level 34
@@ -101,7 +108,7 @@ Ding.RegisterGuide({
         { complete = 1719, classes = { "WARRIOR" }, -- level 35
           note = "Stand on the metal grating to begin the battle. Shows up once you defeat six challengers." },
         { turnin = 1719, when = { ready = 1719 }, classes = { "WARRIOR" } }, -- level 35
-        { accept = 1791, when = { done = 1719 }, classes = { "WARRIOR" } }, -- level 35
-        { turnin = { 1111, 1039 }, accept = { 1112, 1040 } }, -- level 35
+        { accept = 1791, when = { done = 1719 }, classes = { "WARRIOR" }, why = { continent = true, kind = "carry", quest = 1791, seconds = 10380, xp = 200 } }, -- level 35
+        { turnin = { 1111, 1039 }, accept = { 1112, 1040 }, why = { kind = "carry", once = true, quest = 1112, seconds = 25200, xp = 1400 } }, -- level 35
     },
 })

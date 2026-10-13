@@ -28,13 +28,15 @@ local DEFAULTS = {
         shown = true, point = "TOPRIGHT", x = -260, y = -220, scale = 1, width = 300,
         locked = false, bgAlpha = 0.85, compactInCombat = true,
         hideInInstance = false, keyHints = true, itemButton = true, preview = 0, weaponReminder = true,
+        why = true,      -- why the guide makes its choices: lines under surprising steps, tooltips (Core/Why.lua)
     },
     arrow = { shown = true, point = "CENTER", x = 0, y = 120, size = 56, mode = 0, style = "ding", tomtom = false,
         loop = true, worldMap = true },
     item = { point = "BOTTOM", x = 0, y = 220 },
     minimap = { shown = true, angle = 200, pins = true },
     -- hearth, deathSkip, dungeons, elites: the guide's steps behind an option (Engine).
-    ui = { buttonStyle = "xbox", sound = true, welcomed = false, autoAccept = true, autoTurnin = true,
+    -- welcomed: the first launch's Keybinds tab was shown; setupDone: its setup assistant (UI/Setup.lua).
+    ui = { buttonStyle = "xbox", sound = true, welcomed = false, setupDone = false, autoAccept = true, autoTurnin = true,
         skipGrey = false, hearth = true, deathSkip = false, dungeons = false, elites = false,
         chooseReward = false, sellGrey = true, repair = true, markTarget = true, serviceSteps = true,
         offers = true,   -- beside an NPC's window, what the guide does with its quests (UI/Offers.lua)
@@ -83,7 +85,7 @@ function Ding:ResetSettings()
         for k in pairs(t) do t[k] = nil end
         applyDefaults(t, DEFAULTS[key])
     end
-    self.db.ui.welcomed = true
+    self.db.ui.welcomed, self.db.ui.setupDone = true, true
 end
 
 -- Settings saved before the design (layout 1) in the current shape, once.

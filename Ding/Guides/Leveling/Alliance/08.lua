@@ -9,6 +9,10 @@ Ding.RegisterGuide({
     faction  = "Alliance",
     minLevel = 20, maxLevel = 21,
     next     = "leveling-a09-ashenvale-and-stonetalon-mountains",
+    leftOut  = {
+        [87760] = { kind = "detour", seconds = 180, xp = 1400 },
+        [98042] = { kind = "detour", seconds = 60, xp = 1100 },
+    },
     steps    = {
         { go = { 1439, 37.32, 43.64 }, text = "Travel to Auberdine", -- level 20
           note = "Darkshore: Auberdine, the port on the west coast." },
@@ -91,7 +95,7 @@ Ding.RegisterGuide({
           note = "For this quest you guard an NPC on the move. If she is absent, wait for her to reappear." },
         { complete = 945, -- level 22
           note = "Let the conversation play out. Escort Therylune and defend her." },
-        { accept = 968, useitem = 5352, when = { item = 5352 } }, -- level 22
+        { accept = 968, useitem = 5352, when = { item = 5352 }, why = { continent = true, kind = "carry", quest = 968, seconds = 16800, xp = 2000 } }, -- level 22
         { turnin = 993, accept = 994, noauto = 994, -- level 22
           note = "For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears. Your objective lies in a little cavern." },
         { complete = 994, -- level 22

@@ -9,6 +9,18 @@ Ding.RegisterGuide({
     faction  = "Horde",
     minLevel = 56, maxLevel = 58,
     next     = "leveling-h40-winterspring",
+    leftOut  = {
+        [5214] = { kind = "away" },
+        [5282] = { kind = "prereq" },
+        [5781] = { kind = "far" },
+        [5845] = { kind = "prereq" },
+        [5846] = { kind = "prereq" },
+        [5861] = { kind = "prereq" },
+        [5942] = { kind = "prereq" },
+        [6041] = { kind = "prereq" },
+        [8947] = { kind = "prereq" },
+        [9665] = { kind = "away" },
+    },
     steps    = {
         { go = { 1458, 63.9, 44.08 }, text = "Travel to the Undercity", -- level 56
           note = "Undercity first, then the Plaguelands." },
@@ -16,24 +28,24 @@ Ding.RegisterGuide({
           note = "The NPC wears a pale shirt and carries a lamp. The NPC patrols a long route; look along it." },
         { vendor = true, talk = 4555, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, -- level 56
           note = "A lengthy stretch of quests is coming up. You won't find an ammunition seller." },
-        { turnin = 5094, accept = 5096 }, -- level 56
+        { turnin = 5094, accept = 5096, why = { action = "accept", chain = 10, kind = "detour", quest = 5096, seconds = 60, xp = 49000 } }, -- level 56
         { collect = { { 12814, 1 } }, spots = { { 1420, 83.11, 69.13 } } }, -- level 56
         { turnin = 6029, accept = 5405 }, -- level 56
         { turnin = 5405 }, -- level 56
         { equip = 12846, -- level 56
           note = "Undead foes drop these in both Plaguelands zones, Western and Eastern. Keep your Argent Dawn Commission aura up." },
         { complete = 5096, useitem = 12807 }, -- level 56
-        { turnin = 5096, accept = 5228 }, -- level 56
+        { turnin = 5096, accept = 5228, why = { back = true, chain = 9, kind = "detour", quest = 5228, quests = 11, seconds = 120, total = 49000, xp = 44000 } }, -- level 56
         { accept = 5098, elite = true }, -- level 56
         { destroy = 12814 }, -- level 56
         { turnin = 5228, accept = 5229 }, -- level 56
-        { complete = 5229 }, -- level 56
+        { complete = 5229, why = { back = true, chain = 8, kind = "detour", quest = 5229, quests = 14, seconds = 120, total = 62000, xp = 43000 } }, -- level 56
         { turnin = 5229, accept = 5230 }, -- level 56
         { accept = 5021, -- level 56
           note = "The NPC is indoors, one floor up." },
-        { turnin = 5021, accept = 5023, -- level 56
+        { turnin = 5021, accept = 5023, why = { kind = "carry", quest = 5023, seconds = 26880, xp = 2600 }, -- level 56
           note = "The object is indoors." },
-        { turnin = 5230, accept = 5231 }, -- level 56
+        { turnin = 5230, accept = 5231, why = { back = true, chain = 7, kind = "detour", quest = 5230, seconds = 120, xp = 38000 } }, -- level 56
         { complete = 5231 }, -- level 56
         { turnin = 5231, accept = 5232 }, -- level 56
         { accept = 5058, -- level 56
@@ -67,11 +79,11 @@ Ding.RegisterGuide({
         { destroy = 12815 }, -- level 56
         { turnin = 838, elite = true }, -- level 56
         { accept = 964, elite = true }, -- level 56
-        { turnin = 5232, accept = 5233 }, -- level 56
+        { turnin = 5232, accept = 5233, why = { back = true, chain = 5, kind = "detour", quest = 5232, quests = 9, seconds = 180, total = 44000, xp = 30000 } }, -- level 56
         { accept = 5901 }, -- level 56
         { complete = 964, elite = true }, -- level 56
         { complete = 5233 }, -- level 56
-        { turnin = 5233, accept = 5234 }, -- level 56
+        { turnin = 5233, accept = 5234, why = { kind = "carry", quest = 5234, seconds = 24300, xp = 2800 } }, -- level 56
         { accept = 4984, sticky = 4984, -- level 56
           note = "The NPC is indoors." },
         { accept = 6004 }, -- level 56
@@ -87,7 +99,7 @@ Ding.RegisterGuide({
           note = "Spiders also appear at these spawn spots." },
         { turnin = 4984, accept = 4985, sticky = 4985, -- level 56
           note = "The NPC is indoors." },
-        { accept = { 5542, 5543, 5544 }, sticky = { 5544, 5542, 5543 } }, -- level 56
+        { accept = { 5542, 5543, 5544 }, sticky = { 5544, 5542, 5543 }, why = { kind = "carry", once = true, quest = 5542, seconds = 21960, xp = 5800 } }, -- level 56
         { accept = 6042 }, -- level 56
         { accept = 6022, elite = true }, -- level 56
         { turnin = 5601, accept = 5149, -- level 56
@@ -101,7 +113,7 @@ Ding.RegisterGuide({
         { complete = 5149, useitem = 12886 }, -- level 56
         { turnin = 5149, sticky = { 5542, 5543 }, when = { item = 12885 }, -- level 56
           note = "The NPC is within the ruined home." },
-        { accept = 5152, when = { done = 5149 } }, -- level 56
+        { accept = 5152, when = { done = 5149 }, why = { kind = "carry", quest = 5152, seconds = 22440, xp = 2900 } }, -- level 56
         { accept = 5241, when = { done = 5149 }, races = { "Skyborne" } }, -- level 56
         { complete = 5544, -- level 56
           note = "Look for big yellow grubs." },
@@ -134,7 +146,7 @@ Ding.RegisterGuide({
         { turnin = 5742 }, -- level 57
         { complete = 4985, -- level 57
           note = "Spiders also appear at these spawn spots." },
-        { turnin = 4985, accept = 4987, -- level 57
+        { turnin = 4985, accept = 4987, why = { continent = true, kind = "carry", quest = 4987, seconds = 54840, xp = 5800 }, -- level 57
           note = "The NPC is indoors." },
         { turnin = 5152, when = { log = 5152 }, -- level 57
           note = "Check each of the two floors indoors." },
@@ -173,7 +185,7 @@ Ding.RegisterGuide({
         { turnin = 7817, when = { item = { 4338, 60 }, ready = 7817 } }, -- level 57
         { accept = 7818, when = { done = 7813, item = { 14047, 60 } } }, -- level 57
         { turnin = 7818, when = { item = { 14047, 60 }, ready = 7818 } }, -- level 57
-        { turnin = 6021, races = { "Skyborne" }, -- level 57
+        { turnin = 6021, races = { "Skyborne" }, why = { chain = 1, kind = "detour", quest = 5210, quests = 4, seconds = 420, short = true, total = 19000, xp = 8900 }, -- level 57
           note = "This one roams, so scan the surrounding area." },
         { turnin = 5211 }, -- level 57
         { turnin = 5210, when = { log = 5210 } }, -- level 57
@@ -182,8 +194,8 @@ Ding.RegisterGuide({
           note = "Your targets sit below the water's surface." },
         { complete = 5181, when = { log = 5181 } }, -- level 57
         { turnin = 5235, when = { ready = 5235 } }, -- level 57
-        { accept = 5236, when = { done = 5235 } }, -- level 57
-        { turnin = 5902, accept = 6390, -- level 57
+        { accept = 5236, when = { done = 5235 }, why = { kind = "carry", quest = 5236, seconds = 18540, xp = 3100 } }, -- level 57
+        { turnin = 5902, accept = 6390, why = { kind = "carry", quest = 6390, seconds = 18480, xp = 5700 }, -- level 57
           note = "The object is indoors. It shows up on top of the box." },
         { turnin = 5050, accept = 5051, -- level 57
           note = "The NPC is indoors, one floor up." },
@@ -192,8 +204,8 @@ Ding.RegisterGuide({
         { complete = 5051, useitem = 12722 }, -- level 57
         { turnin = 5051, when = { item = 12723 }, -- level 57
           note = "The NPC is indoors, one floor up." },
-        { level = 58, patrol = { { 1422, 41.76, 62.04 }, { 1422, 44.76, 62.24 }, { 1422, 47.94, 63.04 }, { 1422, 45.66, 65.43 }, { 1422, 42.57, 66.96 }, { 1422, 39.35, 66.86 }, { 1422, 37.83, 70.45 }, { 1422, 40.97, 70.37 }, { 1422, 44.44, 69.83 }, { 1422, 46.94, 71.55 }, { 1422, 48.03, 68.17 }, { 1422, 44.24, 74.76 }, { 1422, 40.23, 73.75 } } }, -- level 57
-        { turnin = 5236, when = { log = 5236 } }, -- level 58
+        { level = 58, patrol = { { 1422, 41.76, 62.04 }, { 1422, 44.76, 62.24 }, { 1422, 47.94, 63.04 }, { 1422, 45.66, 65.43 }, { 1422, 42.57, 66.96 }, { 1422, 39.35, 66.86 }, { 1422, 37.83, 70.45 }, { 1422, 40.97, 70.37 }, { 1422, 44.44, 69.83 }, { 1422, 46.94, 71.55 }, { 1422, 48.03, 68.17 }, { 1422, 44.24, 74.76 }, { 1422, 40.23, 73.75 } }, why = { kind = "level", levels = { 55, 60 } } }, -- level 57
+        { turnin = 5236, when = { log = 5236 }, why = { kind = "detour", quest = 5238, quests = 3, seconds = 60, total = 18000, xp = 9300 } }, -- level 58
         { turnin = 6390 }, -- level 58
         { accept = 5238, when = { done = 5236 } }, -- level 58
         { turnin = 5238, when = { log = 5238 } }, -- level 58
@@ -233,7 +245,7 @@ Ding.RegisterGuide({
           note = "This NPC is found down in the Cleft of Shadow." },
         { talk = 8673, collect = { { 2592, 60 }, { 4306, 60 }, { 4338, 60 }, { 14047, 60 } }, -- level 58
           note = "You can also take it out of your bank. The NPC is indoors." },
-        { accept = 8276 }, -- level 58
+        { accept = 8276, why = { kind = "carry", quest = 8276, seconds = 35580, xp = 2800 } }, -- level 58
         { accept = 7833, when = { item = { 2592, 60 } }, -- level 58
           note = "The NPC is indoors." },
         { turnin = 7833, when = { item = { 2592, 60 }, ready = 7833 } }, -- level 58
@@ -248,6 +260,6 @@ Ding.RegisterGuide({
         { turnin = 7836, when = { item = { 14047, 60 }, ready = 7836 } }, -- level 58
         { train = true, talk = 6018, races = { "Scourge", "Troll" }, classes = { "PRIEST" }, -- level 58
           note = "The NPC is indoors." },
-        { turnin = 3564 }, -- level 58
+        { turnin = 3564, why = { kind = "detour", quest = 3564, seconds = 60, xp = 3000 } }, -- level 58
     },
 })

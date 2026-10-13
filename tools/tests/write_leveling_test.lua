@@ -201,6 +201,50 @@ T.test("a section opens with its intro and, from elsewhere, a go step to its fir
     T.ok(not report:find("without a complete step", 1, true), report)
 end)
 
+-- Teldrassil, then Darnassus for one turn-in (922 Rellian Greenspyre), then back to Teldrassil:
+-- a detour the window explains (tools/route_why.lua). The other steps say nothing.
+local ROUTE3 = [=[
+return {
+    faction = "Alliance",
+    sections = {
+        { id = "leveling-a01-test-why", title = "Why test", races = { "NightElf" }, minLevel = 5, maxLevel = 9,
+          areas = { 188, 141, 1657 }, uiMaps = { 1438, 1457 },
+          steps = {
+              { accept = 456 }, { complete = 456 }, { turnin = 456 },
+              { accept = 922 }, { accept = 916 },
+              { turnin = 922 },
+              { complete = 916 }, { turnin = 916 },
+          } },
+    },
+}
+]=]
+T.test("reasons: a detour to another zone and back is said under its step, with its figures", function()
+    local dir = base .. "/why"
+    os.execute(shell((windows and "mkdir " or "mkdir -p ") .. quote(windows and dir:gsub("/", "\\") or dir)))
+    local f = assert(io.open(dir .. "/route.lua", "w"))
+    f:write(ROUTE3)
+    f:close()
+    local output = run(table.concat({ quote(lua), quote(tools .. "/write_leveling.lua"), quote(T.combined),
+        quote(dir .. "/route.lua"), "--out", quote(dir .. "/out"), "--no-additions" }, " "))
+    local guide = read(dir .. "/out/Leveling/Alliance/01.lua") or ""
+    T.ok(output:find("Reasons (tools/route_why.lua): 1 steps, 1 said under their step (1 detours", 1, true), output)
+    local line = guide:match("\n%s*({ turnin = 922, why = [^\n]*)")
+    T.ok(line, guide)
+    T.ok(line:find('kind = "detour"', 1, true) and line:find("quest = 922", 1, true)
+        and line:find("short = true", 1, true) and line:find("back = true", 1, true), line)
+    local seconds, xp = tonumber(line:match("seconds = (%d+)")), tonumber(line:match("xp = (%d+)"))
+    T.ok(seconds and seconds >= 240 and seconds % 60 == 0, "seconds: " .. line)
+    T.ok(xp and xp > 0 and xp % 10 == 0, "xp: " .. line)
+    -- Honesty: one reason, on that step only.
+    local _, count = guide:gsub("why = ", "")
+    T.eq(count, 1, guide)
+    -- Quests of the side the audit left out, with the route's reason.
+    T.ok(guide:find("\n    leftOut  = {\n        %[%d+%] = { kind = \"%a+\"", 1), guide)
+    local report = run(table.concat({ quote(lua), quote(tools .. "/check_guides.lua"), quote(T.combined),
+        quote(dir .. "/out/Leveling/Alliance/01.lua") }, " "))
+    T.ok(report:find("Result: 0 error(s)", 1, true), report)
+end)
+
 -- Tests run in order: this one last.
 T.test("temporary files cleaned up", function()
     remove(base)

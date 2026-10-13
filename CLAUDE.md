@@ -58,6 +58,9 @@ Ding/
                     hand, never run) and writer back to text
     Import.lua      Ding.Import: guides imported as text (checks, ids, DingDB.imported,
                     registered at login), export
+    Why.lua         Ding.Why: why the guide makes its choices, in plain words (a step's `why`, a
+                    section's `leftOut`): a short line under a surprising step, the whole reason
+                    on demand (row tooltips), why a quest is left out (Why:Quest)
     Commands.lua    /ding
   UI/
     Widgets.lua     Ding.UI: design tokens (UI.C), Noto Sans fonts (UI.Font), nine-slice kit
@@ -89,6 +92,10 @@ Ding/
     Config.lua      Ding.Config: settings window, six tabs by intent (Config.TAB keys: guide,
                     route, automation, arrow, bindings, appearance), titled blocks, pages for
                     long lists (OpenPage), folded rows, "Defaults for this tab"; first launch
+                    (after the setup assistant: Config:Welcome, the Keybinds tab)
+    Setup.lua       Ding.Setup: the setup assistant, four screens of choices (Setup.SCREENS), once
+                    per account at the first launch (Setup:FirstLaunch), again from the Guide tab
+                    or /ding intro
   Locales/
     enUS.lua        interface texts in English (reference, default language)
     <locale>.lua    interface texts of one language (frFR, deDE, esES, ptBR, koKR, zhCN, zhTW)
@@ -109,7 +116,9 @@ Ding/
                                 item worth getting off the route, for both sides (`faction`
                                 steps), hand-written
 examples/DingExamplePack/   example guide pack (a separate addon, not in the zip), tested
-tools/              offline scripts (Lua 5.1): list_zone, check_guides, smoke_test, run_tests
+tools/              offline scripts (Lua 5.1): list_zone, check_guides, smoke_test, run_tests;
+                    route_why.lua: the reasons of the Leveling guides (`why`, `leftOut`), measured
+                    on write_leveling.lua's simulation
   wow_mock.lua      mocked WoW API, shared by the smoke test and the unit tests
   tests/*_test.lua  unit tests (one process per file)
 docs/SPEC.md        specification and roadmap
@@ -149,7 +158,8 @@ Contracts between modules:
   "impossible" | "header" | "notice", `counter`, `sub`), built from `Describe` and the quest
   log objectives: a quest's objectives (`nested`) under a row `action = "header"` (its level
   and name) unless a row of the step names the quest; then the notices `action = "notice"`
-  (`notice` = "travel" | "trip" | "skipped"; `P:Content` lines of the same kind make one box),
+  (`notice` = "travel" | "trip" | "skipped"; `P:Content` lines of the same kind make one box;
+  the step's own rows carry `ofStep`: their tooltip says why, `P.shownStep`),
   then the rows `along = true` of `Along.shown` (objectives of other quests near the player,
   after the step's rows and its notes), the extras, the notices "bags" | "cleanup", and the
   preview (under a row `action = "previewHeader"`). Plain words (SPEC): `Panel:RowMeaning(row)`
@@ -221,7 +231,15 @@ Contracts between modules:
   `Offers:Classify(q)` -> `{ kind = "now" | "later" | "needed" | "earlier" | "other" | "none",
   step, guide, before, ahead, reason }`, `Offers:Verdict(r, q, ctx)` -> "take" | "can" | "notNow" |
   "optional" | "useless" and plain sentences (no color code); `Offers:WhyLeftOut(q)`: the one
-  place that asks `Ding.Why:Quest(q)` for the route's reason (a clause, or `{ text }`). `Engine:UnusedLogQuests()`: quests
+  place that asks `Ding.Why:Quest(q)` for the route's reason (a clause, or `{ text }`).
+  Reasons (`Core/Why.lua`): `Why:Step(step)` -> `{ short, lines,
+  estimates }` or nil (no `why`: the step has no reason), `Why:Short(step)` (the line under the
+  step, nil when not `short` or the option is off), `Why:Detail(step)` (the tooltip's lines,
+  `L.WHY_NONE` without a reason, nil when off), `Why:Quest(q[, guide])` -> clause, entry, guide
+  (for `L.OFFER_NOT_DONE`; the section's `leftOut`, else another section of its pack for the character; nil: say
+  nothing), `Why.LeftOutText(entry)`, `Why.XPText(xp, plain)`, `Why.TimeText(seconds)`,
+  `Why.STEP` / `Why.LEFT` (kinds and keys, checked by Import; `check_guides.lua` has the same).
+  `Engine:UnusedLogQuests()`: quests
   of the log the active guide and the next ones never use (listed in the Guide tab; Ding never
   abandons them). `UI.Banner`, `UI.Ring`, `UI.ScreenCenter`: Ding's marks over the game's
   windows, which are only read. `QuestMobs.byNpc` (`[npc id]` = entries best first: `kind`
@@ -245,11 +263,21 @@ Contracts between modules:
   `Finder:Go(kind)`, `Finder:Cancel([quiet])`), read by the arrow and the guide window; the
   engine ends it whenever the player moves the guide (Next, Skip, Prev, BackToIncomplete,
   SetGuide).
+- Setup assistant: `Setup:Open(screen, back)` (`back(input)` runs once the player closes it, one
+  frame later, `input` = "xbox" | "ps" | "mouse": the settings it came from, the first launch's
+  Keybinds tab), `Setup:Close(quiet)` (`quiet`: another Ding window takes over, `back` does not
+  run; the settings, the directory and the import window call it), `Setup:FirstLaunch(after)`
+  (Config:Init: 2 s after login, the assistant then `after(input)`, or `after()` alone once
+  done), `Setup:Keep()` ("Keep the recommended settings": every setting not changed in this run
+  back to `Ding.DEFAULTS`), `Setup:IsShown()`. A choice of a screen: `{ kind = "check" | "radio"
+  | "go", id, label, sub, tag, setting = { get, set, recommended[, custom] }, value, run }`; a
+  check writes its setting at once, through the same calls as the settings window.
 - `Ding.db` (DingDB, account): `panel` (position, `scale` 0.5-1.5, `width` 240-420, `locked`,
   `bgAlpha`, `compactInCombat`, `hideInInstance`, `keyHints`, `itemButton`), `arrow`
   (position, `size` 40-80, `style`, `mode`, `tomtom`, `loop`: farming loop, `worldMap`: the
   target as the client's map waypoint), `item` (position of the item button),
-  `minimap` (`shown`, `angle`), `ui` (`buttonStyle`, `sound`, `welcomed`, `autoAccept`,
+  `minimap` (`shown`, `angle`), `ui` (`buttonStyle`, `sound`, `welcomed`, `setupDone` (the
+  setup assistant was closed by the player; a fight during the first launch's keeps it pending), `autoAccept`,
   `autoTurnin`, `skipGrey`, `hearth`, `deathSkip`, `dungeons`, `elites`, `chooseReward`,
   `sellGrey`, `repair`, `markTarget`, `serviceSteps`, `trainerSteps`, `flightSteps`, `autoEquip`, `autoFly`, `offers`, `dungeonChoice` (`[name] = bool`),
   `mobIcons`, `mobTooltip`, `farPlates`), `farPlatesFrom` (the nameplate distance before
@@ -287,7 +315,8 @@ Contracts between modules:
   `hearthInn` (`{ inn, name }`: bound during a sethearth step, the client's name of the inn),
   `worldMark` (`{ map, x, y }`: the map waypoint Ding set, not the player's).
   `Ding.db.panel.preview` (0-3 next steps shown), `Ding.db.panel.weaponReminder` (the weapon
-  to learn under the step), `Ding.db.minimap.pins`.
+  to learn under the step), `Ding.db.panel.why` (the guide's explanations, Core/Why.lua),
+  `Ding.db.minimap.pins`.
   The engine places the player only once the quest log has arrived (`Engine.logReady`).
 
 ## Data

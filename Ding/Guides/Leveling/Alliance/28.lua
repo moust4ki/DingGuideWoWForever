@@ -9,8 +9,14 @@ Ding.RegisterGuide({
     faction  = "Alliance",
     minLevel = 44, maxLevel = 48,
     next     = "leveling-a29-the-hinterlands",
+    leftOut  = {
+        [3788] = { kind = "away" },
+        [3841] = { kind = "away" },
+        [7441] = { kind = "away" },
+        [7488] = { kind = "away" },
+    },
     steps    = {
-        { accept = 3022, -- level 44
+        { accept = 3022, why = { kind = "carry", once = true, quest = 3022, seconds = 54180, xp = 2100 }, -- level 44
           note = "Tanaris: Gadgetzan first, then Feralas: Feathermoon Stronghold." },
         { accept = 2821 }, -- level 44
         { sethearth = "Feathermoon Stronghold", talk = 7736, -- level 44
@@ -19,7 +25,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { accept = 2866, -- level 44
           note = "The NPC is indoors." },
-        { accept = 2939, -- level 44
+        { accept = 2939, why = { kind = "carry", quest = 2939, seconds = 54360, xp = 400 }, -- level 44
           note = "The NPC is indoors." },
         { accept = 2982, -- level 44
           note = "The NPC is indoors." },
@@ -43,7 +49,7 @@ Ding.RegisterGuide({
         { go = { 1444, 26.06, 67.3 }, text = "Head out of the cave" }, -- level 44
         { accept = 2766, collect = { { 8705, 1 } }, useitem = 8705, -- level 44
           note = "The item drops rarely." },
-        { level = 46, patrol = { { 1444, 25.26, 62.77 }, { 1444, 27.37, 62.45 }, { 1444, 26.64, 65.05 }, { 1444, 24.56, 66.83 }, { 1444, 23.37, 64.16 } }, -- level 44
+        { level = 46, patrol = { { 1444, 25.26, 62.77 }, { 1444, 27.37, 62.45 }, { 1444, 26.64, 65.05 }, { 1444, 24.56, 66.83 }, { 1444, 23.37, 64.16 } }, why = { kind = "level", levels = { 44, 47 } }, -- level 44
           note = "Zones with stronger foes lie just ahead. The quests alone won't give you the level you need." },
         { go = { 1444, 26.06, 67.3 }, text = "Head out of the cave" }, -- level 46
         { go = { 1444, 38.99, 74.96 }, text = "Swim this way to stay out of fatigue" }, -- level 46
@@ -129,7 +135,7 @@ Ding.RegisterGuide({
         { complete = 4265, -- level 46
           note = "Let the conversation play out. Your targets are within the cavern." },
         { turnin = 2821 }, -- level 46
-        { turnin = 2982, accept = 3445, -- level 46
+        { turnin = 2982, accept = 3445, why = { kind = "carry", quest = 3445, seconds = 71940, xp = 3700 }, -- level 46
           note = "The NPC is indoors." },
         { turnin = 4265, accept = 4266, -- level 46
           note = "The NPC is indoors, one floor up." },
@@ -141,7 +147,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors, one floor up." },
         { accept = 2940, -- level 46
           note = "The object is indoors, one floor up." },
-        { turnin = 2940, accept = 2941, -- level 46
+        { turnin = 2940, accept = 2941, why = { kind = "carry", once = true, quest = 2941, seconds = 59700, xp = 1100 }, -- level 46
           note = "The NPC is indoors, one floor up." },
         { talk = 4209, bank = { 9329, 10699, 8564, 6258, 6259 }, -- level 46
           note = "You need them later for \"The Borrower\", \"Screecher Spirits\", \"The Super Egg-O-Matic\" and \"Rhapsody's Kalimdor Kocktail\": keep them in the bank to free bag slots." },
@@ -169,7 +175,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { vendor = true, talk = 7942, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 46
           note = "A lengthy grinding stretch is coming up. The NPC is indoors." },
-        { level = 48, xp = 67550, patrol = { { 1444, 25.26, 62.77 }, { 1444, 27.37, 62.45 }, { 1444, 26.64, 65.05 }, { 1444, 24.56, 66.83 }, { 1444, 23.37, 64.16 } }, -- level 46
+        { level = 48, xp = 67550, patrol = { { 1444, 25.26, 62.77 }, { 1444, 27.37, 62.45 }, { 1444, 26.64, 65.05 }, { 1444, 24.56, 66.83 }, { 1444, 23.37, 64.16 } }, why = { kind = "level", levels = { 45, 60 } }, -- level 46
           note = "Zones with stronger foes lie just ahead. The quests alone won't give you the level you need." },
         { train = true, talk = 12042, races = { "NightElf" }, classes = { "DRUID" } }, -- level 46
         { train = true, talk = 7312, races = { "Human", "Gnome" }, classes = { "MAGE" }, -- level 46

@@ -14,7 +14,7 @@ Ding.RegisterGuide({
           note = "Stonetalon Mountains: Sun Rock Retreat, in the middle of the zone." },
         { accept = 1087, elite = true }, -- level 25
         { accept = 6301, elite = true }, -- level 25
-        { accept = { 5881, 6282 } }, -- level 25
+        { accept = { 5881, 6282 }, why = { kind = "carry", quest = 5881, seconds = 16740, xp = 1200 } }, -- level 25
         { accept = 86576 }, -- level 25
         { go = { 1442, 49.25, 61.94 }, text = "Climb the trail" }, -- level 25
         { accept = 6393, races = { "Orc", "Tauren", "Troll" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK", "DRUID" }, -- level 25

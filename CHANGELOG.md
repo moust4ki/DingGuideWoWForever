@@ -4,6 +4,10 @@
 
 Nothing else to install: QuestieDB is no longer needed, and TomTom stays optional.
 
+- **Setup assistant** at the first launch: four short screens to choose how you play, what
+  Ding! does for you, your route and the guide to start with, the recommended choices already
+  selected. "Keep the recommended settings" ends it at once; run
+  it again from the Guide tab or with `/ding intro`.
 - **NPC directory**: open it from the new button of the guide window, a key binding or
   `/ding find <text>`.
   - **Nearby**, anywhere in the world: the nearest vendor, repairer, innkeeper, bank, auction
@@ -33,6 +37,11 @@ Nothing else to install: QuestieDB is no longer needed, and TomTom stays optiona
   - The minimized window, the minimap pins, the item button, the quest monsters' tooltip line,
     the NPC directory ("8 min away", "by flight"), the panel beside an NPC ("level 24") and the
     arrow ("distance unknown", "farming loop: 2 of 10") say what they show.
+- **Why the guide does this**: when the guide sends you out of your way (a trip to another zone
+  and back, a quest taken now for much later), one line under the step says why, with the XP
+  and the time ("Why this detour (about 5 min): turning in “The Legend of Stalvan” opens a chain
+  of quests worth a lot of XP (about 13,000)."). The whole reason shows in the tooltip of the
+  step's rows (mouse over a row, or X in focus mode). Option "Guide explanations" (Guide tab).
 - **Guide window**
   - Each quest's level and name above its objectives; the next steps show the quest's level too.
   - Texts are never cut: rows grow to show them whole.

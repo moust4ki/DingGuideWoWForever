@@ -60,6 +60,7 @@ Core\AutoQuest.lua
 Core\Rewards.lua
 Core\GuideText.lua
 Core\Import.lua
+Core\Why.lua
 UI\Widgets.lua
 UI\Gamepad.lua
 UI\Arrow.lua
@@ -75,6 +76,7 @@ UI\Minimap.lua
 UI\MinimapPins.lua
 UI\QuestMobs.lua
 UI\Config.lua
+UI\Setup.lua
 Core\Commands.lua
 
 Guides\Leveling\Alliance\01.lua

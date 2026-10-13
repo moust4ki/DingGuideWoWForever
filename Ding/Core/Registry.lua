@@ -52,8 +52,9 @@ local function normalizeStep(step, guideId, index)
     return step
 end
 
--- Guide texts (title, step text and note) are written in English; a translation replaces
--- them in place, whichever of the guide and its translation loads first.
+-- Guide texts (title, step text and note, the texts of `why` and `leftOut`) are written in
+-- English; a translation replaces them in place, whichever of the guide and its translation
+-- loads first.
 local function translate(def)
     local map = translations[def.id]
     if not map then return end
@@ -61,6 +62,18 @@ local function translate(def)
     for _, step in ipairs(def.steps) do
         if step.text then step.text = map[step.text] or step.text end
         if step.note then step.note = map[step.note] or step.note end
+        if type(step.why) == "string" then
+            step.why = map[step.why] or step.why
+        elseif type(step.why) == "table" and type(step.why.text) == "string" then
+            step.why.text = map[step.why.text] or step.why.text
+        end
+    end
+    for q, entry in pairs(type(def.leftOut) == "table" and def.leftOut or {}) do
+        if type(entry) == "string" then
+            def.leftOut[q] = map[entry] or entry
+        elseif type(entry) == "table" and type(entry.text) == "string" then
+            entry.text = map[entry.text] or entry.text
+        end
     end
 end
 

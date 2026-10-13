@@ -151,7 +151,7 @@ end
 -- The saved settings each tab shows ("Defaults for this tab" puts them back). The keys
 -- never change: only where they are shown.
 local TAB_SETTINGS = {
-    guide = { { "panel", "shown" }, { "panel", "preview" }, { "panel", "weaponReminder" } },
+    guide = { { "panel", "shown" }, { "panel", "preview" }, { "panel", "weaponReminder" }, { "panel", "why" } },
     route = { { "ui", "hearth" }, { "ui", "deathSkip" }, { "ui", "elites" }, { "ui", "dungeons" },
         { "ui", "dungeonChoice" }, { "ui", "trainerSteps" }, { "ui", "flightSteps" }, { "ui", "serviceSteps" } },
     automation = { { "ui", "autoAccept" }, { "ui", "autoTurnin" }, { "ui", "offers" }, { "ui", "chooseReward" },
@@ -341,6 +341,16 @@ local function guideRows(canvas, width)
                 P:Update()
             end,
         }, width),
+        -- Why the guide makes its choices (Core/Why.lua): a line under a surprising step, the
+        -- whole reason in the step's tooltips.
+        UI.CheckRow(canvas, Cfg, {
+            label = L.OPT_WHY, desc = L.OPT_WHY_DESC,
+            get = function() return panel.why ~= false end,
+            set = function(v)
+                panel.why = v and true or false
+                P:Update()
+            end,
+        }, width),
     }
     local function add(row) rows[#rows + 1] = row end
     -- Section wrap-up: "Stay in this section" was chosen; the choices come back on demand.
@@ -373,6 +383,12 @@ local function guideRows(canvas, width)
             return count == 0 and L.IMPORTED_ZERO or L.IMPORTED_COUNT:format(count)
         end,
         open = function() Cfg:OpenPage(IMPORTED_PAGE) end,
+    }, width))
+    -- The first launch's setup assistant (UI/Setup.lua); closing it comes back here.
+    add(UI.HeaderRow(canvas, L.HEADER_HELP, width))
+    add(UI.ButtonRow(canvas, Cfg, {
+        label = L.SETUP_ROW, desc = L.SETUP_ROW_DESC, button = L.SETUP_BTN,
+        run = function() Ding.Setup:Open(1, function() Cfg:Open("guide") end) end,
     }, width))
     add(defaultsRow(canvas, width, "guide"))
     return rows
@@ -1379,6 +1395,7 @@ function Cfg:Toggle()
 end
 
 function Cfg:OnShow()
+    if Ding.Setup:IsShown() then Ding.Setup:Close(true) end
     if Ding.Panel.focusing then Ding.Panel:StopFocus() end
     G():Take(self.frame, function(key) Cfg:OnKey(key) end, 0.4, 0.12)
     self:SelectTab(self.openTab or self.tab or 1, self.openFocus)
@@ -1428,24 +1445,36 @@ local function registerAddOnCategory()
     if InterfaceOptions_AddCategory then pcall(InterfaceOptions_AddCategory, panel) end
 end
 
+-- First launch: the setup assistant (once per account, UI/Setup.lua), then the Keybinds tab,
+-- unless the player plays with the keyboard and the mouse.
 function Cfg:Init()
     registerAddOnCategory()
+    Ding.Setup:FirstLaunch(function(input)
+        if input == "mouse" then
+            Ding.db.ui.welcomed = true
+        else
+            Cfg:Welcome()
+        end
+    end)
+end
+
+-- The Keybinds tab with its welcome banner, the focus on "Open Ding settings", until that
+-- binding is set.
+function Cfg:Welcome()
     local ui = Ding.db.ui
     if ui.welcomed or G():BindingKey("DING_CONFIG") then
         ui.welcomed = true
         return
     end
-    C_Timer.After(2, function()
-        if InCombatLockdown() or ui.welcomed then return end
-        ui.welcomed = true
-        Cfg.welcome = true
-        -- Focus "Open Ding settings" (binding rows are the tab's first focusable rows).
-        local focus = 1
-        for i, b in ipairs(BINDINGS) do
-            if b.action == "DING_CONFIG" then focus = i end
-        end
-        Cfg:Open(BINDINGS_TAB, focus)
-    end)
+    if InCombatLockdown() then return end
+    ui.welcomed = true
+    Cfg.welcome = true
+    -- Focus "Open Ding settings" (binding rows are the tab's first focusable rows).
+    local focus = 1
+    for i, b in ipairs(BINDINGS) do
+        if b.action == "DING_CONFIG" then focus = i end
+    end
+    Cfg:Open(BINDINGS_TAB, focus)
 end
 
 -- Closes before the combat lockdown starts (the override bindings must go now).

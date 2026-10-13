@@ -18,6 +18,7 @@ The accepted deviations and what remains to be checked in game are at the end of
 | 04 Item button | `Ding/UI/ItemButton.lua` |
 | Gamepad chips, footer help, move mode | `Ding/UI/Gamepad.lua` |
 | Minimap button (not in the mockup) | `Ding/UI/Minimap.lua` |
+| Setup assistant (not in the mockup) | `Ding/UI/Setup.lua` |
 | Textures, font | `Ding/Media/Textures/*.tga`, `Ding/Media/Fonts/NotoSans-*.ttf` (OFL) |
 
 
@@ -433,6 +434,13 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   divider at 26; then per quest, padding 12: "[level] name" 12 Medium `text`, 2 lower one or
   two plain sentences 11 Regular `text.secondary`, no color code (Yendi's feedback); both wrap
   without a line limit; 8 between quests.
+- **Why the guide makes its choices** (not in the mockup, Core/Why.lua): a surprising step
+  (a detour, a quest taken now or never) gets one more sub-line under its first row still to
+  do, after the guide's note, in the note's style (11 Regular `text.secondary`, never cut): "Why
+  this detour (about 5 min): turning in “…” opens a chain of quests worth a lot of XP (about
+  13,000)." The tooltip of the step's rows (mouse, X in focus mode) ends with a blank line, "Why?"
+  in `accent`, then the reason's lines in light grey (wrapped); a row without a quest (a trip, a
+  level) gets that tooltip too, its text as title. Option "Guide explanations" (Guide tab, on).
 - **TomTom**: optional and **off by default**; Ding's arrow is enough (Yendi's request); the
   old settings are migrated to Ding's arrow.
 - **Minimap button** (Yendi's request): left click opens the settings, right click the guide;
@@ -674,11 +682,44 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   - Settings: "levels 10–20", "from level 20"; the minimap pins' and nameplate marks'
     descriptions name their shapes.
 
+- **Setup assistant** (not in the mockup, `UI/Setup.lua`; Yendi: an onboarding of choices, not
+  of text, three choices at most per screen): a 460-wide window like the directory's (window look,
+  opaque, DIALOG). Title bar 32 high: "Ding! · Setup" 13 SemiBold (Ding! in `accent`, the dot `text.disabled`), the close
+  cross with the round B chip before it (gamepad). A screen, 20 in: its title 16 SemiBold
+  `text` (the arrow distance's size), 6 below one sentence 12 Regular `text`, both wrapped
+  whole; 12 below, the choices, 12 from the sides, 2 apart: rows of the settings' look (inset
+  focus: `accentBg` fill and the 2-unit accent ring; the A chip at the right, 8 in, gamepad),
+  at least 32 high, growing with their texts. In a row, 8 in: a check box (the settings' 16-unit
+  box: `accent` with the check, or the `muted` outline), a radio (the 16-unit `ring` in `muted`,
+  an 8-unit accent `circle` when chosen), or, for a guide, the accent check on the current one;
+  the label 12 Regular `text` 34 in (`text.disabled` for a pack with nothing for the
+  character), under it 11 Regular `text.secondary` (a pack's levels or items), both wrapped; on
+  the right before the A chip's room, "Recommended" 11 SemiBold `accent`. The window is as high
+  as its tallest screen in the client's language, the same on every screen. Footer 81 high under
+  a divider: "Keep the recommended settings" across (26 high, `bg.control`, 12 Medium, the Y
+  chip before it), 8 below Previous on the left and Next on the right (26 high, radius 4, 12
+  Medium, at least 96 wide; Previous `bg.control`, `text.disabled` on the first screen; Next
+  `accent` with `onAccent` text, "Finish" on the last screen, its width that of the longer
+  label; LB and RB chips), the screen dots centered between them (14 wide and 2 apart: a 6-unit
+  `circle` in `text.disabled`, the current screen's 8 units in `accent`, hover `text.secondary`).
+  No hint bar: every action has its control.
+- **Settings, Guide tab** (Help): a header "Help" and a button row "Run the setup assistant
+  again" ("How you play, automation, route and guide.", button "Open"), before "Defaults
+  for this tab".
+
 ## To check in game (Forever 1.60)
+
+- Why the guide makes its choices: the line under the Duskwood step that turns in "The Legend of
+  Stalvan" at Moonbrook (Leveling, Alliance section 11), at 240 and 300 wide; the "Why?" part of
+  the row tooltips with the mouse and with X in focus mode; nothing more with the option off.
 
 - Quests an NPC offers: `GossipFrame` and `QuestFrame` (names, `GetLeft` / `GetRight` / `GetTop`)
   with the gamepad interface on; the order of `GOSSIP_CLOSED` and `QUEST_DETAIL` when a quest
   is picked from a gossip; no "AddOn blocked" popup while the window shows.
+- Setup assistant: the window's height on its tallest screen (no text cut, in French and German
+  above all), the radio ring and the check boxes, Previous and Next clear of the dots with the
+  gamepad's chips, Y keeping the recommended settings, Esc and B closing it then the Keybinds tab
+  following at the first launch (not after "Keyboard and mouse").
 - Loading of the kit's TGAs and of the Noto Sans fonts (`Font:SetFont` on a file of the
   addon); otherwise the game font takes over.
 - Sharp nine-slices at 100 % scale (corners of 6, 4, 3, 2), shadows and halos.

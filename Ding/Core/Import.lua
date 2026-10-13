@@ -33,7 +33,7 @@ local PACK_KEYS = { id = "id", title = "title", author = "title", category = "ca
 local GUIDE_KEYS = {
     id = "id", title = "title", category = "category", faction = "faction", races = "races",
     classes = "classes", minLevel = "level", maxLevel = "level", next = "next", steps = "steps",
-    pack = "ignored",
+    leftOut = "leftOut", pack = "ignored",
 }
 local STEP_KEYS = {
     accept = "quests", turnin = "quests", complete = "quests", sticky = "quests", noauto = "quests",
@@ -44,7 +44,7 @@ local STEP_KEYS = {
     faction = "faction", use = "items", useitem = "items", equip = "items", destroy = "items",
     bank = "items", unbank = "items", keep = "items", kill = "npcPairs", collect = "itemPairs",
     buy = "buys", talk = "npcs", gossip = "index", object = "objects", spots = "points",
-    patrol = "points", revive = "revive", when = "when",
+    patrol = "points", revive = "revive", when = "when", why = "why",
 }
 local WHEN_KEYS = {
     done = "quests", notdone = "quests", log = "quests", notlog = "quests", ready = "quests",
@@ -68,19 +68,20 @@ local SAMPLES = {
     races = '{ "NightElf" }', classes = '{ "HUNTER" }', faction = '"Alliance" / "Horde"',
     next = '"guide-id"', when = "{ done = 456 }", held = "{ { 5469, 4 } }", steps = "{ { accept = 456 } }",
     category = '"leveling" / "items"', guides = "{ { steps = { ... } } }", pack = '{ title = "text" }',
+    why = '"text" / { kind = "detour", quest = 67, xp = 9000 }', leftOut = '{ [456] = "text" }',
 }
 
 -- The order of the keys in an exported guide.
 local ORDER = {
     "pack", "guides", "id", "title", "author", "category", "faction", "races", "classes",
-    "minLevel", "maxLevel", "next", "steps",
+    "minLevel", "maxLevel", "next", "leftOut", "steps",
 }
 local STEP_ORDER = {
     "turnin", "accept", "complete", "level", "xp", "go", "radius", "sethearth", "hearth", "deathskip",
     "revive", "train", "fly", "vendor", "repair", "kill", "collect", "buy", "talk", "gossip", "useitem",
     "object", "equip", "destroy", "bank", "unbank", "abandon", "keep", "spots", "patrol", "use",
     "sticky", "noauto", "dungeon", "elite", "optional", "faction", "races", "classes", "when", "text",
-    "note", "done", "notdone", "log", "notlog", "ready", "item", "noitem", "minlevel", "maxlevel",
+    "note", "why", "done", "notdone", "log", "notlog", "ready", "item", "noitem", "minlevel", "maxlevel",
 }
 
 ---------------------------------------------------------------------------
@@ -262,6 +263,37 @@ local function checkValue(kind, key, v, at, ctx)
             else
                 checkValue(WHEN_KEYS[k], "when." .. k, value, at, ctx)
             end
+        end
+    elseif kind == "why" or kind == "reason" then
+        -- A step's `why` or a `leftOut` entry (Core/Why.lua): a text, or a kind and its figures.
+        if type(v) == "string" then return checkValue("text", key, v, at, ctx) end
+        local schema = kind == "why" and Ding.Why.STEP or Ding.Why.LEFT
+        if type(v) ~= "table" or (v.kind == nil and v.text == nil) then return expects() end
+        for k, value in pairs(v) do
+            local sub = schema.keys[k]
+            local name = key .. "." .. tostring(k)
+            if not sub then
+                at("error", L.IMPORT_KEY:format(name))
+            elseif sub == "kind" then
+                if not schema.kinds[value] then at("error", L.IMPORT_EXPECTS:format(name, schema.sample)) end
+            elseif sub == "quest" then
+                if type(value) ~= "number" then expects() else checkValue("quests", name, value, at, ctx) end
+            elseif sub == "levels" then
+                if type(value) ~= "table" or type(value[1]) ~= "number" or (value[2] ~= nil and type(value[2]) ~= "number") then
+                    at("error", L.IMPORT_EXPECTS:format(name, "{ 28, 30 }"))
+                end
+            elseif sub == "action" then
+                if value ~= "turnin" and value ~= "accept" then at("error", L.IMPORT_EXPECTS:format(name, '"turnin" / "accept"')) end
+            else
+                checkValue(sub, name, value, at, ctx)
+            end
+        end
+    elseif kind == "leftOut" then
+        if type(v) ~= "table" then return expects() end
+        for q, entry in pairs(v) do
+            if not isId(q) then return expects() end
+            if ctx.db and not D:QuestExists(q) then at("warning", L.IMPORT_QUEST:format(q)) end
+            checkValue("reason", key .. "[" .. q .. "]", entry, at, ctx)
         end
     end
 end

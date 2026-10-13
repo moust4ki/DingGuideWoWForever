@@ -9,6 +9,22 @@ Ding.RegisterGuide({
     faction  = "Alliance",
     minLevel = 52, maxLevel = 52,
     next     = "leveling-a37-feralas-and-azshara",
+    leftOut  = {
+        [3509] = { kind = "prereq" },
+        [3510] = { kind = "prereq" },
+        [3511] = { kind = "prereq" },
+        [3621] = { kind = "prereq" },
+        [5204] = { kind = "prereq" },
+        [5242] = { kind = "far" },
+        [5249] = { kind = "exclusive" },
+        [5385] = { kind = "prereq" },
+        [6804] = { kind = "away" },
+        [6805] = { kind = "away" },
+        [6821] = { kind = "prereq" },
+        [6822] = { kind = "prereq" },
+        [6823] = { kind = "prereq" },
+        [6824] = { kind = "prereq" },
+    },
     steps    = {
         { go = { 1438, 55.5, 92.05 }, text = "Travel to Rut'theran Village", -- level 52
           note = "Teldrassil: Rut'theran Village first, then Azshara and Felwood." },
@@ -20,7 +36,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { talk = 4209, bank = { 12724, 10444, 8526 }, -- level 52
           note = "The NPC is indoors. You need them later for \"Good Natured Emma\", \"Arcane Runes\" and \"Sprinkle's Secret Ingredient\": keep them in the bank to free bag slots." },
-        { turnin = 3790, accept = 3764, -- level 52
+        { turnin = 3790, accept = 3764, why = { chain = 1, kind = "detour", quest = 3764, seconds = 480, short = true, xp = 5200 }, -- level 52
           note = "Climb to the highest floor of the building." },
         { turnin = 3764, when = { ready = 3764 }, -- level 52
           note = "The quest giver stands outdoors, not indoors." },
@@ -28,7 +44,7 @@ Ding.RegisterGuide({
         { accept = 4493, elite = true, when = { done = 162 } }, -- level 52
         { sethearth = "Auberdine", talk = 6737, -- level 52
           note = "The NPC is indoors." },
-        { accept = { 5535, 5536 } }, -- level 52
+        { accept = { 5535, 5536 }, why = { kind = "detour", quest = 5535, quests = 2, seconds = 360, short = true, total = 12000, xp = 4200 } }, -- level 52
         { complete = 5535 }, -- level 52
         { complete = 5536 }, -- level 52
         { turnin = { 5535, 5536 } }, -- level 52
@@ -92,7 +108,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { turnin = { 939, 4906 }, accept = 4441, -- level 52
           note = "The NPC is indoors." },
-        { turnin = 5157, accept = 5158 }, -- level 52
+        { turnin = 5157, accept = 5158, why = { kind = "carry", quest = 5158, seconds = 3960, xp = 2600 } }, -- level 52
         { turnin = 4101 }, -- level 52
         { talk = 9528, collect = { { 11511, 1 } } }, -- level 52
         { talk = 11119, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, text = "Get your companion back from the stable master." }, -- level 52

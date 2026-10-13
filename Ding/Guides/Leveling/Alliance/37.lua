@@ -81,7 +81,7 @@ Ding.RegisterGuide({
         { go = { 1447, 62.41, 82.04 }, text = "Skirt the Ruins of Eldarath, then take the bridge across" }, -- level 53
         { go = { 1447, 65.03, 82.27 }, text = "Walk over the span" }, -- level 53
         { go = { 1447, 74.01, 87.34 }, text = "Drop down with care" }, -- level 53
-        { turnin = 3449, accept = 3461, useitem = 10444, -- level 53
+        { turnin = 3449, accept = 3461, useitem = 10444, why = { continent = true, kind = "carry", once = true, quest = 3461, seconds = 70440, short = true, xp = 7600 }, -- level 53
           note = "The spot is the middle of the timber deck. It shows up close by after a while. At times it takes several minutes." },
         { destroy = 10444 }, -- level 53
     },

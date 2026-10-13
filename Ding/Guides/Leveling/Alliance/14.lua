@@ -9,6 +9,15 @@ Ding.RegisterGuide({
     faction  = "Alliance",
     minLevel = 30, maxLevel = 32,
     next     = "leveling-a15-hillsbrad-foothills-and-arathi-highlands",
+    leftOut  = {
+        [206] = { kind = "prereq" },
+        [343] = { kind = "detour", seconds = 60, xp = 100 },
+        [348] = { kind = "far" },
+        [3626] = { kind = "prereq" },
+        [3721] = { kind = "prereq" },
+        [8553] = { kind = "prereq" },
+        [8554] = { kind = "prereq" },
+    },
     steps    = {
         { go = { 1453, 52.93, 51.05 }, text = "Head indoors", -- level 31
           note = "Stormwind first, then Duskwood and Stranglethorn Vale." },
@@ -28,7 +37,7 @@ Ding.RegisterGuide({
         { turnin = 1274, accept = 1241, -- level 31
           note = "The NPC is indoors." },
         { go = { 1453, 75.98, 42.23 }, when = { log = 337 }, text = "Stay on the trail" }, -- level 31
-        { turnin = 337, accept = 538, when = { log = 337 }, -- level 31
+        { turnin = 337, accept = 538, when = { log = 337 }, why = { kind = "carry", quest = 538, seconds = 16260, xp = 700 }, -- level 31
           note = "The NPC is indoors." },
         { go = { 1453, 75.98, 42.23 }, when = { done = 337 }, text = "Stay on the trail" }, -- level 31
         { turnin = 337, accept = 538, when = { done = 337 }, -- level 31
@@ -69,10 +78,10 @@ Ding.RegisterGuide({
         { collect = { { 2794, 1 } }, useitem = 2794, -- level 31
           note = "The targets are worgen." },
         { complete = 221 }, -- level 31
-        { turnin = 74, accept = 75 }, -- level 31
+        { turnin = 74, accept = 75, why = { back = true, chain = 5, kind = "detour", quest = 75, quests = 8, seconds = 360, short = true, total = 7700, xp = 6500 } }, -- level 31
         { complete = 75, -- level 31
           note = "Be ready for a fight right away. The object is indoors, one floor up." },
-        { turnin = 75, accept = 78 }, -- level 31
+        { turnin = 75, accept = 78, why = { kind = "carry", quest = 78, seconds = 4440, xp = 600 } }, -- level 31
         { turnin = 91732, races = { "Human" } }, -- level 31
         { turnin = 91732, races = { "Dwarf", "Gnome" } }, -- level 31
         { turnin = 159, accept = 133, sticky = 58, -- level 31
@@ -141,7 +150,7 @@ Ding.RegisterGuide({
         { turnin = 190 }, -- level 32
         { turnin = 215 }, -- level 32
         { train = true, talk = 12042, races = { "NightElf" }, classes = { "DRUID" } }, -- level 32
-        { turnin = 222, accept = 223, -- level 32
+        { turnin = 222, accept = 223, why = { kind = "detour", quest = 223, quests = 2, seconds = 60, total = 5100, xp = 3200 }, -- level 32
           note = "This one roams, so scan the surrounding area." },
         { turnin = 223, -- level 32
           note = "The NPC is indoors." },
@@ -172,7 +181,7 @@ Ding.RegisterGuide({
         { collect = { { 2784, 1 } }, spots = { { 1453, 64.24, 80.81 } }, when = { done = 335 }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "WARLOCK", "DRUID" } }, -- level 32
         { talk = 2455, collect = { { 3712, 10 } }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "WARLOCK", "DRUID" }, -- level 32
           note = "The NPC is indoors." },
-        { accept = 690, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "WARLOCK", "DRUID" } }, -- level 32
+        { accept = 690, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "WARLOCK", "DRUID" }, why = { kind = "carry", quest = 690, seconds = 13860, xp = 2000 } }, -- level 32
         { go = { 1453, 50.56, 90.35 }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "WARLOCK", "DRUID" }, text = "Head indoors" }, -- level 32
         { accept = 1301, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "WARLOCK", "DRUID" }, -- level 32
           note = "The NPC is indoors." },
@@ -195,7 +204,7 @@ Ding.RegisterGuide({
         { train = true, talk = 5484, races = { "Human", "Dwarf", "NightElf" }, classes = { "PRIEST" } }, -- level 32
         { train = true, talk = 5479, classes = { "WARRIOR" }, -- level 32
           note = "The NPC is indoors, one floor up." },
-        { accept = 1718, classes = { "WARRIOR" }, -- level 32
+        { accept = 1718, classes = { "WARRIOR" }, why = { continent = true, kind = "carry", quest = 1718, seconds = 28380, xp = 600 }, -- level 32
           note = "The NPC is indoors, one floor up." },
         { train = true, talk = 918, classes = { "ROGUE" } }, -- level 32
         { train = true, talk = 5515, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 32
@@ -212,7 +221,7 @@ Ding.RegisterGuide({
         { turnin = 336, races = { "Dwarf", "NightElf" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "WARLOCK", "DRUID" } }, -- level 32
         { turnin = 336, races = { "Human", "Gnome", "Skyborne" }, -- level 32
           note = "The NPC is indoors." },
-        { accept = 1302, -- level 32
+        { accept = 1302, why = { continent = true, kind = "carry", quest = 1302, seconds = 15720, xp = 700 }, -- level 32
           note = "The NPC is indoors." },
         { turnin = 1301, races = { "Dwarf", "NightElf" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "WARLOCK", "DRUID" } }, -- level 32
         { turnin = 1301, races = { "Human", "Gnome", "Skyborne" } }, -- level 32
@@ -224,12 +233,12 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { accept = 1250, -- level 32
           note = "The NPC is indoors." },
-        { turnin = 1250, accept = 1264, -- level 32
+        { turnin = 1250, accept = 1264, why = { continent = true, kind = "carry", quest = 1264, seconds = 15720, xp = 1300 }, -- level 32
           note = "The NPC is indoors." },
         { accept = 98216 }, -- level 32
         { complete = 98216 }, -- level 32
         { accept = 98310 }, -- level 32
-        { accept = 98313 }, -- level 32
+        { accept = 98313, why = { kind = "carry", quest = 98313, seconds = 14460, xp = 2200 } }, -- level 32
         { accept = 98291, races = { "Dwarf", "NightElf", "Gnome" } }, -- level 32
         { turnin = 98216 }, -- level 32
         { accept = 87491, races = { "Human", "Skyborne" } }, -- level 32
@@ -244,8 +253,8 @@ Ding.RegisterGuide({
         { complete = 98297, races = { "Human" } }, -- level 32
         { turnin = 98297, races = { "Human" } }, -- level 32
         { accept = 98297, races = { "Dwarf", "NightElf", "Gnome" } }, -- level 32
-        { accept = 647, races = { "Human", "Skyborne" } }, -- level 33
-        { accept = 98300, races = { "Dwarf", "NightElf", "Gnome", "Skyborne" } }, -- level 32
+        { accept = 647, races = { "Human", "Skyborne" }, why = { action = "accept", kind = "detour", quest = 647, seconds = 60, xp = 3100 } }, -- level 33
+        { accept = 98300, races = { "Dwarf", "NightElf", "Gnome", "Skyborne" }, why = { kind = "carry", quest = 98300, seconds = 11280, xp = 2400 } }, -- level 32
         { turnin = 98245, races = { "Dwarf", "NightElf", "Gnome" } }, -- level 32
         { complete = 98291, races = { "Dwarf", "NightElf", "Gnome" } }, -- level 32
         { turnin = 98291, races = { "Dwarf", "NightElf", "Gnome" } }, -- level 32

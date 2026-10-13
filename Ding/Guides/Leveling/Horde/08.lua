@@ -9,6 +9,9 @@ Ding.RegisterGuide({
     faction  = "Horde",
     minLevel = 24, maxLevel = 25,
     next     = "leveling-h09-stonetalon-mountains",
+    leftOut  = {
+        [92706] = { kind = "detour", seconds = 120, xp = 1300 },
+    },
     steps    = {
         { talk = 8356, collect = { { 5059, 1 } }, spots = { { 1456, 47.19, 57.86 } }, -- level 24
           note = "Thunder Bluff first, then the Barrens. The NPC is indoors." },
@@ -95,7 +98,7 @@ Ding.RegisterGuide({
           note = "Watch out: the foes here are above your level." },
         { turnin = 893 }, -- level 25
         { turnin = 897, when = { log = 897 } }, -- level 25
-        { turnin = 884, accept = 6382 }, -- level 25
+        { turnin = 884, accept = 6382, why = { kind = "carry", quest = 6382, seconds = 11040, xp = 300 } }, -- level 25
         { turnin = 885, races = { "Orc", "Tauren", "Troll" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK", "DRUID" } }, -- level 25
         { turnin = 885, races = { "Scourge", "Skyborne" } }, -- level 25
         { turnin = 879, when = { log = 879 } }, -- level 25

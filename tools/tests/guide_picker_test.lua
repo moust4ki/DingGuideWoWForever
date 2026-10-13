@@ -238,7 +238,8 @@ T.test("Guide tab: both dropdowns with their label and \"restart\", the automati
         if row.label and row.label:GetText() == Ding.L.CLEANUP then break end
         guideRows = guideRows + 1
     end
-    T.ok(guideRows <= 9, ("%d rows in the Guide tab"):format(guideRows))
+    -- (The window's block: show, next steps, weapon to learn, the guide's explanations.)
+    T.ok(guideRows <= 10, ("%d rows in the Guide tab"):format(guideRows))
     T.ok(not rows[1].focusable and rows[1].label:GetText() == Ding.L.ACTIVE_GUIDE, "\"Active guide\" label missing")
     T.ok(not rows[3].focusable and rows[3].label:GetText() == Ding.L.GUIDE_SECTION, "\"Section\" label missing")
     open()

@@ -9,6 +9,11 @@ Ding.RegisterGuide({
     faction  = "Alliance",
     minLevel = 18, maxLevel = 19,
     next     = "leveling-a07-redridge-and-westfall",
+    leftOut  = {
+        [257] = { kind = "detour", seconds = 240, xp = 1400 },
+        [2038] = { kind = "detour", seconds = 540, xp = 1100 },
+        [2041] = { kind = "detour", seconds = 60, xp = 300 },
+    },
     steps    = {
         { go = { 1432, 37.24, 47.38 }, text = "Travel to Thelsamar", -- level 18
           note = "Loch Modan: Thelsamar, on the road in the west of the zone." },
@@ -38,7 +43,7 @@ Ding.RegisterGuide({
         { turnin = 385, -- level 18
           note = "The NPC is indoors." },
         { turnin = 86758 }, -- level 18
-        { level = 18, xp = 19060, patrol = { { 1432, 75.57, 50.23 }, { 1432, 73.15, 48.23 }, { 1432, 74.44, 44.44 }, { 1432, 71.45, 43.55 }, { 1432, 68.35, 44.54 }, { 1432, 65.43, 43.63 }, { 1432, 62.85, 41.55 }, { 1432, 59.75, 41.85 }, { 1432, 59.14, 38.44 }, { 1432, 62.46, 38.36 }, { 1432, 63.65, 35.45 }, { 1432, 60.65, 35.43 }, { 1432, 61.46, 32.14 }, { 1432, 58.35, 32.35 }, { 1432, 66.17, 33.37 }, { 1432, 68.97, 36.45 }, { 1432, 70.94, 39.06 }, { 1432, 73.97, 40.44 }, { 1432, 76.26, 38.15 }, { 1432, 77.74, 43.03 }, { 1432, 77.37, 46.66 }, { 1432, 73.25, 52.36 }, { 1432, 68.06, 40.97 }, { 1432, 66.23, 38.44 }, { 1432, 62.16, 45.77 } }, -- level 18
+        { level = 18, xp = 19060, patrol = { { 1432, 75.57, 50.23 }, { 1432, 73.15, 48.23 }, { 1432, 74.44, 44.44 }, { 1432, 71.45, 43.55 }, { 1432, 68.35, 44.54 }, { 1432, 65.43, 43.63 }, { 1432, 62.85, 41.55 }, { 1432, 59.75, 41.85 }, { 1432, 59.14, 38.44 }, { 1432, 62.46, 38.36 }, { 1432, 63.65, 35.45 }, { 1432, 60.65, 35.43 }, { 1432, 61.46, 32.14 }, { 1432, 58.35, 32.35 }, { 1432, 66.17, 33.37 }, { 1432, 68.97, 36.45 }, { 1432, 70.94, 39.06 }, { 1432, 73.97, 40.44 }, { 1432, 76.26, 38.15 }, { 1432, 77.74, 43.03 }, { 1432, 77.37, 46.66 }, { 1432, 73.25, 52.36 }, { 1432, 68.06, 40.97 }, { 1432, 66.23, 38.44 }, { 1432, 62.16, 45.77 } }, why = { kind = "level", levels = { 15, 20 } }, -- level 18
           note = "Together with the next turn-ins, this brings you to level 19. This skips some tedious quests with a timer. The upcoming quest may prove hard." },
         { turnin = 436, accept = 297 }, -- level 18
         { accept = 298 }, -- level 19
@@ -49,6 +54,6 @@ Ding.RegisterGuide({
         { turnin = 86614 }, -- level 19
         { turnin = 298, accept = 301, -- level 19
           note = "The NPC waits on the lower level, indoors." },
-        { turnin = 301 }, -- level 19
+        { turnin = 301, why = { kind = "detour", quest = 301, seconds = 240, short = true, xp = 500 } }, -- level 19
     },
 })

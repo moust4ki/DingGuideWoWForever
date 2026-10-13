@@ -9,6 +9,17 @@ Ding.RegisterGuide({
     faction  = "Alliance",
     minLevel = 41, maxLevel = 42,
     next     = "leveling-a25-stranglethorn-vale",
+    leftOut  = {
+        [656] = { kind = "prereq" },
+        [692] = { kind = "prereq" },
+        [706] = { kind = "away" },
+        [709] = { kind = "far" },
+        [721] = { kind = "detour", seconds = 60, xp = 2200 },
+        [723] = { kind = "prereq" },
+        [724] = { kind = "prereq" },
+        [727] = { kind = "prereq" },
+        [732] = { kind = "far" },
+    },
     steps    = {
         { vendor = true, talk = 5101, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 41
           note = "Ironforge first, then the Badlands. The NPC waits on the lower level, indoors. A lengthy stretch of quests is coming up. This vendor sells no arrows or bullets." },
@@ -16,11 +27,11 @@ Ding.RegisterGuide({
           note = "The NPC is indoors. You need them later for \"Back to Booty Bay\" and \"Safety First\": keep them in the bank to free bag slots." },
         { talk = 8720, collect = { { 4611, 9 }, { 3829, 1 }, { 4389, 1 }, { 929, 1 }, { 3823, 1 }, { 2868, 1 } }, when = { maxlevel = 45 }, -- level 41
           note = "Get these for simple Badlands turn-ins ahead. The NPC is indoors." },
-        { turnin = 1467, -- level 41
+        { turnin = 1467, why = { kind = "detour", quest = 1467, quests = 2, seconds = 120, total = 3900, xp = 3200 }, -- level 41
           note = "This one roams, so scan the surrounding area. The NPC is indoors." },
         { accept = 707, -- level 41
           note = "The NPC is indoors." },
-        { accept = 2500, -- level 41
+        { accept = 2500, why = { action = "accept", chain = 1, kind = "detour", quest = 738, quests = 4, seconds = 60, total = 8600, xp = 4900 }, -- level 41
           note = "The NPC is indoors." },
         { turnin = 707, accept = 738, sticky = 2500 }, -- level 41
         { accept = 719 }, -- level 41
@@ -37,7 +48,7 @@ Ding.RegisterGuide({
         { accept = 703 }, -- level 41
         { turnin = 705, when = { ready = 705 } }, -- level 41
         { turnin = 1106, accept = 1108 }, -- level 41
-        { turnin = 738, accept = 739, sticky = { 1108, 739 } }, -- level 41
+        { turnin = 738, accept = 739, sticky = { 1108, 739 }, why = { kind = "carry", quest = 739, seconds = 13080, xp = 3500 } }, -- level 41
         { complete = 739, -- level 41
           note = "This one roams, so scan the surrounding area." },
         { complete = 1108, -- level 41
@@ -45,7 +56,7 @@ Ding.RegisterGuide({
         { complete = 739 }, -- level 41
         { turnin = 703, when = { ready = 703 } }, -- level 41
         { turnin = 1108 }, -- level 41
-        { accept = 1137, -- level 41
+        { accept = 1137, why = { continent = true, kind = "carry", quest = 1137, seconds = 33240, xp = 1500 }, -- level 41
           note = "Wait for the talking to finish" },
         { accept = 710 }, -- level 41
         { accept = 713, when = { item = 3829 } }, -- level 41

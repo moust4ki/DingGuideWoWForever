@@ -351,6 +351,8 @@ function P:Rows(content)
         end
     end
     if #rows == 0 then return rows end
+    -- Why the guide makes a surprising choice here (Core/Why.lua): a short line after the note.
+    if content.why then notes[#notes + 1] = content.why end
     -- Objectives under a header naming their quest, unless a row of the step names it already.
     local named, headed, grouped = {}, {}, {}
     for _, row in ipairs(rows) do
@@ -384,6 +386,8 @@ function P:Rows(content)
             end
         end
     end
+    -- The step's own rows: their tooltip says why the guide plans the step (P:ShowQuest).
+    for _, row in ipairs(rows) do row.ofStep = true end
     -- A target in another zone: its zone (and its NPC) after the row's text.
     for _, row in ipairs(rows) do
         if row.state ~= "done" and row.action ~= "level" and row.action ~= "header" then
@@ -633,11 +637,26 @@ local function addMeaning(row)
     for _, text in ipairs(P:RowMeaning(row)) do GameTooltip:AddLine(text, 0.8, 0.8, 0.8, true) end
 end
 
+-- Why the guide plans the step on screen (Core/Why.lua), at the end of a row's tooltip: for the
+-- step's own rows, while the option is on.
+local function whyLines(row)
+    return row and row.ofStep and Ding.Why:Detail(P.shownStep) or nil
+end
+
+local function addWhy(row)
+    local lines = whyLines(row)
+    if not lines then return end
+    GameTooltip:AddLine(" ")
+    GameTooltip:AddLine(L.WHY_TITLE, C.accent[1], C.accent[2], C.accent[3])
+    for _, line in ipairs(lines) do GameTooltip:AddLine(line, 0.8, 0.8, 0.8, true) end
+end
+
 -- The quest of a row, in a tooltip next to `owner`: name, what the row's look means, level
--- (above the player's: why it is orange), objectives. Ding never opens the game's quest log
--- itself: driving Blizzard's frames from an addon spreads its taint there, and on Forever
--- their secret values then fail by the dozen. A row without a quest: its text and what its
--- look means, when there is something to say.
+-- (above the player's: why it is orange), objectives, why the guide plans its step, then what
+-- a click (A) does. Ding never opens the game's quest log itself: driving Blizzard's frames
+-- from an addon spreads its taint there, and on Forever their secret values then fail by the
+-- dozen. A row without a quest: its text, what its look means and why, when there is something
+-- to say.
 function P:ShowQuest(row, owner)
     local q = row and row.quest
     if row and row.action == "gear" and row.item then
@@ -671,6 +690,7 @@ function P:ShowQuest(row, owner)
         addMeaning(row)
         local info = Ding.Data:NpcInfo(row.npc)
         if info then GameTooltip:AddLine(npcLevels(info.minLevel, info.maxLevel), 0.8, 0.8, 0.8) end
+        addWhy(row)
         clickLine()
         GameTooltip:Show()
         return
@@ -697,6 +717,7 @@ function P:ShowQuest(row, owner)
     else
         GameTooltip:AddLine(L.NOT_IN_LOG, 0.8, 0.8, 0.8, true)
     end
+    addWhy(row)
     -- noAim: a card shown elsewhere than in the guide window (settings).
     if not row.noAim and not row.preview then clickLine() end
     -- Focus mode: Right finds the quest in the guide (the mouse has the step menu for it).
@@ -706,14 +727,15 @@ function P:ShowQuest(row, owner)
     GameTooltip:Show()
 end
 
--- A row without a quest (a level, a trip, a goal, a step further on): its text whole and what
--- its look means; nothing when its look says nothing more than its text.
+-- A row without a quest (a level, a trip, a goal, a step further on): its text whole, what its
+-- look means and why the guide plans its step; nothing when neither says more than its text.
 function P:ShowRowText(row, owner)
     local lines = self:RowMeaning(row)
-    if #lines == 0 then return end
+    if #lines == 0 and not whyLines(row) then return end
     GameTooltip:SetOwner(owner, "ANCHOR_RIGHT")
     GameTooltip:SetText(UI.StripColors(row.text or ""), 1, 1, 1, 1, true)
     for _, text in ipairs(lines) do GameTooltip:AddLine(text, 0.8, 0.8, 0.8, true) end
+    addWhy(row)
     if not row.preview and #self:PointsOf(row) > 0 then clickLine() end
     GameTooltip:Show()
 end
@@ -1319,6 +1341,7 @@ end
 -- end-of-guide messages.
 function P:Content()
     local E = Ding.Engine
+    self.shownStep = nil
     if not E.guide then
         return {
             { action = "info", text = L.NO_GUIDE },
@@ -1333,7 +1356,9 @@ function P:Content()
     end
     local step, held = E:CurrentStep(), self.holding
     if held then step = held.step end
+    self.shownStep = step
     local content = E:Describe(step)
+    content.why = not held and Ding.Why:Short(step) or nil
     local service = not held and E:ServiceDone(step)
     if service then
         content[#content + 1] = { indent = true, kind = "hint", text = serviceHint(service) }
@@ -1771,8 +1796,8 @@ end
 
 ---------------------------------------------------------------------------
 -- Focus mode (DING_FOCUS): the D-pad walks the rows, A points the arrow to a row (or
--- uses the quest item on its row), X shows its quest, LB / RB change step, Y minimizes,
--- B leaves.
+-- uses the quest item on its row), X shows its quest and why the step is there, LB / RB
+-- change step, Y minimizes, B leaves.
 -- Only these keys are taken; the others keep their game binding.
 ---------------------------------------------------------------------------
 -- What A does on the focused row, for the hint bar: nil when it does nothing there, or when the
@@ -1798,7 +1823,7 @@ function P:HasCard(row)
     if row.quest or row.action == "grind" or (row.action == "gear" and row.item) or (row.action == "talent" and row.talent) then
         return true
     end
-    return #self:RowMeaning(row) > 0
+    return #self:RowMeaning(row) > 0 or whyLines(row) ~= nil
 end
 
 -- The focus mode's hint bar: A (what it does on that row), X (its card), B (leave).
@@ -1826,9 +1851,9 @@ end
 
 function P:StartFocus()
     if InCombatLockdown() or not self.frame then return end
-    -- The settings window and the move mode own the gamepad while they are open.
+    -- The settings window, the setup assistant and the move mode own the gamepad while they are open.
     local config = Ding.Config.frame
-    if (config and config:IsShown()) or Ding.Gamepad:IsMoving() then return end
+    if (config and config:IsShown()) or Ding.Setup:IsShown() or Ding.Gamepad:IsMoving() then return end
     if not Ding.db.panel.shown then self:SetShown(true) end
     if self.compact then self:SetCompact(false) end
     self.focusing = true

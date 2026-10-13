@@ -9,6 +9,14 @@ Ding.RegisterGuide({
     faction  = "Alliance",
     minLevel = 54, maxLevel = 56,
     next     = "leveling-a40-burning-steppes",
+    leftOut  = {
+        [5128] = { kind = "prereq" },
+        [5252] = { kind = "prereq" },
+        [5253] = { kind = "prereq" },
+        [5601] = { kind = "exclusive" },
+        [6603] = { kind = "away" },
+        [6604] = { kind = "away" },
+    },
     steps    = {
         { go = { 1448, 51.21, 82.11 }, text = "Travel to Emerald Sanctuary", -- level 54
           note = "Felwood: Emerald Sanctuary, in the south of the zone." },
@@ -46,22 +54,22 @@ Ding.RegisterGuide({
         { turnin = 8461, accept = 8465, -- level 54
           note = "Keep to the road the whole way." },
         { turnin = 8465 }, -- level 54
-        { turnin = { 3909, 980 }, accept = { 3912, 5082 }, sticky = 5082 }, -- level 54
+        { turnin = { 3909, 980 }, accept = { 3912, 5082 }, sticky = 5082, why = { kind = "carry", quest = 3912, seconds = 25440, xp = 5100 } }, -- level 54
         { accept = 5083, collect = { { 12771, 1 } }, useitem = 12771, -- level 54
           note = "The targets are furbolgs." },
         { complete = 5082, -- level 54
           note = "Other creatures use these spawn points too." },
-        { level = 54, xp = 165200, patrol = { { 1452, 29.95, 35.44 }, { 1452, 33.66, 36.95 }, { 1452, 40.45, 42.45 }, { 1452, 42.56, 43.16 } }, -- level 54
+        { level = 54, xp = 165200, patrol = { { 1452, 29.95, 35.44 }, { 1452, 33.66, 36.95 }, { 1452, 40.45, 42.45 }, { 1452, 42.56, 43.16 } }, why = { kind = "level", levels = { 52, 56 } }, -- level 54
           note = "With the coming hand-ins, this brings you to level 55. A tough quest lies just ahead." },
         { turnin = { 5082, 5083 }, accept = 5084 }, -- level 54
-        { turnin = 5084, accept = 5085, object = 176091, -- level 55
+        { turnin = 5084, accept = 5085, object = 176091, why = { back = true, chain = 3, kind = "detour", quest = 5084, seconds = 180, xp = 19000 }, -- level 55
           note = "Flee if things go badly." },
         { turnin = 5085, accept = 5086 }, -- level 55
         { turnin = 3912, accept = 3913, -- level 55
           note = "The NPC is a human spirit." },
         { turnin = 3913, accept = 3914 }, -- level 55
         { destroy = 11243 }, -- level 55
-        { turnin = 3914, accept = 3941 }, -- level 55
+        { turnin = 3914, accept = 3941, why = { chain = 4, kind = "detour", quest = 3941, quests = 6, seconds = 120, total = 26000, xp = 21000 } }, -- level 55
         { go = { 1449, 43.41, 6.84 }, text = "Go into the cavern" }, -- level 55
         { turnin = 3941, -- level 55
           note = "Your targets are within the cavern." },
@@ -82,7 +90,7 @@ Ding.RegisterGuide({
           note = "The targets are 3 white furbolgs moving as one pack. The target patrols a long route beside the road. Move on if you have not seen it once the trail ends." },
         { turnin = 5250, accept = 5244, -- level 55
           note = "The NPC is indoors." },
-        { turnin = 5244, accept = { 5245, 4861 }, -- level 55
+        { turnin = 5244, accept = { 5245, 4861 }, why = { continent = true, kind = "carry", quest = 5245, seconds = 71280, xp = 5800 }, -- level 55
           note = "The NPC is indoors." },
         { complete = 5245, -- level 55
           note = "Be ready for a fight right away." },
@@ -94,14 +102,14 @@ Ding.RegisterGuide({
           note = "Be ready for a fight right away." },
         { sethearth = "Everlook", talk = 11118, -- level 55
           note = "The NPC is indoors." },
-        { accept = { 6028, 6030 }, -- level 55
+        { accept = { 6028, 6030 }, why = { continent = true, kind = "carry", quest = 6028, seconds = 42960, xp = 2600 }, -- level 55
           note = "The NPC is indoors." },
         { talk = 13917, bank = { 11173, 11172, 15788, 15790, 12891, 12896, 12897, 12898, 12899 }, -- level 55
           note = "The NPC is indoors. You need them later for \"Aquementas\", \"The Everlook Report\", \"Duke Nicholas Zverenhoff\" and \"Troubled Spirits of Kel'Theril\": keep them in the bank to free bag slots." },
         { turnin = 4861, accept = 4863 }, -- level 55
         { turnin = 4863, accept = 4864 }, -- level 55
         { complete = 4864 }, -- level 55
-        { turnin = 979, accept = 4901, sticky = 4864, noauto = 4901, -- level 55
+        { turnin = 979, accept = 4901, sticky = 4864, noauto = 4901, why = { kind = "carry", quest = 4901, seconds = 12840, xp = 4800 }, -- level 55
           note = "For this quest you guard an NPC on the move. If she is absent, wait for her to reappear." },
         { complete = 4901, -- level 55
           note = "Let the conversation play out. Escort Ranshalla and guard her. Wait until the foes hit her before you strike." },
@@ -124,7 +132,7 @@ Ding.RegisterGuide({
         { turnin = 8470, when = { maxlevel = 56, ready = 8470 }, -- level 55
           note = "The NPC stands within the passage." },
         { turnin = 8471, when = { log = 8471, ready = 8471 } }, -- level 55
-        { level = 56, patrol = { { 1448, 62.37, 12.64 }, { 1448, 61.45, 10.77 }, { 1448, 60.46, 8.57 }, { 1448, 59.95, 6.64 }, { 1448, 62.46, 7.63 }, { 1448, 63.54, 5.95 }, { 1448, 63.56, 9.55 } } }, -- level 55
+        { level = 56, patrol = { { 1448, 62.37, 12.64 }, { 1448, 61.45, 10.77 }, { 1448, 60.46, 8.57 }, { 1448, 59.95, 6.64 }, { 1448, 62.46, 7.63 }, { 1448, 63.54, 5.95 }, { 1448, 63.56, 9.55 } }, why = { kind = "level", levels = { 53, 57 } } }, -- level 55
         { train = true, talk = 12042, races = { "NightElf" }, classes = { "DRUID" } }, -- level 55
         { turnin = 4901, accept = 4902, -- level 56
           note = "The NPC is indoors." },

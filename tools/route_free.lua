@@ -120,17 +120,27 @@ end
 --   position = function(step) -> where new steps after it go (default: the step itself): races
 --              placed at the same positions share one finding,
 -- }
--- Returns { findings = { ... }, skipped = { [reason] = count } }; a finding:
--- { q, name, level, kind = "free" | "borderline", why, races (nil: all those reaching), xp,
---   estimated, added, rate, ratio, hold, objectives, accept = step, work = step or nil,
---   turnin = step, section }.
+-- Returns { findings = { ... }, skipped = { [reason] = count }, quests = { [quest] = outcome } };
+-- a finding: { q, name, level, kind = "free" | "borderline", why, races (nil: all those
+-- reaching), xp, estimated, added, rate, ratio, hold, objectives, accept = step, work = step or
+-- nil, turnin = step, section }; an outcome (each quest of the side looked at and not free): {
+-- why (the reason counted in `skipped`, or the finding's kind), xp, added, ratio, section (where
+-- it was measured) }.
 function M.audit(input)
     local P = M.PARAMS
     local db, D, Jobs = input.db, input.D, input.Jobs
     local races, logLimit = input.races, input.logLimit or 20
     local code = FACTION_CODE[input.faction]
-    local skipped = {}
-    local function skip(why) skipped[why] = (skipped[why] or 0) + 1 end
+    local skipped, outcomes = {}, {}
+    local current
+    local function skip(why, measure)
+        skipped[why] = (skipped[why] or 0) + 1
+        if current then
+            local o = measure or {}
+            o.why = why
+            outcomes[current] = o
+        end
+    end
 
     local function friendly(id)
         local npc = db.Npc[id]
@@ -196,6 +206,7 @@ function M.audit(input)
     local cands, isCand = {}, {}
     for _, q in ipairs(ids) do
         local quest = db.Quest[q]
+        current = q
         if not input.known[q] and (quest[QK.questLevel] or 0) > 0 then
             local raceList = {}
             for _, race in ipairs(races) do
@@ -533,8 +544,9 @@ function M.audit(input)
     local findings = {}
     local covered = {} -- [signature] = { [race] = true }: versions of one quest placed once per race
     for _, c in ipairs(cands) do
+        current = c.q
         -- Races placed at the same steps share one verdict: the average of their measures.
-        local groups, order, lastWhy = {}, {}, nil
+        local groups, order, lastWhy, measure = {}, {}, nil, nil
         local sigOf = M.signature(c.quest)
         covered[sigOf] = covered[sigOf] or {}
         for _, race in ipairs(c.races) do
@@ -615,13 +627,19 @@ function M.audit(input)
                     races = not all and races or nil, xp = math.floor(xp + 0.5), estimated = c.estimated,
                     added = added, rate = rate, ratio = ratio, hold = hold, objectives = objectives,
                     accept = g.accept, work = g.work, turnin = g.turnin, section = g.section }
+                if not outcomes[c.q] or outcomes[c.q].why ~= "free" then
+                    outcomes[c.q] = { why = kind == "free" and "free" or (why or kind), xp = xp, added = added,
+                        ratio = ratio, section = g.section }
+                end
             else
                 lastWhy = "pays off less than " .. P.borderline .. " times the pace"
+                measure = { xp = xp, added = added, ratio = ratio, section = g.section }
             end
         end
-        if listed == 0 then skip(lastWhy or "not on the route") end
+        if listed == 0 then skip(lastWhy or "not on the route", lastWhy == nil and nil or measure) end
     end
-    return { findings = findings, skipped = skipped }
+    current = nil
+    return { findings = findings, skipped = skipped, quests = outcomes }
 end
 
 return M

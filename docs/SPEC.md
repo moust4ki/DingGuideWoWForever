@@ -452,6 +452,42 @@ the window opens (the game shows it first; a quest AutoQuest takes closes it mea
 with it (`GOSSIP_CLOSED`, `QUEST_FINISHED`, or the window seen hidden). Option "Quests an NPC
 offers" (Automation tab, **on** by default).
 
+### Why the guide makes its choices (`Core/Why.lua`)
+
+Yendi in game: sent from Duskwood to Westfall and back without knowing why, he doubted the
+guide. The player must understand the guide's choices in plain words (never a color or a code),
+without drowning the window, and only with what is true:
+
+- **Under the step, one short line, only for a surprising choice** (a step's `why` with
+  `short = true`): a detour (a few steps in another zone, or one step far off the way: "Pourquoi
+  ce détour (environ 5 min) : rendre « La légende de Stalvan » ouvre une suite de quêtes qui
+  rapporte beaucoup d'XP (environ 13 000)."), a quest taken now or never (turned in on another
+  continent, the route never back here before). It goes after the guide's note, under the first
+  row still to do; never under the finished step kept on screen. "A lot of XP" from a quarter of
+  the player's current level; figures with "about".
+- **On demand, the whole reason**: the tooltip of the step's own rows (the mouse over a row; X
+  in focus mode), under "Why?": the detour's cost beyond the direct way, the quest it names and
+  the chain it opens (follow-ups the guide does next), the whole detour's XP; when a carried
+  quest is turned in; the levels of the quests after a level step; then "Figures are the
+  guide's estimates." A step without a reason: "The guide plans this step here." A row without a
+  quest (a trip, a level, a goal) gets a tooltip of its own (its text, then why).
+- **Quests left out**: a section's `leftOut` (`{ [quest] = reason }`) says why it does not take
+  a quest (too little XP for the detour, with its figures; its giver, objectives or turn-in off
+  the route; the log full there; a prerequisite or another version the route does not do...).
+  `Why:Quest(q)` reads the active section, then the other sections of its pack for the
+  character, for the panel beside an NPC's window (`UI/Offers.lua`): a clause that ends its
+  sentence, "The guide does not do this quest: it is worth too little XP for the detour (about
+  300 XP for about 4 min)."
+- **Honesty**: the Leveling routes come from older routes; for many choices only the measured
+  effect is known. The reasons are computed offline (`tools/route_why.lua`, §5) from the route's
+  simulation and QuestieDB's chains, and say nothing else: a detour that also visits a trainer, a
+  vendor, a bank, a flight master or an inn (what the simulation does not value) gets no reason;
+  a reason holds only when every race that plays the step finds it.
+- Option "Guide explanations" (`Ding.db.panel.why`, Guide tab, **on** by default): off, no line
+  under the steps and no "Why?" in the tooltips (`Why:Quest` still answers: the NPC panel has its
+  own option). Texts through `Ding.L` (`WHY_*`); a pack's own `why.text` and `leftOut` texts are
+  translated like notes (§2, Languages).
+
 ### Choosing the destination point
 
 | Current action | Candidate points |
@@ -998,7 +1034,7 @@ accent #5BB4FF, the Noto Sans font shipped with the addon, rounded shapes from t
   digestible"), six tabs, each in small titled blocks with one-line descriptions:
   - **Guide**: the guide and its section, "Take this guide up where I am", show the guide, the
     next steps preview, "Stay in this section" undone (when chosen), the quest log cleanup
-    (a page).
+    (a page), guides as text (a page), "Run the setup assistant again" (Help).
   - **Route** (what the guide makes you do): hearthstone, death skips; elite quests, dungeon
     quests (one row, "3 of 12", the list on a page); class trainer, flight path, vendor and
     repair steps.
@@ -1020,6 +1056,54 @@ accent #5BB4FF, the Noto Sans font shipped with the addon, rounded shapes from t
   buttons; everything applies live. `Config:Open(key)` takes a tab's key (`Config.TAB`).
 - **Minimap button**: left click for settings, right click to show / hide the guide, drag to
   move around the minimap; can be hidden (Appearance, `/ding minimap`).
+- **Setup assistant** (`UI/Setup.lua`; Yendi, in game: lost on a long Duskwood - Westfall -
+  Duskwood trip, on quests the NPCs offer that the guide leaves out, on a bank step; then, on six
+  pages of text: "if this window pops up I press next, next, next without reading"; then "still
+  too many options"). "Ding! · Setup", four screens, each a title, one simple line saying what it
+  is for, then three choices at most:
+  1. **Welcome** ("To start, tell Ding! how you play."), how the player plays (one choice):
+     "Gamepad, Xbox buttons", "Gamepad, PlayStation buttons" (`ui.buttonStyle`, at once),
+     "Keyboard and mouse" (the button names stay; the Keybinds tab does not follow and
+     `ui.welcomed` is set). Preselected and tagged "Recommended": the gamepad in use
+     (`Gamepad:Active`) with its button names, else keyboard and mouse.
+  2. **What Ding! does for you** ("To save you time, Ding! can do some things for you."): accept
+     and turn in the guide's quests (`autoAccept` and `autoTurnin` together), sell gray items,
+     repair. Choosing the reward and taking the planned flight stay in the Automation tab only:
+     both are off by default and are the player's judgment.
+  3. **Your route** ("Sometimes the guide sends you far or leaves a quest out: it's on purpose,
+     and it tells you why."): hearthstone steps, group quests (elite quests and every dungeon's
+     quests together, as the Route tab's page does for dungeons: the choices per dungeon go),
+     death skips.
+  4. **What do you want to do first?**: one row per guide pack (`Ding:GuidePacks`: its sections
+     for an item pack, else the levels it covers for the character; its author for a community
+     pack; "Recommended" on Ding's Leveling, a check on the current one), then "Take my guide up
+     where I am" (`Engine:Reset`). A pick sets the pack like the Guide tab (`Engine:SetPack`) and
+     ends the assistant; Finish keeps the guide. The sentence says that everything can be changed
+     later in the settings.
+  The help on screen (quest monster marks, the guide's explanations, the panel beside an NPC's
+  window, the weapon to learn) is not asked: on by default, in the settings. A check or a
+  choice writes its setting at once, through the same calls as the settings window
+  (`Engine:Update`); a screen shows the current values. **"Keep the recommended settings"** (a
+  button on every screen, Y) ends it: every setting the player did not change in this run goes
+  back to its default (`Ding.DEFAULTS`); the settings it does not ask and the guide stay. B,
+  Start, Esc and the close cross end it as it is. Shown once per account
+  (`Ding.db.ui.setupDone`), 2 s after the first login, **before** the Keybinds tab of the first
+  launch, which follows once it is closed (with a gamepad); an account that already had Ding
+  sees it once too (new in 1.4.0). Closed by a fight (the temporary bindings must go), the first
+  launch's assistant comes back on its screen a second after the fight, its choices kept;
+  opened by hand, a fight only closes it. Another Ding window opening (settings, directory,
+  import) closes it quietly: done, and the Keybinds tab waits for the next login. Again from
+  the Guide tab (header "Help", "Run the setup assistant again", back to that row once closed)
+  or `/ding intro`. "Restore all defaults" does not run it again.
+  Window 460 wide (window look, opaque, DIALOG, clamped to the screen), as high as its tallest
+  screen in the client's language: every text wraps whole, nothing is ever cut, the buttons
+  stay in place. Footer: "Keep the recommended settings" across, then Previous (disabled on the
+  first screen), the screen dots (a click opens a screen), Next (accent; "Finish" on the last
+  screen). Gamepad (temporary bindings, out of combat): the D-pad up / down between the choices
+  (around), A ticks or picks, LB / RB the screens, Y keeps the recommended settings, B or Start
+  closes; each action once: A on the focused choice, LB on Previous, RB on Next, Y on Keep, B by
+  the close cross; no hint bar. Mouse: hover focuses a choice, a click ticks or picks; the
+  buttons, the dots, the cross, Esc.
 
 ### Keyboard and mouse
 
@@ -1080,8 +1164,9 @@ gamepad buttons). Every gamepad action therefore has an equivalent:
   original position.
 - Binding a button from the Keybinds tab, with conflict detection; buttons are shown as
   Xbox chips (A, LB, LT+Right) or PlayStation chips (symbols).
-- First launch: the window opens on the bindings so the player can bind "Open Ding
-  settings".
+- First launch: the setup assistant (Interface, above), then, unless the player chose the
+  keyboard and the mouse there, the window opens on the bindings so the player can bind "Open
+  Ding settings".
 
 ### API compatibility
 
@@ -1154,6 +1239,12 @@ Output: a guide file in the format above, and its translation.
    those concerned, a missing prerequisite on the same map is done first, a quest waits for
    its prerequisite's turn-in), and Forever's own quests are inserted where the detour is
    smallest, within the +2 / +1 caps (only they follow them). See `tools/README.md` §7.
+   **Reasons** (`tools/route_why.lua`): on the final simulation, the steps whose choice
+   surprises get a `why` (a detour costing 4 minutes or more beyond the direct way, with what
+   it brings: its turn-ins, the quests taken there and the chains they open; a quest taken now
+   or never), the others an on-demand one (smaller detours, quests carried an hour or more, level
+   steps followed by higher quests); the free-quests audit's verdicts become the sections'
+   `leftOut` (§3, "Why the guide makes its choices"). `--why` lists them.
    The zone guides' optimizer (`draft_guide.lua`) also builds guides over several zones
    (a level bracket over a pool of zones, the order across them optimized), for the
    Skyborne starts (one per side).

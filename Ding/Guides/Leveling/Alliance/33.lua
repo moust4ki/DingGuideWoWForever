@@ -9,6 +9,11 @@ Ding.RegisterGuide({
     faction  = "Alliance",
     minLevel = 50, maxLevel = 51,
     next     = "leveling-a34-blasted-lands-and-burning-steppes",
+    leftOut  = {
+        [4450] = { kind = "far" },
+        [7722] = { kind = "far" },
+        [7848] = { kind = "away" },
+    },
     steps    = {
         { go = { 1427, 38.58, 27.81 }, text = "Travel to Thorium Point", -- level 50
           note = "Searing Gorge: Thorium Point, in the north-west of the zone." },
@@ -86,8 +91,8 @@ Ding.RegisterGuide({
           note = "Let the conversation play out. Escort Dorius Stonetender and keep him safe." },
         { turnin = 3367, races = { "Gnome", "Skyborne" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 50
         { turnin = 3367, races = { "Human", "Dwarf" } }, -- level 50
-        { accept = 3368, races = { "Gnome", "Skyborne" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 50
-        { accept = 3368, races = { "Human", "Dwarf" } }, -- level 50
+        { accept = 3368, races = { "Gnome", "Skyborne" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" }, why = { kind = "carry", quest = 3368, seconds = 21300, xp = 4400 } }, -- level 50
+        { accept = 3368, races = { "Human", "Dwarf" }, why = { kind = "carry", quest = 3368, seconds = 21300, xp = 4400 } }, -- level 50
         { turnin = 3463, elite = true }, -- level 50
         { destroy = 10515 }, -- level 50
         { accept = 3481, elite = true }, -- level 50
@@ -98,7 +103,7 @@ Ding.RegisterGuide({
           note = "Look by the lookout towers ringing the Cauldron." },
         { complete = 7724 }, -- level 50
         { complete = 7723 }, -- level 50
-        { level = 51, patrol = { { 1427, 32.54, 42.55 }, { 1427, 31.26, 38.76 }, { 1427, 27.26, 37.76 }, { 1427, 27.34, 42.45 }, { 1427, 27.44, 46.95 }, { 1427, 26.26, 51.26 }, { 1427, 27.35, 55.77 }, { 1427, 31.66, 55.35 }, { 1427, 30.06, 60.94 }, { 1427, 28.14, 65.03 }, { 1427, 26.54, 69.66 }, { 1427, 29.96, 70.74 }, { 1427, 28.94, 75.24 }, { 1427, 29.45, 79.15 }, { 1427, 23.64, 78.55 }, { 1427, 22.56, 74.04 }, { 1427, 36.97, 34.17 } } }, -- level 50
+        { level = 51, patrol = { { 1427, 32.54, 42.55 }, { 1427, 31.26, 38.76 }, { 1427, 27.26, 37.76 }, { 1427, 27.34, 42.45 }, { 1427, 27.44, 46.95 }, { 1427, 26.26, 51.26 }, { 1427, 27.35, 55.77 }, { 1427, 31.66, 55.35 }, { 1427, 30.06, 60.94 }, { 1427, 28.14, 65.03 }, { 1427, 26.54, 69.66 }, { 1427, 29.96, 70.74 }, { 1427, 28.94, 75.24 }, { 1427, 29.45, 79.15 }, { 1427, 23.64, 78.55 }, { 1427, 22.56, 74.04 }, { 1427, 36.97, 34.17 } }, why = { kind = "level", levels = { 50, 60 } } }, -- level 50
         { go = { 1427, 31.55, 33.57 }, text = "Climb the trail into Thorium Point" }, -- level 51
         { turnin = { 7723, 7724, 7727 } }, -- level 51
         { turnin = { 7728, 7729 } }, -- level 51

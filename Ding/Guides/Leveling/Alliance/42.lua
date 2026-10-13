@@ -55,9 +55,9 @@ Ding.RegisterGuide({
           note = "The NPC is indoors. Wait for the talking to finish" },
         { accept = 5527, -- level 58
           note = "The NPC is indoors." },
-        { turnin = 4084, accept = 4005, -- level 58
+        { turnin = 4084, accept = 4005, why = { chain = 2, kind = "detour", quest = 4084, seconds = 660, short = true, xp = 14000 }, -- level 58
           note = "The NPC is indoors." },
-        { turnin = 4986, -- level 58
+        { turnin = 4986, why = { kind = "detour", quest = 4986, seconds = 1080, short = true, xp = 5800 }, -- level 58
           note = "The NPC is indoors, on the central storey." },
         { complete = 5163, useitem = 12928, -- level 59
           note = "Target Sprinkle with it." },
@@ -66,7 +66,7 @@ Ding.RegisterGuide({
         { complete = 4005, useitem = 11169, -- level 59
           note = "Wait for the talking to finish" },
         { go = { 1446, 69.69, 42.33 }, text = "Take the passage out of Lost Rigger Cove" }, -- level 59
-        { go = { 1449, 43.41, 6.84 }, text = "Go into the cavern" }, -- level 59
+        { go = { 1449, 43.41, 6.84 }, text = "Go into the cavern", why = { kind = "detour", quest = 4005, quests = 2, seconds = 60, total = 8200, xp = 5500 } }, -- level 59
         { turnin = 4005, accept = 3961, -- level 59
           note = "Your targets are within the cavern." },
         { destroy = { 11173, 11172, 11169 } }, -- level 59

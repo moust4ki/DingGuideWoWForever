@@ -47,7 +47,7 @@ Ding.RegisterGuide({
         { accept = 8461, -- level 54
           note = "Keep to the road the whole way." },
         { complete = 8461 }, -- level 54
-        { level = 55, patrol = { { 1448, 63.56, 9.55 }, { 1448, 62.46, 7.63 }, { 1448, 63.54, 5.95 }, { 1448, 59.95, 6.64 }, { 1448, 60.46, 8.57 }, { 1448, 61.45, 10.77 }, { 1448, 62.37, 12.64 } } }, -- level 54
+        { level = 55, patrol = { { 1448, 63.56, 9.55 }, { 1448, 62.46, 7.63 }, { 1448, 63.54, 5.95 }, { 1448, 59.95, 6.64 }, { 1448, 60.46, 8.57 }, { 1448, 61.45, 10.77 }, { 1448, 62.37, 12.64 } }, why = { kind = "level", levels = { 52, 56 } } }, -- level 54
         { turnin = 5084, accept = 5085, object = 176091, -- level 55
           note = "Flee if things go badly." },
         { turnin = 8461, accept = 8465, -- level 55
@@ -55,7 +55,7 @@ Ding.RegisterGuide({
         { accept = 8467, when = { item = { 21377, 5 } } }, -- level 55
         { turnin = 8467, when = { item = { 21377, 5 }, ready = 8467 } }, -- level 55
         { turnin = 8465 }, -- level 55
-        { turnin = { 980, 3909, 5085 }, accept = { 4842, 3912, 5086 } }, -- level 55
+        { turnin = { 980, 3909, 5085 }, accept = { 4842, 3912, 5086 }, why = { kind = "carry", quest = 3912, seconds = 3780, xp = 5100 } }, -- level 55
         { complete = 4521 }, -- level 55
         { accept = 3783 }, -- level 55
         { talk = 13917, bank = { 10540, 11136, 10597 }, sticky = 3783, -- level 55
@@ -70,12 +70,12 @@ Ding.RegisterGuide({
         { turnin = 4521, accept = 4741 }, -- level 55
         { talk = 7799, collect = { { 11243, 3 } }, spots = { { 1446, 52.35, 28.88 } }, -- level 55
           note = "The NPC is indoors." },
-        { turnin = 3912, accept = 3913, -- level 55
+        { turnin = 3912, accept = 3913, why = { chain = 6, kind = "detour", quest = 3913, quests = 9, seconds = 300, short = true, total = 39000, xp = 28000 }, -- level 55
           note = "The NPC is a human spirit." },
         { turnin = 3913, accept = 3914 }, -- level 55
         { destroy = 11243 }, -- level 55
         { accept = 4504 }, -- level 55
-        { turnin = 3914, accept = 3941 }, -- level 55
+        { turnin = 3914, accept = 3941, why = { back = true, chain = 4, kind = "detour", quest = 3941, quests = 6, seconds = 480, short = true, total = 33000, xp = 21000 } }, -- level 55
         { go = { 1449, 43.41, 6.84 }, text = "Go into the cavern" }, -- level 55
         { turnin = 3941, -- level 55
           note = "Your targets are within the cavern." },
@@ -85,9 +85,9 @@ Ding.RegisterGuide({
         { complete = 4504, -- level 55
           note = "Fight the elementals of the swamp." },
         { turnin = 4504 }, -- level 55
-        { accept = { 6029, 6030 }, -- level 55
+        { accept = { 6029, 6030 }, why = { continent = true, kind = "carry", quest = 6029, seconds = 21720, xp = 2600 }, -- level 55
           note = "The NPC is indoors." },
-        { accept = 5601, -- level 55
+        { accept = 5601, why = { continent = true, kind = "carry", quest = 5601, seconds = 25800, xp = 600 }, -- level 55
           note = "The NPC is indoors." },
         { talk = 13917, bank = { 15788, 15790 }, -- level 55
           note = "The NPC is indoors. You need them later for \"The Everlook Report\" and \"Duke Nicholas Zverenhoff\": keep them in the bank to free bag slots." },
@@ -144,7 +144,7 @@ Ding.RegisterGuide({
         { sethearth = "Orgrimmar", talk = 6929, -- level 56
           note = "The NPC is indoors." },
         { talk = 4549, collect = { { 10691, 1 }, { 10692, 1 }, { 10693, 1 }, { 10694, 1 }, { 10540, 1 }, { 15788, 1 }, { 15790, 1 } }, spots = { { 1458, 65.94, 44.78 } } }, -- level 56
-        { turnin = 3542, accept = 3564 }, -- level 56
+        { turnin = 3542, accept = 3564, why = { continent = true, kind = "carry", quest = 3564, seconds = 48720, xp = 3000 } }, -- level 56
         { go = { 1458, 52.8, 77.62 }, text = "Take the trail downhill" }, -- level 56
         { turnin = 3568 }, -- level 56
         { accept = 3569, -- level 56
@@ -154,7 +154,7 @@ Ding.RegisterGuide({
         { turnin = 3570 }, -- level 56
         { talk = 4549, unbank = 10679 }, -- level 56
         { accept = 7816, elite = true }, -- level 56
-        { turnin = 626, -- level 56
+        { turnin = 626, why = { back = true, kind = "detour", quest = 626, seconds = 780, short = true, xp = 6100 }, -- level 56
           note = "The spot is at the foot of the falls. Your targets sit below the water's surface." },
         { complete = 7816, elite = true, -- level 56
           note = "Hunt down an elite turtle of level 48 whose shell looks azure. This one roams, so scan the surrounding area." },

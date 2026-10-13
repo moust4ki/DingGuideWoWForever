@@ -9,10 +9,13 @@ Ding.RegisterGuide({
     faction  = "Horde",
     minLevel = 51, maxLevel = 51,
     next     = "leveling-h34-burning-steppes-and-azshara",
+    leftOut  = {
+        [7848] = { kind = "away" },
+    },
     steps    = {
         { go = { 1418, 3.36, 48.06 }, text = "Travel to Kargath", -- level 50
           note = "Badlands: Kargath first, at the western edge, then the Searing Gorge." },
-        { accept = 3821, -- level 50
+        { accept = 3821, why = { kind = "carry", once = true, quest = 3821, seconds = 11700, xp = 5100 }, -- level 50
           note = "The NPC roams the trail close to Kargath. The NPC gives the quest only while at this spot. If the NPC is away, stay until he comes back." },
         { accept = 4449, sticky = 4449 }, -- level 50
         { complete = 4449, -- level 50

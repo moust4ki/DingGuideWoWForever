@@ -35,14 +35,24 @@ local fire, flush, tick, press, hold, release = H.fire, H.flush, H.tick, H.press
 local padDown, focusOn, selectTab, play = H.padDown, H.focusOn, H.selectTab, H.play
 
 local function firstLaunch()
-    local C = Ding.Config
+    local C, S = Ding.Config, Ding.Setup
+    -- The setup assistant first (UI/Setup.lua): RB through its screens, Finish on the last one.
+    expect(S:IsShown() and S.screen == 1, "first launch: the setup assistant does not open")
+    expect(not (C.frame and C.frame:IsShown()), "first launch: the settings open over the setup assistant")
+    for _ = 1, #S.SCREENS do press("PADRSHOULDER") end
+    expect(not S:IsShown(), "first launch: Finish on the last screen does not close the setup assistant")
+    expect(Ding.db.ui.setupDone, "first launch: the setup assistant is not remembered")
+    expect(overrides[S.frame] == nil, "first launch: the setup assistant's temporary bindings are left")
+    -- Then the Keybinds tab (a gamepad is plugged in).
     expect(C.frame and C.frame:IsShown(), "first launch: the settings window does not open")
     if not (C.frame and C.frame:IsShown()) then return end
     expect(C.tab == C.TAB.bindings and C.focus and C.focus.opts.action == "DING_CONFIG",
         'first launch: focus expected on "Open Ding settings"')
     expect(Ding.db.ui.welcomed, "first launch not remembered")
     expect(#registered == 1, "AddOns > Ding category not registered")
-    expect(UISpecialFrames[1] == "DingConfigFrame", "Escape would not close the window")
+    local special = table.concat(UISpecialFrames, ",")
+    expect(special:find("DingConfigFrame", 1, true) and special:find("DingSetup", 1, true),
+        "Escape would not close the windows")
     press("PAD1")
     expect(C.capturing, "A does not start waiting for a button")
     padDown("PADLTRIGGER", { shift = true })
@@ -1678,6 +1688,50 @@ ok, err = pcall(function()
     db.ui.dungeonChoice = nil
 end)
 if not ok then problem("settings: " .. tostring(err)) end
+
+-- Why the guide makes its choices (Core/Why.lua): the line under a surprising step, the reason
+-- in the tooltip of its rows (the mouse, then X in focus mode), nothing under a plain step, and
+-- nothing at all with the option off.
+ok, err = pcall(function()
+    Ding.RegisterGuide({ id = "smoke-why", title = "Why", races = { "NightElf" }, steps = {
+        { accept = 456, why = { kind = "detour", quest = 456, xp = 900, seconds = 300, short = true } },
+        { accept = 916 }, { text = "End" },
+    } })
+    scenarioCharacter()
+    H.resetQuests()
+    E.turnedIn, Ding.char.manual = {}, {}
+    db.ui.autoAccept = false
+    db.panel.why = true
+    player.level, player.map, player.x, player.y = 5, 1438, 58.7, 44
+    E:SetGuide("smoke-why", 1, true)
+    tick(2)
+    local function under()
+        local out = {}
+        for _, r in ipairs(P.rowsShown or {}) do out[#out + 1] = r.sub or "" end
+        return plain(table.concat(out, " "))
+    end
+    local line = Ding.Why:Short(E:CurrentStep())
+    expect(line and under():find(line, 1, true), "why: no line under the detour")
+    checkPanel("why: the line under the step")
+    local r = P.frame.rows[1]
+    r.scripts.OnEnter(r)
+    expect(table.concat(GameTooltip.lines or {}, " "):find(L.WHY_TITLE, 1, true), "why: not in the row's tooltip")
+    r.scripts.OnLeave(r)
+    P:StartFocus()
+    press("PAD3")
+    expect(GameTooltip:IsShown() and table.concat(GameTooltip.lines or {}, " "):find(L.WHY_TITLE, 1, true),
+        "why: X shows no reason")
+    P:StopFocus()
+    db.panel.why = false
+    P:Update()
+    expect(not under():find(line, 1, true), "why: the line stays with the option off")
+    db.panel.why = true
+    E:SetGuide("smoke-why", 2, true)
+    tick(1)
+    expect(not under():find(L.WHY_DETOUR, 1, true), "why: a line under a step without a reason")
+    db.ui.autoAccept = true
+end)
+if not ok then problem("why: " .. tostring(err)) end
 
 print(("Result: %d problem(s)"):format(H.problems()))
 os.exit(H.problems() > 0 and 1 or 0)

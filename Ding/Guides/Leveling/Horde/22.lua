@@ -9,6 +9,21 @@ Ding.RegisterGuide({
     faction  = "Horde",
     minLevel = 41, maxLevel = 42,
     next     = "leveling-h23-dustwallow-marsh",
+    leftOut  = {
+        [4324] = { kind = "away" },
+        [4507] = { kind = "log" },
+        [4509] = { kind = "prereq" },
+        [4787] = { kind = "prereq" },
+        [4788] = { kind = "prereq" },
+        [5065] = { kind = "prereq" },
+        [8181] = { kind = "prereq" },
+        [8182] = { kind = "prereq" },
+        [8921] = { kind = "prereq" },
+        [8924] = { kind = "prereq" },
+        [8925] = { kind = "prereq" },
+        [8928] = { kind = "prereq" },
+        [8978] = { kind = "prereq" },
+    },
     steps    = {
         { go = { 1446, 51.57, 26.76 }, text = "Travel to Gadgetzan", -- level 41
           note = "Tanaris: Gadgetzan, in the north of the zone." },
@@ -29,7 +44,7 @@ Ding.RegisterGuide({
         { collect = { { 8483, 10 } }, spots = { { 1446, 62.75, 30.36 }, { 1446, 59.84, 24.03 }, { 1446, 63.17, 32.36 }, { 1446, 63.25, 34.57 }, { 1446, 64.03, 28.35 }, { 1446, 65.25, 32.76 } }, keep = 8483, -- level 41
           note = "Targets here are human." },
         { complete = 1690 }, -- level 41
-        { level = 42, patrol = { { 1446, 62.75, 30.36 }, { 1446, 63.17, 32.36 }, { 1446, 65.25, 32.76 }, { 1446, 63.25, 34.57 }, { 1446, 64.03, 28.35 }, { 1446, 59.84, 24.03 } }, -- level 41
+        { level = 42, patrol = { { 1446, 62.75, 30.36 }, { 1446, 63.17, 32.36 }, { 1446, 65.25, 32.76 }, { 1446, 63.25, 34.57 }, { 1446, 64.03, 28.35 }, { 1446, 59.84, 24.03 } }, why = { kind = "level", levels = { 37, 43 } }, -- level 41
           note = "A tougher foe is coming up." },
         { turnin = 1690 }, -- level 42
         { turnin = 379, when = { ready = 379 } }, -- level 42
@@ -41,7 +56,7 @@ Ding.RegisterGuide({
         { talk = 7799, bank = { 8524, 10699 }, -- level 42
           note = "The NPC is indoors. You need them later for \"Tanaris Field Sampling\" and \"Screecher Spirits\": keep them in the bank to free bag slots." },
         { turnin = 1117 }, -- level 42
-        { accept = 1118, -- level 42
+        { accept = 1118, why = { continent = true, kind = "carry", quest = 1118, seconds = 47040, xp = 900 }, -- level 42
           note = "Wait for the talking to finish" },
         { turnin = 1137 }, -- level 42
         { turnin = 1183, accept = { 1186, 1190 } }, -- level 42

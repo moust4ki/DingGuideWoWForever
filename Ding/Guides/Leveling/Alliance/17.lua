@@ -13,7 +13,7 @@ Ding.RegisterGuide({
         { go = { 1434, 26.35, 73.56 }, text = "Travel to Booty Bay", -- level 35
           note = "Stranglethorn Vale: Booty Bay, at the southern tip. The boat from Ratchet lands there." },
         { turnin = 1180, accept = 1181 }, -- level 35
-        { turnin = 1040, accept = 1041 }, -- level 35
+        { turnin = 1040, accept = 1041, why = { kind = "carry", quest = 1041, seconds = 8820, xp = 1000 } }, -- level 35
         { sethearth = "Booty Bay", talk = 6807, -- level 35
           note = "The NPC is indoors at street level." },
         { accept = 605, -- level 35
@@ -83,7 +83,7 @@ Ding.RegisterGuide({
           note = "Climb to the highest floor of the building." },
         { turnin = 213, -- level 35
           note = "Climb to the highest floor of the building." },
-        { turnin = { 578, 1182 }, accept = 1183, -- level 35
+        { turnin = { 578, 1182 }, accept = 1183, why = { continent = true, kind = "carry", quest = 1183, seconds = 16860, xp = 700 }, -- level 35
           note = "The NPC is upstairs, out on the balcony." },
         { talk = 2625, bank = { 5852, 2719 }, -- level 35
           note = "You need them later for \"Goblin Sponsorship\" and \"The Hidden Key\": keep them in the bank to free bag slots." },
@@ -149,14 +149,14 @@ Ding.RegisterGuide({
         { train = true, talk = 918, classes = { "ROGUE" } }, -- level 36
         { train = true, talk = 5515, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 36
           note = "The NPC is indoors." },
-        { go = { 1453, 73.19, 46.69 }, text = "Head into Stormwind Keep" }, -- level 36
+        { go = { 1453, 73.19, 46.69 }, text = "Head into Stormwind Keep", why = { kind = "detour", quest = 563, seconds = 60, xp = 3200 } }, -- level 36
         { turnin = 563, -- level 36
           note = "The NPC is indoors." },
-        { accept = 1453, -- level 36
+        { accept = 1453, why = { action = "accept", chain = 8, kind = "detour", quest = 1453, seconds = 120, xp = 22000 }, -- level 36
           note = "This one roams, so scan the surrounding area. The NPC is indoors." },
         { turnin = 1758, races = { "Human", "Gnome", "Skyborne" }, classes = { "WARLOCK" }, -- level 36
           note = "The NPC is indoors." },
-        { turnin = 1791, when = { log = 1791 }, classes = { "WARRIOR" }, -- level 36
+        { turnin = 1791, when = { log = 1791 }, classes = { "WARRIOR" }, why = { chain = 1, kind = "detour", quest = 1791, seconds = 780, short = true, xp = 2500 }, -- level 36
           note = "The NPC is indoors." },
         { accept = 1712, classes = { "WARRIOR" } }, -- level 36
     },

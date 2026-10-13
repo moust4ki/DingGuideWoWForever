@@ -9,6 +9,10 @@ Ding.RegisterGuide({
     faction  = "Alliance",
     minLevel = 35, maxLevel = 37,
     next     = "leveling-a19-stranglethorn-vale",
+    leftOut  = {
+        [92841] = { kind = "far", turnin = true },
+        [93034] = { kind = "far", turnin = true },
+    },
     steps    = {
         { talk = 11104, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, text = "Leave your pet with the stable master.", -- level 35
           note = "Desolace: Nijel's Point, in the north-east corner, is the Alliance hub." },
@@ -94,7 +98,7 @@ Ding.RegisterGuide({
           note = "Look for tan sacks by the houses. Some of them are not usable. Magram Pack Runners patrol with 2 hyena escorts; steer clear." },
         { turnin = 1370, accept = 1373 }, -- level 37
         { train = true, talk = 12042, races = { "NightElf" }, classes = { "DRUID" } }, -- level 37
-        { turnin = 1456, accept = 1457 }, -- level 37
+        { turnin = 1456, accept = 1457, why = { continent = true, kind = "carry", quest = 1457, seconds = 29760, xp = 1500 } }, -- level 37
         { complete = 1459, -- level 37
           note = "The foes here are scorpions. Basilisks compete for the same spawn points." },
         { go = { 1443, 67.44, 15.7 }, text = "Head uphill into Nijel's Point" }, -- level 37

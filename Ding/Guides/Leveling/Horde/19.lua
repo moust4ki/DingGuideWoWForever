@@ -9,6 +9,34 @@ Ding.RegisterGuide({
     faction  = "Horde",
     minLevel = 39, maxLevel = 40,
     next     = "leveling-h20-stranglethorn-vale-and-swamp-of-sorrows",
+    leftOut  = {
+        [656] = { kind = "prereq" },
+        [692] = { kind = "prereq" },
+        [709] = { kind = "far" },
+        [712] = { kind = "version" },
+        [716] = { kind = "prereq" },
+        [728] = { kind = "prereq" },
+        [734] = { kind = "prereq" },
+        [777] = { kind = "prereq" },
+        [778] = { kind = "prereq" },
+        [782] = { kind = "far" },
+        [2202] = { kind = "far" },
+        [2338] = { kind = "prereq" },
+        [2339] = { kind = "prereq" },
+        [2340] = { kind = "prereq" },
+        [3907] = { kind = "prereq" },
+        [4061] = { kind = "away" },
+        [4062] = { kind = "prereq" },
+        [4063] = { kind = "prereq" },
+        [4082] = { kind = "prereq" },
+        [4122] = { kind = "prereq" },
+        [4132] = { kind = "prereq" },
+        [4134] = { kind = "away" },
+        [4724] = { kind = "away" },
+        [4768] = { kind = "away" },
+        [4903] = { kind = "away" },
+        [7201] = { kind = "prereq" },
+    },
     steps    = {
         { go = { 1418, 42.39, 52.93 }, text = "Travel to the Badlands", -- level 39
           note = "Badlands: Kargath, at the western edge, is the Horde hub." },
@@ -45,9 +73,9 @@ Ding.RegisterGuide({
         { complete = 1108, -- level 40
           note = "The targets are troggs." },
         { turnin = 1108 }, -- level 40
-        { accept = 1137, -- level 40
+        { accept = 1137, why = { continent = true, kind = "carry", quest = 1137, seconds = 21240, xp = 1500 }, -- level 40
           note = "Wait for the talking to finish" },
-        { turnin = 1419, accept = 1420, -- level 40
+        { turnin = 1419, accept = 1420, why = { kind = "carry", quest = 1420, seconds = 11460, xp = 2400 }, -- level 40
           note = "The NPC waits on the tower's highest floor." },
         { turnin = 2258, -- level 40
           note = "The NPC is indoors, one floor up." },

@@ -26,7 +26,7 @@ Ding.RegisterGuide({
         { turnin = 100, when = { log = 100 }, races = { "Orc", "Tauren", "Troll", "Skyborne" }, classes = { "SHAMAN" }, -- level 30
           note = "Wait for the talking to finish" },
         { accept = 96, when = { done = 100 }, races = { "Orc", "Tauren", "Troll", "Skyborne" }, classes = { "SHAMAN" } }, -- level 30
-        { accept = 509, -- level 30
+        { accept = 509, why = { action = "accept", chain = 4, kind = "detour", quest = 533, quests = 11, seconds = 60, total = 28000, xp = 16000 }, -- level 30
           note = "The NPC is indoors." },
         { turnin = 529, accept = 532 }, -- level 30
         { accept = 533, -- level 30
@@ -45,7 +45,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { complete = 552, -- level 30
           note = "Targets are in the cavern and around its entrance too." },
-        { level = 31, sticky = { 532, 546 }, patrol = { { 1424, 46.23, 31.88 }, { 1424, 46.17, 31.84 }, { 1424, 45.44, 33.45 }, { 1424, 44.25, 31.25 }, { 1424, 43.36, 29.45 }, { 1424, 45.04, 28.64 }, { 1424, 43.46, 27.44 }, { 1424, 45.05, 26.36 }, { 1424, 43.36, 25.35 }, { 1424, 47.55, 30.34 }, { 1424, 42.77, 33.54 }, { 1424, 41.85, 31.96 } }, -- level 30
+        { level = 31, sticky = { 532, 546 }, patrol = { { 1424, 46.23, 31.88 }, { 1424, 46.17, 31.84 }, { 1424, 45.44, 33.45 }, { 1424, 44.25, 31.25 }, { 1424, 43.36, 29.45 }, { 1424, 45.04, 28.64 }, { 1424, 43.46, 27.44 }, { 1424, 45.05, 26.36 }, { 1424, 43.36, 25.35 }, { 1424, 47.55, 30.34 }, { 1424, 42.77, 33.54 }, { 1424, 41.85, 31.96 } }, why = { kind = "level", levels = { 25, 37 } }, -- level 30
           note = "A tough quest lies just ahead. Foes in this area outlevel you. Targets are in the cavern and around its entrance too." },
         { go = { 1424, 46.23, 31.88 }, text = "Head out of the cave" }, -- level 31
         { complete = 567, -- level 31
@@ -85,7 +85,7 @@ Ding.RegisterGuide({
           note = "While Shield Guards glow, stop your melee attacks on them. Expect heavy damage from it. Targets here are human." },
         { destroy = 3711 }, -- level 31
         { complete = 533 }, -- level 31
-        { level = 31, xp = 35550, patrol = { { 1424, 46.23, 31.88 }, { 1424, 46.17, 31.84 }, { 1424, 45.44, 33.45 }, { 1424, 44.25, 31.25 }, { 1424, 43.36, 29.45 }, { 1424, 45.04, 28.64 }, { 1424, 43.46, 27.44 }, { 1424, 45.05, 26.36 }, { 1424, 43.36, 25.35 }, { 1424, 47.55, 30.34 }, { 1424, 42.77, 33.54 }, { 1424, 41.85, 31.96 } }, -- level 31
+        { level = 31, xp = 35550, patrol = { { 1424, 46.23, 31.88 }, { 1424, 46.17, 31.84 }, { 1424, 45.44, 33.45 }, { 1424, 44.25, 31.25 }, { 1424, 43.36, 29.45 }, { 1424, 45.04, 28.64 }, { 1424, 43.46, 27.44 }, { 1424, 45.05, 26.36 }, { 1424, 43.36, 25.35 }, { 1424, 47.55, 30.34 }, { 1424, 42.77, 33.54 }, { 1424, 41.85, 31.96 } }, why = { kind = "level", levels = { 25, 37 } }, -- level 31
           note = "Together with the next turn-ins, this brings you to level 32. Targets are in the cavern and around its entrance too." },
         { turnin = 544, -- level 31
           note = "The NPC is indoors." },

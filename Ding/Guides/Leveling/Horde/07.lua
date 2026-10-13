@@ -9,6 +9,16 @@ Ding.RegisterGuide({
     faction  = "Horde",
     minLevel = 22, maxLevel = 24,
     next     = "leveling-h08-the-barrens",
+    leftOut  = {
+        [517] = { kind = "version" },
+        [519] = { kind = "prereq" },
+        [520] = { kind = "prereq" },
+        [521] = { kind = "prereq" },
+        [524] = { kind = "prereq" },
+        [541] = { kind = "version" },
+        [2935] = { kind = "far", turnin = true },
+        [2938] = { kind = "prereq" },
+    },
     steps    = {
         { go = { 1421, 44.19, 42.67 }, text = "Travel to the Undercity", -- level 22
           note = "Undercity first, then Hillsbrad Foothills: Tarren Mill." },
@@ -80,7 +90,7 @@ Ding.RegisterGuide({
         { complete = 496 }, -- level 23
         { level = 22, xp = 19570, patrol = { { 1424, 62.86, 34.25 }, { 1424, 60.34, 37.44 }, { 1424, 62.56, 39.63 }, { 1424, 69.23, 41.36 }, { 1424, 70.85, 38.35 }, { 1424, 70.43, 35.37 }, { 1424, 72.34, 44.26 }, { 1424, 68.65, 45.85 }, { 1424, 58.54, 33.34 }, { 1424, 61.24, 30.26 }, { 1424, 58.74, 26.03 }, { 1424, 57.24, 23.45 }, { 1424, 56.45, 28.86 }, { 1424, 66.36, 26.46 }, { 1424, 65.43, 22.46 }, { 1424, 67.55, 16.14 }, { 1424, 61.95, 15.57 }, { 1424, 57.96, 14.63 }, { 1424, 55.15, 17.03 }, { 1424, 55.85, 10.05 } }, -- level 23
           note = "Together with the next turn-ins, this brings you to level 23." },
-        { turnin = { 1066, 496 }, accept = { 499, 1067 }, -- level 23
+        { turnin = { 1066, 496 }, accept = { 499, 1067 }, why = { continent = true, kind = "carry", quest = 1067, seconds = 8280, xp = 1400 }, -- level 23
           note = "The NPC is indoors." },
         { turnin = 499, -- level 23
           note = "The NPC is indoors." },
@@ -106,7 +116,7 @@ Ding.RegisterGuide({
         { complete = 528 }, -- level 24
         { level = 23, xp = 27400, patrol = { { 1424, 41.83, 37.57 }, { 1424, 42.34, 40.77 }, { 1424, 45.24, 39.45 }, { 1424, 46.37, 42.54 }, { 1424, 48.66, 40.25 }, { 1424, 51.06, 42.64 }, { 1424, 54.45, 42.14 }, { 1424, 57.36, 41.46 }, { 1424, 55.45, 36.94 }, { 1424, 52.06, 38.97 }, { 1424, 51.45, 35.65 }, { 1424, 48.46, 34.23 }, { 1424, 48.35, 31.17 }, { 1424, 53.23, 32.66 }, { 1424, 54.77, 29.65 }, { 1424, 44.65, 35.45 }, { 1424, 40.55, 34.44 }, { 1424, 38.05, 35.97 }, { 1424, 38.34, 39.25 }, { 1424, 39.77, 42.56 }, { 1424, 37.24, 44.24 }, { 1424, 39.24, 47.06 }, { 1424, 48.36, 45.65 }, { 1424, 52.15, 46.36 } }, -- level 24
           note = "With the coming hand-ins, this brings you to level 24. Tougher foes are coming up next." },
-        { turnin = 528, accept = 529, sticky = { 529, 546 } }, -- level 24
+        { turnin = 528, accept = 529, sticky = { 529, 546 }, why = { back = true, chain = 3, kind = "detour", quest = 528, seconds = 360, short = true, xp = 8500 } }, -- level 24
         { complete = 529, -- level 24
           note = "The target is indoors." },
         { complete = 529, -- level 24

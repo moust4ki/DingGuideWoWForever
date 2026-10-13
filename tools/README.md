@@ -379,7 +379,7 @@ The zone tracks:
 
 ```sh
 lua5.1 tools/write_leveling.lua $QDB tools/routes/leveling/alliance.lua [--report] [--dry-run] [--no-additions]
-                                  [--deviation] [--free-quests <file>]
+                                  [--deviation] [--free-quests <file>] [--why]
 lua5.1 tools/write_leveling.lua $QDB tools/routes/leveling/horde.lua
 lua5.1 tools/translate_guides.lua
 ```
@@ -470,6 +470,37 @@ Every run also looks for **free quests** the route leaves out (section 8): it pr
 `Free quests left out: N, borderline: M` and a `warning:` line for each free one, with the route
 step it would follow. `--free-quests <file>` writes them all, borderline ones included, as a Lua
 table (what `audit_free_quests.lua` reads).
+
+**Reasons** (`tools/route_why.lua`, the window's "why": docs/guide-packs.md, section 6): on the
+final simulation, what a surprising step brings, measured and nothing else, written as the step's
+`why`:
+
+- **detour**: a run of at most 6 steps in another zone (back in the zone it left, or on to a
+  third), or one step far off the way in its own zone (5 minutes or more). Its cost: the time on
+  the way beyond the direct trip from the step before to the step after. What it brings: its
+  turn-ins, the quests taken there (turned in later) and the chains they open (follow-ups through
+  QuestieDB's prerequisites that the route turns in later), the monsters killed there for them;
+  the window names the quest whose chain brings the most. Said under the step from 4 minutes
+  (`short = true`), on demand below. A detour with a step for a trainer, a vendor, a bank, a
+  flight master, the inn or an NPC to talk to (for any class) gets no reason: the simulation
+  does not value those, so its quests would not be the whole reason.
+- **carry**: a quest taken here and turned in an hour of route or more later, in another zone;
+  said under the step when it is turned in on another continent and the route never comes back
+  to this zone first (taken now or never).
+- **level**: a level step, when the next quests taken after it are above its level (their
+  levels; no time: the window counts the kills left).
+
+A reason is kept when every race that plays the step finds the same (kind and quest); its figures
+are their average, rounded (XP to the hundred, to the thousand from 10,000; time to the minute).
+Each run prints `Reasons (tools/route_why.lua): N steps, M said under their step (...)`; `--why`
+lists them (stderr). The free-quests audit's verdicts on the quests the route leaves out
+become each section's `leftOut` (in the section where the audit measured the quest, else the
+first one on its giver's map): too little XP for the detour (`detour`, with the XP and the
+added time), too long a detour (`long`), giver, objectives or turn-in off the route (`away`,
+`far`), log full (`log`), a prerequisite not on the route (`prereq`), another version on the
+route (`version`), exclusive with a route quest (`exclusive`), its follow-up taken first
+(`followup`), objectives the data does not know (`unsure`). Reasons that are not the route's
+(class, profession, event, elite, dungeon...) stay out: the game or Ding tells those.
 
 ## 8. Free quests
 

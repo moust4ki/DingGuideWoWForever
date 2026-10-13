@@ -126,9 +126,9 @@ Ding.RegisterGuide({
         { go = { 1437, 50.6, 8.48 }, text = "Leap from the span and splash down below" }, -- level 29
         { collect = { { 4433, 1 } }, -- level 29
           note = "Look for a pale, rolled scroll. A dwarf corpse grips it. Your targets sit below the water's surface." },
-        { accept = 637, useitem = 4433 }, -- level 29
+        { accept = 637, useitem = 4433, why = { kind = "carry", quest = 637, seconds = 16140, xp = 2500 } }, -- level 29
         { complete = 633 }, -- level 29
-        { turnin = 633, accept = 634 }, -- level 29
+        { turnin = 633, accept = 634, why = { back = true, chain = 1, kind = "detour", quest = 633, seconds = 120, xp = 3800 } }, -- level 29
         { turnin = 634 }, -- level 29
         { go = { 1417, 45.81, 46.15 }, fly = true, talk = 2835, text = "Fly to Refuge Pointe" }, -- level 29
         { go = { 1424, 49.4, 52.21 }, fly = true, talk = 2432, text = "Flight master at Southshore" }, -- level 29
@@ -138,9 +138,9 @@ Ding.RegisterGuide({
           note = "The targets are turtles. Head north, keeping to the riverbank." },
         { go = { 1422, 42.98, 85.09 }, fly = true, talk = 12596, text = "Flight master at Chillwind Camp", -- level 29
           note = "Keep to the road the whole way." },
-        { turnin = 292, when = { log = 292 }, -- level 29
+        { turnin = 292, when = { log = 292 }, why = { chain = 1, kind = "detour", quest = 292, quests = 3, seconds = 180, total = 5700, xp = 3700 }, -- level 29
           note = "The NPC is indoors." },
-        { accept = 293, when = { done = 292 } }, -- level 30
+        { accept = 293, when = { done = 292 }, why = { kind = "carry", quest = 293, seconds = 15300, xp = 2500 } }, -- level 30
         { turnin = 98223 }, -- level 30
         { accept = 321, elite = true }, -- level 30
         { turnin = 321, elite = true }, -- level 30

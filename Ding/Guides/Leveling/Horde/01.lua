@@ -10,6 +10,55 @@ Ding.RegisterGuide({
     races    = { "Scourge" },
     minLevel = 1, maxLevel = 13,
     next     = "leveling-h04-silverpine-forest",
+    leftOut  = {
+        [105] = { kind = "prereq" },
+        [357] = { kind = "prereq" },
+        [366] = { kind = "prereq" },
+        [372] = { kind = "version" },
+        [405] = { kind = "detour", seconds = 60, xp = 100 },
+        [408] = { kind = "prereq" },
+        [411] = { kind = "prereq" },
+        [441] = { kind = "prereq" },
+        [446] = { kind = "prereq" },
+        [450] = { kind = "far" },
+        [530] = { kind = "prereq" },
+        [737] = { kind = "prereq" },
+        [827] = { kind = "prereq" },
+        [828] = { kind = "prereq" },
+        [829] = { kind = "prereq" },
+        [1004] = { kind = "exclusive" },
+        [1113] = { kind = "prereq" },
+        [1160] = { kind = "prereq" },
+        [1394] = { kind = "prereq" },
+        [2342] = { kind = "far" },
+        [2937] = { kind = "prereq" },
+        [3784] = { kind = "exclusive" },
+        [4133] = { kind = "log" },
+        [4642] = { kind = "prereq" },
+        [4769] = { kind = "away" },
+        [5511] = { kind = "prereq" },
+        [5804] = { kind = "prereq" },
+        [6521] = { kind = "prereq" },
+        [8430] = { kind = "away" },
+        [8439] = { kind = "away" },
+        [92421] = { kind = "away" },
+        [92422] = { kind = "away" },
+        [95216] = { kind = "away" },
+        [96607] = { kind = "away" },
+        [96658] = { kind = "prereq" },
+        [96896] = { kind = "away" },
+        [96899] = { kind = "far", turnin = true },
+        [97289] = { kind = "away" },
+        [97290] = { kind = "away" },
+        [97291] = { kind = "away" },
+        [97292] = { kind = "away" },
+        [97985] = { kind = "far" },
+        [98545] = { kind = "away" },
+        [99051] = { kind = "far" },
+        [99052] = { kind = "prereq" },
+        [99141] = { kind = "away" },
+        [99153] = { kind = "away" },
+    },
     steps    = {
         { destroy = 6948, -- level 1
           note = "Tirisfal Glades: Deathknell, where the undead rise. This frees room in your bags. You receive one further along the route." },
@@ -55,7 +104,7 @@ Ding.RegisterGuide({
           note = "The targets are wolves." },
         { complete = 376, -- level 3
           note = "The targets are bats." },
-        { level = 3, xp = 1000, patrol = { { 1420, 31.35, 58.35 }, { 1420, 29.46, 58.77 }, { 1420, 30.23, 62.14 }, { 1420, 29.26, 64.45 }, { 1420, 28.96, 67.76 }, { 1420, 32.43, 67.03 }, { 1420, 34.43, 66.35 }, { 1420, 34.45, 58.23 }, { 1420, 31.03, 55.46 } }, -- level 3
+        { level = 3, xp = 1000, patrol = { { 1420, 31.35, 58.35 }, { 1420, 29.46, 58.77 }, { 1420, 30.23, 62.14 }, { 1420, 29.26, 64.45 }, { 1420, 28.96, 67.76 }, { 1420, 32.43, 67.03 }, { 1420, 34.43, 66.35 }, { 1420, 34.45, 58.23 }, { 1420, 31.03, 55.46 } }, why = { kind = "level", levels = { 3, 6 } }, -- level 3
           note = "With the coming hand-ins, this brings you to level 4." },
         { turnin = 376, accept = 6395, -- level 3
           note = "The NPC is indoors." },
@@ -85,7 +134,7 @@ Ding.RegisterGuide({
           note = "Just out of the mine." },
         { complete = 380, -- level 4
           note = "The objective is underground, in the mine shaft." },
-        { level = 4, xp = 1500, patrol = { { 1420, 26.87, 59.44 }, { 1420, 25.46, 59.66 }, { 1420, 23.37, 60.16 }, { 1420, 23.44, 58.17 }, { 1420, 27.23, 56.75 }, { 1420, 29.44, 57.45 }, { 1420, 29.25, 59.54 } }, -- level 4
+        { level = 4, xp = 1500, patrol = { { 1420, 26.87, 59.44 }, { 1420, 25.46, 59.66 }, { 1420, 23.37, 60.16 }, { 1420, 23.44, 58.17 }, { 1420, 27.23, 56.75 }, { 1420, 29.44, 57.45 }, { 1420, 29.25, 59.54 } }, why = { kind = "level", levels = { 4, 7 } }, -- level 4
           note = "With the coming hand-ins, this gets you to level 5. The targets roam the mine and the area around it." },
         { go = { 1420, 26.87, 59.44 }, deathskip = true, text = "Die on purpose at this spot", -- level 4
           note = "Die to the monsters here on purpose. Dying costs you nothing this early. This is the quickest way over." },
@@ -108,7 +157,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { turnin = 381, accept = 382 }, -- level 5
         { complete = 382 }, -- level 5
-        { level = 5, xp = 2150, patrol = { { 1420, 35.43, 65.86 }, { 1420, 37.04, 64.34 }, { 1420, 37.75, 66.65 }, { 1420, 38.66, 69.43 }, { 1420, 37.03, 70.84 }, { 1420, 35.45, 68.55 } }, -- level 5
+        { level = 5, xp = 2150, patrol = { { 1420, 35.43, 65.86 }, { 1420, 37.04, 64.34 }, { 1420, 37.75, 66.65 }, { 1420, 38.66, 69.43 }, { 1420, 37.03, 70.84 }, { 1420, 35.45, 68.55 } }, why = { kind = "level", levels = { 5, 7 } }, -- level 5
           note = "With the coming hand-ins, this gets you to level 6." },
         { turnin = 382, accept = 383 }, -- level 5
         { train = true, talk = 2124, classes = { "MAGE" }, -- level 5
@@ -150,7 +199,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { complete = 404, -- level 6
           note = "The targets are zombies." },
-        { level = 7, patrol = { { 1420, 49.96, 56.45 }, { 1420, 48.04, 57.87 }, { 1420, 48.94, 60.15 }, { 1420, 50.86, 58.94 }, { 1420, 53.44, 57.35 }, { 1420, 55.35, 57.95 }, { 1420, 56.05, 53.74 }, { 1420, 53.63, 52.66 }, { 1420, 52.67, 54.66 }, { 1420, 50.24, 53.93 }, { 1420, 48.26, 53.67 }, { 1420, 46.55, 52.43 }, { 1420, 45.74, 50.46 }, { 1420, 43.87, 51.84 }, { 1420, 44.44, 54.14 }, { 1420, 42.35, 54.24 }, { 1420, 41.37, 52.03 }, { 1420, 39.56, 50.66 }, { 1420, 39.73, 54.14 }, { 1420, 40.46, 57.45 }, { 1420, 41.57, 59.07 }, { 1420, 43.57, 59.76 }, { 1420, 45.47, 59.05 }, { 1420, 43.35, 57.44 }, { 1420, 45.25, 56.24 }, { 1420, 47.04, 61.45 }, { 1420, 51.35, 51.97 }, { 1420, 52.16, 49.85 } }, -- level 6
+        { level = 7, patrol = { { 1420, 49.96, 56.45 }, { 1420, 48.04, 57.87 }, { 1420, 48.94, 60.15 }, { 1420, 50.86, 58.94 }, { 1420, 53.44, 57.35 }, { 1420, 55.35, 57.95 }, { 1420, 56.05, 53.74 }, { 1420, 53.63, 52.66 }, { 1420, 52.67, 54.66 }, { 1420, 50.24, 53.93 }, { 1420, 48.26, 53.67 }, { 1420, 46.55, 52.43 }, { 1420, 45.74, 50.46 }, { 1420, 43.87, 51.84 }, { 1420, 44.44, 54.14 }, { 1420, 42.35, 54.24 }, { 1420, 41.37, 52.03 }, { 1420, 39.56, 50.66 }, { 1420, 39.73, 54.14 }, { 1420, 40.46, 57.45 }, { 1420, 41.57, 59.07 }, { 1420, 43.57, 59.76 }, { 1420, 45.47, 59.05 }, { 1420, 43.35, 57.44 }, { 1420, 45.25, 56.24 }, { 1420, 47.04, 61.45 }, { 1420, 51.35, 51.97 }, { 1420, 52.16, 49.85 } }, why = { kind = "level", levels = { 6, 9 } }, -- level 6
           note = "Progress westward as you go." },
         { complete = 5481, -- level 7
           note = "Look for wilted violet weeds. Progress westward as you go." },
@@ -158,7 +207,7 @@ Ding.RegisterGuide({
         { complete = 427 }, -- level 7
         { accept = 86784, races = { "Scourge" } }, -- level 7
         { complete = 86784, races = { "Scourge" } }, -- level 7
-        { level = 7, xp = 2535, patrol = { { 1420, 32.84, 50.37 }, { 1420, 29.76, 49.37 }, { 1420, 30.74, 46.37 }, { 1420, 33.55, 45.26 }, { 1420, 36.75, 47.94 } }, -- level 7
+        { level = 7, xp = 2535, patrol = { { 1420, 32.84, 50.37 }, { 1420, 29.76, 49.37 }, { 1420, 30.74, 46.37 }, { 1420, 33.55, 45.26 }, { 1420, 36.75, 47.94 } }, why = { kind = "level", levels = { 6, 9 } }, -- level 7
           note = "Together with the next turn-ins, this brings you to level 8." },
         { turnin = 427, accept = 370 }, -- level 7
         { turnin = 365, accept = 407, -- level 7
@@ -230,7 +279,7 @@ Ding.RegisterGuide({
         { complete = 791 }, -- level 8
         { complete = 784 }, -- level 8
         { turnin = 823 }, -- level 8
-        { turnin = { 784, 830 }, accept = { 825, 831, 837 }, -- level 9
+        { turnin = { 784, 830 }, accept = { 825, 831, 837 }, why = { kind = "carry", quest = 831, seconds = 5580, xp = 600 }, -- level 9
           note = "The NPC is indoors, one floor up." },
         { accept = 815, -- level 9
           note = "This one roams, so scan the surrounding area." },

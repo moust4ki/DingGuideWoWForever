@@ -54,11 +54,11 @@ Ding.RegisterGuide({
         { talk = 9985, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, text = "Get your companion back from the stable master." }, -- level 41
         { talk = 9985, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 41
           note = "Release the short-term pet you tamed." },
-        { turnin = 1117 }, -- level 41
-        { accept = 1118, -- level 41
+        { turnin = 1117, why = { chain = 4, kind = "detour", quest = 1117, quests = 13, seconds = 1140, short = true, total = 24000, xp = 10000 } }, -- level 41
+        { accept = 1118, why = { continent = true, kind = "carry", quest = 1118, seconds = 17460, xp = 900 }, -- level 41
           note = "Wait for the talking to finish" },
         { accept = 1106 }, -- level 41
-        { turnin = 1187, accept = 1188 }, -- level 41
+        { turnin = 1187, accept = 1188, why = { kind = "carry", quest = 1188, seconds = 38160, xp = 800 } }, -- level 41
         { complete = 98155 }, -- level 41
         { turnin = 261, -- level 41
           note = "The NPC is indoors." },

@@ -9,12 +9,20 @@ Ding.RegisterGuide({
     faction  = "Horde",
     minLevel = 34, maxLevel = 36,
     next     = "leveling-h16-stranglethorn-vale",
+    leftOut  = {
+        [5386] = { kind = "far" },
+        [6568] = { kind = "prereq" },
+        [6602] = { kind = "prereq" },
+        [93034] = { kind = "far", turnin = true },
+        [94872] = { kind = "away" },
+        [96261] = { kind = "detour", seconds = 240, xp = 2300 },
+    },
     steps    = {
         { go = { 1443, 38.88, 27.16 }, text = "Travel to Desolace", -- level 34
           note = "Desolace: Ghost Walker Post is the hub, in the middle of the zone." },
         { vendor = true, talk = 3313, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, -- level 34
           note = "The NPC is indoors. A lengthy grinding stretch is coming up." },
-        { accept = 1480, collect = { { 20310, 1 } }, useitem = 20310 }, -- level 34
+        { accept = 1480, collect = { { 20310, 1 } }, useitem = 20310, why = { kind = "carry", once = true, quest = 1480, seconds = 17520, xp = 1300 } }, -- level 34
         { level = 35, patrol = { { 1443, 57.84, 25.44 }, { 1443, 55.64, 24.76 }, { 1443, 55.16, 27.43 }, { 1443, 53.15, 27.46 }, { 1443, 53.43, 30.06 }, { 1443, 56.03, 29.36 }, { 1443, 57.14, 27.76 }, { 1443, 55.74, 31.55 } }, -- level 34
           note = "Plan on killing monsters for quite some time. Dungeon runs are a fine choice here too, as you like." },
         { accept = 5741, -- level 35
@@ -83,7 +91,7 @@ Ding.RegisterGuide({
         { complete = 6161, -- level 35
           note = "Hunt naga. The targets are on islands and beneath the surface." },
         { turnin = 6161, object = 177786 }, -- level 35
-        { level = 36, patrol = { { 1443, 28.35, 12.24 }, { 1443, 30.44, 9.54 }, { 1443, 27.36, 9.05 }, { 1443, 29.97, 6.37 }, { 1443, 33.69, 10.39 }, { 1443, 29.15, 15.44 } } }, -- level 35
+        { level = 36, patrol = { { 1443, 28.35, 12.24 }, { 1443, 30.44, 9.54 }, { 1443, 27.36, 9.05 }, { 1443, 29.97, 6.37 }, { 1443, 33.69, 10.39 }, { 1443, 29.15, 15.44 } }, why = { kind = "level", levels = { 31, 37 } } }, -- level 35
         { complete = 6027 }, -- level 36
         { complete = 1482, -- level 36
           note = "Other naga compete for the same spawn points. The targets are on islands and beneath the surface." },

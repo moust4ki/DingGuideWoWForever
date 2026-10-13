@@ -150,6 +150,7 @@ Ding.RegisterGuide({
 | `minLevel`, `maxLevel` | no | Levels of the section (default 1 and 60). Ding uses them to suggest a section, and past `maxLevel` it offers the player to go on to `next` ("Next section", "Turn in first" or "Stay"). |
 | `next` | no | Id of the section to start when this one is done. It may be a section of another pack, Ding's included (`/ding list` gives the ids). For a race that picks its side later (Skyborne), one id per faction: `next = { Alliance = "mypack-05-darkshore", Horde = "mypack-05-barrens" }`; a character with no side yet (or a faction missing from the table) finishes the section there. |
 | `steps` | yes | The list of steps (see 6), at least one. |
+| `leftOut` | no | Quests this section leaves out on purpose, and why: `{ [quest id] = reason }` (see "Why", in 6). The panel beside an NPC's window says it when the NPC offers one. |
 
 **Which section a character gets.** When a pack is picked, Ding takes, among the sections
 for the character's faction, race and class, in the order of your `.toc`: the first one
@@ -208,6 +209,7 @@ Options of a step:
 | Key | Meaning |
 | --- | --- |
 | `note` | A tip shown under the step. |
+| `why` | Why your route makes this choice (see "Why" below): a text, or `{ kind = ..., ... }`. |
 | `optional` | `true`: the step never blocks. Ding passes it when the player goes further, or when its quest never started (an item that never dropped). |
 | `faction` | `"Alliance"` or `"Horde"`: in a section for both sides, the step only exists for that side (a race that picks its side on the way gets it once it has one). For a route that starts differently on each side and then goes on together. |
 | `races`, `classes` | The step only exists for these races or classes (same names as above). |
@@ -256,6 +258,41 @@ different classes to one place are fine (`classes` on each), one per character.
 { accept = 228, elite = true, note = "Mor'Ladim is elite: find a group." },
 { text = "End of the route: pick Ding's guide again in the settings." },
 ```
+
+**Why.** A player who does not see why the route sends them somewhere doubts it, and leaves
+it. `why` says it in plain words, never as a color or a code. Keep it for the choices that
+surprise (a trip to another zone and back, a quest taken now and turned in much later):
+with `short = true`, one line under the step; otherwise only on demand, in the tooltip of the
+step's rows (the mouse over a row, or X in focus mode), under "Why?". A step without `why`
+says nothing more ("The guide plans this step here." on demand). The player can turn the
+explanations off (Guide tab, "Guide explanations"). Say only what is true: a reason you do not
+know is better left out.
+
+- A text: `why = "The cave is safer at night."` (on demand), or
+  `why = { text = "...", short = true }` (under the step). Translated like `note` (see 7).
+- Figures, written in the player's language by Ding (estimates, said as such):
+  - `{ kind = "detour", quest = 67, xp = 13000, seconds = 300, chain = 11, short = true }`: the
+    step takes the player out of their way for `seconds` (beyond the direct way); turning in
+    `quest` (or taking it: `action = "accept"`) brings `xp`, and opens `chain` more quests your
+    route does next. Optional: `total` and `quests` (all the XP of the detour, its number of
+    quests), `back = true` (back in the zone it left). Under the step: "Why this detour (about
+    5 min): turning in “The Legend of Stalvan” opens a chain of quests worth a lot of XP (about
+    13,000)." ("a lot of XP" from a quarter of the player's level).
+  - `{ kind = "carry", quest = 79192, xp = 1100, seconds = 27720, continent = true, once = true }`:
+    taken here, turned in `seconds` of route later (on another continent; `once`: the route never
+    comes back here before).
+  - `{ kind = "level", levels = { 28, 30 } }`: on a `level` step, the levels of the quests that
+    follow.
+
+A section's `leftOut` names the quests it does not take, so that the player beside an NPC
+knows why ("The guide does not do this quest: <reason>."): `{ [quest id] = "text" }` (the end of
+that sentence: "too far for the XP it brings"), or `{ kind = ... }` with `detour` (`xp`, `seconds`: too
+little XP for the detour), `long` (`xp`, `seconds`: the detour is too long), `away` (the route
+does not pass by its giver at a fitting level), `far` (its objectives are far from the route;
+`turnin = true`: its turn-in), `log` (the quest log is full there), `prereq` (it follows a
+quest the route does not do; `quest`: which), `version` (the route does another version of it),
+`exclusive` (it rules out a quest the route does), `followup` (the route takes the quest it
+leads to directly), `unsure` (the data does not tell what it asks for).
 
 What Ding does for you, so steps stay short:
 
@@ -315,8 +352,8 @@ Ding.RegisterGuideTranslation("frFR", "mypack-01-shadowglen", {
 - Arguments: the language, the section id, then `[English text] = translated text`.
 - The key is the **exact** English text of the section. If you change the English text,
   change the key too, or the translation no longer applies.
-- Only `title`, `text` and `note` are translated. `train`, `fly` and `sethearth` texts are
-  shown as written.
+- Only `title`, `text`, `note` and the texts of `why` and `leftOut` are translated. `train`,
+  `fly` and `sethearth` texts are shown as written.
 - A client in another language ignores the file. Languages: `frFR`, `deDE`, `esES` (also
   used by Latin American clients), `ptBR`, `koKR`, `zhCN`, `zhTW`.
 
