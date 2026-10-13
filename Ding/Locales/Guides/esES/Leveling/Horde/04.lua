@@ -13,6 +13,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h04-silverpine-forest", {
         "Deja que termine la conversación. Escolta al Mortacechador Erland y mantenlo con vida.",
     ["Hunt the wolves whose fur is jet black."] =
         "Caza los lobos de pelaje negro azabache.",
+    ["Tame a pet here"] =
+        "Domestica una mascota aquí",
     ["Pick one Ferocious Grizzled Bear and tame it with Tame Beast. Release your current pet before this. Here you tame a pet to keep."] =
         "Elige un Ferocious Grizzled Bear y domestícalo con Domesticar bestia. Antes, abandona a tu mascota actual. Aquí domesticas una mascota para quedártela.",
     ["Fly to The Sepulcher"] =

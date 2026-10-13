@@ -5,8 +5,12 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h12-hillsbrad-foothills", {
         "Contreforts de Hautebrande (30-32)",
     ["Undercity first, then Hillsbrad Foothills: Tarren Mill."] =
         "Fossoyeuse d'abord, puis les Contreforts de Hautebrande : Moulin-de-Tarren.",
+    ["Learn Cooking from the trainer"] =
+        "Apprends la Cuisine auprès de l'entraîneur",
     ["You'll need this to pick up an upcoming quest."] =
         "Il te le faut pour prendre une prochaine quête.",
+    ["Learn Crossbows and Two-Handed Swords at the weapon master"] =
+        "Apprends les Arbalètes et les Épées à deux mains auprès du maître d'armes",
     ["Leap up and take the trail behind that tree"] =
         "Saute et prends le chemin derrière cet arbre",
     ["Wait for the talking to finish"] =

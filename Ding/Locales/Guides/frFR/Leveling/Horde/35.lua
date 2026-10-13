@@ -51,6 +51,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h35-felwood-and-winterspring", {
         "Tu vas bientôt apprivoiser un familier temporaire. Ici, tu obtiens Griffe (Rang 7).",
     ["Flight master at Everlook"] =
         "Maître de vol de Long-guet",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Apprivoise ici une bête pour apprendre le rang suivant de Griffe",
     ["Tame an Angerclaw Mauler with your Tame Beast spell. Track down a plague-ridden bear with a chestnut coat."] =
         "Apprivoise un Angerclaw Mauler avec ton sort Apprivoiser une bête. Traque un ours pestiféré au pelage châtain.",
     ["The NPC is upstairs, out on the balcony."] =

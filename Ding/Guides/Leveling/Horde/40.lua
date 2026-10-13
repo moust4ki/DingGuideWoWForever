@@ -14,7 +14,7 @@ Ding.RegisterGuide({
           note = "Winterspring: Everlook, in the middle of the zone." },
         { talk = 11119, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, -- level 58
           note = "You will tame a short-term pet shortly. Pick up Claw (Rank 8) for your pet." },
-        { go = { 1452, 57.86, 26.45 }, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, -- level 58
+        { go = { 1452, 57.86, 26.45 }, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, text = "Tame a beast here to learn the next rank of Claw", -- level 58
           note = "Tame a Winterspring Screecher with the Tame Beast spell. Hunt the white owls." },
         { talk = 11119, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, text = "Get your companion back from the stable master." }, -- level 58
         { talk = 11119, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, -- level 58
@@ -44,7 +44,7 @@ Ding.RegisterGuide({
         { go = { 1450, 32.05, 66.54 }, fly = true, talk = 12740, text = "Fly to Moonglade" }, -- level 58
         { turnin = 1123, accept = 1124, -- level 58
           note = "The NPC is indoors." },
-        { go = { 1450, 51.74, 45.12 } }, -- level 58
+        { go = { 1450, 51.74, 45.12 }, text = "Head indoors" }, -- level 58
         { talk = 11801, -- level 58
           note = "The NPC is indoors. Wait for the talking to finish" },
         { accept = 5527, -- level 58

@@ -253,10 +253,10 @@ Ding.RegisterGuide({
         { turnin = 377, dungeon = "The Stockade", -- level 28
           note = "This one roams, so scan the surrounding area. The NPC is indoors." },
         { turnin = 2923, dungeon = "Gnomeregan" }, -- level 28
-        { go = { 1455, 61.12, 89.58 }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE" } }, -- level 28
-        { go = { 1455, 61.12, 89.58 }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE" } }, -- level 28
-        { go = { 1455, 61.12, 89.58 }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE" } }, -- level 28
-        { go = { 1455, 61.12, 89.58 }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE" } }, -- level 28
+        { go = { 1455, 61.12, 89.58 }, classes = { "WARRIOR" }, text = "Learn Guns, Two-Handed Axes and Two-Handed Maces at the weapon master" }, -- level 28
+        { go = { 1455, 61.12, 89.58 }, classes = { "PALADIN" }, text = "Learn Two-Handed Axes at the weapon master" }, -- level 28
+        { go = { 1455, 61.12, 89.58 }, classes = { "HUNTER" }, text = "Learn Guns and Two-Handed Axes at the weapon master" }, -- level 28
+        { go = { 1455, 61.12, 89.58 }, classes = { "ROGUE" }, text = "Learn Guns and Maces at the weapon master" }, -- level 28
         { talk = 11865, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE" }, -- level 28
           note = "The NPC is indoors." },
     },

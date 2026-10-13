@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a18-desolace", {
         "Desolace: Die Nijelspitze in der Nordostecke ist die Basis der Allianz.",
     ["You will tame a short-term pet shortly. Here your pet picks up Claw (Rank 5)."] =
         "Du zähmst gleich ein Tier für kurze Zeit. Hier lernt dein Tier Klaue (Rang 5).",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Zähme hier ein Tier, um den nächsten Rang von Klaue zu lernen",
     ["Tame a Scorpashi Lasher with Tame Beast."] =
         "Zähme einen Scorpashi Lasher mit Wildtier zähmen.",
     ["Head uphill into Nijel's Point"] =

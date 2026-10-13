@@ -51,6 +51,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h35-felwood-and-winterspring", {
         "곧 임시 소환수를 길들입니다. 여기서 할퀴기 (7 레벨)를 배웁니다.",
     ["Flight master at Everlook"] =
         "눈망루 마을 비행 조련사",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "여기서 야수를 길들여 할퀴기의 다음 등급을 배우세요",
     ["Tame an Angerclaw Mauler with your Tame Beast spell. Track down a plague-ridden bear with a chestnut coat."] =
         "야수 길들이기 주문으로 덩치큰 성난발톱곰을 길들이세요. 밤색 털의 역병 걸린 곰을 찾아내세요.",
     ["The NPC is upstairs, out on the balcony."] =

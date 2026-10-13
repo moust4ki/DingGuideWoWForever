@@ -29,4 +29,6 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a04-westfall", {
         "달의 숲으로 날아가세요",
     ["Flight master at Rut'theran Village"] =
         "루테란 마을 비행 조련사",
+    ["Learn Bows and Staves at the weapon master"] =
+        "무기 전문가에게서 활과 지팡이를 배우세요",
 })

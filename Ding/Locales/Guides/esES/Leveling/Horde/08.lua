@@ -17,6 +17,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h08-the-barrens", {
         "Sal de la cueva",
     ["This NPC is found down in the Cleft of Shadow."] =
         "Este PNJ está abajo, en la Grieta de la Sombra.",
+    ["Visit the caged quilboar"] =
+        "Visita al jabaespín enjaulado",
     ["Trade your Blood Shards to gain buffs. Trade any spare Blood Shards to him during your Barrens questing. Ask him for the Spirit of the Wind buff"] =
         "Cambia tus Fragmentos de sangre por beneficios. Mientras hagas misiones en Los Baldíos, cámbiale los Fragmentos de sangre que te sobren. Pídele el beneficio Spirit of the Wind",
     ["The target is a dinosaur with blue hide. The targets are spread over several spots."] =

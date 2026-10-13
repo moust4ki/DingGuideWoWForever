@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a01-human-starter", {
         "Start: Mensch (1-13)",
     ["Elwynn Forest: Northshire Abbey, where every human starts. This frees room in your bags. You receive one further along the route."] =
         "Wald von Elwynn: Abtei von Nordhain, wo jeder Mensch beginnt. Das schafft Platz in deinen Taschen. Weiter auf der Route bekommst du eins.",
+    ["Loot the beasts you kill on the way here"] =
+        "Plündere die Tiere, die du auf dem Weg hierher tötest",
     ["Pick up anything that sells for 10 copper or more. You'll level faster with this."] =
         "Heb alles auf, was sich für 10 Kupfer oder mehr verkaufen lässt. Damit levelst du schneller.",
     ["The NPC is outdoors, right beside the structure."] =
@@ -47,6 +49,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a01-human-starter", {
         "Der NPC ist drinnen, ein Stockwerk höher.",
     ["Heal Guard Roberts using Lesser Heal (Rank 2). Buff Guard Roberts with Power Word: Fortitude."] =
         "Heile Wache Roberts mit Geringes Heilen (Rang 2). Wirke Machtwort: Seelenstärke auf Wache Roberts.",
+    ["Learn First Aid from the trainer"] =
+        "Lerne Erste Hilfe beim Lehrer",
     ["The NPC is indoors, one floor up. Do it only if you can."] =
         "Der NPC ist drinnen, ein Stockwerk höher. Mach das nur, wenn du kannst.",
     ["Go into the mine"] =
@@ -85,6 +89,16 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a01-human-starter", {
         "Flieg zur Späherkuppe",
     ["Fly to Stormwind City"] =
         "Flieg nach Sturmwind",
+    ["Learn Two-Handed Swords at the weapon master"] =
+        "Lerne Zweihandschwerter beim Waffenmeister",
+    ["Learn Swords at the weapon master"] =
+        "Lerne Schwerter beim Waffenmeister",
+    ["Learn Staves at the weapon master"] =
+        "Lerne Stäbe beim Waffenmeister",
+    ["Learn Swords and Daggers at the weapon master"] =
+        "Lerne Schwerter und Dolche beim Waffenmeister",
+    ["Learn Swords and Staves at the weapon master"] =
+        "Lerne Schwerter und Stäbe beim Waffenmeister",
     ["Head indoors"] =
         "Geh hinein",
     ["Step onto the pink rune. Look within the tomb. The NPC waits on the lower level, indoors."] =
@@ -95,6 +109,10 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a01-human-starter", {
         "Dieses Ziel wandert umher, also such die Umgebung ab. Der NPC ist drinnen. Mach dich sofort auf einen Kampf gefasst.",
     ["This one roams, so scan the surrounding area. The NPC is indoors."] =
         "Dieses Ziel wandert umher, also such die Umgebung ab. Der NPC ist drinnen.",
+    ["Learn Blacksmithing from the trainer"] =
+        "Lerne Schmiedekunst beim Lehrer",
+    ["Learn Mining from the trainer"] =
+        "Lerne Bergbau beim Lehrer",
     ["The NPC waits indoors, a floor above the entrance."] =
         "Der NPC wartet drinnen, ein Stockwerk über dem Eingang.",
     ["Head down into the Deeprun Tram station"] =
@@ -107,6 +125,10 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a01-human-starter", {
         "Benutze den Gegenstand an den Tiefenbahnratten. Such nach kleinen grauen Nagern. Geh zum Bahnsteig der Tiefenbahn auf der Seite von Eisenschmiede.",
     ["The NPC stands by the wall on the central platform. Head to the Deeprun Tram's Ironforge platform."] =
         "Der NPC steht an der Wand auf dem mittleren Bahnsteig. Geh zum Bahnsteig der Tiefenbahn auf der Seite von Eisenschmiede.",
+    ["Learn Thrown at the weapon master"] =
+        "Lerne Wurfwaffen beim Waffenmeister",
+    ["Learn Two-Handed Maces at the weapon master"] =
+        "Lerne Zweihandstreitkolben beim Waffenmeister",
     ["Fly to Ironforge"] =
         "Flieg nach Eisenschmiede",
     ["Stay on the trail"] =
@@ -135,6 +157,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a01-human-starter", {
         "Flieg zum Hafen von Menethil",
     ["Your targets are within the cavern."] =
         "Deine Ziele sind in der Höhle.",
+    ["Learn Cooking from the trainer"] =
+        "Lerne Kochkunst beim Lehrer",
     ["This one roams, so scan the surrounding area. Without this, one quest can't be picked up."] =
         "Dieses Ziel wandert umher, also such die Umgebung ab. Ohne das kannst du eine Quest nicht annehmen.",
     ["The NPC is past the tunnel; stay on the road."] =

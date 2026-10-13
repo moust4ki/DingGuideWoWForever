@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a01-human-starter", {
         "人类起始 (1-13)",
     ["Elwynn Forest: Northshire Abbey, where every human starts. This frees room in your bags. You receive one further along the route."] =
         "艾尔文森林：北郡修道院，所有人类的起点。这样可以腾出背包空间。路线后面会得到一个。",
+    ["Loot the beasts you kill on the way here"] =
+        "拾取你在来路上击杀的野兽",
     ["Pick up anything that sells for 10 copper or more. You'll level faster with this."] =
         "拾取所有能卖10铜币或以上的物品。这样升级更快。",
     ["The NPC is outdoors, right beside the structure."] =
@@ -47,6 +49,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a01-human-starter", {
         "NPC在室内楼上一层。",
     ["Heal Guard Roberts using Lesser Heal (Rank 2). Buff Guard Roberts with Power Word: Fortitude."] =
         "用次级治疗术（等级2）治疗Guard Roberts。给Guard Roberts施加真言术：韧。",
+    ["Learn First Aid from the trainer"] =
+        "向训练师学习急救",
     ["The NPC is indoors, one floor up. Do it only if you can."] =
         "NPC在室内楼上一层。能做到才做。",
     ["Go into the mine"] =
@@ -85,6 +89,16 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a01-human-starter", {
         "飞往哨兵岭",
     ["Fly to Stormwind City"] =
         "飞往暴风城",
+    ["Learn Two-Handed Swords at the weapon master"] =
+        "向武器大师学习双手剑",
+    ["Learn Swords at the weapon master"] =
+        "向武器大师学习单手剑",
+    ["Learn Staves at the weapon master"] =
+        "向武器大师学习法杖",
+    ["Learn Swords and Daggers at the weapon master"] =
+        "向武器大师学习单手剑和匕首",
+    ["Learn Swords and Staves at the weapon master"] =
+        "向武器大师学习单手剑和法杖",
     ["Head indoors"] =
         "进入室内",
     ["Step onto the pink rune. Look within the tomb. The NPC waits on the lower level, indoors."] =
@@ -95,6 +109,10 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a01-human-starter", {
         "它会四处游荡，在周围找找。NPC在室内。准备好马上战斗。",
     ["This one roams, so scan the surrounding area. The NPC is indoors."] =
         "它会四处游荡，在周围找找。NPC在室内。",
+    ["Learn Blacksmithing from the trainer"] =
+        "向训练师学习锻造",
+    ["Learn Mining from the trainer"] =
+        "向训练师学习采矿",
     ["The NPC waits indoors, a floor above the entrance."] =
         "NPC在室内，入口上面一层。",
     ["Head down into the Deeprun Tram station"] =
@@ -107,6 +125,10 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a01-human-starter", {
         "对矿道老鼠使用该物品。寻找灰色的小老鼠。前往矿道地铁的铁炉堡站台。",
     ["The NPC stands by the wall on the central platform. Head to the Deeprun Tram's Ironforge platform."] =
         "NPC站在中间站台的墙边。前往矿道地铁的铁炉堡站台。",
+    ["Learn Thrown at the weapon master"] =
+        "向武器大师学习投掷武器",
+    ["Learn Two-Handed Maces at the weapon master"] =
+        "向武器大师学习双手锤",
     ["Fly to Ironforge"] =
         "飞往铁炉堡",
     ["Stay on the trail"] =
@@ -135,6 +157,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a01-human-starter", {
         "飞往米奈希尔港",
     ["Your targets are within the cavern."] =
         "目标在洞穴里。",
+    ["Learn Cooking from the trainer"] =
+        "向训练师学习烹饪",
     ["This one roams, so scan the surrounding area. Without this, one quest can't be picked up."] =
         "它会四处游荡，在周围找找。不做这个，有一个任务就接不到。",
     ["The NPC is past the tunnel; stay on the road."] =

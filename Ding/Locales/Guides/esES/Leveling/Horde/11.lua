@@ -109,6 +109,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h11-thousand-needles", {
         "Este deambula, así que revisa los alrededores. Este PNJ está abajo, en la Grieta de la Sombra.",
     ["The NPC stands on the highest level of this structure."] =
         "El PNJ está en el nivel más alto de esta estructura.",
+    ["Learn Two-Handed Axes at the weapon master"] =
+        "Aprende Hachas de dos manos con el maestro de armas",
     ["This one roams, so scan the surrounding area. The NPC is indoors."] =
         "Este deambula, así que revisa los alrededores. El PNJ está dentro.",
 })

@@ -39,6 +39,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h15-desolace", {
         "NPC在室内。",
     ["Fly to Shadowprey Village"] =
         "飞往葬影村",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "在这里驯服一只野兽，学会下一级爪击",
     ["Tame a Scorpashi Lasher with Tame Beast."] =
         "用驯服野兽驯服一只Scorpashi Lasher。",
     ["Get your companion back from the stable master."] =

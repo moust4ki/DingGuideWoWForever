@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a18-desolace", {
         "Désolace : la combe de Nijel, dans le coin nord-est, est la base de l'Alliance.",
     ["You will tame a short-term pet shortly. Here your pet picks up Claw (Rank 5)."] =
         "Tu vas bientôt apprivoiser un familier temporaire. Ici, ton familier apprend Griffe (Rang 5).",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Apprivoise ici une bête pour apprendre le rang suivant de Griffe",
     ["Tame a Scorpashi Lasher with Tame Beast."] =
         "Apprivoise un Scorpashi Lasher avec Apprivoiser une bête.",
     ["Head uphill into Nijel's Point"] =

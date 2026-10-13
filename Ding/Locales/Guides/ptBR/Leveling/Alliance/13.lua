@@ -33,6 +33,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a13-stonetalon-mountains-and-ash
         "Deixe seu ajudante com o mestre do estábulo.",
     ["You will tame a short-term pet shortly. You pick up Claw (Rank 4) here."] =
         "Em breve você vai domar um ajudante temporário. Aqui você obtém Garra (Grau 4).",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Dome uma fera aqui para aprender o próximo grau de Garra",
     ["Tame any Elder Ashenvale Bear with Tame Beast."] =
         "Dome qualquer Urso Ancião do Vale Gris com Domar Fera.",
     ["Get your companion back from the stable master."] =

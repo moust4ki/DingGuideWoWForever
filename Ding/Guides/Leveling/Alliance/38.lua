@@ -27,10 +27,10 @@ Ding.RegisterGuide({
         { accept = 3881 }, -- level 53
         { accept = 3883 }, -- level 53
         { accept = 3882 }, -- level 53
-        { go = { 1449, 43.41, 6.84 }, text = "Go into the cavern" }, -- level 53
+        { go = { 1449, 43.41, 6.84 }, when = { done = 4284 }, text = "Go into the cavern" }, -- level 53
         { accept = { 4285, 4287, 4288 }, when = { done = 4284 }, -- level 53
           note = "Your targets are within the cavern." },
-        { go = { 1449, 43.41, 6.84 }, text = "Head out of the cave" }, -- level 53
+        { go = { 1449, 43.41, 6.84 }, when = { done = 4284 }, text = "Head out of the cave" }, -- level 53
         { accept = 4501 }, -- level 53
         { accept = 4492, races = { "Gnome" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 53
         { accept = 4492, races = { "Human", "Dwarf", "NightElf", "Skyborne" } }, -- level 53

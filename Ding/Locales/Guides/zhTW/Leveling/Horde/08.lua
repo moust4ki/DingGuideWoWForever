@@ -17,6 +17,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h08-the-barrens", {
         "離開洞穴",
     ["This NPC is found down in the Cleft of Shadow."] =
         "這個NPC在下方的暗影裂口裡。",
+    ["Visit the caged quilboar"] =
+        "拜訪籠中的野豬人",
     ["Trade your Blood Shards to gain buffs. Trade any spare Blood Shards to him during your Barrens questing. Ask him for the Spirit of the Wind buff"] =
         "用你的血岩碎片換取增益效果。在貧瘠之地做任務期間，把多餘的血岩碎片都拿來跟他交換。向他要求風之魂增益效果",
     ["The target is a dinosaur with blue hide. The targets are spread over several spots."] =

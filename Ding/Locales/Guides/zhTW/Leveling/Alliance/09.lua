@@ -21,6 +21,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a09-ashenvale-and-stonetalon-mou
         "你很快就要馴服一隻臨時寵物。讓你的寵物學會爪擊（等級3）。",
     ["Let the conversation play out. The NPC is indoors."] =
         "讓對話播完。NPC在室內。",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "在這裡馴服一隻野獸，學會下一級爪擊",
     ["Tame an Ashenvale Bear with Tame Beast. Track down a chestnut-furred bear."] =
         "用馴服野獸馴服一隻梣谷熊。找出一隻栗色毛的熊。",
     ["Get your companion back from the stable master."] =

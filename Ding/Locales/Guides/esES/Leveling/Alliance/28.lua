@@ -63,6 +63,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a28-feralas-and-tanaris", {
         "Caza gorilas. Los osos aparecen en los mismos puntos de aparición.",
     ["Hunt bears. They appear in the same spots as the apes."] =
         "Caza osos. Aparecen en los mismos sitios que los simios.",
+    ["Head to the big cage"] =
+        "Ve a la jaula grande",
     ["Kill the foes near the big cage first. This helps with the following step."] =
         "Mata primero a los enemigos que hay junto a la jaula grande. Esto ayuda en el paso siguiente.",
     ["This sets Captured Sprite Darters free. Save as many of them as possible. Keep 6 or more of them alive."] =

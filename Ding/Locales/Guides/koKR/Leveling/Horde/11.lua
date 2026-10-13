@@ -109,6 +109,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h11-thousand-needles", {
         "이 대상은 돌아다니므로 주변을 살펴보세요. 이 NPC는 아래쪽 어둠의 틈에 있습니다.",
     ["The NPC stands on the highest level of this structure."] =
         "NPC는 이 건물의 꼭대기 층에 서 있습니다.",
+    ["Learn Two-Handed Axes at the weapon master"] =
+        "무기 전문가에게서 양손 도끼를 배우세요",
     ["This one roams, so scan the surrounding area. The NPC is indoors."] =
         "이 대상은 돌아다니므로 주변을 살펴보세요. NPC는 건물 안에 있습니다.",
 })

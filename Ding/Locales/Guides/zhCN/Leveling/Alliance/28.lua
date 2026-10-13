@@ -63,6 +63,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a28-feralas-and-tanaris", {
         "猎杀大猩猩。熊也会在同样的刷新点出现。",
     ["Hunt bears. They appear in the same spots as the apes."] =
         "猎杀熊。它们与猩猩在同样的地点出现。",
+    ["Head to the big cage"] =
+        "前往大笼子",
     ["Kill the foes near the big cage first. This helps with the following step."] =
         "先杀掉大笼子附近的敌人。这对下一步有帮助。",
     ["This sets Captured Sprite Darters free. Save as many of them as possible. Keep 6 or more of them alive."] =

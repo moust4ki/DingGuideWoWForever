@@ -21,6 +21,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a09-ashenvale-and-stonetalon-mou
         "Tu vas bientôt apprivoiser un familier temporaire. Fais apprendre Griffe (Rang 3) à ton familier.",
     ["Let the conversation play out. The NPC is indoors."] =
         "Laisse la conversation se dérouler. Le PNJ est à l'intérieur.",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Apprivoise ici une bête pour apprendre le rang suivant de Griffe",
     ["Tame an Ashenvale Bear with Tame Beast. Track down a chestnut-furred bear."] =
         "Apprivoise un Ashenvale Bear avec Apprivoiser une bête. Trouve un ours au pelage châtain.",
     ["Get your companion back from the stable master."] =

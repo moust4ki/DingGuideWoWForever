@@ -17,6 +17,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h08-the-barrens", {
         "Verlass die Höhle",
     ["This NPC is found down in the Cleft of Shadow."] =
         "Dieser NPC ist unten in der Kluft der Schatten.",
+    ["Visit the caged quilboar"] =
+        "Besuche den eingesperrten Stacheleber",
     ["Trade your Blood Shards to gain buffs. Trade any spare Blood Shards to him during your Barrens questing. Ask him for the Spirit of the Wind buff"] =
         "Tausch deine Blutsplitter gegen Buffs ein. Gib ihm beim Questen im Brachland deine übrigen Blutsplitter. Bitte ihn um den Buff Geist des Windes",
     ["The target is a dinosaur with blue hide. The targets are spread over several spots."] =

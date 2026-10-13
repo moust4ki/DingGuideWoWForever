@@ -18,6 +18,8 @@
 --    quest log. Only these follow the level caps: the route's own steps are trusted.
 -- 4. Simulation (tools/route_model.lua, travel tools/route_travel.lua) of each race as a
 --    warrior: the "-- level N" of each step is the lowest level a race reaches there.
+-- 5. A trip to the place the character's previous step already took it (the steps in between
+--    being for others) is left out for that character.
 -- Writes Ding/Guides/<file> and its translations (tools/routes/locales).
 local here = arg[0]:match("^(.*)[/\\]") or "."
 local root = here:match("^(.*)[/\\]tools$") or (here == "." and "..") or (here .. "/..")
@@ -1691,6 +1693,91 @@ for _, section in ipairs(sections) do
 end
 
 ---------------------------------------------------------------------------
+-- 5. A trip right after the same trip
+---------------------------------------------------------------------------
+-- A step that only travels: a go and nothing to do there (the rule of tools/check_guides.lua).
+local ACTION_KEYS = { "accept", "turnin", "complete", "level", "sethearth", "hearth", "deathskip", "train", "fly",
+    "vendor", "repair", "kill", "collect", "talk", "gossip", "useitem", "buy", "object", "equip", "destroy", "bank",
+    "unbank", "abandon", "patrol" }
+local function onlyTravels(step)
+    if not step.go then return false end
+    for _, k in ipairs(ACTION_KEYS) do
+        if step[k] ~= nil then return false end
+    end
+    return true
+end
+local function samePlace(a, b)
+    return a[1] == b[1] and math.abs(a[2] - b[2]) <= 0.1 and math.abs(a[3] - b[3]) <= 0.1
+end
+local function written(step) return questActions(step) > 0 or hasOther(step) end
+-- A character whose last step was a trip to the same place is there already: the trip would
+-- pass on arrival and show the same line twice (the route repeats it, or the steps in between
+-- are for other races or classes). The trip goes for those characters: left out when it is so
+-- for all it applies to, else kept for the others (when races or classes can name them). A
+-- step under conditions in between may have been played: the trip stays.
+stats.tripsLeftOut, stats.tripsRestricted = 0, 0
+local function dropRepeatedTrips(section)
+    local out = {}
+    for _, step in ipairs(section.out) do
+        local keep = true
+        if written(step) and onlyTravels(step) then
+            local all, there, n = {}, {}, 0
+            for _, race in ipairs(RACES) do
+                for _, class in ipairs(CLASSES) do
+                    if applies(section, step, race, class) then
+                        local key = race .. "|" .. class
+                        all[#all + 1] = { race = race, class = class, key = key }
+                        for i = #out, 1, -1 do
+                            local before = out[i]
+                            if written(before) and applies(section, before, race, class) then
+                                if not before.when and onlyTravels(before) and samePlace(before.go, step.go) then
+                                    there[key] = true
+                                    n = n + 1
+                                end
+                                break
+                            end
+                        end
+                    end
+                end
+            end
+            -- (A note of its own stays: the trip with it.)
+            if n > 0 and n == #all and not step.note then
+                keep = false
+                stats.tripsLeftOut = stats.tripsLeftOut + 1
+            elseif n > 0 and n < #all then
+                local races, classes, inRaces, inClasses, allRaces, allClasses = {}, {}, {}, {}, {}, {}
+                for _, c in ipairs(all) do
+                    allRaces[c.race], allClasses[c.class] = true, true
+                    if not there[c.key] then
+                        if not inRaces[c.race] then races[#races + 1] = c.race end
+                        if not inClasses[c.class] then classes[#classes + 1] = c.class end
+                        inRaces[c.race], inClasses[c.class] = true, true
+                    end
+                end
+                -- (Expressible: no character already there among those races and classes.)
+                local named = true
+                for _, c in ipairs(all) do
+                    if there[c.key] and inRaces[c.race] and inClasses[c.class] then named = false end
+                end
+                if named then
+                    local function count(set)
+                        local k = 0
+                        for _ in pairs(set) do k = k + 1 end
+                        return k
+                    end
+                    if #races < count(allRaces) then step.races = races end
+                    if #classes < count(allClasses) then step.classes = classes end
+                    stats.tripsRestricted = stats.tripsRestricted + 1
+                end
+            end
+        end
+        if keep then out[#out + 1] = step end
+    end
+    section.out = out
+end
+for _, section in ipairs(sections) do dropRepeatedTrips(section) end
+
+---------------------------------------------------------------------------
 -- Output
 ---------------------------------------------------------------------------
 local function quote(s) return (("%q"):format(s):gsub("\\\n", "\\n")) end
@@ -1901,6 +1988,8 @@ print(("Tags: %d quest actions split onto tagged steps, %d go steps joined to th
     stats.dieSpots))
 print(("Forever repairs: %d, quest actions left out: %d, residual problems: %d"):format(nRepairs, #dropped, residual))
 print(("Forever quests added: %d, not added: %d"):format(#additions.added, #additions.skipped))
+print(("Trips right after the same trip: %d left out, %d kept for the races or classes that need them"):format(
+    stats.tripsLeftOut, stats.tripsRestricted))
 local peak = 0
 for _, v in pairs(peaks) do peak = math.max(peak, v) end
 print(("Quest log: %d at most"):format(peak))

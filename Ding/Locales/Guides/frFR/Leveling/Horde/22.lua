@@ -11,6 +11,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h22-tanaris", {
         "Laisse ton familier au maître des écuries.",
     ["You will tame a short-term pet shortly. Your pet picks up Claw (Rank 6) here."] =
         "Tu vas bientôt apprivoiser un familier temporaire. Ton familier apprend Griffe (Rang 6) ici.",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Apprivoise ici une bête pour apprendre le rang suivant de Griffe",
     ["Tame a Scorpid Hunter with Tame Beast. The foes here are scorpions."] =
         "Apprivoise un Scorpid Hunter avec Apprivoiser une bête. Ici, les ennemis sont des scorpions.",
     ["Get your companion back from the stable master."] =

@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a18-desolace", {
         "Desolace: Punta de Nijel, en la esquina noreste, es la base de la Alianza.",
     ["You will tame a short-term pet shortly. Here your pet picks up Claw (Rank 5)."] =
         "Pronto domesticarás una mascota temporal. Aquí tu mascota aprende Garra (Rango 5).",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Domestica aquí una bestia para aprender el siguiente rango de Garra",
     ["Tame a Scorpashi Lasher with Tame Beast."] =
         "Domestica un Scorpashi Lasher con Domesticar bestia.",
     ["Head uphill into Nijel's Point"] =

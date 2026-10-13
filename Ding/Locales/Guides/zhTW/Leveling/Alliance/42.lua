@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a42-winterspring", {
         "冬泉谷：永望鎮，位於區域中央。",
     ["You will tame a short-term pet shortly. Pick up Claw (Rank 8) for your pet."] =
         "你很快就要馴服一隻臨時寵物。為你的寵物學習爪擊（等級8）。",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "在這裡馴服一隻野獸，學會下一級爪擊",
     ["Tame a Winterspring Screecher with the Tame Beast spell. Hunt the white owls."] =
         "用馴服野獸法術馴服一隻冬泉鳴梟。獵殺白色的貓頭鷹。",
     ["Get your companion back from the stable master."] =
@@ -31,6 +33,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a42-winterspring", {
         "對萊加奇使用這個物品。",
     ["Fly to Moonglade"] =
         "飛往月光林地",
+    ["Head indoors"] =
+        "進入室內",
     ["The NPC is indoors. Wait for the talking to finish"] =
         "NPC在室內。等對話結束",
     ["The NPC is indoors, on the central storey."] =

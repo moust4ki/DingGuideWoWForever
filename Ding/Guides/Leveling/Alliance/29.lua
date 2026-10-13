@@ -32,7 +32,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors. The NPC is at the summit of the trail." },
         { complete = 3661, -- level 48
           note = "Gather the big plumes colored brown and ivory. Drop the Ground Clutter option down to 1. Find it in the game options, under System, then Graphics." },
-        { go = { 1425, 49.18, 66.5 }, -- level 48
+        { go = { 1425, 49.18, 66.5 }, text = "Hop onto the ledge", -- level 48
           note = "Hop onto the ledge here. Monsters are unable to reach you from this spot. Hold off until you have left combat." },
         { complete = 2877, -- level 48
           note = "Other creatures use these spawn points too." },

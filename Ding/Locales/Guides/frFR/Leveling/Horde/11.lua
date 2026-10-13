@@ -109,6 +109,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h11-thousand-needles", {
         "Celui-ci se déplace : fouille les environs. Ce PNJ se trouve en bas, dans la Faille de l'ombre.",
     ["The NPC stands on the highest level of this structure."] =
         "Le PNJ se tient au plus haut niveau de ce bâtiment.",
+    ["Learn Two-Handed Axes at the weapon master"] =
+        "Apprends les Haches à deux mains auprès du maître d'armes",
     ["This one roams, so scan the surrounding area. The NPC is indoors."] =
         "Celui-ci se déplace : fouille les environs. Le PNJ est à l'intérieur.",
 })

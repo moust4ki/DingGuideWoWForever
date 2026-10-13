@@ -29,6 +29,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h07-hillsbrad-foothills", {
         "你马上要驯服一只临时宠物。为你的宠物学习爪击（等级3）。",
     ["The quest comes from a bounty sign."] =
         "这个任务来自一块悬赏告示牌。",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "在这里驯服一只野兽，学会下一级爪击",
     ["Pick any Gray Bear and use Tame Beast on it."] =
         "任选一只Gray Bear，对它施放驯服野兽。",
     ["Get your companion back from the stable master."] =

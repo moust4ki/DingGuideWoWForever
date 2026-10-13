@@ -13,7 +13,7 @@ Ding.RegisterGuide({
     steps    = {
         { destroy = 6948, -- level 1
           note = "Teldrassil: Shadowglen, where night elves start. This frees room in your bags. You receive one further along the route." },
-        { go = { 1438, 58.24, 45.44 }, classes = { "WARRIOR" }, -- level 1
+        { go = { 1438, 58.24, 45.44 }, classes = { "WARRIOR" }, text = "Loot the beasts you kill on the way here", -- level 1
           note = "Pick up anything that sells for 10 copper or more." },
         { vendor = true, talk = 6091, classes = { "WARRIOR" }, -- level 1
           note = "The NPC is indoors at street level." },
@@ -134,7 +134,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors at street level." },
         { train = true, talk = 3600, classes = { "PRIEST" }, -- level 6
           note = "The NPC is indoors at street level." },
-        { go = { 1438, 55.25, 56.78 }, classes = { "WARRIOR", "ROGUE" } }, -- level 6
+        { go = { 1438, 55.25, 56.78 }, classes = { "WARRIOR", "ROGUE" }, text = "Learn First Aid from the trainer" }, -- level 6
         { talk = 6094, classes = { "WARRIOR", "ROGUE" }, -- level 6
           note = "The NPC is indoors at street level. Do it only if you can." },
         { accept = { 932, 2438 }, -- level 6
@@ -151,7 +151,7 @@ Ding.RegisterGuide({
         { turnin = 928, accept = 929 }, -- level 6
         { complete = 5621, classes = { "PRIEST" }, -- level 6
           note = "Heal Sentinel Shaya with Lesser Heal (Rank 2). Buff Sentinel Shaya with Power Word: Fortitude." },
-        { go = { 1438, 57.68, 60.67 }, classes = { "DRUID" } }, -- level 6
+        { go = { 1438, 57.68, 60.67 }, classes = { "DRUID" }, text = "Learn Herbalism from the trainer" }, -- level 6
         { talk = 3604, classes = { "DRUID" }, -- level 6
           note = "The NPC is indoors. Pick up 5 Earthroot while questing. A class quest further on requires this." },
         { turnin = 997, -- level 6
@@ -196,7 +196,7 @@ Ding.RegisterGuide({
         { train = true, talk = 3601, classes = { "HUNTER" } }, -- level 8
         { train = true, talk = 3602, classes = { "DRUID" } }, -- level 8
         { turnin = 929, accept = 933 }, -- level 8
-        { go = { 1438, 57.09, 61.36 } }, -- level 8
+        { go = { 1438, 57.09, 61.36 }, text = "Learn Cooking from the trainer" }, -- level 8
         { talk = 6286, -- level 8
           note = "Without this, one quest can't be picked up." },
         { accept = 4161 }, -- level 8
@@ -329,7 +329,7 @@ Ding.RegisterGuide({
         { go = { 1457, 32.08, 16.49 }, classes = { "ROGUE" }, text = "Go into the hollow tree's cavern" }, -- level 10
         { turnin = 2241, accept = 2242, classes = { "ROGUE" }, -- level 10
           note = "Your targets are within the cavern." },
-        { go = { 1438, 40.83, 44.86 }, classes = { "HUNTER" } }, -- level 10
+        { go = { 1438, 40.83, 44.86 }, classes = { "HUNTER" }, text = "Tame a pet here" }, -- level 10
         { complete = 2518, -- level 10
           note = "The target is a big gray spider. This one roams, so scan the surrounding area. The targets are spread over several spots." },
         { complete = 2242, classes = { "ROGUE" }, -- level 10
@@ -356,7 +356,7 @@ Ding.RegisterGuide({
         { deathskip = true, revive = { 1457, 77.02, 27.14 }, classes = { "WARRIOR" }, text = "Get yourself killed, then resurrect with the spirit healer" }, -- level 11
         { talk = 6491, classes = { "WARRIOR" } }, -- level 11
         { turnin = 1683, when = { ready = 1683 }, classes = { "WARRIOR" } }, -- level 11
-        { go = { 1457, 57.59, 46.69 }, classes = { "WARRIOR", "HUNTER", "PRIEST" } }, -- level 11
+        { go = { 1457, 57.59, 46.69 }, classes = { "WARRIOR", "HUNTER", "PRIEST" }, text = "Learn Staves at the weapon master" }, -- level 11
         { talk = 11866, classes = { "WARRIOR", "HUNTER", "PRIEST" } }, -- level 11
         { turnin = 923 }, -- level 11
         { go = { 1457, 32.08, 16.49 }, classes = { "ROGUE" }, text = "Go into the hollow tree's cavern" }, -- level 11
@@ -393,15 +393,15 @@ Ding.RegisterGuide({
         { vendor = true, talk = 4200, classes = { "HUNTER" } }, -- level 11
         { accept = 983, -- level 11
           note = "The NPC is indoors, one floor up." },
-        { go = { 1439, 38.13, 40.98 }, classes = { "WARRIOR", "ROGUE" } }, -- level 11
+        { go = { 1439, 38.13, 40.98 }, classes = { "WARRIOR", "ROGUE" }, text = "Learn Blacksmithing from the trainer" }, -- level 11
         { talk = 6299, classes = { "WARRIOR", "ROGUE" } }, -- level 11
-        { go = { 1439, 38.3, 41.05 }, classes = { "WARRIOR", "ROGUE" } }, -- level 11
+        { go = { 1439, 38.3, 41.05 }, classes = { "WARRIOR", "ROGUE" }, text = "Learn Mining from the trainer" }, -- level 11
         { talk = 6297, classes = { "WARRIOR", "ROGUE" } }, -- level 11
         { talk = 6298, buy = { { 2901, 1, 6298 } }, classes = { "WARRIOR", "ROGUE" } }, -- level 11
         { accept = 2118 }, -- level 11
         { accept = 984, -- level 11
           note = "The NPC is indoors." },
-        { go = { 1439, 38.46, 46.23 }, classes = { "HUNTER" } }, -- level 11
+        { go = { 1439, 38.46, 46.23 }, classes = { "HUNTER" }, text = "Tame a pet here" }, -- level 11
         { complete = 3524 }, -- level 11
         { complete = 983, -- level 11
           note = "Hunt the crabs. You'll find extra ones swimming nearby as well." },
@@ -434,7 +434,7 @@ Ding.RegisterGuide({
         { train = true, talk = 10089, classes = { "HUNTER" }, -- level 12
           note = "The NPC stands on the highest level of this structure." },
         { train = true, talk = 4089, classes = { "WARRIOR" } }, -- level 12
-        { go = { 1457, 57.59, 46.69 }, classes = { "WARRIOR" } }, -- level 12
+        { go = { 1457, 57.59, 46.69 }, classes = { "WARRIOR" }, text = "Learn Thrown at the weapon master" }, -- level 12
         { talk = 11866, classes = { "WARRIOR" } }, -- level 12
         { train = true, talk = 4091, classes = { "PRIEST" }, -- level 12
           note = "The NPC is indoors." },
@@ -513,8 +513,7 @@ Ding.RegisterGuide({
           note = "The NPC patrols a long route; look along it." },
         { turnin = 1339, accept = 1338, -- level 13
           note = "The NPC is indoors, one floor up." },
-        { go = { 1455, 61.12, 89.58 }, classes = { "WARRIOR" } }, -- level 13
-        { go = { 1455, 61.12, 89.58 }, classes = { "WARRIOR" } }, -- level 13
+        { go = { 1455, 61.12, 89.58 }, classes = { "WARRIOR" }, text = "Learn Two-Handed Axes and Two-Handed Maces at the weapon master" }, -- level 13
         { talk = 11865, classes = { "WARRIOR" }, -- level 13
           note = "The NPC is indoors." },
         { go = { 1455, 76.62, 51.1 }, text = "Head down into the Deeprun Tram station", -- level 13
@@ -539,9 +538,9 @@ Ding.RegisterGuide({
         { accept = 1665, when = { done = 1640 }, classes = { "WARRIOR" } }, -- level 14
         { turnin = 1665, when = { log = 1665 }, classes = { "WARRIOR" }, -- level 14
           note = "The NPC is indoors." },
-        { go = { 1453, 63.92, 69.12 }, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST" } }, -- level 14
-        { go = { 1453, 63.92, 69.12 }, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST" } }, -- level 14
-        { go = { 1453, 63.92, 69.12 }, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST" } }, -- level 14
+        { go = { 1453, 63.92, 69.12 }, classes = { "WARRIOR", "HUNTER" }, text = "Learn Two-Handed Swords at the weapon master" }, -- level 14
+        { go = { 1453, 63.92, 69.12 }, classes = { "ROGUE" }, text = "Learn Swords at the weapon master" }, -- level 14
+        { go = { 1453, 63.92, 69.12 }, classes = { "PRIEST" }, text = "Learn Staves at the weapon master" }, -- level 14
         { talk = 11867, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST" }, -- level 14
           note = "The NPC is indoors." },
         { go = { 1453, 68.01, 72.6 }, text = "Head up the incline", -- level 14

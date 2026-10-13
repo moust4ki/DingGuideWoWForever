@@ -526,7 +526,8 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   rows whose first sub-line says "Still to do · For “quest”"; the wrap-up choices are three
   ordinary rows (the first with "You are past this section's levels (up to N)."); the preview
   rows are dimmed: no background, icon `impossible.icon.bg` / glyph `text.disabled`, text
-  `text.muted` without its links' colors, no counter.
+  `text.muted` without its links' colors, no counter; a quest's level in brackets before its
+  name, "+N" for the step's other quests.
 - **Minimap pins** (not in the mockup): `ring` 14 px accent for the target, `circle` 6 px accent
   at 70 % for the spots (a farming loop's stops: up to 12), `caret_up` 12 px accent on the rim (6 inside), rotated toward the
   target.

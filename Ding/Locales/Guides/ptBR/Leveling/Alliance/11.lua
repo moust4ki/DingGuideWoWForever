@@ -87,4 +87,12 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a11-duskwood-and-redridge-mounta
         "O alvo é o quinto chefe da masmorra.",
     ["You'll find them all over the instance."] =
         "Você os encontra por toda a instância.",
+    ["Learn Guns, Two-Handed Axes and Two-Handed Maces at the weapon master"] =
+        "Aprenda Armas de Fogo, Machados de Duas Mãos e Maças de Duas Mãos com o mestre de armas",
+    ["Learn Two-Handed Axes at the weapon master"] =
+        "Aprenda Machados de Duas Mãos com o mestre de armas",
+    ["Learn Guns and Two-Handed Axes at the weapon master"] =
+        "Aprenda Armas de Fogo e Machados de Duas Mãos com o mestre de armas",
+    ["Learn Guns and Maces at the weapon master"] =
+        "Aprenda Armas de Fogo e Maças com o mestre de armas",
 })

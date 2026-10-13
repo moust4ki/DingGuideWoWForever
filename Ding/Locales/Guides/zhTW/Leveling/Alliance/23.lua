@@ -37,6 +37,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a23-desolace", {
         "把寵物寄放在獸欄管理員那裡。",
     ["You will tame a short-term pet shortly. Your pet picks up Claw (Rank 6) here."] =
         "你很快就要馴服一隻臨時寵物。你的寵物在這裡學會爪擊（等級6）。",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "在這裡馴服一隻野獸，學會下一級爪擊",
     ["Tame a Scorpid Hunter with Tame Beast. The foes here are scorpions."] =
         "用馴服野獸馴服一隻沙漠獵食蠍。這裡的敵人是蠍子。",
     ["Get your companion back from the stable master."] =

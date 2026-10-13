@@ -37,6 +37,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a23-desolace", {
         "Deja tu mascota con el maestro de establos.",
     ["You will tame a short-term pet shortly. Your pet picks up Claw (Rank 6) here."] =
         "Pronto domesticarás una mascota temporal. Aquí tu mascota aprende Garra (Rango 6).",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Domestica aquí una bestia para aprender el siguiente rango de Garra",
     ["Tame a Scorpid Hunter with Tame Beast. The foes here are scorpions."] =
         "Domestica un Scorpid Hunter con Domesticar bestia. Aquí los enemigos son escorpiones.",
     ["Get your companion back from the stable master."] =

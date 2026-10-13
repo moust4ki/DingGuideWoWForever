@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h03-orc-and-troll-starter", {
         "獸人和食人妖起始區 (1-13)",
     ["Durotar: the Valley of Trials, where orcs and trolls start."] =
         "杜洛塔：試煉谷，獸人和食人妖的起點。",
+    ["Loot the beasts you kill on the way here"] =
+        "拾取你在來路上擊殺的野獸",
     ["Pick up anything that sells for 10 copper or more. You'll level faster with this."] =
         "拾取所有能賣10銅幣以上的物品。這能讓你升級更快。",
     ["Your targets are within the cavern."] =
@@ -51,6 +53,10 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h03-orc-and-troll-starter", {
         "這個會四處走動，留意周圍一帶。",
     ["The NPC waits on the tower's highest floor."] =
         "NPC在塔的最頂層。",
+    ["Learn Mining from the trainer"] =
+        "向訓練師學習採礦",
+    ["Learn Blacksmithing from the trainer"] =
+        "向訓練師學習鍛造",
     ["Heal Grunt Kor'ja with the second rank of Lesser Heal. Buff Grunt Kor'ja with Power Word: Fortitude."] =
         "用等級2的次級治療術治療蠻兵科雅。為蠻兵科雅施加真言術：韌。",
     ["Head indoors"] =
@@ -65,6 +71,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h03-orc-and-troll-starter", {
         "故意讓這裡的怪物殺死你。在這麼早期死亡沒有任何損失。這是過去最快的方法。",
     ["The NPC is out back, at the rear of the structure."] =
         "NPC在外面，位於建築後方。",
+    ["Learn First Aid from the trainer"] =
+        "向訓練師學習急救",
     ["Loot the gray chests built from metal. Search in and around the sunken wrecks. Your targets sit below the water's surface."] =
         "拾取灰色的金屬箱子。在沉船殘骸內外搜尋。目標在水面下。",
     ["The target is a troll in crimson robes. This one roams, so scan the surrounding area."] =
@@ -91,6 +99,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h03-orc-and-troll-starter", {
         "這個NPC在下方的暗影裂口裡。",
     ["This clears the quest's time limit."] =
         "這會解除任務的時間限制。",
+    ["Tame a pet here"] =
+        "在這裡馴服一隻寵物",
     ["Find one Venomtail Scorpid and use Tame Beast on it. The foes here are scorpions. Here you tame a pet to keep."] =
         "找一隻毒尾蠍，對牠使用馴服野獸。這裡的敵人是蠍子。在這裡馴服一隻要長期保留的寵物。",
     ["Kill Water Seekers and Thornweavers."] =
@@ -113,12 +123,16 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h03-orc-and-troll-starter", {
         "獲得Sapta Sight",
     ["The quest giver stands among the boulders."] =
         "任務給予者站在巨石之間。",
+    ["Learn Staves at the weapon master"] =
+        "向武器大師學習法杖",
     ["Fly to Undercity"] =
         "飛往幽暗城",
     ["The quest comes from a bounty sign."] =
         "任務來自一塊懸賞告示牌。",
     ["Look for an iron slab marked with a skull. Wait for the talking to finish"] =
         "尋找一塊刻有骷髏標記的鐵板。等對話結束",
+    ["Learn Swords at the weapon master"] =
+        "向武器大師學習單手劍",
     ["Use the item at the pink marking."] =
         "在粉紅色標記處使用物品。",
     ["The targets are gray, demon-like hounds. This leads to a quest for later levels."] =

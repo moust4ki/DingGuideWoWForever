@@ -51,6 +51,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h35-felwood-and-winterspring", {
         "Du zähmst gleich ein Tier für kurze Zeit. Hier lernst du Klaue (Rang 7).",
     ["Flight master at Everlook"] =
         "Flugmeister der Ewigen Warte",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Zähme hier ein Tier, um den nächsten Rang von Klaue zu lernen",
     ["Tame an Angerclaw Mauler with your Tame Beast spell. Track down a plague-ridden bear with a chestnut coat."] =
         "Zähme einen Angerclaw Mauler mit deinem Zauber Wildtier zähmen. Spür einen verseuchten Bären mit kastanienbraunem Fell auf.",
     ["The NPC is upstairs, out on the balcony."] =

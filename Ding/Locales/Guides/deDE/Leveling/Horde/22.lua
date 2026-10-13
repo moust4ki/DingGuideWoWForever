@@ -11,6 +11,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h22-tanaris", {
         "Stell dein Tier beim Stallmeister in den Stall.",
     ["You will tame a short-term pet shortly. Your pet picks up Claw (Rank 6) here."] =
         "Du zähmst gleich ein Tier für kurze Zeit. Hier lernt dein Tier Klaue (Rang 6).",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Zähme hier ein Tier, um den nächsten Rang von Klaue zu lernen",
     ["Tame a Scorpid Hunter with Tame Beast. The foes here are scorpions."] =
         "Zähme einen Scorpid Hunter mit Wildtier zähmen. Die Gegner hier sind Skorpione.",
     ["Get your companion back from the stable master."] =

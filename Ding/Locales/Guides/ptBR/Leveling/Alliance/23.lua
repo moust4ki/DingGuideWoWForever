@@ -37,6 +37,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a23-desolace", {
         "Deixe seu ajudante com o mestre do estábulo.",
     ["You will tame a short-term pet shortly. Your pet picks up Claw (Rank 6) here."] =
         "Em breve você vai domar um ajudante temporário. Seu ajudante aprende Garra (Grau 6) aqui.",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Dome uma fera aqui para aprender o próximo grau de Garra",
     ["Tame a Scorpid Hunter with Tame Beast. The foes here are scorpions."] =
         "Use Domar Fera em um Caçador Escorpídeo. Os inimigos aqui são escorpiões.",
     ["Get your companion back from the stable master."] =

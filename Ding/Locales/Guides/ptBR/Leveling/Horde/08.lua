@@ -17,6 +17,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h08-the-barrens", {
         "Saia da caverna",
     ["This NPC is found down in the Cleft of Shadow."] =
         "Este NPC fica lá embaixo, no Antro das Sombras.",
+    ["Visit the caged quilboar"] =
+        "Visite o javatusco enjaulado",
     ["Trade your Blood Shards to gain buffs. Trade any spare Blood Shards to him during your Barrens questing. Ask him for the Spirit of the Wind buff"] =
         "Troque seus Estilhaços de Sangue por bônus. Durante as missões nos Sertões, troque com ele os Estilhaços de Sangue que sobrarem. Peça a ele o bônus Espírito do Vento",
     ["The target is a dinosaur with blue hide. The targets are spread over several spots."] =

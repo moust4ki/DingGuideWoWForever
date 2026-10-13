@@ -51,6 +51,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h35-felwood-and-winterspring", {
         "Pronto domesticarás una mascota temporal. Aquí consigues Garra (Rango 7).",
     ["Flight master at Everlook"] =
         "Maestro de vuelo de Vista Eterna",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Domestica aquí una bestia para aprender el siguiente rango de Garra",
     ["Tame an Angerclaw Mauler with your Tame Beast spell. Track down a plague-ridden bear with a chestnut coat."] =
         "Domestica un Angerclaw Mauler con tu hechizo Domesticar bestia. Busca un oso apestado de pelaje castaño.",
     ["The NPC is upstairs, out on the balcony."] =

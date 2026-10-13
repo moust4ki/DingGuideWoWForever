@@ -51,6 +51,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h35-felwood-and-winterspring", {
         "Em breve você vai domar um ajudante temporário. Aqui você obtém Garra (Grau 7).",
     ["Flight master at Everlook"] =
         "Mestre de voo de Visteterna",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Dome uma fera aqui para aprender o próximo grau de Garra",
     ["Tame an Angerclaw Mauler with your Tame Beast spell. Track down a plague-ridden bear with a chestnut coat."] =
         "Use o feitiço Domar Fera em um Espancador Garraivoso. Encontre um urso empesteado de pelagem castanha.",
     ["The NPC is upstairs, out on the balcony."] =

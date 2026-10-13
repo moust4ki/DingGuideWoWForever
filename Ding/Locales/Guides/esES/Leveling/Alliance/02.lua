@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a02-dwarf-and-gnome-starter", {
         "Inicio enano y gnomo (1-13)",
     ["Dun Morogh: Coldridge Valley, where dwarves and gnomes start. This frees room in your bags. You receive one further along the route."] =
         "Dun Morogh: Valle de Crestanevada, donde empiezan enanos y gnomos. Así liberas espacio en tus bolsas. Recibirás uno más adelante en la ruta.",
+    ["Loot the beasts you kill on the way here"] =
+        "Saquea las bestias que mates de camino aquí",
     ["Pick up anything that sells for 10 copper or more."] =
         "Recoge todo lo que se venda por 10 de cobre o más.",
     ["Head indoors"] =
@@ -41,10 +43,16 @@ Ding.RegisterGuideTranslation("esES", "leveling-a02-dwarf-and-gnome-starter", {
         "Cruza el túnel y sigue el camino",
     ["Heal Mountaineer Dolf with Lesser Heal (Rank 2). Buff Mountaineer Dolf with Power Word: Fortitude."] =
         "Cura al Montañero Dolf con Sanación inferior (Rango 2). Lanza Palabra de poder: entereza sobre el Montañero Dolf.",
+    ["Learn Blacksmithing from the trainer"] =
+        "Aprende Herrería con el instructor",
+    ["Learn Mining from the trainer"] =
+        "Aprende Minería con el instructor",
     ["The NPC waits on the lower level, indoors."] =
         "El PNJ espera en el nivel inferior, dentro.",
     ["The quest wants yetis; seek them out. Targets are in the cavern and around its entrance too."] =
         "La misión pide yetis; búscalos. Los objetivos están en la cueva y también alrededor de la entrada.",
+    ["Learn First Aid from the trainer"] =
+        "Aprende Primeros auxilios con el instructor",
     ["The NPC is indoors. Do it only if you can."] =
         "El PNJ está dentro. Hazlo solo si puedes.",
     ["Stay on the trail"] =
@@ -81,10 +89,14 @@ Ding.RegisterGuideTranslation("esES", "leveling-a02-dwarf-and-gnome-starter", {
         "Usa el objeto sobre cualquier Ice Claw Bear.",
     ["This one roams, so scan the surrounding area. Keep it as pet food for later."] =
         "Este deambula, así que revisa los alrededores. Guárdalo como comida para tu mascota.",
+    ["Tame a pet here"] =
+        "Domestica una mascota aquí",
     ["Find one Ice Claw Bear and use Tame Beast on it. Push eastward if you still need more."] =
         "Busca un Ice Claw Bear y lanza Domesticar bestia sobre él. Sigue hacia el este si aún te faltan.",
     ["Targets are in the cavern and around its entrance too. Hold on to it: a Paladin task coming up uses it."] =
         "Los objetivos están en la cueva y también alrededor de la entrada. Guárdalo: lo necesitarás en una próxima misión de paladín.",
+    ["Learn Cooking from the trainer"] =
+        "Aprende Cocina con el instructor",
     ["This one roams, so scan the surrounding area. Without this, one quest can't be picked up."] =
         "Este deambula, así que revisa los alrededores. Sin esto, no podrás aceptar una misión.",
     ["The NPC is past the tunnel; stay on the road."] =
@@ -101,6 +113,12 @@ Ding.RegisterGuideTranslation("esES", "leveling-a02-dwarf-and-gnome-starter", {
         "Deja que los monstruos de aquí te maten a propósito. Es el camino más rápido para llegar.",
     ["This one roams, so scan the surrounding area. The NPC can be indoors or out."] =
         "Este deambula, así que revisa los alrededores. El PNJ puede estar dentro o fuera.",
+    ["Learn Two-Handed Axes and Two-Handed Maces at the weapon master"] =
+        "Aprende Hachas de dos manos y Mazas de dos manos con el maestro de armas",
+    ["Learn Two-Handed Maces at the weapon master"] =
+        "Aprende Mazas de dos manos con el maestro de armas",
+    ["Learn Thrown at the weapon master"] =
+        "Aprende Armas arrojadizas con el maestro de armas",
     ["Head down into the Deeprun Tram station"] =
         "Baja a la estación del Tranvía Subterráneo",
     ["Pass through the portal to teleport."] =
@@ -113,6 +131,18 @@ Ding.RegisterGuideTranslation("esES", "leveling-a02-dwarf-and-gnome-starter", {
         "Toma el Tranvía Subterráneo hasta la Ciudad de Ventormenta. El PNJ está junto a la pared, en el andén central.",
     ["This one roams, so scan the surrounding area. The NPC is indoors. Be ready for a fight right away."] =
         "Este deambula, así que revisa los alrededores. El PNJ está dentro. Prepárate para luchar de inmediato.",
+    ["Learn Two-Handed Swords and Staves at the weapon master"] =
+        "Aprende Espadas de dos manos y Bastones con el maestro de armas",
+    ["Learn Two-Handed Swords at the weapon master"] =
+        "Aprende Espadas de dos manos con el maestro de armas",
+    ["Learn Swords at the weapon master"] =
+        "Aprende Espadas con el maestro de armas",
+    ["Learn Staves at the weapon master"] =
+        "Aprende Bastones con el maestro de armas",
+    ["Learn Swords and Daggers at the weapon master"] =
+        "Aprende Espadas y Dagas con el maestro de armas",
+    ["Learn Swords and Staves at the weapon master"] =
+        "Aprende Espadas y Bastones con el maestro de armas",
     ["Head up the incline"] =
         "Sube la cuesta",
     ["Flight master in Stormwind"] =

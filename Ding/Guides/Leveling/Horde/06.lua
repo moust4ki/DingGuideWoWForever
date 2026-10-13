@@ -33,7 +33,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { train = true, talk = 3043, classes = { "WARRIOR" }, -- level 22
           note = "The NPC is indoors." },
-        { go = { 1454, 81.5, 19.65 }, classes = { "WARRIOR" } }, -- level 22
+        { go = { 1454, 81.5, 19.65 }, classes = { "WARRIOR" }, text = "Learn Two-Handed Axes at the weapon master" }, -- level 22
         { talk = 2704, classes = { "WARRIOR" }, -- level 22
           note = "The NPC is indoors." },
         { turnin = 1063, -- level 22

@@ -15,6 +15,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h06-ashenvale", {
         "NPC는 건물 안에 있습니다.",
     ["Hunt naga."] =
         "나가를 사냥하세요.",
+    ["Learn Two-Handed Axes at the weapon master"] =
+        "무기 전문가에게서 양손 도끼를 배우세요",
     ["The quest giver waits in the tent."] =
         "퀘스트를 주는 NPC는 천막 안에서 기다립니다.",
     ["Let the conversation play out. The quest giver waits in the tent."] =

@@ -15,6 +15,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h06-ashenvale", {
         "NPC在室内。",
     ["Hunt naga."] =
         "猎杀纳迦。",
+    ["Learn Two-Handed Axes at the weapon master"] =
+        "向武器大师学习双手斧",
     ["The quest giver waits in the tent."] =
         "任务发布者在帐篷里等候。",
     ["Let the conversation play out. The quest giver waits in the tent."] =

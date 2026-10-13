@@ -51,6 +51,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a36-azshara-and-felwood", {
         "Flugmeister der Ewigen Warte",
     ["The flight master stands past the walls, outdoors."] =
         "Der Flugmeister steht draußen, hinter den Mauern.",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Zähme hier ein Tier, um den nächsten Rang von Klaue zu lernen",
     ["Tame an Angerclaw Mauler with your Tame Beast spell. Track down a plague-ridden bear with a chestnut coat."] =
         "Zähme einen Angerclaw Mauler mit deinem Zauber Wildtier zähmen. Spür einen verseuchten Bären mit kastanienbraunem Fell auf.",
     ["Get your companion back from the stable master."] =
