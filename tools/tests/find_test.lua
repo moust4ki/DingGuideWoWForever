@@ -70,7 +70,7 @@ T.test("gamepad: Right on the quest's row offers the step, A goes there", functi
     T.ok(offer, "no offer")
     T.eq(P.focusIndex, at, "the focus does not go to the offer")
     T.eq(H.plain(offer.text), L.FIND_JUMP:format(2, "Second"))
-    T.ok(H.plain(offer.sub):find(L.FIND_COMPLETE:format(L.QUEST_WITH_LEVEL:format(Ding.Data:QuestLevel(456), L.QUOTE:format(Ding.Data:QuestName(456)))), 1, true), H.plain(offer.sub))
+    T.ok(H.plain(offer.sub):find(L.FIND_COMPLETE:format(T.questLabel(456)), 1, true), H.plain(offer.sub))
     local lines = chat(function() H.press("PAD1") end)
     T.eq(E.guide.id, "tfind-2")
     T.eq(E.index, 2)

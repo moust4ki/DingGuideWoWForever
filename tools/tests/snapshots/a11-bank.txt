@@ -12,9 +12,6 @@ STEP   < Étape 90 / 97 >   zone: Hurlevent
       | Mettre Une page de journal déchirée en banque
       | À faire.
       | Encore 1 dans tes sacs.
-      |  
-      | Pourquoi ?
-      | Le guide prévoit cette étape ici.
       | Clic : la flèche y va.
  2  infoHeader  [section] LINE ABOVE, no icon, text dim grey, semibold 11
     À savoir

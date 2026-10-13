@@ -77,7 +77,7 @@ end
 T.test("a surprising step: one line under its first row still to do, after the guide's note", function()
     start(2, { log = { STALVAN2 } })
     local expected = "Pourquoi ce détour (environ 5 min) : rendre « La légende de Stalvan » ouvre une suite"
-        .. " de quêtes qui rapporte beaucoup d'XP (environ 13,000)."
+        .. " de quêtes qui rapporte beaucoup d'XP (environ 13\194\160000)."
     T.eq(W:Short(E:CurrentStep()), expected)
     local row = P.rowsShown[1]
     T.eq(row.state, "todo")
@@ -87,7 +87,7 @@ T.test("a surprising step: one line under its first row still to do, after the g
     T.eq(count, 1)
 end)
 
-T.test("honesty: a step without a reason gets no line; on demand, the guide plans it here", function()
+T.test("honesty: a step without a reason gets no line, and no \"Why?\" in its cards", function()
     start(1)
     T.eq(W:Short(E:CurrentStep()), nil)
     T.eq(W:Step(E:CurrentStep()), nil)
@@ -95,8 +95,8 @@ T.test("honesty: a step without a reason gets no line; on demand, the guide plan
     T.ok(not subs():find(L.WHY_DETOUR, 1, true), "a reason under a step without one: " .. subs())
     local shown, _, lines = hover(1)
     T.ok(shown, "no card")
-    find(lines, L.WHY_TITLE, "card")
-    find(lines, L.WHY_NONE, "card")
+    T.ok(not lines:find(L.WHY_TITLE, 1, true), "\"Why?\" on a step without a reason: " .. lines)
+    T.eq(W:Detail(E:CurrentStep()), nil)
     T.ok(not lines:find(L.WHY_ESTIMATE, 1, true), "estimates announced without any figure")
 end)
 
@@ -104,10 +104,12 @@ T.test("on demand (the mouse): the whole reason under \"Why?\", its figures said
     start(2, { log = { STALVAN2 } })
     local shown, text, lines = hover(1)
     T.ok(shown, "no card")
-    T.eq(text, Ding.Data:QuestName(STALVAN2), "the quest's card first")
+    -- The quest's name and its part of the chain that shares it.
+    T.eq(text, Ding.Data:QuestName(STALVAN2) .. " " .. L.QUEST_PART:format(Ding.Data:QuestPart(STALVAN2)),
+        "the quest's card first")
     find(lines, "Pourquoi ? | Ce détour ajoute environ 5 min au trajet.", "card")
     find(lines, "Rendre « La légende de Stalvan » ouvre 11 autres quêtes que le guide fait ensuite :"
-        .. " environ 13,000 XP en tout.", "card")
+        .. " environ 13\194\160000 XP en tout.", "card")
     find(lines, L.WHY_ESTIMATE, "card")
 end)
 
@@ -135,7 +137,7 @@ T.test("a row without a quest (a trip): its card is its text and why; X too", fu
     T.ok(shown, "no card on the trip")
     T.eq(text, H.plain(P.rowsShown[i].text))
     find(lines, "Ce détour ajoute environ 2 min au trajet.", "trip card")
-    find(lines, "Rendre « La légende de Stalvan » : environ 1,100 XP.", "trip card")
+    find(lines, "Rendre « La légende de Stalvan » : environ 1\194\160100 XP.", "trip card")
     P:StartFocus()
     P.focusIndex = i
     H.press("PAD3")
@@ -147,9 +149,9 @@ T.test("a detour whose quest opens one follow-up: said in the singular", functio
     start(1)
     local step = { why = { kind = "detour", quest = STALVAN2, chain = 1, xp = 2400, seconds = 480, short = true } }
     T.eq(W:Short(step), "Pourquoi ce détour (environ 8 min) : rendre « La légende de Stalvan » puis faire la quête"
-        .. " suivante rapporte environ 2,400 XP.", "under a quarter of the level: no \"a lot\"")
+        .. " suivante rapporte environ 2\194\160400 XP.", "under a quarter of the level: no \"a lot\"")
     T.eq(W:Detail(step)[2], "Rendre « La légende de Stalvan » ouvre la quête suivante, que le guide fait aussi :"
-        .. " environ 2,400 XP en tout.")
+        .. " environ 2\194\160400 XP en tout.")
     -- Taken there, no follow-up; without its time, the heading alone.
     step = { why = { kind = "detour", quest = STALVAN3, action = "accept", xp = 900, short = true } }
     T.eq(W:Short(step), "Pourquoi ce détour : y prendre « La légende de Stalvan », qui rapporte environ 900 XP.")
@@ -158,9 +160,9 @@ end)
 T.test("a quest taken now for much later: why now, and when it is turned in", function()
     start(4)
     T.eq(W:Short(E:CurrentStep()), "Pourquoi la prendre maintenant : le guide ne repasse pas par ici avant de"
-        .. " la rendre, sur l'autre continent (environ 1,100 XP).")
+        .. " la rendre, sur l'autre continent (environ 1\194\160100 XP).")
     local lines = table.concat(W:Detail(E:CurrentStep()), " | ")
-    T.eq(lines, "Le guide la rend plus tard, dans environ 7 h 42 : environ 1,100 XP. | Elle se rend sur"
+    T.eq(lines, "Le guide la rend plus tard, dans environ 7 h 42 : environ 1\194\160100 XP. | Elle se rend sur"
         .. " l'autre continent. | Le guide ne repasse pas par ici d'ici là. | " .. L.WHY_ESTIMATE)
 end)
 
@@ -320,7 +322,7 @@ T.test("Duskwood (Leveling): the trip to Moonbrook and back says why, in plain w
     start(index, { guide = A11, log = { STALVAN2 } })
     local line = W:Short(step)
     T.ok(line:find("^Pourquoi ce détour %(environ %d+ min%) : rendre « La légende de Stalvan » ouvre une suite de"
-        .. " quêtes qui rapporte beaucoup d'XP %(environ [%d,]+%)%.$"), line)
+        .. " quêtes qui rapporte beaucoup d'XP %(environ [%d\194\160]+%)%.$"), line)
     find(subs(), line, "window")
     -- Rare: few steps of the section say a reason under them.
     local short = 0

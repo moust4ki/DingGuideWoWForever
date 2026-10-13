@@ -11,31 +11,20 @@ STEP   < Étape 20 / 97 >   zone: Sombre-Comté
       | Des loups aux trousses
       | Rendue : elle n'est plus dans ton journal de quêtes.
       | Quête de niveau 21
-      |  
-      | Pourquoi ?
-      | Le guide prévoit cette étape ici.
       | Clic : la flèche y va.
  2  objective  [done] green background, green check icon, text light grey, indented, counter 1/1 green
       Loup redoutable affamé : fait
       card:
-        | Des loups aux trousses
+        | Loup redoutable affamé : fait
         | Fait.
-        | Quête de niveau 21
-        | Rendue : elle n'est plus dans ton journal de quêtes.
-        |  
-        | Pourquoi ?
-        | Le guide prévoit cette étape ici.
+        | Pour [21] « Des loups aux trousses ». Rendue : elle n'est plus dans ton journal de quêtes.
         | Clic : la flèche y va.
  3  objective  [done] green background, green check icon, text light grey, indented, counter 1/1 green
       Loup redoutable enragé : fait
       card:
-        | Des loups aux trousses
+        | Loup redoutable enragé : fait
         | Fait.
-        | Quête de niveau 21
-        | Rendue : elle n'est plus dans ton journal de quêtes.
-        |  
-        | Pourquoi ?
-        | Le guide prévoit cette étape ici.
+        | Pour [21] « Des loups aux trousses ». Rendue : elle n'est plus dans ton journal de quêtes.
         | Clic : la flèche y va.
 
 PROGRESS bar 20 / 97

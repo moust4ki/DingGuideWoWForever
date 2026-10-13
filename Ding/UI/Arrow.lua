@@ -584,7 +584,7 @@ function A:Tick()
         if wasFaded then UI.FadeIn(f, 0.2) end
         -- Far away in another zone: its name next to the distance.
         local zone = Ding.Engine:ZoneLabel(point)
-        f.distance:SetText(L.YARDS:format(distance) .. (zone and (" · " .. zone) or ""))
+        f.distance:SetText(L.YARDS:format(Compat.Number(distance)) .. (zone and (" · " .. zone) or ""))
         local time = not behind and eta(distance)
         f.eta:SetText(behind and (" · " .. L.TURN_AROUND) or (time and (" · " .. time) or ""))
         f.eta:Show()

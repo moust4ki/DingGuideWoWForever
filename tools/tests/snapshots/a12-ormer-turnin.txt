@@ -6,15 +6,12 @@ TITLE  Ding! · Les Paluns (27-29)
 STEP   < Étape 31 / 87 >   zone: Les Paluns
 
  1  turnin  [todo] red background, red "?" icon, text white
-    Rendre {orange: [29] « La vengeance d'Ormer »}
+    Rendre {orange: [29] « La vengeance d'Ormer » (partie 3 sur 3)}
     card:
-      | La vengeance d'Ormer
+      | La vengeance d'Ormer (partie 3 sur 3)
       | À faire.
       | Quête de niveau 29, au-dessus du tien (28) : plus difficile, mais le guide la prévoit.
       | Serre de Grondecroc : 1/1
-      |  
-      | Pourquoi ?
-      | Le guide prévoit cette étape ici.
       | Clic : la flèche y va.
  2  infoHeader  [section] LINE ABOVE, no icon, text dim grey, semibold 11
     À savoir

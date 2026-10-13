@@ -11,9 +11,6 @@ STEP   < Étape 12 / 87 >   zone: Les Paluns
       | À la recherche d'autres taudis
       | À faire.
       | Quête de niveau 25
-      |  
-      | Pourquoi ?
-      | Le guide prévoit cette étape ici.
       | Clic : la flèche y va.
  2  accept  [todo] red background, red "!" icon, text white
     Prendre [25] « Rapporter la statuette »
@@ -22,9 +19,6 @@ STEP   < Étape 12 / 87 >   zone: Les Paluns
       | À faire.
       | Quête de niveau 25
       | Pas encore dans ton journal de quêtes.
-      |  
-      | Pourquoi ?
-      | Le guide prévoit cette étape ici.
       | Clic : la flèche y va.
 
 PROGRESS bar 12 / 87

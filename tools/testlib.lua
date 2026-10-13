@@ -43,6 +43,17 @@ return function(combined, opts)
 
     function T.test(name, fn) tests[#tests + 1] = { name = name, fn = fn } end
 
+    -- A quest as the guide window names it: "[2] “The Balance of Nature” (part 1 of 2)" (its
+    -- level, its name quoted, its part of a chain that shares its name).
+    function T.questLabel(q)
+        local L, D = Ding.L, Ding.Data
+        local name = L.QUOTE:format(D:QuestName(q))
+        local level = D:QuestLevel(q)
+        local text = level > 0 and L.QUEST_WITH_LEVEL:format(level, name) or name
+        local part, total = D:QuestPart(q)
+        return part and (text .. " " .. L.QUEST_PART:format(part, total)) or text
+    end
+
     local function show(v)
         if type(v) == "string" then return ("%q"):format(v) end
         return tostring(v)

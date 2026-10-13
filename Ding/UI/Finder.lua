@@ -106,7 +106,7 @@ local function cost(entry)
         if entry.seconds < 60 then return L.DIR_UNDER_MINUTE end
         return L.DIR_MINUTES:format(math.floor(entry.seconds / 60 + 0.5))
     end
-    if entry and entry.distance then return L.YARDS:format(entry.distance) end
+    if entry and entry.distance then return L.YARDS:format(Ding.Compat.Number(entry.distance)) end
     return ""
 end
 

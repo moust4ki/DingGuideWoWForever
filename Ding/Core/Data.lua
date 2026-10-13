@@ -179,6 +179,58 @@ function D:QuestPrereqs(questID)
     return get("Quest", "preQuestSingle", questID), get("Quest", "preQuestGroup", questID)
 end
 
+-- Chains of quests that share one name ("The Legend of Stalvan"): a quest's part and the
+-- chain's length, from the preQuestSingle links between quests of the same English name, so
+-- the window can tell "Turn in … (part 4 of 11)" from "Accept … (part 5 of 11)". Built once.
+local chainPart
+local function buildChains()
+    chainPart = {}
+    local nameOf, prevOf, nextOf = {}, {}, {}
+    local ids = allIds("Quest")
+    for _, q in ipairs(ids) do nameOf[q] = raw("Quest", "name", q) end
+    for _, q in ipairs(ids) do
+        local pre = get("Quest", "preQuestSingle", q)
+        for _, p in ipairs(type(pre) == "table" and pre or {}) do
+            if p ~= q and nameOf[p] ~= nil and nameOf[p] == nameOf[q] then
+                prevOf[q] = prevOf[q] or p
+                nextOf[p] = nextOf[p] or {}
+                table.insert(nextOf[p], q)
+            end
+        end
+    end
+    -- From each first part, every quest of the chain gets its depth; the chain's length is the
+    -- deepest (variants of a part for other races share its number).
+    for _, root in ipairs(ids) do
+        if nextOf[root] and not prevOf[root] then
+            local members, length, queue, seen = {}, 0, { { root, 1 } }, { [root] = true }
+            while #queue > 0 do
+                local item = table.remove(queue, 1)
+                local q, depth = item[1], item[2]
+                members[#members + 1] = { q, depth }
+                if depth > length then length = depth end
+                for _, n in ipairs(nextOf[q] or {}) do
+                    if not seen[n] then
+                        seen[n] = true
+                        queue[#queue + 1] = { n, depth + 1 }
+                    end
+                end
+            end
+            if length > 1 then
+                for _, m in ipairs(members) do chainPart[m[1]] = { m[2], length } end
+            end
+        end
+    end
+end
+
+-- part, length of the quest's same-name chain; nil when its name is its own.
+function D:QuestPart(questID)
+    if not self.available then return nil end
+    if not chainPart then buildChains() end
+    local p = chainPart[questID]
+    if p then return p[1], p[2] end
+    return nil
+end
+
 -- requiredRaces / requiredClasses bits, by the client's race and class file names.
 -- Masks can go beyond 32 bits: test bits with arithmetic, never 32-bit bit operations.
 local RACE_BITS = {

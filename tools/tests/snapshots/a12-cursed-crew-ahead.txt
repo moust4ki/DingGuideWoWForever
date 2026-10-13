@@ -12,9 +12,6 @@ STEP   < Étape 6 / 87 >   zone: Port de Menethil
       | À faire.
       | Quête de niveau 25
       | Pas encore dans ton journal de quêtes.
-      |  
-      | Pourquoi ?
-      | Le guide prévoit cette étape ici.
       | Clic : la flèche y va.
  2  infoHeader  [section] LINE ABOVE, no icon, text dim grey, semibold 11
     À savoir
@@ -31,22 +28,20 @@ STEP   < Étape 6 / 87 >   zone: Port de Menethil
  4  objective  [other] light grey diamond icon, text light grey, indented, counter 0/13 light grey
       Tuer 13 Marin maudit
       card:
-        | L'équipage maudit
+        | Tuer 13 Marin maudit
         | Pas le travail de cette étape : une autre quête de ton journal, dont les cibles sont tout autour de toi. Fais-la en chemin si tu veux.
+        | 0 sur 13 pour l'instant.
+        | Pour [29] « L'équipage maudit » : 0 sur 3 objectifs faits.
         | Quête de niveau 29, au-dessus du tien (28) : plus difficile, mais le guide la prévoit.
-        | Marin maudit : 0/13
-        | Soldat de marine maudit : 0/5
-        | Tabatière de Snellig : 0/1
         | Clic : la flèche y va.
  5  objective  [other] light grey diamond icon, text light grey, indented, counter 0/5 light grey
       Tuer 5 Soldat de marine maudit
       card:
-        | L'équipage maudit
+        | Tuer 5 Soldat de marine maudit
         | Pas le travail de cette étape : une autre quête de ton journal, dont les cibles sont tout autour de toi. Fais-la en chemin si tu veux.
+        | 0 sur 5 pour l'instant.
+        | Pour [29] « L'équipage maudit » : 0 sur 3 objectifs faits.
         | Quête de niveau 29, au-dessus du tien (28) : plus difficile, mais le guide la prévoit.
-        | Marin maudit : 0/13
-        | Soldat de marine maudit : 0/5
-        | Tabatière de Snellig : 0/1
         | Clic : la flèche y va.
 
 PROGRESS bar 6 / 87

@@ -14,54 +14,35 @@ STEP   [LB] < Étape 15 / 97 > [RB]   zone: Sombre-Comté
       | Croc de goule : 3/7
       | Fiole de venin d'araignée : 0/7
       | Doigt de squelette : 7/7
-      |  
-      | Pourquoi ?
-      | Le guide prévoit cette étape ici.
       | A : la flèche y va.
       | Droite : trouver cette quête dans le guide.
     hint bar: A Flèche · X Détails · B Quitter
  2  objective  [todo] red background, red dot icon, text white, indented, counter 3/7 red
       Récupérer 7 Croc de goule
       X card:
-        | Le Totem d'affliction
+        | Récupérer 7 Croc de goule
         | À faire.
-        | Quête de niveau 25
-        | Croc de goule : 3/7
-        | Fiole de venin d'araignée : 0/7
-        | Doigt de squelette : 7/7
-        |  
-        | Pourquoi ?
-        | Le guide prévoit cette étape ici.
+        | 3 sur 7 pour l'instant.
+        | Pour [25] « Le Totem d'affliction » : 1 sur 3 objectifs faits.
         | A : la flèche y va.
         | Droite : trouver cette quête dans le guide.
       hint bar: A Flèche · X Détails · B Quitter
  3  objective  [todo] red background, red dot icon, text white, indented, counter 0/7 red
       Récupérer 7 Fiole de venin d'araignée
       X card:
-        | Le Totem d'affliction
+        | Récupérer 7 Fiole de venin d'araignée
         | À faire.
-        | Quête de niveau 25
-        | Croc de goule : 3/7
-        | Fiole de venin d'araignée : 0/7
-        | Doigt de squelette : 7/7
-        |  
-        | Pourquoi ?
-        | Le guide prévoit cette étape ici.
+        | 0 sur 7 pour l'instant.
+        | Pour [25] « Le Totem d'affliction » : 1 sur 3 objectifs faits.
         | A : la flèche y va.
         | Droite : trouver cette quête dans le guide.
       hint bar: A Flèche · X Détails · B Quitter
  4  objective  [done] green background, green check icon, text light grey, indented, counter 7/7 green
       7 Doigt de squelette : fait
       X card:
-        | Le Totem d'affliction
+        | 7 Doigt de squelette : fait
         | Fait.
-        | Quête de niveau 25
-        | Croc de goule : 3/7
-        | Fiole de venin d'araignée : 0/7
-        | Doigt de squelette : 7/7
-        |  
-        | Pourquoi ?
-        | Le guide prévoit cette étape ici.
+        | Pour [25] « Le Totem d'affliction » : 1 sur 3 objectifs faits.
         | A : la flèche y va.
         | Droite : trouver cette quête dans le guide.
       hint bar: A Flèche · X Détails · B Quitter

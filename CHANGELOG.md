@@ -58,6 +58,11 @@ Nothing else to install: QuestieDB is no longer needed, and TomTom stays optiona
     instead of a bare "+4", and hovering it tells what it replaces and which stats change.
     **"Suggest better gear"** (Automation tab, on by default) turns these suggestions off.
   - The lines under a row are plain sentences ("To equip it, use the item button on screen.").
+  - A quest of a chain whose parts share one name says which part ("The Legend of Stalvan (part 2
+    of 13)"), so turning in one part and taking the next no longer read alike.
+  - Hover cards are shorter: an objective's card shows that objective and its quest in one line;
+    "Why?" only appears when the guide has a reason.
+  - Numbers are written your language's way ("13 000" in French).
   - A quest you turned in, seen again with "Previous", says so; a "keep this item" reminder is
     a line under the step, not a line to do.
 - **Travel**

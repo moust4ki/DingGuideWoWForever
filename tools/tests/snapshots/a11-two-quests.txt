@@ -12,21 +12,15 @@ STEP   < Étape 55 / 97 >   zone: Lac Everstill
       | En cours : ses objectifs sont en dessous.
       | Quête de niveau 20
       | Aileron de murloc : 4/8
-      |  
-      | Pourquoi ?
-      | Le guide prévoit cette étape ici.
       | Clic : la flèche y va.
  2  objective  [todo] red background, red dot icon, text white, indented, counter 4/8 red
       Récupérer 8 Aileron de murloc
         > Tu en trouveras d'autres qui nagent aussi tout près.
       card:
-        | Les braconniers murlocs
+        | Récupérer 8 Aileron de murloc
         | À faire.
-        | Quête de niveau 20
-        | Aileron de murloc : 4/8
-        |  
-        | Pourquoi ?
-        | Le guide prévoit cette étape ici.
+        | 4 sur 8 pour l'instant.
+        | Pour [20] « Les braconniers murlocs » : 0 sur 1 objectifs faits.
         | Clic : la flèche y va.
  3  header  [header] no icon, text light grey, semibold 12
     [21] « Criée aux poissons »
@@ -35,22 +29,15 @@ STEP   < Étape 55 / 97 >   zone: Lac Everstill
       | En cours : ses objectifs sont en dessous.
       | Quête de niveau 21
       | Poisson-lune : 10/10
-      |  
-      | Pourquoi ?
-      | Le guide prévoit cette étape ici.
       | Clic : la flèche y va.
  4  objective  [done] green background, green check icon, text light grey, indented, counter 10/10 green
       10 Poisson-lune : fait
         > Garder Aileron de murloc : une étape plus loin en a besoin.
         > Garder Poisson-lune : une étape plus loin en a besoin.
       card:
-        | Criée aux poissons
+        | 10 Poisson-lune : fait
         | Fait.
-        | Quête de niveau 21
-        | Poisson-lune : 10/10
-        |  
-        | Pourquoi ?
-        | Le guide prévoit cette étape ici.
+        | Pour [21] « Criée aux poissons » : 1 sur 1 objectifs faits.
         | Clic : la flèche y va.
 
 PROGRESS bar 55 / 97

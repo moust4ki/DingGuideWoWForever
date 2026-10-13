@@ -6,27 +6,27 @@ TITLE  Ding! · Bois de la Pénombre et Carmines (25-27)
 STEP   < Étape 46 / 97 >   zone: Hurlevent
 
  1  turnin  [todo] red background, red "?" icon, text white
-    Rendre {orange: [28] « La légende de Stalvan »}
+    Rendre {orange: [28] « La légende de Stalvan » (partie 6 sur 13)}
       > Prépare-toi à combattre tout de suite.
     card:
-      | La légende de Stalvan
+      | La légende de Stalvan (partie 6 sur 13)
       | À faire.
       | Quête de niveau 28, au-dessus du tien (27) : plus difficile, mais le guide la prévoit.
       |  
       | Pourquoi ?
-      | Le guide la rend plus tard, dans environ 11 h 48 : environ 1,200 XP.
+      | Le guide la rend plus tard, dans environ 11 h 48 : environ 1 200 XP.
       | Chiffres estimés par le guide.
       | Clic : la flèche y va.
  2  accept  [todo] red background, red "!" icon, text white
-    Prendre {orange: [28] « La légende de Stalvan »}
+    Prendre {orange: [28] « La légende de Stalvan » (partie 7 sur 13)}
     card:
-      | La légende de Stalvan
+      | La légende de Stalvan (partie 7 sur 13)
       | À faire.
       | Quête de niveau 28, au-dessus du tien (27) : plus difficile, mais le guide la prévoit.
       | Pas encore dans ton journal de quêtes.
       |  
       | Pourquoi ?
-      | Le guide la rend plus tard, dans environ 11 h 48 : environ 1,200 XP.
+      | Le guide la rend plus tard, dans environ 11 h 48 : environ 1 200 XP.
       | Chiffres estimés par le guide.
       | Clic : la flèche y va.
 

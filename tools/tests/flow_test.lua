@@ -175,8 +175,7 @@ T.test("preview: one to three dimmed lines of the next steps, off by default", f
     local preview = rows(function(r) return r.preview end)
     T.eq(#preview, 2)
     T.eq(preview[1].state, "preview")
-    T.eq(preview[1].text, L.ROW_ACCEPT:format(L.QUEST_WITH_LEVEL:format(Ding.Data:QuestLevel(458),
-        L.QUOTE:format(Ding.Data:QuestName(458)))))
+    T.eq(preview[1].text, L.ROW_ACCEPT:format(T.questLabel(458)))
     T.ok(P.rowsShown[#P.rowsShown].preview, "the preview is not last")
     Ding.db.panel.preview = 0
 end)
@@ -201,9 +200,8 @@ local function previews(index)
 end
 
 local function leveled(q)
-    local level = Ding.Data:QuestLevel(q)
-    T.ok(level > 0, "no level for quest " .. q)
-    return L.QUEST_WITH_LEVEL:format(level, L.QUOTE:format(Ding.Data:QuestName(q)))
+    T.ok(Ding.Data:QuestLevel(q) > 0, "no level for quest " .. q)
+    return T.questLabel(q)
 end
 
 T.test("preview: a quest step names the action and the quest with its level", function()

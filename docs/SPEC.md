@@ -496,7 +496,8 @@ without drowning the window, and only with what is true:
   in focus mode), under "Why?": the detour's cost beyond the direct way, the quest it names and
   the chain it opens (follow-ups the guide does next), the whole detour's XP; when a carried
   quest is turned in; the levels of the quests after a level step; then "Figures are the
-  guide's estimates." A step without a reason: "The guide plans this step here." A row without a
+  guide's estimates." A step without a reason: no "Why?" at all (Yendi: on nearly every card it
+  said nothing). A row without a
   quest (a trip, a level, a goal) gets a tooltip of its own (its text, then why).
 - **Quests left out**: a section's `leftOut` (`{ [quest] = reason }`) says why it does not take
   a quest (too little XP for the detour, with its figures; its giver, objectives or turn-in off
@@ -734,18 +735,25 @@ the window in a review (`panel_snapshot_test.lua`).
    (Plain words, above): to do, done, not possible yet and why, marked by hand, skipped, a step
    further on, another quest's objective and why it is there, a row besides the step; a quest
    header says where its quest stands (in progress, ready to turn in, turned in, not taken). A
-   section header, a notice and a control say it all in their text.
+   section header, a notice and a control say it all in their text. Cards stay short: an
+   objective's card is that objective (its row's text, what its look and its counter mean: "3 of
+   7 so far."), then its quest in one line ("For [25] « Name »: 1 of 3 objectives done."), never
+   the quest's whole list again; the quest's header and its other rows have the quest's card.
 3. **Why lines** (`Ding.Why`): one line under the first row still to do, after the guide's note,
    only for a step whose reason is marked short; the whole reason at the end of the cards of the
-   step's own rows, under "Why?"; neither with "Guide explanations" off; never under the finished
-   step kept on screen.
+   step's own rows, under "Why?", and only when the guide has a reason (no "Why?" saying "the
+   guide plans this step here" on every card); neither with "Guide explanations" off; never under
+   the finished step kept on screen.
 4. **Texts never cut**: a row's text, its sub-lines and the notices wrap whole and the row grows,
    at every width and scale. Minimized, the one line may end in an ellipsis: hovering it shows
    the row whole, with its note, what its look means and "Step N of M".
 5. **Every quest carries its level**: "[28] « Name »" in the headers, the accept, turn-in and
    complete rows, the next steps and the other quests' headers; a quest above the player's
    level is orange and its card says why ("Quest level 29, above yours (27): harder, but the
-   guide plans it.").
+   guide plans it."). A quest of a chain whose parts share its name says which part, so a turn-in
+   and the next part's accept read apart: "Turn in [28] « The Legend of Stalvan » (part 2 of 13)",
+   "Accept … (part 3 of 13)" (rows, next steps, cards; `Data:QuestPart`, from the prerequisite
+   links between quests of the same English name).
 
 **The step's quests**
 
@@ -830,6 +838,10 @@ the window in a review (`panel_snapshot_test.lua`).
 24. **Sub-lines are plain sentences**: no "Button: action · Button: action" shorthand under a row
     (the upgrade, the talent, the offer to jump, the quest log's notice, the level's experience
     left): "To equip it, use the item button on screen. To ignore it, press Left in focus mode."
+25. **Numbers are written the language's way** (`Compat.Number`, `L.NUMBER_GROUP`): "13,000" in
+    English, "13 000" in French (a no-break space), "13.000" in German, Spanish and Portuguese;
+    never the client's BreakUpLargeNumbers, which writes the English way on some clients (the why
+    lines, the experience left, distances).
 
 ### Minimap pins (`UI/MinimapPins.lua`)
 

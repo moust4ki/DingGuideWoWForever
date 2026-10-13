@@ -163,12 +163,12 @@ function W:Short(step)
     return s and s.short or nil
 end
 
--- The reason on demand: its lines, "the guide plans this step here" for a step without one;
--- nil when the option is off.
+-- The reason on demand: its lines; nil for a step without one (Yendi: "The guide plans this
+-- step here" on nearly every card said nothing) and when the option is off.
 function W:Detail(step)
     if not self:Enabled() or not step then return nil end
     local s = self:Step(step)
-    if not s then return { L.WHY_NONE } end
+    if not s then return nil end
     local lines = {}
     for _, line in ipairs(s.lines) do lines[#lines + 1] = line end
     if s.estimates then lines[#lines + 1] = L.WHY_ESTIMATE end
