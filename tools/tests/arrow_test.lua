@@ -399,6 +399,40 @@ T.test("hunting area: arrived among the spawns (40), up to 60, without flickerin
     T.eq(A.state, "arrived", "not entered at 36 m")
 end)
 
+-- Two objectives side by side (spiders east, skeletons west, about 100 yards apart): walking
+-- between them, the arrow keeps the one it follows until the other is clearly nearer.
+T.test("two objectives side by side: the arrow keeps its target until another is clearly nearer", function()
+    done()
+    start()
+    local spiders = { map = 1438, x = 52, y = 50, label = "Spiders", area = true }
+    local skeletons = { map = 1438, x = 48, y = 50, label = "Skeletons", area = true }
+    local function at(x)
+        H.player.x = x
+        E.candidates = { spiders, skeletons }
+        A.point = nil
+        A:Tick()
+        return A.point and A.point.label
+    end
+    A.follow = nil
+    T.eq(at(50.6), "Spiders", "nearer at first")
+    T.eq(at(49.6), "Spiders", "skeletons a bit nearer: the arrow stays")
+    T.eq(at(48.6), "Skeletons", "skeletons clearly nearer: the arrow moves")
+    T.eq(at(49.4), "Skeletons", "and stays on them in turn")
+    -- The target it follows gone (objective done): the nearest one.
+    A.point = nil
+    E.candidates = { spiders }
+    A:Tick()
+    T.eq(A.point.label, "Spiders")
+end)
+
+T.test("a new step starts without a followed target", function()
+    done()
+    start()
+    A.follow = "Somebody else"
+    E:Next(); H.tick(1)
+    T.eq(A.follow ~= "Somebody else", true)
+end)
+
 T.test("hunting area: the arrow fades while hunting, comes back on leaving", function()
     done()
     start()

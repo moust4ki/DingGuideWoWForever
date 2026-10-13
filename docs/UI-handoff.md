@@ -534,7 +534,8 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   "Guides as text". A window like the settings' (560 × 440, `bg.window`, padding 12): title
   13 SemiBold ("Ding · Import a guide"), a help line 11 Regular `text.secondary`, the text in a
   box (radius 4, `bg.control`, 196 high, 11 Regular `text.primary`, scrolls), a status line
-  12 Medium (`done` green when imported, `todo` red when refused), the report in a second box
+  12 Medium (`done` green when imported, `todo` red when refused, `text.secondary` while the
+  game's chat still has the keyboard), the report in a second box
   (104 high, 11 Regular `text.secondary`, read-only, hidden when empty), buttons at the bottom
   right (26 high, radius 4, 12 Medium, the first one `accent` with `onAccent` text; focus: outer
   ring and halo, gamepad only; A on the focused one, B on the one that closes, Y on "Select

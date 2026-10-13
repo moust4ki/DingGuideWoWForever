@@ -273,6 +273,7 @@ Ding.Locales.deDE = {
     IMPORT_ANOTHER = "Weiteren importieren",
     IMPORT_ERROR_LINE = "Fehler: %s",
     IMPORT_WARNING_LINE = "Warnung: %s",
+    IMPORT_WAIT_KEYBOARD = "Der Chat hat noch die Tastatur: sobald er geschlossen ist, übernimmt dieses Feld sie.",
     EXPORT_TITLE = "Exportieren: %s",
     EXPORT_HELP = "Der Text ist markiert: mit Strg+C kopieren.",
     EXPORT_MOUSE = "Strg+C: kopieren · Esc: schließen",

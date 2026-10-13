@@ -236,7 +236,7 @@ function A:Update()
     if forced and (forced.guide ~= E.guide or forced.index ~= E.index or E.finished) then self.forced = nil end
     -- A new step starts outside of any area.
     local step = E:CurrentStep()
-    if step ~= self.lastStep then self.inArea, self.lastStep = false, step end
+    if step ~= self.lastStep then self.inArea, self.lastStep, self.follow = false, step, nil end
     self.point = nil
     local hasPoints = Compat.IsGhost() or (self.forced ~= nil) or (E.candidates and #E.candidates > 0)
     if visible() and hasPoints and not self.arrivedFaded then
@@ -435,14 +435,17 @@ local function target(self)
     -- A trip to a service the player chose (UI/Finder.lua), until that NPC's window opens.
     local trip = Ding.Finder and Ding.Finder.trip
     if trip then return Ding.Engine:NearestPoint({ trip.point }) end
-    return Ding.Engine:NearestPoint(self.forced and self.forced.points)
+    -- The step's targets: the one the arrow follows stays unless another is clearly nearer.
+    local point, distance, otherContinent = Ding.Engine:NearestPoint(self.forced and self.forced.points, self.follow)
+    return point, distance, otherContinent, true
 end
 
 function A:Tick()
     local f = self.frame
     if not self.point then
-        local point, _, otherContinent = target(self)
+        local point, _, otherContinent, ofStep = target(self)
         self.point, self.otherContinent = point, otherContinent
+        if ofStep and point then self.follow = point.label end
     end
     local point = self.point
     self:MarkWorld(point)

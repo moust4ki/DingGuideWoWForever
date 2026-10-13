@@ -274,6 +274,7 @@ Ding.Locales.koKR = {
     IMPORT_ANOTHER = "다른 가이드 가져오기",
     IMPORT_ERROR_LINE = "오류: %s",
     IMPORT_WARNING_LINE = "경고: %s",
+    IMPORT_WAIT_KEYBOARD = "채팅창이 아직 키보드를 사용 중입니다. 채팅창을 닫으면 이 상자가 키보드를 받습니다.",
     EXPORT_TITLE = "내보내기: %s",
     EXPORT_HELP = "텍스트가 선택되었습니다: Ctrl+C로 복사하세요.",
     EXPORT_MOUSE = "Ctrl+C: 복사 · Esc: 닫기",

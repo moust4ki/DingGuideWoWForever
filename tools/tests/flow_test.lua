@@ -302,6 +302,8 @@ T.test("loop: among the spawns, the arrow goes from stop to stop and around", fu
     local spawn = atSpawn(2031)
     T.ok(spawn, "no spawn of the young nightsabers")
     H.player.map, H.player.x, H.player.y = spawn.map, spawn.x, spawn.y
+    -- Seen from afar, the arrow followed the boars; on a nightsaber, it starts from there.
+    A.follow = nil
     A.point = nil; A:Tick()
     local farm = A.farm
     T.ok(farm and #farm.points >= 3, "no loop among the spawns")

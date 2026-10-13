@@ -182,13 +182,27 @@ return function(opts)
     function Methods:SetScrollChild(child) self.scrollChild = child end
     function Methods:GetVerticalScrollRange() return 0 end
     -- Edit boxes (the import window): the focus and the selection; SetText does not fire
-    -- OnTextChanged as typed (H.type does).
+    -- OnTextChanged as typed (H.type does). A box that loses the keyboard runs its
+    -- OnEditFocusLost right away, in the execution that took the keyboard from it.
     local focusedEdit
+    local function focusLost(edit)
+        local fn = edit.scripts and edit.scripts.OnEditFocusLost
+        if fn then fn(edit) end
+    end
     function Methods:SetMultiLine(v) self.multiLine = v and true or false end
     function Methods:SetAutoFocus(v) self.autoFocus = v and true or false end
     function Methods:SetMaxLetters(n) assert(type(n) == "number", "SetMaxLetters(n)") end
-    function Methods:SetFocus() focusedEdit = self end
-    function Methods:ClearFocus() if focusedEdit == self then focusedEdit = nil end end
+    function Methods:SetFocus()
+        local previous = focusedEdit
+        focusedEdit = self
+        if previous and previous ~= self then focusLost(previous) end
+    end
+    function Methods:ClearFocus()
+        if focusedEdit ~= self then return end
+        focusedEdit = nil
+        focusLost(self)
+    end
+    _G.GetCurrentKeyBoardFocus = function() return focusedEdit end
     function Methods:HasFocus() return focusedEdit == self end
     function Methods:HighlightText(from, to) self.selection = { from or 0, to or -1 } end
     function Methods:SetVerticalScroll(v)
@@ -358,6 +372,21 @@ return function(opts)
         say("   [chat] " .. msg:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", ""))
     end }
     _G.SlashCmdList = {}
+    -- Actions only the Blizzard UI may take: run in an execution an addon tainted, the game
+    -- refuses them with ADDON_ACTION_FORBIDDEN, whose popup offers to disable the addon.
+    -- `secure` is true only while the mock plays the game's own input (H.chat, H.closeChat):
+    -- everything a test calls in Ding, and all that follows from it, is tainted.
+    local secure = false
+    local function blizzardOnly(name)
+        if not secure then problem("ADDON_ACTION_FORBIDDEN: Ding's execution reached " .. name) end
+    end
+    _G.SetGamePadCursorControl = function() blizzardOnly("SetGamePadCursorControl") end
+    -- The game's chat box with its gamepad interface on: losing the keyboard takes the chat
+    -- out of the gamepad navigation, which gives the stick back to the cursor (Blizzard only).
+    -- After a message the box keeps the keyboard, emptied, until the player closes it.
+    local chatBox = newWidget("EditBox", UIParent)
+    _G.ChatFrame1EditBox = chatBox
+    chatBox:SetScript("OnEditFocusLost", function() SetGamePadCursorControl(false) end)
     _G.BackdropTemplateMixin = {}
     _G.TOOLTIP_DEFAULT_COLOR = { r = 1, g = 1, b = 1 }
     _G.TOOLTIP_DEFAULT_BACKGROUND_COLOR = { r = 0.09, g = 0.09, b = 0.19 }
@@ -1665,6 +1694,33 @@ return function(opts)
         local fn = edit.scripts and edit.scripts.OnTextChanged
         if fn then fn(edit, true) end
     end
+    -- A slash command typed in the game's chat: the player opens the chat (the game's code),
+    -- then Enter runs the addon's command, tainted from there on, while the chat still has the
+    -- keyboard; the gamepad interface keeps it open, emptied. H.closeChat: B or Escape.
+    function H.chat(text)
+        local command, msg = text:match("^(/%S+)%s*(.-)%s*$")
+        local handler
+        for key, fn in pairs(SlashCmdList) do
+            for i = 1, 9 do
+                local tag = _G["SLASH_" .. key .. i]
+                if tag and tag:upper() == command:upper() then handler = fn end
+            end
+        end
+        assert(handler, "no slash command " .. tostring(command))
+        secure = true
+        chatBox:SetFocus()
+        chatBox:SetText(text)
+        secure = false
+        handler(msg, chatBox)
+        chatBox:SetText("")
+        flush()
+    end
+    function H.closeChat()
+        secure = true
+        chatBox:ClearFocus()
+        secure = false
+    end
+    function H.chatHasKeyboard() return chatBox:HasFocus() end
     function H.setUsable(id, v) usable[id] = v or nil end
     function H.clearItems()
         items, specialItems, usable = {}, {}, {}
