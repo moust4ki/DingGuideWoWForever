@@ -426,8 +426,8 @@ nothing for the gamepad to press. The game's windows are only read (`GossipFrame
 `QuestFrame`: shown or not, where they stand), never anchored to, changed, shown nor hidden
 (with the gamepad interface, touching them taints the game's frame controls). Shown 0.2 s after
 the window opens (the game shows it first; a quest AutoQuest takes closes it meanwhile), hidden
-with it (`GOSSIP_CLOSED`, `QUEST_FINISHED`, or the window seen hidden). Option "What the guide
-does with offered quests" (Automation tab, **on** by default).
+with it (`GOSSIP_CLOSED`, `QUEST_FINISHED`, or the window seen hidden). Option "Quests an NPC
+offers" (Automation tab, **on** by default).
 
 ### Choosing the destination point
 
