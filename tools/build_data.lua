@@ -1,0 +1,347 @@
+-- Builds Ding's own game database (Ding/DB/) from a QuestieDB release: the Forever export
+-- (src/corrections/Forever/combined), its zone tables (support/Forever/Zones) and its names in
+-- every language (l10n/Forever). Questie's data is GPL v3: the files keep its credits.
+-- Spawns are converted from AreaIDs to UiMapIDs here, once, so that the game never has to.
+-- usage: lua5.1 tools/build_data.lua <combined dir> [--out <dir>] [--source <text>]
+--   <combined dir>   .../QuestieDB/src/corrections/Forever/combined (exported with
+--                    tools/export-forever.lua --include-authored)
+--   --out            output folder (default: Ding/DB next to this script)
+--   --source         what the data comes from, written in the files (e.g. "QuestieDB v1.0.6")
+local here = arg[0]:match("^(.*)[/\\]") or "."
+local X = dofile(here .. "/questiedb_export.lua")
+
+local combined, out, source
+do
+    local i = 1
+    while arg[i] do
+        local a = arg[i]
+        if a == "--out" then i = i + 1; out = arg[i]
+        elseif a == "--source" then i = i + 1; source = arg[i]
+        elseif not combined then combined = a
+        else io.stderr:write("unknown argument: " .. a .. "\n"); os.exit(2) end
+        i = i + 1
+    end
+end
+if not combined then
+    io.stderr:write("usage: lua5.1 tools/build_data.lua <combined dir> [--out <dir>] [--source <text>]\n")
+    os.exit(2)
+end
+out = out or (here .. "/../Ding/DB")
+source = source or "QuestieDB"
+local qdbRoot = combined:gsub("[/\\]src[/\\]corrections[/\\]Forever[/\\]combined[/\\]?$", "")
+
+-- The fields Ding reads (Core/Data.lua), by the export's indexes (QuestieDB src/meta/*Meta.lua).
+local FIELDS = {
+    Quest = { "name", 1, "startedBy", 2, "finishedBy", 3, "requiredLevel", 4, "questLevel", 5,
+        "requiredRaces", 6, "requiredClasses", 7, "triggerEnd", 9, "objectives", 10, "sourceItemId", 11,
+        "preQuestGroup", 12, "preQuestSingle", 13 },
+    Npc = { "name", 1, "minLevel", 4, "maxLevel", 5, "rank", 6, "spawns", 7, "friendlyToFaction", 13,
+        "subName", 14, "npcFlags", 15 },
+    Object = { "name", 1, "spawns", 4 },
+    Item = { "name", 1, "npcDrops", 2, "objectDrops", 3, "vendors", 14 },
+}
+-- Our layout: the position of each field in a record (Core/Data.lua reads the same table).
+local LAYOUT = {}
+for kind, list in pairs(FIELDS) do
+    LAYOUT[kind] = {}
+    for i = 1, #list, 2 do LAYOUT[kind][#LAYOUT[kind] + 1] = { name = list[i], from = list[i + 1] } end
+end
+
+---------------------------------------------------------------------------
+-- Reading QuestieDB
+---------------------------------------------------------------------------
+local db = X.load(combined)
+
+-- QuestieDB's support modules expect QuestieLoader: run them in a sandbox.
+local function sandbox(path, private, imports, faction)
+    local chunk = loadfile(path)
+    if not chunk then return false end
+    local module = { private = private }
+    setfenv(chunk, setmetatable({ QuestieLoader = {
+        ImportModule = function(_, name) return (imports and imports[name]) or module end,
+        CreateModule = function() return module end,
+    }, UnitFactionGroup = function() return faction or "Alliance" end }, { __index = _G }))
+    return pcall(chunk)
+end
+
+-- Dungeon entrances depend on the side for a few battlegrounds: read them for each side.
+local zones = { areaIdToUiMapId = {} }
+local dungeonsBySide = {}
+do
+    local dir = qdbRoot .. "/support/Forever/Zones/"
+    assert(sandbox(dir .. "areaIdToUiMapId.lua", zones), "cannot read " .. dir .. "areaIdToUiMapId.lua")
+    local expansions = setmetatable({ Current = 1 }, { __index = function() return 99 end })
+    for _, side in ipairs({ "Alliance", "Horde" }) do
+        local private = {}
+        assert(sandbox(dir .. "dungeons.lua", private, { Expansions = expansions }, side),
+            "cannot read " .. dir .. "dungeons.lua")
+        assert(type(private.dungeons) == "table" and next(private.dungeons), "no dungeons in " .. dir .. "dungeons.lua")
+        dungeonsBySide[side] = private.dungeons
+    end
+end
+local areaToMap = {}
+for _, key in ipairs({ "areaIdToUiMapId", "areaIdToUiMapIdOverride" }) do
+    local src = zones[key]
+    if type(src) == "string" then src = loadstring(src)() end
+    for area, map in pairs(src or {}) do areaToMap[area] = map end
+end
+
+-- Names in every language QuestieDB has: l10n/Forever/lookup<Kind>/<locale>.lua.
+local LOOKUPS = { Quest = { "lookupQuests", "questLookup" }, Npc = { "lookupNpcs", "npcNameLookup" },
+    Object = { "lookupObjects", "objectLookup" }, Item = { "lookupItems", "itemLookup" } }
+local LOCALES = { "deDE", "esES", "esMX", "frFR", "koKR", "ptBR", "ruRU", "zhCN", "zhTW" }
+local function lookup(kind, locale)
+    local folder, field = LOOKUPS[kind][1], LOOKUPS[kind][2]
+    local chunk = loadfile(("%s/l10n/Forever/%s/%s.lua"):format(qdbRoot, folder, locale))
+    if not chunk then return {} end
+    local l10n = { [field] = {} }
+    setfenv(chunk, setmetatable({
+        GetLocale = function() return locale end,
+        QuestieLoader = { ImportModule = function() return l10n end },
+    }, { __index = _G }))
+    if not pcall(chunk) then return {} end
+    local fn = l10n[field][locale]
+    local ok, t = pcall(fn)
+    return ok and type(t) == "table" and t or {}
+end
+
+---------------------------------------------------------------------------
+-- Converting
+---------------------------------------------------------------------------
+local function round2(v) return math.floor(v * 100 + 0.5) / 100 end
+
+-- { [areaID] = { { x, y }, ... } } -> { [uiMapID] = { x, y, x, y, ... } }: unknown zones and
+-- the -1, -1 of "inside an instance" are left out, as Ding always did.
+local function spawnsByMap(spawns)
+    if type(spawns) ~= "table" then return nil end
+    local maps, any = {}, false
+    local areas = {}
+    for area in pairs(spawns) do areas[#areas + 1] = area end
+    table.sort(areas)
+    for _, area in ipairs(areas) do
+        local map = areaToMap[area]
+        local coords = spawns[area]
+        if map and type(coords) == "table" then
+            for _, c in ipairs(coords) do
+                if type(c) == "table" and type(c[1]) == "number" and type(c[2]) == "number"
+                    and c[1] >= 0 and c[2] >= 0 then
+                    local list = maps[map] or {}
+                    maps[map] = list
+                    list[#list + 1] = round2(c[1])
+                    list[#list + 1] = round2(c[2])
+                    any = true
+                end
+            end
+        end
+    end
+    return any and maps or nil
+end
+
+local function convert(kind, row)
+    local rec = {}
+    for i, f in ipairs(LAYOUT[kind]) do
+        local v = row[f.from]
+        if f.name == "spawns" then
+            v = spawnsByMap(v)
+        elseif f.name == "triggerEnd" and type(v) == "table" then
+            v = { v[1], spawnsByMap(v[2]) }
+        end
+        if type(v) == "table" and next(v) == nil then v = nil end
+        rec[i] = v
+    end
+    return rec
+end
+
+---------------------------------------------------------------------------
+-- Writing compact Lua
+---------------------------------------------------------------------------
+local function num(v)
+    if v == math.floor(v) and math.abs(v) < 2 ^ 53 then return ("%.0f"):format(v) end
+    local s = ("%.2f"):format(v):gsub("0+$", ""):gsub("%.$", "")
+    if tonumber(s) == v then return s end
+    return ("%.17g"):format(v)
+end
+
+local serialize
+local function isList(t)
+    local n = 0
+    for _ in pairs(t) do n = n + 1 end
+    for i = 1, n do if t[i] == nil then return false end end
+    return true
+end
+function serialize(v)
+    local kind = type(v)
+    if kind == "number" then return num(v) end
+    if kind == "string" then return (("%q"):format(v):gsub("\\\n", "\\n")) end
+    if kind == "boolean" then return tostring(v) end
+    if kind == "nil" then return "nil" end
+    assert(kind == "table", "cannot write a " .. kind)
+    local parts = {}
+    if isList(v) then
+        for i = 1, #v do parts[i] = serialize(v[i]) end
+        return "{" .. table.concat(parts, ",") .. "}"
+    end
+    local keys = {}
+    for k in pairs(v) do keys[#keys + 1] = k end
+    table.sort(keys, function(a, b)
+        if type(a) == type(b) then return a < b end
+        return type(a) == "number"
+    end)
+    for _, k in ipairs(keys) do
+        local key = type(k) == "number" and ("[" .. num(k) .. "]") or ("[" .. ("%q"):format(k) .. "]")
+        parts[#parts + 1] = key .. "=" .. serialize(v[k])
+    end
+    return "{" .. table.concat(parts, ",") .. "}"
+end
+
+-- A positional record with holes: { a, nil, c } keeps its positions.
+local function record(rec, size)
+    local last = 0
+    for i = 1, size do if rec[i] ~= nil then last = i end end
+    local parts = {}
+    for i = 1, last do parts[i] = serialize(rec[i]) end
+    return "{" .. table.concat(parts, ",") .. "}"
+end
+
+local HEADER = [[
+-- Generated by tools/build_data.lua from %s (Forever): do not edit, run the tool again.
+-- Game data from Questie (https://github.com/Questie/Questie) and QuestieDB
+-- (https://github.com/Questie/QuestieDB), under the GNU General Public License v3; see
+-- Ding/DB/CREDITS.md.
+]]
+
+local CHUNK = 500   -- records per function: Lua 5.1 limits the constants of one function
+
+local written = {}
+local function write(name, body)
+    local path = out .. "/" .. name
+    local f = assert(io.open(path, "wb"))
+    f:write(HEADER:format(source), body)
+    f:close()
+    written[#written + 1] = name
+end
+
+local function sortedIds(t)
+    local ids = {}
+    for id in pairs(t) do ids[#ids + 1] = id end
+    table.sort(ids)
+    return ids
+end
+
+-- Records of one kind, in chunks: `t[id] = { ... }` statements inside small functions.
+local function table_(var, ids, line)
+    local parts = { "local _, Ding = ...\nlocal t = Ding.DB." .. var .. "\n" }
+    for start = 1, #ids, CHUNK do
+        parts[#parts + 1] = "do local function f()\n"
+        for i = start, math.min(start + CHUNK - 1, #ids) do
+            parts[#parts + 1] = "t[" .. ids[i] .. "]=" .. line(ids[i]) .. "\n"
+        end
+        parts[#parts + 1] = "end f() end\n"
+    end
+    return table.concat(parts)
+end
+
+local function sizeOf(name)
+    local f = io.open(out .. "/" .. name, "rb")
+    if not f then return 0 end
+    local n = f:seek("end")
+    f:close()
+    return n
+end
+
+---------------------------------------------------------------------------
+-- The files
+---------------------------------------------------------------------------
+os.execute((package.config:sub(1, 1) == "\\" and 'mkdir "%s\\Locales" 2>nul' or 'mkdir -p "%s/Locales"')
+    :format((out:gsub(package.config:sub(1, 1) == "\\" and "/" or "\\", package.config:sub(1, 1)))))
+
+local layout = {}
+for _, kind in ipairs({ "Quest", "Npc", "Object", "Item" }) do
+    local names = {}
+    for i, f in ipairs(LAYOUT[kind]) do names[i] = ("%s = %d"):format(f.name, i) end
+    layout[#layout + 1] = ("    %s = { %s },"):format(kind, table.concat(names, ", "))
+end
+write("DB.lua", ([[
+-- Ding's game database: what Core/Data.lua reads instead of QuestieDB. Records are positional;
+-- LAYOUT gives each field's position. Spawns: { [uiMapID] = { x, y, x, y, ... } } (0-100).
+local _, Ding = ...
+Ding.DB = {
+    source = %q,
+    LAYOUT = {
+%s
+    },
+    quests = {}, npcs = {}, objects = {}, items = {},
+    zones = { areaToUiMap = {}, dungeons = {}, dungeonsHorde = {} },
+    names = { quests = {}, npcs = {}, objects = {}, items = {} },
+}
+]]):format(source, table.concat(layout, "\n")))
+
+-- Zones: AreaID -> UiMapID, and dungeon entrances as { uiMapID, x, y }.
+do
+    local parts = { "local _, Ding = ...\nlocal z = Ding.DB.zones\nz.areaToUiMap = " .. serialize(areaToMap) .. "\n" }
+    local function entrances(source)
+        local dungeons = {}
+        for area, entry in pairs(source) do
+            local list = {}
+            if type(entry) == "table" and type(entry[4]) == "table" then
+                for _, at in ipairs(entry[4]) do
+                    local map = type(at) == "table" and areaToMap[at[1]]
+                    if map and at[2] and at[3] then list[#list + 1] = { map, round2(at[2]), round2(at[3]) } end
+                end
+            end
+            if #list > 0 then dungeons[area] = list end
+        end
+        return dungeons
+    end
+    local alliance, horde = entrances(dungeonsBySide.Alliance), entrances(dungeonsBySide.Horde)
+    -- The Horde's own entrances: only where they differ from the Alliance's.
+    local hordeOnly = {}
+    for area, list in pairs(horde) do
+        if serialize(list) ~= serialize(alliance[area] or {}) then hordeOnly[area] = list end
+    end
+    parts[#parts + 1] = "z.dungeons = " .. serialize(alliance) .. "\n"
+    parts[#parts + 1] = "z.dungeonsHorde = " .. serialize(hordeOnly) .. "\n"
+    write("Zones.lua", table.concat(parts))
+end
+
+local counts = {}
+for _, spec in ipairs({ { "Quest", "quests", "Quests.lua" }, { "Npc", "npcs", "Npcs.lua" },
+    { "Object", "objects", "Objects.lua" }, { "Item", "items", "Items.lua" } }) do
+    local kind, var, file = spec[1], spec[2], spec[3]
+    local ids = sortedIds(db[kind])
+    counts[kind] = #ids
+    local size = #LAYOUT[kind]
+    write(file, table_(var, ids, function(id) return record(convert(kind, db[kind][id]), size) end))
+end
+
+-- Names in each language, loaded only by a client in that language.
+local NAME = { Quest = function(v) return type(v) == "table" and v[1] or v end,
+    Npc = function(v) return type(v) == "table" and v[1] or v end,
+    Object = function(v) return v end, Item = function(v) return v end }
+local VAR = { Quest = "quests", Npc = "npcs", Object = "objects", Item = "items" }
+for _, locale in ipairs(LOCALES) do
+    local parts = { ("if GetLocale() ~= %q then return end\nlocal _, Ding = ...\nlocal n = Ding.DB.names\n"):format(locale) }
+    for _, kind in ipairs({ "Quest", "Npc", "Object", "Item" }) do
+        local names = lookup(kind, locale)
+        local ids = {}
+        for id, v in pairs(names) do
+            local name = NAME[kind](v)
+            if type(id) == "number" and type(name) == "string" and name ~= "" and db[kind][id] then ids[#ids + 1] = id end
+        end
+        table.sort(ids)
+        for start = 1, #ids, CHUNK * 4 do
+            parts[#parts + 1] = "do local t = n." .. VAR[kind] .. " local function f()\n"
+            for i = start, math.min(start + CHUNK * 4 - 1, #ids) do
+                parts[#parts + 1] = "t[" .. ids[i] .. "]=" .. serialize(NAME[kind](names[ids[i]])) .. "\n"
+            end
+            parts[#parts + 1] = "end f() end\n"
+        end
+    end
+    write("Locales/" .. locale .. ".lua", table.concat(parts))
+end
+
+local total = 0
+for _, name in ipairs(written) do total = total + sizeOf(name) end
+print(("Ding/DB from %s: %d quests, %d NPCs, %d objects, %d items, %d zones; %d files, %.1f MB")
+    :format(source, counts.Quest, counts.Npc, counts.Object, counts.Item, #sortedIds(areaToMap),
+        #written, total / 1048576))

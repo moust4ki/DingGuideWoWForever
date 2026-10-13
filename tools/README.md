@@ -12,6 +12,7 @@ the guides; nothing here is loaded by the game.
 | `wow_mock.lua` | Shared module: simulated WoW API, in-memory QuestieDB, loading of Ding |
 | `testlib.lua` | Shared module: small unit test framework |
 | `draft_guide.lua` | Writes the guides of a route (`routes/*.lua`) from the export |
+| `build_data.lua` | Writes Ding's game database (`Ding/DB`) from a QuestieDB release (section 1) |
 | `write_leveling.lua` | Writes Ding! - Leveling from the Leveling routes (`routes/leveling/*.lua`) (section 7) |
 | `fit_windows.lua` | Re-cuts the level windows of a route from the simulation: each guide starts where the previous one ends |
 | `route_model.lua` | Shared module: the optimizer's time and XP model (parameters to recalibrate) |
@@ -32,11 +33,11 @@ You need a **Lua 5.1** interpreter (`lua5.1` on Debian/Ubuntu, package `lua5.1`)
 QuestieDB also ships binaries in `tools/lua-binary/` of its repository (`lua.exe` on
 Windows, which `run_tests.lua` also works with).
 
-Clone QuestieDB **outside the Ding repository** (its data has no explicit license: we never
-copy it into Ding), then run the export from its root:
+Clone QuestieDB **outside the Ding repository**, at the release `Ding/DB` was built from (its
+tag is in `Ding/DB/DB.lua`, `source`), then run the export from its root:
 
 ```sh
-git clone --depth 1 https://github.com/Questie/QuestieDB.git ../QuestieDB
+git clone --depth 1 --branch v1.0.6 https://github.com/Questie/QuestieDB.git ../QuestieDB
 cd ../QuestieDB
 lua5.1 tools/export-forever.lua --include-authored
 ```
@@ -46,6 +47,21 @@ Each file returns a table `{ [id] = { positional fields } }`; the field indexes 
 `src/meta/*Meta.lua` (quest: 1 name, 2 giver, 3 turn-in, 4 required level, 5 quest level,
 6 races, 10 objectives, 12-13 prerequisites, 17 zone…).
 Run the export again after each `git pull` of QuestieDB.
+
+**Ding's game database.** Ding does not need the QuestieDB addon in game: it carries
+`Ding/DB`, written from that export by `build_data.lua` (Questie's data is GPL v3; the credits
+are in `Ding/DB/CREDITS.md`). On each new QuestieDB release:
+
+```sh
+git -C ../QuestieDB fetch --tags && git -C ../QuestieDB checkout vX.Y.Z
+(cd ../QuestieDB && lua5.1 tools/export-forever.lua --include-authored)
+lua5.1 tools/build_data.lua ../QuestieDB/src/corrections/Forever/combined --source "QuestieDB vX.Y.Z"
+```
+
+then run the whole suite with that export: `db_parity_test` checks that Ding gets the same
+answers from `Ding/DB` and from QuestieDB, and CI clones the release named in `Ding/DB/DB.lua`.
+`build_data.lua` keeps only the fields `Core/Data.lua` reads, converts the spawns from AreaIDs
+to UiMapIDs, and writes the names of each language in `Ding/DB/Locales/<locale>.lua`.
 
 Below, `$QDB` stands for this folder:
 

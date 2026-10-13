@@ -17,23 +17,17 @@ gamepad**.
 
 ## Installation
 
-1. **Install QuestieDB first.** It is a separate addon, not Questie, and it is not on
-   CurseForge: the CurseForge app does not install it for you, and Ding does not load without
-   it. Download `QuestieDB-Forever.zip` from the
-   [QuestieDB releases](https://github.com/Questie/QuestieDB/releases/latest) and extract it
-   into `World of Warcraft/_forever_/Interface/AddOns/` (during the beta: `_classic_beta_`
-   instead of `_forever_`). It must give a folder named exactly `QuestieDB` (not
-   `QuestieDB-master`). The full Questie addon is not needed.
-2. Install Ding from [CurseForge](https://www.curseforge.com/wow/addons/ding-xp-and-leveling-guide),
-   or copy the `Ding/` folder of this repository to the same place.
-3. In the game's addon list, check that both QuestieDB and Ding are enabled.
+Install Ding from [CurseForge](https://www.curseforge.com/wow/addons/ding-xp-and-leveling-guide),
+or copy the `Ding/` folder of this repository into `World of Warcraft/_forever_/Interface/AddOns/`
+(during the beta: `_classic_beta_` instead of `_forever_`). That is all: Ding carries its own
+game data, **QuestieDB is no longer needed** (you may remove it if no other addon uses it).
 
 Ding has its own arrow: **TomTom is not needed**. If it is installed, its arrow can be used
 instead from the *Arrow* tab of the settings (off by default).
 
 ## Features
 
-- **Guides optimized for XP per hour.** The routes are generated offline from QuestieDB:
+- **Guides optimized for XP per hour.** The routes are generated offline from the game data:
   quests grouped to avoid back-and-forth, poor-value detours left out, never a quest above
   your level (one level above at most). The new quests of Forever are included.
 - **Resumes where you really are.** Ding picks the guide for your race, class and level. When
@@ -58,7 +52,7 @@ instead from the *Arrow* tab of the settings (off by default).
   [Community guide packs](#community-guide-packs).
 - **Languages.** English, French, German, Spanish (Spain and Latin America), Brazilian
   Portuguese, Korean, Simplified and Traditional Chinese: Ding follows your game's language.
-  Quest, NPC and item names come from QuestieDB in that language. Each language has its own
+  Quest, NPC and item names come from Ding's game data in that language. Each language has its own
   files; to add one, see [docs/SPEC.md](docs/SPEC.md#languages).
 
 ## With a gamepad
@@ -132,4 +126,11 @@ Everything built on Ding stays free: a guide pack for Ding (an addon that calls
 under the GPL v3 as well. There is no exception.
 
 The Noto Sans fonts in `Ding/Media/Fonts` are under the SIL Open Font License 1.1
-(`OFL.txt`). QuestieDB and TomTom are separate addons; Ding ships none of their code or data.
+(`OFL.txt`). TomTom is a separate addon; Ding ships none of its code.
+
+### Credits
+
+Ding's game data (`Ding/DB`: quests, NPCs, objects, items, places and their names) is built
+from the database of [Questie](https://github.com/Questie/Questie) and
+[QuestieDB](https://github.com/Questie/QuestieDB), released under the GNU GPL v3: thanks to
+their authors and contributors. See [`Ding/DB/CREDITS.md`](Ding/DB/CREDITS.md).

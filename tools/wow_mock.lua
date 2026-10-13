@@ -308,6 +308,18 @@ return function(opts)
 
     ---------------------------------------------------------------------------
     -- Game state and API
+    -- The quest title the client shows, in its own language: Ding/DB's names of that
+    -- language when Ding is loaded, else QuestieDB's English one.
+    local function clientTitle(q)
+        local db = _G.Ding and _G.Ding.DB
+        return db and db.names.quests[q] or QuestDB.name(q)
+    end
+    -- The same for an NPC, object or item name (the quest log's objectives, the XP messages).
+    local function clientName(kind, id)
+        local db = _G.Ding and _G.Ding.DB
+        local base = ({ npcs = NpcDB, objects = ObjectDB, items = ItemDB })[kind].name(id)
+        return db and db.names[kind][id] or base
+    end
     ---------------------------------------------------------------------------
     local player = { level = 1, xp = 0, rested = 0, race = "NightElf", class = "WARRIOR", faction = "Alliance",
         x = 50, y = 50 }
@@ -802,7 +814,7 @@ return function(opts)
         GetNumQuestLogEntries = function() return #logOrder, #logOrder end,
         GetInfo = function(i)
             local q = logOrder[i]
-            return q and { questID = q, isHeader = false, title = QuestDB.name(q) } or nil
+            return q and { questID = q, isHeader = false, title = clientTitle(q) } or nil
         end,
 
         GetQuestObjectives = function(q)
@@ -1000,10 +1012,12 @@ return function(opts)
         local dungeons = loadfile((support:gsub("areaIdToUiMapId%.lua$", "dungeons.lua")))
         if dungeons then
             local expansions = setmetatable({ Current = 1 }, { __index = function() return 99 end })
-            setfenv(dungeons, setmetatable({ QuestieLoader = { ImportModule = function(name)
+            -- Called as QuestieLoader:ImportModule(name); the file reads the side at load (the
+            -- Alliance's entrances; a few battlegrounds differ for the Horde).
+            setfenv(dungeons, setmetatable({ QuestieLoader = { ImportModule = function(_, name)
                 if name == "Expansions" then return expansions end
                 return { private = zonePrivate }
-            end } }, { __index = _G }))
+            end }, UnitFactionGroup = function() return "Alliance" end }, { __index = _G }))
             pcall(dungeons)
         end
         zonePrivate.dungeons = zonePrivate.dungeons
@@ -1139,7 +1153,7 @@ return function(opts)
             assert(dialog.kind == "gossip", "GetActiveQuests outside gossip")
             local out = {}
             for _, q in ipairs((lists())) do
-                out[#out + 1] = { questID = q, title = QuestDB.name(q), isComplete = isDone(q) }
+                out[#out + 1] = { questID = q, title = clientTitle(q), isComplete = isDone(q) }
             end
             return out
         end,
@@ -1147,7 +1161,7 @@ return function(opts)
             assert(dialog.kind == "gossip", "GetAvailableQuests outside gossip")
             local out = {}
             local _, available = lists()
-            for _, q in ipairs(available) do out[#out + 1] = { questID = q, title = QuestDB.name(q) } end
+            for _, q in ipairs(available) do out[#out + 1] = { questID = q, title = clientTitle(q) } end
             return out
         end,
         SelectActiveQuest = function(q)
@@ -1165,7 +1179,7 @@ return function(opts)
     _G.GetNumActiveQuests = function() return dialog.kind == "greeting" and #(lists()) or 0 end
     _G.GetActiveTitle = function(i)
         local q = (lists())[i]
-        return q and QuestDB.name(q), q and isDone(q)
+        return q and clientTitle(q), q and isDone(q)
     end
     _G.GetNumAvailableQuests = function()
         if dialog.kind ~= "greeting" then return 0 end
@@ -1174,7 +1188,7 @@ return function(opts)
     end
     _G.GetAvailableTitle = function(i)
         local _, available = lists()
-        return available[i] and QuestDB.name(available[i])
+        return available[i] and clientTitle(available[i])
     end
     _G.SelectActiveQuest = function(i)
         assert(dialog.kind == "greeting", "SelectActiveQuest outside greeting")
@@ -1251,7 +1265,7 @@ return function(opts)
     local function talk(npc)
         closeDialog()
         dialog.npc = npc
-        if npc.id then npcID, npcName = npc.id, NpcDB.name(npc.id) end
+        if npc.id then npcID, npcName = npc.id, clientName("npcs", npc.id) end
         gossipOptions = npc.options or {}
         dialog.kind = npc.greeting and "greeting" or "gossip"
         fire(npc.greeting and "QUEST_GREETING" or "GOSSIP_SHOW")
@@ -1333,7 +1347,8 @@ return function(opts)
     local function accept(q)
         grindTo(QuestDB.requiredLevel(q))
         local objectives, names, types = QuestDB.objectives(q), {}, {}
-        local namers = { NpcDB.name, ObjectDB.name, ItemDB.name }
+        local namers = { function(id) return clientName("npcs", id) end, function(id) return clientName("objects", id) end,
+            function(id) return clientName("items", id) end }
         local kinds = { "monster", "object", "item" }
         for group = 1, 3 do
             for _, o in ipairs(objectives[group] or {}) do
@@ -1387,7 +1402,7 @@ return function(opts)
         local g = GO and GO:Of(step)
         if not g then return end
         for _, p in ipairs(g.kill or {}) do
-            for _ = 1, p[2] do fire("CHAT_MSG_COMBAT_XP_GAIN", xpMessage(NpcDB.name(p[1]) or "?")) end
+            for _ = 1, p[2] do fire("CHAT_MSG_COMBAT_XP_GAIN", xpMessage(clientName("npcs", p[1]) or "?")) end
         end
         for _, key in ipairs({ "collect", "buy" }) do
             for _, p in ipairs(g[key] or {}) do giveItem(p[1], p[2]) end

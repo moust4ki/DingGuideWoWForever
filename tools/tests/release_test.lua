@@ -42,10 +42,12 @@ T.test(".pkgmeta: the Ding folder becomes the root of the zip, without tools or 
         "changelog written by hand")
 end)
 
-T.test("the changelog starts with the latest version and mentions QuestieDB", function()
+T.test("the changelog starts with the latest version and says what to install", function()
     local log = read("CHANGELOG.md")
     T.ok(log:find("^# Changelog\n\n## v%d+%.%d+%.%d+"), "one entry per version, the latest at the top")
-    T.ok(log:find("QuestieDB", 1, true), "reminds to install QuestieDB")
+    -- Since v1.3.0 Ding carries its own data: the top entry says QuestieDB is no longer needed.
+    local top = log:match("^# Changelog\n\n(## v.-)\n## v") or log
+    T.ok(top:find("QuestieDB is no longer needed", 1, true), "says QuestieDB is no longer needed")
 end)
 
 T.test("publishing: only on a tag, after the tests and the zip check", function()
