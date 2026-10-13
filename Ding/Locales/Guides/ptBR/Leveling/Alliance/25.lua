@@ -45,6 +45,14 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a25-stranglethorn-vale", {
         "Prepare-se: esses oponentes são de elite de nível 38. Os Crocoliscos de Água Salgada surgem nos mesmos lugares.",
     ["The object is a table made of stone. Your targets sit below the water's surface. Drag him up until he breaks the surface."] =
         "O objeto é uma mesa de pedra. Seus alvos ficam abaixo da superfície da água. Puxe-o para cima até ele chegar à superfície.",
+    ["You need it later for \"Chapter I\": keep it in the bank to free a bag slot."] =
+        "Você vai precisar dele mais tarde para \"Capítulo I\": guarde-o no banco para liberar espaço nas bolsas.",
+    ["You need it later for \"Chapter II\": keep it in the bank to free a bag slot."] =
+        "Você vai precisar dele mais tarde para \"Capítulo II\": guarde-o no banco para liberar espaço nas bolsas.",
+    ["You need it later for \"Chapter III\": keep it in the bank to free a bag slot."] =
+        "Você vai precisar dele mais tarde para \"Capítulo III\": guarde-o no banco para liberar espaço nas bolsas.",
+    ["You need it later for \"Chapter IV\": keep it in the bank to free a bag slot."] =
+        "Você vai precisar dele mais tarde para \"Capítulo IV\": guarde-o no banco para liberar espaço nas bolsas.",
     ["The NPC stands on the top tier of the pier."] =
         "O NPC fica no nível mais alto do píer.",
     ["Follow the shoreline"] =

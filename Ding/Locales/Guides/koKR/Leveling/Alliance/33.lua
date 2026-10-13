@@ -51,6 +51,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a33-searing-gorge", {
         "길을 올라 토륨 조합 거점으로 들어가세요",
     ["The NPC is indoors."] =
         "NPC는 건물 안에 있습니다.",
+    ["The NPC is indoors. You need it later for \"A Taste of Flame\": keep it in the bank to free a bag slot."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"화염의 맛\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["The NPC is indoors, one floor up."] =
         "NPC는 건물 안 한 층 위에 있습니다.",
 })

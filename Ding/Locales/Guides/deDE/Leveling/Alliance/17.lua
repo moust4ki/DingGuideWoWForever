@@ -13,6 +13,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a17-stranglethorn-vale", {
         "Steig ins oberste Stockwerk des Gebäudes.",
     ["The NPC is upstairs, out on the balcony."] =
         "Der NPC ist oben, draußen auf dem Balkon.",
+    ["You need it later for \"Parts for Kravel\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Teile für Kravel“: Lass es in der Bank, das spart einen Taschenplatz.",
     ["The NPC stands on the top tier of the pier. The NPC is indoors."] =
         "Der NPC steht auf der obersten Ebene des Piers. Der NPC ist drinnen.",
     ["Fly to Booty Bay"] =
@@ -41,6 +43,16 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a17-stranglethorn-vale", {
         "Lass dich hier absichtlich von den Monstern töten. So früh kostet dich der Tod nichts. Das ist der schnellste Weg hinüber.",
     ["Get yourself killed, then resurrect with the spirit healer"] =
         "Lass dich töten, dann lass dich vom Geistheiler wiederbeleben",
+    ["You need them later for \"Goblin Sponsorship\" and \"The Hidden Key\": keep them in the bank to free bag slots."] =
+        "Du brauchst sie später für „Goblin-Sponsoring“ und „Der versteckte Schlüssel“: Lass sie in der Bank, das spart Taschenplätze.",
+    ["You need it later for \"Chapter I\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Kapitel I“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need it later for \"Chapter II\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Kapitel II“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need it later for \"Chapter III\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Kapitel III“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need it later for \"Chapter IV\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Kapitel IV“: Lass es in der Bank, das spart einen Taschenplatz.",
     ["The NPC is indoors."] =
         "Der NPC ist drinnen.",
     ["Go into the mine"] =

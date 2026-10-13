@@ -100,7 +100,7 @@ Ding.RegisterGuide({
         { go = { 1443, 67.44, 15.7 }, text = "Head uphill into Nijel's Point" }, -- level 37
         { turnin = 1459 }, -- level 37
         { talk = 7799, bank = 6245, -- level 37
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need it later for \"The Karnitol Shipwreck\": keep it in the bank to free a bag slot." },
         { talk = 7799, collect = { { 5800, 1 }, { 5852, 1 } }, spots = { { 1446, 52.35, 28.88 } }, -- level 37
           note = "The NPC is indoors." },
         { turnin = 1112 }, -- level 37

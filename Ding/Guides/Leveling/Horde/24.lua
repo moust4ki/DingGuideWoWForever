@@ -15,7 +15,7 @@ Ding.RegisterGuide({
         { talk = 7799, collect = { { 8523, 1 }, { 8524, 1 } }, -- level 42
           note = "The NPC is indoors." },
         { talk = 7799, bank = { 5945, 5862 }, -- level 42
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need them later for \"Deadmire\" and \"Safety First\": keep them in the bank to free bag slots." },
         { accept = 992, elite = true }, -- level 42
         { accept = 654, useitem = 8524, sticky = 654, -- level 42
           note = "Accepting this starts a 2 hour countdown. The timer keeps running while you're offline. Take this quest only when you have time to spare." },

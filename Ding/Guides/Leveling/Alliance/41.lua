@@ -16,7 +16,7 @@ Ding.RegisterGuide({
         { talk = 2461, collect = { { 15788, 1 }, { 15790, 1 }, { 12891, 1 }, { 12896, 1 }, { 12897, 1 }, { 12898, 1 }, { 12899, 1 } }, spots = { { 1455, 35.87, 60.19 } }, -- level 57
           note = "The NPC is indoors." },
         { talk = 2461, bank = 12438, -- level 57
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need it later for \"Felnok Steelspring\": keep it in the bank to free a bag slot." },
         { go = { 1455, 44.45, 49.53 }, text = "Stay on the trail" }, -- level 57
         { turnin = 3701 }, -- level 57
         { sethearth = "Southshore", talk = 2352, -- level 57

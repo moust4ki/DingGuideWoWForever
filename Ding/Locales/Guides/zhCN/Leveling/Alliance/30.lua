@@ -31,6 +31,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a30-tanaris", {
         "进入洞穴",
     ["Take the trail downhill"] =
         "沿小路下山",
+    ["The NPC is indoors. You need it later for \"Deliver to MacKinley\": keep it in the bank to free a bag slot."] =
+        "NPC在室内。之后的任务“给马克基雷的货物”需要它：先存进银行，腾出背包空间。",
     ["Your objective lies in a little cavern."] =
         "目标在一个小洞穴里。",
     ["Search the sand mounds."] =

@@ -29,6 +29,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a34-blasted-lands-and-burning-st
         "Dieses Ziel wandert umher, also such die Umgebung ab. Der NPC ist drinnen.",
     ["The NPC is indoors. Hold on to it; a task in Un'Goro Crater calls for it later."] =
         "Der NPC ist drinnen. Behalte es; eine Aufgabe im Krater von Un'Goro braucht es später.",
+    ["The NPC is indoors. You need them later for \"Chasing A-Me 01\" and \"Arcane Runes\": keep them in the bank to free bag slots."] =
+        "Der NPC ist drinnen. Du brauchst sie später für „Chasing A-Me 01“ und „Arkane Runen“: Lass sie in der Bank, das spart Taschenplätze.",
     ["8 different quests will ask for it. You hand in 60 pieces of cloth for every quest. The NPC is indoors."] =
         "8 verschiedene Quests verlangen es. Für jede Quest gibst du 60 Stoff ab. Der NPC ist drinnen.",
     ["The NPC patrols a long route; look along it."] =

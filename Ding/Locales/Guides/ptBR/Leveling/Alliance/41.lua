@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a41-western-and-eastern-plaguela
         "Altaforja primeiro, depois as Terras Pestilentas: Acampamento Ventogelante e Capela Esperança da Luz.",
     ["The NPC is indoors."] =
         "O NPC está lá dentro.",
+    ["The NPC is indoors. You need it later for \"Felnok Steelspring\": keep it in the bank to free a bag slot."] =
+        "O NPC está lá dentro. Você vai precisar dele mais tarde para \"Felnok Molaço\": guarde-o no banco para liberar espaço nas bolsas.",
     ["Stay on the trail"] =
         "Siga a trilha",
     ["Check each of the two floors indoors."] =

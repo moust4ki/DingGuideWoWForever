@@ -47,6 +47,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h25-feralas", {
         "Durchquere den Durchgang",
     ["The robot sits in the open ground linking the cave and the tunnel."] =
         "Der Roboter steht auf dem offenen Gelände zwischen Höhle und Tunnel.",
+    ["The NPC is indoors. You need them later for \"Another Message to the Wildhammer\", \"Screecher Spirits\" and \"The Super Egg-O-Matic\": keep them in the bank to free bag slots."] =
+        "Der NPC ist drinnen. Du brauchst sie später für „Eine weitere Botschaft an die Wildhammer“, „Kreischergeister“ und „Der Super-Ei-O-Mat“: Lass sie in der Bank, das spart Taschenplätze.",
     ["This NPC is found down in the Cleft of Shadow."] =
         "Dieser NPC ist unten in der Kluft der Schatten.",
     ["The quest giver waits in the tent. This NPC is found down in the Cleft of Shadow."] =
@@ -59,6 +61,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h25-feralas", {
         "Der NPC ist drinnen, ein Stockwerk höher.",
     ["If some pages are unavailable, go on without them. The NPC is indoors."] =
         "Fehlen manche Seiten, mach ohne sie weiter. Der NPC ist drinnen.",
+    ["The NPC is indoors. You need it later for \"Return to Witch Doctor Uzer'i\": keep it in the bank to free a bag slot."] =
+        "Der NPC ist drinnen. Du brauchst es später für „Kehrt zu Hexendoktor Uzer'i zurück“: Lass es in der Bank, das spart einen Taschenplatz.",
     ["The NPC is indoors. You need Chapter I as well as Chapter II."] =
         "Der NPC ist drinnen. Du brauchst Kapitel I und auch Kapitel II.",
 })

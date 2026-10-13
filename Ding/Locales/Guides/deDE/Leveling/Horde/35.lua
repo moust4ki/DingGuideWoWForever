@@ -47,6 +47,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h35-felwood-and-winterspring", {
         "Stell dein Tier beim Stallmeister in den Stall.",
     ["You will tame a short-term pet shortly. You pick up Claw (Rank 7) here."] =
         "Du zähmst gleich ein Tier für kurze Zeit. Hier lernst du Klaue (Rang 7).",
+    ["The NPC is indoors. You need them later for \"Delivery to Magatha\" and \"Seeping Corruption\": keep them in the bank to free bag slots."] =
+        "Der NPC ist drinnen. Du brauchst sie später für „Lieferung an Magatha“ und „Verbreitete Verderbnis“: Lass sie in der Bank, das spart Taschenplätze.",
     ["Flight master at Everlook"] =
         "Flugmeister der Ewigen Warte",
     ["Tame a beast here to learn the next rank of Claw"] =
@@ -57,6 +59,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h35-felwood-and-winterspring", {
         "Der NPC ist oben, draußen auf dem Balkon.",
     ["The NPC is indoors. Hold on to it for a task in Un'Goro Crater later."] =
         "Der NPC ist drinnen. Behalte es für eine spätere Aufgabe im Krater von Un'Goro.",
+    ["The NPC is indoors. You need it later for \"Jes'rimon's Payment to Jediga\": keep it in the bank to free a bag slot."] =
+        "Der NPC ist drinnen. Du brauchst es später für „Jes'rimons Bezahlung für Jediga“: Lass es in der Bank, das spart einen Taschenplatz.",
     ["Get your companion back from the stable master."] =
         "Hol dein Tier beim Stallmeister ab.",
     ["Release the short-term pet you tamed."] =

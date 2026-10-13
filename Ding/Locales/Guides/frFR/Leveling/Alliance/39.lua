@@ -57,6 +57,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a39-winterspring-and-felwood", {
         "Les cibles sont 3 furbolgs blancs qui se déplacent en groupe. La cible patrouille sur un long trajet le long de la route. Passe à la suite si tu ne l'as pas vue au bout du sentier.",
     ["Be ready for a fight right away."] =
         "Prépare-toi à combattre tout de suite.",
+    ["The NPC is indoors. You need them later for \"Aquementas\", \"The Everlook Report\", \"Duke Nicholas Zverenhoff\" and \"Troubled Spirits of Kel'Theril\": keep them in the bank to free bag slots."] =
+        "Le PNJ est à l'intérieur. Tu en auras besoin plus tard pour « Aquementas », « Le rapport de Long-guet », « Le duc Nicholas Zverenhoff » et « Les Esprits troublés de Kel'Theril » : garde-les à la banque pour libérer de la place dans tes sacs.",
     ["For this quest you guard an NPC on the move. If she is absent, wait for her to reappear."] =
         "Dans cette quête, tu protèges un PNJ qui se déplace. Si elle n'est pas là, attends qu'elle réapparaisse.",
     ["Let the conversation play out. Escort Ranshalla and guard her. Wait until the foes hit her before you strike."] =

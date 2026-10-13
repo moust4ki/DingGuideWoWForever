@@ -51,6 +51,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a33-searing-gorge", {
         "Sube por el sendero hasta el Puesto del Torio",
     ["The NPC is indoors."] =
         "El PNJ está dentro.",
+    ["The NPC is indoors. You need it later for \"A Taste of Flame\": keep it in the bank to free a bag slot."] =
+        "El PNJ está dentro. Lo necesitarás más adelante para «Un sabor a llamarada»: déjalo en el banco para liberar un hueco en las bolsas.",
     ["The NPC is indoors, one floor up."] =
         "El PNJ está dentro, un piso más arriba.",
 })

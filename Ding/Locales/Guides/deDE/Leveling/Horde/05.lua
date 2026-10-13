@@ -27,6 +27,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h05-the-barrens-and-stonetalon-m
         "Durchsuche Stapel brauner Kisten. Die Ziele sind auf mehrere Stellen verteilt.",
     ["Flight master in Ratchet"] =
         "Flugmeister in Ratschet",
+    ["You need them later for \"The Disruption Ends\" and \"Supplies for the Crossroads\": keep them in the bank to free bag slots."] =
+        "Du brauchst sie später für „Das Ende der Unterbrechungen“ und „Vorräte für Crossroads“: Lass sie in der Bank, das spart Taschenplätze.",
     ["The target is a troll. This one roams, so scan the surrounding area."] =
         "Das Ziel ist ein Troll. Dieses Ziel wandert umher, also such die Umgebung ab.",
     ["The target is a human in a crimson long coat. This one roams, so scan the surrounding area. The targets are spread over several spots."] =
@@ -51,6 +53,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h05-the-barrens-and-stonetalon-m
         "Steig den Weg hinauf",
     ["With the coming hand-ins, this gets you to level 18."] =
         "Mit den kommenden Abgaben bringt dich das auf Stufe 18.",
+    ["You need it later for \"Chen's Empty Keg\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Chens leeres Fässchen“: Lass es in der Bank, das spart einen Taschenplatz.",
     ["This NPC is found down in the Cleft of Shadow."] =
         "Dieser NPC ist unten in der Kluft der Schatten.",
     ["The NPC stands on the highest level of this structure."] =

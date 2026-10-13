@@ -11,6 +11,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h29-the-hinterlands", {
         "여기서 얻어 두면 운고로 분화구 진행이 빨라집니다. NPC는 건물 안에 있습니다.",
     ["The NPC is indoors."] =
         "NPC는 건물 안에 있습니다.",
+    ["The NPC is indoors. You need them later for \"The Stone Circle\" and \"Crystals of Power\": keep them in the bank to free bag slots."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"돌무리\", \"마력의 수정\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["Take the trail downhill"] =
         "길을 따라 내려가세요",
     ["Buy plenty of arrows or bullets. Stock up first: nobody in the Hinterlands sells arrows or bullets for level 40."] =
@@ -57,4 +59,6 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h29-the-hinterlands", {
         "샤드라알로를 나가세요",
     ["Wait for the talking to finish"] =
         "대화가 끝날 때까지 기다리세요",
+    ["The NPC is indoors. You need them later for \"Ripple Delivery\", \"Whiskey Slim's Lost Grog\" and \"Seeping Corruption\": keep them in the bank to free bag slots."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"리플 배달\", \"위스키 슬림의 잃어버린 술병\", \"스며드는 타락\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
 })

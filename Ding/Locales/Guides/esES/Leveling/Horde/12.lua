@@ -3,8 +3,8 @@
 Ding.RegisterGuideTranslation("esES", "leveling-h12-hillsbrad-foothills", {
     ["Hillsbrad Foothills (30-32)"] =
         "Laderas de Trabalomas (30-32)",
-    ["Undercity first, then Hillsbrad Foothills: Tarren Mill."] =
-        "Primero Entrañas y luego las Laderas de Trabalomas: Molino Tarren.",
+    ["Undercity first, then Hillsbrad Foothills: Tarren Mill. You need it later for \"The Swarm Grows\": keep it in the bank to free a bag slot."] =
+        "Primero Entrañas y luego las Laderas de Trabalomas: Molino Tarren. Lo necesitarás más adelante para «El enjambre crece»: déjalo en el banco para liberar un hueco en las bolsas.",
     ["Learn Cooking from the trainer"] =
         "Aprende Cocina con el instructor",
     ["You'll need this to pick up an upcoming quest."] =

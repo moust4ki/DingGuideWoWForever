@@ -67,6 +67,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a18-desolace", {
         "집 옆의 황갈색 자루를 찾으세요. 일부는 사용할 수 없습니다. 마그람일족 조련사는 하이에나 2마리를 데리고 순찰합니다. 피하세요.",
     ["The foes here are scorpions. Basilisks compete for the same spawn points."] =
         "여기의 적은 전갈입니다. 바실리스크와 같은 생성 위치를 두고 경쟁합니다.",
+    ["The NPC is indoors. You need it later for \"The Karnitol Shipwreck\": keep it in the bank to free a bag slot."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"카니톨 난파선\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["Wait for the talking to finish"] =
         "대화가 끝날 때까지 기다리세요",
 })

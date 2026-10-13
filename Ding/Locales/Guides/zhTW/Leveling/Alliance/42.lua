@@ -19,6 +19,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a42-winterspring", {
         "放棄你馴服的臨時寵物。",
     ["The NPC is indoors."] =
         "NPC在室內。",
+    ["The NPC is indoors. You need it later for \"Glyphed Oaken Branch\": keep it in the bank to free a bag slot."] =
+        "NPC在室內。之後的任務「雕文橡木枝」需要它：先存進銀行，空出背包空間。",
     ["The quest wants yetis; seek them out. Targets are in the cavern and around its entrance too."] =
         "任務需要雪人；去找牠們。目標在洞穴裡，入口周圍也有。",
     ["Head out of the cave"] =

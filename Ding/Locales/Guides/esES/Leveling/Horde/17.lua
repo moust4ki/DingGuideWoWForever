@@ -5,10 +5,20 @@ Ding.RegisterGuideTranslation("esES", "leveling-h17-dustwallow-marsh", {
         "Marjal Revolcafango (37-38)",
     ["Orgrimmar first, then Dustwallow Marsh: Brackenwall Village. Hold on to it, an upcoming quest uses it."] =
         "Primero Orgrimmar y luego el Marjal Revolcafango: Poblado Murohelecho. Guárdalo, lo usa una misión próxima.",
-    ["The NPC is indoors."] =
-        "El PNJ está dentro.",
+    ["The NPC is indoors. You need it later for \"Caught!\": keep it in the bank to free a bag slot."] =
+        "El PNJ está dentro. Lo necesitarás más adelante para «Atrapado»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need it later for \"Chapter I\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Capítulo I»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need it later for \"Chapter II\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Capítulo II»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need it later for \"Chapter III\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Capítulo III»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need it later for \"Chapter IV\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Capítulo IV»: déjalo en el banco para liberar un hueco en las bolsas.",
     ["Climb the steps"] =
         "Sube los escalones",
+    ["The NPC is indoors."] =
+        "El PNJ está dentro.",
     ["A lengthy stretch of quests is coming up. You won't find an ammunition seller. The NPC is indoors."] =
         "Se acerca un largo tramo de misiones. No encontrarás vendedor de munición. El PNJ está dentro.",
     ["The quest starts from a small piece of metal."] =
@@ -57,6 +67,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h17-dustwallow-marsh", {
         "Guárdalo: lo pide la cadena de misiones del arma de Torbellino del guerrero.",
     ["Get these for simple Badlands turn-ins ahead. The NPC is indoors."] =
         "Consíguelos para entregas fáciles en las Tierras Inhóspitas más adelante. El PNJ está dentro.",
+    ["You need them later for \"The Black Shield\" and \"Into the Field\": keep them in the bank to free bag slots."] =
+        "Los necesitarás más adelante para «El escudo negro» y «In situ»: déjalos en el banco para liberar huecos en las bolsas.",
     ["Stay clear of Refuge Point."] =
         "Evita el Refugio de la Zaga.",
 })

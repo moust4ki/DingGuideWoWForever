@@ -5,10 +5,20 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h17-dustwallow-marsh", {
         "Marécage d'Âprefange (37-38)",
     ["Orgrimmar first, then Dustwallow Marsh: Brackenwall Village. Hold on to it, an upcoming quest uses it."] =
         "Orgrimmar d'abord, puis le marécage d'Âprefange : le village de Mur-de-Fougères. Garde-le, une prochaine quête s'en sert.",
-    ["The NPC is indoors."] =
-        "Le PNJ est à l'intérieur.",
+    ["The NPC is indoors. You need it later for \"Caught!\": keep it in the bank to free a bag slot."] =
+        "Le PNJ est à l'intérieur. Tu en auras besoin plus tard pour « Piégé ! » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need it later for \"Chapter I\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Chapitre I » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need it later for \"Chapter II\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Chapitre II » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need it later for \"Chapter III\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Chapitre III » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need it later for \"Chapter IV\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Chapitre IV » : garde-le à la banque pour libérer une place dans tes sacs.",
     ["Climb the steps"] =
         "Monte les marches",
+    ["The NPC is indoors."] =
+        "Le PNJ est à l'intérieur.",
     ["A lengthy stretch of quests is coming up. You won't find an ammunition seller. The NPC is indoors."] =
         "Une longue série de quêtes arrive. Tu ne trouveras pas de vendeur de munitions. Le PNJ est à l'intérieur.",
     ["The quest starts from a small piece of metal."] =
@@ -57,6 +67,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h17-dustwallow-marsh", {
         "Garde-le : la suite de quêtes de guerrier de l'arme Tourbillon le demande.",
     ["Get these for simple Badlands turn-ins ahead. The NPC is indoors."] =
         "Prends-les pour des rendus faciles plus loin, dans les Terres ingrates. Le PNJ est à l'intérieur.",
+    ["You need them later for \"The Black Shield\" and \"Into the Field\": keep them in the bank to free bag slots."] =
+        "Tu en auras besoin plus tard pour « Le Bouclier noir » et « Sur le terrain » : garde-les à la banque pour libérer de la place dans tes sacs.",
     ["Stay clear of Refuge Point."] =
         "Tiens-toi loin du Refuge de l'Ornière.",
 })

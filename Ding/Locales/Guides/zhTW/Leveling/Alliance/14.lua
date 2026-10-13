@@ -19,6 +19,12 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a14-duskwood-and-stranglethorn-v
         "NPC站在水邊。",
     ["The NPC is indoors, one floor up."] =
         "NPC在室內的樓上一層。",
+    ["The NPC is indoors. You need it later for \"Soothing Turtle Bisque\": keep it in the bank to free a bag slot."] =
+        "NPC在室內。之後的任務「海龜湯」需要它：先存進銀行，空出背包空間。",
+    ["You need it later for \"The Brassbolts Brothers\": keep it in the bank to free a bag slot."] =
+        "之後的任務「防撞頭盔」需要它：先存進銀行，空出背包空間。",
+    ["You need it later for \"A Noble Brew\": keep it in the bank to free a bag slot."] =
+        "之後的任務「名釀」需要它：先存進銀行，空出背包空間。",
     ["This one roams, so scan the surrounding area."] =
         "這個會四處走動，留意周圍一帶。",
     ["The NPC patrols the road; look along it."] =

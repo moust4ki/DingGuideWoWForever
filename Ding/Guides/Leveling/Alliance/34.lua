@@ -57,12 +57,12 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { sethearth = "Ironforge", talk = 5111, -- level 51
           note = "The NPC is indoors." },
-        { talk = 8720, unbank = 10561, -- level 51
+        { talk = 8720, collect = { { 10561, 1 } }, -- level 51
           note = "The NPC is indoors. Hold on to it; a task in Un'Goro Crater calls for it later." },
         { talk = 2461, collect = { { 9328, 1 }, { 9330, 1 }, { 10819, 15 } }, spots = { { 1455, 35.87, 60.19 } }, -- level 51
           note = "The NPC is indoors." },
         { talk = 2461, bank = { 10561, 10445 }, -- level 51
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need them later for \"Chasing A-Me 01\" and \"Arcane Runes\": keep them in the bank to free bag slots." },
         { talk = 8720, collect = { { 2592, 120 }, { 4306, 120 }, { 4338, 120 }, { 14047, 120 } }, -- level 51
           note = "8 different quests will ask for it. You hand in 60 pieces of cloth for every quest. The NPC is indoors." },
         { accept = 7802, when = { item = { 2592, 60 } } }, -- level 51

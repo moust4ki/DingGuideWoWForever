@@ -75,6 +75,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h39-western-and-eastern-plaguela
         "대상은 쇠스랑을 든 구울입니다. 이 대상은 돌아다니므로 주변을 살펴보세요. 이 자리에 나타날 수 있습니다.",
     ["You can also take it out of your bank. The NPC is indoors."] =
         "은행에서 꺼내도 됩니다. NPC는 건물 안에 있습니다.",
+    ["The NPC is indoors. You need it later for \"Glyphed Oaken Branch\": keep it in the bank to free a bag slot."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"문자가 새겨진 떡갈나무 가지\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["The NPC stands on the highest level of this structure."] =
         "NPC는 이 건물의 꼭대기 층에 서 있습니다.",
     ["This NPC is found down in the Cleft of Shadow."] =

@@ -35,8 +35,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a37-feralas-and-azshara", {
         "Termina la misión The Videre Elixir. Guarda el elixir en tus bolsas; no te lo bebas nunca. Te matará.",
     ["The NPC is indoors."] =
         "El PNJ está dentro.",
-    ["Put these items in your bank vault."] =
-        "Guarda estos objetos en el banco.",
+    ["Put these items in your bank vault. You need them later for \"The Stone Circle\", \"Felbound Ancients\", \"A Little Slime Goes a Long Way\", \"Moontouched Wildkin\" and \"Meet at the Grave\": keep them in the bank to free bag slots."] =
+        "Guarda estos objetos en el banco. Los necesitarás más adelante para «El Círculo de Piedras», «Los Ancestros corrompidos», «Un largo camino para unas babosas», «Lechúcico Lunadón» y «Encuentro en la tumba»: déjalos en el banco para liberar huecos en las bolsas.",
     ["The quest giver waits on the hilltop."] =
         "El PNJ de la misión espera en lo alto de la colina.",
     ["The targets are Myrmidons and Sirens. Hunt naga."] =

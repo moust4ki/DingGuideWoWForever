@@ -81,8 +81,12 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a28-feralas-and-tanaris", {
         "Laisse la conversation se dérouler. Tes cibles sont dans la grotte.",
     ["The object is indoors, one floor up."] =
         "L'objet est à l'intérieur, un étage plus haut.",
+    ["You need them later for \"The Borrower\", \"Screecher Spirits\", \"The Super Egg-O-Matic\" and \"Rhapsody's Kalimdor Kocktail\": keep them in the bank to free bag slots."] =
+        "Tu en auras besoin plus tard pour « Le prêt », « Esprits de Hurleurs », « Le Super-Oeuf-O-Matic » et « Le Kocktail Kalimdor de Rhapsody » : garde-les à la banque pour libérer de la place dans tes sacs.",
     ["Getting it here speeds up Un'Goro Crater. The NPC is indoors."] =
         "L'obtenir ici accélère le cratère d'Un'Goro. Le PNJ est à l'intérieur.",
+    ["You need them later for \"Crystals of Power\": keep them in the bank to free bag slots."] =
+        "Tu en auras besoin plus tard pour « Cristaux de puissance » : garde-les à la banque pour libérer de la place dans tes sacs.",
     ["Step into the cavern within the trunk"] =
         "Entre dans la cavité du tronc",
     ["The spot is on the lower floor of the hollow tree."] =

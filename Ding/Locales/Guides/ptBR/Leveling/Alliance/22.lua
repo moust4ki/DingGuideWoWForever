@@ -7,6 +7,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a22-dustwallow-marsh", {
         "Ventobravo primeiro, depois o Pântano Vadeoso: Ilha de Theramore. Guarde-o, uma missão mais adiante usa isso.",
     ["The NPC is indoors."] =
         "O NPC está lá dentro.",
+    ["The NPC is indoors. You need it later for \"Sunken Treasure\": keep it in the bank to free a bag slot."] =
+        "O NPC está lá dentro. Você vai precisar dele mais tarde para \"Tesouro submerso\": guarde-o no banco para liberar espaço nas bolsas.",
     ["Head indoors"] =
         "Vá para dentro",
     ["Stay on the trail"] =

@@ -79,6 +79,10 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a11-duskwood-and-redridge-mounta
         "Nesta missão, você protege um NPC em movimento. Se o NPC não estiver lá, espere até ele reaparecer. Seus alvos estão dentro da caverna.",
     ["Let the conversation play out. Keep Corporal Keeshan safe during the escort. At the cave's mouth, draw foes to him with care."] =
         "Deixe a conversa terminar. Proteja o Cabo Keeshan durante a escolta. Na entrada da caverna, atraia os inimigos até ele com cuidado.",
+    ["You need it later for \"The Legend of Stalvan\": keep it in the bank to free a bag slot."] =
+        "Você vai precisar dele mais tarde para \"A lenda de Galvão\": guarde-o no banco para liberar espaço nas bolsas.",
+    ["You need it later for \"Juice Delivery\": keep it in the bank to free a bag slot."] =
+        "Você vai precisar dele mais tarde para \"Alguém pediu um suco?\": guarde-o no banco para liberar espaço nas bolsas.",
     ["The NPC patrols a long route; look along it."] =
         "O NPC patrulha uma rota longa; procure ao longo dela.",
     ["It is the dungeon's 4th boss."] =

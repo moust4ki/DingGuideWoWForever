@@ -27,8 +27,12 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h22-tanaris", {
         "Ein stärkerer Gegner steht bevor.",
     ["Grab the loot."] =
         "Schnapp dir die Beute.",
+    ["The NPC is indoors. You need them later for \"Tanaris Field Sampling\" and \"Screecher Spirits\": keep them in the bank to free bag slots."] =
+        "Der NPC ist drinnen. Du brauchst sie später für „Tanaris-Feldproben“ und „Kreischergeister“: Lass sie in der Bank, das spart Taschenplätze.",
     ["Wait for the talking to finish"] =
         "Warte, bis das Gespräch endet",
     ["Hold on until Rizzle has fled. The object is indoors."] =
         "Warte, bis Rizzle geflohen ist. Das Objekt ist drinnen.",
+    ["The NPC is indoors. You need it later for \"Back to Booty Bay\": keep it in the bank to free a bag slot."] =
+        "Der NPC ist drinnen. Du brauchst es später für „Zurück nach Booty Bay“: Lass es in der Bank, das spart einen Taschenplatz.",
 })

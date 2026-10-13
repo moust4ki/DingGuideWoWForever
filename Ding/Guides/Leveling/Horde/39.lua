@@ -206,7 +206,7 @@ Ding.RegisterGuide({
         { talk = 3309, collect = { { 10679, 1 } }, spots = { { 1454, 49.62, 69.06 } }, -- level 58
           note = "The NPC is indoors." },
         { talk = 3309, bank = 12663, -- level 58
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need it later for \"Glyphed Oaken Branch\": keep it in the bank to free a bag slot." },
         { accept = 7826, when = { item = { 2592, 60 } }, -- level 58
           note = "The NPC is indoors." },
         { turnin = 7826, when = { item = { 2592, 60 }, ready = 7826 } }, -- level 58

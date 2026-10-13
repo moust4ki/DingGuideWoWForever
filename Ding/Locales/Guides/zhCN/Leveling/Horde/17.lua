@@ -5,10 +5,20 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h17-dustwallow-marsh", {
         "尘泥沼泽 (37-38)",
     ["Orgrimmar first, then Dustwallow Marsh: Brackenwall Village. Hold on to it, an upcoming quest uses it."] =
         "先到奥格瑞玛，再到尘泥沼泽：蕨墙村。留着它，接下来的任务要用。",
-    ["The NPC is indoors."] =
-        "NPC在室内。",
+    ["The NPC is indoors. You need it later for \"Caught!\": keep it in the bank to free a bag slot."] =
+        "NPC在室内。之后的任务“被锁起来的矮人”需要它：先存进银行，腾出背包空间。",
+    ["You need it later for \"Chapter I\": keep it in the bank to free a bag slot."] =
+        "之后的任务“荆棘谷的青山 - 第一章”需要它：先存进银行，腾出背包空间。",
+    ["You need it later for \"Chapter II\": keep it in the bank to free a bag slot."] =
+        "之后的任务“荆棘谷的青山 - 第二章”需要它：先存进银行，腾出背包空间。",
+    ["You need it later for \"Chapter III\": keep it in the bank to free a bag slot."] =
+        "之后的任务“荆棘谷的青山 - 第三章”需要它：先存进银行，腾出背包空间。",
+    ["You need it later for \"Chapter IV\": keep it in the bank to free a bag slot."] =
+        "之后的任务“荆棘谷的青山 - 第四章”需要它：先存进银行，腾出背包空间。",
     ["Climb the steps"] =
         "爬上台阶",
+    ["The NPC is indoors."] =
+        "NPC在室内。",
     ["A lengthy stretch of quests is coming up. You won't find an ammunition seller. The NPC is indoors."] =
         "接下来是一长段任务。这里找不到弹药商人。NPC在室内。",
     ["The quest starts from a small piece of metal."] =
@@ -57,6 +67,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h17-dustwallow-marsh", {
         "留着它：战士的旋风武器任务线需要它。",
     ["Get these for simple Badlands turn-ins ahead. The NPC is indoors."] =
         "拿上这些，之后在荒芜之地可以轻松交任务。NPC在室内。",
+    ["You need them later for \"The Black Shield\" and \"Into the Field\": keep them in the bank to free bag slots."] =
+        "之后的任务“黑色盾牌”和“进入沙漠”需要它们：先存进银行，腾出背包空间。",
     ["Stay clear of Refuge Point."] =
         "避开避难谷地。",
 })

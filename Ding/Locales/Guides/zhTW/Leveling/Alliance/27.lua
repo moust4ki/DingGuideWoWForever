@@ -19,4 +19,6 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a27-tanaris", {
         "這裡的目標是人類。喜歡的話，這時去刷地城也是不錯的選擇。在加基森每交付一組5個可獲得380點經驗值。",
     ["Hunt the red-feathered birds. Hyenas also use these spawn spots."] =
         "獵殺紅色羽毛的鳥。土狼也會使用這些重生點。",
+    ["The NPC is indoors. You need them later for \"Report Back to Fizzlebub\" and \"Rhapsody's Kalimdor Kocktail\": keep them in the bank to free bag slots."] =
+        "NPC在室內。之後的任務「向菲茲巴布報告」和「拉普索迪的卡利姆多雞尾酒」需要它們：先存進銀行，空出背包空間。",
 })

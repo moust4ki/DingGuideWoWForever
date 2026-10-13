@@ -37,4 +37,6 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a29-the-hinterlands", {
         "打怪直到爐石冷卻完畢",
     ["Stay away from Gammerita. The quarry: a tough elite tortoise, azure-shelled. This one roams, so scan the surrounding area."] =
         "遠離加莫里塔。目標：一隻強悍的精英海龜，龜殼是天藍色。這個會四處走動，留意周圍一帶。",
+    ["The NPC is indoors. You need them later for \"Rhapsody's Tale\", \"The Super Snapper FX\", \"Whiskey Slim's Lost Grog\" and \"Favored of Elune?\": keep them in the bank to free bag slots."] =
+        "NPC在室內。之後的任務「拉普索迪的故事」、「超級攝影器FX」、「威士忌斯利姆的酒」和「月神之獸？」需要它們：先存進銀行，空出背包空間。",
 })

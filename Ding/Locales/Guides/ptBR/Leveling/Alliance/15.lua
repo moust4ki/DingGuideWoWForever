@@ -27,6 +27,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a15-hillsbrad-foothills-and-arat
         "O NPC fica no topo da trilha. Isso te poupa tempo mais adiante.",
     ["Let the conversation play out. The NPC is indoors."] =
         "Deixe a conversa terminar. O NPC está lá dentro.",
+    ["The NPC is indoors. You need it later for \"Reassignment\": keep it in the bank to free a bag slot."] =
+        "O NPC está lá dentro. Você vai precisar dele mais tarde para \"Transferência\": guarde-o no banco para liberar espaço nas bolsas.",
     ["Stay on the trail"] =
         "Siga a trilha",
 })

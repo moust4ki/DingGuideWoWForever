@@ -21,6 +21,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h34-burning-steppes-and-azshara"
         "對黑色小龍使用這個物品。目標是有翅膀的小龍。每具屍體上方都漂浮著一顆紅色水晶。",
     ["The NPC is indoors."] =
         "NPC在室內。",
+    ["The NPC is indoors. You need it later for \"Felnok Steelspring\": keep it in the bank to free a bag slot."] =
+        "NPC在室內。之後的任務「菲諾克」需要它：先存進銀行，空出背包空間。",
     ["This NPC is found down in the Cleft of Shadow."] =
         "這個NPC在下方的暗影裂口裡。",
     ["The NPC stands on the highest level of this structure."] =

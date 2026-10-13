@@ -67,6 +67,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a18-desolace", {
         "Busca sacos de color tostado junto a las casas. Algunos no se pueden usar. Los Magram Pack Runners patrullan con 2 hienas de escolta; mantente lejos.",
     ["The foes here are scorpions. Basilisks compete for the same spawn points."] =
         "Aquí los enemigos son escorpiones. Los basiliscos comparten los mismos puntos de aparición.",
+    ["The NPC is indoors. You need it later for \"The Karnitol Shipwreck\": keep it in the bank to free a bag slot."] =
+        "El PNJ está dentro. Lo necesitarás más adelante para «El naufragio de Karnitol»: déjalo en el banco para liberar un hueco en las bolsas.",
     ["Wait for the talking to finish"] =
         "Espera a que termine la conversación",
 })

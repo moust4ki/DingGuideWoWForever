@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a41-western-and-eastern-plaguela
         "Primero Forjaz y luego las Tierras de la Peste: el Campamento del Orvallo y la Capilla de la Esperanza de la Luz.",
     ["The NPC is indoors."] =
         "El PNJ está dentro.",
+    ["The NPC is indoors. You need it later for \"Felnok Steelspring\": keep it in the bank to free a bag slot."] =
+        "El PNJ está dentro. Lo necesitarás más adelante para «Felnok Acerovera»: déjalo en el banco para liberar un hueco en las bolsas.",
     ["Stay on the trail"] =
         "Sigue el sendero",
     ["Check each of the two floors indoors."] =

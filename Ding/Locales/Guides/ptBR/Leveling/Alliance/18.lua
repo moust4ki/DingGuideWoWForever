@@ -67,6 +67,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a18-desolace", {
         "Procure sacos bege perto das casas. Alguns deles não podem ser usados. Os Pisoteiros Magram patrulham com 2 hienas de escolta; fique longe.",
     ["The foes here are scorpions. Basilisks compete for the same spawn points."] =
         "Os inimigos aqui são escorpiões. Basiliscos disputam os mesmos pontos de surgimento.",
+    ["The NPC is indoors. You need it later for \"The Karnitol Shipwreck\": keep it in the bank to free a bag slot."] =
+        "O NPC está lá dentro. Você vai precisar dele mais tarde para \"O naufrágio de Karnitol\": guarde-o no banco para liberar espaço nas bolsas.",
     ["Wait for the talking to finish"] =
         "Espere a conversa terminar",
 })

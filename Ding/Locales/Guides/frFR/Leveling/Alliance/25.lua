@@ -45,6 +45,14 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a25-stranglethorn-vale", {
         "Prépare-toi : ces adversaires sont des élites de niveau 38. Les Saltwater Crocolisks apparaissent aux mêmes endroits.",
     ["The object is a table made of stone. Your targets sit below the water's surface. Drag him up until he breaks the surface."] =
         "L'objet est une table de pierre. Tes cibles sont sous la surface de l'eau. Remonte-le jusqu'à ce qu'il sorte de l'eau.",
+    ["You need it later for \"Chapter I\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Chapitre I » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need it later for \"Chapter II\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Chapitre II » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need it later for \"Chapter III\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Chapitre III » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need it later for \"Chapter IV\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Chapitre IV » : garde-le à la banque pour libérer une place dans tes sacs.",
     ["The NPC stands on the top tier of the pier."] =
         "Le PNJ se tient sur le niveau supérieur du quai.",
     ["Follow the shoreline"] =

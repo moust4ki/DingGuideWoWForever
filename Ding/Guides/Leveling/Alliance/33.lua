@@ -92,7 +92,7 @@ Ding.RegisterGuide({
         { destroy = 10515 }, -- level 50
         { accept = 3481, elite = true }, -- level 50
         { turnin = 3481, elite = true }, -- level 50
-        { useitem = 10569, unbank = 10575, -- level 50
+        { collect = { { 10575, 1 } }, useitem = 10569, -- level 50
           note = "Keep it; a later quest calls for it." },
         { complete = 7728, -- level 50
           note = "Look by the lookout towers ringing the Cauldron." },
@@ -105,7 +105,7 @@ Ding.RegisterGuide({
         { talk = 15659, collect = { { 2592, 60 }, { 4306, 60 }, { 4338, 60 }, { 14047, 60 } }, -- level 51
           note = "The NPC is indoors." },
         { talk = 2455, bank = 10575, -- level 51
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need it later for \"A Taste of Flame\": keep it in the bank to free a bag slot." },
         { accept = 7791, when = { item = { 2592, 60 } }, -- level 51
           note = "The NPC is indoors, one floor up." },
         { turnin = 7791, when = { item = { 2592, 60 }, ready = 7791 } }, -- level 51

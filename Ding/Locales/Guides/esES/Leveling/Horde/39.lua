@@ -75,6 +75,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h39-western-and-eastern-plaguela
         "El objetivo es un necrófago armado con una horca. Este deambula, así que revisa los alrededores. Puede aparecer en este punto.",
     ["You can also take it out of your bank. The NPC is indoors."] =
         "También puedes sacarlo del banco. El PNJ está dentro.",
+    ["The NPC is indoors. You need it later for \"Glyphed Oaken Branch\": keep it in the bank to free a bag slot."] =
+        "El PNJ está dentro. Lo necesitarás más adelante para «Rama de roble con inscripciones»: déjalo en el banco para liberar un hueco en las bolsas.",
     ["The NPC stands on the highest level of this structure."] =
         "El PNJ está en el nivel más alto de esta estructura.",
     ["This NPC is found down in the Cleft of Shadow."] =

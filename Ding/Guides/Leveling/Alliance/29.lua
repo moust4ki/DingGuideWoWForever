@@ -48,6 +48,6 @@ Ding.RegisterGuide({
         { go = { 1425, 78.17, 68.15 }, elite = true, text = "Kill mobs until your hearthstone is off cooldown", -- level 48
           note = "Stay away from Gammerita. The quarry: a tough elite tortoise, azure-shelled. This one roams, so scan the surrounding area." },
         { talk = 7799, bank = { 6287, 9328, 9330, 3900, 10819 }, -- level 49
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need them later for \"Rhapsody's Tale\", \"The Super Snapper FX\", \"Whiskey Slim's Lost Grog\" and \"Favored of Elune?\": keep them in the bank to free bag slots." },
     },
 })

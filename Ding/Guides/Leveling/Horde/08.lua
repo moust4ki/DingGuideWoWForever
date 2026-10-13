@@ -13,7 +13,7 @@ Ding.RegisterGuide({
         { talk = 8356, collect = { { 5059, 1 } }, spots = { { 1456, 47.19, 57.86 } }, -- level 24
           note = "Thunder Bluff first, then the Barrens. The NPC is indoors." },
         { talk = 8356, bank = { 3692, 3564 }, -- level 24
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need them later for \"Souvenirs of Death\" and \"Battle of Hillsbrad\": keep them in the bank to free bag slots." },
         { go = { 1456, 29.77, 29.79 }, text = "Go into the cavern" }, -- level 24
         { turnin = 1067, -- level 24
           note = "Your targets are within the cavern." },

@@ -67,6 +67,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a18-desolace", {
         "Such nach hellbraunen Säcken bei den Häusern. Manche davon sind nicht benutzbar. Magram Pack Runners patrouillieren mit 2 Hyänen als Begleitung; halte dich fern.",
     ["The foes here are scorpions. Basilisks compete for the same spawn points."] =
         "Die Gegner hier sind Skorpione. Basilisken teilen sich dieselben Spawnpunkte.",
+    ["The NPC is indoors. You need it later for \"The Karnitol Shipwreck\": keep it in the bank to free a bag slot."] =
+        "Der NPC ist drinnen. Du brauchst es später für „Karnitols Schiffbruch“: Lass es in der Bank, das spart einen Taschenplatz.",
     ["Wait for the talking to finish"] =
         "Warte, bis das Gespräch endet",
 })

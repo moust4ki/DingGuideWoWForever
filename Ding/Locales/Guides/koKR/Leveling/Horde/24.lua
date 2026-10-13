@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h24-tanaris", {
         "타나리스: 가젯잔은 지역 북쪽에 있습니다.",
     ["The NPC is indoors."] =
         "NPC는 건물 안에 있습니다.",
+    ["The NPC is indoors. You need them later for \"Deadmire\" and \"Safety First\": keep them in the bank to free bag slots."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"붉은눈늪지악어\", \"안전 제일\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["Accepting this starts a 2 hour countdown. The timer keeps running while you're offline. Take this quest only when you have time to spare."] =
         "수락하면 2시간 제한 시간이 시작됩니다. 접속하지 않은 동안에도 시간이 흐릅니다. 시간이 넉넉할 때만 이 퀘스트를 받으세요.",
     ["Stay clear of the elite foes. Be ready for a fight right away. Watch out for a pair of stronger monsters here."] =

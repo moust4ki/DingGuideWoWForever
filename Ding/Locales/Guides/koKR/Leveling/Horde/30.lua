@@ -65,6 +65,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h30-feralas-and-ungoro-crater", 
         "대상은 동굴 안에 있습니다.",
     ["Flight master at Marshal's Refuge"] =
         "마샬의 야영지 비행 조련사",
+    ["The NPC is indoors. You need them later for \"Bungle in the Jungle\", \"The Bait for Lar'korwi\" and \"It's a Secret to Everybody\": keep them in the bank to free bag slots."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"밀림 속 생물\", \"라르코르위를 위한 미끼\", \"아무도 모르는 비밀\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["This NPC is found down in the Cleft of Shadow."] =
         "이 NPC는 아래쪽 어둠의 틈에 있습니다.",
     ["The NPC is upstairs, out on the balcony."] =

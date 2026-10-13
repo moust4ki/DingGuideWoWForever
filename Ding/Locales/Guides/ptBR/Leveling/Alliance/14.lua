@@ -19,6 +19,12 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a14-duskwood-and-stranglethorn-v
         "O NPC fica à beira da água.",
     ["The NPC is indoors, one floor up."] =
         "O NPC está lá dentro, um andar acima.",
+    ["The NPC is indoors. You need it later for \"Soothing Turtle Bisque\": keep it in the bank to free a bag slot."] =
+        "O NPC está lá dentro. Você vai precisar dele mais tarde para \"Caldo reconfortante de tartaruga\": guarde-o no banco para liberar espaço nas bolsas.",
+    ["You need it later for \"The Brassbolts Brothers\": keep it in the bank to free a bag slot."] =
+        "Você vai precisar dele mais tarde para \"Os irmãos Latafuso\": guarde-o no banco para liberar espaço nas bolsas.",
+    ["You need it later for \"A Noble Brew\": keep it in the bank to free a bag slot."] =
+        "Você vai precisar dele mais tarde para \"Uma bebida para poucos\": guarde-o no banco para liberar espaço nas bolsas.",
     ["This one roams, so scan the surrounding area."] =
         "Este se desloca, então procure pelos arredores.",
     ["The NPC patrols the road; look along it."] =

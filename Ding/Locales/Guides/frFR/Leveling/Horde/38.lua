@@ -39,10 +39,12 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h38-felwood-and-winterspring", {
         "Reste sur la route tout du long.",
     ["Flee if things go badly."] =
         "Fuis si ça tourne mal.",
-    ["The NPC is indoors."] =
-        "Le PNJ est à l'intérieur.",
+    ["The NPC is indoors. You need them later for \"Delivery to Andron Gant\", \"A Grave Situation\" and \"Betrayed\": keep them in the bank to free bag slots."] =
+        "Le PNJ est à l'intérieur. Tu en auras besoin plus tard pour « Livraison à Andron Gant », « Une situation grave » et « Trahison » : garde-les à la banque pour libérer de la place dans tes sacs.",
     ["The quest wants yetis; seek them out. Targets are in the cavern and around its entrance too."] =
         "La quête demande des yétis : va les chercher. Les cibles sont dans la grotte et aussi autour de l'entrée.",
+    ["The NPC is indoors."] =
+        "Le PNJ est à l'intérieur.",
     ["The NPC is a human spirit."] =
         "Le PNJ est un esprit humain.",
     ["Your targets are within the cavern."] =
@@ -53,6 +55,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h38-felwood-and-winterspring", {
         "Sors de la grotte",
     ["Fight the elementals of the swamp."] =
         "Combats les élémentaires du marais.",
+    ["The NPC is indoors. You need them later for \"The Everlook Report\" and \"Duke Nicholas Zverenhoff\": keep them in the bank to free bag slots."] =
+        "Le PNJ est à l'intérieur. Tu en auras besoin plus tard pour « Le rapport de Long-guet » et « Le duc Nicholas Zverenhoff » : garde-les à la banque pour libérer de la place dans tes sacs.",
     ["The targets are leafless trees that walk."] =
         "Les cibles sont des arbres sans feuilles qui marchent.",
     ["Slay the greenish beings of living water."] =
@@ -69,6 +73,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h38-felwood-and-winterspring", {
         "Les cibles sont 3 furbolgs blancs qui se déplacent en groupe. La cible patrouille sur un long trajet le long de la route. Ils apparaissent près de 28.1, 35.0 au Berceau-de-l'Hiver.",
     ["This number shrinks while you kill monsters. Bring any feathers you collect to the NPC at 64.8, 8.1."] =
         "Ce nombre baisse à mesure que tu tues des monstres. Apporte les plumes que tu ramasses au PNJ en 64.8, 8.1.",
+    ["The NPC is indoors. You need it later for \"Aquementas\": keep it in the bank to free a bag slot."] =
+        "Le PNJ est à l'intérieur. Tu en auras besoin plus tard pour « Aquementas » : garde-le à la banque pour libérer une place dans tes sacs.",
     ["This NPC is found down in the Cleft of Shadow."] =
         "Ce PNJ se trouve en bas, dans la Faille de l'ombre.",
     ["The NPC stands on the highest level of this structure."] =

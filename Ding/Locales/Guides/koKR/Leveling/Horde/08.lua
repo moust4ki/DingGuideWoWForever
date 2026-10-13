@@ -5,8 +5,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h08-the-barrens", {
         "불모의 땅 (24-25)",
     ["Thunder Bluff first, then the Barrens. The NPC is indoors."] =
         "썬더 블러프에 먼저 들른 다음 불모의 땅으로 가세요. NPC는 건물 안에 있습니다.",
-    ["The NPC is indoors."] =
-        "NPC는 건물 안에 있습니다.",
+    ["The NPC is indoors. You need them later for \"Souvenirs of Death\" and \"Battle of Hillsbrad\": keep them in the bank to free bag slots."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"죽음의 전리품\", \"힐스브래드 전투\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["Go into the cavern"] =
         "동굴에 들어가세요",
     ["Your targets are within the cavern."] =
@@ -15,6 +15,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h08-the-barrens", {
         "대화가 끝날 때까지 기다리세요. 대상은 동굴 안에 있습니다.",
     ["Head out of the cave"] =
         "동굴을 나가세요",
+    ["The NPC is indoors."] =
+        "NPC는 건물 안에 있습니다.",
     ["This NPC is found down in the Cleft of Shadow."] =
         "이 NPC는 아래쪽 어둠의 틈에 있습니다.",
     ["Visit the caged quilboar"] =

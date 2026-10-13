@@ -3,8 +3,8 @@
 Ding.RegisterGuideTranslation("deDE", "leveling-h12-hillsbrad-foothills", {
     ["Hillsbrad Foothills (30-32)"] =
         "Vorgebirge des Hügellands (30-32)",
-    ["Undercity first, then Hillsbrad Foothills: Tarren Mill."] =
-        "Zuerst Unterstadt, dann das Vorgebirge des Hügellands: Tarrens Mühle.",
+    ["Undercity first, then Hillsbrad Foothills: Tarren Mill. You need it later for \"The Swarm Grows\": keep it in the bank to free a bag slot."] =
+        "Zuerst Unterstadt, dann das Vorgebirge des Hügellands: Tarrens Mühle. Du brauchst es später für „Der Schwarm wächst“: Lass es in der Bank, das spart einen Taschenplatz.",
     ["Learn Cooking from the trainer"] =
         "Lerne Kochkunst beim Lehrer",
     ["You'll need this to pick up an upcoming quest."] =

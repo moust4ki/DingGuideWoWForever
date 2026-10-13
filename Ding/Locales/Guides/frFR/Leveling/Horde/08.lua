@@ -5,8 +5,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h08-the-barrens", {
         "Les Tarides (24-25)",
     ["Thunder Bluff first, then the Barrens. The NPC is indoors."] =
         "Les Pitons-du-Tonnerre d'abord, puis les Tarides. Le PNJ est à l'intérieur.",
-    ["The NPC is indoors."] =
-        "Le PNJ est à l'intérieur.",
+    ["The NPC is indoors. You need them later for \"Souvenirs of Death\" and \"Battle of Hillsbrad\": keep them in the bank to free bag slots."] =
+        "Le PNJ est à l'intérieur. Tu en auras besoin plus tard pour « Souvenirs de morts » et « La bataille d'Hillsbrad » : garde-les à la banque pour libérer de la place dans tes sacs.",
     ["Go into the cavern"] =
         "Entre dans la grotte",
     ["Your targets are within the cavern."] =
@@ -15,6 +15,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h08-the-barrens", {
         "Laisse la conversation se dérouler. Tes cibles sont dans la grotte.",
     ["Head out of the cave"] =
         "Sors de la grotte",
+    ["The NPC is indoors."] =
+        "Le PNJ est à l'intérieur.",
     ["This NPC is found down in the Cleft of Shadow."] =
         "Ce PNJ se trouve en bas, dans la Faille de l'ombre.",
     ["Visit the caged quilboar"] =

@@ -5,10 +5,20 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h17-dustwallow-marsh", {
         "Düstermarschen (37-38)",
     ["Orgrimmar first, then Dustwallow Marsh: Brackenwall Village. Hold on to it, an upcoming quest uses it."] =
         "Zuerst Orgrimmar, dann die Düstermarschen: Brackenwall Village. Behalte es, eine kommende Quest braucht es.",
-    ["The NPC is indoors."] =
-        "Der NPC ist drinnen.",
+    ["The NPC is indoors. You need it later for \"Caught!\": keep it in the bank to free a bag slot."] =
+        "Der NPC ist drinnen. Du brauchst es später für „Eingesperrt!“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need it later for \"Chapter I\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Kapitel I“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need it later for \"Chapter II\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Kapitel II“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need it later for \"Chapter III\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Kapitel III“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need it later for \"Chapter IV\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Kapitel IV“: Lass es in der Bank, das spart einen Taschenplatz.",
     ["Climb the steps"] =
         "Steig die Treppe hinauf",
+    ["The NPC is indoors."] =
+        "Der NPC ist drinnen.",
     ["A lengthy stretch of quests is coming up. You won't find an ammunition seller. The NPC is indoors."] =
         "Gleich kommt eine lange Questphase. Du findest keinen Munitionshändler. Der NPC ist drinnen.",
     ["The quest starts from a small piece of metal."] =
@@ -57,6 +67,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h17-dustwallow-marsh", {
         "Behalte es: Die Questreihe der Wirbelwindwaffe für Krieger verlangt es.",
     ["Get these for simple Badlands turn-ins ahead. The NPC is indoors."] =
         "Hol sie dir für einfache Abgaben im Ödland, die später kommen. Der NPC ist drinnen.",
+    ["You need them later for \"The Black Shield\" and \"Into the Field\": keep them in the bank to free bag slots."] =
+        "Du brauchst sie später für „Der Schwarze Schild“ und „Auf ins Feld“: Lass sie in der Bank, das spart Taschenplätze.",
     ["Stay clear of Refuge Point."] =
         "Halte dich von der Zuflucht fern.",
 })

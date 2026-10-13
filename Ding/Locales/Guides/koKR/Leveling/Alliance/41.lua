@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a41-western-and-eastern-plaguela
         "아이언포지에 먼저 들른 다음 역병지대: 서리바람 야영지와 희망의 빛 예배당으로 가세요.",
     ["The NPC is indoors."] =
         "NPC는 건물 안에 있습니다.",
+    ["The NPC is indoors. You need it later for \"Felnok Steelspring\": keep it in the bank to free a bag slot."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"펠노크 스틸스프링\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["Stay on the trail"] =
         "길을 계속 따라가세요",
     ["Check each of the two floors indoors."] =

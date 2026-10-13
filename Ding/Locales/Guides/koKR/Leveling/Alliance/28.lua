@@ -81,8 +81,12 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a28-feralas-and-tanaris", {
         "대화가 끝날 때까지 기다리세요. 대상은 동굴 안에 있습니다.",
     ["The object is indoors, one floor up."] =
         "그 물체는 건물 안 한 층 위에 있습니다.",
+    ["You need them later for \"The Borrower\", \"Screecher Spirits\", \"The Super Egg-O-Matic\" and \"Rhapsody's Kalimdor Kocktail\": keep them in the bank to free bag slots."] =
+        "나중에 \"사진기 대여\", \"계곡천둥매의 영혼\", \"고성능 자동부화기\", \"랩소디의 칼림도어 칵테일\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["Getting it here speeds up Un'Goro Crater. The NPC is indoors."] =
         "여기서 얻어 두면 운고로 분화구 진행이 빨라집니다. NPC는 건물 안에 있습니다.",
+    ["You need them later for \"Crystals of Power\": keep them in the bank to free bag slots."] =
+        "나중에 \"마력의 수정\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["Step into the cavern within the trunk"] =
         "나무줄기 속 동굴에 들어가세요",
     ["The spot is on the lower floor of the hollow tree."] =

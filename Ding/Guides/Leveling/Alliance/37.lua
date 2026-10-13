@@ -63,7 +63,7 @@ Ding.RegisterGuide({
         { accept = 4502, elite = true }, -- level 53
         { talk = 3496, collect = { { 10445, 1 }, { 10444, 1 } }, spots = { { 1413, 62.58, 37.39 } } }, -- level 53
         { talk = 3496, bank = { 10556, 11682, 11947, 11949, 12383, 11243, 11511 }, -- level 53
-          note = "Put these items in your bank vault." },
+          note = "Put these items in your bank vault. You need them later for \"The Stone Circle\", \"Felbound Ancients\", \"A Little Slime Goes a Long Way\", \"Moontouched Wildkin\" and \"Meet at the Grave\": keep them in the bank to free bag slots." },
         { accept = 3601, -- level 53
           note = "The quest giver waits on the hilltop." },
         { turnin = 3601, when = { ready = 3601 }, -- level 53

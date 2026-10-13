@@ -19,4 +19,6 @@ Ding.RegisterGuideTranslation("esES", "leveling-a27-tanaris", {
         "Aquí los objetivos son humanos. Aquí también puedes hacer mazmorras, si quieres. Cada lote de 5 entregado en Gadgetzan da 380 de experiencia.",
     ["Hunt the red-feathered birds. Hyenas also use these spawn spots."] =
         "Caza las aves de plumas rojas. Las hienas también usan estos puntos de aparición.",
+    ["The NPC is indoors. You need them later for \"Report Back to Fizzlebub\" and \"Rhapsody's Kalimdor Kocktail\": keep them in the bank to free bag slots."] =
+        "El PNJ está dentro. Los necesitarás más adelante para «Volver a informar a Pinchabujas,» y «El cubata de Kalimdor de Rapsodio»: déjalos en el banco para liberar huecos en las bolsas.",
 })

@@ -11,6 +11,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h29-the-hinterlands", {
         "在这里拿到它能加快安戈洛环形山的进度。NPC在室内。",
     ["The NPC is indoors."] =
         "NPC在室内。",
+    ["The NPC is indoors. You need them later for \"The Stone Circle\" and \"Crystals of Power\": keep them in the bank to free bag slots."] =
+        "NPC在室内。之后的任务“石环”和“能量水晶”需要它们：先存进银行，腾出背包空间。",
     ["Take the trail downhill"] =
         "沿小路下山",
     ["Buy plenty of arrows or bullets. Stock up first: nobody in the Hinterlands sells arrows or bullets for level 40."] =
@@ -57,4 +59,6 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h29-the-hinterlands", {
         "离开沙德拉洛",
     ["Wait for the talking to finish"] =
         "等对话结束",
+    ["The NPC is indoors. You need them later for \"Ripple Delivery\", \"Whiskey Slim's Lost Grog\" and \"Seeping Corruption\": keep them in the bank to free bag slots."] =
+        "NPC在室内。之后的任务“送回蜜酒”、“威士忌斯利姆的酒”和“堕落之水”需要它们：先存进银行，腾出背包空间。",
 })

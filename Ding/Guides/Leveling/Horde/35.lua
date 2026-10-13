@@ -62,7 +62,7 @@ Ding.RegisterGuide({
         { talk = 13917, collect = { { 12438, 1 } }, spots = { { 1452, 61.51, 36.91 } }, -- level 53
           note = "The NPC is indoors." },
         { talk = 13917, bank = { 10538, 10691, 10692, 10693, 10694 }, -- level 53
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need them later for \"Delivery to Magatha\" and \"Seeping Corruption\": keep them in the bank to free bag slots." },
         { turnin = 4808 }, -- level 53
         { go = { 1452, 60.51, 36.24 }, fly = true, talk = 11139, text = "Flight master at Everlook" }, -- level 53
         { turnin = 6162 }, -- level 53
@@ -81,7 +81,7 @@ Ding.RegisterGuide({
         { talk = 3309, collect = { { 11568, 1 }, { 11018, 25 } }, spots = { { 1454, 49.62, 69.06 } }, -- level 53
           note = "The NPC is indoors." },
         { talk = 3309, bank = 10680, -- level 53
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need it later for \"Jes'rimon's Payment to Jediga\": keep it in the bank to free a bag slot." },
         { talk = 9983, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, text = "Get your companion back from the stable master." }, -- level 53
         { talk = 9983, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, -- level 53
           note = "Release the short-term pet you tamed." },

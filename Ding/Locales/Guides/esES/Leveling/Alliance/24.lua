@@ -5,12 +5,14 @@ Ding.RegisterGuideTranslation("esES", "leveling-a24-badlands", {
         "Tierras Inhóspitas (41-42)",
     ["Ironforge first, then the Badlands. The NPC waits on the lower level, indoors. A lengthy stretch of quests is coming up. This vendor sells no arrows or bullets."] =
         "Primero Forjaz y luego las Tierras Inhóspitas. El PNJ espera en el nivel inferior, dentro. Se acerca un largo tramo de misiones. Este vendedor no vende flechas ni balas.",
-    ["The NPC is indoors."] =
-        "El PNJ está dentro.",
+    ["The NPC is indoors. You need them later for \"Back to Booty Bay\" and \"Safety First\": keep them in the bank to free bag slots."] =
+        "El PNJ está dentro. Los necesitarás más adelante para «De vuelta a Bahía del Botín» y «La seguridad primero»: déjalos en el banco para liberar huecos en las bolsas.",
     ["Get these for simple Badlands turn-ins ahead. The NPC is indoors."] =
         "Consíguelos para entregas fáciles en las Tierras Inhóspitas más adelante. El PNJ está dentro.",
     ["This one roams, so scan the surrounding area. The NPC is indoors."] =
         "Este deambula, así que revisa los alrededores. El PNJ está dentro.",
+    ["The NPC is indoors."] =
+        "El PNJ está dentro.",
     ["The object sits on the rocky shelf above."] =
         "El objeto está en la repisa rocosa de arriba.",
     ["Fight the dwarves."] =

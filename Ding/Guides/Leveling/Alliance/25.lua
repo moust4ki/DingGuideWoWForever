@@ -90,22 +90,37 @@ Ding.RegisterGuide({
         { turnin = 611, -- level 42
           note = "The NPC is upstairs, out on the balcony." },
         { turnin = 617, accept = 623 }, -- level 42
-        { bank = 2725, when = { item = 2725 } }, -- level 42
-        { bank = 2728, when = { item = 2728 } }, -- level 42
-        { bank = 2730, when = { item = 2730 } }, -- level 42
-        { bank = 2732, when = { item = 2732 } }, -- level 42
-        { bank = 2734, when = { item = 2734 } }, -- level 42
-        { bank = 2735, when = { item = 2735 } }, -- level 42
-        { bank = 2738, when = { item = 2738 } }, -- level 42
-        { bank = 2740, when = { item = 2740 } }, -- level 42
-        { bank = 2742, when = { item = 2742 } }, -- level 42
-        { bank = 2744, when = { item = 2744 } }, -- level 42
-        { bank = 2745, when = { item = 2745 } }, -- level 42
-        { bank = 2748, when = { item = 2748 } }, -- level 42
-        { bank = 2749, when = { item = 2749 } }, -- level 42
-        { bank = 2750, when = { item = 2750 } }, -- level 42
-        { bank = 2751, when = { item = 2751 } }, -- level 42
         { talk = 2625 }, -- level 42
+        { bank = 2725, when = { item = 2725 }, -- level 42
+          note = "You need it later for \"Chapter I\": keep it in the bank to free a bag slot." },
+        { bank = 2728, when = { item = 2728 }, -- level 42
+          note = "You need it later for \"Chapter I\": keep it in the bank to free a bag slot." },
+        { bank = 2730, when = { item = 2730 }, -- level 42
+          note = "You need it later for \"Chapter I\": keep it in the bank to free a bag slot." },
+        { bank = 2732, when = { item = 2732 }, -- level 42
+          note = "You need it later for \"Chapter I\": keep it in the bank to free a bag slot." },
+        { bank = 2734, when = { item = 2734 }, -- level 42
+          note = "You need it later for \"Chapter II\": keep it in the bank to free a bag slot." },
+        { bank = 2735, when = { item = 2735 }, -- level 42
+          note = "You need it later for \"Chapter II\": keep it in the bank to free a bag slot." },
+        { bank = 2738, when = { item = 2738 }, -- level 42
+          note = "You need it later for \"Chapter II\": keep it in the bank to free a bag slot." },
+        { bank = 2740, when = { item = 2740 }, -- level 42
+          note = "You need it later for \"Chapter II\": keep it in the bank to free a bag slot." },
+        { bank = 2742, when = { item = 2742 }, -- level 42
+          note = "You need it later for \"Chapter III\": keep it in the bank to free a bag slot." },
+        { bank = 2744, when = { item = 2744 }, -- level 42
+          note = "You need it later for \"Chapter III\": keep it in the bank to free a bag slot." },
+        { bank = 2745, when = { item = 2745 }, -- level 42
+          note = "You need it later for \"Chapter III\": keep it in the bank to free a bag slot." },
+        { bank = 2748, when = { item = 2748 }, -- level 42
+          note = "You need it later for \"Chapter III\": keep it in the bank to free a bag slot." },
+        { bank = 2749, when = { item = 2749 }, -- level 42
+          note = "You need it later for \"Chapter IV\": keep it in the bank to free a bag slot." },
+        { bank = 2750, when = { item = 2750 }, -- level 42
+          note = "You need it later for \"Chapter IV\": keep it in the bank to free a bag slot." },
+        { bank = 2751, when = { item = 2751 }, -- level 42
+          note = "You need it later for \"Chapter IV\": keep it in the bank to free a bag slot." },
         { turnin = 609, -- level 42
           note = "The NPC is indoors." },
         { turnin = 628, elite = true }, -- level 42

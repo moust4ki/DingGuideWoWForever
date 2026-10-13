@@ -13,7 +13,8 @@ Ding.RegisterGuide({
         { go = { 1413, 62.64, 37.42 }, text = "Travel to Gadgetzan", -- level 53
           note = "Tanaris: Gadgetzan first, then Un'Goro Crater." },
         { talk = 3496, collect = { { 10556, 1 }, { 8526, 1 }, { 11568, 1 }, { 10561, 1 } }, spots = { { 1413, 62.58, 37.39 } } }, -- level 53
-        { talk = 3496, bank = 10445 }, -- level 53
+        { talk = 3496, bank = 10445, -- level 53
+          note = "You need it later for \"Return to Tymor\": keep it in the bank to free a bag slot." },
         { accept = 4504 }, -- level 53
         { turnin = 2641 }, -- level 53
         { accept = 2661, -- level 53

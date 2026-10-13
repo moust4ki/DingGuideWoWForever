@@ -97,7 +97,7 @@ Ding.RegisterGuide({
         { accept = { 6028, 6030 }, -- level 55
           note = "The NPC is indoors." },
         { talk = 13917, bank = { 11173, 11172, 15788, 15790, 12891, 12896, 12897, 12898, 12899 }, -- level 55
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need them later for \"Aquementas\", \"The Everlook Report\", \"Duke Nicholas Zverenhoff\" and \"Troubled Spirits of Kel'Theril\": keep them in the bank to free bag slots." },
         { turnin = 4861, accept = 4863 }, -- level 55
         { turnin = 4863, accept = 4864 }, -- level 55
         { complete = 4864 }, -- level 55

@@ -21,6 +21,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h34-burning-steppes-and-azshara"
         "Benutze den Gegenstand an Black Broodlings. Die Ziele sind kleine geflügelte Drachen. Über jeder Leiche schwebt ein roter Kristall.",
     ["The NPC is indoors."] =
         "Der NPC ist drinnen.",
+    ["The NPC is indoors. You need it later for \"Felnok Steelspring\": keep it in the bank to free a bag slot."] =
+        "Der NPC ist drinnen. Du brauchst es später für „Felnok Steelspring“: Lass es in der Bank, das spart einen Taschenplatz.",
     ["This NPC is found down in the Cleft of Shadow."] =
         "Dieser NPC ist unten in der Kluft der Schatten.",
     ["The NPC stands on the highest level of this structure."] =

@@ -57,4 +57,14 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a19-stranglethorn-vale", {
         "대상은 트롤입니다.",
     ["With the coming hand-ins, this gets you to level 38."] =
         "곧 있을 반납까지 하면 38레벨이 됩니다.",
+    ["You need them later for \"Magical Analysis\" and \"Caught!\": keep them in the bank to free bag slots."] =
+        "나중에 \"마법 분석\", \"화장실에 갇힌 사람\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Chapter I\": keep it in the bank to free a bag slot."] =
+        "나중에 \"제 1 장\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Chapter II\": keep it in the bank to free a bag slot."] =
+        "나중에 \"제 2 장\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Chapter III\": keep it in the bank to free a bag slot."] =
+        "나중에 \"제 3 장\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Chapter IV\": keep it in the bank to free a bag slot."] =
+        "나중에 \"제 4 장\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
 })

@@ -3275,4 +3275,123 @@ return {
         "Das Ziel patrouilliert eine lange Route; such entlang dieser Route.",
     ["The target waits here, then strolls out onto the big branch close by."] =
         "Das Ziel wartet hier und geht dann auf den großen Ast in der Nähe hinaus.",
+    -- Ding - Leveling: why an item goes to the bank (notes)
+    ["You need it later for \"The Legend of Stalvan\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Die Legende von Stalvan“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need it later for \"Juice Delivery\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Saftlieferung“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need it later for \"The Brassbolts Brothers\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Die Brüder Brassbolt“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need it later for \"A Noble Brew\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Ein nobles Bräu“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need it later for \"Soothing Turtle Bisque\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Milde Schildkrötensuppe“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need it later for \"Reassignment\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Versetzungen“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need it later for \"Parts for Kravel\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Teile für Kravel“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need them later for \"Goblin Sponsorship\" and \"The Hidden Key\": keep them in the bank to free bag slots."] =
+        "Du brauchst sie später für „Goblin-Sponsoring“ und „Der versteckte Schlüssel“: Lass sie in der Bank, das spart Taschenplätze.",
+    ["You need it later for \"Chapter I\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Kapitel I“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need it later for \"Chapter II\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Kapitel II“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need it later for \"Chapter III\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Kapitel III“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need it later for \"Chapter IV\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Kapitel IV“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need it later for \"The Karnitol Shipwreck\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Karnitols Schiffbruch“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need them later for \"Magical Analysis\" and \"Caught!\": keep them in the bank to free bag slots."] =
+        "Du brauchst sie später für „Magische Analyse“ und „Eingesperrt!“: Lass sie in der Bank, das spart Taschenplätze.",
+    ["You need it later for \"Rumors for Kravel\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Gerüchte für Kravel“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need it later for \"Ongeku\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Ongeku“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need it later for \"Sunken Treasure\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Versunkener Schatz“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need them later for \"Back to Booty Bay\" and \"Safety First\": keep them in the bank to free bag slots."] =
+        "Du brauchst sie später für „Zurück nach Booty Bay“ und „Sicherheit zuerst“: Lass sie in der Bank, das spart Taschenplätze.",
+    ["You need them later for \"Report Back to Fizzlebub\" and \"Rhapsody's Kalimdor Kocktail\": keep them in the bank to free bag slots."] =
+        "Du brauchst sie später für „Meldet Euch bei Fizzlebub“ und „Rhapsodys Kalimdor-Cocktail“: Lass sie in der Bank, das spart Taschenplätze.",
+    ["You need them later for \"The Borrower\", \"Screecher Spirits\", \"The Super Egg-O-Matic\" and \"Rhapsody's Kalimdor Kocktail\": keep them in the bank to free bag slots."] =
+        "Du brauchst sie später für „Der Borger“, „Kreischergeister“, „Der Super-Ei-O-Mat“ und „Rhapsodys Kalimdor-Cocktail“: Lass sie in der Bank, das spart Taschenplätze.",
+    ["You need them later for \"Crystals of Power\": keep them in the bank to free bag slots."] =
+        "Du brauchst sie später für „Machtkristalle“: Lass sie in der Bank, das spart Taschenplätze.",
+    ["You need them later for \"Rhapsody's Tale\", \"The Super Snapper FX\", \"Whiskey Slim's Lost Grog\" and \"Favored of Elune?\": keep them in the bank to free bag slots."] =
+        "Du brauchst sie später für „Rhapsodys Geschichte“, „Der Superschnapper FX“, „Whiskey Slim's verlorener Grog“ und „Elunes Lieblinge?“: Lass sie in der Bank, das spart Taschenplätze.",
+    ["You need it later for \"Deliver to MacKinley\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Lieferung für MacKinley“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need them later for \"The Bait for Lar'korwi\", \"Un'Goro Soil\", \"A Visit to Gregan\" and \"It's a Secret to Everybody\": keep them in the bank to free bag slots."] =
+        "Du brauchst sie später für „Ein Köder für Lar'korwi“, „Un'Goro-Erde“, „Ein Besuch bei Gregan“ und „Es ist für jeden ein Geheimnis“: Lass sie in der Bank, das spart Taschenplätze.",
+    ["You need it later for \"Rise of the Silithid\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Aufstieg der Silithid“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need it later for \"A Taste of Flame\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Eine Kostprobe der Flamme“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need them later for \"Chasing A-Me 01\" and \"Arcane Runes\": keep them in the bank to free bag slots."] =
+        "Du brauchst sie später für „Chasing A-Me 01“ und „Arkane Runen“: Lass sie in der Bank, das spart Taschenplätze.",
+    ["You need them later for \"Good Natured Emma\", \"Arcane Runes\" and \"Sprinkle's Secret Ingredient\": keep them in the bank to free bag slots."] =
+        "Du brauchst sie später für „Emma die Nette“, „Arkane Runen“ und „Sprinkles Geheimzutat“: Lass sie in der Bank, das spart Taschenplätze.",
+    ["You need them later for \"The Stone Circle\", \"Felbound Ancients\", \"A Little Slime Goes a Long Way\", \"Moontouched Wildkin\" and \"Meet at the Grave\": keep them in the bank to free bag slots."] =
+        "Du brauchst sie später für „Der runde Stein“, „Gebundene Urtume“, „Brühschleimer auf Abwegen“, „Mondbestrahltes Wildekin“ und „Treffen am Grab“: Lass sie in der Bank, das spart Taschenplätze.",
+    ["You need it later for \"Return to Tymor\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Rückkehr zu Magier Tymor“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need them later for \"Aquementas\", \"The Everlook Report\", \"Duke Nicholas Zverenhoff\" and \"Troubled Spirits of Kel'Theril\": keep them in the bank to free bag slots."] =
+        "Du brauchst sie später für „Aquementas“, „Der Everlook-Bericht“, „Fürst Nicholas Zverenhoff“ und „Die gequälten Seelen von Kel'Theril“: Lass sie in der Bank, das spart Taschenplätze.",
+    ["You need it later for \"Felnok Steelspring\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Felnok Steelspring“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need it later for \"Glyphed Oaken Branch\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Glyphenverzierter Eichenast“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need them later for \"The Disruption Ends\" and \"Supplies for the Crossroads\": keep them in the bank to free bag slots."] =
+        "Du brauchst sie später für „Das Ende der Unterbrechungen“ und „Vorräte für Crossroads“: Lass sie in der Bank, das spart Taschenplätze.",
+    ["You need it later for \"Chen's Empty Keg\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Chens leeres Fässchen“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need it later for \"Egg Hunt\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Eierjagd“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need them later for \"Souvenirs of Death\" and \"Battle of Hillsbrad\": keep them in the bank to free bag slots."] =
+        "Du brauchst sie später für „Andenken des Todes“ und „Kampf um Hillsbrad“: Lass sie in der Bank, das spart Taschenplätze.",
+    ["You need it later for \"Frostmaw\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Frostrachen“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need it later for \"The Swarm Grows\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Der Schwarm wächst“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need them later for \"Martek the Exiled\" and \"Hemet Nesingwary\": keep them in the bank to free bag slots."] =
+        "Du brauchst sie später für „Martek der Verbannte“ und „Hemet Nesingwary“: Lass sie in der Bank, das spart Taschenplätze.",
+    ["You need it later for \"Caught!\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Eingesperrt!“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need them later for \"The Black Shield\" and \"Into the Field\": keep them in the bank to free bag slots."] =
+        "Du brauchst sie später für „Der Schwarze Schild“ und „Auf ins Feld“: Lass sie in der Bank, das spart Taschenplätze.",
+    ["You need them later for \"Tanaris Field Sampling\" and \"Screecher Spirits\": keep them in the bank to free bag slots."] =
+        "Du brauchst sie später für „Tanaris-Feldproben“ und „Kreischergeister“: Lass sie in der Bank, das spart Taschenplätze.",
+    ["You need it later for \"Back to Booty Bay\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Zurück nach Booty Bay“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need them later for \"Deadmire\" and \"Safety First\": keep them in the bank to free bag slots."] =
+        "Du brauchst sie später für „Schlammwühler“ und „Sicherheit zuerst“: Lass sie in der Bank, das spart Taschenplätze.",
+    ["You need them later for \"Another Message to the Wildhammer\", \"Screecher Spirits\" and \"The Super Egg-O-Matic\": keep them in the bank to free bag slots."] =
+        "Du brauchst sie später für „Eine weitere Botschaft an die Wildhammer“, „Kreischergeister“ und „Der Super-Ei-O-Mat“: Lass sie in der Bank, das spart Taschenplätze.",
+    ["You need it later for \"Return to Witch Doctor Uzer'i\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Kehrt zu Hexendoktor Uzer'i zurück“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need it later for \"The Atal'ai Exile\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Der Verbannte der Atal'ai“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need them later for \"Testing the Vessel\" and \"Report Back to Fizzlebub\": keep them in the bank to free bag slots."] =
+        "Du brauchst sie später für „Das Gefäß wird getestet“ und „Meldet Euch bei Fizzlebub“: Lass sie in der Bank, das spart Taschenplätze.",
+    ["You need it later for \"Return to Apothecary Zinge\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Kehrt zu Apothekerin Zinge zurück“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need them later for \"The Stone Circle\" and \"Crystals of Power\": keep them in the bank to free bag slots."] =
+        "Du brauchst sie später für „Der runde Stein“ und „Machtkristalle“: Lass sie in der Bank, das spart Taschenplätze.",
+    ["You need them later for \"Ripple Delivery\", \"Whiskey Slim's Lost Grog\" and \"Seeping Corruption\": keep them in the bank to free bag slots."] =
+        "Du brauchst sie später für „Wellenlieferung“, „Whiskey Slim's verlorener Grog“ und „Verbreitete Verderbnis“: Lass sie in der Bank, das spart Taschenplätze.",
+    ["You need them later for \"Bungle in the Jungle\", \"The Bait for Lar'korwi\" and \"It's a Secret to Everybody\": keep them in the bank to free bag slots."] =
+        "Du brauchst sie später für „Dschungelei“, „Ein Köder für Lar'korwi“ und „Es ist für jeden ein Geheimnis“: Lass sie in der Bank, das spart Taschenplätze.",
+    ["You need them later for \"Delivery to Magatha\" and \"Seeping Corruption\": keep them in the bank to free bag slots."] =
+        "Du brauchst sie später für „Lieferung an Magatha“ und „Verbreitete Verderbnis“: Lass sie in der Bank, das spart Taschenplätze.",
+    ["You need it later for \"Jes'rimon's Payment to Jediga\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Jes'rimons Bezahlung für Jediga“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need it later for \"Meet at the Grave\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Treffen am Grab“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need them later for \"Delivery to Andron Gant\", \"A Grave Situation\" and \"Betrayed\": keep them in the bank to free bag slots."] =
+        "Du brauchst sie später für „Lieferung an Andron Gant“, „Grabesstille“ und „Verraten“: Lass sie in der Bank, das spart Taschenplätze.",
+    ["You need them later for \"The Everlook Report\" and \"Duke Nicholas Zverenhoff\": keep them in the bank to free bag slots."] =
+        "Du brauchst sie später für „Der Everlook-Bericht“ und „Fürst Nicholas Zverenhoff“: Lass sie in der Bank, das spart Taschenplätze.",
+    ["You need it later for \"Aquementas\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Aquementas“: Lass es in der Bank, das spart einen Taschenplatz.",
 }

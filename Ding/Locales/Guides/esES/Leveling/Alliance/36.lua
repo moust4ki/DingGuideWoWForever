@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a36-azshara-and-felwood", {
         "Teldrassil: primero la Aldea Rut'theran y luego Azshara y Frondavil.",
     ["The NPC is indoors."] =
         "El PNJ está dentro.",
+    ["The NPC is indoors. You need them later for \"Good Natured Emma\", \"Arcane Runes\" and \"Sprinkle's Secret Ingredient\": keep them in the bank to free bag slots."] =
+        "El PNJ está dentro. Los necesitarás más adelante para «El buen carácter de Emma», «Runas arcanas» y «El ingrediente secreto de Roxio»: déjalos en el banco para liberar huecos en las bolsas.",
     ["Climb to the highest floor of the building."] =
         "Sube al piso más alto del edificio.",
     ["The quest giver stands outdoors, not indoors."] =

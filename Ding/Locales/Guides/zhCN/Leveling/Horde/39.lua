@@ -75,6 +75,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h39-western-and-eastern-plaguela
         "目标是一个拿着干草叉的食尸鬼。它会四处游荡，在周围找找。它可能在这个位置出现。",
     ["You can also take it out of your bank. The NPC is indoors."] =
         "也可以从银行取出。NPC在室内。",
+    ["The NPC is indoors. You need it later for \"Glyphed Oaken Branch\": keep it in the bank to free a bag slot."] =
+        "NPC在室内。之后的任务“雕文橡木枝”需要它：先存进银行，腾出背包空间。",
     ["The NPC stands on the highest level of this structure."] =
         "NPC在这座建筑的最高层。",
     ["This NPC is found down in the Cleft of Shadow."] =
