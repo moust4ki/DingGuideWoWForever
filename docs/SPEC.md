@@ -789,8 +789,8 @@ gamepad buttons). Every gamepad action therefore has an equivalent:
   keyboard key just like a gamepad button.
 - Move mode: drag the frame with the mouse; "Save", "Cancel" and "Reset" buttons on the
   plate, Enter saves, Esc cancels.
-- **The help bar is clickable** (settings and the move mode plate): a click on
-  "A Select", "B Back", "Y Reset" or "LB/RB Tabs" does what the button does.
+- **The help bar is clickable** (settings, import window and the move mode plate): a click
+  on "A Open", "Y Reset", "B Cancel" or "Y Select for Ctrl+C" does what the button does.
   These hints look like buttons (background, border, lighter on hover); the D-pad hint and
   the mouse help text, which cannot be clicked, stay plain text. Yendi's feedback: with no
   gamepad plugged in, you could neither confirm nor cancel, since A and B were only pictures.
@@ -800,6 +800,15 @@ gamepad buttons). Every gamepad action therefore has an equivalent:
   the help bar and these messages talk mouse and keyboard ("Click: change · Right-click:
   default · Esc: close"), with no glyph; with a gamepad, nothing changes. `mouse_test`
   checks it.
+- **Each action once** (Yendi's feedback: "the gamepad interface and the mouse interface
+  coexist, so I get duplicate buttons"). With a gamepad, a button on screen carries the chips
+  of the gamepad buttons that press it (A on the focused one, B on the one that closes or goes
+  back, Y on the one that selects), and the help bar lists only what no button does (D-pad,
+  Y to select for Ctrl+C, a row's A when the row has no chip…). In the settings, B is on the
+  close cross (on a page: on the page's title) and LB / RB at the ends of the tabs, so the
+  footer no longer repeats them. Without a gamepad: the buttons alone, no chip, the mouse
+  help. A window open while a gamepad is plugged in or out follows it. `single_action_test`
+  checks every window, gamepad or not, in every language (buttons and hints fit).
 
 ### Gamepad
 

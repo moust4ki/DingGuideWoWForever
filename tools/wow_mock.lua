@@ -146,9 +146,18 @@ return function(opts)
     local function plainText(w)
         return (tostring(w.text or ""):gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", ""))
     end
+    -- 6 per character, 12 for a wide one (Chinese, Japanese, Korean: from U+3000), bytes of a
+    -- character counted once.
+    local function measure(text)
+        local width = 0
+        for lead in text:gmatch("[^\128-\191]") do
+            width = width + (lead:byte() >= 0xE3 and 12 or 6)
+        end
+        return width
+    end
     -- Like the modern client, the measure is bounded by a width already set (0 = none).
     function Methods:GetStringWidth()
-        local full = #plainText(self) * 6
+        local full = measure(plainText(self))
         if self.w and self.w > 0 then return math.min(full, self.w) end
         return full
     end

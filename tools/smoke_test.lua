@@ -492,7 +492,14 @@ ok, err = pcall(function()
                 press("PAD2")
                 expect(not row.confirming and C.frame:IsShown(), "B does not cancel the confirmation: " .. row.opts.label)
             end
-            expect((C.frame.help.shown or 0) > 0, "empty help bar")
+            -- The footer lists what no chip on screen says (each action once): all of it fits,
+            -- and a row with an empty footer carries its A (check box corner, button).
+            local help = C.frame.help
+            expect((help.shown or 0) == #(help.list or {}), "help bar cut")
+            if #(help.list or {}) == 0 then
+                local chip = row.aGlyph or (row.button and row.button.keyGlyphs and row.button.keyGlyphs[1])
+                expect(chip and chip:IsShown(), "empty help bar and no A on the row: " .. tostring(row.opts.label))
+            end
             press("PADDDOWN")
         until C.focus == first or seen > 40
         expect(seen > 1, "tab " .. t .. ": the d-pad does not go through the elements")

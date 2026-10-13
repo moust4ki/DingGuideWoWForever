@@ -205,7 +205,8 @@ local HINT_PAD, HINT_GAP, HINT_TEXT_GAP, HINT_BOX = 7, 6, 16, 22
 
 -- onPress(key): optional; each hint with a button to press is then a button too, so a
 -- mouse can do what the glyph says (players without a gamepad plugged in could not press
--- A or B).
+-- A or B). After SetHints, `bar.list` is the list, `bar.shown` the number of entries that fit
+-- and `bar.used` the width they take; SetRoom(width) changes the width they may take.
 function G:NewHintBar(parent, width, height, onPress)
     local bar = CreateFrame("Frame", nil, parent)
     bar:SetSize(width, height)
@@ -234,8 +235,13 @@ function G:NewHintBar(parent, width, height, onPress)
         return item
     end
 
+    function bar:SetRoom(w)
+        width = w
+        self:SetWidth(w)
+    end
+
     function bar:SetHints(list)
-        local x, shown = 0, 0
+        local x, shown, used = 0, 0, 0
         for i, hint in ipairs(list) do
             local item = self.items[i] or newItem(self)
             self.items[i] = item
@@ -255,6 +261,7 @@ function G:NewHintBar(parent, width, height, onPress)
                 item.button:ClearAllPoints()
                 item.button:SetPoint("LEFT", self, "LEFT", x, 0)
                 item.button:SetSize(w, boxHeight)
+                used = x + w
                 x = x + w + (key and HINT_GAP or HINT_TEXT_GAP)
                 shown = shown + 1
             end
@@ -277,7 +284,7 @@ function G:NewHintBar(parent, width, height, onPress)
             item.border:Hide()
             item.hover:Hide()
         end
-        self.shown = shown
+        self.list, self.shown, self.used = list, shown, used
     end
     return bar
 end
@@ -430,8 +437,9 @@ end
 ---------------------------------------------------------------------------
 local PLATE_WIDTH = 340
 
--- A text button of the plate, for the mouse (the gamepad has its hints).
-local function plateButton(plate, text, onClick)
+-- A text button of the plate: clicked with the mouse, pressed with `key` on a gamepad (its
+-- chip then sits before the label, and the hints leave it out).
+local function plateButton(plate, text, key)
     local b = CreateFrame("Button", nil, plate)
     b:SetHeight(22)
     b:RegisterForClicks("LeftButtonUp")
@@ -440,9 +448,27 @@ local function plateButton(plate, text, onClick)
     b.text = UI.Text(b, "medium", 11, UI.C.text)
     b.text:SetPoint("CENTER", b, "CENTER", 0, 0)
     b.text:SetText(text)
-    b:SetWidth(math.max(64, UI.Measure(b.text) + 20))
-    b:SetScript("OnClick", onClick)
+    b.key = key
+    b:SetScript("OnClick", function() G:OnMoveKey(key) end)
     return b
+end
+
+-- The plate's help: with a gamepad, the chips go on the buttons (A Save, B Cancel, Y Reset)
+-- and the hints keep what has no button (D-pad, LB / RB); without one, the mouse help.
+local function plateHelp(plate)
+    local pad = G:Active()
+    for _, b in ipairs({ plate.save, plate.cancel, plate.reset }) do
+        local keys = pad and { b.key } or nil
+        b:SetWidth(math.max(64, UI.Measure(b.text) + 20 + UI.ButtonKeys(b, keys)))
+    end
+    if pad then
+        plate.hints:SetHints({
+            UI.Hint({ "PADDUP", "PADDDOWN", "PADDLEFT", "PADDRIGHT" }, L.HINT_MOVE),
+            UI.Hint({ "PADLSHOULDER", "PADRSHOULDER" }, L.MOVE_STEP),
+        })
+    else
+        plate.hints:SetHints({ UI.Hint(nil, L.MOVE_DRAG) })
+    end
 end
 
 local function movePlate()
@@ -459,12 +485,12 @@ local function movePlate()
     plate.pos:SetPoint("TOPRIGHT", plate, "TOPRIGHT", -12, -11)
     plate.hints = G:NewHintBar(plate, PLATE_WIDTH - 24, 22, function(key) G:OnMoveKey(key) end)
     plate.hints:SetPoint("TOPLEFT", plate, "TOPLEFT", 12, -34)
-    -- Mouse and keyboard: Save (Enter), Cancel (Escape), Reset.
-    plate.save = plateButton(plate, L.HINT_SAVE, function() G:OnMoveKey("PAD1") end)
+    -- Save (A, Enter), Cancel (B, Escape), Reset (Y).
+    plate.save = plateButton(plate, L.HINT_SAVE, "PAD1")
     plate.save:SetPoint("BOTTOMLEFT", plate, "BOTTOMLEFT", 12, 10)
-    plate.cancel = plateButton(plate, L.HINT_CANCEL, function() G:OnMoveKey("PAD2") end)
+    plate.cancel = plateButton(plate, L.HINT_CANCEL, "PAD2")
     plate.cancel:SetPoint("LEFT", plate.save, "RIGHT", 8, 0)
-    plate.reset = plateButton(plate, L.HINT_RESET, function() G:OnMoveKey("PAD4") end)
+    plate.reset = plateButton(plate, L.HINT_RESET, "PAD4")
     plate.reset:SetPoint("LEFT", plate.cancel, "RIGHT", 8, 0)
     if plate.EnableKeyboard then pcall(plate.EnableKeyboard, plate, true) end
     pcall(plate.SetScript, plate, "OnKeyDown", function(self, key)
@@ -516,17 +542,7 @@ function G:StartMove(target, onDone)
     self.moveOrigin = { target.get() }
 
     plate.title:SetText(target.title)
-    if self:Active() then
-        plate.hints:SetHints({
-            UI.Hint({ "PADDUP", "PADDDOWN", "PADDLEFT", "PADDRIGHT" }, L.HINT_MOVE),
-            UI.Hint({ "PADLSHOULDER", "PADRSHOULDER" }, L.MOVE_STEP),
-            UI.Hint("PAD1", L.HINT_SAVE),
-            UI.Hint("PAD2", L.HINT_CANCEL),
-            UI.Hint("PAD4", L.HINT_RESET),
-        })
-    else
-        plate.hints:SetHints({ UI.Hint(nil, L.MOVE_DRAG) })
-    end
+    plateHelp(plate)
     plate:ClearAllPoints()
     plate:SetPoint("BOTTOMLEFT", target.frame, "TOPLEFT", 0, 12)
 
@@ -592,13 +608,19 @@ function G:IsMoving()
     return self.moving ~= nil
 end
 
--- A gamepad plugged in or out: the help switches between the gamepad and the mouse.
+-- A gamepad plugged in or out: the open windows switch between the gamepad (chips on the
+-- buttons, hints) and the mouse (buttons alone, mouse help).
 local function gamepadChanged()
     local Cfg = Ding.Config
     if Cfg and Cfg.frame and Cfg.frame:IsShown() then
         Ding:Safe(Cfg.RefreshRows, Cfg)
         Ding:Safe(Cfg.UpdateHelp, Cfg)
     end
+    local W = Ding.ImportWindow
+    if W and W.frame and W.frame:IsShown() then Ding:Safe(W.Refresh, W) end
+    local F = Ding.Finder
+    if F and F.frame and F.frame:IsShown() then Ding:Safe(F.UpdateHelp, F) end
+    if G.moving then Ding:Safe(plateHelp, G.plate) end
     if Ding.Panel and Ding.Panel.Update then Ding:Safe(Ding.Panel.Update, Ding.Panel) end
 end
 Ding:On("GAME_PAD_CONNECTED", gamepadChanged)

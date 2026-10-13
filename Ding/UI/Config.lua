@@ -1078,13 +1078,11 @@ function Cfg:RefreshRows()
     local view = f and self:View()
     if not view or not view.rows then return end
     for _, row in ipairs(view.rows) do row:Refresh() end
-    local pad = G():Active()
+    -- The focused row again: its A chip follows the gamepad.
+    if self.focus then self.focus:SetFocused(true) end
     f.lb:SetKey("PADLSHOULDER")
     f.rb:SetKey("PADRSHOULDER")
     f.back:SetKey("PAD2")
-    f.lb:SetShown(pad)
-    f.rb:SetShown(pad)
-    f.back:SetShown(pad)
     layoutTabs(f)
     self:UpdateHelp()
 end
@@ -1172,11 +1170,24 @@ local function mouseHelp(self, row)
     return L.MOUSE_HINT
 end
 
+-- Each action shows once (Yendi: the same action as a hint and as a button). With a gamepad,
+-- a chip sits on what its button does when that is on screen: B on the close cross (on a tab)
+-- or on the page's title (on a page), LB / RB at the ends of the tabs, A on the focused row
+-- when the row has one (check box, button). The footer keeps the others.
 function Cfg:UpdateHelp()
     local f = self.frame
     if not f then return end
     local row = self.focus
-    if not G():Active() then
+    local pad = G():Active()
+    -- While a list is open, a button waited for or a conflict settled, B and LB / RB do
+    -- something else (or nothing): their chips go away, the footer says it.
+    local busy = self.dropdown or self.capturing or self.conflictRow
+    local confirming = row and row.confirming
+    f.lb:SetShown(pad and not busy)
+    f.rb:SetShown(pad and not busy)
+    f.back:SetShown(pad and not busy and not confirming and not self.page)
+    if self.page then self.page.rows[1]:ShowKey(pad and not busy and not confirming) end
+    if not pad then
         f.help:SetHints({ UI.Hint(nil, mouseHelp(self, row)) })
         return
     end
@@ -1185,12 +1196,13 @@ function Cfg:UpdateHelp()
         hints = { hint("PAD1", L.HINT_SELECT), hint("PAD2", L.HINT_BACK) }
     elseif self.capturing then
         hints = { hint("PAD2", L.HINT_CANCEL) }
-    elseif self.conflictRow or (row and row.confirming) then
+    elseif self.conflictRow then
         hints = { hint("PAD1", L.HINT_CONFIRM), hint("PAD2", L.HINT_CANCEL) }
+    elseif confirming then
+        -- The row's button says "Confirm? (A)".
+        hints = { hint("PAD2", L.HINT_CANCEL) }
     else
         hints = row and row:Hints() or {}
-        hints[#hints + 1] = hint("PAD2", L.HINT_BACK)
-        hints[#hints + 1] = hint({ "PADLSHOULDER", "PADRSHOULDER" }, L.HINT_TABS)
     end
     f.help:SetHints(hints)
 end
