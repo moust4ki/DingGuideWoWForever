@@ -271,6 +271,7 @@ Ding.Locales.frFR = {
     IMPORT_ANOTHER = "En importer un autre",
     IMPORT_ERROR_LINE = "Erreur : %s",
     IMPORT_WARNING_LINE = "Avertissement : %s",
+    IMPORT_WAIT_KEYBOARD = "Le chat a encore le clavier : une fois fermé, cette zone le prend.",
     EXPORT_TITLE = "Exporter : %s",
     EXPORT_HELP = "Le texte est sélectionné : copiez-le avec Ctrl+C.",
     EXPORT_MOUSE = "Ctrl+C : copier · Échap : fermer",

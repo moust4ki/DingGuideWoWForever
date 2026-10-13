@@ -304,6 +304,10 @@ Contracts between modules:
   `HideUIPanel`…): called from an addon, they get tainted and their secret values fail all
   over. Ding shows what is needed in its own frames and tooltips; `taint_test` rejects these
   calls.
+- **Never take the keyboard from a box Ding does not own** (`EditBox:SetFocus` while the game's
+  chat has it, during a slash command above all): the chat's focus-lost handler then runs in
+  Ding's name and, with the gamepad interface, reaches Blizzard-only actions (the game's
+  "AddOn blocked" popup). `ImportWindow:Focus` waits until `GetCurrentKeyBoardFocus()` is free.
 - Interface: the design of `docs/UI-handoff.md`, to the pixel. Colors through the `UI.C`
   tokens, fonts through `UI.Font(weight, size)` (Noto Sans), shapes through `UI.Shape` /
   `UI.Window` (nine-slice kit textures), focus through `UI.Focus`, gamepad buttons through

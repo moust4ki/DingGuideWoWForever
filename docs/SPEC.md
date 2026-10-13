@@ -275,7 +275,10 @@ keys of section 2 above.
   text, to copy back to the AI: "Error: Step 3: ..."), buttons. Gamepad: D-pad left / right
   between the buttons, A, Y selects the text or the report for Ctrl+C, B closes; temporary
   bindings, closed in combat. Mouse: the buttons, Esc. Opened from the settings, closing it
-  comes back to the page.
+  comes back to the page. The window never takes the keyboard from a box that is not Ding's
+  (the game's chat, which still has it while `/ding export` runs from it, and keeps it with
+  the gamepad interface): the text takes it once the keyboard is free, the status line says
+  so meanwhile.
 
 ---
 

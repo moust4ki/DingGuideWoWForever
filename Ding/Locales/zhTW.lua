@@ -274,6 +274,7 @@ Ding.Locales.zhTW = {
     IMPORT_ANOTHER = "再匯入一個",
     IMPORT_ERROR_LINE = "錯誤：%s",
     IMPORT_WARNING_LINE = "警告：%s",
+    IMPORT_WAIT_KEYBOARD = "聊天框仍占用鍵盤：關閉聊天框後，此文字框將接管鍵盤。",
     EXPORT_TITLE = "匯出：%s",
     EXPORT_HELP = "文字已選取：用 Ctrl+C 複製。",
     EXPORT_MOUSE = "Ctrl+C：複製 · Esc：關閉",

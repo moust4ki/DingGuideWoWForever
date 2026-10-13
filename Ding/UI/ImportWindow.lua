@@ -19,6 +19,45 @@ local KEYS = { "PADDLEFT", "PADDRIGHT", "PAD1", "PAD2", "PAD4" }
 local function G() return Ding.Gamepad end
 
 ---------------------------------------------------------------------------
+-- Keyboard focus
+---------------------------------------------------------------------------
+-- Ding never takes the keyboard from a box that is not one of its own: the game's chat box
+-- above all, which still has it while /ding export or /ding import runs from it. Taken away
+-- inside Ding's code, the chat's own focus-lost handler runs in Ding's name, and with the
+-- game's gamepad interface it ends in actions only the Blizzard UI may take (the game's
+-- "AddOn blocked" popup, in game, 13/10/2026). The box waits until the keyboard is free.
+local function keyboardTaken()
+    if type(GetCurrentKeyBoardFocus) ~= "function" then return false end
+    local ok, focus = pcall(GetCurrentKeyBoardFocus)
+    if not ok or focus == nil then return false end
+    local f = W.frame
+    return not (f and (focus == f.text.edit or focus == f.report.edit))
+end
+
+-- The box takes the keyboard (its text selected with `select`), now or once it is free.
+function W:Focus(box, select)
+    local f = self.frame
+    if keyboardTaken() then
+        self.pendingFocus = { box = box, select = select }
+        if (f.status:GetText() or "") == "" then
+            f.status:SetText(L.IMPORT_WAIT_KEYBOARD)
+            f.status:SetTextColor(unpack(C.secondary))
+        end
+        return false
+    end
+    self.pendingFocus = nil
+    if f.status:GetText() == L.IMPORT_WAIT_KEYBOARD then f.status:SetText("") end
+    box.edit:SetFocus()
+    if select then box.edit:HighlightText() end
+    return true
+end
+
+function W:OnUpdate()
+    local pending = self.pendingFocus
+    if pending and not keyboardTaken() then self:Focus(pending.box, pending.select) end
+end
+
+---------------------------------------------------------------------------
 -- Pieces
 ---------------------------------------------------------------------------
 -- A box of text that scrolls: a multi-line edit box in a scroll frame. A read-only box (or
@@ -66,7 +105,7 @@ local function textBox(parent, height, readOnly)
         end
     end)
     box:EnableMouse(true)
-    box:SetScript("OnMouseDown", function() edit:SetFocus() end)
+    box:SetScript("OnMouseDown", function() W:Focus(box) end)
     function box:SetValue(text, locked)
         edit.fixed = (readOnly or locked) and text or nil
         edit:SetText(text)
@@ -74,10 +113,7 @@ local function textBox(parent, height, readOnly)
     end
     function box:GetValue() return edit:GetText() or "" end
     -- Everything selected, ready for Ctrl+C.
-    function box:SelectAll()
-        edit:SetFocus()
-        edit:HighlightText()
-    end
+    function box:SelectAll() W:Focus(box, true) end
     box.scroll, box.edit = scroll, edit
     return box
 end
@@ -133,6 +169,7 @@ function W:Create()
     f.hints = G():NewHintBar(f, WIDTH / 2, 22, function(key) W:OnKey(key) end)
     f.hints:SetPoint("BOTTOMLEFT", f, "BOTTOMLEFT", PAD, 9)
     f:SetScript("OnHide", function() W:OnHide() end)
+    f:SetScript("OnUpdate", function() if W.pendingFocus then Ding:Safe(W.OnUpdate, W) end end)
     f:Hide()
     if type(UISpecialFrames) == "table" then table.insert(UISpecialFrames, "DingImport") end
     self.frame = f
@@ -276,7 +313,7 @@ function W:Open(mode, id, back)
         f:Show()
         G():Take(f, function(key) W:OnKey(key) end, 0.4, 0.12, KEYS)
     end
-    if mode == "export" then f.text:SelectAll() else f.text.edit:SetFocus() end
+    self:Focus(f.text, mode == "export")
     return true
 end
 
@@ -300,6 +337,7 @@ function W:OnHide()
     local f = self.frame
     if not f then return end
     G():Release(f)
+    self.pendingFocus = nil
     f.text.edit:ClearFocus()
     f.report.edit:ClearFocus()
     local back = self.back
