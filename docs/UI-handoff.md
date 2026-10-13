@@ -515,8 +515,8 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
     12 Regular `text.secondary` ("More options" / "Fewer options"; "Advanced" in Appearance);
     A or a click.
   - **"Defaults for this tab"**: a button row (confirmed) at the end of every tab but Keybinds.
-  - Footer: on a page, `B Back` stays the last-but-one hint; the mouse help says "Click: change
-    · Right-click or Esc: back".
+  - Footer: on a page, B goes back: its chip sits on the page's title (below, "Each action
+    once"); the mouse help says "Click: change · Right-click or Esc: back".
 - **Step language 2** (not in the mockup): the dungeons' page of the Route tab (above); the
   arrow's label on a patrol, "text · point 2 of 5"; as a ghost on a death skip with a spirit
   healer, "Spirit healer".
@@ -537,8 +537,10 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   12 Medium (`done` green when imported, `todo` red when refused), the report in a second box
   (104 high, 11 Regular `text.secondary`, read-only, hidden when empty), buttons at the bottom
   right (26 high, radius 4, 12 Medium, the first one `accent` with `onAccent` text; focus: outer
-  ring and halo, gamepad only), the hint bar at the bottom left (A the focused button, Y
-  Select for Ctrl+C, B Close; without a gamepad "Ctrl+V: paste · Esc: close"). The Guide tab:
+  ring and halo, gamepad only; A on the focused one, B on the one that closes, Y on "Select
+  all"), the hint bar at the bottom left (`Y Select for Ctrl+C` while no button selects;
+  without a gamepad "Ctrl+V: paste · Esc: close"), on a line of its own above the buttons, the
+  window 30 higher, when it does not fit beside them. The Guide tab:
   a header "Guides as text" and a page row "Import and export" (value "None" / "2 imported");
   its page: "Import a guide", "Export the active guide" (button rows), a header "Imported
   guides", one button row per imported guide ("Delete", confirmed; its steps, category and id
@@ -555,6 +557,31 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   that binding is bound and the arrow points to an NPC or a monster. In the Keybinds tab, an
   info row under the bindings (11 Regular `text.secondary`) suggests the game's "Interact with
   Target" key.
+- **Each action once** (Yendi, in game: "the gamepad interface and the mouse interface coexist,
+  so I get duplicate buttons": `A Import` in the hint bar next to the Import button). With a
+  gamepad, a button carries the chips of the gamepad buttons that press it, and the hint bar
+  keeps only what no button on screen does; without one, the buttons alone and the mouse help
+  (no chip anywhere). Switching (a gamepad plugged in or out) updates an open window.
+  - **Chips on a button** (`UI.ButtonKeys`): the 14-high chips before the label, 6 between the
+    last chip and the label, 3 between chips, chips and label centered together. On a
+    `bg.control` button the hint bar's colors; on an `accent` button a dark disc
+    (`glyphOnAccent`, `#0B0C0E33`) and the `onAccent` letter. A button keeps room for every
+    chip it can carry, so that it does not grow when the focus comes to it.
+  - **Import window**: A on the focused button, B on Cancel / Close (A and B on it when it has
+    the focus), Y on "Select all" (export); the hint bar keeps `Y Select for Ctrl+C` (import)
+    or nothing (export).
+  - **Settings**: the footer no longer shows `B Back` nor `LB RB Tabs` (screen 03's footer):
+    the round B chip of the title bar and the LB / RB chips of the tabs say it, and show only
+    while those buttons do that (not while the guide list is open, a button is awaited or a
+    binding conflict asks). On a page the B chip moves from the title bar to the page's title
+    (between the caret and the name). The focused check row shows A in its corner (screen
+    03), the focused button row A on its button: their footer is empty. A confirmation: the
+    button says "Confirm? (A)", the footer `B Cancel` only. Other rows keep their footer (`A
+    Open`, `◂ ▸ Adjust`, `Y Reset`, `A Bind` · `Y Unbind`…).
+  - **Move mode plate**: Save (A), Cancel (B) and Reset (Y) buttons with their chips; the
+    hints keep `◂▴▾▸ Move` and `LB RB Step 1 / 20`.
+  - Nearby services and the guide's focus mode have no button doing what a hint says: they do
+    not change.
 
 ## To check in game (Forever 1.60)
 

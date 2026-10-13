@@ -319,6 +319,9 @@ Contracts between modules:
   cancel, Escape = B, clickable buttons in move mode). Without an active gamepad
   (`Gamepad:Active`), the help and the messages speak of the mouse and the keyboard;
   `mouse_test` checks it (SPEC §3, Keyboard and mouse).
+- Each action shows once: with a gamepad, a button carries its chips (`UI.ButtonKeys`: A on the
+  focused one, B on the one that closes) and a hint bar only lists what no button on screen
+  does; `single_action_test` checks every window, with and without a gamepad, in every language.
 - Anchors: to stretch a region, `TOPLEFT`/`TOPRIGHT` pairs (never `TOPLEFT` + `RIGHT`, which
   also fixes the vertical center); the smoke test checks it.
 - Temporary bindings (`SetOverrideBindingClick`) only out of combat; anything that sets them
