@@ -59,6 +59,7 @@ Ding.Locales.zhTW = {
     SCALE_SET = "視窗縮放：%.2f",
     OPTIONAL = "（非必要）",
     ANOTHER_CONTINENT = "另一塊大陸",
+    IN_DUNGEON = "%s（%s內）",
     ARRIVED = "已抵達",
     IN_AREA = "已在區域內",
     CORPSE = "屍體",

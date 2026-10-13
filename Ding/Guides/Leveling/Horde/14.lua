@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Horde/14.lua.
--- Simulated (warrior): Orc 33 (7%) -> 34 (9%) in 3 h 52, 16 quests turned in; Scourge 33 (7%) -> 34 (9%) in 3 h 52, 16 quests turned in; Tauren 33 (7%) -> 34 (10%) in 3 h 52, 17 quests turned in; Troll 33 (7%) -> 34 (9%) in 3 h 52, 16 quests turned in; Skyborne 33 (7%) -> 34 (9%) in 3 h 52, 16 quests turned in.
+-- Simulated (warrior): Orc 33 (7%) -> 34 (9%) in 3 h 52, 16 quests turned in; Scourge 33 (7%) -> 34 (9%) in 3 h 52, 16 quests turned in; Tauren 33 (7%) -> 34 (9%) in 3 h 52, 16 quests turned in; Troll 33 (7%) -> 34 (9%) in 3 h 52, 16 quests turned in; Skyborne 33 (7%) -> 34 (9%) in 3 h 52, 16 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-h14-thousand-needles",
     title    = "Thousand Needles (33-34)",
@@ -68,7 +68,6 @@ Ding.RegisterGuide({
         { destroy = 5877 }, -- level 34
         { turnin = 1178, accept = 1180, -- level 34
           note = "The NPC is indoors, one floor up." },
-        { turnin = 92706, races = { "Tauren" } }, -- level 34
         { turnin = 96, when = { log = 96 }, races = { "Orc", "Tauren", "Troll", "Skyborne" }, classes = { "SHAMAN" } }, -- level 34
         { turnin = 1180, accept = 1181 }, -- level 34
         { accept = 575, -- level 34

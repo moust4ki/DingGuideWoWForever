@@ -59,6 +59,7 @@ Ding.Locales.enUS = {
     SCALE_SET = "Window scale: %.2f",
     OPTIONAL = "(optional)",
     ANOTHER_CONTINENT = "Another continent",
+    IN_DUNGEON = "%s, in %s",
     ARRIVED = "You’re here",
     IN_AREA = "You’re in the area",
     CORPSE = "Your corpse",

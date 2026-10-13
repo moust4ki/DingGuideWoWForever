@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Horde/01.lua.
--- Simulated (warrior): Scourge 1 (0%) -> 14 (13%) in 9 h 10, 79 quests turned in.
+-- Simulated (warrior): Scourge 1 (0%) -> 14 (14%) in 9 h 10, 80 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-h01-undead-starter",
     title    = "Undead start (1-13)",
@@ -334,7 +334,6 @@ Ding.RegisterGuide({
           note = "The NPC waits on the tower's highest floor." },
         { turnin = 831, -- level 11
           note = "The NPC is indoors." },
-        { accept = 96874, races = { "Scourge" } }, -- level 11
         { go = { 1454, 81.59, 19.59 }, classes = { "WARRIOR" }, text = "Learn Staves at the weapon master" }, -- level 11
         { talk = 2704, classes = { "WARRIOR" }, -- level 11
           note = "The NPC is indoors." },
@@ -366,6 +365,7 @@ Ding.RegisterGuide({
         { accept = 97558, races = { "Scourge" } }, -- level 11
         { accept = 97951, races = { "Scourge" } }, -- level 11
         { accept = 97953, races = { "Scourge" } }, -- level 11
+        { accept = 97957, races = { "Scourge" } }, -- level 11
         { accept = 97961, races = { "Scourge" } }, -- level 11
         { turnin = 1478, accept = 1473, classes = { "WARLOCK" } }, -- level 11
         { turnin = 1885, accept = 1886, classes = { "ROGUE" } }, -- level 11
@@ -472,6 +472,8 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { turnin = 371 }, -- level 13
         { turnin = 99134, races = { "Scourge" } }, -- level 13
+        { complete = 97957, races = { "Scourge" } }, -- level 13
+        { turnin = 97957, races = { "Scourge" } }, -- level 13
         { turnin = 369, accept = { 492, 445 }, -- level 13
           note = "The NPC is indoors." },
         { turnin = 492, -- level 14

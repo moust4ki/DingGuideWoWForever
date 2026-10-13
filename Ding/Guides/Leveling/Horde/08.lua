@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Horde/08.lua.
--- Simulated (warrior): Orc 24 (81%) -> 25 (86%) in 1 h 58, 13 quests turned in; Scourge 24 (81%) -> 25 (86%) in 1 h 58, 13 quests turned in; Tauren 24 (78%) -> 25 (83%) in 1 h 58, 13 quests turned in; Troll 24 (81%) -> 25 (86%) in 1 h 58, 13 quests turned in; Skyborne 24 (85%) -> 25 (90%) in 1 h 58, 13 quests turned in.
+-- Simulated (warrior): Orc 24 (84%) -> 25 (89%) in 1 h 58, 13 quests turned in; Scourge 24 (84%) -> 25 (89%) in 1 h 58, 13 quests turned in; Tauren 24 (81%) -> 25 (86%) in 1 h 58, 13 quests turned in; Troll 24 (84%) -> 25 (89%) in 1 h 58, 13 quests turned in; Skyborne 24 (85%) -> 25 (90%) in 1 h 58, 13 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-h08-the-barrens",
     title    = "The Barrens (24-25)",

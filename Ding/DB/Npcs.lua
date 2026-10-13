@@ -369,7 +369,7 @@ t[594]={"Defias Henchman",15,16,1,{[1436]={42.88,72.6,41.84,78.44,43.94,73.51,43
 t[595]={"Bloodscalp Hunter",34,35,0,{[1434]={22.69,11.96,22.35,12.8,25.99,9.82,26,9.41,25.91,12.67,26.09,12.39,25.56,13.21,26.13,12.69,25.93,8.4,25.72,9.32,26.02,9.18,25.05,9.45,25.08,9.9,22.94,11.02,24.46,12.32,26.31,11.32,23.85,13.16,23.34,12.05}},nil,nil,0}
 t[596]={"Brainwashed Noble",18,18,2,{[1436]={43.98,78.33}},nil,nil,0}
 t[597]={"Bloodscalp Berserker",36,37,0,{[1434]={20.26,12.2,19.89,11.87,19.98,12.07,23.09,11.25,24.72,9.39,20.7,11.15,19.37,12.84,19.52,11.95,24.42,9.11,24.31,9.47,23.92,9.92,23.77,9.4,22.99,8.81,22.71,9.18,23.14,10.7,23.66,9.89,23.56,9.7,24.08,10.7,23.3,9.15}},nil,nil,0}
-t[598]={"Defias Miner",18,18,0,nil,nil,nil,0}
+t[598]={"Defias Miner",18,18,0,nil,nil,nil,0,1581}
 t[599]={"Marisa du'Paige",18,18,2,{[1436]={42.23,79.91,43.86,79.1,44.23,76.83}},nil,nil,0}
 t[601]={"Capo the Mean",16,16,2,nil,nil,nil,0}
 t[603]={"Grimtooth",59,59,0,{[1459]={51.71,94.86}},nil,nil,0}
@@ -378,7 +378,7 @@ t[615]={"Blackrock Tracker",23,24,0,{[1433]={21.05,12.87,31.93,10.43,22.15,9.96,
 t[616]={"Chatter",23,23,4,{[1433]={47.04,45.24,47.04,32.58,45.48,34.63,46.33,38.66,47.38,36.15,50.12,37.74,49.71,41.76,53.21,48.29,51.4,47.08,48.28,49.12,47.4,43.11,43.12,41.11,45.21,36.88,48.26,46.07}},nil,nil,0}
 t[619]={"Defias Conjurer",15,16,1,{[1436]={43.7,74.32,40.49,78.25,41.69,76.08}},nil,nil,0}
 t[620]={"Chicken",1,1,0,{[1413]={61.63,23.74,61.78,23.91,62.56,56.77,61.76,53.64,61.77,23.89,61.63,24.27,60.76,55.49,62.7,56.72,61.73,23.75,62.25,54.05,62.04,24.2,61.29,53.53,61.69,53.32,61.97,23.89},[1420]={38.04,48.91,52.17,56.23,52.95,56.31,38.08,51.71,60.26,51.27,60.87,53.59,37.21,50.15},[1424]={78.93,42.47,52.6,56.95,52.24,55.79,79.39,44.44,63.31,61.35,64.56,61.11,33.18,41.23,29.87,40.46,32.77,43.41,36.04,40.48,51.25,54.09,34.98,47.13,50.12,57.02},[1426]={67.1,3.78},[1429]={36.02,60.55,36.46,59.87,36.31,59.79,36.39,60.17,36.01,60.13,40.52,64.27,40.52,64.38,42.87,66.23,42.68,66.13,48.49,86.53,48.57,86.63,48.39,86.73,79.08,67.74,79.33,67.62,77.72,66.36,78.22,66.24,77.65,66.56,77.6,66.19,77.84,66.49,77.68,65.54},[1431]={78.01,48.04,72.73,54.34,77.16,55.54,79.77,46.94,75.73,56.33,76.54,53.72,77.87,44.25,73.57,53.09},[1433]={15.22,47.08,17.22,45.84,15.15,46.36},[1436]={48.73,21.32,55.64,30.85,55.92,31.95,51.71,31.23,38.23,57.08,38.84,57,45.34,69.59,38.94,56.69,45.68,39.19,45.77,38.72,49.75,19.49,45.14,69.93,51.52,31.28,49.19,20.47,48.96,20.8,49.31,19.76,44.73,68.08,38.48,56.67,49.91,18.97,45.42,69.6,45.64,39.6,44.73,68.46,56.24,31.82,55.66,31.46,56.1,29.71,56.21,29.61,56.1,30.05,51.51,31.6},[1437]={20.97,70.13,17.24,72.18,17.21,71.45,16.98,71.78,21.24,69.89,21.52,70.53,25.56,68.64,25.63,68,25.9,67.84,27.49,65.9},[1445]={66.42,48.52,63.93,50.06,66.81,46.11,65.34,50.66,64.41,47.47,65.52,49.47,67.63,50.77}},"AH",nil,2}
-t[622]={"Goblin Engineer",18,19,1,nil,nil,nil,0}
+t[622]={"Goblin Engineer",18,19,1,nil,nil,nil,0,1581}
 t[623]={"Skeletal Miner",17,18,1,{[1436]={40.71,81.81,41.52,81.35,41.61,81.67,42.15,81.36,41.37,83.19,40.69,82.29,40.86,80.81,41.22,83.21,40.74,81.2}},nil,nil,0}
 t[624]={"Undead Excavator",17,18,1,{[1436]={42.14,82.98,40.56,80.91,40.8,82.58,42.04,82.48,40.87,81.47}},nil,nil,0}
 t[625]={"Undead Dynamiter",17,18,1,{[1436]={41.08,80.96,41,82.74,41.74,83.26,41.85,81.44,42.44,83.31,41.55,82.54}},nil,nil,0}
@@ -386,17 +386,17 @@ t[626]={"Foreman Thistlenettle",20,20,1,{[1436]={42.22,82.61}},nil,nil,0}
 t[628]={"Black Ravager",24,25,0,{[1431]={48.55,61.55,69.98,35.41,66.1,28.73,63.74,27.8,52.74,63.16,64.13,25.65,67.34,31.79,68.37,33.3,59.72,57.79,59.33,58.84}},nil,nil,0}
 t[631]={"pnagle's test dude",1,2,0,nil,"AH",nil,0}
 t[633]={"Elaine Carevin",18,18,0,{[1431]={75.34,48.75}},"A",nil,2}
-t[634]={"Defias Overseer",17,18,1,nil,nil,nil,0}
-t[636]={"Defias Blackguard",19,20,1,nil,nil,nil,0}
+t[634]={"Defias Overseer",17,18,1,nil,nil,nil,0,1581}
+t[636]={"Defias Blackguard",19,20,1,nil,nil,nil,0,1581}
 t[638]={"Goblin Mercenary",15,16,1,nil,nil,nil,0}
-t[639]={"Edwin VanCleef",21,21,2,nil,nil,"Defias Kingpin",0}
-t[641]={"Goblin Woodcarver",18,19,1,nil,nil,nil,0}
-t[642]={"Sneed's Shredder",20,20,1,nil,nil,"Lumbermaster",0}
-t[643]={"Sneed",20,20,1,nil,nil,"Lumbermaster",0}
-t[644]={"Rhahk'Zor",19,19,1,nil,nil,"The Foreman",0}
-t[645]={"Cookie",20,20,1,nil,nil,"The Ship's Cook",0}
-t[646]={"Mr. Smite",20,20,1,nil,nil,"The Ship's First Mate",0}
-t[647]={"Captain Greenskin",20,20,1,nil,nil,nil,0}
+t[639]={"Edwin VanCleef",21,21,2,nil,nil,"Defias Kingpin",0,1581}
+t[641]={"Goblin Woodcarver",18,19,1,nil,nil,nil,0,1581}
+t[642]={"Sneed's Shredder",20,20,1,nil,nil,"Lumbermaster",0,1581}
+t[643]={"Sneed",20,20,1,nil,nil,"Lumbermaster",0,1581}
+t[644]={"Rhahk'Zor",19,19,1,nil,nil,"The Foreman",0,1581}
+t[645]={"Cookie",20,20,1,nil,nil,"The Ship's Cook",0,1581}
+t[646]={"Mr. Smite",20,20,1,nil,nil,"The Ship's First Mate",0,1581}
+t[647]={"Captain Greenskin",20,20,1,nil,nil,nil,0,1581}
 t[648]={"Bridge Worker Trent",5,5,0,nil,"A",nil,0}
 t[649]={"Bridge Worker Dmitri",10,10,0,nil,"A",nil,0}
 t[650]={"Bridge Worker Jess",6,6,0,nil,"A",nil,0}
@@ -404,7 +404,7 @@ t[651]={"Bridge Worker Daniel",6,6,0,nil,"A",nil,0}
 t[652]={"Bridge Worker Matthew",6,6,0,nil,"A",nil,0}
 t[653]={"Bridge Worker Alex",6,6,0,nil,"A",nil,0}
 t[656]={"Wilder Thistlenettle",20,20,0,{[1453]={70.31,40.82}},"A",nil,2}
-t[657]={"Defias Pirate",19,20,1,nil,nil,nil,0}
+t[657]={"Defias Pirate",19,20,1,nil,nil,nil,0,1581}
 t[658]={"Sten Stoutarm",5,5,0,{[1426]={29.93,71.2}},"A",nil,3}
 t[659]={"El Pollo Grande",50,50,0,nil,nil,"The Black Chicken of Death",0}
 t[660]={"Bloodscalp Witch Doctor",37,37,0,{[1434]={20.26,11.79,20.09,11.94,19.87,12.13,20.87,15.38,20.87,12.96,21.01,13.54,20.89,12.12,20.5,14.3,19.38,11.39,20.42,12.94,24.16,9.81,24.03,9.98,24.24,8.85,23.57,8.19,24.05,9.45,23.37,8.41,24.57,10.65,24.69,10.31}},nil,nil,0}
@@ -1289,10 +1289,10 @@ t[1658]={"Captain Dargol",13,13,0,{[1420]={52.81,26.35}},nil,nil,0}
 t[1660]={"Scarlet Bodyguard",8,8,0,{[1420]={79.44,25.12,79.46,25.25}},nil,nil,0}
 t[1661]={"Novice Elreth",3,3,0,{[1420]={30.86,66.05}},"H",nil,2}
 t[1662]={"Captain Perrine",9,9,0,{[1420]={51.14,67.8}},nil,nil,0}
-t[1663]={"Dextren Ward",26,26,1,nil,nil,nil,0}
+t[1663]={"Dextren Ward",26,26,1,nil,nil,nil,0,717}
 t[1664]={"Captain Vachon",11,11,0,{[1420]={78.82,56.13}},nil,nil,0}
 t[1665]={"Captain Melrache",12,12,0,{[1420]={79.52,25.15}},nil,nil,0}
-t[1666]={"Kam Deepfury",27,27,1,nil,nil,nil,0}
+t[1666]={"Kam Deepfury",27,27,1,nil,nil,nil,0,717}
 t[1667]={"Meven Korgal",5,5,0,{[1420]={36.57,68.54}},nil,nil,0}
 t[1668]={"William MacGregor",15,15,0,{[1436]={57.71,53.94}},"A","Bowyer",16388}
 t[1669]={"Defias Profiteer",20,20,0,{[1436]={43.47,66.76}},"AH","Free Wheeling Merchant",16388}
@@ -1321,7 +1321,7 @@ t[1692]={"Golorn Frostbeard",10,10,0,{[1426]={46.67,53.49}},"A","Tradesman",6}
 t[1693]={"Loch Crocolisk",14,15,0,{[1432]={51.19,34.87,54.24,56.22,56.1,37.8,58.76,36.85,54.54,41.69,56.87,39.12,54.03,39.3,62.44,51.52,56.55,36.4,53.57,37.42,53.15,39.24,53.76,40.41,55.51,33.84,55.68,35.96,56.29,37.56,58.76,57.55,59.98,41.76,57.43,31.63,56.45,52.59,55.34,52.72,55.08,52.89,55.47,53.48,61.31,43.67,53.99,55.2,61.86,45.41,57.32,21.74,58.33,23.97}},nil,nil,0}
 t[1694]={"Loslor Rudge",10,10,0,{[1426]={50.08,49.42}},"A","Engineering Supplies",7}
 t[1695]={"Rendow",45,45,0,{[1444]={89.35,45.86}},"A","Leather Armor Merchant",16388}
-t[1696]={"Targorr the Dread",24,24,1,nil,nil,nil,0}
+t[1696]={"Targorr the Dread",24,24,1,nil,nil,nil,0,717}
 t[1697]={"Keeg Gibn",10,10,0,{[1426]={30.45,46.01}},"A","Ale and Wine",6}
 t[1698]={"Frast Dokner",8,8,0,{[1426]={69,55.89}},"A","Apprentice Weaponsmith",16388}
 t[1699]={"Gremlock Pilsnor",10,10,0,{[1426]={47.67,52.31}},"A","Cooking Trainer",19}
@@ -1329,28 +1329,28 @@ t[1700]={"Paxton Ganter",10,10,0,{[1426]={35.48,40.22}},"A","Fisherman",19}
 t[1701]={"Dank Drizzlecut",10,10,0,{[1426]={69.32,55.46}},"A","Mining Trainer",19}
 t[1702]={"Bronk Guzzlegear",24,24,0,{[1426]={50.18,50.38}},"A","Journeyman Engineer",19}
 t[1703]={"Uthrar Threx",24,24,0,{[1455]={43.82,27.86}},"A","Journeyman Tailor",19}
-t[1706]={"Defias Prisoner",23,24,1,nil,nil,nil,0}
-t[1707]={"Defias Captive",23,23,1,nil,nil,nil,0}
-t[1708]={"Defias Inmate",24,25,1,nil,nil,nil,0}
-t[1711]={"Defias Convict",24,25,1,nil,nil,nil,0}
+t[1706]={"Defias Prisoner",23,24,1,nil,nil,nil,0,717}
+t[1707]={"Defias Captive",23,23,1,nil,nil,nil,0,717}
+t[1708]={"Defias Inmate",24,25,1,nil,nil,nil,0,717}
+t[1711]={"Defias Convict",24,25,1,nil,nil,nil,0,717}
 t[1713]={"Elder Shadowmaw Panther",42,43,0,{[1434]={35.43,55.67,36.21,56.74,36.07,58.39,35.65,57.77,31.16,58.55,36.72,55.93,36.63,55.25,36.28,55.26,29.76,58.01}},nil,nil,0}
 t[1714]={"SAVE Defias Lifer",26,26,0,nil,nil,nil,0}
-t[1715]={"Defias Insurgent",25,26,1,nil,nil,nil,0}
-t[1716]={"Bazil Thredd",29,29,1,nil,nil,nil,0}
-t[1717]={"Hamhock",28,28,1,nil,nil,nil,0}
+t[1715]={"Defias Insurgent",25,26,1,nil,nil,nil,0,717}
+t[1716]={"Bazil Thredd",29,29,1,nil,nil,nil,0,717}
+t[1717]={"Hamhock",28,28,1,nil,nil,nil,0,717}
 t[1718]={"Rockjaw Raider",3,4,0,{[1426]={35.56,69.24,35,68.41,34.09,68.88,34.87,69.4,33.86,69.82,34.56,70.92,35.62,69.32,35.62,68.05,35.69,65.9,35.77,66.9}},nil,nil,0}
 t[1719]={"Warden Thelwater",30,30,0,{[1453]={51.49,69.38}},"A",nil,2}
-t[1720]={"Bruegal Ironknuckle",26,26,2,nil,nil,nil,0}
+t[1720]={"Bruegal Ironknuckle",26,26,2,nil,nil,nil,0,717}
 t[1721]={"Nikova Raskol",5,5,0,{[1453]={76.42,63.67}},"A",nil,2}
 t[1723]={"Stormwind Citizen",1,1,0,nil,"A","Placeholder",0}
 t[1724]={"Stormwind Citizen Masculine",1,1,0,nil,"A","Placeholder",0}
 t[1725]={"Defias Watchman",16,18,1,{[1436]={42.36,79.69,39.19,79.01,39.6,77.55,39.97,77.95,39.95,78.48,42.49,80.4,42.29,79.9}},nil,nil,0}
 t[1726]={"Defias Magician",16,17,1,{[1436]={42.36,79.69,39.19,79.01,39.6,77.55,39.97,77.95,39.95,78.48,42.49,80.4,42.29,79.9}},nil,nil,0}
 t[1727]={"Defias Worker",16,17,0,{[1436]={40.53,78.54,42.22,78.77,39.84,76.12,42.11,80.19,39.22,79.79,39.43,76.02,40.8,78.87,39.79,77.53,41.64,79.87,44.01,79.28,42.91,78.56,43.17,80.46,41.26,79.77,43.21,78.37,40.26,78.06,39.09,77.51,39.31,77.91,39.7,78.55,38.58,78.93,40.67,79.41,38.92,79.65,42.37,80,43.08,78.86,43.56,79.08,39.6,76.92,42.8,79.51,39.47,78.94,43.27,79.61}},nil,nil,0}
-t[1729]={"Defias Evoker",17,18,1,nil,nil,nil,0}
+t[1729]={"Defias Evoker",17,18,1,nil,nil,nil,0,1581}
 t[1730]={"Goblin Buzzcutter",16,16,1,nil,nil,nil,0}
-t[1731]={"Goblin Craftsman",18,19,1,nil,nil,nil,0}
-t[1732]={"Defias Squallshaper",19,20,1,nil,nil,nil,0}
+t[1731]={"Goblin Craftsman",18,19,1,nil,nil,nil,0,1581}
+t[1732]={"Defias Squallshaper",19,20,1,nil,nil,nil,0,1581}
 t[1733]={"Zggi",5,5,0,{[1453]={40.21,85.31}},"A","Zardeth's Minion",2}
 t[1735]={"Deathguard Abraham",22,22,0,{[1420]={53.63,53.02}},"H",nil,1}
 t[1736]={"Deathguard Randolph",55,55,0,{[1420]={31.92,64.88}},"H",nil,0}
@@ -1380,7 +1380,7 @@ t[1759]={"Mage (TEST)",20,20,1,nil,nil,nil,0}
 t[1760]={"Warrior (TEST)",20,20,1,nil,nil,nil,0}
 t[1761]={"Priest (TEST)",20,20,1,nil,nil,nil,0}
 t[1762]={"Rogue (TEST)",20,20,1,nil,nil,nil,0}
-t[1763]={"Gilnid",20,20,1,nil,nil,"The Smelter",0}
+t[1763]={"Gilnid",20,20,1,nil,nil,"The Smelter",0,1581}
 t[1764]={"Greater Feral Spirit",1,1,0,nil,"AH",nil,0}
 t[1765]={"Worg",10,11,0,{[1420]={55.83,76.39,53.19,74.74,55.78,76.08},[1421]={64.8,5.89,44.22,47.87,45.76,50.18,65.01,11.2,68.93,5.49,65.97,10.37,43.19,52.38,68.31,6.3,69.09,7.8,63.7,7.43,63.83,11.1,65.69,5.53,66.37,8.98,67.58,8.4,64.41,7.96,66.57,6.32,57.96,8.3,47.91,48.1,64.85,7.28,66.06,8.77,70.2,7.1,46.45,45.86,69.31,7.42,65.76,5.35,68.81,4.9,64.8,5.48,68.26,6.61,69.84,6.88}},nil,nil,0}
 t[1766]={"Mottled Worg",11,12,0,{[1421]={59.24,13.59,46.71,23.35,47.55,25.71,46.4,25.62,49.37,15.38,44.54,25.39,61.01,9.04,61.25,11.94,48.95,20.05,50.54,17.89,50.05,13.6,52.27,17.46,55.52,17.32,58.91,10.53,57.41,15.81,57.92,14.09,59.75,10.38,63.13,10.94,62.13,8.51,57.86,9.86,44.52,26.8,57.09,10.79,49.16,22.46,47.67,24.73,47.49,21.82,59.53,8.94,61.79,8.8,56.41,7.99,58.47,6.8,57.03,10.09,57.68,8.77,56.43,16.21,54.49,12.79,50.86,19.5,50.85,21.78,59.53,16.04,56.16,10.23,56.18,12.48,54.88,13.61,55.32,12.65}},nil,nil,0}
@@ -1455,7 +1455,7 @@ t[1849]={"Dreadwhisper",58,58,4,nil,nil,nil,0}
 t[1850]={"Putridius",58,58,2,{[1422]={48.05,67.39}},nil,nil,0}
 t[1851]={"The Husk",62,62,4,{[1422]={62.15,36.31}},nil,nil,0}
 t[1852]={"Araj the Summoner",61,61,1,{[1422]={45.27,69.21}},nil,nil,0}
-t[1853]={"Darkmaster Gandling",61,61,1,nil,nil,nil,0}
+t[1853]={"Darkmaster Gandling",61,61,1,nil,nil,nil,0,2057}
 t[1854]={"High Priest Thel'danis",62,62,0,{[1422]={52.05,83.27}},"A",nil,2}
 t[1855]={"Tirion Fordring",61,61,1,{[1423]={5.16,35.57}},"AH",nil,3}
 t[1857]={"Pissed Vendor",5,5,0,nil,nil,"Pissed Vendor",0}
@@ -2029,7 +2029,7 @@ t[2516]={"Mountaineer Kamdar",28,28,0,{[1432]={33.31,44.76}},"A",nil,2}
 t[2517]={"Mountaineer Langarr",30,30,0,{[1432]={35.8,46.89}},"A",nil,2}
 t[2518]={"Mountaineer Swarth",30,30,0,{[1432]={37.49,49.01}},"A",nil,2}
 t[2519]={"Kin'weelay",39,39,0,{[1434]={32.27,27.71}},"H",nil,2}
-t[2520]={"Remote-Controlled Golem",18,18,1,nil,nil,nil,0}
+t[2520]={"Remote-Controlled Golem",18,18,1,nil,nil,nil,0,1581}
 t[2521]={"Skymane Gorilla",50,50,0,{[1434]={40.44,77.28,41.87,77.92,41.34,77.82,40.3,79.45,40.24,80.47,40.73,79.14,41.88,79.46,39.13,86.56,40.86,81.89,39.24,78.71,40.29,82.04,41.87,81.11,40.87,80.54,40.36,83.86,41.86,82.54,40.26,86.52,41.89,84.15,41.31,85.02,38.75,85.9}},nil,nil,0}
 t[2522]={"Jaguero Stalker",50,50,0,{[1434]={36.49,80.89,37.14,80.36,38.65,86.58,36.5,84.05,36.6,85.69,38.89,77.76,37.09,83.3,37.64,86.14,37.53,82.85,37.75,81.57,37.64,83.55,37.8,79.98,37.28,78.58,38.05,81.31}},nil,nil,0}
 t[2523]={"Searing Totem",19,19,0,nil,"AH",nil,0}
@@ -2238,7 +2238,7 @@ t[2743]={"Shadowforge Warrior",38,39,0,{[1418]={41.54,33.72,45.32,30.59,44.22,29
 t[2744]={"Shadowforge Commander",40,40,4,{[1418]={41.49,29.75}},nil,nil,0}
 t[2745]={"Ambassador Infernus",42,42,1,{[1418]={42.1,28.88}},nil,nil,0}
 t[2746]={"Stonevault Warden",39,39,1,nil,nil,nil,0}
-t[2748]={"Archaedas",47,47,1,nil,nil,"Ancient Stone Watcher",0}
+t[2748]={"Archaedas",47,47,1,nil,nil,"Ancient Stone Watcher",0,1337}
 t[2749]={"Siege Golem",40,40,2,{[1418]={19.86,56.58,15.9,59.23,11.58,59.14,8.6,61.81,5.49,59.53,15.82,65.31,19.07,60.63,24.61,55.58,24.53,50.11,29.18,47.41,31.47,50.02,35.66,47.63,36.25,41.73,40.03,39.82}},nil,nil,0}
 t[2751]={"War Golem",36,36,4,{[1418]={52.41,19.48,49.38,12.06,45.36,33.53}},nil,nil,0}
 t[2752]={"Rumbler",45,45,4,{[1418]={14.73,89.33,13.86,86.11,4.77,81.78,1.98,80.52}},nil,nil,0}
@@ -2446,7 +2446,7 @@ t[2988]={"Morin Cloudstalker",10,10,0,{[1412]={54.76,64.27}},"H",nil,2}
 t[2989]={"Bael'dun Digger",7,8,0,{[1412]={33.7,52.69,33.21,52.93,35.23,54.65,34.32,54.18,33.28,53.92,33.97,54.22,33.83,54.61,32.94,55.04,33.6,55.28,33.77,54.89,35.62,53.16,35.12,54.11,35.71,52.51,35.19,53.27,32.78,53.65,33.42,52.91,32.76,53.93,32.77,54.25,32.9,53.17,32.82,54.78,33.44,53.97}},"A",nil,0}
 t[2990]={"Bael'dun Appraiser",8,9,0,{[1412]={33.15,53.46,33.63,53.11,34.74,52.81,34.58,52.85,33.39,53.59,33.09,53.87,33.28,54.43,33.28,53.87,34.34,53.49,33.57,54.68,33.75,54.61,33.2,54.78,33.14,53.85}},"A",nil,0}
 t[2991]={"Greatmother Hawkwind",9,9,0,{[1412]={48.77,80.92}},"H",nil,2}
-t[2992]={"Healing Ward V",28,28,0,nil,nil,nil,0}
+t[2992]={"Healing Ward V",28,28,0,nil,nil,nil,0,491}
 t[2993]={"Baine Bloodhoof",10,10,0,{[1412]={46.67,63.38}},"H",nil,2}
 t[2994]={"Ancestral Spirit",9,9,0,{[1412]={58.31,30.7}},"H",nil,2}
 t[2995]={"Tal",55,55,1,{[1456]={47,49.83}},"H","Wind Rider Master",11}
@@ -2883,7 +2883,7 @@ t[3446]={"Mebok Mizzyrix",17,17,0,{[1413]={62.37,37.62}},"AH",nil,2}
 t[3447]={"Pawe Mistrunner",24,24,0,{[1456]={25.69,27.14}},"H",nil,2}
 t[3448]={"Tonga Runetotem",22,22,0,{[1413]={52.26,31.93}},"H",nil,3}
 t[3449]={"Darsok Swiftdagger",14,14,0,{[1413]={51.62,30.9}},"H",nil,2}
-t[3450]={"Defias Companion",14,15,0,nil,nil,nil,0}
+t[3450]={"Defias Companion",14,15,0,nil,nil,nil,0,1581}
 t[3451]={"Pilot Wizzlecrank",15,15,0,nil,"AH",nil,2}
 t[3452]={"Serena Bloodfeather",20,20,0,{[1413]={39.16,12.17}},nil,nil,0}
 t[3453]={"Wharfmaster Dizzywig",15,15,0,{[1413]={63.35,38.45}},"AH",nil,2}
@@ -3012,7 +3012,7 @@ t[3582]={"Aman",50,50,0,nil,"AH",nil,0}
 t[3583]={"Barithras Moonshade",14,14,0,{[1439]={37.32,43.64}},"A",nil,2}
 t[3584]={"Therylune",17,17,0,{[1439]={38.64,87.33}},"A",nil,2}
 t[3585]={"Therysil",17,17,0,{[1440]={22.64,51.92}},"A",nil,2}
-t[3586]={"Miner Johnson",19,19,2,nil,nil,nil,0}
+t[3586]={"Miner Johnson",19,19,2,nil,nil,nil,0,1581}
 t[3587]={"Lyrai",9,9,0,{[1438]={59.52,40.91}},"A","General Supplies",6}
 t[3588]={"Khardan Proudblade",8,8,0,{[1438]={58.72,39.67}},"A","Weaponsmith",16388}
 end f() end
@@ -3061,19 +3061,19 @@ t[3631]={"Deviate Stinglash",16,17,1,{[1413]={47.37,33.68,48.24,32.22,49.41,33.1
 t[3632]={"Deviate Creeper",15,16,1,{[1413]={46.32,32.54,46.57,34.22,45.88,33.05,46.19,34.26,45.92,33.55,46.2,34.8,46.08,32.52,46.3,35.06,45.9,35.6,46.18,35.27,46.6,34.78,45.79,34.09}},nil,nil,0}
 t[3633]={"Deviate Slayer",16,17,1,{[1413]={47.62,32.38,47.9,32.62,47.38,32.78,48.79,32.56,48.04,32.14,47.62,32.83,49.17,33.31,49.19,32.72,48.45,32.29,48.84,31.98,48.96,33.97,48.34,34.25,47.53,34.14,47.41,33.39}},nil,nil,0}
 t[3634]={"Deviate Stalker",15,16,1,{[1413]={45.2,36.2,46,36.4,46,36.6,46.6,36.2,48.2,36.6,48.8,35.6}},nil,nil,0}
-t[3636]={"Deviate Ravager",18,19,1,nil,nil,nil,0}
-t[3637]={"Deviate Guardian",18,19,1,nil,nil,nil,0}
+t[3636]={"Deviate Ravager",18,19,1,nil,nil,nil,0,718}
+t[3637]={"Deviate Guardian",18,19,1,nil,nil,nil,0,718}
 t[3638]={"Devouring Ectoplasm",16,17,1,{[1413]={47.59,32.58,48.74,32.1,48.25,32.24,49.11,33.38,49.29,33.85,47.91,33.97,47.55,34.28,47.58,33.05,46.05,33.86,45.86,33.36}},nil,nil,0}
 t[3639]={"Sentinel Tysha Moonblade",10,10,0,{[1439]={40.3,59.73}},"A",nil,2}
-t[3640]={"Evolving Ectoplasm",17,18,1,nil,nil,nil,0}
+t[3640]={"Evolving Ectoplasm",17,18,1,nil,nil,nil,0,718}
 t[3641]={"Deviate Lurker",16,17,1,{[1413]={46.74,32.39,48.03,33.62,48.28,33.49,48.09,33.13,47.93,33.42,48.36,33.14,48.54,33.43,46.74,32.53}},nil,nil,0}
 t[3642]={"Deviate Horror",18,19,1,nil,nil,nil,0}
 t[3644]={"Cerellean Whiteclaw",15,15,0,{[1439]={35.74,43.71}},"A",nil,2}
 t[3649]={"Thundris Windweaver",15,15,0,{[1439]={37.4,40.13}},"A",nil,2}
 t[3650]={"Asterion",15,15,0,{[1439]={44.17,36.29}},"A",nil,2}
 t[3652]={"Trigore the Lasher",19,19,2,{[1413]={48.29,33.07}},nil,nil,0}
-t[3653]={"Kresh",20,20,1,nil,"AH",nil,0}
-t[3654]={"Mutanus the Devourer",22,22,1,nil,nil,nil,0}
+t[3653]={"Kresh",20,20,1,nil,"AH",nil,0,718}
+t[3654]={"Mutanus the Devourer",22,22,1,nil,nil,nil,0,718}
 t[3655]={"Mad Magglish",18,18,1,{[1413]={46.46,35.47,46.83,34.66,45.69,33.62}},nil,nil,0}
 t[3657]={"Sentinel Elissa Starbreeze",20,20,0,{[1439]={39.05,43.55}},"A",nil,2}
 t[3658]={"Lizzarik",19,19,0,{[1413]={61.76,38.29}},"AH","Weapon Dealer",16388}
@@ -3087,14 +3087,14 @@ t[3665]={"Crane Operator Bigglefuzz",18,18,0,{[1413]={63.09,37.61}},"AH",nil,2}
 t[3666]={"Wizbang Cranktoggle",15,15,0,{[1439]={36.97,44.13}},"A",nil,2}
 t[3667]={"Anaya Dawnrunner",16,16,0,{[1439]={41.81,60.73}},"AH",nil,0}
 t[3668]={"Tortured Highborne Soul",20,20,0,nil,"AH",nil,0}
-t[3669]={"Lord Cobrahn",20,20,1,nil,nil,"Fanglord",0}
-t[3670]={"Lord Pythas",21,21,1,nil,nil,"Fanglord",0}
+t[3669]={"Lord Cobrahn",20,20,1,nil,nil,"Fanglord",0,718}
+t[3670]={"Lord Pythas",21,21,1,nil,nil,"Fanglord",0,718}
 t[3671]={"Lady Anacondra",20,20,1,nil,nil,"Fanglord",0}
 t[3672]={"Boahn",20,20,2,{[1413]={49.06,33.9}},nil,"Druid of the Fang",0}
-t[3673]={"Lord Serpentis",21,21,1,nil,nil,"Fanglord",0}
-t[3674]={"Skum",21,21,1,nil,nil,nil,0}
-t[3678]={"Disciple of Naralex",20,20,1,nil,"AH",nil,1}
-t[3679]={"Naralex",25,25,0,nil,"AH",nil,1}
+t[3673]={"Lord Serpentis",21,21,1,nil,nil,"Fanglord",0,718}
+t[3674]={"Skum",21,21,1,nil,nil,nil,0,718}
+t[3678]={"Disciple of Naralex",20,20,1,nil,"AH",nil,1,718}
+t[3679]={"Naralex",25,25,0,nil,"AH",nil,1,718}
 t[3680]={"Serpentbloom Snake",1,1,0,nil,"AH",nil,0}
 t[3681]={"Wisp",1,1,0,{[1457]={68.44,36.17,46.66,50.07,66.65,73.39,31.12,38.43,28.36,89.6,34.02,53.17,57.54,68.32,28.82,1.35,68.75,48.85,72.32,14.99,52.93,15.32,39.05,90.89,53.09,7.46,60.31,54.99,28.42,16.51,75.63,55.22,27.82,19.39,25.33,28.17,34.98,59.4,68.17,35.64,43.51,82.62,73.85,45.95,59.2,21.44,75.41,36.09,82.53,43.84,65.49,13.25,46.02,19.13,40.64,42.7,52.56,87.07,37.07,84.75,42.09,18.37,39.79,36.68,57.98,83.7,45.09,3.97}},"A",nil,0}
 t[3682]={"Vrang Wildgore",35,48,0,{[1413]={43.8,12.21}},"H","Weaponsmith & Armorcrafter",16388}
@@ -3211,7 +3211,7 @@ t[3836]={"Mountaineer Pebblebitty",44,44,0,{[1432]={18.18,84.01}},"A",nil,3}
 t[3837]={"Riding Hippogryph",29,29,0,nil,"AH",nil,0}
 t[3838]={"Vesprystus",55,55,1,{[1438]={58.4,94.02}},"A","Hippogryph Master",11}
 t[3839]={"Voidlasher",19,20,1,nil,nil,nil,0}
-t[3840]={"Druid of the Fang",19,20,1,nil,nil,nil,0}
+t[3840]={"Druid of the Fang",19,20,1,nil,nil,nil,0,718}
 t[3841]={"Caylais Moonfeather",55,55,1,{[1439]={36.34,45.58}},"A","Hippogryph Master",11}
 t[3842]={"Brombar Higgleby",40,40,0,{[1455]={52.57,37.26}},"A","The Keymaster",2}
 t[3843]={"Anaya",16,16,0,nil,"A",nil,0}
@@ -3220,30 +3220,30 @@ t[3845]={"Shindrell Swiftfire",25,25,0,{[1440]={34.67,48.84}},"A",nil,3}
 t[3846]={"Talen",17,17,0,{[1440]={14.79,31.29}},"A",nil,3}
 t[3847]={"Orendil Broadleaf",27,27,0,{[1440]={26.44,38.59}},"A",nil,2}
 t[3848]={"Kayneth Stillwind",31,31,0,{[1440]={85.24,44.71}},"A",nil,3}
-t[3849]={"Deathstalker Adamant",18,18,1,nil,"H",nil,1}
-t[3850]={"Sorcerer Ashcrombe",18,18,1,nil,"A",nil,1}
-t[3851]={"Shadowfang Whitescalp",18,19,1,nil,nil,nil,0}
+t[3849]={"Deathstalker Adamant",18,18,1,nil,"H",nil,1,209}
+t[3850]={"Sorcerer Ashcrombe",18,18,1,nil,"A",nil,1,209}
+t[3851]={"Shadowfang Whitescalp",18,19,1,nil,nil,nil,0,209}
 t[3852]={"Shadowfang Bloodhowler",19,19,1,nil,nil,nil,0}
-t[3853]={"Shadowfang Moonwalker",20,20,1,nil,nil,nil,0}
-t[3854]={"Shadowfang Wolfguard",20,20,1,nil,nil,nil,0}
-t[3855]={"Shadowfang Darksoul",21,21,1,nil,nil,nil,0}
-t[3857]={"Shadowfang Glutton",21,21,1,nil,nil,nil,0}
-t[3859]={"Shadowfang Ragetooth",24,24,1,nil,nil,nil,0}
+t[3853]={"Shadowfang Moonwalker",20,20,1,nil,nil,nil,0,209}
+t[3854]={"Shadowfang Wolfguard",20,20,1,nil,nil,nil,0,209}
+t[3855]={"Shadowfang Darksoul",21,21,1,nil,nil,nil,0,209}
+t[3857]={"Shadowfang Glutton",21,21,1,nil,nil,nil,0,209}
+t[3859]={"Shadowfang Ragetooth",24,24,1,nil,nil,nil,0,209}
 t[3860]={"Shadowfang Tainted One",20,20,1,nil,nil,nil,0}
-t[3861]={"Bleak Worg",18,19,1,nil,nil,nil,0}
-t[3862]={"Slavering Worg",18,18,1,nil,nil,nil,0}
-t[3863]={"Lupine Horror",24,24,1,nil,nil,nil,0}
-t[3864]={"Fel Steed",19,20,1,nil,"AH",nil,0}
-t[3865]={"Shadow Charger",20,21,1,nil,"AH",nil,0}
-t[3866]={"Vile Bat",22,23,1,nil,nil,nil,0}
-t[3868]={"Blood Seeker",23,24,1,nil,nil,nil,0}
+t[3861]={"Bleak Worg",18,19,1,nil,nil,nil,0,209}
+t[3862]={"Slavering Worg",18,18,1,nil,nil,nil,0,209}
+t[3863]={"Lupine Horror",24,24,1,nil,nil,nil,0,209}
+t[3864]={"Fel Steed",19,20,1,nil,"AH",nil,0,209}
+t[3865]={"Shadow Charger",20,21,1,nil,"AH",nil,0,209}
+t[3866]={"Vile Bat",22,23,1,nil,nil,nil,0,209}
+t[3868]={"Blood Seeker",23,24,1,nil,nil,nil,0,209}
 t[3869]={"Lesser Gargoyle",20,20,1,nil,nil,nil,0}
 t[3870]={"Stone Sleeper",20,20,1,nil,nil,nil,0}
-t[3872]={"Deathsworn Captain",25,25,2,nil,nil,nil,0}
-t[3873]={"Tormented Officer",23,24,1,nil,nil,nil,0}
-t[3875]={"Haunted Servitor",20,21,1,nil,nil,nil,0}
+t[3872]={"Deathsworn Captain",25,25,2,nil,nil,nil,0,209}
+t[3873]={"Tormented Officer",23,24,1,nil,nil,nil,0,209}
+t[3875]={"Haunted Servitor",20,21,1,nil,nil,nil,0,209}
 t[3876]={"Traumatized Spirit",20,20,1,nil,nil,nil,0}
-t[3877]={"Wailing Guardsman",21,22,1,nil,nil,nil,0}
+t[3877]={"Wailing Guardsman",21,22,1,nil,nil,nil,0,209}
 t[3878]={"Magthrull's Doomguard",20,20,0,nil,nil,nil,0}
 t[3879]={"Dark Strand Assassin",21,21,0,{[1440]={25.76,30.17}},nil,nil,0}
 t[3880]={"Sentinel Melyria Frostshadow",25,25,0,{[1440]={22.23,52.98}},"A",nil,2}
@@ -3252,8 +3252,8 @@ t[3882]={"Zlagk",9,9,0,{[1411]={42.64,67.19}},"H","Butcher",6}
 t[3883]={"Moodan Sungrain",11,11,0,{[1412]={44.28,78.2}},"H","Baker",6}
 t[3884]={"Jhawna Oatwind",13,13,0,{[1412]={46.77,64.49}},"H","Baker",6}
 t[3885]={"Sentinel Velene Starstrike",25,25,0,{[1440]={49.8,67.21}},"A",nil,3}
-t[3886]={"Razorclaw the Butcher",22,22,1,nil,nil,nil,0}
-t[3887]={"Baron Silverlaine",24,24,1,nil,nil,nil,0}
+t[3886]={"Razorclaw the Butcher",22,22,1,nil,nil,nil,0,209}
+t[3887]={"Baron Silverlaine",24,24,1,nil,nil,nil,0,209}
 t[3888]={"Korra",20,20,0,{[1440]={36.61,49.55}},"A",nil,0}
 t[3890]={"Brakgul Deathbringer",61,61,1,{[1454]={79.39,30.3}},"H","Warsong Gulch Battlemaster",2049}
 t[3891]={"Teronis' Corpse",20,20,0,{[1440]={20.31,42.33}},"A",nil,2}
@@ -3277,7 +3277,7 @@ t[3909]={"Healing Stream Totem V",60,60,0,nil,"AH",nil,0}
 t[3911]={"Stoneclaw Totem II",29,29,0,nil,"AH",nil,0}
 t[3912]={"Stoneclaw Totem III",40,40,0,nil,"AH",nil,0}
 t[3913]={"Stoneclaw Totem IV",38,38,0,nil,"AH",nil,0}
-t[3914]={"Rethilgore",20,20,1,nil,nil,"The Cell Keeper",0}
+t[3914]={"Rethilgore",20,20,1,nil,nil,"The Cell Keeper",0,209}
 t[3915]={"Dagri",23,23,0,{[1440]={36.68,49.7}},"A","Raene's Pet",0}
 t[3916]={"Shael'dryn",24,24,0,{[1440]={53.54,46.22}},"A",nil,2}
 t[3917]={"Befouled Water Elemental",23,25,0,{[1440]={45.08,69.3,46.09,69.92,46.26,70.66,51.22,73.36,48.35,72.76,52.13,72.25,51.86,70.48,51.52,70.15,51.6,69.49,48.32,70.95,47.94,71.88,49.18,71.85,50.89,72.04,50.32,70.29,50.22,72.2,50.71,71.63,51.02,71.35,46.4,67.43,46.14,68.66,50.92,67.42,48.05,69.69,49.36,69.85,47.69,69.6,47.66,70.71,46.97,70.61,47.56,69.05,47.13,67.44,48,68.14,49.47,69.55,49.8,71.1,50.55,69.52,52.14,72.75,46.59,71.75}},nil,nil,0}
@@ -3289,7 +3289,7 @@ t[3923]={"Thistlefur Den Watcher",23,24,0,{[1440]={41.41,35.49,40.71,34.24,40.96
 t[3924]={"Thistlefur Shaman",23,24,0,{[1440]={36.14,36.98,35.9,36.64,39.64,36.84,39.54,36.42,39.76,36.35,35.7,36.94,38.52,35.4,37.81,34.88,37.91,34.21,35.83,31.74,36.09,31.96,32.58,42.75,32.1,38.93,31.58,39.52,34.99,32.76,37.89,35.44,36.06,32.7,33.56,38.71,33.89,38.85,34.08,38.44,34.19,38.87,33.75,39.73,30.93,45,30.98,44.41,30.98,44,30.98,43.27,30.28,42.26,31.04,40.39,31.59,43.92}},nil,nil,0}
 t[3925]={"Thistlefur Avenger",23,24,0,{[1440]={39.56,37.73,39.06,36.85,37.93,34.52,39.96,37.87,39.26,36.28,37.74,33.92,35.78,32.01,32.63,42.16,31.74,38,37.42,34.27,35.64,32.83,36.71,36.96,36.64,36.06,31.86,39.24,32.05,43.15,33.48,36.6,36.69,32.71,33.4,37.53,36.77,35.24,31.55,45.66,31.38,45.24,32.62,39.57}},nil,nil,0}
 t[3926]={"Thistlefur Pathfinder",23,24,0,{[1440]={39.44,36.82,38.68,39.21,36.21,32.08,38.06,30.75,39.09,36.11}},nil,nil,0}
-t[3927]={"Wolf Master Nandos",25,25,1,nil,nil,nil,0}
+t[3927]={"Wolf Master Nandos",25,25,1,nil,nil,nil,0,209}
 t[3928]={"Rotting Slime",20,22,0,{[1440]={69.04,84.77,77.03,73.8,79.08,74.48,70.53,73.58,70.68,85.06,69.29,82.67,71.29,83.83,77.97,65.82,77.38,69.77,77.06,68.3,69.87,74.11,78.3,73.6,76.22,67.48,76.62,70.67,76.77,72.19,78.31,69.73,68.24,77.68,77.68,72.63,74.77,69.6,78.26,64.58,70.72,75.24,74.23,69.47,74.36,70.21,75.88,73.52,75.87,69.99,69.89,85.32,74.34,77.92,70.1,76.08,74.58,77.19,74.67,75.39,76.67,68.46,68.94,84.86,74.41,73.38,74.46,75.56,73.09,73.23,71.04,73.8,71.45,76.97,73.68,76.95,72.63,76.86,70.77,75.99,72.51,75.12}},nil,nil,0}
 t[3931]={"Shadethicket Oracle",30,30,0,{[1440]={66.66,82.17}},nil,nil,0}
 t[3932]={"Bloodtooth Guard",27,28,0,{[1440]={55.94,76.21,54.93,75.96,55.52,75.2,54.67,79.72,54.75,79.07,55.85,75.42,54.98,79.33,54.76,77.69,54.4,79.58,55.37,76,54.86,78.82}},nil,nil,0}
@@ -3307,7 +3307,7 @@ t[3943]={"Ruuzel",22,22,0,{[1440]={7.22,13.06}},nil,nil,0}
 t[3944]={"Wrathtail Priestess",20,21,0,{[1440]={6.58,15.5,6.38,14.53,5.53,15.18,5.99,11.74,5.37,13.69,7.4,12.52,5.62,14.47,7.82,14.42,6.67,11.18,7.84,13.36,8.44,14.58,7.25,16.19,7.75,16.95,7.18,11.79,8.35,16.13}},nil,nil,0}
 t[3945]={"Caravaneer Ruzzgot",33,33,0,{[1434]={27.37,74.08}},"AH",nil,2}
 t[3946]={"Velinde Starsong",1,1,0,nil,"A",nil,0}
-t[3947]={"Goblin Shipbuilder",19,20,1,nil,nil,nil,0}
+t[3947]={"Goblin Shipbuilder",19,20,1,nil,nil,nil,0,1581}
 t[3948]={"Honni Goldenoat",10,10,0,{[1432]={35.32,49.73}},"A","Baker",6}
 t[3950]={"Minor Water Guardian",1,25,0,nil,nil,nil,0}
 t[3951]={"Bhaldaran Ravenshade",34,34,0,{[1440]={50.27,67.27}},"A","Bowyer",16388}
@@ -3333,16 +3333,16 @@ t[3970]={"Llana",25,25,0,{[1440]={34.98,48.46}},"A","Reagent Supplies",4}
 t[3971]={"Agro 5",60,60,0,nil,nil,nil,0}
 t[3972]={"Agro 7",60,60,0,nil,nil,nil,0}
 t[3973]={"Agro 10",60,60,0,nil,nil,nil,0}
-t[3974]={"Houndmaster Loksey",34,34,1,nil,nil,nil,0}
-t[3975]={"Herod",40,40,1,nil,nil,"The Scarlet Champion",0}
-t[3976]={"Scarlet Commander Mograine",42,42,1,nil,nil,nil,0}
-t[3977]={"High Inquisitor Whitemane",42,42,1,nil,nil,nil,0}
+t[3974]={"Houndmaster Loksey",34,34,1,nil,nil,nil,0,796}
+t[3975]={"Herod",40,40,1,nil,nil,"The Scarlet Champion",0,796}
+t[3976]={"Scarlet Commander Mograine",42,42,1,nil,nil,nil,0,796}
+t[3977]={"High Inquisitor Whitemane",42,42,1,nil,nil,nil,0,796}
 t[3978]={"Sage Truthseeker",30,30,0,{[1456]={34.4,46.87}},"H",nil,2}
 t[3979]={"Librarian Mae Paledust",30,30,0,{[1455]={74.97,12.48}},"A","Explorers' League",2}
 t[3980]={"Raleigh the Devout",30,30,0,{[1424]={51.47,58.35}},"A",nil,2}
-t[3981]={"Vorrel Sengutz",8,8,0,nil,"H",nil,2}
+t[3981]={"Vorrel Sengutz",8,8,0,nil,"H",nil,2,796}
 t[3982]={"Monika Sengutz",7,7,0,{[1424]={62.67,18.88}},"H",nil,2}
-t[3983]={"Interrogator Vishas",32,32,1,nil,nil,nil,0}
+t[3983]={"Interrogator Vishas",32,32,1,nil,nil,nil,0,796}
 t[3984]={"Nancy Vishas",33,33,1,{[1416]={32.33,32.78}},nil,nil,0}
 t[3985]={"Grandpa Vishas",34,34,1,{[1416]={32.33,32.98}},nil,nil,0}
 t[3986]={"Sarilus Foulborne",25,25,0,{[1413]={48.22,19.15}},"H",nil,0}
@@ -3609,41 +3609,41 @@ t[4270]={"Riding Wolf (Red)",1,1,0,nil,"AH",nil,0}
 t[4271]={"Riding Wolf (DarkGray)",1,1,0,nil,"AH",nil,0}
 t[4272]={"Riding Wolf (DarkBrown)",1,1,0,nil,"AH",nil,0}
 t[4273]={"Keeper Ordanus",29,29,0,{[1440]={62.05,51.37}},"A",nil,0}
-t[4274]={"Fenrus the Devourer",25,25,1,nil,nil,nil,0}
-t[4275]={"Archmage Arugal",26,26,1,nil,nil,nil,0}
+t[4274]={"Fenrus the Devourer",25,25,1,nil,nil,nil,0,209}
+t[4275]={"Archmage Arugal",26,26,1,nil,nil,nil,0,209}
 t[4276]={"Piznik",20,20,0,{[1442]={71.87,60}},"AH","Venture Co.",2}
 t[4277]={"Eye of Kilrogg",22,22,0,nil,"AH",nil,0}
-t[4278]={"Commander Springvale",24,24,1,nil,nil,nil,0}
-t[4279]={"Odo the Blindwatcher",24,24,1,nil,nil,nil,0}
+t[4278]={"Commander Springvale",24,24,1,nil,nil,nil,0,209}
+t[4279]={"Odo the Blindwatcher",24,24,1,nil,nil,nil,0,209}
 t[4280]={"Scarlet Preserver",29,30,1,{[1420]={82.89,30.86,83.73,29.43,81.54,30.34,83.07,29.34,83.97,30.22,83.89,30.54,81.6,32.4,81.36,33.72,82.24,33.91,82.91,33.5,82.27,35.11}},nil,nil,0}
 t[4281]={"Scarlet Scout",29,30,1,{[1420]={82.89,30.86,83.73,29.43,82.18,29.53,81.54,30.34,83.07,29.34,83.94,30.71,85.66,34.81,86.85,35.61,83.68,28.69,83.77,35.71,81.6,32.4,81.36,33.72,81.06,29.53,83.59,34.94,84.51,34.05,84.78,35.98,83.68,33.82,82.24,33.91,82.91,33.5,84.48,36.88,84.36,34.61,83.36,37.82,84.33,35.09,82.27,35.11,83.02,37.28,82.33,37.13}},nil,nil,0}
 t[4282]={"Scarlet Magician",29,30,1,{[1420]={82.89,30.86,83.73,29.43,82.18,29.53,81.54,30.34,83.07,29.34,83.94,30.71,83.68,28.69,81.5,29.53,82.88,28.53,83.77,35.71,81.6,32.4,81.06,29.53,83.59,34.94,84.51,34.05,84.78,35.98,83.68,33.82,80.89,29.4,82.24,33.91,82.91,33.5,84.36,34.61,84.33,35.09,82.27,35.11,82.21,36.07}},nil,nil,0}
 t[4283]={"Scarlet Sentry",30,31,1,{[1420]={83.88,31.28,84.28,32.69,84.04,32.49,84.83,32.36,83.77,31.76,84.47,30.93}},nil,nil,0}
 t[4284]={"Scarlet Augur",30,31,1,{[1420]={83.59,31.8,83.63,31.93,83.81,32.53,83.85,32.67,85.04,31.31,85.07,31.43,84.61,31.74,84.58,31.63}},nil,nil,0}
 t[4285]={"Scarlet Disciple",30,31,1,{[1420]={83.59,31.8,83.63,31.93,83.81,32.53,83.85,32.67,85.04,31.31,85.07,31.43,84.61,31.74,84.58,31.63}},nil,nil,0}
-t[4286]={"Scarlet Soldier",35,36,1,nil,nil,nil,0}
-t[4287]={"Scarlet Gallant",33,34,1,nil,nil,nil,0}
-t[4288]={"Scarlet Beastmaster",34,35,1,nil,nil,nil,0}
-t[4289]={"Scarlet Evoker",36,37,1,nil,nil,nil,0}
-t[4290]={"Scarlet Guardsman",36,37,1,nil,nil,nil,0}
-t[4291]={"Scarlet Diviner",34,35,1,nil,nil,nil,0}
-t[4292]={"Scarlet Protector",36,37,1,nil,nil,nil,0}
-t[4293]={"Scarlet Scryer",30,31,1,nil,nil,nil,0}
-t[4294]={"Scarlet Sorcerer",37,38,1,nil,nil,nil,0}
-t[4295]={"Scarlet Myrmidon",37,38,1,nil,nil,nil,0}
-t[4296]={"Scarlet Adept",33,34,1,nil,nil,nil,0}
-t[4297]={"Scarlet Conjuror",35,36,1,nil,nil,nil,0}
-t[4298]={"Scarlet Defender",37,38,1,nil,nil,nil,0}
-t[4299]={"Scarlet Chaplain",34,35,1,nil,nil,nil,0}
-t[4300]={"Scarlet Wizard",38,39,1,nil,nil,nil,0}
-t[4301]={"Scarlet Centurion",38,39,1,nil,nil,nil,0}
-t[4302]={"Scarlet Champion",39,40,1,nil,nil,nil,0}
-t[4303]={"Scarlet Abbot",39,40,1,nil,nil,nil,0}
-t[4304]={"Scarlet Tracking Hound",33,33,1,nil,nil,nil,0}
+t[4286]={"Scarlet Soldier",35,36,1,nil,nil,nil,0,796}
+t[4287]={"Scarlet Gallant",33,34,1,nil,nil,nil,0,796}
+t[4288]={"Scarlet Beastmaster",34,35,1,nil,nil,nil,0,796}
+t[4289]={"Scarlet Evoker",36,37,1,nil,nil,nil,0,796}
+t[4290]={"Scarlet Guardsman",36,37,1,nil,nil,nil,0,796}
+t[4291]={"Scarlet Diviner",34,35,1,nil,nil,nil,0,796}
+t[4292]={"Scarlet Protector",36,37,1,nil,nil,nil,0,796}
+t[4293]={"Scarlet Scryer",30,31,1,nil,nil,nil,0,796}
+t[4294]={"Scarlet Sorcerer",37,38,1,nil,nil,nil,0,796}
+t[4295]={"Scarlet Myrmidon",37,38,1,nil,nil,nil,0,796}
+t[4296]={"Scarlet Adept",33,34,1,nil,nil,nil,0,796}
+t[4297]={"Scarlet Conjuror",35,36,1,nil,nil,nil,0,796}
+t[4298]={"Scarlet Defender",37,38,1,nil,nil,nil,0,796}
+t[4299]={"Scarlet Chaplain",34,35,1,nil,nil,nil,0,796}
+t[4300]={"Scarlet Wizard",38,39,1,nil,nil,nil,0,796}
+t[4301]={"Scarlet Centurion",38,39,1,nil,nil,nil,0,796}
+t[4302]={"Scarlet Champion",39,40,1,nil,nil,nil,0,796}
+t[4303]={"Scarlet Abbot",39,40,1,nil,nil,nil,0,796}
+t[4304]={"Scarlet Tracking Hound",33,33,1,nil,nil,nil,0,796}
 t[4305]={"Kriggon Talsone",25,25,0,{[1436]={36.23,90.18}},"A","Fisherman",4}
-t[4306]={"Scarlet Torturer",30,31,1,nil,nil,nil,0}
+t[4306]={"Scarlet Torturer",30,31,1,nil,nil,nil,0,796}
 t[4307]={"Heldan Galesong",25,25,0,{[1439]={36.97,56.35}},"A","Fisherman",4}
-t[4308]={"Unfettered Spirit",31,32,0,nil,nil,nil,0}
+t[4308]={"Unfettered Spirit",31,32,0,nil,nil,nil,0,796}
 t[4309]={"Gorm Grimtotem",62,62,0,{[1456]={70.51,30.28}},"H",nil,2}
 t[4310]={"Cor Grimtotem",62,62,0,{[1456]={70.62,30.97}},"H",nil,2}
 t[4311]={"Holgar Stormaxe",30,30,0,{[1411]={46.02,12.93}},"H",nil,0}
@@ -3725,28 +3725,28 @@ t[4412]={"Darkfang Creeper",38,39,0,{[1445]={43.93,34.55,36.87,55.75,35.78,55.55
 t[4413]={"Darkfang Spider",35,36,0,{[1445]={42.72,13.85,56.01,23.25}},nil,nil,0}
 t[4414]={"Darkfang Venomspitter",37,38,0,{[1445]={52.71,15.41,51.01,15.3,50.06,30.57,50.93,33.77,35.69,14.8,37.01,12.35,56.37,19.4,61.51,36.76,62.1,37.92,60.24,29.81,51.97,32.68,52.3,34.88,56.79,39.42,58.65,21.04,60.02,23.01,49.55,26.71,62.88,39.26,41.34,26.09,58.48,37.91,38.72,26.02,49.61,23.45,34.34,27.99,37.73,27.68}},nil,nil,0}
 t[4415]={"Giant Darkfang Spider",40,41,0,{[1445]={56.05,66.76,51.51,64.47,52.18,66.81,53.43,66.44,55.05,60.09,53.86,60.72,51.39,63.25,53.99,67.82,54.94,66.59,52.26,48.44,55.72,52.46,56.02,54.01,56.07,56.03,49.21,45.15,49.74,48.95,50.75,47.95,53.2,61.64,48.38,46.72,49.58,46.39,52.47,60.45,51.96,49.93,50.36,47.68,54.29,50.99,52.02,61.84}},nil,nil,0}
-t[4416]={"Defias Strip Miner",18,19,0,nil,nil,nil,0}
-t[4417]={"Defias Taskmaster",18,19,1,nil,nil,nil,0}
-t[4418]={"Defias Wizard",18,19,1,nil,nil,nil,0}
+t[4416]={"Defias Strip Miner",18,19,0,nil,nil,nil,0,1581}
+t[4417]={"Defias Taskmaster",18,19,1,nil,nil,nil,0,1581}
+t[4418]={"Defias Wizard",18,19,1,nil,nil,nil,0,1581}
 t[4419]={"Race Master Kronkrider",35,35,0,{[1441]={79.17,75.95}},"AH",nil,1}
-t[4420]={"Overlord Ramtusk",32,32,1,nil,nil,nil,0}
-t[4421]={"Charlga Razorflank",33,33,1,nil,nil,"The Crone",0}
-t[4422]={"Agathelos the Raging",33,33,1,nil,nil,nil,0}
+t[4420]={"Overlord Ramtusk",32,32,1,nil,nil,nil,0,491}
+t[4421]={"Charlga Razorflank",33,33,1,nil,nil,"The Crone",0,491}
+t[4422]={"Agathelos the Raging",33,33,1,nil,nil,nil,0,491}
 t[4423]={"Darnassian Protector",55,55,0,{[1457]={46.57,22.7,39.6,21.27,34.89,12.32,37.03,13.15,46.34,21.33}},"A",nil,0}
-t[4424]={"Aggem Thorncurse",30,30,1,nil,nil,"Death's Head Prophet",0}
-t[4425]={"Blind Hunter",32,32,2,nil,nil,nil,2}
-t[4427]={"Ward Guardian",31,31,1,nil,nil,nil,0}
-t[4428]={"Death Speaker Jargba",30,30,1,nil,nil,"Death's Head Captain",0}
+t[4424]={"Aggem Thorncurse",30,30,1,nil,nil,"Death's Head Prophet",0,491}
+t[4425]={"Blind Hunter",32,32,2,nil,nil,nil,2,491}
+t[4427]={"Ward Guardian",31,31,1,nil,nil,nil,0,491}
+t[4428]={"Death Speaker Jargba",30,30,1,nil,nil,"Death's Head Captain",0,491}
 t[4429]={"Goblin Pit Crewman",30,30,0,{[1441]={79.75,76.38,79.83,76.95,80.23,75.92,80.18,76.58,79.85,76.86}},"AH",nil,1}
 t[4430]={"Gnome Pit Crewman",30,30,0,{[1441]={77.69,76.84,77.54,77.25,77.58,76.78,77.86,77.46}},"AH",nil,1}
-t[4435]={"Razorfen Warrior",24,25,1,nil,nil,nil,0}
-t[4436]={"Razorfen Quilguard",25,26,1,nil,nil,nil,0}
-t[4437]={"Razorfen Warden",25,26,1,nil,nil,nil,0}
-t[4438]={"Razorfen Spearhide",29,30,2,nil,nil,nil,0}
-t[4440]={"Razorfen Totemic",29,29,1,nil,nil,nil,0}
-t[4442]={"Razorfen Defender",27,28,1,nil,nil,nil,0}
+t[4435]={"Razorfen Warrior",24,25,1,nil,nil,nil,0,491}
+t[4436]={"Razorfen Quilguard",25,26,1,nil,nil,nil,0,491}
+t[4437]={"Razorfen Warden",25,26,1,nil,nil,nil,0,491}
+t[4438]={"Razorfen Spearhide",29,30,2,nil,nil,nil,0,491}
+t[4440]={"Razorfen Totemic",29,29,1,nil,nil,nil,0,491}
+t[4442]={"Razorfen Defender",27,28,1,nil,nil,nil,0,491}
 t[4443]={"Wazza",1,1,0,nil,"AH","Totem Merchent",0}
-t[4444]={"Deathstalker Vincent",21,21,0,nil,"H",nil,2}
+t[4444]={"Deathstalker Vincent",21,21,0,nil,"H",nil,2,209}
 t[4445]={"Griznak",35,35,0,nil,"AH","Race Vendor",0}
 t[4446]={"Mazzer Stripscrew",35,35,0,nil,"AH","Race Vendor",0}
 t[4449]={"Crazzle Sprysprocket",35,35,0,nil,"AH","Gnome Ticket Redeemer",0}
@@ -3802,35 +3802,35 @@ t[4504]={"Frostmaw",37,37,0,{[1416]={37.51,67.2}},nil,nil,0}
 t[4505]={"Bloodsail Deckhand",43,44,0,{[1434]={29.35,89.31,30.5,90.08,33.36,88.35,33.53,88.17,33.06,88.38,33.31,88.11,33.55,88.15,33.04,88.23,33.21,88.35,29.45,89.46,30.59,89.93,30.64,90.43,30.6,90.4,30.69,90.65,29.44,89.12,29.21,88.72}},nil,nil,0}
 t[4506]={"Bloodsail Swabby",42,44,0,{[1434]={33.24,88.11,33.16,88.27,33.03,88.1,33.02,88.34,33.4,88.36,29.43,89.42,30.52,89.5}},nil,nil,0}
 t[4507]={"Daisy",15,15,0,{[1441]={79.48,76.86}},"AH","Race Starter Girl",0}
-t[4508]={"Willix the Importer",27,27,1,nil,"AH",nil,2}
+t[4508]={"Willix the Importer",27,27,1,nil,"AH",nil,2,491}
 t[4509]={"Sargath",20,20,0,nil,"A",nil,0}
-t[4510]={"Heralath Fallowbrook",25,25,0,nil,"A",nil,2}
-t[4511]={"Agam'ar",24,25,1,nil,nil,nil,0}
-t[4512]={"Rotting Agam'ar",28,28,1,nil,nil,nil,0}
-t[4514]={"Raging Agam'ar",25,26,1,nil,nil,nil,0}
-t[4515]={"Death's Head Acolyte",28,29,1,nil,nil,nil,0}
-t[4516]={"Death's Head Adept",27,28,1,nil,nil,nil,0}
-t[4517]={"Death's Head Priest",26,27,1,nil,nil,nil,0}
-t[4518]={"Death's Head Sage",29,30,1,nil,nil,nil,0}
-t[4519]={"Death's Head Seer",28,29,1,nil,nil,nil,0}
-t[4520]={"Razorfen Geomancer",25,25,1,nil,nil,nil,0}
+t[4510]={"Heralath Fallowbrook",25,25,0,nil,"A",nil,2,491}
+t[4511]={"Agam'ar",24,25,1,nil,nil,nil,0,491}
+t[4512]={"Rotting Agam'ar",28,28,1,nil,nil,nil,0,491}
+t[4514]={"Raging Agam'ar",25,26,1,nil,nil,nil,0,491}
+t[4515]={"Death's Head Acolyte",28,29,1,nil,nil,nil,0,491}
+t[4516]={"Death's Head Adept",27,28,1,nil,nil,nil,0,491}
+t[4517]={"Death's Head Priest",26,27,1,nil,nil,nil,0,491}
+t[4518]={"Death's Head Sage",29,30,1,nil,nil,nil,0,491}
+t[4519]={"Death's Head Seer",28,29,1,nil,nil,nil,0,491}
+t[4520]={"Razorfen Geomancer",25,25,1,nil,nil,nil,0,491}
 t[4521]={"Treshala Fallowbrook",20,20,0,{[1457]={69.54,67.75}},"A",nil,2}
-t[4522]={"Razorfen Dustweaver",28,29,1,nil,nil,nil,0}
-t[4523]={"Razorfen Groundshaker",27,28,1,nil,nil,nil,0}
-t[4525]={"Razorfen Earthbreaker",30,31,1,nil,nil,nil,0}
+t[4522]={"Razorfen Dustweaver",28,29,1,nil,nil,nil,0,491}
+t[4523]={"Razorfen Groundshaker",27,28,1,nil,nil,nil,0,491}
+t[4525]={"Razorfen Earthbreaker",30,31,1,nil,nil,nil,0,491}
 t[4526]={"Wind Howler",25,26,1,nil,nil,nil,0}
 t[4528]={"Stone Rumbler",21,21,1,nil,nil,nil,0}
-t[4530]={"Razorfen Handler",25,26,1,nil,nil,nil,0}
-t[4531]={"Razorfen Beast Trainer",28,29,1,nil,nil,nil,0}
-t[4532]={"Razorfen Beastmaster",30,31,1,nil,nil,nil,0}
-t[4534]={"Tamed Hyena",27,28,1,nil,nil,nil,0}
-t[4535]={"Tamed Battleboar",25,26,1,nil,nil,nil,0}
-t[4538]={"Kraul Bat",30,31,1,nil,nil,nil,0}
-t[4539]={"Greater Kraul Bat",32,32,1,nil,nil,nil,0}
-t[4540]={"Scarlet Monk",35,36,1,nil,nil,nil,0}
-t[4541]={"Blood of Agamaggan",27,27,1,nil,nil,nil,0}
-t[4542]={"High Inquisitor Fairbanks",40,40,1,nil,nil,nil,1}
-t[4543]={"Bloodmage Thalnos",34,34,1,nil,nil,nil,0}
+t[4530]={"Razorfen Handler",25,26,1,nil,nil,nil,0,491}
+t[4531]={"Razorfen Beast Trainer",28,29,1,nil,nil,nil,0,491}
+t[4532]={"Razorfen Beastmaster",30,31,1,nil,nil,nil,0,491}
+t[4534]={"Tamed Hyena",27,28,1,nil,nil,nil,0,491}
+t[4535]={"Tamed Battleboar",25,26,1,nil,nil,nil,0,491}
+t[4538]={"Kraul Bat",30,31,1,nil,nil,nil,0,491}
+t[4539]={"Greater Kraul Bat",32,32,1,nil,nil,nil,0,491}
+t[4540]={"Scarlet Monk",35,36,1,nil,nil,nil,0,796}
+t[4541]={"Blood of Agamaggan",27,27,1,nil,nil,nil,0,491}
+t[4542]={"High Inquisitor Fairbanks",40,40,1,nil,nil,nil,1,796}
+t[4543]={"Bloodmage Thalnos",34,34,1,nil,nil,nil,0,796}
 t[4544]={"Krueg Skullsplitter",37,37,0,{[1444]={75.94,42.74}},"H",nil,2}
 t[4545]={"Nag'zehn",35,35,0,{[1441]={67.84,64.34}},"H",nil,0}
 t[4546]={"Bor'zehn",35,35,0,{[1441]={67.8,63.83}},"H",nil,0}
@@ -3908,9 +3908,9 @@ t[4618]={"Martek the Exiled",42,42,0,{[1418]={42.22,52.69}},"AH",nil,3}
 t[4619]={"Geltharis",32,32,0,{[1440]={77.99,42.42}},nil,nil,0}
 t[4620]={"Fobeed",35,35,0,{[1441]={79.26,75.92}},"AH","Race Announcer",0}
 t[4621]={"Rebald Yorglun",50,50,0,nil,"A","Raptor Trainer",0}
-t[4623]={"Quilguard Champion",30,31,1,nil,nil,nil,0}
+t[4623]={"Quilguard Champion",30,31,1,nil,nil,nil,0,491}
 t[4624]={"Booty Bay Bruiser",57,57,0,{[1434]={27.96,76.87,26.13,73.09,26.33,73.29,27.59,78.04,28.38,77.09,27.31,77.41,27.68,76.96,27.78,77.52,28.55,76.83,28.01,73.72,28.55,75.63,27.36,77.49,27.17,77.69,27.86,73.68,26.79,73.66,26.91,73.6,28.11,75.16,27.68,77.15,26.78,76.7,28.27,76.77,27.55,76.84,26.67,77.03,27.56,77.15,28.64,77,27.85,77.14,27.8,74,26.06,73.44,28.33,75.97,27.97,73.57,28.75,75.4,27.73,77.37,27.75,74.63,27.22,77.65,28.87,74.85,29.49,72.59,27.26,76.94,27.97,77.11,26.92,77.39,26.64,76.34,27.95,77.87,27.15,77.32,27.73,77.11,27.05,77.3,28.37,76.08,26.62,76.59,27.65,76.59,26.93,77.44,28.15,76.51,27.46,77.63,28.07,77.1,27.68,77.17,28.3,75.74,29.42,72.25,29.68,72.63}},"AH",nil,0}
-t[4625]={"Death's Head Ward Keeper",15,15,0,nil,nil,nil,0}
+t[4625]={"Death's Head Ward Keeper",15,15,0,nil,nil,nil,0,491}
 t[4626]={"CHOW Guard",62,62,0,nil,"A",nil,0}
 t[4627]={"Arugal's Voidwalker",24,25,0,nil,nil,nil,0}
 t[4629]={"Trackmaster Zherin",30,30,0,{[1441]={81.63,77.95}},"AH",nil,2}
@@ -4032,61 +4032,61 @@ t[4783]={"Dawnwatcher Selgorm",25,25,0,{[1457]={56.16,24.39}},"AH","The Argent D
 t[4784]={"Argent Guard Manados",23,23,0,{[1457]={55.24,23.99}},"AH","The Argent Dawn",2}
 t[4785]={"Illusionary Nightmare",29,30,0,nil,"AH",nil,0}
 t[4786]={"Dawnwatcher Shaedlass",22,22,0,{[1457]={55.36,25.03}},"AH","The Argent Dawn",2}
-t[4787]={"Argent Guard Thaelrid",18,18,0,nil,"AH","The Argent Dawn",2}
+t[4787]={"Argent Guard Thaelrid",18,18,0,nil,"AH","The Argent Dawn",2,719}
 t[4788]={"Fallenroot Satyr",20,21,1,{[1439]={30.86,92.72,31.19,92.59,31.17,93.56},[1440]={13.52,12.22,13.28,12.62,13.87,10.61,13.78,11.67}},nil,nil,0}
 t[4789]={"Fallenroot Rogue",21,22,1,{[1439]={33.96,94.43,33.16,94.07,32.07,93.08,32.41,93.26,30.94,91.83,31.92,92.8}},nil,nil,0}
 t[4791]={"Nazeer Bloodpike",48,48,0,{[1445]={35.21,30.66}},"H",nil,2}
 t[4792]={"\"Swamp Eye\" Jarl",42,42,0,{[1445]={55.44,26.27}},"AH",nil,2}
 t[4794]={"Morgan Stern",36,36,0,{[1445]={66.34,45.47}},"A",nil,2}
 t[4795]={"Force of Nature",16,27,0,nil,"A",nil,0}
-t[4798]={"Fallenroot Shadowstalker",23,24,1,nil,nil,nil,0}
-t[4799]={"Fallenroot Hellcaller",24,25,1,nil,nil,nil,0}
+t[4798]={"Fallenroot Shadowstalker",23,24,1,nil,nil,nil,0,719}
+t[4799]={"Fallenroot Hellcaller",24,25,1,nil,nil,nil,0,719}
 t[4802]={"Blackfathom Tide Priestess",20,21,1,{[1440]={13.55,12.06}},nil,nil,0}
 t[4803]={"Blackfathom Oracle",21,22,1,{[1439]={30.2,92.72,30,92.63,30.6,92.11,31.37,91.37,31.72,91.65,31.85,91.44,34.75,93.38,33.55,94.39,33.88,93.68,33.72,93.32,33.55,94.19,33.78,94.35,32.82,93.87,31.72,92.14,32.35,93.65,31.21,91.93,31.31,91.88,31.8,92.44,34.74,93.4,34.52,93.58,31.86,91.48,30.92,91.87}},nil,nil,0}
-t[4805]={"Blackfathom Sea Witch",23,24,1,nil,nil,nil,0}
-t[4807]={"Blackfathom Myrmidon",22,23,1,nil,nil,nil,0}
-t[4809]={"Twilight Acolyte",24,25,1,nil,nil,nil,0}
-t[4810]={"Twilight Reaver",25,26,1,nil,nil,nil,0}
-t[4811]={"Twilight Aquamancer",25,26,1,nil,nil,nil,0}
-t[4812]={"Twilight Loreseeker",24,25,1,nil,nil,nil,0}
-t[4813]={"Twilight Shadowmage",26,27,1,nil,nil,nil,0}
-t[4814]={"Twilight Elementalist",26,27,1,nil,nil,nil,0}
-t[4815]={"Murkshallow Snapclaw",22,23,1,nil,nil,nil,0}
+t[4805]={"Blackfathom Sea Witch",23,24,1,nil,nil,nil,0,719}
+t[4807]={"Blackfathom Myrmidon",22,23,1,nil,nil,nil,0,719}
+t[4809]={"Twilight Acolyte",24,25,1,nil,nil,nil,0,719}
+t[4810]={"Twilight Reaver",25,26,1,nil,nil,nil,0,719}
+t[4811]={"Twilight Aquamancer",25,26,1,nil,nil,nil,0,719}
+t[4812]={"Twilight Loreseeker",24,25,1,nil,nil,nil,0,719}
+t[4813]={"Twilight Shadowmage",26,27,1,nil,nil,nil,0,719}
+t[4814]={"Twilight Elementalist",26,27,1,nil,nil,nil,0,719}
+t[4815]={"Murkshallow Snapclaw",22,23,1,nil,nil,nil,0,719}
 t[4816]={"Murkshallow Shellhide",23,24,1,nil,nil,nil,0}
-t[4818]={"Blindlight Murloc",22,23,1,nil,nil,nil,0}
-t[4819]={"Blindlight Muckdweller",25,25,1,nil,nil,nil,0}
-t[4820]={"Blindlight Oracle",25,25,1,nil,nil,nil,0}
-t[4821]={"Skittering Crustacean",22,23,1,nil,nil,nil,0}
-t[4822]={"Snapping Crustacean",23,24,1,nil,nil,nil,0}
-t[4823]={"Barbed Crustacean",25,26,1,nil,nil,nil,0}
-t[4824]={"Aku'mai Fisher",23,24,1,nil,nil,nil,0}
-t[4825]={"Aku'mai Snapjaw",26,27,1,nil,nil,nil,0}
-t[4827]={"Deep Pool Threshfin",24,25,1,nil,nil,nil,0}
-t[4829]={"Aku'mai",28,28,1,nil,nil,nil,0}
-t[4830]={"Old Serra'kis",26,26,1,nil,nil,nil,0}
-t[4831]={"Lady Sarevess",25,25,1,nil,nil,nil,0}
-t[4832]={"Twilight Lord Kelris",27,27,1,nil,nil,nil,0}
+t[4818]={"Blindlight Murloc",22,23,1,nil,nil,nil,0,719}
+t[4819]={"Blindlight Muckdweller",25,25,1,nil,nil,nil,0,719}
+t[4820]={"Blindlight Oracle",25,25,1,nil,nil,nil,0,719}
+t[4821]={"Skittering Crustacean",22,23,1,nil,nil,nil,0,719}
+t[4822]={"Snapping Crustacean",23,24,1,nil,nil,nil,0,719}
+t[4823]={"Barbed Crustacean",25,26,1,nil,nil,nil,0,719}
+t[4824]={"Aku'mai Fisher",23,24,1,nil,nil,nil,0,719}
+t[4825]={"Aku'mai Snapjaw",26,27,1,nil,nil,nil,0,719}
+t[4827]={"Deep Pool Threshfin",24,25,1,nil,nil,nil,0,719}
+t[4829]={"Aku'mai",28,28,1,nil,nil,nil,0,719}
+t[4830]={"Old Serra'kis",26,26,1,nil,nil,nil,0,719}
+t[4831]={"Lady Sarevess",25,25,1,nil,nil,nil,0,719}
+t[4832]={"Twilight Lord Kelris",27,27,1,nil,nil,nil,0,719}
 t[4834]={"Theramore Infiltrator",35,36,0,{[1445]={40.94,25.52,38.95,26.4,40.65,35.32,38.04,37.41,38.05,33.94,42.12,26.03,41.65,25.21,41.73,26.62,40.58,33.4,44.04,27.29,38.05,23.59,38.05,25.56,38.94,22.42,39.62,23.88,37.56,27.02,38.97,21.67}},"A",nil,0}
 t[4841]={"Deadmire",45,45,0,{[1445]={50.2,52.7}},nil,nil,0}
-t[4842]={"Earthcaller Halmgar",32,32,2,nil,nil,nil,0}
+t[4842]={"Earthcaller Halmgar",32,32,2,nil,nil,nil,0,491}
 t[4844]={"Shadowforge Surveyor",35,36,1,{[1418]={43.8,10.6,44.2,10,44.4,9.4,44.4,12.4,44.6,9.6,44.8,11.4,44.8,12,45.2,12.6,45.4,8.4,45.4,8.6,45.8,8.6,45.8,10.2,46,10.6,46,12.2,46.2,13.8,46.4,8.2,46.4,12.6,46.6,8,46.6,11,46.6,12.2,47.2,13,47.4,9.4,47.4,9.8,47.4,13.6,47.6,7.8,47.6,9.4,47.6,12.4,47.6,13,47.6,13.6,47.8,9.6,48.2,7.2,48.2,11,48.6,7.6,48.6,8.6,48.6,9.6,48.6,12,48.6,13.6,48.8,13,49,11.4,49.2,7.2,49.6,7.8,49.6,11,49.6,11.8,49.6,13.4,50,13.8,50.6,10.6,50.6,13,50.6,14.8,53,16.2,53.8,16.8}},nil,nil,0}
 t[4845]={"Shadowforge Ruffian",36,37,1,{[1418]={44.4,12.4,44.6,12.4,45,11,45.2,12.8,45.4,10.2,45.6,11.4,45.6,12.8,46.4,12.2,46.4,13.6,46.8,13.4,47.2,12,47.4,10.8,47.4,13.6,47.6,13.8,47.8,13,48,9,48,10.8,48,12.4,48.2,35.8,48.8,13.8,49,12.4,49.2,13,49.4,10.2,49.8,12.4,50,9.8,50,12.8,50.2,33.4,50.4,15,50.6,14.8,50.8,13.2,51.2,12.4,51.2,14.2,51.2,27.2,51.6,15.4,51.8,18.8,52.2,27.6,52.4,21.6,52.4,26.6,52.6,15.6,52.8,18.8,53.2,18.2,54.4,21.2,55,17}},nil,nil,0}
 t[4846]={"Shadowforge Digger",35,36,1,{[1418]={43.8,10.8,44.4,9.4,44.4,9.6,44.4,12.2,44.6,12.4,44.8,11.2,45,12.6,45.2,8.8,45.2,10.2,45.4,8.4,45.6,8.4,45.6,9.8,45.8,8.6,45.8,10.6,45.8,13,46,13.6,46.4,12.2,46.6,8.4,46.6,10.8,46.6,12.8,46.8,12.4,47.4,9.4,47.4,10,47.4,13.6,47.6,12.6,47.6,13.8,47.8,7.6,47.8,10,47.8,12.2,48,9,48.2,7.4,48.2,11.4,48.6,9,48.6,10.8,48.6,12.6,48.8,8.2,48.8,11.6,48.8,14,49,7.2,49.2,9.8,49.6,7.4,49.6,9.2,49.6,11.4,49.6,13.8,49.8,8.2,49.8,9.8,50.2,11.8,50.2,13,50.6,8,50.6,12.6,50.8,11.4,50.8,11.8,50.8,13.8,51,15.4,51.4,26.8,51.8,14.8,52,16,52,27.6,52.6,19}},nil,nil,0}
-t[4847]={"Shadowforge Relic Hunter",39,40,1,nil,nil,nil,0}
-t[4848]={"Shadowforge Darkcaster",43,44,1,nil,nil,nil,0}
-t[4849]={"Shadowforge Archaeologist",43,44,1,nil,nil,nil,0}
-t[4850]={"Stonevault Cave Lurker",37,39,1,nil,nil,nil,0}
+t[4847]={"Shadowforge Relic Hunter",39,40,1,nil,nil,nil,0,1337}
+t[4848]={"Shadowforge Darkcaster",43,44,1,nil,nil,nil,0,1337}
+t[4849]={"Shadowforge Archaeologist",43,44,1,nil,nil,nil,0,1337}
+t[4850]={"Stonevault Cave Lurker",37,39,1,nil,nil,nil,0,1337}
 t[4851]={"Stonevault Rockchewer",36,37,1,{[1418]={35.43,23.13},[1432]={32.36,90.47,33.35,92.32,33.45,92.63,34.05,91.79,37.22,90.9,37.3,91.78,37.46,91.96,36.71,92.07,36.62,91.28,34.97,93.95,35.02,96.47,34.81,95.46,34.15,95.75,34.15,96.54,36.47,92.36}},nil,nil,0}
-t[4852]={"Stonevault Oracle",37,38,1,nil,nil,nil,0}
-t[4853]={"Stonevault Geomancer",43,44,1,nil,nil,nil,0}
-t[4854]={"Grimlok",45,45,1,nil,nil,"Stonevault Chieftain",0}
-t[4855]={"Stonevault Brawler",43,44,1,nil,nil,nil,0}
+t[4852]={"Stonevault Oracle",37,38,1,nil,nil,nil,0,1337}
+t[4853]={"Stonevault Geomancer",43,44,1,nil,nil,nil,0,1337}
+t[4854]={"Grimlok",45,45,1,nil,nil,"Stonevault Chieftain",0,1337}
+t[4855]={"Stonevault Brawler",43,44,1,nil,nil,nil,0,1337}
 t[4856]={"Stonevault Cave Hunter",36,37,1,{[1418]={35.96,23.06},[1432]={33.29,89.46,33,88.93,32.57,89.49,33.32,91.41,36.89,92.82,36.26,92.66,36.18,91.51,35.18,93.01,35.27,95.87,34.57,96.61,33.67,95.98,32.2,90.21,33.15,91.69,33.8,91.71,34.79,93.32,37.06,92.56}},nil,nil,0}
-t[4857]={"Stone Keeper",46,46,1,nil,nil,nil,0}
-t[4860]={"Stone Steward",43,44,1,nil,nil,nil,0}
-t[4861]={"Shrike Bat",38,39,1,nil,nil,nil,0}
+t[4857]={"Stone Keeper",46,46,1,nil,nil,nil,0,1337}
+t[4860]={"Stone Steward",43,44,1,nil,nil,nil,0,1337}
+t[4861]={"Shrike Bat",38,39,1,nil,nil,nil,0,1337}
 t[4862]={"Rabid Shrike Bat",38,39,1,nil,nil,nil,0}
-t[4863]={"Jadespine Basilisk",39,40,1,nil,nil,nil,0}
+t[4863]={"Jadespine Basilisk",39,40,1,nil,nil,nil,0,1337}
 t[4872]={"Obsidian Golem",38,38,1,{[1432]={38.84,94.25,37.88,93.26,39.76,90.64}},nil,nil,0}
 t[4875]={"Turhaw",40,40,0,{[1441]={45.44,51.17}},"H","Butcher",6}
 t[4876]={"Jawn Highmesa",35,35,0,{[1441]={45.91,51.48}},"H","General Goods",6}
@@ -4099,7 +4099,7 @@ t[4883]={"Krak",41,41,0,{[1445]={36.4,30.85}},"H","Armorer",16388}
 t[4884]={"Zulrg",43,43,0,{[1445]={36.17,31.8}},"H","Weaponsmith",16388}
 t[4885]={"Gregor MacVince",35,35,0,{[1445]={65.19,51.5}},"A","Horse Breeder",5}
 t[4886]={"Hans Weston",35,35,0,{[1445]={64.63,50.42}},"A","Armorer & Shieldsmith",16388}
-t[4887]={"Ghamoo-ra",25,25,1,nil,nil,nil,0}
+t[4887]={"Ghamoo-ra",25,25,1,nil,nil,nil,0,719}
 t[4888]={"Marie Holdston",37,37,0,{[1445]={64.61,50.07}},"A","Weaponsmith",16388}
 t[4889]={"Torq Ironblast",43,43,0,{[1445]={67.51,47.98}},"A","Gunsmith",16388}
 t[4890]={"Piter Verance",41,41,0,{[1445]={67.39,47.86}},"A","Weaponsmith & Armorer",16388}
@@ -4155,7 +4155,7 @@ t[4973]={"Guard Lasiter",50,50,0,{[1445]={67.78,49.69}},"A",nil,2}
 t[4974]={"Aldwin Laughlin",50,50,0,{[1453]={63.8,76.78}},"A","Guild Master",1537}
 t[4975]={"Theramore Archery Target 2",1,1,0,nil,"A",nil,0}
 t[4976]={"Elise Laughlin",25,25,0,nil,"A","Guild Tabard Designer",0}
-t[4977]={"Murkshallow Softshell",25,25,0,nil,nil,nil,0}
+t[4977]={"Murkshallow Softshell",25,25,0,nil,nil,nil,0,719}
 t[4978]={"Aku'mai Servant",26,26,1,nil,nil,nil,0}
 t[4979]={"Theramore Guard",53,57,0,{[1445]={69.6,49.79,65.88,52.04,64.87,48.57,65.66,50.49,71.05,56.04,71.64,56.15,69.29,50.16,70.56,57.17,71.39,56.55,68.51,51.56,71.28,55.65,66.82,50.1,71.64,54.26,64.24,49.55,69.65,50.06,68.04,52.56,64.53,45.61,64.77,46.95,65,46.98,65,46.91,65.02,46.59,70.99,56.58,68.32,51.9,68.3,51.87,65.73,48.46,65.49,48.21,65.46,48.25,65.63,48.61,68.5,52.5,63.79,44.98,63.97,44.76,64.21,45.98}},"A",nil,0}
 t[4980]={"Paval Reethe",35,35,0,{[1445]={42.65,38.07}},"AH",nil,2}
@@ -4225,15 +4225,15 @@ t[5044]={"Theramore Skirmisher",36,36,0,{[1445]={42.46,38.03}},"A",nil,0}
 t[5045]={"Private Hallan",34,34,0,{[1445]={42.48,38.06}},"A",nil,0}
 t[5046]={"Lieutenant Caldwell",37,37,0,{[1445]={42.48,38.05}},"A",nil,0}
 t[5047]={"Ellaercia",30,30,0,{[1457]={70.22,21.87}},"A","Tabard Designer",524288}
-t[5048]={"Deviate Adder",18,19,1,nil,nil,nil,0}
+t[5048]={"Deviate Adder",18,19,1,nil,nil,nil,0,718}
 t[5049]={"Lyesa Steelbrow",25,25,0,{[1455]={36.31,85.47}},"A","Guild Tabard Vendor",1029}
 t[5052]={"Edward Remington",25,25,0,{[1458]={69.81,44.28}},"H","Guild Tabard Designer",1029}
-t[5053]={"Deviate Crocolisk",18,19,0,nil,nil,nil,0}
+t[5053]={"Deviate Crocolisk",18,19,0,nil,nil,nil,0,718}
 t[5054]={"Krumn",50,50,0,{[1456]={37.31,63.49}},"H","Guild Master",1537}
-t[5055]={"Deviate Lasher",19,20,0,nil,nil,nil,0}
-t[5056]={"Deviate Dreadfang",20,21,1,nil,nil,nil,0}
+t[5055]={"Deviate Lasher",19,20,0,nil,nil,nil,0,718}
+t[5056]={"Deviate Dreadfang",20,21,1,nil,nil,nil,0,718}
 t[5057]={"Theramore Deserter",37,37,0,{[1445]={36.33,53.71,36.42,54.02,36.32,54.45,36.55,54.36,36.28,54.88,36.21,53.58,36.36,53.43,36.53,53.68,35.93,53.22,35.64,53.25,75.82,54.82,76.33,55.14,35.89,54.72,36.09,54.65,76.97,56.18,76.73,56.33,76.53,56.85,76.72,56.45,76.88,56.32,77,56.09,76.66,56.37,35.6,54.62,35.13,52.91,35.25,52.75,35.25,53.12,35.43,54.34,34.78,54.76,35.76,53.65,35.86,53.85,35.87,54.18,36.05,53.85,35.16,54.17,35.28,53.52,35.6,53.87,35.64,54.35,34.52,53.7,34.42,54.75}},"A",nil,0}
-t[5058]={"Wolfguard Worg",20,21,0,nil,nil,nil,0}
+t[5058]={"Wolfguard Worg",20,21,0,nil,nil,nil,0,209}
 t[5059]={"Galthogran the Callous",40,40,0,nil,nil,nil,0}
 t[5060]={"World Banker",45,45,0,nil,"AH","Banker",0}
 t[5061]={"World Guild Tabbard Vendor",10,10,0,nil,"AH","Guild Tabard Vendor",0}
@@ -4335,7 +4335,7 @@ t[5177]={"Tally Berryfizz",35,35,0,{[1455]={66.62,55.69}},"A","Expert Alchemist"
 t[5178]={"Soolie Berryfizz",30,30,0,{[1455]={66.23,54.52}},"A","Alchemy Supplies",4}
 t[5184]={"Theramore Sentry",35,36,0,{[1445]={42.6,30.51,45.01,24.47,45.14,24.51,42.66,30.3,46.56,24.34,46.83,24.25,46.75,24.64,46.59,24.52,46.82,24.56,44.64,24.47,43.2,27.79,43.34,27.56,46.66,24.93,46.71,24.48,46.72,23.41,46.43,23.52,46.85,24.34,46.61,24.31,46.53,24.37,46.64,23.87,46.9,24.92}},"A",nil,0}
 t[5185]={"Hammerhead Shark",31,31,1,{[1424]={53.55,90.66,50.15,85.36},[1437]={7.36,33.6,10.46,24.93,12.08,20.57,14.47,19.3,19.38,16.8,16.96,16.69,21.51,15.24,25.16,13.64,20.35,13.1}},nil,nil,0}
-t[5186]={"Basking Shark",41,41,1,nil,nil,nil,0}
+t[5186]={"Basking Shark",41,41,1,nil,nil,nil,0,2257}
 t[5187]={"Southsea Cannon",13,14,0,nil,nil,nil,0}
 t[5188]={"Garyl",30,30,0,{[1454]={43.77,74.25}},"H","Tabard Vendor",1029}
 t[5189]={"Thrumn",25,25,0,{[1456]={37.67,63.26}},"H","Tabard Vendor",1029}
@@ -4354,8 +4354,8 @@ t[5202]={"Archery Target",1,1,0,{[1445]={68.19,49.44,68.11,49.27,68.28,49.45,68.
 t[5204]={"Apothecary Zinge",29,29,0,{[1458]={50.14,67.97}},"H","Royal Apothecary Society",2}
 t[5224]={"Murk Slitherer",45,46,1,nil,nil,nil,0}
 t[5225]={"Murk Spitter",46,47,1,nil,nil,nil,0}
-t[5226]={"Murk Worm",47,48,1,nil,nil,nil,0}
-t[5228]={"Saturated Ooze",47,48,1,nil,nil,nil,0}
+t[5226]={"Murk Worm",47,48,1,nil,nil,nil,0,1477}
+t[5228]={"Saturated Ooze",47,48,1,nil,nil,nil,0,1477}
 t[5229]={"Gordunni Ogre",40,41,0,{[1444]={75.13,25.59,74.75,25.92,74.87,24.96,74.75,26.61,74.92,25.59,75.39,32.98,74.48,26.77,79.41,34.91,80.95,35.21,79.64,34.72,76.61,29.76,74.63,28.37,75.21,29.62,75.13,34.86,75.61,34.75,75.36,33.85,75.15,32.54}},nil,nil,0}
 t[5231]={"Gordunni Enforcer",41,42,0,nil,nil,nil,0}
 t[5232]={"Gordunni Brute",42,43,0,{[1444]={75.07,25.14,75.2,26.33,75.42,26.33,60.41,54.48,61.38,54.97,59.71,57.26,59.33,57.52,60.38,57.09,76.65,33.14,74.68,29.56,74.77,27.44,58.58,64.94,80.31,35.04,80.36,34.46,79.67,34.2,77.54,34.8,78.56,33.74,75.4,29.72,75.27,29.06,74.61,27.95,61.65,54.43,61.85,55.16,61.79,53.96,61.37,56.17,60.54,57.66,60.78,56.76,60.42,58.2,59.31,63.63,58.63,65.14,75.64,33.47,75.69,34.02,75.04,32.39,76.57,33.37}},nil,nil,0}
@@ -4377,31 +4377,31 @@ t[5251]={"Woodpaw Trapper",41,42,0,{[1444]={76.87,54.06,72.39,35.57,72.09,37.43,
 t[5253]={"Woodpaw Brute",41,42,0,{[1444]={76.93,54.19,72.19,36.74,70.46,51.38,70.55,53.23,71.82,53.63,70.41,52.18,70.62,54.2,71.32,54.37,71.77,54.97,75.94,54.05,75.58,54.34,75.45,54.85,72.77,39.17,72.68,39.19,73.2,39.84,72.85,39.87,73.25,39.18,73.22,37.09,72.37,37.18,72.48,37.77}},nil,nil,0}
 t[5254]={"Woodpaw Mystic",42,43,0,{[1444]={77.27,57.44,65.65,52.71,65.55,53.71,66.1,52.38,65.13,52.68,77.69,56.37,77.36,56.26,66.09,52.93,73.67,57.15,65.93,51.41,66.41,51.58,76.78,56.56,65.55,52.44,65.29,51.89,68.54,54.21,67.21,55.85,67.41,56.08,68.82,53.78,75.64,55.85,75.53,56.28,69.84,55.75,68.55,55.08,69.52,55.57,69.39,55.03,69.62,56.39,68.47,56.62,68.36,55.71,69.13,55.79,70.88,56.64,71.57,56.09,71.49,56.18,72.28,55.8,73.33,57.37,71.95,57.28,72.79,55.7,73.06,56.87,72.22,57.11,72.74,56.49,72.43,56.77,73.3,56.62,72.81,57.19,74.41,54.75,74.62,55.77,75.18,55.8}},nil,nil,0}
 t[5255]={"Woodpaw Reaver",42,43,0,{[1444]={65.61,52.59,65.62,53.53,77.27,56.33,65.92,51.68,76.76,56.02,65.12,52.53,65.16,51.95,68.57,54.38,67.09,54.4,66.72,53.42,68.49,53.55,67.92,53.62,68.96,54.36,76.11,56.5,75.62,57.2,76.12,57.08,75.61,56.35,68.17,55.37,69.05,54.98,72.34,54.99,73.36,55.63,69.68,54.84,69.01,56.42,68.78,55.73,69.12,55.9,71.59,55.83,72.22,56.64,71.82,56.53,73.06,56.42,71.39,57.16,70.81,57.39,74.32,55.66,74.47,54.98,75.22,56.39,74.65,56.45,74.75,57.1}},nil,nil,0}
-t[5256]={"Atal'ai Warrior",48,49,1,nil,nil,nil,0}
+t[5256]={"Atal'ai Warrior",48,49,1,nil,nil,nil,0,1477}
 t[5258]={"Woodpaw Alpha",43,44,0,{[1444]={65.74,52.63,65.44,53.68,77.32,56.8,66.09,51.56,65.26,52.02,68.66,54.32,75.48,56.49,69.07,55.63,71.42,55.91,73.27,56.17,72.4,56.55,74.34,54.96}},nil,nil,0}
-t[5259]={"Atal'ai Witch Doctor",48,50,1,nil,nil,nil,0}
+t[5259]={"Atal'ai Witch Doctor",48,50,1,nil,nil,nil,0,1477}
 t[5260]={"Groddoc Ape",42,43,0,{[1444]={61.73,64.4,61.73,63.99,56.51,60.11,74.73,51.37,57.76,60.29,56.3,54.93,57.96,57.9,57.79,57.94,57.53,54.33,73.35,53.73,68.29,52.06,60.63,61.23,61.2,61.39,60.81,60.81,56.87,54.49,57.38,60.74,59.57,60.5,58.91,60.33,58.3,55.62,57.86,55.52,57.42,53.51,57.22,57.16,58.55,58.71,58.41,58.06,58.77,61.61,59.79,60.12}},nil,nil,0}
 t[5261]={"Enthralled Atal'ai",45,46,1,{[1435]={80.58,47.49}},nil,nil,0}
 t[5262]={"Groddoc Thunderer",49,50,0,{[1444]={40.62,20.55,45.1,19.79,43.7,22.17,41.28,15.88,43.93,23.77,44.79,12.16,46.44,24.2,46.32,29.38,41.78,21.58,43.18,23.09,39.92,18.65,44.08,20.28,45.74,22.08,43.55,25.68,50.26,28.73,43.7,8.28,42.23,9.04,42.76,25.01,50.22,29.9,50.59,28.23,37.68,23.38,41.81,23.27,46.69,24.96,46.5,29.78,50.71,32.72,41.14,17.11,41.62,16.89,49.83,32.75,50.25,31.91,48.83,34.75,48.76,35.36,42.97,11.47,42.62,11.83,41.13,24.15}},nil,nil,0}
-t[5263]={"Mummified Atal'ai",46,47,1,nil,nil,nil,0}
+t[5263]={"Mummified Atal'ai",46,47,1,nil,nil,nil,0,1477}
 t[5264]={"Groddoc Chestpounder",45,46,0,nil,nil,nil,0}
-t[5267]={"Unliving Atal'ai",48,49,1,nil,nil,nil,0}
+t[5267]={"Unliving Atal'ai",48,49,1,nil,nil,nil,0,1477}
 t[5268]={"Ironfur Bear",41,42,0,{[1444]={89.58,39.33,76.88,40.85,79.94,43.64,78.94,37.02,70.33,36.26,78.87,46.19,80.11,46.58,87.05,38.3,71.62,35.32,68.11,44.79,81.58,45.88,87.74,39.28,83.31,42.46,82.87,44.22,81.18,46.13,73.14,41.9,85.1,38.46,85.74,37.09,86.65,38.58,87.89,38.08,82.86,38.62,82.77,40.5,83.42,40.61,80.35,38.26,81.68,39.03,70.97,40.82,71.19,42.78,57.78,55.32,69.39,42.42,69.69,44.19,68.64,43.97,61.28,61.6,57.09,60.06,70.54,44.94,79.24,41.24,77.57,38.4,75.93,36.47,74.8,37.95,76.09,39.94,60.88,59.99,86.06,45.58,85.24,45.78,86.11,44.26,84.35,45.86,86.82,44.13,84.33,39.57,85.78,42.84,85.04,38.94,58.01,55.8,71.59,43.77,70.51,41.46,58.25,60.43,79.48,45.85,58.66,54.43,54.73,52.75,72.6,43.44,57.89,58.32,59.04,59.55,55.67,53.79,68.73,44.92,70.89,46.54,72.19,45.95,83.41,46.12,80.42,44.93,78,45.36,79.34,39.04,70.39,42.71}},nil,nil,0}
-t[5269]={"Atal'ai Priest",46,47,1,nil,nil,nil,0}
-t[5270]={"Atal'ai Corpse Eater",49,50,1,nil,nil,nil,0}
-t[5271]={"Atal'ai Deathwalker",50,51,1,nil,nil,nil,0}
+t[5269]={"Atal'ai Priest",46,47,1,nil,nil,nil,0,1477}
+t[5270]={"Atal'ai Corpse Eater",49,50,1,nil,nil,nil,0,1477}
+t[5271]={"Atal'ai Deathwalker",50,51,1,nil,nil,nil,0,1477}
 t[5272]={"Grizzled Ironfur Bear",44,44,0,{[1444]={55.01,49.8,53.16,47.26,69.52,60.8,53.33,48.61,69.78,60.97,71.2,62.69,52.57,46.49,69.93,63.58,67.95,60.58,69.9,58.35,68.23,59.12,70.06,62.88,68.64,59.36,70.67,63.83,69.96,61.56,58.21,50.66,57.21,50.13,51.53,46.64,57.51,48.38,56.97,47.83,53.67,47.99,52.16,47.9,69.52,58.53,73.42,57.87,61.36,50.93,71.77,60.14,71.03,61.33,50.02,47.48,50.97,48.38,60.44,51.05,56.19,49.53,59.8,51.19}},nil,nil,0}
-t[5273]={"Atal'ai High Priest",50,51,1,nil,nil,nil,0}
+t[5273]={"Atal'ai High Priest",50,51,1,nil,nil,nil,0,1477}
 t[5274]={"Ironfur Patriarch",48,49,0,{[1444]={43.08,23.87,44.12,21.64,46.7,25.42,44.46,11.74,47.27,24.1,45.85,24.19,41.29,17.79,44.61,22.03,43.03,9.69,49.93,28.21,49.39,28.33,38.47,23.11,39.91,21.77,40.91,19.11,41.07,17.51,42.13,24.09,46.13,25.07,39.61,25.02,42.89,20.29,50.08,27.92,48.94,37.47,49.6,33.51,49.77,33.95,49.49,31.33,50.57,31.28,49.82,29.62,46.48,26.01,43.69,11.67}},nil,nil,0}
 t[5276]={"Sprite Dragon",47,48,0,{[1444]={44.26,22.29,43.35,22.54,44.4,9.7,43.53,22.48,50.67,33.75}},"AH",nil,0}
-t[5277]={"Nightmare Scalebane",49,51,1,nil,nil,nil,0}
+t[5277]={"Nightmare Scalebane",49,51,1,nil,nil,nil,0,1477}
 t[5278]={"Sprite Darter",43,45,0,{[1444]={65.51,47.39,65.14,47.97,64.49,48.43,64.42,48.87,68.44,44.47,66.99,47.23,66.4,48.08,70.15,46.59,67.51,48.1,69.08,46.56,69.16,46.09,69.45,44.95,69.99,46.96,70.26,47.7,69.43,47.06,68.92,49.1,69.37,48.22,68.02,48.08,68.51,48.89,68.42,47.89,68.86,48.71}},"A",nil,0}
-t[5280]={"Nightmare Wyrmkin",50,51,1,nil,nil,nil,0}
-t[5283]={"Nightmare Wanderer",49,50,1,nil,nil,nil,0}
+t[5280]={"Nightmare Wyrmkin",50,51,1,nil,nil,nil,0,1477}
+t[5283]={"Nightmare Wanderer",49,50,1,nil,nil,nil,0,1477}
 t[5286]={"Longtooth Runner",40,41,0,{[1444]={88.95,39.24,89.21,40.18,83.45,45.89,70.8,36.24,68.66,42.28,81.23,39.04,87.72,42.68,87.74,43.7,79.31,37.74,79.65,46.62,68.99,42.94,80.31,46.6,69.43,43.99,64.54,48.59,25.84,47.23,88.17,38.44,86.88,39.66,82.8,44.32,80.63,45.83,27.07,45.24,84.79,38.11,86.19,38.36,86.77,37.83,85.86,37.62,88.46,37.53,78.32,37.9,76.86,38.89,77.36,39.84,82.77,38.72,71.09,42.16,70.93,43.96,71.14,43.41,74.25,39.15,70.83,40.33,78.72,37.83,28.31,45.63,30.96,51.52,30.72,52.64,30.88,51.82,29.15,47.24,28.84,46.61,27.6,47.31,28.27,47.05,27.35,46.15,27.31,46.72,26.77,46.46,26.51,46.14,27.28,43.64,26.86,44.12,70.3,42.11,69.98,42.71,79.91,38.21,70.71,45.32,79.59,40.18,80.58,39.24,72,45.52,72.43,43.52,71.7,41.38,74.89,36.26,76.23,38.74,75.49,38.62,75.66,37.09,74.38,40.12,85.7,45.95,85.83,44.74,86.57,45.14,86.47,41.96,86.68,40.6,84.66,45.7,85.01,40.37,84.7,38.54,70.73,46.39,71.43,42.83,77.27,41.25,80.05,45.3,28.74,49.56,29.22,49.53,68.67,48.85,71.22,46.31,82.76,44.82,82.08,45.16,78.43,44.67,76.71,40.01,31.46,49.46,30.95,50.85,30.8,49.36,31.91,50.54,30.56,50.08,28.21,48.59,29.71,48.4,29.73,48.59,29.78,49.48,27.59,48.28,30.08,50,26.7,47.38,27.43,45.19,31.03,48.48,28.7,44.92}},nil,nil,0}
 t[5287]={"Longtooth Howler",43,44,0,{[1444]={71.29,60.1,52.22,47.4,53.51,48.65,69.37,61.64,56.11,46.59,70.65,58.68,52.29,45.86,54.44,49.14,69.57,63.51,70.03,59.22,68.86,60.29,67.98,58.53,68.81,61.07,69.69,61.84,57.41,50.5,53.94,47.3,50.79,47.97,51.56,46.92,57.31,48.93,54.18,48.77,51.53,47.27,71.7,58.83,56.91,47.05,55.36,49.08,73.92,54.31,52.77,49.5,74.48,58.78,61.95,51.14,60.78,50.02,71.84,61.11,71.49,62.06,68.47,50.55,70.25,59.71,70.86,60.7,59.03,51.42,72.33,59.42,60.89,51.06,73.92,52.83}},nil,nil,0}
 t[5288]={"Rabid Longtooth",8,48,0,{[1444]={44.5,9.12,43.12,21.14,41.66,20.41,39.65,19.55,40.44,18.66,42.74,25.96,43.61,20.16,45.85,21.95,43.71,22.88,48.96,26.62,39.76,22.78,41.53,15.34,40.44,18,44.97,24.03,42.01,19.86,49.53,30.61,50.61,33.51,38.34,21.82,46.63,29.51,42.6,23.37,49.08,32.25,48.84,37.13,39.49,23.17,44.5,13.29,44.08,12.92,44.37,11.02,43.29,12.64}},nil,nil,0}
-t[5291]={"Hakkari Frostwing",49,50,1,nil,nil,nil,0}
+t[5291]={"Hakkari Frostwing",49,50,1,nil,nil,nil,0,1477}
 t[5292]={"Feral Scar Yeti",43,44,0,{[1444]={55.88,58.81,52.26,57.93,52.51,57.55,52.79,57.03,53.08,56.43,52.69,57.24,54.29,55.63,55.02,56.33,54.64,56.16,55.54,55.71,55.48,55.07,56.03,56.46,55.55,56.47,56.02,57.21,56.52,56.5,55.53,57.17}},nil,nil,0}
 t[5293]={"Hulking Feral Scar",45,46,0,{[1444]={51.82,60.47,52.29,61.13,53.15,60,52.7,59.63,52.24,60.07,52.64,60.49,51.83,57.22,51.89,58.58,50.51,58.96,50.35,58.78,50.58,58.2,51.32,60.16}},nil,nil,0}
 t[5295]={"Enraged Feral Scar",44,45,0,{[1444]={52.47,59.21,51.68,59.29,51.92,58.54,51.93,59.83,51.87,57.93,52.32,58.49,51.45,57.94,51.13,58.34,50.76,59.28,51,59.81,53.13,56.13,53.52,55.24}},nil,nil,0}
@@ -4675,9 +4675,9 @@ t[5644]={"Dalinda Malem",35,35,0,{[1443]={54.86,26.13}},"AH",nil,2}
 t[5645]={"Sandfury Hideskinner",42,43,1,{[1446]={42.32,23.2,36.26,24.63,40.97,29.96,40.95,29.24,40.11,30.1,39.57,27.62,39.63,21.27}},nil,nil,0}
 t[5646]={"Sandfury Axe Thrower",43,44,1,{[1446]={37.42,24.4,38.5,22,36.65,24.82,37.61,26.19,38.16,21.75,40.47,29.94,39.62,28.4,40.1,27.76,40.36,28.55,40.46,29.31,42.5,23.47}},nil,nil,0}
 t[5647]={"Sandfury Firecaller",43,44,1,{[1446]={41.49,21.97,37.2,25.55,37.67,25.5,37.57,24.28,36.19,25.82,37.59,24.74,38.07,24.13,37.06,24.76,37.25,26.32,36.68,26.28,36.57,25.58,37.11,25.8,40.6,27.69,40.99,28.59,40.52,29.67,40.36,28.57,39.07,21.22,38.55,21.18,38.24,21.26,42.95,23.31,42.47,22.71,43,22.69,39.65,29.21}},nil,nil,0}
-t[5648]={"Sandfury Shadowcaster",43,44,1,nil,nil,nil,0}
-t[5649]={"Sandfury Blood Drinker",44,45,1,nil,nil,nil,0}
-t[5650]={"Sandfury Witch Doctor",44,45,1,nil,nil,nil,0}
+t[5648]={"Sandfury Shadowcaster",43,44,1,nil,nil,nil,0,1176}
+t[5649]={"Sandfury Blood Drinker",44,45,1,nil,nil,nil,0,1176}
+t[5650]={"Sandfury Witch Doctor",44,45,1,nil,nil,nil,0,1176}
 t[5651]={"Patrick Garrett",15,15,0,{[1458]={62.32,48.61}},"H",nil,2}
 t[5652]={"Practice Dummy",1,1,0,{[1458]={46.81,28.82,46.62,27.52,46.96,30.15}},"AH",nil,0}
 t[5653]={"Tyler",20,20,0,{[1458]={51.61,22.8}},"H",nil,0}
@@ -4730,21 +4730,21 @@ t[5704]={"Adrian Bartlett",20,20,0,{[1458]={78.01,12.16}},"H",nil,0}
 t[5705]={"Victor Bartholomew",20,20,0,{[1458]={77.19,14.23}},"H",nil,0}
 t[5706]={"Davitt Hickson",20,20,0,{[1458]={77.43,44.06}},"H",nil,0}
 t[5707]={"Reginald Grimsford",20,20,0,{[1458]={77.6,43.84}},"H",nil,0}
-t[5708]={"Spawn of Hakkar",51,51,1,nil,nil,nil,0}
-t[5709]={"Shade of Eranikus",55,55,1,nil,nil,nil,0}
-t[5710]={"Jammal'an the Prophet",54,54,1,nil,nil,nil,0}
-t[5711]={"Ogom the Wretched",53,53,1,nil,nil,nil,0}
-t[5712]={"Zolo",51,51,1,nil,nil,nil,0}
-t[5713]={"Gasher",51,51,1,nil,nil,nil,0}
-t[5714]={"Loro",51,51,1,nil,nil,nil,0}
-t[5715]={"Hukku",52,52,1,nil,nil,nil,0}
-t[5716]={"Zul'Lor",52,52,1,nil,nil,nil,0}
-t[5717]={"Mijan",52,52,1,nil,nil,nil,0}
+t[5708]={"Spawn of Hakkar",51,51,1,nil,nil,nil,0,1477}
+t[5709]={"Shade of Eranikus",55,55,1,nil,nil,nil,0,1477}
+t[5710]={"Jammal'an the Prophet",54,54,1,nil,nil,nil,0,1477}
+t[5711]={"Ogom the Wretched",53,53,1,nil,nil,nil,0,1477}
+t[5712]={"Zolo",51,51,1,nil,nil,nil,0,1477}
+t[5713]={"Gasher",51,51,1,nil,nil,nil,0,1477}
+t[5714]={"Loro",51,51,1,nil,nil,nil,0,1477}
+t[5715]={"Hukku",52,52,1,nil,nil,nil,0,1477}
+t[5716]={"Zul'Lor",52,52,1,nil,nil,nil,0,1477}
+t[5717]={"Mijan",52,52,1,nil,nil,nil,0,1477}
 t[5718]={"Rothos",62,62,1,{[1425]={66.16,20.17}},nil,nil,0}
-t[5719]={"Morphaz",52,52,1,nil,nil,nil,0}
-t[5720]={"Weaver",51,51,1,nil,nil,nil,0}
-t[5721]={"Dreamscythe",53,53,1,nil,nil,nil,0}
-t[5722]={"Hazzas",53,53,1,nil,nil,nil,0}
+t[5719]={"Morphaz",52,52,1,nil,nil,nil,0,1477}
+t[5720]={"Weaver",51,51,1,nil,nil,nil,0,1477}
+t[5721]={"Dreamscythe",53,53,1,nil,nil,nil,0,1477}
+t[5722]={"Hazzas",53,53,1,nil,nil,nil,0,1477}
 t[5723]={"Warug's Target Dummy",26,26,0,nil,"AH",nil,0}
 t[5724]={"Ageron Kargal",15,15,0,{[1420]={61.62,52.68}},"H",nil,2}
 t[5725]={"Deathguard Lundmark",15,15,0,{[1420]={56.19,52.46}},"H",nil,1}
@@ -4776,15 +4776,15 @@ t[5750]={"Gina Lang",10,10,0,{[1420]={61.55,52.61}},"H","Demon Trainer",5}
 t[5752]={"Corporal Melkins",39,39,0,{[1443]={66.74,10.87}},"A",nil,2}
 t[5753]={"Martha Strain",20,20,0,{[1458]={85.7,16.08}},"H","Demon Trainer",5}
 t[5754]={"Zane Bradford",10,10,0,{[1458]={69.56,26.94}},"H","Wand Vendor",16388}
-t[5755]={"Deviate Viper",20,20,1,nil,nil,nil,0}
-t[5756]={"Deviate Venomwing",20,21,1,nil,nil,nil,0}
+t[5755]={"Deviate Viper",20,20,1,nil,nil,nil,0,718}
+t[5756]={"Deviate Venomwing",20,21,1,nil,nil,nil,0,718}
 t[5757]={"Lilly",19,19,0,{[1421]={43.02,50.82}},"H","Enchanting Supplies",6}
 t[5758]={"Leo Sarn",18,18,0,{[1421]={53.89,82.21}},"H","Enchanting Supplies",6}
 t[5759]={"Nurse Neela",10,10,0,{[1420]={61.82,52.83}},"H","First Aid Trainer",19}
 t[5760]={"Lord Azrethoc",40,40,1,{[1443]={56.95,75.74}},nil,nil,0}
-t[5761]={"Deviate Shambler",19,20,1,nil,nil,nil,0}
-t[5762]={"Deviate Moccasin",20,21,1,nil,nil,nil,0}
-t[5763]={"Nightmare Ectoplasm",20,21,0,nil,nil,nil,0}
+t[5761]={"Deviate Shambler",19,20,1,nil,nil,nil,0,718}
+t[5762]={"Deviate Moccasin",20,21,1,nil,nil,nil,0,718}
+t[5763]={"Nightmare Ectoplasm",20,21,0,nil,nil,nil,0,718}
 t[5764]={"Guardian of Blizzard",63,63,0,nil,nil,nil,0}
 t[5765]={"Ruzan",10,10,0,{[1411]={42.59,69}},"H",nil,2}
 t[5766]={"Savannah Cub",9,13,0,{[1413]={59.61,32.07,60.67,33.36,62.05,32.44,61.92,32.31,61.72,32.46,62.15,33.03,61.9,33.41,61.72,33.06,62.3,33.42}},nil,nil,0}
@@ -4796,7 +4796,7 @@ t[5771]={"Jugkar Grim'rod",40,40,0,{[1443]={55.91,77.76}},nil,nil,0}
 t[5772]={"Lord Azrethoc's Image",40,40,0,nil,nil,nil,0}
 t[5773]={"Jugkar Grim'rod's Image",40,40,0,nil,"AH",nil,0}
 t[5774]={"Riding Wolf",1,1,0,{[1413]={51.75,29.58,51.79,29.51},[1446]={50.38,26.63,50.62,26.53}},"AH",nil,0}
-t[5775]={"Verdan the Everliving",21,21,1,nil,nil,nil,0}
+t[5775]={"Verdan the Everliving",21,21,1,nil,nil,nil,0,718}
 t[5776]={"Evolving Ectoplasm (Red)",17,18,1,nil,nil,nil,0}
 t[5777]={"Evolving Ectoplasm (Green)",17,18,1,nil,nil,nil,0}
 t[5778]={"Evolving Ectoplasm (Black)",17,18,1,nil,nil,nil,0}
@@ -4922,7 +4922,7 @@ t[5908]={"Grunt Dogran",20,20,0,{[1413]={43.3,47.89}},"H",nil,2}
 t[5909]={"Cazul",40,40,0,{[1454]={47.06,46.43}},"H",nil,2}
 t[5910]={"Zankaja",15,15,0,{[1454]={37.04,59.45}},"H",nil,2}
 t[5911]={"Grunt Logmar",20,20,0,{[1413]={44.62,59.27}},"H",nil,2}
-t[5912]={"Deviate Faerie Dragon",20,20,2,nil,nil,nil,0}
+t[5912]={"Deviate Faerie Dragon",20,20,2,nil,nil,nil,0,718}
 t[5913]={"Tremor Totem",53,53,0,nil,"AH",nil,0}
 t[5914]={"Deviate Nightmare",19,21,0,nil,nil,nil,0}
 t[5915]={"Brother Ravenoak",29,29,2,{[1442]={28.05,12.23}},"A",nil,0}
@@ -5043,7 +5043,7 @@ t[6030]={"Thorvald Deepforge",21,21,0,{[1432]={23.67,74.32}},"A",nil,2}
 t[6031]={"Tormus Deepforge",30,30,0,{[1455]={48.64,42.48}},"A",nil,2}
 t[6033]={"Lake Frenzy",15,16,0,{[1416]={32.06,23.95,28.27,34.62,11.47,52.27,30.63,27.45,33.4,15.51,23.38,42.04,13.94,51.09,19.59,45.57,27.44,31.09,23.79,17.08,17.75,48.64,18.59,12.15,21.41,11.64,26.02,11.32},[1421]={69.37,40.97,60.09,25.19,62.75,17.36,68.25,14.98,61.74,28.41,65.42,39.03,66.97,40.67,71.13,14.42,66.65,16.17,61.49,30.61,59.96,28.48,63.76,37.2,60.57,22.56,73.12,12.68,74.68,12.59,71.41,11.52}},nil,nil,0}
 t[6034]={"Lotherias",35,35,0,{[1457]={64.4,22.22}},"A",nil,2}
-t[6035]={"Razorfen Stalker",28,29,1,nil,nil,nil,0}
+t[6035]={"Razorfen Stalker",28,29,1,nil,nil,nil,0,491}
 t[6036]={"Guardian of Backus",62,62,0,nil,"AH",nil,0}
 t[6047]={"Aqua Guardian",22,23,0,nil,nil,nil,0}
 t[6066]={"Earthgrab Totem",50,50,0,nil,nil,nil,0}
@@ -5109,7 +5109,7 @@ t[6147]={"Cliff Thunderer",53,54,1,{[1447]={62.41,86.75,54.54,74.41,73.38,20.4,5
 t[6148]={"Cliff Walker",52,53,1,{[1447]={16.82,53.81,28.44,50.09,52.84,75.44,60.12,89.74,46.16,79.91,46.18,71.59,83.68,20.5,61.73,83.57,76.63,22.07,83.49,16.68,47.53,81.74,72.35,14.45,73.65,11.72,82.19,18.35,79.72,18.59,51.24,83.51,51.53,79.64,68.18,12.45,45.65,69.06,85.02,18.69,44.84,85.55,59.01,79.39,57.88,78.01,47.21,77.53,52.66,85.39,74.31,23.33,73.18,24.06}},nil,nil,0}
 t[6166]={"Yorus Barleybrew",24,24,0,{[1433]={21.49,44.72}},"A",nil,2}
 t[6167]={"Chimaera Matriarch",28,28,0,{[1442]={33.64,74.66}},nil,nil,0}
-t[6168]={"Roogug",28,28,1,nil,nil,nil,0}
+t[6168]={"Roogug",28,28,1,nil,nil,nil,0,491}
 t[6169]={"Klockmort Spannerspan",45,45,0,{[1455]={67.92,46.1}},"A",nil,2}
 t[6170]={"Gutspill",32,32,0,{[1431]={73.89,77.17}},nil,nil,0}
 t[6171]={"Duthorian Rall",60,60,0,{[1453]={50.48,47.49}},"A",nil,2}
@@ -5141,34 +5141,34 @@ t[6199]={"Blood Elf Reclaimer",52,53,0,{[1447]={55.93,26.17,59.2,28.57,56.63,25.
 t[6200]={"Legashi Satyr",51,52,0,{[1447]={65.96,16.48,65.83,17.55,60.05,24.34,61.42,25.2,60.65,25.58,65.23,17.35,66.36,19.68,61.87,26.8,65.94,15.61,62.62,24.35,67.2,17.69,61.79,23.59,61.84,24.51,51.42,18.25,52.07,18.66,52.47,19.02}},nil,nil,0}
 t[6201]={"Legashi Rogue",51,53,0,{[1447]={62.78,25.49,66.41,16.83,65.89,16.9,65.79,18.64,60.65,24.47,61.44,24.97,51.84,20.73,60.72,25.03,61.13,26.45,66.75,19.37,66.62,15.39,61.24,23.41,66.25,16.72,66.55,17.64,52.06,19.08,50.79,17.63,52.08,20.39}},nil,nil,0}
 t[6202]={"Legashi Hellcaller",52,53,0,{[1447]={60.99,24.08,67.04,18.45,62.64,23.39,66.43,18.51,67.21,16.31,62.11,25.89,50.07,19.56,65.26,16.41,62.36,26.31,60.72,23.4,51.32,17.48,68.58,18.31,68.03,17.67,52.22,17.11,50.74,18.41}},nil,nil,0}
-t[6206]={"Caverndeep Burrower",25,27,1,nil,nil,nil,0}
-t[6207]={"Caverndeep Ambusher",25,27,0,nil,nil,nil,0}
+t[6206]={"Caverndeep Burrower",25,27,1,nil,nil,nil,0,721}
+t[6207]={"Caverndeep Ambusher",25,27,0,nil,nil,nil,0,721}
 t[6208]={"Caverndeep Invader",25,26,1,{[1426]={21.79,33.13,21.73,34.04,18.1,39.25}},nil,nil,0}
 t[6209]={"Caverndeep Looter",26,26,1,{[1426]={18.71,38.66,22.98,31.94,19.34,36.57,21.08,31.52}},nil,nil,0}
 t[6210]={"Caverndeep Pillager",24,25,1,{[1426]={21.79,33.69,20.61,36.96,18.76,39.16}},nil,nil,0}
-t[6211]={"Caverndeep Reaver",27,28,1,nil,nil,nil,0}
-t[6212]={"Dark Iron Agent",32,33,1,nil,nil,nil,0}
+t[6211]={"Caverndeep Reaver",27,28,1,nil,nil,nil,0,721}
+t[6212]={"Dark Iron Agent",32,33,1,nil,nil,nil,0,721}
 t[6213]={"Irradiated Invader",24,26,1,{[1426]={20.9,36.02,22.09,34.14,19.68,36.71,19.32,38.8,21.81,32.2}},nil,nil,0}
 t[6214]={"Irradiated Burrower",27,27,1,nil,nil,nil,0}
-t[6215]={"Chomper",30,30,1,nil,nil,nil,0}
-t[6218]={"Irradiated Slime",27,28,1,nil,nil,nil,0}
-t[6219]={"Corrosive Lurker",28,29,1,nil,nil,nil,0}
-t[6220]={"Irradiated Horror",28,29,1,nil,nil,nil,0}
+t[6215]={"Chomper",30,30,1,nil,nil,nil,0,721}
+t[6218]={"Irradiated Slime",27,28,1,nil,nil,nil,0,721}
+t[6219]={"Corrosive Lurker",28,29,1,nil,nil,nil,0,721}
+t[6220]={"Irradiated Horror",28,29,1,nil,nil,nil,0,721}
 t[6221]={"Addled Leper",24,25,0,{[1426]={23.15,39.51,23.55,38.9,22.53,39.09,22.53,39.12,22.82,39.07,22.81,39.21,22.79,39.01,22.65,39.17,22.46,38.84,22.36,39.27,22.2,39.05,21.75,39.21,21.83,38.9,21.87,38.57}},nil,nil,0}
-t[6222]={"Leprous Technician",29,30,0,nil,nil,nil,0}
-t[6223]={"Leprous Defender",28,29,1,nil,nil,nil,0}
-t[6224]={"Leprous Machinesmith",29,30,0,nil,nil,nil,0}
-t[6225]={"Mechano-Tank",29,30,1,nil,nil,nil,0}
-t[6226]={"Mechano-Flamewalker",30,31,1,nil,nil,nil,0}
-t[6227]={"Mechano-Frostwalker",31,32,1,nil,nil,nil,0}
-t[6228]={"Dark Iron Ambassador",33,33,2,nil,nil,nil,0}
-t[6229]={"Crowd Pummeler 9-60",32,32,1,nil,nil,nil,0}
-t[6230]={"Peacekeeper Security Suit",30,30,1,nil,nil,nil,0}
+t[6222]={"Leprous Technician",29,30,0,nil,nil,nil,0,721}
+t[6223]={"Leprous Defender",28,29,1,nil,nil,nil,0,721}
+t[6224]={"Leprous Machinesmith",29,30,0,nil,nil,nil,0,721}
+t[6225]={"Mechano-Tank",29,30,1,nil,nil,nil,0,721}
+t[6226]={"Mechano-Flamewalker",30,31,1,nil,nil,nil,0,721}
+t[6227]={"Mechano-Frostwalker",31,32,1,nil,nil,nil,0,721}
+t[6228]={"Dark Iron Ambassador",33,33,2,nil,nil,nil,0,721}
+t[6229]={"Crowd Pummeler 9-60",32,32,1,nil,nil,nil,0,721}
+t[6230]={"Peacekeeper Security Suit",30,30,1,nil,nil,nil,0,721}
 t[6231]={"Techbot",26,26,1,{[1426]={19.78,31.93}},nil,nil,0}
-t[6232]={"Arcane Nullifier X-21",32,33,1,nil,nil,nil,0}
-t[6233]={"Mechanized Sentry",28,29,1,nil,nil,nil,0}
-t[6234]={"Mechanized Guardian",31,32,1,nil,nil,nil,0}
-t[6235]={"Electrocutioner 6000",32,32,1,nil,nil,nil,0}
+t[6232]={"Arcane Nullifier X-21",32,33,1,nil,nil,nil,0,721}
+t[6233]={"Mechanized Sentry",28,29,1,nil,nil,nil,0,721}
+t[6234]={"Mechanized Guardian",31,32,1,nil,nil,nil,0,721}
+t[6235]={"Electrocutioner 6000",32,32,1,nil,nil,nil,0,721}
 t[6236]={"Klannoc Macleod",60,60,0,{[1413]={68.62,49.16}},"AH","The Islander",2}
 t[6237]={"Stockade Archer",45,45,0,{[1453]={51.42,68.73,51.01,68.3,51.83,68.22,51.79,67.87}},"A",nil,0}
 t[6238]={"Big Will",33,33,0,{[1413]={68.61,48.72}},"AH",nil,0}
@@ -5176,7 +5176,7 @@ t[6239]={"Cyclonian",40,40,1,{[1416]={80.32,62.14}},nil,nil,0}
 t[6240]={"Affray Challenger",26,27,0,nil,nil,nil,0}
 t[6241]={"Bailor Stonehand",20,20,0,{[1432]={35.95,44.91}},"A",nil,2}
 t[6242]={"World Skinning Trainer",10,10,0,nil,"AH","Skinning Trainer",0}
-t[6243]={"Gelihast",26,26,1,nil,nil,nil,0}
+t[6243]={"Gelihast",26,26,1,nil,nil,nil,0,719}
 t[6244]={"Takar the Seer",45,45,0,{[1413]={49.31,57.1}},"A",nil,2}
 t[6245]={"Anathera",19,19,0,nil,"AH",nil,0}
 t[6246]={"Latherion",19,19,0,nil,"AH",nil,0}
@@ -5215,7 +5215,7 @@ t[6306]={"Helene Peltskinner",12,12,0,{[1429]={46.24,62.24}},"A","Skinner",16}
 t[6326]={"Horde Wargryphoner",45,45,0,nil,"AH","Wargryphon Master",0}
 t[6327]={"Alliance Wargryphoner",45,45,0,nil,"AH","Wargryphon Master",0}
 t[6328]={"Dannie Fizzwizzle",14,14,0,{[1426]={47.28,53.67}},"A","Demon Trainer",5}
-t[6329]={"Irradiated Pillager",25,26,1,nil,nil,nil,0}
+t[6329]={"Irradiated Pillager",25,26,1,nil,nil,nil,0,721}
 t[6346]={"Skeletal Horse",1,1,0,nil,"AH",nil,0}
 t[6347]={"Young Wavethrasher",51,51,0,{[1447]={84.17,11.83,88.16,17.43,57.99,9.9,85.54,11.69,84.28,8.38,86.31,12.61,88.19,15.68,88.3,13.51,83.54,12.7,83.04,11.6}},nil,nil,0}
 t[6348]={"Wavethrasher",52,53,0,{[1447]={91.53,37.32,90.91,32.5,90.25,31.08,52.54,41.99,86.17,31.1,88.93,37.25,88.89,29.07,86.29,25.57,67.79,33.15,83.61,29.22,88.2,32.07,92.1,36.26,90.92,38.21,84.13,32.3,89.62,22.42,54.18,42.28,86.92,26.46,88.2,28.49}},nil,nil,0}
@@ -5245,25 +5245,25 @@ t[6388]={"Zanzil Skeleton",45,45,0,nil,nil,nil,0}
 t[6389]={"Deathguard Podrig",25,25,0,{[1421]={43.42,41.68}},"H",nil,2}
 t[6390]={"Ulag the Cleaver",11,11,0,{[1420]={59.47,48.28}},nil,nil,0}
 t[6391]={"Holdout Warrior",29,30,1,{[1426]={71,38.01}},"A",nil,0}
-t[6392]={"Holdout Medic",29,30,1,nil,"A",nil,0}
+t[6392]={"Holdout Medic",29,30,1,nil,"A",nil,0,721}
 t[6393]={"Henen Ragetotem",62,62,0,{[1456]={59.78,79.74}},"H",nil,2}
 t[6394]={"Ruga Ragetotem",30,30,0,{[1413]={44.67,59.42}},"H",nil,2}
 t[6395]={"Sergeant Rutger",62,62,0,{[1458]={48.69,25.71}},"H","Sergeant",2}
-t[6407]={"Holdout Technician",29,30,1,nil,"A",nil,0}
+t[6407]={"Holdout Technician",29,30,1,nil,"A",nil,0,721}
 t[6408]={"Ula'elek",35,35,0,{[1411]={56.31,74.33}},"H",nil,2}
 t[6410]={"Orm Stonehoof",45,45,0,{[1456]={38.99,55.98}},"H",nil,2}
 t[6411]={"Velora Nitely",45,45,0,{[1458]={62.14,39.14}},"H",nil,2}
 t[6412]={"Skeleton",24,25,0,nil,nil,nil,0}
-t[6426]={"Anguished Dead",31,33,1,nil,nil,nil,0}
-t[6427]={"Haunting Phantasm",32,33,1,nil,nil,nil,0}
+t[6426]={"Anguished Dead",31,33,1,nil,nil,nil,0,796}
+t[6427]={"Haunting Phantasm",32,33,1,nil,nil,nil,0,796}
 t[6446]={"Therzok",20,20,0,{[1454]={42.73,53.55}},"H",nil,2}
 t[6466]={"Gamon",12,12,0,{[1454]={54,68.03}},"AH",nil,0}
 t[6467]={"Mennet Carkad",30,30,0,{[1458]={83.51,69.11}},"H",nil,2}
 t[6486]={"Riding Skeletal Horse (Black)",1,1,0,nil,"AH",nil,0}
-t[6487]={"Arcanist Doan",37,37,1,nil,nil,nil,0}
-t[6488]={"Fallen Champion",33,33,2,nil,nil,nil,0}
-t[6489]={"Ironspine",33,33,2,nil,nil,nil,0}
-t[6490]={"Azshir the Sleepless",33,33,2,nil,"AH",nil,0}
+t[6487]={"Arcanist Doan",37,37,1,nil,nil,nil,0,796}
+t[6488]={"Fallen Champion",33,33,2,nil,nil,nil,0,796}
+t[6489]={"Ironspine",33,33,2,nil,nil,nil,0,796}
+t[6490]={"Azshir the Sleepless",33,33,2,nil,"AH",nil,0,796}
 t[6491]={"Spirit Healer",60,60,0,{[1411]={57.22,73.26,44.17,69.43,53.49,44.47,47.37,17.88},[1412]={42.59,78.39,45.84,59.48},[1413]={45.31,60.96,60.22,39.75,50.7,32.6},[1416]={42.93,38},[1417]={48.84,55.61},[1418]={8.44,55.32,56.66,23.69},[1419]={51.07,12.06},[1420]={82,69.64,30.8,64.9,56.22,49.42,78.97,40.98},[1421]={44.15,42.52},[1422]={44.97,85.97,65.83,74.24},[1423]={32.41,59.39,33.58,80.63,70.73,54.97,40.89,36.64},[1424]={51.83,52.55,64.46,19.69},[1425]={73.06,68.25,16.94,44.51},[1426]={54.38,39.23,47.31,54.61,29.98,69.53},[1427]={35.5,22.79},[1428]={64.13,24.06},[1429]={83.63,69.76,39.48,60.55,49.68,42.53},[1430]={39.99,74.18},[1431]={19.99,49.21,75.09,59.02},[1432]={32.56,46.99},[1433]={15.69,56.56},[1434]={30.36,73.28,38.38,8.97},[1435]={50.31,62.4},[1436]={51.71,49.67},[1437]={11.01,43.79,49.34,41.76},[1438]={56.22,63.29,58.71,42.33},[1439]={43.55,92.38,41.81,36.57},[1440]={80.69,58.39,40.49,52.76},[1441]={68.67,53.3,30.56,23.02},[1442]={36.44,75.24,40.27,5.58,57.53,61.34},[1443]={50.41,62.91},[1444]={31.83,48.2,54.82,48.05,72.97,44.51},[1445]={46.62,57.08,63.62,42.42,39.49,31.45},[1446]={49.35,59.05,53.9,28.8},[1447]={14.02,78.62,54.31,71.49,70.38,16.07},[1448]={56.76,87.04,49.51,31.05},[1449]={50,56.03,45.3,7.6,80.33,50.28},[1450]={62.2,70.07},[1451]={28.16,87.08,47.22,37.27,81.17,20.82},[1452]={61.46,35.41},[1456]={56.69,19.11},[1457]={77.67,25.92},[1458]={68.17,9.14}},"AH",nil,33}
 t[6492]={"Rift Spawn",16,17,0,{[1453]={51.3,93.33,51.21,95.73,51.61,94.5,50.83,92.63,51.32,92.34,50.99,95.58},[1458]={53.29,74.56,53.67,76.81,52.01,75.96,53.2,71.44}},nil,nil,0}
 t[6493]={"Illusionary Phantasm",32,33,1,nil,nil,nil,0}
@@ -5322,7 +5322,7 @@ t[6571]={"Cat Form (Night Elf Druid)",1,1,0,nil,"AH",nil,0}
 t[6572]={"Cat Form (Tauren Druid)",1,1,0,nil,"AH",nil,0}
 t[6573]={"Travel Form (Druid)",1,1,0,nil,"AH",nil,0}
 t[6574]={"Jun'ha",31,31,0,{[1417]={72.69,36.45}},"H","Tailoring Supplies",6}
-t[6575]={"Scarlet Trainee",30,30,0,nil,nil,nil,0}
+t[6575]={"Scarlet Trainee",30,30,0,nil,nil,nil,0,796}
 t[6576]={"Brienna Starglow",40,40,0,{[1444]={88.96,45.95}},"A","Tailoring Supplies",6}
 t[6577]={"Bingles Blastenheimer",16,16,0,{[1432]={63.56,47.92}},"A",nil,2}
 t[6578]={"Peasant (Wood)",1,2,0,nil,"A",nil,0}
@@ -5406,13 +5406,13 @@ t[6867]={"Tracking Hound",30,30,0,nil,"H",nil,0}
 t[6868]={"Jarkal Mossmeld",35,35,0,{[1418]={2.42,46.06}},"H",nil,2}
 t[6886]={"Onin MacHammar",12,12,0,{[1426]={25.16,44.45}},"A",nil,2}
 t[6887]={"Yalda",52,52,0,{[1439]={37.42,45.18}},"A",nil,2}
-t[6906]={"Baelog",41,41,1,nil,"A",nil,2}
-t[6907]={"Eric \"The Swift\"",40,40,1,nil,"A",nil,2}
-t[6908]={"Olaf",40,40,1,nil,"A",nil,2}
+t[6906]={"Baelog",41,41,1,nil,"A",nil,2,1337}
+t[6907]={"Eric \"The Swift\"",40,40,1,nil,"A",nil,2,1337}
+t[6908]={"Olaf",40,40,1,nil,"A",nil,2,1337}
 t[6909]={"Sethir the Ancient",12,12,0,{[1438]={37.11,22.83}},nil,nil,0}
-t[6910]={"Revelosh",40,40,1,nil,nil,nil,0}
+t[6910]={"Revelosh",40,40,1,nil,nil,nil,0,1337}
 t[6911]={"Minion of Sethir",8,9,0,{[1438]={37.46,23.71}},nil,nil,0}
-t[6912]={"Remains of a Paladin",35,35,0,nil,"AH",nil,2}
+t[6912]={"Remains of a Paladin",35,35,0,nil,"AH",nil,2,1337}
 t[6913]={"Lost One Rift Traveler",25,25,0,nil,nil,nil,0}
 t[6926]={"Test Satyr",13,13,0,nil,nil,nil,0}
 t[6927]={"Defias Dockworker",8,9,0,{[1429]={48.65,87.23,48.68,87.29,48.71,87.21}},nil,nil,0}
@@ -5430,22 +5430,22 @@ t[7007]={"Tiev Mordune",22,22,0,{[1421]={37.34,44.15}},"H",nil,2}
 t[7008]={"Blackrock Reaver",20,20,0,nil,"H",nil,0}
 t[7009]={"Arantir",45,45,1,{[1433]={22.97,52.32}},"A","The Hand of Chaos",2}
 t[7010]={"Zilzibin Drumlore",35,35,0,{[1454]={56.26,46.68}},"H",nil,3}
-t[7011]={"Earthen Rocksmasher",42,43,0,nil,nil,nil,0}
-t[7012]={"Earthen Sculptor",42,43,0,nil,nil,nil,0}
+t[7011]={"Earthen Rocksmasher",42,43,0,nil,nil,nil,0,1337}
+t[7012]={"Earthen Sculptor",42,43,0,nil,nil,nil,0,1337}
 t[7013]={"Blackrock Rampager",17,18,0,nil,nil,nil,0}
 t[7014]={"Commander Kartak Dwarfdefiler",30,30,0,nil,"H",nil,0}
 t[7015]={"Flagglemurk the Cruel",16,16,4,{[1439]={36.75,67.6,45.05,21.12}},nil,nil,0}
 t[7016]={"Lady Vespira",22,22,4,{[1439]={57.81,21.43,61.52,18.72,58.82,16.65,60.97,21.82,57.89,18.52,59.88,15.78,57.85,21.84,59.93,23.39}},nil,nil,0}
 t[7017]={"Lord Sinslayer",16,16,4,{[1439]={56.6,34.94,55.51,36.28,55.71,35.94}},nil,nil,0}
-t[7022]={"Venomlash Scorpid",39,40,1,nil,nil,nil,0}
-t[7023]={"Obsidian Sentinel",42,42,1,nil,nil,nil,0}
+t[7022]={"Venomlash Scorpid",39,40,1,nil,nil,nil,0,1337}
+t[7023]={"Obsidian Sentinel",42,42,1,nil,nil,nil,0,1337}
 t[7024]={"Agent Kearnen",22,22,0,{[1436]={68.49,70.08}},"A",nil,2}
 t[7025]={"Blackrock Soldier",55,56,0,{[1428]={55.6,54.14,44.6,50.85,48.85,59.19,44.53,50.58,42.33,56.02,42.44,54.68,42.51,56.1,45.05,51.08,49,57.03,45.02,56.8,55.4,54.37}},nil,nil,0}
 t[7026]={"Blackrock Sorcerer",55,56,0,{[1428]={49.8,54.05,43.87,55.72,53.4,52.52,53.55,52.78,55.26,53.99,50.45,61.34,50.7,60.87,51.42,54.43,43.05,37.03,40.52,32.6,44.74,57.29}},nil,nil,0}
 t[7027]={"Blackrock Slayer",56,57,0,{[1428]={55.82,54.35,41.79,55.7,56.21,53.34,56.03,53.09,49.76,54.67,55.29,53.96,55.56,53.81,39.33,55.58,38.76,54.22,51.03,53.53,43.67,34.1,42.39,35.71,43.54,35.37,43.82,36.77,41.11,33.38,41.05,33.25,39.9,32.54,41.16,33.55,41.2,55.26,51.67,54.31}},nil,nil,0}
 t[7028]={"Blackrock Warlock",56,57,0,{[1428]={17.98,29.33,17.47,28.79,17.73,30.19,17.12,30.19,16.98,29.3,50.45,61.64,55.16,54.49,55.68,54.53,43.51,33.74,41.72,35.3,42.68,38.49,42.9,36.9,40.47,35.69,40.64,35.87,39.8,35.59,39.14,34.74,41.27,33.76}},nil,nil,0}
 t[7029]={"Blackrock Battlemaster",57,58,0,{[1428]={41.14,34.92,39.17,34.99,39.82,32.8,40.59,33.01,40.04,33.84,40.58,34.01,40.24,34.79,39.85,34.55}},nil,nil,0}
-t[7030]={"Shadowforge Geologist",40,41,1,nil,nil,nil,0}
+t[7030]={"Shadowforge Geologist",40,41,1,nil,nil,nil,0,1337}
 t[7031]={"Obsidian Elemental",51,53,0,{[1428]={59.86,57.94,80.37,34.24,69.82,59.91,80.63,50.64,76.63,38.28,75.07,69.16,79.23,37.37}},nil,nil,0}
 t[7032]={"Greater Obsidian Elemental",55,57,0,{[1428]={29.06,62.33,44.09,43.64,54.83,62.52,35.66,61.08,61.94,31.82,41.08,43.5,55.47,49.02,66.34,31.55}},nil,nil,0}
 t[7033]={"Firegut Ogre",50,51,0,{[1428]={80.18,42.14,82.32,53.48,74.5,48.81,79.16,45.08,77.24,45.2,79.91,44.6,76.05,50.36,75.42,48.34,77.92,33.36,78.65,55.47,74.47,40.1,78.22,41.31,87.14,45.24,81.63,43.05,76.81,47.84,75.16,45.29,77.13,43.63,87,47.19,80.1,46.44,83.83,53.61,78.3,43.55,86.75,48.52,77.38,47.17,74.44,38.44,77.74,54.88,76.06,56.36,76.33,55.91}},nil,nil,0}
@@ -5481,15 +5481,15 @@ t[7072]={"Cursed Justicar",57,58,1,{[1424]={15.35,81.82,14.07,83.94,15.64,80.28,
 t[7073]={"Arados the Damned",35,35,0,nil,nil,nil,0}
 t[7074]={"Judge Thelgram",34,34,0,nil,"A",nil,0}
 t[7075]={"Writhing Mage",58,59,1,{[1424]={15.46,77.43,17.1,80.7,16.34,82.19,16.19,84.94,13.97,84.08,14.65,82,13.36,80.93}},nil,nil,0}
-t[7076]={"Earthen Guardian",44,45,0,nil,nil,nil,0}
-t[7077]={"Earthen Hallshaper",44,45,0,nil,nil,nil,0}
-t[7078]={"Cleft Scorpid",35,36,0,nil,nil,nil,0}
-t[7079]={"Viscous Fallout",30,30,1,nil,nil,nil,0}
+t[7076]={"Earthen Guardian",44,45,0,nil,nil,nil,0,1337}
+t[7077]={"Earthen Hallshaper",44,45,0,nil,nil,nil,0,1337}
+t[7078]={"Cleft Scorpid",35,36,0,nil,nil,nil,0,1337}
+t[7079]={"Viscous Fallout",30,30,1,nil,nil,nil,0,721}
 t[7086]={"Cursed Ooze",49,50,0,{[1448]={41.19,70.9,40.65,71.26,40.72,71.9,39.22,71.05,39.67,71.22,39.94,72.49,38.69,72.74,40.38,72.48,40.17,70.82,40.23,65.75,40.06,67.52,40.47,67.56,40.92,66.13,41.85,67.16,41.1,66.9,41.57,66.7,41.69,67.91,42.22,67.66,40.63,70.6,38.76,71.47,38.94,71.94,39.02,72.59,40.12,68.22,40.4,66.64}},nil,nil,0}
 t[7087]={"Killian Hagey",35,35,0,{[1458]={70.16,59.18}},"H","Skinning Trainer",19}
 t[7088]={"Thuwd",35,35,0,{[1454]={63.36,45.42}},"H","Skinning Trainer",19}
 t[7089]={"Mooranta",35,35,0,{[1456]={44.44,43.15}},"H","Skinning Trainer",19}
-t[7091]={"Shadowforge Ambusher",43,44,0,nil,nil,nil,0}
+t[7091]={"Shadowforge Ambusher",43,44,0,nil,nil,nil,0,1337}
 t[7092]={"Tainted Ooze",51,52,0,{[1448]={42.64,47.58,42.2,46.46,39.99,56.04,40.5,55.71,39.72,54.88,39.28,54.48,40.09,55.38,40.1,54.72,39.54,54.04,39.14,54.59,40.45,54.14,40.3,58.93,40.62,59.41,40.01,48.09,39.5,49.25,39.61,48.35,39.21,48.31,34.85,48.41,34.18,48.46,40.72,59.74,40.54,59.07,40.89,59.03,41.4,45.49,43.99,46.35,41.93,49.51,43.86,48.58,42.6,50.43,43.47,48.33,41.22,47.39,42.8,51.07,41.74,48.88,41.4,50.23,38.46,49.16,40.94,45.68}},nil,nil,0}
 t[7093]={"Vile Ooze",53,53,0,{[1448]={37.11,45.07,36.73,46.15,36.6,46.93,36.99,47.32,37.31,44.78,36.86,45.5,37.47,52.04,37.02,52.41,36.47,52.75}},nil,nil,0}
 t[7094]={"Crazed Stag",1,1,0,nil,nil,nil,0}
@@ -5559,15 +5559,15 @@ t[7170]={"Thragomm",20,21,1,{[1432]={55.3,66.94}},"H","Horde Runner",2}
 t[7172]={"Lore Keeper of Norgannon",60,60,0,nil,"AH",nil,1}
 t[7173]={"World Weaponsmithing Trainer",10,10,0,nil,"AH","Weaponsmith Trainer",0}
 t[7174]={"World Armorsmithing Trainer",10,10,0,nil,"AH","Armorsmithing Trainer",0}
-t[7175]={"Stonevault Ambusher",35,35,0,nil,nil,nil,0}
+t[7175]={"Stonevault Ambusher",35,35,0,nil,nil,nil,0,1337}
 t[7186]={"A",1,1,0,nil,"AH",nil,0}
-t[7206]={"Ancient Stone Keeper",44,44,1,nil,nil,nil,0}
+t[7206]={"Ancient Stone Keeper",44,44,1,nil,nil,nil,0,1337}
 t[7207]={"Doc Mixilpixil",45,45,0,{[1453]={80.06,69.9}},"A",nil,3}
 t[7208]={"Noarm",25,25,0,{[1453]={79.75,69.78}},"A",nil,0}
 t[7209]={"Obsidian Shard",35,35,0,nil,nil,nil,0}
 t[7226]={"Sand Storm",44,44,0,nil,nil,nil,0}
 t[7227]={"Cobaltine Dragonspawn",48,49,1,nil,nil,nil,0}
-t[7228]={"Ironaya",40,40,1,nil,nil,nil,0}
+t[7228]={"Ironaya",40,40,1,nil,nil,nil,0,1337}
 t[7229]={"Arantir's Shadow",55,55,1,nil,"A",nil,0}
 t[7230]={"Shayis Steelfury",60,60,0,{[1454]={80.24,23.44}},"H","Armor Crafter",17}
 t[7231]={"Kelgruk Bloodaxe",60,60,0,{[1454]={81.95,18.02}},"H","Weapon Crafter",21}
@@ -5576,24 +5576,24 @@ t[7233]={"Taskmaster Fizzule",30,30,1,{[1413]={55.44,5.56}},nil,nil,0}
 t[7234]={"Ferocitas the Dream Eater",8,8,0,{[1438]={69.37,53.41}},nil,nil,0}
 t[7235]={"Gnarlpine Mystic",6,7,0,{[1438]={68.64,52.3,68.59,52.18,69.72,52.89,69.62,55.32,69.36,53.21,68.46,51.71,68.63,52.85,68.27,52.18,68.85,52.35}},nil,nil,0}
 t[7236]={"Test Anubisath",62,62,0,nil,"AH","I am a test, don't bug me",0}
-t[7246]={"Sandfury Shadowhunter",45,46,1,nil,nil,nil,0}
-t[7247]={"Sandfury Soul Eater",45,46,1,nil,nil,nil,0}
+t[7246]={"Sandfury Shadowhunter",45,46,1,nil,nil,nil,0,1176}
+t[7247]={"Sandfury Soul Eater",45,46,1,nil,nil,nil,0,1176}
 t[7266]={"Ember",30,30,0,nil,nil,nil,0}
-t[7267]={"Chief Ukorz Sandscalp",48,48,1,nil,nil,nil,0}
-t[7268]={"Sandfury Guardian",45,46,1,nil,nil,nil,0}
-t[7269]={"Scarab",44,46,0,nil,"AH",nil,0}
+t[7267]={"Chief Ukorz Sandscalp",48,48,1,nil,nil,nil,0,1176}
+t[7268]={"Sandfury Guardian",45,46,1,nil,nil,nil,0,1176}
+t[7269]={"Scarab",44,46,0,nil,"AH",nil,0,1176}
 t[7270]={"Sandfury Zombie",44,45,1,nil,nil,nil,0}
-t[7271]={"Witch Doctor Zum'rah",46,46,1,nil,"AH",nil,0}
-t[7272]={"Theka the Martyr",46,46,1,nil,nil,nil,0}
-t[7273]={"Gahz'rilla",46,46,1,nil,nil,nil,0}
-t[7274]={"Sandfury Executioner",46,46,1,nil,nil,nil,0}
-t[7275]={"Shadowpriest Sezz'ziz",47,47,1,nil,nil,nil,0}
-t[7276]={"Zul'Farrak Dead Hero",45,46,0,nil,nil,nil,0}
-t[7286]={"Zul'Farrak Zombie",43,44,1,nil,nil,nil,0}
+t[7271]={"Witch Doctor Zum'rah",46,46,1,nil,"AH",nil,0,1176}
+t[7272]={"Theka the Martyr",46,46,1,nil,nil,nil,0,1176}
+t[7273]={"Gahz'rilla",46,46,1,nil,nil,nil,0,1176}
+t[7274]={"Sandfury Executioner",46,46,1,nil,nil,nil,0,1176}
+t[7275]={"Shadowpriest Sezz'ziz",47,47,1,nil,nil,nil,0,1176}
+t[7276]={"Zul'Farrak Dead Hero",45,46,0,nil,nil,nil,0,1176}
+t[7286]={"Zul'Farrak Zombie",43,44,1,nil,nil,nil,0,1176}
 t[7287]={"Foreman Silixiz",22,22,0,{[1413]={54.8,5.97}},nil,nil,0}
 t[7288]={"Grand Foreman Puzik Gallywix",23,23,1,{[1413]={54.75,5.59}},nil,nil,0}
-t[7290]={"Shadowforge Sharpshooter",43,44,1,nil,nil,nil,0}
-t[7291]={"Galgann Firehammer",45,45,1,nil,nil,nil,0}
+t[7290]={"Shadowforge Sharpshooter",43,44,1,nil,nil,nil,0,1337}
+t[7291]={"Galgann Firehammer",45,45,1,nil,nil,nil,0,1337}
 t[7292]={"Dinita Stonemantle",40,40,0,{[1455]={33.88,59.15}},"A","Vault Administrator",2}
 t[7294]={"Shim'la",35,35,0,{[1454]={65.47,22.02}},"H",nil,0}
 t[7295]={"Shailiea",35,35,0,{[1453]={43.18,65.7}},"A",nil,0}
@@ -5602,7 +5602,7 @@ t[7297]={"Gothard Winslow",35,35,0,{[1458]={83.79,65.62}},"H",nil,0}
 t[7298]={"Demnul Farmountain",45,45,0,{[1455]={71.52,84.61}},"A",nil,0}
 t[7307]={"Venture Co. Lookout",23,23,0,{[1413]={54.75,5.53,54.64,5.77,54.78,5.82}},nil,nil,0}
 t[7308]={"Venture Co. Patroller",22,22,0,{[1413]={54.81,5.59,54.66,5.68}},nil,nil,0}
-t[7309]={"Earthen Custodian",44,45,0,nil,nil,nil,0}
+t[7309]={"Earthen Custodian",44,45,0,nil,nil,nil,0,1337}
 t[7310]={"Mutated Venture Co. Drone",25,25,0,{[1413]={54.7,5.7,54.72,5.75}},nil,nil,0}
 t[7311]={"Uthel'nay",40,40,0,{[1454]={39.16,86.27}},"H","Mage Trainer",19}
 t[7312]={"Dink",40,40,0,{[1455]={27.16,8.57}},"A","Mage Trainer",19}
@@ -5613,40 +5613,40 @@ t[7316]={"Sister Aquinne",15,15,0,{[1457]={28.94,45.8}},"A","Novice Priestess",2
 t[7317]={"Oben Rageclaw",40,40,0,{[1438]={44.94,61.59}},"A",nil,2}
 t[7318]={"Rageclaw",10,10,0,{[1438]={45.53,58.58}},nil,nil,0}
 t[7319]={"Lady Sathrah",12,12,0,{[1438]={39.4,25.4,39.4,25.6,39.6,25.4,39.6,25.6,41,25.6,41.4,25.2,42,25.4,42,25.6,46.2,24.4,47.8,26.6,48,25.2,48,25.6,48.6,24.6}},nil,nil,0}
-t[7320]={"Stonevault Mauler",44,45,1,nil,nil,nil,0}
-t[7321]={"Stonevault Flameweaver",44,45,1,nil,nil,nil,0}
+t[7320]={"Stonevault Mauler",44,45,1,nil,nil,nil,0,1337}
+t[7321]={"Stonevault Flameweaver",44,45,1,nil,nil,nil,0,1337}
 t[7322]={"Riding Tiger (Black)",1,1,0,nil,"AH",nil,0}
 t[7323]={"Winstone Wolfe",52,52,0,{[1416]={85.91,79.08}},"AH","The Wolf",0}
 t[7324]={"Simone Cantrell",45,45,0,{[1416]={83.79,79.79}},"AH","Landscape Architect",0}
 t[7325]={"Master Kang",62,62,0,{[1416]={83.98,81.33}},"AH",nil,0}
 t[7327]={"Withered Warrior",34,35,1,{[1413]={50.16,92.88,50.41,92.61,49.96,93.2,49.72,93.03,49.94,92.93,49.56,92.64,49.76,92.53,49.43,92.49}},nil,nil,0}
-t[7328]={"Withered Reaver",35,36,1,nil,nil,nil,0}
-t[7329]={"Withered Quilguard",35,36,1,nil,nil,nil,0}
+t[7328]={"Withered Reaver",35,36,1,nil,nil,nil,0,722}
+t[7329]={"Withered Quilguard",35,36,1,nil,nil,nil,0,722}
 t[7332]={"Withered Spearhide",34,35,1,{[1413]={50.16,92.88,50.41,92.61,49.96,93.2,49.72,93.03,49.76,92.53,49.43,92.49}},nil,nil,0}
-t[7333]={"Withered Battle Boar",34,34,0,nil,nil,nil,0}
-t[7334]={"Battle Boar Horror",37,37,0,nil,nil,nil,0}
+t[7333]={"Withered Battle Boar",34,34,0,nil,nil,nil,0,722}
+t[7334]={"Battle Boar Horror",37,37,0,nil,nil,nil,0,722}
 t[7335]={"Death's Head Geomancer",35,36,1,{[1413]={50.42,92.79,50.07,92.45,50.07,93.07,49.93,92.74,49.55,92.78}},nil,nil,0}
-t[7337]={"Death's Head Necromancer",36,37,1,nil,nil,nil,0}
+t[7337]={"Death's Head Necromancer",36,37,1,nil,nil,nil,0,722}
 t[7340]={"Skeletal Shadowcaster",36,36,0,nil,nil,nil,0}
-t[7341]={"Skeletal Frostweaver",37,38,1,nil,nil,nil,0}
-t[7342]={"Skeletal Summoner",39,40,1,nil,nil,nil,0}
-t[7343]={"Splinterbone Skeleton",35,35,0,nil,nil,nil,0}
-t[7344]={"Splinterbone Warrior",37,38,0,nil,nil,nil,0}
-t[7345]={"Splinterbone Captain",39,40,1,nil,nil,nil,0}
-t[7346]={"Splinterbone Centurion",38,39,0,nil,nil,nil,0}
-t[7347]={"Boneflayer Ghoul",38,39,1,nil,nil,nil,0}
-t[7348]={"Thorn Eater Ghoul",37,38,1,nil,nil,nil,0}
+t[7341]={"Skeletal Frostweaver",37,38,1,nil,nil,nil,0,722}
+t[7342]={"Skeletal Summoner",39,40,1,nil,nil,nil,0,722}
+t[7343]={"Splinterbone Skeleton",35,35,0,nil,nil,nil,0,722}
+t[7344]={"Splinterbone Warrior",37,38,0,nil,nil,nil,0,722}
+t[7345]={"Splinterbone Captain",39,40,1,nil,nil,nil,0,722}
+t[7346]={"Splinterbone Centurion",38,39,0,nil,nil,nil,0,722}
+t[7347]={"Boneflayer Ghoul",38,39,1,nil,nil,nil,0,722}
+t[7348]={"Thorn Eater Ghoul",37,38,1,nil,nil,nil,0,722}
 t[7349]={"Tomb Fiend",35,35,0,nil,nil,nil,0}
 t[7351]={"Tomb Reaver",37,37,1,nil,nil,nil,0}
-t[7352]={"Frozen Soul",37,38,1,nil,nil,nil,0}
-t[7353]={"Freezing Spirit",39,40,1,nil,nil,nil,0}
-t[7354]={"Ragglesnout",40,40,1,nil,nil,nil,0}
-t[7355]={"Tuten'kash",40,40,1,nil,nil,nil,0}
-t[7356]={"Plaguemaw the Rotting",40,40,1,nil,nil,nil,0}
-t[7357]={"Mordresh Fire Eye",39,39,1,nil,nil,nil,0}
-t[7358]={"Amnennar the Coldbringer",41,41,1,nil,nil,nil,0}
+t[7352]={"Frozen Soul",37,38,1,nil,nil,nil,0,722}
+t[7353]={"Freezing Spirit",39,40,1,nil,nil,nil,0,722}
+t[7354]={"Ragglesnout",40,40,1,nil,nil,nil,0,722}
+t[7355]={"Tuten'kash",40,40,1,nil,nil,nil,0,722}
+t[7356]={"Plaguemaw the Rotting",40,40,1,nil,nil,nil,0,722}
+t[7357]={"Mordresh Fire Eye",39,39,1,nil,nil,nil,0,722}
+t[7358]={"Amnennar the Coldbringer",41,41,1,nil,nil,nil,0,722}
 t[7360]={"Dun Garok Soldier",28,30,0,{[1424]={30.85,55.78}},"A",nil,0}
-t[7361]={"Grubbis",32,32,1,nil,nil,nil,0}
+t[7361]={"Grubbis",32,32,1,nil,nil,nil,0,721}
 t[7363]={"Kum'isha the Collector",60,60,0,{[1419]={51.98,35.65}},"AH",nil,3}
 t[7364]={"Flawless Draenethyst Sphere",60,60,0,nil,nil,nil,0}
 t[7365]={"Flawless Draenethyst Fragment",40,40,0,nil,nil,nil,0}
@@ -5680,8 +5680,8 @@ t[7392]={"Prairie Chicken",1,1,0,nil,"A",nil,0}
 t[7393]={"White Plymouth Rock",1,1,0,nil,"AH",nil,0}
 t[7394]={"Ancona Chicken",1,1,0,nil,"AH",nil,0}
 t[7395]={"Cockroach",1,1,0,{[1458]={67.4,44.26,67.67,43.79,67.46,43.87,67.37,44.5,67.38,43.75,67.61,44.45}},"AH",nil,0}
-t[7396]={"Earthen Stonebreaker",44,45,0,nil,nil,nil,0}
-t[7397]={"Earthen Stonecarver",44,45,0,nil,nil,nil,0}
+t[7396]={"Earthen Stonebreaker",44,45,0,nil,nil,nil,0,1337}
+t[7397]={"Earthen Stonecarver",44,45,0,nil,nil,nil,0,1337}
 t[7398]={"Stoneclaw Totem V",53,53,0,nil,"AH",nil,0}
 t[7399]={"Stoneclaw Totem VI",58,58,0,nil,"AH",nil,0}
 t[7400]={"Searing Totem V",50,50,0,nil,"AH",nil,0}
@@ -5689,7 +5689,7 @@ t[7401]={"Draenei Refugee",45,45,0,nil,"AH",nil,0}
 t[7402]={"Searing Totem VI",60,60,0,nil,"AH",nil,0}
 t[7403]={"Strength of Earth Totem IV",53,53,0,nil,"AH",nil,0}
 t[7404]={"Galak Flame Guard",30,30,0,{[1441]={41.98,31.75,42.06,31.77}},nil,nil,0}
-t[7405]={"Deadly Cleft Scorpid",42,43,0,nil,nil,nil,0}
+t[7405]={"Deadly Cleft Scorpid",42,43,0,nil,nil,nil,0,1337}
 t[7406]={"Oglethorpe Obnoticus",50,50,0,{[1434]={28.36,76.35}},"AH","Master Gnome Engineer",19}
 t[7407]={"Chief Engineer Bilgewhizzle",50,50,0,{[1446]={52.46,28.51}},"AH","Gadgetzan Water Co.",2}
 t[7408]={"Spigot Operator Luglunket",40,40,0,{[1446]={52.49,28.45}},"AH","Gadgetzan Water Co.",2}
@@ -5794,12 +5794,12 @@ t[7570]={"Elven Wisp",1,1,0,nil,"AH",nil,0}
 t[7572]={"Fallen Hero of the Horde",60,60,0,{[1435]={34.29,66.14}},"AH",nil,3}
 t[7583]={"Sprinkle",30,30,0,{[1446]={51.06,26.87}},"AH",nil,2}
 t[7584]={"Wandering Forest Walker",44,46,0,{[1444]={44.01,23,73.9,38.84,54.02,47.22,57.4,73.34,73.48,54.55}},"AH",nil,0}
-t[7603]={"Leprous Assistant",28,29,0,nil,nil,nil,0}
-t[7604]={"Sergeant Bly",45,45,1,nil,"AH",nil,1}
-t[7605]={"Raven",44,44,1,nil,"AH",nil,0}
-t[7606]={"Oro Eyegouge",44,44,1,nil,"AH",nil,0}
-t[7607]={"Weegli Blastfuse",43,43,1,nil,"AH",nil,1}
-t[7608]={"Murta Grimgut",44,44,1,nil,"AH",nil,0}
+t[7603]={"Leprous Assistant",28,29,0,nil,nil,nil,0,721}
+t[7604]={"Sergeant Bly",45,45,1,nil,"AH",nil,1,1176}
+t[7605]={"Raven",44,44,1,nil,"AH",nil,0,1176}
+t[7606]={"Oro Eyegouge",44,44,1,nil,"AH",nil,0,1176}
+t[7607]={"Weegli Blastfuse",43,43,1,nil,"AH",nil,1,1176}
+t[7608]={"Murta Grimgut",44,44,1,nil,"AH",nil,0,1176}
 t[7623]={"Dispatch Commander Ruag",60,60,0,{[1435]={47.79,54.94}},"H",nil,2}
 t[7624]={"Test Death Knight",60,60,0,nil,"AH",nil,0}
 t[7643]={"Bengor",45,45,0,{[1435]={44.97,57.37}},"H",nil,2}
@@ -5878,18 +5878,18 @@ t[7785]={"Ward of Zum'rah",46,46,0,nil,nil,nil,0}
 t[7786]={"Skeleton of Zum'rah",35,35,0,nil,nil,nil,0}
 t[7787]={"Sandfury Slave",43,44,0,nil,nil,nil,0}
 t[7788]={"Sandfury Drudge",44,45,0,nil,nil,nil,0}
-t[7789]={"Sandfury Cretin",43,45,1,nil,nil,nil,0}
+t[7789]={"Sandfury Cretin",43,45,1,nil,nil,nil,0,1176}
 t[7790]={"Orokk Omosh",45,45,0,{[1454]={79.24,22.4}},"H",nil,2}
 t[7791]={"Theka the Martyr Shapeshift",1,1,1,nil,"AH",nil,0}
 t[7792]={"Aturk the Anvil",50,50,0,{[1454]={80.94,23.32}},"H",nil,2}
 t[7793]={"Ox",53,53,0,{[1454]={80.45,23.52}},"H","The Mithril Order",2}
 t[7794]={"McGavan",55,55,0,{[1434]={28.87,75.42}},"AH","The Mithril Order",2}
-t[7795]={"Hydromancer Velratha",46,46,1,nil,nil,nil,0}
-t[7796]={"Nekrum Gutchewer",46,46,1,nil,nil,nil,0}
-t[7797]={"Ruuzlu",46,46,1,nil,nil,nil,0}
+t[7795]={"Hydromancer Velratha",46,46,1,nil,nil,nil,0,1176}
+t[7796]={"Nekrum Gutchewer",46,46,1,nil,nil,nil,0,1176}
+t[7797]={"Ruuzlu",46,46,1,nil,nil,nil,0,1176}
 t[7798]={"Hank the Hammer",50,50,0,{[1453]={62.85,36.81}},"A","The Mithril Order",2}
 t[7799]={"Gimblethorn",45,45,0,{[1446]={52.3,28.91}},"AH","Banker",256}
-t[7800]={"Mekgineer Thermaplugg",34,34,1,nil,nil,nil,0}
+t[7800]={"Mekgineer Thermaplugg",34,34,1,nil,nil,nil,0,721}
 t[7801]={"Gilveradin Sunchaser",45,45,0,{[1425]={26.71,48.59}},"AH",nil,2}
 t[7802]={"Galvan the Ancient",60,60,0,{[1434]={50.62,20.48}},"AH","Artisan Blacksmith of the Mithril Order",2}
 t[7803]={"Scorpid Duneburrower",46,47,0,nil,nil,nil,0}
@@ -5909,8 +5909,8 @@ t[7845]={"Fire Nova Totem V",52,52,0,nil,"AH",nil,0}
 t[7846]={"Teremus the Devourer",60,60,3,{[1419]={51.16,50.11}},nil,nil,0}
 t[7847]={"Caliph Scorpidsting",46,46,0,{[1446]={61.77,38.17}},nil,nil,0}
 t[7848]={"Lurking Feral Scar",46,46,0,{[1444]={55.29,53.76}},nil,nil,0}
-t[7849]={"Mobile Alert System",25,25,0,nil,nil,nil,0}
-t[7850]={"Kernobee",28,28,0,nil,"AH",nil,2}
+t[7849]={"Mobile Alert System",25,25,0,nil,nil,nil,0,721}
+t[7850]={"Kernobee",28,28,0,nil,"AH",nil,2,721}
 t[7851]={"Nethergarde Elite",55,55,1,{[1419]={63.51,16.49,67.21,19.09,64.99,16.8,65.68,21.89,64.17,22.49,64.23,22.65,65.46,21.42,64.97,16.99,63.53,16.33,65.4,21.27,65.08,16.25,64.42,23.12,67.18,18.41,63.61,15.74}},"A",nil,0}
 t[7852]={"Pratt McGrubben",55,55,0,{[1444]={30.63,42.71}},"A","Leatherworking Supplies",16391}
 t[7853]={"Scooty",30,30,0,{[1434]={27.6,77.48}},"AH","Chief Engineer",3}
@@ -5945,7 +5945,7 @@ t[7885]={"Spitelash Battlemaster",53,54,0,{[1447]={66.6,91.55,69.18,83.46,66.04,
 t[7886]={"Spitelash Enchantress",54,55,0,{[1447]={70.29,85.24,70.51,81.44,69.82,84.39,67.07,82.68,71.02,90.43,66.01,91.4,69.82,80.72,69.81,80.39,66.21,77.8,71.24,89.57,71.82,85.6}},nil,nil,0}
 t[7895]={"Ambassador Bloodrage",36,36,2,{[1413]={47.74,90.74}},nil,nil,0}
 t[7896]={"Southsea Buccaneer",44,45,0,nil,nil,nil,0}
-t[7897]={"Alarm-a-bomb 2600",20,20,0,nil,nil,nil,0}
+t[7897]={"Alarm-a-bomb 2600",20,20,0,nil,nil,nil,0,721}
 t[7898]={"Pirate treasure trigger mob",1,1,0,nil,"AH",nil,0}
 t[7899]={"Treasure Hunting Pirate",44,45,0,{[1446]={50.7,90.78,54.06,93.03,53.09,95.89,52.16,94.39,54.54,95.09,55.56,92.28}},nil,nil,0}
 t[7900]={"Angelas Moonbreeze",50,50,0,{[1444]={31.83,45.61}},"A",nil,2}
@@ -5991,7 +5991,7 @@ t[7980]={"Deathguard Elite",55,55,0,{[1420]={38.72,56.1,38.16,55.6,39,55.84,38.9
 t[7995]={"Vile Priestess Hexx",51,51,1,{[1425]={59.47,78.26}},nil,nil,0}
 t[7996]={"Qiaga the Keeper",50,50,1,{[1425]={48.64,68.24}},nil,nil,0}
 t[7997]={"Captured Sprite Darter",41,41,0,{[1444]={66.58,46.98,66.58,46.9,66.48,46.86,66.58,46.84,66.51,46.9,66.54,46.93,66.55,47.03,66.56,46.77,66.54,46.83,66.48,46.93,66.49,46.96,66.62,46.94}},"A",nil,0}
-t[7998]={"Blastmaster Emi Shortfuse",27,27,1,nil,"AH",nil,1}
+t[7998]={"Blastmaster Emi Shortfuse",27,27,1,nil,"AH",nil,1,721}
 t[7999]={"Tyrande Whisperwind",63,63,3,{[1457]={39.1,81.59}},"A","High Priestess of Elune",2}
 t[8015]={"Ashenvale Sentinel",40,40,0,{[1440]={59.5,59.06,59.41,58.92,59.04,58.91,59.32,59.11,59.06,59.96}},"A",nil,2}
 t[8016]={"Barrens Guard",40,40,0,{[1413]={47.85,5.1,47.63,5.38,48.03,5.36,48.4,5.64,48.18,6.21,47.75,5.16,47.72,5.53,48.09,5.15,39.34,29.71,39.12,30.33,39.43,30.15,39.65,29.47,39.29,29.94,39.63,29.14,39.42,29.54}},"H",nil,0}
@@ -6008,30 +6008,30 @@ t[8026]={"Thyn'tel Bladeweaver",60,60,0,{[1457]={61.77,39.18}},"A",nil,2}
 t[8035]={"Dark Iron Land Mine",32,33,0,nil,nil,nil,0}
 t[8055]={"Thelsamar Mountaineer",40,40,0,nil,"A",nil,0}
 t[8075]={"Edana Hatetalon",50,50,1,{[1444]={40.55,8.6}},nil,nil,0}
-t[8095]={"Sul'lithuz Sandcrawler",45,47,1,nil,nil,nil,0}
+t[8095]={"Sul'lithuz Sandcrawler",45,47,1,nil,nil,nil,0,1176}
 t[8096]={"Protector of the People",40,40,0,{[1436]={57.85,54.39,53.28,53.97,53.04,51.96}},"A","The People's Militia",0}
 t[8115]={"Witch Doctor Uzer'i",50,50,0,{[1444]={74.42,43.36}},"H",nil,3}
 t[8116]={"Ziggle Sparks",46,46,0,nil,"AH","Holiday Fireworks Vendor",6}
 t[8117]={"Wizbang Booms",38,38,0,nil,"AH","Holiday Fireworks Vendor",6}
 t[8118]={"Lillian Singh",28,28,0,nil,"AH","Holiday Fireworks Vendor",6}
 t[8119]={"Zikkel",45,45,0,{[1413]={62.68,37.4}},"AH","Banker",256}
-t[8120]={"Sul'lithuz Abomination",47,47,1,nil,nil,nil,0}
+t[8120]={"Sul'lithuz Abomination",47,47,1,nil,nil,nil,0,1176}
 t[8121]={"Jaxxil Sparks",24,24,0,nil,"AH","Holiday Fireworks Vendor",6}
 t[8122]={"Kizzak Sparks",24,24,0,nil,"AH","Holiday Fireworks Vendor",4}
 t[8123]={"Rickle Goldgrubber",55,55,0,{[1434]={26.51,76.47}},"AH","Banker",256}
 t[8124]={"Qizzik",45,45,0,{[1446]={52.38,28.95}},"AH","Banker",258}
 t[8125]={"Dirge Quikcleave",43,43,0,{[1446]={52.63,28.11}},"AH","Butcher",7}
 t[8126]={"Nixx Sprocketspring",55,55,0,{[1446]={52.48,27.33}},"AH","Master Goblin Engineer",19}
-t[8127]={"Antu'sul",48,48,1,nil,nil,"Overseer of Sul",0}
+t[8127]={"Antu'sul",48,48,1,nil,nil,"Overseer of Sul",0,1176}
 t[8128]={"Pikkle",40,40,0,{[1446]={51.08,28.1}},"AH","Miner",19}
 t[8129]={"Wrinkle Goodsteel",40,40,0,{[1446]={50.8,27.71}},"AH","Superior Armor Crafter",16388}
-t[8130]={"Sul'lithuz Hatchling",30,35,1,nil,nil,nil,0}
+t[8130]={"Sul'lithuz Hatchling",30,35,1,nil,nil,nil,0,1176}
 t[8131]={"Blizrik Buckshot",43,43,0,{[1446]={50.74,27.53}},"AH","Gunsmith",16388}
 end f() end
 do local function f()
 t[8136]={"Lord Shalzaru",47,47,0,{[1444]={28.5,70.46}},nil,nil,0}
 t[8137]={"Gikkix",40,40,0,{[1446]={66.64,22.08}},"AH","Fisherman",4}
-t[8138]={"Sul'lithuz Broodling",39,39,0,nil,nil,nil,0}
+t[8138]={"Sul'lithuz Broodling",39,39,0,nil,nil,nil,0,1176}
 t[8139]={"Jabbey",40,40,0,{[1446]={67.01,21.99}},"AH","General Goods",6}
 t[8140]={"Brother Karman",45,45,0,{[1445]={67.4,47.41}},"A","Paladin Trainer",19}
 t[8141]={"Captain Evencane",45,45,0,{[1445]={67.88,48.41}},"A","Warrior Trainer",19}
@@ -6058,7 +6058,7 @@ t[8161]={"Harggan",49,49,0,{[1425]={13.42,44.14}},"A","Blacksmithing Supplies",1
 t[8176]={"Gharash",45,45,0,{[1435]={45.46,51.41}},"H","Blacksmithing Supplies",16390}
 t[8177]={"Rartar",45,45,0,{[1435]={45.39,56.87}},"H","Alchemy Supplies",4}
 t[8178]={"Nina Lightbrew",49,49,0,{[1419]={66.87,18.24}},"A","Alchemy Supplies",4}
-t[8179]={"Greater Healing Ward",45,45,0,nil,nil,nil,0}
+t[8179]={"Greater Healing Ward",45,45,0,nil,nil,nil,0,1176}
 t[8196]={"Occulus",50,50,1,{[1446]={63.3,52.6}},"AH",nil,0}
 t[8197]={"Chronalis",61,61,1,{[1446]={64.16,48.49}},"AH",nil,0}
 t[8198]={"Tick",52,52,1,{[1446]={62.64,49.36}},"AH",nil,0}
@@ -6084,7 +6084,7 @@ t[8218]={"Witherheart the Stalker",45,45,4,{[1425]={33.12,70.29}},nil,nil,0}
 t[8219]={"Zul'arek Hatefowler",43,43,4,{[1425]={32.42,56.9}},nil,nil,0}
 t[8236]={"Muck Frenzy",14,15,0,{[1413]={68.39,48.73,68.55,48.71,68.6,48.72,67.95,48.71,68.17,48.73}},nil,nil,0}
 t[8256]={"Curator Thorius",45,45,0,{[1455]={71.5,15.74}},"A",nil,2}
-t[8257]={"Oozeling",40,40,0,nil,nil,nil,0}
+t[8257]={"Oozeling",40,40,0,nil,nil,nil,0,1477}
 t[8276]={"Soaring Razorbeak",41,41,0,{[1425]={11.15,57.09,15.26,46.46}},"AH",nil,0}
 t[8277]={"Rekk'tilac",48,48,4,{[1427]={61.92,73.23,53.02,70.9,30.33,72.99,35.04,27.96,59.75,29.31}},nil,nil,0}
 t[8278]={"Smoldar",50,50,4,{[1427]={29.53,62.44}},nil,nil,0}
@@ -6109,17 +6109,17 @@ t[8307]={"Tarban Hearthgrain",22,22,0,{[1413]={55.16,32.08}},"H","Baker",6}
 t[8308]={"Alenndaar Lapidaar",27,27,0,{[1440]={18.01,59.83}},"A","Hunter Trainer",19}
 t[8309]={"Carlo Aurelius",50,50,0,{[1416]={84.58,82.52}},"AH","Assassin",0}
 t[8310]={"Watcher Wollpert",37,37,0,{[1431]={78.06,49.53}},"A","The Night Watch",0}
-t[8311]={"Slime Maggot",45,46,0,nil,"AH",nil,0}
+t[8311]={"Slime Maggot",45,46,0,nil,"AH",nil,0,1477}
 t[8316]={"Paladin 10 Alternate",10,10,0,nil,"AH",nil,0}
 t[8317]={"Atal'ai Deathwalker's Spirit",49,49,1,nil,nil,nil,0}
-t[8318]={"Atal'ai Slave",46,47,0,nil,nil,nil,0}
-t[8319]={"Nightmare Whelp",49,50,0,nil,nil,nil,0}
+t[8318]={"Atal'ai Slave",46,47,0,nil,nil,nil,0,1477}
+t[8319]={"Nightmare Whelp",49,50,0,nil,nil,nil,0,1477}
 t[8320]={"Sprok",28,28,0,{[1426]={21.36,37.27}},"AH","Away Team",1}
 t[8321]={"Paladin 20 Alternate",20,20,0,nil,"AH",nil,0}
 t[8322]={"Paladin 30 Alternate",30,30,0,nil,"AH",nil,0}
 t[8323]={"Paladin 40 Alternate",40,40,0,nil,"AH",nil,0}
 t[8324]={"Atal'ai Skeleton",46,47,0,nil,nil,nil,0}
-t[8336]={"Hakkari Sapper",49,50,1,nil,nil,nil,0}
+t[8336]={"Hakkari Sapper",49,50,1,nil,nil,nil,0,1477}
 t[8337]={"Dark Iron Steelshifter",42,45,0,{[1427]={66.02,45.11}},nil,nil,0}
 t[8338]={"Dark Iron Marksman",55,55,0,nil,nil,nil,0}
 t[8356]={"Chesmu",45,45,0,{[1456]={47.13,57.89}},"H","Banker",256}
@@ -6139,7 +6139,7 @@ t[8380]={"Captain Vanessa Beltis",50,50,0,{[1447]={53.07,87.78}},"AH",nil,3}
 t[8381]={"Lindros",47,47,0,{[1447]={53.07,87.85}},"AH",nil,0}
 t[8382]={"Patrick Mills",46,46,0,{[1447]={53.01,87.7}},"AH",nil,0}
 t[8383]={"Master Wood",60,60,1,{[1453]={80.93,61.32}},"A",nil,0}
-t[8384]={"Deep Lurker",47,49,1,nil,nil,nil,0}
+t[8384]={"Deep Lurker",47,49,1,nil,nil,nil,0,1477}
 t[8385]={"Mura Runetotem",22,22,0,{[1421]={42.91,41.99}},"H",nil,2}
 t[8386]={"Horizon Scout Crewman",42,42,0,{[1447]={52.95,87.57,53.04,87.85,49.79,91.77,52.87,87.92,52.94,87.66,52.97,87.67,52.93,87.86,52.96,87.85}},"AH",nil,0}
 t[8387]={"Horizon Scout First Mate",43,43,0,nil,"AH",nil,0}
@@ -6172,22 +6172,22 @@ t[8419]={"Twilight Idolater",49,51,1,{[1427]={29.12,26.67,29.65,25.92,28.71,26.2
 t[8420]={"Kim'jael",46,46,0,{[1447]={53.45,21.82}},"AH",nil,2}
 t[8421]={"Dorius",50,50,0,nil,nil,nil,0}
 t[8436]={"Zamael Lunthistle",50,50,0,{[1427]={29.57,26.29}},"A",nil,3}
-t[8437]={"Hakkari Minion",45,46,0,nil,nil,nil,0}
-t[8438]={"Hakkari Bloodkeeper",49,50,1,nil,nil,nil,0}
+t[8437]={"Hakkari Minion",45,46,0,nil,nil,nil,0,1477}
+t[8438]={"Hakkari Bloodkeeper",49,50,1,nil,nil,nil,0,1477}
 t[8439]={"Nilith Lokrav",48,48,0,{[1427]={40.99,74.95}},"AH",nil,2}
-t[8440]={"Shade of Hakkar",1,1,1,nil,"AH",nil,0}
+t[8440]={"Shade of Hakkar",1,1,1,nil,"AH",nil,0,1477}
 t[8441]={"Raze",48,48,0,{[1427]={40.83,75.11}},"AH","Nilith's Guardian",1}
 t[8442]={"Shadowsilk Poacher",47,50,0,{[1427]={59.62,25.26,59.46,25.37,59.69,25.52,59.56,25.02,59.79,25.17}},nil,"The Undermarket",0}
-t[8443]={"Avatar of Hakkar",49,50,1,nil,nil,nil,0}
+t[8443]={"Avatar of Hakkar",49,50,1,nil,nil,nil,0,1477}
 t[8444]={"Trade Master Kovic",50,50,0,{[1427]={34.71,51.99}},nil,"The Undermarket",0}
 t[8446]={"Xiggs Fuselighter's Flyingmachine",45,45,0,nil,"A",nil,0}
 t[8447]={"Clunk",48,48,1,{[1427]={34.69,51.89}},nil,"The Undermarket",0}
-t[8477]={"Skeletal Servant",32,32,0,nil,nil,nil,0}
+t[8477]={"Skeletal Servant",32,32,0,nil,nil,nil,0,2017}
 t[8478]={"Second Mate Shandril",43,43,0,nil,"AH",nil,0}
 t[8479]={"Kalaran Windblade",55,55,1,{[1427]={39.06,38.99}},"AH",nil,3}
 t[8480]={"Kalaran the Deceiver",55,55,1,nil,nil,nil,0}
 t[8496]={"Liv Rizzlefix",17,17,0,{[1413]={62.45,38.73}},"AH","Workshop Assistant",3}
-t[8497]={"Nightmare Suppressor",49,50,1,nil,nil,nil,0}
+t[8497]={"Nightmare Suppressor",49,50,1,nil,nil,nil,0,1477}
 t[8498]={"TEST Uber Night Elf",1,1,0,nil,nil,nil,0}
 t[8499]={"TEST Uber Succubus",1,1,0,nil,nil,nil,0}
 t[8500]={"TEST Uber Abomination",1,1,1,nil,nil,nil,0}
@@ -6201,7 +6201,7 @@ t[8507]={"Tymor",35,35,0,{[1455]={30.96,4.83}},"A",nil,2}
 t[8508]={"Gretta Ganter",10,10,0,{[1426]={31.53,44.65}},"A","Fisherman Supplies",6}
 t[8509]={"Squire Maltrake",52,52,0,{[1427]={39.17,39}},"AH",nil,3}
 t[8510]={"Atal'ai Totem",51,51,0,nil,"AH",nil,0}
-t[8516]={"Belnistrasz",36,36,0,nil,"AH",nil,2}
+t[8516]={"Belnistrasz",36,36,0,nil,"AH",nil,2,722}
 t[8517]={"Xiggs Fuselighter",45,45,0,{[1455]={70.87,94.56}},"A",nil,2}
 t[8518]={"Rynthariel the Keymaster",29,29,1,{[1442]={29.71,16.91}},"A",nil,2}
 t[8519]={"Blighted Surge",54,55,0,{[1423]={54.9,71.11,51.88,67.29,53.36,65.99,55.55,67.6,53.15,71.34,52.51,69.57,54.55,66.54,55.35,69.91,54.91,68.84}},nil,nil,0}
@@ -6250,11 +6250,11 @@ t[8563]={"Woodsman",58,59,0,{[1423]={46.93,13.19,46.81,10.86,45.91,14.19,43.85,1
 t[8564]={"Ranger",59,60,0,{[1423]={44.68,12.55,46.1,13.74,44.59,11.84,45.74,13.72,44.13,11.21,46.72,11.08,45.82,11.56,46.54,13.01,45.73,13.21,46.22,11.6,44.57,15.75,44.58,14.33,44.26,14.36}},"A",nil,0}
 t[8565]={"Pathstrider",57,58,0,{[1423]={46.69,13.18,46.81,10.27,46.61,10.86,46.74,13.01,44.69,15.29}},"A",nil,0}
 t[8566]={"Dark Iron Lookout",47,48,0,{[1427]={42.72,62.57,42.73,62.93,53.55,58.61,52.91,58.79,33.19,53.54,32.49,54.86,35.15,62.12,37.12,60.8,51.92,58.69,49.78,55.97,32.63,55.52,33.71,51.92,52.51,58}},nil,nil,0}
-t[8567]={"Glutton",40,40,1,nil,nil,nil,0}
+t[8567]={"Glutton",40,40,1,nil,nil,nil,0,722}
 t[8576]={"Ag'tor Bloodfist",45,45,0,{[1447]={22.26,51.48}},"H",nil,3}
 t[8578]={"Magus Rimtori",55,55,0,{[1447]={59.51,31.37}},nil,nil,0}
 t[8579]={"Yeh'kinya",41,41,0,{[1446]={66.99,22.36}},"AH",nil,3}
-t[8580]={"Atal'alarion",50,50,1,nil,nil,"Guardian of the Idol",0}
+t[8580]={"Atal'alarion",50,50,1,nil,nil,"Guardian of the Idol",0,1477}
 t[8581]={"Blood Elf Defender",51,51,0,nil,nil,nil,0}
 t[8582]={"Kadrak",31,31,0,{[1413]={48.12,5.42}},"H",nil,3}
 t[8583]={"Dirania Silvershine",8,8,0,{[1438]={60.9,41.96}},"A",nil,2}
@@ -6291,7 +6291,7 @@ t[8658]={"Hukku's Imp",52,52,0,nil,nil,nil,0}
 t[8659]={"Jes'rimon",50,50,0,{[1454]={55.52,34.08}},"H",nil,3}
 t[8660]={"The Evalcharr",48,48,4,{[1447]={17.87,65.6}},nil,nil,0}
 t[8661]={"Auctioneer Beardo",50,50,0,{[1446]={51.96,29.65}},"AH",nil,4096}
-t[8662]={"Idol Oven Fire Target",1,1,0,nil,"AH",nil,0}
+t[8662]={"Idol Oven Fire Target",1,1,0,nil,"AH",nil,0,722}
 t[8663]={"Splinterbone Elite",43,44,1,nil,nil,nil,0}
 t[8664]={"Saern Priderunner",50,50,0,{[1456]={63.29,80.19}},"H",nil,3}
 t[8665]={"Shylenai",30,30,0,{[1457]={69.64,45.9}},"A","Owl Trainer",4}
@@ -6311,7 +6311,7 @@ t[8678]={"Jubie Gadgetspring",55,55,0,{[1447]={45.28,90.95}},"AH","Engineering S
 t[8679]={"Knaz Blunderflame",42,42,0,{[1434]={51.05,35.23}},"AH","Engineering Supplies",4}
 t[8680]={"Massive Infernal",63,63,3,nil,nil,nil,0}
 t[8681]={"Outfitter Eric",35,35,0,{[1455]={43.37,29.31}},"A","Speciality Tailoring Supplies",4}
-t[8696]={"Henry Stern",36,36,0,nil,"AH",nil,17}
+t[8696]={"Henry Stern",36,36,0,nil,"AH",nil,17,722}
 t[8716]={"Dreadlord",62,62,1,{[1419]={39.22,77.07,34.58,64.21,34.9,70.73,39.22,73.7,37.17,71.1,38.05,72.27}},nil,nil,0}
 t[8717]={"Felguard Elite",63,63,1,{[1419]={41.01,64.89,39.49,75.23,34.25,54.28,38.19,57.95,38.93,56.03,34.16,61.01,40.04,57.75,42.23,62.58,38.12,54.1,42.17,60.83,40.1,54.49,38.24,60.47,37.17,53.11,35.83,51.49,40.22,72.68,41.27,55.75,38.27,66.12,39.22,53.3,38.95,61.83,38.89,58.99,40.97,59.11,41.12,67.69,41.09,61.96,35.19,53.11,42.99,58.9,41.84,57.83,43.01,61.7,34.88,58.99,34.82,61.86,43.02,57.62,36.03,54.41,42.02,63.38,44.07,59.79,40.13,60.76,39.17,68,44.12,59.02,36.91,55.81,38.89,64.82,36.96,59.09,42.16,66.27,40.06,75.64,39.97,69.55,59.23,56.57,58.76,57.28,58.22,57.37,59.11,58.4,58.07,58.63,58.94,59.16,58.34,59.3,60.13,56.88,58.04,55.81,59.5,55.63,56.79,56.07,59.56,55.18,56.85,55.4,59.11,54.73,56.94,54.87,57.92,54.24,57.23,53.7}},nil,nil,0}
 t[8718]={"Manahound",60,60,1,{[1419]={40.22,64.62,39.55,75.05,39.73,71.52,36.42,53.25,43.31,58.95,43.41,75.08,42.13,62.69,42.25,62.75,39.83,76.94,35,60.84,40.18,70.82,44.06,61.18,37.91,55.79,41.96,67.53,58.43,59.3,58.94,57.24,58.04,57.37,58.88,59.21,57.5,54.82,58.43,53.57}},nil,nil,0}
@@ -6335,7 +6335,7 @@ t[8763]={"Mistwing Rogue",49,50,0,{[1447]={32.17,81.78,25.05,80.72,35.47,82.15,2
 t[8764]={"Mistwing Ravager",52,53,0,{[1447]={64.46,26.05,82.3,16.85,78.26,27.05,73.57,28.47,68.64,23.92,74.4,16.8,77.43,27.97,65.71,22.37,74.52,33.39,71.11,26.73}},nil,nil,0}
 t[8765]={"Forest Creeper",50,51,0,nil,nil,nil,0}
 t[8766]={"Forest Ooze",52,53,0,{[1447]={66.42,25.55,70.56,31.18,69.16,27.22,36.16,67.86,74.73,12.72,44.45,71.14,71.73,29.47,67.74,29.46,41.77,69.83,74.57,29.49,76.81,25.45,71.58,24.32,80.41,24.49,38.76,71.3}},nil,nil,0}
-t[8767]={"Sah'rhee",30,30,0,nil,"AH",nil,1}
+t[8767]={"Sah'rhee",30,30,0,nil,"AH",nil,1,722}
 t[8776]={"Emerald Dragon Whelp",55,55,0,nil,nil,nil,0}
 t[8777]={"Seinrick Coulthane",35,35,0,nil,"H","Skinning Trainer",0}
 t[8796]={"Swimming Murloc Test",1,1,0,nil,"AH",nil,0}
@@ -6353,7 +6353,7 @@ t[8882]={"Riding Tiger",1,1,0,{[1446]={50.89,26.46}},"AH",nil,0}
 t[8883]={"Riding Horse",1,1,0,{[1446]={50.93,26.43,51.06,26.36}},"AH",nil,0}
 t[8884]={"Skeletal Mount",1,1,0,{[1446]={50.44,26.61}},"AH",nil,0}
 t[8885]={"Riding Raptor",1,1,0,{[1425]={78.03,80.49},[1446]={50.52,26.58}},"AH",nil,0}
-t[8886]={"Deviate Python",18,19,0,nil,nil,nil,0}
+t[8886]={"Deviate Python",18,19,0,nil,nil,nil,0,718}
 t[8887]={"A tormented voice",50,50,0,{[1428]={67.95,21.06}},"AH",nil,0}
 t[8888]={"Franclorn Forgewright",60,60,0,{[1428]={28.96,28.93}},"AH",nil,3}
 t[8889]={"Anvilrage Overseer",48,49,1,nil,nil,nil,0}
@@ -6384,20 +6384,20 @@ t[8913]={"Twilight Emissary",52,53,1,nil,nil,nil,0}
 t[8914]={"Twilight Bodyguard",53,54,1,nil,nil,nil,0}
 t[8915]={"Twilight's Hammer Ambassador",54,55,0,nil,nil,nil,0}
 t[8916]={"Arena Spectator",52,54,0,nil,nil,nil,0}
-t[8917]={"Quarry Slave",46,48,0,nil,"AH",nil,0}
+t[8917]={"Quarry Slave",46,48,0,nil,"AH",nil,0,1584}
 t[8920]={"Weapon Technician",55,56,0,nil,nil,nil,0}
 t[8921]={"Bloodhound",49,50,0,nil,nil,nil,0}
 t[8922]={"Bloodhound Mastiff",54,55,0,nil,nil,nil,0}
 t[8923]={"Panzor the Invincible",57,57,2,nil,nil,nil,32832}
 t[8924]={"The Behemoth",50,50,2,nil,nil,nil,0}
-t[8925]={"Dredge Worm",50,52,0,nil,nil,nil,0}
-t[8926]={"Deep Stinger",50,52,0,nil,nil,nil,0}
-t[8927]={"Dark Screecher",50,52,0,nil,nil,nil,0}
-t[8928]={"Burrowing Thundersnout",50,52,0,nil,nil,nil,0}
+t[8925]={"Dredge Worm",50,52,0,nil,nil,nil,0,1584}
+t[8926]={"Deep Stinger",50,52,0,nil,nil,nil,0,1584}
+t[8927]={"Dark Screecher",50,52,0,nil,nil,nil,0,1584}
+t[8928]={"Burrowing Thundersnout",50,52,0,nil,nil,nil,0,1584}
 t[8929]={"Princess Moira Bronzebeard",58,58,1,nil,nil,"Princess of Ironforge",2}
 t[8931]={"Innkeeper Heather",30,30,0,{[1436]={52.86,53.71}},"A","Innkeeper",135}
-t[8932]={"Borer Beetle",50,52,0,nil,nil,nil,0}
-t[8933]={"Cave Creeper",50,52,0,nil,nil,nil,0}
+t[8932]={"Borer Beetle",50,52,0,nil,nil,nil,0,1584}
+t[8933]={"Cave Creeper",50,52,0,nil,nil,nil,0,1584}
 t[8934]={"Christopher Hewen",30,30,0,{[1436]={52.23,52.83}},"A","General Trade Goods Vendor",4}
 t[8935]={"Paladin 20 AlternateHighDamage",20,20,0,nil,"AH",nil,0}
 t[8937]={"Pet Bomb",1,1,0,nil,"AH",nil,0}
@@ -6432,12 +6432,12 @@ t[9023]={"Marshal Windsor",52,52,1,nil,"A",nil,2}
 t[9024]={"Pyromancer Loregrain",52,52,2,nil,nil,nil,2}
 t[9025]={"Lord Roccor",51,51,2,nil,nil,nil,0}
 t[9026]={"Overmaster Pyron",52,52,1,{[1415]={46.82,67.71}},nil,nil,0}
-t[9027]={"Gorosh the Dervish",56,56,1,nil,nil,nil,0}
-t[9028]={"Grizzle",54,54,1,nil,nil,nil,0}
-t[9029]={"Eviscerator",54,54,1,nil,nil,nil,0}
-t[9030]={"Ok'thor the Breaker",53,53,1,nil,nil,nil,0}
-t[9031]={"Anub'shiah",54,54,1,nil,nil,nil,0}
-t[9032]={"Hedrum the Creeper",53,53,1,nil,nil,nil,0}
+t[9027]={"Gorosh the Dervish",56,56,1,nil,nil,nil,0,1584}
+t[9028]={"Grizzle",54,54,1,nil,nil,nil,0,1584}
+t[9029]={"Eviscerator",54,54,1,nil,nil,nil,0,1584}
+t[9030]={"Ok'thor the Breaker",53,53,1,nil,nil,nil,0,1584}
+t[9031]={"Anub'shiah",54,54,1,nil,nil,nil,0,1584}
+t[9032]={"Hedrum the Creeper",53,53,1,nil,nil,nil,0,1584}
 t[9033]={"General Angerforge",57,57,1,nil,nil,nil,0}
 t[9034]={"Hate'rel",55,55,1,nil,"AH",nil,1}
 t[9035]={"Anger'rel",55,55,1,nil,"AH",nil,1}
@@ -6450,7 +6450,7 @@ t[9041]={"Warder Stilgiss",56,56,2,nil,nil,nil,0}
 t[9042]={"Verek",55,55,2,nil,nil,nil,0}
 t[9043]={"Scarshield Grunt",53,54,1,nil,nil,"Scarshield Legion",0}
 t[9044]={"Scarshield Sentry",53,54,1,nil,nil,"Scarshield Legion",0}
-t[9045]={"Scarshield Acolyte",54,55,1,nil,nil,"Scarshield Legion",0}
+t[9045]={"Scarshield Acolyte",54,55,1,nil,nil,"Scarshield Legion",0,1583}
 t[9046]={"Scarshield Quartermaster",55,55,2,{[1415]={49.12,64.1}},nil,"Scarshield Legion",0}
 t[9047]={"Jenal",5,5,0,{[1457]={31.49,8.23}},"A","Ditch Digger",3}
 t[9056]={"Fineous Darkvire",54,54,1,nil,nil,"Chief Architect",0}
@@ -6466,9 +6466,9 @@ t[9084]={"Thunderheart",52,52,0,{[1418]={3.33,48.26}},"H","Kargath Expeditionary
 t[9085]={"Initiate Amakkar",52,52,0,{[1418]={3.21,48.14}},"H","Kargath Expeditionary Force",0}
 t[9086]={"Grunt Gargal",52,52,0,{[1418]={3.23,48.43}},"H","Kargath Expeditionary Force",0}
 t[9087]={"Bashana Runetotem",35,35,0,{[1456]={71.06,34.19}},"H",nil,0}
-t[9096]={"Rage Talon Dragonspawn",58,59,1,nil,nil,nil,0}
-t[9097]={"Scarshield Legionnaire",54,55,1,nil,nil,"Scarshield Legion",0}
-t[9098]={"Scarshield Spellbinder",54,55,1,nil,nil,"Scarshield Legion",0}
+t[9096]={"Rage Talon Dragonspawn",58,59,1,nil,nil,nil,0,1583}
+t[9097]={"Scarshield Legionnaire",54,55,1,nil,nil,"Scarshield Legion",0,1583}
+t[9098]={"Scarshield Spellbinder",54,55,1,nil,nil,"Scarshield Legion",0,1583}
 t[9099]={"Sraaz",30,30,0,{[1455]={55.8,35.59}},"A","Pie Vendor",5}
 t[9116]={"Eridan Bluewind",57,57,0,{[1448]={51.35,81.51}},"AH","Emerald Circle",3}
 t[9117]={"J.D. Collie",60,60,0,{[1449]={41.92,2.7}},"AH",nil,3}
@@ -6489,36 +6489,36 @@ t[9177]={"Oralius",55,55,0,{[1428]={84.56,68.68}},"A",nil,3}
 t[9178]={"Burning Spirit",30,30,0,nil,"AH",nil,0}
 t[9179]={"Jazzrik",38,38,0,{[1418]={42.47,52.5}},"AH","Blacksmithing Supplies",16390}
 t[9180]={"World Event Generator",5,5,0,nil,"AH",nil,0}
-t[9196]={"Highlord Omokk",59,59,1,nil,nil,nil,0}
-t[9197]={"Spirestone Battle Mage",57,58,1,nil,nil,nil,0}
-t[9198]={"Spirestone Mystic",55,56,1,nil,nil,nil,0}
-t[9199]={"Spirestone Enforcer",54,55,1,nil,nil,nil,0}
-t[9200]={"Spirestone Reaver",54,56,1,nil,nil,nil,0}
-t[9201]={"Spirestone Ogre Magus",54,55,1,nil,nil,nil,0}
-t[9216]={"Spirestone Warlord",57,58,1,nil,nil,nil,0}
-t[9217]={"Spirestone Lord Magus",58,58,2,nil,nil,nil,0}
-t[9218]={"Spirestone Battle Lord",58,58,2,nil,nil,nil,0}
-t[9219]={"Spirestone Butcher",57,57,2,nil,nil,nil,0}
-t[9236]={"Shadow Hunter Vosh'gajin",58,58,1,nil,nil,nil,0}
-t[9237]={"War Master Voone",58,58,1,nil,nil,nil,0}
+t[9196]={"Highlord Omokk",59,59,1,nil,nil,nil,0,1583}
+t[9197]={"Spirestone Battle Mage",57,58,1,nil,nil,nil,0,1583}
+t[9198]={"Spirestone Mystic",55,56,1,nil,nil,nil,0,1583}
+t[9199]={"Spirestone Enforcer",54,55,1,nil,nil,nil,0,1583}
+t[9200]={"Spirestone Reaver",54,56,1,nil,nil,nil,0,1583}
+t[9201]={"Spirestone Ogre Magus",54,55,1,nil,nil,nil,0,1583}
+t[9216]={"Spirestone Warlord",57,58,1,nil,nil,nil,0,1583}
+t[9217]={"Spirestone Lord Magus",58,58,2,nil,nil,nil,0,1583}
+t[9218]={"Spirestone Battle Lord",58,58,2,nil,nil,nil,0,1583}
+t[9219]={"Spirestone Butcher",57,57,2,nil,nil,nil,0,1583}
+t[9236]={"Shadow Hunter Vosh'gajin",58,58,1,nil,nil,nil,0,1583}
+t[9237]={"War Master Voone",58,58,1,nil,nil,nil,0,1583}
 t[9238]={"Quentin",40,40,0,{[1441]={78.35,74.72}},"A",nil,2}
-t[9239]={"Smolderthorn Mystic",55,56,1,nil,nil,nil,0}
-t[9240]={"Smolderthorn Shadow Priest",55,56,1,nil,nil,nil,0}
-t[9241]={"Smolderthorn Headhunter",56,57,1,nil,nil,nil,0}
+t[9239]={"Smolderthorn Mystic",55,56,1,nil,nil,nil,0,1583}
+t[9240]={"Smolderthorn Shadow Priest",55,56,1,nil,nil,nil,0,1583}
+t[9241]={"Smolderthorn Headhunter",56,57,1,nil,nil,nil,0,1583}
 t[9256]={"Farm Chicken",1,1,0,nil,"AH",nil,0}
-t[9257]={"Scarshield Warlock",54,55,1,nil,nil,"Scarshield Legion",0}
-t[9258]={"Scarshield Raider",54,56,1,nil,nil,"Scarshield Legion",0}
-t[9259]={"Firebrand Grunt",56,57,1,nil,nil,"Firebrand Legion",0}
-t[9260]={"Firebrand Legionnaire",57,58,1,nil,nil,"Firebrand Legion",0}
-t[9261]={"Firebrand Darkweaver",56,57,1,nil,nil,"Firebrand Legion",0}
-t[9262]={"Firebrand Invoker",56,57,1,nil,nil,"Firebrand Legion",0}
-t[9263]={"Firebrand Dreadweaver",57,58,1,nil,nil,"Firebrand Legion",0}
-t[9264]={"Firebrand Pyromancer",57,58,1,nil,nil,"Firebrand Legion",0}
-t[9265]={"Smolderthorn Shadow Hunter",56,57,1,nil,nil,nil,0}
-t[9266]={"Smolderthorn Witch Doctor",56,57,1,nil,nil,nil,0}
-t[9267]={"Smolderthorn Axe Thrower",55,56,1,nil,nil,nil,0}
-t[9268]={"Smolderthorn Berserker",57,58,1,nil,nil,nil,0}
-t[9269]={"Smolderthorn Seer",56,57,1,nil,nil,nil,0}
+t[9257]={"Scarshield Warlock",54,55,1,nil,nil,"Scarshield Legion",0,1583}
+t[9258]={"Scarshield Raider",54,56,1,nil,nil,"Scarshield Legion",0,1583}
+t[9259]={"Firebrand Grunt",56,57,1,nil,nil,"Firebrand Legion",0,1583}
+t[9260]={"Firebrand Legionnaire",57,58,1,nil,nil,"Firebrand Legion",0,1583}
+t[9261]={"Firebrand Darkweaver",56,57,1,nil,nil,"Firebrand Legion",0,1583}
+t[9262]={"Firebrand Invoker",56,57,1,nil,nil,"Firebrand Legion",0,1583}
+t[9263]={"Firebrand Dreadweaver",57,58,1,nil,nil,"Firebrand Legion",0,1583}
+t[9264]={"Firebrand Pyromancer",57,58,1,nil,nil,"Firebrand Legion",0,1583}
+t[9265]={"Smolderthorn Shadow Hunter",56,57,1,nil,nil,nil,0,1583}
+t[9266]={"Smolderthorn Witch Doctor",56,57,1,nil,nil,nil,0,1583}
+t[9267]={"Smolderthorn Axe Thrower",55,56,1,nil,nil,nil,0,1583}
+t[9268]={"Smolderthorn Berserker",57,58,1,nil,nil,nil,0,1583}
+t[9269]={"Smolderthorn Seer",56,57,1,nil,nil,nil,0,1583}
 t[9270]={"Williden Marshal",48,48,0,{[1449]={43.95,7.14}},"AH",nil,3}
 t[9271]={"Hol'anyee Marshal",45,45,0,{[1449]={43.89,7.24}},"AH",nil,3}
 t[9272]={"Spark Nilminer",45,45,0,{[1449]={43.5,7.42}},"AH",nil,3}
@@ -6542,17 +6542,17 @@ t[9376]={"Blazerunner",56,56,1,{[1449]={49.41,49.33}},nil,nil,0}
 t[9377]={"Swirling Vortex",33,34,0,{[1441]={82.2,62.71,71.58,90.45,75.34,52.83,71.19,57.3,71.94,66.07,77.33,71.36}},nil,nil,0}
 t[9396]={"Ground Pounder",41,43,0,{[1446]={50.03,30.57,56.45,25.44,56.69,32.35,48.71,27.81,44.84,27.89}},nil,nil,0}
 t[9397]={"Living Storm",48,48,0,{[1446]={30.37,77.65,49.76,69.2}},nil,nil,0}
-t[9398]={"Twilight's Hammer Executioner",55,56,1,nil,nil,nil,0}
-t[9416]={"Scarshield Worg",53,54,0,nil,nil,"Scarshield Legion",0}
+t[9398]={"Twilight's Hammer Executioner",55,56,1,nil,nil,nil,0,1584}
+t[9416]={"Scarshield Worg",53,54,0,nil,nil,"Scarshield Legion",0,1583}
 t[9417]={"Sleeping Dragon",60,60,2,nil,nil,nil,0}
 t[9436]={"Spawn of Bael'Gar",49,50,0,nil,nil,nil,0}
 t[9437]={"Dark Keeper Vorfalk",55,55,1,nil,nil,nil,0}
-t[9438]={"Dark Keeper Bethek",55,55,1,nil,nil,nil,0}
-t[9439]={"Dark Keeper Uggel",55,55,1,nil,nil,nil,0}
-t[9441]={"Dark Keeper Zimrel",55,55,1,nil,nil,nil,0}
-t[9442]={"Dark Keeper Ofgut",55,55,1,nil,nil,nil,0}
-t[9443]={"Dark Keeper Pelver",55,55,1,nil,nil,nil,0}
-t[9445]={"Dark Guard",53,54,1,nil,nil,nil,0}
+t[9438]={"Dark Keeper Bethek",55,55,1,nil,nil,nil,0,1584}
+t[9439]={"Dark Keeper Uggel",55,55,1,nil,nil,nil,0,1584}
+t[9441]={"Dark Keeper Zimrel",55,55,1,nil,nil,nil,0,1584}
+t[9442]={"Dark Keeper Ofgut",55,55,1,nil,nil,nil,0,1584}
+t[9443]={"Dark Keeper Pelver",55,55,1,nil,nil,nil,0,1584}
+t[9445]={"Dark Guard",53,54,1,nil,nil,nil,0,1584}
 t[9447]={"Scarlet Warder",53,54,1,{[1423]={68.53,65.94,59.38,72.61,68.54,67.43,74.12,67.11,68.77,65.82,59.52,70.47,58.73,72.37,60.18,72.19,68.71,68.54,69.73,74.77,68.71,70.93,72.03,68.07,73.18,67.69,74.18,69.34,71.6,72.74,71.65,72.59,71.26,73.66,71.58,68.72,71.49,68.67,68.26,68.43,68.22,68.51,58.79,71.71,72.21,72.4,73.45,73.93,73.09,74.49,72.92,74.25,72.78,69.32,72.86,69.35,72.8,71.99,72.94,71.84,70.54,71.99,73.31,72.59,71.02,72.42,71.08,72.48,70.59,71.85,70.27,73.03,70.47,72.6,70.83,73.2,71.07,72.59,71.26,73.79,71.31,73.76,72.81,68.49,72.63,68.1,60.3,70.95,59.87,70.37,73.63,64.57,71.61,71.19,72.61,71.14,67.68,70.95,68.14,72.56,68.2,70.22,67.81,68.42,68.79,69.28,68.19,69.24,68.8,70.18,70.45,68.72,71.34,71.01,70.28,69.93,74.89,65.45}},nil,nil,0}
 t[9448]={"Scarlet Praetorian",56,57,1,{[1423]={78.03,72.34,73.87,74.05,76.79,68.06,76.97,70.34,75.89,70.08,75.63,69.54,74.78,70.43,76.55,68.79,76.84,74.79,76.64,69.4,74.07,72.5,75.08,73.48,74.37,73.52,75.41,73.89,75.13,71.49,74.81,75.15,75.62,72.6,75.81,72.09,76.12,72.48,76.01,72.76,77.15,73.6,77.69,73.7,77.15,72.82,77.11,72.73,77.56,74.46,78,73.42,76.8,73.87,77.64,74.47,74.11,71.02,73.98,71.5}},nil,nil,0}
 t[9449]={"Scarlet Cleric",54,55,1,{[1423]={69.44,67.36,59.32,71.07,73.83,66,73.77,65.92,67.36,65.15,68.96,66.73,68.91,64,74.91,66.44,74.19,65.42,68.35,63.5,59.59,71.79,73.37,68.32,73.38,66.82,73.36,68.41,74.56,67.76,74.08,69.32,71.65,72.04,71.33,73.63,71.73,72.06,70.58,72.16,70.78,71.7,71.9,71.89,68.76,70.61,74.99,68.86,72.28,72.34,73.95,67.54,73.29,72.77,70.73,71.47,70.31,72.99,70.24,72.97,71.1,72.51,70.47,72.69,70.76,73.15,71.31,73.69,74.12,67.79,73.24,67.87,73.59,65.88,73.65,66.66,73.6,66.73,67.99,71.13,67.9,69.05,70.26,71.36,69.86,69.73,68.86,66.73}},nil,nil,0}
@@ -6571,7 +6571,7 @@ t[9462]={"Chieftain Bloodmaw",56,56,0,{[1448]={62.75,7.74}},nil,nil,0}
 t[9464]={"Overlord Ror",51,51,0,{[1448]={48.23,94.28}},nil,nil,0}
 t[9465]={"Golhine the Hooded",60,60,0,{[1448]={61.93,24.54}},"A","Druid Trainer",19}
 t[9467]={"Miblon Snarltooth",50,50,0,{[1444]={44.62,10.52}},"AH",nil,1}
-t[9476]={"Watchman Doomgrip",55,55,1,nil,nil,nil,0}
+t[9476]={"Watchman Doomgrip",55,55,1,nil,nil,nil,0,1584}
 t[9477]={"Cloned Ooze",50,52,0,{[1449]={56.3,63.89,46.45,25.45,45.44,66.04,56.2,18.13,59.39,60.37}},nil,nil,0}
 t[9496]={"Gorishi Egg",50,51,0,nil,nil,nil,0}
 t[9498]={"Gorishi Grub",48,48,0,nil,nil,nil,0}
@@ -6594,11 +6594,11 @@ t[9527]={"Enraged Hippogryph",55,55,0,nil,nil,nil,0}
 t[9528]={"Arathandris Silversky",60,60,0,{[1448]={54.15,86.83}},"AH","Emerald Circle",3}
 t[9529]={"Maybess Riverbreeze",60,60,0,{[1448]={46.75,83.13}},"AH","Emerald Circle",3}
 t[9536]={"Maxwort Uberglint",42,42,0,{[1428]={65.15,23.91}},"AH",nil,2}
-t[9537]={"Hurley Blackbreath",55,55,1,nil,nil,nil,0}
+t[9537]={"Hurley Blackbreath",55,55,1,nil,nil,nil,0,1584}
 t[9538]={"High Executioner Nuzrak",60,60,0,nil,nil,"Kargath Expeditionary Force",0}
 t[9539]={"Shadow of Lexlort",58,58,0,nil,nil,"Kargath Expeditionary Force",0}
 t[9540]={"Enohar Thunderbrew",50,50,0,{[1419]={63.63,20.63}},"A",nil,3}
-t[9541]={"Blackbreath Crony",53,53,1,nil,nil,nil,0}
+t[9541]={"Blackbreath Crony",53,53,1,nil,nil,nil,0,1584}
 t[9542]={"Franclorn's Spirit",1,1,0,nil,"AH",nil,0}
 t[9543]={"Ribbly Screwspigot",53,53,1,nil,"AH",nil,3}
 t[9544]={"Yuka Screwspigot",51,51,0,{[1428]={66.06,21.95}},"AH",nil,16391}
@@ -6624,16 +6624,16 @@ t[9564]={"Frezza",45,45,0,{[1411]={50.82,13.54}},"H","Zeppelin Master",1}
 t[9565]={"Mayara Brightwing",57,57,0,{[1428]={84.84,69.12}},"A",nil,2}
 t[9566]={"Zapetta",45,45,0,{[1420]={60.74,58.87}},"H","Zeppelin Master",1}
 t[9567]={"Test Stable Master",50,50,0,nil,"AH",nil,0}
-t[9568]={"Overlord Wyrmthalak",60,60,1,nil,nil,nil,0}
+t[9568]={"Overlord Wyrmthalak",60,60,1,nil,nil,nil,0,1583}
 t[9576]={"Stormwind Talent Master",50,50,0,nil,"A","Talent Master",0}
 t[9578]={"Ironforge Talent Master",50,50,0,nil,"A","Talent Master",0}
 t[9579]={"Darnassus Talent Master",50,50,0,nil,"A","Talent Master",0}
 t[9580]={"Orgrimmar Talent Master",50,50,0,nil,"H","Talent Master",0}
 t[9581]={"Thunder Bluff Talent Master",50,50,0,nil,"H","Talent Master",0}
 t[9582]={"Undercity Talent Master",50,50,0,nil,"H","Talent Master",0}
-t[9583]={"Bloodaxe Veteran",58,59,1,nil,nil,"Bloodaxe Legion",0}
+t[9583]={"Bloodaxe Veteran",58,59,1,nil,nil,"Bloodaxe Legion",0,1583}
 t[9584]={"Jalane Ayrole",45,45,0,{[1453]={40.35,84.62}},"A","Master Shadoweave Tailor",17}
-t[9596]={"Bannok Grimaxe",59,59,2,nil,nil,"Firebrand Legion Champion",0}
+t[9596]={"Bannok Grimaxe",59,59,2,nil,nil,"Firebrand Legion Champion",0,1583}
 t[9598]={"Arei",56,56,0,{[1448]={49.57,29.6}},"A",nil,3}
 t[9599]={"Arei Transformed",1,1,0,nil,"AH",nil,0}
 t[9600]={"Parrot",1,1,0,{[1449]={60.29,44.77,56.27,80.46,40.18,54.7,31.22,36.96,53.27,63.92,32.02,76.39,39.4,72.63,36.17,66.59,58.72,54.16,31.09,66.99,60.1,44.43}},"AH",nil,0}
@@ -6656,7 +6656,7 @@ t[9658]={"Distract Test",1,1,0,nil,"AH",nil,0}
 t[9659]={"Unkillable Test Dummy",60,60,0,nil,"AH",nil,0}
 t[9660]={"Agnar Beastamer",47,47,0,{[1425]={14.16,43.62}},"A",nil,2}
 t[9662]={"Sprite Darter Hatchling",1,1,0,nil,"A",nil,0}
-t[9676]={"Tink Sprocketwhistle",24,24,0,nil,"A","Engineering Supplies",5}
+t[9676]={"Tink Sprocketwhistle",24,24,0,nil,"A","Engineering Supplies",5,721}
 t[9677]={"Ograbisi",55,55,1,nil,"AH",nil,0}
 t[9678]={"Shill Dinger",56,56,1,nil,"AH",nil,2}
 t[9679]={"Tobias Seecher",52,52,1,nil,"AH",nil,1}
@@ -6671,16 +6671,16 @@ t[9688]={"Windwall Totem II",45,45,0,nil,"AH",nil,0}
 t[9689]={"Windwall Totem III",59,59,0,nil,"AH",nil,0}
 t[9690]={"Ember Worg",51,52,0,{[1428]={90.62,39.95,86.69,55.55,79.3,30.62,84.06,60.61,89.34,50.65,91.86,59.31,89.93,51.72}},nil,nil,0}
 t[9691]={"Venomtip Scorpid",52,53,0,{[1428]={90.86,32.89,90.05,29.66,89.06,31.31,91.92,44.29,86.46,57.56,84.73,22.72,88.87,45.45,86.24,29.98,86.83,59.68,92.54,36.99,89.72,55.5}},nil,nil,0}
-t[9692]={"Bloodaxe Raider",57,58,1,nil,nil,"Bloodaxe Legion",0}
-t[9693]={"Bloodaxe Evoker",58,59,1,nil,nil,"Bloodaxe Legion",0}
+t[9692]={"Bloodaxe Raider",57,58,1,nil,nil,"Bloodaxe Legion",0,1583}
+t[9693]={"Bloodaxe Evoker",58,59,1,nil,nil,"Bloodaxe Legion",0,1583}
 t[9694]={"Slavering Ember Worg",53,54,0,{[1428]={72.44,46.88,68.16,60.96,61.5,59.86,63.05,54.34,58.4,63.94}},nil,nil,0}
 t[9695]={"Deathlash Scorpid",54,54,0,{[1428]={62.54,55.58,49.8,28.18,70.51,27.97,73.29,64.83,54.19,66.98,62.23,57.66,48.07,29.17,64.96,60.91,75.96,26.95,57.21,26.64,55.15,65.82,70.97,45.21}},nil,nil,0}
-t[9696]={"Bloodaxe Worg",56,57,0,nil,nil,"Scarshield Legion",0}
+t[9696]={"Bloodaxe Worg",56,57,0,nil,nil,"Scarshield Legion",0,1583}
 t[9697]={"Giant Ember Worg",55,56,0,{[1428]={26.51,57.73,26.49,62.76,24.47,69.23,23.64,59.46}},nil,nil,0}
 t[9698]={"Firetail Scorpid",56,57,0,{[1428]={27.81,57.84,25.58,60.9,29.25,55.58,32.41,55.5,32.69,55.31,27.34,55.35,26.68,60.42}},nil,nil,0}
 t[9699]={"Fire Beetle",1,1,0,{[1427]={32.87,66.93,49.33,69.86,51.78,40.77,56.02,37.29,73.51,29.46,21.41,75.34,54.7,44.33,74.68,19.66,62.33,66.84,46.8,55.51,54.44,69.71,59.16,84.11,68.23,36.59,35.45,71.97,68.65,54.96,57.62,26.18,62.4,70.58,44.84,41.03,50.17,62.66,43.44,71.25,58.82,60.9,47.67,68.46,24.14,36.37,32.38,61.39,57.87,59.2,48.83,38.81,29.61,72.83,34.3,44.9,28.25,56.4,28.09,43.88,35.49,26.41,25.45,35.16},[1428]={84.68,31.14,23.39,69.34,72.27,55.4,17.12,59.54,47.21,58.07,39.52,46.83,44.88,53.7,66.03,49.09,64.72,60.24,79.53,43.07,67.53,36.08,49.96,54.09,54.83,56.87,40.61,57.41,89.52,34.33,72.15,47.95,81.35,57.94,43.52,37.1,18.81,49.55,89.52,48.09,78.38,29.69,57.94,62.44}},"AH",nil,0}
 t[9700]={"Lava Crab",1,1,0,{[1427]={53.63,47.11,30.9,43.59,58.9,76.9,34.65,74.59,31.35,74.67,56.39,52.83,49.65,51.46,27.85,63.1,40.24,57.8,30.77,63.66,43.46,34.41,53.27,54.23,38.21,76.85,36.17,77.95,52.54,62.51,58.18,73.51,56.16,39.53,38.62,73.29,32.79,70.51,46.21,61.07,45.59,47.47,43.26,39,57.94,45.41,38.33,40.82,29.11,26.82},[1428]={44.21,43.59,65.23,25.84,59.69,57.23,78.78,46.09,39.3,28,75.34,70.24,38.47,29.83,54.45,62.61,23.49,44.82,80.88,34.38,19.61,28.1,70.34,61.31,34.9,67.3,62.01,38.23,35.37,45.3,61.98,31.78,70.86,31.29,33.26,46.85,15.95,31.95,77.83,50.68,65.82,31.37,49.31,62.58,51.05,35.13,35.73,61.09,46.28,50.57,76.93,39.14,28.88,62.13,63.16,25.55,51.49,50.56,21.86,41.86,34.94,57.62,14.83,29.88,78.67,74.83,55.05,48.88,65.54,26.2,36.32,33.08}},"AH",nil,0}
-t[9701]={"Spire Scorpid",58,58,0,nil,nil,nil,0}
+t[9701]={"Spire Scorpid",58,58,0,nil,nil,nil,0,1583}
 t[9702]={"Grurk",18,18,0,nil,nil,nil,0}
 t[9703]={"Il'thurk",17,17,0,nil,nil,nil,0}
 t[9704]={"Lumurk",17,17,0,nil,nil,nil,0}
@@ -6688,19 +6688,19 @@ t[9705]={"Illusionary Dreamwatcher",1,1,0,nil,"AH",nil,0}
 t[9706]={"Yorba Screwspigot",53,53,0,{[1446]={67.04,24.01}},"AH",nil,2}
 t[9707]={"Scarshield Portal",54,54,0,nil,nil,nil,0}
 t[9708]={"Burning Imp",54,55,0,nil,nil,nil,0}
-t[9716]={"Bloodaxe Warmonger",57,58,1,nil,nil,"Bloodaxe Legion",0}
-t[9717]={"Bloodaxe Summoner",57,58,1,nil,nil,"Bloodaxe Legion",0}
-t[9718]={"Ghok Bashguud",59,59,2,nil,nil,"Bloodaxe Champion",0}
-t[9736]={"Quartermaster Zigris",59,59,2,nil,nil,"Bloodaxe Legion",0}
+t[9716]={"Bloodaxe Warmonger",57,58,1,nil,nil,"Bloodaxe Legion",0,1583}
+t[9717]={"Bloodaxe Summoner",57,58,1,nil,nil,"Bloodaxe Legion",0,1583}
+t[9718]={"Ghok Bashguud",59,59,2,nil,nil,"Bloodaxe Champion",0,1583}
+t[9736]={"Quartermaster Zigris",59,59,2,nil,nil,"Bloodaxe Legion",0,1583}
 t[9776]={"Flamekin Spitter",52,53,0,{[1428]={78.16,50.81,77.72,51.46,78.03,51.02,78.65,45.69,79.24,46.62,78.96,46.23,77.59,75.26,77.6,74.71}},nil,nil,0}
 t[9777]={"Flamekin Sprite",51,52,0,{[1428]={78.46,50.43,77.49,51.02,79.57,46.98,79.84,47.19,77.93,75.34,78.53,73.37,78.57,74.9}},nil,nil,0}
 t[9778]={"Flamekin Torcher",54,56,0,{[1428]={36.85,60.66,37.1,61.04,36.01,63.71,35.97,63.16,65.49,29.31,65.34,29.07,65.3,29.3,51.19,34.85,51.18,35.36,50.97,34.96,35.07,57.99,35.54,58.3,70.99,31.27,70.58,31.63,70.32,31.55}},nil,nil,0}
 t[9779]={"Flamekin Rager",54,56,0,{[1428]={36.81,60.29,37.04,60.62,36.84,60.57,35.92,63.82,35.63,63.85,35.81,64.51,65.36,29.68,65.75,28.98,51.15,34.92,50.96,35.06,35.02,57.29,34.5,57.98,35.2,58.74,70.84,31.49,70.85,31.94}},nil,nil,0}
 t[9796]={"Galgar",8,8,0,{[1411]={42.73,67.23}},"H",nil,2}
-t[9816]={"Pyroguard Emberseer",60,60,3,nil,nil,nil,0}
-t[9817]={"Blackhand Dreadweaver",59,60,1,nil,nil,"Blackhand Legion",0}
-t[9818]={"Blackhand Summoner",59,60,1,nil,nil,"Blackhand Legion",0}
-t[9819]={"Blackhand Veteran",59,60,1,nil,nil,"Blackhand Legion",0}
+t[9816]={"Pyroguard Emberseer",60,60,3,nil,nil,nil,0,1583}
+t[9817]={"Blackhand Dreadweaver",59,60,1,nil,nil,"Blackhand Legion",0,1583}
+t[9818]={"Blackhand Summoner",59,60,1,nil,nil,"Blackhand Legion",0,1583}
+t[9819]={"Blackhand Veteran",59,60,1,nil,nil,"Blackhand Legion",0,1583}
 t[9836]={"Mathredis Firestar",60,60,0,{[1428]={64.99,23.58}},"AH",nil,3}
 t[9837]={"Lithilia",59,59,0,nil,"AH",nil,0}
 t[9856]={"Auctioneer Grimful",50,50,0,{[1454]={55.25,61.79}},"H",nil,4096}
@@ -6739,7 +6739,7 @@ t[9996]={"Winna Hazzard",57,57,0,{[1448]={34.21,52.34}},"H",nil,2}
 t[9997]={"Spraggle Frock",37,37,0,{[1449]={43.62,8.5}},"AH",nil,3}
 t[9998]={"Shizzle",40,40,0,{[1449]={44.23,11.59}},"AH",nil,2}
 t[9999]={"Ringo",54,54,0,{[1449]={51.9,49.85}},"AH",nil,2}
-t[10000]={"Arugal",26,26,1,nil,nil,nil,0}
+t[10000]={"Arugal",26,26,1,nil,nil,nil,0,209}
 t[10016]={"Tainted Rat",1,1,0,{[1448]={46.76,39.71,40.58,72.74,49.87,17.1,41.12,56.84,45.48,87.25,56.57,87.08,49.5,28.63,49.58,18.2,39.29,37.13,56.85,25.26,38.43,42.02,46.09,75.94,45.82,41.33,47.9,28.8,50.64,21.79,38.74,71.76,60.01,15.35,49.96,30.2,45.19,73.12,47.38,86.24,65.02,15.58,55.5,84,57.72,87.26,57.16,85.47,38.16,68.26,43.38,65.08,48.88,20.38,38.96,66.97,37.66,67.93,41.78,52.99,54.76,18.86,41.35,49.82,46.3,86.16,39.74,30.66,44.51,77.65}},"AH",nil,0}
 t[10017]={"Tainted Cockroach",1,1,0,{[1448]={51,32.2,47.89,77.51,40.78,30.16,45.05,13.72,41.83,75.67,48.05,93.37,47.7,74.24,61.5,13.7,47.7,81.56,56.59,84.1,47.77,26.11,53.22,16.14,41.34,78.06,49.19,32.83,55.5,11.08,44.84,69.27,43.83,79.3,48.81,20.1,53.19,82.7,43.61,67.76,62.66,16.4,37.65,38.8,48.57,37.76,47.34,22.83,47.97,75.45,37.92,44.9,48.2,87.83,64.2,18.54,49.48,80.8,50.43,88.44,45.27,42.91,40.8,27.46,48.33,29.47,44.85,46.64,60.42,6.12,32.07,66.04,38.64,72.38,42.99,17.42,46.1,23.91,41.75,31.28,54.62,84.42,54.91,91.62,52.78,16.06,43.69,48.32,47.87,76.43,56.27,9.01,43.04,64.94,46.31,75.58,55.1,24.15,46.44,15.07,46.29,75.91,38.3,39.37,44.43,22.18,57.98,17.07,39.63,32.7,50.6,30.53,37.54,75.04,49.59,30.85,45.05,23.74,41.59,81.26,46.42,87.25,46.35,85.99,54.15,88.29,44.19,44.85,41.48,35.02,60.38,8.45,42.1,75.61,39.77,53.38,41.39,37.55,49.57,87.79,44.13,82.88,53.21,83.01,55.75,20.28,54.11,90.14,49.66,35.05,44.2,81.44,53.93,25.82,56.2,83.78,62.3,17.16,43.3,81.49,46.36,40.32,41.44,80.02,41.81,58.49,56.58,21.93,46.73,76.01,48.13,76.98,56.15,7.34,41.85,59.03,56.06,89.15,38.74,56.84,38.02,48.12,40.38,31.62,56.24,27.32,43.21,22.92,62.28,19.25,56.29,91.52,54.15,28.08,50.46,81.24,57.49,18.69,55.05,86.06,50.36,15.83,55.61,88.76,53.76,90.43,48.83,82.43,40.33,69.72,53.6,27.54,37.12,67.23,41.56,62.34,40.86,28.13,41.04,60.93,51.98,86.37,63.67,8.94}},"AH",nil,0}
 t[10036]={"Brackenwall Enforcer",55,55,0,{[1445]={37.64,31.84,35.8,30.36,35.05,29.2,36.9,31.9,35.08,30.38,36.07,32.63,35.18,29.1,37.22,31.58,35.17,30.18,34.41,30.87,37.63,31.52,35.9,30.13,35.41,31.31,34.41,30.5,36.12,30.35,36.24,32.59}},"H",nil,0}
@@ -6773,10 +6773,10 @@ t[10076]={"High Priestess of Thaurissan",58,58,1,nil,nil,nil,0}
 t[10077]={"Deathmaw",53,53,4,{[1428]={87.36,50.45,82.73,30.35,75.54,32.89,81.51,56.7}},nil,nil,0}
 t[10078]={"Terrorspark",55,55,4,{[1428]={41.86,46.53,42.3,44.74,45.88,43.46,49.08,43.12,68.39,31.45,63.57,37.79,51.2,42.92,69.03,31.61}},nil,nil,0}
 t[10079]={"Brave Moonhorn",30,30,0,{[1441]={32.24,22.17}},"H",nil,2}
-t[10080]={"Sandarr Dunereaver",45,45,2,nil,nil,nil,0}
-t[10081]={"Dustwraith",45,45,2,nil,nil,nil,0}
-t[10082]={"Zerillis",45,45,2,nil,nil,nil,0}
-t[10083]={"Rage Talon Flamescale",58,59,1,nil,nil,nil,0}
+t[10080]={"Sandarr Dunereaver",45,45,2,nil,nil,nil,0,1176}
+t[10081]={"Dustwraith",45,45,2,nil,nil,nil,0,1176}
+t[10082]={"Zerillis",45,45,2,nil,nil,nil,0,1176}
+t[10083]={"Rage Talon Flamescale",58,59,1,nil,nil,nil,0,1583}
 t[10084]={"Rage Talon Whelp",57,57,0,nil,nil,nil,0}
 t[10085]={"Jaelysia",30,30,0,{[1439]={37.4,44.28}},"A","Stable Master",8193}
 t[10086]={"Hesuwa Thunderhorn",40,40,0,{[1456]={54.09,83.99}},"H","Pet Trainer",19}
@@ -6788,7 +6788,7 @@ t[10116]={"Slave",1,1,0,nil,"AH",nil,0}
 t[10117]={"Tortured Slave",1,1,0,nil,"AH",nil,0}
 t[10118]={"Nessa Shadowsong",25,25,0,{[1438]={56.26,92.44}},"A","Fishing Supplies",7}
 t[10119]={"Volchan",60,60,2,{[1428]={74.3,37.82}},nil,nil,0}
-t[10120]={"Vault Warder",45,45,1,nil,nil,nil,0}
+t[10120]={"Vault Warder",45,45,1,nil,nil,nil,0,1337}
 t[10136]={"Chemist Fuely",30,30,0,{[1458]={47.45,73.35}},"H",nil,3}
 t[10156]={"Scott's Test Dummy",58,58,3,nil,"AH","TEST, Don't BUG",0}
 t[10157]={"Moonkin Oracle",13,14,0,{[1439]={45.61,53.12,46.75,45.79,45.96,50.28}},nil,nil,0}
@@ -6796,16 +6796,16 @@ t[10158]={"Moonkin",12,13,0,{[1439]={43.28,52.19,44.05,45.99,46.16,50.69,43.1,44
 t[10159]={"Young Moonkin",11,12,0,{[1439]={43.6,45.36,43.72,46.85,42.76,52.22,43.56,53.36,43.07,47.71,42.7,49.8,42.19,49.39,44.04,45.02,41.96,52.3,42.7,45.45,42.21,46.12,42.98,45.48}},nil,nil,0}
 t[10160]={"Raging Moonkin",12,14,0,{[1439]={45.16,52.64,45.97,47.48,44.54,45.55,45.07,46.14,44.23,50.94,45.07,54.62,46.62,48.23,44.76,47.29,45.3,44.84,44.67,53.89,45.17,50.59,45.62,51.86,46.68,46.78,44.29,47.85,46.18,49.2,45.63,45.55,45.79,46.61,47.28,48.54,47.07,48.24,47.21,48.67,47.15,44.85,45.1,49.21}},nil,nil,0}
 t[10161]={"Rookery Whelp",56,57,0,nil,nil,nil,0}
-t[10162]={"Lord Victor Nefarius",63,63,3,nil,"AH","Lord of Blackrock",0}
+t[10162]={"Lord Victor Nefarius",63,63,3,nil,"AH","Lord of Blackrock",0,2677}
 t[10176]={"Kaltunk",20,20,0,{[1411]={43.29,68.53}},"H",nil,2}
-t[10177]={"Spire Scarab",58,58,0,nil,nil,nil,0}
+t[10177]={"Spire Scarab",58,58,0,nil,nil,nil,0,1583}
 t[10178]={"Riding MechaStrider (Flourescent Green)",1,1,0,nil,"AH",nil,0}
 t[10179]={"Riding MechaStrider (Black)",1,1,0,nil,"AH",nil,0}
 t[10180]={"Riding MechaStrider (Steel)",1,1,0,nil,"AH",nil,0}
 t[10181]={"Lady Sylvanas Windrunner",63,63,3,{[1458]={58.05,91.79}},"H","Banshee Queen",268435459}
 t[10182]={"Rexxar",62,62,1,{[1443]={54,2}},"H","Champion of the Horde",3}
 t[10183]={"Moonflare Totem",54,54,0,nil,nil,nil,0}
-t[10184]={"Onyxia",63,63,3,nil,nil,nil,0}
+t[10184]={"Onyxia",63,63,3,nil,nil,nil,0,2159}
 t[10196]={"General Colbatann",57,57,2,{[1452]={55.34,49.81,54.2,50.29,59.67,49.52}},nil,nil,0}
 t[10197]={"Mezzir the Howler",55,55,4,{[1452]={45.03,37.37}},nil,nil,0}
 t[10198]={"Kashoch the Reaver",60,60,2,{[1452]={63.36,70.19}},nil,nil,0}
@@ -6819,24 +6819,24 @@ t[10216]={"Gubber Blump",15,15,0,{[1439]={36.1,44.93}},"A",nil,7}
 t[10217]={"Flame Buffet Totem",56,56,0,nil,"AH",nil,0}
 t[10218]={"Superior Healing Ward",56,56,0,nil,"AH",nil,0}
 t[10219]={"Gwennyth Bly'Leggonde",21,21,0,{[1439]={36.62,45.59}},"A",nil,3}
-t[10220]={"Halycon",59,59,1,nil,nil,nil,0}
-t[10221]={"Bloodaxe Worg Pup",52,53,0,nil,nil,nil,0}
+t[10220]={"Halycon",59,59,1,nil,nil,nil,0,1583}
+t[10221]={"Bloodaxe Worg Pup",52,53,0,nil,nil,nil,0,1583}
 t[10236]={"Wep",33,33,4,nil,nil,nil,0}
 t[10237]={"Yor",35,35,4,nil,nil,nil,0}
 t[10238]={"Staggon",35,35,4,nil,nil,nil,0}
 t[10239]={"Tepolar",38,38,2,nil,nil,nil,0}
-t[10257]={"Bijou",58,58,1,nil,"AH",nil,2}
-t[10258]={"Rookery Guardian",58,59,1,nil,nil,nil,0}
+t[10257]={"Bijou",58,58,1,nil,"AH",nil,2,1583}
+t[10258]={"Rookery Guardian",58,59,1,nil,nil,nil,0,1583}
 t[10259]={"Worg Pup",1,1,0,nil,"A",nil,0}
 t[10260]={"Kibler",56,56,0,{[1428]={65.89,21.92}},"AH",nil,3}
 t[10261]={"Burning Felhound",54,55,0,nil,nil,nil,0}
 t[10262]={"Opus",40,40,0,{[1428]={65.81,21.74}},"AH",nil,0}
-t[10263]={"Burning Felguard",56,57,2,nil,nil,nil,0}
-t[10264]={"Solakar Flamewreath",60,60,1,nil,nil,nil,0}
+t[10263]={"Burning Felguard",56,57,2,nil,nil,nil,0,1583}
+t[10264]={"Solakar Flamewreath",60,60,1,nil,nil,nil,0,1583}
 t[10265]={"UNUSED [PH] Flamewreath Guard",58,59,1,nil,nil,nil,0}
 t[10266]={"Ug'thok",25,25,0,{[1454]={80.77,23.7}},"H","Journeyman Blacksmith",17}
 t[10267]={"Tinkee Steamboil",53,53,0,{[1428]={65.24,24}},"AH",nil,3}
-t[10268]={"Gizrul the Slavener",60,60,1,nil,nil,nil,0}
+t[10268]={"Gizrul the Slavener",60,60,1,nil,nil,nil,0,1583}
 t[10276]={"Rotgath Stonebeard",31,31,0,{[1455]={52.36,42.55}},"A","Expert Blacksmith",17}
 t[10277]={"Groum Stonebeard",25,25,0,{[1455]={52.26,41.94}},"A","Journeyman Blacksmith",17}
 t[10278]={"Thrag Stonehoof",24,24,0,{[1456]={39.43,56.66}},"H","Journeyman Blacksmith",19}
@@ -6846,10 +6846,10 @@ t[10292]={"Rombulus Frostmoon",40,40,0,nil,"A","Dagger Trainer",0}
 t[10293]={"Dulciea Frostmoon",51,51,0,{[1444]={30.79,43.15}},"A","Cloth Armor Merchant",16388}
 t[10294]={"Malakar Frostmoon",40,40,0,nil,"A","Fist Weapons Trainer",0}
 t[10295]={"Jennail Mooncaller",40,40,0,nil,"A","Staves Trainer",0}
-t[10296]={"Vaelan",54,54,1,nil,"AH",nil,3}
+t[10296]={"Vaelan",54,54,1,nil,"AH",nil,3,1583}
 t[10297]={"Gerratys Nightrunner",40,40,0,nil,"A","Bow Trainer",0}
 t[10298]={"Traelion Shadewhisper",40,40,0,nil,"A","Thrown Weapons Trainer",0}
-t[10299]={"Scarshield Infiltrator",54,54,1,nil,nil,"Scarshield Legion",1}
+t[10299]={"Scarshield Infiltrator",54,54,1,nil,nil,"Scarshield Legion",1,1583}
 t[10300]={"Ranshalla",58,58,0,{[1452]={63.07,59.48}},"A",nil,3}
 t[10301]={"Jaron Stoneshaper",55,55,0,{[1452]={52.14,30.43}},"A","Explorers' League",3}
 t[10302]={"Krakle",60,60,0,{[1449]={30.93,50.44}},"AH",nil,2}
@@ -6858,17 +6858,17 @@ t[10304]={"Aurora Skycaller",62,62,0,{[1423]={46.49,16.03}},"AH",nil,3}
 t[10305]={"Umi Rumplesnicker",57,57,0,{[1452]={60.88,37.62}},"AH",nil,3}
 t[10306]={"Trull Failbane",55,55,0,{[1448]={34.73,52.79}},"H",nil,2}
 t[10307]={"Witch Doctor Mau'ari",55,55,0,{[1452]={61.92,38.3}},"AH",nil,3}
-t[10316]={"Blackhand Incarcerator",59,60,0,nil,nil,"Blackhand Legion",0}
-t[10317]={"Blackhand Elite",60,61,1,nil,nil,"Blackhand Legion",0}
-t[10318]={"Blackhand Assassin",60,61,1,nil,nil,"Blackhand Legion",0}
-t[10319]={"Blackhand Iron Guard",60,61,1,nil,nil,"Blackhand Legion",0}
+t[10316]={"Blackhand Incarcerator",59,60,0,nil,nil,"Blackhand Legion",0,1583}
+t[10317]={"Blackhand Elite",60,61,1,nil,nil,"Blackhand Legion",0,1583}
+t[10318]={"Blackhand Assassin",60,61,1,nil,nil,"Blackhand Legion",0,1583}
+t[10319]={"Blackhand Iron Guard",60,61,1,nil,nil,"Blackhand Legion",0,1583}
 t[10321]={"Emberstrife",61,61,1,{[1445]={56.66,87.72}},nil,nil,2}
 t[10322]={"Riding Tiger (White)",1,1,0,nil,"AH",nil,0}
 t[10323]={"Murkdeep",19,19,0,{[1439]={36.44,76.51}},nil,nil,0}
 t[10336]={"Riding Tiger (Leopard)",1,1,0,nil,"AH",nil,0}
 t[10337]={"Riding Tiger (Orange)",1,1,0,nil,"AH",nil,0}
 t[10338]={"Riding Tiger (Gold)",1,1,0,nil,"AH",nil,0}
-t[10339]={"Gyth",62,62,1,nil,nil,"Rend Blackhand's Mount",0}
+t[10339]={"Gyth",62,62,1,nil,nil,"Rend Blackhand's Mount",0,1583}
 t[10340]={"Vaelastrasz the Red",62,62,1,nil,"AH",nil,0}
 t[10356]={"Bayne",10,10,4,{[1420]={39.9,42.16}},nil,nil,0}
 t[10357]={"Ressan the Needler",11,11,4,{[1420]={42.86,67.57}},nil,nil,0}
@@ -6876,76 +6876,76 @@ t[10358]={"Fellicent's Shade",12,12,4,{[1420]={76.96,60.35}},nil,nil,0}
 t[10359]={"Sri'skulk",13,13,4,{[1420]={88.16,51.44}},nil,nil,0}
 t[10360]={"Kergul Bloodaxe",61,61,1,{[1456]={56.78,76.45}},"H","Warsong Gulch Battlemaster",2049}
 t[10361]={"Gruul Darkblade",50,50,0,{[1447]={22.22,51.09}},"H","Weaponsmith",16388}
-t[10363]={"General Drakkisath",62,62,3,nil,nil,nil,0}
+t[10363]={"General Drakkisath",62,62,3,nil,nil,nil,0,1583}
 t[10364]={"Yaelika Farclaw",55,55,0,{[1459]={48.37,80.32}},"H","Reagents & Poisons",6}
-t[10366]={"Rage Talon Dragon Guard",60,61,1,nil,nil,nil,0}
+t[10366]={"Rage Talon Dragon Guard",60,61,1,nil,nil,nil,0,1583}
 t[10367]={"Shrye Ragefist",55,55,0,{[1459]={48.53,80.47}},"H","Food and Drink",6}
 t[10369]={"Trayexir",12,12,0,{[1411]={56.47,73.12}},"H","Weapon Merchant",16388}
-t[10371]={"Rage Talon Captain",62,62,1,nil,nil,nil,0}
-t[10372]={"Rage Talon Fire Tongue",60,61,1,nil,nil,nil,0}
+t[10371]={"Rage Talon Captain",62,62,1,nil,nil,nil,0,1583}
+t[10372]={"Rage Talon Fire Tongue",60,61,1,nil,nil,nil,0,1583}
 t[10373]={"Xabraxxis",19,19,0,{[1439]={52.48,33.39}},nil,nil,0}
-t[10374]={"Spire Spider",57,58,1,nil,nil,nil,0}
-t[10375]={"Spire Spiderling",55,56,0,nil,nil,nil,0}
-t[10376]={"Crystal Fang",60,60,2,nil,nil,nil,0}
+t[10374]={"Spire Spider",57,58,1,nil,nil,nil,0,1583}
+t[10375]={"Spire Spiderling",55,56,0,nil,nil,nil,0,1583}
+t[10376]={"Crystal Fang",60,60,2,nil,nil,nil,0,1583}
 t[10377]={"Elu",28,28,0,{[1441]={44.93,48.92}},"H","Wind Rider Apprentice",2}
 t[10378]={"Omusa Thunderhorn",55,55,1,{[1413]={44.45,59.15}},"H","Wind Rider Master",11}
 t[10379]={"Altsoba Ragetotem",40,40,0,{[1448]={34.81,53.16}},"H","Weapon Merchant",16388}
 t[10380]={"Sanuye Runetotem",15,15,0,{[1413]={45.12,59.01}},"H","Leather Armor Merchant",16388}
-t[10381]={"Ravaged Cadaver",56,57,1,nil,nil,nil,0}
-t[10382]={"Mangled Cadaver",55,56,1,nil,nil,nil,0}
-t[10383]={"Broken Cadaver",55,56,0,nil,nil,nil,0}
-t[10384]={"Spectral Citizen",55,56,1,nil,"AH",nil,0}
-t[10385]={"Ghostly Citizen",56,57,1,nil,"AH",nil,0}
-t[10387]={"Vengeful Phantom",56,57,0,nil,nil,nil,0}
+t[10381]={"Ravaged Cadaver",56,57,1,nil,nil,nil,0,2017}
+t[10382]={"Mangled Cadaver",55,56,1,nil,nil,nil,0,2017}
+t[10383]={"Broken Cadaver",55,56,0,nil,nil,nil,0,2017}
+t[10384]={"Spectral Citizen",55,56,1,nil,"AH",nil,0,2017}
+t[10385]={"Ghostly Citizen",56,57,1,nil,"AH",nil,0,2017}
+t[10387]={"Vengeful Phantom",56,57,0,nil,nil,nil,0,2017}
 t[10388]={"Spiteful Phantom",58,59,0,nil,nil,nil,0}
-t[10389]={"Wrath Phantom",60,61,0,nil,nil,nil,0}
-t[10390]={"Skeletal Guardian",55,56,0,nil,nil,nil,0}
-t[10391]={"Skeletal Berserker",56,57,0,nil,nil,nil,0}
-t[10393]={"Skul",58,58,2,nil,nil,nil,0}
-t[10394]={"Black Guard Sentry",58,59,1,nil,nil,nil,0}
+t[10389]={"Wrath Phantom",60,61,0,nil,nil,nil,0,2017}
+t[10390]={"Skeletal Guardian",55,56,0,nil,nil,nil,0,2017}
+t[10391]={"Skeletal Berserker",56,57,0,nil,nil,nil,0,2017}
+t[10393]={"Skul",58,58,2,nil,nil,nil,0,2017}
+t[10394]={"Black Guard Sentry",58,59,1,nil,nil,nil,0,2017}
 t[10395]={"Black Guard Warrior",59,60,1,nil,nil,nil,0}
 t[10397]={"Black Guard Executioner",61,62,1,nil,nil,nil,0}
-t[10398]={"Thuzadin Shadowcaster",58,59,1,nil,nil,nil,0}
-t[10399]={"Thuzadin Acolyte",59,60,0,nil,nil,nil,0}
-t[10400]={"Thuzadin Necromancer",59,61,1,nil,nil,nil,0}
-t[10405]={"Plague Ghoul",57,58,1,nil,nil,nil,0}
-t[10406]={"Ghoul Ravener",58,59,1,nil,nil,nil,0}
-t[10407]={"Fleshflayer Ghoul",59,60,1,nil,nil,nil,0}
-t[10408]={"Rockwing Gargoyle",57,58,1,nil,nil,nil,0}
-t[10409]={"Rockwing Screecher",58,59,1,nil,nil,nil,0}
-t[10411]={"Eye of Naxxramas",55,57,0,nil,nil,nil,0}
-t[10412]={"Crypt Crawler",58,59,1,nil,nil,nil,0}
-t[10413]={"Crypt Beast",59,60,1,nil,nil,nil,0}
-t[10414]={"Patchwork Horror",57,58,1,nil,nil,nil,0}
-t[10415]={"Ash'ari Crystal",60,60,1,nil,"AH",nil,0}
-t[10416]={"Bile Spewer",59,60,1,nil,nil,nil,0}
-t[10417]={"Venom Belcher",60,61,1,nil,nil,nil,0}
-t[10418]={"Crimson Guardsman",57,58,1,nil,nil,nil,0}
-t[10419]={"Crimson Conjuror",57,58,1,nil,nil,nil,0}
-t[10420]={"Crimson Initiate",57,58,1,nil,nil,nil,0}
-t[10421]={"Crimson Defender",58,59,1,nil,nil,nil,0}
-t[10422]={"Crimson Sorcerer",58,59,1,nil,nil,nil,0}
-t[10423]={"Crimson Priest",58,59,1,nil,nil,nil,0}
-t[10424]={"Crimson Gallant",59,60,1,nil,nil,nil,0}
-t[10425]={"Crimson Battle Mage",59,60,1,nil,nil,nil,0}
-t[10426]={"Crimson Inquisitor",59,60,1,nil,nil,nil,0}
+t[10398]={"Thuzadin Shadowcaster",58,59,1,nil,nil,nil,0,2017}
+t[10399]={"Thuzadin Acolyte",59,60,0,nil,nil,nil,0,2017}
+t[10400]={"Thuzadin Necromancer",59,61,1,nil,nil,nil,0,2017}
+t[10405]={"Plague Ghoul",57,58,1,nil,nil,nil,0,2017}
+t[10406]={"Ghoul Ravener",58,59,1,nil,nil,nil,0,2017}
+t[10407]={"Fleshflayer Ghoul",59,60,1,nil,nil,nil,0,2017}
+t[10408]={"Rockwing Gargoyle",57,58,1,nil,nil,nil,0,2017}
+t[10409]={"Rockwing Screecher",58,59,1,nil,nil,nil,0,2017}
+t[10411]={"Eye of Naxxramas",55,57,0,nil,nil,nil,0,2017}
+t[10412]={"Crypt Crawler",58,59,1,nil,nil,nil,0,2017}
+t[10413]={"Crypt Beast",59,60,1,nil,nil,nil,0,2017}
+t[10414]={"Patchwork Horror",57,58,1,nil,nil,nil,0,2017}
+t[10415]={"Ash'ari Crystal",60,60,1,nil,"AH",nil,0,2017}
+t[10416]={"Bile Spewer",59,60,1,nil,nil,nil,0,2017}
+t[10417]={"Venom Belcher",60,61,1,nil,nil,nil,0,2017}
+t[10418]={"Crimson Guardsman",57,58,1,nil,nil,nil,0,2017}
+t[10419]={"Crimson Conjuror",57,58,1,nil,nil,nil,0,2017}
+t[10420]={"Crimson Initiate",57,58,1,nil,nil,nil,0,2017}
+t[10421]={"Crimson Defender",58,59,1,nil,nil,nil,0,2017}
+t[10422]={"Crimson Sorcerer",58,59,1,nil,nil,nil,0,2017}
+t[10423]={"Crimson Priest",58,59,1,nil,nil,nil,0,2017}
+t[10424]={"Crimson Gallant",59,60,1,nil,nil,nil,0,2017}
+t[10425]={"Crimson Battle Mage",59,60,1,nil,nil,nil,0,2017}
+t[10426]={"Crimson Inquisitor",59,60,1,nil,nil,nil,0,2017}
 t[10427]={"Pao'ka Swiftmountain",30,30,0,{[1441]={17.89,40.57}},"H",nil,2}
 t[10428]={"Motega Firemane",28,28,0,{[1441]={21.54,32.35}},"H",nil,2}
-t[10429]={"Warchief Rend Blackhand",62,62,3,nil,nil,nil,0}
-t[10430]={"The Beast",62,62,3,nil,nil,nil,0}
+t[10429]={"Warchief Rend Blackhand",62,62,3,nil,nil,nil,0,1583}
+t[10430]={"The Beast",62,62,3,nil,nil,nil,0,1583}
 t[10431]={"Gregor Greystone",55,55,0,{[1452]={61.35,38.97}},"AH","The Argent Dawn",3}
-t[10432]={"Vectus",60,60,1,nil,"AH",nil,1}
-t[10433]={"Marduk Blackpool",58,58,1,nil,"AH",nil,1}
-t[10435]={"Magistrate Barthilas",58,58,1,nil,nil,nil,0}
-t[10436]={"Baroness Anastari",59,59,1,nil,nil,nil,0}
-t[10437]={"Nerub'enkan",60,60,1,nil,nil,nil,0}
-t[10438]={"Maleki the Pallid",61,61,1,nil,nil,nil,0}
-t[10439]={"Ramstein the Gorger",61,61,1,nil,nil,nil,0}
-t[10440]={"Baron Rivendare",62,62,1,nil,nil,nil,0}
-t[10441]={"Plagued Rat",55,55,0,nil,nil,nil,0}
+t[10432]={"Vectus",60,60,1,nil,"AH",nil,1,2057}
+t[10433]={"Marduk Blackpool",58,58,1,nil,"AH",nil,1,2057}
+t[10435]={"Magistrate Barthilas",58,58,1,nil,nil,nil,0,2017}
+t[10436]={"Baroness Anastari",59,59,1,nil,nil,nil,0,2017}
+t[10437]={"Nerub'enkan",60,60,1,nil,nil,nil,0,2017}
+t[10438]={"Maleki the Pallid",61,61,1,nil,nil,nil,0,2017}
+t[10439]={"Ramstein the Gorger",61,61,1,nil,nil,nil,0,2017}
+t[10440]={"Baron Rivendare",62,62,1,nil,nil,nil,0,2017}
+t[10441]={"Plagued Rat",55,55,0,nil,nil,nil,0,2017}
 t[10442]={"Chromatic Whelp",57,58,0,nil,nil,nil,0}
 t[10445]={"Selina Dourman",30,30,0,{[1412]={37.81,44.6},[1429]={41.72,69.22}},"AH","Darkmoon Faire Information",1}
-t[10447]={"Chromatic Dragonspawn",59,60,1,nil,nil,nil,0}
+t[10447]={"Chromatic Dragonspawn",59,60,1,nil,nil,nil,0,1583}
 t[10449]={"Emily Vaccar",40,40,0,nil,"A","Polearm Trainer",0}
 t[10451]={"Sarah Arello",40,40,0,nil,"A","Staves Trainer",0}
 t[10452]={"Farbrahm Steelfist",40,40,0,nil,"A","Mace Trainer",0}
@@ -6956,50 +6956,50 @@ t[10456]={"Prynne",40,40,0,{[1455]={46.45,7.44}},"A",nil,0}
 t[10459]={"Rend on Drake Visual",1,1,0,nil,"AH",nil,0}
 t[10460]={"Prospector Ironboot",48,48,0,{[1446]={66.89,24.03}},"AH",nil,2}
 t[10461]={"Plagued Insect",55,55,0,nil,nil,nil,0}
-t[10463]={"Shrieking Banshee",57,58,1,nil,nil,nil,0}
-t[10464]={"Wailing Banshee",58,59,1,nil,nil,nil,0}
+t[10463]={"Shrieking Banshee",57,58,1,nil,nil,nil,0,2017}
+t[10464]={"Wailing Banshee",58,59,1,nil,nil,nil,0,2017}
 t[10466]={"Styleen Silvercart",40,40,0,nil,"AH","Exotic Item Vendor",0}
 t[10467]={"Mana Tide Totem",42,42,0,nil,"AH",nil,0}
 t[10468]={"Felnok Steelspring",54,54,0,{[1452]={61.63,38.61}},"AH",nil,2}
-t[10469]={"Scholomance Adept",58,59,1,nil,nil,nil,0}
-t[10470]={"Scholomance Neophyte",57,58,1,nil,nil,nil,0}
-t[10471]={"Scholomance Acolyte",57,58,1,nil,nil,nil,0}
-t[10472]={"Scholomance Occultist",58,59,1,nil,nil,nil,0}
+t[10469]={"Scholomance Adept",58,59,1,nil,nil,nil,0,2057}
+t[10470]={"Scholomance Neophyte",57,58,1,nil,nil,nil,0,2057}
+t[10471]={"Scholomance Acolyte",57,58,1,nil,nil,nil,0,2057}
+t[10472]={"Scholomance Occultist",58,59,1,nil,nil,nil,0,2057}
 t[10473]={"Scholomance Shadowcaster",40,40,0,nil,nil,nil,0}
-t[10475]={"Scholomance Student",58,59,1,nil,"AH",nil,1}
-t[10476]={"Scholomance Necrolyte",57,58,1,nil,nil,nil,0}
-t[10477]={"Scholomance Necromancer",58,59,1,nil,nil,nil,0}
-t[10478]={"Splintered Skeleton",59,60,1,nil,nil,nil,0}
+t[10475]={"Scholomance Student",58,59,1,nil,"AH",nil,1,2057}
+t[10476]={"Scholomance Necrolyte",57,58,1,nil,nil,nil,0,2057}
+t[10477]={"Scholomance Necromancer",58,59,1,nil,nil,nil,0,2057}
+t[10478]={"Splintered Skeleton",59,60,1,nil,nil,nil,0,2057}
 t[10479]={"Skulking Corpse",58,59,0,nil,nil,nil,0}
-t[10480]={"Unstable Corpse",58,59,0,nil,nil,nil,0}
-t[10481]={"Reanimated Corpse",58,59,0,nil,nil,nil,0}
+t[10480]={"Unstable Corpse",58,59,0,nil,nil,nil,0,2057}
+t[10481]={"Reanimated Corpse",58,59,0,nil,nil,nil,0,2057}
 t[10482]={"Risen Lackey",55,56,0,nil,nil,nil,0}
 t[10483]={"Risen Flayer",40,41,0,nil,nil,nil,0}
 t[10484]={"Risen Terror",40,41,0,nil,nil,nil,0}
-t[10485]={"Risen Aberration",57,58,0,nil,nil,nil,0}
-t[10486]={"Risen Warrior",59,61,1,nil,nil,nil,0}
-t[10487]={"Risen Protector",58,60,1,nil,nil,nil,0}
-t[10488]={"Risen Construct",58,61,1,nil,nil,nil,0}
-t[10489]={"Risen Guard",57,59,1,nil,nil,nil,0}
-t[10491]={"Risen Bonewarder",58,59,1,nil,nil,nil,0}
+t[10485]={"Risen Aberration",57,58,0,nil,nil,nil,0,2057}
+t[10486]={"Risen Warrior",59,61,1,nil,nil,nil,0,2057}
+t[10487]={"Risen Protector",58,60,1,nil,nil,nil,0,2057}
+t[10488]={"Risen Construct",58,61,1,nil,nil,nil,0,2057}
+t[10489]={"Risen Guard",57,59,1,nil,nil,nil,0,2057}
+t[10491]={"Risen Bonewarder",58,59,1,nil,nil,nil,0,2057}
 t[10492]={"Risen Shadowmage",41,41,1,nil,nil,nil,0}
 t[10493]={"Risen Sorcerer",41,41,0,nil,nil,nil,0}
 t[10494]={"Decrepit Ghoul",40,41,0,nil,nil,nil,0}
-t[10495]={"Diseased Ghoul",58,59,1,nil,nil,nil,0}
+t[10495]={"Diseased Ghoul",58,59,1,nil,nil,nil,0,2057}
 t[10497]={"Ragged Ghoul",58,59,1,nil,nil,nil,0}
-t[10498]={"Spectral Tutor",58,60,1,nil,nil,nil,0}
-t[10499]={"Spectral Researcher",58,60,1,nil,nil,nil,0}
-t[10500]={"Spectral Teacher",58,61,1,nil,nil,nil,0}
-t[10502]={"Lady Illucia Barov",60,60,1,nil,nil,nil,0}
-t[10503]={"Jandice Barov",61,61,1,nil,nil,nil,0}
-t[10504]={"Lord Alexei Barov",60,60,1,nil,nil,nil,0}
-t[10505]={"Instructor Malicia",60,60,1,nil,nil,nil,2}
-t[10506]={"Kirtonos the Herald",60,60,1,nil,nil,nil,0}
-t[10507]={"The Ravenian",60,60,1,nil,nil,nil,0}
-t[10508]={"Ras Frostwhisper",62,62,1,nil,nil,nil,0}
-t[10509]={"Jed Runewatcher",59,59,2,nil,nil,"Blackhand Legion",0}
+t[10498]={"Spectral Tutor",58,60,1,nil,nil,nil,0,2057}
+t[10499]={"Spectral Researcher",58,60,1,nil,nil,nil,0,2057}
+t[10500]={"Spectral Teacher",58,61,1,nil,nil,nil,0,2057}
+t[10502]={"Lady Illucia Barov",60,60,1,nil,nil,nil,0,2057}
+t[10503]={"Jandice Barov",61,61,1,nil,nil,nil,0,2057}
+t[10504]={"Lord Alexei Barov",60,60,1,nil,nil,nil,0,2057}
+t[10505]={"Instructor Malicia",60,60,1,nil,nil,nil,2,2057}
+t[10506]={"Kirtonos the Herald",60,60,1,nil,nil,nil,0,2057}
+t[10507]={"The Ravenian",60,60,1,nil,nil,nil,0,2057}
+t[10508]={"Ras Frostwhisper",62,62,1,nil,nil,nil,0,2057}
+t[10509]={"Jed Runewatcher",59,59,2,nil,nil,"Blackhand Legion",0,1583}
 t[10510]={"Plagued Slime",44,44,0,nil,nil,nil,0}
-t[10516]={"The Unforgiven",57,57,1,nil,nil,nil,0}
+t[10516]={"The Unforgiven",57,57,1,nil,nil,nil,0,2017}
 t[10536]={"Plagued Maggot",55,55,0,nil,nil,nil,0}
 t[10537]={"Cliffwatcher Longhorn",55,55,0,{[1441]={45.67,50.74}},"H",nil,2}
 t[10538]={"Vaelastrasz",60,60,1,nil,"AH",nil,0}
@@ -7008,7 +7008,7 @@ t[10540]={"Vol'jin",60,60,3,{[1454]={34.34,36.33}},"H",nil,3}
 t[10541]={"Krakle's Thermometer",1,1,0,{[1449]={49,45}},"AH",nil,0}
 t[10556]={"Lazy Peon",4,4,0,{[1411]={43.9,57.78,46.74,60.66,47.1,57.87,45.65,65.7,40.94,60.41,47.56,69.34,44.67,72.82,38.83,61.8,41.27,72.69,42.83,57.24,42.34,73.25,44.98,69.13,41.27,58.94,47.16,65.45}},"H",nil,0}
 t[10557]={"Flametongue Totem IV",46,46,0,nil,"AH",nil,0}
-t[10558]={"Hearthsinger Forresten",57,57,2,nil,"AH",nil,0}
+t[10558]={"Hearthsinger Forresten",57,57,2,nil,"AH",nil,0,2017}
 t[10559]={"Lady Vespia",22,22,4,{[1440]={13.63,24.73,9.87,14.34}},nil,nil,0}
 t[10577]={"Crypt Scarab",1,1,0,nil,nil,nil,0}
 t[10578]={"Bom'bay",8,8,0,{[1411]={55.73,75.36}},"H","Witch Doctor in Training",1}
@@ -7017,8 +7017,8 @@ t[10580]={"Fetid Zombie",54,56,0,{[1422]={53.6,68.21,52.76,65.2,52.47,67.64}},ni
 t[10581]={"Young Arikara",20,20,1,nil,"AH",nil,0}
 t[10582]={"Dog",1,1,0,{[1441]={45.15,50.41}},"H","Sire",0}
 t[10583]={"Gryfe",55,55,1,{[1449]={45.23,5.83}},"AH","Flight Master",11}
-t[10584]={"Urok Doomhowl",60,60,2,nil,nil,nil,0}
-t[10596]={"Mother Smolderweb",59,59,1,nil,nil,nil,0}
+t[10584]={"Urok Doomhowl",60,60,2,nil,nil,nil,0,1583}
+t[10596]={"Mother Smolderweb",59,59,1,nil,nil,nil,0,1583}
 t[10598]={"Smolderweb Hatchling",1,1,0,nil,"A",nil,0}
 t[10599]={"Hulfnar Stonetotem",10,10,0,{[1412]={48.72,64.04}},"AH",nil,0}
 t[10600]={"Thontek Rumblehoof",11,11,0,{[1412]={48.61,63.4}},"AH",nil,0}
@@ -7066,11 +7066,11 @@ t[10666]={"Gordo",30,30,0,{[1420]={43.06,54.69}},"H",nil,3}
 t[10667]={"Chromie",63,63,0,{[1422]={39.46,66.76}},"AH",nil,3}
 t[10668]={"Beaten Corpse",16,16,0,{[1413]={49.33,50.32}},"H",nil,1}
 t[10676]={"Raider Jhash",35,35,0,{[1411]={44.05,68.3}},"H",nil,0}
-t[10678]={"Plagued Hatchling",57,59,0,nil,nil,nil,0}
-t[10680]={"Summoned Blackhand Dreadweaver",59,60,1,nil,nil,"Blackhand Legion",0}
-t[10681]={"Summoned Blackhand Veteran",59,60,1,nil,nil,"Blackhand Legion",0}
+t[10678]={"Plagued Hatchling",57,59,0,nil,nil,nil,0,2057}
+t[10680]={"Summoned Blackhand Dreadweaver",59,60,1,nil,nil,"Blackhand Legion",0,1583}
+t[10681]={"Summoned Blackhand Veteran",59,60,1,nil,nil,"Blackhand Legion",0,1583}
 t[10682]={"Raider Kerr",35,35,0,{[1411]={44.06,68.23}},"H",nil,0}
-t[10683]={"Rookery Hatcher",58,59,1,nil,nil,nil,0}
+t[10683]={"Rookery Hatcher",58,59,1,nil,nil,nil,0,1583}
 t[10684]={"Remorseful Highborne",56,56,0,{[1452]={56.14,44.36}},"A",nil,3}
 t[10685]={"Swine",3,3,0,{[1411]={42.98,15.66,43.02,14.86,43.47,30.04,42.84,15.16,42.66,15.13,42.82,14.94,48.29,15.66,42.59,14.87,43.83,30.17,48.55,15.67,48.53,15.97,48.53,16.16,48.72,16.16,42.97,15.36,43.56,30.23,43.82,30.08,48.27,15.9,48.96,16,48.81,15.76,43.62,30.12,42.71,15.41,43.68,30.18},[1413]={53.94,20.55,48.15,9.17,48.1,9.01,48.06,9.15,47.83,8.4,47.82,8.51,47.88,8.53,48,9.03,54.03,20.83,53.9,20.72,54.07,20.55,54.1,20.69}},"AH",nil,0}
 t[10696]={"Refuge Pointe Defender",41,45,0,{[1417]={46.81,43.42,48.58,42.67,44.99,43.36,43.21,48.25,44.74,51.79,43.75,46.22,48.58,42.67,45.16,47.66,46.61,48.22,47.04,47.24,48.11,45.34,48.08,44.56,46.55,45.45,47.04,45.88,46.63,45.42,46.35,46.12,43.15,50.59,46.41,45.81,44.54,48.52,44.33,48.35,45.82,49.66,47.64,48.67}},"A",nil,0}
@@ -7087,17 +7087,17 @@ t[10736]={"Unkillable Test Dummy 60 Mage",60,60,0,nil,"AH",nil,0}
 t[10737]={"Shy-Rotam",60,60,1,{[1452]={49.81,9.8}},nil,nil,0}
 t[10738]={"High Chief Winterfall",59,59,1,{[1452]={69.56,38.31}},nil,nil,0}
 t[10739]={"Mulgris Deepriver",55,55,0,{[1422]={53.73,64.66}},"AH",nil,3}
-t[10740]={"Awbee",57,57,1,nil,"AH",nil,3}
+t[10740]={"Awbee",57,57,1,nil,"AH",nil,3,1583}
 t[10741]={"Sian-Rotam",60,60,1,{[1452]={49.85,9.8}},nil,nil,0}
-t[10742]={"Blackhand Dragon Handler",59,60,1,nil,nil,"Blackhand Legion",0}
+t[10742]={"Blackhand Dragon Handler",59,60,1,nil,nil,"Blackhand Legion",0,1583}
 t[10756]={"Scalding Elemental",28,29,0,{[1441]={36.65,39.17,35.37,35.88,35.17,34.8,34.98,33.53,37.54,37.7}},nil,nil,0}
 t[10757]={"Boiling Elemental",27,28,0,{[1441]={35.9,34.64,37.47,39.13,33.59,33.53,32.82,34.61,36.84,37.08,36.85,37.97,34.51,33.52,33.61,32.55,36.66,34.66,35.83,35.63}},nil,nil,0}
 t[10758]={"Grimtotem Bandit",25,26,0,{[1441]={33.35,27.43,37.39,32.49,37.91,35.16,33.21,38.11,33.87,38.96,37.02,32.35,38.04,35.7}},nil,nil,0}
 t[10759]={"Grimtotem Stomper",26,27,0,{[1441]={33.96,38,34.06,37.96,34.43,36.89,33.09,35.43,33.23,27.34,37.47,32.27,38.46,26.91,34.25,36.49,34.93,31.98,32.33,32.66,35.13,39.16,38.9,40.61,32.81,27.03,35.3,31.24,34.96,31.03,37.77,35.26,38.44,35.38}},nil,nil,0}
 t[10760]={"Grimtotem Geomancer",25,27,0,{[1441]={34.04,37.21,34.5,38.12,34.38,37.05,32.11,30.08,33.04,28.04,37.4,31.76,38.56,27.79,37.95,26.83,33.42,36.73,34.49,39.1,33.62,38.62,33.08,28.03,35.36,31.17,35.41,30.96,38.23,35.02}},nil,nil,0}
 t[10761]={"Grimtotem Reaver",28,28,0,{[1441]={33.01,37.5,34.67,37.46,34.93,38.13,33.29,39.03,34.5,39.99,37.69,26.39,32.65,37.97,33.72,39.87,39.23,41.62}},nil,nil,0}
-t[10762]={"Blackhand Thug",60,60,1,nil,nil,nil,0}
-t[10776]={"Pip Quickwit",60,60,1,nil,"AH",nil,3}
+t[10762]={"Blackhand Thug",60,60,1,nil,nil,nil,0,1583}
+t[10776]={"Pip Quickwit",60,60,1,nil,"AH",nil,3,1583}
 t[10778]={"Janice Felstone",5,5,0,{[1422]={38.4,54.05}},"AH",nil,3}
 t[10779]={"Infected Squirrel",1,1,0,{[1421]={65.62,57.39,51.78,12.43,51.43,54.36},[1422]={52.29,38.58,49.02,47.94,48.59,42.86,55.13,31.29,49.7,54.67,38.96,79.15}},"AH",nil,0}
 t[10780]={"Infected Deer",5,5,0,{[1421]={41.56,24.69,51.62,76.8},[1422]={43.75,81.24,44.63,18.75,36.11,75.35,41.37,80.65,42.36,51.49,54.07,35.76,54.47,29,41.35,55.04,52.21,22.78}},"AH",nil,0}
@@ -7119,8 +7119,8 @@ t[10795]={"Orb of Deception (Human, Male)",1,1,0,nil,"AH",nil,0}
 t[10796]={"Orb of Deception (Human, Female)",1,1,0,nil,"AH",nil,0}
 t[10797]={"Orb of Deception (NightElf, Male)",1,1,0,nil,"AH",nil,0}
 t[10798]={"Orb of Deception (Nightelf, Female)",1,1,0,nil,"AH",nil,0}
-t[10799]={"Warosh",60,60,0,nil,"AH","The Cursed",2}
-t[10800]={"Warosh the Redeemed",60,60,0,nil,nil,nil,0}
+t[10799]={"Warosh",60,60,0,nil,"AH","The Cursed",2,1583}
+t[10800]={"Warosh the Redeemed",60,60,0,nil,nil,nil,0,1583}
 t[10801]={"Jabbering Ghoul",54,54,0,{[1422]={36.2,56.6,36.6,57.6,37,57.2,37.2,55.4,37.4,55.6,37.8,57.6,38,56.4,38,56.6,38.4,55.4,38.6,55.2,38.6,56.2}},nil,nil,0}
 t[10802]={"Hitah'ya the Keeper",51,51,1,{[1425]={57.32,86.64}},nil,nil,0}
 t[10803]={"Rifleman Wheeler",9,9,0,{[1426]={40.63,64.92}},"A",nil,0}
@@ -7128,12 +7128,12 @@ t[10804]={"Rifleman Middlecamp",9,9,0,{[1426]={40.64,64.98}},"A",nil,0}
 t[10805]={"Spotter Klemmy",6,6,0,{[1426]={40.66,64.88}},"A",nil,0}
 t[10806]={"Ursius",56,56,1,{[1452]={60.92,32.9}},nil,nil,0}
 t[10807]={"Brumeran",58,58,1,{[1452]={62.54,57.9}},nil,nil,0}
-t[10808]={"Timmy the Cruel",58,58,2,nil,nil,nil,0}
-t[10809]={"Stonespine",60,60,2,nil,nil,nil,0}
-t[10811]={"Archivist Galford",60,60,1,nil,nil,nil,0}
-t[10812]={"Grand Crusader Dathrohan",62,62,1,nil,nil,nil,0}
-t[10813]={"Balnazzar",62,62,1,nil,nil,nil,0}
-t[10814]={"Chromatic Elite Guard",59,60,1,nil,nil,nil,0}
+t[10808]={"Timmy the Cruel",58,58,2,nil,nil,nil,0,2017}
+t[10809]={"Stonespine",60,60,2,nil,nil,nil,0,2017}
+t[10811]={"Archivist Galford",60,60,1,nil,nil,nil,0,2017}
+t[10812]={"Grand Crusader Dathrohan",62,62,1,nil,nil,nil,0,2017}
+t[10813]={"Balnazzar",62,62,1,nil,nil,nil,0,2017}
+t[10814]={"Chromatic Elite Guard",59,60,1,nil,nil,nil,0,1583}
 t[10816]={"Wandering Skeleton",55,55,0,{[1422]={47.71,49.87}},nil,nil,0}
 t[10817]={"Duggan Wildhammer",55,55,4,{[1423]={33.7,59.69,32.52,52.85,12.67,51.75,9.72,61.39,18.2,68.53,23.6,65.02,31.22,52.4}},"A",nil,0}
 t[10818]={"Death Knight Soulbearer",43,43,4,nil,nil,nil,0}
@@ -7164,14 +7164,14 @@ t[10882]={"Arikara",28,28,1,{[1441]={38.09,35.38}},"AH","Vengeance",0}
 t[10896]={"Arnak Grimtotem",29,29,0,{[1441]={38.11,26.87}},nil,nil,0}
 t[10897]={"Sindrayl",55,55,1,{[1450]={48.1,67.34}},"A","Hippogryph Master",11}
 t[10898]={"Blackhand Armorsmith",59,59,1,nil,nil,"Blackhand Legion",0}
-t[10899]={"Goraluk Anvilcrack",61,61,1,nil,nil,"Blackhand Legion Armorsmith",0}
-t[10901]={"Lorekeeper Polkelt",60,60,1,nil,nil,nil,0}
+t[10899]={"Goraluk Anvilcrack",61,61,1,nil,nil,"Blackhand Legion Armorsmith",0,1583}
+t[10901]={"Lorekeeper Polkelt",60,60,1,nil,nil,nil,0,2057}
 t[10902]={"Andorhal Tower One",1,1,0,{[1422]={40.05,71.6}},"AH",nil,0}
 t[10903]={"Andorhal Tower Two",1,1,0,{[1422]={42.33,66.24}},"AH",nil,0}
 t[10904]={"Andorhal Tower Three",1,1,0,{[1422]={44.3,63.25}},"AH",nil,0}
 t[10905]={"Andorhal Tower Four",1,1,0,{[1422]={46.62,71.05}},"AH",nil,0}
 t[10916]={"Winterfall Runner",57,57,0,{[1448]={60.23,5.75},[1452]={27.96,34.52,27.96,34.42,27.9,34.48}},nil,nil,0}
-t[10917]={"Aurius",60,60,0,nil,"AH",nil,3}
+t[10917]={"Aurius",60,60,0,nil,"AH",nil,3,2017}
 t[10918]={"Lorax",61,61,0,{[1452]={63.79,73.76}},"AH",nil,3}
 t[10919]={"Shatterspear Troll",57,57,0,{[1439]={68.25,18.07,68.19,18,68.13,18.08,69.22,22.95,69.25,22.83,70.24,21.34,69.13,19.99,69.04,19.71,68.99,19.58,69.11,19.58,68.79,19.67,68.88,19.72,68.22,19.68,68.21,19.07,68.82,18.77,68.74,18.76,68.57,18.87,68.3,18.64,68.36,18.59,68.1,23.65,68.54,23.45,68.62,23.44,67.79,22.77,67.86,22.87,68.24,22.44,68.27,22.56,68.25,22.62,68.2,22.54,68.16,22.55,68.19,22.65,68.15,22.46,68.1,22.54,68.12,22.67,68.08,22.92,68.08,22.83,68.01,22.72,68.04,22.77,68.03,22.86,68.03,22.93,68.13,23.51,68.03,23.52,69.94,21.41,69.03,21.63,67.94,22.78}},"H",nil,0}
 t[10920]={"Kelek Skykeeper",57,57,0,{[1448]={51.14,81.75}},"AH","Emerald Circle",2}
@@ -7191,7 +7191,7 @@ t[10938]={"Redpath the Corrupted",60,60,1,nil,"AH",nil,0}
 t[10939]={"Marduk the Black",58,58,1,nil,"AH",nil,0}
 t[10940]={"Ghost of the Past",55,55,0,nil,nil,nil,0}
 t[10941]={"Wizlo Bearingshiner",31,31,0,{[1441]={21.43,32.55}},"H",nil,3}
-t[10942]={"Nessy",62,62,3,nil,"AH",nil,0}
+t[10942]={"Nessy",62,62,3,nil,"AH",nil,0,2257}
 t[10943]={"Decrepit Guardian",55,56,0,nil,nil,nil,0}
 t[10944]={"Davil Lightfire",60,60,1,nil,"AH",nil,0}
 t[10945]={"Davil Crokford",60,60,0,nil,"AH",nil,1}
@@ -7205,7 +7205,7 @@ t[10952]={"Marauding Skeleton",56,57,0,nil,nil,nil,0}
 t[10953]={"Servant of Horgus",57,58,1,nil,nil,nil,0}
 t[10954]={"Bloodletter",57,58,1,nil,"H",nil,2}
 t[10955]={"Summoned Water Elemental",55,56,0,nil,nil,nil,0}
-t[10956]={"Naga Siren",56,56,0,nil,"AH",nil,0}
+t[10956]={"Naga Siren",56,56,0,nil,"AH",nil,0,2257}
 t[10976]={"Jeziba",58,58,0,{[1422]={39.37,66.78}},"AH",nil,2}
 t[10977]={"Quixxil",53,53,0,{[1449]={43.66,9.37}},"AH",nil,2}
 t[10978]={"Legacki",57,57,0,{[1452]={61.54,38.61}},"AH",nil,2}
@@ -7225,7 +7225,7 @@ t[10991]={"Wildpaw Gnoll",52,53,0,{[1459]={53.48,93.06,51.93,97.42,52.36,90.95,5
 t[10992]={"Enraged Panther",30,30,1,{[1441]={22.76,24.62}},nil,nil,0}
 t[10993]={"Twizwick Sprocketgrind",25,25,0,{[1412]={58.65,39.38}},"AH","Journeyman Engineer",19}
 t[10996]={"Fallen Hero",58,59,1,{[1420]={82.8,72.7,83,71.4,83,71.5},[1422]={35.9,57.4,35.9,57.5,36.4,53.7,36.5,53.6,38.2,56.3,39.7,69.4,39.7,69.6,40.6,73.1,40.7,57.4,40.8,57.5,41.4,62.1,41.5,62.1,41.9,70.5,42.2,54.9,42.8,64.2,43.3,68.3,43.6,70.4,43.7,70.5,44.2,65,44.4,71.6,44.5,53.3,44.5,71.7,44.6,53.5,45.8,71.5,45.9,51.1,45.9,71.4,46.7,34.4,46.8,34.5,47,59.9,47,67.1,47.6,70,47.9,53.1,49.4,68.1,49.8,33.3,52.2,66.5,52.3,55,52.3,66.3,53,64.2,53.2,66.5,53.3,65.1,53.3,66.2,53.4,63.4,53.5,63.3,53.5,63.5,54.9,27.1,55.2,69.4,55.3,69.6,56.7,34.7,57.8,66.4,57.8,66.5,62,58.3,62,58.5,62.9,57.2,62.9,57.9,63.2,59.2,63.6,75.4,63.6,75.5,64,48.7,64.1,57.9,64.9,74.4,64.9,74.5,65.8,76.8,66.4,42.1,66.5,42.2,67,53.9,67.8,84.6,68,44.7,68.3,81.4,68.3,81.6,68.4,77.1,68.5,77.1,68.7,49.2,68.7,79.2,68.9,73.8,69.5,78.6},[1423]={4.74,41.87,5.55,45.29,11.13,54.48,16.35,51.15,16.8,56.46,17.7,62.76,18.24,72.85,20.22,75.64,21.75,63.48,22.02,59.7,22.38,58.8,22.74,64.29,22.92,53.85,24.27,73.66,24.63,67.18,26.16,55.2,27.15,60.15,28.59,25.58,28.95,68.44,29.22,57.27,29.31,65.46,29.4,19.45,30.38,62.22,30.65,64.47,31.37,30.44,31.55,59.79,31.73,55.38,32.18,57.9,32.9,24.22,32.99,44.84,33.26,20.26,33.35,28.73,34.34,41.15,35.6,67.99,35.69,55.38,36.5,64.47,38.75,25.85,39.92,59.97,40.01,53.85,40.19,63.57,41.09,32.96,41.45,68.26,42.35,56.73,42.53,28.19,43.61,37.19,43.7,65.91,44.96,59.52,46.49,41.87,48.29,49.08,48.92,53.76,49.19,64.74,49.73,69.97,50,60.96,50.36,64.74,50.63,67.99,50.9,54.57,51.08,67.9,51.62,52.23,51.71,69.07,51.89,64.65,52.25,57,53.96,59.43,55.58,57.18,56.57,55.11,56.57,69.16,57.92,43.94,59.18,56.37,59.72,59.79,59.81,63.39,60.08,66.82,60.26,68.98,60.35,71.23,60.44,60.6,61.88,68.98,61.97,58.8,62.33,64.02,63.32,66.82,64.31,65.73,64.4,59.07,64.4,70.15,64.58,65.37,64.76,42.23,65.03,71.68,65.57,49.08,66.38,46.02,66.65,71.41,66.83,66.64,66.92,41.6,67.36,61.41,68.89,48,69.16,56.82,69.25,53.4,70.69,50.07}},nil,nil,0}
-t[10997]={"Cannon Master Willey",60,60,1,nil,nil,nil,0}
+t[10997]={"Cannon Master Willey",60,60,1,nil,nil,nil,0,2017}
 t[11016]={"Captured Arko'narin",48,48,0,{[1448]={36.21,55.47}},"AH",nil,3}
 t[11017]={"Roxxik",46,46,0,{[1454]={76.17,25.17}},"H","Artisan Engineer",19}
 t[11018]={"Arko'narin",48,48,0,{[1448]={36.88,54.9}},"AH",nil,2}
@@ -7242,7 +7242,7 @@ t[11028]={"Jemma Quikswitch",24,24,0,{[1455]={67.66,44.21}},"A","Journeyman Engi
 t[11029]={"Trixie Quikswitch",31,31,0,{[1455]={67.48,42.91}},"A","Expert Engineer",19}
 t[11030]={"Mindless Undead",56,57,0,nil,nil,nil,0}
 t[11031]={"Franklin Lloyd",33,33,0,{[1458]={76.12,74.03}},"H","Expert Engineer",19}
-t[11032]={"Malor the Zealous",60,60,1,nil,nil,nil,0}
+t[11032]={"Malor the Zealous",60,60,1,nil,nil,nil,0,2017}
 t[11033]={"Smokey LaRue",55,55,0,{[1423]={70.88,48.43}},"AH",nil,3}
 t[11034]={"Lord Maxwell Tyrosus",62,62,0,{[1423]={71.9,48.41}},"AH","The Argent Dawn",2}
 t[11035]={"Betina Bigglezink",57,57,0,{[1423]={71.66,49.94}},"AH","The Argent Dawn",3}
@@ -7253,7 +7253,7 @@ t[11039]={"Duke Nicholas Zverenhoff",60,60,0,{[1423]={71.63,50.09}},"AH","The Ar
 t[11040]={"Watcher Brownell",30,30,0,{[1431]={74.57,45.39}},"A","The Night Watch",3}
 t[11041]={"Milla Fairancora",24,24,0,{[1457]={55.39,22.72}},"A","Journeyman Alchemist",19}
 t[11042]={"Sylvanna Forestmoon",32,32,0,{[1457]={56.38,24.23}},"A","Expert Alchemist",19}
-t[11043]={"Crimson Monk",58,60,1,nil,nil,nil,0}
+t[11043]={"Crimson Monk",58,60,1,nil,nil,nil,0,2017}
 t[11044]={"Doctor Martin Felben",25,25,0,{[1458]={46.61,74.09}},"H","Journeyman Alchemist Trainer",19}
 t[11045]={"Burns",45,45,0,nil,"A",nil,0}
 t[11046]={"Whuut",23,23,0,{[1454]={55.79,32.9}},"H","Journeyman Alchemist",17}
@@ -7268,7 +7268,7 @@ t[11054]={"Crimson Rifleman",57,58,0,nil,nil,nil,0}
 t[11055]={"Shadow Priestess Vandis",60,60,0,{[1420]={83.04,71.91}},"H",nil,3}
 t[11056]={"Alchemist Arbington",58,58,0,{[1422]={42.66,83.77}},"A",nil,7}
 t[11057]={"Apothecary Dithers",58,58,0,{[1420]={83.28,69.23}},"H",nil,7}
-t[11058]={"Ezra Grimm",61,61,1,nil,nil,nil,0}
+t[11058]={"Ezra Grimm",61,61,1,nil,nil,nil,0,2017}
 t[11063]={"Carlin Redpath",58,58,0,{[1423]={71.7,50.04}},"AH","The Argent Dawn",3}
 t[11064]={"Darrowshire Spirit",57,57,0,{[1423]={18.54,13.03,26.34,24.41,18.43,15.51,36.21,25.94,22.1,25.53,27.69,27.11,21.41,29.63,35.47,20.15,31.91,26,21,25.99,15.04,27.06,26.22,27.5,13.38,24.04,14.39,25.17,14.11,24.36,32.51,29.19,30.97,26.56,33.07,28.2,31.72,17.56,37.38,16.26,35.41,15.36,23.73,23.41,22.93,20.15,13.33,23.63,11.14,25.43,36.17,18.67,36.76,21.51,31.12,16.7,30.01,22.53,31.55,22.72,21.51,24.8,51.72,58.32,52.71,54.82,52.46,62.48,53.17,61.93,54.32,57.29,53.43,56.51,54.07,55.09,50.91,61.91,34.17,41.04,33.96,43.03,57.21,32.93,58.75,32.99,57.32,32.01,57.27,30.69,57.71,28.57,56.29,31.52,56.54,30.73,58.78,32.1,26.97,53.73,31.89,44.48,28.92,53.59,32.1,47.91,32.71,46.83,66.37,42.04,71.92,34.09,74.99,33.91,72.03,35.81,31.68,47.27,69.61,46.79,68.09,38.87}},"AH",nil,1}
 t[11065]={"Thonys Pillarstone",25,25,0,{[1455]={60.27,45.37}},"A","Journeyman Enchanter",17}
@@ -7279,7 +7279,7 @@ t[11069]={"Jenova Stoneshield",58,58,0,{[1453]={67.24,37.72}},"A","Stable Master
 t[11070]={"Lalina Summermoon",27,27,0,{[1457]={58.79,12.74}},"A","Journeyman Enchanter",19}
 t[11071]={"Mot Dawnstrider",21,21,0,{[1456]={44.61,38.5}},"H","Journeyman Enchanter",19}
 t[11072]={"Kitta Firewind",44,44,0,{[1429]={64.93,70.71}},"A","Artisan Enchanter",17}
-t[11073]={"Annora",54,54,0,nil,"AH","Master Enchanter",17}
+t[11073]={"Annora",54,54,0,nil,"AH","Master Enchanter",17,1337}
 t[11074]={"Hgarth",46,46,0,{[1442]={49.18,57.18}},"H","Artisan Enchanter",19}
 t[11075]={"Cauldron Lord Bilemaw",53,53,0,{[1422]={36.93,57.41}},nil,nil,0}
 t[11076]={"Cauldron Lord Razarch",56,56,0,{[1422]={52.88,66.08}},nil,nil,0}
@@ -7288,7 +7288,7 @@ t[11078]={"Cauldron Lord Soulwrath",58,58,0,{[1422]={62.18,59.06}},nil,nil,0}
 t[11079]={"Wynd Nightchaser",62,62,0,{[1452]={51.97,30.39}},"A",nil,3}
 t[11080]={"[PH[ Combat Tester",60,60,0,nil,nil,nil,0}
 t[11081]={"Faldron",32,32,0,{[1457]={64.77,21.82}},"A","Expert Leatherworker",19}
-t[11082]={"Stratholme Courier",57,57,1,nil,"AH",nil,0}
+t[11082]={"Stratholme Courier",57,57,1,nil,"AH",nil,0,2017}
 t[11083]={"Darianna",24,24,0,{[1457]={64.44,20.87}},"A","Journeyman Leatherworker",19}
 t[11084]={"Tarn",36,36,0,{[1456]={42.32,42.61}},"H","Expert Leatherworker",19}
 t[11096]={"Randal Worth",24,24,0,{[1453]={72.14,62.85}},"A","Journeyman Leatherworker",17}
@@ -7306,17 +7306,17 @@ t[11116]={"Innkeeper Abeqwa",30,30,0,{[1441]={46.07,51.52}},"H","Innkeeper",135}
 t[11117]={"Awenasa",30,30,0,{[1441]={45.77,51.07}},"H","Stable Master",8193}
 t[11118]={"Innkeeper Vizzie",30,30,0,{[1452]={61.36,38.83}},"AH","Innkeeper",135}
 t[11119]={"Azzleby",58,58,0,{[1452]={60.39,37.92}},"AH","Stable Master",8193}
-t[11120]={"Crimson Hammersmith",60,60,1,nil,nil,nil,0}
-t[11121]={"Black Guard Swordsmith",61,62,1,nil,nil,nil,0}
-t[11122]={"Restless Soul",1,1,0,nil,"AH",nil,0}
-t[11136]={"Freed Soul",1,1,0,nil,"AH",nil,0}
+t[11120]={"Crimson Hammersmith",60,60,1,nil,nil,nil,0,2017}
+t[11121]={"Black Guard Swordsmith",61,62,1,nil,nil,nil,0,2017}
+t[11122]={"Restless Soul",1,1,0,nil,"AH",nil,0,2017}
+t[11136]={"Freed Soul",1,1,0,nil,"AH",nil,0,2017}
 t[11137]={"Xai'ander",35,35,0,{[1440]={35.79,52.05}},"A","Weaponsmith",16388}
 t[11138]={"Maethrya",55,55,1,{[1452]={62.33,36.61}},"A","Hippogryph Master",11}
 t[11139]={"Yugrek",55,55,1,{[1452]={60.47,36.3}},"H","Wind Rider Master",11}
 t[11140]={"Egan",59,59,0,{[1423]={11.36,26.6}},"AH",nil,2}
 t[11141]={"Spirit of Trey Lightforge",53,53,1,nil,nil,nil,0}
-t[11142]={"Undead Postman",57,58,1,nil,nil,nil,2}
-t[11143]={"Postmaster Malown",60,60,1,nil,nil,nil,0}
+t[11142]={"Undead Postman",57,58,1,nil,nil,nil,2,2017}
+t[11143]={"Postmaster Malown",60,60,1,nil,nil,nil,0,2017}
 t[11144]={"Oracle Sphere",1,1,0,nil,"AH",nil,0}
 t[11145]={"Myolor Sunderfury",53,53,0,{[1455]={51.71,41.41}},"A",nil,3}
 t[11146]={"Ironus Coldsteel",54,54,0,{[1455]={50.33,43.56}},"A","Special Weapon Crafter",19}
@@ -7361,11 +7361,11 @@ t[11218]={"Kerlonian Evershade",20,20,0,{[1439]={44.4,76.43}},"A","Druid of the 
 t[11219]={"Liladris Moonriver",42,42,0,{[1440]={27.26,35.58}},"A",nil,2}
 t[11236]={"Blood Parrot",1,1,0,nil,"AH",nil,0}
 t[11256]={"Manifestation of Water",60,60,1,nil,nil,nil,0}
-t[11257]={"Scholomance Handler",59,60,1,nil,nil,nil,0}
+t[11257]={"Scholomance Handler",59,60,1,nil,nil,nil,0,2057}
 t[11258]={"Frail Skeleton",1,1,0,nil,nil,nil,0}
 t[11259]={"Nataka Longhorn",40,40,0,{[1443]={55.41,55.81}},"H",nil,2}
 t[11260]={"Northshire Peasant",1,1,0,{[1429]={50.73,38.84,51.51,39.63,52.17,41.13,51.17,42.89,50.1,44.41}},"A",nil,0}
-t[11261]={"Doctor Theolen Krastinov",60,60,1,nil,nil,"The Butcher",2}
+t[11261]={"Doctor Theolen Krastinov",60,60,1,nil,nil,"The Butcher",2,2057}
 t[11262]={"Onyxian Whelp",56,57,0,nil,nil,nil,0}
 t[11263]={"Spectral Projection",58,60,0,nil,nil,nil,0}
 t[11276]={"Azshara Sentinel",44,44,0,{[1447]={11.88,78.14,11.81,78.35}},"A",nil,0}
@@ -7388,50 +7388,50 @@ t[11292]={"Mossflayer Berserker",55,55,0,nil,nil,nil,0}
 t[11296]={"Darrowshire Poltergeist",1,1,0,nil,"AH",nil,0}
 t[11316]={"Joseph Dirte",31,31,0,{[1422]={67.98,74.77}},"AH","Waste Management",1}
 t[11317]={"Jinar'Zillen",37,37,0,{[1443]={22.45,73.12}},"H",nil,3}
-t[11318]={"Ragefire Trogg",13,15,1,nil,nil,nil,0}
-t[11319]={"Ragefire Shaman",13,15,1,nil,nil,nil,0}
-t[11320]={"Earthborer",13,14,1,nil,nil,nil,0}
-t[11321]={"Molten Elemental",13,15,1,nil,nil,nil,0}
-t[11322]={"Searing Blade Cultist",13,15,1,nil,nil,nil,0}
-t[11323]={"Searing Blade Enforcer",13,15,1,nil,nil,nil,0}
-t[11324]={"Searing Blade Warlock",13,15,1,nil,nil,nil,0}
+t[11318]={"Ragefire Trogg",13,15,1,nil,nil,nil,0,2437}
+t[11319]={"Ragefire Shaman",13,15,1,nil,nil,nil,0,2437}
+t[11320]={"Earthborer",13,14,1,nil,nil,nil,0,2437}
+t[11321]={"Molten Elemental",13,15,1,nil,nil,nil,0,2437}
+t[11322]={"Searing Blade Cultist",13,15,1,nil,nil,nil,0,2437}
+t[11323]={"Searing Blade Enforcer",13,15,1,nil,nil,nil,0,2437}
+t[11324]={"Searing Blade Warlock",13,15,1,nil,nil,nil,0,2437}
 t[11325]={"Panda Cub",1,1,0,nil,"A",nil,0}
 t[11326]={"Mini Diablo",1,1,0,nil,"A","Lord of Terror",0}
 t[11327]={"Zergling",1,1,0,nil,"A",nil,0}
 t[11328]={"Eastvale Peasant",7,7,0,{[1429]={81.83,68.94,81.23,67.44,82.37,68.68,80.92,68.99,82.55,68.96}},"A",nil,0}
-t[11338]={"Hakkari Shadowcaster",61,61,1,nil,nil,nil,0}
-t[11339]={"Hakkari Shadow Hunter",61,61,1,nil,nil,nil,0}
-t[11340]={"Hakkari Blood Priest",61,61,1,nil,nil,nil,0}
+t[11338]={"Hakkari Shadowcaster",61,61,1,nil,nil,nil,0,1977}
+t[11339]={"Hakkari Shadow Hunter",61,61,1,nil,nil,nil,0,1977}
+t[11340]={"Hakkari Blood Priest",61,61,1,nil,nil,nil,0,1977}
 t[11346]={"Hakkari Oracle",55,56,1,{[1434]={51.61,18.39,51.52,16.72,50.9,18.23,50.87,16.74,52.72,17.57,52.95,18.27,52.88,16.84,49.58,17.55,52.26,16.74}},nil,nil,0}
-t[11347]={"Zealot Lor'Khan",62,62,1,nil,nil,nil,0}
-t[11348]={"Zealot Zath",62,62,1,nil,nil,nil,0}
-t[11350]={"Gurubashi Axe Thrower",60,60,1,nil,nil,nil,0}
-t[11351]={"Gurubashi Headhunter",60,60,1,nil,nil,nil,0}
+t[11347]={"Zealot Lor'Khan",62,62,1,nil,nil,nil,0,1977}
+t[11348]={"Zealot Zath",62,62,1,nil,nil,nil,0,1977}
+t[11350]={"Gurubashi Axe Thrower",60,60,1,nil,nil,nil,0,1977}
+t[11351]={"Gurubashi Headhunter",60,60,1,nil,nil,nil,0,1977}
 t[11352]={"Gurubashi Berserker",62,62,1,{[1459]={55.51,68.85}},nil,nil,0}
-t[11353]={"Gurubashi Blood Drinker",60,60,1,nil,nil,nil,0}
+t[11353]={"Gurubashi Blood Drinker",60,60,1,nil,nil,nil,0,1977}
 t[11355]={"Gurubashi Warrior",54,55,1,{[1434]={51.29,16.74,51.68,18.56,51.31,18.4,51.61,16.85,50.82,18.37,50.72,16.77,51.61,17.72,51.61,17.41,52.89,17.67,52.9,17.44,52.97,18.36,53.02,18.28,52.91,16.75,52.96,16.83,50.57,18.31,50.54,16.77,50.29,15.96,48.99,17.71,48.99,17.41}},nil,nil,0}
-t[11356]={"Gurubashi Champion",61,61,1,nil,nil,nil,0}
-t[11357]={"Son of Hakkar",60,60,1,nil,nil,nil,0}
-t[11359]={"Soulflayer",61,61,1,nil,nil,nil,0}
-t[11360]={"Zulian Cub",60,60,0,nil,nil,nil,0}
-t[11361]={"Zulian Tiger",60,60,1,nil,nil,nil,0}
-t[11365]={"Zulian Panther",60,60,1,nil,nil,nil,0}
-t[11368]={"Bloodseeker Bat",60,60,0,nil,nil,nil,0}
-t[11370]={"Razzashi Broodwidow",61,61,1,nil,nil,nil,0}
-t[11371]={"Razzashi Serpent",60,60,1,nil,nil,nil,0}
-t[11372]={"Razzashi Adder",60,60,1,nil,nil,nil,0}
-t[11373]={"Razzashi Cobra",60,60,1,nil,nil,nil,0}
-t[11374]={"Hooktooth Frenzy",60,60,1,nil,nil,nil,0}
+t[11356]={"Gurubashi Champion",61,61,1,nil,nil,nil,0,1977}
+t[11357]={"Son of Hakkar",60,60,1,nil,nil,nil,0,1977}
+t[11359]={"Soulflayer",61,61,1,nil,nil,nil,0,1977}
+t[11360]={"Zulian Cub",60,60,0,nil,nil,nil,0,1977}
+t[11361]={"Zulian Tiger",60,60,1,nil,nil,nil,0,1977}
+t[11365]={"Zulian Panther",60,60,1,nil,nil,nil,0,1977}
+t[11368]={"Bloodseeker Bat",60,60,0,nil,nil,nil,0,1977}
+t[11370]={"Razzashi Broodwidow",61,61,1,nil,nil,nil,0,1977}
+t[11371]={"Razzashi Serpent",60,60,1,nil,nil,nil,0,1977}
+t[11372]={"Razzashi Adder",60,60,1,nil,nil,nil,0,1977}
+t[11373]={"Razzashi Cobra",60,60,1,nil,nil,nil,0,1977}
+t[11374]={"Hooktooth Frenzy",60,60,1,nil,nil,nil,0,1977}
 t[11378]={"Foreman Thazz'ril",4,4,0,{[1411]={44.63,68.65}},"H",nil,2}
-t[11380]={"Jin'do the Hexxer",63,63,3,nil,nil,nil,0}
+t[11380]={"Jin'do the Hexxer",63,63,3,nil,nil,nil,0,1977}
 t[11381]={"Jin",60,60,1,nil,nil,nil,0}
-t[11382]={"Bloodlord Mandokir",63,63,3,nil,nil,nil,0}
+t[11382]={"Bloodlord Mandokir",63,63,3,nil,nil,nil,0,1977}
 t[11383]={"High Priestess Hai'watna",57,57,1,{[1434]={50.69,16.44,51.44,18.41,51.41,16.74,50.89,17.57}},nil,nil,0}
-t[11387]={"Sandfury Speaker",61,61,0,nil,nil,"Sandfury Troll Ambassador",0}
-t[11388]={"Witherbark Speaker",61,61,0,nil,nil,"Witherbark Troll Ambassador",0}
-t[11389]={"Bloodscalp Speaker",61,61,0,nil,nil,"Bloodscalp Troll Ambassador",0}
-t[11390]={"Skullsplitter Speaker",61,61,0,nil,nil,"Skullsplitter Troll Ambassador",1}
-t[11391]={"Vilebranch Speaker",61,61,0,nil,nil,"Vilebranch Troll Ambassador",2}
+t[11387]={"Sandfury Speaker",61,61,0,nil,nil,"Sandfury Troll Ambassador",0,1977}
+t[11388]={"Witherbark Speaker",61,61,0,nil,nil,"Witherbark Troll Ambassador",0,1977}
+t[11389]={"Bloodscalp Speaker",61,61,0,nil,nil,"Bloodscalp Troll Ambassador",0,1977}
+t[11390]={"Skullsplitter Speaker",61,61,0,nil,nil,"Skullsplitter Troll Ambassador",1,1977}
+t[11391]={"Vilebranch Speaker",61,61,0,nil,nil,"Vilebranch Troll Ambassador",2,1977}
 t[11392]={"Audrey Vergara",30,30,0,nil,"A",nil,0}
 t[11393]={"Josh Miller",35,35,0,nil,"A",nil,0}
 t[11394]={"Lauren Preston",40,40,0,nil,"A",nil,0}
@@ -7461,62 +7461,62 @@ t[11437]={"Minor Infernal",29,30,0,nil,"AH",nil,0}
 t[11438]={"Bibbly F'utzbuckle",45,45,0,{[1443]={62.33,38.99}},"AH",nil,2}
 t[11439]={"Illusion of Jandice Barov",61,61,1,nil,nil,nil,0}
 t[11440]={"Gordok Enforcer",53,54,1,{[1444]={59.95,46.58,64.89,28.5,63.01,44.33,60.87,45.03,64.83,28.75,65.01,43.88,63.07,45.27,58.5,43.96,63.81,36.54,54.54,45.62,64.98,28.75,61.72,43.28,57.52,44.92,59.29,35.8,61.95,36.1,59.24,43.08,58.03,42.33,57.32,42.8,56.93,43.17,58.86,45.24,61.05,42.81,59.92,38.75,59.46,39.18,63.8,35.5,60.31,45.87,56.52,44.99,55.22,44.92,62.24,38.83,58.88,39.53,59.41,45.23,61.21,39.63,61.73,39.24,61.67,38.07,59.14,47.08,58.86,48.52,58.6,42.87,59.7,42.73,58.84,41.87,60.26,42.36,59.45,40.3}},nil,nil,0}
-t[11441]={"Gordok Brute",57,58,1,nil,nil,nil,1}
+t[11441]={"Gordok Brute",57,58,1,nil,nil,nil,1,10022}
 t[11442]={"Gordok Mauler",53,54,1,{[1444]={64.62,36.05,64.47,35.93,63.74,33.8,64.09,26.49,65.36,36.14,60.93,29.29,61.13,26.35,61.6,25.96,62.13,26.13,59.17,36,61.84,28.11,61.08,33.54,62.93,36.02,61.08,31.76,61.71,32.29,63.13,27.16,63.11,26.13,64.18,29.47,60.14,35.93,65.58,36.26,61.77,27.4,63.37,32.32,62.57,32.8,63.97,31.83,63.63,30.67,63.66,29.97}},nil,nil,0}
 t[11443]={"Gordok Ogre-Mage",52,53,1,{[1444]={59.95,46.58,64.89,28.5,64.62,36.05,64.98,28.75,59.24,43.08,58.03,42.33,58.86,45.24,59.92,38.75,59.46,39.18,64.47,35.93,65.36,36.14,61.08,33.54,63.11,26.13,64.28,45.6,54.98,45.45,60.88,44.2,55.24,44.22,54.02,45.6,53.69,44.81,63.8,35.5,64.22,33.17,61.33,44.32,55.84,43.48,60.31,45.87,60.14,35.93,56.52,44.99,58.29,45.95,62.43,43.56,55.22,44.92,62.65,44.26,56.99,44.22,62.58,45.6,62.01,43.7,65.58,36.26,63.67,45.52,58.64,44.4,62.97,33.76,64.58,44.52,57.85,45.79,61.04,27.26,61.12,28.04,61.77,27.4,62.63,26.72,56.03,45.33,65.61,35.78,62.24,38.83,62.21,27.51,61.56,28.98,61.44,30.79,58.88,39.53,59.41,45.23,61.21,39.63,61.73,39.24,62.22,35.88,63.78,35.85,61.67,38.07,60.98,35.98,62.02,32,63.37,32.32,62.57,32.8,63.97,31.83,63.63,30.67,63.66,29.97,63.69,29.1,63.38,27.31,63.92,27.99,59.14,47.08,58.86,48.52,58.6,42.87,59.7,42.73,56.64,43.25,58.84,41.87,60.26,42.36,59.45,40.3}},nil,nil,0}
-t[11444]={"Gordok Mage-Lord",57,58,1,nil,nil,nil,1}
-t[11445]={"Gordok Captain",59,60,1,nil,nil,nil,1}
-t[11446]={"Gordok Spirit",60,60,1,nil,nil,nil,0}
+t[11444]={"Gordok Mage-Lord",57,58,1,nil,nil,nil,1,10022}
+t[11445]={"Gordok Captain",59,60,1,nil,nil,nil,1,10022}
+t[11446]={"Gordok Spirit",60,60,1,nil,nil,nil,0,2557}
 t[11447]={"Mushgog",60,60,2,nil,nil,nil,0}
-t[11448]={"Gordok Warlock",59,60,1,nil,nil,nil,1}
-t[11450]={"Gordok Reaver",58,59,1,nil,nil,nil,1}
-t[11451]={"Wildspawn Satyr",55,56,1,nil,nil,nil,0}
-t[11452]={"Wildspawn Rogue",56,57,1,nil,nil,nil,0}
-t[11453]={"Wildspawn Trickster",56,57,1,nil,nil,nil,0}
-t[11454]={"Wildspawn Betrayer",55,56,1,nil,nil,nil,0}
-t[11455]={"Wildspawn Felsworn",55,56,1,nil,nil,nil,0}
-t[11456]={"Wildspawn Shadowstalker",56,56,1,nil,nil,nil,0}
-t[11457]={"Wildspawn Hellcaller",56,57,1,nil,nil,nil,0}
-t[11458]={"Petrified Treant",57,59,1,nil,nil,nil,0}
-t[11459]={"Ironbark Protector",57,59,1,nil,nil,nil,0}
-t[11460]={"Alzzin's Minion",56,56,0,nil,nil,nil,0}
-t[11461]={"Warpwood Guardian",57,58,1,nil,nil,nil,0}
-t[11462]={"Warpwood Treant",54,55,1,nil,nil,nil,0}
-t[11464]={"Warpwood Tangler",55,56,1,nil,nil,nil,0}
-t[11465]={"Warpwood Stomper",57,58,1,nil,nil,nil,0}
-t[11466]={"Highborne Summoner",55,55,1,nil,"AH",nil,0}
-t[11467]={"Tsu'zee",59,59,1,nil,nil,nil,0}
-t[11469]={"Eldreth Seether",58,59,1,nil,nil,nil,0}
-t[11470]={"Eldreth Sorcerer",58,59,1,nil,nil,nil,2}
-t[11471]={"Eldreth Apparition",57,58,1,nil,nil,nil,0}
-t[11472]={"Eldreth Spirit",57,58,1,nil,nil,nil,0}
-t[11473]={"Eldreth Spectre",58,59,1,nil,nil,nil,0}
+t[11448]={"Gordok Warlock",59,60,1,nil,nil,nil,1,10022}
+t[11450]={"Gordok Reaver",58,59,1,nil,nil,nil,1,10022}
+t[11451]={"Wildspawn Satyr",55,56,1,nil,nil,nil,0,10027}
+t[11452]={"Wildspawn Rogue",56,57,1,nil,nil,nil,0,10027}
+t[11453]={"Wildspawn Trickster",56,57,1,nil,nil,nil,0,10027}
+t[11454]={"Wildspawn Betrayer",55,56,1,nil,nil,nil,0,10027}
+t[11455]={"Wildspawn Felsworn",55,56,1,nil,nil,nil,0,10027}
+t[11456]={"Wildspawn Shadowstalker",56,56,1,nil,nil,nil,0,10027}
+t[11457]={"Wildspawn Hellcaller",56,57,1,nil,nil,nil,0,10027}
+t[11458]={"Petrified Treant",57,59,1,nil,nil,nil,0,10027}
+t[11459]={"Ironbark Protector",57,59,1,nil,nil,nil,0,10023}
+t[11460]={"Alzzin's Minion",56,56,0,nil,nil,nil,0,10027}
+t[11461]={"Warpwood Guardian",57,58,1,nil,nil,nil,0,10027}
+t[11462]={"Warpwood Treant",54,55,1,nil,nil,nil,0,10027}
+t[11464]={"Warpwood Tangler",55,56,1,nil,nil,nil,0,10027}
+t[11465]={"Warpwood Stomper",57,58,1,nil,nil,nil,0,10027}
+t[11466]={"Highborne Summoner",55,55,1,nil,"AH",nil,0,2557}
+t[11467]={"Tsu'zee",59,59,1,nil,nil,nil,0,10024}
+t[11469]={"Eldreth Seether",58,59,1,nil,nil,nil,0,10025}
+t[11470]={"Eldreth Sorcerer",58,59,1,nil,nil,nil,2,10025}
+t[11471]={"Eldreth Apparition",57,58,1,nil,nil,nil,0,10025}
+t[11472]={"Eldreth Spirit",57,58,1,nil,nil,nil,0,10025}
+t[11473]={"Eldreth Spectre",58,59,1,nil,nil,nil,0,10025}
 t[11474]={"Eldreth Wraith",42,43,1,nil,nil,nil,0}
-t[11475]={"Eldreth Phantasm",58,59,1,nil,nil,nil,0}
-t[11476]={"Skeletal Highborne",57,58,0,nil,nil,nil,0}
-t[11477]={"Rotting Highborne",58,59,0,nil,nil,nil,0}
+t[11475]={"Eldreth Phantasm",58,59,1,nil,nil,nil,0,10025}
+t[11476]={"Skeletal Highborne",57,58,0,nil,nil,nil,0,10023}
+t[11477]={"Rotting Highborne",58,59,0,nil,nil,nil,0,10023}
 t[11479]={"Arcane Horror",58,59,1,nil,nil,nil,0}
-t[11480]={"Arcane Aberration",59,60,1,nil,nil,nil,0}
-t[11483]={"Mana Remnant",57,59,1,nil,nil,nil,0}
-t[11484]={"Residual Monstrosity",59,60,1,nil,nil,nil,0}
-t[11486]={"Prince Tortheldrin",60,61,1,nil,"AH",nil,1}
-t[11487]={"Magister Kalendris",60,60,1,nil,nil,nil,0}
-t[11488]={"Illyanna Ravenoak",60,60,1,nil,nil,nil,0}
-t[11489]={"Tendris Warpwood",60,60,1,nil,nil,nil,0}
-t[11490]={"Zevrim Thornhoof",57,57,1,nil,nil,nil,0}
-t[11491]={"Old Ironbark",58,58,1,nil,"AH",nil,0}
-t[11492]={"Alzzin the Wildshaper",58,58,1,nil,nil,nil,0}
+t[11480]={"Arcane Aberration",59,60,1,nil,nil,nil,0,10025}
+t[11483]={"Mana Remnant",57,59,1,nil,nil,nil,0,10025}
+t[11484]={"Residual Monstrosity",59,60,1,nil,nil,nil,0,10025}
+t[11486]={"Prince Tortheldrin",60,61,1,nil,"AH",nil,1,10022}
+t[11487]={"Magister Kalendris",60,60,1,nil,nil,nil,0,10024}
+t[11488]={"Illyanna Ravenoak",60,60,1,nil,nil,nil,0,10023}
+t[11489]={"Tendris Warpwood",60,60,1,nil,nil,nil,0,10023}
+t[11490]={"Zevrim Thornhoof",57,57,1,nil,nil,nil,0,10027}
+t[11491]={"Old Ironbark",58,58,1,nil,"AH",nil,0,10027}
+t[11492]={"Alzzin the Wildshaper",58,58,1,nil,nil,nil,0,10027}
 t[11494]={"Alzinn Trigger",1,1,1,nil,"AH",nil,0}
-t[11496]={"Immol'thar",61,61,1,nil,nil,nil,0}
+t[11496]={"Immol'thar",61,61,1,nil,nil,nil,0,10025}
 t[11497]={"The Razza",60,60,2,nil,nil,nil,0}
 t[11498]={"Skarr the Unbreakable",58,58,2,{[1444]={62.5,30.37}},nil,nil,0}
-t[11501]={"King Gordok",61,62,1,nil,nil,nil,0}
-t[11502]={"Ragnaros",63,63,3,nil,nil,nil,0}
+t[11501]={"King Gordok",61,62,1,nil,nil,nil,0,10022}
+t[11502]={"Ragnaros",63,63,3,nil,nil,nil,0,2717}
 t[11516]={"Timbermaw Warder",53,54,0,{[1448]={65.57,2.91,65.46,2.59,65.31,2.91,65.32,2.6,65.2,6.61,64.93,5.58,64.74,3.78,65.06,2.97,64.41,3.86,66.52,3.55,66.84,3.42,67.89,4.75}},nil,nil,0}
-t[11517]={"Oggleflint",16,16,1,nil,nil,"Ragefire Chieftain",0}
-t[11518]={"Jergosh the Invoker",16,16,1,nil,nil,nil,0}
-t[11519]={"Bazzalan",16,16,1,nil,nil,nil,0}
-t[11520]={"Taragaman the Hungerer",16,16,1,nil,nil,nil,0}
+t[11517]={"Oggleflint",16,16,1,nil,nil,"Ragefire Chieftain",0,2437}
+t[11518]={"Jergosh the Invoker",16,16,1,nil,nil,nil,0,2437}
+t[11519]={"Bazzalan",16,16,1,nil,nil,nil,0,2437}
+t[11520]={"Taragaman the Hungerer",16,16,1,nil,nil,nil,0,2437}
 t[11521]={"Kodo Apparition",37,38,0,nil,nil,nil,0}
 t[11536]={"Quartermaster Miranda Breechlock",58,58,0,{[1423]={71.79,50.25}},"AH","The Argent Dawn",7}
 t[11537]={"TEST GEAR PALADIN",1,1,0,nil,"AH",nil,0}
@@ -7535,7 +7535,7 @@ t[11549]={"Austin Burwell",40,40,0,nil,"A",nil,0}
 t[11550]={"Taylor Burwell",40,40,0,nil,"A",nil,0}
 end f() end
 do local function f()
-t[11551]={"Necrofiend",58,60,1,nil,nil,nil,0}
+t[11551]={"Necrofiend",58,60,1,nil,nil,nil,0,2057}
 t[11552]={"Timbermaw Mystic",52,54,0,{[1448]={64.69,4.54,64.54,3.38,65.8,0.86,68.05,5.32}},nil,nil,0}
 t[11553]={"Timbermaw Woodbender",52,53,0,{[1448]={65.65,0.9,65.58,2.82,65.17,7.89},[1450]={35.72,72.25}},nil,nil,0}
 t[11554]={"Grazle",55,55,0,{[1448]={50.93,85.01}},"AH",nil,3}
@@ -7555,11 +7555,11 @@ t[11578]={"Whirlwind Shredder",32,34,0,{[1443]={62.58,79.24,61.9,76.8,61.65,80.0
 t[11579]={"Tempest",41,41,0,nil,nil,nil,0}
 t[11580]={"Kelemis the Lifeless",41,41,4,nil,nil,nil,0}
 t[11581]={"Scarlet Assassin",54,56,1,nil,nil,nil,0}
-t[11582]={"Scholomance Dark Summoner",58,59,1,nil,nil,nil,0}
-t[11583]={"Nefarian",63,63,3,nil,nil,nil,0}
+t[11582]={"Scholomance Dark Summoner",58,59,1,nil,nil,nil,0,2057}
+t[11583]={"Nefarian",63,63,3,nil,nil,nil,0,2677}
 t[11596]={"Smeed Scrabblescrew",45,45,0,{[1443]={60.86,61.86}},"AH",nil,2}
 t[11597]={"Cheveyo",40,40,0,nil,"AH",nil,0}
-t[11598]={"Risen Guardian",59,61,0,nil,nil,nil,0}
+t[11598]={"Risen Guardian",59,61,0,nil,nil,nil,0,2057}
 t[11599]={"Irondeep Geomancer UNUSED",53,54,1,nil,nil,nil,0}
 t[11600]={"Irondeep Shaman",53,54,0,{[1459]={52.43,4.59,50.95,5.24,49.85,5.68,52.94,6.21,51.21,6.28,52.35,6.61,51.65,7.12,50.1,7.41,51.52,7.46,51.29,7.69,52.41,8.03,50.59,8.28,50.23,8.44,51.99,8.61,50.8,8.75,52.83,9.15,49.64,9.2,52.5,7.71,52.77,4.54,49.74,4.79,50.45,5.26,51.93,5.63,53.27,6.49,50.03,6.65,51.48,7.22,51.9,7.34,51.38,8.07,51.36,8.1,51.25,8.3,51.22,8.97,51.93,9.13,50.28,9.17,52.79,9.47,49.73,9.79}},nil,nil,0}
 t[11601]={"Irondeep Cave Lurker UNUSED",52,53,1,nil,nil,nil,0}
@@ -7581,7 +7581,7 @@ t[11618]={"Archmage Antonio",57,57,0,nil,"AH",nil,0}
 t[11619]={"Merchant Bolden",57,57,0,nil,"AH",nil,0}
 t[11620]={"Spectral Marauder",57,57,0,{[1423]={47.33,55.43,47.44,55.59,47.01,55.7,47.21,55.75}},nil,nil,0}
 t[11621]={"Spectral Corpse",57,57,0,{[1423]={46.98,55.54,46.94,55.62,47.53,55.65,47.06,55.51,47.38,55.54,47.33,55.54}},"AH",nil,0}
-t[11622]={"Rattlegore",61,61,1,nil,nil,nil,0}
+t[11622]={"Rattlegore",61,61,1,nil,nil,nil,0,2057}
 t[11623]={"Scourge Summoning Crystal",60,60,0,nil,"AH",nil,0}
 t[11624]={"Taiga Wisemane",60,60,0,{[1443]={25.82,68.21}},"H",nil,2}
 t[11625]={"Cork Gizelton",38,38,0,{[1443]={66.54,37.51}},"AH",nil,3}
@@ -7593,20 +7593,20 @@ t[11636]={"Servant of Weldon Barov",60,60,0,nil,"A",nil,0}
 t[11637]={"Servant of Alexi Barov",60,60,0,nil,"H",nil,0}
 t[11656]={"Horde Peon",26,27,0,{[1440]={85.27,63.86,85.66,55.67,86.74,56.66,84.33,62.96,85.05,56.04,85.84,58.57,84.11,62.94,84.18,63.46,83.38,60.75,83.86,61.08,85.17,58.79,71.41,82.3,83.67,62.89,70.49,82.54,71.69,80.29,85.64,58.23,72.86,78.98,84.27,58.32,85.9,55.04,85.65,57.77,86.09,58.08,83.6,56.32,86.93,57.07,84.44,61.53,69.19,83.53,88.48,54.1,85.57,57.36,85.41,59.16,87.74,52.61,88.02,53.72,86.97,55.35,88.49,50.97,88.96,52.12,84.58,60.85,85.02,61.11,86.75,55.84,83.68,59.08,87.36,63.69,88.61,64.28,87.85,64.25}},"H",nil,0}
 t[11657]={"Morloch",58,58,0,{[1459]={52.39,7.78}},nil,nil,0}
-t[11658]={"Molten Giant",62,62,1,nil,nil,nil,0}
-t[11659]={"Molten Destroyer",63,63,1,nil,nil,nil,0}
-t[11661]={"Flamewaker",62,62,1,nil,nil,nil,0}
-t[11662]={"Flamewaker Priest",62,62,1,nil,nil,nil,0}
-t[11663]={"Flamewaker Healer",60,60,1,nil,nil,nil,0}
-t[11664]={"Flamewaker Elite",62,62,1,nil,nil,nil,0}
-t[11665]={"Lava Annihilator",61,62,1,nil,nil,nil,0}
-t[11666]={"Firewalker",61,62,1,nil,nil,nil,0}
-t[11667]={"Flameguard",61,62,1,nil,nil,nil,0}
-t[11668]={"Firelord",61,62,1,nil,nil,nil,0}
-t[11669]={"Flame Imp",61,62,1,nil,nil,nil,0}
-t[11671]={"Core Hound",61,61,1,nil,nil,nil,0}
-t[11672]={"Core Rager",62,62,1,nil,nil,nil,0}
-t[11673]={"Ancient Core Hound",62,62,1,nil,nil,nil,0}
+t[11658]={"Molten Giant",62,62,1,nil,nil,nil,0,2717}
+t[11659]={"Molten Destroyer",63,63,1,nil,nil,nil,0,2717}
+t[11661]={"Flamewaker",62,62,1,nil,nil,nil,0,2717}
+t[11662]={"Flamewaker Priest",62,62,1,nil,nil,nil,0,2717}
+t[11663]={"Flamewaker Healer",60,60,1,nil,nil,nil,0,2717}
+t[11664]={"Flamewaker Elite",62,62,1,nil,nil,nil,0,2717}
+t[11665]={"Lava Annihilator",61,62,1,nil,nil,nil,0,2717}
+t[11666]={"Firewalker",61,62,1,nil,nil,nil,0,2717}
+t[11667]={"Flameguard",61,62,1,nil,nil,nil,0,2717}
+t[11668]={"Firelord",61,62,1,nil,nil,nil,0,2717}
+t[11669]={"Flame Imp",61,62,1,nil,nil,nil,0,2717}
+t[11671]={"Core Hound",61,61,1,nil,nil,nil,0,2717}
+t[11672]={"Core Rager",62,62,1,nil,nil,nil,0,2717}
+t[11673]={"Ancient Core Hound",62,62,1,nil,nil,nil,0,2717}
 t[11675]={"Snowblind Windcaller",53,54,0,{[1459]={41.22,37.64,39.75,31.55,39.42,30.71,41.88,28.87,49.56,27.32,42.98,23.01,49.53,27.27}},nil,nil,0}
 t[11676]={"Fjordune the Greater",2,2,1,nil,nil,nil,0}
 t[11677]={"Taskmaster Snivvle",58,58,0,{[1459]={44.19,68.4,44.23,68.47}},nil,nil,0}
@@ -7693,18 +7693,18 @@ t[11779]={"Shadowshard Thunderer",38,38,1,nil,nil,nil,0}
 t[11780]={"Ambershard Rager",36,36,1,nil,nil,nil,0}
 t[11781]={"Ambershard Crusher",40,41,1,{[1443]={32.17,64.3,29.6,64.15}},nil,nil,0}
 t[11782]={"Ambershard Destroyer",42,43,1,{[1443]={35.36,61.44,33.81,65.35}},nil,nil,0}
-t[11783]={"Theradrim Shardling",46,46,0,nil,nil,nil,0}
-t[11784]={"Theradrim Guardian",47,48,1,nil,nil,nil,0}
+t[11783]={"Theradrim Shardling",46,46,0,nil,nil,nil,0,2100}
+t[11784]={"Theradrim Guardian",47,48,1,nil,nil,nil,0,2100}
 t[11785]={"Ambereye Basilisk",40,41,1,{[1443]={33.99,68.35,35.17,61.06,34.4,66.66,33.24,67.67,31.48,64.58,30.19,65.32,33.83,66.06,34.18,63.87,35.09,64.14,32.62,66.56,33.82,59.82,35.21,63.58,33.89,62.06,35.03,58.91}},nil,nil,0}
 t[11786]={"Ambereye Reaver",41,42,1,{[1443]={29.71,65.47,32.51,63.72,36.57,60.8,36.41,61.16,34.72,62.6,34.06,60.96,36.64,62.78,34.94,61.28}},nil,nil,0}
 t[11787]={"Rock Borer",40,41,1,{[1443]={27.33,54.91,27.52,54.17,26.66,56.37,29.62,57.29,29.1,57.27,28.46,56.06,27.75,55.23,28.31,54.98,29.39,56.43,28.16,56.4}},nil,nil,0}
 t[11788]={"Rock Worm",41,42,1,{[1443]={28.62,53.32,27.31,55.92,27.9,56.29,26.65,55.32,26.69,54.87,29.7,58.32,28.78,56.96,29.28,55.84,28.29,57.2,29.49,55.41}},nil,nil,0}
-t[11789]={"Deep Borer",46,48,0,nil,nil,nil,0}
-t[11790]={"Putridus Satyr",43,44,1,nil,nil,nil,0}
-t[11791]={"Putridus Trickster",43,45,1,nil,nil,nil,0}
-t[11792]={"Putridus Shadowstalker",42,43,1,nil,nil,nil,0}
-t[11793]={"Celebrian Dryad",45,46,1,nil,nil,nil,0}
-t[11794]={"Sister of Celebrian",45,47,1,nil,nil,nil,0}
+t[11789]={"Deep Borer",46,48,0,nil,nil,nil,0,2100}
+t[11790]={"Putridus Satyr",43,44,1,nil,nil,nil,0,2100}
+t[11791]={"Putridus Trickster",43,45,1,nil,nil,nil,0,2100}
+t[11792]={"Putridus Shadowstalker",42,43,1,nil,nil,nil,0,2100}
+t[11793]={"Celebrian Dryad",45,46,1,nil,nil,nil,0,2100}
+t[11794]={"Sister of Celebrian",45,47,1,nil,nil,nil,0,2100}
 t[11795]={"Mylentha Riverbend",60,60,0,{[1450]={51.77,32.58}},"AH",nil,0}
 t[11796]={"Bessany Plainswind",60,60,0,{[1450]={48.31,31.59}},"AH",nil,0}
 t[11797]={"Moren Riverbend",60,60,0,{[1450]={49.79,43.23}},"AH",nil,0}
@@ -7740,11 +7740,11 @@ t[11826]={"Kristy Grant",45,45,0,{[1444]={89.42,45.99}},"A",nil,2}
 t[11827]={"Kimberly Grant",35,35,0,{[1453]={37.78,64.8}},"A",nil,2}
 t[11828]={"Kelly Grant",40,40,0,{[1453]={37.82,64.85}},"A",nil,2}
 t[11829]={"Fahrak",42,42,0,{[1440]={73.14,61.38}},"H",nil,2}
-t[11830]={"Hakkari Priest",60,60,1,nil,nil,nil,0}
-t[11831]={"Hakkari Witch Doctor",60,60,1,nil,nil,nil,0}
+t[11830]={"Hakkari Priest",60,60,1,nil,nil,nil,0,1977}
+t[11831]={"Hakkari Witch Doctor",60,60,1,nil,nil,nil,0,1977}
 t[11832]={"Keeper Remulos",62,62,1,{[1450]={36.18,41.79}},"AH",nil,3}
 t[11833]={"Rahauro",20,20,0,{[1456]={70.14,29.52}},"H","Magatha's Servant",3}
-t[11834]={"Maur Grimtotem",14,14,0,nil,"AH",nil,2}
+t[11834]={"Maur Grimtotem",14,14,0,nil,"AH",nil,2,2437}
 t[11835]={"Theodore Griffs",50,50,0,{[1458]={46.31,71.91}},"AH",nil,3}
 t[11836]={"Captured Rabid Thistle Bear",14,14,0,{[1439]={49.1,29.89,49.95,34.58,39,63.09,38.62,77,39.28,68.07}},"AH",nil,0}
 t[11837]={"Wildpaw Shaman",53,54,0,{[1459]={51.28,95.69,51.41,93.86}},nil,nil,0}
@@ -7827,15 +7827,15 @@ t[11956]={"Great Bear Spirit",60,60,0,{[1450]={39.11,27.5}},"AH",nil,3}
 t[11957]={"Great Cat Spirit",60,60,0,{[1450]={58.39,73.52}},"AH",nil,2}
 t[11958]={"Gracchus Spiritlight",60,60,1,nil,"AH","Argent Dawn",0}
 t[11979]={"Kim Bridenbecker",25,25,0,{[1429]={35.85,59.34}},"A",nil,0}
-t[11981]={"Flamegor",63,63,3,nil,nil,nil,0}
-t[11982]={"Magmadar",63,63,3,nil,nil,nil,0}
-t[11983]={"Firemaw",63,63,3,nil,nil,nil,0}
-t[11988]={"Golemagg the Incinerator",63,63,3,nil,nil,nil,0}
+t[11981]={"Flamegor",63,63,3,nil,nil,nil,0,2677}
+t[11982]={"Magmadar",63,63,3,nil,nil,nil,0,2717}
+t[11983]={"Firemaw",63,63,3,nil,nil,nil,0,2677}
+t[11988]={"Golemagg the Incinerator",63,63,3,nil,nil,nil,0,2717}
 t[11994]={"Rob Bridenbecker",25,25,0,{[1429]={36.04,59.2}},"A",nil,0}
 t[11996]={"Ashley Bridenbecker",1,1,0,{[1429]={36.44,59.57}},"A",nil,0}
 t[11997]={"Stormpike Herald",60,60,0,{[1459]={53.79,10.44,54.32,5.48,60.05,92.9}},"A",nil,0}
 t[11998]={"Frostwolf Herald",60,60,0,{[1459]={55.51,68.74}},"H",nil,0}
-t[12017]={"Broodlord Lashlayer",63,63,3,nil,nil,nil,0}
+t[12017]={"Broodlord Lashlayer",63,63,3,nil,nil,nil,0,2677}
 t[12018]={"Majordomo Executus",63,63,3,nil,nil,nil,0}
 t[12019]={"Dargon",51,51,0,{[1450]={48.87,39.16}},"AH","Food & Drink Merchant",6}
 t[12020]={"Moonglade Alchemy Trainer",51,51,0,nil,"AH","Artisan Alchemist",0}
@@ -7870,18 +7870,18 @@ t[12051]={"Frostwolf Legionnaire",56,57,0,{[1459]={46.16,58.07,46.35,57.41,45.79
 t[12052]={"Frostwolf Warrior",55,55,0,nil,"H",nil,0}
 t[12053]={"Frostwolf Guardian",58,58,0,{[1459]={48.93,83.95,48.15,81.25,49.65,88.66,48.93,85.74,48.36,84.11,50.46,79.47,48.42,84.59,49.55,88.75,46.23,56.13,50.34,79.57,48.3,84.62,50.59,81.68,48.87,86.47,50.25,79.52,48.3,84.94,50.57,81.51,47.91,81.18,49.84,82.24,48.56,84.89,48.76,86,42.73,15.94,42.81,15.68,42.69,15.68,42.83,15.91,49.05,14.73,48.93,14.56,48.84,14.81,48.97,14.91,51.62,35.53,51.69,35.66,51.64,35.82,51.52,35.65,44.65,45.76,44.68,45.43,44.79,45.6,44.59,45.57,51.33,60.21,51.3,59.96,51.48,60.01,51.43,60.23,50.06,76.57,49.91,76.75,50.09,77.03,50.17,76.71,49.39,88.3,49.24,88.23,49.22,88,49.38,87.99}},"H",nil,0}
 t[12054]={"Dawnchaser",60,60,0,nil,"AH",nil,0}
-t[12056]={"Baron Geddon",63,63,3,nil,nil,nil,0}
-t[12057]={"Garr",63,63,3,nil,nil,nil,0}
-t[12076]={"Lava Elemental",61,62,1,nil,nil,nil,0}
+t[12056]={"Baron Geddon",63,63,3,nil,nil,nil,0,2717}
+t[12057]={"Garr",63,63,3,nil,nil,nil,0,2717}
+t[12076]={"Lava Elemental",61,62,1,nil,nil,nil,0,2717}
 t[12096]={"Stormpike Quartermaster",55,55,0,{[1459]={43.12,17.62}},"A",nil,7}
 t[12097]={"Frostwolf Quartermaster",55,55,0,{[1459]={46.62,84.22}},"H",nil,6}
-t[12098]={"Sulfuron Harbinger",63,63,3,nil,nil,nil,0}
-t[12099]={"Firesworn",60,60,1,nil,nil,nil,0}
-t[12100]={"Lava Reaver",62,63,1,nil,nil,nil,0}
-t[12101]={"Lava Surger",61,62,1,nil,nil,nil,0}
+t[12098]={"Sulfuron Harbinger",63,63,3,nil,nil,nil,0,2717}
+t[12099]={"Firesworn",60,60,1,nil,nil,nil,0,2717}
+t[12100]={"Lava Reaver",62,63,1,nil,nil,nil,0,2717}
+t[12101]={"Lava Surger",61,62,1,nil,nil,nil,0,2717}
 t[12116]={"Priestess of Elune",1,1,2,nil,"AH",nil,0}
-t[12118]={"Lucifron",63,63,3,nil,nil,nil,0}
-t[12119]={"Flamewaker Protector",62,62,1,nil,nil,nil,0}
+t[12118]={"Lucifron",63,63,3,nil,nil,nil,0,2717}
+t[12119]={"Flamewaker Protector",62,62,1,nil,nil,nil,0,2717}
 t[12120]={"Plagueland Termite",1,1,0,nil,"AH",nil,0}
 t[12121]={"Draka",60,60,1,{[1459]={46.9,86.77}},"H",nil,2}
 t[12122]={"Duros",60,60,1,{[1459]={47.03,87.3}},"H",nil,2}
@@ -7891,7 +7891,7 @@ t[12125]={"Mammoth Shark",54,54,1,{[1447]={79.62,91.51,78.11,94.64,61.11,52.25,6
 t[12126]={"Lord Tirion Fordring",63,63,1,{[1422]={53.95,24.45}},"AH","Order of the Silver Hand",2}
 t[12127]={"Stormpike Guardsman",57,57,0,{[1459]={45.61,16.36,47.53,16.32,42.54,12.8,47.48,15.85,44.6,15.52,43.33,15.85,42.9,15.04,42.56,15.19,48.43,15.56,46.56,16.55,44.45,15.55,42.05,13.02,48.46,16.2,50.93,22.63,51.46,18.98,51.5,18.96,51.64,31.6,52.32,22.8,51.59,31.59,51.29,25.84,50.89,22.63,52.26,13.72,49.86,16.8,49.82,16.84,52.26,13.79,52.31,22.73}},"A",nil,0}
 t[12128]={"Crimson Elite",60,60,1,{[1422]={51.93,23.82}},nil,nil,0}
-t[12129]={"Onyxian Warder",60,63,1,nil,nil,nil,0}
+t[12129]={"Onyxian Warder",60,63,1,nil,nil,nil,0,2159}
 t[12136]={"Snurk Bucksquick",45,45,0,{[1411]={50.69,12.89}},"H","Zeppelin Master",1}
 t[12137]={"Squibby Overspeck",45,45,0,{[1434]={31.54,29.36}},"H","Zeppelin Master",1}
 t[12138]={"Lunaclaw",12,12,0,nil,nil,nil,0}
@@ -7923,32 +7923,32 @@ t[12197]={"Glordrum Steelbeard",61,61,1,{[1455]={69.85,90.38}},"A","Alterac Vall
 t[12198]={"Martin Lindsey",61,61,1,{[1456]={28.69,20.86}},"H","Arathi Basin Battlemaster",2049}
 t[12199]={"Shade of Ambermoon",58,58,0,{[1451]={62.72,49.76}},nil,nil,0}
 t[12200]={"Cobaltine Wyrmkin",49,50,1,nil,nil,nil,0}
-t[12201]={"Princess Theradras",51,51,1,nil,nil,nil,0}
+t[12201]={"Princess Theradras",51,51,1,nil,nil,nil,0,2100}
 t[12202]={"Human Skull",1,1,0,{[1423]={22.42,64.49,22.05,64.26,22.55,64.11,22.02,62.87,22.6,63,22.34,62.69,22.26,64.12,22.6,63.61}},"AH",nil,0}
-t[12203]={"Landslide",50,50,1,nil,nil,nil,0}
+t[12203]={"Landslide",50,50,1,nil,nil,nil,0,2100}
 t[12204]={"Spitelash Raider",48,49,0,nil,nil,nil,0}
 t[12205]={"Spitelash Witch",49,50,0,nil,nil,nil,0}
-t[12206]={"Primordial Behemoth",48,49,1,nil,nil,nil,0}
-t[12207]={"Thessala Hydra",46,47,1,nil,nil,nil,0}
+t[12206]={"Primordial Behemoth",48,49,1,nil,nil,nil,0,2100}
+t[12207]={"Thessala Hydra",46,47,1,nil,nil,nil,0,2100}
 t[12208]={"Conquered Soul of the Blightcaller",58,59,0,nil,nil,nil,0}
-t[12216]={"Poison Sprite",42,43,0,nil,nil,nil,0}
-t[12217]={"Corruptor",42,43,0,nil,nil,nil,0}
-t[12218]={"Vile Larva",45,47,0,nil,nil,nil,0}
-t[12219]={"Barbed Lasher",44,45,1,nil,nil,nil,0}
-t[12220]={"Constrictor Vine",45,46,1,nil,nil,nil,0}
-t[12221]={"Noxious Slime",46,47,1,nil,nil,nil,0}
-t[12222]={"Creeping Sludge",45,46,1,nil,nil,nil,0}
-t[12223]={"Cavern Lurker",45,46,1,nil,nil,nil,0}
-t[12224]={"Cavern Shambler",46,47,1,nil,nil,nil,0}
-t[12225]={"Celebras the Cursed",49,49,1,nil,nil,nil,0}
-t[12236]={"Lord Vyletongue",47,47,1,nil,nil,nil,0}
-t[12237]={"Meshlok the Harvester",48,48,2,nil,nil,nil,0}
-t[12238]={"Zaetar's Spirit",60,60,1,nil,"AH",nil,3}
+t[12216]={"Poison Sprite",42,43,0,nil,nil,nil,0,2100}
+t[12217]={"Corruptor",42,43,0,nil,nil,nil,0,2100}
+t[12218]={"Vile Larva",45,47,0,nil,nil,nil,0,2100}
+t[12219]={"Barbed Lasher",44,45,1,nil,nil,nil,0,2100}
+t[12220]={"Constrictor Vine",45,46,1,nil,nil,nil,0,2100}
+t[12221]={"Noxious Slime",46,47,1,nil,nil,nil,0,2100}
+t[12222]={"Creeping Sludge",45,46,1,nil,nil,nil,0,2100}
+t[12223]={"Cavern Lurker",45,46,1,nil,nil,nil,0,2100}
+t[12224]={"Cavern Shambler",46,47,1,nil,nil,nil,0,2100}
+t[12225]={"Celebras the Cursed",49,49,1,nil,nil,nil,0,2100}
+t[12236]={"Lord Vyletongue",47,47,1,nil,nil,nil,0,2100}
+t[12237]={"Meshlok the Harvester",48,48,2,nil,nil,nil,0,2100}
+t[12238]={"Zaetar's Spirit",60,60,1,nil,"AH",nil,3,2100}
 t[12239]={"Spirit of Gelk",42,42,1,{[1443]={29.43,56.93}},"AH","The Second Kahn",0}
 t[12240]={"Spirit of Kolk",43,43,1,{[1443]={29.66,60.48}},"AH","The First Kahn",0}
 t[12241]={"Spirit of Magra",43,43,1,{[1443]={35.79,60.43}},"AH","The Third Kahn",0}
-t[12242]={"Spirit of Maraudos",46,46,1,nil,"AH","The Fourth Kahn",0}
-t[12243]={"Spirit of Veng",47,47,1,nil,"AH","The Fifth Kahn",0}
+t[12242]={"Spirit of Maraudos",46,46,1,nil,"AH","The Fourth Kahn",0,2100}
+t[12243]={"Spirit of Veng",47,47,1,nil,"AH","The Fifth Kahn",0,2100}
 t[12244]={"Mark of Detonation (NW)",1,1,0,{[1423]={19.49,15.95}},"AH",nil,0}
 t[12245]={"Vendor-Tron 1000",38,38,0,{[1443]={60.33,38.12}},"AH",nil,5}
 t[12246]={"Super-Seller 680",36,36,0,{[1443]={40.48,79.27}},"AH",nil,5}
@@ -7963,13 +7963,13 @@ t[12254]={"Mark of Detonation (NESH)",1,1,0,{[1423]={32.25,13.92}},"AH",nil,0}
 t[12255]={"Mark of Detonation (NE)",1,1,0,{[1423]={37.48,19.79}},"AH",nil,0}
 t[12256]={"Mark of Detonation (SE)",1,1,0,{[1423]={34.95,31}},"AH",nil,0}
 t[12257]={"Mechanical Yeti",58,58,0,nil,"A",nil,0}
-t[12258]={"Razorlash",48,48,1,nil,nil,nil,0}
-t[12259]={"Gehennas",63,63,3,nil,nil,nil,0}
+t[12258]={"Razorlash",48,48,1,nil,nil,nil,0,2100}
+t[12259]={"Gehennas",63,63,3,nil,nil,nil,0,2717}
 t[12260]={"Onyxian Drake",1,1,1,nil,"AH",nil,0}
 t[12261]={"Infected Mossflayer",57,58,0,{[1423]={61.35,11.82}},nil,nil,0}
 t[12262]={"Ziggurat Protector",58,58,1,{[1423]={19.52,16.18,34.98,31.28,22.7,28.94,37.52,20.03,24.62,18.01,28.17,17.89}},nil,nil,0}
 t[12263]={"Slaughterhouse Protector",58,58,1,{[1423]={32.1,14.13,27.42,23.65}},nil,nil,0}
-t[12264]={"Shazzrah",63,63,3,nil,nil,nil,0}
+t[12264]={"Shazzrah",63,63,3,nil,nil,nil,0,2717}
 t[12265]={"Lava Spawn",60,60,1,nil,nil,nil,0}
 t[12276]={"Hive'Zora Egg",20,20,0,nil,nil,nil,0}
 t[12277]={"Melizza Brimbuzzle",39,39,0,{[1443]={33.95,53.5}},"AH",nil,2}
@@ -8053,18 +8053,18 @@ t[12430]={"Grunt Kor'ja",7,7,0,{[1411]={53.1,46.46}},"H",nil,0}
 t[12431]={"Gorefang",13,13,4,{[1421]={59.53,7.64}},nil,nil,0}
 t[12432]={"Old Vicejaw",14,14,4,{[1421]={53.85,51.93}},nil,nil,0}
 t[12433]={"Krethis Shadowspinner",15,15,4,{[1421]={35.7,8.25}},nil,nil,0}
-t[12434]={"Monster Generator (Blackwing)",1,1,0,nil,"AH",nil,0}
-t[12435]={"Razorgore the Untamed",63,63,3,nil,nil,nil,0}
-t[12457]={"Blackwing Spellbinder",62,62,1,nil,nil,nil,0}
-t[12458]={"Blackwing Taskmaster",62,62,1,nil,nil,nil,0}
-t[12459]={"Blackwing Warlock",61,61,1,nil,nil,nil,0}
-t[12460]={"Death Talon Wyrmguard",63,63,1,nil,nil,nil,0}
-t[12461]={"Death Talon Overseer",62,62,1,nil,nil,nil,0}
-t[12463]={"Death Talon Flamescale",62,62,1,nil,nil,nil,0}
-t[12464]={"Death Talon Seether",62,62,1,nil,nil,nil,0}
-t[12465]={"Death Talon Wyrmkin",61,61,1,nil,nil,nil,0}
-t[12467]={"Death Talon Captain",62,62,1,nil,nil,nil,0}
-t[12468]={"Death Talon Hatcher",61,61,1,nil,nil,nil,0}
+t[12434]={"Monster Generator (Blackwing)",1,1,0,nil,"AH",nil,0,2677}
+t[12435]={"Razorgore the Untamed",63,63,3,nil,nil,nil,0,2677}
+t[12457]={"Blackwing Spellbinder",62,62,1,nil,nil,nil,0,2677}
+t[12458]={"Blackwing Taskmaster",62,62,1,nil,nil,nil,0,2677}
+t[12459]={"Blackwing Warlock",61,61,1,nil,nil,nil,0,2677}
+t[12460]={"Death Talon Wyrmguard",63,63,1,nil,nil,nil,0,2677}
+t[12461]={"Death Talon Overseer",62,62,1,nil,nil,nil,0,2677}
+t[12463]={"Death Talon Flamescale",62,62,1,nil,nil,nil,0,2677}
+t[12464]={"Death Talon Seether",62,62,1,nil,nil,nil,0,2677}
+t[12465]={"Death Talon Wyrmkin",61,61,1,nil,nil,nil,0,2677}
+t[12467]={"Death Talon Captain",62,62,1,nil,nil,nil,0,2677}
+t[12468]={"Death Talon Hatcher",61,61,1,nil,nil,nil,0,2677}
 t[12473]={"Arcanite Dragonling",60,60,0,nil,"A",nil,0}
 t[12474]={"Emeraldon Boughguard",62,62,1,{[1440]={91.59,38.95,91.52,39,89.52,39.69,92.69,37.22,95.27,37.19,95.21,37.27,94.98,39.79,94.94,39.84}},nil,nil,0}
 t[12475]={"Emeraldon Tree Warder",60,60,1,{[1440]={89.48,39.63,92.64,37.14,90.37,38.71,90.39,38.8,92.83,39.48,92.9,39.47}},nil,nil,0}
@@ -8080,7 +8080,7 @@ t[12498]={"Dreamstalker",62,62,1,{[1440]={94.05,37.09}},nil,nil,0}
 t[12516]={"TEST Resist Gear",1,1,0,nil,"AH",nil,0}
 t[12517]={"TEST Potions and Enchantments",1,1,0,nil,"AH",nil,0}
 t[12536]={"Illusion: Black Dragonkin",1,1,0,nil,"AH",nil,0}
-t[12557]={"Grethok the Controller",62,62,1,nil,nil,nil,0}
+t[12557]={"Grethok the Controller",62,62,1,nil,nil,nil,0,2677}
 t[12576]={"Grish Longrunner",25,25,0,{[1441]={31.86,21.66}},"H",nil,2}
 t[12577]={"Jarrodenus",55,55,1,{[1447]={11.9,77.59}},"A","Hippogryph Master",11}
 t[12578]={"Mishellena",55,55,1,{[1448]={62.49,24.24}},"A","Hippogryph Master",11}
@@ -8115,31 +8115,31 @@ t[12740]={"Faustron",55,55,1,{[1450]={32.09,66.61}},"H","Wind Rider Master",11}
 t[12741]={"Warrior 40 (More Leash)",40,40,0,nil,"AH",nil,0}
 t[12756]={"Lady Onyxia",63,63,3,nil,"A",nil,0}
 t[12757]={"Karang Amakkar",35,35,0,{[1440]={11.9,34.54}},"H",nil,3}
-t[12758]={"Onyxia Trigger",1,1,0,nil,"AH",nil,0}
+t[12758]={"Onyxia Trigger",1,1,0,nil,"AH",nil,0,2159}
 t[12759]={"Tideress",27,27,0,{[1440]={46,70}},nil,nil,0}
 t[12776]={"Hraug",9,9,0,{[1411]={40.56,68.44}},"H","Demon Trainer",5}
 t[12777]={"Captain Dirgehammer",55,55,0,nil,"AH","Armor Quartermaster",4224}
-t[12778]={"Lieutenant Rachel Vaccar",55,55,0,nil,"A",nil,0}
-t[12779]={"Archmage Gaiman",55,55,0,nil,"A",nil,0}
-t[12780]={"Sergeant Major Skyshadow",55,55,0,nil,"A",nil,0}
-t[12781]={"Master Sergeant Biggins",55,55,0,nil,"AH","Officer Accessories Quartermaster",4}
+t[12778]={"Lieutenant Rachel Vaccar",55,55,0,nil,"A",nil,0,2918}
+t[12779]={"Archmage Gaiman",55,55,0,nil,"A",nil,0,2918}
+t[12780]={"Sergeant Major Skyshadow",55,55,0,nil,"A",nil,0,2918}
+t[12781]={"Master Sergeant Biggins",55,55,0,nil,"AH","Officer Accessories Quartermaster",4,2918}
 t[12782]={"Captain O'Neal",55,55,0,nil,"AH","Weapons Quartermaster",4224}
-t[12783]={"Lieutenant Karter",53,53,0,nil,"AH","Mount Vendor",4}
-t[12784]={"Lieutenant Jackspring",55,55,0,nil,"A","Reagent Vendor",4}
-t[12785]={"Sergeant Major Clate",55,55,0,nil,"A","Food and Drink",4}
-t[12786]={"Guard Quine",62,62,0,nil,"A",nil,0}
-t[12787]={"Guard Hammon",62,62,0,nil,"A",nil,0}
-t[12788]={"Legionnaire Teena",62,62,0,nil,"H",nil,0}
-t[12789]={"Blood Guard Hini'wana",62,62,0,nil,"H",nil,0}
-t[12790]={"Advisor Willington",62,62,0,nil,"H",nil,0}
-t[12791]={"Chieftain Earthbind",62,62,0,nil,"H",nil,0}
-t[12792]={"Lady Palanseer",55,55,0,nil,"H","Armor Quartermaster",16388}
-t[12793]={"Brave Stonehide",55,55,0,nil,"H","Officer Accessories Quartermaster",4}
-t[12794]={"Stone Guard Zarg",55,55,0,nil,"H","Food and Drink",6}
-t[12795]={"First Sergeant Hola'mahi",55,55,0,nil,"H","Reagent Vendor",6}
-t[12796]={"Raider Bork",55,55,0,nil,"H","Mount Quartermaster",4}
-t[12797]={"Grunt Korf",62,62,0,nil,"H",nil,0}
-t[12798]={"Grunt Bek'rah",62,62,0,nil,"H",nil,0}
+t[12783]={"Lieutenant Karter",53,53,0,nil,"AH","Mount Vendor",4,2918}
+t[12784]={"Lieutenant Jackspring",55,55,0,nil,"A","Reagent Vendor",4,2918}
+t[12785]={"Sergeant Major Clate",55,55,0,nil,"A","Food and Drink",4,2918}
+t[12786]={"Guard Quine",62,62,0,nil,"A",nil,0,2918}
+t[12787]={"Guard Hammon",62,62,0,nil,"A",nil,0,2918}
+t[12788]={"Legionnaire Teena",62,62,0,nil,"H",nil,0,2917}
+t[12789]={"Blood Guard Hini'wana",62,62,0,nil,"H",nil,0,2917}
+t[12790]={"Advisor Willington",62,62,0,nil,"H",nil,0,2917}
+t[12791]={"Chieftain Earthbind",62,62,0,nil,"H",nil,0,2917}
+t[12792]={"Lady Palanseer",55,55,0,nil,"H","Armor Quartermaster",16388,2917}
+t[12793]={"Brave Stonehide",55,55,0,nil,"H","Officer Accessories Quartermaster",4,2917}
+t[12794]={"Stone Guard Zarg",55,55,0,nil,"H","Food and Drink",6,2917}
+t[12795]={"First Sergeant Hola'mahi",55,55,0,nil,"H","Reagent Vendor",6,2917}
+t[12796]={"Raider Bork",55,55,0,nil,"H","Mount Quartermaster",4,2917}
+t[12797]={"Grunt Korf",62,62,0,nil,"H",nil,0,2917}
+t[12798]={"Grunt Bek'rah",62,62,0,nil,"H",nil,0,2917}
 t[12799]={"Sergeant Ba'sha",55,55,0,{[1454]={41.46,68.6}},"H","Accessories Quartermaster",16388}
 t[12800]={"Chimaerok",60,61,1,{[1444]={31.25,87.79,29.67,80.99,28.15,74.54,29.82,80.93,30.32,82.67,30.18,85.31,28.15,73.83,28.02,76.47}},nil,nil,0}
 t[12801]={"Arcane Chimaerok",60,62,1,{[1444]={30.93,85.54,30.16,87.84,30.58,85.22,29.19,75.46,28.06,73.05,28.65,77.43,29.63,78.8,30.14,79.47,30.58,80.2}},nil,nil,0}
@@ -8166,14 +8166,14 @@ t[12864]={"Warsong Outrider",30,30,0,{[1440]={81.83,53.51}},"H",nil,2}
 t[12865]={"Ambassador Malcin",36,36,1,{[1413]={46.2,90.2,47.8,90.6,48,92.4,48.2,92.6,48.4,95.4,48.4,95.6,48.6,95.4,48.6,95.6}},nil,nil,0}
 t[12866]={"Myriam Moonsinger",35,35,0,{[1413]={49.01,94.94}},"AH",nil,3}
 t[12867]={"Kuray'bin",35,35,0,{[1440]={71.11,68.12}},"H",nil,2}
-t[12876]={"Baron Aquanis",28,28,1,nil,nil,nil,0}
+t[12876]={"Baron Aquanis",28,28,1,nil,nil,nil,0,719}
 t[12877]={"Ertog Ragetusk",35,35,0,{[1440]={73.03,62.47}},"H",nil,2}
 t[12896]={"Silverwing Sentinel",22,23,0,{[1440]={65.34,75.53,65.81,75.01,64.32,74.35,65.38,75.18,64.99,75.51,64.27,75.27,66.12,74.45,64.59,75.16}},"A",nil,0}
 t[12897]={"Silverwing Warrior",21,22,0,{[1440]={64.39,74.75,64.23,73.53,64.59,75.53,63.85,74.31,65.87,74.69,64.93,75.16}},"A",nil,0}
 t[12898]={"Phantim Illusion",1,1,0,nil,"AH",nil,0}
 t[12899]={"Axtroz",62,62,1,{[1437]={81.82,48.24}},nil,nil,0}
 t[12900]={"Somnus",62,62,1,{[1435]={76,66.6}},nil,nil,0}
-t[12902]={"Lorgus Jett",26,26,1,nil,nil,nil,0}
+t[12902]={"Lorgus Jett",26,26,1,nil,nil,nil,0,719}
 t[12903]={"Splintertree Guard",40,40,0,{[1440]={74.22,62.92,69.73,71.71,70.06,71.46,69.85,71.29,72.91,63.08,74.01,62.24,73.15,62.89,73.38,59.68,73.25,59.74,73.24,61.9,72.79,62.6,11.76,34.38,11.98,34.72,11.87,33.63,12.2,34.35,73.4,63.63,73.32,63.7,73.13,64.67,73.63,63.6,73.23,60.73,73.23,60.9,73.7,63.68,73.96,62.8,73.73,61.19,71.02,68.67,71.25,67.86,71.59,67.5,70.69,68.15}},"H",nil,0}
 t[12904]={"Spirit Of Redemption",60,60,0,nil,"AH",nil,0}
 t[12916]={"Unkillable Test Dummy 60 Low Magic Resistances",60,60,0,nil,"AH",nil,0}
@@ -8205,18 +8205,18 @@ t[12962]={"Wik'Tar",30,30,0,{[1440]={11.71,34.1}},"H","Fish Merchant & Supplies"
 t[12976]={"Kolkar Waylayer",33,34,0,{[1443]={67.95,43.74,67.73,52}},nil,nil,0}
 t[12977]={"Kolkar Ambusher",34,35,0,{[1443]={67.91,43.72,67.72,51.99}},nil,nil,0}
 t[12996]={"Mounted Ironforge Mountaineer",30,30,0,{[1426]={70.97,31.17,70.27,26.55,69.11,19.71,69.73,18.83},[1437]={24.53,68.12,24.53,68.12}},"A",nil,1}
-t[12997]={"Monty",12,12,0,nil,"A","Rat Extermination Specialist",3}
+t[12997]={"Monty",12,12,0,nil,"A","Rat Extermination Specialist",3,2257}
 t[12998]={"Dwarven Farmer",15,15,0,{[1417]={89.58,71.67,90.43,71.66},[1437]={17.35,72.54,16.42,71.21,20.97,69.9,21.09,70.89,25.73,68.28}},"A",nil,0}
 t[12999]={"Blackwing Trigger",1,1,0,{[1420]={55.6,69.88}},"AH",nil,0}
 t[13000]={"Gnome Engineer",15,15,0,{[1426]={71.15,27.46,71.17,26.56,71.3,26.56,71.21,26.26,71.14,25.31,69.98,26.69}},"A",nil,1}
-t[13016]={"Deeprun Rat",1,1,0,nil,"AH",nil,0}
-t[13017]={"Enthralled Deeprun Rat",1,1,0,nil,"AH",nil,0}
-t[13018]={"Nipsy",12,12,0,nil,"A",nil,7}
+t[13016]={"Deeprun Rat",1,1,0,nil,"AH",nil,0,2257}
+t[13017]={"Enthralled Deeprun Rat",1,1,0,nil,"AH",nil,0,2257}
+t[13018]={"Nipsy",12,12,0,nil,"A",nil,7,2257}
 t[13019]={"Burning Blade Seer",33,33,0,{[1443]={55.17,30.15}},nil,nil,0}
-t[13020]={"Vaelastrasz the Corrupt",63,63,3,nil,"AH",nil,3}
-t[13021]={"Warpwood Crusher",56,56,1,nil,nil,nil,0}
-t[13022]={"Whip Lasher",54,54,0,nil,nil,nil,0}
-t[13036]={"Gordok Mastiff",57,59,0,nil,nil,nil,0}
+t[13020]={"Vaelastrasz the Corrupt",63,63,3,nil,"AH",nil,3,2677}
+t[13021]={"Warpwood Crusher",56,56,1,nil,nil,nil,0,10027}
+t[13022]={"Whip Lasher",54,54,0,nil,nil,nil,0,10027}
+t[13036]={"Gordok Mastiff",57,59,0,nil,nil,nil,0,10022}
 t[13056]={"test spirit healer (DND)",60,60,0,nil,"AH",nil,0}
 t[13076]={"Dun Morogh Mountaineer",30,30,0,{[1426]={84.53,51.38,68.09,56.33,68.09,56.28,30.01,44.96,30.64,45.18,30.12,45.87,30.19,46.33,30.57,45.85,62.78,54.6,68.35,54.91,67.71,53.66,68.02,54.97,68.94,55.04,86.12,50.51,85.17,50.55,82.98,40.07,83.83,39.56,82.79,37.28,83.66,36.21,83.14,34.25,83.52,35.11,83.55,34.24,84.36,32.74}},"A",nil,1}
 t[13078]={"Umi Thorson",58,58,0,{[1459]={52.39,7.78}},"A",nil,0}
@@ -8243,8 +8243,8 @@ t[13137]={"Lieutenant Rugba",59,59,1,{[1459]={50.86,60.99}},"H",nil,2}
 t[13138]={"Lieutenant Spencer",59,59,1,{[1459]={50.76,34.14}},"A",nil,0}
 t[13139]={"Commander Randolph",61,61,1,{[1459]={52.43,43.79}},"A",nil,0}
 t[13140]={"Commander Dardosh",61,61,1,{[1459]={46.02,57.45}},"H",nil,2}
-t[13141]={"Deeprot Stomper",43,44,1,nil,nil,nil,0}
-t[13142]={"Deeprot Tangler",44,45,1,nil,nil,nil,0}
+t[13141]={"Deeprot Stomper",43,44,1,nil,nil,nil,0,2100}
+t[13142]={"Deeprot Tangler",44,45,1,nil,nil,nil,0,2100}
 t[13143]={"Lieutenant Stronghoof",59,59,1,{[1459]={51.58,60.02}},"H",nil,2}
 t[13144]={"Lieutenant Vol'talar",59,59,1,{[1459]={46.64,56.08}},"H",nil,2}
 t[13145]={"Lieutenant Grummus",59,59,1,{[1459]={50.15,64.3}},"H",nil,2}
@@ -8262,7 +8262,7 @@ t[13156]={"Carrosh",12,12,0,nil,nil,nil,0}
 t[13157]={"Makasgar",12,12,0,{[1411]={61.53,66.3}},nil,nil,0}
 t[13158]={"Lieutenant Sanders",12,12,0,{[1420]={87.23,43.92}},nil,nil,0}
 t[13159]={"James Clark",12,12,0,{[1429]={78.62,67.06}},"AH",nil,0}
-t[13160]={"Carrion Swarmer",56,58,0,nil,nil,nil,0}
+t[13160]={"Carrion Swarmer",56,58,0,nil,nil,nil,0,10022}
 t[13161]={"Aerie Gryphon",60,60,1,nil,nil,nil,0}
 t[13176]={"Smith Regzar",60,60,1,{[1459]={49.5,82.72}},"H",nil,3}
 t[13177]={"Vahgruk",55,55,1,{[1428]={65.69,24.22}},"H","Wind Rider Master",11}
@@ -8270,8 +8270,8 @@ t[13178]={"War Rider",60,60,1,nil,"H",nil,2}
 t[13179]={"Wing Commander Guse",59,59,1,{[1459]={49.85,85.57,50.6,30.6}},"H",nil,2}
 t[13180]={"Wing Commander Jeztor",58,58,1,{[1459]={49.87,85.62,54.23,25.43}},"H",nil,2}
 t[13181]={"Wing Commander Mulverick",60,60,1,{[1459]={44.9,14.6,49.84,85.91}},"H",nil,2}
-t[13196]={"Phase Lasher",54,55,1,nil,nil,nil,0}
-t[13197]={"Fel Lash",56,56,1,nil,nil,nil,0}
+t[13196]={"Phase Lasher",54,55,1,nil,nil,nil,0,10027}
+t[13197]={"Fel Lash",56,56,1,nil,nil,nil,0,10027}
 t[13216]={"Gaelden Hammersmith",55,56,1,{[1459]={44.28,18.25}},"A","Stormpike Supply Officer",16388}
 t[13217]={"Thanthaldis Snowgleam",58,58,1,{[1416]={39.45,81.65}},"A","Stormpike Supply Officer",16388}
 t[13218]={"Grunnda Wolfheart",54,58,1,{[1459]={49.33,82.49}},"H","Frostwolf Supply Officer",16388}
@@ -8281,16 +8281,16 @@ t[13221]={"Ryson's Eye in the Sky",58,58,1,nil,"AH",nil,0}
 t[13236]={"Primalist Thurloga",60,60,1,{[1459]={50.12,85.13}},"H",nil,2}
 t[13256]={"Lokholar the Ice Lord",63,63,3,nil,"H",nil,2}
 t[13257]={"Murgot Deepforge",60,60,1,{[1459]={43.48,15.5}},"A",nil,3}
-t[13276]={"Wildspawn Imp",56,56,0,nil,nil,nil,0}
+t[13276]={"Wildspawn Imp",56,56,0,nil,nil,nil,0,2557}
 t[13277]={"Dahne Pierce",5,5,0,{[1445]={66.8,45.11}},"A",nil,0}
 t[13278]={"Duke Hydraxis",60,60,1,{[1447]={79.28,73.7}},"AH",nil,3}
 t[13279]={"Discordant Surge",54,57,0,{[1423]={62.62,27.34,44.26,40.29}},nil,nil,0}
-t[13280]={"Hydrospawn",57,57,1,nil,nil,nil,0}
+t[13280]={"Hydrospawn",57,57,1,nil,nil,nil,0,10027}
 t[13281]={"Furis",1,1,0,nil,"H",nil,0}
-t[13282]={"Noxxion",48,48,1,nil,nil,nil,0}
+t[13282]={"Noxxion",48,48,1,nil,nil,nil,0,2100}
 t[13283]={"Lord Tony Romano",60,60,0,{[1453]={80.28,68.58}},"A","Rogue Trainer",19}
 t[13284]={"Frostwolf Shaman",58,58,1,{[1459]={50.15,85.21,50.13,85.06,50.16,85.12}},"H",nil,0}
-t[13285]={"Death Lash",57,58,1,nil,nil,nil,0}
+t[13285]={"Death Lash",57,58,1,nil,nil,nil,0,10027}
 t[13296]={"Lieutenant Largent",59,59,1,{[1459]={47.58,35.99}},"A",nil,0}
 t[13297]={"Lieutenant Stouthandle",59,59,1,{[1459]={48.85,39.58}},"A",nil,0}
 t[13298]={"Lieutenant Greywand",59,59,1,{[1459]={48.17,35.45}},"A",nil,0}
@@ -8302,9 +8302,9 @@ t[13317]={"Coldmine Miner",58,58,0,{[1459]={43.31,71.91,42.32,68.85,44.25,72.56,
 t[13318]={"Commander Mortimer",61,61,1,{[1459]={45.14,14.04}},"A",nil,0}
 t[13319]={"Commander Duffy",61,61,1,{[1459]={49.03,14.61}},"A",nil,2}
 t[13320]={"Commander Karl Philips",61,61,1,{[1459]={50.6,31.45}},"A",nil,2}
-t[13321]={"Frog",1,1,0,nil,"AH",nil,0}
+t[13321]={"Frog",1,1,0,nil,"AH",nil,0,1977}
 t[13322]={"Hydraxian Honor Guard",57,57,1,{[1447]={79.52,76.26,80.17,71.79,80.1,74.78,78.16,74.23,78.26,72.76,79,71.66,78.15,75.45}},"AH",nil,1}
-t[13323]={"Subterranean Diemetradon",46,48,1,nil,nil,nil,0}
+t[13323]={"Subterranean Diemetradon",46,48,1,nil,nil,nil,0,2100}
 t[13324]={"Seasoned Guardsman",58,58,0,{[1459]={42.73,15.94,42.81,15.68,42.69,15.68,42.83,15.91,49.05,14.73,48.93,14.56,48.84,14.81,48.97,14.91,51.62,35.53,51.69,35.66,51.64,35.82,51.52,35.65,44.65,45.76,44.68,45.43,44.79,45.6,44.59,45.57,51.33,60.21,51.3,59.96,51.48,60.01,51.43,60.23,50.06,76.57,49.91,76.75,50.09,77.03,50.17,76.71,49.39,88.3,49.24,88.23,49.22,88,49.38,87.99}},"AH",nil,0}
 t[13325]={"Seasoned Mountaineer",56,56,0,nil,"A",nil,0}
 t[13326]={"Seasoned Defender",59,59,0,{[1459]={42.73,15.94,42.81,15.68,42.69,15.68,42.83,15.91,49.05,14.73,48.93,14.56,48.84,14.81,48.97,14.91,51.62,35.53,51.69,35.66,51.64,35.82,51.52,35.65,44.65,45.76,44.68,45.43,44.79,45.6,44.59,45.57,51.33,60.21,51.3,59.96,51.48,60.01,51.43,60.23,50.06,76.57,49.91,76.75,50.09,77.03,50.17,76.71,49.39,88.3,49.24,88.23,49.22,88,49.38,87.99}},"A",nil,0}
@@ -8362,7 +8362,7 @@ t[13446]={"Field Marshal Teravaine",61,61,1,{[1459]={52.37,44.01}},"A",nil,2}
 t[13447]={"Corporal Noreg Stormpike",58,59,1,{[1459]={44,17.3}},"A",nil,3}
 t[13448]={"Sergeant Yazra Bloodsnarl",56,57,0,{[1459]={48.21,81.33}},"H",nil,2}
 t[13449]={"Warmaster Garrick",61,61,1,nil,"H",nil,2}
-t[13456]={"Noxxion's Spawn",46,46,0,nil,nil,nil,0}
+t[13456]={"Noxxion's Spawn",46,46,0,nil,nil,nil,0,2100}
 t[13476]={"Balai Lok'Wein",43,43,0,{[1445]={36.49,30.36}},"H","Potions, Scrolls and Reagents",4}
 t[13477]={"Noxxion Trigger",1,1,0,nil,"AH",nil,0}
 t[13496]={"Risen Ancient",1,1,1,nil,"A",nil,0}
@@ -8409,11 +8409,11 @@ t[13556]={"Veteran Irondeep Surveyor",58,59,0,{[1459]={52.61,7.26}},"AH",nil,0}
 t[13557]={"Champion Irondeep Surveyor",52,52,0,{[1459]={52.61,7.26}},"AH",nil,0}
 t[13576]={"Stormpike Ram Rider",58,58,1,{[1459]={42.1,17.18}},"A",nil,0}
 t[13577]={"Stormpike Ram Rider Commander",60,60,1,{[1459]={42.1,17.18}},"A",nil,3}
-t[13596]={"Rotgrip",50,50,1,nil,nil,nil,0}
+t[13596]={"Rotgrip",50,50,1,nil,nil,nil,0,2100}
 t[13597]={"Frostwolf Explosives Expert",59,59,1,nil,"H",nil,2}
 t[13598]={"Stormpike Explosives Expert",60,60,1,nil,"A",nil,2}
-t[13599]={"Stolid Snapjaw",46,47,0,nil,"AH",nil,0}
-t[13601]={"Tinkerer Gizlock",50,50,1,nil,nil,nil,0}
+t[13599]={"Stolid Snapjaw",46,47,0,nil,"AH",nil,0,2100}
+t[13601]={"Tinkerer Gizlock",50,50,1,nil,nil,nil,0,2100}
 t[13602]={"The Abominable Greench",36,36,1,{[1416]={37.26,71.16,29.92,61.01,41.44,63.57,31.62,50.84,32.18,47.29,30.05,64.27,40.83,67.68,39.61,62.91,30.85,54.63,45.11,63.02,39.67,73.5,34.34,67.9}},nil,nil,2}
 t[13616]={"Frostwolf Stable Master",60,60,1,{[1459]={57.16,82.45}},"H","Stable Master",8195}
 t[13617]={"Stormpike Stable Master",60,60,1,{[1459]={42.55,16.82}},"A","Stable Master",8195}
@@ -8423,21 +8423,21 @@ t[13620]={"Gizlock",1,1,0,nil,"AH",nil,0}
 t[13636]={"Strange Snowman",35,35,0,{[1416]={35.44,72.46}},"AH",nil,2}
 t[13656]={"Willow",45,45,0,{[1443]={62.2,39.63}},"AH","Twilight's Hammer",2}
 t[13676]={"Stabled Alterac Ram",50,51,0,{[1459]={52.37,38.33,52.68,38.64}},"AH",nil,0}
-t[13696]={"Noxxious Scion",45,46,0,nil,nil,nil,0}
+t[13696]={"Noxxious Scion",45,46,0,nil,nil,nil,0,2100}
 t[13697]={"Cavindra",45,45,1,{[1443]={31.9,63.8}},"AH",nil,3}
 t[13698]={"Keeper Marandis",43,43,0,{[1443]={63.83,10.67}},"AH",nil,3}
 t[13699]={"Selendra",46,46,0,{[1443]={26.87,77.67}},"AH",nil,3}
-t[13716]={"Celebras the Redeemed",49,49,1,nil,"AH",nil,3}
+t[13716]={"Celebras the Redeemed",49,49,1,nil,"AH",nil,3,2100}
 t[13717]={"Centaur Pariah",42,42,0,{[1443]={50.42,86.65}},"AH",nil,3}
 t[13718]={"The Nameless Prophet",41,41,1,{[1443]={28.15,62.39,27.24,63.14,28.75,62.4,28.2,64.19}},nil,nil,3}
 t[13736]={"Noxxious Essence",45,46,0,nil,nil,nil,0}
 t[13737]={"Marandis' Sister",36,36,0,{[1443]={63.99,10.08,64.13,10.38,27.09,77.65,26.81,77.87,26.87,77.57}},"AH",nil,0}
-t[13738]={"Veng",47,47,1,nil,nil,"The Fifth Kahn",0}
-t[13739]={"Maraudos",46,46,1,nil,nil,"The Fourth Kahn",0}
+t[13738]={"Veng",47,47,1,nil,nil,"The Fifth Kahn",0,2100}
+t[13739]={"Maraudos",46,46,1,nil,nil,"The Fourth Kahn",0,2100}
 t[13740]={"Magra",43,43,1,{[1443]={35.18,60.2}},nil,"The Third Kahn",0}
 t[13741]={"Gelk",42,42,1,{[1443]={29.05,57.15}},nil,"The Second Kahn",0}
 t[13742]={"Kolk",43,43,1,{[1443]={29.82,60.3}},nil,"The First Kahn",0}
-t[13743]={"Corrupt Force of Nature",44,44,0,nil,nil,nil,0}
+t[13743]={"Corrupt Force of Nature",44,44,0,nil,nil,nil,0,2100}
 t[13756]={"PvP Graveyard Credit Marker",1,1,0,{[1459]={49.3,88.5,49.3,76.7,51.6,57.1,51.8,36,49.2,14.8,42.4,15.6}},"AH",nil,0}
 t[13776]={"Corporal Teeka Bloodsnarl",56,57,1,{[1416]={65.55,55.13}},"H",nil,3}
 t[13777]={"Sergeant Durgen Stormpike",58,58,1,{[1416]={36.76,77.19}},"A",nil,3}
@@ -8457,42 +8457,42 @@ t[13842]={"Frostwolf Ambassador Rokhstrom",60,60,0,{[1454]={49.61,71.19}},"H",ni
 t[13843]={"Lieutenant Rotimer",60,60,0,{[1455]={32.21,63.26}},"A","Stormpike Guard Recruitment Officer",2}
 t[13856]={"Alliance Res Fixer",60,60,0,nil,"A","Click me to clear res effects",0}
 t[13857]={"Horde Res Fixer",60,60,0,nil,"H","Click me to clear res effects",0}
-t[13876]={"Mekgineer Trigger",1,1,0,nil,"AH",nil,0}
+t[13876]={"Mekgineer Trigger",1,1,0,nil,"AH",nil,0,721}
 t[13896]={"Scalebeard",52,52,2,{[1447]={52.59,47.37}},"AH",nil,0}
-t[13916]={"Dire Maul Crystal Totem",52,52,0,nil,nil,nil,2}
+t[13916]={"Dire Maul Crystal Totem",52,52,0,nil,nil,nil,2,2557}
 t[13917]={"Izzy Coppergrab",55,55,0,{[1452]={61.45,36.98}},"AH","Banker",256}
 t[13936]={"Ravenholdt",1,1,0,{[1424]={78.64,17.84}},"AH",nil,0}
 t[13956]={"Winterax Mystic",58,58,1,nil,nil,nil,0}
 t[13957]={"Winterax Warrior",60,60,1,nil,nil,nil,0}
 t[13958]={"Winterax Seer",59,59,1,nil,nil,nil,0}
 t[13959]={"Alterac Yeti",61,61,1,{[1459]={38.24,38.34,40.58,37.29,40.47,33.17,37.62,35.91,38.88,35.15}},nil,nil,0}
-t[13976]={"Tortured Drake",40,40,1,nil,"AH",nil,0}
+t[13976]={"Tortured Drake",40,40,1,nil,"AH",nil,0,2677}
 t[13977]={"Gash'nak the Cannibal",1,1,2,nil,nil,nil,0}
-t[13996]={"Blackwing Technician",60,60,1,nil,nil,nil,0}
+t[13996]={"Blackwing Technician",60,60,1,nil,nil,nil,0,2677}
 t[14016]={"Ushalac the Gloomdweller",1,1,2,nil,nil,nil,0}
 t[14017]={"Withered Troll",59,60,1,nil,nil,nil,0}
 t[14018]={"Rezrelek",1,1,2,nil,nil,"Winterax Hero",0}
 t[14019]={"Tatterhide",1,1,2,nil,nil,nil,0}
-t[14020]={"Chromaggus",63,63,3,nil,nil,nil,0}
+t[14020]={"Chromaggus",63,63,3,nil,nil,nil,0,2677}
 t[14021]={"Winterax Sentry",60,60,1,nil,nil,nil,0}
-t[14022]={"Corrupted Red Whelp",60,60,0,nil,nil,nil,0}
-t[14023]={"Corrupted Green Whelp",60,60,0,nil,nil,nil,0}
-t[14024]={"Corrupted Blue Whelp",60,60,0,nil,nil,nil,0}
-t[14025]={"Corrupted Bronze Whelp",60,60,0,nil,nil,nil,0}
+t[14022]={"Corrupted Red Whelp",60,60,0,nil,nil,nil,0,2677}
+t[14023]={"Corrupted Green Whelp",60,60,0,nil,nil,nil,0,2677}
+t[14024]={"Corrupted Blue Whelp",60,60,0,nil,nil,nil,0,2677}
+t[14025]={"Corrupted Bronze Whelp",60,60,0,nil,nil,nil,0,2677}
 t[14026]={"Trigger Guse",1,1,1,{[1459]={50.6,30.6}},"AH",nil,0}
 t[14027]={"Trigger Mulverick",1,1,1,{[1459]={44.9,14.6}},"AH",nil,0}
 t[14028]={"Trigger Jeztor",1,1,1,{[1459]={54,27}},"AH",nil,0}
 t[14029]={"Trigger Ichman",1,1,1,{[1459]={48,84}},"AH",nil,0}
 t[14030]={"Trigger Slidore",1,1,1,{[1459]={50,65}},"AH",nil,0}
 t[14031]={"Trigger Vipore",1,1,1,{[1459]={50,81}},"AH",nil,0}
-t[14041]={"Haggle",20,20,0,nil,"A",nil,0}
+t[14041]={"Haggle",20,20,0,nil,"A",nil,0,2257}
 t[14042]={"Rytama",61,61,0,nil,"AH","Binder of the Moro'gai",0}
 t[14061]={"Phase Lasher (Fire)",37,38,1,nil,nil,nil,0}
 t[14062]={"Phase Lasher (Nature)",37,38,1,nil,nil,nil,0}
 t[14063]={"Phase Lasher (Arcane)",37,38,1,nil,nil,nil,0}
 t[14081]={"Demon Portal",61,61,0,nil,nil,nil,0}
 t[14101]={"Enraged Felguard",60,60,1,nil,nil,nil,0}
-t[14121]={"Deeprun Diver",20,20,0,nil,"A",nil,0}
+t[14121]={"Deeprun Diver",20,20,0,nil,"A",nil,0,2257}
 t[14122]={"Massive Geyser",60,60,0,nil,nil,nil,0}
 t[14123]={"Steeljaw Snapper",42,43,0,{[1446]={65.81,22.22,67.07,27.71,72.51,42.3,68.52,33.54,70.45,39.35,68.28,39.65,73.28,43.01,68.08,37.8,73.02,42.29,70.8,41.08,67.17,18.2,67.96,25.83,67.49,36.24,66.98,18.86,68.53,32.68,68.42,37.02,67.26,20.2,68.15,23.82,67.26,17.93,67.8,21.47,68.12,34.28,68.48,30.06,68.35,35.8,68.3,27.55,67.67,26.19,67.67,37.25,68.2,21.79,67.77,19.57,65,25.11,71.5,39.88,68.63,39.1,67.14,28.33,67.15,38.03,67.46,24.92,68.12,28.58,67.28,39.23,67.73,17.36,68.47,35.3,66.24,20.76,68.21,19.58,67.74,29.52,71.83,41.16,67.89,38.6}},"AH",nil,0}
 t[14141]={"Stormpike Reclaimer",58,58,1,nil,"A",nil,0}
@@ -8561,23 +8561,23 @@ t[14284]={"Stormpike Battleguard",59,59,1,{[1416]={34.43,74.72,34.53,74.62,34.6,
 t[14285]={"Frostwolf Battleguard",61,61,1,{[1416]={63.93,58.86,63.98,58.92,65.55,54.12,65.46,54.03,65.57,54.72,65.46,54.77,66.58,51.7,66.62,51.87,66.87,51.36,66.95,51.5},[1459]={57.99,66.04,55.56,68.92,58.36,64.35,58.02,66.19,57.97,65.22,57.93,65.11,58.14,65.09,58.14,64.98,58.6,64.38,58.66,64.29,58.49,64.13,58.56,64.06,58.13,66.69,58.08,66.84,56.89,67.69,56.99,67.76,56.91,67.35,56.94,67.46,56.31,68,56.37,67.82,56.7,68,56.67,68.13,54.83,69.49,54.74,69.51,54.96,69.69,54.89,69.79}},"H",nil,0}
 t[14301]={"Brinna Valanaar",43,43,0,{[1447]={12,78.38}},"A","Bowyer",16388}
 t[14302]={"Chromatic Drakonid",60,60,1,nil,nil,nil,0}
-t[14303]={"Petrified Guardian",57,59,1,nil,nil,nil,0}
+t[14303]={"Petrified Guardian",57,59,1,nil,nil,nil,0,10027}
 t[14304]={"Kor'kron Elite",60,60,0,{[1454]={35.31,37.03,37.34,37.6,39.76,36.71,31.63,38.66,34.97,39.83,33.47,40.97,33.48,39.71,33.16,34.41,33.44,40.15,31.92,40.14,39.77,37.32,32.44,37.13,37.27,36.96,34.76,35.18,34.81,36.41,34.86,38.88,40.33,36.97,35.32,37.9,33.21,35.23,40.22,36.6,32.51,38.41,31.58,37.08,40.27,37.33,31.63,35.51}},"H",nil,0}
 t[14305]={"Human Orphan",4,4,0,{[1453]={56.29,54.29}},"A",nil,3}
 t[14306]={"Eskhandar",1,1,0,nil,"AH",nil,0}
 t[14307]={"Black Drakonid Spawner",1,1,0,nil,"AH",nil,0}
-t[14308]={"Ferra",60,60,1,nil,nil,nil,0}
+t[14308]={"Ferra",60,60,1,nil,nil,nil,0,2557}
 t[14309]={"Red Drakonid Spawner",1,1,0,nil,"AH",nil,0}
 t[14310]={"Green Drakonid Spawner",1,1,0,nil,"AH",nil,0}
 t[14311]={"Bronze Drakonid Spawner",1,1,0,nil,"AH",nil,0}
 t[14312]={"Blue Drakonid Spawner",1,1,0,nil,"AH",nil,0}
-t[14321]={"Guard Fengus",59,59,1,nil,nil,nil,3}
-t[14322]={"Stomper Kreeg",59,59,1,nil,nil,"The Drunk",7}
-t[14323]={"Guard Slip'kik",59,59,1,nil,nil,nil,3}
-t[14324]={"Cho'Rush the Observer",60,60,1,nil,nil,nil,1}
-t[14325]={"Captain Kromcrush",61,61,1,nil,nil,nil,3}
-t[14326]={"Guard Mol'dar",59,59,1,nil,nil,nil,3}
-t[14327]={"Lethtendris",57,57,1,nil,nil,nil,0}
+t[14321]={"Guard Fengus",59,59,1,nil,nil,nil,3,10022}
+t[14322]={"Stomper Kreeg",59,59,1,nil,nil,"The Drunk",7,10022}
+t[14323]={"Guard Slip'kik",59,59,1,nil,nil,nil,3,10022}
+t[14324]={"Cho'Rush the Observer",60,60,1,nil,nil,nil,1,10022}
+t[14325]={"Captain Kromcrush",61,61,1,nil,nil,nil,3,10022}
+t[14326]={"Guard Mol'dar",59,59,1,nil,nil,nil,3,10022}
+t[14327]={"Lethtendris",57,57,1,nil,nil,nil,0,10026}
 t[14329]={"Black War Wolf",1,1,0,nil,"AH",nil,0}
 t[14330]={"Black War Raptor",1,1,0,nil,"AH",nil,0}
 t[14331]={"Red Skeletal Warhorse",1,1,0,nil,"AH",nil,0}
@@ -8587,7 +8587,7 @@ t[14334]={"Black Battlestrider",1,1,0,nil,"AH",nil,0}
 t[14335]={"Black War Ram",1,1,0,nil,"AH",nil,0}
 t[14336]={"Black War Saber",1,1,0,nil,"AH",nil,0}
 t[14337]={"Field Repair Bot 74A",50,50,0,nil,"AH",nil,16388}
-t[14338]={"Knot Thimblejack",50,50,0,nil,"AH",nil,3}
+t[14338]={"Knot Thimblejack",50,50,0,nil,"AH",nil,3,10022}
 t[14339]={"Death Howl",49,49,4,{[1448]={50.03,77.11,47.86,74.82,48.34,78.18,56.16,89.26}},nil,nil,0}
 t[14340]={"Alshirr Banebreath",54,54,4,{[1448]={40.25,85.21}},nil,nil,0}
 t[14341]={"Felendor the Accuser",53,54,4,nil,nil,nil,0}
@@ -8598,27 +8598,27 @@ t[14345]={"The Ongar",51,51,4,{[1448]={42.22,49.9}},nil,nil,0}
 t[14346]={"Captain Greshkil",52,53,1,nil,nil,nil,0}
 t[14347]={"Highlord Demitrian",62,62,1,{[1451]={21.71,8.57}},"AH",nil,3}
 t[14348]={"Earthcaller Franzahl",62,62,1,{[1452]={53.98,90.39}},"AH",nil,3}
-t[14349]={"Pimgib",56,56,1,nil,nil,nil,0}
+t[14349]={"Pimgib",56,56,1,nil,nil,nil,0,10026}
 t[14350]={"Hydroling",57,57,0,nil,nil,nil,0}
-t[14351]={"Gordok Bushwacker",58,59,1,nil,nil,nil,1}
+t[14351]={"Gordok Bushwacker",58,59,1,nil,nil,nil,1,10022}
 t[14352]={"Duke Landressar",63,63,3,nil,nil,"Agent of Therazane",0}
-t[14353]={"Mizzle the Crafty",60,60,1,nil,"AH",nil,3}
-t[14354]={"Pusillin",57,57,1,nil,"AH",nil,3}
+t[14353]={"Mizzle the Crafty",60,60,1,nil,"AH",nil,3,10022}
+t[14354]={"Pusillin",57,57,1,nil,"AH",nil,3,10026}
 t[14355]={"Azj'Tordin",60,60,0,{[1444]={76.91,37.35}},"AH",nil,2}
 t[14356]={"Sawfin Frenzy",38,40,0,{[1435]={66.41,52.44,74.13,51.91,68.47,45.87,66.59,57.27,73.24,60.46,69.59,59.97,73.78,56.3,72.49,47.55}},nil,nil,0}
 t[14357]={"Lake Thresher",25,25,1,{[1433]={42.99,55.31,37.29,64.44}},nil,nil,0}
-t[14358]={"Shen'dralar Ancient",60,60,1,nil,"AH",nil,3}
-t[14361]={"Shen'dralar Wisp",1,1,0,nil,"AH",nil,0}
+t[14358]={"Shen'dralar Ancient",60,60,1,nil,"AH",nil,3,10023}
+t[14361]={"Shen'dralar Wisp",1,1,0,nil,"AH",nil,0,2557}
 t[14362]={"Thornling",60,60,0,nil,"A",nil,0}
 t[14363]={"Thief Catcher Shadowdelve",60,60,1,{[1455]={35.72,62.04}},"A",nil,0}
 t[14364]={"Shen'dralar Spirit",56,56,1,nil,"AH",nil,2}
 t[14365]={"Thief Catcher Farmountain",60,60,1,{[1455]={24.44,73.39}},"A",nil,0}
 t[14366]={"Warpwood Spores",60,60,0,nil,nil,nil,0}
 t[14367]={"Thief Catcher Thunderbrew",60,60,1,{[1455]={57.53,48.38}},"A",nil,0}
-t[14368]={"Lorekeeper Lydros",60,60,1,nil,"AH",nil,3}
-t[14369]={"Shen'dralar Zealot",59,59,1,nil,"AH",nil,1}
+t[14368]={"Lorekeeper Lydros",60,60,1,nil,"AH",nil,3,10022}
+t[14369]={"Shen'dralar Zealot",59,59,1,nil,"AH",nil,1,2557}
 t[14370]={"Cadaverous Worm",60,60,0,nil,nil,nil,0}
-t[14371]={"Shen'dralar Provisioner",52,52,1,nil,"AH",nil,16388}
+t[14371]={"Shen'dralar Provisioner",52,52,1,nil,"AH",nil,16388,2557}
 t[14372]={"Winterfall Ambusher",56,57,0,nil,nil,nil,0}
 t[14373]={"Sage Korolusk",59,59,0,{[1444]={74.4,44}},"H",nil,2}
 t[14374]={"Scholar Runethorn",59,59,0,{[1444]={31.65,43.45}},"A",nil,3}
@@ -8628,11 +8628,11 @@ t[14377]={"Scout Tharr",60,60,1,{[1454]={55.04,57.51}},"H",nil,0}
 t[14378]={"Huntress Skymane",60,60,1,{[1457]={40.48,42.63}},"A",nil,2}
 t[14379]={"Huntress Ravenoak",60,60,1,{[1457]={34.12,15.29}},"A",nil,2}
 t[14380]={"Huntress Leafrunner",60,60,1,{[1457]={55.83,86.23}},"A",nil,2}
-t[14381]={"Lorekeeper Javon",60,60,1,nil,"AH",nil,3}
-t[14382]={"Lorekeeper Mykos",60,60,1,nil,"AH",nil,3}
-t[14383]={"Lorekeeper Kildrath",58,58,1,nil,"AH",nil,3}
+t[14381]={"Lorekeeper Javon",60,60,1,nil,"AH",nil,3,10022}
+t[14382]={"Lorekeeper Mykos",60,60,1,nil,"AH",nil,3,10022}
+t[14383]={"Lorekeeper Kildrath",58,58,1,nil,"AH",nil,3,10022}
 t[14385]={"Doomguard Minion",59,60,0,nil,nil,nil,0}
-t[14386]={"Wandering Eye of Kilrogg",60,60,0,nil,nil,nil,0}
+t[14386]={"Wandering Eye of Kilrogg",60,60,0,nil,nil,nil,0,2557}
 t[14387]={"Lothos Riftwaker",60,60,1,{[1427]={32.13,94.7}},"AH",nil,3}
 t[14388]={"Rogue Black Drake",50,51,1,{[1428]={9.33,57.31},[1429]={58.61,11.99,58.15,11.47,60.86,10.56}},nil,nil,0}
 t[14389]={"Netherwalker",60,60,1,nil,nil,nil,0}
@@ -8644,10 +8644,10 @@ t[14394]={"Major Mattingly",60,60,1,{[1453]={67.16,85.51}},"A",nil,3}
 t[14395]={"Griniblix the Spectator",57,57,0,nil,"AH",nil,1}
 t[14396]={"Eye of Immol'thar",59,59,0,nil,nil,nil,0}
 t[14397]={"Mana Burst",59,60,0,nil,nil,nil,0}
-t[14398]={"Eldreth Darter",58,59,1,nil,nil,nil,0}
-t[14399]={"Arcane Torrent",59,60,1,nil,nil,nil,0}
-t[14400]={"Arcane Feedback",59,60,0,nil,nil,nil,0}
-t[14401]={"Master Elemental Shaper Krixix",60,60,1,nil,nil,nil,0}
+t[14398]={"Eldreth Darter",58,59,1,nil,nil,nil,0,2557}
+t[14399]={"Arcane Torrent",59,60,1,nil,nil,nil,0,10025}
+t[14400]={"Arcane Feedback",59,60,0,nil,nil,nil,0,2557}
+t[14401]={"Master Elemental Shaper Krixix",60,60,1,nil,nil,nil,0,2677}
 t[14402]={"Seeker Cromwell",60,60,1,{[1458]={64.31,46}},"H",nil,2}
 t[14403]={"Seeker Nahr",60,60,1,{[1458]={67.72,41.98}},"H",nil,2}
 t[14404]={"Seeker Thompson",60,60,1,{[1458]={68.22,40.75}},"H",nil,2}
@@ -8680,17 +8680,17 @@ t[14445]={"Lord Captain Wyrmak",45,45,2,{[1435]={68.91,38.91}},nil,nil,0}
 t[14446]={"Fingat",43,43,4,{[1435]={61.43,83.72}},nil,nil,0}
 t[14447]={"Gilmorian",43,43,4,{[1435]={95.87,64.39}},nil,nil,0}
 t[14448]={"Molt Thorn",42,42,4,{[1435]={34.49,38.84,43.27,33.96,41.15,31.64,39.71,36.04,37.28,36.97,35.57,31.36,33.57,35.01,30.92,36.63,27.88,32.7,26.59,38.46,29.07,42.35,28.4,45.91,25.83,48.16,28.37,52.47,30.52,50.99,32.65,48.08,32.88,44.53,37.02,44.41,38.23,39.75}},nil,nil,0}
-t[14449]={"Blackwing Orb Trigger",1,1,0,nil,"AH",nil,0}
+t[14449]={"Blackwing Orb Trigger",1,1,0,nil,"AH",nil,0,2677}
 t[14450]={"Orphan Matron Nightingale",10,10,0,{[1453]={56.31,53.99}},"A",nil,7}
 t[14451]={"Orphan Matron Battlewail",10,10,0,{[1454]={70.72,25.19}},"H",nil,3}
 t[14452]={"Enslaved Doomguard Commander",61,61,1,nil,nil,nil,0}
 t[14453]={"Orb of Domination",1,1,0,nil,"AH",nil,0}
 t[14454]={"The Windreaver",60,60,1,{[1451]={28.66,26.85}},nil,nil,0}
 t[14455]={"Whirling Invader",57,58,0,{[1451]={28.4,26.89,28.49,27.24,28.5,26.49}},nil,nil,0}
-t[14456]={"Blackwing Guardsman",61,61,1,nil,nil,nil,0}
+t[14456]={"Blackwing Guardsman",61,61,1,nil,nil,nil,0,2677}
 t[14457]={"Princess Tempestria",60,60,1,{[1452]={54.96,41.58}},nil,nil,0}
 t[14458]={"Watery Invader",56,58,0,{[1452]={55.06,41.37,54.93,41.34,55.13,41.51}},nil,nil,0}
-t[14459]={"Nefarian's Troops",1,1,0,nil,"AH",nil,0}
+t[14459]={"Nefarian's Troops",1,1,0,nil,"AH",nil,0,2677}
 t[14460]={"Blazing Invader",54,56,0,{[1449]={44,47.92,43.61,47.77,43.83,47.69}},nil,nil,0}
 t[14461]={"Baron Charr",58,58,1,{[1449]={43.76,48.13}},nil,nil,0}
 t[14462]={"Thundering Invader",55,57,0,{[1447]={79.89,25.61,79.91,25.17,79.65,25.74}},nil,nil,0}
@@ -8730,28 +8730,28 @@ t[14496]={"Stormwind Orphan",3,3,0,{[1453]={56.67,53.43,56.59,53.52,57.11,53.69,
 t[14497]={"Shellene",20,20,0,{[1453]={57.02,52.48}},"A","Orphanage Matron",0}
 t[14498]={"Tosamina",34,34,0,{[1454]={70.61,23.69}},"H",nil,0}
 t[14499]={"Horde Orphan",3,3,0,{[1454]={70.44,22.67,71.13,23.29,70.77,22.42,69.86,26.23,71.06,22.47}},"H",nil,0}
-t[14500]={"J'eevee",58,58,0,nil,"AH",nil,0}
+t[14500]={"J'eevee",58,58,0,nil,"AH",nil,0,2057}
 t[14501]={"Warlock Mount Ritual Mob Type 3, Infernal (DND)",1,1,0,nil,"AH",nil,0}
-t[14502]={"Xorothian Dreadsteed",62,62,1,nil,nil,nil,0}
+t[14502]={"Xorothian Dreadsteed",62,62,1,nil,nil,nil,0,10025}
 t[14503]={"The Cleaner",60,60,1,nil,nil,nil,0}
-t[14504]={"Dreadsteed Spirit",60,60,0,nil,"AH",nil,2}
+t[14504]={"Dreadsteed Spirit",60,60,0,nil,"AH",nil,2,10025}
 t[14505]={"Riding Horse (Dreadsteed)",1,1,0,nil,"AH",nil,0}
-t[14506]={"Lord Hel'nurath",62,62,1,nil,nil,nil,0}
-t[14507]={"High Priest Venoxis",63,63,3,nil,nil,nil,0}
+t[14506]={"Lord Hel'nurath",62,62,1,nil,nil,nil,0,10025}
+t[14507]={"High Priest Venoxis",63,63,3,nil,nil,nil,0,1977}
 t[14508]={"Short John Mithril",47,47,0,{[1434]={29.59,47.38}},"AH",nil,3}
-t[14509]={"High Priest Thekal",63,63,3,nil,nil,nil,0}
-t[14510]={"High Priestess Mar'li",63,63,3,nil,nil,nil,0}
+t[14509]={"High Priest Thekal",63,63,3,nil,nil,nil,0,1977}
+t[14510]={"High Priestess Mar'li",63,63,3,nil,nil,nil,0,1977}
 t[14511]={"Shadowed Spirit",60,60,1,nil,nil,nil,0}
 t[14512]={"Corrupted Spirit",59,60,1,nil,nil,nil,0}
 t[14513]={"Malicious Spirit",59,60,1,nil,nil,nil,0}
 t[14514]={"Banal Spirit",60,60,0,nil,nil,nil,0}
-t[14515]={"High Priestess Arlokk",63,63,3,nil,nil,nil,0}
-t[14516]={"Death Knight Darkreaver",62,62,1,nil,nil,nil,0}
-t[14517]={"High Priestess Jeklik",63,63,3,nil,nil,nil,0}
-t[14518]={"Aspect of Banality",60,60,1,nil,nil,nil,0}
-t[14519]={"Aspect of Corruption",59,60,1,nil,nil,nil,0}
-t[14520]={"Aspect of Malice",60,60,1,nil,nil,nil,0}
-t[14521]={"Aspect of Shadow",60,60,1,nil,nil,nil,0}
+t[14515]={"High Priestess Arlokk",63,63,3,nil,nil,nil,0,1977}
+t[14516]={"Death Knight Darkreaver",62,62,1,nil,nil,nil,0,2057}
+t[14517]={"High Priestess Jeklik",63,63,3,nil,nil,nil,0,1977}
+t[14518]={"Aspect of Banality",60,60,1,nil,nil,nil,0,2057}
+t[14519]={"Aspect of Corruption",59,60,1,nil,nil,nil,0,2057}
+t[14520]={"Aspect of Malice",60,60,1,nil,nil,nil,0,2057}
+t[14521]={"Aspect of Shadow",60,60,1,nil,nil,nil,0,2057}
 t[14522]={"Ur'dan",54,54,0,{[1448]={36.18,44.46}},nil,nil,5}
 t[14523]={"Ulathek",57,57,0,{[1448]={40.76,48.42}},nil,nil,1}
 t[14524]={"Vartrus the Ancient",63,63,1,{[1448]={47.78,24.08}},"AH",nil,2}
@@ -8762,7 +8762,7 @@ t[14528]={"Precious",60,60,1,{[1449]={50.13,76.59,31.31,44.93,51.62,68.79,45.03,
 t[14529]={"Franklin the Friendly",60,60,1,{[1428]={24.82,65.93}},"AH",nil,1}
 t[14530]={"Solenor the Slayer",60,60,1,nil,nil,nil,0}
 t[14531]={"Artorius the Amiable",60,60,1,{[1452]={60.31,13.18}},"AH",nil,1}
-t[14532]={"Razzashi Venombrood",60,60,1,nil,nil,nil,0}
+t[14532]={"Razzashi Venombrood",60,60,1,nil,nil,nil,0,1977}
 t[14533]={"Simone the Seductress",60,60,1,nil,nil,nil,0}
 t[14534]={"Klinfran the Crazed",60,60,1,nil,nil,nil,0}
 t[14535]={"Artorius the Doombringer",60,60,1,nil,nil,nil,0}
@@ -8795,11 +8795,11 @@ t[14562]={"Swift Blue Mechanostrider",1,1,0,nil,"AH",nil,0}
 t[14563]={"Swift Red Mechanostrider",1,1,0,nil,"AH",nil,0}
 t[14564]={"Terrordale Spirit",59,60,0,{[1423]={10.91,22.64,12.16,22.59,11.29,20.05,15.48,20.92,12.07,24.22,11.53,19.9,11.36,20.78,13.13,24.81,11.82,21.3,12,23.15,14.59,25.65,15.31,24.33,8.81,20.87,11.54,21.2,11.42,19.81,10.47,19.29,11.18,20.01,15.11,20.73,11.84,22.72,14.84,22.93,10.23,15.9,11.23,21.1,14.86,21.35,10.46,19.7,8.11,20.86,8.68,19.81,8.54,21.59,9.43,20.48,9.35,21.98,9.14,22.59,10.37,19.8,13.02,20.87,11.11,17.41,11.74,18.14,13.81,21.78}},nil,nil,0}
 t[14565]={"Riding Horse (Charger)",1,1,0,nil,"AH",nil,0}
-t[14566]={"Ancient Equine Spirit",60,60,0,nil,"AH",nil,2}
+t[14566]={"Ancient Equine Spirit",60,60,0,nil,"AH",nil,2,10024}
 t[14567]={"Derotain Mudsipper",52,52,0,{[1446]={51.38,28.67}},"AH","The Thorium Brotherhood",2}
-t[14568]={"Darkreaver's Fallen Charger",60,60,0,nil,"AH",nil,2}
-t[14581]={"Sergeant Thunderhorn",55,55,0,nil,"H","Weapons Quartermaster",16388}
-t[14601]={"Ebonroc",63,63,3,nil,nil,nil,0}
+t[14568]={"Darkreaver's Fallen Charger",60,60,0,nil,"AH",nil,2,2057}
+t[14581]={"Sergeant Thunderhorn",55,55,0,nil,"H","Weapons Quartermaster",16388,2917}
+t[14601]={"Ebonroc",63,63,3,nil,nil,nil,0,2677}
 t[14602]={"Swift Stormsaber",1,1,0,{[1457]={38.78,14.94}},"AH",nil,0}
 t[14603]={"Zapped Shore Strider",48,49,0,{[1444]={34.54,33.98,42.52,46.88,38.25,34.95,36.47,35.75,36.42,36.53,45.46,62.32,44.15,50.09,45.9,57.9,46.49,59.58}},nil,nil,0}
 t[14604]={"Zapped Land Walker",48,48,0,{[1444]={40.93,25.55,38.07,18.26,37.99,23.6,39.61,22.11,37.76,21.92,39.16,23.89,38.52,24.39,41.15,24.82}},nil,nil,0}
@@ -8830,7 +8830,7 @@ t[14642]={"[PH] Alliance Spell thrower",1,1,0,nil,"A",nil,0}
 t[14643]={"[PH] Alliance Herald",60,60,0,nil,"A",nil,0}
 t[14644]={"[PH] Horde Herald",60,60,0,nil,"H",nil,0}
 t[14645]={"Warsong Gulch Herald",1,1,0,nil,"A",nil,0}
-t[14646]={"Stratholme Trigger",1,1,0,nil,"AH",nil,0}
+t[14646]={"Stratholme Trigger",1,1,0,nil,"AH",nil,0,2017}
 t[14661]={"Stinglasher",47,47,0,{[1444]={75.58,60.85}},nil,nil,0}
 t[14662]={"Corrupted Fire Nova Totem V",52,52,0,nil,nil,nil,0}
 t[14663]={"Corrupted Stoneskin Totem VI",54,54,0,nil,nil,nil,0}
@@ -8839,20 +8839,20 @@ t[14666]={"Corrupted Windfury Totem III",60,60,0,nil,nil,nil,0}
 t[14667]={"Corrupted Totem",1,1,0,nil,nil,nil,0}
 t[14668]={"Corrupted Infernal",60,60,0,nil,nil,nil,0}
 t[14681]={"Transporter Malfunction",1,1,0,nil,"AH",nil,0}
-t[14682]={"Sever",25,25,1,nil,"AH",nil,0}
+t[14682]={"Sever",25,25,1,nil,"AH",nil,0,209}
 t[14683]={"Baron Titus Rivendare",62,62,1,nil,nil,nil,0}
-t[14684]={"Balzaphon",60,60,1,nil,"AH",nil,0}
+t[14684]={"Balzaphon",60,60,1,nil,"AH",nil,0,2017}
 t[14685]={"Morbus",61,61,1,nil,nil,nil,0}
-t[14686]={"Lady Falther'ess",40,40,1,nil,"AH",nil,0}
+t[14686]={"Lady Falther'ess",40,40,1,nil,"AH",nil,0,722}
 t[14687]={"Soulless",61,61,1,nil,nil,nil,0}
 t[14688]={"Master Sandoval",61,61,1,nil,nil,nil,0}
 t[14689]={"Mana Elemental",59,60,1,nil,nil,nil,0}
-t[14690]={"Revanchion",60,60,1,nil,"AH",nil,0}
+t[14690]={"Revanchion",60,60,1,nil,"AH",nil,0,10025}
 t[14691]={"Basalt",61,61,1,nil,nil,nil,0}
 t[14692]={"Wollstonecraft",61,61,1,nil,nil,nil,0}
-t[14693]={"Scorn",34,34,1,nil,"AH",nil,0}
+t[14693]={"Scorn",34,34,1,nil,"AH",nil,0,796}
 t[14694]={"Necrosis",61,61,1,nil,nil,nil,0}
-t[14695]={"Lord Blackwood",60,60,1,nil,"AH",nil,0}
+t[14695]={"Lord Blackwood",60,60,1,nil,"AH",nil,0,2057}
 t[14696]={"Stitched Behemoth",60,60,0,nil,nil,nil,0}
 t[14697]={"Lumbering Horror",1,1,4,nil,"AH",nil,0}
 t[14698]={"Silent Stalker",57,59,0,nil,nil,nil,0}
@@ -8904,7 +8904,7 @@ t[14744]={"Frostwolf Riding Wolf",1,1,0,nil,"H",nil,0}
 t[14745]={"Stormpike Riding Ram",1,1,0,nil,"A",nil,0}
 t[14746]={"[PH] Horde Tower Lieutenant",60,60,1,nil,"H",nil,0}
 t[14748]={"Vilebranch Kidnapper",49,49,0,{[1425]={84.6,41.2}},nil,nil,0}
-t[14750]={"Gurubashi Bat Rider",61,61,1,nil,nil,nil,0}
+t[14750]={"Gurubashi Bat Rider",61,61,1,nil,nil,nil,0,1977}
 t[14751]={"Frostwolf Battle Standard",1,1,0,nil,"H",nil,0}
 t[14752]={"Stormpike Battle Standard",1,1,0,nil,"A",nil,0}
 t[14753]={"Illiyana Moonblaze",55,55,1,{[1440]={61.49,83.86}},"A","Silverwing Supply Officer",7}
@@ -8912,7 +8912,7 @@ t[14754]={"Kelm Hargunth",55,55,1,{[1413]={46.65,8.38}},"H","Warsong Supply Offi
 t[14755]={"Tiny Green Dragon",1,1,0,nil,"AH",nil,0}
 t[14756]={"Tiny Red Dragon",1,1,0,nil,"AH",nil,0}
 t[14757]={"Elder Torntusk",48,48,0,{[1425]={59.69,77.84}},"H",nil,3}
-t[14758]={"Zul'Gurub Trigger",60,60,0,nil,"AH",nil,0}
+t[14758]={"Zul'Gurub Trigger",60,60,0,nil,"AH",nil,0,1977}
 t[14761]={"Creeping Doom",60,60,0,nil,"AH",nil,0}
 t[14762]={"Dun Baldar North Marshal",60,60,1,{[1459]={42.37,12.83}},"A",nil,0}
 t[14763]={"Dun Baldar South Marshal",60,60,1,{[1459]={42.22,12.9}},"A",nil,0}
@@ -8932,12 +8932,12 @@ t[14776]={"Tower Point Warmaster",60,60,1,{[1459]={47.31,86.95}},"H",nil,2}
 t[14777]={"West Frostwolf Warmaster",60,60,1,{[1459]={47.44,86.49}},"H",nil,0}
 t[14781]={"Captain Shatterskull",55,55,1,{[1413]={46.6,8.41}},"H",nil,3}
 t[14801]={"Wild Polymorph Target",1,1,0,nil,"AH",nil,0}
-t[14821]={"Razzashi Raptor",60,60,1,nil,nil,nil,0}
+t[14821]={"Razzashi Raptor",60,60,1,nil,nil,nil,0,1977}
 t[14822]={"Sayge",55,55,0,{[1412]={37.83,45.18},[1429]={42.13,69}},"AH",nil,3}
 t[14823]={"Silas Darkmoon",61,61,1,{[1412]={38.1,44.92},[1429]={41.88,69.77}},"AH",nil,3}
 t[14824]={"GGOODMAN",1,1,0,nil,"AH",nil,0}
-t[14825]={"Withered Mistress",60,60,1,nil,nil,nil,0}
-t[14826]={"Sacrificed Troll",60,60,0,nil,nil,nil,0}
+t[14825]={"Withered Mistress",60,60,1,nil,nil,nil,0,1977}
+t[14826]={"Sacrificed Troll",60,60,0,nil,nil,nil,0,1977}
 t[14827]={"Burth",60,60,0,{[1412]={38.05,44.89},[1429]={41.97,69.93}},"AH",nil,3}
 t[14828]={"Gelvas Grimegate",25,25,0,{[1412]={38.15,44.66},[1429]={41.5,68.87}},"AH","Darkmoon Faire Ticket Redemption",3}
 t[14829]={"Yebb Neblegear",55,55,0,{[1412]={38.35,46.24},[1429]={40.17,69.53}},"AH",nil,3}
@@ -8945,7 +8945,7 @@ t[14830]={"Unkillable Test Dummy 60 Warrior",60,60,0,nil,"AH",nil,0}
 t[14831]={"Unkillable Test Dummy 63 Warrior",63,63,3,nil,"AH",nil,0}
 t[14832]={"Kerri Hicks",55,55,0,{[1412]={38.62,46.41},[1429]={40.49,69.93}},"AH","The Strongest Woman Alive!",3}
 t[14833]={"Chronos",55,55,0,{[1412]={37.19,42.53},[1429]={43.61,70.84}},"AH","He Who Never Forgets!",3}
-t[14834]={"Hakkar",63,63,3,nil,nil,nil,0}
+t[14834]={"Hakkar",63,63,3,nil,nil,nil,0,1977}
 t[14841]={"Rinling",55,55,0,{[1412]={38,44.31},[1429]={41.71,70.72}},"AH",nil,3}
 t[14842]={"Melnan Darkstone",30,30,0,{[1455]={29.65,75.25}},"AH","Darkmoon Faire Barker",3}
 t[14843]={"Kruban Darkblade",30,30,0,{[1454]={52.9,66.56}},"AH","Darkmoon Faire Barker",3}
@@ -8966,7 +8966,7 @@ t[14857]={"Erk",2,2,0,{[1413]={51.71,24.3}},"H",nil,0}
 t[14858]={"Progk",1,1,0,nil,"H",nil,0}
 t[14859]={"Guard Taruc",40,40,0,{[1413]={55.38,31.74}},"H",nil,0}
 t[14860]={"Flik",4,4,0,{[1412]={37.51,44.12},[1429]={41.76,68.1}},"AH",nil,5}
-t[14861]={"Blood Steward of Kirtonos",61,61,1,nil,nil,nil,0}
+t[14861]={"Blood Steward of Kirtonos",61,61,1,nil,nil,nil,0,2057}
 t[14862]={"Emissary Roman'khan",63,63,3,{[1451]={48.77,58.14}},nil,nil,0}
 t[14864]={"Khaz Modan Ram",5,5,0,{[1412]={38.48,46.41,38.86,46.08},[1429]={40.93,69.25,40.47,69.37}},"AH",nil,0}
 t[14865]={"Felinni",10,10,1,{[1412]={38.6,46.08},[1429]={40.9,69.82}},"AH",nil,0}
@@ -8984,10 +8984,10 @@ t[14876]={"Zandalar Headshrinker",60,60,1,{[1434]={15.24,17.17,15,13.6,14.28,13.
 t[14877]={"High Priest Venoxis Transform Visual",1,1,1,nil,"AH",nil,0}
 t[14878]={"Jubling",1,1,0,nil,"H",nil,0}
 t[14879]={"Arathi Basin Battlemaster",1,1,0,nil,"AH",nil,0}
-t[14880]={"Razzashi Skitterer",56,58,1,nil,nil,nil,0}
-t[14881]={"Spider",1,1,0,nil,"AH",nil,0}
-t[14882]={"Atal'ai Mistress",60,60,1,nil,nil,nil,0}
-t[14883]={"Voodoo Slave",60,60,1,nil,nil,nil,0}
+t[14880]={"Razzashi Skitterer",56,58,1,nil,nil,nil,0,1977}
+t[14881]={"Spider",1,1,0,nil,"AH",nil,0,1977}
+t[14882]={"Atal'ai Mistress",60,60,1,nil,nil,nil,0,1977}
+t[14883]={"Voodoo Slave",60,60,1,nil,nil,nil,0,1977}
 t[14884]={"Parasitic Serpent",63,63,0,nil,nil,nil,0}
 t[14885]={"[PH] Jon LeCraft",63,63,0,nil,"AH","Designer Extraordinaire",0}
 t[14886]={"The Good Rabbit",5,5,0,nil,"AH",nil,0}
@@ -9038,13 +9038,13 @@ t[14989]={"Poisonous Cloud",60,60,0,nil,nil,nil,0}
 t[14990]={"Defilers Emissary",40,40,0,nil,"H",nil,2049}
 t[14991]={"League of Arathor Emissary",40,40,0,nil,"A",nil,2049}
 t[14994]={"Zandalarian Event Generator",1,1,0,{[1434]={14.73,15.94}},"AH",nil,0}
-t[15001]={"PvP A-Mid Credit Marker",1,1,0,nil,"AH",nil,0}
+t[15001]={"PvP A-Mid Credit Marker",1,1,0,nil,"AH",nil,0,3358}
 end f() end
 do local function f()
-t[15002]={"PvP Mid Credit Marker",1,1,0,nil,"AH",nil,0}
-t[15003]={"PvP H-Mid Credit Marker",1,1,0,nil,"AH",nil,0}
-t[15004]={"PvP ALT-S Credit Marker",1,1,0,nil,"AH",nil,0}
-t[15005]={"PvP ALT-N Credit Marker",1,1,0,nil,"AH",nil,0}
+t[15002]={"PvP Mid Credit Marker",1,1,0,nil,"AH",nil,0,3358}
+t[15003]={"PvP H-Mid Credit Marker",1,1,0,nil,"AH",nil,0,3358}
+t[15004]={"PvP ALT-S Credit Marker",1,1,0,nil,"AH",nil,0,3358}
+t[15005]={"PvP ALT-N Credit Marker",1,1,0,nil,"AH",nil,0,3358}
 t[15006]={"Deze Snowbane",61,61,1,{[1454]={79.58,29.04}},"H","Arathi Basin Battlemaster",2049}
 t[15007]={"Sir Malory Wheeler",61,61,1,{[1458]={61.35,93.03}},"H","Arathi Basin Battlemaster",2049}
 t[15008]={"Lady Hoteshem",61,61,1,{[1453]={80.24,36.66}},"A","Arathi Basin Battlemaster",2049}
@@ -9055,8 +9055,8 @@ t[15012]={"Javnir Nashak",55,55,0,{[1411]={46.1,13.77}},"H",nil,7}
 t[15021]={"Deathmaster Dwire",62,62,0,{[1417]={73.25,29.73}},"H",nil,3}
 t[15022]={"Deathstalker Mortis",62,62,0,{[1417]={73.46,29.76}},"H",nil,3}
 t[15041]={"Spawn of Mar'li",60,60,0,nil,nil,nil,0}
-t[15042]={"Zanza the Restless",60,60,1,nil,"AH",nil,3}
-t[15043]={"Zulian Crocolisk",60,60,1,nil,nil,nil,0}
+t[15042]={"Zanza the Restless",60,60,1,nil,"AH",nil,3,1977}
+t[15043]={"Zulian Crocolisk",60,60,1,nil,nil,nil,0,1977}
 t[15045]={"Arathi Farmer",1,1,0,{[1461]={60.69,59.51,56.56,56.94,56.32,58.55,58.87,61.69,58.47,59.15,57.61,60.58,58.17,56.46,58.93,61.14}},nil,nil,0}
 t[15046]={"Forsaken Farmer",1,1,0,{[1461]={58.35,56.3,58.96,61.24,60.72,59.44,56.4,58.56,56.96,56.79,58.46,59.17,59.26,58.5,57.54,60.64}},"AH",nil,0}
 t[15047]={"Gurubashi",63,63,1,nil,nil,nil,0}
@@ -9066,7 +9066,7 @@ t[15063]={"Arathi Blacksmith",1,1,0,{[1461]={48.82,44.12,48.9,46.05,48.39,44.81,
 t[15064]={"Forsaken Blacksmith",1,1,0,{[1461]={48.89,46.07,48.71,43.72,48.03,44.24,48.39,44.82,49.02,45.16}},"AH",nil,0}
 t[15065]={"Lady",1,1,0,{[1461]={48.54,42.67}},"AH",nil,0}
 t[15066]={"Cleo",1,1,0,{[1461]={48.37,41.89}},"AH",nil,0}
-t[15067]={"Zulian Stalker",61,61,1,nil,nil,nil,0}
+t[15067]={"Zulian Stalker",61,61,1,nil,nil,nil,0,1977}
 t[15068]={"Zulian Guardian",61,61,1,nil,nil,nil,0}
 t[15069]={"Heart of Hakkar",1,1,0,nil,"AH",nil,0}
 t[15070]={"Vinchaxa",60,60,1,{[1434]={14.5,15.83}},"AH","Servitor of Zanza",3}
@@ -9090,7 +9090,7 @@ t[15087]={"Forsaken Stablehand",1,1,0,{[1461]={37.52,27.41,38.91,26.2,38.5,29.11
 t[15088]={"Booty Bay Elite",61,61,1,nil,"AH",nil,0}
 t[15089]={"Forsaken Lumberjack",1,1,0,{[1461]={39.71,59.44,31.14,50.83,33.82,54.29,35,65.39,35.43,57.83,44.16,63.82,35.75,61.54,38.82,53.27,35.62,51.14,34.75,51.24,38.44,51.21,40.48,63.51,34.53,50.22,43.83,59.14,37.57,64.6}},"AH",nil,0}
 t[15090]={"Swift Razzashi Raptor",1,1,0,nil,"AH",nil,0}
-t[15091]={"Zul'Gurub Panther Trigger",60,60,0,nil,"AH",nil,0}
+t[15091]={"Zul'Gurub Panther Trigger",60,60,0,nil,"AH",nil,0,1977}
 t[15101]={"Zulian Prowler",60,60,0,nil,nil,nil,0}
 t[15102]={"Silverwing Emissary",22,22,0,nil,"A",nil,2049}
 t[15103]={"Stormpike Emissary",55,55,0,nil,"A",nil,2049}
@@ -9101,10 +9101,10 @@ t[15107]={"Arathi Horse",1,1,0,{[1461]={40.09,30.34,39.02,29.96,38.55,27.4,39.45
 t[15108]={"Forsaken Horse",1,1,0,{[1461]={39.2,29.74,38.67,27.63,40.65,28.81,40.04,28.46,38.26,29.14,38.31,27.06,38.01,27.52}},"AH",nil,0}
 t[15109]={"Primal Blessing Visual",1,1,0,nil,"AH",nil,0}
 t[15110]={"Gurubashi Prisoner",60,60,0,nil,"AH",nil,0}
-t[15111]={"Mad Servant",61,61,1,nil,nil,nil,0}
+t[15111]={"Mad Servant",61,61,1,nil,nil,nil,0,1977}
 t[15112]={"Brain Wash Totem",59,60,0,nil,"H",nil,0}
 t[15113]={"Honored Hero",60,60,0,{[1426]={52.94,36.45,52.96,37.31,52.96,37.13,52.92,36.77,52.86,36.16,52.68,36.63,52.76,36.94,52.65,36.86,52.59,36.68,52.74,36.32,52.82,36.31,52.82,37.1}},"AH",nil,0}
-t[15114]={"Gahz'ranka",63,63,3,nil,nil,nil,0}
+t[15114]={"Gahz'ranka",63,63,3,nil,nil,nil,0,1176}
 t[15115]={"Honored Ancestor",60,60,0,{[1411]={46.6,13.84,46.51,13.83,46.3,13.79,46.68,13.71,46.21,13.64,46.2,13.34,46.71,13.17,46.63,13.11,46.47,12.99,46.29,13.05,46.14,13.47,46.76,13.44}},"AH",nil,0}
 t[15116]={"Grinkle",50,50,0,{[1454]={53.25,70.65}},"H","Fishing Promoter",3}
 t[15117]={"Chained Spirit",60,60,0,nil,"AH",nil,0}
@@ -9151,7 +9151,7 @@ t[15164]={"Mulgore Trigger",1,1,0,{[1456]={56.3,53.79}},"AH",nil,0}
 t[15165]={"Haughty Modiste",51,51,0,{[1446]={66.56,22.27}},"AH","Fashion Designer",7}
 t[15166]={"[PH] Luis Barriga",60,60,0,nil,"AH",nil,0}
 t[15167]={"[PH] Luis Test NPC",45,45,0,nil,"AH",nil,0}
-t[15168]={"Vile Scarab",55,55,0,nil,"AH",nil,0}
+t[15168]={"Vile Scarab",55,55,0,nil,"AH",nil,0,3429}
 t[15169]={"Ralo'shan the Eternal Watcher",60,60,0,{[1451]={70.2,25.35}},"AH",nil,1}
 t[15170]={"Rutgar Glyphshaper",60,60,0,{[1451]={41.28,88.45}},"AH",nil,3}
 t[15171]={"Frankal Stonebridge",60,60,0,{[1451]={40.81,88.86}},"AH",nil,3}
@@ -9207,33 +9207,33 @@ t[15220]={"The Duke of Zephyrs",62,62,1,{[1451]={37.63,44.8,24.7,32.65,17.21,84.
 t[15221]={"Frankal Invisible Trigger",1,1,0,{[1451]={40.62,89.18}},"AH",nil,0}
 t[15222]={"Rutgar Invisible Trigger",1,1,0,{[1451]={41.28,88.82}},"AH",nil,0}
 t[15224]={"Dream Fog",60,60,3,nil,nil,nil,0}
-t[15229]={"Vekniss Soldier",61,61,1,nil,nil,nil,0}
-t[15230]={"Vekniss Warrior",61,61,1,nil,nil,nil,0}
-t[15233]={"Vekniss Guardian",61,61,1,nil,nil,nil,0}
-t[15235]={"Vekniss Stinger",62,62,1,nil,nil,nil,0}
-t[15236]={"Vekniss Wasp",60,60,1,nil,nil,nil,0}
-t[15240]={"Vekniss Hive Crawler",62,62,1,nil,nil,nil,0}
-t[15246]={"Qiraji Mindslayer",61,61,1,nil,nil,nil,0}
-t[15247]={"Qiraji Brainwasher",61,61,1,nil,nil,nil,0}
-t[15249]={"Qiraji Lasher",61,61,1,nil,nil,nil,0}
-t[15250]={"Qiraji Slayer",61,61,1,nil,nil,nil,0}
-t[15252]={"Qiraji Champion",63,63,1,nil,nil,nil,0}
+t[15229]={"Vekniss Soldier",61,61,1,nil,nil,nil,0,3428}
+t[15230]={"Vekniss Warrior",61,61,1,nil,nil,nil,0,3428}
+t[15233]={"Vekniss Guardian",61,61,1,nil,nil,nil,0,3428}
+t[15235]={"Vekniss Stinger",62,62,1,nil,nil,nil,0,3428}
+t[15236]={"Vekniss Wasp",60,60,1,nil,nil,nil,0,3428}
+t[15240]={"Vekniss Hive Crawler",62,62,1,nil,nil,nil,0,3428}
+t[15246]={"Qiraji Mindslayer",61,61,1,nil,nil,nil,0,3428}
+t[15247]={"Qiraji Brainwasher",61,61,1,nil,nil,nil,0,3428}
+t[15249]={"Qiraji Lasher",61,61,1,nil,nil,nil,0,3428}
+t[15250]={"Qiraji Slayer",61,61,1,nil,nil,nil,0,3428}
+t[15252]={"Qiraji Champion",63,63,1,nil,nil,nil,0,3428}
 t[15260]={"Demented Druid Spirit",60,60,0,nil,nil,nil,0}
 t[15261]={"Spirit Shade",60,60,0,nil,nil,nil,0}
-t[15262]={"Obsidian Eradicator",60,60,1,nil,nil,nil,0}
-t[15263]={"The Prophet Skeram",63,63,3,nil,nil,nil,0}
-t[15264]={"Anubisath Sentinel",61,61,1,nil,nil,nil,0}
+t[15262]={"Obsidian Eradicator",60,60,1,nil,nil,nil,0,3428}
+t[15263]={"The Prophet Skeram",63,63,3,nil,nil,nil,0,3428}
+t[15264]={"Anubisath Sentinel",61,61,1,nil,nil,nil,0,3428}
 t[15270]={"Huum Wildmane",60,60,0,{[1451]={48.62,37.87}},"AH",nil,3}
-t[15275]={"Emperor Vek'nilash",63,63,3,nil,nil,nil,0}
-t[15276]={"Emperor Vek'lor",63,63,3,nil,nil,nil,0}
-t[15277]={"Anubisath Defender",62,62,1,nil,nil,nil,0}
+t[15275]={"Emperor Vek'nilash",63,63,3,nil,nil,nil,0,3428}
+t[15276]={"Emperor Vek'lor",63,63,3,nil,nil,nil,0,3428}
+t[15277]={"Anubisath Defender",62,62,1,nil,nil,nil,0,3428}
 t[15282]={"Aurel Goldleaf",60,60,0,{[1451]={51.96,38.16}},"AH",nil,3}
 t[15286]={"Xil'xix",62,62,1,nil,nil,"Hive'Regal Overlord",0}
 t[15288]={"Aluntir",62,62,1,nil,nil,"Hive'Ashi Overlord",0}
 t[15290]={"Arakis",62,62,1,nil,nil,"Hive'Zora Overlord",0}
 t[15293]={"Aendel Windspear",60,60,0,{[1451]={62.57,49.79}},"AH",nil,5}
-t[15299]={"Viscidus",63,63,3,nil,nil,nil,0}
-t[15300]={"Vekniss Drone",60,60,0,nil,nil,nil,0}
+t[15299]={"Viscidus",63,63,3,nil,nil,nil,0,3428}
+t[15300]={"Vekniss Drone",60,60,0,nil,nil,nil,0,3428}
 t[15302]={"Shade of Taerar",63,63,3,nil,nil,nil,0}
 t[15303]={"Maxima Blastenheimer",35,35,0,{[1429]={44.54,70.46},[1456]={41.25,67.47}},"AH","Darkmoon Faire Cannoneer",1}
 t[15304]={"Ancient Mana Spring Totem",1,1,0,nil,"AH",nil,0}
@@ -9243,71 +9243,71 @@ t[15307]={"Earthen Templar",60,60,1,{[1451]={20.46,86.16,18.23,81.12,38.96,42.44
 t[15308]={"Twilight Prophet",60,60,1,{[1451]={22.82,68.66,18.28,31.4}},nil,"Twilight's Hammer",0}
 t[15309]={"Spoops",1,1,0,{[1454]={71.44,22.81}},"H",nil,2}
 t[15310]={"Jesper",1,1,0,{[1453]={56.53,51.76}},"A",nil,2}
-t[15311]={"Anubisath Warder",63,63,1,nil,nil,nil,0}
-t[15312]={"Obsidian Nullifier",61,61,1,nil,nil,nil,0}
+t[15311]={"Anubisath Warder",63,63,1,nil,nil,nil,0,3428}
+t[15312]={"Obsidian Nullifier",61,61,1,nil,nil,nil,0,3428}
 t[15313]={"Moonkin (Druid - Night Elf)",1,1,0,nil,"AH",nil,0}
 t[15314]={"Moonkin (Druid - Tauren)",1,1,0,nil,"AH",nil,0}
 t[15315]={"Mylini Frostmoon",55,55,0,{[1448]={62.41,25.78}},"A","Weapon Merchant",16388}
-t[15316]={"Qiraji Scarab",60,60,0,nil,nil,nil,0}
-t[15317]={"Qiraji Scorpion",60,60,0,nil,nil,nil,0}
-t[15318]={"Hive'Zara Drone",60,60,1,nil,nil,nil,0}
-t[15319]={"Hive'Zara Collector",60,60,1,nil,nil,nil,0}
-t[15320]={"Hive'Zara Soldier",61,61,1,nil,nil,nil,0}
-t[15323]={"Hive'Zara Sandstalker",61,61,1,nil,nil,nil,0}
-t[15324]={"Qiraji Gladiator",61,61,1,nil,nil,nil,0}
-t[15325]={"Hive'Zara Wasp",61,61,1,nil,nil,nil,0}
-t[15327]={"Hive'Zara Stinger",61,61,1,nil,nil,nil,0}
+t[15316]={"Qiraji Scarab",60,60,0,nil,nil,nil,0,3428}
+t[15317]={"Qiraji Scorpion",60,60,0,nil,nil,nil,0,3428}
+t[15318]={"Hive'Zara Drone",60,60,1,nil,nil,nil,0,3429}
+t[15319]={"Hive'Zara Collector",60,60,1,nil,nil,nil,0,3429}
+t[15320]={"Hive'Zara Soldier",61,61,1,nil,nil,nil,0,3429}
+t[15323]={"Hive'Zara Sandstalker",61,61,1,nil,nil,nil,0,3429}
+t[15324]={"Qiraji Gladiator",61,61,1,nil,nil,nil,0,3429}
+t[15325]={"Hive'Zara Wasp",61,61,1,nil,nil,nil,0,3429}
+t[15327]={"Hive'Zara Stinger",61,61,1,nil,nil,nil,0,3429}
 t[15328]={"Steam Tonk",1,1,0,nil,"AH",nil,0}
-t[15333]={"Silicate Feeder",55,55,0,nil,"AH",nil,0}
+t[15333]={"Silicate Feeder",55,55,0,nil,"AH",nil,0,3429}
 t[15334]={"Giant Eye Tentacle",60,60,1,nil,nil,nil,0}
-t[15335]={"Flesh Hunter",62,62,1,nil,nil,nil,0}
-t[15336]={"Hive'Zara Tail Lasher",61,61,1,nil,nil,nil,0}
-t[15338]={"Obsidian Destroyer",61,61,1,nil,nil,nil,0}
-t[15339]={"Ossirian the Unscarred",63,63,3,nil,nil,nil,0}
-t[15340]={"Moam",63,63,3,nil,nil,nil,0}
-t[15341]={"General Rajaxx",63,63,3,nil,nil,nil,0}
-t[15343]={"Qiraji Swarmguard",61,61,1,nil,nil,nil,0}
-t[15344]={"Swarmguard Needler",61,61,1,nil,nil,nil,0}
-t[15348]={"Kurinnaxx",63,63,3,nil,nil,nil,0}
+t[15335]={"Flesh Hunter",62,62,1,nil,nil,nil,0,3429}
+t[15336]={"Hive'Zara Tail Lasher",61,61,1,nil,nil,nil,0,3429}
+t[15338]={"Obsidian Destroyer",61,61,1,nil,nil,nil,0,3429}
+t[15339]={"Ossirian the Unscarred",63,63,3,nil,nil,nil,0,3429}
+t[15340]={"Moam",63,63,3,nil,nil,nil,0,3429}
+t[15341]={"General Rajaxx",63,63,3,nil,nil,nil,0,3429}
+t[15343]={"Qiraji Swarmguard",61,61,1,nil,nil,nil,0,3429}
+t[15344]={"Swarmguard Needler",61,61,1,nil,nil,nil,0,3429}
+t[15348]={"Kurinnaxx",63,63,3,nil,nil,nil,0,3429}
 t[15349]={"RC Blimp <PH>",1,1,0,nil,"AH",nil,0}
 t[15350]={"Horde Warbringer",60,60,0,{[1413]={46.71,8.68},[1416]={63.09,59.87},[1417]={73.5,29.13},[1425]={50.33,89.57},[1454]={80.68,30.51},[1456]={57.8,76.4},[1458]={58.27,97.9}},"H",nil,7}
 t[15351]={"Alliance Brigadier General",60,60,0,{[1416]={39.29,82.33},[1417]={45.65,45.75},[1440]={61.94,83.83},[1453]={81.23,38.49},[1455]={70.41,91.12},[1457]={58.02,34.52}},"A",nil,7}
 t[15352]={"Corrupted Water Elemental",60,60,0,nil,nil,nil,0}
 t[15353]={"Katrina Shimmerstar",30,30,0,{[1455]={34.09,66.22}},"A","Hallow's End Treats",6}
 t[15354]={"Rachelle Gothena",30,30,0,{[1454]={53.63,65.85}},"H","Hallow's End Treats",4}
-t[15355]={"Anubisath Guardian",62,62,1,nil,nil,nil,0}
+t[15355]={"Anubisath Guardian",62,62,1,nil,nil,nil,0,3429}
 t[15356]={"Blue Baby Murloc",1,1,0,nil,"AH",nil,0}
 t[15357]={"Purple Baby Murloc",1,1,0,nil,"AH",nil,0}
 t[15358]={"White Baby Murloc",1,1,0,nil,"AH",nil,0}
 t[15359]={"Pink Baby Murloc",1,1,0,nil,"AH",nil,0}
 t[15360]={"Green Baby Murloc",1,1,0,nil,"AH",nil,0}
 t[15361]={"Murki",1,1,0,nil,"AH",nil,0}
-t[15362]={"Malfurion Stormrage",1,1,3,nil,"AH",nil,2}
+t[15362]={"Malfurion Stormrage",1,1,3,nil,"AH",nil,2,1477}
 t[15363]={"Spirit Totem",35,35,0,nil,"AH",nil,0}
 t[15364]={"RC Mortar Tank <PH>",1,1,0,nil,"AH",nil,0}
 t[15368]={"Tonk Mine",60,60,0,nil,"AH",nil,0}
-t[15369]={"Ayamiss the Hunter",63,63,3,nil,nil,nil,0}
-t[15370]={"Buru the Gorger",63,63,3,nil,nil,nil,0}
+t[15369]={"Ayamiss the Hunter",63,63,3,nil,nil,nil,0,3429}
+t[15370]={"Buru the Gorger",63,63,3,nil,nil,nil,0,3429}
 t[15373]={"Halloween Pirate Captain",1,1,0,nil,"AH",nil,0}
 t[15374]={"Halloween Undead Pirate",1,1,0,nil,"AH",nil,0}
 t[15375]={"Halloween Pirate Female",1,1,0,nil,"AH",nil,0}
 t[15376]={"Halloween Male Ghost",1,1,1,nil,"AH",nil,3}
 t[15377]={"Halloween Female Ghost",1,1,1,nil,"AH",nil,0}
-t[15378]={"Merithra of the Dream",63,63,3,nil,"AH",nil,3}
-t[15379]={"Caelestrasz",63,63,3,nil,"AH",nil,3}
-t[15380]={"Arygos",63,63,3,nil,"AH",nil,3}
+t[15378]={"Merithra of the Dream",63,63,3,nil,"AH",nil,3,3428}
+t[15379]={"Caelestrasz",63,63,3,nil,"AH",nil,3,3428}
+t[15380]={"Arygos",63,63,3,nil,"AH",nil,3,3428}
 t[15381]={"Anachronos the Ancient",63,63,3,nil,"AH",nil,0}
 t[15382]={"Fandral Staghelm",63,63,3,nil,"AH",nil,0}
 t[15383]={"Sergeant Stonebrow",56,56,1,{[1455]={64.1,65.5}},"A","Copper Bar Collector",3}
 t[15384]={"World Trigger",1,1,0,{[1413]={63.74,38.5},[1431]={46.83,34.69,46.45,35.24,46.1,34.68,46.61,34.47,46.61,34.54,46.41,35.17},[1437]={5.75,63.39,5.2,57.73},[1439]={33.3,40.18,32.3,43.76,30.79,40.82},[1444]={43.34,42.92,30.92,39.83},[1445]={71.63,56.06},[1453]={51.13,66.4}},"AH",nil,0}
-t[15385]={"Colonel Zerran",63,63,1,nil,nil,nil,0}
-t[15386]={"Major Yeggeth",63,63,1,nil,nil,nil,0}
-t[15387]={"Qiraji Warrior",61,61,1,nil,nil,nil,0}
-t[15388]={"Major Pakkon",63,63,1,nil,nil,nil,0}
-t[15389]={"Captain Drenn",63,63,1,nil,nil,nil,0}
-t[15390]={"Captain Xurrem",63,63,1,nil,nil,nil,0}
-t[15391]={"Captain Qeez",63,63,1,nil,nil,nil,0}
-t[15392]={"Captain Tuubid",63,63,1,nil,nil,nil,0}
+t[15385]={"Colonel Zerran",63,63,1,nil,nil,nil,0,3429}
+t[15386]={"Major Yeggeth",63,63,1,nil,nil,nil,0,3429}
+t[15387]={"Qiraji Warrior",61,61,1,nil,nil,nil,0,3429}
+t[15388]={"Major Pakkon",63,63,1,nil,nil,nil,0,3429}
+t[15389]={"Captain Drenn",63,63,1,nil,nil,nil,0,3429}
+t[15390]={"Captain Xurrem",63,63,1,nil,nil,nil,0,3429}
+t[15391]={"Captain Qeez",63,63,1,nil,nil,nil,0,3429}
+t[15392]={"Captain Tuubid",63,63,1,nil,nil,nil,0,3429}
 t[15394]={"Hero of the Horde",1,1,0,nil,"AH",nil,0}
 t[15395]={"Nafien",55,55,0,{[1448]={64.77,8.13}},"AH",nil,3}
 t[15410]={"Anachronos Dragon Form",1,1,3,nil,"AH",nil,0}
@@ -9322,7 +9322,7 @@ t[15422]={"Qiraji Tank",60,60,1,nil,nil,nil,0}
 t[15423]={"Kaldorei Infantry",58,60,0,nil,"AH",nil,0}
 t[15424]={"Anubisath Conqueror",61,61,1,nil,nil,nil,0}
 t[15425]={"Debug Point",1,1,0,nil,"AH",nil,0}
-t[15426]={"Ahn'Qiraj Trigger",1,1,0,nil,"AH",nil,0}
+t[15426]={"Ahn'Qiraj Trigger",1,1,0,nil,"AH",nil,0,3429}
 t[15427]={"Merithra's Wake",1,1,3,nil,"AH",nil,0}
 t[15428]={"Sand Vortex",60,60,0,nil,nil,nil,0}
 t[15429]={"Disgusting Oozeling",1,1,0,nil,"AH",nil,0}
@@ -9352,16 +9352,16 @@ t[15457]={"Huntress Swiftriver",60,60,1,{[1455]={73,68.5}},"A","Spotted Yellowta
 t[15458]={"Commander Stronghammer",60,60,1,{[1454]={31.22,68.76}},"AH","Alliance Ambassador",3}
 t[15459]={"Miner Cromwell",56,56,1,{[1454]={31.1,66.1}},"H","Copper Bar Collector",3}
 t[15460]={"Grunt Maug",58,58,1,{[1454]={30.9,65.4}},"H","Tin Bar Collector",3}
-t[15461]={"Shrieker Scarab",60,60,1,nil,nil,nil,0}
-t[15462]={"Spitting Scarab",60,60,1,nil,nil,nil,0}
+t[15461]={"Shrieker Scarab",60,60,1,nil,nil,nil,0,3429}
+t[15462]={"Spitting Scarab",60,60,1,nil,nil,nil,0,3429}
 t[15463]={"Grace of Air Totem III",60,60,0,nil,"AH",nil,0}
 t[15464]={"Strength of Earth Totem V",60,60,0,nil,"AH",nil,0}
 t[15466]={"Minion of Omen",59,60,0,nil,nil,nil,0}
 t[15467]={"Omen",63,63,3,nil,nil,nil,0}
 t[15469]={"Senior Sergeant T'kelah",60,60,1,{[1454]={31.5,66.8}},"AH","Mithril Bar Collector",3}
-t[15471]={"Lieutenant General Andorov",60,60,1,nil,"AH",nil,16389}
+t[15471]={"Lieutenant General Andorov",60,60,1,nil,"AH",nil,16389,3429}
 t[15473]={"Kaldorei Elite",58,58,1,nil,"AH",nil,0}
-t[15475]={"Beetle",1,1,0,nil,"AH",nil,0}
+t[15475]={"Beetle",1,1,0,nil,"AH",nil,0,3428}
 t[15476]={"Scorpion",1,1,0,nil,"AH",nil,0}
 t[15477]={"Herbalist Proudfeather",56,56,1,{[1454]={33.3,69.6}},"H","Peacebloom Collector",3}
 t[15481]={"Spirit of Azuregos",63,63,3,{[1447]={52.98,81.73}},"AH",nil,1}
@@ -9370,21 +9370,21 @@ t[15495]={"Nighthaven Defender",60,61,1,nil,"AH",nil,0}
 t[15498]={"Windcaller Yessendra",55,57,0,{[1451]={52.05,38.16}},"AH",nil,3}
 t[15499]={"Warden Haro",56,58,0,{[1451]={51.14,38.94}},"AH",nil,3}
 t[15500]={"Keyl Swiftclaw",60,60,1,{[1451]={51.76,39.54}},"AH",nil,3}
-t[15502]={"Andorgos",60,60,1,nil,"AH","Brood of Malygos",3}
-t[15503]={"Kandrostrasz",60,60,1,nil,"AH","Brood of Alexstrasza",3}
-t[15504]={"Vethsera",60,60,1,nil,"AH","Brood of Ysera",3}
-t[15505]={"Canal Frenzy",60,60,1,nil,nil,nil,0}
+t[15502]={"Andorgos",60,60,1,nil,"AH","Brood of Malygos",3,3428}
+t[15503]={"Kandrostrasz",60,60,1,nil,"AH","Brood of Alexstrasza",3,3428}
+t[15504]={"Vethsera",60,60,1,nil,"AH","Brood of Ysera",3,3428}
+t[15505]={"Canal Frenzy",60,60,1,nil,nil,nil,0,3429}
 t[15506]={"Stewvul",60,60,0,nil,"AH",nil,0}
 t[15507]={"Buru the Gorger Transform Visual",1,1,0,nil,"AH",nil,0}
 t[15508]={"Batrider Pele'keiki",58,58,1,{[1454]={32.8,70.4}},"H","Firebloom Collector",3}
-t[15509]={"Princess Huhuran",63,63,3,nil,nil,nil,0}
-t[15510]={"Fankriss the Unyielding",63,63,3,nil,nil,nil,0}
-t[15511]={"Lord Kri",63,63,3,nil,nil,nil,0}
+t[15509]={"Princess Huhuran",63,63,3,nil,nil,nil,0,3428}
+t[15510]={"Fankriss the Unyielding",63,63,3,nil,nil,nil,0,3428}
+t[15511]={"Lord Kri",63,63,3,nil,nil,nil,0,3428}
 t[15512]={"Apothecary Jezel",1,1,1,{[1454]={32.8,68.7}},"AH","Purple Lotus Collector",3}
-t[15514]={"Buru Egg",55,55,0,nil,nil,nil,0}
+t[15514]={"Buru Egg",55,55,0,nil,nil,nil,0,3429}
 t[15515]={"Skinner Jamani",56,56,1,{[1454]={36,73.4}},"AH","Heavy Leather Collector",3}
-t[15516]={"Battleguard Sartura",63,63,3,nil,nil,nil,0}
-t[15517]={"Ouro",63,63,3,nil,nil,nil,0}
+t[15516]={"Battleguard Sartura",63,63,3,nil,nil,nil,0,3428}
+t[15517]={"Ouro",63,63,3,nil,nil,nil,0,3428}
 t[15518]={"Auctioneer Grum",1,1,0,nil,"A",nil,0}
 t[15519]={"Auctioneer Bertram",1,1,0,nil,"A",nil,0}
 t[15520]={"O'Reily",5,5,0,{[1446]={65.39,19.02}},"AH",nil,0}
@@ -9408,8 +9408,8 @@ t[15539]={"General Zog",60,60,1,{[1455]={63.85,78.09}},"AH","Horde Ambassador",1
 t[15540]={"Windcaller Kaldon",60,60,1,{[1451]={49.98,36.35}},"AH",nil,3}
 t[15541]={"Twilight Marauder Morna",60,60,1,{[1451]={57.57,17.9}},nil,"Twilight's Hammer",0}
 t[15542]={"Twilight Marauder",58,59,0,{[1451]={57,17.38,57.29,17.57}},nil,"Twilight's Hammer",0}
-t[15543]={"Princess Yauj",63,63,3,nil,nil,nil,0}
-t[15544]={"Vem",63,63,3,nil,nil,nil,0}
+t[15543]={"Princess Yauj",63,63,3,nil,nil,nil,0,3428}
+t[15544]={"Vem",63,63,3,nil,nil,nil,0,3428}
 t[15545]={"Cenarion Outrider",60,60,0,{[1451]={23.64,45.42,23.13,45.45,23.96,45.12,23.82,45.91,39.13,78.14,38.57,78.67,38.67,77.66,38.81,78.16,68.94,36.09,69.1,35.76,69.22,36.09,68.78,36.21}},"AH",nil,0}
 t[15546]={"Hive'Zara Swarmer",60,60,0,nil,nil,nil,0}
 t[15549]={"Elder Morndeep",60,60,0,nil,"AH",nil,3}
@@ -9417,11 +9417,11 @@ t[15552]={"Doctor Weavil",63,63,1,{[1445]={77.85,17.13}},nil,nil,0}
 t[15553]={"Doctor Weavil's Flying Machine",60,60,0,{[1445]={77.4,18.51}},"AH",nil,0}
 t[15554]={"Number Two",61,61,1,{[1452]={67.2,72.6}},nil,nil,0}
 t[15555]={"Hive'Zara Larva",60,60,0,nil,nil,nil,0}
-t[15556]={"Elder Splitrock",60,60,0,nil,"AH",nil,3}
+t[15556]={"Elder Splitrock",60,60,0,nil,"AH",nil,3,2100}
 t[15557]={"Elder Rumblerock",60,60,0,{[1428]={82.21,46.48}},"AH",nil,3}
 t[15558]={"Elder Silvervein",60,60,0,{[1432]={33.33,46.54}},"AH",nil,3}
 t[15559]={"Elder Highpeak",60,60,0,{[1425]={50,48.05}},"AH",nil,3}
-t[15560]={"Elder Stonefort",60,60,0,nil,"AH",nil,3}
+t[15560]={"Elder Stonefort",60,60,0,nil,"AH",nil,3,1583}
 t[15561]={"Elder Obsidian",60,60,0,{[1421]={44.98,41.14}},"AH",nil,3}
 t[15562]={"Elder Hammershout",60,60,0,{[1453]={36.27,66.14}},"AH",nil,3}
 t[15563]={"Elder Bellowrage",60,60,0,{[1419]={58.75,51.7}},"AH",nil,3}
@@ -9439,7 +9439,7 @@ t[15574]={"Elder Stonespire",60,60,0,{[1452]={61.45,37.81}},"AH",nil,3}
 t[15575]={"Elder Bloodhoof",60,60,0,{[1412]={47.54,57.81}},"AH",nil,3}
 t[15576]={"Elder Winterhoof",60,60,0,{[1434]={27.62,74.26}},"AH",nil,3}
 t[15577]={"Elder Skychaser",60,60,0,{[1436]={56.65,47.11}},"AH",nil,3}
-t[15578]={"Elder Wildmane",60,60,0,nil,"AH",nil,3}
+t[15578]={"Elder Wildmane",60,60,0,nil,"AH",nil,3,1176}
 t[15579]={"Elder Darkhorn",60,60,0,{[1454]={41.13,33.84}},"AH",nil,3}
 t[15580]={"Elder Proudhorn",60,60,0,{[1456]={72.98,23.37}},"AH",nil,3}
 t[15581]={"Elder Grimtotem",60,60,0,{[1444]={76.72,37.9}},"AH",nil,3}
@@ -9450,11 +9450,11 @@ t[15585]={"Elder Dawnstrider",60,60,0,{[1428]={64.46,23.95}},"AH",nil,3}
 t[15586]={"Elder Dreamseer",60,60,0,{[1446]={51.47,27.85}},"AH",nil,3}
 t[15587]={"Elder Mistwalker",60,60,0,{[1444]={62.58,30.96}},"AH",nil,3}
 t[15588]={"Elder High Mountain",60,60,0,{[1413]={45.09,57.92}},"AH",nil,3}
-t[15589]={"Eye of C'Thun",63,63,3,nil,nil,nil,0}
-t[15590]={"Ossirian Crystal Trigger",60,60,0,nil,"AH",nil,0}
+t[15589]={"Eye of C'Thun",63,63,3,nil,nil,nil,0,3428}
+t[15590]={"Ossirian Crystal Trigger",60,60,0,nil,"AH",nil,0,3429}
 t[15591]={"Minion of Weavil",60,61,1,{[1445]={77.67,17.13,77.44,17.12,77.39,18.6,77.39,17.05,77.63,17.21,77.57,17.68,77.76,17.87,77.76,17.81,77.37,18.43,77.36,17.11}},nil,nil,0}
 t[15592]={"Elder Windrun",60,60,0,{[1423]={34.06,64.1}},"AH",nil,3}
-t[15593]={"Elder Starsong",60,60,0,nil,"AH",nil,3}
+t[15593]={"Elder Starsong",60,60,0,nil,"AH",nil,3,1477}
 t[15594]={"Elder Moonstrike",60,60,0,{[1422]={69.18,73.45}},"AH",nil,3}
 t[15595]={"Elder Bladeleaf",60,60,0,{[1438]={57.3,60.77}},"AH",nil,3}
 t[15596]={"Elder Starglade",60,60,0,{[1434]={53.08,18.45}},"AH",nil,3}
@@ -9468,7 +9468,7 @@ t[15603]={"Elder Nightwind",60,60,0,{[1448]={37.64,53}},"AH",nil,3}
 t[15604]={"Elder Morningdew",60,60,0,{[1441]={79.2,77.05}},"AH",nil,3}
 t[15605]={"Elder Riversong",60,60,0,{[1440]={35.6,48.8}},"AH",nil,3}
 t[15606]={"Elder Brightspear",60,60,0,{[1452]={55.61,43.65}},"AH",nil,3}
-t[15607]={"Elder Farwhisper",60,60,0,nil,"AH",nil,3}
+t[15607]={"Elder Farwhisper",60,60,0,nil,"AH",nil,3,2017}
 t[15608]={"Medivh",63,63,3,nil,"AH",nil,0}
 t[15609]={"Cenarion Scout Landion",60,60,1,{[1451]={53.71,97.48}},"AH",nil,1}
 t[15610]={"Cenarion Scout Azenel",60,60,1,{[1451]={23.63,62.42}},"AH",nil,1}
@@ -9553,7 +9553,7 @@ t[15723]={"Booty Bay Reveler",15,25,0,nil,"AH",nil,0}
 t[15724]={"Drunken Bruiser",57,57,0,nil,"AH",nil,0}
 t[15725]={"Claw Tentacle",60,60,0,nil,nil,nil,0}
 t[15726]={"Eye Tentacle",60,60,0,nil,nil,nil,0}
-t[15727]={"C'Thun",63,63,3,nil,nil,nil,0}
+t[15727]={"C'Thun",63,63,3,nil,nil,nil,0,3428}
 t[15728]={"Giant Claw Tentacle",60,60,1,nil,nil,nil,0}
 t[15729]={"Father Winter's Helper (BIG) gm",1,1,0,nil,"AH",nil,0}
 t[15730]={"Pat's Snowcloud Guy",60,60,0,{[1411]={50.03,13.51},[1420]={61.1,59.29},[1426]={53.18,35.71},[1434]={26.71,73.48},[1437]={9.33,58.3},[1446]={53.61,28.07},[1453]={68.06,71.46}},"AH",nil,0}
@@ -9703,7 +9703,7 @@ t[15892]={"Lunar Festival Emissary",55,55,0,{[1453]={61.74,75.73},[1455]={30.93,
 t[15893]={"Lunar Firework Credit Marker",60,60,0,nil,"AH",nil,0}
 t[15894]={"Lunar Cluster Credit Marker",60,60,0,nil,"AH",nil,0}
 t[15895]={"Lunar Festival Harbinger",55,55,0,{[1453]={37.65,65.63},[1454]={41.66,31.98},[1455]={28.85,16.23},[1456]={71.12,28.2},[1457]={32.6,12},[1458]={65.62,36}},"AH",nil,3}
-t[15896]={"C'Thun Portal",63,63,0,nil,nil,nil,0}
+t[15896]={"C'Thun Portal",63,63,0,nil,nil,nil,0,3428}
 t[15897]={"Large Spotlight",60,60,0,{[1450]={36.37,59.85,36.72,57.21,37.16,59.52,35.96,57.69,35.7,58.88,37.51,58.2},[1453]={37.34,64.97},[1454]={41.02,31.09},[1455]={30.69,17.8},[1456]={71.59,26.15},[1457]={31.74,12.5},[1458]={66.02,36.85}},"AH",nil,0}
 t[15898]={"Lunar Festival Vendor",55,55,0,{[1450]={36.58,58.1,36.3,58.53},[1453]={37.3,64.05},[1454]={41.27,32.36},[1455]={29.92,14.21},[1456]={70.56,27.83},[1457]={31.56,13.69},[1458]={66.45,36.02}},"AH",nil,4}
 t[15899]={"Lunar Festival NE Vendor (PH)",1,1,0,nil,"AH",nil,0}
@@ -9728,39 +9728,39 @@ t[15917]={"Lunar Festival Reveler",1,1,0,nil,"AH",nil,0}
 t[15918]={"Pat's Firework Cluster Guy (ELUNE)",1,1,0,nil,"AH",nil,0}
 t[15922]={"Viscidus Trigger",1,1,0,nil,"AH",nil,0}
 t[15925]={"Toxic Slime",60,60,0,nil,nil,nil,0}
-t[15928]={"Thaddius",63,63,3,nil,nil,nil,0}
-t[15929]={"Stalagg",63,63,3,nil,nil,nil,0}
-t[15930]={"Feugen",63,63,3,nil,nil,nil,0}
-t[15931]={"Grobbulus",63,63,3,nil,nil,nil,0}
-t[15932]={"Gluth",63,63,3,nil,nil,nil,0}
+t[15928]={"Thaddius",63,63,3,nil,nil,nil,0,3456}
+t[15929]={"Stalagg",63,63,3,nil,nil,nil,0,3456}
+t[15930]={"Feugen",63,63,3,nil,nil,nil,0,3456}
+t[15931]={"Grobbulus",63,63,3,nil,nil,nil,0,3456}
+t[15932]={"Gluth",63,63,3,nil,nil,nil,0,3456}
 t[15933]={"Poison Cloud",60,60,0,nil,nil,nil,0}
 t[15934]={"Hive'Zara Hornet",61,61,1,nil,nil,nil,0}
-t[15936]={"Heigan the Unclean",63,63,3,nil,nil,nil,0}
-t[15952]={"Maexxna",63,63,3,nil,nil,nil,0}
-t[15953]={"Grand Widow Faerlina",63,63,3,nil,nil,nil,0}
-t[15954]={"Noth the Plaguebringer",63,63,3,nil,nil,nil,0}
-t[15956]={"Anub'Rekhan",63,63,3,nil,nil,nil,0}
-t[15957]={"Ouro Spawner",60,60,0,nil,nil,nil,0}
+t[15936]={"Heigan the Unclean",63,63,3,nil,nil,nil,0,3456}
+t[15952]={"Maexxna",63,63,3,nil,nil,nil,0,3456}
+t[15953]={"Grand Widow Faerlina",63,63,3,nil,nil,nil,0,3456}
+t[15954]={"Noth the Plaguebringer",63,63,3,nil,nil,nil,0,3456}
+t[15956]={"Anub'Rekhan",63,63,3,nil,nil,nil,0,3456}
+t[15957]={"Ouro Spawner",60,60,0,nil,nil,nil,0,3428}
 t[15961]={"Lunar Festival Sentinel",60,60,1,{[1450]={35.74,60.44,37.59,59.18,35.31,58.73,37.94,57.58,36.39,58.78,36.67,55.91,53.51,35.21,36.5,60.62,35.65,57.6,54.02,35.38,53.02,36.48,54.43,36.87}},"AH",nil,0}
 t[15962]={"Vekniss Hatchling",60,60,0,nil,nil,nil,0}
-t[15963]={"The Master's Eye",63,63,3,nil,nil,nil,0}
+t[15963]={"The Master's Eye",63,63,3,nil,nil,nil,0,3428}
 t[15964]={"Buru Egg Trigger",60,60,0,nil,"AH",nil,0}
 t[15972]={"Alterac Valley Battlemaster",1,1,0,nil,"AH",nil,0}
 t[15973]={"Naxxramas Template",1,1,1,nil,"AH",nil,0}
-t[15974]={"Dread Creeper",61,61,1,nil,nil,nil,0}
-t[15975]={"Carrion Spinner",61,61,1,nil,nil,nil,0}
-t[15976]={"Venom Stalker",61,61,1,nil,nil,nil,0}
-t[15977]={"Infectious Skitterer",61,61,1,nil,nil,nil,0}
-t[15978]={"Crypt Reaver",61,61,1,nil,nil,nil,0}
-t[15979]={"Tomb Horror",61,61,1,nil,nil,nil,0}
-t[15980]={"Naxxramas Cultist",61,61,1,nil,nil,nil,0}
-t[15981]={"Naxxramas Acolyte",61,61,1,nil,nil,nil,0}
+t[15974]={"Dread Creeper",61,61,1,nil,nil,nil,0,3456}
+t[15975]={"Carrion Spinner",61,61,1,nil,nil,nil,0,3456}
+t[15976]={"Venom Stalker",61,61,1,nil,nil,nil,0,3456}
+t[15977]={"Infectious Skitterer",61,61,1,nil,nil,nil,0,3456}
+t[15978]={"Crypt Reaver",61,61,1,nil,nil,nil,0,3456}
+t[15979]={"Tomb Horror",61,61,1,nil,nil,nil,0,3456}
+t[15980]={"Naxxramas Cultist",61,61,1,nil,nil,nil,0,3456}
+t[15981]={"Naxxramas Acolyte",61,61,1,nil,nil,nil,0,3456}
 t[15982]={"[PH] Valentine Reveler, Male",1,60,0,nil,"AH",nil,0}
 t[15983]={"[PH] Valentine Reveler, Female",1,60,0,nil,"AH",nil,0}
-t[15984]={"Sartura's Royal Guard",61,61,1,nil,nil,nil,0}
+t[15984]={"Sartura's Royal Guard",61,61,1,nil,nil,nil,0,3428}
 t[15985]={"[PH] Eric Maloof Test Guy",1,1,0,nil,"AH",nil,0}
 t[15989]={"Sapphiron",63,63,3,nil,nil,nil,0}
-t[15990]={"Kel'Thuzad",63,63,3,nil,nil,nil,0}
+t[15990]={"Kel'Thuzad",63,63,3,nil,nil,nil,0,3456}
 t[15991]={"Lady Dena Kennedy",60,60,1,nil,"A",nil,0}
 t[15992]={"Sam's Test Dummy 1",1,1,0,nil,"AH",nil,0}
 t[15993]={"Sam's Test Dummy 2",1,1,0,nil,"AH",nil,0}
@@ -9777,44 +9777,44 @@ t[16006]={"InCombat Trigger",1,1,0,nil,nil,nil,0}
 t[16007]={"Orok Deathbane",5,5,0,{[1454]={51.29,70.19}},"AH",nil,2}
 t[16008]={"Temma of the Wells",5,5,0,{[1456]={44.77,60.13}},"H",nil,2}
 t[16009]={"Tormek Stoneriver",5,5,0,{[1455]={32.64,66.23}},"AH",nil,2}
-t[16011]={"Loatheb",63,63,3,nil,nil,nil,0}
+t[16011]={"Loatheb",63,63,3,nil,nil,nil,0,3456}
 t[16012]={"Mokvar",60,60,0,{[1454]={34.95,38.29}},"H",nil,3}
 t[16013]={"Deliana",60,60,0,{[1455]={43.53,52.64}},"A",nil,3}
 t[16014]={"Mux Manascrambler",60,60,0,{[1446]={52.47,27.23}},"AH",nil,3}
 t[16015]={"Vi'el",60,60,0,{[1452]={58.87,78.39}},"AH","Exotic Reagent Merchant",5}
 t[16016]={"Anthion Harmon",60,60,0,{[1423]={26.11,11.3}},"AH",nil,2}
-t[16017]={"Patchwork Golem",61,61,1,nil,nil,nil,0}
-t[16018]={"Bile Retcher",61,61,1,nil,nil,nil,0}
+t[16017]={"Patchwork Golem",61,61,1,nil,nil,nil,0,3456}
+t[16018]={"Bile Retcher",61,61,1,nil,nil,nil,0,3456}
 t[16019]={"Boorana Thunderhoof",35,35,0,nil,"H","Panda Cub Caretaker",0}
-t[16020]={"Mad Scientist",61,61,1,nil,nil,nil,0}
-t[16021]={"Living Monstrosity",62,62,1,nil,nil,nil,0}
-t[16022]={"Surgical Assistant",60,60,1,nil,nil,nil,0}
+t[16020]={"Mad Scientist",61,61,1,nil,nil,nil,0,3456}
+t[16021]={"Living Monstrosity",62,62,1,nil,nil,nil,0,3456}
+t[16022]={"Surgical Assistant",60,60,1,nil,nil,nil,0,3456}
 t[16023]={"Allenya Moonshadow",35,35,0,nil,"A","Panda Cub Caretaker",0}
-t[16024]={"Embalming Slime",60,60,1,nil,nil,nil,0}
-t[16025]={"Stitched Spewer",63,63,1,nil,nil,nil,0}
+t[16024]={"Embalming Slime",60,60,1,nil,nil,nil,0,3456}
+t[16025]={"Stitched Spewer",63,63,1,nil,nil,nil,0,3456}
 t[16026]={"Flesh Giant B [PH]",62,62,1,nil,nil,nil,0}
 t[16027]={"Living Poison",61,61,1,nil,nil,nil,0}
-t[16028]={"Patchwerk",63,63,3,nil,nil,nil,0}
-t[16029]={"Sludge Belcher",62,62,1,nil,nil,nil,0}
+t[16028]={"Patchwerk",63,63,3,nil,nil,nil,0,3456}
+t[16029]={"Sludge Belcher",62,62,1,nil,nil,nil,0,3456}
 t[16030]={"Maggot",1,1,0,{[1440]={83.15,79.28,82.42,79.01,82.83,78.7}},"AH",nil,0}
-t[16031]={"Ysida Harmon",60,60,0,nil,"AH",nil,3}
-t[16032]={"Falrin Treeshaper",60,60,0,nil,"AH",nil,3}
+t[16031]={"Ysida Harmon",60,60,0,nil,"AH",nil,3,2017}
+t[16032]={"Falrin Treeshaper",60,60,0,nil,"AH",nil,3,10022}
 t[16033]={"Bodley",60,60,0,{[1415]={48.9,63.93}},"AH",nil,2}
-t[16034]={"Plague Beast",61,61,1,nil,nil,nil,0}
+t[16034]={"Plague Beast",61,61,1,nil,nil,nil,0,3456}
 t[16035]={"Bog Beast B [PH]",61,61,1,nil,nil,nil,0}
-t[16036]={"Frenzied Bat",60,60,1,nil,nil,nil,0}
-t[16037]={"Plagued Bat",60,60,1,nil,nil,nil,0}
+t[16036]={"Frenzied Bat",60,60,1,nil,nil,nil,0,3456}
+t[16037]={"Plagued Bat",60,60,1,nil,nil,nil,0,3456}
 t[16038]={"Deathhound",60,60,1,nil,nil,nil,0}
 t[16039]={"Pack Trainer [PH]",61,61,1,nil,nil,nil,0}
 t[16040]={"Pack Handler [PH]",61,61,1,nil,nil,nil,0}
 t[16041]={"Shadowhound",60,60,1,nil,nil,nil,0}
-t[16042]={"Lord Valthalak",63,63,3,nil,nil,nil,0}
+t[16042]={"Lord Valthalak",63,63,3,nil,nil,nil,0,1583}
 t[16043]={"Magma Lord Bokk",58,60,0,{[1428]={35.39,57.76}},nil,nil,0}
-t[16044]={"Mor Grayhoof Trigger",1,1,0,nil,"AH",nil,0}
-t[16045]={"Isalien Trigger",60,60,0,nil,"AH",nil,0}
-t[16046]={"Jarien and Sothos Trigger",1,1,0,nil,"AH",nil,0}
-t[16047]={"Kormok Trigger",1,1,0,nil,"AH",nil,0}
-t[16048]={"Lord Valthalak Trigger",60,60,0,nil,"AH",nil,0}
+t[16044]={"Mor Grayhoof Trigger",1,1,0,nil,"AH",nil,0,1583}
+t[16045]={"Isalien Trigger",60,60,0,nil,"AH",nil,0,2557}
+t[16046]={"Jarien and Sothos Trigger",1,1,0,nil,"AH",nil,0,2017}
+t[16047]={"Kormok Trigger",1,1,0,nil,"AH",nil,0,2057}
+t[16048]={"Lord Valthalak Trigger",60,60,0,nil,"AH",nil,0,1583}
 t[16049]={"Lefty",60,60,1,nil,nil,nil,0}
 t[16050]={"Rotfang",60,60,1,nil,nil,nil,0}
 t[16051]={"Snokh Blackspine",60,60,1,nil,nil,nil,0}
@@ -9822,31 +9822,31 @@ t[16052]={"Malgen Longspear",60,60,1,nil,nil,nil,0}
 t[16053]={"Korv",60,60,1,nil,nil,nil,0}
 t[16054]={"Rezznik",60,60,1,nil,nil,nil,0}
 t[16055]={"Va'jashni",60,60,1,nil,nil,nil,0}
-t[16056]={"Diseased Maggot",60,60,1,nil,nil,nil,0}
-t[16057]={"Rotting Maggot",60,60,1,nil,nil,nil,0}
+t[16056]={"Diseased Maggot",60,60,1,nil,nil,nil,0,3456}
+t[16057]={"Rotting Maggot",60,60,1,nil,nil,nil,0,3456}
 t[16058]={"Volida",60,60,1,nil,nil,nil,0}
-t[16059]={"Theldren",60,60,1,nil,nil,nil,0}
-t[16060]={"Gothik the Harvester",63,63,3,nil,nil,nil,0}
-t[16061]={"Instructor Razuvious",63,63,3,nil,nil,nil,0}
-t[16062]={"Highlord Mograine",63,63,3,nil,nil,"The Ashbringer",0}
-t[16063]={"Sir Zeliek",63,63,3,nil,nil,nil,0}
-t[16064]={"Thane Korth'azz",63,63,3,nil,nil,nil,0}
-t[16065]={"Lady Blaumeux",63,63,3,nil,nil,nil,0}
+t[16059]={"Theldren",60,60,1,nil,nil,nil,0,1584}
+t[16060]={"Gothik the Harvester",63,63,3,nil,nil,nil,0,3456}
+t[16061]={"Instructor Razuvious",63,63,3,nil,nil,nil,0,3456}
+t[16062]={"Highlord Mograine",63,63,3,nil,nil,"The Ashbringer",0,3456}
+t[16063]={"Sir Zeliek",63,63,3,nil,nil,nil,0,3456}
+t[16064]={"Thane Korth'azz",63,63,3,nil,nil,nil,0,3456}
+t[16065]={"Lady Blaumeux",63,63,3,nil,nil,nil,0,3456}
 t[16066]={"Spectral Assassin",60,60,0,nil,nil,nil,0}
-t[16067]={"Skeletal Steed",61,61,1,nil,nil,nil,0}
-t[16068]={"Larva",1,1,0,nil,"AH",nil,0}
+t[16067]={"Skeletal Steed",61,61,1,nil,nil,nil,0,3456}
+t[16068]={"Larva",1,1,0,nil,"AH",nil,0,3456}
 t[16069]={"Gurky",1,1,0,{[1454]={69.6,30.37},[1455]={49.58,14.02}},"AH",nil,0}
 t[16070]={"Garel Redrock",35,35,0,{[1455]={49.76,13.71}},"A",nil,1}
 t[16072]={"Tidelord Rrurgaz",62,62,1,{[1445]={76.48,19.47}},nil,nil,0}
-t[16073]={"Spirit of Lord Valthalak",63,63,1,nil,"AH",nil,2}
+t[16073]={"Spirit of Lord Valthalak",63,63,1,nil,"AH",nil,2,1583}
 t[16075]={"Kwee Q. Peddlefeet",1,1,0,{[1453]={80.55,37.94},[1454]={32.57,36.81},[1455]={40.3,56.6},[1456]={60.88,50.3},[1457]={38.12,80.49},[1458]={55.2,89.95}},"AH",nil,3}
 t[16076]={"Tharl Stonebleeder",35,35,0,{[1454]={69.54,30.42}},"H",nil,1}
 t[16077]={"[PH] Alex's Test DPS Mob",63,63,3,nil,nil,nil,0}
 t[16078]={"Unkillable Fixed Damage Test Dummy",60,60,0,nil,"AH",nil,0}
 t[16079]={"Theldren Trigger",1,1,0,nil,"AH",nil,0}
-t[16080]={"Mor Grayhoof",60,60,1,nil,nil,nil,0}
+t[16080]={"Mor Grayhoof",60,60,1,nil,nil,nil,0,1583}
 t[16081]={"Spectral Gryphon",60,60,0,nil,"AH",nil,0}
-t[16082]={"Naxxramas Trigger",1,1,0,nil,"AH",nil,0}
+t[16082]={"Naxxramas Trigger",1,1,0,nil,"AH",nil,0,3456}
 t[16083]={"Mor Grayhoof Transformation Visual",1,1,1,nil,"AH",nil,0}
 t[16084]={"picnic blanket",60,60,0,nil,"AH",nil,0}
 t[16085]={"Peddlefeet",1,1,0,nil,"AH",nil,0}
@@ -9859,12 +9859,12 @@ t[16093]={"Spectral Stalker",60,60,0,nil,"AH",nil,0}
 t[16094]={"Durik",30,30,0,{[1434]={31.87,29.5}},"H","Stable Master",8193}
 t[16095]={"Gnashjaw",60,60,0,nil,nil,"Malgen Longspear's Pet",0}
 t[16096]={"Steamwheedle Bruiser",55,55,1,{[1411]={50.6,13.28,51.08,13.3,50.99,12.88},[1420]={60.72,58.65,61.86,58.96,61.83,59.22,60.69,58.86,61.79,59.08},[1434]={31.39,29.78,31.65,29.42,31.74,29.75}},"H",nil,0}
-t[16097]={"Isalien",60,60,1,nil,nil,nil,0}
+t[16097]={"Isalien",60,60,1,nil,nil,nil,0,10027}
 t[16098]={"Empyrean",60,60,1,nil,nil,nil,0}
 t[16099]={"[PH] Naxxramas Test Boss",63,63,0,nil,nil,"Minion of Alex",0}
-t[16100]={"Ysida's Trigger",1,1,0,nil,"AH",nil,0}
-t[16101]={"Jarien",59,60,1,nil,nil,nil,0}
-t[16102]={"Sothos",60,60,1,nil,nil,nil,0}
+t[16100]={"Ysida's Trigger",1,1,0,nil,"AH",nil,0,2017}
+t[16101]={"Jarien",59,60,1,nil,nil,nil,0,2017}
+t[16102]={"Sothos",60,60,1,nil,nil,nil,0,2017}
 t[16103]={"Spirit of Jarien",60,60,0,nil,"AH",nil,0}
 t[16104]={"Spirit of Sothos",60,60,0,nil,"AH",nil,0}
 t[16105]={"Aristan Mottar",5,5,0,{[1453]={61.92,74.96}},"A",nil,2}
@@ -9880,7 +9880,7 @@ t[16114]={"Scarlet Commander Marjhan",60,60,1,{[1423]={71.63,48.68}},"AH","The S
 t[16115]={"Commander Eligor Dawnbringer",60,60,1,{[1423]={71.72,48.59}},"AH","Brotherhood of the Light",3}
 t[16116]={"Archmage Angela Dosantos",60,60,1,{[1423]={71.7,48.69}},"AH","Brotherhood of the Light",3}
 t[16117]={"Plagued Swine",60,60,0,{[1423]={15.28,26.7,14.5,27.59,11.55,26.58,14.47,23.71,14.29,27.2,14.6,28.02,11.02,26.6,14.79,25.11,14.69,25.99,11.91,25.94,11.75,24.97,13.1,22.86,15.32,27.14,10.75,25.94,12.97,23.5,12.31,26.12,13.75,24.34}},"AH",nil,0}
-t[16118]={"Kormok",58,60,1,nil,nil,nil,0}
+t[16118]={"Kormok",58,60,1,nil,nil,nil,0,2057}
 t[16119]={"Bone Minion",60,60,0,nil,nil,nil,0}
 t[16120]={"Bone Mage",60,60,1,nil,nil,nil,0}
 t[16121]={"Mortar",1,1,0,nil,"AH",nil,0}
@@ -9897,37 +9897,37 @@ t[16133]={"Mataus the Wrathcaster",60,60,1,{[1423]={71.58,48.65}},"AH","The Scar
 t[16134]={"Rimblat Earthshatter",60,60,1,{[1423]={71.34,49.36}},"AH","Earthen Ring",3}
 t[16135]={"Rayne",60,60,1,{[1423]={71.41,49.35}},"AH","Cenarion Circle",3}
 t[16136]={"Necrotic Shard",60,60,0,nil,"AH",nil,0}
-t[16137]={"Naxxramas Military Sub-Boss Trigger",1,1,0,nil,"AH",nil,0}
+t[16137]={"Naxxramas Military Sub-Boss Trigger",1,1,0,nil,"AH",nil,0,3456}
 t[16139]={"Cenarion Hold Reservist",60,60,1,nil,"AH",nil,0}
 t[16141]={"Ghoul Berserker",59,60,0,nil,"AH",nil,0}
 t[16142]={"Bile Sludge",62,62,0,nil,nil,nil,0}
 t[16143]={"Shadow of Doom",60,60,1,{[1419]={60.1,43.4,63,28.3,56.9,29.2,47.2,35.6,51.2,26.5,45.9,19},[1423]={64.85,45.93,68.44,57.27,58.73,57.72,20.58,61.5,12.12,64.02,16.71,68.08},[1428]={77.2,30.5,67.4,34,71.7,49.2,36.2,70.6,23.6,70.6,23.5,48.7},[1446]={48.1,29.8,54.2,29.9,50.6,34.2,51.9,50.3,55.9,52,53.8,54.4,35.3,56.8,33.5,66.6,29.7,57.5},[1447]={46.3,56.6,22.1,60.5,16.9,68.5,17.1,52.5},[1452]={50.9,14.3,45.3,37.8,64.1,50.5}},"AH",nil,0}
-t[16145]={"Deathknight Captain",61,61,1,nil,nil,nil,0}
-t[16146]={"Deathknight",61,61,1,nil,nil,nil,0}
+t[16145]={"Deathknight Captain",61,61,1,nil,nil,nil,0,3456}
+t[16146]={"Deathknight",61,61,1,nil,nil,nil,0,3456}
 t[16148]={"Spectral Deathknight",62,62,1,nil,nil,nil,0}
 t[16149]={"Spectral Horse",63,63,1,nil,nil,nil,0}
 t[16150]={"Spectral Rider",63,63,1,nil,nil,nil,0}
-t[16154]={"Risen Deathknight",61,61,1,nil,nil,nil,0}
-t[16156]={"Dark Touched Warrior",61,61,1,nil,nil,"Stable Master",0}
-t[16157]={"Doom Touched Warrior",61,61,1,nil,nil,nil,0}
-t[16158]={"Death Touched Warrior",61,61,1,nil,nil,nil,0}
-t[16163]={"Deathknight Cavalier",61,61,1,nil,nil,nil,0}
-t[16164]={"Shade of Naxxramas",61,61,1,nil,nil,nil,0}
-t[16165]={"Necro Knight",61,61,1,nil,nil,nil,0}
+t[16154]={"Risen Deathknight",61,61,1,nil,nil,nil,0,3456}
+t[16156]={"Dark Touched Warrior",61,61,1,nil,nil,"Stable Master",0,3456}
+t[16157]={"Doom Touched Warrior",61,61,1,nil,nil,nil,0,3456}
+t[16158]={"Death Touched Warrior",61,61,1,nil,nil,nil,0,3456}
+t[16163]={"Deathknight Cavalier",61,61,1,nil,nil,nil,0,3456}
+t[16164]={"Shade of Naxxramas",61,61,1,nil,nil,nil,0,3456}
+t[16165]={"Necro Knight",61,61,1,nil,nil,nil,0,3456}
 t[16166]={"Theldren Kill Credit",1,1,0,nil,"AH",nil,0}
-t[16167]={"Bony Construct",61,61,1,nil,nil,nil,0}
-t[16168]={"Stoneskin Gargoyle",61,61,1,nil,nil,nil,0}
+t[16167]={"Bony Construct",61,61,1,nil,nil,nil,0,3456}
+t[16168]={"Stoneskin Gargoyle",61,61,1,nil,nil,nil,0,3456}
 t[16172]={"Damaged Necrotic Shard",60,60,0,nil,"AH",nil,0}
 t[16182]={"Crystal Zapper",60,60,0,nil,"AH",nil,0}
 t[16184]={"Nerubian Overseer",60,60,1,{[1423]={5.63,30.61}},nil,nil,0}
-t[16193]={"Skeletal Smith",61,61,1,nil,nil,nil,0}
-t[16194]={"Unholy Axe",61,61,1,nil,nil,nil,0}
-t[16211]={"Naxxramas Combat Dummy",1,1,0,nil,"AH",nil,0}
+t[16193]={"Skeletal Smith",61,61,1,nil,nil,nil,0,3456}
+t[16194]={"Unholy Axe",61,61,1,nil,nil,nil,0,3456}
+t[16211]={"Naxxramas Combat Dummy",1,1,0,nil,"AH",nil,0,3456}
 t[16212]={"Dispatch Commander Metz",60,60,0,{[1423]={71.28,48.04}},"AH","The Argent Dawn",3}
 t[16214]={"Necropolis Controller",1,1,0,nil,"AH",nil,0}
-t[16215]={"Unholy Staff",61,61,1,nil,nil,nil,0}
-t[16216]={"Unholy Swords",61,61,1,nil,nil,nil,0}
-t[16218]={"Tesla Coil",60,60,0,nil,nil,nil,0}
+t[16215]={"Unholy Staff",61,61,1,nil,nil,nil,0,3456}
+t[16216]={"Unholy Swords",61,61,1,nil,nil,nil,0,3456}
+t[16218]={"Tesla Coil",60,60,0,nil,nil,nil,0,3456}
 t[16225]={"Pack Mule",1,2,0,{[1423]={70.63,48.56,70.57,48.55,70.58,48.45}},"AH",nil,0}
 t[16226]={"Guard Didier",60,60,1,{[1423]={70.6,48.27}},"AH","Brotherhood of the Light",2}
 t[16227]={"Bragok",55,55,1,{[1413]={63.08,37.16}},"AH","Flight Master",11}
@@ -9938,10 +9938,10 @@ t[16232]={"Caravan Mule",50,50,0,nil,"AH",nil,0}
 t[16233]={"Plaguewing Slug",61,61,1,nil,"AH",nil,0}
 t[16234]={"Flesh Ripper",61,61,1,nil,nil,nil,0}
 t[16235]={"Plague Flesh Tentacle",61,61,1,nil,nil,nil,0}
-t[16236]={"Eye Stalk",61,61,1,nil,nil,nil,0}
+t[16236]={"Eye Stalk",61,61,1,nil,nil,nil,0,3456}
 t[16241]={"Argent Recruiter",1,1,0,{[1453]={62.16,72.26},[1455]={34.07,68.14,29.82,61.65},[1457]={39.47,45.34,40.43,45.23}},"AH","The Argent Dawn",2}
-t[16243]={"Plague Slime",61,61,1,nil,nil,nil,0}
-t[16244]={"Infectious Ghoul",61,61,1,nil,nil,nil,0}
+t[16243]={"Plague Slime",61,61,1,nil,nil,nil,0,3456}
+t[16244]={"Infectious Ghoul",61,61,1,nil,nil,nil,0,3456}
 t[16254]={"Field Marshal Chambers",60,60,1,{[1423]={40.82,34.58}},"AH","The Argent Dawn",0}
 t[16255]={"Argent Scout",55,55,0,{[1454]={52.5,73.7},[1456]={42.8,58.6},[1458]={66.2,47}},"AH","The Argent Dawn",2}
 t[16256]={"Jessica Chambers",52,52,0,{[1423]={71.8,48.52}},"AH","Innkeeper",133}
@@ -9951,7 +9951,7 @@ t[16284]={"Argent Medic",57,58,0,{[1423]={70.88,48.21,40.52,35.35}},"AH","The Ar
 t[16285]={"Argent Emissary",1,1,0,{[1423]={71.15,50.36},[1453]={62.28,72.09},[1455]={34.33,68.38,30.12,61.73},[1457]={39.67,45.25}},"AH","The Argent Dawn",1}
 t[16286]={"Spore",60,60,0,nil,nil,nil,0}
 t[16290]={"Fallout Slime",60,60,1,nil,nil,nil,0}
-t[16297]={"Mutated Grub",61,61,1,nil,nil,nil,0}
+t[16297]={"Mutated Grub",61,61,1,nil,nil,nil,0,3456}
 t[16298]={"Spectral Soldier",59,60,0,nil,"AH",nil,0}
 t[16299]={"Skeletal Shocktrooper",59,60,0,nil,"AH",nil,0}
 t[16306]={"Scourge Invasion Minion, spawner, Ghost/Ghoul",1,1,0,nil,"AH",nil,0}
@@ -9962,8 +9962,8 @@ t[16359]={"Argent Messenger",55,55,0,{[1454]={52.75,73.62},[1456]={43.03,59.07},
 t[16360]={"Zombie Chow",60,60,1,nil,nil,nil,0}
 t[16361]={"Commander Thomas Helleran",55,55,0,{[1423]={71.15,50.61}},"AH","The Argent Dawn",2}
 t[16363]={"Grobbulus Cloud",60,60,0,nil,nil,nil,0}
-t[16365]={"Master Craftsman Omarion",60,60,1,nil,"AH","Brotherhood of the Light",1}
-t[16368]={"Necropolis Acolyte",62,62,1,nil,nil,nil,0}
+t[16365]={"Master Craftsman Omarion",60,60,1,nil,"AH","Brotherhood of the Light",1,3456}
+t[16368]={"Necropolis Acolyte",62,62,1,nil,nil,nil,0,3456}
 t[16369]={"Polymorphed Chicken",1,1,0,nil,"AH",nil,0}
 t[16371]={"Polymorphed Pig",3,3,0,nil,"AH",nil,0}
 t[16372]={"Polymorphed Sheep",3,3,0,nil,"AH",nil,0}
@@ -9975,7 +9975,7 @@ t[16377]={"Polymorphed Turtle",3,3,0,nil,"AH",nil,0}
 t[16378]={"Argent Sentry",60,60,1,{[1423]={71.79,48.24,70.83,52.65,72.95,49.41,70.58,49.24,70.56,49.1,72.42,47.06,70.95,51.54,71.83,49.83,71.11,46.64,70.33,48.99,72.06,51.24,72,47.94,71.97,48.62,70.64,47.84,70.58,51.13,71.36,47.74,71.7,50.45,71.68,49.44,70.81,47.5,70.5,47.95,71.2,48.93,71.31,49.18,70.31,49.49}},"AH","The Argent Dawn",0}
 t[16379]={"Spirit of the Damned",61,61,4,nil,"AH",nil,0}
 t[16380]={"Bone Witch",61,61,4,nil,"AH",nil,0}
-t[16381]={"Archmage Tarsis Kir-Moldir",60,60,1,nil,"AH",nil,1}
+t[16381]={"Archmage Tarsis Kir-Moldir",60,60,1,nil,"AH",nil,1,3456}
 t[16382]={"Patchwork Terror",60,60,1,nil,nil,nil,0}
 t[16383]={"Flameshocker",53,55,1,nil,nil,nil,0}
 t[16384]={"Argent Dawn Initiate",1,1,0,{[1454]={52.14,74.03},[1456]={42.3,58.47},[1458]={65.17,45.84}},"AH","The Argent Dawn",0}
@@ -9989,7 +9989,7 @@ t[16395]={"Argent Dawn Paladin",1,1,0,{[1423]={71,50.22},[1453]={62.16,72.4},[14
 t[16396]={"Stormwind Elite Guard",60,60,1,nil,"AH",nil,0}
 t[16398]={"Necropolis Proxy",1,1,0,{[1419]={47.22,26.71,49.22,29.06,47.54,32.67,62.35,34.77,61.4,37.11,61.46,40.56},[1423]={62.23,53.83,63.03,56.92,61.15,57.02,18.84,64.83,16.52,66.8,18.08,68.9},[1428]={75.89,33.91,71.68,35.98,73.98,40.23,27.54,58.7,27.33,63.26,30.72,63.31},[1446]={49.96,31.73,52.14,32.73,50.93,34.98,53.6,52.33,55.52,53.45,53.53,54.62,32.09,59.23,34.03,59.24,33.55,61.41},[1447]={45.75,52.56,46.66,53.42,45.8,54.76,18.81,58.52,21.3,60.37,19.47,62.32},[1452]={51.58,15.16,53.1,15.96,51.23,17.13,44.84,38.71,43.64,39.21,44.26,40.51,64.19,49.01,64.25,50.21,65.36,50.45}},"AH",nil,0}
 t[16399]={"Bloodsail Traitor",43,44,0,{[1434]={31.78,70.89}},"AH",nil,3}
-t[16400]={"Toxic Tunnel",61,61,0,nil,"AH",nil,0}
+t[16400]={"Toxic Tunnel",61,61,0,nil,"AH",nil,0,3456}
 t[16401]={"Necropolis",60,60,0,{[1419]={61.94,37.41,47.76,29.88},[1423]={18.07,67.15,62.15,55.46},[1428]={28.44,61.55,73.95,35.99},[1446]={33.06,59.96,54.31,53.45,50.93,33.15},[1447]={20.2,60.4,46.01,53.14},[1452]={64.74,49.63,44.02,39.86,52.31,16.43}},"AH",nil,0}
 t[16416]={"Bronn Fitzwrench",55,56,0,{[1452]={59.77,39.73}},"AH",nil,3}
 t[16417]={"Rumsen Fizzlebrack",44,44,0,{[1446]={50.41,26.25}},"AH",nil,3}
@@ -10015,14 +10015,14 @@ t[16439]={"Fairbanks Transformed",1,1,1,nil,"AH",nil,0}
 t[16440]={"Highlord Mograine",63,63,3,nil,"AH","The Ashbringer",0}
 t[16441]={"Guardian of Icecrown",60,60,1,nil,nil,nil,0}
 t[16445]={"Terky",1,1,0,nil,"AH",nil,0}
-t[16446]={"Plagued Gargoyle",61,61,1,nil,nil,nil,0}
-t[16447]={"Plagued Ghoul",61,61,1,nil,nil,nil,0}
-t[16448]={"Plagued Deathhound",61,61,1,nil,nil,nil,0}
-t[16449]={"Spirit of Naxxramas",61,61,1,nil,nil,nil,0}
+t[16446]={"Plagued Gargoyle",61,61,1,nil,nil,nil,0,3456}
+t[16447]={"Plagued Ghoul",61,61,1,nil,nil,nil,0,3456}
+t[16448]={"Plagued Deathhound",61,61,1,nil,nil,nil,0,3456}
+t[16449]={"Spirit of Naxxramas",61,61,1,nil,nil,nil,0,3456}
 t[16450]={"She number one",60,60,0,nil,"AH","CocaCola Ambassador",0}
-t[16451]={"Deathknight Vindicator",62,62,1,nil,nil,nil,0}
-t[16452]={"Necro Knight Guardian",62,62,1,nil,nil,nil,0}
-t[16453]={"Necro Stalker",61,61,1,nil,nil,nil,0}
+t[16451]={"Deathknight Vindicator",62,62,1,nil,nil,nil,0,3456}
+t[16452]={"Necro Knight Guardian",62,62,1,nil,nil,nil,0,3456}
+t[16453]={"Necro Stalker",61,61,1,nil,nil,nil,0,3456}
 t[16454]={"She number two",60,60,0,nil,"AH","CocaCola Ambassador",0}
 t[16455]={"She number three",60,60,0,nil,"AH","CocaCola Ambassador",0}
 t[16456]={"Poley",1,1,0,nil,"AH",nil,0}
@@ -10036,8 +10036,8 @@ t[16490]={"Lieutenant Lisande",1,1,0,{[1456]={31.4,70.4}},"AH","The Argent Dawn"
 t[16493]={"Lieutenant Dagel",1,1,0,{[1454]={51.6,82}},"AH","The Argent Dawn",2}
 t[16494]={"Lieutenant Rukag",10,10,0,{[1458]={66.8,21.4}},"AH","The Argent Dawn",2}
 t[16495]={"Lieutenant Beitha",1,1,0,{[1457]={78.2,41.4}},"AH","The Argent Dawn",2}
-t[16505]={"Naxxramas Follower",61,61,1,nil,nil,nil,0}
-t[16506]={"Naxxramas Worshipper",61,61,1,nil,nil,nil,0}
+t[16505]={"Naxxramas Follower",61,61,1,nil,nil,nil,0,3456}
+t[16506]={"Naxxramas Worshipper",61,61,1,nil,nil,nil,0,3456}
 t[16508]={"Argent Horse",1,1,0,nil,"AH",nil,0}
 t[16509]={"Argent Warhorse",60,60,0,nil,"AH",nil,0}
 t[16510]={"Argent Charger",63,63,0,nil,"AH",nil,0}
@@ -10052,9 +10052,9 @@ t[16543]={"Garon Hutchins",60,60,0,{[1451]={52.51,38.65}},"AH",nil,5}
 t[16547]={"Speedy",1,1,0,nil,"AH",nil,0}
 t[16548]={"Mr. Wiggles",1,1,0,nil,"A",nil,0}
 t[16549]={"Whiskers the Rat",1,1,0,nil,"A",nil,0}
-t[16573]={"Crypt Guard",61,61,1,nil,nil,nil,0}
+t[16573]={"Crypt Guard",61,61,1,nil,nil,nil,0,3456}
 t[16592]={"Midsummer Bonfire",1,1,0,nil,"AH",nil,0}
-t[16604]={"Blackwing Spell Marker",1,1,0,nil,"AH",nil,0}
+t[16604]={"Blackwing Spell Marker",1,1,0,nil,"AH",nil,0,2677}
 t[16606]={"Midsummer Bonfire Despawner",1,1,0,nil,"AH",nil,0}
 t[16609]={"Giant Claw Tentacle Test",60,60,1,nil,nil,nil,0}
 t[16697]={"Void Zone",63,63,0,nil,nil,nil,0}
@@ -10072,10 +10072,10 @@ t[16785]={"Plague Slime (Green)",61,61,1,nil,nil,nil,0}
 t[16786]={"Argent Quartermaster",1,1,0,{[1423]={71.27,50.01,71,50.16},[1453]={62.08,72.51,61.88,72.58},[1455]={33.91,67.8,29.59,61.42,29.37,60.01},[1457]={39.11,45.43,39.55,46.88}},"AH","The Argent Dawn",2}
 t[16787]={"Argent Outfitter",1,1,0,{[1423]={71.06,49.81},[1454]={53.09,73.51,52.15,73.83},[1456]={43.07,58.34,42.15,58.45},[1458]={65.46,46.57,64.96,45.62}},"AH","The Argent Dawn",2}
 t[16788]={"Festival Flamekeeper",60,60,1,{[1438]={56.56,91.94},[1453]={49.39,71.86},[1454]={42.61,34.21},[1455]={63.54,24.67},[1456]={21.55,26.18},[1458]={65.6,35.99}},"AH",nil,2}
-t[16803]={"Deathknight Understudy",60,60,1,nil,nil,nil,0}
+t[16803]={"Deathknight Understudy",60,60,1,nil,nil,nil,0,3456}
 t[16817]={"Festival Loremaster",60,60,1,{[1438]={56.47,92.23},[1453]={50.03,71.95},[1455]={63.81,25.31}},"A",nil,3}
 t[16818]={"Festival Talespinner",60,60,1,{[1454]={42.77,34.95},[1456]={21.55,27.16},[1458]={66.47,37.76}},"H",nil,3}
-t[16861]={"Death Lord",61,61,1,nil,nil,nil,0}
+t[16861]={"Death Lord",61,61,1,nil,nil,nil,0,3456}
 t[16889]={"Stormwind Celebrant",1,60,0,nil,"A",nil,0}
 t[16890]={"Ironforge Celebrant",1,60,0,nil,"A",nil,0}
 t[16891]={"Yuree",60,60,0,nil,"AH","Dawn Whisperer",0}
@@ -10084,7 +10084,7 @@ t[16893]={"Orgrimmar Celebrant",1,60,0,nil,"H",nil,0}
 t[16894]={"Thunder Bluff Celebrant",1,60,0,nil,"H",nil,0}
 t[16895]={"Undercity Celebrant",1,60,0,nil,"H",nil,0}
 t[16979]={"Midsummer Merchant",60,60,0,nil,"AH","Festival Supplies",0}
-t[16980]={"The Lich King",60,60,0,nil,"AH",nil,0}
+t[16980]={"The Lich King",60,60,0,nil,"AH",nil,0,3456}
 t[16981]={"Plagued Guardian",61,61,1,nil,nil,nil,0}
 t[16982]={"Plagued Construct",61,61,1,nil,nil,nil,0}
 t[16983]={"Plagued Champion",61,61,1,nil,nil,nil,0}
@@ -10096,7 +10096,7 @@ t[16988]={"Festival Flamekeeper Costume: Human",1,1,0,nil,"AH",nil,0}
 t[16989]={"Festival Flamekeeper Costume: Troll",1,1,0,nil,"AH",nil,0}
 t[16990]={"Festival Flamekeeper Costume: Dwarf",1,1,0,nil,"AH",nil,0}
 t[16995]={"Mouth of Kel'Thuzad",1,60,0,{[1453]={66.32,82.87},[1454]={52.4,83.97},[1455]={21.85,77.61},[1456]={32.9,64.72},[1457]={65.37,40.45},[1458]={66.16,11.3}},"AH",nil,0}
-t[16998]={"Mr. Bigglesworth",5,5,0,nil,"AH",nil,0}
+t[16998]={"Mr. Bigglesworth",5,5,0,nil,"AH",nil,0,3456}
 t[16999]={"Johnny McWeaksauce",60,60,0,nil,"AH","Public Test Realm Bot",0}
 t[17003]={"Cinder Elemental",1,1,0,nil,"AH",nil,0}
 t[17025]={"Sapphiron's Wing Buffet",60,60,0,nil,"AH",nil,0}
@@ -10124,7 +10124,7 @@ t[17082]={"Rifleman Torrig",55,55,0,{[1451]={50.68,34.71}},"AH",nil,2}
 t[17090]={"Silithus Dust Turnin Quest Doodad",1,1,0,{[1451]={32.95,50.81}},"AH",nil,0}
 t[17163]={"Worm Target (DND)",1,1,0,nil,"AH",nil,0}
 t[17209]={"William Kielar",60,60,1,nil,"A","Spectral Gryphon Master",1}
-t[17231]={"Garden Gas",1,1,0,nil,"AH",nil,0}
+t[17231]={"Garden Gas",1,1,0,nil,"AH",nil,0,3456}
 t[17239]={"[PH] Plaguelands Herald",1,1,0,nil,"AH",nil,0}
 t[17249]={"Landro",60,60,0,{[1434]={28.13,75.9}},"AH","The Black Flame",1}
 t[17252]={"Felguard",58,58,0,nil,"H",nil,0}
@@ -10133,8 +10133,8 @@ t[17255]={"Hippogryph Hatchling",1,1,0,nil,"AH",nil,0}
 t[17258]={"Purple Ogre Costume",60,60,1,nil,"AH",nil,0}
 t[17266]={"Riding Turtle",1,1,0,nil,"AH",nil,0}
 t[17284]={"Lottery Commissioner [DND]",1,1,0,nil,"AH",nil,0}
-t[17286]={"Invisible Man",60,60,0,nil,"AH",nil,0}
-t[17293]={"Plague Wave",60,60,0,nil,nil,nil,0}
+t[17286]={"Invisible Man",60,60,0,nil,"AH",nil,0,3456}
+t[17293]={"Plague Wave",60,60,0,nil,nil,nil,0,3456}
 t[17313]={"Unkillable Test Dummy Spammer",60,60,0,nil,"AH",nil,0}
 t[17415]={"Lordaeron Mage",60,60,0,nil,"AH",nil,0}
 t[17466]={"Lordaeron Spirit",60,60,0,nil,"AH",nil,0}
@@ -12192,7 +12192,7 @@ t[261306]={"Faldrim Anvilmar"}
 t[261311]={"Plunder"}
 t[261313]={"Naluk",nil,nil,nil,{[2548]={58,45.8}},nil,"Butcher",4}
 t[261316]={"Magmatus"}
-t[261319]={"Durgen Dirgehammer"}
+t[261319]={"Durgen Dirgehammer",nil,nil,nil,nil,nil,nil,nil,16919}
 t[261330]={"Bik Zipzit"}
 t[261345]={"Stalker"}
 t[261363]={"Ranthor the Severer",nil,nil,nil,nil,nil,"Undermarket Risk Mitigator"}
@@ -12312,8 +12312,8 @@ t[263367]={"Sleebo Fizzlespout",40,40,nil,{[2548]={69.55,50.32,69.75,48.37}}}
 t[263369]={"G45-B4G",38,38,nil,{[2548]={68.88,50.2}}}
 t[263380]={"Ghostmaw",42,42}
 t[263384]={"Mister Graphed",60,60,nil,{[2548]={78.19,51.93,78.26,51.92,78.27,52.01,78.35,52.29}},"AH","Agent of the Black Market",4}
-t[263389]={"Enraged Apparition"}
-t[263390]={"Tormented Soul"}
+t[263389]={"Enraged Apparition",nil,nil,nil,nil,nil,nil,nil,16919}
+t[263390]={"Tormented Soul",nil,nil,nil,nil,nil,nil,nil,16919}
 t[263394]={"Bethra'zel"}
 t[263396]={"Dark Iron Looter"}
 t[263397]={"Dark Iron Engineer"}

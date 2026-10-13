@@ -10,12 +10,12 @@ Ding.DB = {
     source = "QuestieDB v1.0.6",
     LAYOUT = {
     Quest = { name = 1, startedBy = 2, finishedBy = 3, requiredLevel = 4, questLevel = 5, requiredRaces = 6, requiredClasses = 7, triggerEnd = 8, objectives = 9, sourceItemId = 10, preQuestGroup = 11, preQuestSingle = 12 },
-    Npc = { name = 1, minLevel = 2, maxLevel = 3, rank = 4, spawns = 5, friendlyToFaction = 6, subName = 7, npcFlags = 8 },
-    Object = { name = 1, spawns = 2 },
+    Npc = { name = 1, minLevel = 2, maxLevel = 3, rank = 4, spawns = 5, friendlyToFaction = 6, subName = 7, npcFlags = 8, dungeon = 9 },
+    Object = { name = 1, spawns = 2, dungeon = 3 },
     Item = { name = 1, npcDrops = 2, objectDrops = 3, vendors = 4 },
     },
     corrected = {["items"]={},["npcs"]={},["objects"]={},["quests"]={}},
     quests = {}, npcs = {}, objects = {}, items = {},
-    zones = { areaToUiMap = {}, dungeons = {}, dungeonsHorde = {} },
+    zones = { areaToUiMap = {}, dungeons = {}, dungeonsHorde = {}, dungeonNames = {} },
     names = { quests = {}, npcs = {}, objects = {}, items = {} },
 }

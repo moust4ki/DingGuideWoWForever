@@ -61,6 +61,7 @@ Ding.Locales.esES = {
     SCALE_SET = "Escala de la ventana: %.2f",
     OPTIONAL = "(opcional)",
     ANOTHER_CONTINENT = "Otro continente",
+    IN_DUNGEON = "%s, en %s",
     ARRIVED = "Estás aquí",
     IN_AREA = "Estás en la zona",
     CORPSE = "Tu cadáver",

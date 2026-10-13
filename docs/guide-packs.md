@@ -261,7 +261,8 @@ What Ding does for you, so steps stay short:
 
 - the arrow points to the next NPC or the monsters of the objectives, from Ding's game data; a target
   in another zone is named with its zone (under the arrow and on the step's line), and the
-  target is marked on the world map (the game's own map waypoint);
+  target is marked on the world map (the game's own map waypoint); a target only inside a
+  dungeon leads to the dungeon's entrance ("Herod, in Scarlet Monastery");
 - with automation on (the default), quests of the step are accepted and turned in when the
   player talks to the NPC;
 - a quest above the player's level is shown in orange with its level;

@@ -1,6 +1,7 @@
 -- What Ding's guides need that DingDB lacks. For every quest a shipped guide uses: a giver with a
 -- place (accept), a turn-in with a place (turnin), places for its objectives (complete); and the
--- NPCs, objects and items the steps name (talk, kill, collect, object, useitem). Without them the
+-- NPCs, objects and items the steps name (talk, kill, collect, object, useitem). A target only
+-- inside a dungeon counts as placed when the dungeon's entrances are known. Without them the
 -- arrow has nothing to point at, unless the step carries its own `go` or `spots`: those steps are
 -- counted apart ("covered"). Reads Ding/DB only (no QuestieDB needed). The answer to a gap is a
 -- correction in tools/data/corrections (docs/dingdb.md).
@@ -44,8 +45,16 @@ local function hasSpawns(spawns)
     end
     return false
 end
-local function npcPlaced(id) local r = DB.npcs[id] return r and hasSpawns(r[L.Npc.spawns]) end
-local function objectPlaced(id) local r = DB.objects[id] return r and hasSpawns(r[L.Object.spawns]) end
+-- Placed: spawns on a map, or only inside a dungeon whose entrances are known (Ding leads there).
+local function entranceKnown(area) return area and DB.zones.dungeons[area] ~= nil end
+local function npcPlaced(id)
+    local r = DB.npcs[id]
+    return r and (hasSpawns(r[L.Npc.spawns]) or entranceKnown(r[L.Npc.dungeon])) or false
+end
+local function objectPlaced(id)
+    local r = DB.objects[id]
+    return r and (hasSpawns(r[L.Object.spawns]) or entranceKnown(r[L.Object.dungeon])) or false
+end
 local function itemPlaced(id)
     local r = DB.items[id]
     if not r then return false end

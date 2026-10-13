@@ -430,7 +430,6 @@ Ding.RegisterGuide({
         { train = true, talk = 3353, classes = { "WARRIOR" }, -- level 12
           note = "The NPC is indoors." },
         { go = { 1454, 81.59, 19.59 }, classes = { "WARRIOR" }, text = "Learn Staves at the weapon master" }, -- level 12
-        { accept = 96874, races = { "Orc", "Troll" } }, -- level 12
         { talk = 2704, classes = { "WARRIOR" }, -- level 12
           note = "The NPC is indoors." },
         { train = true, talk = 3352, classes = { "HUNTER" }, -- level 12

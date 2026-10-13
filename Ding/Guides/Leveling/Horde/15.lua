@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Horde/15.lua.
--- Simulated (warrior): Orc 34 (9%) -> 36 (32%) in 9 h 47, 21 quests turned in; Scourge 34 (9%) -> 36 (32%) in 9 h 47, 21 quests turned in; Tauren 34 (10%) -> 36 (32%) in 9 h 47, 21 quests turned in; Troll 34 (9%) -> 36 (32%) in 9 h 47, 21 quests turned in; Skyborne 34 (9%) -> 36 (32%) in 9 h 47, 21 quests turned in.
+-- Simulated (warrior): Orc 34 (9%) -> 36 (32%) in 9 h 47, 21 quests turned in; Scourge 34 (9%) -> 36 (32%) in 9 h 47, 21 quests turned in; Tauren 34 (9%) -> 36 (32%) in 9 h 47, 21 quests turned in; Troll 34 (9%) -> 36 (32%) in 9 h 47, 21 quests turned in; Skyborne 34 (9%) -> 36 (32%) in 9 h 47, 21 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-h15-desolace",
     title    = "Desolace (34-36)",

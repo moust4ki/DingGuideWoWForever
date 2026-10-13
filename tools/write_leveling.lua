@@ -1267,7 +1267,9 @@ local function addForeverQuests(sims)
     local cands = {}
     for _, q in ipairs(sortedKeys(db.Quest)) do
         local quest = db.Quest[q]
-        if not classic[q] and not routeQuests[q] and (quest[QK.questLevel] or 0) > 0 then
+        if route.exclude and route.exclude[q] then
+            additions.skipped[#additions.skipped + 1] = { q = q, why = "left out by the route: " .. route.exclude[q] }
+        elseif not classic[q] and not routeQuests[q] and (quest[QK.questLevel] or 0) > 0 then
             local races = {}
             for _, race in ipairs(RACES) do
                 if X.raceAllowed(quest, RACE_BIT[race]) then races[#races + 1] = race end

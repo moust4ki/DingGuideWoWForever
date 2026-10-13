@@ -59,6 +59,7 @@ Ding.Locales.zhCN = {
     SCALE_SET = "窗口缩放：%.2f",
     OPTIONAL = "（可选）",
     ANOTHER_CONTINENT = "其他大陆",
+    IN_DUNGEON = "%s（%s内）",
     ARRIVED = "已到达",
     IN_AREA = "已在区域内",
     CORPSE = "尸体",
