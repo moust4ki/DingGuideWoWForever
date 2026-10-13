@@ -637,7 +637,7 @@ under a step that names the quest, nor under a step seen again with "Previous": 
 13/10/2026, "The Cursed Crew" listed at 0/13 in red under a step done read as that step's
 objectives; nor, whatever the distance, while the next step still to do works on that quest: it
 comes right after, and among its monsters it is an ordinary along-the-way row; not the red of
-the step's work: Guide window rules 8 and 9), and their targets
+the step's work: Guide window rules 9 and 10), and their targets
 are **low-priority arrow candidates** on the steps with quests (not on a trip: a `go` point
 must stay the arrow's to be validated): such a point counts as twice its distance plus 300
 yards. A quest turned in leaves the set, and so does a quest the active guide only makes
@@ -685,8 +685,10 @@ clutters least:
   "Quest level 29, above yours (27): harder, but the guide plans it."), "· before “Name”" in a
   sentence, and the action in the gamepad's words in focus mode ("A: the arrow goes there.",
   "Right: find this quest in the guide."). A row without a quest gets a card too (its text and
-  these lines), except notices, controls and the extras, whose text says it all. A gear
-  upgrade's "+12": "+12 on the guide's score for your class".
+  these lines), except section titles, notices and controls, whose text says it all. A gear
+  upgrade says how much better in words, no bare "+12": "Clearly better than [worn item] for your
+  class."; its card: what it replaces, which stats change, "the guide weighs each stat for your
+  class".
 - **Quest lines done** say it in their text, like the objectives: "Accepted / Turned in /
   Completed [2] “Name”".
 - **Minimized window**: its card says the row, its state and "Step 3 of 42" (the "3/42").
@@ -713,40 +715,52 @@ writes the window as plain text (rows, their look in words, counters, sub-lines,
 cards, the step menu), and the French snapshots of `tools/tests/snapshots/` show every change of
 the window in a review (`panel_snapshot_test.lua`).
 
+**Information apart from the step**
+
+1. **Informational messages are clearly separated from the quest steps** (Yendi's first rule):
+   the step's own work (its quest headers, objectives, accept / turn-in / complete rows, a trip,
+   a level, the trainer, its goals, with the guide's note, the step's hints and its why line as
+   their sub-lines, and the undo of its mark) comes first, in one block; then a 1-unit line and a
+   "Good to know" title (11 SemiBold, dimmed); then everything else, never with the look of an
+   objective (no to-do / done state, no state background): the way there, a trip of the NPC
+   directory and its "Cancel the trip", steps passed, other quests' objectives, the rows besides
+   the step, bags and quest log almost full. "Next steps" come last, under their own line and
+   title. None of these is ever above or between the step's rows.
+
 **Words**
 
-1. **Nothing said by a color or an icon alone.** Every row but a section header, a notice and a
+2. **Nothing said by a color or an icon alone.** Every row but a section header, a notice and a
    control has a card (hover; X in focus mode) whose first line says what the row's look means
    (Plain words, above): to do, done, not possible yet and why, marked by hand, skipped, a step
    further on, another quest's objective and why it is there, a row besides the step; a quest
    header says where its quest stands (in progress, ready to turn in, turned in, not taken). A
    section header, a notice and a control say it all in their text.
-2. **Why lines** (`Ding.Why`): one line under the first row still to do, after the guide's note,
+3. **Why lines** (`Ding.Why`): one line under the first row still to do, after the guide's note,
    only for a step whose reason is marked short; the whole reason at the end of the cards of the
    step's own rows, under "Why?"; neither with "Guide explanations" off; never under the finished
    step kept on screen.
-3. **Texts never cut**: a row's text, its sub-lines and the notices wrap whole and the row grows,
+4. **Texts never cut**: a row's text, its sub-lines and the notices wrap whole and the row grows,
    at every width and scale. Minimized, the one line may end in an ellipsis: hovering it shows
    the row whole, with its note, what its look means and "Step N of M".
-4. **Every quest carries its level**: "[28] « Name »" in the headers, the accept, turn-in and
+5. **Every quest carries its level**: "[28] « Name »" in the headers, the accept, turn-in and
    complete rows, the next steps and the other quests' headers; a quest above the player's
    level is orange and its card says why ("Quest level 29, above yours (27): harder, but the
    guide plans it.").
 
 **The step's quests**
 
-5. A quest's objectives sit under a header "[level] « Name »" (no icon, no background,
+6. A quest's objectives sit under a header "[level] « Name »" (no icon, no background,
    SemiBold), indented by 8, unless a row of the step names the quest already.
-6. Accept, turn-in and complete rows say the action and the quest; done, in the past
+7. Accept, turn-in and complete rows say the action and the quest; done, in the past
    ("Accepted / Turned in / Completed [28] « Name »").
-7. **A quest ready to turn in or turned in**: its objective rows are green, in the past tense,
+8. **A quest ready to turn in or turned in**: its objective rows are green, in the past tense,
    with a full counter, whatever the client reports (counts back to 0, a secret "finished"),
    also when the step is seen again with Previous; its card says it is turned in, never "not in
    your log yet".
 
 **Other quests**
 
-8. Another quest's objectives (persistent `sticky`, along the way) are listed only when they are
+9. Another quest's objectives (persistent `sticky`, along the way) are listed only when they are
    relevant: never for a quest a row of the step names, never twice, never under a step seen
    again with Previous; a persistent quest only from the step that makes it persistent on, and
    not while the next step still to do works on it (it comes right after). Along the way lists
@@ -754,63 +768,66 @@ the window in a review (`panel_snapshot_test.lua`).
    *Open (Yendi's decision)*: whether along the way should also leave out a quest whose own step
    is further on (Menethil, « The Cursed Crew » among its sailors at step 7); the test keeps that
    case PENDING.
-9. **They never pass for the step's work**: under a header that names the other quest and says
+10. **They never pass for the step's work**: under a header that names the other quest and says
    why it is there ("Another quest to finish on the way: [29] « Name »", "Another quest, its
    targets are here: …"), indented rows without the red of a row to do (no background, grey
    icons and counters); their card begins "Not this step's work".
 
 **Notices, rows besides the step, next steps**
 
-10. **Window-wide messages are notices**: the way there, a trip of the NPC directory, steps
+11. **Window-wide messages are notices**: the way there, a trip of the NPC directory, steps
     passed, bags almost full, quest log almost full: boxes of their own (grey box, no icon, 11
     Regular), never a sub-line of a row; the guide's notes and the step's own hints stay under
     the step.
-11. A trip of the NPC directory has a "Cancel the trip" control right under its notice.
-12. **Rows besides the step** (class training, weapon to learn, gear upgrade, talent, a new
+12. A trip of the NPC directory has a "Cancel the trip" control right under its notice.
+13. **Rows besides the step** (class training, weapon to learn, gear upgrade, talent, a new
     continent's flight master, a quest found elsewhere in the guide, the section wrap-up) come
-    after the step under a "Besides this step" header and never look like its objectives: no
-    red nor green, no state background, a blue icon; their card says they are not a step of the
-    guide and what a click (A) does.
-13. **Next steps**: under a "Next steps" header, one dimmed row per step, "Turn in [2] « Name »
+    under "Good to know" and never look like its objectives: no red nor green, no state
+    background, a blue icon; their card says they are not a step of the guide and what a click (A)
+    does. A gear upgrade says how much better in words, never a bare "+4": "Clearly better than
+    [worn item] for your class."; its card says what it replaces, which stats change and that the
+    guide weighs each stat for the class. "Suggest better gear" (Automation tab, on) hides it, its
+    banner and the item button's offer; "Equip upgrades automatically" stays its own option.
+14. **Next steps**: under a "Next steps" header, one dimmed row per step, "Turn in [2] « Name »
     and 1 more quest" (never "+1"), exactly the steps Next goes to, in that order.
 
 **Moving through the guide, marks**
 
-14. While browsing (after Previous), Previous and Next move **one step at a time**, done steps
+15. While browsing (after Previous), Previous and Next move **one step at a time**, done steps
     included, and mark nothing; only on the guide's current step does Next mark the step done
     and move on to the next step to do.
-15. A step just finished stays 1.5 s on screen, green; Next or Skip meanwhile only brings the
+16. A step just finished stays 1.5 s on screen, green; Next or Skip meanwhile only brings the
     step the guide moved to.
-16. A step marked done by hand is violet, a skipped one amber; a line under it and the cards say
+17. A step marked done by hand is violet, a skipped one amber; a line under it and the cards say
     it in words; an "Undo" control under it, and first in the step menu, takes the mark away.
-17. **The step menu says what each entry acts on**: during a trip, the trip's entries first, then
+18. **The step menu says what each entry acts on**: during a trip, the trip's entries first, then
     "the guide's step"; an entry that would do what the step's mark already says is left out
     (no "Mark as done" on a step marked done, no "Skip" on a skipped one); "Find this quest in
     the guide" on a row with a quest.
 
 **Gamepad and mouse**
 
-18. **Each action once**: with a gamepad, a focused control carries its A chip and focus mode's
+19. **Each action once**: with a gamepad, a focused control carries its A chip and focus mode's
     hint bar lists only what no control on screen does (A on a row, X when the row has a card,
     B); LB / RB chips in the step bar with a gamepad only; without one, no chip and no hint bar.
-19. Focus mode reaches every row (quest headers, objectives, other quests, notices, controls,
+20. Focus mode reaches every row (quest headers, objectives, other quests, notices, controls,
     rows besides the step) and the directory's button above them; X shows the focused row's
     card; A does what a click does.
-20. The mouse does everything: a click = A, hovering = X, a right click = the step menu.
+21. The mouse does everything: a click = A, hovering = X, a right click = the step menu.
 
 **Frames and looks**
 
-21. **Own frames only**: the window never opens, closes nor drives a game window (quest log,
+22. **Own frames only**: the window never opens, closes nor drives a game window (quest log,
     map, talents); plain frames, nothing protected, no taint (`taint_test`).
-22. **One look per kind**, the same everywhere, and **the step's own work stands out**: only the
-    step's rows have a state's background (red, green, violet, amber) and their icon; quest headers (12 SemiBold, no icon), section headers ("Next steps", "Besides this
-    step": 11 SemiBold, dimmed, no icon), notices (grey box, 11 Regular), controls (button
+23. **One look per kind**, the same everywhere, and **the step's own work stands out**: only the
+    step's rows have a state's background (red, green, violet, amber) and their icon; quest headers (12 SemiBold, no icon), section headers ("Good to know", "Next steps": 11
+    SemiBold, dimmed, no icon, a line above), notices (grey box, 11 Regular), controls (button
     background, lighter under the mouse), rows besides the step (no background, blue icon), other
     quests (no background, grey icon), next steps (dimmed). Colors only through `UI.C`.
 
 **Sentences**
 
-23. **Sub-lines are plain sentences**: no "Button: action · Button: action" shorthand under a row
+24. **Sub-lines are plain sentences**: no "Button: action · Button: action" shorthand under a row
     (the upgrade, the talent, the offer to jump, the quest log's notice, the level's experience
     left): "To equip it, use the item button on screen. To ignore it, press Left in focus mode."
 
@@ -935,8 +952,8 @@ accent #5BB4FF, the Noto Sans font shipped with the addon, rounded shapes from t
   starts on the first row to do (past the header); the D-pad also stops on headers; the
   "target" binding (`DING_CYCLE`) passes over them.
 - **Notices** (state "notice", `action = "notice"`): what concerns the whole window rather than
-  one row of the step gets a box of its own (no icon, 11 Regular, wrapped whole): right
-  under the step, the way there (`travel`: the travel hint, then the itinerary), a trip of the
+  one row of the step gets a box of its own (no icon, 11 Regular, wrapped whole), under the
+  "Good to know" title after the step's rows (Guide window rule 1): first the way there (`travel`: the travel hint, then the itinerary), a trip of the
   NPC directory (`trip`: with the way there in its box, and a "Cancel the trip" control under
   it: A or a click on it ends the trip) and why steps were passed (`skipped`); after the rows added under
   the step, the bags almost full (`bags`) and the quest log almost full (`cleanup`, with "A: see
@@ -1143,9 +1160,14 @@ accent #5BB4FF, the Noto Sans font shipped with the addon, rounded shapes from t
 - **Gear upgrades** (`Core/Gear.lua`): each piece of gear in the bags that the class can wear at
   its level (armor and weapon proficiencies of Classic, `GetItemInfoInstant`) is scored like
   the quest rewards against what it would replace; one point of score or more is an upgrade.
-  The best one gets a 6 s banner ("Upgrade in your bags: [item]"), a row "Equip [item]" with
-  its gain under the step, and the item button offers it (using a piece of gear from the bags
-  wears it), when the step needs no item of its own. Declined (right click on the row, Left in
+  The best one gets a 6 s banner ("Upgrade in your bags: [item]"), a row "Equip [item]" under
+  "Good to know" saying in words how much better it is ("Slightly / Clearly better than [worn
+  item] for your class.", "You wear nothing there: better than nothing.": a gain of a quarter of
+  what is worn or more is clear, `Rewards:Compare`) and how to equip it or say no, and the item
+  button offers it (using a piece of gear from the bags wears it), when the step needs no item of
+  its own. "Suggest better gear" (Automation tab, on by default, `ui.suggestGear`): off, no row,
+  no banner, nothing on the item button (`Gear:Suggested`); the bags are still looked at for
+  "Equip upgrades automatically", its own option. Declined (right click on the row, Left in
   focus mode): remembered in `Ding.char.gearDeclined`. "Equip upgrades automatically" (off by
   default): out of combat, only an item already bound to the player (`C_Item.IsBound`), else the
   game would ask its confirmation. An item a quest of the log needs (objective, item handed

@@ -49,10 +49,15 @@ Nothing else to install: QuestieDB is no longer needed, and TomTom stays optiona
     their own; the quest log one opens the cleanup page.
   - A step you marked as done or skipped by mistake: go back to it and undo it, from the line
     under it or the right-click menu.
+  - What the step asks comes first; everything else (the way there, other quests on your way,
+    the weapon to learn, new spells at the trainer, a gear upgrade, bags or quest log almost
+    full) comes below a line, under "Good to know", never as a red line to do.
   - Another quest's objectives shown on the way sit under a line that names that quest and
     says why it is there, in grey: they no longer look like the step's own work.
-  - The weapon to learn, new spells at the trainer, a gear upgrade and the section's end come
-    under "Besides this step", with a look of their own instead of a red line to do.
+  - A gear upgrade says how much better it is in words ("Clearly better than … for your class")
+    instead of a bare "+4", and hovering it tells what it replaces and which stats change.
+    **"Suggest better gear"** (Automation tab, on by default) turns these suggestions off.
+  - The lines under a row are plain sentences ("To equip it, use the item button on screen.").
   - A quest you turned in, seen again with "Previous", says so; a "keep this item" reminder is
     a line under the step, not a line to do.
 - **Travel**

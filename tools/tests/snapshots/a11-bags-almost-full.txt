@@ -16,9 +16,11 @@ STEP   < Étape 4 / 97 >   zone: Sombre-Comté
       | Pourquoi ?
       | Le guide prévoit cette étape ici.
       | Clic : la flèche y va.
- 2  notice  [notice] grey box background, no icon, text light grey, regular 11
-    Sautée : [20] « Colline-aux-Corbeaux » (quête grise, trop basse pour toi)
+ 2  infoHeader  [section] LINE ABOVE, no icon, text dim grey, semibold 11
+    À savoir
  3  notice  [notice] grey box background, no icon, text light grey, regular 11
+    Sautée : [20] « Colline-aux-Corbeaux » (quête grise, trop basse pour toi)
+ 4  notice  [notice] grey box background, no icon, text light grey, regular 11
     Sacs presque pleins : 4 emplacements libres
 
 PROGRESS bar 4 / 97

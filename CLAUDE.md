@@ -161,10 +161,12 @@ Contracts between modules:
   and name) unless a row of the step names the quest; then the notices `action = "notice"`
   (`notice` = "travel" | "trip" | "skipped"; `P:Content` lines of the same kind make one box;
   the step's own rows carry `ofStep`: their tooltip says why, `P.shownStep`),
-  then the rows `along = true` of `Along.shown` (objectives of other quests, state "other",
-  `other` = "sticky" | "along", each quest under a row `action = "header"` with `other`), the
-  extras (`extra = true`, state "extra", under a row `action = "extrasHeader"`, state "section"),
-  the notices "bags" | "cleanup", and the preview (under a row `action = "previewHeader"`, state
+  after the step's rows (and its `unmark` control), a row `action = "infoHeader"` (state
+  "section", "Good to know", a line above) and everything informational, `info = true`: the
+  first notices, the rows `along = true` of `Along.shown` (objectives of other quests, state
+  "other", `other` = "sticky" | "along", each quest under a row `action = "header"` with
+  `other`), the extras (`extra = true`, state "extra"), the notices "bags" | "cleanup"; then the
+  preview (under a row `action = "previewHeader"`, state
   "section"). The rules of the window: SPEC "Guide window: rules" (`panel_rules_test`);
   `tools/panel_snapshot.lua` writes it as text for a scenario of `tools/panel_scenarios.lua`. Plain words (SPEC): `Panel:RowMeaning(row)`
   -> what a row's look means, in words, for its card (`Panel:ShowQuest`: hover, X in focus mode;
@@ -328,7 +330,8 @@ Contracts between modules:
   am", which then takes the first step still to do),
   `hearthInn` (`{ inn, name }`: bound during a sethearth step, the client's name of the inn),
   `worldMark` (`{ map, x, y }`: the map waypoint Ding set, not the player's).
-  `Ding.db.panel.preview` (0-3 next steps shown), `Ding.db.panel.weaponReminder` (the weapon
+  `Ding.db.ui.suggestGear` (the gear upgrade's row, banner and item button:
+  `Gear:Suggested()`; `Gear.upgrade` stays for auto-equip), `Ding.db.panel.preview` (0-3 next steps shown), `Ding.db.panel.weaponReminder` (the weapon
   to learn under the step), `Ding.db.panel.why` (the guide's explanations, Core/Why.lua),
   `Ding.db.minimap.pins`.
   The engine places the player only once the quest log has arrived (`Engine.logReady`).

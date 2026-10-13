@@ -28,7 +28,7 @@ STEP   < Étape 2 / 97 >   zone: Sombre-Comté
       | Pourquoi ?
       | Le guide prévoit cette étape ici.
       | Clic : la flèche y va.
- 3  previewHeader  [section] no icon, text dim grey, semibold 11
+ 3  previewHeader  [section] LINE ABOVE, no icon, text dim grey, semibold 11
     Étapes suivantes
  4  preview  [preview] grey caret right icon, text dim grey
     Lie ta pierre de foyer à Darkshire

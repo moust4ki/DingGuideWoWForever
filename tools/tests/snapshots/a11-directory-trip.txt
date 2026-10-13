@@ -16,9 +16,11 @@ STEP   < Étape 4 / 97 >   zone: Sombre-Comté
       | Pourquoi ?
       | Le guide prévoit cette étape ici.
       | Clic : la flèche y va.
- 2  notice  [notice] grey box background, no icon, text light grey, regular 11
+ 2  infoHeader  [section] LINE ABOVE, no icon, text dim grey, semibold 11
+    À savoir
+ 3  notice  [notice] grey box background, no icon, text light grey, regular 11
     En route vers Tordrin Sternblade (Maître de classe) : le guide reprend une fois sur place.
- 3  tripcancel  [button] button background, no icon, text white
+ 4  tripcancel  [button] button background, no icon, text white
     Annuler le trajet
 
 PROGRESS bar 4 / 97

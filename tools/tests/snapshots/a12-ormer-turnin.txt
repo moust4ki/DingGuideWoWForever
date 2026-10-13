@@ -16,20 +16,22 @@ STEP   < Étape 31 / 87 >   zone: Les Paluns
       | Pourquoi ?
       | Le guide prévoit cette étape ici.
       | Clic : la flèche y va.
- 2  extrasHeader  [section] no icon, text dim grey, semibold 11
-    En plus de l'étape
+ 2  infoHeader  [section] LINE ABOVE, no icon, text dim grey, semibold 11
+    À savoir
  3  weapon  [extra] blue caret right icon, text white
     Arme à apprendre : Armes d'hast — Woo Ping, Stormwind City
     card:
       | Arme à apprendre : Armes d'hast — Woo Ping, Stormwind City
       | Pas une étape du guide : une suggestion en plus de l'étape.
       | Clic : la flèche y va.
- 4  gear  [extra] item icon icon, text white, counter +4 blue
+ 4  gear  [extra] item icon icon, text white
     Équiper [Hachette trancheuse du loup]
+      > Tu ne portes rien à cet emplacement : mieux que rien.
       > Pour l'équiper, clique sur le bouton d'objet à l'écran. Pour l'ignorer, fais un clic droit sur cette ligne.
     card:
       | item 15231
-      | Mieux que ce que tu portes : +4 au score du guide pour ta classe.
+      | Tu ne portes rien à cet emplacement : mieux que rien.
+      | Pour comparer, le guide pèse chaque caractéristique selon ta classe.
       | Pas une étape du guide : une suggestion en plus de l'étape.
 
 PROGRESS bar 31 / 87

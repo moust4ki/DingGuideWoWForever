@@ -16,7 +16,9 @@ STEP   < Étape 6 / 87 >   zone: Port de Menethil
       | Pourquoi ?
       | Le guide prévoit cette étape ici.
       | Clic : la flèche y va.
- 2  header  [header] no icon, text light grey, semibold 12
+ 2  infoHeader  [section] LINE ABOVE, no icon, text dim grey, semibold 11
+    À savoir
+ 3  header  [header] no icon, text light grey, semibold 12
     Autre quête de ton journal, ses cibles sont ici : {orange: [29] « L'équipage maudit »}
     card:
       | L'équipage maudit
@@ -26,7 +28,7 @@ STEP   < Étape 6 / 87 >   zone: Port de Menethil
       | Soldat de marine maudit : 0/5
       | Tabatière de Snellig : 0/1
       | Clic : la flèche y va.
- 3  objective  [other] light grey diamond icon, text light grey, indented, counter 0/13 light grey
+ 4  objective  [other] light grey diamond icon, text light grey, indented, counter 0/13 light grey
       Tuer 13 Marin maudit
       card:
         | L'équipage maudit
@@ -36,7 +38,7 @@ STEP   < Étape 6 / 87 >   zone: Port de Menethil
         | Soldat de marine maudit : 0/5
         | Tabatière de Snellig : 0/1
         | Clic : la flèche y va.
- 4  objective  [other] light grey diamond icon, text light grey, indented, counter 0/5 light grey
+ 5  objective  [other] light grey diamond icon, text light grey, indented, counter 0/5 light grey
       Tuer 5 Soldat de marine maudit
       card:
         | L'équipage maudit

@@ -15,11 +15,11 @@ STEP   < (off) Étape 1 / 97 >   zone: Hurlevent
       | Pourquoi ?
       | Le guide prévoit cette étape ici.
       | Clic : la flèche y va.
- 2  notice  [notice] grey box background, no icon, text light grey, regular 11
+ 2  infoHeader  [section] LINE ABOVE, no icon, text dim grey, semibold 11
+    À savoir
+ 3  notice  [notice] grey box background, no icon, text light grey, regular 11
     Quitte Stormwind City par ses portes
       > Trajet : à pied 2:02, portes 50:06 vers Elwynn Forest, à pied 40:47 (92:55 en tout)
- 3  extrasHeader  [section] no icon, text dim grey, semibold 11
-    En plus de l'étape
  4  weapon  [extra] blue caret right icon, text white
     Armes à apprendre : Épées, Épées à deux mains, Armes d'hast et 3 autres — Woo Ping, Stormwind City
     card:

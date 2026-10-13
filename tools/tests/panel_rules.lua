@@ -92,9 +92,58 @@ return function(tools, locale)
     end
 
     ---------------------------------------------------------------------------
+    -- Information apart from the step
+    ---------------------------------------------------------------------------
+    -- A row of information: not the step's work (Yendi: "informational messages must be
+    -- clearly separated from the quest steps").
+    local function isInfo(row)
+        return row.action == "notice" or row.action == "tripcancel" or row.other ~= nil or row.extra == true
+    end
+    local STEP_STATES = { todo = true, done = true, impossible = true, manual = true, skipped = true }
+    local STATE_BG = { red = true, green = true, violet = true, amber = true }
+
+    T.test("1 information apart from the step: the step's work first, then a line, \"Good to know\" and the rest", function()
+        local seen = 0
+        for _, sc in ipairs(S) do
+            if not sc.compact then
+                scene(sc.name)
+                local _, title = find(function(r) return r.action == "infoHeader" end)
+                local lastStep, firstInfo, previewAt = 0, nil, nil
+                for i, row in ipairs(rows()) do
+                    if row.ofStep or row.action == "unmark" then lastStep = i end
+                    if isInfo(row) then
+                        firstInfo = firstInfo or i
+                        T.ok(not STEP_STATES[row.state], ("%s: row %d (%s) has a step's state %s"):format(sc.name, i,
+                            plain(row.text), tostring(row.state)))
+                        T.ok(not STATE_BG[bg(i) or ""], ("%s: row %d (%s) has a step's %s background"):format(sc.name, i,
+                            plain(row.text), tostring(bg(i))))
+                        T.ok(row.info, ("%s: row %d (%s) is not in the information block"):format(sc.name, i, plain(row.text)))
+                    end
+                    if row.preview then previewAt = previewAt or i end
+                end
+                if firstInfo then
+                    seen = seen + 1
+                    T.ok(title, sc.name .. ": information without its title: " .. describe())
+                    T.eq(plain(rows()[title].text), L.INFO_HEADER)
+                    T.ok(frame(title).rule:IsShown(), sc.name .. ": no line above \"Good to know\"")
+                    T.ok(lastStep < title and title < firstInfo, ("%s: information above or between the step's rows "
+                        .. "(last step row %d, title %s, first information %d)"):format(sc.name, lastStep, tostring(title), firstInfo))
+                    for i = title + 1, #rows() do
+                        T.ok(not rows()[i].ofStep, ("%s: a step's row %d after the information"):format(sc.name, i))
+                    end
+                    if previewAt then T.ok(previewAt > firstInfo, sc.name .. ": the next steps above the information") end
+                else
+                    T.eq(title, nil, sc.name .. ": \"Good to know\" with nothing under it")
+                end
+            end
+        end
+        T.ok(seen >= 10, "too few scenarios with information: " .. seen)
+    end)
+
+    ---------------------------------------------------------------------------
     -- Words
     ---------------------------------------------------------------------------
-    T.test("1 nothing said by a color or an icon alone: every row has a card that says its look", function()
+    T.test("2 nothing said by a color or an icon alone: every row has a card that says its look", function()
         for _, sc in ipairs(S) do
             if not sc.compact and not sc.focus then
                 scene(sc.name)
@@ -112,7 +161,7 @@ return function(tools, locale)
         end
     end)
 
-    T.test("1 a quest header says where its quest stands", function()
+    T.test("2 a quest header says where its quest stands", function()
         scene("a11-darkshire-objectives")
         local _, i = find(function(r) return r.action == "header" and r.quest == 101 end)
         T.ok(i, describe())
@@ -123,14 +172,14 @@ return function(tools, locale)
         T.ok(cardHas(card(i), L.QUEST_TURNED_IN), "turned in")
     end)
 
-    T.test("1 a reminder to keep an item is a line under the step, never a row \"to do\"", function()
+    T.test("2 a reminder to keep an item is a line under the step, never a row \"to do\"", function()
         scene("a11-two-quests")
         T.eq(#all(function(r) return r.goal and r.goal.kind == "keep" end), 0, "a keep reminder as a row: " .. describe())
         local keep = L.GOAL_KEEP:format(D:ItemName(1468))
         T.ok(find(function(r) return r.ofStep and has(r.sub, keep) end), "the reminder is not under the step: " .. keep)
     end)
 
-    T.test("2 why lines: only for a surprising step, after the note; the reason on demand; option off", function()
+    T.test("3 why lines: only for a surprising step, after the note; the reason on demand; option off", function()
         local ctx = scene("a11-westfall-detour")
         local step = E:CurrentStep()
         local short = Ding.Why:Short(step)
@@ -172,7 +221,7 @@ return function(tools, locale)
         end
     end
 
-    T.test("3 texts never cut: every scenario from 240 to 420 wide, at every scale", function()
+    T.test("4 texts never cut: every scenario from 240 to 420 wide, at every scale", function()
         for _, sc in ipairs(S) do
             if not sc.compact then
                 scene(sc.name)
@@ -188,7 +237,7 @@ return function(tools, locale)
         end
     end)
 
-    T.test("3 minimized: hovering shows the row whole, its note, its state and \"Step N of M\"", function()
+    T.test("4 minimized: hovering shows the row whole, its note, its state and \"Step N of M\"", function()
         scene("a11-minimized")
         local f, data = P.frame, P.compactRow
         T.ok(P.compact and data, "not minimized")
@@ -203,7 +252,7 @@ return function(tools, locale)
         T.ok(cardHas(c, L.COMPACT_STEP:format(E:StepNumber(E.index))), "\"Step N of M\" is missing")
     end)
 
-    T.test("4 every quest carries its level; above the player's, orange and said in words", function()
+    T.test("5 every quest carries its level; above the player's, orange and said in words", function()
         local NAMED = { accept = true, turnin = true, complete = true, header = true, preview = true }
         for _, sc in ipairs(S) do
             if not sc.compact then
@@ -231,7 +280,7 @@ return function(tools, locale)
     ---------------------------------------------------------------------------
     -- The step's quests
     ---------------------------------------------------------------------------
-    T.test("5 objectives under a header \"[level] « Name »\", indented; none when the step names the quest", function()
+    T.test("6 objectives under a header \"[level] « Name »\", indented; none when the step names the quest", function()
         scene("a11-two-quests")
         for _, q in ipairs({ 150, 127 }) do
             local header, i = find(function(r) return r.action == "header" and r.quest == q end)
@@ -248,7 +297,7 @@ return function(tools, locale)
         T.eq(#all(function(r) return r.action == "header" end), 0, "a header for a quest the step names: " .. describe())
     end)
 
-    T.test("6 accept, turn-in and complete rows: the action and the quest; done, in the past", function()
+    T.test("7 accept, turn-in and complete rows: the action and the quest; done, in the past", function()
         scene("a11-darkshire-accepts")
         local row = find(function(r) return r.quest == 101 end)
         T.eq(plain(row.text), plain(L.ROW_ACCEPT:format(leveled(101))))
@@ -263,7 +312,7 @@ return function(tools, locale)
         T.eq(plain(row.text), plain(L.ROW_TURNIN:format(leveled(70))))
     end)
 
-    T.test("7 a quest ready or turned in: green objectives, full counters, past tense, whatever the client says", function()
+    T.test("8 a quest ready or turned in: green objectives, full counters, past tense, whatever the client says", function()
         scene("a11-finished-seen-again")
         local list = all(function(r) return r.action == "objective" and r.quest == 226 end)
         T.ok(#list >= 1, describe())
@@ -286,7 +335,7 @@ return function(tools, locale)
     ---------------------------------------------------------------------------
     -- Other quests
     ---------------------------------------------------------------------------
-    T.test("8 other quests: never one the step names, never twice", function()
+    T.test("9 other quests: never one the step names, never twice", function()
         scene("a12-cursed-crew-carried")
         T.eq(#all(function(r) return r.action == "header" and r.other and r.quest == 289 end), 1, describe())
         local seen = {}
@@ -304,7 +353,7 @@ return function(tools, locale)
         T.eq(#all(function(r) return r.other and r.quest == 289 end), 0, "the step's own quest as another quest")
     end)
 
-    T.test("8 other quests: none under a step seen again with Previous", function()
+    T.test("9 other quests: none under a step seen again with Previous", function()
         scene("a12-cursed-crew-carried")
         T.ok(#all(function(r) return r.other end) > 0, "nothing to hide: " .. describe())
         E:Prev()
@@ -312,7 +361,7 @@ return function(tools, locale)
         T.eq(#all(function(r) return r.other end), 0, "another quest's rows under a step seen again: " .. describe())
     end)
 
-    T.test("8 a persistent quest: not before the step that makes it persistent, nor when its own step is next", function()
+    T.test("9 a persistent quest: not before the step that makes it persistent, nor when its own step is next", function()
         -- Menethil, step 7, away from the wreck: the step that keeps it on screen (13) is ahead.
         scene("a12-cursed-crew-ahead")
         H.player.x, H.player.y = 18, 40
@@ -328,14 +377,14 @@ return function(tools, locale)
         T.ok(#all(function(r) return r.quest == 289 and r.other == "sticky" end) > 0, "not kept on screen: " .. describe())
     end)
 
-    pending("8 along the way: a quest whose own step is further on (open: Yendi's decision)",
+    pending("9 along the way: a quest whose own step is further on (open: Yendi's decision)",
         "Core/Along.lua, a decision first", function()
         scene("a12-cursed-crew-ahead")
         T.eq(#all(function(r) return r.quest == 289 end), 0,
             "« The Cursed Crew » listed while its step is further on: " .. describe())
     end)
 
-    T.test("9 other quests never pass for the step's work: a header that says why, no red", function()
+    T.test("10 other quests never pass for the step's work: a header that says why, no red", function()
         for _, case in ipairs({ { "a12-cursed-crew-carried", 289, "sticky", L.OTHER_STICKY, L.STATE_STICKY },
             { "a12-along-behind", 471, "along", L.OTHER_ALONG, L.STATE_ALONG } }) do
             scene(case[1])
@@ -359,7 +408,7 @@ return function(tools, locale)
     ---------------------------------------------------------------------------
     -- Notices, rows besides the step, next steps
     ---------------------------------------------------------------------------
-    T.test("10 window-wide messages are notices: boxes of their own, never under a row", function()
+    T.test("11 window-wide messages are notices: boxes of their own, never under a row", function()
         local kinds = {}
         for _, name in ipairs({ "a11-bags-almost-full", "a11-log-almost-full", "a11-directory-trip", "a11-go-darkshire" }) do
             scene(name)
@@ -386,7 +435,7 @@ return function(tools, locale)
         T.ok(row and row.sub and row.sub ~= "", "the note is not under the step's row")
     end)
 
-    T.test("11 a trip of the NPC directory: \"Cancel the trip\" right under its notice", function()
+    T.test("12 a trip of the NPC directory: \"Cancel the trip\" right under its notice", function()
         scene("a11-directory-trip")
         local notice, i = find(function(r) return r.notice == "trip" end)
         T.ok(notice, describe())
@@ -397,14 +446,14 @@ return function(tools, locale)
         T.eq(Ding.Finder.trip, nil, "the control does not end the trip")
     end)
 
-    T.test("12 rows besides the step: under their title, never the look of the step's objectives", function()
+    T.test("13 rows besides the step: under \"Good to know\", never the look of the step's objectives", function()
         for _, name in ipairs({ "a11-extras", "a11-bank" }) do
             scene(name)
             local extras = all(function(r) return r.extra end)
             T.ok(#extras > 0, name .. ": no row besides the step: " .. describe())
-            local _, title = find(function(r) return r.action == "extrasHeader" end)
+            local _, title = find(function(r) return r.action == "infoHeader" end)
             T.ok(title and title < extras[1], name .. ": no title above them")
-            T.eq(plain(rows()[title].text), L.BESIDES_STEP)
+            T.eq(plain(rows()[title].text), L.INFO_HEADER)
             for _, i in ipairs(extras) do
                 local row = rows()[i]
                 T.eq(row.state, "extra", plain(row.text))
@@ -424,7 +473,7 @@ return function(tools, locale)
         end
     end)
 
-    T.test("13 next steps: under their title, dimmed, levels and \"and N more\" in words; what Next shows", function()
+    T.test("14 next steps: under their title, dimmed, levels and \"and N more\" in words; what Next shows", function()
         scene("a11-darkshire-accepts")
         local _, title = find(function(r) return r.action == "previewHeader" end)
         T.ok(title, describe())
@@ -451,7 +500,7 @@ return function(tools, locale)
     ---------------------------------------------------------------------------
     -- Moving through the guide, marks
     ---------------------------------------------------------------------------
-    T.test("14 browsing: Previous and Next move one step at a time and mark nothing", function()
+    T.test("15 browsing: Previous and Next move one step at a time and mark nothing", function()
         scene("a11-finished-seen-again")
         local shown = E.index
         E:Prev()
@@ -463,7 +512,7 @@ return function(tools, locale)
         T.eq(E.index, shown, "Next while browsing does not move one step")
     end)
 
-    T.test("14 on the guide's current step, Next marks it done and moves on", function()
+    T.test("15 on the guide's current step, Next marks it done and moves on", function()
         scene("a11-darkshire-accepts")
         local index = E.index
         E:Next()
@@ -472,7 +521,7 @@ return function(tools, locale)
         T.ok(E.index > index, "Next did not move on")
     end)
 
-    T.test("15 a finished step stays 1.5 s, green; Next meanwhile only brings the next step", function()
+    T.test("16 a finished step stays 1.5 s, green; Next meanwhile only brings the next step", function()
         scene("a11-marked-done")
         Ding.Engine:Unmark()
         H.flush()
@@ -491,7 +540,7 @@ return function(tools, locale)
         T.ok(not P.holding)
     end)
 
-    T.test("16 marked by hand: violet or amber, said in words, undone by its control", function()
+    T.test("17 marked by hand: violet or amber, said in words, undone by its control", function()
         for _, case in ipairs({ { "a11-marked-done", "manual", "violet", L.STEP_MARKED_DONE, L.STATE_MANUAL, L.STEP_UNDO_DONE },
             { "a11-skipped", "skipped", "amber", L.STEP_MARKED_SKIPPED, L.STATE_SKIPPED, L.STEP_UNDO_SKIP } }) do
             scene(case[1])
@@ -525,7 +574,7 @@ return function(tools, locale)
         return false
     end
 
-    T.test("17 the step menu says what each entry acts on, never what the mark says already", function()
+    T.test("18 the step menu says what each entry acts on, never what the mark says already", function()
         scene("a11-marked-done")
         local m = menu()
         T.eq(m[1], L.STEP_UNDO_DONE)
@@ -558,7 +607,7 @@ return function(tools, locale)
         return keys
     end
 
-    T.test("18 each action once: a focused control carries A, the hint bar only what no control does", function()
+    T.test("19 each action once: a focused control carries A, the hint bar only what no control does", function()
         scene("a11-directory-trip")
         pad(true)
         P:StartFocus()
@@ -583,7 +632,7 @@ return function(tools, locale)
         for j = 1, #rows() do T.ok(not frame(j).key:IsShown(), "a chip without a gamepad") end
     end)
 
-    T.test("19 focus mode reaches every row and the directory's button; X shows the card, A what a click does", function()
+    T.test("20 focus mode reaches every row and the directory's button; X shows the card, A what a click does", function()
         for _, name in ipairs({ "a11-focus-gamepad", "a11-extras", "a12-cursed-crew-carried", "a11-directory-trip" }) do
             scene(name)
             pad(true)
@@ -618,7 +667,7 @@ return function(tools, locale)
         pad(false)
     end)
 
-    T.test("19 the target binding stops on the step's own rows only, never a header nor another quest", function()
+    T.test("20 the target binding stops on the step's own rows only, never a header nor another quest", function()
         for _, name in ipairs({ "a12-cursed-crew-carried", "a11-extras", "a12-along-behind" }) do
             scene(name)
             pad(true)
@@ -639,7 +688,7 @@ return function(tools, locale)
         end
     end)
 
-    T.test("20 the mouse does everything: click = A, hover = X, right click = the step menu", function()
+    T.test("21 the mouse does everything: click = A, hover = X, right click = the step menu", function()
         scene("a11-darkshire-objectives")
         local _, i = find(function(r) return r.action == "objective" and r.state == "todo" end)
         A:Unfocus()
@@ -654,7 +703,7 @@ return function(tools, locale)
     ---------------------------------------------------------------------------
     -- Frames and looks
     ---------------------------------------------------------------------------
-    T.test("21 own frames only: nothing protected, no game window touched", function()
+    T.test("22 own frames only: nothing protected, no game window touched", function()
         local problems = H.problems()
         for _, sc in ipairs(S) do
             local text = view:Snapshot(sc.name)     -- hover, menus, focus mode: all of it
@@ -673,7 +722,7 @@ return function(tools, locale)
         end
     end)
 
-    T.test("22 one look per kind, the same in every scenario", function()
+    T.test("23 one look per kind, the same in every scenario", function()
         local looks, where = {}, {}
         local function kindOf(row)
             if row.extra then return "extra" end
@@ -713,7 +762,7 @@ return function(tools, locale)
         T.ok(looks["next step"]:find("^nil, icon, DingFont_regular12, dim grey"), looks["next step"])
     end)
 
-    T.test("22 the step's own work stands out: only its rows have a state's background", function()
+    T.test("23 the step's own work stands out: only its rows have a state's background", function()
         local STATE_BG = { red = true, green = true, violet = true, amber = true }
         for _, sc in ipairs(S) do
             if not sc.compact then
@@ -734,7 +783,7 @@ return function(tools, locale)
     -- A sentence ends like one, in every language.
     local function sentence(line) return line:find("[%.!%?]$") or line:find("。$") or line:find("%)$") end
 
-    T.test("23 sub-lines are plain sentences, with the mouse and with a gamepad", function()
+    T.test("24 sub-lines are plain sentences, with the mouse and with a gamepad", function()
         for _, on in ipairs({ false, true }) do
             for _, sc in ipairs(S) do
                 if not sc.compact and not sc.focus then

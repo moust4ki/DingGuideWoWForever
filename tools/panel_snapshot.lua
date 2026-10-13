@@ -75,6 +75,7 @@ function Snap.Bind(T)
     -- What a row frame looks like, in words: background, icon, text color, counter, font.
     local function look(r, data)
         local parts = {}
+        if r.rule and r.rule:IsShown() then parts[#parts + 1] = "LINE ABOVE" end
         if r.bg:IsShown() then parts[#parts + 1] = colorWord(r.bg.color) .. " background" end
         if r.icon:IsShown() then
             local icon

@@ -513,15 +513,20 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   title bar, left of minimize (a map pin: an 8-unit `text.secondary` circle with a 3-unit
   `bg` dot, over a 7-unit downward caret); tooltip "NPC directory". In focus mode, up from the
   first row: the outer focus ring around it and the A chip on its left (the title shortens).
-- **Guide window rows added under the step** (after "along the way", under a section title
-  "Besides this step": 11 SemiBold `text.muted`, no icon, padding 8 above (a group starts) and
-  none below, like "Next steps"), with their own look, never the red or green of the step's rows: no
-  background, the icon on `accent.bg` with an `accent` glyph, text `text`, a counter `accent`
-  (Yendi: the weapon to learn passed for a red row to do): "Weapon to learn: Guns —
+- **Information apart from the step** (Yendi's first rule for the window): after the step's own
+  rows, a 1-unit `divider` line across the list, then a section title "Good to know" (11 SemiBold
+  `text.muted`, no icon, padding 8 above, none below; "Next steps" has the same line and title),
+  then the notices, other quests' objectives and the rows added under the step, never with a
+  state's background.
+- **Guide window rows added under the step** (under "Good to know", after "along the way"),
+  with their own look, never the red or green of the step's rows: no background, the icon on
+  `accent.bg` with an `accent` glyph, text `text`, a counter `accent` (Yendi: the weapon to learn
+  passed for a red row to do): "Weapon to learn: Guns —
   Buliwyf Stonehand, Ironforge"; "New spells at your class
   trainer (cost)", or "New spells may wait at your class trainer (level N)" before the first
-  visit (glyph of an "other" row) and "Equip [item]" with the item's icon, its gain
-  as the counter ("+4") and a sub-line saying how to equip or ignore it. Focus mode also takes
+  visit (glyph of an "other" row) and "Equip [item]" with the item's icon, no counter (a bare
+  "+4" read like a quest's), and two sentences under it: how much better ("Clearly better than
+  [worn item] for your class.") and how to equip it or say no. Focus mode also takes
   **Left** (ignore the gear upgrade under focus); Right stays the game's. With a free talent
   point, "Talent: name" (glyph of a "level" row), the rank it reaches as the counter ("2/3") and
   a sub-line saying how to learn it ("Focus mode, A twice: learn it", then "A again: learn it"

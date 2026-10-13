@@ -76,7 +76,9 @@ STEP   < Étape 29 / 87 >   zone: Les Paluns
         | Pourquoi ?
         | Le guide prévoit cette étape ici.
         | Clic : la flèche y va.
- 6  header  [header] no icon, text light grey, semibold 12
+ 6  infoHeader  [section] LINE ABOVE, no icon, text dim grey, semibold 11
+    À savoir
+ 7  header  [header] no icon, text light grey, semibold 12
     Autre quête de ton journal, ses cibles sont ici : [28] « Bannières de guerre »
     card:
       | Bannières de guerre
@@ -84,7 +86,7 @@ STEP   < Étape 29 / 87 >   zone: Les Paluns
       | Quête de niveau 28
       | Etendard de guerre Dragonmaw : 0/8
       | Clic : la flèche y va.
- 7  objective  [other] light grey dot icon, text light grey, indented, counter 0/8 light grey
+ 8  objective  [other] light grey dot icon, text light grey, indented, counter 0/8 light grey
       Récupérer 8 Etendard de guerre Dragonmaw
       card:
         | Bannières de guerre
@@ -92,7 +94,7 @@ STEP   < Étape 29 / 87 >   zone: Les Paluns
         | Quête de niveau 28
         | Etendard de guerre Dragonmaw : 0/8
         | Clic : la flèche y va.
- 8  header  [header] no icon, text light grey, semibold 12
+ 9  header  [header] no icon, text light grey, semibold 12
     Autre quête de ton journal, à finir en chemin : {orange: [29] « L'équipage maudit »}
     card:
       | L'équipage maudit
@@ -102,7 +104,7 @@ STEP   < Étape 29 / 87 >   zone: Les Paluns
       | Soldat de marine maudit : 0/1
       | Tabatière de Snellig : 0/1
       | Clic : la flèche y va.
- 9  objective  [other] light grey diamond icon, text light grey, indented, counter 0/1 light grey
+10  objective  [other] light grey diamond icon, text light grey, indented, counter 0/1 light grey
       Tuer Marin maudit
       card:
         | L'équipage maudit
@@ -112,7 +114,7 @@ STEP   < Étape 29 / 87 >   zone: Les Paluns
         | Soldat de marine maudit : 0/1
         | Tabatière de Snellig : 0/1
         | Clic : la flèche y va.
-10  objective  [other] light grey diamond icon, text light grey, indented, counter 0/1 light grey
+11  objective  [other] light grey diamond icon, text light grey, indented, counter 0/1 light grey
       Tuer Soldat de marine maudit
       card:
         | L'équipage maudit
@@ -122,7 +124,7 @@ STEP   < Étape 29 / 87 >   zone: Les Paluns
         | Soldat de marine maudit : 0/1
         | Tabatière de Snellig : 0/1
         | Clic : la flèche y va.
-11  objective  [other] light grey dot icon, text light grey, indented, counter 0/1 light grey
+12  objective  [other] light grey dot icon, text light grey, indented, counter 0/1 light grey
       Récupérer Tabatière de Snellig
       card:
         | L'équipage maudit
@@ -132,25 +134,25 @@ STEP   < Étape 29 / 87 >   zone: Les Paluns
         | Soldat de marine maudit : 0/1
         | Tabatière de Snellig : 0/1
         | Clic : la flèche y va.
-12  extrasHeader  [section] no icon, text dim grey, semibold 11
-    En plus de l'étape
 13  weapon  [extra] blue caret right icon, text white
     Arme à apprendre : Armes d'hast — Woo Ping, Stormwind City
     card:
       | Arme à apprendre : Armes d'hast — Woo Ping, Stormwind City
       | Pas une étape du guide : une suggestion en plus de l'étape.
       | Clic : la flèche y va.
-14  gear  [extra] item icon icon, text white, counter +4 blue
+14  gear  [extra] item icon icon, text white
     Équiper [Hachette trancheuse du loup]
+      > Tu ne portes rien à cet emplacement : mieux que rien.
       > Pour l'équiper, clique sur le bouton d'objet à l'écran. Pour l'ignorer, fais un clic droit sur cette ligne.
     card:
       | item 15231
-      | Mieux que ce que tu portes : +4 au score du guide pour ta classe.
+      | Tu ne portes rien à cet emplacement : mieux que rien.
+      | Pour comparer, le guide pèse chaque caractéristique selon ta classe.
       | Pas une étape du guide : une suggestion en plus de l'étape.
 15  notice  [notice] grey box background, no icon, text light grey, regular 11
     Journal presque plein : 10 quêtes dont le guide ne se sert pas peuvent partir.
       > Clique pour voir la liste.
-16  previewHeader  [section] no icon, text dim grey, semibold 11
+16  previewHeader  [section] LINE ABOVE, no icon, text dim grey, semibold 11
     Étapes suivantes
 17  preview  [preview] grey caret right icon, text dim grey
     Monte le chemin

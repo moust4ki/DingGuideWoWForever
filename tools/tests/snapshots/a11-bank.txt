@@ -16,8 +16,8 @@ STEP   < Étape 90 / 97 >   zone: Hurlevent
       | Pourquoi ?
       | Le guide prévoit cette étape ici.
       | Clic : la flèche y va.
- 2  extrasHeader  [section] no icon, text dim grey, semibold 11
-    En plus de l'étape
+ 2  infoHeader  [section] LINE ABOVE, no icon, text dim grey, semibold 11
+    À savoir
  3  weapon  [extra] blue caret right icon, text white
     Armes à apprendre : Épées, Épées à deux mains, Armes d'hast et 3 autres — Woo Ping, Stormwind City
     card:

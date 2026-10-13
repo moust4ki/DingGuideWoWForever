@@ -16,11 +16,11 @@ STEP   < Étape 4 / 97 >   zone: Forgefer
       | Pourquoi ?
       | Le guide prévoit cette étape ici.
       | Clic : la flèche y va.
- 2  notice  [notice] grey box background, no icon, text light grey, regular 11
+ 2  infoHeader  [section] LINE ABOVE, no icon, text dim grey, semibold 11
+    À savoir
+ 3  notice  [notice] grey box background, no icon, text light grey, regular 11
     Prends le tram pour Stormwind City
       > Trajet : à pied 4:47, tram 1:50 vers Stormwind City, à pied 5:21, portes 50:06 vers Elwynn Forest, à pied 40:52 (102:56 en tout)
- 3  extrasHeader  [section] no icon, text dim grey, semibold 11
-    En plus de l'étape
  4  service  [extra] blue caret right icon, text white
     Nouveaux sorts chez ton maître de classe (26s)
     card:
@@ -33,12 +33,14 @@ STEP   < Étape 4 / 97 >   zone: Forgefer
       | Armes à apprendre : Haches à deux mains, Armes de pugilat — Buliwyf Stonehand, Ironforge
       | Pas une étape du guide : une suggestion en plus de l'étape.
       | Clic : la flèche y va.
- 6  gear  [extra] item icon icon, text white, counter +12 blue
+ 6  gear  [extra] item icon icon, text white
     Équiper [Poignard]
+      > Tu ne portes rien à cet emplacement : mieux que rien.
       > Pour l'équiper, clique sur le bouton d'objet à l'écran. Pour l'ignorer, fais un clic droit sur cette ligne.
     card:
       | item 2208
-      | Mieux que ce que tu portes : +12 au score du guide pour ta classe.
+      | Tu ne portes rien à cet emplacement : mieux que rien.
+      | Pour comparer, le guide pèse chaque caractéristique selon ta classe.
       | Pas une étape du guide : une suggestion en plus de l'étape.
 
 PROGRESS bar 4 / 97

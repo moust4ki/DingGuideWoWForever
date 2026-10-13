@@ -16,7 +16,9 @@ STEP   < Étape 4 / 97 >   zone: Sombre-Comté
       | Pourquoi ?
       | Le guide prévoit cette étape ici.
       | Clic : la flèche y va.
- 2  notice  [notice] grey box background, no icon, text light grey, regular 11
+ 2  infoHeader  [section] LINE ABOVE, no icon, text dim grey, semibold 11
+    À savoir
+ 3  notice  [notice] grey box background, no icon, text light grey, regular 11
     Journal presque plein : 14 quêtes dont le guide ne se sert pas peuvent partir.
       > Clique pour voir la liste.
 

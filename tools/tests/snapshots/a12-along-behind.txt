@@ -28,7 +28,9 @@ STEP   < Étape 16 / 87 >   zone: Les Paluns
         | Pourquoi ?
         | Le guide prévoit cette étape ici.
         | Clic : la flèche y va.
- 3  header  [header] no icon, text light grey, semibold 12
+ 3  infoHeader  [section] LINE ABOVE, no icon, text dim grey, semibold 11
+    À savoir
+ 4  header  [header] no icon, text light grey, semibold 12
     Autre quête de ton journal, ses cibles sont ici : [26] « Les devoirs de l'apprenti »
     card:
       | Les devoirs de l'apprenti
@@ -36,7 +38,7 @@ STEP   < Étape 16 / 87 >   zone: Les Paluns
       | Quête de niveau 26
       | Peau de crocilisque géant : 2/8
       | Clic : la flèche y va.
- 4  objective  [other] light grey dot icon, text light grey, indented, counter 2/8 light grey
+ 5  objective  [other] light grey dot icon, text light grey, indented, counter 2/8 light grey
       Récupérer 8 Peau de crocilisque géant
       card:
         | Les devoirs de l'apprenti

@@ -459,8 +459,13 @@ function P:Rows(content)
         rows[#rows + 1] = { action = "unmark", kind = "other", state = "button",
             text = content.mark == "manual" and L.STEP_UNDO_DONE or L.STEP_UNDO_SKIP }
     end
+    -- Everything informational comes after the step's own work, below a line and a title in
+    -- words (Yendi: "informational messages must be clearly separated from the quest steps"),
+    -- never with the look of an objective: the way there, a trip, steps passed; other quests'
+    -- objectives; rows besides the step; bags and quest log almost full.
+    local info = {}
     local firstNotices, lastNotices = noticeRows(notices)
-    for _, row in ipairs(firstNotices) do rows[#rows + 1] = row end
+    for _, row in ipairs(firstNotices) do info[#info + 1] = row end
     -- Other quests of the log: the persistent ones (to finish on the way, wherever the player
     -- is), then the ones whose targets are right around the player. Each under a header that
     -- names it and says why it is there, its objectives without the red of the step's work
@@ -471,29 +476,33 @@ function P:Rows(content)
             if row.index == line.objective then
                 local kind = line.sticky and "sticky" or "along"
                 if row.quest ~= lastQuest or kind ~= lastKind then
-                    rows[#rows + 1] = { action = "header", quest = row.quest, kind = "header", state = "header",
+                    info[#info + 1] = { action = "header", quest = row.quest, kind = "header", state = "header",
                         other = kind, text = (kind == "sticky" and L.OTHER_STICKY or L.OTHER_ALONG):format(questName(row.quest)) }
                     lastQuest, lastKind = row.quest, kind
                 end
                 row.along, row.sticky, row.other, row.nested = true, line.sticky, kind, true
                 if row.state == "todo" then row.state = "other" end
-                rows[#rows + 1] = row
+                info[#info + 1] = row
             end
         end
     end
     -- Rows besides the step: training waiting at the class trainer, a weapon to learn, a gear
-    -- upgrade in the bags, a talent, a quest found elsewhere, the section's end. Under a title
-    -- that says so, without the red of the step's work.
-    if #extra > 0 then
-        rows[#rows + 1] = { action = "extrasHeader", kind = "section", state = "section", text = L.BESIDES_STEP }
-    end
+    -- upgrade in the bags, a talent, a quest found elsewhere, the section's end. Without the
+    -- red of the step's work.
     for _, line in ipairs(extra) do
         local row = questRow(line)
         row.extra = true
         if row.state ~= "done" then row.state = "extra" end
-        rows[#rows + 1] = row
+        info[#info + 1] = row
     end
-    for _, row in ipairs(lastNotices) do rows[#rows + 1] = row end
+    for _, row in ipairs(lastNotices) do info[#info + 1] = row end
+    if #info > 0 then
+        rows[#rows + 1] = { action = "infoHeader", kind = "section", state = "section", text = L.INFO_HEADER }
+        for _, row in ipairs(info) do
+            row.info = true
+            rows[#rows + 1] = row
+        end
+    end
     -- The next steps, dimmed (option): what the step after this one will ask, under a title
     -- that says so (dimmed rows alone looked like work to do now).
     local ahead = {}
@@ -930,6 +939,12 @@ local function newRow(parent)
     r.sub = UI.Text(r, "regular", 11, C.secondary)
     UI.Wrap(r.sub, 11, NO_CAP)
     r.sub:SetPoint("TOPLEFT", r.text, "BOTTOMLEFT", 0, -2)
+    -- Above a section's title ("Good to know", "Next steps"): a 1-unit line across the row.
+    r.rule = r:CreateTexture(nil, "ARTWORK")
+    r.rule:SetColorTexture(unpack(C.divider))
+    r.rule:SetHeight(1)
+    r.rule:SetPoint("TOPLEFT", r, "TOPLEFT", 0, -1)
+    r.rule:SetPoint("TOPRIGHT", r, "TOPRIGHT", 0, -1)
     -- A control row (cancel the trip): lighter under the mouse, A on it in focus mode.
     r.hover = UI.Shape(r, "row", C.hover, "HIGHLIGHT"):Place(r)
     r.key = UI.Glyph(r)
@@ -1702,6 +1717,7 @@ local function layoutRow(f, i, data, y, width)
         UI.Wrap(r.text, style[2], NO_CAP)
     end
 
+    r.rule:SetShown(data.state == "section")
     local button = data.state == "button"
     r.hover:SetShown(button)
     local chip = button and focused and Ding.Gamepad:Active()
