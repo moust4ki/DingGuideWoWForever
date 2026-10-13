@@ -89,6 +89,9 @@ Ding/
     Config.lua      Ding.Config: settings window, six tabs by intent (Config.TAB keys: guide,
                     route, automation, arrow, bindings, appearance), titled blocks, pages for
                     long lists (OpenPage), folded rows, "Defaults for this tab"; first launch
+                    (after the presentation: Config:Welcome, the Keybinds tab)
+    Intro.lua       Ding.Intro: the presentation, six pages (Intro.PAGES), once per account at
+                    the first launch (Intro:FirstLaunch), again from the Guide tab or /ding intro
   Locales/
     enUS.lua        interface texts in English (reference, default language)
     <locale>.lua    interface texts of one language (frFR, deDE, esES, ptBR, koKR, zhCN, zhTW)
@@ -237,11 +240,17 @@ Contracts between modules:
   A trip goes through `Travel:Leg` like any target of the arrow.
   `Finder.trip` = `{ kind, npc, name, point, label }` (`Finder:GoTo(entry, label)`,
   `Finder:Go(kind)`, `Finder:Cancel()`), read by the arrow and the guide window.
+- Presentation: `Intro:Open(page, back)` (`back` runs once the player closes it: the settings it
+  came from, the first launch's Keybinds tab, one frame later), `Intro:Close(quiet)` (`quiet`:
+  another Ding window takes over, `back` does not run; the settings, the directory and the import
+  window call it), `Intro:FirstLaunch(after)` (Config:Init: 2 s after login, the presentation
+  then `after`, or `after` alone once seen), `Intro:IsShown()`.
 - `Ding.db` (DingDB, account): `panel` (position, `scale` 0.5-1.5, `width` 240-420, `locked`,
   `bgAlpha`, `compactInCombat`, `hideInInstance`, `keyHints`, `itemButton`), `arrow`
   (position, `size` 40-80, `style`, `mode`, `tomtom`, `loop`: farming loop, `worldMap`: the
   target as the client's map waypoint), `item` (position of the item button),
-  `minimap` (`shown`, `angle`), `ui` (`buttonStyle`, `sound`, `welcomed`, `autoAccept`,
+  `minimap` (`shown`, `angle`), `ui` (`buttonStyle`, `sound`, `welcomed`, `introSeen` (the
+  presentation was closed by the player; a fight during the first launch's keeps it pending), `autoAccept`,
   `autoTurnin`, `skipGrey`, `hearth`, `deathSkip`, `dungeons`, `elites`, `chooseReward`,
   `sellGrey`, `repair`, `markTarget`, `serviceSteps`, `trainerSteps`, `flightSteps`, `autoEquip`, `autoFly`, `offers`, `dungeonChoice` (`[name] = bool`),
   `mobIcons`, `mobTooltip`, `farPlates`), `farPlatesFrom` (the nameplate distance before

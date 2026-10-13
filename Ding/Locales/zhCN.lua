@@ -74,7 +74,7 @@ Ding.Locales.zhCN = {
     ARROW_MODE_SET = "箭头朝向：方案%d（共4种）",
     DEBUG_ON = "调试模式已开启。",
     DEBUG_OFF = "调试模式已关闭。",
-    HELP = "命令：/ding（显示/隐藏），/ding config，/ding list，/ding guide <id>，/ding where，/ding passages [n]，/ding import，/ding export [id]，/ding find <文字>，/ding next，/ding prev，/ding skip，/ding back，/ding reset，/ding scale <0.5-1.5>，/ding arrow，/ding arrowflip，/ding minimap，/ding debug",
+    HELP = "命令：/ding（显示/隐藏），/ding config，/ding intro，/ding list，/ding guide <id>，/ding where，/ding passages [n]，/ding import，/ding export [id]，/ding find <文字>，/ding next，/ding prev，/ding skip，/ding back，/ding reset，/ding scale <0.5-1.5>，/ding arrow，/ding arrowflip，/ding minimap，/ding debug",
 
     -- Guide window
     QUOTE = "“%s”",
@@ -588,6 +588,28 @@ Ding.Locales.zhCN = {
     HINT_SAVE = "保存",
     WELCOME_TITLE = "欢迎使用Ding!",
     WELCOME_TEXT = "首先为“打开Ding!设置”绑定一个按钮，这样无需键盘也能随时重新打开此窗口。",
+
+    -- The presentation (UI/Intro.lua): window, settings row, its six pages
+    INTRO_TITLE = "介绍",
+    INTRO_PREV = "上一页",
+    INTRO_NEXT = "下一页",
+    INTRO_DONE = "开始吧！",
+    HEADER_HELP = "帮助",
+    INTRO_ROW = "重新查看介绍",
+    INTRO_ROW_DESC = "Ding!能做什么、怎么用，共六页。",
+    INTRO_BTN = "查看",
+    INTRO_WHAT_TITLE = "Ding!一步步带你升级",
+    INTRO_WHAT_TEXT = "Ding!替你跟进任务：与NPC对话时，它会自动接取和交付指南中的任务，一步完成后自动进入下一步。\n\n指南窗口告诉你现在该做什么，箭头告诉你该去哪里，并显示距离和所需时间。",
+    INTRO_ROUTES_TITLE = "为每小时经验而设计的路线",
+    INTRO_ROUTES_TEXT = "每条路线都经过计算，让你尽快升级。所以它有时会让你跑很远、跳过NPC提供的某个任务，或者去一趟银行。这是有意为之：这趟路值得跑。\n\nDing!会告诉你原因：在NPC窗口旁，说明指南如何处理每个提供的任务；在指南窗口中，显示步骤说明以及跳过某一步的原因。",
+    INTRO_FREEDOM_TITLE = "按你的方式玩",
+    INTRO_FREEDOM_TEXT = "换了顺序做任务？没关系：Ding!会看到你接取、完成和交付的任务，并跳过已经完成的步骤。\n\n想离开某一步，右键点击指南窗口：标记为已完成，或跳过稍后再做。使用手柄时，“下一步”和“跳过步骤”按钮也能做到。改主意了？“上一步”可以把它找回来。",
+    INTRO_FIND_TITLE = "找到你需要的",
+    INTRO_FIND_TEXT = "背包满了、装备要修理、要找训练师或银行？NPC名录会帮你找到最近的那一个，无论你在哪里：指南窗口顶部的图钉、它的按键绑定，或/ding find。\n\n箭头总是走最快的路线，会利用飞行路线、船只、飞艇和你的炉石，并告诉你该乘坐什么。",
+    INTRO_CONTROLS_TITLE = "手柄、鼠标和键盘",
+    INTRO_CONTROLS_TEXT = "手柄：在“按键绑定”标签页中绑定按钮，至少绑定“打开Ding!设置”、“下一步”和“使用任务物品”。使用“用手柄浏览指南”时，可以用方向键选择窗口中的一行。\n\n鼠标：悬停在一行上查看其任务，点击让箭头指向那里，右键打开步骤菜单。Esc可关闭设置和名录。",
+    INTRO_SETTINGS_TITLE = "按你的喜好设置Ding!",
+    INTRO_SETTINGS_TEXT = "其他一切都在设置中：点击小地图按钮，或指南窗口的菜单按钮。\n指南：你的指南；不知道进度时，使用“从当前进度继续此指南”。\n路线：炉石、地下城、精英任务、训练师。\n自动化：任务、奖励、商人、飞行。\n箭头与地图：箭头、地图、要击杀的怪物。\n按键绑定：你的按钮。\n外观：大小、不透明度、物品按钮。\n\n可在“指南”标签页或用/ding intro重新查看本介绍。",
 
     -- Gamepad button names (the D-pad in words: the font has no arrows)
     PAD_UP = "方向键上",

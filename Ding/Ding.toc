@@ -75,6 +75,7 @@ UI\Minimap.lua
 UI\MinimapPins.lua
 UI\QuestMobs.lua
 UI\Config.lua
+UI\Intro.lua
 Core\Commands.lua
 
 Guides\Leveling\Alliance\01.lua

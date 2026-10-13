@@ -73,7 +73,7 @@ Ding.Locales.deDE = {
     ARROW_MODE_SET = "Pfeilausrichtung: Einstellung %d von 4",
     DEBUG_ON = "Debugmodus an.",
     DEBUG_OFF = "Debugmodus aus.",
-    HELP = "Befehle: /ding (zeigen/verbergen), /ding config, /ding list, /ding guide <id>, /ding where, /ding passages [n], /ding import, /ding export [id], /ding find <Text>, /ding next, /ding prev, /ding skip, /ding back, /ding reset, /ding scale <0.5-1.5>, /ding arrow, /ding arrowflip, /ding minimap, /ding debug",
+    HELP = "Befehle: /ding (zeigen/verbergen), /ding config, /ding intro, /ding list, /ding guide <id>, /ding where, /ding passages [n], /ding import, /ding export [id], /ding find <Text>, /ding next, /ding prev, /ding skip, /ding back, /ding reset, /ding scale <0.5-1.5>, /ding arrow, /ding arrowflip, /ding minimap, /ding debug",
 
     -- Guide window
     QUOTE = "„%s“",
@@ -587,6 +587,28 @@ Ding.Locales.deDE = {
     HINT_SAVE = "Speichern",
     WELCOME_TITLE = "Willkommen bei Ding!",
     WELCOME_TEXT = "Belege zuerst eine Taste mit „Ding!-Einstellungen öffnen“, damit du dieses Fenster jederzeit ohne Tastatur wieder öffnen kannst.",
+
+    -- The presentation (UI/Intro.lua): window, settings row, its six pages
+    INTRO_TITLE = "Einführung",
+    INTRO_PREV = "Zurück",
+    INTRO_NEXT = "Weiter",
+    INTRO_DONE = "Los geht's!",
+    HEADER_HELP = "Hilfe",
+    INTRO_ROW = "Einführung erneut ansehen",
+    INTRO_ROW_DESC = "Was Ding! macht und wie du es nutzt, auf sechs Seiten.",
+    INTRO_BTN = "Öffnen",
+    INTRO_WHAT_TITLE = "Ding! führt dich Schritt für Schritt",
+    INTRO_WHAT_TEXT = "Ding! verfolgt deine Quests für dich: Es nimmt die Quests des Guides an und gibt sie ab, wenn du mit einem NSC sprichst, und macht von selbst weiter, sobald ein Schritt erledigt ist.\n\nDas Guide-Fenster sagt dir, was jetzt zu tun ist. Der Pfeil zeigt dir, wohin, mit Entfernung und Wegzeit.",
+    INTRO_ROUTES_TITLE = "Routen für EP pro Stunde",
+    INTRO_ROUTES_TEXT = "Jede Route ist so geplant, dass du so schnell wie möglich aufsteigst. Darum schickt sie dich manchmal weit weg, lässt eine Quest aus, die dir ein NSC anbietet, oder führt dich zur Bank. Das ist Absicht: Der Weg lohnt sich.\n\nDing! sagt dir, warum: neben dem Fenster eines NSC, was der Guide mit jeder angebotenen Quest macht; im Guide-Fenster die Notizen des Schritts und warum ein Schritt übersprungen wurde.",
+    INTRO_FREEDOM_TITLE = "Spiel auf deine Art",
+    INTRO_FREEDOM_TEXT = "Etwas in anderer Reihenfolge erledigt? Kein Problem: Ding! sieht die Quests, die du annimmst, abschließt und abgibst, und überspringt die Schritte, die schon erledigt sind.\n\nUm einen Schritt zu verlassen, klicke mit rechts auf das Guide-Fenster: als erledigt markieren oder für später überspringen. Mit dem Gamepad tun das die Tasten „Nächster Schritt“ und „Schritt überspringen“. Doch anders entschieden? „Vorheriger Schritt“ holt ihn zurück.",
+    INTRO_FIND_TITLE = "Finde, was du brauchst",
+    INTRO_FIND_TEXT = "Taschen voll, Ausrüstung kaputt, ein Lehrer, die Bank? Das NSC-Verzeichnis findet den nächsten, wo immer du bist: die Stecknadel oben im Guide-Fenster, seine Taste oder /ding find.\n\nDer Pfeil nimmt immer den schnellsten Weg, mit Flugrouten, Schiffen, Zeppelinen und deinem Ruhestein, und sagt dir, was du nehmen sollst.",
+    INTRO_CONTROLS_TITLE = "Gamepad, Maus und Tastatur",
+    INTRO_CONTROLS_TEXT = "Gamepad: Belege deine Tasten im Reiter Tasten, mindestens „Ding!-Einstellungen öffnen“, „Nächster Schritt“ und „Questgegenstand benutzen“. Mit „Guide mit dem Gamepad durchgehen“ wählt das Steuerkreuz eine Zeile des Fensters.\n\nMaus: Fahre über eine Zeile, um ihre Quest zu sehen, klicke darauf, um den Pfeil dorthin zu schicken, Rechtsklick für das Schrittmenü. Esc schließt die Einstellungen und das Verzeichnis.",
+    INTRO_SETTINGS_TITLE = "Stell Ding! nach deinem Geschmack ein",
+    INTRO_SETTINGS_TEXT = "Alles Weitere findest du in den Einstellungen: Klick auf den Minikartenknopf oder auf den Menüknopf des Guide-Fensters.\nGuide: dein Guide, und „Guide dort fortsetzen, wo ich bin“, wenn du nicht mehr weißt, wo du stehst.\nRoute: Ruhestein, Dungeons, Elitequests, Lehrer.\nAutomatik: Quests, Belohnungen, Händler, Flüge.\nPfeil und Karten: der Pfeil, die Karten, die Monster zum Töten.\nTasten: deine Tasten.\nAussehen: Größe, Deckkraft, Gegenstandsknopf.\n\nDiese Einführung findest du wieder im Reiter Guide oder mit /ding intro.",
 
     -- Gamepad button names (the D-pad in words: the font has no arrows)
     PAD_UP = "Oben",

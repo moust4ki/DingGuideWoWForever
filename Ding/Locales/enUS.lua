@@ -74,7 +74,7 @@ Ding.Locales.enUS = {
     ARROW_MODE_SET = "Arrow orientation: setting %d of 4",
     DEBUG_ON = "Debug mode on.",
     DEBUG_OFF = "Debug mode off.",
-    HELP = "Commands: /ding (show/hide), /ding config, /ding list, /ding guide <id>, /ding where, /ding passages [n], /ding import, /ding export [id], /ding find <text>, /ding next, /ding prev, /ding skip, /ding back, /ding reset, /ding scale <0.5-1.5>, /ding arrow, /ding arrowflip, /ding minimap, /ding debug",
+    HELP = "Commands: /ding (show/hide), /ding config, /ding intro, /ding list, /ding guide <id>, /ding where, /ding passages [n], /ding import, /ding export [id], /ding find <text>, /ding next, /ding prev, /ding skip, /ding back, /ding reset, /ding scale <0.5-1.5>, /ding arrow, /ding arrowflip, /ding minimap, /ding debug",
 
     -- Guide window
     QUOTE = "“%s”",
@@ -588,6 +588,28 @@ Ding.Locales.enUS = {
     HINT_SAVE = "Save",
     WELCOME_TITLE = "Welcome to Ding!",
     WELCOME_TEXT = "First, bind a button to “Open Ding! settings” so you can reopen this window at any time, no keyboard needed.",
+
+    -- The presentation (UI/Intro.lua): window, settings row, its six pages
+    INTRO_TITLE = "Introduction",
+    INTRO_PREV = "Previous",
+    INTRO_NEXT = "Next",
+    INTRO_DONE = "Let's go!",
+    HEADER_HELP = "Help",
+    INTRO_ROW = "Show the introduction again",
+    INTRO_ROW_DESC = "What Ding! does and how to use it, in six pages.",
+    INTRO_BTN = "Show",
+    INTRO_WHAT_TITLE = "Ding! guides you, step by step",
+    INTRO_WHAT_TEXT = "Ding! follows your quests for you: it accepts and turns in the guide's quests when you talk to an NPC, and moves on by itself once a step is done.\n\nThe guide window tells you what to do now. The arrow shows you where, with the distance and the time to get there.",
+    INTRO_ROUTES_TITLE = "Routes built for XP per hour",
+    INTRO_ROUTES_TEXT = "Each route is planned to level you up as fast as possible. So it sometimes sends you far away, leaves out a quest an NPC offers you, or stops by the bank. That is on purpose: the trip is worth it.\n\nDing! tells you why: next to an NPC's window, what the guide does with each quest offered; in the guide window, the step's notes and why a step was passed.",
+    INTRO_FREEDOM_TITLE = "Play your way",
+    INTRO_FREEDOM_TEXT = "Did things in another order? No problem: Ding! sees the quests you take, finish and turn in, and passes the steps already done.\n\nTo leave a step, right-click the guide window: mark it as done, or skip it for later. With a gamepad, the “Next step” and “Skip step” buttons do it. Changed your mind? “Previous step” brings it back.",
+    INTRO_FIND_TITLE = "Find what you need",
+    INTRO_FIND_TEXT = "Bags full, gear to repair, a trainer, the bank? The NPC directory finds the closest one, wherever you are: the pin at the top of the guide window, its key binding, or /ding find.\n\nThe arrow always takes the fastest way, with flight paths, boats, zeppelins and your hearthstone, and tells you what to take.",
+    INTRO_CONTROLS_TITLE = "Gamepad, mouse and keyboard",
+    INTRO_CONTROLS_TEXT = "Gamepad: bind your buttons in the Keybinds tab, at least “Open Ding! settings”, “Next step” and “Use the quest item”. With “Browse the guide with the gamepad”, the D-pad picks a line of the window.\n\nMouse: hover a line to see its quest, click it to send the arrow there, right-click for the step menu. Esc closes the settings and the directory.",
+    INTRO_SETTINGS_TITLE = "Make Ding! yours",
+    INTRO_SETTINGS_TEXT = "Everything else is in the settings: click the minimap button, or the menu button of the guide window.\nGuide: your guide, and “Take this guide up where I am” when you no longer know where you are.\nRoute: hearthstone, dungeons, elite quests, trainers.\nAutomation: quests, rewards, merchants, flights.\nArrow and maps: the arrow, the maps, the monsters to kill.\nKeybinds: your buttons.\nAppearance: size, opacity, the item button.\n\nSee this introduction again from the Guide tab, or with /ding intro.",
 
     -- Gamepad button names (the D-pad in words: the font has no arrows)
     PAD_UP = "Up",

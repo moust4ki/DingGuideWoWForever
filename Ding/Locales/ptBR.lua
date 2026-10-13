@@ -74,7 +74,7 @@ Ding.Locales.ptBR = {
     ARROW_MODE_SET = "Orientação da seta: ajuste %d de 4",
     DEBUG_ON = "Depuração ativada.",
     DEBUG_OFF = "Depuração desativada.",
-    HELP = "Comandos: /ding (mostrar/ocultar), /ding config, /ding list, /ding guide <id>, /ding where, /ding passages [n], /ding import, /ding export [id], /ding find <texto>, /ding next, /ding prev, /ding skip, /ding back, /ding reset, /ding scale <0.5-1.5>, /ding arrow, /ding arrowflip, /ding minimap, /ding debug",
+    HELP = "Comandos: /ding (mostrar/ocultar), /ding config, /ding intro, /ding list, /ding guide <id>, /ding where, /ding passages [n], /ding import, /ding export [id], /ding find <texto>, /ding next, /ding prev, /ding skip, /ding back, /ding reset, /ding scale <0.5-1.5>, /ding arrow, /ding arrowflip, /ding minimap, /ding debug",
 
     -- Guide window
     QUOTE = "“%s”",
@@ -588,6 +588,28 @@ Ding.Locales.ptBR = {
     HINT_SAVE = "Salvar",
     WELCOME_TITLE = "Bem-vindo ao Ding!",
     WELCOME_TEXT = "Primeiro, atribua um botão a “Abrir opções do Ding!” para reabrir esta janela a qualquer momento, sem teclado.",
+
+    -- The presentation (UI/Intro.lua): window, settings row, its six pages
+    INTRO_TITLE = "Apresentação",
+    INTRO_PREV = "Anterior",
+    INTRO_NEXT = "Próxima",
+    INTRO_DONE = "Vamos lá!",
+    HEADER_HELP = "Ajuda",
+    INTRO_ROW = "Ver a apresentação de novo",
+    INTRO_ROW_DESC = "O que o Ding! faz e como usá-lo, em seis páginas.",
+    INTRO_BTN = "Abrir",
+    INTRO_WHAT_TITLE = "O Ding! guia você passo a passo",
+    INTRO_WHAT_TEXT = "O Ding! acompanha suas missões por você: aceita e entrega as missões do guia quando você fala com um PNJ, e passa sozinho para a próxima assim que uma etapa termina.\n\nA janela do guia diz o que fazer agora. A seta mostra para onde, com a distância e o tempo para chegar.",
+    INTRO_ROUTES_TITLE = "Rotas feitas para XP por hora",
+    INTRO_ROUTES_TEXT = "Cada rota é calculada para você subir de nível o mais rápido possível. Por isso, às vezes ela manda você para longe, deixa de lado uma missão que um PNJ oferece ou passa no banco. É de propósito: a viagem vale a pena.\n\nO Ding! diz por quê: ao lado da janela de um PNJ, o que o guia faz com cada missão oferecida; na janela do guia, as notas da etapa e por que uma etapa foi pulada.",
+    INTRO_FREEDOM_TITLE = "Jogue do seu jeito",
+    INTRO_FREEDOM_TEXT = "Fez as coisas em outra ordem? Sem problema: o Ding! vê as missões que você aceita, conclui e entrega, e pula as etapas já feitas.\n\nPara deixar uma etapa, clique com o botão direito na janela do guia: marque como feita ou pule para depois. No controle, os botões “Próxima etapa” e “Pular etapa” fazem isso. Mudou de ideia? “Etapa anterior” traz a etapa de volta.",
+    INTRO_FIND_TITLE = "Encontre o que precisa",
+    INTRO_FIND_TEXT = "Bolsas cheias, equipamento para consertar, um instrutor, o banco? O diretório de PNJs encontra o mais próximo, onde você estiver: o alfinete no alto da janela do guia, o atalho dele ou /ding find.\n\nA seta sempre pega o caminho mais rápido, com rotas de voo, barcos, zepelins e sua pedra de regresso, e diz o que pegar.",
+    INTRO_CONTROLS_TITLE = "Controle, mouse e teclado",
+    INTRO_CONTROLS_TEXT = "Controle: atribua seus botões na aba Atalhos, pelo menos “Abrir opções do Ding!”, “Próxima etapa” e “Usar o item de missão”. Com “Navegar no guia com o controle”, o direcional escolhe uma linha da janela.\n\nMouse: passe o cursor sobre uma linha para ver a missão, clique para mandar a seta até lá e use o botão direito para o menu da etapa. Esc fecha as opções e o diretório.",
+    INTRO_SETTINGS_TITLE = "Deixe o Ding! do seu jeito",
+    INTRO_SETTINGS_TEXT = "Todo o resto está nas opções: clique no botão do minimapa ou no botão de menu da janela do guia.\nGuia: seu guia, e “Retomar este guia de onde estou” quando não souber mais onde está.\nRota: pedra de regresso, masmorras, missões de elite, instrutores.\nAutomação: missões, recompensas, comerciantes, voos.\nSeta e mapas: a seta, os mapas, os monstros a matar.\nAtalhos: seus botões.\nAparência: tamanho, opacidade, botão do item.\n\nVeja esta apresentação de novo na aba Guia ou com /ding intro.",
 
     -- Gamepad button names (the D-pad in words: the font has no arrows)
     PAD_UP = "Cima",

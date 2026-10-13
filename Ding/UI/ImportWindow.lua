@@ -330,6 +330,7 @@ function W:Open(mode, id, back)
     local f = self.frame
     if Ding.Config.frame and Ding.Config.frame:IsShown() then Ding.Config:Close() end
     if Ding.Finder.frame and Ding.Finder.frame:IsShown() then Ding.Finder:Close() end
+    if Ding.Intro:IsShown() then Ding.Intro:Close(true) end
     if Ding.Panel.focusing then Ding.Panel:StopFocus() end
     self.mode, self.exportId, self.compact, self.imported = mode, id, false, nil
     self.back = back

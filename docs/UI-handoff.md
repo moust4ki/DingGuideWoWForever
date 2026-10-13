@@ -18,6 +18,7 @@ The accepted deviations and what remains to be checked in game are at the end of
 | 04 Item button | `Ding/UI/ItemButton.lua` |
 | Gamepad chips, footer help, move mode | `Ding/UI/Gamepad.lua` |
 | Minimap button (not in the mockup) | `Ding/UI/Minimap.lua` |
+| Presentation (not in the mockup) | `Ding/UI/Intro.lua` |
 | Textures, font | `Ding/Media/Textures/*.tga`, `Ding/Media/Fonts/NotoSans-*.ttf` (OFL) |
 
 
@@ -636,11 +637,34 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
     flights, boats, hearthstone."), the mouse help without a gamepad.
   - The guide's focus mode has no button doing what a hint says: it does not change.
 
+- **Presentation** (not in the mockup, `UI/Intro.lua`; Yendi: an onboarding that explains the
+  principle of Ding and reassures): a 460-wide window like the directory's (window look, opaque,
+  DIALOG). Title bar 32 high: "Ding! · Introduction" 13 SemiBold (Ding! in `accent`, the dot
+  `text.disabled`), the close cross with the round B chip before it (gamepad). Under the
+  divider, 20 in from every side: the page's title 16 SemiBold `text` (the arrow distance's
+  size), 8 below it the text 12 Regular `text`, line height 16, paragraphs separated by an
+  empty line, both wrapped whole. The window is as high as its longest page in the client's
+  language, the same on every page. Footer 48 high under a divider: on the left Previous, on
+  the right Next, 26 high, 12 from the sides, radius 4, 12 Medium, at least 96 wide (Previous
+  `bg.control`, `text.disabled` on the first page; Next `accent` with `onAccent` text, "Let's
+  go!" on the last page, its width that of the longer label); centered between them, the page
+  dots, 14 wide and 2 apart: a 6-unit `circle` in `text.disabled`, the current page's 8 units in
+  `accent` (hover: `text.secondary`). Gamepad: LB on Previous, A and RB on Next (A only on the
+  last page), dark chips on the accent button, the outer focus ring and halo on Next; each
+  button keeps room for its chips. No hint bar: every action has its button (the D-pad left and
+  right change pages too).
+- **Settings, Guide tab** (Help): a header "Help" and a button row "Show the introduction again"
+  ("What Ding! does and how to use it, in six pages.", button "Show"), before "Defaults for
+  this tab".
+
 ## To check in game (Forever 1.60)
 
 - Quests an NPC offers: `GossipFrame` and `QuestFrame` (names, `GetLeft` / `GetRight` / `GetTop`)
   with the gamepad interface on; the order of `GOSSIP_CLOSED` and `QUEST_DETAIL` when a quest
   is picked from a gossip; no "AddOn blocked" popup while the window shows.
+- Presentation: the window's height on its longest page (no text cut, in French and German
+  above all), Previous and Next clear of the dots with the gamepad's chips, Esc and B closing it
+  then the Keybinds tab following at the first launch.
 - Loading of the kit's TGAs and of the Noto Sans fonts (`Font:SetFont` on a file of the
   addon); otherwise the game font takes over.
 - Sharp nine-slices at 100 % scale (corners of 6, 4, 3, 2), shadows and halos.

@@ -34,7 +34,8 @@ local DEFAULTS = {
     item = { point = "BOTTOM", x = 0, y = 220 },
     minimap = { shown = true, angle = 200, pins = true },
     -- hearth, deathSkip, dungeons, elites: the guide's steps behind an option (Engine).
-    ui = { buttonStyle = "xbox", sound = true, welcomed = false, autoAccept = true, autoTurnin = true,
+    -- welcomed: the first launch's Keybinds tab was shown; introSeen: its presentation (UI/Intro.lua).
+    ui = { buttonStyle = "xbox", sound = true, welcomed = false, introSeen = false, autoAccept = true, autoTurnin = true,
         skipGrey = false, hearth = true, deathSkip = false, dungeons = false, elites = false,
         chooseReward = false, sellGrey = true, repair = true, markTarget = true, serviceSteps = true,
         offers = true,   -- beside an NPC's window, what the guide does with its quests (UI/Offers.lua)
@@ -83,7 +84,7 @@ function Ding:ResetSettings()
         for k in pairs(t) do t[k] = nil end
         applyDefaults(t, DEFAULTS[key])
     end
-    self.db.ui.welcomed = true
+    self.db.ui.welcomed, self.db.ui.introSeen = true, true
 end
 
 -- Settings saved before the design (layout 1) in the current shape, once.

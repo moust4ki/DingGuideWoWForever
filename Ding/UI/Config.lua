@@ -374,6 +374,12 @@ local function guideRows(canvas, width)
         end,
         open = function() Cfg:OpenPage(IMPORTED_PAGE) end,
     }, width))
+    -- The presentation of the first launch (UI/Intro.lua); closing it comes back here.
+    add(UI.HeaderRow(canvas, L.HEADER_HELP, width))
+    add(UI.ButtonRow(canvas, Cfg, {
+        label = L.INTRO_ROW, desc = L.INTRO_ROW_DESC, button = L.INTRO_BTN,
+        run = function() Ding.Intro:Open(1, function() Cfg:Open("guide") end) end,
+    }, width))
     add(defaultsRow(canvas, width, "guide"))
     return rows
 end
@@ -1379,6 +1385,7 @@ function Cfg:Toggle()
 end
 
 function Cfg:OnShow()
+    if Ding.Intro:IsShown() then Ding.Intro:Close(true) end
     if Ding.Panel.focusing then Ding.Panel:StopFocus() end
     G():Take(self.frame, function(key) Cfg:OnKey(key) end, 0.4, 0.12)
     self:SelectTab(self.openTab or self.tab or 1, self.openFocus)
@@ -1428,24 +1435,29 @@ local function registerAddOnCategory()
     if InterfaceOptions_AddCategory then pcall(InterfaceOptions_AddCategory, panel) end
 end
 
+-- First launch: the presentation (once per account, UI/Intro.lua), then the Keybinds tab.
 function Cfg:Init()
     registerAddOnCategory()
+    Ding.Intro:FirstLaunch(function() Cfg:Welcome() end)
+end
+
+-- The Keybinds tab with its welcome banner, the focus on "Open Ding settings", until that
+-- binding is set.
+function Cfg:Welcome()
     local ui = Ding.db.ui
     if ui.welcomed or G():BindingKey("DING_CONFIG") then
         ui.welcomed = true
         return
     end
-    C_Timer.After(2, function()
-        if InCombatLockdown() or ui.welcomed then return end
-        ui.welcomed = true
-        Cfg.welcome = true
-        -- Focus "Open Ding settings" (binding rows are the tab's first focusable rows).
-        local focus = 1
-        for i, b in ipairs(BINDINGS) do
-            if b.action == "DING_CONFIG" then focus = i end
-        end
-        Cfg:Open(BINDINGS_TAB, focus)
-    end)
+    if InCombatLockdown() then return end
+    ui.welcomed = true
+    Cfg.welcome = true
+    -- Focus "Open Ding settings" (binding rows are the tab's first focusable rows).
+    local focus = 1
+    for i, b in ipairs(BINDINGS) do
+        if b.action == "DING_CONFIG" then focus = i end
+    end
+    Cfg:Open(BINDINGS_TAB, focus)
 end
 
 -- Closes before the combat lockdown starts (the override bindings must go now).

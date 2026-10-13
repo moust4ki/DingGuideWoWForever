@@ -481,6 +481,7 @@ function F:Open(tab)
     end
     self:Create()
     if Ding.Config.frame and Ding.Config.frame:IsShown() then Ding.Config:Close() end
+    if Ding.Intro:IsShown() then Ding.Intro:Close(true) end
     if Ding.Panel.focusing then Ding.Panel:StopFocus() end
     Dir():Forget()
     self.tab = tab or self.tab or 1

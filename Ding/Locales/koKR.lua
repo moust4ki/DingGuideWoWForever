@@ -74,7 +74,7 @@ Ding.Locales.koKR = {
     ARROW_MODE_SET = "화살표 방향: 설정 %d/4",
     DEBUG_ON = "디버그 모드 켜짐.",
     DEBUG_OFF = "디버그 모드 꺼짐.",
-    HELP = "명령어: /ding (표시/숨기기), /ding config, /ding list, /ding guide <id>, /ding where, /ding passages [n], /ding import, /ding export [id], /ding find <텍스트>, /ding next, /ding prev, /ding skip, /ding back, /ding reset, /ding scale <0.5-1.5>, /ding arrow, /ding arrowflip, /ding minimap, /ding debug",
+    HELP = "명령어: /ding (표시/숨기기), /ding config, /ding intro, /ding list, /ding guide <id>, /ding where, /ding passages [n], /ding import, /ding export [id], /ding find <텍스트>, /ding next, /ding prev, /ding skip, /ding back, /ding reset, /ding scale <0.5-1.5>, /ding arrow, /ding arrowflip, /ding minimap, /ding debug",
 
     -- Guide window
     QUOTE = "“%s”",
@@ -588,6 +588,28 @@ Ding.Locales.koKR = {
     HINT_SAVE = "저장",
     WELCOME_TITLE = "Ding!에 오신 것을 환영합니다",
     WELCOME_TEXT = "먼저 “Ding! 설정 열기”에 버튼을 지정하세요. 키보드 없이도 언제든 이 창을 다시 열 수 있습니다.",
+
+    -- The presentation (UI/Intro.lua): window, settings row, its six pages
+    INTRO_TITLE = "소개",
+    INTRO_PREV = "이전",
+    INTRO_NEXT = "다음",
+    INTRO_DONE = "시작하기",
+    HEADER_HELP = "도움말",
+    INTRO_ROW = "소개 다시 보기",
+    INTRO_ROW_DESC = "Ding!이 하는 일과 사용법을 여섯 쪽으로 소개합니다.",
+    INTRO_BTN = "열기",
+    INTRO_WHAT_TITLE = "Ding!이 한 걸음씩 안내합니다",
+    INTRO_WHAT_TEXT = "Ding!이 퀘스트를 대신 챙깁니다. NPC와 대화하면 가이드의 퀘스트를 수락하고 완료하며, 단계가 끝나면 알아서 다음으로 넘어갑니다.\n\n가이드 창은 지금 할 일을 알려 주고, 화살표는 거리와 도착 시간과 함께 어디로 갈지 보여 줍니다.",
+    INTRO_ROUTES_TITLE = "시간당 경험치를 위한 경로",
+    INTRO_ROUTES_TEXT = "모든 경로는 최대한 빨리 레벨을 올리도록 짜여 있습니다. 그래서 가끔 먼 곳으로 보내거나, NPC가 주는 퀘스트를 건너뛰거나, 은행에 들르게 합니다. 일부러 그런 것이니 먼 길도 그만한 가치가 있습니다.\n\nDing!이 이유를 알려 줍니다. NPC 창 옆에는 제안된 각 퀘스트를 가이드가 어떻게 다루는지, 가이드 창에는 단계의 메모와 단계를 건너뛴 이유가 나옵니다.",
+    INTRO_FREEDOM_TITLE = "원하는 방식대로",
+    INTRO_FREEDOM_TEXT = "순서를 바꿔서 진행했나요? 괜찮습니다. Ding!은 수락하고 완료하고 반납한 퀘스트를 보고, 이미 끝난 단계는 넘어갑니다.\n\n단계를 넘기려면 가이드 창을 오른쪽 클릭해 완료로 표시하거나 나중으로 미루세요. 게임패드에서는 “다음 단계”와 “단계 건너뛰기” 버튼이 같은 일을 합니다. 마음이 바뀌었다면 “이전 단계”로 되돌릴 수 있습니다.",
+    INTRO_FIND_TITLE = "필요한 것 찾기",
+    INTRO_FIND_TEXT = "가방이 가득 찼거나, 수리가 필요하거나, 상급자나 은행을 찾나요? NPC 안내소가 어디서든 가장 가까운 곳을 찾아 줍니다. 가이드 창 위쪽의 핀, 전용 단축키, 또는 /ding find를 쓰세요.\n\n화살표는 언제나 가장 빠른 길로 안내합니다. 비행 경로, 배, 비행선, 귀환석까지 활용하고 무엇을 타야 하는지 알려 줍니다.",
+    INTRO_CONTROLS_TITLE = "게임패드, 마우스, 키보드",
+    INTRO_CONTROLS_TEXT = "게임패드: 단축키 탭에서 버튼을 지정하세요. 최소한 “Ding! 설정 열기”, “다음 단계”, “퀘스트 아이템 사용”은 지정해 두세요. “게임패드로 가이드 탐색”을 쓰면 방향 패드로 창의 줄을 고를 수 있습니다.\n\n마우스: 줄에 커서를 올리면 퀘스트가 보이고, 클릭하면 화살표가 그곳을 가리키며, 오른쪽 클릭하면 단계 메뉴가 열립니다. Esc는 설정과 안내소를 닫습니다.",
+    INTRO_SETTINGS_TITLE = "나에게 맞게 설정하기",
+    INTRO_SETTINGS_TEXT = "나머지는 모두 설정에 있습니다. 미니맵 버튼이나 가이드 창의 메뉴 버튼을 클릭하세요.\n가이드: 사용할 가이드, 그리고 어디까지 했는지 모를 때 “현재 진행 위치에서 이 가이드 이어가기”.\n경로: 귀환석, 던전, 정예 퀘스트, 상급자.\n자동화: 퀘스트, 보상, 상인, 비행.\n화살표와 지도: 화살표, 지도, 처치할 몬스터.\n단축키: 내 버튼.\n외관: 크기, 불투명도, 아이템 버튼.\n\n이 소개는 가이드 탭이나 /ding intro로 다시 볼 수 있습니다.",
 
     -- Gamepad button names (the D-pad in words: the font has no arrows)
     PAD_UP = "위",

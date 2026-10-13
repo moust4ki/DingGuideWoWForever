@@ -931,7 +931,7 @@ accent #5BB4FF, the Noto Sans font shipped with the addon, rounded shapes from t
   digestible"), six tabs, each in small titled blocks with one-line descriptions:
   - **Guide**: the guide and its section, "Take this guide up where I am", show the guide, the
     next steps preview, "Stay in this section" undone (when chosen), the quest log cleanup
-    (a page).
+    (a page), guides as text (a page), "Show the introduction again" (Help).
   - **Route** (what the guide makes you do): hearthstone, death skips; elite quests, dungeon
     quests (one row, "3 of 12", the list on a page); class trainer, flight path, vendor and
     repair steps.
@@ -953,6 +953,33 @@ accent #5BB4FF, the Noto Sans font shipped with the addon, rounded shapes from t
   buttons; everything applies live. `Config:Open(key)` takes a tab's key (`Config.TAB`).
 - **Minimap button**: left click for settings, right click to show / hide the guide, drag to
   move around the minimap; can be hidden (Appearance, `/ding minimap`).
+- **Presentation** (`UI/Intro.lua`; Yendi, in game: lost on a long Duskwood - Westfall -
+  Duskwood trip, on quests the NPCs offer that the guide leaves out, on a bank step, on a step
+  marked done by mistake). "Ding! · Introduction", six short pages in plain words (no color
+  code): what Ding does (it accepts and turns in the guide's quests and moves on by itself, the
+  window says what, the arrow where); the routes are built for XP per hour, so a long trip, a
+  quest left out or a bank step is on purpose, and Ding says why (beside an NPC's window, the
+  step's notes, why a step was passed); taking things in another order (Ding catches up; the
+  step menu or the "Next step" / "Skip step" bindings; "Previous step" brings a step back); the
+  NPC directory and the arrow's travel; the controls, gamepad then mouse; the settings, one line
+  per tab. Shown once per account (`Ding.db.ui.introSeen`), 2 s after the first login,
+  **before** the Keybinds tab of the first launch, which follows once it is closed; an account
+  that already had Ding sees it once too (new in 1.4.0). Skipped at any page (B, Start, Esc, the
+  close cross): it counts as seen. Closed by a fight (the temporary bindings must go), the first
+  launch's presentation comes back on its page a second after the fight, still unseen; opened
+  by hand, a fight only closes it. Another Ding window opening (settings, directory, import)
+  closes it quietly: seen, and the Keybinds tab waits for the next login. Again from the Guide
+  tab (header "Help", "Show the introduction again", back to that row once closed) or
+  `/ding intro`.
+  Window 460 wide (window look, opaque, DIALOG, clamped to the screen), as high as its longest
+  page in the client's language (the title 16 SemiBold, then the text 12 Regular wrapped whole):
+  no text is ever cut and the buttons stay in place from page to page. Footer: Previous
+  (disabled on the first page), the page dots (the current one accent; a click opens a page),
+  Next (accent; "Let's go!" on the last page, which closes). Gamepad (temporary bindings, out
+  of combat): A goes on, RB or the D-pad right next page, LB or the D-pad left previous page, B
+  or Start closes; each action once: A and RB on Next (A only on the last page), LB on Previous,
+  B by the close cross, the focus ring on Next; no hint bar, every action has its button.
+  Mouse: the buttons, the dots, the cross, Esc.
 
 ### Keyboard and mouse
 
@@ -1013,8 +1040,8 @@ gamepad buttons). Every gamepad action therefore has an equivalent:
   original position.
 - Binding a button from the Keybinds tab, with conflict detection; buttons are shown as
   Xbox chips (A, LB, LT+Right) or PlayStation chips (symbols).
-- First launch: the window opens on the bindings so the player can bind "Open Ding
-  settings".
+- First launch: the presentation (Interface, above), then the window opens on the bindings so
+  the player can bind "Open Ding settings".
 
 ### API compatibility
 

@@ -12,6 +12,9 @@ SlashCmdList.DING = function(input)
         Ding.Panel:Toggle()
     elseif cmd == "config" or cmd == "options" then
         Ding.Config:Open()
+    elseif cmd == "intro" then
+        -- The presentation of the first launch, again.
+        Ding.Intro:Open()
     elseif cmd == "next" then
         E:Next()
     elseif cmd == "prev" then
