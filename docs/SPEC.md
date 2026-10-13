@@ -472,10 +472,33 @@ target (the nearest candidate) goes through a travel planner, the fastest way in
   cached per 300-yard cell); the share of looks in a zone more than 4 levels above the player
   (Classic zone levels, `Travel.ZONE_LEVELS`) makes the walk up to 2.5 times as long, so a flight
   or a boat around wins sooner.
+- **Walking passages** (`Core/Passages.lua`, Yendi's feedback: the arrow pointed through cliffs
+  and walls): lifts, tunnels, bridges, city gates and portals, each joining two **sides** of the
+  world (`Passages.SIDES`: lists of zones, a box of a zone, or `"*"` for anywhere else). A walk
+  from one side of a pair to the other is never straight: both ends of every passage are nodes
+  of the plan, and the way through costs the walk from end to end, or a fixed time for a lift
+  (45 s, its wait and ride) or a portal (10 s). A place on neither side of a pair is not held
+  back by it. The ends are `{ map, x, y }` as `/ding where` prints them (`zone`: the zone the
+  place lies in when it is read on another map, a lift's foot on its city's map); `faction` keeps
+  a passage to one side. Data: Thunder Bluff's two lifts, the Undercity's three, the gates of
+  Ironforge, Stormwind and Orgrimmar (two), the Rut'theran portal, Thandol Span, Dun Algaz and the
+  Great Lift, placed where DingDB's guards and NPCs stand at each of them and where the Leveling
+  routes go through; each carries `verified` (false until someone checked it in game; the
+  planner takes it either way). A lift whose two ends lie on the same map (Freewind Post) cannot
+  be told apart without the height and is left out.
+- **Islands**: pairs of sides without a passage (Teldrassil with Darnassus, the Skyborne's
+  Zephras Isle): no walk over the sea, only a boat, a flight, a portal or the hearthstone.
+  Darnassus to Menethil Harbor: the portal down, the boat to Auberdine, the boat to Menethil.
+- **`/ding passages [n]`**, for testers: the five passages of the continent nearest to the
+  player, each with its hint, its distance, "checked in game" or "not checked yet", and both
+  ends as `/ding where` prints a point (`a = { 1456, 31.9, 66.6 }, b = …`); the arrow points at
+  the n-th (the nearest by default; the end on the player's side) until the step changes. A
+  wrong point is reported with `/ding where` standing on the right spot.
 - **Itinerary**: when the plan takes anything but a walk, the window writes it in the travel
   notice (under the step),
   "Route: walk 1:20, fly 6:30 to Redridge Mountains, walk 0:40 (8:30 in all)"
-  (`Travel:Itinerary(Travel.plan)`): each leg that is not a walk names the zone it leads to.
+  (`Travel:Itinerary(Travel.plan)`): each leg that is not a walk names the zone it leads to; a
+  passage counts ("lift 0:45 to Thunder Bluff", tunnel, bridge, gates, portal).
 - **A continent never seen**: no flight map opened there yet (`Ding.char.taxiSeen[continent]`,
   set on `TAXIMAP_OPENED`; a flight path known there counts too) and a flight master of the
   player's side within 400 yards: a row "New continent: talk to … (flight master) to learn its
@@ -503,11 +526,15 @@ target (the nearest candidate) goes through a travel planner, the fastest way in
 - **The arrow** follows the first leg that is not a walk: it points to the flight master with
   "Fly to Lakeshire, Redridge", to the dock with "Take the boat to Darkshore" (zeppelin, tram),
   or keeps the target with "Hearthstone to Goldshire" (the item button then offers the
-  hearthstone). The window repeats it in a notice under the step. Once at a dock, the arrow waits for the
+  hearthstone), or to a passage's entry with "Take the lift up to Thunder Bluff", "Go through the
+  tunnel to Loch Modan", "Enter Ironforge through its gates"; within 60 yards of a passage's line
+  (on the lift, in the tunnel; not a portal), to its far end, then on to the target. The window
+  repeats it in a notice under the step. Once at a dock, the arrow waits for the
   far side ("on board") until the player gets there (5 minutes at most after leaving the dock).
   On a flight, the plan starts where it lands (`TakeTaxiNode`, watched with `hooksecurefunc`).
   A `go` step is still validated on its own point.
-- The plan is made again when the target changes, the player moved 150 yards, or after 15 s.
+- The plan is made again when the target changes, the player moved 150 yards or to another map
+  (a lift goes up without moving on the map), or after 15 s.
 - **Flight map**: when the plan flies the player, a Ding banner names the destination ("Fly to
   …") and a ring marks its node, both Ding frames on UIParent placed where the game's node button
   stands (only read): Ding never anchors to, shows, hides nor changes the game's flight map.

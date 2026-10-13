@@ -236,9 +236,14 @@ T.test("service steps: the window says how they end", function()
     start(5)
     local last = P.rowsShown[#P.rowsShown]
     T.ok(last.sub and last.sub:find(L.SERVICE_HINT:format(".+")), tostring(last.sub))
+    -- The flight master is Vesprystus, in Rut'theran: the travel notices of the way down the
+    -- portal follow the hint.
     start(4)
-    last = P.rowsShown[#P.rowsShown]
-    T.ok(last.sub and last.sub:find(L.SERVICE_FLY_HINT:format(".+")), tostring(last.sub))
+    local said = false
+    for _, row in ipairs(P.rowsShown) do
+        if row.sub and row.sub:find(L.SERVICE_FLY_HINT:format(".+")) then said = true end
+    end
+    T.ok(said, "no hint on how a fly step ends")
 end)
 
 ---------------------------------------------------------------------------

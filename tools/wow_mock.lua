@@ -974,7 +974,8 @@ return function(opts)
         [1437] = "Wetlands", [1438] = "Teldrassil", [1439] = "Darkshore", [1445] = "Dustwallow Marsh",
         [1453] = "Stormwind City", [1455] = "Ironforge", [1457] = "Darnassus", [1431] = "Duskwood",
         [1433] = "Redridge Mountains", [1412] = "Mulgore", [1426] = "Dun Morogh", [1446] = "Tanaris",
-        [1452] = "Winterspring", [1454] = "Orgrimmar", [1456] = "Thunder Bluff", [1458] = "Undercity" }
+        [1452] = "Winterspring", [1454] = "Orgrimmar", [1456] = "Thunder Bluff", [1458] = "Undercity",
+        [1432] = "Loch Modan", [1417] = "Arathi Highlands", [1441] = "Thousand Needles" }
     -- Area names (C_Map.GetAreaInfo): the neutral towns.
     local AREA_NAMES = { [35] = "Booty Bay", [976] = "Gadgetzan", [392] = "Ratchet", [2255] = "Everlook" }
     -- Sub-maps (a dungeon, a cave) of a zone: { name, mapType 4 or 5, parent zone }.
