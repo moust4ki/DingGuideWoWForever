@@ -514,8 +514,8 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   `bg` dot, over a 7-unit downward caret); tooltip "NPC directory". In focus mode, up from the
   first row: the outer focus ring around it and the A chip on its left (the title shortens).
 - **Guide window rows added under the step** (after "along the way", under a section title
-  "Besides this step": 11 SemiBold `text.muted`, no icon, padding 4 above and none below, like
-  "Next steps"), with their own look, never the red or green of the step's rows: no
+  "Besides this step": 11 SemiBold `text.muted`, no icon, padding 8 above (a group starts) and
+  none below, like "Next steps"), with their own look, never the red or green of the step's rows: no
   background, the icon on `accent.bg` with an `accent` glyph, text `text`, a counter `accent`
   (Yendi: the weapon to learn passed for a red row to do): "Weapon to learn: Guns —
   Buliwyf Stonehand, Ironforge"; "New spells at your class
@@ -583,7 +583,7 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   talk to … (flight master) to learn its flight paths".
 - **Other quests, wrap-up, preview** (not in the mockup): the objectives of another quest
   (persistent, along the way) come under a header like a quest's (12 SemiBold `text.secondary`,
-  no icon) that says why they are there, "Another quest to finish on the way: [29] “quest”" or
+  no icon, padding 8 above: a group starts) that says why they are there, "Another quest to finish on the way: [29] “quest”" or
   "Another quest, its targets are here: [26] “quest”", indented by 8, without the to-do look: no
   background, icon `impossible.icon.bg` / glyph `text.secondary`, text and counter
   `text.secondary` (Yendi: "The Cursed Crew" 0/13 in red passed for the step's work); the wrap-up

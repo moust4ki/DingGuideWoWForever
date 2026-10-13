@@ -59,6 +59,7 @@ local TEXT_STYLE = { "regular", 12 }
 local TEXT_STYLES = { header = { "semibold", 12 }, section = { "semibold", 11 }, notice = { "regular", 11 } }
 local NO_CAP = 0             -- SetMaxLines: no limit
 local INDENT = 8             -- objectives under their quest's header
+local GROUP_GAP = 4          -- more room above a group (a section's title, another quest's header)
 
 local function clamp(v, low, high) return math.max(low, math.min(high, v)) end
 
@@ -1641,8 +1642,10 @@ local function layoutRow(f, i, data, y, width)
     r.icon:SetShown(not iconless)
     if not iconless then setIcon(r.icon, data, look) end
     local textX = iconless and ROW_PAD_X or (ROW_PAD_X + ICON + ROW_GAP_X)
+    -- A group starts (a section's title, another quest's header): 8 above its text, not 4.
+    local top = (data.state == "section" or data.other and data.action == "header") and ROW_PAD_Y + GROUP_GAP or ROW_PAD_Y
     r.text:ClearAllPoints()
-    r.text:SetPoint("TOPLEFT", r, "TOPLEFT", textX, -ROW_PAD_Y)
+    r.text:SetPoint("TOPLEFT", r, "TOPLEFT", textX, -top)
     local style = TEXT_STYLES[data.state] or TEXT_STYLE
     if r.style ~= style then
         r.style = style
@@ -1681,7 +1684,7 @@ local function layoutRow(f, i, data, y, width)
         r.sub:Hide()
     end
     if data.state == "header" or data.state == "section" then
-        height = ROW_PAD_Y + height          -- its rows follow right under it
+        height = top + height                -- its rows follow right under it
     else
         height = ROW_PAD_Y * 2 + (iconless and height or math.max(ICON, height))
     end
