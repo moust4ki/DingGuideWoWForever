@@ -54,6 +54,7 @@ local function applyAllSettings()
         A:ApplyStyle()
         A.point = nil
     end
+    Ding.QuestMobs:Apply()
     refreshAll()
 end
 
@@ -155,8 +156,8 @@ local TAB_SETTINGS = {
     automation = { { "ui", "autoAccept" }, { "ui", "autoTurnin" }, { "ui", "chooseReward" }, { "ui", "skipGrey" },
         { "ui", "sellGrey" }, { "ui", "repair" }, { "ui", "autoEquip" }, { "ui", "autoFly" } },
     arrow = { { "arrow", "shown" }, { "arrow", "style" }, { "arrow", "size" }, { "arrow", "loop" },
-        { "arrow", "worldMap" }, { "minimap", "pins" }, { "ui", "markTarget" }, { "arrow", "tomtom" },
-        { "arrow", "mode" } },
+        { "arrow", "worldMap" }, { "minimap", "pins" }, { "ui", "markTarget" }, { "ui", "mobIcons" },
+        { "ui", "mobTooltip" }, { "ui", "farPlates" }, { "arrow", "tomtom" }, { "arrow", "mode" } },
     appearance = { { "panel", "bgAlpha" }, { "panel", "scale" }, { "panel", "locked" },
         { "panel", "compactInCombat" }, { "panel", "hideInInstance" }, { "panel", "itemButton" },
         { "minimap", "shown" }, { "ui", "sound" }, { nil, "debug" } },
@@ -575,6 +576,32 @@ local function arrowRows(canvas, width)
             label = L.MARK_TARGET, desc = L.MARK_TARGET_DESC,
             get = function() return Ding.db.ui.markTarget end,
             set = function(v) Ding.db.ui.markTarget = v and true or false end,
+        }, width),
+        -- Quest monsters (UI/QuestMobs.lua): nameplates and tooltips.
+        UI.HeaderRow(canvas, L.HEADER_QUEST_MOBS, width),
+        UI.CheckRow(canvas, Cfg, {
+            label = L.MOB_ICONS, desc = L.MOB_ICONS_DESC,
+            get = function() return Ding.db.ui.mobIcons ~= false end,
+            set = function(v)
+                Ding.db.ui.mobIcons = v and true or false
+                Ding.QuestMobs:Apply()
+            end,
+        }, width),
+        UI.CheckRow(canvas, Cfg, {
+            label = L.MOB_TOOLTIP, desc = L.MOB_TOOLTIP_DESC,
+            get = function() return Ding.db.ui.mobTooltip ~= false end,
+            set = function(v)
+                Ding.db.ui.mobTooltip = v and true or false
+                Ding.QuestMobs:Apply()
+            end,
+        }, width),
+        UI.CheckRow(canvas, Cfg, {
+            label = L.FAR_PLATES, desc = L.FAR_PLATES_DESC,
+            get = function() return Ding.db.ui.farPlates end,
+            set = function(v)
+                Ding.db.ui.farPlates = v and true or false
+                Ding.QuestMobs:ApplyDistance(true)
+            end,
         }, width),
         foldRow(canvas, width, "arrow"),
     }

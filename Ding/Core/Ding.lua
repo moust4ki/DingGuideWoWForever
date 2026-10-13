@@ -37,7 +37,10 @@ local DEFAULTS = {
     ui = { buttonStyle = "xbox", sound = true, welcomed = false, autoAccept = true, autoTurnin = true,
         skipGrey = false, hearth = true, deathSkip = false, dungeons = false, elites = false,
         chooseReward = false, sellGrey = true, repair = true, markTarget = true, serviceSteps = true,
-        trainerSteps = true, flightSteps = true, autoEquip = false, autoFly = false },
+        trainerSteps = true, flightSteps = true, autoEquip = false, autoFly = false,
+        -- Quest monsters (UI/QuestMobs.lua): marks on enemy nameplates, the tooltip line, and
+        -- the enemy nameplates' distance raised to the client's maximum.
+        mobIcons = true, mobTooltip = true, farPlates = false },
     timings = {},
     imported = {},   -- [pack id] = { pack, guides, at }: guides imported as text (Import)
 }

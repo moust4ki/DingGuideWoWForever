@@ -575,6 +575,34 @@ the first one says "Along the way · For “quest”". Hovering, clicking (A in 
 for the step's objectives. The objective the level step already farms is not repeated. Looked
 at every 2 s while the window is shown, and on every quest log change.
 
+### Quest monsters (`UI/QuestMobs.lua`)
+
+Above the **enemy nameplates** of the monsters a log quest still needs, a small mark of Ding's
+(its own frame, parented to the game's plate, which is never changed): a diamond for a monster
+to kill, a dot for one that drops an item a quest needs (DingDB's item drops), then the
+objective's counter ("3/8"). The current step's monsters (its quests and their missing links,
+the monster a level step farms, its `kill` and `collect` goals) are in the accent color; those
+of the log's other quests are quieter (grey glyph, plain border, 80 %). A finished objective,
+or a quest ready to turn in, loses its mark. On a **friendly** plate (when the game shows
+them): the current step's quest giver "!" and turn-in NPC "?". The **unit tooltip** gets one
+line per objective (three at most): "Ding! · “Quest name” 3/8", the quest in the client's
+language; hooked through the client's tooltip processor (`TooltipDataProcessor`), else its
+`OnTooltipSetUnit` script, never replaced.
+
+What counts is computed again with the window's rows (`Engine:Refresh`, so after every quest
+log change), per creature id; the objectives are matched to DingDB's targets the way "Along
+the way" does it (`Along:Objectives`, `Along:StepQuests`). A plate's monster is read once,
+when it appears (`UnitGUID`): when the client keeps the GUID secret (in combat, maybe), the
+plate keeps what it had, else its name is matched with the monsters Ding knows; a player is
+never marked. Nothing is protected: frames are only created, anchored, shown and hidden.
+
+Options (Arrow and maps tab, "Quest monsters"): marks on the plates (on), the tooltip line
+(on), **"Show enemy nameplates farther"** (off): the client's `nameplateMaxDistance` at its
+maximum (Ding asks for 60 yards, the client keeps its own limit), the value before put back
+when the option goes off (`Ding.db.farPlatesFrom`, outside the settings, so that the tab's
+defaults and "Restore all defaults" put it back too); never changed in combat (after the
+fight). Turned on or off in the settings, the chat says the distance now.
+
 ### Interface
 
 The design (dimensions, colors, fonts, states, texts) is in [`UI-handoff.md`](UI-handoff.md),
@@ -761,7 +789,8 @@ accent #5BB4FF, the Noto Sans font shipped with the addon, rounded shapes from t
   - **Automation**: Quests (accept, turn in, rewards, skip gray), Merchant (sell gray,
     repair), Equipment (equip upgrades, talent build), Flights (take the flight).
   - **Arrow and maps**: arrow, style, size, farming loop, move; the world map mark, the
-    minimap pins; the target's skull; "More options" folded: orientation, TomTom, reset the
+    minimap pins; the target's skull; quest monsters (marks on the nameplates, the tooltip
+    line, enemy nameplates farther); "More options" folded: orientation, TomTom, reset the
     arrow's position.
   - **Keybinds**: unchanged.
   - **Appearance**: window (opacity, scale, preview, lock, minimized in combat, hidden in
