@@ -12,8 +12,9 @@ local C = UI.C
 local Cfg = {}
 Ding.Config = Cfg
 
-local WIDTH, HEIGHT = 560, 440
-local TITLE_HEIGHT, TABS_HEIGHT, FOOTER_HEIGHT = 32, 36, 32
+local SIZE = UI.SIZE
+local WIDTH, HEIGHT = 560, 392      -- [560, 440]
+local TITLE_HEIGHT, TABS_HEIGHT, FOOTER_HEIGHT = SIZE.title, SIZE.tabs, SIZE.footer
 local CONTENT_TOP = TITLE_HEIGHT + 1 + TABS_HEIGHT + 1
 local CONTENT_HEIGHT = HEIGHT - CONTENT_TOP - FOOTER_HEIGHT - 1
 
@@ -44,6 +45,7 @@ end
 
 local function applyAllSettings()
     local P, A = Ding.Panel, Ding.Arrow
+    UI.SetDialogScale(Ding.db.ui.dialogScale)
     if P.frame then
         P.frame:SetScale(Ding.db.panel.scale)
         P:ApplyPosition()
@@ -160,7 +162,7 @@ local TAB_SETTINGS = {
     arrow = { { "arrow", "shown" }, { "arrow", "style" }, { "arrow", "size" }, { "arrow", "loop" },
         { "arrow", "worldMap" }, { "minimap", "pins" }, { "ui", "markTarget" }, { "ui", "mobIcons" },
         { "ui", "mobTooltip" }, { "ui", "farPlates" }, { "arrow", "tomtom" }, { "arrow", "mode" } },
-    appearance = { { "panel", "bgAlpha" }, { "panel", "scale" }, { "panel", "locked" },
+    appearance = { { "panel", "bgAlpha" }, { "panel", "scale" }, { "ui", "dialogScale" }, { "panel", "locked" },
         { "panel", "compactInCombat" }, { "panel", "hideInInstance" }, { "panel", "itemButton" },
         { "minimap", "shown" }, { "ui", "sound" }, { nil, "debug" } },
 }
@@ -712,9 +714,9 @@ end
 -- Appearance preview: a scene with the minimized guide window, at the chosen opacity.
 local function previewRow(canvas, width)
     local row = CreateFrame("Frame", nil, canvas)
-    row:SetSize(width, 8 + 92)
+    row:SetSize(width, 6 + 80)      -- [8 + 92]
     local scene = CreateFrame("Frame", nil, row)
-    scene:SetPoint("TOPLEFT", row, "TOPLEFT", 0, -8)
+    scene:SetPoint("TOPLEFT", row, "TOPLEFT", 0, -6)
     scene:SetPoint("BOTTOMRIGHT", row, "BOTTOMRIGHT", 0, 0)
     UI.Shape(scene, "row", C.scene, "BACKGROUND"):Place(scene)
     local w = CreateFrame("Frame", nil, scene)
@@ -812,6 +814,22 @@ local function appearanceRows(canvas, width)
         label = L.MOVE_PANEL, button = L.MOVE_BTN,
         run = function() Cfg:StartMove(P:MoveTarget()) end,
     }, width))
+    -- This window, the NPC directory, the setup assistant, import / export: shown at once at
+    -- the new size, once the mouse lets go of the thumb (the window would move under it).
+    add(UI.HeaderRow(canvas, L.HEADER_DIALOGS, width))
+    local S = UI.DIALOG_SCALE
+    add(UI.SliderRow(canvas, Cfg, {
+        label = L.DIALOG_SCALE, min = S.min * 100, max = S.max * 100, step = 5, default = S.default * 100,
+        format = percent, help = L.SLIDER_HELP_STEP:format(5),
+        get = function() return math.floor(UI.DialogScale() * 100 + 0.5) end,
+        set = function(v, dragging)
+            if dragging then
+                ui.dialogScale = v / 100
+            else
+                UI.SetDialogScale(v / 100)
+            end
+        end,
+    }, width))
     add(UI.HeaderRow(canvas, L.HEADER_ITEM_BUTTON, width))
     add(UI.CheckRow(canvas, Cfg, {
         label = L.ITEM_BUTTON, desc = L.ITEM_BUTTON_DESC,
@@ -888,7 +906,7 @@ local TABS = {
 Cfg.TABS = TABS
 Cfg.TAB = {}
 for i, tab in ipairs(TABS) do
-    tab.pad, tab.gap = 12, 4
+    tab.pad, tab.gap = SIZE.pad, SIZE.gap
     Cfg.TAB[tab.key] = i
 end
 local BINDINGS_TAB = Cfg.TAB.bindings
@@ -948,7 +966,7 @@ function Cfg:Create()
     if self.frame then return end
     local f = CreateFrame("Frame", "DingConfigFrame", UIParent)
     f:SetSize(WIDTH, HEIGHT)
-    f:SetPoint("CENTER", UIParent, "CENTER", 0, 0)
+    UI.Dialog(f, 0, 0)
     f:SetFrameStrata("DIALOG")
     f:SetClampedToScreen(true)
     f:EnableMouse(true)
@@ -1077,7 +1095,7 @@ function Cfg:OpenPage(def)
     if self.focus then self.focus:SetFocused(false) end
     local again = self.page and self.page.def == def and self.page or nil
     if again then again.canvas:Hide() end
-    local page = { def = def, key = def.key, pad = 12, gap = 4, tab = again and again.tab or self.tab,
+    local page = { def = def, key = def.key, pad = SIZE.pad, gap = SIZE.gap, tab = again and again.tab or self.tab,
         from = again and again.from or self.focusIndex[self.tab], built = def.signature and def.signature() }
     local canvas = CreateFrame("Frame", nil, f.content)
     canvas:SetWidth(WIDTH)

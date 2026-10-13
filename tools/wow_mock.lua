@@ -39,6 +39,9 @@ return function(opts)
         "SetPropagateKeyboardInput", "SetShadowOffset", "SetShadowColor", "SetSpacing", "AddMaskTexture" }) do
         Methods[m] = noop
     end
+    -- Kept for the layout tests (tools/layout.lua) and the windows kept on the screen.
+    function Methods:SetJustifyH(justify) self.justifyH = justify end
+    function Methods:SetClampedToScreen(v) self.clamped = v and true or false end
     function Methods:SetVertexColor(r, g, b, a)
         assert(type(r) == "number" and type(g) == "number" and type(b) == "number", "SetVertexColor(r, g, b[, a])")
         self.vertexColor = { r, g, b, a or 1 }

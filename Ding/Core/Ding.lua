@@ -44,7 +44,9 @@ local DEFAULTS = {
         suggestGear = true,   -- a better piece of gear in the bags: row, banner, item button (Core/Gear.lua)
         -- Quest monsters (UI/QuestMobs.lua): marks on enemy nameplates, the tooltip line, and
         -- the enemy nameplates' distance raised to the client's maximum.
-        mobIcons = true, mobTooltip = true, farPlates = false },
+        mobIcons = true, mobTooltip = true, farPlates = false,
+        dialogScale = 0.85,   -- the settings, the NPC directory, the setup assistant, import (UI.Dialog)
+    },
     timings = {},
     imported = {},   -- [pack id] = { pack, guides, at }: guides imported as text (Import)
 }

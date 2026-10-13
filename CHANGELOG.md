@@ -60,6 +60,12 @@ Nothing else to install: QuestieDB is no longer needed, and TomTom stays optiona
   - The lines under a row are plain sentences ("To equip it, use the item button on screen.").
   - A quest you turned in, seen again with "Previous", says so; a "keep this item" reminder is
     a line under the step, not a line to do.
+- **Settings windows** (the settings, the NPC directory, the setup assistant, import / export)
+  - A little denser: lower title and tab bars, rows and gaps; every text still shows whole.
+  - **"Settings windows size"** (Appearance tab, 60 % to 120 %, 85 % by default): their size on
+    screen, apart from the guide window's own "Window scale".
+  - In the NPC directory, with a gamepad, the A button takes the place of a list's arrow and no
+    longer covers the time.
 - **Travel**
   - Walking passages (lifts, tunnels, bridges, city gates, portals) and islands: the arrow no
     longer points through a cliff or across the sea. The passages are not checked in game yet:

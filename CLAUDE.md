@@ -333,7 +333,8 @@ Contracts between modules:
   `Ding.db.ui.suggestGear` (the gear upgrade's row, banner and item button:
   `Gear:Suggested()`; `Gear.upgrade` stays for auto-equip), `Ding.db.panel.preview` (0-3 next steps shown), `Ding.db.panel.weaponReminder` (the weapon
   to learn under the step), `Ding.db.panel.why` (the guide's explanations, Core/Why.lua),
-  `Ding.db.minimap.pins`.
+  `Ding.db.minimap.pins`, `Ding.db.ui.dialogScale` (the settings windows' size, 0.6-1.2:
+  `UI.Dialog` / `UI.SetDialogScale`). The dialog windows take their sizes from `UI.SIZE`.
   The engine places the player only once the quest log has arrived (`Engine.logReady`).
 
 ## Data
