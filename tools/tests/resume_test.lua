@@ -228,6 +228,19 @@ T.test("resume: an old guide quest still in the log is finished first", function
     T.eq(Ding.char.resumeTo, nil)
 end)
 
+T.test("resume: the next steps shown are the ones \"next\" goes to", function()
+    load({ [P1] = "log", [P3] = "turnedin", [P4] = "log" }, 3, "t-where")
+    E:Reset(); H.flush()
+    T.eq(E.index, 2)
+    T.ok(E:NextSteps(1)[1] == E.guide.steps[3], "the turn-in of the past quest is not shown next")
+    T.quests({ [P1] = "ready" })
+    T.eq(E.index, 3)
+    -- Steps 4 and 5 are left behind: the step after the turn-in is the player's place.
+    T.ok(E:NextSteps(1)[1] == E.guide.steps[8], "a step the resume passes is shown next")
+    E:Next(); H.flush()
+    T.eq(E.index, 8)
+end)
+
 T.test("resume: kept after a reload, over if the quest is abandoned", function()
     load({ [P1] = "log", [P3] = "turnedin", [P4] = "log" }, 3, "t-where")
     E:Reset(); H.flush()

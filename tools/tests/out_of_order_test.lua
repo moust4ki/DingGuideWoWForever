@@ -1,0 +1,127 @@
+-- In game (13/10/2026, a Dwarf hunter in "Duskwood and Redridge"): the character had done
+-- Redridge before Duskwood. Taken up again in the middle of Duskwood (back from the Items
+-- pack), the guide believed it was at the end of Redridge, step 132: it kept passing the
+-- steps still to do between the quests of the log (the hunter trainer, the next quests of the
+-- chains, the trips) and ran from Elwynn to step 99 in Duskwood; "next" passed several steps
+-- at a time; and "The Night Watch" (57), made sticky at step 102, listed its monsters in red
+-- under every step, going back to the finished "The Night Watch" (56) too.
+local tools = (arg[0]:match("^(.*)[/\\]") or ".") .. "/.."
+local GUIDE = "leveling-a11-duskwood-and-redridge-mountains"
+local T = dofile(tools .. "/testlib.lua")(arg[1], { guides = { GUIDE }, locale = "enUS" })
+local Ding, H = T.Ding, T.H
+local E, P = Ding.Engine, Ding.Panel
+
+-- Redridge quests the character turned in before Duskwood (steps 86-97 and 117-132).
+local REDRIDGE = { 20, 127, 150, 34, 128, 91, 180 }
+local NIGHT_WATCH, NIGHT_WATCH_2 = 56, 57
+
+-- Plays the guide like the player (quests, then "next" on the steps only the player can
+-- validate) up to step `upto`, in Elwynn Forest; Redridge is done.
+local function playTo(upto)
+    T.reset({ level = 25, race = "Dwarf", class = "HUNTER" })
+    Ding.db.panel.shown = true
+    Ding.char.sticky = nil
+    E:SetGuide(GUIDE, 1, true); H.flush()
+    H.tick(11)
+    for _ = 1, 200 do
+        if E.index >= upto then break end
+        local before = E.index
+        H.play(E:CurrentStep()); H.flush()
+        if E.index == before then E:Next(); H.flush() end
+    end
+    T.eq(E.index, upto, "the guide played up to its step")
+    for _, q in ipairs(REDRIDGE) do H.setQuest(q, "turnedin") end
+    H.player.map, H.player.x, H.player.y = 1429, 44, 66      -- Goldshire
+    H.fire("QUEST_LOG_UPDATE"); H.flush()
+    H.tick(2)    -- past the finished step kept on screen
+end
+
+local function rowsOf(q)
+    local out = {}
+    for _, row in ipairs(P.rowsShown or {}) do
+        if row.quest == q and not row.preview then out[#out + 1] = row end
+    end
+    return out
+end
+
+T.test("a section done earlier: the guide is taken up where the player is, not past it", function()
+    playTo(58)
+    T.ok(E:ProgressStep(E.guide) > 100, "premise: the quests alone put the character at the end of Redridge")
+    E:Resume(GUIDE, true); H.flush()
+    T.eq(E.index, 58)
+    T.eq(E.resumeTo, nil, "a resume still runs towards the end of Redridge")
+    T.eq(Ding.char.lastStep[GUIDE], 58)
+    -- Innkeeper Farley, the storage chest: then the hunter trainer of Stormwind, Caretaker
+    -- Folsom, the sealed crate and the trip indoors, one after the other.
+    H.tick(11)
+    H.turnin(69); H.accept(70); H.flush()
+    T.eq(E.index, 59)
+    H.complete(70); H.flush()
+    T.eq(E.index, 73, "the hunter trainer passed")
+    H.tick(2)
+    E:Next(); H.flush()
+    T.eq(E.index, 77)
+    H.turnin(70); H.accept(72); H.flush()
+    T.eq(E.index, 78)
+    H.turnin(72); H.accept(74); H.flush()
+    T.eq(E.index, 79, "sent from Stormwind to Duskwood")
+end)
+
+T.test("login with the resume the game saved towards the end of Redridge: dropped", function()
+    playTo(58)
+    H.turnin(69); H.accept(70); H.flush()
+    T.eq(E.index, 59)
+    -- The character's saved variables after the jump: step 59, resuming to step 132.
+    Ding.char.step, Ding.char.resumeTo = 59, { guide = GUIDE, step = 132 }
+    Ding.char.lastStep[GUIDE] = 132
+    E.guide, E.resumeTo = nil, nil
+    E:Start(); H.flush()
+    T.eq(E.guide and E.guide.id, GUIDE)
+    T.eq(E.index, 59)
+    T.eq(E.resumeTo, nil, "still resuming towards step 132")
+    T.eq(Ding.char.resumeTo, nil)
+    T.eq(Ding.char.lastStep[GUIDE], 59, "the section's place still points to the end of Redridge")
+    -- Right after login too: a turn-in at step 132 is no proof the trainer was visited.
+    T.ok(E:IsResuming(), "premise: the seconds after login")
+    H.complete(70); H.flush()
+    T.eq(E.index, 73, "the hunter trainer passed")
+end)
+
+T.test("\"next\" goes to the step the preview shows first, never past a step still to do", function()
+    playTo(58)
+    E:Resume(GUIDE, true); H.flush()
+    for _ = 1, 12 do
+        local from, shown = E.index, E:NextSteps(1)[1]
+        E:Next(); H.flush()
+        T.ok(E:CurrentStep() == shown, ("from step %d, \"next\" went to step %d, not the preview's"):format(from, E.index))
+        for i = from + 1, E.index - 1 do
+            T.ok(E:IsStepDone(E.guide.steps[i], i), ("from step %d, step %d passed while still to do"):format(from, i))
+        end
+    end
+end)
+
+T.test("going back: no \"Still to do\" for a quest the guide makes sticky further on", function()
+    playTo(58)
+    T.ok(H.log()[NIGHT_WATCH_2] ~= nil and H.completed()[NIGHT_WATCH], "premise: 56 turned in, 57 in the log")
+    -- The jump went as far as step 102, which makes 57 sticky; the guide then came back.
+    E:SetGuide(GUIDE, 102, true); H.flush()
+    T.eq(Ding.char.sticky[NIGHT_WATCH_2], true)
+    E:Reset(); H.flush()
+    T.eq(E.index, 58)
+    T.eq(#rowsOf(NIGHT_WATCH_2), 0, "57 listed before its step")
+    T.eq(Ding.char.sticky[NIGHT_WATCH_2], nil)
+    while E.index > 16 do E:Prev(); H.flush() end
+    T.eq(E.index, 16, "step 16: complete \"The Night Watch\" (56)")
+    T.ok(#rowsOf(NIGHT_WATCH) > 0, "the step's rows are missing")
+    for _, row in ipairs(rowsOf(NIGHT_WATCH)) do T.eq(row.state, "done", H.plain(row.text)) end
+    T.eq(#rowsOf(NIGHT_WATCH_2), 0, "the monsters of 57 listed in red under the finished 56")
+    -- From step 102 on, they are listed again.
+    E.hold = false
+    E:SetGuide(GUIDE, 103, true); H.flush()
+    T.eq(Ding.char.sticky[NIGHT_WATCH_2], true)
+    local sticky = 0
+    for _, row in ipairs(rowsOf(NIGHT_WATCH_2)) do if row.sticky then sticky = sticky + 1 end end
+    T.ok(sticky > 0, "57 no longer listed past its step")
+end)
+
+T.run()

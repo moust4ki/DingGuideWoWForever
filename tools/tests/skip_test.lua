@@ -193,6 +193,7 @@ T.test("go back from the end of the guide", function()
     start()
     E:Skip(); H.flush()
     T.quests({ [B] = "turnedin", [A] = "ready" })
+    H.tick(2)              -- the finished step leaves the screen
     E:Next(); H.flush()    -- trainer
     T.eq(E.index, 6)
     T.quests({ [A] = "turnedin" })
