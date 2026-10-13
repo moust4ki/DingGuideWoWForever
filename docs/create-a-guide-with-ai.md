@@ -2,7 +2,7 @@
 
 Ding can **import a guide written as text**: no addon to install, no file to copy. You paste
 the text in the game, Ding checks every quest, NPC, object and place against its quest
-database (QuestieDB), and the guide shows up next to Ding's own ones, for all your
+database (built from Questie's), and the guide shows up next to Ding's own ones, for all your
 characters.
 
 Any AI chat can write that text for you, from facts it knows or that you give it. This page
@@ -86,7 +86,7 @@ keys (the full list, with every option, is in [guide-packs.md, section 6](guide-
 Ding writes the names of quests, NPCs and items itself, in the player's language: **a guide
 never writes names**, only ids. Your `title`, `text` and `note` are shown as you wrote them.
 
-**When QuestieDB lacks something** (a new NPC or object of WoW Forever), give Ding a place
+**When the database lacks something** (a new NPC or object of WoW Forever), give Ding a place
 instead: `text` with the English name of the target and `go` with its coordinates, or
 `spots = { { uiMapId, x, y } }` next to `kill`, `collect` or `object`. With `spots`, an NPC or
 an object Ding does not know is only a warning.
@@ -226,7 +226,7 @@ Ding lists one line per problem, with where it is:
 - `Step 3: quest 79009 is not in the database` when a value is wrong;
 - `Guide my-route-2, step 5: ...` in a pack.
 
-**Errors** block the import; **warnings** (an item QuestieDB does not know, an id already
+**Errors** block the import; **warnings** (an item the database does not know, an id already
 used that Ding changed) let it through.
 
 To have the AI fix them: select the list (Y on the gamepad, or click in it then Ctrl+A),
@@ -267,7 +267,7 @@ Frequent ones:
 - **Facts are free, texts are yours.** Ids, coordinates and the order of quests are facts.
   Titles, texts and notes must be your own words (or the AI's own words): never copy the
   text of a website, a guide addon or a book.
-- **Ids only.** Names, levels and places come from QuestieDB in the game; a guide holds
+- **Ids only.** Names, levels and places come from Ding's game data in the game; a guide holds
   ids, coordinates and notes.
 - **What Ding accepts.** Every import is read as data and checked: nothing in a guide can
   run code in your game.

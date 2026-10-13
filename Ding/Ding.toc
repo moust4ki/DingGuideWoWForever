@@ -9,7 +9,6 @@
 ## X-License: GPL-3.0
 ## X-Curse-Project-ID: 1739053
 ## X-Website: https://www.curseforge.com/wow/addons/ding-xp-and-leveling-guide
-## Dependencies: QuestieDB
 ## OptionalDeps: TomTom
 ## SavedVariables: DingDB
 ## SavedVariablesPerCharacter: DingCharDB
@@ -26,6 +25,21 @@ Locales\zhCN.lua
 Locales\zhTW.lua
 Core\Locales.lua
 Core\Compat.lua
+DB\DB.lua
+DB\Zones.lua
+DB\Quests.lua
+DB\Npcs.lua
+DB\Objects.lua
+DB\Items.lua
+DB\Locales\deDE.lua
+DB\Locales\esES.lua
+DB\Locales\esMX.lua
+DB\Locales\frFR.lua
+DB\Locales\koKR.lua
+DB\Locales\ptBR.lua
+DB\Locales\ruRU.lua
+DB\Locales\zhCN.lua
+DB\Locales\zhTW.lua
 Core\Data.lua
 Core\Registry.lua
 Core\Timing.lua

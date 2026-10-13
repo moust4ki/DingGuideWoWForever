@@ -20,9 +20,13 @@ jobs:
       - name: Syntax
         run: find Ding tools examples -name '*.lua' -print0 | xargs -0 -n1 luac5.1 -p
 
-      - name: QuestieDB export
+      # The QuestieDB release Ding/DB was built from (Ding.DB.source): the guides, the tests and
+      # db_parity_test read the same data as the game.
+      - name: QuestieDB export (the release of Ding/DB)
         run: |
-          git clone --depth 1 https://github.com/Questie/QuestieDB.git ../QuestieDB
+          tag=$(grep -o 'source = "QuestieDB v[0-9.]*"' Ding/DB/DB.lua | grep -o 'v[0-9.]*')
+          test -n "$tag"
+          git clone --depth 1 --branch "$tag" https://github.com/Questie/QuestieDB.git ../QuestieDB
           cd ../QuestieDB && lua5.1 tools/export-forever.lua --include-authored
 
       - name: Guide validation

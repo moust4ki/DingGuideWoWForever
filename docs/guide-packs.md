@@ -90,8 +90,8 @@ Locales\frFR.lua
 - `## Interface: 16001` is the WoW Forever client (1.60). When the client changes, the game
   marks addons with an older number as "out of date".
 - `## Dependencies: Ding` is required: the game then loads Ding first, so that the `Ding`
-  global and its functions exist when your files run. Do not list QuestieDB: Ding already
-  depends on it.
+  global and its functions exist when your files run. Nothing else: Ding carries its own
+  game data (QuestieDB is not needed).
 - Order: `Pack.lua` first (the sections name the pack), then the sections, then the
   translations.
 
@@ -164,7 +164,7 @@ disappears, the character gets the suggested section of your pack.
 
 A step is a table of **actions**. The step is done when all its actions are; Ding then moves
 to the next one by itself. Ding writes the text of each action in the player's language,
-with the quest, NPC and item names from QuestieDB: **a guide never writes names**, only ids.
+with the quest, NPC and item names from its game data: **a guide never writes names**, only ids.
 
 | Key | Value | Done when |
 | --- | --- | --- |
@@ -256,7 +256,7 @@ two steps, the trip first.
 
 What Ding does for you, so steps stay short:
 
-- the arrow points to the next NPC or the monsters of the objectives, from QuestieDB; a target
+- the arrow points to the next NPC or the monsters of the objectives, from Ding's game data; a target
   in another zone is named with its zone (under the arrow and on the step's line), and the
   target is marked on the world map (the game's own map waypoint);
 - with automation on (the default), quests of the step are accepted and turned in when the
@@ -344,7 +344,7 @@ available.
 ## 9. Testing in the game
 
 1. Copy your folder into `World of Warcraft/_forever_/Interface/AddOns/` (during the beta:
-   `_classic_beta_`), next to `Ding` and `QuestieDB`.
+   `_classic_beta_`), next to `Ding`.
 2. Start the game, or type `/reload` if it is running. Check that your pack is enabled in the
    addon list.
 3. Open the settings (`/ding config`), **Guide** tab: pick your pack in the first list, then
@@ -384,10 +384,7 @@ On Windows without Lua, the QuestieDB repository has a Lua binary:
 - **Publish it** as an addon of its own, on CurseForge, Wago, GitHub or elsewhere: a zip
   with your folder at its root. On CurseForge, add Ding
   (`ding-xp-and-leveling-guide`) as a **required dependency** in the project's
-  relations, so the CurseForge app installs it with your pack. QuestieDB is not on
-  CurseForge: say in your description that it must be installed by hand
-  ([QuestieDB releases](https://github.com/Questie/QuestieDB/releases/latest), the
-  `QuestieDB-Forever.zip` file).
+  relations, so the CurseForge app installs it with your pack. Nothing else is needed.
 - **Or share it as text**: `/ding export <section id>` (or `<pack id>`) gives your guide
   as text that anyone can paste with `/ding import`, no addon to install
   ([create-a-guide-with-ai.md](create-a-guide-with-ai.md)).
@@ -408,7 +405,6 @@ On Windows without Lua, the QuestieDB repository has a Lua binary:
 - **Your own work.** Write your own route and your own notes. Do not copy the text or the
   routes of other guides (commercial guide addons, websites, books) unless their license
   allows it.
-- **Ids only.** Quest, NPC and item names, levels and places come from QuestieDB when the
-  game runs: a pack holds quest ids, item ids, coordinates and notes, nothing copied from
-  QuestieDB.
+- **Ids only.** Quest, NPC and item names, levels and places come from Ding's game data when
+  the game runs: a pack holds quest ids, item ids, coordinates and notes.
 - **Stable ids.** Keep your pack id and your section ids from one version to the next.

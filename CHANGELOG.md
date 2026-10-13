@@ -2,9 +2,8 @@
 
 ## v1.3.0
 
-**Requires QuestieDB**: download `QuestieDB-Forever.zip` from
-https://github.com/Questie/QuestieDB/releases/latest and extract its `QuestieDB` folder into
-`Interface/AddOns`.
+**QuestieDB is no longer needed**: Ding now carries its own game data, built from Questie's
+database (thanks to its authors). You may remove the QuestieDB addon if no other addon uses it.
 
 - Ding is now called **Ding!**: in the addon list, its windows, guide names, messages and
   options. Your settings and progress stay as they are.
