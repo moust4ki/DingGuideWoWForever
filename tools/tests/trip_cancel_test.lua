@@ -174,6 +174,36 @@ T.test("the step menu: \"Cancel the trip to …\" first during a trip, absent wi
     P:CloseStepMenu()
 end)
 
+T.test("the menu during a trip: the trip's entries, then the guide's step said so; only that one marks it", function()
+    start()
+    P.frame.scripts.OnMouseUp(P.frame, "RightButton")
+    local m = P.stepMenu
+    T.ok(m.items[1] == m.cancel and m.items[2] == m.arrived, "the trip's entries are not first")
+    T.eq(m.arrived.text:GetText(), L.TRIP_DONE_AT:format(F.trip.name))
+    T.ok(m.items[3] == m.done and m.items[4] == m.skip, "the guide's step entries")
+    T.eq(m.done.text:GetText(), L.STEP_MENU_DONE_GUIDE)
+    T.eq(m.skip.text:GetText(), L.STEP_MENU_SKIP_GUIDE)
+    T.ok(m.line:IsShown(), "no line between the trip's entries and the guide's step")
+    -- "Done with <NPC>": the trip ends, the guide's step does not move nor get a mark.
+    click(m.arrived)
+    T.eq(E.index, 1, "\"done with the NPC\" moved the guide's step")
+    T.eq(E:StepMark(1), nil, "\"done with the NPC\" marked the guide's step")
+    onStep("done with the NPC")
+    -- The guide's step entry, said so: the step is marked done (and the trip ends).
+    T.ok(F:Go("vendor"))
+    P.frame.scripts.OnMouseUp(P.frame, "RightButton")
+    click(m.done)
+    T.eq(E.index, 2, "the guide's step entry did not mark the step")
+    T.eq(E:StepMark(1), "manual")
+    onStep("mark the guide's step")
+    -- Without a trip: the usual words, no line.
+    P.frame.scripts.OnMouseUp(P.frame, "RightButton")
+    T.eq(m.done.text:GetText(), L.STEP_MENU_DONE)
+    T.eq(m.skip.text:GetText(), L.STEP_MENU_SKIP)
+    T.ok(not m.line:IsShown() and not m.arrived:IsShown(), "trip entries without a trip")
+    P:CloseStepMenu()
+end)
+
 T.test("the directory's binding during a trip: its first row cancels, focused", function()
     start()
     F:Toggle(); H.flush()

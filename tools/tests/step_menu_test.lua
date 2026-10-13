@@ -35,6 +35,21 @@ local function choose(item)
     H.flush()
 end
 
+-- The step's own rows (not the control that undoes its mark).
+local function stepRows()
+    local out = {}
+    for _, row in ipairs(P.rowsShown) do
+        if row.action ~= "unmark" then out[#out + 1] = row end
+    end
+    return out
+end
+
+local function undoRow()
+    for i, row in ipairs(P.rowsShown) do
+        if row.action == "unmark" then return row, i end
+    end
+end
+
 local function hasHint(text)
     for _, row in ipairs(P.rowsShown) do
         if row.sub and row.sub:find(text, 1, true) then return true end
@@ -69,7 +84,7 @@ T.test("mark as done: step validated by hand, violet when going back to it", fun
     E:Prev(); H.flush()
     T.eq(E.index, 1)
     T.eq(E:StepMark(1), "manual", "\"previous\" cleared the mark")
-    for _, row in ipairs(P.rowsShown) do T.eq(row.state, "manual", row.text) end
+    for _, row in ipairs(stepRows()) do T.eq(row.state, "manual", row.text) end
     T.ok(hasHint(L.STEP_MARKED_DONE), "no \"marked by hand\" hint")
     T.ok(P.frame.rows[1].bg.color[1] == C.manualRowBg[1], "background not violet")
 end)
@@ -82,7 +97,7 @@ T.test("skip: step recorded as skipped, amber when going back to it", function()
     T.eq(E:StepMark(1), "skipped")
     T.ok(not (Ding.char.manual[G] or {})[1], "skipped step marked done")
     E:Prev(); H.flush()
-    for _, row in ipairs(P.rowsShown) do T.eq(row.state, "skipped", row.text) end
+    for _, row in ipairs(stepRows()) do T.eq(row.state, "skipped", row.text) end
     T.ok(hasHint(L.STEP_MARKED_SKIPPED), "no \"skipped\" hint")
 end)
 
@@ -93,9 +108,82 @@ T.test("what the game confirms stays green in a step marked by hand", function()
     choose("done")
     E:Prev(); H.flush()
     local states = {}
-    for _, row in ipairs(P.rowsShown) do states[row.quest] = row.state end
+    for _, row in ipairs(stepRows()) do states[row.quest] = row.state end
     T.eq(states[456], "done", "accepted quest not green")
     T.eq(states[458], "manual", "quest not accepted not violet")
+end)
+
+T.test("undo \"mark as done\": the control under the step (a click, A in focus mode), or the menu", function()
+    start()
+    rightClickRow()
+    choose("done")
+    T.eq(undoRow(), nil, "an undo control on a step not marked")
+    E:Prev(); H.flush()
+    local row, i = undoRow()
+    T.ok(row and row.text == L.STEP_UNDO_DONE, "no undo control under the marked step")
+    T.eq(row.state, "button")
+    local r = P.frame.rows[i]
+    r.scripts.OnClick(r, "LeftButton"); H.flush()
+    T.eq(E:StepMark(1), nil, "the mark stays")
+    T.eq(E.index, 1, "not on the step any more")
+    T.ok(not E.hold, "the step is still held")
+    for _, row2 in ipairs(stepRows()) do T.ok(row2.state ~= "manual", "still violet: " .. tostring(row2.text)) end
+    T.eq(undoRow(), nil, "the control stays once undone")
+    -- Again, from the menu.
+    rightClickRow()
+    choose("done")
+    E:Prev(); H.flush()
+    rightClickRow()
+    T.ok(P.stepMenu.undo:IsShown() and P.stepMenu.items[1] == P.stepMenu.undo, "the menu's undo is not first")
+    T.eq(P.stepMenu.undo.text:GetText(), L.STEP_UNDO_DONE)
+    choose("undo")
+    T.eq(E:StepMark(1), nil, "the menu's undo does not clear the mark")
+    -- Focus mode: A on the control.
+    rightClickRow()
+    choose("done")
+    E:Prev(); H.flush()
+    P:StartFocus(); H.flush()
+    local _, j = undoRow()
+    P.focusIndex = j; P:Update()
+    T.ok(P.frame.rows[j].key:IsShown(), "no A on the focused undo control")
+    H.press("PAD1")
+    T.eq(E:StepMark(1), nil, "A on the undo control")
+    P:StopFocus()
+end)
+
+T.test("undo the skip; undo from a later step goes back to it; a step the game says is done goes on", function()
+    start()
+    rightClickRow()
+    choose("skip")
+    E:Prev(); H.flush()
+    local row = undoRow()
+    T.eq(row and row.text, L.STEP_UNDO_SKIP)
+    rightClickRow()
+    T.eq(P.stepMenu.undo.text:GetText(), L.STEP_UNDO_SKIP)
+    choose("undo")
+    T.eq(E:StepMark(1), nil)
+    T.eq(E.index, 1)
+    -- Marked done, the player two steps further: undoing it goes back there.
+    start()
+    E:Next(); H.flush()
+    E:Next(); H.flush()
+    T.eq(E.index, 3)
+    T.ok(E:Unmark(1))
+    T.eq(E.index, 1, "not back to the step to do")
+    T.eq(E:StepMark(1), nil)
+    T.ok(not E:Unmark(4), "a step without a mark")
+    -- Done in the game since: the mark goes, the guide goes on from there.
+    start({ [456] = "log", [458] = "log" })
+    T.eq(E.index, 2, "the accepted quests do not pass step 1")
+    E:Next(); H.flush()
+    T.eq(E.index, 3)
+    T.quests({ [456] = "ready" })
+    E:Prev(); H.flush()
+    T.eq(E.index, 2)
+    T.eq(E:StepMark(2), "manual")
+    T.ok(E:Unmark())
+    T.eq(E:StepMark(2), nil)
+    T.eq(E.index, 3, "a step the game says is done is not passed again")
 end)
 
 T.test("going back to do a skipped step clears its mark", function()

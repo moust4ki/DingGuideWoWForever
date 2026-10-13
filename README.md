@@ -37,7 +37,8 @@ instead from the *Arrow* tab of the settings (off by default).
   not yet possible states and the guide's notes. Hover a line to see its quest (name, level,
   objectives); click it to send the arrow there. Right-click the window to mark the step as
   done or skip it for later: steps left by hand keep their own color (violet: marked done,
-  amber: skipped). Minimizes to a single line, automatically in combat if you want. Closing it
+  amber: skipped); go back to such a step ("previous") to undo it, from the line under it or the
+  same menu. Minimizes to a single line, automatically in combat if you want. Closing it
   hides the arrow too; the minimap button brings both back.
 - **Waypoint arrow.** Distance and time to the target, red with "turn around" when it is
   behind you. Among the monsters you have to kill, it tells you you're in the area. When you

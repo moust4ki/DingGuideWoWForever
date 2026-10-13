@@ -394,6 +394,9 @@ function P:Rows(content)
         for _, row in ipairs(rows) do
             if row.state == "todo" or row.state == "impossible" then row.state = content.mark end
         end
+        -- A control under it undoes the mark (A in focus mode, or a click).
+        rows[#rows + 1] = { action = "unmark", kind = "other", state = "button",
+            text = content.mark == "manual" and L.STEP_UNDO_DONE or L.STEP_UNDO_SKIP }
     end
     local firstNotices, lastNotices = noticeRows(notices)
     for _, row in ipairs(firstNotices) do rows[#rows + 1] = row end
@@ -549,6 +552,8 @@ function P:Aim(row)
     if row and row.action == "preview" then return end
     -- The control under the trip's notice: the arrow goes back to the guide (UI/Finder.lua).
     if row and row.action == "tripcancel" then return Ding.Finder:Cancel() end
+    -- The control under a step marked done or skipped: the mark goes.
+    if row and row.action == "unmark" then return Ding.Engine:Unmark() end
     -- A notice: the quest log's opens the settings' cleanup page, the others only inform.
     if row and row.action == "notice" then
         if row.notice == "cleanup" then Ding.Config:OpenCleanup() end
@@ -1001,7 +1006,7 @@ end
 -- Step menu (right click on the window): mark the step done by hand, or skip it for
 -- later. On a gamepad the "Next step" and "Skip step" bindings do the same.
 ---------------------------------------------------------------------------
-local MENU_WIDTH, MENU_ITEM, MENU_PAD = 210, 26, 4
+local MENU_WIDTH, MENU_ITEM, MENU_PAD, MENU_LINE = 210, 26, 4, 9
 
 local function menuItem(menu, text, action)
     local b = CreateFrame("Button", nil, menu)
@@ -1021,9 +1026,11 @@ local function menuItem(menu, text, action)
     return b
 end
 
--- The step menu (right click on the window or a row): during a trip of the NPC directory,
--- "Cancel the trip to …" first; then mark the step done, skip it, and on a row with a quest,
--- find it in the guide.
+-- The step menu (right click on the window or a line). During a trip of the NPC directory, the
+-- trip's own entries first ("Cancel the trip to …", "Done with …: back to the guide", both
+-- ending it), then, under a line, the guide's step said so ("Mark the guide's step as done",
+-- "Skip the guide's step": Yendi took "Mark as done" for the NPC and lost a step). On a step
+-- marked done or skipped, its undo first. On a line with a quest, find it in the guide.
 function P:OpenStepMenu(row)
     local E = Ding.Engine
     local trip = Ding.Finder and Ding.Finder.trip
@@ -1044,6 +1051,11 @@ function P:OpenStepMenu(row)
         m:EnableMouse(true)
         m.look = UI.Window(m)
         m.cancel = menuItem(m, "", function() Ding.Finder:Cancel() end)
+        m.arrived = menuItem(m, "", function() Ding.Finder:Cancel() end)
+        m.undo = menuItem(m, "", function() Ding.Engine:Unmark() end)
+        m.line = m:CreateTexture(nil, "ARTWORK")
+        m.line:SetColorTexture(unpack(C.divider))
+        m.line:SetHeight(1)
         m.done = menuItem(m, L.STEP_MENU_DONE, function() Ding.Engine:Next() end)
         m.skip = menuItem(m, L.STEP_MENU_SKIP, function() Ding.Engine:Skip() end)
         -- On a row with a quest: where the guide deals with it.
@@ -1052,25 +1064,44 @@ function P:OpenStepMenu(row)
         self.stepMenu = m
     end
     m.quest = steps and row and row.quest or nil
-    if trip then m.cancel.text:SetText(L.TRIP_CANCEL_TO:format(trip.name or "?")) end
-    local items = {}
-    m.cancel:SetShown(trip ~= nil)
-    if trip then items[#items + 1] = m.cancel end
-    for _, b in ipairs({ m.done, m.skip }) do
-        b:SetShown(steps and true or false)
-        if steps then items[#items + 1] = b end
+    local mark = steps and E:StepMark() or nil
+    if trip then
+        m.cancel.text:SetText(L.TRIP_CANCEL_TO:format(trip.name or "?"))
+        m.arrived.text:SetText(L.TRIP_DONE_AT:format(trip.name or "?"))
     end
-    m.find:SetShown(m.quest ~= nil)
-    if m.quest then items[#items + 1] = m.find end
-    local width = MENU_WIDTH
+    m.undo.text:SetText(mark == "manual" and L.STEP_UNDO_DONE or L.STEP_UNDO_SKIP)
+    m.done.text:SetText(trip and L.STEP_MENU_DONE_GUIDE or L.STEP_MENU_DONE)
+    m.skip.text:SetText(trip and L.STEP_MENU_SKIP_GUIDE or L.STEP_MENU_SKIP)
+    local items, gap = {}, nil
+    local function add(b, shown)
+        b:SetShown(shown and true or false)
+        if shown then items[#items + 1] = b end
+    end
+    add(m.cancel, trip)
+    add(m.arrived, trip)
+    if trip and steps then gap = #items end
+    add(m.undo, mark)
+    add(m.done, steps)
+    add(m.skip, steps)
+    add(m.find, m.quest)
+    local width, y = MENU_WIDTH, MENU_PAD
     for i, b in ipairs(items) do
         b:ClearAllPoints()
-        b:SetPoint("TOPLEFT", m, "TOPLEFT", MENU_PAD, -MENU_PAD - (i - 1) * MENU_ITEM)
-        b:SetPoint("TOPRIGHT", m, "TOPRIGHT", -MENU_PAD, -MENU_PAD - (i - 1) * MENU_ITEM)
+        b:SetPoint("TOPLEFT", m, "TOPLEFT", MENU_PAD, -y)
+        b:SetPoint("TOPRIGHT", m, "TOPRIGHT", -MENU_PAD, -y)
+        y = y + MENU_ITEM
+        -- A line between the trip's entries and the guide's step.
+        if i == gap then
+            m.line:ClearAllPoints()
+            m.line:SetPoint("TOPLEFT", m, "TOPLEFT", MENU_PAD + 4, -(y + MENU_LINE / 2))
+            m.line:SetPoint("TOPRIGHT", m, "TOPRIGHT", -(MENU_PAD + 4), -(y + MENU_LINE / 2))
+            y = y + MENU_LINE
+        end
         width = math.max(width, UI.Measure(b.text) + 16 + MENU_PAD * 2)
     end
+    m.line:SetShown(gap ~= nil)
     m.items = items
-    m:SetSize(width, MENU_PAD * 2 + MENU_ITEM * #items)
+    m:SetSize(width, y + MENU_PAD)
     local scale = UIParent:GetEffectiveScale()
     local x, y = GetCursorPosition()
     m:ClearAllPoints()

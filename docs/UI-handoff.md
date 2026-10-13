@@ -561,8 +561,13 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   … (…): the guide resumes once there.", the travel hint and the route in the same box (no
   travel box then); right under it, 2 apart, a "Cancel the trip" control: a row with the
   `bg.control` background and the `hover` one under the mouse, no icon, 12 Regular `text`; in
-  focus mode, focused, the A chip on its right (gamepad). The step menu starts with "Cancel the
-  trip to …" during a trip (the menu widens to its text).
+  focus mode, focused, the A chip on its right (gamepad). During a trip the step menu starts
+  with the trip's entries ("Cancel the trip to …", "Done with …: back to the guide"), then a
+  1-unit `divider` line (9 high with its space), then the guide's step said so ("Mark the
+  guide's step as done", "Skip the guide's step"); the menu widens to its longest text.
+- **Undo a mark** (not in the mockup): under a step marked done or skipped (seen again with
+  "Previous"), the same control as the trip's, "Undo: mark as not done" / "Undo the skip"; the
+  step menu starts with it too.
 - **New continent** (not in the mockup): an ordinary "other" row under the step, "New continent:
   talk to … (flight master) to learn its flight paths".
 - **Persistent objectives, wrap-up, preview** (not in the mockup): sticky objectives are along-the-way

@@ -970,6 +970,32 @@ function E:Skip()
     self:Refresh()
 end
 
+-- Undoes "mark as done" or "skip, do it later" on a step (the current one by default): its
+-- mark goes, it is to do again unless the game says it is done. Still to do, the guide goes
+-- back to it (like BackToIncomplete); done, the guide goes on from where the player is.
+-- Returns false when the step had no mark.
+function E:Unmark(index)
+    if not self.guide then return false end
+    index = index or self.index
+    if not self:StepMark(index) then return false end
+    endTrip()
+    setManuallyDone(index, false)
+    setSkipped(index, false)
+    local step = self.guide.steps[index]
+    if step and not self:IsStepDone(step, index) and index ~= self.index then
+        Ding.Timing:Cancel()
+        setResumeTo(nil)
+        self.index = index
+        self.finished = false
+        saveStep(index)
+        Ding.Timing:Start(self.guide.id, index)
+    end
+    self.hold = false
+    self:Advance()
+    self:Refresh()
+    return true
+end
+
 -- Back to the nearest earlier step still to do (one that was skipped). Returns false
 -- when every earlier step is done.
 function E:BackToIncomplete()

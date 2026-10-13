@@ -715,9 +715,13 @@ accent #5BB4FF, the Noto Sans font shipped with the addon, rounded shapes from t
   a quest that is ready to turn in or already turned in are done (in green, full counter),
   even when the client resets them to 0 (quest turned in, past step reviewed with
   "Previous"); a full counter also counts as done when the client's flag is secret.
-- **Step menu** (right click on the window or a line): during a trip of the NPC directory,
-  "Cancel the trip to …" first; "Mark as done" (like "Next") or
-  "Skip, do it later" (like a right click on "Next"), and on a line with a quest "Find this
+- **Step menu** (right click on the window or a line): during a trip of the NPC directory, the
+  trip's own entries first, "Cancel the trip to …" and "Done with …: back to the guide" (both end
+  the trip and leave the guide's step as it is), then under a line the guide's step said so:
+  "Mark the guide's step as done", "Skip the guide's step" (Yendi took "Mark as done" for the
+  NPC and lost a step). Without a trip: "Mark as done" (like "Next") or
+  "Skip, do it later" (like a right click on "Next"). On a step marked done or skipped, its undo
+  first ("Undo: mark as not done", "Undo the skip"); on a line with a quest "Find this
   quest in the guide". On the gamepad, the "Next step" and
   "Skip step (do it later)" bindings do the same. A step settled by hand keeps its mark
   (`Engine:StepMark`: `Ding.char.manual`, `Ding.char.skipped`), visible when you come back to
@@ -725,7 +729,11 @@ accent #5BB4FF, the Noto Sans font shipped with the addon, rounded shapes from t
   **amber** if skipped (green stays reserved for what the game confirms), with a line
   "Marked as done by hand." / "Skipped: still to do.". "Previous" keeps the mark; coming back
   to do a skipped step clears its mark; "Take this guide up where I am" clears all of the
-  guide's marks, and whatever is not really done goes back to "to do".
+  guide's marks, and whatever is not really done goes back to "to do". **Undo**: under a marked
+  step on screen (browsing back with "Previous"), a control "Undo: mark as not done" / "Undo the
+  skip" (a click, A in focus mode), and the same first in the step menu (`Engine:Unmark`): the
+  mark goes; the step still to do, the guide goes back to it (like going back to a skipped
+  step); done in the game since, the guide goes on from there.
 - **Closing the window** (close button) also hides the arrow (and the TomTom waypoint); the
   minimap button, the binding, `/ding` or the "Show the guide and its arrow" checkbox (Guide
   tab) bring them back together. "Go" steps are still validated. With "Hide the guide in
