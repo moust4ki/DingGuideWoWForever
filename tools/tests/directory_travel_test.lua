@@ -17,8 +17,8 @@ Ding.RegisterGuide({ id = "t-directory-travel", title = "Directory travel",
 
 -- The mocked world lays the zones side by side; these trips need one closer to the real one:
 -- Teldrassil across the water from Darkshore, Darnassus and Ironforge inside their zone,
--- Wetlands north of Dun Morogh, Undercity by the Tirisfal zeppelin tower, Orgrimmar by
--- Durotar, Thunder Bluff in Mulgore. { continent, x, y, width, height } in yards; any other
+-- Wetlands north of Dun Morogh with Loch Modan at the end of the Dun Algaz pass, Undercity under
+-- the ruins by the Tirisfal zeppelin tower, Orgrimmar by Durotar, Thunder Bluff in Mulgore. { continent, x, y, width, height } in yards; any other
 -- map lies far away. (The mock's convention: a map's y goes along the world's x.)
 local WORLD = {
     [1438] = { 1, 0, 0, 3400, 5100 }, [1457] = { 1, 1360, 1275, 680, 1020 }, [1439] = { 1, 4000, 1000, 3400, 5100 },
@@ -26,7 +26,7 @@ local WORLD = {
     [1413] = { 1, 8000, 6000, 3400, 5100 }, [1412] = { 1, 12000, 5000, 3400, 5100 },
     [1456] = { 1, 12680, 6530, 900, 1100 }, [1445] = { 1, 14000, 12000, 3400, 5100 },
     [1420] = { 0, 0, 10000, 3400, 5100 }, [1458] = { 0, 2108, 12907, 340, 510 },
-    [1437] = { 0, 10000, 10000, 3400, 5100 },
+    [1437] = { 0, 10000, 10000, 3400, 5100 }, [1432] = { 0, 12900, 11464, 3400, 5100 },
     [1426] = { 0, 14000, 9000, 3400, 5100 }, [1455] = { 0, 14680, 11295, 510, 765 },
     [1429] = { 0, 20000, 8000, 3400, 5100 }, [1453] = { 0, 20000, 7000, 1200, 1500 },
     [1431] = { 0, 24000, 8000, 3400, 5100 }, [1434] = { 0, 36000, 8000, 3400, 5100 },
@@ -72,10 +72,11 @@ local function at(map, x, y)
     P:Update()
 end
 
+-- The ways a plan takes besides walking; a passage (Core/Passages.lua) by its kind.
 local function kinds(plan)
     local out = {}
     for _, l in ipairs(plan and plan.legs or {}) do
-        if l.kind ~= "walk" then out[#out + 1] = l.kind end
+        if l.kind ~= "walk" then out[#out + 1] = l.kind == "passage" and l.node.passage.kind or l.kind end
     end
     return table.concat(out, ",")
 end
@@ -135,7 +136,7 @@ T.test("Darkshire to Buliwyf: the row says flight, the arrow flies first, then w
     H.setTrainerServices({})
 end)
 
-T.test("Darnassus to an Ironforge banker: the boats by Auberdine and Menethil, then on foot", function()
+T.test("Darnassus to an Ironforge banker: the portal, the boats by Auberdine and Menethil, then on foot", function()
     start({ class = "WARRIOR", race = "NightElf", map = 1457, x = 50, y = 50 })
     local banker = Dir:CityList(Dir:City("ironforge"), Dir:Category("bank"))[1]
     T.ok(banker and banker.seconds, "no Ironforge banker priced from Darnassus")
@@ -145,8 +146,12 @@ T.test("Darnassus to an Ironforge banker: the boats by Auberdine and Menethil, t
     F:Close(); H.flush()
     F:GoTo(banker)
     at(1457, 50, 50)
-    T.eq(kinds(Travel.plan), "boat,boat")
-    T.ok(Travel.leg.kind == "boat" and Travel.leg.point.map == 1438, "not the Rut'theran boat first")
+    T.eq(kinds(Travel.plan), "portal,boat,boat,tunnel,gate")
+    -- Down the portal to Rut'theran, then its boat.
+    T.ok(Travel.leg.kind == "passage" and Travel.leg.point.map == 1457, "not Darnassus' portal first")
+    T.eq(A.hint, L.PASSAGE_PORTAL:format("Teldrassil"))
+    at(1438, 55.9, 89.4)
+    T.ok(Travel.leg.kind == "boat" and Travel.leg.point.map == 1438, "not the Rut'theran boat after the portal")
     T.eq(A.hint, L.TRAVEL_BOAT:format("Darkshore"))
     T.ok(H.plain(tripRow().sub):find(A.hint, 1, true), "the boat is not told under the trip")
     -- On board, then Auberdine: the other pier, the boat to Menethil.
@@ -157,9 +162,14 @@ T.test("Darnassus to an Ironforge banker: the boats by Auberdine and Menethil, t
     T.ok(Travel.leg and Travel.leg.kind == "boat" and Travel.leg.point.map == 1439, "no boat to Menethil")
     T.eq(A.hint, L.TRAVEL_BOAT:format("Wetlands"))
     at(Travel.leg.point.map, Travel.leg.point.x, Travel.leg.point.y)
-    -- Menethil Harbor: on foot to the banker.
+    -- Menethil Harbor: on foot through Dun Algaz and the gates of Ironforge to the banker.
     at(1437, 4.6, 57.1)
-    T.eq(Travel.leg, nil, "still a leg after Menethil: " .. kinds(Travel.plan))
+    T.ok(Travel.leg and Travel.leg.kind == "passage", "no tunnel from Menethil: " .. kinds(Travel.plan))
+    T.eq(A.hint, L.PASSAGE_TUNNEL:format("Loch Modan"))
+    at(1432, 25.3, 1.5)
+    T.eq(A.hint, L.PASSAGE_GATE_IN:format("Ironforge"))
+    at(1455, 21.5, 78.0)
+    T.eq(Travel.leg, nil, "still a leg inside Ironforge: " .. kinds(Travel.plan))
     T.eq(A.shownPoint.npc, banker.npc, "the arrow does not go to the banker")
     H.setNpcName(nil)
     H.fire("BANKFRAME_OPENED"); H.flush()
@@ -185,8 +195,12 @@ T.test("Orgrimmar to Thunder Bluff: the wind rider; Undercity: the zeppelin, the
     T.eq(table.concat(guns.means, ","), "zeppelin,fly")
     F:GoTo(guns)
     at(1458, 60, 50)
-    T.eq(kinds(Travel.plan), "zeppelin,fly")
-    T.ok(Travel.leg.kind == "zeppelin" and Travel.leg.point.map == 1420, "not the Tirisfal zeppelin first")
+    T.eq(kinds(Travel.plan), "lift,zeppelin,gate,fly")
+    -- Up the lift (its foot and its top share a spot: the ride changes the map), then the zeppelin.
+    T.ok(Travel.leg.kind == "passage" and Travel.leg.passage.kind == "lift", "not the lift first")
+    T.eq(A.hint, L.PASSAGE_LIFT_UP:format("Tirisfal Glades"))
+    at(1420, 63.15, 66.56)
+    T.ok(Travel.leg.kind == "zeppelin" and Travel.leg.point.map == 1420, "not the Tirisfal zeppelin after the lift")
     T.eq(A.hint, L.TRAVEL_ZEPPELIN:format("Durotar"))
     local trip = tripRow()
     T.ok(H.plain(trip.sub):find(Travel:Itinerary(Travel.plan), 1, true), "no itinerary under the trip")
