@@ -1,5 +1,50 @@
 # Changelog
 
+## v1.4.0
+
+Nothing else to install: QuestieDB is no longer needed, and TomTom stays optional.
+
+- **NPC directory**: open it from the new button of the guide window, a key binding or
+  `/ding find <text>`.
+  - **Nearby**, anywhere in the world: the nearest vendor, repairer, innkeeper, bank, auction
+    house, flight master, class trainer, stable master, ammunition, food and drink, reagents,
+    poisons, trade supplies and profession trainers.
+  - **Cities**: the six capitals and Booty Bay, Gadgetzan, Ratchet and Everlook, service by
+    service.
+  - **Weapon masters, by weapon**: only the weapons your class can learn and does not know yet.
+  - The arrow takes you there the fastest way, flights, boats and zeppelins included, and the
+    guide window shows the whole way.
+- **Weapon to learn**: a line in the guide window when your class can learn a new weapon, with
+  the weapon master to see.
+- **Quest monsters**: a mark above the nameplate of the monsters your quests need, with the
+  count; a line in their tooltip; an option to see enemy nameplates from farther.
+- **Beside an NPC's window**: what the guide does with each quest the NPC offers: now, later in
+  the guide, in another section, or not in the guide and why.
+- **Guide window**
+  - Each quest's level and name above its objectives; the next steps show the quest's level too.
+  - Texts are never cut: rows grow to show them whole.
+  - Messages about the whole window (quest log or bags almost full, the way there) get a box of
+    their own; the quest log one opens the cleanup page.
+- **Travel**
+  - Walking passages (lifts, tunnels, bridges, city gates, portals) and islands: the arrow no
+    longer points through a cliff or across the sea. The passages are not checked in game yet:
+    `/ding passages` lists the ones near you; please report a wrong one.
+  - A target inside a dungeon leads to the dungeon's entrance.
+  - The arrow keeps the target it follows until another one is clearly nearer.
+- **Leveling routes**
+  - 17 more quests that cost almost nothing on the way.
+  - One trip per class at weapon masters; every move step says where it goes.
+  - Bank steps come at the banker and say which quest needs the item.
+  - Notes say "the chest" when the target is not an NPC, and "this one roams" only for NPCs
+    that move.
+  - Horde: the Forever quest "This Is Spinal Axe" is left out (a long wait for little XP).
+- **Fixes**
+  - Taken up again after a zone done out of order, the guide no longer jumps ahead.
+  - "Next" moves to the step the preview shows, one step at a time.
+  - No more "AddOn blocked" popup on `/ding export`.
+  - With a gamepad, each action shows once in the windows.
+  - French: "repère" for the stops of a hunting loop.
+
 ## v1.3.0
 
 **QuestieDB is no longer needed**: Ding now carries its own game data, built from Questie's
@@ -22,8 +67,7 @@ database (thanks to its authors). You may remove the QuestieDB addon if no other
   https://github.com/moust4ki/DingGuideWoWForever/blob/main/docs/create-a-guide-with-ai.md
 - Travel: the arrow takes the fastest way, with known flight paths, boats, zeppelins, the
   tram, your hearthstone and teleports. The destination is highlighted on the flight map,
-  and the target's zone is shown under the arrow and on the world map. A target inside a
-  dungeon leads to the dungeon's entrance.
+  and the target's zone is shown under the arrow and on the world map.
 - New route options: hearthstone steps (on), death skips (off), elite quests (off), dungeon
   quests (off, or chosen dungeon by dungeon), take the planned flight automatically (off).
 - Along the way: experience and kills left on level steps, objectives of the other quests
