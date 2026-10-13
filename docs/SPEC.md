@@ -703,8 +703,8 @@ accent #5BB4FF, the Noto Sans font shipped with the addon, rounded shapes from t
 - **Notices** (state "notice", `action = "notice"`): what concerns the whole window rather than
   one row of the step gets a box of its own (no icon, 11 Regular, wrapped whole): right
   under the step, the way there (`travel`: the travel hint, then the itinerary), a trip of the
-  NPC directory (`trip`: with the way there in its box and "A: back to the guide"; A or a click
-  on it ends the trip) and why steps were passed (`skipped`); after the rows added under
+  NPC directory (`trip`: with the way there in its box, and a "Cancel the trip" control under
+  it: A or a click on it ends the trip) and why steps were passed (`skipped`); after the rows added under
   the step, the bags almost full (`bags`) and the quest log almost full (`cleanup`, with "A: see
   the list" or "Click: see the list": the settings open on the cleanup page). The guide's notes
   and the step's own hints (service, "press Next", marked by hand, option steps) stay under the
@@ -715,7 +715,8 @@ accent #5BB4FF, the Noto Sans font shipped with the addon, rounded shapes from t
   a quest that is ready to turn in or already turned in are done (in green, full counter),
   even when the client resets them to 0 (quest turned in, past step reviewed with
   "Previous"); a full counter also counts as done when the client's flag is secret.
-- **Step menu** (right click on the window or a line): "Mark as done" (like "Next") or
+- **Step menu** (right click on the window or a line): during a trip of the NPC directory,
+  "Cancel the trip to …" first; "Mark as done" (like "Next") or
   "Skip, do it later" (like a right click on "Next"), and on a line with a quest "Find this
   quest in the guide". On the gamepad, the "Next step" and
   "Skip step (do it later)" bindings do the same. A step settled by hand keeps its mark
@@ -862,13 +863,24 @@ accent #5BB4FF, the Noto Sans font shipped with the addon, rounded shapes from t
   flight map's destination, the boarding (Travel above). The guide window's `trip` notice says
   "On the way to … (Guns): the guide resumes once there.", with in its box what to take ("Fly to
   Ironforge"), the whole way ("Route: walk 0:20, fly 7:56 to Ironforge, walk 0:37 (8:53 in
-  all)"; no separate `travel` notice then) and "A: back to the guide" (or "Click: …"); the trip ends when that NPC's window opens (by its creature id,
-  else its name; when the client tells neither, the window of its kind: merchant, trainer, bank,
-  auction house, stable, flight map), then the guide takes the arrow back. On the first page
-  during a trip, a row "Back to the guide"; B there closes the window and ends the trip too (a
-  right click or Esc only closes it). The trip's notice itself, clicked or pressed in focus mode,
-  ends it. A weapon
-  master's trainer window is not taken for the class trainer's (`Training:Record`).
+  all)"; no separate `travel` notice then). The trip ends when that NPC's window opens (by its
+  creature id, else its name; when the client tells neither, the window of its kind: merchant,
+  trainer, bank, auction house, stable, flight map), then the guide takes the arrow back. It
+  also ends, the arrow back on the step at once, whenever the player moves the guide: next,
+  mark as done, skip, previous, back to a skipped step, another step ("Go to step N"), another
+  section or "Take this guide up where I am" (`Engine` → `Finder:Cancel(true)`; the guide's own
+  progress, quests done on the way, does not end it). And on demand (Yendi: "there must be a
+  clear way to cancel"):
+  - a "Cancel the trip" control right under the trip's notice (a row with a button's look:
+    `bg.control`, lighter under the mouse; in focus mode A on it, its chip on the right with a
+    gamepad); the notice itself only informs;
+  - "Cancel the trip to …" first in the step menu (right click on the window or a line);
+  - the directory's first row during a trip, "Cancel the trip" ("On the way to …"), focused when
+    the window opens (its binding or the pin button): A or a click; B there closes the window and
+    ends the trip too (a right click or Esc only closes it);
+  - `/ding cancel` ("Trip cancelled: the arrow follows the guide again.", or "No trip in
+    progress.").
+  A weapon master's trainer window is not taken for the class trainer's (`Training:Record`).
 - **Weapon to learn** (guide window, option "Weapon to learn" in the Guide tab, on by default):
   a row "Weapon to learn: Guns — Buliwyf Stonehand, Ironforge" when a weapon the class can use
   but does not know is in the bags or worn (its fastest weapon master), else when a weapon master

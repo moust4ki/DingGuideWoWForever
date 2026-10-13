@@ -14,6 +14,9 @@ Nothing else to install: QuestieDB is no longer needed, and TomTom stays optiona
   - **Weapon masters, by weapon**: only the weapons your class can learn and does not know yet.
   - The arrow takes you there the fastest way, flights, boats and zeppelins included, and the
     guide window shows the whole way.
+  - Cancel the trip from the "Cancel the trip" line of the guide window, its right-click menu,
+    the directory or `/ding cancel`; moving the guide yourself (next, skip, mark as done) ends
+    it too.
 - **Weapon to learn**: a line in the guide window when your class can learn a new weapon, with
   the weapon master to see.
 - **Quest monsters**: a mark above the nameplate of the monsters your quests need, with the

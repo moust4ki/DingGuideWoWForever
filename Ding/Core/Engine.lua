@@ -806,6 +806,15 @@ function E:SetPack(packId)
     return self:Resume(guide.id)
 end
 
+-- The player moves the guide (next, skip, back, another step or section): a trip of the NPC
+-- directory (UI/Finder.lua) ends, and the refresh that follows gives the arrow back to the guide.
+local function endTrip()
+    local F = Ding.Finder
+    if not (F and F.trip) then return false end
+    F:Cancel(true)
+    return true
+end
+
 -- resumeTo: optional, see E:Resume.
 function E:SetGuide(id, index, silent, resumeTo)
     local guide = Ding:GetGuide(id)
@@ -813,6 +822,7 @@ function E:SetGuide(id, index, silent, resumeTo)
         Ding:Print(L.GUIDE_UNKNOWN:format(tostring(id)))
         return false
     end
+    endTrip()
     self.guide = guide
     self.index = index or 1
     setResumeTo(resumeTo and resumeTo > self.index and resumeTo or nil)
@@ -923,7 +933,12 @@ local function heldOnScreen()
 end
 
 function E:Next()
-    if not self.guide or heldOnScreen() then return end
+    if not self.guide then return end
+    local ended = endTrip()
+    if heldOnScreen() then
+        if ended then self:Refresh() end
+        return
+    end
     if self.guide.steps[self.index] then
         Ding.Timing:Finish(self.guide.id, self.index)
         setManuallyDone(self.index, true)
@@ -940,7 +955,12 @@ end
 -- (Advance passes the ones already done). The skipped step stays undone, and is not
 -- timed; BackToIncomplete (or Prev) returns to it.
 function E:Skip()
-    if not self.guide or self.finished or heldOnScreen() then return end
+    if not self.guide or self.finished then return end
+    local ended = endTrip()
+    if heldOnScreen() then
+        if ended then self:Refresh() end
+        return
+    end
     local step = self.guide.steps[self.index]
     if step and not self:IsStepDone(step, self.index) then setSkipped(self.index, true) end
     self.index = self.index + 1
@@ -954,6 +974,7 @@ end
 -- when every earlier step is done.
 function E:BackToIncomplete()
     if not self.guide then return false end
+    endTrip()
     local steps = self.guide.steps
     local from = math.min(self.index, #steps + 1) - 1
     for i = from, 1, -1 do
@@ -975,6 +996,7 @@ end
 
 function E:Prev()
     if not self.guide or self.index <= 1 then return end
+    endTrip()
     Ding.Timing:Cancel()
     self.index = self.index - 1
     -- Skip steps meant for other races or classes.

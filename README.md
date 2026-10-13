@@ -84,8 +84,10 @@ window, B gives the gamepad back to the game. Up from the first line, the focus 
 NPC directory's button.
 
 The NPC directory (bind "NPC directory", or use the guide window's pin button): LB / RB change
-tabs, the D-pad picks, A opens a list or sends the arrow, B goes back or closes; during a trip,
-B on the first page takes the arrow back to the guide.
+tabs, the D-pad picks, A opens a list or sends the arrow, B goes back or closes. To cancel a trip:
+the "Cancel the trip" line under it in the guide window (a click, or A in focus mode), the first
+entry of the right-click menu, the directory's first row, or `/ding cancel`; moving the guide
+(next, skip, mark as done...) ends it too.
 
 The settings also move the window, the arrow and the item button with the D-pad, set the
 opacity and the size, minimize the guide in combat and pick the button names (Xbox or
@@ -109,7 +111,8 @@ gamepad button.
 lifts, gates and tunnels near you, for testers; the arrow points at the n-th) · `/ding import` (a guide as
 text) · `/ding export [id]` (a guide as text) · `/ding find <text>` (the NPC directory: a service,
 a weapon, a profession or a name, in your game's language or in English, such as
-`/ding find gun`, `/ding find bank`, `/ding find Buliwyf`) · `/ding next` · `/ding prev` · `/ding skip` · `/ding back` · `/ding reset` (take the guide up
+`/ding find gun`, `/ding find bank`, `/ding find Buliwyf`) · `/ding cancel` (end the directory's
+trip: the arrow follows the guide again) · `/ding next` · `/ding prev` · `/ding skip` · `/ding back` · `/ding reset` (take the guide up
 where you are) · `/ding scale <0.5-1.5>` · `/ding arrow` · `/ding arrowflip` ·
 `/ding minimap` · `/ding debug`
 

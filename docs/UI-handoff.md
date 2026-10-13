@@ -559,7 +559,10 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   same notice as its sub-line. The quest log's one adds "A: see the list" (mouse: "Click: see the
   list") and opens the settings on the cleanup page. A trip of the NPC directory: "On the way to
   … (…): the guide resumes once there.", the travel hint and the route in the same box (no
-  travel box then), and "A: back to the guide" ("Click: …"); A or a click ends the trip.
+  travel box then); right under it, 2 apart, a "Cancel the trip" control: a row with the
+  `bg.control` background and the `hover` one under the mouse, no icon, 12 Regular `text`; in
+  focus mode, focused, the A chip on its right (gamepad). The step menu starts with "Cancel the
+  trip to …" during a trip (the menu widens to its text).
 - **New continent** (not in the mockup): an ordinary "other" row under the step, "New continent:
   talk to … (flight master) to learn its flight paths".
 - **Persistent objectives, wrap-up, preview** (not in the mockup): sticky objectives are along-the-way

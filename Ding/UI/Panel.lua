@@ -37,9 +37,11 @@ local STATES = {
     header = { text = C.secondary, counter = C.secondary },
     -- A notice for the whole window (travel, bags, quest log): a box of its own, no icon.
     notice = { row = C.subtle, text = C.secondary, counter = C.secondary },
+    -- A control in the list (cancel the directory's trip): a button's background, no icon.
+    button = { row = C.control, text = C.text, counter = C.text },
 }
 -- Rows without an icon: their text starts where the icons do.
-local ICONLESS = { header = true, notice = true }
+local ICONLESS = { header = true, notice = true, button = true }
 -- Text of a row: weight and size. A quest's header in SemiBold; a notice like an info line,
 -- 11 Regular. Never a cap on the lines (Yendi: a note cut by an ellipsis could not be read):
 -- every text wraps whole and its row grows, down to the narrowest window (240 wide).
@@ -295,12 +297,14 @@ local function noticeRows(lines)
             list[#list + 1] = row
         end
     end
-    -- The trip of the NPC directory: A (a click) takes the arrow back to the guide.
-    local trip = byKind.trip
-    if trip then
-        local back = Ding.Gamepad:Active() and L.DIR_TRIP_PAD:format(Ding.Gamepad:ButtonName("PAD1"))
-            or L.DIR_TRIP_MOUSE
-        trip.sub = trip.sub and (trip.sub .. "\n" .. back) or back
+    -- The trip of the NPC directory: a control of its own under it ends the trip (A on it in
+    -- focus mode, or a click).
+    for i, row in ipairs(first) do
+        if row.notice == "trip" then
+            table.insert(first, i + 1,
+                { action = "tripcancel", kind = "other", state = "button", text = L.TRIP_CANCEL })
+            break
+        end
     end
     local cleanup = byKind.cleanup
     if cleanup then
@@ -543,11 +547,11 @@ function P:Aim(row)
     if row and row.action == "weapon" then return Ding.Finder:GoTo(row.entry, row.what) end
     if row and row.action == "wrapup" then return Ding.Engine:WrapUp(row.wrap) end
     if row and row.action == "preview" then return end
-    -- A notice: the quest log's opens the settings' cleanup page, the trip's takes the arrow
-    -- back to the guide (UI/Finder.lua), the others only inform.
+    -- The control under the trip's notice: the arrow goes back to the guide (UI/Finder.lua).
+    if row and row.action == "tripcancel" then return Ding.Finder:Cancel() end
+    -- A notice: the quest log's opens the settings' cleanup page, the others only inform.
     if row and row.action == "notice" then
         if row.notice == "cleanup" then Ding.Config:OpenCleanup() end
-        if row.notice == "trip" then Ding.Finder:Cancel() end
         return
     end
     if row and row.action == "gear" then return end
@@ -682,6 +686,11 @@ local function newRow(parent)
     r.sub = UI.Text(r, "regular", 11, C.secondary)
     UI.Wrap(r.sub, 11, NO_CAP)
     r.sub:SetPoint("TOPLEFT", r.text, "BOTTOMLEFT", 0, -2)
+    -- A control row (cancel the trip): lighter under the mouse, A on it in focus mode.
+    r.hover = UI.Shape(r, "row", C.hover, "HIGHLIGHT"):Place(r)
+    r.key = UI.Glyph(r)
+    r.key:SetPoint("RIGHT", r, "RIGHT", -ROW_PAD_X, 0)
+    r.key:Hide()
     r:SetScript("OnClick", function(self, button)
         if button == "RightButton" then
             -- On a gear upgrade: not wanted, never offered again. On a jump offer: never mind.
@@ -994,11 +1003,9 @@ end
 ---------------------------------------------------------------------------
 local MENU_WIDTH, MENU_ITEM, MENU_PAD = 210, 26, 4
 
-local function menuItem(menu, i, text, action)
+local function menuItem(menu, text, action)
     local b = CreateFrame("Button", nil, menu)
     b:SetHeight(MENU_ITEM)
-    b:SetPoint("TOPLEFT", menu, "TOPLEFT", MENU_PAD, -MENU_PAD - (i - 1) * MENU_ITEM)
-    b:SetPoint("TOPRIGHT", menu, "TOPRIGHT", -MENU_PAD, -MENU_PAD - (i - 1) * MENU_ITEM)
     b:RegisterForClicks("LeftButtonUp")
     b.bg = UI.Shape(b, "row", C.hover, "BACKGROUND"):Place(b)
     b.bg:Hide()
@@ -1014,9 +1021,14 @@ local function menuItem(menu, i, text, action)
     return b
 end
 
+-- The step menu (right click on the window or a row): during a trip of the NPC directory,
+-- "Cancel the trip to …" first; then mark the step done, skip it, and on a row with a quest,
+-- find it in the guide.
 function P:OpenStepMenu(row)
     local E = Ding.Engine
-    if not E.guide or E.finished then return end
+    local trip = Ding.Finder and Ding.Finder.trip
+    local steps = E.guide and not E.finished
+    if not steps and not trip then return end
     local m = self.stepMenu
     if not m then
         -- A click anywhere else closes the menu.
@@ -1029,19 +1041,36 @@ function P:OpenStepMenu(row)
         m:SetFrameStrata("DIALOG")
         m:SetFrameLevel(catcher:GetFrameLevel() + 5)
         m:SetClampedToScreen(true)
-        m:SetSize(MENU_WIDTH, MENU_PAD * 2 + MENU_ITEM * 2)
         m:EnableMouse(true)
         m.look = UI.Window(m)
-        m.done = menuItem(m, 1, L.STEP_MENU_DONE, function() Ding.Engine:Next() end)
-        m.skip = menuItem(m, 2, L.STEP_MENU_SKIP, function() Ding.Engine:Skip() end)
+        m.cancel = menuItem(m, "", function() Ding.Finder:Cancel() end)
+        m.done = menuItem(m, L.STEP_MENU_DONE, function() Ding.Engine:Next() end)
+        m.skip = menuItem(m, L.STEP_MENU_SKIP, function() Ding.Engine:Skip() end)
         -- On a row with a quest: where the guide deals with it.
-        m.find = menuItem(m, 3, L.STEP_MENU_FIND, function() P:FindQuest(m.quest) end)
+        m.find = menuItem(m, L.STEP_MENU_FIND, function() P:FindQuest(m.quest) end)
         m.catcher = catcher
         self.stepMenu = m
     end
-    m.quest = row and row.quest or nil
+    m.quest = steps and row and row.quest or nil
+    if trip then m.cancel.text:SetText(L.TRIP_CANCEL_TO:format(trip.name or "?")) end
+    local items = {}
+    m.cancel:SetShown(trip ~= nil)
+    if trip then items[#items + 1] = m.cancel end
+    for _, b in ipairs({ m.done, m.skip }) do
+        b:SetShown(steps and true or false)
+        if steps then items[#items + 1] = b end
+    end
     m.find:SetShown(m.quest ~= nil)
-    m:SetHeight(MENU_PAD * 2 + MENU_ITEM * (m.quest and 3 or 2))
+    if m.quest then items[#items + 1] = m.find end
+    local width = MENU_WIDTH
+    for i, b in ipairs(items) do
+        b:ClearAllPoints()
+        b:SetPoint("TOPLEFT", m, "TOPLEFT", MENU_PAD, -MENU_PAD - (i - 1) * MENU_ITEM)
+        b:SetPoint("TOPRIGHT", m, "TOPRIGHT", -MENU_PAD, -MENU_PAD - (i - 1) * MENU_ITEM)
+        width = math.max(width, UI.Measure(b.text) + 16 + MENU_PAD * 2)
+    end
+    m.items = items
+    m:SetSize(width, MENU_PAD * 2 + MENU_ITEM * #items)
     local scale = UIParent:GetEffectiveScale()
     local x, y = GetCursorPosition()
     m:ClearAllPoints()
@@ -1384,7 +1413,12 @@ local function layoutRow(f, i, data, y, width)
         UI.Wrap(r.text, style[2], NO_CAP)
     end
 
-    local counterWidth = 0
+    local button = data.state == "button"
+    r.hover:SetShown(button)
+    local chip = button and focused and Ding.Gamepad:Active()
+    if chip then r.key:SetKey("PAD1") end
+    r.key:SetShown(chip and true or false)
+    local counterWidth = chip and r.key:GetWidth() or 0
     if data.counter and data.state ~= "impossible" then
         r.counter:SetText(data.counter)
         r.counter:SetTextColor(unpack(look.counter))

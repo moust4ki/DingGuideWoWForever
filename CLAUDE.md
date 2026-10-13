@@ -236,7 +236,9 @@ Contracts between modules:
   `reach:Route(point)` -> seconds, `{ "fly", "boat"... }` (one planner pass, many targets).
   A trip goes through `Travel:Leg` like any target of the arrow.
   `Finder.trip` = `{ kind, npc, name, point, label }` (`Finder:GoTo(entry, label)`,
-  `Finder:Go(kind)`, `Finder:Cancel()`), read by the arrow and the guide window.
+  `Finder:Go(kind)`, `Finder:Cancel([quiet])`), read by the arrow and the guide window; the
+  engine ends it whenever the player moves the guide (Next, Skip, Prev, BackToIncomplete,
+  SetGuide).
 - `Ding.db` (DingDB, account): `panel` (position, `scale` 0.5-1.5, `width` 240-420, `locked`,
   `bgAlpha`, `compactInCombat`, `hideInInstance`, `keyHints`, `itemButton`), `arrow`
   (position, `size` 40-80, `style`, `mode`, `tomtom`, `loop`: farming loop, `worldMap`: the
