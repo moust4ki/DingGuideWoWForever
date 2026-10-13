@@ -40,10 +40,12 @@ local STATES = {
 }
 -- Rows without an icon: their text starts where the icons do.
 local ICONLESS = { header = true, notice = true }
--- Text of a row: weight, size, lines at most. A quest's header in SemiBold; a notice like
--- an info line, 11 Regular on up to three lines (the narrowest window is 240 wide).
-local TEXT_STYLE = { "regular", 12, 2 }
-local TEXT_STYLES = { header = { "semibold", 12, 2 }, notice = { "regular", 11, 3 } }
+-- Text of a row: weight and size. A quest's header in SemiBold; a notice like an info line,
+-- 11 Regular. Never a cap on the lines (Yendi: a note cut by an ellipsis could not be read):
+-- every text wraps whole and its row grows, down to the narrowest window (240 wide).
+local TEXT_STYLE = { "regular", 12 }
+local TEXT_STYLES = { header = { "semibold", 12 }, notice = { "regular", 11 } }
+local NO_CAP = 0             -- SetMaxLines: no limit
 local INDENT = 8             -- objectives under their quest's header
 
 local function clamp(v, low, high) return math.max(low, math.min(high, v)) end
@@ -604,6 +606,23 @@ local function hideQuest(owner)
     if GameTooltip:GetOwner() == owner then GameTooltip:Hide() end
 end
 
+-- The minimized window keeps one line (design): hovering it shows that row whole, with its
+-- note, when the line is cut or the note hidden. The gamepad's focus mode opens the window.
+function P:ShowCompactText(owner)
+    local data = self.compact and self.compactRow
+    if not data or (data.text or "") == "" then return end
+    local ok, cut = pcall(self.frame.mini.text.IsTruncated, self.frame.mini.text)
+    if ok and not cut and not data.sub then return end
+    GameTooltip:SetOwner(owner, "ANCHOR_BOTTOM")
+    GameTooltip:SetText(UI.StripColors(data.text), 1, 1, 1, 1, true)
+    if data.sub then
+        for line in (data.sub .. "\n"):gmatch("(.-)\n") do
+            GameTooltip:AddLine(UI.StripColors(line), C.secondary[1], C.secondary[2], C.secondary[3], true)
+        end
+    end
+    GameTooltip:Show()
+end
+
 ---------------------------------------------------------------------------
 -- Construction
 ---------------------------------------------------------------------------
@@ -644,13 +663,13 @@ local function newRow(parent)
     r.icon.item:SetPoint("CENTER", r.icon, "CENTER", 0, 0)
     r.icon.border = UI.Shape(r.icon, "smallBorder", C.strong, "OVERLAY"):Place(r.icon)
     r.text = UI.Text(r, "regular", 12, C.text)
-    UI.Wrap(r.text, 12, 2)
+    UI.Wrap(r.text, 12, NO_CAP)
     r.text:SetPoint("TOPLEFT", r, "TOPLEFT", ROW_PAD_X + ICON + ROW_GAP_X, -ROW_PAD_Y)
     r.counter = UI.Text(r, "semibold", 12, C.todo)
     r.counter:SetJustifyH("RIGHT")
     r.counter:SetPoint("TOPRIGHT", r, "TOPRIGHT", -ROW_PAD_X, -ROW_PAD_Y)
     r.sub = UI.Text(r, "regular", 11, C.secondary)
-    UI.Wrap(r.sub, 11, 3)
+    UI.Wrap(r.sub, 11, NO_CAP)
     r.sub:SetPoint("TOPLEFT", r.text, "BOTTOMLEFT", 0, -2)
     r:SetScript("OnClick", function(self, button)
         if button == "RightButton" then
@@ -726,6 +745,8 @@ function P:Create()
     f:SetScript("OnMouseUp", function(_, button)
         if button == "RightButton" then P:OpenStepMenu() end
     end)
+    f:SetScript("OnEnter", function(self) P:ShowCompactText(self) end)
+    f:SetScript("OnLeave", hideQuest)
     f.look = UI.Window(f)
 
     -- Title bar: menu, "Ding · guide", minimize, close.
@@ -1302,7 +1323,7 @@ local function layoutRow(f, i, data, y, width)
     if r.style ~= style then
         r.style = style
         r.text:SetFontObject(UI.Font(style[1], style[2]))
-        UI.Wrap(r.text, style[2], style[3])
+        UI.Wrap(r.text, style[2], NO_CAP)
     end
 
     local counterWidth = 0
@@ -1433,6 +1454,7 @@ function P:LayoutCompact()
         if row.state == "todo" then data = row break end
     end
     data = data or rows[1] or { text = "", state = "impossible", kind = "other" }
+    self.compactRow = data
     local done = self.holding ~= nil or data.state == "done"
     local current, total = 0, 0
     if E.guide then current, total = progress(E, self.holding) end

@@ -480,6 +480,69 @@ T.test("narrow window (240): the header, indented objectives and a notice box fi
     P:SetWidth(300)
 end)
 
+-- Yendi: a step note cut by an ellipsis ("Le PNJ est à l'intérieur, un étage plus…") could
+-- not be read anywhere. Every text of the window wraps whole and its row grows.
+local LONG_NOTE = "Le PNJ est à l'intérieur, un étage plus haut, au fond de la salle à droite de "
+    .. "l'escalier. Parle-lui deux fois : la première réponse ne donne rien, la seconde ouvre la quête."
+
+local ROW_PAD = 4        -- the rows' vertical padding (docs/UI-handoff.md)
+local function shownWhole(label)
+    for i, data in ipairs(P.rowsShown) do
+        local r = P.frame.rows[i]
+        T.ok(not r.text:IsTruncated(), ("%s: row %d cut: %s"):format(label, i, H.plain(data.text)))
+        T.ok(not (r.sub:IsShown() and r.sub:IsTruncated()), ("%s: sub-line of row %d cut"):format(label, i))
+        local need = ROW_PAD * 2 + r.text:GetStringHeight() + (r.sub:IsShown() and 2 + r.sub:GetStringHeight() or 0)
+        T.ok(r:GetHeight() >= need - ROW_PAD, ("%s: row %d shorter than its text"):format(label, i))
+    end
+end
+
+T.test("long texts: never cut, the rows grow (240 wide)", function()
+    Ding.RegisterGuide({ id = "t-long", title = "Long", races = { "NightElf" }, steps = {
+        { complete = 456, note = LONG_NOTE },
+    } })
+    start()
+    H.accept(456); H.flush()
+    E:SetGuide("t-long", 1, true); H.flush()
+    for _, width in ipairs({ 240, 300, 420 }) do
+        P:SetWidth(width)
+        shownWhole(width .. " wide")
+    end
+    P:SetWidth(240)
+    local noteRow
+    for i, data in ipairs(P.rowsShown) do
+        if data.sub and data.sub:find(LONG_NOTE, 1, true) then noteRow = P.frame.rows[i] end
+    end
+    T.ok(noteRow, "the note is not in the window")
+    T.ok(noteRow.sub:GetStringHeight() > 3 * 11, "the note's sub-line did not grow past three lines")
+    -- A long notice (the way there) and a long objective-like text, too.
+    A.hint = LONG_NOTE
+    P:Update()
+    local notice
+    for i, data in ipairs(P.rowsShown) do
+        if data.notice == "travel" then notice = P.frame.rows[i] end
+    end
+    T.ok(notice, "no travel notice")
+    T.ok(notice.text:GetStringHeight() > 3 * 11, "the notice did not grow past three lines")
+    shownWhole("notice")
+    A.hint = nil
+    -- Minimized, the window keeps one line: hovering it shows the whole row and its note.
+    P:SetCompact(true)
+    local f = P.frame
+    T.ok(f.mini.text:IsTruncated(), "the one-line text is not cut at 240: nothing to check")
+    f.scripts.OnEnter(f)
+    T.ok(GameTooltip:IsShown() and GameTooltip:GetOwner() == f, "no card over the minimized window")
+    local row
+    for _, data in ipairs(P:Rows()) do
+        if data.state == "todo" then row = row or data end
+    end
+    T.eq(GameTooltip.text, H.plain(row.text))
+    T.ok(table.concat(GameTooltip.lines, " "):find(LONG_NOTE, 1, true), "the note is missing from the card")
+    f.scripts.OnLeave(f)
+    T.ok(not GameTooltip:IsShown(), "card still shown")
+    P:SetCompact(false)
+    P:SetWidth(300)
+end)
+
 T.test("focus mode: only its keys are taken, the D-pad browses, A aims, B exits", function()
     start()
     H.accept(456); H.flush()

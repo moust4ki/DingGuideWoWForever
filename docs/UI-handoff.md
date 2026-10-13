@@ -523,10 +523,15 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
 - **Step language 2** (not in the mockup): the dungeons' page of the Route tab (above); the
   arrow's label on a patrol, "text · point 2 of 5"; as a ghost on a death skip with a spirit
   healer, "Spirit healer".
+- **Texts never cut** (Yendi's feedback: a step note ended in "un étage plus…" and could not be
+  read anywhere): the rows' text, sub-lines (notes, hints) and notices wrap with no line cap
+  (instead of "2 lines max" for the text and 3 for the sub-line); the row grows, at every width
+  from 240. The minimized window keeps its one line with an ellipsis; hovering it shows that
+  row whole with its note in a tooltip, and the gamepad's focus mode opens the window.
 - **Notices** (not in the mockup): what concerns the whole window (the way there, a trip to a
   service, steps passed, bags almost full, quest log almost full) is a box of its own instead of
   a sub-line of the last row: row background `#FFFFFF0A` (`subtle`), radius 4, no icon, text
-  11/14 Regular `text.secondary` at the icons' x on up to three lines, the other lines of the
+  11/14 Regular `text.secondary` at the icons' x, wrapped whole, the other lines of the
   same notice as its sub-line. The quest log's one adds "A: see the list" (mouse: "Click: see the
   list") and opens the settings on the cleanup page.
 - **New continent** (not in the mockup): an ordinary "other" row under the step, "New continent:
