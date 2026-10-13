@@ -413,32 +413,34 @@ accepted again from its giver.
 
 Yendi's question in game: the NPCs offer quests the guide does not ask for. Next to the game's
 window (gossip, greeting or quest details), a small Ding window, "Ding! · These quests and your
-guide", answers at a glance "should I take this quest now?". Each quest the NPC offers (its level
-and its name in the client's language, from DingDB) gets a verdict first, in color, then the
-reason in plain words:
+guide", answers "should I take this quest now?" in plain sentences, without color codes (Yendi's
+feedback: colors are hard to decode). Each quest the NPC offers (its level and its name in the
+client's language, from DingDB, in the text color) gets one or two sentences:
 
-- **Take it** (`done`): the steps at the player's place take it ("it is the current step", "the
-  guide takes it here, at step N", or a catch-up: "the guide's next quests need it"); or no step
-  takes it from here on but a later step completes or turns it in ("step N needs it and you do
-  not have it": the player missed it).
-- **You can take it** (`accent`): a later step of the active section takes it and AutoQuest would
-  take it on the way (not above the player's level, fewer than 15 quests in the log): "the guide
-  takes it at step N, this saves you a trip back".
-- **Not now** (`text`): a later step takes it but it is above the player's level or the log is
-  almost full; or a later section takes it: "the guide takes it later, in “<section>” (levels
-  a-b), when you come back".
-- **Optional** (`text.secondary`): the guide took it earlier, at a step already passed or in a
-  section before the active one.
-- **Not needed by the guide** (`text.muted`): elite or dungeon quest with its option off, for
-  another race or class, an elite quest (an objective with elite monsters only, or the quest
-  before it in its chain: Mor'Ladim, The Daughter Who Lived), too high (more than 2 levels
-  above), a WoW Forever quest (ids from 10000: Classic's end at 9665) the route leaves out, a gray
-  quest the guide skips ("Skip gray quests"), else "the route does not take it".
+- "Take it: it is the guide's current step." / "...: the guide takes it here, at step N." /
+  "...: the guide's next quests need it." (a catch-up) / "...: step N of the guide needs it and
+  you do not have it yet." (no step takes it from here on, a later step completes or turns it in).
+- "The guide does this quest later (step N)." then "You can take it now: it saves you a trip
+  back." when AutoQuest would take it on the way (not above the player's level, fewer than 15
+  quests in the log), else "It is too high for you for now (level X, you are level Y)." or "Your
+  quest log is almost full: keep it for later."
+- "The guide does this quest when you come back here, in “<section>” (levels a-b)." (a later
+  section of the active pack).
+- "The guide took this quest earlier (step N, already passed): do it if you like." or "..., in
+  “<section>” (levels a-b): ..." (a section before the active one).
+- "The guide does not do this quest: <reason>." with the **real** reason when Ding knows it: an
+  elite quest (option off), done in a dungeon (option off), for another race or class, an elite
+  quest for a group (an objective with elite monsters only, or the quest before it in its chain:
+  the generator's own rule), or the route's own reason through `Offers:WhyLeftOut(q)`, the one
+  place that asks `Ding.Why:Quest(q)` (the generator's reasons, when shipped: a clause or
+  `{ text }`). "The guide skips this quest: it is gray, too low for you." ("Skip gray quests").
+- Otherwise, honestly: "The guide does not plan this quest." (plus "It is too high for you for
+  now (level X, you are level Y)." as a fact, never as the reason).
 
-A quest above the player's level adds both levels ("It is level 28, you are level 26.").
-**Shown only when it helps**: one quest at least that the steps at the player's place do not
-take; when the guide takes every quest offered right here, nothing shows. Then every quest of
-the window has its row, in the window's order; names and lines wrap, never cut.
+A quest above the player's level adds "It is level X, you are level Y." **Shown only when it
+helps**: one quest at least that the steps at the player's place do not take; when the guide
+takes every quest offered right here, nothing shows. Then every quest of the window has its
+row, in the window's order; names and sentences wrap, never cut.
 
 Steps are read without their conditions (`when` can hold later); each section is indexed once.
 The greeting window only gives titles: they are matched to the quests the NPC starts

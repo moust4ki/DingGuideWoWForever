@@ -430,11 +430,9 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   HIGH, no mouse), its top level with the game's NPC window and 8 to its right (to its left
   when the screen has no room), else at 370, -116 from the top left. Title 12 SemiBold
   "Ding! · These quests and your guide" (Ding! in `accent`, the dot in `text.disabled`),
-  divider at 26; then per quest, padding 12: "[level] name" 12 Medium `text` (orange `above`
-  over the player's level), 2 lower "Verdict: why." 11 Regular `text.secondary`, the verdict in
-  its color (`done` take it, `accent` you can take it, `text` not now, `text.secondary`
-  optional, `text.muted` not needed by the guide); both wrap without a line limit; 8 between
-  quests.
+  divider at 26; then per quest, padding 12: "[level] name" 12 Medium `text`, 2 lower one or
+  two plain sentences 11 Regular `text.secondary`, no color code (Yendi's feedback); both wrap
+  without a line limit; 8 between quests.
 - **TomTom**: optional and **off by default**; Ding's arrow is enough (Yendi's request); the
   old settings are migrated to Ding's arrow.
 - **Minimap button** (Yendi's request): left click opens the settings, right click the guide;

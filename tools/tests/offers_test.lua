@@ -1,11 +1,10 @@
--- Quests an NPC offers: beside the game's window, whether to take each one now and why (take it,
--- you can take it, not now, optional, not needed by the guide), shown only when one quest at
--- least is not for right now. The game's windows are only read: the mock's GossipFrame and
+-- Quests an NPC offers: beside the game's window, plain sentences on whether to take each one now
+-- and why (no color code), shown only when one quest at least is not for right now. The game's windows are only read: the mock's GossipFrame and
 -- QuestFrame fail on anything else.
 local tools = (arg[0]:match("^(.*)[/\\]") or ".") .. "/.."
 local T = dofile(tools .. "/testlib.lua")(arg[1])
 local Ding, H = T.Ding, T.H
-local E, O, L = Ding.Engine, Ding.Offers, Ding.L
+local E, O, L, UI = Ding.Engine, Ding.Offers, Ding.L, Ding.UI
 
 -- Duskwood's quests (real data: names, levels, monsters) in a pack of three sections.
 local SUPPLIES, ZOMBIE, TRANSLATION, HERMIT, THREAD = 148, 158, 252, 165, 157
@@ -59,80 +58,104 @@ local function talk(npc)
     return O.frame and O.frame:IsShown() and O.entries or nil
 end
 
-T.test("take it: the current step, or a step at the player's place", function()
+T.test("take it: the current step, or a later step that needs it", function()
     start(1)
     local v, text, r = verdict(SUPPLIES)
     T.eq(r.kind, "now")
     T.eq(v, "take")
-    T.eq(text, "Prends-la : c'est l'étape en cours.")
-    local _, line = O:Verdict(r, SUPPLIES, O:Context())
-    T.ok(line:find("|cff4cc38aPrends-la|r", 1, true) == 1, "the verdict first, in green")
+    T.eq(text, "Prends-la : c'est l'étape en cours du guide.")
     -- Past the steps that take it, a later step still needs it (and at step 3 the engine catches
     -- it up first: an earlier quest of ZOMBIE's chain).
     start(4)
-    T.eq(select(2, verdict(SUPPLIES)), "Prends-la : l'étape 8 en a besoin et tu ne l'as pas.")
+    T.eq(select(2, verdict(SUPPLIES)), "Prends-la : l'étape 8 du guide en a besoin et tu ne l'as pas encore.")
 end)
 
-T.test("you can take it: a later step takes it and AutoQuest would on the way", function()
+T.test("later in the guide: its step, and you can take it now when AutoQuest would", function()
     start(1)
     local v, text, r = verdict(ZOMBIE)
     T.eq(r.kind, "later")
     T.eq(r.step, 3)
     T.eq(v, "can")
-    T.eq(text, "Tu peux la prendre : le guide la prend à l'étape 3, ça t'évite de revenir.")
+    T.eq(text, "Cette quête sera faite plus tard dans le guide (étape 3). "
+        .. "Tu peux la prendre dès maintenant : ça t'évite de revenir.")
 end)
 
-T.test("not now: a later step, too high or the log full; a later section", function()
+T.test("later in the guide, not now: too high, or the log full; when you come back", function()
     start(1, { level = 22 })
     local v, text = verdict(ZOMBIE)
     T.eq(v, "notNow")
-    T.eq(text, "Pas maintenant : le guide la prend à l'étape 3. Elle est niveau 24, tu es niveau 22.")
+    T.eq(text, "Cette quête sera faite plus tard dans le guide (étape 3). "
+        .. "Elle est trop haute pour toi pour l'instant (niveau 24, tu es niveau 22).")
     start(1)
     local states = {}
     for i = 1, Ding.AutoQuest.AHEAD_LOG_LIMIT do states[900600 + i] = "log" end
     T.quests(states)
     v, text = verdict(ZOMBIE)
     T.eq(v, "notNow")
-    T.eq(text, "Pas maintenant : le guide la prend à l'étape 3 (ton journal de quêtes est presque plein).")
+    T.eq(text, "Cette quête sera faite plus tard dans le guide (étape 3). "
+        .. "Ton journal de quêtes est presque plein : garde-la pour plus tard.")
     start(1)
     v, text = verdict(EFFIGY)
     T.eq(v, "notNow")
-    T.eq(text, "Pas maintenant : le guide la prend plus tard, dans « Stranglethorn » (niveaux 30-32), "
-        .. "quand tu reviendras. Elle est niveau 27, tu es niveau 25.")
+    T.eq(text, "Cette quête sera faite quand tu reviendras ici, dans « Stranglethorn » (niveaux 30-32). "
+        .. "Elle est niveau 27, tu es niveau 25.")
 end)
 
-T.test("optional: the guide took it earlier, in this section or a section before", function()
+T.test("the guide took it earlier, in this section or a section before", function()
     start(8)
     local v, text = verdict(ZOMBIE)
     T.eq(v, "optional")
-    T.eq(text, "Facultative : le guide la prenait à l'étape 3, déjà passée.")
+    T.eq(text, "Le guide prenait cette quête plus tôt (étape 3, déjà passée) : fais-la si tu veux.")
     start(1)
     v, text = verdict(GHOST_HAIR)
     T.eq(v, "optional")
-    T.eq(text, "Facultative : le guide la prenait plus tôt, dans « Elwynn » (niveaux 10-12).",
+    T.eq(text, "Le guide prenait cette quête plus tôt, dans « Elwynn » (niveaux 10-12) : fais-la si tu veux.",
         "the section's levels once, not in its title too")
 end)
 
-T.test("not needed by the guide: options off, then on", function()
+T.test("the guide does not do it: elite and dungeon options off, then on", function()
     start(1)
     local v, text = verdict(TRANSLATION)
     T.eq(v, "useless")
-    T.eq(text, "Inutile pour le guide : quête élite (option désactivée). Elle est niveau 30, tu es niveau 25.")
-    T.eq(select(2, verdict(THREAD)), "Inutile pour le guide : quête de donjon (option désactivée).")
+    T.eq(text, "Le guide ne fait pas cette quête : c'est une quête élite (option désactivée). "
+        .. "Elle est niveau 30, tu es niveau 25.")
+    T.eq(select(2, verdict(THREAD)), "Le guide ne fait pas cette quête : elle se fait dans un donjon (option désactivée).")
     Ding.db.ui.elites, Ding.db.ui.dungeons = true, true
     T.eq(select(3, verdict(TRANSLATION)).step, 4)
     T.eq(select(3, verdict(THREAD)).step, 6)
 end)
 
-T.test("not needed by the guide: race or class, elite, too high, WoW Forever, nothing known", function()
+T.test("the guide does not do it: race or class, an elite quest", function()
     start(1)
-    T.eq(select(2, verdict(HERMIT)), "Inutile pour le guide : pour une autre race ou classe.")
-    T.eq(select(2, verdict(MORLADIM)), "Inutile pour le guide : quête élite, à faire en groupe. Elle est niveau 35, tu es niveau 25.")
+    T.eq(select(2, verdict(HERMIT)), "Le guide ne fait pas cette quête : elle est pour une autre race ou classe.")
+    T.eq(select(2, verdict(MORLADIM)), "Le guide ne fait pas cette quête : c'est une quête élite, à faire en groupe. "
+        .. "Elle est niveau 35, tu es niveau 25.")
     T.eq(select(3, verdict(MORBENT)).reason, "elite", "Morbent Fel")
     T.eq(select(3, verdict(DAUGHTER)).reason, "elite", "The Daughter Who Lived: after Mor'Ladim")
-    T.eq(select(2, verdict(OGRES)), "Inutile pour le guide : trop haute pour toi. Elle est niveau 30, tu es niveau 25.")
-    T.eq(select(2, verdict(FOREVER)), "Inutile pour le guide : quête propre à WoW Forever, hors du parcours.")
-    T.eq(select(2, verdict(NIGHT_WATCH)), "Inutile pour le guide : le parcours ne la prend pas.")
+end)
+
+T.test("no reason known: said honestly, with the level as a fact when too high", function()
+    start(1)
+    T.eq(select(2, verdict(NIGHT_WATCH)), "Le guide ne prévoit pas cette quête.")
+    T.eq(select(2, verdict(FOREVER)), "Le guide ne prévoit pas cette quête.")
+    T.eq(select(2, verdict(OGRES)), "Le guide ne prévoit pas cette quête. "
+        .. "Elle est trop haute pour toi pour l'instant (niveau 30, tu es niveau 25).")
+end)
+
+T.test("the route's own reason, from Ding.Why when it is there", function()
+    start(1)
+    Ding.Why = { Quest = function(_, q)
+        if q == NIGHT_WATCH then return "elle rapporte trop peu d'XP pour le détour" end
+        if q == FOREVER then return { text = "elle demande une réputation" } end
+    end }
+    T.eq(select(2, verdict(NIGHT_WATCH)), "Le guide ne fait pas cette quête : elle rapporte trop peu d'XP pour le détour.")
+    T.eq(select(2, verdict(FOREVER)), "Le guide ne fait pas cette quête : elle demande une réputation.")
+    T.eq(select(2, verdict(OGRES)):find("Le guide ne prévoit pas cette quête.", 1, true), 1, "nothing from Ding.Why: unknown")
+    T.eq(select(2, verdict(HERMIT)), "Le guide ne fait pas cette quête : elle est pour une autre race ou classe.",
+        "the player's race or class first")
+    Ding.Why = { Quest = function() error("broken") end }
+    T.eq(select(2, verdict(NIGHT_WATCH)), "Le guide ne prévoit pas cette quête.", "an error in Ding.Why: unknown")
+    Ding.Why = nil
 end)
 
 T.test("a gray quest the guide skips", function()
@@ -140,7 +163,7 @@ T.test("a gray quest the guide skips", function()
     Ding.db.ui.skipGrey = true
     local v, text = verdict(ZOMBIE)
     T.eq(v, "useless")
-    T.eq(text, "Inutile pour le guide : quête grise, trop basse pour toi.")
+    T.eq(text, "Le guide passe cette quête : elle est grise, trop basse pour toi.")
     Ding.db.ui.skipGrey = false
 end)
 
@@ -169,6 +192,11 @@ T.test("several quests: one row each, in the window's order, beside the gossip w
     for i, e in ipairs(rows) do verdicts[i] = e.verdict end
     T.eq(table.concat(verdicts, " "), "take can notNow useless useless")
     local f = O.frame
+    -- No color code: plain sentences, every name in the text color (above the player's level too).
+    for i, e in ipairs(rows) do
+        T.ok(not e.text:find("|c", 1, true), "a color code in row " .. i)
+        T.eq(table.concat(f.rows[i].name.color, ","), table.concat({ unpack(UI.C.text, 1, 3) }, ","), "name " .. i)
+    end
     T.eq(H.plain(f.title:GetText()), "Ding! · Ces quêtes et ton guide")
     T.eq(rows[1].name, "[24] Fournitures en provenance de Darkshire", "the quest's name in the client's language")
     local point, rel, relPoint, x, y = f:GetPoint()
@@ -232,7 +260,8 @@ T.test("quest details: the one quest shown", function()
     H.flush()
     T.ok(O.frame:IsShown())
     T.eq(#O.entries, 1)
-    T.eq(O.entries[1].result.reason, "above")
+    T.eq(O.entries[1].result.kind, "none")
+    T.eq(O.entries[1].verdict, "useless")
     H.closeDialog()
     -- The current step's quest alone in its details: nothing to say.
     H.showQuest({ gives = { SUPPLIES } }, "detail", SUPPLIES)
