@@ -552,11 +552,6 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   `text.secondary` 8 in (no check column), never focused nor picked; the D-pad, a page jump
   and the mouse pass over it. Opening the list scrolls a header into view with the first item
   under it.
-- **Target line** (not in the mockup): under the arrow's distance, gap 2, a glyph chip of the
-  target binding then "Target: name" in 11 Regular `#A3A9B3` with the text shadow; only when
-  that binding is bound and the arrow points to an NPC or a monster. In the Keybinds tab, an
-  info row under the bindings (11 Regular `text.secondary`) suggests the game's "Interact with
-  Target" key.
 - **Quest monster mark** (not in the mockup, `UI/QuestMobs.lua`): over an enemy nameplate,
   bottom centered on the plate's top, 2 up; 18 high, the "small" shape (radius 3) in
   `itemBg` with a 1.5 border; the glyph of the window's rows (diamond 7 for a kill, dot 7 for
@@ -566,6 +561,11 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   another quest: glyph and counter `text.secondary`, border `border`, the mark at 80 %. In
   the unit tooltip, one line per objective: "Ding!" in `accent`, then " · “Quest” 3/8" in
   `text` (the step's) or `text.secondary` (another quest's).
+- **Target line** (not in the mockup): under the arrow's distance, gap 2, a glyph chip of the
+  target binding then "Target: name" in 11 Regular `#A3A9B3` with the text shadow; only when
+  that binding is bound and the arrow points to an NPC or a monster. In the Keybinds tab, an
+  info row under the bindings (11 Regular `text.secondary`) suggests the game's "Interact with
+  Target" key.
 
 ## To check in game (Forever 1.60)
 
