@@ -624,7 +624,8 @@ end
 
 -- The card's last line: what a click on the row does, or A in focus mode (the gamepad's).
 local function clickLine()
-    local text = P.focusing and L.ROW_CLICK_PAD:format(Ding.Gamepad:ButtonName("PAD1")) or L.ROW_CLICK
+    local pad = P.focusing and Ding.Gamepad:Active()
+    local text = pad and L.ROW_CLICK_PAD:format(Ding.Gamepad:ButtonName("PAD1")) or L.ROW_CLICK
     GameTooltip:AddLine(text, 0.6, 0.6, 0.6, true)
 end
 
@@ -699,7 +700,7 @@ function P:ShowQuest(row, owner)
     -- noAim: a card shown elsewhere than in the guide window (settings).
     if not row.noAim and not row.preview then clickLine() end
     -- Focus mode: Right finds the quest in the guide (the mouse has the step menu for it).
-    if self.focusing and not row.noAim then
+    if self.focusing and Ding.Gamepad:Active() and not row.noAim then
         GameTooltip:AddLine(L.ROW_FIND_PAD:format(Ding.Gamepad:ButtonName("PADDRIGHT")), 0.6, 0.6, 0.6, true)
     end
     GameTooltip:Show()
