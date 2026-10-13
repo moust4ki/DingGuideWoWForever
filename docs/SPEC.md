@@ -337,7 +337,17 @@ keys of section 2 above.
   at most, then "and N more".
 - An optional step is passed as soon as a later step makes progress, or right away if its
   quest was never accepted (starting item never dropped).
-- After "Previous", the engine stays on the displayed step until "Next".
+- After "Previous", the engine stays on the displayed step until "Next". **Browsing is one
+  step at a time both ways**: "Previous" shows the step before (the previous one for the
+  character's race, class and options), done or not; "Next" then shows the step right after
+  the one on screen, done or not, marking nothing, until the guide's current step is back
+  (`Engine.browseFrom`, `Engine:IsBrowsing()`); only there does "Next" mean "mark done and
+  move on" (in game, 13/10/2026: "Next" after "Previous" ×N marked the step shown and jumped
+  to the next step still to do). The preview under a step browsed back lists the steps
+  "Next" will show. "Go to step" on a step behind in the section shows it the same way
+  (`Engine:BrowseTo`), the gamepad's LB / RB in focus mode too; while browsing, the saved
+  step stays the guide's current one. The step menu's "Mark as done" (`Engine:MarkDone`)
+  still marks the step shown and goes on to the next step still to do.
 - **Skipping a step** (binding, right click on "Next", `/ding skip`): goes to the next step
   to do without validating this one, which is not timed. **Going back to a skipped step**
   (binding, right click on "Previous", `/ding back`) brings back the nearest step not done
@@ -607,7 +617,9 @@ under every following step (with the along-the-way rows, first, "Another quest o
 finish along the way: [29] “quest”" — said as another quest, never as the step's work — whatever
 the distance; never twice, never under a step that names the quest, nor under a step seen again
 with "Previous": in game, 13/10/2026, "The Cursed Crew" listed at 0/13 in red under a step done
-read as that step's objectives), and their targets
+read as that step's objectives; nor, whatever the distance, while the next step still to do
+works on that quest: it comes right after, and among its monsters it is an ordinary
+along-the-way row), and their targets
 are **low-priority arrow candidates** on the steps with quests (not on a trip: a `go` point
 must stay the arrow's to be validated): such a point counts as twice its distance plus 300
 yards. A quest turned in leaves the set, and so does a quest the active guide only makes

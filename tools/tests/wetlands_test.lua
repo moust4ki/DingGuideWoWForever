@@ -102,6 +102,15 @@ T.test("\"previous\": a step done shows its own rows, not another quest's in red
     end
 end)
 
+T.test("the step before the Cursed Crew's own does not list it as another quest", function()
+    arrive()
+    E:SetGuide(GUIDE, CREW, true); H.flush()
+    -- The step that makes it sticky, shown as the guide's step: its own comes right after.
+    E.index = HOVELS; E:Refresh(); H.flush()
+    T.ok(E:NextSteps(1)[1] == E.guide.steps[CREW], "premise: the Cursed Crew's step comes next")
+    T.eq(#rowsOf(CURSED_CREW), 0, "listed as another quest under the step before its own")
+end)
+
 T.test("further on, the Cursed Crew is said as another quest of the log", function()
     arrive()
     E:SetGuide(GUIDE, APPRENTICE, true); H.flush()
