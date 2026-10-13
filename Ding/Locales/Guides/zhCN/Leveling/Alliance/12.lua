@@ -7,10 +7,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a12-wetlands", {
         "前往米奈希尔港",
     ["Wetlands: Menethil Harbor, on the west coast."] =
         "湿地：米奈希尔港，在西海岸。",
-    ["This one roams, so scan the surrounding area."] =
-        "它会四处游荡，在周围找找。",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "它会四处游荡，在周围找找。NPC在室内。",
+    ["The NPC is indoors."] =
+        "NPC在室内。",
     ["The NPC is indoors, one floor up."] =
         "NPC在室内楼上一层。",
     ["Your targets sit below the water's surface. Targets are within the wrecked vessel underwater."] =
@@ -37,8 +35,6 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a12-wetlands", {
         "离开维尔加挖掘场",
     ["The targets are orcs."] =
         "目标是兽人。",
-    ["The NPC is indoors."] =
-        "NPC在室内。",
     ["The target is up on the boat's top deck. Climb the incline at the rear."] =
         "目标在船的顶层甲板上。爬上后面的斜坡。",
     ["Go to the lowest deck of the ship. Your targets sit below the water's surface. Swim in via the gap at the base."] =
@@ -51,8 +47,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a12-wetlands", {
         "这些敌人会潜行隐身。多在水中或水边。",
     ["Take the door on the bridge, then descend the steps"] =
         "从桥上的门进去，然后走下台阶",
-    ["Be ready for a fight right away. The NPC is on the lower level within the bridge."] =
-        "准备好马上战斗。NPC在桥内部的下层。",
+    ["Be ready for a fight right away. The object is on the lower level within the bridge."] =
+        "准备好马上战斗。该物件在桥内部的下层。",
     ["Leap from the span and splash down below"] =
         "从桥上跳下，落入下面的水中",
     ["Look for a pale, rolled scroll. A dwarf corpse grips it. Your targets sit below the water's surface."] =

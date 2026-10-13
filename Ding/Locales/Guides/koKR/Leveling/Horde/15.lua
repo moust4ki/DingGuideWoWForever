@@ -15,14 +15,12 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h15-desolace", {
         "높은 절벽 꼭대기에서 찾으세요.",
     ["Climb the trail"] =
         "길을 따라 올라가세요",
-    ["The targets are spread over several spots. The NPC is indoors."] =
-        "대상은 여러 곳에 흩어져 있습니다. NPC는 건물 안에 있습니다.",
+    ["The targets are spread over several spots. The target is indoors."] =
+        "대상은 여러 곳에 흩어져 있습니다. 대상은 건물 안에 있습니다.",
     ["Other satyrs use the same spawn points. Beware of foes lurking in stealth."] =
         "다른 사티로스도 같은 생성 위치를 씁니다. 은신해 숨어 있는 적을 조심하세요.",
     ["Beware of foes lurking in stealth."] =
         "은신해 숨어 있는 적을 조심하세요.",
-    ["This one roams, so scan the surrounding area."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요.",
     ["The targets here are centaurs. Magram Pack Runners patrol with 2 hyena escorts; steer clear."] =
         "여기의 대상은 켄타우로스입니다. 마그람일족 조련사는 하이에나 2마리를 데리고 순찰합니다. 피하세요.",
     ["Target kodos with the item. The kodos trail behind you. Lead them to Smeed Scrabblescrew, then speak with them there."] =
@@ -47,10 +45,10 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h15-desolace", {
         "야수 관리인에게서 소환수를 찾아오세요.",
     ["Release the short-term pet you tamed."] =
         "길들인 임시 소환수를 풀어 주세요.",
-    ["The NPC waits on the tower's highest floor."] =
-        "NPC는 탑 꼭대기 층에서 기다립니다.",
-    ["Defeat every foe in this chamber before starting. The NPC is indoors."] =
-        "시작하기 전에 이 방의 적을 모두 처치하세요. NPC는 건물 안에 있습니다.",
+    ["The target is on the tower's highest floor."] =
+        "대상은 탑 꼭대기 층에 있습니다.",
+    ["Defeat every foe in this chamber before starting. The target is indoors."] =
+        "시작하기 전에 이 방의 적을 모두 처치하세요. 대상은 건물 안에 있습니다.",
     ["Target Burning Blade foes with the item. Wait for the foe to be badly hurt, then apply it."] =
         "불타는칼날단 적에게 아이템을 사용하세요. 적이 크게 다칠 때까지 기다렸다가 사용하세요.",
     ["The quest starts from a little book."] =

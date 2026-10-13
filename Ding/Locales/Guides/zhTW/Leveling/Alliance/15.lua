@@ -19,18 +19,14 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a15-hillsbrad-foothills-and-arat
         "離開洞穴",
     ["The targets are spread over several spots."] =
         "目標分散在好幾個地點。",
-    ["This one roams, so scan the surrounding area."] =
-        "這個會四處走動，留意周圍一帶。",
     ["Beware of foes lurking in stealth. Further hidden ones lurk on the high ridgelines. Some are indoors as well."] =
         "小心潛行中的敵人。高處的山脊上還藏著更多。有些也在室內。",
     ["Fly to Aerie Peak"] =
         "飛往鷹巢山",
     ["The NPC is at the summit of the trail. This spares you time further on."] =
         "NPC在小路的最高處。這能為後面省下時間。",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "這個會四處走動，留意周圍一帶。NPC在室內。",
-    ["Let the conversation play out. The NPC is indoors. This one roams, so scan the surrounding area."] =
-        "讓對話播完。NPC在室內。這個會四處走動，留意周圍一帶。",
+    ["Let the conversation play out. The NPC is indoors."] =
+        "讓對話播完。NPC在室內。",
     ["Stay on the trail"] =
         "沿著小路走",
 })

@@ -35,8 +35,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h20-stranglethorn-vale-and-swamp
         "스토나드 비행 조련사",
     ["The NPC is indoors, one floor up."] =
         "NPC는 건물 안 한 층 위에 있습니다.",
-    ["The target is a humanoid escorted by 2 guards. The NPC patrols a long route; look along it."] =
-        "대상은 경비병 2명이 호위하는 인간형입니다. NPC는 긴 경로를 순찰합니다. 경로를 따라 찾아보세요.",
+    ["The target is a humanoid escorted by 2 guards. The target patrols a long route; look along it."] =
+        "대상은 경비병 2명이 호위하는 인간형입니다. 대상은 긴 경로를 순찰합니다. 경로를 따라 찾아보세요.",
     ["This one roams, so scan the surrounding area. The targets are spread over several spots."] =
         "이 대상은 돌아다니므로 주변을 살펴보세요. 대상은 여러 곳에 흩어져 있습니다.",
     ["For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears. Clear the monsters just south before you start."] =

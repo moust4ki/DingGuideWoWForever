@@ -11,8 +11,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a27-tanaris", {
         "NPC在室内。",
     ["Wait for the talking to finish"] =
         "等对话结束",
-    ["Hold on until Rizzle has fled. The NPC is indoors."] =
-        "坚持到Rizzle逃跑。NPC在室内。",
+    ["Hold on until Rizzle has fled. The object is indoors."] =
+        "坚持到Rizzle逃跑。该物件在室内。",
     ["Targets here are human."] =
         "这里的目标是人类。",
     ["Targets here are human. Dungeon runs are a fine choice here too, as you like. Each set of 5 handed in at Gadgetzan gives 380 xp."] =

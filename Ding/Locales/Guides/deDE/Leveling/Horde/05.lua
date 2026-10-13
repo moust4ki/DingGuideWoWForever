@@ -43,6 +43,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h05-the-barrens-and-stonetalon-m
         "Töte Harpyien.",
     ["Up to two foes might jump you."] =
         "Bis zu zwei Gegner können dich angreifen.",
+    ["The target is indoors."] =
+        "Das Ziel ist drinnen.",
     ["Kill the purple raptors. Targets are found across the entire Barrens. Slay any you come across along the way."] =
         "Töte die violetten Raptoren. Ziele gibt es im ganzen Brachland. Töte alle, denen du unterwegs begegnest.",
     ["Climb the trail"] =
@@ -55,8 +57,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h05-the-barrens-and-stonetalon-m
         "Der NPC steht auf der obersten Ebene dieses Gebäudes.",
     ["Learn Staves at the weapon master"] =
         "Lerne Stäbe beim Waffenmeister",
-    ["Steal from Gamon using Pick Pocket. The NPC is indoors."] =
-        "Bestiehl Gamon mit Taschendiebstahl. Der NPC ist drinnen.",
+    ["Steal from Gamon using Pick Pocket. The target is indoors."] =
+        "Bestiehl Gamon mit Taschendiebstahl. Das Ziel ist drinnen.",
     ["Use it on Tazan's Satchel. The item is already in your inventory."] =
         "Benutze es an Tazan's Satchel. Der Gegenstand ist schon in deinem Inventar.",
     ["For this quest you guard an NPC on the move. If the NPC is gone, hold on until it reappears."] =
@@ -131,8 +133,6 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h05-the-barrens-and-stonetalon-m
         "Flieg nach Donnerfels",
     ["Go into the cavern"] =
         "Geh in die Höhle",
-    ["This one roams, so scan the surrounding area. Your targets are within the cavern."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab. Deine Ziele sind in der Höhle.",
     ["Your targets are within the cavern."] =
         "Deine Ziele sind in der Höhle.",
     ["Head out of the cave"] =

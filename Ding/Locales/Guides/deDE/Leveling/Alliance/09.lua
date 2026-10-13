@@ -61,8 +61,6 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a09-ashenvale-and-stonetalon-mou
         "Das Ziel ist eine Naga mit jadegrüner Haut und rosafarbenen Flossen. Es umrundet die Insel im Uhrzeigersinn, nah am Ufer. Sie ist mit zwei Wachen unterwegs.",
     ["Hunt naga."] =
         "Jag Naga.",
-    ["This one roams, so scan the surrounding area."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab.",
     ["The quest giver stands outdoors, not indoors."] =
         "Der Questgeber steht draußen, nicht drinnen.",
     ["Step into the cavern within the trunk"] =

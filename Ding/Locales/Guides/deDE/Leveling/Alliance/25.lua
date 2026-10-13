@@ -31,8 +31,6 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a25-stranglethorn-vale", {
         "Nimm den Durchgang aus Beutebucht hinaus",
     ["Take the tunnel into Booty Bay"] =
         "Nimm den Tunnel nach Beutebucht",
-    ["This one roams, so scan the surrounding area."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab.",
     ["Take the trail toward the Ruins of Aboraz"] =
         "Nimm den Pfad zu den Ruinen von Aboraz",
     ["Gradually move toward the northeast."] =

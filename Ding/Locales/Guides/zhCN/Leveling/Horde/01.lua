@@ -19,8 +19,6 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h01-undead-starter", {
         "目标是蝙蝠。",
     ["With the coming hand-ins, this brings you to level 4."] =
         "加上接下来的交任务，这能让你升到4级。",
-    ["This one roams, so scan the surrounding area."] =
-        "它会四处游荡，在周围找找。",
     ["Search stacks of brown crates. Check in and around the structures."] =
         "搜查成堆的棕色箱子。在建筑物里面和周围找。",
     ["Just out of the mine."] =
@@ -79,18 +77,22 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h01-undead-starter", {
         "猎杀螃蟹。",
     ["Stay on the trail"] =
         "沿小路走",
+    ["The object is indoors."] =
+        "该物件在室内。",
     ["Keep to the trail as it curves."] =
         "顺着弯曲的小路走。",
     ["Step into the flames. Dying costs you nothing this early. This is the quickest way over."] =
         "走进火焰中。这么早死亡没有任何损失。这是最快的过去方式。",
     ["Head indoors"] =
         "进入室内",
-    ["The NPC is indoors, one floor up. Consider bringing a group for this one."] =
-        "NPC在室内楼上一层。这个可以考虑组队来做。",
+    ["The target is indoors, one floor up. Consider bringing a group for this one."] =
+        "目标在室内楼上一层。这个可以考虑组队来做。",
     ["Stay on the trail and keep climbing the steps"] =
         "沿小路走，继续爬台阶",
-    ["The NPC stands on the highest level of this structure."] =
-        "NPC在这座建筑的最高层。",
+    ["The object is on the highest level of this structure."] =
+        "该物件在这座建筑的最高层。",
+    ["This one roams, so scan the surrounding area."] =
+        "它会四处游荡，在周围找找。",
     ["Learn First Aid from the trainer"] =
         "向训练师学习急救",
     ["Loot the gray chests built from metal. Search in and around the sunken wrecks. Your targets sit below the water's surface."] =
@@ -123,6 +125,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h01-undead-starter", {
         "寻找一块刻有骷髅标记的铁板。等对话结束",
     ["Learn Swords at the weapon master"] =
         "向武器大师学习单手剑",
+    ["The target is indoors."] =
+        "目标在室内。",
     ["Use the item at the pink marking."] =
         "在粉色标记处使用物品。",
     ["Move gradually northwest toward Agamand Mills."] =

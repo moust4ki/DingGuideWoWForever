@@ -7,8 +7,6 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h19-badlands", {
         "Reise ins Ödland",
     ["Badlands: Kargath, at the western edge, is the Horde hub."] =
         "Ödland: Kargath am Westrand ist die Basis der Horde.",
-    ["This one roams, so scan the surrounding area."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab.",
     ["The NPC waits on the tower's highest floor."] =
         "Der NPC wartet im obersten Stockwerk des Turms.",
     ["Fly to Kargath"] =

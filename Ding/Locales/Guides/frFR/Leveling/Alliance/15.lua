@@ -19,18 +19,14 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a15-hillsbrad-foothills-and-arat
         "Sors de la grotte",
     ["The targets are spread over several spots."] =
         "Les cibles sont réparties sur plusieurs endroits.",
-    ["This one roams, so scan the surrounding area."] =
-        "Celui-ci se déplace : fouille les environs.",
     ["Beware of foes lurking in stealth. Further hidden ones lurk on the high ridgelines. Some are indoors as well."] =
         "Attention aux ennemis camouflés. D'autres sont cachées sur les crêtes en hauteur. Certaines sont aussi à l'intérieur.",
     ["Fly to Aerie Peak"] =
         "Vole jusqu'au Nid-de-l'Aigle",
     ["The NPC is at the summit of the trail. This spares you time further on."] =
         "Le PNJ est en haut du chemin. Ça te fera gagner du temps plus tard.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "Celui-ci se déplace : fouille les environs. Le PNJ est à l'intérieur.",
-    ["Let the conversation play out. The NPC is indoors. This one roams, so scan the surrounding area."] =
-        "Laisse la conversation se dérouler. Le PNJ est à l'intérieur. Celui-ci se déplace : fouille les environs.",
+    ["Let the conversation play out. The NPC is indoors."] =
+        "Laisse la conversation se dérouler. Le PNJ est à l'intérieur.",
     ["Stay on the trail"] =
         "Suis le chemin",
 })

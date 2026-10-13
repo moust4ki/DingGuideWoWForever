@@ -19,8 +19,6 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h01-undead-starter", {
         "대상은 박쥐입니다.",
     ["With the coming hand-ins, this brings you to level 4."] =
         "이어지는 퀘스트 완료와 함께 4레벨이 됩니다.",
-    ["This one roams, so scan the surrounding area."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요.",
     ["Search stacks of brown crates. Check in and around the structures."] =
         "갈색 상자 더미를 뒤져 보세요. 건물 안팎을 확인하세요.",
     ["Just out of the mine."] =
@@ -79,18 +77,22 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h01-undead-starter", {
         "게를 사냥하세요.",
     ["Stay on the trail"] =
         "길을 계속 따라가세요",
+    ["The object is indoors."] =
+        "그 물체는 건물 안에 있습니다.",
     ["Keep to the trail as it curves."] =
         "굽은 길을 따라 계속 가세요.",
     ["Step into the flames. Dying costs you nothing this early. This is the quickest way over."] =
         "불길 속으로 들어가세요. 이 시점에는 죽어도 잃는 것이 없습니다. 건너가는 가장 빠른 방법입니다.",
     ["Head indoors"] =
         "건물 안으로 들어가세요",
-    ["The NPC is indoors, one floor up. Consider bringing a group for this one."] =
-        "NPC는 건물 안 한 층 위에 있습니다. 파티를 꾸려 하는 것도 고려하세요.",
+    ["The target is indoors, one floor up. Consider bringing a group for this one."] =
+        "대상은 건물 안 한 층 위에 있습니다. 파티를 꾸려 하는 것도 고려하세요.",
     ["Stay on the trail and keep climbing the steps"] =
         "길을 벗어나지 말고 계단을 계속 올라가세요",
-    ["The NPC stands on the highest level of this structure."] =
-        "NPC는 이 건물의 꼭대기 층에 서 있습니다.",
+    ["The object is on the highest level of this structure."] =
+        "그 물체는 이 건물의 꼭대기 층에 있습니다.",
+    ["This one roams, so scan the surrounding area."] =
+        "이 대상은 돌아다니므로 주변을 살펴보세요.",
     ["Learn First Aid from the trainer"] =
         "상급자에게서 응급치료를 배우세요",
     ["Loot the gray chests built from metal. Search in and around the sunken wrecks. Your targets sit below the water's surface."] =
@@ -123,6 +125,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h01-undead-starter", {
         "해골이 새겨진 철판을 찾으세요. 대화가 끝날 때까지 기다리세요",
     ["Learn Swords at the weapon master"] =
         "무기 전문가에게서 한손 도검을 배우세요",
+    ["The target is indoors."] =
+        "대상은 건물 안에 있습니다.",
     ["Use the item at the pink marking."] =
         "분홍색 표시에서 아이템을 사용하세요.",
     ["Move gradually northwest toward Agamand Mills."] =

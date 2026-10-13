@@ -27,6 +27,4 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a26-swamp-of-sorrows", {
         "爬到建筑物的顶层。",
     ["The NPC is indoors."] =
         "NPC在室内。",
-    ["This one roams, so scan the surrounding area."] =
-        "它会四处游荡，在周围找找。",
 })

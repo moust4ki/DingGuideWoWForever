@@ -29,6 +29,6 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h22-tanaris", {
         "Pegue o saque.",
     ["Wait for the talking to finish"] =
         "Espere a conversa terminar",
-    ["Hold on until Rizzle has fled. The NPC is indoors."] =
-        "Espere até Rebu fugir. O NPC está lá dentro.",
+    ["Hold on until Rizzle has fled. The object is indoors."] =
+        "Espere até Rebu fugir. O objeto está lá dentro.",
 })

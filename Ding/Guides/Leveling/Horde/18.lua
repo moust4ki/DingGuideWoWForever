@@ -45,16 +45,15 @@ Ding.RegisterGuide({
         { turnin = 503, accept = 506, -- level 38
           note = "The NPC is indoors, one floor up." },
         { complete = 566, -- level 38
-          note = "The NPC waits on the lower level, indoors. If it is not around, move on without it. No rush; you may complete this afterwards." },
+          note = "The target is on the lower level, indoors. If it is not around, move on without it. No rush; you may complete this afterwards." },
         { turnin = 506, accept = 507, -- level 38
           note = "The NPC is indoors." },
-        { turnin = 566, sticky = 545, when = { ready = 566 }, -- level 38
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 566, sticky = 545, when = { ready = 566 } }, -- level 38
         { go = { 1416, 38.86, 39.49 }, text = "Climb the slope, then leap the wall" }, -- level 38
         { complete = 557 }, -- level 38
         { complete = 545 }, -- level 38
         { complete = 507, -- level 39
-          note = "The NPC is indoors, one floor up. Beware of foes lurking in stealth." },
+          note = "The target is indoors, one floor up. Beware of foes lurking in stealth." },
         { turnin = 507, accept = 508, -- level 39
           note = "The NPC is indoors, one floor up." },
         { turnin = 545, -- level 39
@@ -92,11 +91,9 @@ Ding.RegisterGuide({
         { turnin = 651 }, -- level 39
         { go = { 1417, 31.28, 65.32 }, text = "Take the trail across the peaks" }, -- level 39
         { go = { 1417, 21.63, 75.58 }, text = "Take the passage to Faldir's Cove" }, -- level 39
-        { accept = 663, -- level 39
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 663 }, -- level 39
         { turnin = 663 }, -- level 39
-        { accept = 662, -- level 39
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 662 }, -- level 39
         { accept = 664 }, -- level 39
         { accept = 665, noauto = 665, -- level 39
           note = "For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears." },
@@ -121,8 +118,7 @@ Ding.RegisterGuide({
         { useitem = 5996, when = { item = 5996 }, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST", "MAGE" } }, -- level 39
         { complete = 664, -- level 39
           note = "Your targets sit below the water's surface." },
-        { turnin = 662, -- level 39
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 662 }, -- level 39
         { turnin = 664 }, -- level 39
         { turnin = 666, accept = 668 }, -- level 39
         { turnin = 668, accept = 669 }, -- level 39

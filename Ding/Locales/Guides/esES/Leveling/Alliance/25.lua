@@ -31,8 +31,6 @@ Ding.RegisterGuideTranslation("esES", "leveling-a25-stranglethorn-vale", {
         "Toma el paso para salir de Bahía del Botín",
     ["Take the tunnel into Booty Bay"] =
         "Toma el túnel para entrar en Bahía del Botín",
-    ["This one roams, so scan the surrounding area."] =
-        "Este deambula, así que revisa los alrededores.",
     ["Take the trail toward the Ruins of Aboraz"] =
         "Toma el sendero hacia las Ruinas de Aboraz",
     ["Gradually move toward the northeast."] =

@@ -140,7 +140,7 @@ Ding.RegisterGuide({
         { turnin = 2939, -- level 46
           note = "The NPC is indoors, one floor up." },
         { accept = 2940, -- level 46
-          note = "The NPC is indoors, one floor up." },
+          note = "The object is indoors, one floor up." },
         { turnin = 2940, accept = 2941, -- level 46
           note = "The NPC is indoors, one floor up." },
         { talk = 4209, bank = { 9329, 10699, 8564, 6258, 6259 } }, -- level 46

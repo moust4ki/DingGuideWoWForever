@@ -21,8 +21,6 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h04-silverpine-forest", {
         "Flieg zum Grabmal",
     ["Fly to Undercity"] =
         "Flieg nach Unterstadt",
-    ["This one roams, so scan the surrounding area."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab.",
     ["Go down into the tomb"] =
         "Geh hinunter in die Gruft",
     ["This is below ground, on the crypt's lower floor."] =
@@ -33,14 +31,14 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h04-silverpine-forest", {
         "Die Ziele sind Worgen.",
     ["Walk over the span"] =
         "Geh über die Brücke",
-    ["Be ready for a fight right away. The NPC is indoors, one floor up."] =
-        "Mach dich sofort auf einen Kampf gefasst. Der NPC ist drinnen, ein Stockwerk höher.",
+    ["Be ready for a fight right away. The object is indoors, one floor up."] =
+        "Mach dich sofort auf einen Kampf gefasst. Das Objekt ist drinnen, ein Stockwerk höher.",
     ["The NPC is indoors, one floor up."] =
         "Der NPC ist drinnen, ein Stockwerk höher.",
     ["The quest giver stands outdoors, not indoors."] =
         "Der Questgeber steht draußen, nicht drinnen.",
-    ["He has three ghouls at his side. Hold off until one steps out, then slay it. The NPC is indoors."] =
-        "Er hat drei Ghule an seiner Seite. Warte, bis einer herauskommt, und töte ihn dann. Der NPC ist drinnen.",
+    ["He has three ghouls at his side. Hold off until one steps out, then slay it. The target is indoors."] =
+        "Er hat drei Ghule an seiner Seite. Warte, bis einer herauskommt, und töte ihn dann. Das Ziel ist drinnen.",
     ["Your targets here are gnolls. The target shows up here sooner or later."] =
         "Deine Ziele hier sind Gnolle. Das Ziel taucht hier früher oder später auf.",
     ["Hunt spiders for it. The targets roam the mine and the area around it."] =

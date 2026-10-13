@@ -17,11 +17,11 @@ Ding.RegisterGuide({
           note = "The targets are out in front of the cavern." },
         { go = { 1417, 34.77, 44.18 }, text = "Head out of the cave" }, -- level 32
         { complete = 1164, -- level 32
-          note = "The NPC is indoors." },
+          note = "The target is indoors." },
         { complete = 1164, -- level 32
           note = "The targets are spread over several spots." },
         { complete = 1164, -- level 32
-          note = "The NPC is indoors." },
+          note = "The target is indoors." },
         { accept = 642 }, -- level 32
         { go = { 1417, 73, 32.65 }, fly = true, talk = 2851, text = "Flight master at Hammerfall" }, -- level 32
         { turnin = 676, accept = 677 }, -- level 32

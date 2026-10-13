@@ -432,6 +432,11 @@ Forever:
   the others. Every `go` of a route says where or why in its `text`: `check_guides.lua` warns
   about a `go` without one and fails on the same trip twice in a row.
 
+A route note says "the NPC" only on a step with someone to see there (a quest giver or ender,
+an NPC to talk to, a service); for objects it says "the object", for monsters "the target".
+"This one roams" stays for targets that move: a quest giver with a path in QuestieDB, a
+`patrol`, monsters. `leveling_guides_test` checks both on the guides.
+
 A `fly` or `train` label becomes the step's `text` (texts are translated). `--report` lists
 the repairs, the quests left out with their reason, the Forever quests added and those that
 found no place. The route stays the place to change anything: the guides are written again

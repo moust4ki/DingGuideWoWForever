@@ -35,8 +35,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h20-stranglethorn-vale-and-swamp
         "Maestro de vuelo de Rocal",
     ["The NPC is indoors, one floor up."] =
         "El PNJ está dentro, un piso más arriba.",
-    ["The target is a humanoid escorted by 2 guards. The NPC patrols a long route; look along it."] =
-        "El objetivo es un humanoide escoltado por 2 guardias. El PNJ patrulla una ruta larga; búscalo a lo largo de ella.",
+    ["The target is a humanoid escorted by 2 guards. The target patrols a long route; look along it."] =
+        "El objetivo es un humanoide escoltado por 2 guardias. El objetivo patrulla una ruta larga; búscalo a lo largo de ella.",
     ["This one roams, so scan the surrounding area. The targets are spread over several spots."] =
         "Este deambula, así que revisa los alrededores. Los objetivos están repartidos en varios puntos.",
     ["For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears. Clear the monsters just south before you start."] =

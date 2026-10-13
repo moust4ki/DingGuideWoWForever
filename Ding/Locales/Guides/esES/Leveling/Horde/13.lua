@@ -9,8 +9,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h13-arathi-highlands", {
         "Sal de la cueva",
     ["The targets are out in front of the cavern."] =
         "Los objetivos están delante de la caverna.",
-    ["The NPC is indoors."] =
-        "El PNJ está dentro.",
+    ["The target is indoors."] =
+        "El objetivo está dentro.",
     ["The targets are spread over several spots."] =
         "Los objetivos están repartidos en varios puntos.",
     ["Flight master at Hammerfall"] =
@@ -23,6 +23,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h13-arathi-highlands", {
         "Los objetivos son raptores. Mantente lejos del Refugio de la Zaga.",
     ["Together with the next turn-ins, this brings you to level 33."] =
         "Junto con las próximas entregas, esto te sube al nivel 33.",
+    ["The NPC is indoors."] =
+        "El PNJ está dentro.",
     ["The NPC is indoors, one floor up."] =
         "El PNJ está dentro, un piso más arriba.",
     ["Take the trail downhill"] =

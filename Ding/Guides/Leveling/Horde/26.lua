@@ -72,8 +72,7 @@ Ding.RegisterGuide({
         { go = { 1434, 29.51, 72.47 }, text = "Take the tunnel into Booty Bay" }, -- level 45
         { turnin = 576, -- level 45
           note = "The NPC stands on the top tier of the pier." },
-        { accept = 617, -- level 45
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 617 }, -- level 45
         { turnin = 587, -- level 45
           note = "Climb to the highest floor of the building." },
         { turnin = 604, -- level 45
@@ -95,8 +94,7 @@ Ding.RegisterGuide({
         { go = { 1434, 29.51, 72.47 }, text = "Take the tunnel into Booty Bay" }, -- level 45
         { turnin = 609, -- level 45
           note = "The NPC is indoors." },
-        { turnin = 617, -- level 45
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 617 }, -- level 45
         { accept = 580, -- level 45
           note = "The NPC is indoors at street level." },
         { turnin = 621, when = { ready = 621 }, -- level 45

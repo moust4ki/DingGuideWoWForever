@@ -11,8 +11,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a24-badlands", {
         "Pegue estes para entregas fáceis nos Ermos mais adiante. O NPC está lá dentro.",
     ["This one roams, so scan the surrounding area. The NPC is indoors."] =
         "Este se desloca, então procure pelos arredores. O NPC está lá dentro.",
-    ["The NPC or item sits on the rocky shelf above."] =
-        "O NPC ou item fica na saliência rochosa acima.",
+    ["The object sits on the rocky shelf above."] =
+        "O objeto fica na saliência rochosa acima.",
     ["Fight the dwarves."] =
         "Lute contra os anões.",
     ["Look for a timber box. The targets are spread over several spots."] =

@@ -66,8 +66,7 @@ Ding.RegisterGuide({
         { talk = 2381, buy = { { 2321, 1, 2381 } }, when = { done = 565 }, -- level 33
           note = "The NPC is indoors." },
         { turnin = 565, when = { item = 2997, log = 565 } }, -- level 33
-        { accept = 681, -- level 33
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 681 }, -- level 33
         { turnin = 690, races = { "Dwarf", "NightElf" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "WARLOCK", "DRUID" } }, -- level 33
         { turnin = 690, races = { "Human", "Gnome", "Skyborne" } }, -- level 33
         { turnin = 659, accept = 658 }, -- level 33
@@ -75,14 +74,13 @@ Ding.RegisterGuide({
           note = "Beware of foes lurking in stealth. Further hidden ones lurk on the high ridgelines. Some are indoors as well." },
         { go = { 1425, 11.1, 46.2 }, fly = true, talk = 8018, text = "Fly to Aerie Peak", -- level 33
           note = "The NPC is at the summit of the trail. This spares you time further on." },
-        { turnin = 681, -- level 33
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 681 }, -- level 33
         { turnin = 514, -- level 33
           note = "The NPC is indoors." },
         { turnin = 689, -- level 33
-          note = "This one roams, so scan the surrounding area. The NPC is indoors." },
+          note = "The NPC is indoors." },
         { accept = 700, -- level 33
-          note = "Let the conversation play out. The NPC is indoors. This one roams, so scan the surrounding area." },
+          note = "Let the conversation play out. The NPC is indoors." },
         { talk = 2461, bank = 3721, -- level 33
           note = "The NPC is indoors." },
         { go = { 1455, 44.51, 49.54 }, text = "Stay on the trail" }, -- level 33

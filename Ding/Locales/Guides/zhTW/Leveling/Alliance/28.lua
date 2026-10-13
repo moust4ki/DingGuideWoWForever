@@ -79,6 +79,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a28-feralas-and-tanaris", {
         "目標在洞穴裡。",
     ["Let the conversation play out. Your targets are within the cavern."] =
         "讓對話播完。目標在洞穴裡。",
+    ["The object is indoors, one floor up."] =
+        "這個物件在室內的樓上一層。",
     ["Getting it here speeds up Un'Goro Crater. The NPC is indoors."] =
         "在這裡拿到它，可以加快安戈洛環形山的進度。NPC在室內。",
     ["Step into the cavern within the trunk"] =

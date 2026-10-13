@@ -48,8 +48,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { useitem = 8095, races = { "Orc", "Scourge", "Troll" }, classes = { "ROGUE" }, -- level 22
           note = "Get rid of your Touch of Zanzil." },
-        { turnin = 494, accept = 527, -- level 22
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 494, accept = 527 }, -- level 22
         { talk = 10057, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, text = "Leave your pet with the stable master." }, -- level 22
         { talk = 10057, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, -- level 22
           note = "You will tame a short-term pet shortly. Pick up Claw (Rank 3) for your pet." },
@@ -73,7 +72,7 @@ Ding.RegisterGuide({
         { collect = { { 3467, 1 } }, spots = { { 1424, 79.63, 41.79 }, { 1424, 75.35, 41.96 } }, -- level 22
           note = "This one roams, so scan the surrounding area. The targets are spread over several spots." },
         { complete = 498, -- level 22
-          note = "Look for it bound to the orc's leg. The NPC is indoors." },
+          note = "Look for it bound to the orc's leg. The object is indoors." },
         { complete = 1066 }, -- level 22
         { complete = 549 }, -- level 22
         { complete = 496, -- level 22
@@ -85,8 +84,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { turnin = 499, -- level 23
           note = "The NPC is indoors." },
-        { turnin = 549, -- level 23
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 549 }, -- level 23
         { turnin = 498, sticky = { 527, 501 }, -- level 23
           note = "The NPC is indoors." },
         { complete = 527, -- level 23
@@ -97,11 +95,10 @@ Ding.RegisterGuide({
         { complete = 501 }, -- level 23
         { turnin = 501, accept = 502, -- level 24
           note = "The NPC is indoors." },
-        { turnin = 527, accept = 528, -- level 24
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 527, accept = 528 }, -- level 24
         { accept = 546, sticky = { 567, 528, 546 } }, -- level 24
         { turnin = 502, -- level 24
-          note = "The NPC is a little wolf. This one roams, so scan the surrounding area. He goes berserk and attacks you once the quest is handed in." },
+          note = "The NPC is a little wolf. He goes berserk and attacks you once the quest is handed in." },
         { complete = 567, -- level 24
           note = "A woman holding a pitchfork. This one roams, so scan the surrounding area." },
         { complete = 567, patrol = { { 1424, 33, 39.61 }, { 1424, 34.2, 38.69 }, { 1424, 35.42, 38.78 }, { 1424, 36.47, 39.39 }, { 1424, 35.72, 38.78 }, { 1424, 34.02, 38.79 }, { 1424, 32.49, 40.05 }, { 1424, 32.64, 38.2 }, { 1424, 32.72, 36.93 }, { 1424, 32.56, 36 }, { 1424, 32.88, 35.23 }, { 1424, 32.63, 35.86 }, { 1424, 32.66, 37.01 }, { 1424, 32.61, 38.24 }, { 1424, 32.58, 39.46 }, { 1424, 32.68, 41.13 }, { 1424, 32.42, 42.49 }, { 1424, 31.34, 42.18 }, { 1424, 31.01, 41.77 }, { 1424, 30.49, 40.58 }, { 1424, 30.79, 41.67 }, { 1424, 31.26, 42.15 }, { 1424, 31.78, 42.2 }, { 1424, 32.48, 42.92 }, { 1424, 32.46, 44.74 }, { 1424, 32.34, 45.18 }, { 1424, 32.49, 44.14 }, { 1424, 32.59, 42.18 }, { 1424, 32.55, 41.2 } }, -- level 24
@@ -109,10 +106,9 @@ Ding.RegisterGuide({
         { complete = 528 }, -- level 24
         { level = 23, xp = 27400, patrol = { { 1424, 41.83, 37.57 }, { 1424, 42.34, 40.77 }, { 1424, 45.24, 39.45 }, { 1424, 46.37, 42.54 }, { 1424, 48.66, 40.25 }, { 1424, 51.06, 42.64 }, { 1424, 54.45, 42.14 }, { 1424, 57.36, 41.46 }, { 1424, 55.45, 36.94 }, { 1424, 52.06, 38.97 }, { 1424, 51.45, 35.65 }, { 1424, 48.46, 34.23 }, { 1424, 48.35, 31.17 }, { 1424, 53.23, 32.66 }, { 1424, 54.77, 29.65 }, { 1424, 44.65, 35.45 }, { 1424, 40.55, 34.44 }, { 1424, 38.05, 35.97 }, { 1424, 38.34, 39.25 }, { 1424, 39.77, 42.56 }, { 1424, 37.24, 44.24 }, { 1424, 39.24, 47.06 }, { 1424, 48.36, 45.65 }, { 1424, 52.15, 46.36 } }, -- level 24
           note = "With the coming hand-ins, this brings you to level 24. Tougher foes are coming up next." },
-        { turnin = 528, accept = 529, sticky = { 529, 546 }, -- level 24
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 528, accept = 529, sticky = { 529, 546 } }, -- level 24
         { complete = 529, -- level 24
-          note = "The NPC is indoors." },
+          note = "The target is indoors." },
         { complete = 529, -- level 24
           note = "This one roams, so scan the surrounding area. The targets are spread over several spots. Some may be in the smithy." },
         { complete = 529 }, -- level 24

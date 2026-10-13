@@ -101,14 +101,14 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a01-human-starter", {
         "Apprends les Épées et les Bâtons auprès du maître d'armes",
     ["Head indoors"] =
         "Va à l'intérieur",
-    ["Step onto the pink rune. Look within the tomb. The NPC waits on the lower level, indoors."] =
-        "Monte sur la rune rose. Regarde dans la tombe. Le PNJ attend au niveau inférieur, à l'intérieur.",
+    ["The target is indoors."] =
+        "La cible est à l'intérieur.",
+    ["Step onto the pink rune. Look within the tomb. The target is on the lower level, indoors."] =
+        "Monte sur la rune rose. Regarde dans la tombe. La cible est au niveau inférieur, à l'intérieur.",
     ["The NPC stands one level over the crypt. The NPC waits on the lower level, indoors."] =
         "Le PNJ se tient un niveau au-dessus de la crypte. Le PNJ attend au niveau inférieur, à l'intérieur.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors. Be ready for a fight right away."] =
-        "Celui-ci se déplace : fouille les environs. Le PNJ est à l'intérieur. Prépare-toi à combattre tout de suite.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "Celui-ci se déplace : fouille les environs. Le PNJ est à l'intérieur.",
+    ["The NPC is indoors. Be ready for a fight right away."] =
+        "Le PNJ est à l'intérieur. Prépare-toi à combattre tout de suite.",
     ["Learn Blacksmithing from the trainer"] =
         "Apprends la Forge auprès de l'entraîneur",
     ["Learn Mining from the trainer"] =
@@ -183,6 +183,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a01-human-starter", {
         "Quitte Stonesplinter Valley, puis reste sur la route",
     ["The NPC waits on the tower's highest floor."] =
         "Le PNJ attend au dernier étage de la tour.",
+    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
+        "Celui-ci se déplace : fouille les environs. Le PNJ est à l'intérieur.",
     ["Head up the incline"] =
         "Monte la pente",
 })

@@ -31,16 +31,14 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a18-desolace", {
         "Die Quest beginnt mit einem kleinen Buch.",
     ["The targets are lobsters. Your targets sit below the water's surface."] =
         "Die Ziele sind Hummer. Deine Ziele sind unter der Wasseroberfläche.",
-    ["The NPC waits on the tower's highest floor."] =
-        "Der NPC wartet im obersten Stockwerk des Turms.",
+    ["The target is on the tower's highest floor."] =
+        "Das Ziel ist im obersten Stockwerk des Turms.",
     ["For this quest you guard an NPC on the move. If she is absent, wait for her to reappear. The NPC is indoors."] =
         "Bei dieser Quest beschützt du einen NPC, der unterwegs ist. Wenn sie nicht da ist, warte, bis sie wieder erscheint. Der NPC ist drinnen.",
-    ["Draw him to the doorway so other foes stay out of it. The NPC is indoors."] =
-        "Zieh ihn zum Eingang, damit sich andere Gegner nicht einmischen. Der NPC ist drinnen.",
+    ["Draw him to the doorway so other foes stay out of it. The target is indoors."] =
+        "Zieh ihn zum Eingang, damit sich andere Gegner nicht einmischen. Das Ziel ist drinnen.",
     ["Let the conversation play out. Escort Dalinda Malem and keep her alive."] =
         "Lass das Gespräch zu Ende laufen. Begleite Dalinda Malem und halte sie am Leben.",
-    ["This one roams, so scan the surrounding area."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab.",
     ["The targets here are centaurs. Magram Pack Runners patrol with 2 hyena escorts; steer clear."] =
         "Die Ziele hier sind Zentauren. Magram Pack Runners patrouillieren mit 2 Hyänen als Begleitung; halte dich fern.",
     ["Stay away from Ghost Walker Post."] =

@@ -33,8 +33,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h08-the-barrens", {
         "대상은 빨간 로브를 입은 가시멧돼지입니다. 이 대상은 돌아다니므로 주변을 살펴보세요. 대상은 이 지점에 나타납니다.",
     ["This one roams, so scan the surrounding area. Beware of foes lurking in stealth."] =
         "이 대상은 돌아다니므로 주변을 살펴보세요. 은신해 숨어 있는 적을 조심하세요.",
-    ["Beware of foes lurking in stealth. The NPC is indoors."] =
-        "은신해 숨어 있는 적을 조심하세요. NPC는 건물 안에 있습니다.",
+    ["Beware of foes lurking in stealth. The target is indoors."] =
+        "은신해 숨어 있는 적을 조심하세요. 대상은 건물 안에 있습니다.",
     ["Kill Stalkers and Pathfinders. Beware of foes lurking in stealth."] =
         "추적자와 길잡이를 처치하세요. 은신해 숨어 있는 적을 조심하세요.",
     ["Beware of foes lurking in stealth."] =
@@ -45,8 +45,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h08-the-barrens", {
         "이 대상은 돌아다니므로 주변을 살펴보세요. 대상은 여러 곳에 흩어져 있습니다.",
     ["Climb the trail"] =
         "길을 따라 올라가세요",
-    ["The NPC can be indoors or out."] =
-        "NPC는 건물 안이나 밖에 있을 수 있습니다.",
+    ["The target can be indoors or out."] =
+        "대상은 건물 안이나 밖에 있을 수 있습니다.",
     ["The objective sits up on the raised deck. Keep some range when you use the item."] =
         "목표는 높은 갑판 위에 있습니다. 아이템을 사용할 때는 거리를 두세요.",
     ["With the coming hand-ins, this gets you to level 25."] =

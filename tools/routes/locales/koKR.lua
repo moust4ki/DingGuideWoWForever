@@ -3239,4 +3239,41 @@ return {
         "우리에 갇힌 가시멧돼지를 찾아가세요",
     ["Go to the corrupted moonwell"] =
         "타락한 달샘으로 가세요",
+    -- Ding - Leveling: where an object or a monster target is (notes)
+    ["The object is indoors."] =
+        "그 물체는 건물 안에 있습니다.",
+    ["The object is indoors, one floor up."] =
+        "그 물체는 건물 안 한 층 위에 있습니다.",
+    ["The object is on the lower level, indoors."] =
+        "그 물체는 건물 안 아래층에 있습니다.",
+    ["The object is on the lower level within the bridge."] =
+        "그 물체는 다리 안쪽 아래층에 있습니다.",
+    ["The object is on the highest level of this structure."] =
+        "그 물체는 이 건물의 꼭대기 층에 있습니다.",
+    ["The object is up on the summit."] =
+        "그 물체는 정상에 있습니다.",
+    ["The object sits on the rocky shelf above."] =
+        "그 물체는 위쪽 바위턱에 있습니다.",
+    ["The target is indoors."] =
+        "대상은 건물 안에 있습니다.",
+    ["The target is indoors, one floor up."] =
+        "대상은 건물 안 한 층 위에 있습니다.",
+    ["The target is indoors at street level."] =
+        "대상은 건물 안 1층에 있습니다.",
+    ["The target is indoors, on the central storey."] =
+        "대상은 건물 안 가운데 층에 있습니다.",
+    ["The target is on the lower level, indoors."] =
+        "대상은 건물 안 아래층에 있습니다.",
+    ["The target is on the tower's highest floor."] =
+        "대상은 탑 꼭대기 층에 있습니다.",
+    ["The target is up on the summit."] =
+        "대상은 정상에 있습니다.",
+    ["The target is down in the Cleft of Shadow."] =
+        "대상은 아래쪽 어둠의 틈에 있습니다.",
+    ["The target can be indoors or out."] =
+        "대상은 건물 안이나 밖에 있을 수 있습니다.",
+    ["The target patrols a long route; look along it."] =
+        "대상은 긴 경로를 순찰합니다. 경로를 따라 찾아보세요.",
+    ["The target waits here, then strolls out onto the big branch close by."] =
+        "대상은 여기서 기다리다가 근처의 큰 나뭇가지 위로 걸어 나갑니다.",
 }

@@ -47,7 +47,7 @@ Ding.RegisterGuide({
         { turnin = 1183, accept = { 1186, 1190 } }, -- level 42
         { turnin = 1186, accept = 1187 }, -- level 42
         { turnin = 1190, accept = 1194, -- level 42
-          note = "Hold on until Rizzle has fled. The NPC is indoors." },
+          note = "Hold on until Rizzle has fled. The object is indoors." },
         { turnin = 1194 }, -- level 42
         { turnin = 79358, classes = { "SHAMAN" } }, -- level 42
         { accept = 79366, classes = { "SHAMAN" } }, -- level 42

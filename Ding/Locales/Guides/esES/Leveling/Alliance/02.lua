@@ -19,8 +19,6 @@ Ding.RegisterGuideTranslation("esES", "leveling-a02-dwarf-and-gnome-starter", {
         "Vuelve a salir",
     ["The targets are wolves."] =
         "Los objetivos son lobos.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "Este deambula, así que revisa los alrededores. El PNJ está dentro.",
     ["They are rare and scattered widely. Your targets are within the cavern."] =
         "Son escasos y están muy dispersos. Tus objetivos están dentro de la cueva.",
     ["Die on purpose at this spot"] =
@@ -45,6 +43,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a02-dwarf-and-gnome-starter", {
         "Cura al Montañero Dolf con Sanación inferior (Rango 2). Lanza Palabra de poder: entereza sobre el Montañero Dolf.",
     ["Learn Blacksmithing from the trainer"] =
         "Aprende Herrería con el instructor",
+    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
+        "Este deambula, así que revisa los alrededores. El PNJ está dentro.",
     ["Learn Mining from the trainer"] =
         "Aprende Minería con el instructor",
     ["The NPC waits on the lower level, indoors."] =
@@ -65,8 +65,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a02-dwarf-and-gnome-starter", {
         "Busca las cestas de madera.",
     ["Die to the monsters here on purpose. Any spot around Brewnall Village works. Dying costs you nothing this early."] =
         "Deja que los monstruos de aquí te maten a propósito. Sirve cualquier punto alrededor de Brewnall Village. A estos niveles morir no te cuesta nada.",
-    ["Give it a few seconds. The NPC waits on the lower level, indoors."] =
-        "Espera unos segundos. El PNJ espera en el nivel inferior, dentro.",
+    ["Give it a few seconds. The object is on the lower level, indoors."] =
+        "Espera unos segundos. El objeto está en el nivel inferior, dentro.",
     ["Head to the lower level of the cavern."] =
         "Ve al nivel inferior de la cueva.",
     ["With the coming turn-ins, this gets you to level 10."] =
@@ -111,8 +111,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a02-dwarf-and-gnome-starter", {
         "El PNJ patrulla una ruta larga; búscalo a lo largo de ella.",
     ["Die to the monsters here on purpose. This is the quickest way over."] =
         "Deja que los monstruos de aquí te maten a propósito. Es el camino más rápido para llegar.",
-    ["This one roams, so scan the surrounding area. The NPC can be indoors or out."] =
-        "Este deambula, así que revisa los alrededores. El PNJ puede estar dentro o fuera.",
+    ["The NPC can be indoors or out."] =
+        "El PNJ puede estar dentro o fuera.",
     ["Learn Two-Handed Axes and Two-Handed Maces at the weapon master"] =
         "Aprende Hachas de dos manos y Mazas de dos manos con el maestro de armas",
     ["Learn Two-Handed Maces at the weapon master"] =
@@ -129,8 +129,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a02-dwarf-and-gnome-starter", {
         "Usa el objeto sobre las Deeprun Rats. Busca pequeños roedores grises. Ve al andén de Forjaz del Tranvía Subterráneo.",
     ["Take the Deeprun Tram over to Stormwind City. The NPC stands by the wall on the central platform."] =
         "Toma el Tranvía Subterráneo hasta la Ciudad de Ventormenta. El PNJ está junto a la pared, en el andén central.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors. Be ready for a fight right away."] =
-        "Este deambula, así que revisa los alrededores. El PNJ está dentro. Prepárate para luchar de inmediato.",
+    ["The NPC is indoors. Be ready for a fight right away."] =
+        "El PNJ está dentro. Prepárate para luchar de inmediato.",
     ["Learn Two-Handed Swords and Staves at the weapon master"] =
         "Aprende Espadas de dos manos y Bastones con el maestro de armas",
     ["Learn Two-Handed Swords at the weapon master"] =
@@ -153,12 +153,12 @@ Ding.RegisterGuideTranslation("esES", "leveling-a02-dwarf-and-gnome-starter", {
         "El PNJ espera fuera, delante del edificio.",
     ["This one roams, so scan the surrounding area."] =
         "Este deambula, así que revisa los alrededores.",
-    ["Stay on the road and watch for danger. Foes in this area outlevel you. This one roams, so scan the surrounding area."] =
-        "Sigue el camino y vigila los peligros. Los enemigos de esta zona son de nivel superior al tuyo. Este deambula, así que revisa los alrededores.",
+    ["Stay on the road and watch for danger. Foes in this area outlevel you."] =
+        "Sigue el camino y vigila los peligros. Los enemigos de esta zona son de nivel superior al tuyo.",
     ["Fly to Lakeshire"] =
         "Vuela a Villa del Lago",
-    ["Step onto the pink rune. Look within the tomb. The NPC waits on the lower level, indoors."] =
-        "Pisa la runa rosa. Busca dentro de la tumba. El PNJ espera en el nivel inferior, dentro.",
+    ["Step onto the pink rune. Look within the tomb. The target is on the lower level, indoors."] =
+        "Pisa la runa rosa. Busca dentro de la tumba. El objetivo está en el nivel inferior, dentro.",
     ["The NPC stands one level over the crypt. The NPC waits on the lower level, indoors."] =
         "El PNJ está un nivel por encima de la cripta. El PNJ espera en el nivel inferior, dentro.",
     ["The NPC waits on the tower's highest floor."] =

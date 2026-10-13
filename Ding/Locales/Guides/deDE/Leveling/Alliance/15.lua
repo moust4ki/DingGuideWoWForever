@@ -19,18 +19,14 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a15-hillsbrad-foothills-and-arat
         "Verlass die Höhle",
     ["The targets are spread over several spots."] =
         "Die Ziele sind auf mehrere Stellen verteilt.",
-    ["This one roams, so scan the surrounding area."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab.",
     ["Beware of foes lurking in stealth. Further hidden ones lurk on the high ridgelines. Some are indoors as well."] =
         "Vorsicht vor getarnten Gegnern. Weitere liegen versteckt auf den hohen Bergkämmen. Einige sind auch drinnen.",
     ["Fly to Aerie Peak"] =
         "Flieg zum Nistgipfel",
     ["The NPC is at the summit of the trail. This spares you time further on."] =
         "Der NPC ist am höchsten Punkt des Wegs. Das spart dir später Zeit.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab. Der NPC ist drinnen.",
-    ["Let the conversation play out. The NPC is indoors. This one roams, so scan the surrounding area."] =
-        "Lass das Gespräch zu Ende laufen. Der NPC ist drinnen. Dieses Ziel wandert umher, also such die Umgebung ab.",
+    ["Let the conversation play out. The NPC is indoors."] =
+        "Lass das Gespräch zu Ende laufen. Der NPC ist drinnen.",
     ["Stay on the trail"] =
         "Bleib auf dem Weg",
 })

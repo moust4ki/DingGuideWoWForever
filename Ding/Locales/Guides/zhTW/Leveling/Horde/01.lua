@@ -19,8 +19,6 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h01-undead-starter", {
         "目標是蝙蝠。",
     ["With the coming hand-ins, this brings you to level 4."] =
         "加上接下來的交任務，這會讓你升到4級。",
-    ["This one roams, so scan the surrounding area."] =
-        "這個會四處走動，留意周圍一帶。",
     ["Search stacks of brown crates. Check in and around the structures."] =
         "搜尋成堆的棕色箱子。檢查建築物內外。",
     ["Just out of the mine."] =
@@ -79,18 +77,22 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h01-undead-starter", {
         "獵殺螃蟹。",
     ["Stay on the trail"] =
         "沿著小路走",
+    ["The object is indoors."] =
+        "這個物件在室內。",
     ["Keep to the trail as it curves."] =
         "沿著彎曲的小路走。",
     ["Step into the flames. Dying costs you nothing this early. This is the quickest way over."] =
         "走進火焰中。在這麼早期死亡沒有任何損失。這是過去最快的方法。",
     ["Head indoors"] =
         "進入室內",
-    ["The NPC is indoors, one floor up. Consider bringing a group for this one."] =
-        "NPC在室內的樓上一層。這個可以考慮找隊伍一起做。",
+    ["The target is indoors, one floor up. Consider bringing a group for this one."] =
+        "目標在室內的樓上一層。這個可以考慮找隊伍一起做。",
     ["Stay on the trail and keep climbing the steps"] =
         "沿著小路走，繼續爬上台階",
-    ["The NPC stands on the highest level of this structure."] =
-        "NPC站在這座建築的最高層。",
+    ["The object is on the highest level of this structure."] =
+        "這個物件在這座建築的最高層。",
+    ["This one roams, so scan the surrounding area."] =
+        "這個會四處走動，留意周圍一帶。",
     ["Learn First Aid from the trainer"] =
         "向訓練師學習急救",
     ["Loot the gray chests built from metal. Search in and around the sunken wrecks. Your targets sit below the water's surface."] =
@@ -123,6 +125,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h01-undead-starter", {
         "尋找一塊刻有骷髏標記的鐵板。等對話結束",
     ["Learn Swords at the weapon master"] =
         "向武器大師學習單手劍",
+    ["The target is indoors."] =
+        "目標在室內。",
     ["Use the item at the pink marking."] =
         "在粉紅色標記處使用物品。",
     ["Move gradually northwest toward Agamand Mills."] =

@@ -17,6 +17,4 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h32-blasted-lands", {
         "猎杀土狼获取。蝎子也在同样的地点刷新。",
     ["The foes here are scorpions. Hyenas also use these spawn spots."] =
         "这里的敌人是蝎子。土狼也会在这些刷新点出现。",
-    ["This one roams, so scan the surrounding area."] =
-        "它会四处游荡，在周围找找。",
 })

@@ -92,7 +92,7 @@ Ding.RegisterGuide({
         { accept = 1424, sticky = 698, -- level 41
           note = "The NPC is indoors, one floor up." },
         { accept = 1392, collect = { { 6196, 1 } }, useitem = 6196, patrol = { { 1435, 32.23, 36.35 }, { 1435, 33.3, 40.48 }, { 1435, 33.55, 43.94 }, { 1435, 36.72, 46.24 }, { 1435, 37.96, 43.15 }, { 1435, 38.93, 35.49 }, { 1435, 40.17, 34.59 }, { 1435, 40.92, 32.28 }, { 1435, 42.33, 32.31 }, { 1435, 45.65, 36.53 }, { 1435, 46.33, 38.63 }, { 1435, 47.61, 38.16 }, { 1435, 53.06, 39.13 }, { 1435, 55.45, 37.4 }, { 1435, 55.84, 35.66 }, { 1435, 55.57, 34.03 } }, -- level 41
-          note = "The target is a humanoid escorted by 2 guards. The NPC patrols a long route; look along it." },
+          note = "The target is a humanoid escorted by 2 guards. The target patrols a long route; look along it." },
         { turnin = 1392, accept = 1389, sticky = { 1389, 698 } }, -- level 41
         { complete = 1373, -- level 41
           note = "This one roams, so scan the surrounding area. The targets are spread over several spots." },

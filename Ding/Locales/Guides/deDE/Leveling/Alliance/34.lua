@@ -19,8 +19,6 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a34-blasted-lands-and-burning-st
         "Jage dafür Hyänen. Skorpione erscheinen an denselben Stellen.",
     ["The foes here are scorpions. Hyenas also use these spawn spots."] =
         "Die Gegner hier sind Skorpione. Hyänen nutzen auch diese Spawnpunkte.",
-    ["This one roams, so scan the surrounding area."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab.",
     ["Climb the trail to Morgan's Vigil"] =
         "Steig den Pfad hinauf zu Morgans Wacht",
     ["Flight master at Morgan's Vigil"] =

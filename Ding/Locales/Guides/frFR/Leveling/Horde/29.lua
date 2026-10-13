@@ -43,6 +43,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h29-the-hinterlands", {
         "Les cibles sont des loups camouflés.",
     ["Slay them, then apply the item to their remains."] =
         "Tue-les, puis utilise l'objet sur leurs restes.",
+    ["The object is indoors."] =
+        "L'objet est à l'intérieur.",
     ["Steer clear of hostile Alliance NPCs. Warning: this turns on your PvP flag."] =
         "Évite les PNJ hostiles de l'Alliance. Attention : ça active ton marquage JcJ.",
     ["Head into Shadra'Alor"] =

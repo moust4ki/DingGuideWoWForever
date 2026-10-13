@@ -13,8 +13,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h30-feralas-and-ungoro-crater", 
         "目標是角鷹獸。殺死牠們，然後對屍體使用這個物品。",
     ["Slay them, then apply the item to their remains."] =
         "殺死牠們，然後對屍體使用這個物品。",
-    ["Fight the treants. The NPC patrols a long route; look along it. Slay them, then apply the item to their remains."] =
-        "與樹人戰鬥。NPC沿著一條很長的路線巡邏；沿路尋找。殺死牠們，然後對屍體使用這個物品。",
+    ["Fight the treants. The target patrols a long route; look along it. Slay them, then apply the item to their remains."] =
+        "與樹人戰鬥。目標沿著一條很長的路線巡邏；沿路尋找。殺死牠們，然後對屍體使用這個物品。",
     ["Aim the item at the Strider foes. The targets are towering green giants. The item strips their elite status."] =
         "對Strider敵人使用這個物品。目標是高大的綠色巨人。這個物品會移除牠們的精英狀態。",
     ["Hunt down the elementals formed of water."] =

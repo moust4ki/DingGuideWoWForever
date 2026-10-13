@@ -47,8 +47,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a08-darkshore", {
         "讓對話播完。跟著勘察員雷姆塔維爾並保護他。他很脆弱，很快就會倒下。",
     ["Look on top of the table."] =
         "在桌子上找。",
-    ["For this quest you guard an NPC on the move. If she is absent, wait for her to reappear. This one roams, so scan the surrounding area."] =
-        "這個任務要護送一名移動中的NPC。如果她不在，等她重生。這個會四處走動，留意周圍一帶。",
+    ["For this quest you guard an NPC on the move. If she is absent, wait for her to reappear."] =
+        "這個任務要護送一名移動中的NPC。如果她不在，等她重生。",
     ["Let the conversation play out. Escort Therylune and defend her."] =
         "讓對話播完。護送瑟瑞露尼並保護她。",
     ["For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears. Your objective lies in a little cavern."] =

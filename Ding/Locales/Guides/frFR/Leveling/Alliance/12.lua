@@ -7,10 +7,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a12-wetlands", {
         "Rejoins le port de Menethil",
     ["Wetlands: Menethil Harbor, on the west coast."] =
         "Les Paluns : le port de Menethil, sur la côte ouest.",
-    ["This one roams, so scan the surrounding area."] =
-        "Celui-ci se déplace : fouille les environs.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "Celui-ci se déplace : fouille les environs. Le PNJ est à l'intérieur.",
+    ["The NPC is indoors."] =
+        "Le PNJ est à l'intérieur.",
     ["The NPC is indoors, one floor up."] =
         "Le PNJ est à l'intérieur, un étage plus haut.",
     ["Your targets sit below the water's surface. Targets are within the wrecked vessel underwater."] =
@@ -37,8 +35,6 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a12-wetlands", {
         "Sors de Whelgar's Excavation Site",
     ["The targets are orcs."] =
         "Les cibles sont des orcs.",
-    ["The NPC is indoors."] =
-        "Le PNJ est à l'intérieur.",
     ["The target is up on the boat's top deck. Climb the incline at the rear."] =
         "La cible est en haut, sur le pont supérieur du bateau. Monte la pente à l'arrière.",
     ["Go to the lowest deck of the ship. Your targets sit below the water's surface. Swim in via the gap at the base."] =
@@ -51,8 +47,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a12-wetlands", {
         "Ces ennemis sont camouflés. Le plus souvent dans l'eau ou au bord.",
     ["Take the door on the bridge, then descend the steps"] =
         "Passe la porte sur le pont, puis descends les marches",
-    ["Be ready for a fight right away. The NPC is on the lower level within the bridge."] =
-        "Prépare-toi à combattre tout de suite. Le PNJ est au niveau inférieur, à l'intérieur du pont.",
+    ["Be ready for a fight right away. The object is on the lower level within the bridge."] =
+        "Prépare-toi à combattre tout de suite. L'objet est au niveau inférieur, à l'intérieur du pont.",
     ["Leap from the span and splash down below"] =
         "Saute du pont et plonge dans l'eau en dessous",
     ["Look for a pale, rolled scroll. A dwarf corpse grips it. Your targets sit below the water's surface."] =

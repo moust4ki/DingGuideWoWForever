@@ -40,7 +40,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { turnin = 8464 }, -- level 58
         { turnin = 8471, when = { ready = 8471 }, -- level 58
-          note = "This one roams, so scan the surrounding area. The NPC stands within the passage." },
+          note = "The NPC stands within the passage." },
         { go = { 1450, 32.05, 66.54 }, fly = true, talk = 12740, text = "Fly to Moonglade" }, -- level 58
         { turnin = 1123, accept = 1124, -- level 58
           note = "The NPC is indoors." },
@@ -54,7 +54,7 @@ Ding.RegisterGuide({
         { accept = 8467, when = { item = { 21377, 5 } } }, -- level 59
         { turnin = 8467, when = { item = { 21377, 5 }, ready = 8467 } }, -- level 59
         { turnin = 8470, when = { maxlevel = 56, ready = 8470 }, -- level 59
-          note = "This one roams, so scan the surrounding area. The NPC stands within the passage." },
+          note = "The NPC stands within the passage." },
         { collect = { { 14047, 30 } }, when = { maxlevel = 59 } }, -- level 59
         { accept = 6031, when = { item = { 14047, 30 }, maxlevel = 59 }, -- level 59
           note = "The NPC stands within the passage." },

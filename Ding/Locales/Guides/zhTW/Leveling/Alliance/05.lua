@@ -35,8 +35,6 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a05-darkshore", {
         "目標在水面下。",
     ["The targets are sea creatures with long necks. Your targets sit below the water's surface."] =
         "目標是長脖子的海洋生物。目標在水面下。",
-    ["This one roams, so scan the surrounding area."] =
-        "這個會四處走動，留意周圍一帶。",
     ["Head to the hilltop."] =
         "前往山丘頂端。",
     ["The targets are imps. Avoid slaying the satyrs if you can. You'll need this for the following quest."] =
@@ -63,6 +61,6 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a05-darkshore", {
         "前往沉船的最底層甲板。從舷窗游進去。",
     ["Hunt the crabs."] =
         "獵殺螃蟹。",
-    ["This one roams, so scan the surrounding area. The NPC is indoors. Do it only if you can."] =
-        "這個會四處走動，留意周圍一帶。NPC在室內。能做到才做。",
+    ["The NPC is indoors. Do it only if you can."] =
+        "NPC在室內。能做到才做。",
 })

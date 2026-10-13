@@ -7,8 +7,6 @@ Ding.RegisterGuideTranslation("esES", "leveling-h38-felwood-and-winterspring", {
         "Viaja al Puesto del Veneno",
     ["Felwood: Bloodvenom Post, in the west of the zone."] =
         "Frondavil: Puesto del Veneno, al oeste de la zona.",
-    ["This one roams, so scan the surrounding area."] =
-        "Este deambula, así que revisa los alrededores.",
     ["Hand these in afterwards for experience and reputation."] =
         "Entrégalos después por experiencia y reputación.",
     ["Go into Jaedenar"] =
@@ -45,8 +43,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h38-felwood-and-winterspring", {
         "El PNJ está dentro.",
     ["The quest wants yetis; seek them out. Targets are in the cavern and around its entrance too."] =
         "La misión pide yetis; búscalos. Los objetivos están en la cueva y también alrededor de la entrada.",
-    ["The NPC is a human spirit. This one roams, so scan the surrounding area."] =
-        "El PNJ es un espíritu humano. Este deambula, así que revisa los alrededores.",
+    ["The NPC is a human spirit."] =
+        "El PNJ es un espíritu humano.",
     ["Your targets are within the cavern."] =
         "Tus objetivos están dentro de la cueva.",
     ["Let the conversation play out. Your targets are within the cavern."] =
@@ -65,8 +63,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h38-felwood-and-winterspring", {
         "Dale los objetos a Nafien en lotes de 5. Cada lote completo que entregas da 50 de reputación. Lleva las plumas que recojas al PNJ en 64.8, 8.1.",
     ["Raise Timbermaw Hold standing to Neutral"] =
         "Sube tu reputación con el Bastión Fauces de Madera a Neutral",
-    ["This one roams, so scan the surrounding area. The NPC stands within the passage."] =
-        "Este deambula, así que revisa los alrededores. El PNJ está dentro del paso.",
+    ["The NPC stands within the passage."] =
+        "El PNJ está dentro del paso.",
     ["The targets are 3 white furbolgs moving as one pack. The target patrols a long route beside the road. They appear near 28.1, 35.0 in Winterspring."] =
         "Los objetivos son 3 fúrbolgs blancos que van en grupo. El objetivo patrulla una larga ruta junto al camino. Aparecen cerca de 28.1, 35.0, en Cuna del Invierno.",
     ["This number shrinks while you kill monsters. Bring any feathers you collect to the NPC at 64.8, 8.1."] =

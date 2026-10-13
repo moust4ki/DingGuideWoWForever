@@ -25,14 +25,16 @@ Ding.RegisterGuideTranslation("esES", "leveling-a14-duskwood-and-stranglethorn-v
         "El PNJ patrulla el camino; búscalo a lo largo de él.",
     ["The targets are worgen."] =
         "Los objetivos son huargen.",
-    ["Be ready for a fight right away. The NPC is indoors, one floor up."] =
-        "Prepárate para luchar de inmediato. El PNJ está dentro, un piso más arriba.",
+    ["Be ready for a fight right away. The object is indoors, one floor up."] =
+        "Prepárate para luchar de inmediato. El objeto está dentro, un piso más arriba.",
     ["The targets are ghouls. Targets are both in the tomb and around it."] =
         "Los objetivos son necrófagos. Los objetivos están dentro de la tumba y a su alrededor.",
     ["Other ghouls occupy the same spawn points. Targets are both in the tomb and around it."] =
         "Otros necrófagos ocupan los mismos puntos de aparición. Los objetivos están dentro de la tumba y a su alrededor.",
     ["Exit the tomb"] =
         "Sal de la tumba",
+    ["The object is indoors."] =
+        "El objeto está dentro.",
     ["Go into the cavern"] =
         "Entra en la cueva",
     ["Your targets are within the cavern. The targets are spread over several spots."] =

@@ -19,18 +19,14 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a15-hillsbrad-foothills-and-arat
         "Saia da caverna",
     ["The targets are spread over several spots."] =
         "Os alvos estão espalhados por vários pontos.",
-    ["This one roams, so scan the surrounding area."] =
-        "Este se desloca, então procure pelos arredores.",
     ["Beware of foes lurking in stealth. Further hidden ones lurk on the high ridgelines. Some are indoors as well."] =
         "Cuidado com inimigos furtivos à espreita. Há outras escondidas no alto das cristas. Também há dentro das construções.",
     ["Fly to Aerie Peak"] =
         "Voe até o Ninho da Águia",
     ["The NPC is at the summit of the trail. This spares you time further on."] =
         "O NPC fica no topo da trilha. Isso te poupa tempo mais adiante.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "Este se desloca, então procure pelos arredores. O NPC está lá dentro.",
-    ["Let the conversation play out. The NPC is indoors. This one roams, so scan the surrounding area."] =
-        "Deixe a conversa terminar. O NPC está lá dentro. Este se desloca, então procure pelos arredores.",
+    ["Let the conversation play out. The NPC is indoors."] =
+        "Deixe a conversa terminar. O NPC está lá dentro.",
     ["Stay on the trail"] =
         "Siga a trilha",
 })

@@ -7,8 +7,6 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h35-felwood-and-winterspring", {
         "에메랄드 성소로 이동",
     ["Felwood: Emerald Sanctuary, in the south of the zone."] =
         "악령의 숲: 에메랄드 성소는 지역 남쪽에 있습니다.",
-    ["This one roams, so scan the surrounding area."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요.",
     ["The NPC is indoors."] =
         "NPC는 건물 안에 있습니다.",
     ["Hand these in afterwards for experience and reputation."] =

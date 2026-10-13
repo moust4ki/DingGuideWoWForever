@@ -7,8 +7,6 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h19-badlands", {
         "황야의 땅으로 이동",
     ["Badlands: Kargath, at the western edge, is the Horde hub."] =
         "황야의 땅: 카르가스가 서쪽 끝에 있는 호드 거점입니다.",
-    ["This one roams, so scan the surrounding area."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요.",
     ["The NPC waits on the tower's highest floor."] =
         "NPC는 탑 꼭대기 층에서 기다립니다.",
     ["Fly to Kargath"] =

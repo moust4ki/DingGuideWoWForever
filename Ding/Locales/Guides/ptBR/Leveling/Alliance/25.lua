@@ -31,8 +31,6 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a25-stranglethorn-vale", {
         "Pegue a passagem para sair da Angra do Butim",
     ["Take the tunnel into Booty Bay"] =
         "Pegue o túnel para entrar na Angra do Butim",
-    ["This one roams, so scan the surrounding area."] =
-        "Este se desloca, então procure pelos arredores.",
     ["Take the trail toward the Ruins of Aboraz"] =
         "Pegue a trilha rumo às Ruínas de Aboraz",
     ["Gradually move toward the northeast."] =

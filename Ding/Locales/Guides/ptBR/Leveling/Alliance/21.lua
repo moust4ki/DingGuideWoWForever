@@ -33,8 +33,10 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a21-arathi-highlands-and-alterac
         "O NPC está lá dentro.",
     ["Wait for the talking to finish"] =
         "Espere a conversa terminar",
-    ["Beware of foes lurking in stealth. The NPC is indoors."] =
-        "Cuidado com inimigos furtivos à espreita. O NPC está lá dentro.",
+    ["Beware of foes lurking in stealth. The target is indoors."] =
+        "Cuidado com inimigos furtivos à espreita. O alvo está lá dentro.",
+    ["The target is indoors."] =
+        "O alvo está lá dentro.",
     ["Beware of foes lurking in stealth."] =
         "Cuidado com inimigos furtivos à espreita.",
     ["The targets are ogres."] =
@@ -59,8 +61,6 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a21-arathi-highlands-and-alterac
         "Pegue a trilha pelos picos",
     ["Take the passage to Faldir's Cove"] =
         "Pegue a passagem até a Enseada de Faldir",
-    ["This one roams, so scan the surrounding area."] =
-        "Este se desloca, então procure pelos arredores.",
     ["For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears."] =
         "Nesta missão, você protege um NPC em movimento. Se o NPC não estiver lá, espere até ele reaparecer.",
     ["Let the conversation play out. Escort Professor Phizzlethorpe and keep him alive."] =

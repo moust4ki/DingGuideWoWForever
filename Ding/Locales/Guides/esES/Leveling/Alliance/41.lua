@@ -11,34 +11,38 @@ Ding.RegisterGuideTranslation("esES", "leveling-a41-western-and-eastern-plaguela
         "El PNJ está dentro.",
     ["Stay on the trail"] =
         "Sigue el sendero",
-    ["This one roams, so scan the surrounding area. Check each of the two floors indoors."] =
-        "Este deambula, así que revisa los alrededores. Mira en los dos pisos del interior.",
+    ["Check each of the two floors indoors."] =
+        "Mira en los dos pisos del interior.",
     ["Stand at the watchtower's doorway. An elite foe waits indoors; stay clear of it."] =
         "Ponte en la puerta de la atalaya. Dentro hay un enemigo élite; evítalo.",
     ["Spiders also appear at these spawn spots."] =
         "Las arañas también aparecen en estos puntos de aparición.",
+    ["The object is indoors."] =
+        "El objeto está dentro.",
     ["Look for a white set of bones. This one roams, so scan the surrounding area. The targets appear in several places."] =
         "Busca unos huesos blancos. Este deambula, así que revisa los alrededores. Los objetivos aparecen en varios sitios.",
     ["Finish Locked Away to obtain this."] =
         "Termina Locked Away para conseguirlo.",
+    ["The object is indoors, one floor up."] =
+        "El objeto está dentro, un piso más arriba.",
     ["The NPC is indoors, one floor up."] =
         "El PNJ está dentro, un piso más arriba.",
     ["The target is a ghoul armed with a pitchfork. This one roams, so scan the surrounding area. The targets appear in several places."] =
         "El objetivo es un necrófago armado con una horca. Este deambula, así que revisa los alrededores. Los objetivos aparecen en varios sitios.",
-    ["This one roams, so scan the surrounding area."] =
-        "Este deambula, así que revisa los alrededores.",
     ["Elites roam close by; keep your distance."] =
         "Hay élites cerca; mantén las distancias.",
     ["Search the bones of a fallen person. Elites roam close by; keep your distance."] =
         "Registra los huesos de una persona caída. Hay élites cerca; mantén las distancias.",
-    ["This one roams, so scan the surrounding area. The NPC is within the ruined home."] =
-        "Este deambula, así que revisa los alrededores. El PNJ está dentro de la casa en ruinas.",
+    ["The NPC is within the ruined home."] =
+        "El PNJ está dentro de la casa en ruinas.",
     ["Search within the houses here. Be ready for a fight right away."] =
         "Busca dentro de las casas de aquí. Prepárate para luchar de inmediato.",
     ["Look for big yellow grubs."] =
         "Busca larvas amarillas grandes.",
     ["With the coming hand-ins, this gets you to level 58."] =
         "Con las próximas entregas, esto te lleva a nivel 58.",
+    ["This one roams, so scan the surrounding area."] =
+        "Este deambula, así que revisa los alrededores.",
     ["Flight master at Light's Hope Chapel"] =
         "Maestro de vuelo de la Capilla de la Esperanza de la Luz",
     ["Look for big rocks seeping green slime. Progress westward as you go."] =
@@ -49,8 +53,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a41-western-and-eastern-plaguela
         "Baja a la tumba",
     ["This is below ground, on the crypt's lower floor."] =
         "Está bajo tierra, en el piso inferior de la cripta.",
-    ["This one roams, so scan the surrounding area. Your character must be seated first."] =
-        "Este deambula, así que revisa los alrededores. Primero tu personaje tiene que estar sentado.",
+    ["Your character must be seated first."] =
+        "Primero tu personaje tiene que estar sentado.",
     ["Move the camera close and check which book is genuine. Some books are traps that summon foes. The genuine book can look two ways:"] =
         "Acerca la cámara y comprueba qué libro es el auténtico. Algunos libros son trampas que invocan enemigos. El libro auténtico puede tener dos aspectos:",
     ["Close to the big buildings lit in blue. A new one may appear when one is killed."] =
@@ -59,8 +63,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a41-western-and-eastern-plaguela
         "Busca pequeños cofres grises de metal. Los objetivos están en las casas en ruinas.",
     ["Your targets sit below the water's surface."] =
         "Tus objetivos están bajo la superficie del agua.",
-    ["The NPC is indoors. It shows up on top of the box."] =
-        "El PNJ está dentro. Aparece encima de la caja.",
+    ["The object is indoors. It shows up on top of the box."] =
+        "El objeto está dentro. Aparece encima de la caja.",
     ["This one roams, so scan the surrounding area. Targets are in the tower and around its base. If an elite stands on the tower's roof, hold back outside."] =
         "Este deambula, así que revisa los alrededores. Los objetivos están en la torre y alrededor de su base. Si hay un élite en el tejado de la torre, espera fuera.",
     ["Head down into the Deeprun Tram station"] =

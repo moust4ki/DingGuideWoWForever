@@ -25,14 +25,12 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h18-alterac-mountains-and-arathi
         "Die Ziele sind auf mehrere Stellen verteilt. Der NPC ist drinnen. Sieh auch im oberen Stockwerk nach.",
     ["The NPC is indoors, one floor up."] =
         "Der NPC ist drinnen, ein Stockwerk höher.",
-    ["The NPC waits on the lower level, indoors. If it is not around, move on without it. No rush; you may complete this afterwards."] =
-        "Der NPC wartet drinnen auf der unteren Ebene. Wenn es nicht da ist, mach ohne es weiter. Keine Eile, du kannst das später abschließen.",
-    ["This one roams, so scan the surrounding area."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab.",
+    ["The target is on the lower level, indoors. If it is not around, move on without it. No rush; you may complete this afterwards."] =
+        "Das Ziel ist drinnen auf der unteren Ebene. Wenn es nicht da ist, mach ohne es weiter. Keine Eile, du kannst das später abschließen.",
     ["Climb the slope, then leap the wall"] =
         "Steig den Hang hinauf, dann spring über die Mauer",
-    ["The NPC is indoors, one floor up. Beware of foes lurking in stealth."] =
-        "Der NPC ist drinnen, ein Stockwerk höher. Vorsicht vor getarnten Gegnern.",
+    ["The target is indoors, one floor up. Beware of foes lurking in stealth."] =
+        "Das Ziel ist drinnen, ein Stockwerk höher. Vorsicht vor getarnten Gegnern.",
     ["The targets are kobolds. Additional ones are in the cavern up the trail. The following step takes place in the cave."] =
         "Die Ziele sind Kobolde. Weitere sind in der Höhle den Pfad hinauf. Der nächste Schritt findet in der Höhle statt.",
     ["Climb the trail to the cavern"] =
@@ -45,6 +43,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h18-alterac-mountains-and-arathi
         "Verlass die Höhle",
     ["The targets are raptors."] =
         "Die Ziele sind Raptoren.",
+    ["This one roams, so scan the surrounding area."] =
+        "Dieses Ziel wandert umher, also such die Umgebung ab.",
     ["Let the conversation play out. This one roams, so scan the surrounding area."] =
         "Lass das Gespräch zu Ende laufen. Dieses Ziel wandert umher, also such die Umgebung ab.",
     ["Take the trail across the peaks"] =

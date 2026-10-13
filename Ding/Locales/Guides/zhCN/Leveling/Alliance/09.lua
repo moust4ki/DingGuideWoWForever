@@ -61,8 +61,6 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a09-ashenvale-and-stonetalon-mou
         "目标是翠绿皮肤、玫瑰色鳍的纳迦。它在岸边附近顺时针绕岛游动。她身边跟着两个守卫。",
     ["Hunt naga."] =
         "猎杀纳迦。",
-    ["This one roams, so scan the surrounding area."] =
-        "它会四处游荡，在周围找找。",
     ["The quest giver stands outdoors, not indoors."] =
         "任务发布者在室外，不在室内。",
     ["Step into the cavern within the trunk"] =

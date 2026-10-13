@@ -3240,4 +3240,41 @@ return {
         "Visita al jabaespín enjaulado",
     ["Go to the corrupted moonwell"] =
         "Ve al pozo de la luna corrupto",
+    -- Ding - Leveling: where an object or a monster target is (notes)
+    ["The object is indoors."] =
+        "El objeto está dentro.",
+    ["The object is indoors, one floor up."] =
+        "El objeto está dentro, un piso más arriba.",
+    ["The object is on the lower level, indoors."] =
+        "El objeto está en el nivel inferior, dentro.",
+    ["The object is on the lower level within the bridge."] =
+        "El objeto está en el nivel inferior, dentro del puente.",
+    ["The object is on the highest level of this structure."] =
+        "El objeto está en el nivel más alto de esta estructura.",
+    ["The object is up on the summit."] =
+        "El objeto está arriba, en la cima.",
+    ["The object sits on the rocky shelf above."] =
+        "El objeto está en la repisa rocosa de arriba.",
+    ["The target is indoors."] =
+        "El objetivo está dentro.",
+    ["The target is indoors, one floor up."] =
+        "El objetivo está dentro, un piso más arriba.",
+    ["The target is indoors at street level."] =
+        "El objetivo está dentro, a pie de calle.",
+    ["The target is indoors, on the central storey."] =
+        "El objetivo está dentro, en el piso central.",
+    ["The target is on the lower level, indoors."] =
+        "El objetivo está en el nivel inferior, dentro.",
+    ["The target is on the tower's highest floor."] =
+        "El objetivo está en el piso más alto de la torre.",
+    ["The target is up on the summit."] =
+        "El objetivo está arriba, en la cima.",
+    ["The target is down in the Cleft of Shadow."] =
+        "El objetivo está abajo, en la Grieta de la Sombra.",
+    ["The target can be indoors or out."] =
+        "El objetivo puede estar dentro o fuera.",
+    ["The target patrols a long route; look along it."] =
+        "El objetivo patrulla una ruta larga; búscalo a lo largo de ella.",
+    ["The target waits here, then strolls out onto the big branch close by."] =
+        "El objetivo espera aquí y luego sale paseando a la gran rama cercana.",
 }

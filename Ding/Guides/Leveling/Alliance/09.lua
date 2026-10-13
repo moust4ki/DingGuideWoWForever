@@ -104,8 +104,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { turnin = 1008, accept = 1134 }, -- level 23
         { turnin = { 4730, 4731, 4732, 4733 } }, -- level 23
-        { turnin = 4740, -- level 23
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 4740 }, -- level 23
         { turnin = 98025, races = { "Dwarf", "NightElf", "Gnome", "Skyborne" } }, -- level 23
         { turnin = 731, accept = 741, when = { log = 731 } }, -- level 23
         { turnin = 731, accept = 741, when = { done = 731 } }, -- level 23

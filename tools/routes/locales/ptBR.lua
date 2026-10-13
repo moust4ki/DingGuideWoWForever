@@ -3239,4 +3239,41 @@ return {
         "Visite o javatusco enjaulado",
     ["Go to the corrupted moonwell"] =
         "Vá até o poço lunar corrompido",
+    -- Ding - Leveling: where an object or a monster target is (notes)
+    ["The object is indoors."] =
+        "O objeto está lá dentro.",
+    ["The object is indoors, one floor up."] =
+        "O objeto está lá dentro, um andar acima.",
+    ["The object is on the lower level, indoors."] =
+        "O objeto está no nível de baixo, lá dentro.",
+    ["The object is on the lower level within the bridge."] =
+        "O objeto está no nível de baixo, dentro da ponte.",
+    ["The object is on the highest level of this structure."] =
+        "O objeto fica no nível mais alto desta construção.",
+    ["The object is up on the summit."] =
+        "O objeto está lá no topo.",
+    ["The object sits on the rocky shelf above."] =
+        "O objeto fica na saliência rochosa acima.",
+    ["The target is indoors."] =
+        "O alvo está lá dentro.",
+    ["The target is indoors, one floor up."] =
+        "O alvo está lá dentro, um andar acima.",
+    ["The target is indoors at street level."] =
+        "O alvo está lá dentro, no nível da rua.",
+    ["The target is indoors, on the central storey."] =
+        "O alvo está lá dentro, no andar do meio.",
+    ["The target is on the lower level, indoors."] =
+        "O alvo está no nível de baixo, lá dentro.",
+    ["The target is on the tower's highest floor."] =
+        "O alvo está no último andar da torre.",
+    ["The target is up on the summit."] =
+        "O alvo está lá no topo.",
+    ["The target is down in the Cleft of Shadow."] =
+        "O alvo fica lá embaixo, no Antro das Sombras.",
+    ["The target can be indoors or out."] =
+        "O alvo pode estar dentro ou fora.",
+    ["The target patrols a long route; look along it."] =
+        "O alvo patrulha uma rota longa; procure ao longo dela.",
+    ["The target waits here, then strolls out onto the big branch close by."] =
+        "O alvo espera aqui e depois caminha até o grande galho próximo.",
 }

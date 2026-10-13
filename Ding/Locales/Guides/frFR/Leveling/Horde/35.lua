@@ -7,8 +7,6 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h35-felwood-and-winterspring", {
         "Rejoins le Sanctuaire d'émeraude",
     ["Felwood: Emerald Sanctuary, in the south of the zone."] =
         "Gangrebois : le Sanctuaire d'émeraude, au sud de la zone.",
-    ["This one roams, so scan the surrounding area."] =
-        "Celui-ci se déplace : fouille les environs.",
     ["The NPC is indoors."] =
         "Le PNJ est à l'intérieur.",
     ["Hand these in afterwards for experience and reputation."] =

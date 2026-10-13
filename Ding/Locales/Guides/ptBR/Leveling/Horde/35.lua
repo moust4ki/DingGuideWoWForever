@@ -7,8 +7,6 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h35-felwood-and-winterspring", {
         "Viaje até o Santuário Esmeralda",
     ["Felwood: Emerald Sanctuary, in the south of the zone."] =
         "Selva Maleva: Santuário Esmeralda, no sul da zona.",
-    ["This one roams, so scan the surrounding area."] =
-        "Este se desloca, então procure pelos arredores.",
     ["The NPC is indoors."] =
         "O NPC está lá dentro.",
     ["Hand these in afterwards for experience and reputation."] =

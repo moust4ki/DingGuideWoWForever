@@ -35,8 +35,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h20-stranglethorn-vale-and-swamp
         "Mestre de voo de Pedregal",
     ["The NPC is indoors, one floor up."] =
         "O NPC está lá dentro, um andar acima.",
-    ["The target is a humanoid escorted by 2 guards. The NPC patrols a long route; look along it."] =
-        "O alvo é um humanoide escoltado por 2 guardas. O NPC patrulha uma rota longa; procure ao longo dela.",
+    ["The target is a humanoid escorted by 2 guards. The target patrols a long route; look along it."] =
+        "O alvo é um humanoide escoltado por 2 guardas. O alvo patrulha uma rota longa; procure ao longo dela.",
     ["This one roams, so scan the surrounding area. The targets are spread over several spots."] =
         "Este se desloca, então procure pelos arredores. Os alvos estão espalhados por vários pontos.",
     ["For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears. Clear the monsters just south before you start."] =

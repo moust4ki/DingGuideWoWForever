@@ -35,8 +35,6 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a05-darkshore", {
         "Tes cibles sont sous la surface de l'eau.",
     ["The targets are sea creatures with long necks. Your targets sit below the water's surface."] =
         "Les cibles sont des créatures marines au long cou. Tes cibles sont sous la surface de l'eau.",
-    ["This one roams, so scan the surrounding area."] =
-        "Celui-ci se déplace : fouille les environs.",
     ["Head to the hilltop."] =
         "Va au sommet de la colline.",
     ["The targets are imps. Avoid slaying the satyrs if you can. You'll need this for the following quest."] =
@@ -63,6 +61,6 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a05-darkshore", {
         "Va au pont inférieur de l'épave. Entre à la nage par un hublot.",
     ["Hunt the crabs."] =
         "Chasse les crabes.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors. Do it only if you can."] =
-        "Celui-ci se déplace : fouille les environs. Le PNJ est à l'intérieur. Fais-le seulement si tu peux.",
+    ["The NPC is indoors. Do it only if you can."] =
+        "Le PNJ est à l'intérieur. Fais-le seulement si tu peux.",
 })

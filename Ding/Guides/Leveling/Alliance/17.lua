@@ -44,7 +44,7 @@ Ding.RegisterGuide({
         { accept = 191, sticky = { 204, 203 } }, -- level 35
         { complete = 204 }, -- level 35
         { turnin = 200, accept = 328, -- level 35
-          note = "The NPC is indoors, one floor up." },
+          note = "The object is indoors, one floor up." },
         { complete = 204, keep = 2633, -- level 35
           note = "These foes heal both their allies and themselves." },
         { complete = 203 }, -- level 35
@@ -53,9 +53,9 @@ Ding.RegisterGuide({
         { complete = 186 }, -- level 35
         { level = 35, sticky = 213, patrol = { { 1434, 46.35, 12.74 }, { 1434, 45.94, 15.25 }, { 1434, 46.43, 17.64 }, { 1434, 42.85, 14.97 }, { 1434, 44.03, 13.46 } } }, -- level 35
         { collect = { { 5851, 1 } }, spots = { { 1434, 42.62, 18.29 } }, -- level 35
-          note = "The objective sits up on the raised deck. The NPC is indoors." },
+          note = "The objective sits up on the raised deck. The target is indoors." },
         { complete = 1182, -- level 35
-          note = "The NPC is indoors." },
+          note = "The object is indoors." },
         { complete = 213 }, -- level 35
         { turnin = { 203, 204 } }, -- level 35
         { accept = 210 }, -- level 35
@@ -102,7 +102,7 @@ Ding.RegisterGuide({
         { turnin = 575, -- level 35
           note = "The NPC stands on the top tier of the pier. The NPC is indoors." },
         { turnin = 1041, accept = 1042, -- level 35
-          note = "This one roams, so scan the surrounding area. The NPC is indoors." },
+          note = "The NPC is indoors." },
         { turnin = 1042, accept = 1043, -- level 35
           note = "The NPC is indoors." },
         { go = { 1431, 73.01, 75.09 }, text = "Go into the mine" }, -- level 35

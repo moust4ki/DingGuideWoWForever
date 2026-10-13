@@ -19,20 +19,22 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a37-feralas-and-azshara", {
         "Saia da caverna",
     ["Stand on the neighboring ledge, then hop into this crack in the wall"] =
         "Fique na saliência vizinha, depois pule nesta fenda do muro",
-    ["The NPC is indoors."] =
-        "O NPC está lá dentro.",
+    ["The object is indoors."] =
+        "O objeto está lá dentro.",
     ["Hop onto the ledge"] =
         "Pule na saliência",
     ["Leap over at this spot"] =
         "Pule para o outro lado neste ponto",
     ["Leap up at this spot"] =
         "Pule para cima neste ponto",
-    ["The NPC or item sits on the rocky shelf above."] =
-        "O NPC ou item fica na saliência rochosa acima.",
+    ["The object sits on the rocky shelf above."] =
+        "O objeto fica na saliência rochosa acima.",
     ["Let the conversation play out. Shay Leafrunner trails behind you; keep her alive. Keep near her, as she tends to stray."] =
         "Deixe a conversa terminar. Shay Velifrondes segue você; mantenha-a viva. Fique perto dela, pois ela costuma se desviar.",
     ["Finish the quest named The Videre Elixir. Keep the elixir in your bags; never consume it. You will die from it."] =
         "Conclua a missão O elixir Videre. Guarde o elixir nas bolsas; nunca o beba. Ele mata você.",
+    ["The NPC is indoors."] =
+        "O NPC está lá dentro.",
     ["Put these items in your bank vault."] =
         "Guarde estes itens no seu banco.",
     ["The quest giver waits on the hilltop."] =

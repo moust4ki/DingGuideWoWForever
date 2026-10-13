@@ -19,20 +19,22 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a37-feralas-and-azshara", {
         "동굴을 나가세요",
     ["Stand on the neighboring ledge, then hop into this crack in the wall"] =
         "옆 바위턱에 선 다음 벽의 이 틈으로 뛰어 들어가세요",
-    ["The NPC is indoors."] =
-        "NPC는 건물 안에 있습니다.",
+    ["The object is indoors."] =
+        "그 물체는 건물 안에 있습니다.",
     ["Hop onto the ledge"] =
         "바위턱 위로 뛰어오르세요",
     ["Leap over at this spot"] =
         "여기서 뛰어 건너세요",
     ["Leap up at this spot"] =
         "여기서 뛰어오르세요",
-    ["The NPC or item sits on the rocky shelf above."] =
-        "NPC나 아이템은 위쪽 바위턱에 있습니다.",
+    ["The object sits on the rocky shelf above."] =
+        "그 물체는 위쪽 바위턱에 있습니다.",
     ["Let the conversation play out. Shay Leafrunner trails behind you; keep her alive. Keep near her, as she tends to stray."] =
         "대화가 끝날 때까지 기다리세요. 샤이 리프러너가 뒤를 따라옵니다. 살려 두세요. 자주 엉뚱한 곳으로 가니 곁에 붙어 있으세요.",
     ["Finish the quest named The Videre Elixir. Keep the elixir in your bags; never consume it. You will die from it."] =
         "앞날의 비약 퀘스트를 완료하세요. 비약은 가방에 보관하고 절대 마시지 마세요. 이것 때문에 죽게 됩니다.",
+    ["The NPC is indoors."] =
+        "NPC는 건물 안에 있습니다.",
     ["Put these items in your bank vault."] =
         "이 아이템들을 은행 금고에 맡기세요.",
     ["The quest giver waits on the hilltop."] =

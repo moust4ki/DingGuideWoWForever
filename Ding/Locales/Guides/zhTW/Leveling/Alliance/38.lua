@@ -23,8 +23,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a38-ungoro-crater", {
         "目標在洞穴裡，入口周圍也有。",
     ["Climb the trail"] =
         "沿小路往上爬",
-    ["The NPC is up on the summit."] =
-        "NPC在山頂上。",
+    ["The object is up on the summit."] =
+        "這個物件在山頂上。",
     ["The targets are flame elementals. An elite foe waits on the summit; steer clear."] =
         "目標是火元素。山頂上有一個精英敵人；避開它。",
     ["For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears. Your objective lies in a little cavern."] =
@@ -45,6 +45,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a38-ungoro-crater", {
         "你不再需要這些；賣掉或丟掉。",
     ["The NPC is indoors."] =
         "NPC在室內。",
+    ["The object is indoors."] =
+        "這個物件在室內。",
     ["The NPC patrols a long route; look along it."] =
         "NPC沿著一條很長的路線巡邏；沿路尋找。",
     ["The NPC is indoors, one floor up."] =
@@ -55,8 +57,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a38-ungoro-crater", {
         "進入樹幹裡的洞穴",
     ["The spot is on the lower floor of the hollow tree."] =
         "位置在空心樹的下層。",
-    ["This one roams, so scan the surrounding area. Climb to the highest floor of the building."] =
-        "這個會四處走動，留意周圍一帶。爬到建築的最頂樓。",
+    ["Climb to the highest floor of the building."] =
+        "爬到建築的最頂樓。",
     ["The NPC is indoors, on the central storey."] =
         "NPC在室內的中間樓層。",
 })

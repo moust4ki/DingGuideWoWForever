@@ -7,18 +7,14 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a10-wetlands", {
         "Reise zum Hafen von Menethil",
     ["Wetlands: Menethil Harbor, on the west coast."] =
         "Sumpfland: Hafen von Menethil, an der Westküste.",
-    ["This one roams, so scan the surrounding area."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab.",
     ["The NPC is indoors."] =
         "Der NPC ist drinnen.",
     ["The NPC waits on the lower level, indoors."] =
         "Der NPC wartet drinnen auf der unteren Ebene.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab. Der NPC ist drinnen.",
     ["The NPC is indoors, one floor up."] =
         "Der NPC ist drinnen, ein Stockwerk höher.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors. Do it only if you can."] =
-        "Dieses Ziel wandert umher, also such die Umgebung ab. Der NPC ist drinnen. Mach das nur, wenn du kannst.",
+    ["The NPC is indoors. Do it only if you can."] =
+        "Der NPC ist drinnen. Mach das nur, wenn du kannst.",
     ["The target is a gray murloc. This one roams, so scan the surrounding area. The target appears at this spot."] =
         "Das Ziel ist ein grauer Murloc. Dieses Ziel wandert umher, also such die Umgebung ab. Das Ziel erscheint an dieser Stelle.",
     ["Go into Whelgar's Excavation Site"] =

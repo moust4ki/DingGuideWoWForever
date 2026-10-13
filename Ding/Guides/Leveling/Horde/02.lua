@@ -50,8 +50,7 @@ Ding.RegisterGuide({
         { level = 3, xp = 1150, patrol = { { 1412, 46.2, 86.92 }, { 1412, 48.55, 88.51 }, { 1412, 50.61, 86.57 }, { 1412, 53.22, 86.59 }, { 1412, 53.21, 89.41 }, { 1412, 50.71, 90.18 }, { 1412, 46.55, 90.42 }, { 1412, 44.29, 89.17 }, { 1412, 43.01, 91.42 }, { 1412, 41.01, 88 }, { 1412, 43.46, 86.59 } }, -- level 3
           note = "With the coming hand-ins, this brings you to level 4." },
         { turnin = 750, accept = 780 }, -- level 3
-        { accept = 3376, -- level 4
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 3376 }, -- level 4
         { train = true, talk = 3062, classes = { "SHAMAN" }, -- level 4
           note = "The NPC is indoors." },
         { train = true, talk = 3059, classes = { "WARRIOR" }, -- level 4
@@ -64,7 +63,7 @@ Ding.RegisterGuide({
         { go = { 1412, 55.61, 84.19 }, text = "Traverse the passageway" }, -- level 4
         { turnin = 95805, races = { "Tauren" } }, -- level 4
         { complete = 3376, -- level 4
-          note = "The NPC is indoors." },
+          note = "The target is indoors." },
         { accept = 781, collect = { { 4851, 1 } }, useitem = 4851, -- level 4
           note = "Your objective lies in a little cavern." },
         { complete = 757, -- level 4
@@ -77,8 +76,7 @@ Ding.RegisterGuide({
         { deathskip = true, revive = { 1412, 42.57, 78.32 }, text = "Get yourself killed, then resurrect with the spirit healer" }, -- level 5
         { talk = 6491 }, -- level 5
         { turnin = 780 }, -- level 5
-        { turnin = 3376, -- level 5
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 3376 }, -- level 5
         { accept = 96659, races = { "Tauren" } }, -- level 5
         { turnin = { 781, 757 }, accept = 763, -- level 5
           note = "The NPC is indoors." },
@@ -278,8 +276,7 @@ Ding.RegisterGuide({
         { turnin = 6364 }, -- level 11
         { go = { 1411, 35.37, 47.36 }, classes = { "HUNTER" }, text = "Tame a pet here", -- level 11
           note = "Find one Venomtail Scorpid and use Tame Beast on it. Release your current pet before this. Here you tame a pet to keep." },
-        { turnin = 2984, accept = 1524, classes = { "SHAMAN" }, -- level 11
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 2984, accept = 1524, classes = { "SHAMAN" } }, -- level 11
         { go = { 1411, 36.64, 57.03 }, classes = { "SHAMAN" }, text = "Climb the trail" }, -- level 11
         { turnin = 1524, accept = 1525, classes = { "SHAMAN" }, -- level 11
           note = "The NPC waits at the mountain's summit." },
@@ -314,10 +311,10 @@ Ding.RegisterGuide({
         { accept = 97907, races = { "Tauren" } }, -- level 11
         { go = { 1411, 58.96, 58.33 }, text = "Head indoors" }, -- level 11
         { complete = 784, collect = { { 4882, 1 } }, -- level 11
-          note = "The NPC is indoors, one floor up. Consider bringing a group for this one." },
+          note = "The target is indoors, one floor up. Consider bringing a group for this one." },
         { go = { 1411, 59.86, 57.81 }, text = "Stay on the trail and keep climbing the steps" }, -- level 11
         { collect = { { 4881, 1 } }, -- level 11
-          note = "The NPC stands on the highest level of this structure." },
+          note = "The object is on the highest level of this structure." },
         { accept = 830, useitem = 4881 }, -- level 11
         { complete = 791 }, -- level 11
         { complete = 784 }, -- level 11
@@ -361,7 +358,7 @@ Ding.RegisterGuide({
         { complete = 96825, races = { "Tauren" } }, -- level 12
         { complete = 837 }, -- level 12
         { accept = 816, -- level 12
-          note = "This one roams, so scan the surrounding area. The NPC is indoors." },
+          note = "The NPC is indoors." },
         { complete = 816 }, -- level 12
         { go = { 1411, 36.64, 57.03 }, classes = { "SHAMAN" }, text = "Climb the trail" }, -- level 12
         { turnin = 1525, when = { ready = 1525 }, classes = { "SHAMAN" }, -- level 12
@@ -371,14 +368,13 @@ Ding.RegisterGuide({
           note = "The NPC is up on the summit." },
         { go = { 1411, 38.22, 58.5 }, classes = { "SHAMAN" }, text = "Receive Sapta Sight" }, -- level 12
         { complete = 1526, when = { log = 1526 }, classes = { "SHAMAN" }, -- level 12
-          note = "The NPC is up on the summit." },
+          note = "The target is up on the summit." },
         { turnin = 1526, when = { ready = 1526 }, classes = { "SHAMAN" }, -- level 12
-          note = "The NPC is up on the summit." },
+          note = "The object is up on the summit." },
         { accept = 1527, when = { done = 1526 }, classes = { "SHAMAN" } }, -- level 12
-        { turnin = 1527, when = { log = 1527 }, classes = { "SHAMAN" }, -- level 12
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 1527, when = { log = 1527 }, classes = { "SHAMAN" } }, -- level 12
         { turnin = 816, -- level 12
-          note = "This one roams, so scan the surrounding area. The NPC is indoors." },
+          note = "The NPC is indoors." },
         { level = 12, patrol = { { 1411, 42.46, 40.56 }, { 1411, 41.16, 37.84 }, { 1411, 44.46, 35.95 } } }, -- level 12
         { turnin = 791, -- level 12
           note = "The NPC waits on the tower's highest floor." },

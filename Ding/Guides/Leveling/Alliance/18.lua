@@ -44,17 +44,16 @@ Ding.RegisterGuide({
         { turnin = 1455, accept = 1456 }, -- level 36
         { turnin = 1465, accept = 1438, sticky = 1459 }, -- level 36
         { complete = 5741, -- level 36
-          note = "The NPC waits on the tower's highest floor." },
+          note = "The target is on the tower's highest floor." },
         { turnin = 1438, accept = 1439, -- level 36
           note = "For this quest you guard an NPC on the move. If she is absent, wait for her to reappear. The NPC is indoors." },
         { complete = 1439, -- level 36
-          note = "Draw him to the doorway so other foes stay out of it. The NPC is indoors." },
+          note = "Draw him to the doorway so other foes stay out of it. The target is indoors." },
         { turnin = 1439, accept = 1440, noauto = 1440, -- level 36
           note = "For this quest you guard an NPC on the move. If she is absent, wait for her to reappear. The NPC is indoors." },
         { complete = 1440, sticky = 1459, -- level 36
           note = "Let the conversation play out. Escort Dalinda Malem and keep her alive." },
-        { accept = 5501, -- level 36
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 5501 }, -- level 36
         { complete = { 1387, 1382 }, -- level 36
           note = "The targets here are centaurs. Magram Pack Runners patrol with 2 hyena escorts; steer clear." },
         { accept = 5561, sticky = 5501, -- level 36
@@ -73,8 +72,7 @@ Ding.RegisterGuide({
         { turnin = 1440, sticky = 1459 }, -- level 36
         { complete = 1384, -- level 36
           note = "The targets here are centaurs." },
-        { turnin = 5501, -- level 36
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 5501 }, -- level 36
         { turnin = 5741, accept = 6027, sticky = { 1456, 6161 }, -- level 36
           note = "Look for it high on the clifftop." },
         { complete = 6027 }, -- level 36

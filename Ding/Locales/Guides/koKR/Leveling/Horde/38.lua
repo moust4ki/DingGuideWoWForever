@@ -7,8 +7,6 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h38-felwood-and-winterspring", {
         "피멍울 초소로 이동",
     ["Felwood: Bloodvenom Post, in the west of the zone."] =
         "악령의 숲: 피멍울 초소는 지역 서쪽에 있습니다.",
-    ["This one roams, so scan the surrounding area."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요.",
     ["Hand these in afterwards for experience and reputation."] =
         "나중에 반납해 경험치와 평판을 얻으세요.",
     ["Go into Jaedenar"] =
@@ -45,8 +43,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h38-felwood-and-winterspring", {
         "NPC는 건물 안에 있습니다.",
     ["The quest wants yetis; seek them out. Targets are in the cavern and around its entrance too."] =
         "이 퀘스트의 대상은 설인입니다. 찾아다니세요. 대상은 동굴 안과 입구 주변에도 있습니다.",
-    ["The NPC is a human spirit. This one roams, so scan the surrounding area."] =
-        "NPC는 인간의 영혼입니다. 이 대상은 돌아다니므로 주변을 살펴보세요.",
+    ["The NPC is a human spirit."] =
+        "NPC는 인간의 영혼입니다.",
     ["Your targets are within the cavern."] =
         "대상은 동굴 안에 있습니다.",
     ["Let the conversation play out. Your targets are within the cavern."] =
@@ -65,8 +63,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h38-felwood-and-winterspring", {
         "나피엔에게 아이템을 5개씩 주세요. 한 묶음을 건넬 때마다 평판 50을 얻습니다. 모은 깃털은 64.8, 8.1의 NPC에게 가져가세요.",
     ["Raise Timbermaw Hold standing to Neutral"] =
         "나무구렁 요새 평판을 중립까지 올리세요",
-    ["This one roams, so scan the surrounding area. The NPC stands within the passage."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요. NPC는 통로 안에 서 있습니다.",
+    ["The NPC stands within the passage."] =
+        "NPC는 통로 안에 서 있습니다.",
     ["The targets are 3 white furbolgs moving as one pack. The target patrols a long route beside the road. They appear near 28.1, 35.0 in Winterspring."] =
         "대상은 한 무리로 다니는 흰 펄볼그 3마리입니다. 대상은 길옆으로 긴 경로를 순찰합니다. 여명의 설원 28.1, 35.0 근처에 나타납니다.",
     ["This number shrinks while you kill monsters. Bring any feathers you collect to the NPC at 64.8, 8.1."] =

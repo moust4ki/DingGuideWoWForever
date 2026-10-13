@@ -15,8 +15,6 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h11-thousand-needles", {
         "승강기를 타고 버섯구름 봉우리로 내려가 길을 따라 높새바람 봉우리로 간 다음 승강기를 타고 다시 올라가세요",
     ["Fly to Freewind Post"] =
         "높새바람 봉우리로 날아가세요",
-    ["This one roams, so scan the surrounding area."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요.",
     ["The NPC is indoors."] =
         "NPC는 건물 안에 있습니다.",
     ["Go into the cavern"] =
@@ -51,8 +49,10 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h11-thousand-needles", {
         "큰 알을 찾으세요.",
     ["For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears. Keep away from Heartrazor."] =
         "이 퀘스트에서는 이동하는 NPC를 보호합니다. NPC가 없다면 다시 나타날 때까지 기다리세요. 칼날심장에게서 떨어져 있으세요.",
-    ["Steelsnap is a brown hyena with 2 hyena escorts. The NPC patrols a long route; look along it. The target appears near 17.3, 22.2 in Thousand Needles."] =
-        "Steelsnap은 하이에나 호위 2마리를 거느린 갈색 하이에나입니다. NPC는 긴 경로를 순찰합니다. 경로를 따라 찾아보세요. 대상은 버섯구름 봉우리 17.3, 22.2 근처에 나타납니다.",
+    ["Steelsnap is a brown hyena with 2 hyena escorts. The target patrols a long route; look along it. The target appears near 17.3, 22.2 in Thousand Needles."] =
+        "Steelsnap은 하이에나 호위 2마리를 거느린 갈색 하이에나입니다. 대상은 긴 경로를 순찰합니다. 경로를 따라 찾아보세요. 대상은 버섯구름 봉우리 17.3, 22.2 근처에 나타납니다.",
+    ["This one roams, so scan the surrounding area."] =
+        "이 대상은 돌아다니므로 주변을 살펴보세요.",
     ["The target is a centaur, black in color. It roams a wide route. Leave it out if you'd rather not hunt for it."] =
         "대상은 검은색 켄타우로스입니다. 넓은 경로를 돌아다닙니다. 찾아다니기 싫다면 건너뛰세요.",
     ["The target is a centaur, black in color. It roams a wide route. His patrol crosses this spot two times."] =
@@ -71,8 +71,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h11-thousand-needles", {
         "길을 올라 밧줄 다리를 건너세요",
     ["Walk over the rope bridge"] =
         "밧줄 다리를 건너가세요",
-    ["The objective lies atop the mesa. The NPC is indoors."] =
-        "목표는 바위 고원 위에 있습니다. NPC는 건물 안에 있습니다.",
+    ["The objective lies atop the mesa. The object is indoors."] =
+        "목표는 바위 고원 위에 있습니다. 그 물체는 건물 안에 있습니다.",
     ["The objective lies atop the mesa."] =
         "목표는 바위 고원 위에 있습니다.",
     ["The objective lies atop the mesa. Be ready for a fight right away. The target is a level 28 elite."] =

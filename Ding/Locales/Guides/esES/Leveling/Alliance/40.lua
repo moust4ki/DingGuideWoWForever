@@ -35,8 +35,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a40-burning-steppes", {
         "El PNJ es una anciana humana. El PNJ patrulla una ruta larga; búscalo a lo largo de ella. Si no está, puede estar en el piso de arriba de la casa, en 52.4, 42.1, en Ciudad de Ventormenta.",
     ["Walk over the rope bridge, then climb the trail"] =
         "Cruza el puente de cuerda y luego sube por el sendero",
-    ["The NPC is up on the summit."] =
-        "El PNJ está arriba, en la cima.",
+    ["The object is up on the summit."] =
+        "El objeto está arriba, en la cima.",
     ["Dungeon runs are a fine choice here too, as you like."] =
         "Aquí también puedes hacer mazmorras, si quieres.",
 })

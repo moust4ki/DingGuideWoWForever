@@ -47,8 +47,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a08-darkshore", {
         "等对话结束。跟着Prospector Remtravel并保护他。他很脆弱，很快就会倒下。",
     ["Look on top of the table."] =
         "在桌子上面找。",
-    ["For this quest you guard an NPC on the move. If she is absent, wait for her to reappear. This one roams, so scan the surrounding area."] =
-        "这个任务需要保护一个行进中的NPC。如果她不在，等她重新出现。它会四处游荡，在周围找找。",
+    ["For this quest you guard an NPC on the move. If she is absent, wait for her to reappear."] =
+        "这个任务需要保护一个行进中的NPC。如果她不在，等她重新出现。",
     ["Let the conversation play out. Escort Therylune and defend her."] =
         "等对话结束。护送Therylune并保护她。",
     ["For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears. Your objective lies in a little cavern."] =

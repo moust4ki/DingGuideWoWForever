@@ -79,6 +79,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a28-feralas-and-tanaris", {
         "Seus alvos estão dentro da caverna.",
     ["Let the conversation play out. Your targets are within the cavern."] =
         "Deixe a conversa terminar. Seus alvos estão dentro da caverna.",
+    ["The object is indoors, one floor up."] =
+        "O objeto está lá dentro, um andar acima.",
     ["Getting it here speeds up Un'Goro Crater. The NPC is indoors."] =
         "Pegar isso aqui agiliza a Cratera Un'Goro. O NPC está lá dentro.",
     ["Step into the cavern within the trunk"] =

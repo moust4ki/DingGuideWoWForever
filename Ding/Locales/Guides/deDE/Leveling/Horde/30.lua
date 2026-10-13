@@ -13,8 +13,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h30-feralas-and-ungoro-crater", 
         "Die Ziele sind Hippogryphen. Töte sie, dann benutze den Gegenstand an ihren Überresten.",
     ["Slay them, then apply the item to their remains."] =
         "Töte sie, dann benutze den Gegenstand an ihren Überresten.",
-    ["Fight the treants. The NPC patrols a long route; look along it. Slay them, then apply the item to their remains."] =
-        "Bekämpfe die Treants. Der NPC patrouilliert eine lange Route; such entlang dieser Route. Töte sie, dann benutze den Gegenstand an ihren Überresten.",
+    ["Fight the treants. The target patrols a long route; look along it. Slay them, then apply the item to their remains."] =
+        "Bekämpfe die Treants. Das Ziel patrouilliert eine lange Route; such entlang dieser Route. Töte sie, dann benutze den Gegenstand an ihren Überresten.",
     ["Aim the item at the Strider foes. The targets are towering green giants. The item strips their elite status."] =
         "Richte den Gegenstand auf die Schreiter-Gegner. Die Ziele sind turmhohe grüne Riesen. Der Gegenstand nimmt ihnen den Elitestatus.",
     ["Hunt down the elementals formed of water."] =

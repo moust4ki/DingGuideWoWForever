@@ -21,8 +21,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h28-tanaris-and-dustwallow-marsh
         "Diese Gegner sind getarnt.",
     ["Head down the passage that opens on Lost Rigger Cove"] =
         "Geh den Durchgang hinunter, der nach Lost Rigger Cove führt",
-    ["The NPC is indoors, one floor up."] =
-        "Der NPC ist drinnen, ein Stockwerk höher.",
+    ["The object is indoors, one floor up."] =
+        "Das Objekt ist drinnen, ein Stockwerk höher.",
     ["Few kills yield this item."] =
         "Nur wenige Kills bringen diesen Gegenstand.",
     ["Others can be found on raised wood platforms close by."] =

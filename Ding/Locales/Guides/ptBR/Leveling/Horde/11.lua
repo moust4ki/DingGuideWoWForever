@@ -15,8 +15,6 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h11-thousand-needles", {
         "Desça de elevador até Mil Agulhas, siga a estrada rumo à Aldeia Vento Livre e suba de elevador",
     ["Fly to Freewind Post"] =
         "Voe até a Aldeia Vento Livre",
-    ["This one roams, so scan the surrounding area."] =
-        "Este se desloca, então procure pelos arredores.",
     ["The NPC is indoors."] =
         "O NPC está lá dentro.",
     ["Go into the cavern"] =
@@ -51,8 +49,10 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h11-thousand-needles", {
         "Procure ovos grandes.",
     ["For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears. Keep away from Heartrazor."] =
         "Nesta missão, você protege um NPC em movimento. Se o NPC não estiver lá, espere até ele reaparecer. Fique longe de Lamicárdio.",
-    ["Steelsnap is a brown hyena with 2 hyena escorts. The NPC patrols a long route; look along it. The target appears near 17.3, 22.2 in Thousand Needles."] =
-        "Steelsnap é uma hiena marrom com 2 hienas de escolta. O NPC patrulha uma rota longa; procure ao longo dela. O alvo aparece perto de 17.3, 22.2, em Mil Agulhas.",
+    ["Steelsnap is a brown hyena with 2 hyena escorts. The target patrols a long route; look along it. The target appears near 17.3, 22.2 in Thousand Needles."] =
+        "Steelsnap é uma hiena marrom com 2 hienas de escolta. O alvo patrulha uma rota longa; procure ao longo dela. O alvo aparece perto de 17.3, 22.2, em Mil Agulhas.",
+    ["This one roams, so scan the surrounding area."] =
+        "Este se desloca, então procure pelos arredores.",
     ["The target is a centaur, black in color. It roams a wide route. Leave it out if you'd rather not hunt for it."] =
         "O alvo é um centauro de cor preta. Ele percorre um trajeto amplo. Deixe de lado se preferir não procurá-lo.",
     ["The target is a centaur, black in color. It roams a wide route. His patrol crosses this spot two times."] =
@@ -71,8 +71,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h11-thousand-needles", {
         "Suba a trilha e atravesse as pontes de corda",
     ["Walk over the rope bridge"] =
         "Atravesse a ponte de corda",
-    ["The objective lies atop the mesa. The NPC is indoors."] =
-        "O objetivo fica no alto do platô. O NPC está lá dentro.",
+    ["The objective lies atop the mesa. The object is indoors."] =
+        "O objetivo fica no alto do platô. O objeto está lá dentro.",
     ["The objective lies atop the mesa."] =
         "O objetivo fica no alto do platô.",
     ["The objective lies atop the mesa. Be ready for a fight right away. The target is a level 28 elite."] =

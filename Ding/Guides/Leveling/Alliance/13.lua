@@ -33,8 +33,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { go = { 1440, 50.28, 56.29 }, text = "Take the road until this trail" }, -- level 30
         { go = { 1440, 51.76, 45.67 }, text = "Keep on the trail" }, -- level 30
-        { turnin = 1024, accept = 1026, -- level 30
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 1024, accept = 1026 }, -- level 30
         { collect = { { 5475, 1 } }, spots = { { 1440, 62.54, 46.77 }, { 1440, 54.57, 34.03 }, { 1440, 55.06, 40.56 }, { 1440, 56.85, 29.86 }, { 1440, 58.36, 36.45 }, { 1440, 59.84, 39.45 }, { 1440, 61.45, 43.24 } }, -- level 30
           note = "Fight the treants. Circle the mountain on foot." },
         { complete = 1026 }, -- level 30
@@ -60,8 +59,7 @@ Ding.RegisterGuide({
           note = "Release the short-term pet you tamed." },
         { go = { 1440, 50.28, 56.29 }, text = "Take the road until this trail" }, -- level 30
         { go = { 1440, 51.76, 45.67 }, text = "Keep on the trail" }, -- level 30
-        { turnin = 1026, accept = 1027, -- level 30
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 1026, accept = 1027 }, -- level 30
         { accept = 98027, races = { "Dwarf", "Gnome", "Skyborne" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 30
         { accept = 98027, races = { "NightElf" } }, -- level 30
         { complete = 1035 }, -- level 30
@@ -81,16 +79,14 @@ Ding.RegisterGuide({
           note = "Hunt down satyrs. Beware of foes lurking in stealth." },
         { go = { 1440, 50.28, 56.29 }, text = "Take the road until this trail" }, -- level 30
         { go = { 1440, 51.76, 45.67 }, text = "Keep on the trail" }, -- level 30
-        { turnin = 1027, -- level 30
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 1027 }, -- level 30
         { accept = 1028, -- level 30
-          note = "Let the conversation play out. This one roams, so scan the surrounding area." },
+          note = "Let the conversation play out." },
         { go = { 1440, 56.1, 51.31 }, text = "Circle the peak, then climb the twisting dirt trail to the shrine" }, -- level 30
         { turnin = 1028, accept = 1055, object = 19024, -- level 30
-          note = "The NPC is up on the summit." },
+          note = "The object is up on the summit." },
         { go = { 1440, 51.76, 45.67 }, text = "Circle the mountain, then stay on the trail" }, -- level 30
-        { turnin = 1055, accept = 1029, -- level 30
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 1055, accept = 1029 }, -- level 30
         { turnin = 1035, -- level 30
           note = "The NPC is indoors." },
         { turnin = 98027, races = { "Dwarf", "Gnome", "Skyborne" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 30
@@ -128,7 +124,7 @@ Ding.RegisterGuide({
         { go = { 1457, 56.08, 79.12 }, text = "Head up the incline" }, -- level 31
         { go = { 1457, 57.66, 77.28 }, text = "Walk over the span" }, -- level 31
         { complete = 1038, -- level 31
-          note = "The NPC is indoors, one floor up." },
+          note = "The object is indoors, one floor up." },
         { talk = 4165, races = { "Human", "Gnome" }, classes = { "MAGE" }, -- level 31
           note = "The NPC is indoors." },
         { train = true, talk = 4091, races = { "Human", "Dwarf", "NightElf" }, classes = { "PRIEST" }, -- level 31
@@ -149,7 +145,7 @@ Ding.RegisterGuide({
         { go = { 1455, 44.51, 49.54 }, text = "Stay on the trail" }, -- level 31
         { turnin = 683, accept = 686 }, -- level 31
         { turnin = 686, accept = 689, -- level 31
-          note = "This one roams, so scan the surrounding area. The NPC is indoors." },
+          note = "The NPC is indoors." },
         { accept = 1179, -- level 31
           note = "The NPC is indoors." },
         { accept = 2924, dungeon = "Gnomeregan" }, -- level 31

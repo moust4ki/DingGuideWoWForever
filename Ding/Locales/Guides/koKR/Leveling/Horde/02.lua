@@ -13,10 +13,10 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h02-tauren-starter", {
         "NPC는 건물 안에 있습니다.",
     ["With the coming hand-ins, this brings you to level 4."] =
         "이어지는 퀘스트 완료와 함께 4레벨이 됩니다.",
-    ["This one roams, so scan the surrounding area."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요.",
     ["Traverse the passageway"] =
         "통로를 지나가세요",
+    ["The target is indoors."] =
+        "대상은 건물 안에 있습니다.",
     ["Your objective lies in a little cavern."] =
         "목표는 작은 동굴 안에 있습니다.",
     ["Fight quilboars."] =
@@ -109,18 +109,20 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h02-tauren-starter", {
         "NPC는 산 정상에서 기다립니다.",
     ["Kill Water Seekers and Thornweavers."] =
         "풍수사와 가시마술사를 처치하세요.",
+    ["This one roams, so scan the surrounding area."] =
+        "이 대상은 돌아다니므로 주변을 살펴보세요.",
     ["Your targets are within the cavern. The objective is at the far end."] =
         "대상은 동굴 안에 있습니다. 목표는 맨 끝에 있습니다.",
     ["Head out of the cave"] =
         "동굴을 나가세요",
     ["Head indoors"] =
         "건물 안으로 들어가세요",
-    ["The NPC is indoors, one floor up. Consider bringing a group for this one."] =
-        "NPC는 건물 안 한 층 위에 있습니다. 파티를 꾸려 하는 것도 고려하세요.",
+    ["The target is indoors, one floor up. Consider bringing a group for this one."] =
+        "대상은 건물 안 한 층 위에 있습니다. 파티를 꾸려 하는 것도 고려하세요.",
     ["Stay on the trail and keep climbing the steps"] =
         "길을 벗어나지 말고 계단을 계속 올라가세요",
-    ["The NPC stands on the highest level of this structure."] =
-        "NPC는 이 건물의 꼭대기 층에 서 있습니다.",
+    ["The object is on the highest level of this structure."] =
+        "그 물체는 이 건물의 꼭대기 층에 있습니다.",
     ["The target is a troll in crimson robes. This one roams, so scan the surrounding area."] =
         "대상은 진홍색 로브를 입은 트롤입니다. 이 대상은 돌아다니므로 주변을 살펴보세요.",
     ["Look for the skull-shaped objects."] =
@@ -131,12 +133,14 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h02-tauren-starter", {
         "대상은 랍스터입니다.",
     ["Hunt the crabs."] =
         "게를 사냥하세요.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요. NPC는 건물 안에 있습니다.",
     ["The NPC is up on the summit."] =
         "NPC는 정상에 있습니다.",
     ["Receive Sapta Sight"] =
         "대지의 정기 효과를 받으세요",
+    ["The target is up on the summit."] =
+        "대상은 정상에 있습니다.",
+    ["The object is up on the summit."] =
+        "그 물체는 정상에 있습니다.",
     ["Look for beige sacks."] =
         "베이지색 자루를 찾으세요.",
     ["Stay on the trail, then cross the tunnel"] =

@@ -27,8 +27,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h40-winterspring", {
         "对Legacki使用该物品。",
     ["The NPC is indoors."] =
         "NPC在室内。",
-    ["This one roams, so scan the surrounding area. The NPC stands within the passage."] =
-        "它会四处游荡，在周围找找。NPC站在通道里。",
+    ["The NPC stands within the passage."] =
+        "NPC站在通道里。",
     ["Fly to Moonglade"] =
         "飞往月光林地",
     ["Head indoors"] =
@@ -37,8 +37,6 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h40-winterspring", {
         "NPC在室内。等对话结束",
     ["One last lengthy stretch of monster farming. Dungeon runs are a fine choice here too, as you like. This number shrinks while you kill monsters."] =
         "最后一段长时间的刷怪。如果你愿意，这里也可以去刷副本。杀怪时这个数字会减少。",
-    ["The NPC stands within the passage."] =
-        "NPC站在通道里。",
     ["You can also take it out of your bank."] =
         "也可以从银行取出。",
     ["The NPC patrols a long route; look along it."] =

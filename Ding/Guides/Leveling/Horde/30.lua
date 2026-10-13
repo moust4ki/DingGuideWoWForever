@@ -25,7 +25,7 @@ Ding.RegisterGuide({
           note = "Slay them, then apply the item to their remains." },
         { turnin = 3125, accept = 3126 }, -- level 49
         { complete = { 3126, 3128 }, useitem = 9606, patrol = { { 1444, 68.43, 46.43 }, { 1444, 69.16, 45.35 }, { 1444, 69.46, 43.06 }, { 1444, 70.65, 41.74 }, { 1444, 71.75, 41.97 }, { 1444, 72.36, 41.26 }, { 1444, 72.94, 40.16 }, { 1444, 73.75, 38.76 }, { 1444, 74.74, 38.46 }, { 1444, 75.94, 39.75 }, { 1444, 77.45, 40.64 }, { 1444, 78.26, 41.34 }, { 1444, 78.36, 42.65 }, { 1444, 78.75, 44.23 }, { 1444, 81.06, 45.06 }, { 1444, 81.86, 45.14 }, { 1444, 82.65, 45.63 }, { 1444, 83.25, 46.22 } }, -- level 49
-          note = "Fight the treants. The NPC patrols a long route; look along it. Slay them, then apply the item to their remains." },
+          note = "Fight the treants. The target patrols a long route; look along it. Slay them, then apply the item to their remains." },
         { turnin = { 3126, 3128 } }, -- level 49
         { accept = 3127, elite = true }, -- level 49
         { accept = 7721, sticky = 7721 }, -- level 49

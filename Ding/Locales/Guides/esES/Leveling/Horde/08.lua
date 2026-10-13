@@ -33,8 +33,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h08-the-barrens", {
         "El objetivo es un jabaespín con túnica roja. Este deambula, así que revisa los alrededores. El objetivo aparece en este punto.",
     ["This one roams, so scan the surrounding area. Beware of foes lurking in stealth."] =
         "Este deambula, así que revisa los alrededores. Cuidado con los enemigos ocultos en sigilo.",
-    ["Beware of foes lurking in stealth. The NPC is indoors."] =
-        "Cuidado con los enemigos ocultos en sigilo. El PNJ está dentro.",
+    ["Beware of foes lurking in stealth. The target is indoors."] =
+        "Cuidado con los enemigos ocultos en sigilo. El objetivo está dentro.",
     ["Kill Stalkers and Pathfinders. Beware of foes lurking in stealth."] =
         "Mata a acechadores y exploradores. Cuidado con los enemigos ocultos en sigilo.",
     ["Beware of foes lurking in stealth."] =
@@ -45,8 +45,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h08-the-barrens", {
         "Este deambula, así que revisa los alrededores. Los objetivos están repartidos en varios puntos.",
     ["Climb the trail"] =
         "Sube por el sendero",
-    ["The NPC can be indoors or out."] =
-        "El PNJ puede estar dentro o fuera.",
+    ["The target can be indoors or out."] =
+        "El objetivo puede estar dentro o fuera.",
     ["The objective sits up on the raised deck. Keep some range when you use the item."] =
         "El objetivo está arriba, en la cubierta elevada. Mantén algo de distancia al usar el objeto.",
     ["With the coming hand-ins, this gets you to level 25."] =

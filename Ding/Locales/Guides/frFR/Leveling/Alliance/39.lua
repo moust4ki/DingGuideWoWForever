@@ -9,8 +9,6 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a39-winterspring-and-felwood", {
         "Gangrebois : le Sanctuaire d'émeraude, au sud de la zone.",
     ["Hand these in afterwards for experience and reputation."] =
         "Rends-les ensuite pour l'expérience et la réputation.",
-    ["This one roams, so scan the surrounding area."] =
-        "Celui-ci se déplace : fouille les environs.",
     ["The NPC is indoors."] =
         "Le PNJ est à l'intérieur.",
     ["Let the conversation play out. The NPC is indoors."] =
@@ -41,8 +39,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a39-winterspring-and-felwood", {
         "Avec les rendus à venir, tu atteins le niveau 55. Une quête difficile t'attend juste après.",
     ["Flee if things go badly."] =
         "Fuis si ça tourne mal.",
-    ["The NPC is a human spirit. This one roams, so scan the surrounding area."] =
-        "Le PNJ est un esprit humain. Celui-ci se déplace : fouille les environs.",
+    ["The NPC is a human spirit."] =
+        "Le PNJ est un esprit humain.",
     ["Your targets are within the cavern."] =
         "Tes cibles sont dans la grotte.",
     ["Let the conversation play out. Your targets are within the cavern."] =
@@ -69,14 +67,14 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a39-winterspring-and-felwood", {
         "Tu peux aussi faire des donjons jusqu'au niveau 56. Donne les objets à Nafien par lots de 5. Chaque lot complet rendu rapporte 50 points de réputation.",
     ["Raise Timbermaw Hold standing to Neutral"] =
         "Monte ta réputation auprès des Grumegueules à Neutre",
-    ["This one roams, so scan the surrounding area. The NPC stands within the passage."] =
-        "Celui-ci se déplace : fouille les environs. Le PNJ se tient dans le passage.",
+    ["The NPC stands within the passage."] =
+        "Le PNJ se tient dans le passage.",
     ["The NPC is indoors, one floor up."] =
         "Le PNJ est à l'intérieur, un étage plus haut.",
     ["Step into the cavern within the trunk"] =
         "Entre dans la cavité du tronc",
     ["The spot is on the lower floor of the hollow tree."] =
         "L'endroit est au niveau inférieur de l'arbre creux.",
-    ["This one roams, so scan the surrounding area. The NPC waits on the tower's highest floor."] =
-        "Celui-ci se déplace : fouille les environs. Le PNJ attend au dernier étage de la tour.",
+    ["The NPC waits on the tower's highest floor."] =
+        "Le PNJ attend au dernier étage de la tour.",
 })

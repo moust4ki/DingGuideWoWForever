@@ -11,14 +11,10 @@ Ding.RegisterGuideTranslation("esES", "leveling-a16-dustwallow-marsh-and-thousan
         "El PNJ está dentro.",
     ["The NPC is indoors, one floor up."] =
         "El PNJ está dentro, un piso más arriba.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors, one floor up."] =
-        "Este deambula, así que revisa los alrededores. El PNJ está dentro, un piso más arriba.",
     ["The NPC is indoors. This quest is buggy and may not show up. If it is not around, move on without it."] =
         "El PNJ está dentro. Esta misión tiene errores y puede que no aparezca. Si no está por aquí, pasa al siguiente paso.",
-    ["This one roams, so scan the surrounding area."] =
-        "Este deambula, así que revisa los alrededores.",
-    ["This one roams, so scan the surrounding area. Expect several foes at once. Make Private Hendel your main target."] =
-        "Este deambula, así que revisa los alrededores. Prepárate para varios enemigos a la vez. Céntrate en el Soldado Hendel.",
+    ["Expect several foes at once. Make Private Hendel your main target."] =
+        "Prepárate para varios enemigos a la vez. Céntrate en el Soldado Hendel.",
     ["Wait for the talking to finish"] =
         "Espera a que termine la conversación",
     ["Steer clear of Brackenwall Village. Watch out: the foes here are above your level. Keep to the road the whole way."] =

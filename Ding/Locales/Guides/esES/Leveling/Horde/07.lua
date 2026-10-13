@@ -21,8 +21,6 @@ Ding.RegisterGuideTranslation("esES", "leveling-h07-hillsbrad-foothills", {
         "Deja que termine la conversación. El PNJ está dentro.",
     ["Get rid of your Touch of Zanzil."] =
         "Quítate el Touch of Zanzil.",
-    ["This one roams, so scan the surrounding area."] =
-        "Este deambula, así que revisa los alrededores.",
     ["Leave your pet with the stable master."] =
         "Deja tu mascota con el maestro de establos.",
     ["You will tame a short-term pet shortly. Pick up Claw (Rank 3) for your pet."] =
@@ -43,8 +41,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h07-hillsbrad-foothills", {
         "Este deambula, así que revisa los alrededores. Los objetivos están repartidos en varios puntos.",
     ["Look for it bound to the orc's leg."] =
         "Búscalo atado a la pierna del orco.",
-    ["Look for it bound to the orc's leg. The NPC is indoors."] =
-        "Búscalo atado a la pierna del orco. El PNJ está dentro.",
+    ["Look for it bound to the orc's leg. The object is indoors."] =
+        "Búscalo atado a la pierna del orco. El objeto está dentro.",
     ["The targets are spiders with green bodies."] =
         "Los objetivos son arañas de cuerpo verde.",
     ["Together with the next turn-ins, this brings you to level 23."] =
@@ -53,14 +51,16 @@ Ding.RegisterGuideTranslation("esES", "leveling-h07-hillsbrad-foothills", {
         "Los objetivos están repartidos en varios puntos. Dentro de los edificios o en campo abierto.",
     ["Check each of the two floors indoors. It may be found outdoors too."] =
         "Mira en los dos pisos del interior. También puede estar al aire libre.",
-    ["The NPC is a little wolf. This one roams, so scan the surrounding area. He goes berserk and attacks you once the quest is handed in."] =
-        "El PNJ es un lobo pequeño. Este deambula, así que revisa los alrededores. Al entregar la misión, se vuelve loco y te ataca.",
+    ["The NPC is a little wolf. He goes berserk and attacks you once the quest is handed in."] =
+        "El PNJ es un lobo pequeño. Al entregar la misión, se vuelve loco y te ataca.",
     ["A woman holding a pitchfork. This one roams, so scan the surrounding area."] =
         "Una mujer con una horca. Este deambula, así que revisa los alrededores.",
     ["The target patrols the trail between the houses. The target's spawn point is 30.5, 40.6 in Hillsbrad Foothills."] =
         "El objetivo patrulla el sendero entre las casas. El objetivo aparece en 30.5, 40.6, en las Laderas de Trabalomas.",
     ["With the coming hand-ins, this brings you to level 24. Tougher foes are coming up next."] =
         "Con las próximas entregas, esto te sube al nivel 24. A continuación vienen enemigos más duros.",
+    ["The target is indoors."] =
+        "El objetivo está dentro.",
     ["This one roams, so scan the surrounding area. The targets are spread over several spots. Some may be in the smithy."] =
         "Este deambula, así que revisa los alrededores. Los objetivos están repartidos en varios puntos. Puede que algunos estén en la herrería.",
     ["Go down into the tomb"] =

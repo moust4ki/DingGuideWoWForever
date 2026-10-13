@@ -21,8 +21,6 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h07-hillsbrad-foothills", {
         "대화가 끝날 때까지 기다리세요. NPC는 건물 안에 있습니다.",
     ["Get rid of your Touch of Zanzil."] =
         "잔질의 손길을 없애세요.",
-    ["This one roams, so scan the surrounding area."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요.",
     ["Leave your pet with the stable master."] =
         "야수 관리인에게 소환수를 맡기세요.",
     ["You will tame a short-term pet shortly. Pick up Claw (Rank 3) for your pet."] =
@@ -43,8 +41,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h07-hillsbrad-foothills", {
         "이 대상은 돌아다니므로 주변을 살펴보세요. 대상은 여러 곳에 흩어져 있습니다.",
     ["Look for it bound to the orc's leg."] =
         "오크의 다리에 묶여 있으니 찾아보세요.",
-    ["Look for it bound to the orc's leg. The NPC is indoors."] =
-        "오크의 다리에 묶여 있으니 찾아보세요. NPC는 건물 안에 있습니다.",
+    ["Look for it bound to the orc's leg. The object is indoors."] =
+        "오크의 다리에 묶여 있으니 찾아보세요. 그 물체는 건물 안에 있습니다.",
     ["The targets are spiders with green bodies."] =
         "대상은 몸이 초록색인 거미입니다.",
     ["Together with the next turn-ins, this brings you to level 23."] =
@@ -53,14 +51,16 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h07-hillsbrad-foothills", {
         "대상은 여러 곳에 흩어져 있습니다. 실내나 탁 트인 들판에 있습니다.",
     ["Check each of the two floors indoors. It may be found outdoors too."] =
         "실내 두 층을 각각 확인하세요. 바깥에도 있을 수 있습니다.",
-    ["The NPC is a little wolf. This one roams, so scan the surrounding area. He goes berserk and attacks you once the quest is handed in."] =
-        "NPC는 작은 늑대입니다. 이 대상은 돌아다니므로 주변을 살펴보세요. 퀘스트를 완료하면 그가 광폭해져 공격합니다.",
+    ["The NPC is a little wolf. He goes berserk and attacks you once the quest is handed in."] =
+        "NPC는 작은 늑대입니다. 퀘스트를 완료하면 그가 광폭해져 공격합니다.",
     ["A woman holding a pitchfork. This one roams, so scan the surrounding area."] =
         "쇠스랑을 든 여자입니다. 이 대상은 돌아다니므로 주변을 살펴보세요.",
     ["The target patrols the trail between the houses. The target's spawn point is 30.5, 40.6 in Hillsbrad Foothills."] =
         "대상은 집들 사이의 길을 순찰합니다. 대상의 생성 위치는 힐스브래드 구릉지 30.5, 40.6입니다.",
     ["With the coming hand-ins, this brings you to level 24. Tougher foes are coming up next."] =
         "곧 있을 퀘스트 완료와 함께 24레벨이 됩니다. 다음에는 더 강한 적이 나옵니다.",
+    ["The target is indoors."] =
+        "대상은 건물 안에 있습니다.",
     ["This one roams, so scan the surrounding area. The targets are spread over several spots. Some may be in the smithy."] =
         "이 대상은 돌아다니므로 주변을 살펴보세요. 대상은 여러 곳에 흩어져 있습니다. 일부는 대장간에 있을 수 있습니다.",
     ["Go down into the tomb"] =

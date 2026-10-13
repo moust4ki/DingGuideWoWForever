@@ -47,8 +47,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a08-darkshore", {
         "대화가 끝날 때까지 기다리세요. 발굴조사단장 렘트레블 곁에 머물며 그를 보호하세요. 약해서 금방 쓰러집니다.",
     ["Look on top of the table."] =
         "탁자 위를 살펴보세요.",
-    ["For this quest you guard an NPC on the move. If she is absent, wait for her to reappear. This one roams, so scan the surrounding area."] =
-        "이 퀘스트에서는 이동하는 NPC를 보호합니다. 그녀가 없다면 다시 나타날 때까지 기다리세요. 이 대상은 돌아다니므로 주변을 살펴보세요.",
+    ["For this quest you guard an NPC on the move. If she is absent, wait for her to reappear."] =
+        "이 퀘스트에서는 이동하는 NPC를 보호합니다. 그녀가 없다면 다시 나타날 때까지 기다리세요.",
     ["Let the conversation play out. Escort Therylune and defend her."] =
         "대화가 끝날 때까지 기다리세요. 테리루네를 호위하며 보호하세요.",
     ["For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears. Your objective lies in a little cavern."] =

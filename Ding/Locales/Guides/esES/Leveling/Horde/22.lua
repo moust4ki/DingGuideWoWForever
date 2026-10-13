@@ -29,6 +29,6 @@ Ding.RegisterGuideTranslation("esES", "leveling-h22-tanaris", {
         "Recoge el botín.",
     ["Wait for the talking to finish"] =
         "Espera a que termine la conversación",
-    ["Hold on until Rizzle has fled. The NPC is indoors."] =
-        "Espera a que Rizzle haya huido. El PNJ está dentro.",
+    ["Hold on until Rizzle has fled. The object is indoors."] =
+        "Espera a que Rizzle haya huido. El objeto está dentro.",
 })

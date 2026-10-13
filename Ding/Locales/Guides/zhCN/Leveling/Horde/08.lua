@@ -33,8 +33,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h08-the-barrens", {
         "目标是一个穿红袍的野猪人。它会四处游荡，在周围找找。目标会在这里出现。",
     ["This one roams, so scan the surrounding area. Beware of foes lurking in stealth."] =
         "它会四处游荡，在周围找找。当心潜行中的敌人。",
-    ["Beware of foes lurking in stealth. The NPC is indoors."] =
-        "当心潜行中的敌人。NPC在室内。",
+    ["Beware of foes lurking in stealth. The target is indoors."] =
+        "当心潜行中的敌人。目标在室内。",
     ["Kill Stalkers and Pathfinders. Beware of foes lurking in stealth."] =
         "击杀潜伏者和探路者。当心潜行中的敌人。",
     ["Beware of foes lurking in stealth."] =
@@ -45,8 +45,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h08-the-barrens", {
         "它会四处游荡，在周围找找。目标分布在好几个地点。",
     ["Climb the trail"] =
         "沿小路往上爬",
-    ["The NPC can be indoors or out."] =
-        "NPC可能在室内，也可能在室外。",
+    ["The target can be indoors or out."] =
+        "目标可能在室内，也可能在室外。",
     ["The objective sits up on the raised deck. Keep some range when you use the item."] =
         "目标在高起的甲板上。使用物品时保持一定距离。",
     ["With the coming hand-ins, this gets you to level 25."] =

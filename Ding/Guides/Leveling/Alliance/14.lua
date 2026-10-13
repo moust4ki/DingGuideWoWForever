@@ -25,7 +25,7 @@ Ding.RegisterGuide({
         { accept = 337, useitem = 2794, when = { item = 2794 } }, -- level 31
         { go = { 1453, 73.06, 46.64 }, text = "Head into Stormwind Keep" }, -- level 31
         { turnin = 1274, accept = 1241, -- level 31
-          note = "This one roams, so scan the surrounding area. The NPC is indoors." },
+          note = "The NPC is indoors." },
         { go = { 1453, 75.98, 42.23 }, when = { log = 337 }, text = "Stay on the trail" }, -- level 31
         { accept = 98191, races = { "Human" }, classes = { "PALADIN" } }, -- level 31
         { turnin = 337, accept = 538, when = { log = 337 }, -- level 31
@@ -54,8 +54,7 @@ Ding.RegisterGuide({
         { accept = 173, -- level 31
           note = "This one roams, so scan the surrounding area." },
         { accept = 58, races = { "Dwarf" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK", "DRUID" } }, -- level 31
-        { accept = 58, races = { "Human", "NightElf", "Gnome", "Skyborne" }, -- level 31
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 58, races = { "Human", "NightElf", "Gnome", "Skyborne" } }, -- level 31
         { sethearth = "Darkshire", talk = 6790, -- level 31
           note = "The NPC is indoors." },
         { turnin = 1243, accept = 1244, patrol = { { 1431, 74.85, 44.22 }, { 1431, 74.57, 41.17 }, { 1431, 73.91, 39.65 }, { 1431, 72.79, 38.29 }, { 1431, 72.34, 37.25 }, { 1431, 72.28, 35.14 }, { 1431, 72.64, 33.47 }, { 1431, 73.37, 32.57 } }, -- level 31
@@ -69,7 +68,7 @@ Ding.RegisterGuide({
         { complete = 221 }, -- level 31
         { turnin = 74, accept = 75 }, -- level 31
         { complete = 75, -- level 31
-          note = "Be ready for a fight right away. The NPC is indoors, one floor up." },
+          note = "Be ready for a fight right away. The object is indoors, one floor up." },
         { turnin = 75, accept = 78 }, -- level 31
         { turnin = 91732, races = { "Human" } }, -- level 31
         { turnin = 91732, races = { "Dwarf", "Gnome" } }, -- level 31
@@ -84,7 +83,7 @@ Ding.RegisterGuide({
         { turnin = 133, accept = 134, -- level 31
           note = "The NPC is indoors." },
         { complete = 1244, -- level 31
-          note = "The NPC is indoors." },
+          note = "The object is indoors." },
         { complete = 134 }, -- level 31
         { go = { 1431, 34.12, 76.99 }, text = "Go into the cavern" }, -- level 31
         { complete = 181, when = { log = 181 }, -- level 31
@@ -95,27 +94,25 @@ Ding.RegisterGuide({
         { accept = 225 }, -- level 31
         { turnin = 325, elite = true }, -- level 31
         { turnin = 78, accept = 79, -- level 31
-          note = "This one roams, so scan the surrounding area. The NPC is indoors." },
-        { turnin = 79, accept = 80, -- level 31
-          note = "This one roams, so scan the surrounding area." },
+          note = "The NPC is indoors." },
+        { turnin = 79, accept = 80 }, -- level 31
         { turnin = 58, races = { "Dwarf" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK", "DRUID" } }, -- level 31
         { turnin = 58, races = { "Human", "NightElf", "Gnome", "Skyborne" } }, -- level 31
         { turnin = 80, accept = 97, -- level 31
-          note = "This one roams, so scan the surrounding area. The NPC is indoors." },
+          note = "The NPC is indoors." },
         { turnin = 225, accept = 227, -- level 31
           note = "The NPC is indoors." },
         { turnin = 160, accept = 251, -- level 31
           note = "The NPC is indoors." },
         { turnin = 251, accept = 401, -- level 31
-          note = "This one roams, so scan the surrounding area. The NPC is indoors." },
+          note = "The NPC is indoors." },
         { turnin = 401, accept = 252, -- level 31
-          note = "This one roams, so scan the surrounding area. The NPC is indoors." },
+          note = "The NPC is indoors." },
         { turnin = 96139 }, -- level 31
         { turnin = 252, -- level 31
           note = "The NPC is indoors." },
         { destroy = 3248 }, -- level 31
-        { turnin = { 227, 97 }, accept = 98, -- level 31
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = { 227, 97 }, accept = 98 }, -- level 31
         { turnin = 221, accept = 222, -- level 31
           note = "This one roams, so scan the surrounding area." },
         { destroy = 2154 }, -- level 31
@@ -128,7 +125,7 @@ Ding.RegisterGuide({
         { complete = 98, -- level 31
           note = "The target can be in the house or around it." },
         { turnin = 98, -- level 31
-          note = "This one roams, so scan the surrounding area. The NPC is indoors." },
+          note = "The NPC is indoors." },
         { complete = 222, -- level 32
           note = "The objective is underground, in the mine shaft. Just out of the mine." },
         { level = 32, patrol = { { 1431, 40.57, 69.75 }, { 1431, 39.05, 72.36 }, { 1431, 36.65, 70.55 }, { 1431, 34.05, 69.04 }, { 1431, 31.44, 70.75 }, { 1431, 33.85, 73.35 }, { 1431, 36.54, 74.54 }, { 1431, 37.57, 77.64 }, { 1431, 40.15, 75.74 }, { 1431, 42.96, 74.55 }, { 1431, 34.26, 77.45 }, { 1431, 30.86, 74.86 }, { 1431, 31.35, 66.96 }, { 1431, 34.54, 65.74 } } }, -- level 32
@@ -147,7 +144,7 @@ Ding.RegisterGuide({
         { turnin = 222, accept = 223, -- level 32
           note = "This one roams, so scan the surrounding area." },
         { turnin = 223, -- level 32
-          note = "This one roams, so scan the surrounding area. The NPC is indoors." },
+          note = "The NPC is indoors." },
         { train = true, talk = 5498, races = { "Human", "Gnome" }, classes = { "MAGE" }, -- level 32
           note = "The NPC waits on the tower's highest floor." },
         { accept = 690, races = { "Human", "Gnome", "Skyborne" }, classes = { "MAGE" } }, -- level 32

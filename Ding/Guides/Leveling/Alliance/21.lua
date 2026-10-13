@@ -54,9 +54,9 @@ Ding.RegisterGuide({
         { accept = 603, sticky = 512, -- level 39
           note = "Wait for the talking to finish" },
         { complete = 537, -- level 39
-          note = "Beware of foes lurking in stealth. The NPC is indoors." },
+          note = "Beware of foes lurking in stealth. The target is indoors." },
         { accept = 551, collect = { { 3706, 1 } }, useitem = 3706, -- level 39
-          note = "The NPC is indoors." },
+          note = "The target is indoors." },
         { complete = 512, -- level 39
           note = "Beware of foes lurking in stealth." },
         { complete = 500, -- level 39
@@ -97,11 +97,9 @@ Ding.RegisterGuide({
         { turnin = 651 }, -- level 40
         { go = { 1417, 31.28, 65.32 }, text = "Take the trail across the peaks" }, -- level 40
         { go = { 1417, 21.63, 75.58 }, text = "Take the passage to Faldir's Cove" }, -- level 40
-        { accept = 663, -- level 40
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 663 }, -- level 40
         { turnin = 663 }, -- level 40
-        { accept = 662, -- level 40
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 662 }, -- level 40
         { accept = 664 }, -- level 40
         { accept = 665, noauto = 665, -- level 40
           note = "For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears." },
@@ -126,8 +124,7 @@ Ding.RegisterGuide({
         { useitem = 5996, when = { item = 5996 }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "MAGE" } }, -- level 40
         { complete = 664, -- level 40
           note = "Your targets sit below the water's surface." },
-        { turnin = 662, -- level 40
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 662 }, -- level 40
         { turnin = 664 }, -- level 40
         { turnin = 666, accept = 668 }, -- level 40
         { turnin = 668, accept = 669 }, -- level 40

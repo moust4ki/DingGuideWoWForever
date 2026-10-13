@@ -13,8 +13,6 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a07-redridge-and-westfall", {
         "飛往湖畔鎮",
     ["The NPC is indoors."] =
         "NPC在室內。",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "這個會四處走動，留意周圍一帶。NPC在室內。",
     ["The NPC is indoors, one floor up."] =
         "NPC在室內的樓上一層。",
     ["Look for a big mound of brown earth. Your targets sit below the water's surface."] =
@@ -31,6 +29,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a07-redridge-and-westfall", {
         "護送迪菲亞叛徒，保住他的性命。",
     ["Head indoors"] =
         "進入室內",
+    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
+        "這個會四處走動，留意周圍一帶。NPC在室內。",
     ["The NPC waits on the lower level, indoors."] =
         "NPC在室內的下層。",
     ["The NPC waits on the tower's highest floor."] =
@@ -51,6 +51,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a07-redridge-and-westfall", {
         "將開鎖提升到95",
     ["Look for little gray coffers of metal. The NPC is indoors."] =
         "尋找灰色的小金屬箱。NPC在室內。",
+    ["The object is indoors."] =
+        "這個物件在室內。",
     ["Go inside and stay on the trail"] =
         "進去後沿著小路走",
     ["Your target is a ghoul. This one roams, so scan the surrounding area."] =

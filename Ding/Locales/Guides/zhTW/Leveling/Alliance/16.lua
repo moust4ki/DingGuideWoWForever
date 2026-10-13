@@ -11,14 +11,10 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a16-dustwallow-marsh-and-thousan
         "NPC在室內。",
     ["The NPC is indoors, one floor up."] =
         "NPC在室內的樓上一層。",
-    ["This one roams, so scan the surrounding area. The NPC is indoors, one floor up."] =
-        "這個會四處走動，留意周圍一帶。NPC在室內的樓上一層。",
     ["The NPC is indoors. This quest is buggy and may not show up. If it is not around, move on without it."] =
         "NPC在室內。這個任務有錯誤，可能不會出現。如果不在，就略過繼續前進。",
-    ["This one roams, so scan the surrounding area."] =
-        "這個會四處走動，留意周圍一帶。",
-    ["This one roams, so scan the surrounding area. Expect several foes at once. Make Private Hendel your main target."] =
-        "這個會四處走動，留意周圍一帶。會同時出現多個敵人。以士兵亨德爾為主要目標。",
+    ["Expect several foes at once. Make Private Hendel your main target."] =
+        "會同時出現多個敵人。以士兵亨德爾為主要目標。",
     ["Wait for the talking to finish"] =
         "等對話結束",
     ["Steer clear of Brackenwall Village. Watch out: the foes here are above your level. Keep to the road the whole way."] =

@@ -13,6 +13,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a35-western-plaguelands", {
         "Avec les prochains rendus, tu atteins le niveau 52.",
     ["The NPC is indoors, one floor up."] =
         "Le PNJ est à l'intérieur, un étage plus haut.",
+    ["The object is indoors."] =
+        "L'objet est à l'intérieur.",
     ["The NPC is indoors."] =
         "Le PNJ est à l'intérieur.",
 })

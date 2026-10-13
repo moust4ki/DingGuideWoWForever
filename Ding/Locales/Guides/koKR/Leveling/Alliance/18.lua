@@ -31,16 +31,14 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a18-desolace", {
         "퀘스트는 작은 책에서 시작됩니다.",
     ["The targets are lobsters. Your targets sit below the water's surface."] =
         "대상은 랍스터입니다. 대상은 수면 아래에 있습니다.",
-    ["The NPC waits on the tower's highest floor."] =
-        "NPC는 탑 꼭대기 층에서 기다립니다.",
+    ["The target is on the tower's highest floor."] =
+        "대상은 탑 꼭대기 층에 있습니다.",
     ["For this quest you guard an NPC on the move. If she is absent, wait for her to reappear. The NPC is indoors."] =
         "이 퀘스트에서는 이동하는 NPC를 보호합니다. 그녀가 없다면 다시 나타날 때까지 기다리세요. NPC는 건물 안에 있습니다.",
-    ["Draw him to the doorway so other foes stay out of it. The NPC is indoors."] =
-        "다른 적이 끼어들지 않도록 그를 문간으로 끌어내세요. NPC는 건물 안에 있습니다.",
+    ["Draw him to the doorway so other foes stay out of it. The target is indoors."] =
+        "다른 적이 끼어들지 않도록 그를 문간으로 끌어내세요. 대상은 건물 안에 있습니다.",
     ["Let the conversation play out. Escort Dalinda Malem and keep her alive."] =
         "대화가 끝날 때까지 기다리세요. 달린다 말렘을 호위하며 살려 두세요.",
-    ["This one roams, so scan the surrounding area."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요.",
     ["The targets here are centaurs. Magram Pack Runners patrol with 2 hyena escorts; steer clear."] =
         "여기의 대상은 켄타우로스입니다. 마그람일족 조련사는 하이에나 2마리를 데리고 순찰합니다. 피하세요.",
     ["Stay away from Ghost Walker Post."] =

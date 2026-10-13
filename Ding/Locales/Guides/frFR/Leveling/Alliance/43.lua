@@ -17,6 +17,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a43-silithus", {
         "Le PNJ est en haut du chemin.",
     ["The NPC is on the house's raised terrace."] =
         "Le PNJ est sur la terrasse surélevée de la maison.",
+    ["The object is indoors."] =
+        "L'objet est à l'intérieur.",
     ["Watch out: killing them can summon more foes."] =
         "Attention : les tuer peut invoquer d'autres ennemis.",
     ["The foes here are scorpions."] =

@@ -19,8 +19,6 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a03-night-elf-starter", {
         "큰 경사로를 올라가세요",
     ["The NPC stands high in the great tree. The NPC stands in an adjoining chamber."] =
         "NPC는 거대한 나무 높은 곳에 서 있습니다. NPC는 옆방에 서 있습니다.",
-    ["This one roams, so scan the surrounding area."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요.",
     ["The targets are imps."] =
         "대상은 임프입니다.",
     ["Targets are in the cavern and around its entrance too."] =
@@ -59,10 +57,12 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a03-night-elf-starter", {
         "상급자에게서 약초채집을 배우세요",
     ["The NPC is indoors. Pick up 5 Earthroot while questing. A class quest further on requires this."] =
         "NPC는 건물 안에 있습니다. 퀘스트를 하면서 뱀뿌리 5개를 모으세요. 나중에 할 직업 퀘스트에 필요합니다.",
-    ["Let the conversation play out. This one roams, so scan the surrounding area."] =
-        "대화가 끝날 때까지 기다리세요. 이 대상은 돌아다니므로 주변을 살펴보세요.",
+    ["Let the conversation play out."] =
+        "대화가 끝날 때까지 기다리세요.",
     ["Look for brown clumps of roots."] =
         "갈색 뿌리 덩어리를 찾으세요.",
+    ["The object is indoors."] =
+        "그 물체는 건물 안에 있습니다.",
     ["Kill black-furred tigers."] =
         "검은 털의 호랑이를 처치하세요.",
     ["The targets are spiders with green bodies."] =
@@ -97,8 +97,6 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a03-night-elf-starter", {
         "그 지점은 속이 빈 나무의 아래층에 있습니다. 소매치기를 배우는 것을 잊지 마세요. 보관하세요. 곧 할 퀘스트에 필요합니다.",
     ["The NPC is indoors, on the central storey."] =
         "NPC는 건물 안 가운데 층에 있습니다.",
-    ["This one roams, so scan the surrounding area. The NPC waits on the tower's highest floor."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요. NPC는 탑 꼭대기 층에서 기다립니다.",
     ["Fly to Moonglade"] =
         "달의 숲으로 날아가세요",
     ["Target a Webwood Lurker with it. The targets are spiders with green bodies."] =
@@ -117,8 +115,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a03-night-elf-starter", {
         "여기서 소환수를 길들이세요",
     ["The target is a big gray spider. This one roams, so scan the surrounding area. The targets are spread over several spots."] =
         "대상은 큰 회색 거미입니다. 이 대상은 돌아다니므로 주변을 살펴보세요. 대상은 여러 곳에 흩어져 있습니다.",
-    ["Target Sethir the Ancient and use Pickpocket. The target is a violet satyr. The NPC waits here, then strolls out onto the big branch close by."] =
-        "고대정령 세시르를 대상으로 지정하고 소매치기를 사용하세요. 대상은 보라색 사티로스입니다. NPC는 여기서 기다리다가 근처의 큰 나뭇가지 위로 걸어 나갑니다.",
+    ["Target Sethir the Ancient and use Pickpocket. The target is a violet satyr. The target waits here, then strolls out onto the big branch close by."] =
+        "고대정령 세시르를 대상으로 지정하고 소매치기를 사용하세요. 대상은 보라색 사티로스입니다. 대상은 여기서 기다리다가 근처의 큰 나뭇가지 위로 걸어 나갑니다.",
     ["Fight the elementals of the swamp."] =
         "늪의 정령과 싸우세요.",
     ["Use Herbalism's Track Herbs to spot them. Pick these up while questing around Teldrassil. Get your Herbalism skill to 15."] =
@@ -185,10 +183,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a03-night-elf-starter", {
         "깊은굴쥐에게 아이템을 사용하세요. 작은 회색 쥐를 찾으세요. 깊은굴 지하철의 아이언포지 쪽 승강장으로 가세요.",
     ["Take the Deeprun Tram over to Stormwind City. The NPC stands by the wall on the central platform."] =
         "깊은굴 지하철을 타고 스톰윈드로 가세요. NPC는 가운데 승강장의 벽 옆에 서 있습니다.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors. Be ready for a fight right away."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요. NPC는 건물 안에 있습니다. 바로 전투가 시작되니 대비하세요.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요. NPC는 건물 안에 있습니다.",
+    ["The NPC is indoors. Be ready for a fight right away."] =
+        "NPC는 건물 안에 있습니다. 바로 전투가 시작되니 대비하세요.",
     ["Learn Two-Handed Swords at the weapon master"] =
         "무기 전문가에게서 양손 도검을 배우세요",
     ["Learn Swords at the weapon master"] =

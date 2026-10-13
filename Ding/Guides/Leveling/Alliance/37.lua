@@ -31,12 +31,12 @@ Ding.RegisterGuide({
         { accept = 2844 }, -- level 52
         { go = { 1444, 44.56, 9.85 }, text = "Stand on the neighboring ledge, then hop into this crack in the wall" }, -- level 52
         { collect = { { 11242, 1 } }, object = 164798, spots = { { 1444, 44.6, 10.18 } }, -- level 52
-          note = "The NPC is indoors." },
+          note = "The object is indoors." },
         { go = { 1444, 40.38, 11.01 }, text = "Hop onto the ledge" }, -- level 52
         { go = { 1444, 40.55, 11.48 }, text = "Leap over at this spot" }, -- level 52
         { go = { 1444, 40.94, 11.81 }, text = "Leap up at this spot" }, -- level 52
         { collect = { { 9257, 1 } }, spots = { { 1444, 40.6, 12.7 } }, -- level 52
-          note = "The NPC or item sits on the rocky shelf above." },
+          note = "The object sits on the rocky shelf above." },
         { collect = { { 9256, 1 } }, object = 142187, spots = { { 1444, 39.89, 9.41 } } }, -- level 52
         { collect = { { 9255, 1 } }, object = 142186, spots = { { 1444, 37.72, 12.14 } } }, -- level 52
         { collect = { { 9258, 1 } }, object = 142185, spots = { { 1444, 38.55, 15.85 } } }, -- level 52

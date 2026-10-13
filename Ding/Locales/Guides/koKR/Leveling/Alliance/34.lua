@@ -19,8 +19,6 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a34-blasted-lands-and-burning-st
         "하이에나를 사냥해 구하세요. 전갈도 같은 위치에 나타납니다.",
     ["The foes here are scorpions. Hyenas also use these spawn spots."] =
         "여기의 적은 전갈입니다. 하이에나도 이 생성 위치에 나타납니다.",
-    ["This one roams, so scan the surrounding area."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요.",
     ["Climb the trail to Morgan's Vigil"] =
         "길을 올라 모건의 터로 가세요",
     ["Flight master at Morgan's Vigil"] =

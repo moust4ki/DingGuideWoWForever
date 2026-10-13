@@ -25,14 +25,12 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h18-alterac-mountains-and-arathi
         "目标分布在好几个地点。NPC在室内。楼上也找找。",
     ["The NPC is indoors, one floor up."] =
         "NPC在室内楼上一层。",
-    ["The NPC waits on the lower level, indoors. If it is not around, move on without it. No rush; you may complete this afterwards."] =
-        "NPC在室内下层。如果它不在，就不用管它，继续前进。不急，可以之后再完成。",
-    ["This one roams, so scan the surrounding area."] =
-        "它会四处游荡，在周围找找。",
+    ["The target is on the lower level, indoors. If it is not around, move on without it. No rush; you may complete this afterwards."] =
+        "目标在室内下层。如果它不在，就不用管它，继续前进。不急，可以之后再完成。",
     ["Climb the slope, then leap the wall"] =
         "爬上斜坡，然后跳过墙",
-    ["The NPC is indoors, one floor up. Beware of foes lurking in stealth."] =
-        "NPC在室内楼上一层。当心潜行中的敌人。",
+    ["The target is indoors, one floor up. Beware of foes lurking in stealth."] =
+        "目标在室内楼上一层。当心潜行中的敌人。",
     ["The targets are kobolds. Additional ones are in the cavern up the trail. The following step takes place in the cave."] =
         "目标是狗头人。沿小路往上的洞穴里还有更多。下一步在洞穴里进行。",
     ["Climb the trail to the cavern"] =
@@ -45,6 +43,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h18-alterac-mountains-and-arathi
         "离开洞穴",
     ["The targets are raptors."] =
         "目标是迅猛龙。",
+    ["This one roams, so scan the surrounding area."] =
+        "它会四处游荡，在周围找找。",
     ["Let the conversation play out. This one roams, so scan the surrounding area."] =
         "等对话结束。它会四处游荡，在周围找找。",
     ["Take the trail across the peaks"] =

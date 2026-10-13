@@ -17,8 +17,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a20-swamp-of-sorrows", {
         "這個會四處走動，留意周圍一帶。NPC在室內。",
     ["Hunt the little winged dragonkin. When the targets run out, skip ahead. No rush; you may complete this afterwards."] =
         "獵殺有翅膀的小型龍類。沒有目標可打時，就跳到下一步。不急；之後再完成也可以。",
-    ["The target is a humanoid escorted by 2 guards. The NPC patrols a long route; look along it."] =
-        "目標是一個由2名護衛隨行的人型生物。NPC沿著一條很長的路線巡邏；沿路尋找。",
+    ["The target is a humanoid escorted by 2 guards. The target patrols a long route; look along it."] =
+        "目標是一個由2名護衛隨行的人型生物。目標沿著一條很長的路線巡邏；沿路尋找。",
     ["Hunt spiders for it."] =
         "獵殺蜘蛛取得。",
     ["This one roams, so scan the surrounding area. The targets are spread over several spots."] =

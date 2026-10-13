@@ -3240,4 +3240,41 @@ return {
         "拜访笼中的野猪人",
     ["Go to the corrupted moonwell"] =
         "前往被污染的月亮井",
+    -- Ding - Leveling: where an object or a monster target is (notes)
+    ["The object is indoors."] =
+        "该物件在室内。",
+    ["The object is indoors, one floor up."] =
+        "该物件在室内楼上一层。",
+    ["The object is on the lower level, indoors."] =
+        "该物件在室内下层。",
+    ["The object is on the lower level within the bridge."] =
+        "该物件在桥内部的下层。",
+    ["The object is on the highest level of this structure."] =
+        "该物件在这座建筑的最高层。",
+    ["The object is up on the summit."] =
+        "该物件在山顶上。",
+    ["The object sits on the rocky shelf above."] =
+        "该物件在上方的岩石平台上。",
+    ["The target is indoors."] =
+        "目标在室内。",
+    ["The target is indoors, one floor up."] =
+        "目标在室内楼上一层。",
+    ["The target is indoors at street level."] =
+        "目标在室内，与街道同层。",
+    ["The target is indoors, on the central storey."] =
+        "目标在室内中间那层。",
+    ["The target is on the lower level, indoors."] =
+        "目标在室内下层。",
+    ["The target is on the tower's highest floor."] =
+        "目标在塔的顶层。",
+    ["The target is up on the summit."] =
+        "目标在山顶上。",
+    ["The target is down in the Cleft of Shadow."] =
+        "目标在下面的暗影裂口里。",
+    ["The target can be indoors or out."] =
+        "目标可能在室内，也可能在室外。",
+    ["The target patrols a long route; look along it."] =
+        "目标沿一条很长的路线巡逻；沿路寻找。",
+    ["The target waits here, then strolls out onto the big branch close by."] =
+        "目标在这里等候，然后会走到附近的大树枝上。",
 }

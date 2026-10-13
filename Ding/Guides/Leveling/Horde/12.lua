@@ -28,8 +28,7 @@ Ding.RegisterGuide({
         { accept = 96, when = { done = 100 }, races = { "Orc", "Tauren", "Troll", "Skyborne" }, classes = { "SHAMAN" } }, -- level 30
         { accept = 509, -- level 30
           note = "The NPC is indoors." },
-        { turnin = 529, accept = 532, -- level 30
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 529, accept = 532 }, -- level 30
         { accept = 533, -- level 30
           note = "The NPC is indoors." },
         { accept = 552 }, -- level 30
@@ -50,15 +49,15 @@ Ding.RegisterGuide({
           note = "A tough quest lies just ahead. Foes in this area outlevel you. Targets are in the cavern and around its entrance too." },
         { go = { 1424, 46.23, 31.88 }, text = "Head out of the cave" }, -- level 31
         { complete = 567, -- level 31
-          note = "Draw foes one at a time if you can. Do not take on the whole group together. The NPC is indoors." },
+          note = "Draw foes one at a time if you can. Do not take on the whole group together. The target is indoors." },
         { complete = 532, -- level 31
-          note = "The NPC is indoors." },
+          note = "The target is indoors." },
         { complete = 532, -- level 31
-          note = "The NPC is indoors." },
+          note = "The target is indoors." },
         { complete = 532, -- level 31
-          note = "The NPC is indoors." },
+          note = "The target is indoors." },
         { complete = 532, -- level 31
-          note = "The NPC can be indoors or out." },
+          note = "The target can be indoors or out." },
         { turnin = 532, accept = 539 }, -- level 31
         { turnin = 552 }, -- level 31
         { go = { 1424, 46.17, 31.8 }, text = "Go into the cavern" }, -- level 31
@@ -77,9 +76,9 @@ Ding.RegisterGuide({
         { complete = 544, -- level 31
           note = "This one roams, so scan the surrounding area." },
         { complete = 544, -- level 31
-          note = "This one roams, so scan the surrounding area. The NPC is indoors." },
+          note = "This one roams, so scan the surrounding area. The target is indoors." },
         { complete = 544, -- level 31
-          note = "This one roams, so scan the surrounding area. The NPC is indoors." },
+          note = "This one roams, so scan the surrounding area. The target is indoors." },
         { complete = 544, -- level 31
           note = "Warden Belamoore stands guard over it. The target is a mage of level 36. Fight Kegan, breaking her line of sight with doors and stairways." },
         { complete = 556, -- level 31
@@ -94,8 +93,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { accept = 676 }, -- level 31
         { turnin = 546 }, -- level 31
-        { turnin = { 539, 567 }, -- level 31
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = { 539, 567 } }, -- level 31
         { turnin = 533, -- level 31
           note = "The NPC is indoors." },
         { accept = 98095 }, -- level 31

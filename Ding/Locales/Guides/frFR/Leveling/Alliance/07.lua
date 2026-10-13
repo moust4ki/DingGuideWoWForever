@@ -13,8 +13,6 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a07-redridge-and-westfall", {
         "Vole jusqu'à Comté-du-Lac",
     ["The NPC is indoors."] =
         "Le PNJ est à l'intérieur.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "Celui-ci se déplace : fouille les environs. Le PNJ est à l'intérieur.",
     ["The NPC is indoors, one floor up."] =
         "Le PNJ est à l'intérieur, un étage plus haut.",
     ["Look for a big mound of brown earth. Your targets sit below the water's surface."] =
@@ -31,6 +29,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a07-redridge-and-westfall", {
         "Escorte le traître défias et garde-le en vie.",
     ["Head indoors"] =
         "Va à l'intérieur",
+    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
+        "Celui-ci se déplace : fouille les environs. Le PNJ est à l'intérieur.",
     ["The NPC waits on the lower level, indoors."] =
         "Le PNJ attend au niveau inférieur, à l'intérieur.",
     ["The NPC waits on the tower's highest floor."] =
@@ -51,6 +51,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a07-redridge-and-westfall", {
         "Monte Crochetage à 95",
     ["Look for little gray coffers of metal. The NPC is indoors."] =
         "Cherche de petits coffres en métal gris. Le PNJ est à l'intérieur.",
+    ["The object is indoors."] =
+        "L'objet est à l'intérieur.",
     ["Go inside and stay on the trail"] =
         "Entre et suis le chemin",
     ["Your target is a ghoul. This one roams, so scan the surrounding area."] =

@@ -32,19 +32,19 @@ Ding.RegisterGuide({
         { accept = 5021, -- level 56
           note = "The NPC is indoors, one floor up." },
         { turnin = 5021, accept = 5023, -- level 56
-          note = "The NPC is indoors." },
+          note = "The object is indoors." },
         { turnin = 5230, accept = 5231 }, -- level 56
         { complete = 5231 }, -- level 56
         { turnin = 5231, accept = 5232 }, -- level 56
         { accept = 5058, -- level 56
-          note = "The NPC is indoors." },
+          note = "The object is indoors." },
         { turnin = 5058 }, -- level 56
         { collect = { { 12738, 1 } }, -- level 56
           note = "Look for a white set of bones. This one roams, so scan the surrounding area. The targets appear in several places." },
         { collect = { { 12739, 1 } }, -- level 56
           note = "Finish Locked Away to obtain this." },
         { accept = 5060, -- level 56
-          note = "The NPC is indoors, one floor up." },
+          note = "The object is indoors, one floor up." },
         { turnin = 5060, when = { ready = 5060 } }, -- level 56
         { accept = 4971, -- level 56
           note = "The NPC is indoors, one floor up." },
@@ -87,12 +87,11 @@ Ding.RegisterGuide({
           note = "Spiders also appear at these spawn spots." },
         { turnin = 4984, accept = 4985, sticky = 4985, -- level 56
           note = "The NPC is indoors." },
-        { accept = { 5542, 5543, 5544 }, sticky = { 5544, 5542, 5543 }, -- level 56
-          note = "This one roams, so scan the surrounding area." },
+        { accept = { 5542, 5543, 5544 }, sticky = { 5544, 5542, 5543 } }, -- level 56
         { accept = 6042 }, -- level 56
         { accept = 6022, elite = true }, -- level 56
         { turnin = 5601, accept = 5149, -- level 56
-          note = "This one roams, so scan the surrounding area. The NPC is within the ruined home." },
+          note = "The NPC is within the ruined home." },
         { collect = { { 12886, 1 } }, object = 176116, spots = { { 1423, 32.57, 79.29 }, { 1423, 33.94, 77.32 }, { 1423, 33.93, 79.55 } }, -- level 56
           note = "Search within the houses here. Be ready for a fight right away." },
         { collect = { { 12887, 1 } }, object = 176142, spots = { { 1423, 32.57, 79.29 }, { 1423, 33.94, 77.32 }, { 1423, 33.93, 79.55 } }, -- level 56
@@ -101,7 +100,7 @@ Ding.RegisterGuide({
           note = "Search within the houses here. Be ready for a fight right away." },
         { complete = 5149, useitem = 12886 }, -- level 56
         { turnin = 5149, sticky = { 5542, 5543 }, when = { item = 12885 }, -- level 56
-          note = "This one roams, so scan the surrounding area. The NPC is within the ruined home." },
+          note = "The NPC is within the ruined home." },
         { accept = 5152, when = { done = 5149 } }, -- level 56
         { accept = 5241, when = { done = 5149 }, races = { "Skyborne" } }, -- level 56
         { complete = 5544, -- level 56
@@ -129,18 +128,16 @@ Ding.RegisterGuide({
           note = "This is below ground, on the crypt's lower floor." },
         { turnin = 6022, elite = true, when = { item = 15448 } }, -- level 57
         { turnin = 6042 }, -- level 57
-        { turnin = { 5542, 5543, 5544 }, accept = 5742, -- level 57
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = { 5542, 5543, 5544 }, accept = 5742 }, -- level 57
         { complete = 5742, talk = 1855, -- level 57
-          note = "This one roams, so scan the surrounding area. Your character must be seated first." },
-        { turnin = 5742, -- level 57
-          note = "This one roams, so scan the surrounding area." },
+          note = "Your character must be seated first." },
+        { turnin = 5742 }, -- level 57
         { complete = 4985, -- level 57
           note = "Spiders also appear at these spawn spots." },
         { turnin = 4985, accept = 4987, -- level 57
           note = "The NPC is indoors." },
         { turnin = 5152, when = { log = 5152 }, -- level 57
-          note = "This one roams, so scan the surrounding area. Check each of the two floors indoors." },
+          note = "Check each of the two floors indoors." },
         { accept = 5153, when = { done = 5152 } }, -- level 57
         { complete = 5153, when = { log = 5153 } }, -- level 57
         { turnin = 4972, -- level 57
@@ -187,7 +184,7 @@ Ding.RegisterGuide({
         { turnin = 5235, when = { ready = 5235 } }, -- level 57
         { accept = 5236, when = { done = 5235 } }, -- level 57
         { turnin = 5902, accept = 6390, -- level 57
-          note = "The NPC is indoors. It shows up on top of the box." },
+          note = "The object is indoors. It shows up on top of the box." },
         { turnin = 5050, accept = 5051, -- level 57
           note = "The NPC is indoors, one floor up." },
         { collect = { { 12722, 1 } }, spots = { { 1422, 38.03, 56.41 }, { 1422, 36.17, 57.43 }, { 1422, 36.15, 59.35 }, { 1422, 37.26, 55.35 } }, -- level 57

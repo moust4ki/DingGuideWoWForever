@@ -33,8 +33,10 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a21-arathi-highlands-and-alterac
         "Le PNJ est à l'intérieur.",
     ["Wait for the talking to finish"] =
         "Attends la fin de la discussion",
-    ["Beware of foes lurking in stealth. The NPC is indoors."] =
-        "Attention aux ennemis camouflés. Le PNJ est à l'intérieur.",
+    ["Beware of foes lurking in stealth. The target is indoors."] =
+        "Attention aux ennemis camouflés. La cible est à l'intérieur.",
+    ["The target is indoors."] =
+        "La cible est à l'intérieur.",
     ["Beware of foes lurking in stealth."] =
         "Attention aux ennemis camouflés.",
     ["The targets are ogres."] =
@@ -59,8 +61,6 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a21-arathi-highlands-and-alterac
         "Prends le sentier qui traverse les sommets",
     ["Take the passage to Faldir's Cove"] =
         "Prends le passage jusqu'à Faldir's Cove",
-    ["This one roams, so scan the surrounding area."] =
-        "Celui-ci se déplace : fouille les environs.",
     ["For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears."] =
         "Dans cette quête, tu protèges un PNJ qui se déplace. Si le PNJ n'est pas là, attends qu'il réapparaisse.",
     ["Let the conversation play out. Escort Professor Phizzlethorpe and keep him alive."] =

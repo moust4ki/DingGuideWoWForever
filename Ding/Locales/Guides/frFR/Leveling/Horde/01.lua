@@ -19,8 +19,6 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h01-undead-starter", {
         "Les cibles sont des chauves-souris.",
     ["With the coming hand-ins, this brings you to level 4."] =
         "Avec les prochains rendus, ça te mène au niveau 4.",
-    ["This one roams, so scan the surrounding area."] =
-        "Celui-ci se déplace : fouille les environs.",
     ["Search stacks of brown crates. Check in and around the structures."] =
         "Fouille les piles de caisses brunes. Regarde dans les bâtiments et autour.",
     ["Just out of the mine."] =
@@ -79,18 +77,22 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h01-undead-starter", {
         "Chasse les crabes.",
     ["Stay on the trail"] =
         "Suis le chemin",
+    ["The object is indoors."] =
+        "L'objet est à l'intérieur.",
     ["Keep to the trail as it curves."] =
         "Reste sur le chemin dans le virage.",
     ["Step into the flames. Dying costs you nothing this early. This is the quickest way over."] =
         "Entre dans les flammes. Mourir ne te coûte rien à ce stade. C'est le chemin le plus rapide.",
     ["Head indoors"] =
         "Va à l'intérieur",
-    ["The NPC is indoors, one floor up. Consider bringing a group for this one."] =
-        "Le PNJ est à l'intérieur, un étage plus haut. Pense à venir en groupe pour celle-ci.",
+    ["The target is indoors, one floor up. Consider bringing a group for this one."] =
+        "La cible est à l'intérieur, un étage plus haut. Pense à venir en groupe pour celle-ci.",
     ["Stay on the trail and keep climbing the steps"] =
         "Reste sur le chemin et continue de monter les marches",
-    ["The NPC stands on the highest level of this structure."] =
-        "Le PNJ se tient au plus haut niveau de ce bâtiment.",
+    ["The object is on the highest level of this structure."] =
+        "L'objet est au plus haut niveau de ce bâtiment.",
+    ["This one roams, so scan the surrounding area."] =
+        "Celui-ci se déplace : fouille les environs.",
     ["Learn First Aid from the trainer"] =
         "Apprends le Secourisme auprès de l'entraîneur",
     ["Loot the gray chests built from metal. Search in and around the sunken wrecks. Your targets sit below the water's surface."] =
@@ -123,6 +125,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h01-undead-starter", {
         "Cherche une plaque de fer marquée d'un crâne. Attends la fin de la discussion",
     ["Learn Swords at the weapon master"] =
         "Apprends les Épées auprès du maître d'armes",
+    ["The target is indoors."] =
+        "La cible est à l'intérieur.",
     ["Use the item at the pink marking."] =
         "Utilise l'objet sur la marque rose.",
     ["Move gradually northwest toward Agamand Mills."] =

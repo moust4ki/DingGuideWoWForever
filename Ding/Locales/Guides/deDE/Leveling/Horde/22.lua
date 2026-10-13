@@ -29,6 +29,6 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h22-tanaris", {
         "Schnapp dir die Beute.",
     ["Wait for the talking to finish"] =
         "Warte, bis das Gespräch endet",
-    ["Hold on until Rizzle has fled. The NPC is indoors."] =
-        "Warte, bis Rizzle geflohen ist. Der NPC ist drinnen.",
+    ["Hold on until Rizzle has fled. The object is indoors."] =
+        "Warte, bis Rizzle geflohen ist. Das Objekt ist drinnen.",
 })

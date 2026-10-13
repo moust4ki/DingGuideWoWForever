@@ -11,8 +11,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a24-badlands", {
         "Prends-les pour des rendus faciles plus loin, dans les Terres ingrates. Le PNJ est à l'intérieur.",
     ["This one roams, so scan the surrounding area. The NPC is indoors."] =
         "Celui-ci se déplace : fouille les environs. Le PNJ est à l'intérieur.",
-    ["The NPC or item sits on the rocky shelf above."] =
-        "Le PNJ ou l'objet est sur la corniche rocheuse au-dessus.",
+    ["The object sits on the rocky shelf above."] =
+        "L'objet est sur la corniche rocheuse au-dessus.",
     ["Fight the dwarves."] =
         "Combats les nains.",
     ["Look for a timber box. The targets are spread over several spots."] =

@@ -101,14 +101,14 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a01-human-starter", {
         "Aprenda Espadas e Báculos com o mestre de armas",
     ["Head indoors"] =
         "Vá para dentro",
-    ["Step onto the pink rune. Look within the tomb. The NPC waits on the lower level, indoors."] =
-        "Pise na runa rosa. Procure dentro do túmulo. O NPC espera no nível de baixo, lá dentro.",
+    ["The target is indoors."] =
+        "O alvo está lá dentro.",
+    ["Step onto the pink rune. Look within the tomb. The target is on the lower level, indoors."] =
+        "Pise na runa rosa. Procure dentro do túmulo. O alvo está no nível de baixo, lá dentro.",
     ["The NPC stands one level over the crypt. The NPC waits on the lower level, indoors."] =
         "O NPC fica um nível acima da cripta. O NPC espera no nível de baixo, lá dentro.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors. Be ready for a fight right away."] =
-        "Este se desloca, então procure pelos arredores. O NPC está lá dentro. Esteja pronto para lutar logo de cara.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "Este se desloca, então procure pelos arredores. O NPC está lá dentro.",
+    ["The NPC is indoors. Be ready for a fight right away."] =
+        "O NPC está lá dentro. Esteja pronto para lutar logo de cara.",
     ["Learn Blacksmithing from the trainer"] =
         "Aprenda Ferraria com o instrutor",
     ["Learn Mining from the trainer"] =
@@ -183,6 +183,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a01-human-starter", {
         "Saia do Stonesplinter Valley e siga pela estrada",
     ["The NPC waits on the tower's highest floor."] =
         "O NPC espera no último andar da torre.",
+    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
+        "Este se desloca, então procure pelos arredores. O NPC está lá dentro.",
     ["Head up the incline"] =
         "Suba a ladeira",
 })

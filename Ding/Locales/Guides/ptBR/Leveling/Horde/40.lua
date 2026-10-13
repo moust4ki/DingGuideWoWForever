@@ -27,8 +27,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h40-winterspring", {
         "Use o item em Legacki.",
     ["The NPC is indoors."] =
         "O NPC está lá dentro.",
-    ["This one roams, so scan the surrounding area. The NPC stands within the passage."] =
-        "Este se desloca, então procure pelos arredores. O NPC fica dentro da passagem.",
+    ["The NPC stands within the passage."] =
+        "O NPC fica dentro da passagem.",
     ["Fly to Moonglade"] =
         "Voe até a Clareira da Lua",
     ["Head indoors"] =
@@ -37,8 +37,6 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h40-winterspring", {
         "O NPC está lá dentro. Espere a conversa terminar",
     ["One last lengthy stretch of monster farming. Dungeon runs are a fine choice here too, as you like. This number shrinks while you kill monsters."] =
         "Um último trecho longo matando monstros. Fazer masmorras também é uma boa opção aqui, se preferir. Este número diminui enquanto você mata monstros.",
-    ["The NPC stands within the passage."] =
-        "O NPC fica dentro da passagem.",
     ["You can also take it out of your bank."] =
         "Você também pode pegá-lo no seu banco.",
     ["The NPC patrols a long route; look along it."] =

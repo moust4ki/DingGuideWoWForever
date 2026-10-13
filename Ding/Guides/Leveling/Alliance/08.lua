@@ -88,7 +88,7 @@ Ding.RegisterGuide({
         { destroy = 5251 }, -- level 22
         { turnin = 949, accept = 950 }, -- level 22
         { accept = 945, noauto = 945, -- level 22
-          note = "For this quest you guard an NPC on the move. If she is absent, wait for her to reappear. This one roams, so scan the surrounding area." },
+          note = "For this quest you guard an NPC on the move. If she is absent, wait for her to reappear." },
         { complete = 945, -- level 22
           note = "Let the conversation play out. Escort Therylune and defend her." },
         { accept = 968, useitem = 5352, when = { item = 5352 } }, -- level 22

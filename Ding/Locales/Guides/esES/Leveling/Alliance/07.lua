@@ -13,8 +13,6 @@ Ding.RegisterGuideTranslation("esES", "leveling-a07-redridge-and-westfall", {
         "Vuela a Villa del Lago",
     ["The NPC is indoors."] =
         "El PNJ está dentro.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "Este deambula, así que revisa los alrededores. El PNJ está dentro.",
     ["The NPC is indoors, one floor up."] =
         "El PNJ está dentro, un piso más arriba.",
     ["Look for a big mound of brown earth. Your targets sit below the water's surface."] =
@@ -31,6 +29,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a07-redridge-and-westfall", {
         "Escolta al Traidor Defias y mantenlo con vida.",
     ["Head indoors"] =
         "Ve al interior",
+    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
+        "Este deambula, así que revisa los alrededores. El PNJ está dentro.",
     ["The NPC waits on the lower level, indoors."] =
         "El PNJ espera en el nivel inferior, dentro.",
     ["The NPC waits on the tower's highest floor."] =
@@ -51,6 +51,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a07-redridge-and-westfall", {
         "Sube Forzar cerraduras a 95",
     ["Look for little gray coffers of metal. The NPC is indoors."] =
         "Busca pequeños cofres grises de metal. El PNJ está dentro.",
+    ["The object is indoors."] =
+        "El objeto está dentro.",
     ["Go inside and stay on the trail"] =
         "Entra y sigue el sendero",
     ["Your target is a ghoul. This one roams, so scan the surrounding area."] =

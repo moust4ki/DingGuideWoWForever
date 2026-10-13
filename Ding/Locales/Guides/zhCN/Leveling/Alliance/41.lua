@@ -11,34 +11,38 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a41-western-and-eastern-plaguela
         "NPC在室内。",
     ["Stay on the trail"] =
         "沿小路走",
-    ["This one roams, so scan the surrounding area. Check each of the two floors indoors."] =
-        "它会四处游荡，在周围找找。室内两层都要找。",
+    ["Check each of the two floors indoors."] =
+        "室内两层都要找。",
     ["Stand at the watchtower's doorway. An elite foe waits indoors; stay clear of it."] =
         "站在瞭望塔门口。室内有一个精英敌人，避开它。",
     ["Spiders also appear at these spawn spots."] =
         "蜘蛛也会在这些刷新点出现。",
+    ["The object is indoors."] =
+        "该物件在室内。",
     ["Look for a white set of bones. This one roams, so scan the surrounding area. The targets appear in several places."] =
         "寻找一副白色的骨头。它会四处游荡，在周围找找。目标在多个地点出现。",
     ["Finish Locked Away to obtain this."] =
         "完成任务“Locked Away”来获得它。",
+    ["The object is indoors, one floor up."] =
+        "该物件在室内楼上一层。",
     ["The NPC is indoors, one floor up."] =
         "NPC在室内楼上一层。",
     ["The target is a ghoul armed with a pitchfork. This one roams, so scan the surrounding area. The targets appear in several places."] =
         "目标是一个拿着干草叉的食尸鬼。它会四处游荡，在周围找找。目标在多个地点出现。",
-    ["This one roams, so scan the surrounding area."] =
-        "它会四处游荡，在周围找找。",
     ["Elites roam close by; keep your distance."] =
         "附近有精英游荡，保持距离。",
     ["Search the bones of a fallen person. Elites roam close by; keep your distance."] =
         "搜寻一具死者的骸骨。附近有精英游荡，保持距离。",
-    ["This one roams, so scan the surrounding area. The NPC is within the ruined home."] =
-        "它会四处游荡，在周围找找。NPC在倒塌的房屋里。",
+    ["The NPC is within the ruined home."] =
+        "NPC在倒塌的房屋里。",
     ["Search within the houses here. Be ready for a fight right away."] =
         "在这里的房屋里搜寻。准备好马上战斗。",
     ["Look for big yellow grubs."] =
         "寻找黄色的大幼虫。",
     ["With the coming hand-ins, this gets you to level 58."] =
         "加上接下来要交的任务，这能让你升到58级。",
+    ["This one roams, so scan the surrounding area."] =
+        "它会四处游荡，在周围找找。",
     ["Flight master at Light's Hope Chapel"] =
         "圣光之愿礼拜堂飞行管理员",
     ["Look for big rocks seeping green slime. Progress westward as you go."] =
@@ -49,8 +53,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a41-western-and-eastern-plaguela
         "下到墓穴里",
     ["This is below ground, on the crypt's lower floor."] =
         "在地下，墓穴的下层。",
-    ["This one roams, so scan the surrounding area. Your character must be seated first."] =
-        "它会四处游荡，在周围找找。你的角色必须先坐下。",
+    ["Your character must be seated first."] =
+        "你的角色必须先坐下。",
     ["Move the camera close and check which book is genuine. Some books are traps that summon foes. The genuine book can look two ways:"] =
         "把镜头拉近，看看哪本书是真的。有些书是陷阱，会召唤敌人。真书有两种样子：",
     ["Close to the big buildings lit in blue. A new one may appear when one is killed."] =
@@ -59,8 +63,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a41-western-and-eastern-plaguela
         "寻找灰色的小金属箱。目标在倒塌的房屋里。",
     ["Your targets sit below the water's surface."] =
         "目标在水面以下。",
-    ["The NPC is indoors. It shows up on top of the box."] =
-        "NPC在室内。它会出现在箱子上面。",
+    ["The object is indoors. It shows up on top of the box."] =
+        "该物件在室内。它会出现在箱子上面。",
     ["This one roams, so scan the surrounding area. Targets are in the tower and around its base. If an elite stands on the tower's roof, hold back outside."] =
         "它会四处游荡，在周围找找。目标在塔里和塔底周围。如果塔顶站着精英，就在外面等着。",
     ["Head down into the Deeprun Tram station"] =

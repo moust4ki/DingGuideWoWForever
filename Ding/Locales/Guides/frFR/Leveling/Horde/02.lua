@@ -13,10 +13,10 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h02-tauren-starter", {
         "Le PNJ est à l'intérieur.",
     ["With the coming hand-ins, this brings you to level 4."] =
         "Avec les prochains rendus, ça te mène au niveau 4.",
-    ["This one roams, so scan the surrounding area."] =
-        "Celui-ci se déplace : fouille les environs.",
     ["Traverse the passageway"] =
         "Traverse le passage",
+    ["The target is indoors."] =
+        "La cible est à l'intérieur.",
     ["Your objective lies in a little cavern."] =
         "Ton objectif est dans une petite grotte.",
     ["Fight quilboars."] =
@@ -109,18 +109,20 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h02-tauren-starter", {
         "Le PNJ attend au sommet de la montagne.",
     ["Kill Water Seekers and Thornweavers."] =
         "Tue des chercheurs d'eau et des tisseurs d'épines.",
+    ["This one roams, so scan the surrounding area."] =
+        "Celui-ci se déplace : fouille les environs.",
     ["Your targets are within the cavern. The objective is at the far end."] =
         "Tes cibles sont dans la grotte. L'objectif est tout au fond.",
     ["Head out of the cave"] =
         "Sors de la grotte",
     ["Head indoors"] =
         "Va à l'intérieur",
-    ["The NPC is indoors, one floor up. Consider bringing a group for this one."] =
-        "Le PNJ est à l'intérieur, un étage plus haut. Pense à venir en groupe pour celle-ci.",
+    ["The target is indoors, one floor up. Consider bringing a group for this one."] =
+        "La cible est à l'intérieur, un étage plus haut. Pense à venir en groupe pour celle-ci.",
     ["Stay on the trail and keep climbing the steps"] =
         "Reste sur le chemin et continue de monter les marches",
-    ["The NPC stands on the highest level of this structure."] =
-        "Le PNJ se tient au plus haut niveau de ce bâtiment.",
+    ["The object is on the highest level of this structure."] =
+        "L'objet est au plus haut niveau de ce bâtiment.",
     ["The target is a troll in crimson robes. This one roams, so scan the surrounding area."] =
         "La cible est un troll en robe cramoisie. Celui-ci se déplace : fouille les environs.",
     ["Look for the skull-shaped objects."] =
@@ -131,12 +133,14 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h02-tauren-starter", {
         "Les cibles sont des homards.",
     ["Hunt the crabs."] =
         "Chasse les crabes.",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "Celui-ci se déplace : fouille les environs. Le PNJ est à l'intérieur.",
     ["The NPC is up on the summit."] =
         "Le PNJ est en haut, au sommet.",
     ["Receive Sapta Sight"] =
         "Reçois Sapta Sight",
+    ["The target is up on the summit."] =
+        "La cible est en haut, au sommet.",
+    ["The object is up on the summit."] =
+        "L'objet est en haut, au sommet.",
     ["Look for beige sacks."] =
         "Cherche des sacs beiges.",
     ["Stay on the trail, then cross the tunnel"] =

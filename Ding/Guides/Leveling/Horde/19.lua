@@ -16,15 +16,12 @@ Ding.RegisterGuide({
         { accept = 703 }, -- level 39
         { turnin = 705, when = { log = 705, ready = 705 } }, -- level 39
         { turnin = 1106, accept = 1108 }, -- level 39
-        { accept = 710, -- level 39
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 710 }, -- level 39
         { accept = 713, when = { item = 3829 } }, -- level 39
-        { turnin = 713, when = { log = 713, ready = 713 }, -- level 39
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 713, when = { log = 713, ready = 713 } }, -- level 39
         { accept = 714, when = { item = 4389 } }, -- level 39
         { accept = 714, when = { item = 4389 } }, -- level 39
-        { turnin = 714, when = { item = 4389, log = 714 }, -- level 39
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 714, when = { item = 4389, log = 714 } }, -- level 39
         { accept = 715, when = { item = { { 929, 1 }, { 3823, 1 } } } }, -- level 39
         { turnin = 715, sticky = 710, when = { item = 929, log = 715 } }, -- level 39
         { accept = 1419, -- level 39
@@ -35,12 +32,10 @@ Ding.RegisterGuide({
         { complete = 703, keep = 3404, sticky = 2258, -- level 39
           note = "A cluster of them gathers here. More of them dot the surroundings." },
         { complete = 710 }, -- level 39
-        { turnin = 710, accept = 711, -- level 39
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 710, accept = 711 }, -- level 39
         { complete = 711 }, -- level 40
         { complete = 2258 }, -- level 40
-        { turnin = 711, sticky = { 2258, 1419 }, -- level 40
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 711, sticky = { 2258, 1419 } }, -- level 40
         { complete = 2258, -- level 40
           note = "A cluster of them gathers here. More of them dot the surroundings." },
         { complete = { 2258, 1419 } }, -- level 40

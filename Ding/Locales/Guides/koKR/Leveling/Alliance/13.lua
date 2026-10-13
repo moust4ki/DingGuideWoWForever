@@ -19,8 +19,6 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a13-stonetalon-mountains-and-ash
         "이 오솔길이 나올 때까지 큰길을 따라가세요",
     ["Keep on the trail"] =
         "길을 계속 따라가세요",
-    ["This one roams, so scan the surrounding area."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요.",
     ["Fight the treants. Circle the mountain on foot."] =
         "나무정령과 싸우세요. 걸어서 산을 돌아가세요.",
     ["Head uphill on the trail and across the passage"] =
@@ -29,6 +27,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a13-stonetalon-mountains-and-ash
         "터널로 울부짖는 골짜기를 나가세요",
     ["Climb the trail"] =
         "길을 따라 올라가세요",
+    ["This one roams, so scan the surrounding area."] =
+        "이 대상은 돌아다니므로 주변을 살펴보세요.",
     ["Leave your pet with the stable master."] =
         "야수 관리인에게 소환수를 맡기세요.",
     ["You will tame a short-term pet shortly. You pick up Claw (Rank 4) here."] =
@@ -47,12 +47,12 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a13-stonetalon-mountains-and-ash
         "은신해 숨어 있는 적을 조심하세요.",
     ["Hunt down satyrs. Beware of foes lurking in stealth."] =
         "사티로스를 사냥하세요. 은신해 숨어 있는 적을 조심하세요.",
-    ["Let the conversation play out. This one roams, so scan the surrounding area."] =
-        "대화가 끝날 때까지 기다리세요. 이 대상은 돌아다니므로 주변을 살펴보세요.",
+    ["Let the conversation play out."] =
+        "대화가 끝날 때까지 기다리세요.",
     ["Circle the peak, then climb the twisting dirt trail to the shrine"] =
         "봉우리를 돌아간 다음 구불구불한 흙길을 따라 성소까지 올라가세요",
-    ["The NPC is up on the summit."] =
-        "NPC는 정상에 있습니다.",
+    ["The object is up on the summit."] =
+        "그 물체는 정상에 있습니다.",
     ["Circle the mountain, then stay on the trail"] =
         "산을 돌아간 다음 길을 계속 따라가세요",
     ["Stand on the marked point, then apply the item."] =
@@ -67,14 +67,12 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a13-stonetalon-mountains-and-ash
         "비탈을 올라가세요",
     ["Walk over the span"] =
         "다리를 건너가세요",
-    ["The NPC is indoors, one floor up."] =
-        "NPC는 건물 안 한 층 위에 있습니다.",
+    ["The object is indoors, one floor up."] =
+        "그 물체는 건물 안 한 층 위에 있습니다.",
     ["Wait for the talking to finish"] =
         "대화가 끝날 때까지 기다리세요",
     ["Stay on the trail"] =
         "길을 계속 따라가세요",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요. NPC는 건물 안에 있습니다.",
     ["The foes are gnomes. In Gnomeregan's outer halls, not in the instance itself."] =
         "적은 노움입니다. 인스턴스 안이 아니라 놈리건 바깥쪽 통로에 있습니다.",
     ["Take the lift down, then head north. In Gnomeregan's outer halls, not in the instance itself."] =

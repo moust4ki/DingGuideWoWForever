@@ -13,8 +13,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h30-feralas-and-ungoro-crater", 
         "Os alvos são hipogrifos. Mate-os, depois use o item nos restos deles.",
     ["Slay them, then apply the item to their remains."] =
         "Mate-os, depois use o item nos restos deles.",
-    ["Fight the treants. The NPC patrols a long route; look along it. Slay them, then apply the item to their remains."] =
-        "Enfrente as árvores animadas. O NPC patrulha uma rota longa; procure ao longo dela. Mate-os, depois use o item nos restos deles.",
+    ["Fight the treants. The target patrols a long route; look along it. Slay them, then apply the item to their remains."] =
+        "Enfrente as árvores animadas. O alvo patrulha uma rota longa; procure ao longo dela. Mate-os, depois use o item nos restos deles.",
     ["Aim the item at the Strider foes. The targets are towering green giants. The item strips their elite status."] =
         "Use o item nas moas. Os alvos são gigantes verdes enormes. O item remove o status de elite deles.",
     ["Hunt down the elementals formed of water."] =

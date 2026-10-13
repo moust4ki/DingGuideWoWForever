@@ -35,8 +35,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a40-burning-steppes", {
         "O NPC é uma senhora humana idosa. O NPC patrulha uma rota longa; procure ao longo dela. Se ela não estiver lá, pode estar no andar de cima da casa, em 52.4, 42.1, na Cidade de Ventobravo.",
     ["Walk over the rope bridge, then climb the trail"] =
         "Atravesse a ponte de corda, depois suba a trilha",
-    ["The NPC is up on the summit."] =
-        "O NPC está lá no topo.",
+    ["The object is up on the summit."] =
+        "O objeto está lá no topo.",
     ["Dungeon runs are a fine choice here too, as you like."] =
         "Fazer masmorras também é uma boa opção aqui, se preferir.",
 })

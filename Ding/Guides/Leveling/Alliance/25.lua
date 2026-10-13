@@ -53,8 +53,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors, on the central storey." },
         { turnin = 599, -- level 42
           note = "The NPC is upstairs, out on the balcony." },
-        { accept = 617, -- level 42
-          note = "This one roams, so scan the surrounding area." },
+        { accept = 617 }, -- level 42
         { go = { 1434, 27.94, 73.5 }, text = "Take the passage out of Booty Bay" }, -- level 42
         { complete = 617, sticky = 621 }, -- level 42
         { complete = 609 }, -- level 42
@@ -91,8 +90,7 @@ Ding.RegisterGuide({
           note = "The NPC is upstairs, out on the balcony." },
         { turnin = 611, -- level 42
           note = "The NPC is upstairs, out on the balcony." },
-        { turnin = 617, accept = 623, -- level 42
-          note = "This one roams, so scan the surrounding area." },
+        { turnin = 617, accept = 623 }, -- level 42
         { bank = 2725, when = { item = 2725 } }, -- level 42
         { bank = 2728, when = { item = 2728 } }, -- level 42
         { bank = 2730, when = { item = 2730 } }, -- level 42

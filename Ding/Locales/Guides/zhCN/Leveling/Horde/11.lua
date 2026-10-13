@@ -15,8 +15,6 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h11-thousand-needles", {
         "乘升降梯下到千针石林，沿道路走向乱风岗，再乘升降梯上去",
     ["Fly to Freewind Post"] =
         "飞往乱风岗",
-    ["This one roams, so scan the surrounding area."] =
-        "它会四处游荡，在周围找找。",
     ["The NPC is indoors."] =
         "NPC在室内。",
     ["Go into the cavern"] =
@@ -51,8 +49,10 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h11-thousand-needles", {
         "寻找大蛋。",
     ["For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears. Keep away from Heartrazor."] =
         "这个任务需要保护一个行进中的NPC。如果NPC不在，就等到他重新出现。远离Heartrazor。",
-    ["Steelsnap is a brown hyena with 2 hyena escorts. The NPC patrols a long route; look along it. The target appears near 17.3, 22.2 in Thousand Needles."] =
-        "Steelsnap是一只棕色土狼，身边有2只土狼护卫。NPC沿一条很长的路线巡逻；沿路寻找。目标出现在千针石林的17.3, 22.2附近。",
+    ["Steelsnap is a brown hyena with 2 hyena escorts. The target patrols a long route; look along it. The target appears near 17.3, 22.2 in Thousand Needles."] =
+        "Steelsnap是一只棕色土狼，身边有2只土狼护卫。目标沿一条很长的路线巡逻；沿路寻找。目标出现在千针石林的17.3, 22.2附近。",
+    ["This one roams, so scan the surrounding area."] =
+        "它会四处游荡，在周围找找。",
     ["The target is a centaur, black in color. It roams a wide route. Leave it out if you'd rather not hunt for it."] =
         "目标是一个黑色的半人马。它的游荡路线很长。如果不想去找它，就跳过。",
     ["The target is a centaur, black in color. It roams a wide route. His patrol crosses this spot two times."] =
@@ -71,8 +71,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h11-thousand-needles", {
         "沿小路往上爬，走过绳桥",
     ["Walk over the rope bridge"] =
         "走过吊桥",
-    ["The objective lies atop the mesa. The NPC is indoors."] =
-        "目标在台地顶上。NPC在室内。",
+    ["The objective lies atop the mesa. The object is indoors."] =
+        "目标在台地顶上。该物件在室内。",
     ["The objective lies atop the mesa."] =
         "目标在台地顶上。",
     ["The objective lies atop the mesa. Be ready for a fight right away. The target is a level 28 elite."] =

@@ -21,8 +21,6 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h07-hillsbrad-foothills", {
         "讓對話播完。NPC在室內。",
     ["Get rid of your Touch of Zanzil."] =
         "消除你身上的贊吉爾之觸。",
-    ["This one roams, so scan the surrounding area."] =
-        "這個會四處走動，留意周圍一帶。",
     ["Leave your pet with the stable master."] =
         "把寵物寄放在獸欄管理員那裡。",
     ["You will tame a short-term pet shortly. Pick up Claw (Rank 3) for your pet."] =
@@ -43,8 +41,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h07-hillsbrad-foothills", {
         "這個會四處走動，留意周圍一帶。目標分散在好幾個地點。",
     ["Look for it bound to the orc's leg."] =
         "它綁在那名獸人的腿上，找找看。",
-    ["Look for it bound to the orc's leg. The NPC is indoors."] =
-        "它綁在那名獸人的腿上，找找看。NPC在室內。",
+    ["Look for it bound to the orc's leg. The object is indoors."] =
+        "它綁在那名獸人的腿上，找找看。這個物件在室內。",
     ["The targets are spiders with green bodies."] =
         "目標是綠色身體的蜘蛛。",
     ["Together with the next turn-ins, this brings you to level 23."] =
@@ -53,14 +51,16 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h07-hillsbrad-foothills", {
         "目標分散在好幾個地點。在室內，或在外面的空地上。",
     ["Check each of the two floors indoors. It may be found outdoors too."] =
         "檢查室內的兩層樓。在戶外也可能找到。",
-    ["The NPC is a little wolf. This one roams, so scan the surrounding area. He goes berserk and attacks you once the quest is handed in."] =
-        "這個NPC是一隻小狼。這個會四處走動，留意周圍一帶。交完任務後，他會發狂並攻擊你。",
+    ["The NPC is a little wolf. He goes berserk and attacks you once the quest is handed in."] =
+        "這個NPC是一隻小狼。交完任務後，他會發狂並攻擊你。",
     ["A woman holding a pitchfork. This one roams, so scan the surrounding area."] =
         "一個拿著乾草叉的女人。這個會四處走動，留意周圍一帶。",
     ["The target patrols the trail between the houses. The target's spawn point is 30.5, 40.6 in Hillsbrad Foothills."] =
         "目標在房屋之間的小路上巡邏。目標的重生點在希爾斯布萊德丘陵30.5, 40.6。",
     ["With the coming hand-ins, this brings you to level 24. Tougher foes are coming up next."] =
         "加上接下來交的任務，這能讓你升到24級。接下來的敵人會更強。",
+    ["The target is indoors."] =
+        "目標在室內。",
     ["This one roams, so scan the surrounding area. The targets are spread over several spots. Some may be in the smithy."] =
         "這個會四處走動，留意周圍一帶。目標分散在好幾個地點。有些可能在鐵匠鋪裡。",
     ["Go down into the tomb"] =

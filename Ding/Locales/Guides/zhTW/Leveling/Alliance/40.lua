@@ -35,8 +35,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a40-burning-steppes", {
         "NPC是一位年長的人類女士。NPC沿著一條很長的路線巡邏；沿路尋找。如果不在，她可能在房子的樓上，位於暴風城的52.4, 42.1。",
     ["Walk over the rope bridge, then climb the trail"] =
         "走過吊橋，再沿小路往上",
-    ["The NPC is up on the summit."] =
-        "NPC在山頂上。",
+    ["The object is up on the summit."] =
+        "這個物件在山頂上。",
     ["Dungeon runs are a fine choice here too, as you like."] =
         "喜歡的話，這時去刷地城也是不錯的選擇。",
 })

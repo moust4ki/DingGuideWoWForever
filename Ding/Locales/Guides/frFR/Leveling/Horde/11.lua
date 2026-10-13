@@ -15,8 +15,6 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h11-thousand-needles", {
         "Descends en ascenseur dans Mille pointes, suis la route vers le poste de Librevent, puis remonte en ascenseur",
     ["Fly to Freewind Post"] =
         "Vole jusqu'au poste de Librevent",
-    ["This one roams, so scan the surrounding area."] =
-        "Celui-ci se déplace : fouille les environs.",
     ["The NPC is indoors."] =
         "Le PNJ est à l'intérieur.",
     ["Go into the cavern"] =
@@ -51,8 +49,10 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h11-thousand-needles", {
         "Cherche de gros œufs.",
     ["For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears. Keep away from Heartrazor."] =
         "Dans cette quête, tu protèges un PNJ qui se déplace. Si le PNJ n'est pas là, attends qu'il réapparaisse. Tiens-toi loin de Heartrazor.",
-    ["Steelsnap is a brown hyena with 2 hyena escorts. The NPC patrols a long route; look along it. The target appears near 17.3, 22.2 in Thousand Needles."] =
-        "Steelsnap est une hyène brune escortée de 2 hyènes. Le PNJ patrouille sur un long trajet : cherche-le tout du long. La cible apparaît près de 17.3, 22.2 dans Mille pointes.",
+    ["Steelsnap is a brown hyena with 2 hyena escorts. The target patrols a long route; look along it. The target appears near 17.3, 22.2 in Thousand Needles."] =
+        "Steelsnap est une hyène brune escortée de 2 hyènes. La cible patrouille sur un long trajet : cherche-la tout du long. La cible apparaît près de 17.3, 22.2 dans Mille pointes.",
+    ["This one roams, so scan the surrounding area."] =
+        "Celui-ci se déplace : fouille les environs.",
     ["The target is a centaur, black in color. It roams a wide route. Leave it out if you'd rather not hunt for it."] =
         "La cible est un centaure noir. Il fait une grande ronde. Laisse tomber si tu ne veux pas le chercher.",
     ["The target is a centaur, black in color. It roams a wide route. His patrol crosses this spot two times."] =
@@ -71,8 +71,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h11-thousand-needles", {
         "Monte le chemin et traverse les ponts de corde",
     ["Walk over the rope bridge"] =
         "Traverse le pont de corde",
-    ["The objective lies atop the mesa. The NPC is indoors."] =
-        "L'objectif est au sommet de la mesa. Le PNJ est à l'intérieur.",
+    ["The objective lies atop the mesa. The object is indoors."] =
+        "L'objectif est au sommet de la mesa. L'objet est à l'intérieur.",
     ["The objective lies atop the mesa."] =
         "L'objectif est au sommet de la mesa.",
     ["The objective lies atop the mesa. Be ready for a fight right away. The target is a level 28 elite."] =

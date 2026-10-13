@@ -25,8 +25,6 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h14-thousand-needles", {
         "여기의 적은 전갈입니다.",
     ["Look for assorted mechanical pieces. Parts lie all across the Shimmering Flats."] =
         "여러 가지 기계 부품을 찾으세요. 부품은 소금 평원 곳곳에 있습니다.",
-    ["This one roams, so scan the surrounding area."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요.",
     ["The NPC is indoors, one floor up."] =
         "NPC는 건물 안 한 층 위에 있습니다.",
     ["The NPC stands on the top tier of the pier. The NPC is indoors."] =

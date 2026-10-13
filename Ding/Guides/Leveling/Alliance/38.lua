@@ -65,7 +65,7 @@ Ding.RegisterGuide({
         { accept = 974, sticky = 4502 }, -- level 53
         { go = { 1449, 46.26, 45.59 }, text = "Climb the trail" }, -- level 53
         { complete = 974, useitem = 12472, -- level 53
-          note = "The NPC is up on the summit." },
+          note = "The object is up on the summit." },
         { turnin = 974, accept = 980 }, -- level 53
         { complete = 3882 }, -- level 53
         { complete = 4501 }, -- level 53
@@ -129,7 +129,7 @@ Ding.RegisterGuide({
         { turnin = 4502, elite = true }, -- level 53
         { train = true, talk = 12042, races = { "NightElf" }, classes = { "DRUID" } }, -- level 53
         { complete = 4441, useitem = 11682, -- level 53
-          note = "The NPC is indoors." },
+          note = "The object is indoors." },
         { train = true, talk = 4091, races = { "Human", "Dwarf", "NightElf" }, classes = { "PRIEST" }, -- level 53
           note = "The NPC is indoors." },
         { talk = 8723, collect = { { 2592, 60 }, { 4306, 60 }, { 4338, 60 }, { 14047, 60 } }, -- level 53
@@ -156,7 +156,7 @@ Ding.RegisterGuide({
           note = "The spot is on the lower floor of the hollow tree." },
         { train = true, talk = 4163, classes = { "ROGUE" } }, -- level 53
         { turnin = 1047, accept = 6761, -- level 54
-          note = "This one roams, so scan the surrounding area. Climb to the highest floor of the building." },
+          note = "Climb to the highest floor of the building." },
         { accept = 3781, when = { done = 3764 } }, -- level 54
         { turnin = 6761, accept = 6762, -- level 54
           note = "The NPC is indoors, on the central storey." },

@@ -19,20 +19,22 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a37-feralas-and-azshara", {
         "離開洞穴",
     ["Stand on the neighboring ledge, then hop into this crack in the wall"] =
         "站在旁邊的岩架上，然後跳進牆上的這道裂縫",
-    ["The NPC is indoors."] =
-        "NPC在室內。",
+    ["The object is indoors."] =
+        "這個物件在室內。",
     ["Hop onto the ledge"] =
         "跳上岩架",
     ["Leap over at this spot"] =
         "從這裡跳過去",
     ["Leap up at this spot"] =
         "從這裡跳上去",
-    ["The NPC or item sits on the rocky shelf above."] =
-        "NPC或物品在上方的岩架上。",
+    ["The object sits on the rocky shelf above."] =
+        "這個物件在上方的岩架上。",
     ["Let the conversation play out. Shay Leafrunner trails behind you; keep her alive. Keep near her, as she tends to stray."] =
         "讓對話播完。沙恩·飄葉會跟在你身後；保住她的性命。待在她附近，因為她容易走散。",
     ["Finish the quest named The Videre Elixir. Keep the elixir in your bags; never consume it. You will die from it."] =
         "完成名為「視靈藥劑」的任務。把藥劑留在背包裡；絕對不要喝。你會因此死亡。",
+    ["The NPC is indoors."] =
+        "NPC在室內。",
     ["Put these items in your bank vault."] =
         "把這些物品放進你的銀行。",
     ["The quest giver waits on the hilltop."] =

@@ -15,8 +15,6 @@ Ding.RegisterGuideTranslation("esES", "leveling-h11-thousand-needles", {
         "Baja en un elevador a Las Mil Agujas, sigue el camino hacia el Poblado Viento Libre y vuelve a subir en un elevador",
     ["Fly to Freewind Post"] =
         "Vuela al Poblado Viento Libre",
-    ["This one roams, so scan the surrounding area."] =
-        "Este deambula, así que revisa los alrededores.",
     ["The NPC is indoors."] =
         "El PNJ está dentro.",
     ["Go into the cavern"] =
@@ -51,8 +49,10 @@ Ding.RegisterGuideTranslation("esES", "leveling-h11-thousand-needles", {
         "Busca huevos grandes.",
     ["For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears. Keep away from Heartrazor."] =
         "En esta misión proteges a un PNJ que se desplaza. Si el PNJ no está, quédate hasta que reaparezca. Mantente lejos de Heartrazor.",
-    ["Steelsnap is a brown hyena with 2 hyena escorts. The NPC patrols a long route; look along it. The target appears near 17.3, 22.2 in Thousand Needles."] =
-        "Steelsnap es una hiena marrón escoltada por 2 hienas. El PNJ patrulla una ruta larga; búscalo a lo largo de ella. El objetivo aparece cerca de 17.3, 22.2, en Las Mil Agujas.",
+    ["Steelsnap is a brown hyena with 2 hyena escorts. The target patrols a long route; look along it. The target appears near 17.3, 22.2 in Thousand Needles."] =
+        "Steelsnap es una hiena marrón escoltada por 2 hienas. El objetivo patrulla una ruta larga; búscalo a lo largo de ella. El objetivo aparece cerca de 17.3, 22.2, en Las Mil Agujas.",
+    ["This one roams, so scan the surrounding area."] =
+        "Este deambula, así que revisa los alrededores.",
     ["The target is a centaur, black in color. It roams a wide route. Leave it out if you'd rather not hunt for it."] =
         "El objetivo es un centauro negro. Recorre una ruta amplia. Sáltatelo si prefieres no buscarlo.",
     ["The target is a centaur, black in color. It roams a wide route. His patrol crosses this spot two times."] =
@@ -71,8 +71,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h11-thousand-needles", {
         "Sube por el sendero y cruza los puentes de cuerda",
     ["Walk over the rope bridge"] =
         "Cruza el puente de cuerda",
-    ["The objective lies atop the mesa. The NPC is indoors."] =
-        "El objetivo está en lo alto de la meseta. El PNJ está dentro.",
+    ["The objective lies atop the mesa. The object is indoors."] =
+        "El objetivo está en lo alto de la meseta. El objeto está dentro.",
     ["The objective lies atop the mesa."] =
         "El objetivo está en lo alto de la meseta.",
     ["The objective lies atop the mesa. Be ready for a fight right away. The target is a level 28 elite."] =

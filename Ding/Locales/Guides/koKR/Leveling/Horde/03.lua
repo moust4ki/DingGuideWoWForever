@@ -39,6 +39,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h03-orc-and-troll-starter", {
         "대상은 랍스터입니다. 해안선을 따라 남서쪽으로 걸어가세요. 먼저 해변이 끝나면 그것 없이 다음으로 넘어가세요.",
     ["Hunt the crabs."] =
         "게를 사냥하세요.",
+    ["The object is indoors."] =
+        "그 물체는 건물 안에 있습니다.",
     ["Keep to the trail as it curves."] =
         "굽은 길을 따라 계속 가세요.",
     ["Die on purpose at this spot"] =
@@ -61,12 +63,12 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h03-orc-and-troll-starter", {
         "하급 치유 2 레벨로 그런트 코르자를 치유하세요. 그런트 코르자에게 신의 권능: 인내를 걸어 주세요.",
     ["Head indoors"] =
         "건물 안으로 들어가세요",
-    ["The NPC is indoors, one floor up. Consider bringing a group for this one."] =
-        "NPC는 건물 안 한 층 위에 있습니다. 파티를 꾸려 하는 것도 고려하세요.",
+    ["The target is indoors, one floor up. Consider bringing a group for this one."] =
+        "대상은 건물 안 한 층 위에 있습니다. 파티를 꾸려 하는 것도 고려하세요.",
     ["Stay on the trail and keep climbing the steps"] =
         "길을 벗어나지 말고 계단을 계속 올라가세요",
-    ["The NPC stands on the highest level of this structure."] =
-        "NPC는 이 건물의 꼭대기 층에 서 있습니다.",
+    ["The object is on the highest level of this structure."] =
+        "그 물체는 이 건물의 꼭대기 층에 있습니다.",
     ["Die to the monsters here on purpose. Dying costs you nothing this early. This is the quickest way over."] =
         "여기 있는 몬스터에게 일부러 죽으세요. 이 시점에는 죽어도 잃는 것이 없습니다. 건너가는 가장 빠른 방법입니다.",
     ["The NPC is out back, at the rear of the structure."] =
@@ -99,6 +101,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h03-orc-and-troll-starter", {
         "이 NPC는 아래쪽 어둠의 틈에 있습니다.",
     ["This clears the quest's time limit."] =
         "이렇게 하면 퀘스트 제한 시간이 사라집니다.",
+    ["The NPC stands on the highest level of this structure."] =
+        "NPC는 이 건물의 꼭대기 층에 서 있습니다.",
     ["Tame a pet here"] =
         "여기서 소환수를 길들이세요",
     ["Find one Venomtail Scorpid and use Tame Beast on it. The foes here are scorpions. Here you tame a pet to keep."] =
@@ -117,10 +121,12 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h03-orc-and-troll-starter", {
         "여기 있는 몬스터에게 일부러 죽으세요. 건너가는 가장 빠른 방법입니다.",
     ["Traverse the passageway"] =
         "통로를 지나가세요",
-    ["This one roams, so scan the surrounding area. The NPC is indoors."] =
-        "이 대상은 돌아다니므로 주변을 살펴보세요. NPC는 건물 안에 있습니다.",
     ["Receive Sapta Sight"] =
         "대지의 정기 효과를 받으세요",
+    ["The target is up on the summit."] =
+        "대상은 정상에 있습니다.",
+    ["The object is up on the summit."] =
+        "그 물체는 정상에 있습니다.",
     ["The quest giver stands among the boulders."] =
         "퀘스트를 주는 NPC는 바위들 사이에 서 있습니다.",
     ["Learn Staves at the weapon master"] =
@@ -147,6 +153,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h03-orc-and-troll-starter", {
         "대상은 비틀거리는 좀비입니다. 이 대상은 돌아다니므로 주변을 살펴보세요.",
     ["Drop down with care"] =
         "조심해서 뛰어내리세요",
+    ["The target is indoors."] =
+        "대상은 건물 안에 있습니다.",
     ["Fight the murlocs."] =
         "멀록과 싸우세요.",
     ["Your targets here are gnolls."] =

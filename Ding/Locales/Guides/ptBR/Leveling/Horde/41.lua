@@ -15,6 +15,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h41-silithus", {
         "Mestre de voo do Forte Cenariano",
     ["The NPC is on the house's raised terrace."] =
         "O NPC está no terraço elevado da casa.",
+    ["The object is indoors."] =
+        "O objeto está lá dentro.",
     ["Watch out: killing them can summon more foes."] =
         "Cuidado: matá-los pode evocar mais inimigos.",
     ["The foes here are scorpions."] =

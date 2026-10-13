@@ -25,14 +25,16 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a14-duskwood-and-stranglethorn-v
         "NPC는 길을 순찰합니다. 길을 따라 찾아보세요.",
     ["The targets are worgen."] =
         "대상은 늑대인간입니다.",
-    ["Be ready for a fight right away. The NPC is indoors, one floor up."] =
-        "바로 전투가 시작되니 대비하세요. NPC는 건물 안 한 층 위에 있습니다.",
+    ["Be ready for a fight right away. The object is indoors, one floor up."] =
+        "바로 전투가 시작되니 대비하세요. 그 물체는 건물 안 한 층 위에 있습니다.",
     ["The targets are ghouls. Targets are both in the tomb and around it."] =
         "대상은 구울입니다. 대상은 무덤 안과 주변 모두에 있습니다.",
     ["Other ghouls occupy the same spawn points. Targets are both in the tomb and around it."] =
         "다른 구울도 같은 위치에 나타납니다. 대상은 무덤 안과 주변 모두에 있습니다.",
     ["Exit the tomb"] =
         "무덤을 나가세요",
+    ["The object is indoors."] =
+        "그 물체는 건물 안에 있습니다.",
     ["Go into the cavern"] =
         "동굴에 들어가세요",
     ["Your targets are within the cavern. The targets are spread over several spots."] =

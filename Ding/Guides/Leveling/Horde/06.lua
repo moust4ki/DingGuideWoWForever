@@ -67,7 +67,7 @@ Ding.RegisterGuide({
         { turnin = 1512, accept = 1513, races = { "Orc", "Scourge", "Skyborne" }, classes = { "WARLOCK" }, -- level 22
           note = "The quest giver waits in the tent. This NPC is found down in the Cleft of Shadow." },
         { complete = 1513, useitem = 6626, races = { "Orc", "Scourge", "Skyborne" }, classes = { "WARLOCK" }, -- level 22
-          note = "Step onto the pink rune. The quest giver waits in the tent. This NPC is found down in the Cleft of Shadow." },
+          note = "Step onto the pink rune. The quest giver waits in the tent. The target is down in the Cleft of Shadow." },
         { turnin = 1513, when = { ready = 1513 }, races = { "Orc", "Scourge", "Skyborne" }, classes = { "WARLOCK" }, -- level 22
           note = "The quest giver waits in the tent. This NPC is found down in the Cleft of Shadow." },
         { go = { 1456, 29.77, 29.79 }, races = { "Orc", "Scourge", "Troll" }, classes = { "ROGUE" }, text = "Head out of the cave", -- level 22
@@ -87,11 +87,11 @@ Ding.RegisterGuide({
         { complete = 2478, when = { log = 2478 }, races = { "Orc", "Scourge", "Troll", "Skyborne" }, classes = { "ROGUE" }, -- level 22
           note = "Rob Foreman Silixiz with Pick Pocket." },
         { complete = 2478, when = { log = 2478 }, races = { "Orc", "Scourge", "Troll", "Skyborne" }, classes = { "ROGUE" }, -- level 22
-          note = "Open with Ambush for a bigger hit. The NPC is indoors at street level." },
+          note = "Open with Ambush for a bigger hit. The target is indoors at street level." },
         { complete = 2478, when = { log = 2478 }, races = { "Orc", "Scourge", "Troll", "Skyborne" }, classes = { "ROGUE" }, -- level 22
-          note = "Lean on Rupture for bonus damage. The NPC is indoors, on the central storey." },
+          note = "Lean on Rupture for bonus damage. The target is indoors, on the central storey." },
         { complete = 2478, when = { log = 2478 }, races = { "Orc", "Scourge", "Troll", "Skyborne" }, classes = { "ROGUE" }, -- level 22
-          note = "Eviscerate adds a burst of damage here. The objective is on the terrace above. The NPC is indoors, on the central storey." },
+          note = "Eviscerate adds a burst of damage here. The objective is on the terrace above. The target is indoors, on the central storey." },
         { complete = 2478, when = { log = 2478 }, races = { "Orc", "Scourge", "Troll", "Skyborne" }, classes = { "ROGUE" }, -- level 22
           note = "Open with Ambush for a bigger hit. Climb to the highest floor of the building." },
         { complete = 2478, when = { log = 2478 }, races = { "Orc", "Scourge", "Troll", "Skyborne" }, classes = { "ROGUE" }, -- level 22
