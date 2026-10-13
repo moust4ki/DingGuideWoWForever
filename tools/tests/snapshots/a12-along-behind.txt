@@ -29,7 +29,7 @@ STEP   < Étape 17 / 106 >   zone: Les Paluns
         | Le guide prévoit cette étape ici.
         | Clic : la flèche y va.
  3  header  [header] no icon, text light grey, semibold 12
-    Autre quête, ses cibles sont ici : [26] « Les devoirs de l'apprenti »
+    Autre quête de ton journal, ses cibles sont ici : [26] « Les devoirs de l'apprenti »
     card:
       | Les devoirs de l'apprenti
       | Pas le travail de cette étape : une autre quête de ton journal, dont les cibles sont tout autour de toi. Fais-la en chemin si tu veux.

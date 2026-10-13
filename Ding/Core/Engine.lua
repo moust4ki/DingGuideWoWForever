@@ -682,59 +682,11 @@ function E:GuideProgress(guide)
     return worked, left
 end
 
--- Where the player is in a guide, from quests only: the last step where they turned a
--- quest in, provided they worked on at least half of the quest steps up to there (turned
--- in, or in the log): a quest done early, out of the guide's order, must not send them far
--- ahead. 1 when not started.
-function E:ProgressStep(guide)
-    local best, steps, worked = 1, 0, 0
-    for i, step in ipairs(guide.steps) do
-        if not step.optional and hasQuestActions(step) and Ding:StepApplies(step) then
-            steps = steps + 1
-            local turned, touched = false, false
-            for _, key in ipairs({ "turnin", "accept", "complete" }) do
-                for _, q in ipairs(step[key] or {}) do
-                    if not early(q) then
-                        if isTurnedIn(q) then turned = true end
-                        if isAccepted(q) then touched = true end
-                    end
-                end
-            end
-            if touched then worked = worked + 1 end
-            if turned and worked * 2 >= steps then best = i end
-        end
-    end
-    return best
-end
-
 -- Until the client has sent the quest log, every quest looks absent: resuming then would
 -- pass the very quests the player still has to turn in.
 local function logKnown()
     if not E.logReady and Compat.NumQuestsInLog() > 0 then E.logReady = true end
     return E.logReady
-end
-
--- How far a resume may go: from the furthest step that gives a quest of the log (the quests
--- the player took last, not those taken early on the way), the first step with work left on
--- a quest of the log (to finish or to turn in). The player is not past it, whatever quests
--- further on are turned in: those were done out of the guide's order (Redridge done before
--- Duskwood sent a character 70 steps ahead, past a trainer, chains and trips). Older quests
--- of the log, before that step, are only a backlog the guide stops on. Nil: no limit.
-local function resumeLimit()
-    local steps, from = E.guide.steps, nil
-    for i, s in ipairs(steps) do
-        if Ding:StepApplies(s) then
-            for _, q in ipairs(s.accept or {}) do
-                if Compat.IsInLog(q) and not early(q) then from = i end
-            end
-        end
-    end
-    if not from then return nil end
-    for i = from, #steps do
-        local s = steps[i]
-        if Ding:StepApplies(s) and backlog(s) and not E:IsStepDone(s, i) then return i end
-    end
-    return nil
 end
 
 -- A new version of Ding can regenerate a guide, and a saved step number then points
@@ -772,18 +724,17 @@ end
 ---------------------------------------------------------------------------
 -- Navigation
 ---------------------------------------------------------------------------
--- Takes the guide up where the player is. From the first step, Advance passes what is
--- done and what the player left behind, but stops on any quest of the guide's past still
--- in the log with work left (to finish or to turn in): that is done first. Then the guide
--- goes on from the player's place: the furthest of E:ProgressStep (from the quests) and of
--- the step the character was on in this section before (saveStep), but never past the
--- work left on the quests the player took last (resumeLimit).
+-- Takes the guide up where the player is. From the first step, Advance passes what the
+-- game shows done (quests turned in, accepted, ready; level reached) and what the player
+-- marked. Up to the step the character was on in this section before (saveStep), it also
+-- passes what the player left behind, but stops on any quest of the guide's past still in
+-- the log with work left (to finish or to turn in): that is done first. Never further on
+-- the quests alone: quests done out of the guide's order (a zone done earlier, in another
+-- guide) sent characters far ahead, past the quests, trainers and trips still to do
+-- (Redridge before Duskwood, then the Wetlands at level 24 before the route's Wetlands).
 function E:Resume(id, silent)
-    local guide = Ding:GetGuide(id)
-    local target = guide and self:ProgressStep(guide)
     local last = Ding.char.lastStep and Ding.char.lastStep[id]
-    if target and last and last > target then target = last end
-    return self:SetGuide(id, 1, silent, target)
+    return self:SetGuide(id, 1, silent, last)
 end
 
 -- Switches to a guide pack: the section the character last followed in it (Ding.char.packGuide)
@@ -888,11 +839,6 @@ end
 -- Move forward over every finished step. Returns true if the step changed.
 function E:Advance()
     if self.hold or not self.guide then return false end
-    -- A resume (saved at login too) never goes past the work left on the last quests taken.
-    if self.resumeTo and logKnown() then
-        local stop = resumeLimit()
-        if stop and stop < self.resumeTo then setResumeTo(stop > self.index and stop or nil) end
-    end
     local startGuide, startIndex = self.guide, self.index
     local notes = {}
     while true do

@@ -1464,8 +1464,9 @@ function P:Content()
         content[#content + 1] = { indent = true, kind = "hint",
             text = mark == "manual" and L.STEP_MARKED_DONE or L.STEP_MARKED_SKIPPED }
     end
-    -- Objectives of other quests around the player (Core/Along.lua).
-    if not held and Ding.Along then
+    -- Objectives of other quests around the player (Core/Along.lua); not under a step the
+    -- player went back to with "Previous": they would look like that step's, still to do.
+    if not held and not E.hold and Ding.Along then
         for _, e in ipairs(Ding.Along.shown) do
             content[#content + 1] = { action = "along", quest = e.quest, objective = e.index, sticky = e.sticky }
         end

@@ -69,7 +69,7 @@ end
 
 T.test("a section done earlier: the guide is taken up where the player is, not past it", function()
     playTo(FARLEY)
-    T.ok(E:ProgressStep(E.guide) > 100, "premise: the quests alone put the character at the end of Redridge")
+    T.ok(H.completed()[128], "premise: the end of Redridge (step 132) is turned in")
     E:Resume(GUIDE, true); H.flush()
     T.eq(E.index, FARLEY)
     T.eq(E.resumeTo, nil, "a resume still runs towards the end of Redridge")
@@ -94,9 +94,11 @@ T.test("login with the resume the game saved towards the end of Redridge: droppe
     playTo(FARLEY)
     H.turnin(69); H.accept(70); H.flush()
     T.eq(E.index, CHEST)
-    -- The character's saved variables after the jump: step 59, resuming to step 132.
+    -- The character's saved variables after the jump: step 59, resuming to step 132, saved
+    -- before v1.4.0 (loading them drops the resume once: Ding.MigrateChar).
     Ding.char.step, Ding.char.resumeTo = CHEST, { guide = GUIDE, step = BOUNTY }
-    Ding.char.lastStep[GUIDE] = BOUNTY
+    Ding.char.lastStep[GUIDE], Ding.char.layout = BOUNTY, nil
+    Ding.MigrateChar(Ding.char)
     E.guide, E.resumeTo = nil, nil
     E:Start(); H.flush()
     T.eq(E.guide and E.guide.id, GUIDE)
@@ -129,7 +131,7 @@ T.test("going back: no \"Still to do\" for a quest the guide makes sticky furthe
     -- The jump went as far as step 102, which makes 57 sticky; the guide then came back.
     E:SetGuide(GUIDE, STICKY, true); H.flush()
     T.eq(Ding.char.sticky[NIGHT_WATCH_2], true)
-    E:Reset(); H.flush()
+    E:SetGuide(GUIDE, FARLEY, true); H.flush()
     T.eq(E.index, FARLEY)
     T.eq(#rowsOf(NIGHT_WATCH_2), 0, "57 listed before its step")
     T.eq(Ding.char.sticky[NIGHT_WATCH_2], nil)

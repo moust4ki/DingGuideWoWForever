@@ -28,7 +28,7 @@ STEP   < Étape 16 / 106 >   zone: Les Paluns
         | Le guide prévoit cette étape ici.
         | Clic : la flèche y va.
  3  header  [header] no icon, text light grey, semibold 12
-    Autre quête à finir en chemin : {orange: [29] « L'équipage maudit »}
+    Autre quête de ton journal, à finir en chemin : {orange: [29] « L'équipage maudit »}
     card:
       | L'équipage maudit
       | Pas le travail de cette étape : une autre quête de ton journal, que le guide garde à l'écran jusqu'à ce qu'elle soit faite. Fais-la en chemin.

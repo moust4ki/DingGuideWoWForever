@@ -583,15 +583,16 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   talk to … (flight master) to learn its flight paths".
 - **Other quests, wrap-up, preview** (not in the mockup): the objectives of another quest
   (persistent, along the way) come under a header like a quest's (12 SemiBold `text.secondary`,
-  no icon, padding 8 above: a group starts) that says why they are there, "Another quest to finish on the way: [29] “quest”" or
-  "Another quest, its targets are here: [26] “quest”", indented by 8, without the to-do look: no
-  background, icon `impossible.icon.bg` / glyph `text.secondary`, text and counter
-  `text.secondary` (Yendi: "The Cursed Crew" 0/13 in red passed for the step's work); the wrap-up
-  choices are three rows besides the step (the first with "You are past this section's levels
-  (up to N)."); the preview rows are dimmed: no background, icon `impossible.icon.bg` / glyph
-  `text.disabled`, text `text.muted` without its links' colors, no counter; a quest's level in
-  brackets before its name, "and 1 more quest" for the step's other quests, under a "Next
-  steps" section title.
+  no icon, padding 8 above: a group starts) that says why they are there, "Another quest of your
+  log, to finish along the way: [29] “quest”" or "Another quest of your log, its targets are
+  right here: [26] “quest”", indented by 8, without the to-do look: no background, icon
+  `impossible.icon.bg` / glyph `text.secondary`, text and counter `text.secondary` (Yendi: "The
+  Cursed Crew" 0/13 in red passed for the step's work); none under a step seen again with
+  "Previous". The wrap-up choices are three rows besides the step (the first with "You are past
+  this section's levels (up to N)."); the preview rows are dimmed: no background, icon
+  `impossible.icon.bg` / glyph `text.disabled`, text `text.muted` without its links' colors, no
+  counter; a quest's level in brackets before its name, "and 1 more quest" for the step's other
+  quests, under a "Next steps" section title.
 - **Minimap pins** (not in the mockup): `ring` 14 px accent for the target, `circle` 6 px accent
   at 70 % for the spots (a farming loop's stops: up to 12), `caret_up` 12 px accent on the rim (6 inside), rotated toward the
   target.
