@@ -75,6 +75,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h39-western-and-eastern-plaguela
         "O alvo é um carniçal armado com um forcado. Este se desloca, então procure pelos arredores. Ele pode aparecer neste ponto.",
     ["You can also take it out of your bank. The NPC is indoors."] =
         "Você também pode pegá-lo no seu banco. O NPC está lá dentro.",
+    ["The NPC is indoors. You need it later for \"Glyphed Oaken Branch\": keep it in the bank to free a bag slot."] =
+        "O NPC está lá dentro. Você vai precisar dele mais tarde para \"Galho de carvalho com glifos\": guarde-o no banco para liberar espaço nas bolsas.",
     ["The NPC stands on the highest level of this structure."] =
         "O NPC fica no nível mais alto desta construção.",
     ["This NPC is found down in the Cleft of Shadow."] =

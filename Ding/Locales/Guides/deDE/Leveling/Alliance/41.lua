@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a41-western-and-eastern-plaguela
         "Zuerst Eisenschmiede, dann die Pestländer: Lager Kühlwind und Kapelle des Hoffnungsvollen Lichts.",
     ["The NPC is indoors."] =
         "Der NPC ist drinnen.",
+    ["The NPC is indoors. You need it later for \"Felnok Steelspring\": keep it in the bank to free a bag slot."] =
+        "Der NPC ist drinnen. Du brauchst es später für „Felnok Steelspring“: Lass es in der Bank, das spart einen Taschenplatz.",
     ["Stay on the trail"] =
         "Bleib auf dem Weg",
     ["Check each of the two floors indoors."] =

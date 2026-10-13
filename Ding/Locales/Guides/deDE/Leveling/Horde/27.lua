@@ -19,6 +19,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h27-swamp-of-sorrows", {
         "Verlass die Höhle",
     ["The NPC is indoors at street level."] =
         "Der NPC ist drinnen, auf Straßenhöhe.",
+    ["You need it later for \"The Atal'ai Exile\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Der Verbannte der Atal'ai“: Lass es in der Bank, das spart einen Taschenplatz.",
     ["This NPC is found down in the Cleft of Shadow."] =
         "Dieser NPC ist unten in der Kluft der Schatten.",
     ["The NPC stands on the highest level of this structure."] =

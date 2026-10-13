@@ -65,6 +65,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h11-thousand-needles", {
         "가시가 있는 식물을 찾으세요. 대상은 물속과 물가를 따라 있습니다.",
     ["The quest giver waits in the tent."] =
         "퀘스트를 주는 NPC는 천막 안에서 기다립니다.",
+    ["The NPC is indoors. You need it later for \"Frostmaw\": keep it in the bank to free a bag slot."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"서리갈기 설인\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["Hard quests are coming up. This spreads out the grinding so less is left later."] =
         "어려운 퀘스트가 이어집니다. 사냥을 나눠서 해 두면 나중에 남는 사냥이 줄어듭니다.",
     ["Climb the trail and cross the rope bridges"] =
@@ -103,6 +105,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h11-thousand-needles", {
         "Water Sapta도 함께 완료하세요.",
     ["Stand on the metal grating to begin the battle. Shows up once you defeat six challengers."] =
         "금속 격자 위에 서서 전투를 시작하세요. 도전자 6명을 물리치면 나타납니다.",
+    ["You need it later for \"Parts for Kravel\": keep it in the bank to free a bag slot."] =
+        "나중에 \"크레이블의 부품\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["This NPC is found down in the Cleft of Shadow."] =
         "이 NPC는 아래쪽 어둠의 틈에 있습니다.",
     ["This one roams, so scan the surrounding area. This NPC is found down in the Cleft of Shadow."] =

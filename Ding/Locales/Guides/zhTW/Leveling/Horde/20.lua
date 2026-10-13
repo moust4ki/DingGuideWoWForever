@@ -25,6 +25,14 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h20-stranglethorn-vale-and-swamp
         "目標是食人妖。",
     ["The targets are in the water and along its edges."] =
         "目標在水中和岸邊。",
+    ["You need it later for \"Chapter I\": keep it in the bank to free a bag slot."] =
+        "之後的任務「荊棘谷的青山 - 第壹章」需要它：先存進銀行，空出背包空間。",
+    ["You need it later for \"Chapter II\": keep it in the bank to free a bag slot."] =
+        "之後的任務「荊棘谷的青山 - 第二章」需要它：先存進銀行，空出背包空間。",
+    ["You need it later for \"Chapter III\": keep it in the bank to free a bag slot."] =
+        "之後的任務「荊棘谷的青山 - 第三章」需要它：先存進銀行，空出背包空間。",
+    ["You need it later for \"Chapter IV\": keep it in the bank to free a bag slot."] =
+        "之後的任務「荊棘谷的青山 - 第四章」需要它：先存進銀行，空出背包空間。",
     ["Keep clear of Darkshire."] =
         "遠離夜色鎮。",
     ["Hunt the little winged dragonkin. When the targets run out, skip ahead. No rush; you may complete this afterwards."] =

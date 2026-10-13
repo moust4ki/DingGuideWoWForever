@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a41-western-and-eastern-plaguela
         "先到鐵爐堡，再前往瘟疫之地：冰風崗和聖光之願禮拜堂。",
     ["The NPC is indoors."] =
         "NPC在室內。",
+    ["The NPC is indoors. You need it later for \"Felnok Steelspring\": keep it in the bank to free a bag slot."] =
+        "NPC在室內。之後的任務「菲諾克」需要它：先存進銀行，空出背包空間。",
     ["Stay on the trail"] =
         "沿著小路走",
     ["Check each of the two floors indoors."] =

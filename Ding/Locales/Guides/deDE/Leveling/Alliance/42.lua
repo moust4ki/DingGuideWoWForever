@@ -19,6 +19,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a42-winterspring", {
         "Lass das kurzzeitig gezähmte Tier frei.",
     ["The NPC is indoors."] =
         "Der NPC ist drinnen.",
+    ["The NPC is indoors. You need it later for \"Glyphed Oaken Branch\": keep it in the bank to free a bag slot."] =
+        "Der NPC ist drinnen. Du brauchst es später für „Glyphenverzierter Eichenast“: Lass es in der Bank, das spart einen Taschenplatz.",
     ["The quest wants yetis; seek them out. Targets are in the cavern and around its entrance too."] =
         "Die Quest verlangt Yetis; such sie auf. Ziele gibt es in der Höhle und auch rund um ihren Eingang.",
     ["Head out of the cave"] =

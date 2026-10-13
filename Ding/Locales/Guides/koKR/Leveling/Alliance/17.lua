@@ -13,6 +13,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a17-stranglethorn-vale", {
         "건물 꼭대기 층으로 올라가세요.",
     ["The NPC is upstairs, out on the balcony."] =
         "NPC는 위층 발코니에 있습니다.",
+    ["You need it later for \"Parts for Kravel\": keep it in the bank to free a bag slot."] =
+        "나중에 \"크레이블의 부품\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["The NPC stands on the top tier of the pier. The NPC is indoors."] =
         "NPC는 부두 맨 위층에 서 있습니다. NPC는 건물 안에 있습니다.",
     ["Fly to Booty Bay"] =
@@ -41,6 +43,16 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a17-stranglethorn-vale", {
         "여기 있는 몬스터에게 일부러 죽으세요. 이 시점에는 죽어도 잃는 것이 없습니다. 건너가는 가장 빠른 방법입니다.",
     ["Get yourself killed, then resurrect with the spirit healer"] =
         "죽은 다음 영혼의 치유사에게서 부활하세요",
+    ["You need them later for \"Goblin Sponsorship\" and \"The Hidden Key\": keep them in the bank to free bag slots."] =
+        "나중에 \"고블린 후원\", \"숨겨진 열쇠\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Chapter I\": keep it in the bank to free a bag slot."] =
+        "나중에 \"제 1 장\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Chapter II\": keep it in the bank to free a bag slot."] =
+        "나중에 \"제 2 장\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Chapter III\": keep it in the bank to free a bag slot."] =
+        "나중에 \"제 3 장\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Chapter IV\": keep it in the bank to free a bag slot."] =
+        "나중에 \"제 4 장\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["The NPC is indoors."] =
         "NPC는 건물 안에 있습니다.",
     ["Go into the mine"] =

@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h24-tanaris", {
         "塔纳利斯：加基森，在该区域北部。",
     ["The NPC is indoors."] =
         "NPC在室内。",
+    ["The NPC is indoors. You need them later for \"Deadmire\" and \"Safety First\": keep them in the bank to free bag slots."] =
+        "NPC在室内。之后的任务“死沼巨鳄”和“安全第一”需要它们：先存进银行，腾出背包空间。",
     ["Accepting this starts a 2 hour countdown. The timer keeps running while you're offline. Take this quest only when you have time to spare."] =
         "接受这个任务会开始2小时的倒计时。离线时计时也不会停止。只在时间充裕时接这个任务。",
     ["Stay clear of the elite foes. Be ready for a fight right away. Watch out for a pair of stronger monsters here."] =

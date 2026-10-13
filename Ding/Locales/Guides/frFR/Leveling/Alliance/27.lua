@@ -19,4 +19,6 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a27-tanaris", {
         "Ici, les cibles sont humaines. Faire des donjons ici est un bon choix aussi, comme tu préfères. Chaque lot de 5 rendu à Gadgetzan donne 380 xp.",
     ["Hunt the red-feathered birds. Hyenas also use these spawn spots."] =
         "Chasse les oiseaux aux plumes rouges. Les hyènes utilisent aussi ces points d'apparition.",
+    ["The NPC is indoors. You need them later for \"Report Back to Fizzlebub\" and \"Rhapsody's Kalimdor Kocktail\": keep them in the bank to free bag slots."] =
+        "Le PNJ est à l'intérieur. Tu en auras besoin plus tard pour « Le compte rendu à Fizzlebub » et « Le Kocktail Kalimdor de Rhapsody » : garde-les à la banque pour libérer de la place dans tes sacs.",
 })

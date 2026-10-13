@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a36-azshara-and-felwood", {
         "텔드랏실: 루테란 마을에 먼저 들른 다음 아즈샤라와 악령의 숲으로 가세요.",
     ["The NPC is indoors."] =
         "NPC는 건물 안에 있습니다.",
+    ["The NPC is indoors. You need them later for \"Good Natured Emma\", \"Arcane Runes\" and \"Sprinkle's Secret Ingredient\": keep them in the bank to free bag slots."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"착한 엠마\", \"고대 룬\", \"스프링클의 비밀 재료\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["Climb to the highest floor of the building."] =
         "건물 꼭대기 층으로 올라가세요.",
     ["The quest giver stands outdoors, not indoors."] =

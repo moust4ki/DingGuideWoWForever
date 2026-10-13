@@ -19,6 +19,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h27-swamp-of-sorrows", {
         "Sors de la grotte",
     ["The NPC is indoors at street level."] =
         "Le PNJ est à l'intérieur, au niveau de la rue.",
+    ["You need it later for \"The Atal'ai Exile\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « L'Exilé atal'ai » : garde-le à la banque pour libérer une place dans tes sacs.",
     ["This NPC is found down in the Cleft of Shadow."] =
         "Ce PNJ se trouve en bas, dans la Faille de l'ombre.",
     ["The NPC stands on the highest level of this structure."] =

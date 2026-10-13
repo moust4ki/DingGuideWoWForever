@@ -3276,4 +3276,123 @@ return {
         "대상은 긴 경로를 순찰합니다. 경로를 따라 찾아보세요.",
     ["The target waits here, then strolls out onto the big branch close by."] =
         "대상은 여기서 기다리다가 근처의 큰 나뭇가지 위로 걸어 나갑니다.",
+    -- Ding - Leveling: why an item goes to the bank (notes)
+    ["You need it later for \"The Legend of Stalvan\": keep it in the bank to free a bag slot."] =
+        "나중에 \"스탈반의 전설\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Juice Delivery\": keep it in the bank to free a bag slot."] =
+        "나중에 \"좀비 독주 배달\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"The Brassbolts Brothers\": keep it in the bank to free a bag slot."] =
+        "나중에 \"브라스볼츠 형제\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"A Noble Brew\": keep it in the bank to free a bag slot."] =
+        "나중에 \"귀족을 위한 술\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Soothing Turtle Bisque\": keep it in the bank to free a bag slot."] =
+        "나중에 \"독특한 거북이 비스크\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Reassignment\": keep it in the bank to free a bag slot."] =
+        "나중에 \"전출\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Parts for Kravel\": keep it in the bank to free a bag slot."] =
+        "나중에 \"크레이블의 부품\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need them later for \"Goblin Sponsorship\" and \"The Hidden Key\": keep them in the bank to free bag slots."] =
+        "나중에 \"고블린 후원\", \"숨겨진 열쇠\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Chapter I\": keep it in the bank to free a bag slot."] =
+        "나중에 \"제 1 장\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Chapter II\": keep it in the bank to free a bag slot."] =
+        "나중에 \"제 2 장\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Chapter III\": keep it in the bank to free a bag slot."] =
+        "나중에 \"제 3 장\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Chapter IV\": keep it in the bank to free a bag slot."] =
+        "나중에 \"제 4 장\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"The Karnitol Shipwreck\": keep it in the bank to free a bag slot."] =
+        "나중에 \"카니톨 난파선\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need them later for \"Magical Analysis\" and \"Caught!\": keep them in the bank to free bag slots."] =
+        "나중에 \"마법 분석\", \"화장실에 갇힌 사람\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Rumors for Kravel\": keep it in the bank to free a bag slot."] =
+        "나중에 \"크레이블을 위한 소문\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Ongeku\": keep it in the bank to free a bag slot."] =
+        "나중에 \"온게쿠\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Sunken Treasure\": keep it in the bank to free a bag slot."] =
+        "나중에 \"가라앉은 보물\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need them later for \"Back to Booty Bay\" and \"Safety First\": keep them in the bank to free bag slots."] =
+        "나중에 \"무법항으로의 귀환\", \"안전 제일\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need them later for \"Report Back to Fizzlebub\" and \"Rhapsody's Kalimdor Kocktail\": keep them in the bank to free bag slots."] =
+        "나중에 \"피즐버브에게 돌아가기\", \"랩소디의 칼림도어 칵테일\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need them later for \"The Borrower\", \"Screecher Spirits\", \"The Super Egg-O-Matic\" and \"Rhapsody's Kalimdor Kocktail\": keep them in the bank to free bag slots."] =
+        "나중에 \"사진기 대여\", \"계곡천둥매의 영혼\", \"고성능 자동부화기\", \"랩소디의 칼림도어 칵테일\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need them later for \"Crystals of Power\": keep them in the bank to free bag slots."] =
+        "나중에 \"마력의 수정\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need them later for \"Rhapsody's Tale\", \"The Super Snapper FX\", \"Whiskey Slim's Lost Grog\" and \"Favored of Elune?\": keep them in the bank to free bag slots."] =
+        "나중에 \"랩소디의 이야기\", \"슈퍼 찰칵이 FX\", \"위스키 슬림의 잃어버린 술병\", \"엘룬의 피조물\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Deliver to MacKinley\": keep it in the bank to free a bag slot."] =
+        "나중에 \"맥킨리에게 배달\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need them later for \"The Bait for Lar'korwi\", \"Un'Goro Soil\", \"A Visit to Gregan\" and \"It's a Secret to Everybody\": keep them in the bank to free bag slots."] =
+        "나중에 \"라르코르위를 위한 미끼\", \"운고로 흙\", \"그레간 방문\", \"아무도 모르는 비밀\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Rise of the Silithid\": keep it in the bank to free a bag slot."] =
+        "나중에 \"실리시드의 출현\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"A Taste of Flame\": keep it in the bank to free a bag slot."] =
+        "나중에 \"화염의 맛\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need them later for \"Chasing A-Me 01\" and \"Arcane Runes\": keep them in the bank to free bag slots."] =
+        "나중에 \"에이미 01 추적\", \"고대 룬\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need them later for \"Good Natured Emma\", \"Arcane Runes\" and \"Sprinkle's Secret Ingredient\": keep them in the bank to free bag slots."] =
+        "나중에 \"착한 엠마\", \"고대 룬\", \"스프링클의 비밀 재료\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need them later for \"The Stone Circle\", \"Felbound Ancients\", \"A Little Slime Goes a Long Way\", \"Moontouched Wildkin\" and \"Meet at the Grave\": keep them in the bank to free bag slots."] =
+        "나중에 \"돌무리\", \"저주받은 고대 수호자\", \"수액괴물 견본 수집\", \"달빛의 올빼미야수\", \"무덤에서의 만남\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Return to Tymor\": keep it in the bank to free a bag slot."] =
+        "나중에 \"티모르에게 돌아가기\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need them later for \"Aquementas\", \"The Everlook Report\", \"Duke Nicholas Zverenhoff\" and \"Troubled Spirits of Kel'Theril\": keep them in the bank to free bag slots."] =
+        "나중에 \"아쿠에멘타스\", \"눈망루 마을 보고서\", \"공작 니콜라스 즈바른호프\", \"켈테릴의 고통받는 영혼\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Felnok Steelspring\": keep it in the bank to free a bag slot."] =
+        "나중에 \"펠노크 스틸스프링\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Glyphed Oaken Branch\": keep it in the bank to free a bag slot."] =
+        "나중에 \"문자가 새겨진 떡갈나무 가지\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need them later for \"The Disruption Ends\" and \"Supplies for the Crossroads\": keep them in the bank to free bag slots."] =
+        "나중에 \"습격의 종결\", \"크로스로드의 보급품\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Chen's Empty Keg\": keep it in the bank to free a bag slot."] =
+        "나중에 \"첸의 빈 술통\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Egg Hunt\": keep it in the bank to free a bag slot."] =
+        "나중에 \"알 사냥\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need them later for \"Souvenirs of Death\" and \"Battle of Hillsbrad\": keep them in the bank to free bag slots."] =
+        "나중에 \"죽음의 전리품\", \"힐스브래드 전투\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Frostmaw\": keep it in the bank to free a bag slot."] =
+        "나중에 \"서리갈기 설인\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"The Swarm Grows\": keep it in the bank to free a bag slot."] =
+        "나중에 \"곤충 떼의 위협\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need them later for \"Martek the Exiled\" and \"Hemet Nesingwary\": keep them in the bank to free bag slots."] =
+        "나중에 \"망명자 마르텍\", \"헤멧 네싱워리\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Caught!\": keep it in the bank to free a bag slot."] =
+        "나중에 \"화장실에 갇힌 사람\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need them later for \"The Black Shield\" and \"Into the Field\": keep them in the bank to free bag slots."] =
+        "나중에 \"검은 방패\", \"사막으로\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need them later for \"Tanaris Field Sampling\" and \"Screecher Spirits\": keep them in the bank to free bag slots."] =
+        "나중에 \"타나리스 현장 견본 수집\", \"계곡천둥매의 영혼\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Back to Booty Bay\": keep it in the bank to free a bag slot."] =
+        "나중에 \"무법항으로의 귀환\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need them later for \"Deadmire\" and \"Safety First\": keep them in the bank to free bag slots."] =
+        "나중에 \"붉은눈늪지악어\", \"안전 제일\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need them later for \"Another Message to the Wildhammer\", \"Screecher Spirits\" and \"The Super Egg-O-Matic\": keep them in the bank to free bag slots."] =
+        "나중에 \"또 다른 통첩장\", \"계곡천둥매의 영혼\", \"고성능 자동부화기\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Return to Witch Doctor Uzer'i\": keep it in the bank to free a bag slot."] =
+        "나중에 \"의술사 우제리에게 돌아가기\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"The Atal'ai Exile\": keep it in the bank to free a bag slot."] =
+        "나중에 \"추방된 아탈라이 트롤\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need them later for \"Testing the Vessel\" and \"Report Back to Fizzlebub\": keep them in the bank to free bag slots."] =
+        "나중에 \"단지 실험\", \"피즐버브에게 돌아가기\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Return to Apothecary Zinge\": keep it in the bank to free a bag slot."] =
+        "나중에 \"연금술사 진게에게 돌아가기\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need them later for \"The Stone Circle\" and \"Crystals of Power\": keep them in the bank to free bag slots."] =
+        "나중에 \"돌무리\", \"마력의 수정\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need them later for \"Ripple Delivery\", \"Whiskey Slim's Lost Grog\" and \"Seeping Corruption\": keep them in the bank to free bag slots."] =
+        "나중에 \"리플 배달\", \"위스키 슬림의 잃어버린 술병\", \"스며드는 타락\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need them later for \"Bungle in the Jungle\", \"The Bait for Lar'korwi\" and \"It's a Secret to Everybody\": keep them in the bank to free bag slots."] =
+        "나중에 \"밀림 속 생물\", \"라르코르위를 위한 미끼\", \"아무도 모르는 비밀\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need them later for \"Delivery to Magatha\" and \"Seeping Corruption\": keep them in the bank to free bag slots."] =
+        "나중에 \"마가타에게 전달\", \"스며드는 타락\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Jes'rimon's Payment to Jediga\": keep it in the bank to free a bag slot."] =
+        "나중에 \"제디가에 대한 제스리몬의 답례\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Meet at the Grave\": keep it in the bank to free a bag slot."] =
+        "나중에 \"무덤에서의 만남\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need them later for \"Delivery to Andron Gant\", \"A Grave Situation\" and \"Betrayed\": keep them in the bank to free bag slots."] =
+        "나중에 \"안드론 건트에게 전달\", \"무덤의 상태\", \"배신\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need them later for \"The Everlook Report\" and \"Duke Nicholas Zverenhoff\": keep them in the bank to free bag slots."] =
+        "나중에 \"눈망루 마을 보고서\", \"공작 니콜라스 즈바른호프\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
+    ["You need it later for \"Aquementas\": keep it in the bank to free a bag slot."] =
+        "나중에 \"아쿠에멘타스\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
 }

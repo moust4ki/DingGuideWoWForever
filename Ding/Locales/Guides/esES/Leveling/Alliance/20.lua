@@ -39,6 +39,10 @@ Ding.RegisterGuideTranslation("esES", "leveling-a20-swamp-of-sorrows", {
         "Sube al piso más alto del edificio.",
     ["Let the conversation play out. Climb to the highest floor of the building."] =
         "Deja que termine la conversación. Sube al piso más alto del edificio.",
+    ["The NPC is indoors. You need it later for \"Rumors for Kravel\": keep it in the bank to free a bag slot."] =
+        "El PNJ está dentro. Lo necesitarás más adelante para «Rumores para Kravel»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need it later for \"Ongeku\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Ongeku»: déjalo en el banco para liberar un hueco en las bolsas.",
     ["Head down into the Deeprun Tram station"] =
         "Baja a la estación del Tranvía Subterráneo",
     ["Pass through the portal to teleport."] =

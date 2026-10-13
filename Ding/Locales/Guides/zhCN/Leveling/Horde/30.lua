@@ -65,6 +65,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h30-feralas-and-ungoro-crater", 
         "目标在洞穴里。",
     ["Flight master at Marshal's Refuge"] =
         "马绍尔营地飞行管理员",
+    ["The NPC is indoors. You need them later for \"Bungle in the Jungle\", \"The Bait for Lar'korwi\" and \"It's a Secret to Everybody\": keep them in the bank to free bag slots."] =
+        "NPC在室内。之后的任务“擒虫先擒王”、“拉克维的诱饵”和“无人知晓的秘密”需要它们：先存进银行，腾出背包空间。",
     ["This NPC is found down in the Cleft of Shadow."] =
         "该NPC在下面的暗影裂口里。",
     ["The NPC is upstairs, out on the balcony."] =

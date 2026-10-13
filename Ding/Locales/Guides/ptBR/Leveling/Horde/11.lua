@@ -65,6 +65,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h11-thousand-needles", {
         "Procure plantas espinhosas. Os alvos ficam debaixo d'água e ao longo da margem.",
     ["The quest giver waits in the tent."] =
         "Quem dá a missão espera na tenda.",
+    ["The NPC is indoors. You need it later for \"Frostmaw\": keep it in the bank to free a bag slot."] =
+        "O NPC está lá dentro. Você vai precisar dele mais tarde para \"Bocarragelo\": guarde-o no banco para liberar espaço nas bolsas.",
     ["Hard quests are coming up. This spreads out the grinding so less is left later."] =
         "Missões difíceis vêm por aí. Isso distribui a matança de monstros, e sobra menos para depois.",
     ["Climb the trail and cross the rope bridges"] =
@@ -103,6 +105,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h11-thousand-needles", {
         "Conclua também Water Sapta.",
     ["Stand on the metal grating to begin the battle. Shows up once you defeat six challengers."] =
         "Fique sobre a grade de metal para começar a batalha. Aparece depois que você derrota seis desafiantes.",
+    ["You need it later for \"Parts for Kravel\": keep it in the bank to free a bag slot."] =
+        "Você vai precisar dele mais tarde para \"Peças para Kravel\": guarde-o no banco para liberar espaço nas bolsas.",
     ["This NPC is found down in the Cleft of Shadow."] =
         "Este NPC fica lá embaixo, no Antro das Sombras.",
     ["This one roams, so scan the surrounding area. This NPC is found down in the Cleft of Shadow."] =

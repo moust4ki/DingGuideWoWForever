@@ -37,4 +37,6 @@ Ding.RegisterGuideTranslation("esES", "leveling-a29-the-hinterlands", {
         "Mata monstruos hasta que tu piedra de hogar esté lista",
     ["Stay away from Gammerita. The quarry: a tough elite tortoise, azure-shelled. This one roams, so scan the surrounding area."] =
         "Aléjate de Gammerita. La presa: una tortuga élite muy dura, de caparazón azul celeste. Este deambula, así que revisa los alrededores.",
+    ["The NPC is indoors. You need them later for \"Rhapsody's Tale\", \"The Super Snapper FX\", \"Whiskey Slim's Lost Grog\" and \"Favored of Elune?\": keep them in the bank to free bag slots."] =
+        "El PNJ está dentro. Los necesitarás más adelante para «El relato de Rapsodio», «Superistánea FX», «El grog de Whiskey Slim» y «¿Creados por Elune?»: déjalos en el banco para liberar huecos en las bolsas.",
 })

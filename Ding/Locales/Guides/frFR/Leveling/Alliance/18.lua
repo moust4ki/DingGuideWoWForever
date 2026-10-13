@@ -67,6 +67,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a18-desolace", {
         "Cherche des sacs beiges près des maisons. Certains ne sont pas utilisables. Les Magram Pack Runners patrouillent avec 2 hyènes d'escorte : tiens-toi à l'écart.",
     ["The foes here are scorpions. Basilisks compete for the same spawn points."] =
         "Ici, les ennemis sont des scorpions. Les basilics se disputent les mêmes points d'apparition.",
+    ["The NPC is indoors. You need it later for \"The Karnitol Shipwreck\": keep it in the bank to free a bag slot."] =
+        "Le PNJ est à l'intérieur. Tu en auras besoin plus tard pour « L'épave de Karnitol » : garde-le à la banque pour libérer une place dans tes sacs.",
     ["Wait for the talking to finish"] =
         "Attends la fin de la discussion",
 })

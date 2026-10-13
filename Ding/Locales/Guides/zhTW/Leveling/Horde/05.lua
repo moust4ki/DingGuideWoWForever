@@ -27,6 +27,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h05-the-barrens-and-stonetalon-m
         "搜尋成堆的棕色箱子。目標分散在好幾個地點。",
     ["Flight master in Ratchet"] =
         "棘齒城的飛行管理員",
+    ["You need them later for \"The Disruption Ends\" and \"Supplies for the Crossroads\": keep them in the bank to free bag slots."] =
+        "之後的任務「野豬人的頭目」和「十字路口的補給品」需要它們：先存進銀行，空出背包空間。",
     ["The target is a troll. This one roams, so scan the surrounding area."] =
         "目標是一個食人妖。這個會四處走動，留意周圍一帶。",
     ["The target is a human in a crimson long coat. This one roams, so scan the surrounding area. The targets are spread over several spots."] =
@@ -51,6 +53,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h05-the-barrens-and-stonetalon-m
         "沿小路往上爬",
     ["With the coming hand-ins, this gets you to level 18."] =
         "加上接下來交的任務，這能讓你升到18級。",
+    ["You need it later for \"Chen's Empty Keg\": keep it in the bank to free a bag slot."] =
+        "之後的任務「老陳的空酒桶」需要它：先存進銀行，空出背包空間。",
     ["This NPC is found down in the Cleft of Shadow."] =
         "這個NPC在下方的暗影裂口裡。",
     ["The NPC stands on the highest level of this structure."] =

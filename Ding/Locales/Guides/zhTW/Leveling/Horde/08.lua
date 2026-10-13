@@ -5,8 +5,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h08-the-barrens", {
         "貧瘠之地 (24-25)",
     ["Thunder Bluff first, then the Barrens. The NPC is indoors."] =
         "先到雷霆崖，再前往貧瘠之地。NPC在室內。",
-    ["The NPC is indoors."] =
-        "NPC在室內。",
+    ["The NPC is indoors. You need them later for \"Souvenirs of Death\" and \"Battle of Hillsbrad\": keep them in the bank to free bag slots."] =
+        "NPC在室內。之後的任務「死亡的紀念品」和「希爾斯布萊德之戰」需要它們：先存進銀行，空出背包空間。",
     ["Go into the cavern"] =
         "進入洞穴",
     ["Your targets are within the cavern."] =
@@ -15,6 +15,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h08-the-barrens", {
         "讓對話播完。目標在洞穴裡。",
     ["Head out of the cave"] =
         "離開洞穴",
+    ["The NPC is indoors."] =
+        "NPC在室內。",
     ["This NPC is found down in the Cleft of Shadow."] =
         "這個NPC在下方的暗影裂口裡。",
     ["Visit the caged quilboar"] =

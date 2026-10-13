@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a36-azshara-and-felwood", {
         "Teldrassil: zuerst Rut'theran, dann Azshara und der Teufelswald.",
     ["The NPC is indoors."] =
         "Der NPC ist drinnen.",
+    ["The NPC is indoors. You need them later for \"Good Natured Emma\", \"Arcane Runes\" and \"Sprinkle's Secret Ingredient\": keep them in the bank to free bag slots."] =
+        "Der NPC ist drinnen. Du brauchst sie später für „Emma die Nette“, „Arkane Runen“ und „Sprinkles Geheimzutat“: Lass sie in der Bank, das spart Taschenplätze.",
     ["Climb to the highest floor of the building."] =
         "Steig ins oberste Stockwerk des Gebäudes.",
     ["The quest giver stands outdoors, not indoors."] =

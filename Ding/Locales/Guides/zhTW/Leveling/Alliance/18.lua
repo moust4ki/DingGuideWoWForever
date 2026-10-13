@@ -67,6 +67,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a18-desolace", {
         "在房子旁邊尋找棕褐色的袋子。其中有些無法使用。瑪格拉姆馴犬者會帶著2隻土狼護衛巡邏；避開它們。",
     ["The foes here are scorpions. Basilisks compete for the same spawn points."] =
         "這裡的敵人是蠍子。石化蜥蜴也會佔用相同的重生點。",
+    ["The NPC is indoors. You need it later for \"The Karnitol Shipwreck\": keep it in the bank to free a bag slot."] =
+        "NPC在室內。之後的任務「卡尼托的背包」需要它：先存進銀行，空出背包空間。",
     ["Wait for the talking to finish"] =
         "等對話結束",
 })

@@ -89,9 +89,11 @@ Ding.RegisterGuide({
         { talk = 2455, collect = { { 6245, 1 }, { 3960, 1 } }, spots = { { 1453, 64.24, 80.81 } }, -- level 39
           note = "The NPC is indoors." },
         { talk = 2455, bank = 5804, -- level 39
-          note = "The NPC is indoors." },
-        { bank = 6190, when = { log = 1373 } }, -- level 39
-        { bank = 6190, when = { done = 1373 } }, -- level 39
+          note = "The NPC is indoors. You need it later for \"Rumors for Kravel\": keep it in the bank to free a bag slot." },
+        { bank = 6190, when = { log = 1373 }, -- level 39
+          note = "You need it later for \"Ongeku\": keep it in the bank to free a bag slot." },
+        { bank = 6190, when = { done = 1373 }, -- level 39
+          note = "You need it later for \"Ongeku\": keep it in the bank to free a bag slot." },
         { turnin = 1448, accept = 1449, -- level 39
           note = "The NPC is indoors." },
         { go = { 1453, 69.09, 30.83 }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "WARLOCK", "DRUID" }, text = "Head down into the Deeprun Tram station", -- level 39

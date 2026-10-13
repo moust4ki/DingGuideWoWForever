@@ -136,7 +136,7 @@ Ding.RegisterGuide({
         { talk = 8356, collect = { { 10680, 1 }, { 10538, 1 } }, spots = { { 1456, 47.19, 57.86 } }, -- level 54
           note = "The NPC is indoors." },
         { talk = 8356, bank = 11243, -- level 54
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need it later for \"Meet at the Grave\": keep it in the bank to free a bag slot." },
         { accept = 3762, -- level 54
           note = "The NPC is indoors." },
         { go = { 1456, 29.77, 29.79 }, races = { "Scourge", "Troll" }, classes = { "PRIEST" }, text = "Go into the cavern", -- level 54

@@ -7,6 +7,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a38-ungoro-crater", {
         "Reise nach Gadgetzan",
     ["Tanaris: Gadgetzan first, then Un'Goro Crater."] =
         "Tanaris: zuerst Gadgetzan, dann der Krater von Un'Goro.",
+    ["You need it later for \"Return to Tymor\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Rückkehr zu Magier Tymor“: Lass es in der Bank, das spart einen Taschenplatz.",
     ["Wait for the talking to finish"] =
         "Warte, bis das Gespräch endet",
     ["Go into the cavern"] =

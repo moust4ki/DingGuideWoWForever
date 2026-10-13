@@ -55,6 +55,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h36-ungoro-crater", {
         "该物件在室内。",
     ["Finish the quest named The Videre Elixir. Keep the elixir in your bags; never consume it. You will die from it."] =
         "完成任务“The Videre Elixir”。把药剂留在背包里，千万别喝。你会因此死亡。",
+    ["The NPC is indoors. You need it later for \"Meet at the Grave\": keep it in the bank to free a bag slot."] =
+        "NPC在室内。之后的任务“墓地相见”需要它：先存进银行，腾出背包空间。",
     ["The NPC patrols a long route; look along it."] =
         "NPC沿一条很长的路线巡逻；沿路寻找。",
     ["You no longer need these; vendor or discard them."] =

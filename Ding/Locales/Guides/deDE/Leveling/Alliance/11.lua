@@ -79,6 +79,10 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a11-duskwood-and-redridge-mounta
         "Bei dieser Quest beschützt du einen NPC, der unterwegs ist. Wenn der NPC nicht da ist, bleib, bis er wieder erscheint. Deine Ziele sind in der Höhle.",
     ["Let the conversation play out. Keep Corporal Keeshan safe during the escort. At the cave's mouth, draw foes to him with care."] =
         "Lass das Gespräch zu Ende laufen. Beschütze Corporal Keeshan während der Eskorte. Lock die Gegner am Höhleneingang vorsichtig zu ihm.",
+    ["You need it later for \"The Legend of Stalvan\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Die Legende von Stalvan“: Lass es in der Bank, das spart einen Taschenplatz.",
+    ["You need it later for \"Juice Delivery\": keep it in the bank to free a bag slot."] =
+        "Du brauchst es später für „Saftlieferung“: Lass es in der Bank, das spart einen Taschenplatz.",
     ["The NPC patrols a long route; look along it."] =
         "Der NPC patrouilliert eine lange Route; such entlang dieser Route.",
     ["It is the dungeon's 4th boss."] =

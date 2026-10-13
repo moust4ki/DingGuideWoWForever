@@ -57,6 +57,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a39-winterspring-and-felwood", {
         "目標是3隻一起行動的白色熊怪。目標沿著道路旁的一條長路線巡邏。走到小路盡頭還沒看到它的話，就繼續前進。",
     ["Be ready for a fight right away."] =
         "準備好立刻戰鬥。",
+    ["The NPC is indoors. You need them later for \"Aquementas\", \"The Everlook Report\", \"Duke Nicholas Zverenhoff\" and \"Troubled Spirits of Kel'Theril\": keep them in the bank to free bag slots."] =
+        "NPC在室內。之後的任務「亞奎門塔斯」、「永望鎮報告」、「尼古拉斯·瑟倫霍夫公爵」和「凱斯利爾的怨靈」需要它們：先存進銀行，空出背包空間。",
     ["For this quest you guard an NPC on the move. If she is absent, wait for her to reappear."] =
         "這個任務要護送一名移動中的NPC。如果她不在，等她重生。",
     ["Let the conversation play out. Escort Ranshalla and guard her. Wait until the foes hit her before you strike."] =

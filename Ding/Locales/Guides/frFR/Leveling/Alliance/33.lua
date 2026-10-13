@@ -51,6 +51,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a33-searing-gorge", {
         "Monte le sentier jusqu'à la Halte du Thorium",
     ["The NPC is indoors."] =
         "Le PNJ est à l'intérieur.",
+    ["The NPC is indoors. You need it later for \"A Taste of Flame\": keep it in the bank to free a bag slot."] =
+        "Le PNJ est à l'intérieur. Tu en auras besoin plus tard pour « Un goût de flammes » : garde-le à la banque pour libérer une place dans tes sacs.",
     ["The NPC is indoors, one floor up."] =
         "Le PNJ est à l'intérieur, un étage plus haut.",
 })

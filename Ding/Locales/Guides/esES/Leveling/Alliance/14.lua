@@ -19,6 +19,12 @@ Ding.RegisterGuideTranslation("esES", "leveling-a14-duskwood-and-stranglethorn-v
         "El PNJ está a la orilla del agua.",
     ["The NPC is indoors, one floor up."] =
         "El PNJ está dentro, un piso más arriba.",
+    ["The NPC is indoors. You need it later for \"Soothing Turtle Bisque\": keep it in the bank to free a bag slot."] =
+        "El PNJ está dentro. Lo necesitarás más adelante para «Sopa de tortuga calmante»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need it later for \"The Brassbolts Brothers\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Los hermanos Pernolatón»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need it later for \"A Noble Brew\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Una noble cerveza»: déjalo en el banco para liberar un hueco en las bolsas.",
     ["This one roams, so scan the surrounding area."] =
         "Este deambula, así que revisa los alrededores.",
     ["The NPC patrols the road; look along it."] =

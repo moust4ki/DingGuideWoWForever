@@ -79,6 +79,10 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a11-duskwood-and-redridge-mounta
         "Dans cette quête, tu protèges un PNJ qui se déplace. Si le PNJ n'est pas là, attends qu'il réapparaisse. Tes cibles sont dans la grotte.",
     ["Let the conversation play out. Keep Corporal Keeshan safe during the escort. At the cave's mouth, draw foes to him with care."] =
         "Laisse la conversation se dérouler. Protège le caporal Keeshan pendant l'escorte. À l'entrée de la grotte, attire les ennemis vers lui avec prudence.",
+    ["You need it later for \"The Legend of Stalvan\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « La légende de Stalvan » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need it later for \"Juice Delivery\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Livrer le Suc » : garde-le à la banque pour libérer une place dans tes sacs.",
     ["The NPC patrols a long route; look along it."] =
         "Le PNJ patrouille sur un long trajet : cherche-le tout du long.",
     ["It is the dungeon's 4th boss."] =

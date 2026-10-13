@@ -25,6 +25,14 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h20-stranglethorn-vale-and-swamp
         "Os alvos são trolls.",
     ["The targets are in the water and along its edges."] =
         "Os alvos estão na água e nas margens.",
+    ["You need it later for \"Chapter I\": keep it in the bank to free a bag slot."] =
+        "Você vai precisar dele mais tarde para \"Capítulo I\": guarde-o no banco para liberar espaço nas bolsas.",
+    ["You need it later for \"Chapter II\": keep it in the bank to free a bag slot."] =
+        "Você vai precisar dele mais tarde para \"Capítulo II\": guarde-o no banco para liberar espaço nas bolsas.",
+    ["You need it later for \"Chapter III\": keep it in the bank to free a bag slot."] =
+        "Você vai precisar dele mais tarde para \"Capítulo III\": guarde-o no banco para liberar espaço nas bolsas.",
+    ["You need it later for \"Chapter IV\": keep it in the bank to free a bag slot."] =
+        "Você vai precisar dele mais tarde para \"Capítulo IV\": guarde-o no banco para liberar espaço nas bolsas.",
     ["Keep clear of Darkshire."] =
         "Fique longe de Vila Sombria.",
     ["Hunt the little winged dragonkin. When the targets run out, skip ahead. No rush; you may complete this afterwards."] =

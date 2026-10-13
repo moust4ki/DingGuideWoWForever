@@ -98,7 +98,7 @@ Ding.RegisterGuide({
           note = "The quest wants yetis; seek them out. Others lie past the tunnel." },
         { go = { 1444, 55.19, 56.33 }, text = "Get out of the cave and use the passage beyond" }, -- level 46
         { go = { 1444, 54.13, 68.28 }, text = "Climb the trail" }, -- level 46
-        { unbank = 8564, keep = 8564, sticky = { 2982, 1452 }, -- level 46
+        { collect = { { 8564, 1 } }, keep = 8564, sticky = { 2982, 1452 }, -- level 46
           note = "Look for a big, pale egg. The targets are spread over several spots. Hang on to it; an upcoming quest uses it." },
         { complete = 2982 }, -- level 46
         { complete = 2982 }, -- level 46
@@ -143,10 +143,12 @@ Ding.RegisterGuide({
           note = "The object is indoors, one floor up." },
         { turnin = 2940, accept = 2941, -- level 46
           note = "The NPC is indoors, one floor up." },
-        { talk = 4209, bank = { 9329, 10699, 8564, 6258, 6259 } }, -- level 46
+        { talk = 4209, bank = { 9329, 10699, 8564, 6258, 6259 }, -- level 46
+          note = "You need them later for \"The Borrower\", \"Screecher Spirits\", \"The Super Egg-O-Matic\" and \"Rhapsody's Kalimdor Kocktail\": keep them in the bank to free bag slots." },
         { talk = 8723, collect = { { 11186, 7 }, { 11188, 7 }, { 11185, 7 }, { 11184, 7 } }, -- level 46
           note = "Getting it here speeds up Un'Goro Crater. The NPC is indoors." },
-        { talk = 4209, bank = { 11186, 11188, 11185, 11184 } }, -- level 46
+        { talk = 4209, bank = { 11186, 11188, 11185, 11184 }, -- level 46
+          note = "You need them later for \"Crystals of Power\": keep them in the bank to free bag slots." },
         { go = { 1457, 32.08, 16.4 }, classes = { "ROGUE" }, text = "Step into the cavern within the trunk", -- level 46
           note = "The spot is on the lower floor of the hollow tree." },
         { train = true, talk = 4163, classes = { "ROGUE" } }, -- level 46

@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h24-tanaris", {
         "Tanaris : Gadgetzan, au nord de la zone.",
     ["The NPC is indoors."] =
         "Le PNJ est à l'intérieur.",
+    ["The NPC is indoors. You need them later for \"Deadmire\" and \"Safety First\": keep them in the bank to free bag slots."] =
+        "Le PNJ est à l'intérieur. Tu en auras besoin plus tard pour « Mortebourbe » et « La sécurité d'abord » : garde-les à la banque pour libérer de la place dans tes sacs.",
     ["Accepting this starts a 2 hour countdown. The timer keeps running while you're offline. Take this quest only when you have time to spare."] =
         "Accepter cette quête lance un compte à rebours de 2 heures. Le chrono continue même quand tu es déconnecté. Ne prends cette quête que si tu as du temps devant toi.",
     ["Stay clear of the elite foes. Be ready for a fight right away. Watch out for a pair of stronger monsters here."] =

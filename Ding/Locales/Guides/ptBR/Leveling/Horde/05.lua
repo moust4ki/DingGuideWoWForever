@@ -27,6 +27,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h05-the-barrens-and-stonetalon-m
         "Vasculhe pilhas de caixotes marrons. Os alvos estão espalhados por vários pontos.",
     ["Flight master in Ratchet"] =
         "Mestre de voo em Vila Catraca",
+    ["You need them later for \"The Disruption Ends\" and \"Supplies for the Crossroads\": keep them in the bank to free bag slots."] =
+        "Você vai precisar deles mais tarde para \"Adeus aos ataques\" e \"Suprimentos para a Encruzilhada\": guarde-os no banco para liberar espaço nas bolsas.",
     ["The target is a troll. This one roams, so scan the surrounding area."] =
         "O alvo é um troll. Este se desloca, então procure pelos arredores.",
     ["The target is a human in a crimson long coat. This one roams, so scan the surrounding area. The targets are spread over several spots."] =
@@ -51,6 +53,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h05-the-barrens-and-stonetalon-m
         "Suba a trilha",
     ["With the coming hand-ins, this gets you to level 18."] =
         "Com as próximas entregas, isto leva você ao nível 18.",
+    ["You need it later for \"Chen's Empty Keg\": keep it in the bank to free a bag slot."] =
+        "Você vai precisar dele mais tarde para \"Barril Vazio do Chen\": guarde-o no banco para liberar espaço nas bolsas.",
     ["This NPC is found down in the Cleft of Shadow."] =
         "Este NPC fica lá embaixo, no Antro das Sombras.",
     ["The NPC stands on the highest level of this structure."] =

@@ -37,4 +37,6 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a29-the-hinterlands", {
         "귀환석 재사용 대기시간이 끝날 때까지 몬스터를 처치하세요",
     ["Stay away from Gammerita. The quarry: a tough elite tortoise, azure-shelled. This one roams, so scan the surrounding area."] =
         "감메리타에게는 가까이 가지 마세요. 목표는 하늘색 등껍질을 가진 강한 정예 거북입니다. 이 대상은 돌아다니므로 주변을 살펴보세요.",
+    ["The NPC is indoors. You need them later for \"Rhapsody's Tale\", \"The Super Snapper FX\", \"Whiskey Slim's Lost Grog\" and \"Favored of Elune?\": keep them in the bank to free bag slots."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"랩소디의 이야기\", \"슈퍼 찰칵이 FX\", \"위스키 슬림의 잃어버린 술병\", \"엘룬의 피조물\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
 })

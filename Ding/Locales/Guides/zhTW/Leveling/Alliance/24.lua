@@ -5,12 +5,14 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a24-badlands", {
         "荒蕪之地 (41-42)",
     ["Ironforge first, then the Badlands. The NPC waits on the lower level, indoors. A lengthy stretch of quests is coming up. This vendor sells no arrows or bullets."] =
         "先到鐵爐堡，再前往荒蕪之地。NPC在室內的下層。接下來有一長串任務。這個商人不賣箭矢或子彈。",
-    ["The NPC is indoors."] =
-        "NPC在室內。",
+    ["The NPC is indoors. You need them later for \"Back to Booty Bay\" and \"Safety First\": keep them in the bank to free bag slots."] =
+        "NPC在室內。之後的任務「返回藏寶海灣」和「安全第壹」需要它們：先存進銀行，空出背包空間。",
     ["Get these for simple Badlands turn-ins ahead. The NPC is indoors."] =
         "先拿這些，之後在荒蕪之地可以輕鬆交付。NPC在室內。",
     ["This one roams, so scan the surrounding area. The NPC is indoors."] =
         "這個會四處走動，留意周圍一帶。NPC在室內。",
+    ["The NPC is indoors."] =
+        "NPC在室內。",
     ["The object sits on the rocky shelf above."] =
         "這個物件在上方的岩架上。",
     ["Fight the dwarves."] =

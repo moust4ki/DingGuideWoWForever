@@ -15,6 +15,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h06-ashenvale", {
         "NPC在室内。",
     ["Hunt naga."] =
         "猎杀纳迦。",
+    ["The NPC is indoors. You need it later for \"Egg Hunt\": keep it in the bank to free a bag slot."] =
+        "NPC在室内。之后的任务“蝎卵”需要它：先存进银行，腾出背包空间。",
     ["Learn Two-Handed Axes at the weapon master"] =
         "向武器大师学习双手斧",
     ["The quest giver waits in the tent."] =

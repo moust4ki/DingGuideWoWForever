@@ -47,6 +47,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h35-felwood-and-winterspring", {
         "Deja tu mascota con el maestro de establos.",
     ["You will tame a short-term pet shortly. You pick up Claw (Rank 7) here."] =
         "Pronto domesticarás una mascota temporal. Aquí consigues Garra (Rango 7).",
+    ["The NPC is indoors. You need them later for \"Delivery to Magatha\" and \"Seeping Corruption\": keep them in the bank to free bag slots."] =
+        "El PNJ está dentro. Los necesitarás más adelante para «Entrega a Magatha» y «La filtración de la Corrupción»: déjalos en el banco para liberar huecos en las bolsas.",
     ["Flight master at Everlook"] =
         "Maestro de vuelo de Vista Eterna",
     ["Tame a beast here to learn the next rank of Claw"] =
@@ -57,6 +59,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h35-felwood-and-winterspring", {
         "El PNJ está arriba, fuera, en el balcón.",
     ["The NPC is indoors. Hold on to it for a task in Un'Goro Crater later."] =
         "El PNJ está dentro. Guárdalo para una misión posterior en el Cráter de Un'Goro.",
+    ["The NPC is indoors. You need it later for \"Jes'rimon's Payment to Jediga\": keep it in the bank to free a bag slot."] =
+        "El PNJ está dentro. Lo necesitarás más adelante para «El pago de Jes'rimon a Jediga»: déjalo en el banco para liberar un hueco en las bolsas.",
     ["Get your companion back from the stable master."] =
         "Pide al maestro de establos que te devuelva a tu compañero.",
     ["Release the short-term pet you tamed."] =

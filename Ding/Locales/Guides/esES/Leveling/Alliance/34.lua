@@ -29,6 +29,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a34-blasted-lands-and-burning-st
         "Este deambula, así que revisa los alrededores. El PNJ está dentro.",
     ["The NPC is indoors. Hold on to it; a task in Un'Goro Crater calls for it later."] =
         "El PNJ está dentro. Guárdalo; una tarea en el Cráter de Un'Goro lo pedirá más adelante.",
+    ["The NPC is indoors. You need them later for \"Chasing A-Me 01\" and \"Arcane Runes\": keep them in the bank to free bag slots."] =
+        "El PNJ está dentro. Los necesitarás más adelante para «Buscando a Memo 01» y «Runas arcanas»: déjalos en el banco para liberar huecos en las bolsas.",
     ["8 different quests will ask for it. You hand in 60 pieces of cloth for every quest. The NPC is indoors."] =
         "Lo pedirán 8 misiones distintas. Entregas 60 piezas de tela por cada misión. El PNJ está dentro.",
     ["The NPC patrols a long route; look along it."] =

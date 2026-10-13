@@ -27,6 +27,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h05-the-barrens-and-stonetalon-m
         "갈색 상자 더미를 뒤져 보세요. 대상은 여러 곳에 흩어져 있습니다.",
     ["Flight master in Ratchet"] =
         "톱니항 비행 조련사",
+    ["You need them later for \"The Disruption Ends\" and \"Supplies for the Crossroads\": keep them in the bank to free bag slots."] =
+        "나중에 \"습격의 종결\", \"크로스로드의 보급품\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["The target is a troll. This one roams, so scan the surrounding area."] =
         "대상은 트롤입니다. 이 대상은 돌아다니므로 주변을 살펴보세요.",
     ["The target is a human in a crimson long coat. This one roams, so scan the surrounding area. The targets are spread over several spots."] =
@@ -51,6 +53,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h05-the-barrens-and-stonetalon-m
         "길을 따라 올라가세요",
     ["With the coming hand-ins, this gets you to level 18."] =
         "곧 있을 퀘스트 완료와 함께 18레벨이 됩니다.",
+    ["You need it later for \"Chen's Empty Keg\": keep it in the bank to free a bag slot."] =
+        "나중에 \"첸의 빈 술통\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["This NPC is found down in the Cleft of Shadow."] =
         "이 NPC는 아래쪽 어둠의 틈에 있습니다.",
     ["The NPC stands on the highest level of this structure."] =

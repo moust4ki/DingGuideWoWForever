@@ -43,6 +43,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h14-thousand-needles", {
         "Dieser NPC ist unten in der Kluft der Schatten.",
     ["The NPC stands on the highest level of this structure."] =
         "Der NPC steht auf der obersten Ebene dieses Gebäudes.",
+    ["The NPC is indoors. You need them later for \"Martek the Exiled\" and \"Hemet Nesingwary\": keep them in the bank to free bag slots."] =
+        "Der NPC ist drinnen. Du brauchst sie später für „Martek der Verbannte“ und „Hemet Nesingwary“: Lass sie in der Bank, das spart Taschenplätze.",
     ["The quest giver is in the Dormitory."] =
         "Der Questgeber ist im Schlafsaal.",
     ["Escort Kernobee to the portal at the dungeon's mouth."] =

@@ -29,6 +29,10 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a31-ungoro-crater", {
         "Flugmeister von Marschalls Zuflucht",
     ["The NPC is indoors."] =
         "Der NPC ist drinnen.",
+    ["The NPC is indoors. You need them later for \"The Bait for Lar'korwi\", \"Un'Goro Soil\", \"A Visit to Gregan\" and \"It's a Secret to Everybody\": keep them in the bank to free bag slots."] =
+        "Der NPC ist drinnen. Du brauchst sie später für „Ein Köder für Lar'korwi“, „Un'Goro-Erde“, „Ein Besuch bei Gregan“ und „Es ist für jeden ein Geheimnis“: Lass sie in der Bank, das spart Taschenplätze.",
+    ["The NPC is indoors. You need it later for \"Rise of the Silithid\": keep it in the bank to free a bag slot."] =
+        "Der NPC ist drinnen. Du brauchst es später für „Aufstieg der Silithid“: Lass es in der Bank, das spart einen Taschenplatz.",
     ["The NPC is on the house's raised terrace."] =
         "Der NPC ist auf der erhöhten Terrasse des Hauses.",
     ["In the Maraudon Tunnels, the target is a centaur in violet armor. The targets are spread over several spots."] =

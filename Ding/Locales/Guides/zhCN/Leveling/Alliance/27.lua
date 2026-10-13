@@ -19,4 +19,6 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a27-tanaris", {
         "这里的目标是人类。如果你愿意，这里也可以去刷副本。在加基森每交5个可获得380点经验。",
     ["Hunt the red-feathered birds. Hyenas also use these spawn spots."] =
         "猎杀红色羽毛的鸟。土狼也会在这些刷新点出现。",
+    ["The NPC is indoors. You need them later for \"Report Back to Fizzlebub\" and \"Rhapsody's Kalimdor Kocktail\": keep them in the bank to free bag slots."] =
+        "NPC在室内。之后的任务“向菲兹巴布报告”和“拉普索迪的卡利姆多鸡尾酒”需要它们：先存进银行，腾出背包空间。",
 })

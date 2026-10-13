@@ -43,6 +43,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h14-thousand-needles", {
         "이 NPC는 아래쪽 어둠의 틈에 있습니다.",
     ["The NPC stands on the highest level of this structure."] =
         "NPC는 이 건물의 꼭대기 층에 서 있습니다.",
+    ["The NPC is indoors. You need them later for \"Martek the Exiled\" and \"Hemet Nesingwary\": keep them in the bank to free bag slots."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"망명자 마르텍\", \"헤멧 네싱워리\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["The quest giver is in the Dormitory."] =
         "퀘스트를 주는 NPC는 Dormitory에 있습니다.",
     ["Escort Kernobee to the portal at the dungeon's mouth."] =

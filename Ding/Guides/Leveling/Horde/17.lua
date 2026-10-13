@@ -13,22 +13,37 @@ Ding.RegisterGuide({
         { talk = 8673, collect = { { 3853, 1 } }, when = { maxlevel = 40 }, -- level 38
           note = "Orgrimmar first, then Dustwallow Marsh: Brackenwall Village. Hold on to it, an upcoming quest uses it." },
         { talk = 3309, bank = 4306, -- level 38
-          note = "The NPC is indoors." },
-        { bank = 2725, when = { item = 2725 } }, -- level 38
-        { bank = 2728, when = { item = 2728 } }, -- level 38
-        { bank = 2730, when = { item = 2730 } }, -- level 38
-        { bank = 2732, when = { item = 2732 } }, -- level 38
-        { bank = 2734, when = { item = 2734 } }, -- level 38
-        { bank = 2735, when = { item = 2735 } }, -- level 38
-        { bank = 2738, when = { item = 2738 } }, -- level 38
-        { bank = 2740, when = { item = 2740 } }, -- level 38
-        { bank = 2742, when = { item = 2742 } }, -- level 38
-        { bank = 2744, when = { item = 2744 } }, -- level 38
-        { bank = 2745, when = { item = 2745 } }, -- level 38
-        { bank = 2748, when = { item = 2748 } }, -- level 38
-        { bank = 2749, when = { item = 2749 } }, -- level 38
-        { bank = 2750, when = { item = 2750 } }, -- level 38
-        { bank = 2751, when = { item = 2751 } }, -- level 38
+          note = "The NPC is indoors. You need it later for \"Caught!\": keep it in the bank to free a bag slot." },
+        { bank = 2725, when = { item = 2725 }, -- level 38
+          note = "You need it later for \"Chapter I\": keep it in the bank to free a bag slot." },
+        { bank = 2728, when = { item = 2728 }, -- level 38
+          note = "You need it later for \"Chapter I\": keep it in the bank to free a bag slot." },
+        { bank = 2730, when = { item = 2730 }, -- level 38
+          note = "You need it later for \"Chapter I\": keep it in the bank to free a bag slot." },
+        { bank = 2732, when = { item = 2732 }, -- level 38
+          note = "You need it later for \"Chapter I\": keep it in the bank to free a bag slot." },
+        { bank = 2734, when = { item = 2734 }, -- level 38
+          note = "You need it later for \"Chapter II\": keep it in the bank to free a bag slot." },
+        { bank = 2735, when = { item = 2735 }, -- level 38
+          note = "You need it later for \"Chapter II\": keep it in the bank to free a bag slot." },
+        { bank = 2738, when = { item = 2738 }, -- level 38
+          note = "You need it later for \"Chapter II\": keep it in the bank to free a bag slot." },
+        { bank = 2740, when = { item = 2740 }, -- level 38
+          note = "You need it later for \"Chapter II\": keep it in the bank to free a bag slot." },
+        { bank = 2742, when = { item = 2742 }, -- level 38
+          note = "You need it later for \"Chapter III\": keep it in the bank to free a bag slot." },
+        { bank = 2744, when = { item = 2744 }, -- level 38
+          note = "You need it later for \"Chapter III\": keep it in the bank to free a bag slot." },
+        { bank = 2745, when = { item = 2745 }, -- level 38
+          note = "You need it later for \"Chapter III\": keep it in the bank to free a bag slot." },
+        { bank = 2748, when = { item = 2748 }, -- level 38
+          note = "You need it later for \"Chapter III\": keep it in the bank to free a bag slot." },
+        { bank = 2749, when = { item = 2749 }, -- level 38
+          note = "You need it later for \"Chapter IV\": keep it in the bank to free a bag slot." },
+        { bank = 2750, when = { item = 2750 }, -- level 38
+          note = "You need it later for \"Chapter IV\": keep it in the bank to free a bag slot." },
+        { bank = 2751, when = { item = 2751 }, -- level 38
+          note = "You need it later for \"Chapter IV\": keep it in the bank to free a bag slot." },
         { go = { 1454, 56.41, 56.95 }, text = "Climb the steps" }, -- level 38
         { talk = 3400, buy = { { 3713, 3, 3400 } }, -- level 38
           note = "The NPC is indoors." },
@@ -118,7 +133,8 @@ Ding.RegisterGuide({
         { talk = 8720, collect = { { 4611, 9 }, { 3829, 1 }, { 4389, 1 }, { 929, 1 }, { 3823, 1 } }, when = { maxlevel = 45 }, -- level 38
           note = "Get these for simple Badlands turn-ins ahead. The NPC is indoors." },
         { talk = 2458, collect = { { 5827, 1 } }, spots = { { 1458, 65.87, 43.4 } } }, -- level 38
-        { talk = 2458, bank = { 5919, 8523 } }, -- level 38
+        { talk = 2458, bank = { 5919, 8523 }, -- level 38
+          note = "You need them later for \"The Black Shield\" and \"Into the Field\": keep them in the bank to free bag slots." },
         { collect = { { 4481, 8 } }, classes = { "WARRIOR" } }, -- level 38
         { collect = { { 4480, 8 } }, classes = { "WARRIOR" } }, -- level 38
         { collect = { { 4479, 8 } }, classes = { "WARRIOR" }, -- level 38

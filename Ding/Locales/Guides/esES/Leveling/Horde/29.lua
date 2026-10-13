@@ -11,6 +11,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h29-the-hinterlands", {
         "Conseguirlo aquí acelera el Cráter de Un'Goro. El PNJ está dentro.",
     ["The NPC is indoors."] =
         "El PNJ está dentro.",
+    ["The NPC is indoors. You need them later for \"The Stone Circle\" and \"Crystals of Power\": keep them in the bank to free bag slots."] =
+        "El PNJ está dentro. Los necesitarás más adelante para «El Círculo de Piedras» y «Cristales de poder»: déjalos en el banco para liberar huecos en las bolsas.",
     ["Take the trail downhill"] =
         "Baja por el sendero",
     ["Buy plenty of arrows or bullets. Stock up first: nobody in the Hinterlands sells arrows or bullets for level 40."] =
@@ -57,4 +59,6 @@ Ding.RegisterGuideTranslation("esES", "leveling-h29-the-hinterlands", {
         "Sal de Shadra'Alor",
     ["Wait for the talking to finish"] =
         "Espera a que termine la conversación",
+    ["The NPC is indoors. You need them later for \"Ripple Delivery\", \"Whiskey Slim's Lost Grog\" and \"Seeping Corruption\": keep them in the bank to free bag slots."] =
+        "El PNJ está dentro. Los necesitarás más adelante para «Entrega el calimocho», «El grog de Whiskey Slim» y «La filtración de la Corrupción»: déjalos en el banco para liberar huecos en las bolsas.",
 })

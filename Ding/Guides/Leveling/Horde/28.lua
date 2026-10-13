@@ -38,7 +38,7 @@ Ding.RegisterGuide({
         { accept = 5863 }, -- level 46
         { accept = 1691 }, -- level 46
         { talk = 7799, bank = { 9618, 5807 }, -- level 46
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need them later for \"Testing the Vessel\" and \"Report Back to Fizzlebub\": keep them in the bank to free bag slots." },
         { accept = 2605 }, -- level 46
         { accept = 8365 }, -- level 46
         { turnin = 3520 }, -- level 46
@@ -77,7 +77,7 @@ Ding.RegisterGuide({
         { turnin = 8365 }, -- level 47
         { turnin = { 2781, 1691 } }, -- level 47
         { talk = 7799, bank = 9245, -- level 47
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need it later for \"Deliver to MacKinley\": keep it in the bank to free a bag slot." },
         { turnin = 3380, accept = { 3444, 3161 } }, -- level 47
         { complete = 5863, -- level 47
           note = "Your objective lies in a little cavern." },
@@ -101,7 +101,7 @@ Ding.RegisterGuide({
         { complete = 10, elite = true, when = { log = 10 } }, -- level 47
         { accept = 864, when = { done = 654 } }, -- level 47
         { talk = 7799, bank = 8527, -- level 47
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need it later for \"Return to Apothecary Zinge\": keep it in the bank to free a bag slot." },
         { turnin = 10, elite = true, when = { log = 10 } }, -- level 47
         { accept = 110, elite = true, when = { done = 10 } }, -- level 47
         { turnin = 110, elite = true, when = { log = 110 } }, -- level 47

@@ -43,6 +43,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h14-thousand-needles", {
         "Este PNJ está abajo, en la Grieta de la Sombra.",
     ["The NPC stands on the highest level of this structure."] =
         "El PNJ está en el nivel más alto de esta estructura.",
+    ["The NPC is indoors. You need them later for \"Martek the Exiled\" and \"Hemet Nesingwary\": keep them in the bank to free bag slots."] =
+        "El PNJ está dentro. Los necesitarás más adelante para «Martek el Exiliado» y «Hemet Decautela»: déjalos en el banco para liberar huecos en las bolsas.",
     ["The quest giver is in the Dormitory."] =
         "El PNJ de misión está en la zona de dormitorios.",
     ["Escort Kernobee to the portal at the dungeon's mouth."] =

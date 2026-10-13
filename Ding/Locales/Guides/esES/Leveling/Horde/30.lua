@@ -65,6 +65,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h30-feralas-and-ungoro-crater", 
         "Tus objetivos están dentro de la cueva.",
     ["Flight master at Marshal's Refuge"] =
         "Maestro de vuelo del Refugio de Marshal",
+    ["The NPC is indoors. You need them later for \"Bungle in the Jungle\", \"The Bait for Lar'korwi\" and \"It's a Secret to Everybody\": keep them in the bank to free bag slots."] =
+        "El PNJ está dentro. Los necesitarás más adelante para «Que jungla tan chunga», «El cebo para Lar'korwi» y «Un secreto bien guardado»: déjalos en el banco para liberar huecos en las bolsas.",
     ["This NPC is found down in the Cleft of Shadow."] =
         "Este PNJ está abajo, en la Grieta de la Sombra.",
     ["The NPC is upstairs, out on the balcony."] =

@@ -48,7 +48,7 @@ Ding.RegisterGuide({
         { complete = 4141, races = { "Human", "Dwarf", "Gnome", "Skyborne" }, -- level 49
           note = "The targets are mobile plant monsters." },
         { complete = 4141, races = { "NightElf" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "WARLOCK", "DRUID" } }, -- level 49
-        { unbank = 11018, keep = 11018 }, -- level 49
+        { collect = { { 11018, 25 } }, keep = 11018 }, -- level 49
         { level = 49, xp = 117440, patrol = { { 1449, 69.24, 35.25 }, { 1449, 71.94, 36.34 }, { 1449, 74.65, 38.14 }, { 1449, 72.16, 41.64 }, { 1449, 74.46, 43.86 }, { 1449, 75.37, 47.56 }, { 1449, 69.43, 38.97 }, { 1449, 66.35, 39.54 }, { 1449, 64.37, 37.17 }, { 1449, 66.35, 33.15 }, { 1449, 63.05, 32.56 }, { 1449, 64.06, 29.34 }, { 1449, 67.35, 29.55 }, { 1449, 70.26, 31.34 }, { 1449, 73.34, 32.45 }, { 1449, 70.44, 27.45 }, { 1449, 69.34, 24.45 }, { 1449, 66.37, 25.95 }, { 1449, 68.46, 20.37 }, { 1449, 71.44, 21.37 } }, -- level 49
           note = "Together with the next turn-ins, this brings you to level 50." },
         { turnin = 4141, races = { "Human", "Dwarf", "Gnome", "Skyborne" } }, -- level 49
@@ -60,7 +60,7 @@ Ding.RegisterGuide({
         { talk = 7799, collect = { { 9245, 1 }, { 5807, 1 }, { 3900, 12 } }, spots = { { 1446, 52.35, 28.88 } }, -- level 49
           note = "The NPC is indoors." },
         { talk = 7799, bank = { 9507, 11568, 11018, 11316, 11133 }, -- level 49
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need them later for \"The Bait for Lar'korwi\", \"Un'Goro Soil\", \"A Visit to Gregan\" and \"It's a Secret to Everybody\": keep them in the bank to free bag slots." },
         { turnin = 5863 }, -- level 49
         { turnin = 3362 }, -- level 49
         { turnin = 2606, accept = 2641 }, -- level 49
@@ -68,7 +68,7 @@ Ding.RegisterGuide({
         { turnin = 3161, accept = 3444 }, -- level 49
         { train = true, talk = 12042, races = { "NightElf" }, classes = { "DRUID" } }, -- level 49
         { talk = 7799, bank = 8594, -- level 49
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need it later for \"Rise of the Silithid\": keep it in the bank to free a bag slot." },
         { accept = 7065, dungeon = "Maraudon", -- level 49
           note = "The NPC is on the house's raised terrace." },
         { accept = 7041, dungeon = "Maraudon", races = { "Gnome" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 49

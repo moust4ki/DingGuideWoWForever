@@ -55,6 +55,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h36-ungoro-crater", {
         "El objeto está dentro.",
     ["Finish the quest named The Videre Elixir. Keep the elixir in your bags; never consume it. You will die from it."] =
         "Termina la misión The Videre Elixir. Guarda el elixir en tus bolsas; no te lo bebas nunca. Te matará.",
+    ["The NPC is indoors. You need it later for \"Meet at the Grave\": keep it in the bank to free a bag slot."] =
+        "El PNJ está dentro. Lo necesitarás más adelante para «Encuentro en la tumba»: déjalo en el banco para liberar un hueco en las bolsas.",
     ["The NPC patrols a long route; look along it."] =
         "El PNJ patrulla una ruta larga; búscalo a lo largo de ella.",
     ["You no longer need these; vendor or discard them."] =

@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a41-western-and-eastern-plaguela
         "Forgefer d'abord, puis les Maleterres : le camp du Noroît et la chapelle de l'Espoir de Lumière.",
     ["The NPC is indoors."] =
         "Le PNJ est à l'intérieur.",
+    ["The NPC is indoors. You need it later for \"Felnok Steelspring\": keep it in the bank to free a bag slot."] =
+        "Le PNJ est à l'intérieur. Tu en auras besoin plus tard pour « Felnok Steelspring » : garde-le à la banque pour libérer une place dans tes sacs.",
     ["Stay on the trail"] =
         "Suis le chemin",
     ["Check each of the two floors indoors."] =

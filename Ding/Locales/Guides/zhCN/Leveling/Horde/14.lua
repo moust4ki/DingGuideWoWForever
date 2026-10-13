@@ -43,6 +43,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h14-thousand-needles", {
         "该NPC在下面的暗影裂口里。",
     ["The NPC stands on the highest level of this structure."] =
         "NPC在这座建筑的最高层。",
+    ["The NPC is indoors. You need them later for \"Martek the Exiled\" and \"Hemet Nesingwary\": keep them in the bank to free bag slots."] =
+        "NPC在室内。之后的任务“流放者马特克”和“赫米特·奈辛瓦里”需要它们：先存进银行，腾出背包空间。",
     ["The quest giver is in the Dormitory."] =
         "任务发布者在宿舍区。",
     ["Escort Kernobee to the portal at the dungeon's mouth."] =

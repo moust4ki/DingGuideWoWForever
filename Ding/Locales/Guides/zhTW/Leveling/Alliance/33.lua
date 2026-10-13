@@ -51,6 +51,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a33-searing-gorge", {
         "沿小路往上進入瑟銀哨塔",
     ["The NPC is indoors."] =
         "NPC在室內。",
+    ["The NPC is indoors. You need it later for \"A Taste of Flame\": keep it in the bank to free a bag slot."] =
+        "NPC在室內。之後的任務「烈焰精華」需要它：先存進銀行，空出背包空間。",
     ["The NPC is indoors, one floor up."] =
         "NPC在室內的樓上一層。",
 })

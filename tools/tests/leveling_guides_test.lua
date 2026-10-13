@@ -325,6 +325,49 @@ T.test("notes: the NPC only where there is one, roaming only where someone moves
     end
 end)
 
+-- Putting an item in the bank, or taking it out, happens at a banker: on the step that talks to
+-- one, or right after it (steps that only bank in between). Elsewhere the player has no bank.
+T.test("bank steps: at a banker, with a note saying why", function()
+    local X = dofile(tools .. "/questiedb_export.lua")
+    local db = X.load(T.combined)
+    local function banker(id)
+        local flags = db.Npc[id] and db.Npc[id][15] or 0
+        return type(flags) == "number" and math.floor(flags / 256) % 2 == 1 -- (the banker flag)
+    end
+    local function atBanker(step)
+        for _, id in ipairs(ids(step.talk)) do
+            if banker(id) then return true end
+        end
+        return false
+    end
+    local BANK_ONLY = { bank = true, unbank = true, when = true, note = true, races = true, classes = true, keep = true }
+    local function bankOnly(step)
+        for k in pairs(step) do
+            if not BANK_ONLY[k] then return false end
+        end
+        return true
+    end
+    for _, f in ipairs(FACTIONS) do
+        for _, g in ipairs(f.guides) do
+            local steps = g.def.steps
+            for i, step in ipairs(steps) do
+                if step.bank or step.unbank then
+                    local ok = atBanker(step)
+                    for j = i - 1, 1, -1 do
+                        if ok then break end
+                        if atBanker(steps[j]) then ok = true elseif not bankOnly(steps[j]) then break end
+                    end
+                    T.ok(ok, ("%s, step %d: bank or unbank away from a banker"):format(g.def.id, i))
+                end
+                if step.bank then
+                    T.ok(type(step.note) == "string" and step.note:find("in the bank", 1, true) ~= nil,
+                        ("%s, step %d: a bank step says why"):format(g.def.id, i))
+                end
+            end
+        end
+    end
+end)
+
 T.test("the zone guides keep route texts off the steps behind an option", function()
     -- (Off, the option takes its whole step away: a zone intro there would be lost.)
     for _, name in ipairs({ "human", "dwarf_gnome", "nightelf", "alliance", "orc_troll", "tauren", "undead", "horde" }) do

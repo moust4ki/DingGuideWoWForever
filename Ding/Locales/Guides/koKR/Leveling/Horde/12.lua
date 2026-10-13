@@ -3,8 +3,8 @@
 Ding.RegisterGuideTranslation("koKR", "leveling-h12-hillsbrad-foothills", {
     ["Hillsbrad Foothills (30-32)"] =
         "힐스브래드 구릉지 (30-32)",
-    ["Undercity first, then Hillsbrad Foothills: Tarren Mill."] =
-        "언더시티에 먼저 들른 다음 힐스브래드 구릉지: 타렌 밀농장으로 가세요.",
+    ["Undercity first, then Hillsbrad Foothills: Tarren Mill. You need it later for \"The Swarm Grows\": keep it in the bank to free a bag slot."] =
+        "언더시티에 먼저 들른 다음 힐스브래드 구릉지: 타렌 밀농장으로 가세요. 나중에 \"곤충 떼의 위협\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["Learn Cooking from the trainer"] =
         "상급자에게서 요리를 배우세요",
     ["You'll need this to pick up an upcoming quest."] =

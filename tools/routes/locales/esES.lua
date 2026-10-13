@@ -3277,4 +3277,123 @@ return {
         "El objetivo patrulla una ruta larga; búscalo a lo largo de ella.",
     ["The target waits here, then strolls out onto the big branch close by."] =
         "El objetivo espera aquí y luego sale paseando a la gran rama cercana.",
+    -- Ding - Leveling: why an item goes to the bank (notes)
+    ["You need it later for \"The Legend of Stalvan\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «La leyenda de Stalvan»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need it later for \"Juice Delivery\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Entrega de zumo»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need it later for \"The Brassbolts Brothers\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Los hermanos Pernolatón»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need it later for \"A Noble Brew\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Una noble cerveza»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need it later for \"Soothing Turtle Bisque\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Sopa de tortuga calmante»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need it later for \"Reassignment\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Nueva asignación»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need it later for \"Parts for Kravel\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Las piezas de Kravel»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need them later for \"Goblin Sponsorship\" and \"The Hidden Key\": keep them in the bank to free bag slots."] =
+        "Los necesitarás más adelante para «Apoyo al goblin» y «La llave oculta»: déjalos en el banco para liberar huecos en las bolsas.",
+    ["You need it later for \"Chapter I\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Capítulo I»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need it later for \"Chapter II\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Capítulo II»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need it later for \"Chapter III\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Capítulo III»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need it later for \"Chapter IV\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Capítulo IV»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need it later for \"The Karnitol Shipwreck\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «El naufragio de Karnitol»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need them later for \"Magical Analysis\" and \"Caught!\": keep them in the bank to free bag slots."] =
+        "Los necesitarás más adelante para «Análisis mágico» y «Atrapado»: déjalos en el banco para liberar huecos en las bolsas.",
+    ["You need it later for \"Rumors for Kravel\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Rumores para Kravel»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need it later for \"Ongeku\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Ongeku»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need it later for \"Sunken Treasure\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «El tesoro sumergido»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need them later for \"Back to Booty Bay\" and \"Safety First\": keep them in the bank to free bag slots."] =
+        "Los necesitarás más adelante para «De vuelta a Bahía del Botín» y «La seguridad primero»: déjalos en el banco para liberar huecos en las bolsas.",
+    ["You need them later for \"Report Back to Fizzlebub\" and \"Rhapsody's Kalimdor Kocktail\": keep them in the bank to free bag slots."] =
+        "Los necesitarás más adelante para «Volver a informar a Pinchabujas,» y «El cubata de Kalimdor de Rapsodio»: déjalos en el banco para liberar huecos en las bolsas.",
+    ["You need them later for \"The Borrower\", \"Screecher Spirits\", \"The Super Egg-O-Matic\" and \"Rhapsody's Kalimdor Kocktail\": keep them in the bank to free bag slots."] =
+        "Los necesitarás más adelante para «El préstamo», «Los espíritus de los estriadores», «El Superhuevomático» y «El cubata de Kalimdor de Rapsodio»: déjalos en el banco para liberar huecos en las bolsas.",
+    ["You need them later for \"Crystals of Power\": keep them in the bank to free bag slots."] =
+        "Los necesitarás más adelante para «Cristales de poder»: déjalos en el banco para liberar huecos en las bolsas.",
+    ["You need them later for \"Rhapsody's Tale\", \"The Super Snapper FX\", \"Whiskey Slim's Lost Grog\" and \"Favored of Elune?\": keep them in the bank to free bag slots."] =
+        "Los necesitarás más adelante para «El relato de Rapsodio», «Superistánea FX», «El grog de Whiskey Slim» y «¿Creados por Elune?»: déjalos en el banco para liberar huecos en las bolsas.",
+    ["You need it later for \"Deliver to MacKinley\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Un envío para MacKinley»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need them later for \"The Bait for Lar'korwi\", \"Un'Goro Soil\", \"A Visit to Gregan\" and \"It's a Secret to Everybody\": keep them in the bank to free bag slots."] =
+        "Los necesitarás más adelante para «El cebo para Lar'korwi», «La tierra de Un'Goro», «Visita a Gregan» y «Un secreto bien guardado»: déjalos en el banco para liberar huecos en las bolsas.",
+    ["You need it later for \"Rise of the Silithid\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «La sublevación de los silítidos»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need it later for \"A Taste of Flame\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Un sabor a llamarada»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need them later for \"Chasing A-Me 01\" and \"Arcane Runes\": keep them in the bank to free bag slots."] =
+        "Los necesitarás más adelante para «Buscando a Memo 01» y «Runas arcanas»: déjalos en el banco para liberar huecos en las bolsas.",
+    ["You need them later for \"Good Natured Emma\", \"Arcane Runes\" and \"Sprinkle's Secret Ingredient\": keep them in the bank to free bag slots."] =
+        "Los necesitarás más adelante para «El buen carácter de Emma», «Runas arcanas» y «El ingrediente secreto de Roxio»: déjalos en el banco para liberar huecos en las bolsas.",
+    ["You need them later for \"The Stone Circle\", \"Felbound Ancients\", \"A Little Slime Goes a Long Way\", \"Moontouched Wildkin\" and \"Meet at the Grave\": keep them in the bank to free bag slots."] =
+        "Los necesitarás más adelante para «El Círculo de Piedras», «Los Ancestros corrompidos», «Un largo camino para unas babosas», «Lechúcico Lunadón» y «Encuentro en la tumba»: déjalos en el banco para liberar huecos en las bolsas.",
+    ["You need it later for \"Return to Tymor\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Vuelve con Tymor»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need them later for \"Aquementas\", \"The Everlook Report\", \"Duke Nicholas Zverenhoff\" and \"Troubled Spirits of Kel'Theril\": keep them in the bank to free bag slots."] =
+        "Los necesitarás más adelante para «Aquementas», «El informe Vista Eterna», «El duque Nicolas Zverenhoff» y «Espíritus condenados de Kel'Theril»: déjalos en el banco para liberar huecos en las bolsas.",
+    ["You need it later for \"Felnok Steelspring\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Felnok Acerovera»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need it later for \"Glyphed Oaken Branch\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Rama de roble con inscripciones»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need them later for \"The Disruption Ends\" and \"Supplies for the Crossroads\": keep them in the bank to free bag slots."] =
+        "Los necesitarás más adelante para «El fin de las hostilidades» y «Suministros para El Cruce»: déjalos en el banco para liberar huecos en las bolsas.",
+    ["You need it later for \"Chen's Empty Keg\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «El barril vacío de Chen»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need it later for \"Egg Hunt\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «¡A cazar huevos!»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need them later for \"Souvenirs of Death\" and \"Battle of Hillsbrad\": keep them in the bank to free bag slots."] =
+        "Los necesitarás más adelante para «Recuerdos de muerte» y «La batalla de Trabalomas»: déjalos en el banco para liberar huecos en las bolsas.",
+    ["You need it later for \"Frostmaw\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Faucehielo»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need it later for \"The Swarm Grows\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «El enjambre crece»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need them later for \"Martek the Exiled\" and \"Hemet Nesingwary\": keep them in the bank to free bag slots."] =
+        "Los necesitarás más adelante para «Martek el Exiliado» y «Hemet Decautela»: déjalos en el banco para liberar huecos en las bolsas.",
+    ["You need it later for \"Caught!\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Atrapado»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need them later for \"The Black Shield\" and \"Into the Field\": keep them in the bank to free bag slots."] =
+        "Los necesitarás más adelante para «El escudo negro» y «In situ»: déjalos en el banco para liberar huecos en las bolsas.",
+    ["You need them later for \"Tanaris Field Sampling\" and \"Screecher Spirits\": keep them in the bank to free bag slots."] =
+        "Los necesitarás más adelante para «Recogida de muestras en Tanaris» y «Los espíritus de los estriadores»: déjalos en el banco para liberar huecos en las bolsas.",
+    ["You need it later for \"Back to Booty Bay\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «De vuelta a Bahía del Botín»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need them later for \"Deadmire\" and \"Safety First\": keep them in the bank to free bag slots."] =
+        "Los necesitarás más adelante para «Lodomuerto» y «La seguridad primero»: déjalos en el banco para liberar huecos en las bolsas.",
+    ["You need them later for \"Another Message to the Wildhammer\", \"Screecher Spirits\" and \"The Super Egg-O-Matic\": keep them in the bank to free bag slots."] =
+        "Los necesitarás más adelante para «Un nuevo mensaje para los Martillo Salvaje», «Los espíritus de los estriadores» y «El Superhuevomático»: déjalos en el banco para liberar huecos en las bolsas.",
+    ["You need it later for \"Return to Witch Doctor Uzer'i\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Regresa junto al médico brujo Uzer'i»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need it later for \"The Atal'ai Exile\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «El exiliado Atal'ai»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need them later for \"Testing the Vessel\" and \"Report Back to Fizzlebub\": keep them in the bank to free bag slots."] =
+        "Los necesitarás más adelante para «Probar la vasija» y «Volver a informar a Pinchabujas,»: déjalos en el banco para liberar huecos en las bolsas.",
+    ["You need it later for \"Return to Apothecary Zinge\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Regresa junto a la boticaria Zinge»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need them later for \"The Stone Circle\" and \"Crystals of Power\": keep them in the bank to free bag slots."] =
+        "Los necesitarás más adelante para «El Círculo de Piedras» y «Cristales de poder»: déjalos en el banco para liberar huecos en las bolsas.",
+    ["You need them later for \"Ripple Delivery\", \"Whiskey Slim's Lost Grog\" and \"Seeping Corruption\": keep them in the bank to free bag slots."] =
+        "Los necesitarás más adelante para «Entrega el calimocho», «El grog de Whiskey Slim» y «La filtración de la Corrupción»: déjalos en el banco para liberar huecos en las bolsas.",
+    ["You need them later for \"Bungle in the Jungle\", \"The Bait for Lar'korwi\" and \"It's a Secret to Everybody\": keep them in the bank to free bag slots."] =
+        "Los necesitarás más adelante para «Que jungla tan chunga», «El cebo para Lar'korwi» y «Un secreto bien guardado»: déjalos en el banco para liberar huecos en las bolsas.",
+    ["You need them later for \"Delivery to Magatha\" and \"Seeping Corruption\": keep them in the bank to free bag slots."] =
+        "Los necesitarás más adelante para «Entrega a Magatha» y «La filtración de la Corrupción»: déjalos en el banco para liberar huecos en las bolsas.",
+    ["You need it later for \"Jes'rimon's Payment to Jediga\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «El pago de Jes'rimon a Jediga»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need it later for \"Meet at the Grave\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Encuentro en la tumba»: déjalo en el banco para liberar un hueco en las bolsas.",
+    ["You need them later for \"Delivery to Andron Gant\", \"A Grave Situation\" and \"Betrayed\": keep them in the bank to free bag slots."] =
+        "Los necesitarás más adelante para «Entrega a Andron Gant», «Una situación mortal» y «Traición»: déjalos en el banco para liberar huecos en las bolsas.",
+    ["You need them later for \"The Everlook Report\" and \"Duke Nicholas Zverenhoff\": keep them in the bank to free bag slots."] =
+        "Los necesitarás más adelante para «El informe Vista Eterna» y «El duque Nicolas Zverenhoff»: déjalos en el banco para liberar huecos en las bolsas.",
+    ["You need it later for \"Aquementas\": keep it in the bank to free a bag slot."] =
+        "Lo necesitarás más adelante para «Aquementas»: déjalo en el banco para liberar un hueco en las bolsas.",
 }

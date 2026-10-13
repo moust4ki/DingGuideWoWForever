@@ -13,6 +13,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a17-stranglethorn-vale", {
         "Monte au dernier étage du bâtiment.",
     ["The NPC is upstairs, out on the balcony."] =
         "Le PNJ est à l'étage, dehors sur le balcon.",
+    ["You need it later for \"Parts for Kravel\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Les pièces détachées de Kravel » : garde-le à la banque pour libérer une place dans tes sacs.",
     ["The NPC stands on the top tier of the pier. The NPC is indoors."] =
         "Le PNJ se tient sur le niveau supérieur du quai. Le PNJ est à l'intérieur.",
     ["Fly to Booty Bay"] =
@@ -41,6 +43,16 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a17-stranglethorn-vale", {
         "Laisse-toi tuer exprès par les monstres d'ici. Mourir ne te coûte rien à ce stade. C'est le chemin le plus rapide.",
     ["Get yourself killed, then resurrect with the spirit healer"] =
         "Fais-toi tuer, puis ressuscite auprès du gardien des âmes",
+    ["You need them later for \"Goblin Sponsorship\" and \"The Hidden Key\": keep them in the bank to free bag slots."] =
+        "Tu en auras besoin plus tard pour « Mécénat gobelin » et « La clé cachée » : garde-les à la banque pour libérer de la place dans tes sacs.",
+    ["You need it later for \"Chapter I\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Chapitre I » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need it later for \"Chapter II\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Chapitre II » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need it later for \"Chapter III\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Chapitre III » : garde-le à la banque pour libérer une place dans tes sacs.",
+    ["You need it later for \"Chapter IV\": keep it in the bank to free a bag slot."] =
+        "Tu en auras besoin plus tard pour « Chapitre IV » : garde-le à la banque pour libérer une place dans tes sacs.",
     ["The NPC is indoors."] =
         "Le PNJ est à l'intérieur.",
     ["Go into the mine"] =

@@ -19,4 +19,6 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a27-tanaris", {
         "Os alvos aqui são humanos. Fazer masmorras também é uma boa opção aqui, se preferir. Cada pilha de 5 entregue em Geringontzan dá 380 de XP.",
     ["Hunt the red-feathered birds. Hyenas also use these spawn spots."] =
         "Cace as aves de penas vermelhas. Hienas também surgem nesses pontos.",
+    ["The NPC is indoors. You need them later for \"Report Back to Fizzlebub\" and \"Rhapsody's Kalimdor Kocktail\": keep them in the bank to free bag slots."] =
+        "O NPC está lá dentro. Você vai precisar deles mais tarde para \"Fale novamente com Mirrabolha\" e \"O Coquetel de Kalimdor do Rapsódico\": guarde-os no banco para liberar espaço nas bolsas.",
 })

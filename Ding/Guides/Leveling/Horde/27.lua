@@ -43,7 +43,8 @@ Ding.RegisterGuide({
         { accept = 1119, when = { done = 621 }, -- level 46
           note = "The NPC is indoors at street level." },
         { talk = 2625, collect = { { 9628, 1 }, { 5862, 1 }, { 10699, 1 }, { 8564, 1 } }, spots = { { 1434, 26.6, 76.53 } } }, -- level 46
-        { talk = 2625, bank = 6193 }, -- level 46
+        { talk = 2625, bank = 6193, -- level 46
+          note = "You need it later for \"The Atal'ai Exile\": keep it in the bank to free a bag slot." },
         { train = true, talk = 6018, races = { "Scourge", "Troll" }, classes = { "PRIEST" }, -- level 46
           note = "The NPC is indoors." },
         { train = true, talk = 3344, races = { "Orc", "Tauren", "Troll" }, classes = { "SHAMAN" }, -- level 46

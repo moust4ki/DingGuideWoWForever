@@ -45,6 +45,14 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a25-stranglethorn-vale", {
         "做好准备：这些敌人是38级精英。Saltwater Crocolisk也在同样的地方刷新。",
     ["The object is a table made of stone. Your targets sit below the water's surface. Drag him up until he breaks the surface."] =
         "目标物品是一张石桌。目标在水面以下。把他往上拉，直到他浮出水面。",
+    ["You need it later for \"Chapter I\": keep it in the bank to free a bag slot."] =
+        "之后的任务“荆棘谷的青山 - 第一章”需要它：先存进银行，腾出背包空间。",
+    ["You need it later for \"Chapter II\": keep it in the bank to free a bag slot."] =
+        "之后的任务“荆棘谷的青山 - 第二章”需要它：先存进银行，腾出背包空间。",
+    ["You need it later for \"Chapter III\": keep it in the bank to free a bag slot."] =
+        "之后的任务“荆棘谷的青山 - 第三章”需要它：先存进银行，腾出背包空间。",
+    ["You need it later for \"Chapter IV\": keep it in the bank to free a bag slot."] =
+        "之后的任务“荆棘谷的青山 - 第四章”需要它：先存进银行，腾出背包空间。",
     ["The NPC stands on the top tier of the pier."] =
         "NPC站在码头的最上层。",
     ["Follow the shoreline"] =

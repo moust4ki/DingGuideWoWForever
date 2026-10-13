@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a36-azshara-and-felwood", {
         "Teldrassil: Vila de Rut'theran primeiro, depois Azshara e a Selva Maleva.",
     ["The NPC is indoors."] =
         "O NPC está lá dentro.",
+    ["The NPC is indoors. You need them later for \"Good Natured Emma\", \"Arcane Runes\" and \"Sprinkle's Secret Ingredient\": keep them in the bank to free bag slots."] =
+        "O NPC está lá dentro. Você vai precisar deles mais tarde para \"Bondosa Bia\", \"Runas arcanas\" e \"O Ingrediente Secreto de Sguisha\": guarde-os no banco para liberar espaço nas bolsas.",
     ["Climb to the highest floor of the building."] =
         "Suba até o último andar do prédio.",
     ["The quest giver stands outdoors, not indoors."] =

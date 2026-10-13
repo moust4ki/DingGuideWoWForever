@@ -39,6 +39,10 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a20-swamp-of-sorrows", {
         "爬到建筑物的顶层。",
     ["Let the conversation play out. Climb to the highest floor of the building."] =
         "等对话结束。爬到建筑物的顶层。",
+    ["The NPC is indoors. You need it later for \"Rumors for Kravel\": keep it in the bank to free a bag slot."] =
+        "NPC在室内。之后的任务“地精的谣言”需要它：先存进银行，腾出背包空间。",
+    ["You need it later for \"Ongeku\": keep it in the bank to free a bag slot."] =
+        "之后的任务“盎格库尔”需要它：先存进银行，腾出背包空间。",
     ["Head down into the Deeprun Tram station"] =
         "下到矿道地铁站",
     ["Pass through the portal to teleport."] =

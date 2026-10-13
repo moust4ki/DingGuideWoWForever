@@ -113,7 +113,7 @@ Ding.RegisterGuide({
         { destroy = { 11186, 11188, 11185, 11184 } }, -- level 50
         { go = { 1449, 43.53, 6.78 }, text = "Head out of the cave" }, -- level 50
         { go = { 1449, 45.2, 5.8 }, fly = true, talk = 10583, text = "Flight master at Marshal's Refuge" }, -- level 50
-        { unbank = 11018, keep = 11018 }, -- level 50
+        { collect = { { 11018, 25 } }, keep = 11018 }, -- level 50
         { turnin = 3062, elite = true }, -- level 50
         { turnin = 3063, accept = 4120, -- level 50
           note = "The NPC is indoors." },
@@ -131,7 +131,7 @@ Ding.RegisterGuide({
         { talk = 3309, collect = { { 8685, 1 }, { 9245, 1 }, { 5807, 1 }, { 3900, 12 } }, spots = { { 1454, 49.62, 69.06 } }, -- level 50
           note = "The NPC is indoors." },
         { talk = 3309, bank = { 11018, 11568, 11133 }, -- level 50
-          note = "The NPC is indoors." },
+          note = "The NPC is indoors. You need them later for \"Bungle in the Jungle\", \"The Bait for Lar'korwi\" and \"It's a Secret to Everybody\": keep them in the bank to free bag slots." },
         { train = true, talk = 3344, races = { "Orc", "Tauren", "Troll" }, classes = { "SHAMAN" }, -- level 50
           note = "The NPC is indoors." },
         { train = true, talk = 3328, races = { "Orc", "Scourge", "Troll" }, classes = { "ROGUE" }, -- level 50

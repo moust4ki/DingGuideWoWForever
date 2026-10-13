@@ -21,6 +21,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h34-burning-steppes-and-azshara"
         "Use o item nos Filhotes Negros. Os alvos são pequenos dragões alados. Um cristal vermelho flutua sobre cada corpo.",
     ["The NPC is indoors."] =
         "O NPC está lá dentro.",
+    ["The NPC is indoors. You need it later for \"Felnok Steelspring\": keep it in the bank to free a bag slot."] =
+        "O NPC está lá dentro. Você vai precisar dele mais tarde para \"Felnok Molaço\": guarde-o no banco para liberar espaço nas bolsas.",
     ["This NPC is found down in the Cleft of Shadow."] =
         "Este NPC fica lá embaixo, no Antro das Sombras.",
     ["The NPC stands on the highest level of this structure."] =

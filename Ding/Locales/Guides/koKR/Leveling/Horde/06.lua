@@ -15,6 +15,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h06-ashenvale", {
         "NPC는 건물 안에 있습니다.",
     ["Hunt naga."] =
         "나가를 사냥하세요.",
+    ["The NPC is indoors. You need it later for \"Egg Hunt\": keep it in the bank to free a bag slot."] =
+        "NPC는 건물 안에 있습니다. 나중에 \"알 사냥\" 퀘스트에 필요합니다. 가방 칸을 비우도록 은행에 맡겨 두세요.",
     ["Learn Two-Handed Axes at the weapon master"] =
         "무기 전문가에게서 양손 도끼를 배우세요",
     ["The quest giver waits in the tent."] =

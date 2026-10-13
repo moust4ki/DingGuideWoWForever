@@ -15,6 +15,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h06-ashenvale", {
         "O NPC está lá dentro.",
     ["Hunt naga."] =
         "Cace nagas.",
+    ["The NPC is indoors. You need it later for \"Egg Hunt\": keep it in the bank to free a bag slot."] =
+        "O NPC está lá dentro. Você vai precisar dele mais tarde para \"Ovo tipo extra\": guarde-o no banco para liberar espaço nas bolsas.",
     ["Learn Two-Handed Axes at the weapon master"] =
         "Aprenda Machados de Duas Mãos com o mestre de armas",
     ["The quest giver waits in the tent."] =
