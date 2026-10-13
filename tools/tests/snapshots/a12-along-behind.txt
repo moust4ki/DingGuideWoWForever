@@ -1,0 +1,50 @@
+# a12-along-behind
+# Wetlands: a quest whose step is behind, not finished, its crocolisks right here: along the way
+# frFR, Dwarf HUNTER level 28, window 300 wide, scale 1, mouse
+
+TITLE  Ding! · Les Paluns (27-29)
+STEP   < Étape 17 / 106 >   zone: Les Paluns
+
+ 1  header  [header] no icon, text light grey, semibold 12
+    [23] « Feu interdit »
+    card:
+      | Feu interdit
+      | En cours : ses objectifs sont en dessous.
+      | Quête de niveau 23
+      | Silex brut : 1/8
+      |  
+      | Pourquoi ?
+      | Le guide prévoit cette étape ici.
+      | Clic : la flèche y va.
+ 2  objective  [todo] red background, red dot icon, text white, indented, counter 1/8 red
+      Récupérer 8 Silex brut
+        > Ici, tes cibles sont des gnolls.
+      card:
+        | Feu interdit
+        | À faire.
+        | Quête de niveau 23
+        | Silex brut : 1/8
+        |  
+        | Pourquoi ?
+        | Le guide prévoit cette étape ici.
+        | Clic : la flèche y va.
+ 3  header  [header] no icon, text light grey, semibold 12
+    Autre quête, ses cibles sont ici : [26] « Les devoirs de l'apprenti »
+    card:
+      | Les devoirs de l'apprenti
+      | Pas le travail de cette étape : une autre quête de ton journal, dont les cibles sont tout autour de toi. Fais-la en chemin si tu veux.
+      | Quête de niveau 26
+      | Peau de crocilisque géant : 2/8
+      | Clic : la flèche y va.
+ 4  objective  [other] light grey dot icon, text light grey, indented, counter 2/8 light grey
+      Récupérer 8 Peau de crocilisque géant
+      card:
+        | Les devoirs de l'apprenti
+        | Pas le travail de cette étape : une autre quête de ton journal, dont les cibles sont tout autour de toi. Fais-la en chemin si tu veux.
+        | Quête de niveau 26
+        | Peau de crocilisque géant : 2/8
+        | Clic : la flèche y va.
+
+PROGRESS bar 17 / 106
+MENU (right click on the window): Marquer comme fait | Passer, à faire plus tard
+MENU (right click on a row with a quest): Marquer comme fait | Passer, à faire plus tard | Trouver cette quête dans le guide

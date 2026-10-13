@@ -1,0 +1,55 @@
+# a11-darkshire-accepts
+# Darkshire, Duskwood's first quests: two accepts, one above the player's level, a note, the next steps
+# frFR, Dwarf HUNTER level 25, window 300 wide, scale 1, mouse
+
+TITLE  Ding! · Bois de la Pénombre et Carmines (25-27)
+STEP   < Étape 2 / 160 >   zone: Sombre-Comté
+
+ 1  accept  [todo] red background, red "!" icon, text white
+    Prendre {orange: [28] « La légende de Stalvan »}
+      > Le PNJ est à l'intérieur.
+    card:
+      | La légende de Stalvan
+      | À faire.
+      | Quête de niveau 28, au-dessus du tien (25) : plus difficile, mais le guide la prévoit.
+      | Pas encore dans ton journal de quêtes.
+      |  
+      | Pourquoi ?
+      | Le guide prévoit cette étape ici.
+      | Clic : la flèche y va.
+ 2  accept  [todo] red background, red "!" icon, text white
+    Prendre [25] « Le Totem d'affliction »
+    card:
+      | Le Totem d'affliction
+      | À faire.
+      | Quête de niveau 25
+      | Pas encore dans ton journal de quêtes.
+      |  
+      | Pourquoi ?
+      | Le guide prévoit cette étape ici.
+      | Clic : la flèche y va.
+ 3  previewHeader  [section] no icon, text dim grey, semibold 11
+    Étapes suivantes
+ 4  preview  [preview] grey caret right icon, text dim grey
+    Lie ta pierre de foyer à Darkshire
+    card:
+      | Lie ta pierre de foyer à Darkshire
+      | Une étape plus loin : rien à faire pour l'instant.
+ 5  preview  [preview] grey "!" icon, text dim grey
+    Prendre [24] « Les Veilleurs »
+    card:
+      | Les Veilleurs
+      | Une étape plus loin : rien à faire pour l'instant.
+      | Quête de niveau 24
+      | Pas encore dans ton journal de quêtes.
+ 6  preview  [preview] grey "?" icon, text dim grey
+    Rendre [28] « La légende de Stalvan » et 1 autre quête
+    card:
+      | La légende de Stalvan
+      | Une étape plus loin : rien à faire pour l'instant.
+      | Quête de niveau 28, au-dessus du tien (25) : plus difficile, mais le guide la prévoit.
+      | Pas encore dans ton journal de quêtes.
+
+PROGRESS bar 2 / 160
+MENU (right click on the window): Marquer comme fait | Passer, à faire plus tard
+MENU (right click on a row with a quest): Marquer comme fait | Passer, à faire plus tard | Trouver cette quête dans le guide

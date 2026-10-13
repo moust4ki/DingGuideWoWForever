@@ -486,7 +486,7 @@ T.test("narrow window (240): the header, indented objectives and a notice box fi
         if data.action == "notice" then notice = r end
     end
     T.ok(notice, "no notice: " .. rowTexts())
-    T.eq(H.plain(notice.text:GetText()), L.SKIPPED_GREY:format(Ding.Data:QuestName(916)))
+    T.eq(H.plain(notice.text:GetText()), L.SKIPPED_GREY:format(L.QUEST_WITH_LEVEL:format(Ding.Data:QuestLevel(916), L.QUOTE:format(Ding.Data:QuestName(916)))))
     T.eq(notice.text.fontObject, Ding.UI.Font("regular", 11))
     T.ok(not notice.icon:IsShown() and notice.bg:IsShown(), "a notice is a box without an icon")
     -- Not under the objectives.

@@ -1,0 +1,46 @@
+# a11-extras
+# Rows added under the step: training waiting, a weapon to learn (Ironforge), a gear upgrade
+# frFR, Dwarf HUNTER level 26, window 300 wide, scale 1, mouse
+
+TITLE  Ding! · Bois de la Pénombre et Carmines (25-27)
+STEP   < Étape 4 / 160 >   zone: Forgefer
+
+ 1  accept  [todo] red background, red "!" icon, text white
+    Prendre [24] « Les Veilleurs » — Commandant Althea Ebonlocke, Duskwood
+    card:
+      | Les Veilleurs
+      | À faire.
+      | Quête de niveau 24
+      | Pas encore dans ton journal de quêtes.
+      |  
+      | Pourquoi ?
+      | Le guide prévoit cette étape ici.
+      | Clic : la flèche y va.
+ 2  notice  [notice] grey box background, no icon, text light grey, regular 11
+    Prends le tram pour Stormwind City
+      > Trajet : à pied 4:47, tram 1:50 vers Stormwind City, à pied 5:21, portes 50:06 vers Elwynn Forest, à pied 40:52 (102:56 en tout)
+ 3  extrasHeader  [section] no icon, text dim grey, semibold 11
+    En plus de l'étape
+ 4  service  [extra] blue caret right icon, text white
+    Nouveaux sorts chez ton maître de classe (26s)
+    card:
+      | Nouveaux sorts chez ton maître de classe (26s)
+      | Pas une étape du guide : une suggestion en plus de l'étape.
+      | Clic : la flèche y va.
+ 5  weapon  [extra] blue caret right icon, text white
+    Armes à apprendre : Haches à deux mains, Armes de pugilat — Buliwyf Stonehand, Ironforge
+    card:
+      | Armes à apprendre : Haches à deux mains, Armes de pugilat — Buliwyf Stonehand, Ironforge
+      | Pas une étape du guide : une suggestion en plus de l'étape.
+      | Clic : la flèche y va.
+ 6  gear  [extra] item icon icon, text white, counter +12 blue
+    Équiper [Poignard]
+      > Bouton d'objet : équiper · Clic droit : ignorer
+    card:
+      | item 2208
+      | Mieux que ce que tu portes : +12 au score du guide pour ta classe.
+      | Pas une étape du guide : une suggestion en plus de l'étape.
+
+PROGRESS bar 4 / 160
+MENU (right click on the window): Marquer comme fait | Passer, à faire plus tard
+MENU (right click on a row with a quest): Marquer comme fait | Passer, à faire plus tard | Trouver cette quête dans le guide

@@ -221,6 +221,7 @@ end
 local function isTurnedIn(q)
     return E.turnedIn[q] or Compat.IsQuestCompleted(q)
 end
+function E:IsTurnedIn(q) return isTurnedIn(q) and true or false end
 
 local function isAccepted(q)
     return isTurnedIn(q) or Compat.IsInLog(q)

@@ -1,0 +1,25 @@
+# a11-marked-done
+# A step marked done by hand, seen again with Previous: violet, said in words, its undo
+# frFR, Dwarf HUNTER level 25, window 300 wide, scale 1, mouse
+
+TITLE  Ding! · Bois de la Pénombre et Carmines (25-27)
+STEP   < Étape 4 / 160 >   zone: Sombre-Comté
+
+ 1  accept  [manual] violet background, violet check icon, text light grey
+    Prendre [24] « Les Veilleurs »
+      > Marquée comme faite à la main.
+    card:
+      | Les Veilleurs
+      | Marquée faite à la main : le jeu ne l'a pas confirmé.
+      | Quête de niveau 24
+      | Pas encore dans ton journal de quêtes.
+      |  
+      | Pourquoi ?
+      | Le guide prévoit cette étape ici.
+      | Clic : la flèche y va.
+ 2  unmark  [button] button background, no icon, text white
+    Annuler : ce n'est pas fait
+
+PROGRESS bar 4 / 160
+MENU (right click on the window): Annuler : ce n'est pas fait | Passer, à faire plus tard
+MENU (right click on a row with a quest): Annuler : ce n'est pas fait | Passer, à faire plus tard | Trouver cette quête dans le guide

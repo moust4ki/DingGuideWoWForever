@@ -155,14 +155,18 @@ Contracts between modules:
   spot's spawns, else the next place (without `isGo`). A trip (`go`, `fly`, `hearth` alone)
   is done when the next step for the player is already done by the game's state.
 - `Panel:Rows()` -> lines of the window (`kind`, `text`, `state` = "done" | "todo" |
-  "impossible" | "header" | "notice", `counter`, `sub`), built from `Describe` and the quest
+  "impossible" | "manual" | "skipped" | "header" | "section" | "notice" | "button" | "other" |
+  "extra" | "preview", `counter`, `sub`), built from `Describe` and the quest
   log objectives: a quest's objectives (`nested`) under a row `action = "header"` (its level
   and name) unless a row of the step names the quest; then the notices `action = "notice"`
   (`notice` = "travel" | "trip" | "skipped"; `P:Content` lines of the same kind make one box;
   the step's own rows carry `ofStep`: their tooltip says why, `P.shownStep`),
-  then the rows `along = true` of `Along.shown` (objectives of other quests near the player,
-  after the step's rows and its notes), the extras, the notices "bags" | "cleanup", and the
-  preview (under a row `action = "previewHeader"`). Plain words (SPEC): `Panel:RowMeaning(row)`
+  then the rows `along = true` of `Along.shown` (objectives of other quests, state "other",
+  `other` = "sticky" | "along", each quest under a row `action = "header"` with `other`), the
+  extras (`extra = true`, state "extra", under a row `action = "extrasHeader"`, state "section"),
+  the notices "bags" | "cleanup", and the preview (under a row `action = "previewHeader"`, state
+  "section"). The rules of the window: SPEC "Guide window: rules" (`panel_rules_test`);
+  `tools/panel_snapshot.lua` writes it as text for a scenario of `tools/panel_scenarios.lua`. Plain words (SPEC): `Panel:RowMeaning(row)`
   -> what a row's look means, in words, for its card (`Panel:ShowQuest`: hover, X in focus mode;
   a grey row's `requires` or `waitsOn`); `UI.More(n, quests)` ("and 2 more", never "+2");
   `QuestMobs:Words(e)`, `ItemButton:Explain()`, `MinimapPins:Explain(pin)`: their tooltips.

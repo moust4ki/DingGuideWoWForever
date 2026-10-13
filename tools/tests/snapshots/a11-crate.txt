@@ -1,0 +1,35 @@
+# a11-crate
+# Stormwind, the sealed crate: a turn-in at an object, its fight note, a quest carried for long
+# frFR, Dwarf HUNTER level 27, window 300 wide, scale 1, mouse
+
+TITLE  Ding! · Bois de la Pénombre et Carmines (25-27)
+STEP   < Étape 76 / 160 >   zone: Hurlevent
+
+ 1  turnin  [todo] red background, red "?" icon, text white
+    Rendre {orange: [28] « La légende de Stalvan »}
+      > Prépare-toi à combattre tout de suite.
+    card:
+      | La légende de Stalvan
+      | À faire.
+      | Quête de niveau 28, au-dessus du tien (27) : plus difficile, mais le guide la prévoit.
+      |  
+      | Pourquoi ?
+      | Le guide la rend plus tard, dans environ 11 h 48 : environ 1,200 XP.
+      | Chiffres estimés par le guide.
+      | Clic : la flèche y va.
+ 2  accept  [todo] red background, red "!" icon, text white
+    Prendre {orange: [28] « La légende de Stalvan »}
+    card:
+      | La légende de Stalvan
+      | À faire.
+      | Quête de niveau 28, au-dessus du tien (27) : plus difficile, mais le guide la prévoit.
+      | Pas encore dans ton journal de quêtes.
+      |  
+      | Pourquoi ?
+      | Le guide la rend plus tard, dans environ 11 h 48 : environ 1,200 XP.
+      | Chiffres estimés par le guide.
+      | Clic : la flèche y va.
+
+PROGRESS bar 76 / 160
+MENU (right click on the window): Marquer comme fait | Passer, à faire plus tard
+MENU (right click on a row with a quest): Marquer comme fait | Passer, à faire plus tard | Trouver cette quête dans le guide

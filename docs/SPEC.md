@@ -604,8 +604,9 @@ target (the nearest candidate) goes through a travel planner, the fastest way in
 
 A step's `sticky` quests join a per-character set (`Ding.char.sticky`) once the step is
 reached; while such a quest is in the log and not ready, its unfinished objectives are listed
-under every following step (with the along-the-way rows, first, "Still to do · For “quest”",
-whatever the distance; never twice, never under a step that names the quest), and their targets
+under every following step (with the along-the-way rows, first, under a header "Another quest
+to finish on the way: [29] “quest”", whatever the distance; never twice, never under a step that
+names the quest; not the red of the step's work: Guide window rules 8 and 9), and their targets
 are **low-priority arrow candidates** on the steps with quests (not on a trip: a `go` point
 must stay the arrow's to be validated): such a point counts as twice its distance plus 300
 yards. A quest turned in leaves the set, and so does a quest the active guide only makes
@@ -642,8 +643,13 @@ clutters least:
   what the row's look means: "Still to do." (red), "Done." (green), "Not possible yet: level 12
   required." / "…: take the quest first." / "…: “Name” comes first in its chain." (grey; the
   row's `requires` or `waitsOn`), "Marked done by hand: the game has not confirmed it." (violet),
-  "Skipped for later: still to do." (amber), "A step further on…" (dimmed), "Along the way…",
-  "Still to do: the guide keeps it on screen…", a goal's lone number ("4 still in your bags.").
+  "Skipped for later: still to do." (amber), "A step further on…" (dimmed), "Not this step's
+  work: another quest of your log, whose targets are right around you…" (along the way), "Not
+  this step's work: another quest of your log, which the guide keeps on screen…" (persistent),
+  "Not a step of the guide: a suggestion besides this step." (training, weapon, upgrade, talent,
+  wrap-up, a quest found elsewhere), a quest header's quest: "In progress: its objectives are
+  below." / "Objectives done: ready to turn in." / "Turned in: no longer in your quest log.", a
+  goal's lone number ("4 still in your bags.").
   Then a quest's level ("Quest level 29", the window's "[29]"; above the player's, the orange:
   "Quest level 29, above yours (27): harder, but the guide plans it."), "· before “Name”" in a
   sentence, and the action in the gamepad's words in focus mode ("A: the arrow goes there.",
@@ -664,6 +670,108 @@ clutters least:
   way…", "An upgrade…"), its cooldown and a dimmed look; the NPC directory's "8 min away" and
   "by flight, boat"; the offers panel's "Name (level 24)"; the settings' "levels 10–20" and
   "from level 20".
+
+### Guide window: rules
+
+The guide window is Ding's one interface the player looks at all the time: every rule below
+holds in every language, from 240 to 420 wide and at every scale (50-150 %), with the mouse and
+with a gamepad. `tools/tests/panel_rules_test.lua` (French) and `panel_rules_enus_test.lua`
+(English) check each one, the test named after its number, on the scenarios of
+`tools/panel_scenarios.lua` (Leveling guides, Yendi's reports in game); `tools/panel_snapshot.lua`
+writes the window as plain text (rows, their look in words, counters, sub-lines, notices,
+cards, the step menu), and the French snapshots of `tools/tests/snapshots/` show every change of
+the window in a review (`panel_snapshot_test.lua`).
+
+**Words**
+
+1. **Nothing said by a color or an icon alone.** Every row but a section header, a notice and a
+   control has a card (hover; X in focus mode) whose first line says what the row's look means
+   (Plain words, above): to do, done, not possible yet and why, marked by hand, skipped, a step
+   further on, another quest's objective and why it is there, a row besides the step; a quest
+   header says where its quest stands (in progress, ready to turn in, turned in, not taken). A
+   section header, a notice and a control say it all in their text.
+2. **Why lines** (`Ding.Why`): one line under the first row still to do, after the guide's note,
+   only for a step whose reason is marked short; the whole reason at the end of the cards of the
+   step's own rows, under "Why?"; neither with "Guide explanations" off; never under the finished
+   step kept on screen.
+3. **Texts never cut**: a row's text, its sub-lines and the notices wrap whole and the row grows,
+   at every width and scale. Minimized, the one line may end in an ellipsis: hovering it shows
+   the row whole, with its note, what its look means and "Step N of M".
+4. **Every quest carries its level**: "[28] « Name »" in the headers, the accept, turn-in and
+   complete rows, the next steps and the other quests' headers; a quest above the player's
+   level is orange and its card says why ("Quest level 29, above yours (27): harder, but the
+   guide plans it.").
+
+**The step's quests**
+
+5. A quest's objectives sit under a header "[level] « Name »" (no icon, no background,
+   SemiBold), indented by 8, unless a row of the step names the quest already.
+6. Accept, turn-in and complete rows say the action and the quest; done, in the past
+   ("Accepted / Turned in / Completed [28] « Name »").
+7. **A quest ready to turn in or turned in**: its objective rows are green, in the past tense,
+   with a full counter, whatever the client reports (counts back to 0, a secret "finished"),
+   also when the step is seen again with Previous; its card says it is turned in, never "not in
+   your log yet".
+
+**Other quests**
+
+8. Another quest's objectives (persistent `sticky`, along the way) are listed only when they are
+   relevant: never for a quest a row of the step names, never twice, never while that quest's
+   own step (the step that makes it persistent, else the first one that works on it) is further
+   on than the step shown.
+9. **They never pass for the step's work**: under a header that names the other quest and says
+   why it is there ("Another quest to finish on the way: [29] « Name »", "Another quest, its
+   targets are here: …"), indented rows without the red of a row to do (no background, grey
+   icons and counters); their card begins "Not this step's work".
+
+**Notices, rows besides the step, next steps**
+
+10. **Window-wide messages are notices**: the way there, a trip of the NPC directory, steps
+    passed, bags almost full, quest log almost full: boxes of their own (grey box, no icon, 11
+    Regular), never a sub-line of a row; the guide's notes and the step's own hints stay under
+    the step.
+11. A trip of the NPC directory has a "Cancel the trip" control right under its notice.
+12. **Rows besides the step** (class training, weapon to learn, gear upgrade, talent, a new
+    continent's flight master, a quest found elsewhere in the guide, the section wrap-up) come
+    after the step under a "Besides this step" header and never look like its objectives: no
+    red nor green, no state background, a blue icon; their card says they are not a step of the
+    guide and what a click (A) does.
+13. **Next steps**: under a "Next steps" header, one dimmed row per step, "Turn in [2] « Name »
+    and 1 more quest" (never "+1"), exactly the steps Next goes to, in that order.
+
+**Moving through the guide, marks**
+
+14. While browsing (after Previous), Previous and Next move **one step at a time**, done steps
+    included, and mark nothing; only on the guide's current step does Next mark the step done
+    and move on to the next step to do.
+15. A step just finished stays 1.5 s on screen, green; Next or Skip meanwhile only brings the
+    step the guide moved to.
+16. A step marked done by hand is violet, a skipped one amber; a line under it and the cards say
+    it in words; an "Undo" control under it, and first in the step menu, takes the mark away.
+17. **The step menu says what each entry acts on**: during a trip, the trip's entries first, then
+    "the guide's step"; an entry that would do what the step's mark already says is left out
+    (no "Mark as done" on a step marked done, no "Skip" on a skipped one); "Find this quest in
+    the guide" on a row with a quest.
+
+**Gamepad and mouse**
+
+18. **Each action once**: with a gamepad, a focused control carries its A chip and focus mode's
+    hint bar lists only what no control on screen does (A on a row, X when the row has a card,
+    B); LB / RB chips in the step bar with a gamepad only; without one, no chip and no hint bar.
+19. Focus mode reaches every row (quest headers, objectives, other quests, notices, controls,
+    rows besides the step) and the directory's button above them; X shows the focused row's
+    card; A does what a click does.
+20. The mouse does everything: a click = A, hovering = X, a right click = the step menu.
+
+**Frames and looks**
+
+21. **Own frames only**: the window never opens, closes nor drives a game window (quest log,
+    map, talents); plain frames, nothing protected, no taint (`taint_test`).
+22. **One look per kind**, the same everywhere: the step's rows (the state's background, its
+    icon), quest headers (12 SemiBold, no icon), section headers ("Next steps", "Besides this
+    step": 11 SemiBold, dimmed, no icon), notices (grey box, 11 Regular), controls (button
+    background, lighter under the mouse), rows besides the step (no background, blue icon), other
+    quests (no background, grey icon), next steps (dimmed). Colors only through `UI.C`.
 
 ### Minimap pins (`UI/MinimapPins.lua`)
 
@@ -727,9 +835,10 @@ now shows, on its row:
 Under the current step, the window lists the unfinished objectives of the other quests of the
 log whose targets (monsters, objects, item sources) are within 100 yards of the player: they
 stay listed until the player is 160 yards away (no flicker), the objective is done or the
-quest leaves the log. Three at most, the guide's next quests first, after the step's own rows;
-the first one says "Along the way · For “quest”". Hovering, clicking (A in focus mode) works as
-for the step's objectives. The objective the level step already farms is not repeated. Looked
+quest leaves the log. Three at most, the guide's next quests first, after the step's own rows,
+each quest under a header "Another quest, its targets are here: [26] “quest”", its rows grey (no
+background, grey icon and counter: not the step's work, Guide window rules 8 and 9). Hovering,
+clicking (A in focus mode) works as for the step's objectives. The objective the level step already farms is not repeated. Looked
 at every 2 s while the window is shown, and on every quest log change.
 
 ### Quest monsters (`UI/QuestMobs.lua`)
@@ -804,7 +913,8 @@ accent #5BB4FF, the Noto Sans font shipped with the addon, rounded shapes from t
   "Mark the guide's step as done", "Skip the guide's step" (Yendi took "Mark as done" for the
   NPC and lost a step). Without a trip: "Mark as done" (like "Next") or
   "Skip, do it later" (like a right click on "Next"). On a step marked done or skipped, its undo
-  first ("Undo: mark as not done", "Undo the skip"); on a line with a quest "Find this
+  first ("Undo: mark as not done", "Undo the skip"), and not the entry the mark already says (no
+  "Mark as done" on a step marked done, no "Skip" on a skipped one); on a line with a quest "Find this
   quest in the guide". On the gamepad, the "Next step" and
   "Skip step (do it later)" bindings do the same. A step settled by hand keeps its mark
   (`Engine:StepMark`: `Ding.char.manual`, `Ding.char.skipped`), visible when you come back to
