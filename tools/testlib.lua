@@ -30,12 +30,14 @@ return function(combined, opts)
         T.H, T.Ding = H, Ding
 
         -- Boot like the game: saved variables, login, the quest log a moment later, then
-        -- close the first-launch window.
+        -- close the first-launch windows (the setup assistant, then the Keybinds tab it opens).
         _G.DingDB, _G.DingCharDB = nil, nil
         H.fire("ADDON_LOADED", "Ding")
         H.fire("PLAYER_LOGIN")
         H.fire("QUEST_LOG_UPDATE")
         H.tick(2.5)
+        if Ding.Setup then Ding.Setup:Close() end
+        H.flush()
         if Ding.Config.frame then Ding.Config:Close() end
     end
 

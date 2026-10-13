@@ -92,6 +92,10 @@ Ding/
     Config.lua      Ding.Config: settings window, six tabs by intent (Config.TAB keys: guide,
                     route, automation, arrow, bindings, appearance), titled blocks, pages for
                     long lists (OpenPage), folded rows, "Defaults for this tab"; first launch
+                    (after the setup assistant: Config:Welcome, the Keybinds tab)
+    Setup.lua       Ding.Setup: the setup assistant, four screens of choices (Setup.SCREENS), once
+                    per account at the first launch (Setup:FirstLaunch), again from the Guide tab
+                    or /ding intro
   Locales/
     enUS.lua        interface texts in English (reference, default language)
     <locale>.lua    interface texts of one language (frFR, deDE, esES, ptBR, koKR, zhCN, zhTW)
@@ -256,11 +260,21 @@ Contracts between modules:
   `Finder:Go(kind)`, `Finder:Cancel([quiet])`), read by the arrow and the guide window; the
   engine ends it whenever the player moves the guide (Next, Skip, Prev, BackToIncomplete,
   SetGuide).
+- Setup assistant: `Setup:Open(screen, back)` (`back(input)` runs once the player closes it, one
+  frame later, `input` = "xbox" | "ps" | "mouse": the settings it came from, the first launch's
+  Keybinds tab), `Setup:Close(quiet)` (`quiet`: another Ding window takes over, `back` does not
+  run; the settings, the directory and the import window call it), `Setup:FirstLaunch(after)`
+  (Config:Init: 2 s after login, the assistant then `after(input)`, or `after()` alone once
+  done), `Setup:Keep()` ("Keep the recommended settings": every setting not changed in this run
+  back to `Ding.DEFAULTS`), `Setup:IsShown()`. A choice of a screen: `{ kind = "check" | "radio"
+  | "go", id, label, sub, tag, setting = { get, set, recommended[, custom] }, value, run }`; a
+  check writes its setting at once, through the same calls as the settings window.
 - `Ding.db` (DingDB, account): `panel` (position, `scale` 0.5-1.5, `width` 240-420, `locked`,
   `bgAlpha`, `compactInCombat`, `hideInInstance`, `keyHints`, `itemButton`), `arrow`
   (position, `size` 40-80, `style`, `mode`, `tomtom`, `loop`: farming loop, `worldMap`: the
   target as the client's map waypoint), `item` (position of the item button),
-  `minimap` (`shown`, `angle`), `ui` (`buttonStyle`, `sound`, `welcomed`, `autoAccept`,
+  `minimap` (`shown`, `angle`), `ui` (`buttonStyle`, `sound`, `welcomed`, `setupDone` (the
+  setup assistant was closed by the player; a fight during the first launch's keeps it pending), `autoAccept`,
   `autoTurnin`, `skipGrey`, `hearth`, `deathSkip`, `dungeons`, `elites`, `chooseReward`,
   `sellGrey`, `repair`, `markTarget`, `serviceSteps`, `trainerSteps`, `flightSteps`, `autoEquip`, `autoFly`, `offers`, `dungeonChoice` (`[name] = bool`),
   `mobIcons`, `mobTooltip`, `farPlates`), `farPlatesFrom` (the nameplate distance before

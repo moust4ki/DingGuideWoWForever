@@ -35,14 +35,24 @@ local fire, flush, tick, press, hold, release = H.fire, H.flush, H.tick, H.press
 local padDown, focusOn, selectTab, play = H.padDown, H.focusOn, H.selectTab, H.play
 
 local function firstLaunch()
-    local C = Ding.Config
+    local C, S = Ding.Config, Ding.Setup
+    -- The setup assistant first (UI/Setup.lua): RB through its screens, Finish on the last one.
+    expect(S:IsShown() and S.screen == 1, "first launch: the setup assistant does not open")
+    expect(not (C.frame and C.frame:IsShown()), "first launch: the settings open over the setup assistant")
+    for _ = 1, #S.SCREENS do press("PADRSHOULDER") end
+    expect(not S:IsShown(), "first launch: Finish on the last screen does not close the setup assistant")
+    expect(Ding.db.ui.setupDone, "first launch: the setup assistant is not remembered")
+    expect(overrides[S.frame] == nil, "first launch: the setup assistant's temporary bindings are left")
+    -- Then the Keybinds tab (a gamepad is plugged in).
     expect(C.frame and C.frame:IsShown(), "first launch: the settings window does not open")
     if not (C.frame and C.frame:IsShown()) then return end
     expect(C.tab == C.TAB.bindings and C.focus and C.focus.opts.action == "DING_CONFIG",
         'first launch: focus expected on "Open Ding settings"')
     expect(Ding.db.ui.welcomed, "first launch not remembered")
     expect(#registered == 1, "AddOns > Ding category not registered")
-    expect(UISpecialFrames[1] == "DingConfigFrame", "Escape would not close the window")
+    local special = table.concat(UISpecialFrames, ",")
+    expect(special:find("DingConfigFrame", 1, true) and special:find("DingSetup", 1, true),
+        "Escape would not close the windows")
     press("PAD1")
     expect(C.capturing, "A does not start waiting for a button")
     padDown("PADLTRIGGER", { shift = true })
