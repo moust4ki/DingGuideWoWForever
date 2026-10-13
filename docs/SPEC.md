@@ -988,33 +988,35 @@ accent #5BB4FF, the Noto Sans font shipped with the addon, rounded shapes from t
   move around the minimap; can be hidden (Appearance, `/ding minimap`).
 - **Setup assistant** (`UI/Setup.lua`; Yendi, in game: lost on a long Duskwood - Westfall -
   Duskwood trip, on quests the NPCs offer that the guide leaves out, on a bank step; then, on six
-  pages of text: "if this window pops up I press next, next, next without reading"). "Ding! ·
-  Setup", five screens, each a title, one sentence in plain words, then choices:
-  1. **Welcome**: what Ding does in one sentence, then how the player plays (one choice):
+  pages of text: "if this window pops up I press next, next, next without reading"; then "still
+  too many options"). "Ding! · Setup", four screens, each a title, one simple line saying what it
+  is for, then three choices at most:
+  1. **Welcome** ("To start, tell Ding! how you play."), how the player plays (one choice):
      "Gamepad, Xbox buttons", "Gamepad, PlayStation buttons" (`ui.buttonStyle`, at once),
      "Keyboard and mouse" (the button names stay; the Keybinds tab does not follow and
      `ui.welcomed` is set). Preselected and tagged "Recommended": the gamepad in use
      (`Gamepad:Active`) with its button names, else keyboard and mouse.
-  2. **What Ding! does for you**: accept and turn in the guide's quests (`autoAccept` and
-     `autoTurnin` together), sell gray items, repair, choose the best reward, take the planned
-     flight.
-  3. **Your route**: "Sometimes the guide sends you far or leaves a quest out: it's on purpose,
-     and it tells you why."; hearthstone steps, elite quests, dungeon quests (all or none, as the
-     Route tab's page: the choices per dungeon go), death skips.
-  4. **Help on screen**: the marks above quest monsters (`mobIcons`), the guide's explanations
-     (`panel.why`, shown only once that option exists in `Ding.DEFAULTS`: claude/why-reasons),
-     the panel beside an NPC's window (`offers`), the weapon to learn (`panel.weaponReminder`).
-  5. **What do you want to do first?**: one row per guide pack (`Ding:GuidePacks`: its sections
+  2. **What Ding! does for you** ("To save you time, Ding! can do some things for you."): accept
+     and turn in the guide's quests (`autoAccept` and `autoTurnin` together), sell gray items,
+     repair. Choosing the reward and taking the planned flight stay in the Automation tab only:
+     both are off by default and are the player's judgment.
+  3. **Your route** ("Sometimes the guide sends you far or leaves a quest out: it's on purpose,
+     and it tells you why."): hearthstone steps, group quests (elite quests and every dungeon's
+     quests together, as the Route tab's page does for dungeons: the choices per dungeon go),
+     death skips.
+  4. **What do you want to do first?**: one row per guide pack (`Ding:GuidePacks`: its sections
      for an item pack, else the levels it covers for the character; its author for a community
      pack; "Recommended" on Ding's Leveling, a check on the current one), then "Take my guide up
      where I am" (`Engine:Reset`). A pick sets the pack like the Guide tab (`Engine:SetPack`) and
      ends the assistant; Finish keeps the guide. The sentence says that everything can be changed
      later in the settings.
-  A check or a choice writes its setting at once, through the same calls as the settings window
-  (`Engine:Update`, `Offers:Apply`, `QuestMobs:Apply`, `Panel:Update`); a screen shows the
-  current values. **"Keep the recommended settings"** (a button on every screen, Y) ends it: every
-  setting the player did not change in this run goes back to its default (`Ding.DEFAULTS`); the
-  guide stays. B, Start, Esc and the close cross end it as it is. Shown once per account
+  The help on screen (quest monster marks, the guide's explanations, the panel beside an NPC's
+  window, the weapon to learn) is not asked: on by default, in the settings. A check or a
+  choice writes its setting at once, through the same calls as the settings window
+  (`Engine:Update`); a screen shows the current values. **"Keep the recommended settings"** (a
+  button on every screen, Y) ends it: every setting the player did not change in this run goes
+  back to its default (`Ding.DEFAULTS`); the settings it does not ask and the guide stay. B,
+  Start, Esc and the close cross end it as it is. Shown once per account
   (`Ding.db.ui.setupDone`), 2 s after the first login, **before** the Keybinds tab of the first
   launch, which follows once it is closed (with a gamepad); an account that already had Ding
   sees it once too (new in 1.4.0). Closed by a fight (the temporary bindings must go), the first

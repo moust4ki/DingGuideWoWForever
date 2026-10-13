@@ -90,7 +90,7 @@ Ding/
                     route, automation, arrow, bindings, appearance), titled blocks, pages for
                     long lists (OpenPage), folded rows, "Defaults for this tab"; first launch
                     (after the setup assistant: Config:Welcome, the Keybinds tab)
-    Setup.lua       Ding.Setup: the setup assistant, five screens of choices (Setup.SCREENS), once
+    Setup.lua       Ding.Setup: the setup assistant, four screens of choices (Setup.SCREENS), once
                     per account at the first launch (Setup:FirstLaunch), again from the Guide tab
                     or /ding intro
   Locales/

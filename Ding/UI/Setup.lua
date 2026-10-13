@@ -1,10 +1,13 @@
 -- The setup assistant ("Ding! · Setup"; Yendi: a window of text gets "next, next, next"
--- without reading): five short screens, each one sentence then choices, the current or
--- recommended choice already selected. 1 how you play (gamepad Xbox / PlayStation, keyboard and
--- mouse: the button names, and whether the Keybinds tab follows), 2 what Ding does for you, 3 the
--- route (the steps behind an option), 4 the help on screen, 5 what to do first (a guide pack, or
--- the current guide taken up where you are: a pick ends the assistant). A choice writes its
--- setting at once, as the settings window does. "Keep the recommended settings" ends it from any
+-- without reading, then "still too many options"): four short screens, each one line saying
+-- what it is for then three choices at most, the current or recommended choice already
+-- selected. 1 how you play (gamepad Xbox / PlayStation, keyboard and mouse: the button names,
+-- and whether the Keybinds tab follows), 2 what Ding does for you, 3 the route (the steps behind
+-- an option), 4 what to do first (a guide pack, or the current guide taken up where you are: a
+-- pick ends the assistant). The help on screen (quest monster marks, the guide's explanations,
+-- the NPC panel, the weapon to learn) is on by default and stays in the settings, as do the
+-- rarer automations (rewards, flights). A choice writes its setting at once, as the settings
+-- window does. "Keep the recommended settings" ends it from any
 -- screen: every setting the player did not change here goes back to its default (Ding.DEFAULTS).
 -- Shown once per account at the first launch (Config:Init), again from the Guide tab or
 -- /ding intro. Gamepad (temporary bindings, out of combat only): the D-pad up / down between the
@@ -51,7 +54,6 @@ local function setting(section, key, after)
 end
 
 local function engineUpdate() Ding.Engine:Update() end
-local function panelUpdate() if Ding.Panel.frame then Ding.Panel:Update() end end
 
 -- Accepting and turning in: one choice for the two settings.
 local QUESTS = {
@@ -60,15 +62,19 @@ local QUESTS = {
     recommended = function() return (Ding.DEFAULTS.ui.autoAccept and Ding.DEFAULTS.ui.autoTurnin) and true or false end,
 }
 
--- Dungeon quests: all or none, as the Route tab's page does (the choices per dungeon go).
-local DUNGEONS = {
-    get = function() return ui().dungeons and true or false end,
+-- Group quests: the elite quests and every dungeon's quests together (the Route tab's page:
+-- all or none, the choices per dungeon go). One question: does the player play in a group?
+local GROUP = {
+    get = function() return (ui().elites and ui().dungeons) and true or false end,
     set = function(v)
-        ui().dungeons, ui().dungeonChoice = v and true or false, nil
+        v = v and true or false
+        ui().elites, ui().dungeons, ui().dungeonChoice = v, v, nil
         engineUpdate()
     end,
-    recommended = function() return Ding.DEFAULTS.ui.dungeons and true or false end,
-    custom = function() return ui().dungeonChoice ~= nil and next(ui().dungeonChoice) ~= nil end,
+    recommended = function() return (Ding.DEFAULTS.ui.elites and Ding.DEFAULTS.ui.dungeons) and true or false end,
+    custom = function()
+        return ui().elites ~= ui().dungeons or (ui().dungeonChoice ~= nil and next(ui().dungeonChoice) ~= nil)
+    end,
 }
 
 ---------------------------------------------------------------------------
@@ -99,32 +105,15 @@ local function autoChoices()
         check("quests", L.SETUP_AUTO_QUESTS, QUESTS),
         check("sell", L.SETUP_AUTO_SELL, setting("ui", "sellGrey")),
         check("repair", L.SETUP_AUTO_REPAIR, setting("ui", "repair")),
-        check("reward", L.SETUP_AUTO_REWARD, setting("ui", "chooseReward")),
-        check("fly", L.SETUP_AUTO_FLY, setting("ui", "autoFly")),
     }
 end
 
 local function routeChoices()
     return {
         check("hearth", L.SETUP_ROUTE_HEARTH, setting("ui", "hearth", engineUpdate)),
-        check("elites", L.SETUP_ROUTE_ELITES, setting("ui", "elites", engineUpdate)),
-        check("dungeons", L.SETUP_ROUTE_DUNGEONS, DUNGEONS),
+        check("group", L.SETUP_ROUTE_GROUP, GROUP),
         check("deathSkip", L.SETUP_ROUTE_DEATHSKIP, setting("ui", "deathSkip", engineUpdate)),
     }
-end
-
-local function helpChoices()
-    local list = {
-        check("mobs", L.SETUP_HELP_MOBS, setting("ui", "mobIcons", function() Ding.QuestMobs:Apply() end)),
-    }
-    -- HOOK (claude/why-reasons): the guide's explanations ("Why?", Ding.db.panel.why, on by
-    -- default) once that option exists; until then the choice is left out.
-    if Ding.DEFAULTS.panel.why ~= nil then
-        list[#list + 1] = check("why", L.SETUP_HELP_WHY, setting("panel", "why", panelUpdate))
-    end
-    list[#list + 1] = check("offers", L.SETUP_HELP_OFFERS, setting("ui", "offers", function() Ding.Offers:Apply() end))
-    list[#list + 1] = check("weapon", L.SETUP_HELP_WEAPON, setting("panel", "weaponReminder", panelUpdate))
-    return list
 end
 
 -- A pack's line under its name: its sections for an item pack ("Cozy Sleeping Bag"), else the
@@ -173,7 +162,6 @@ local SCREENS = {
     { title = function() return L.SETUP_WELCOME_TITLE, L.SETUP_WELCOME_TEXT end, choices = inputChoices },
     { title = function() return L.SETUP_AUTO_TITLE, L.SETUP_AUTO_TEXT end, choices = autoChoices },
     { title = function() return L.SETUP_ROUTE_TITLE, L.SETUP_ROUTE_TEXT end, choices = routeChoices },
-    { title = function() return L.SETUP_HELP_TITLE, L.SETUP_HELP_TEXT end, choices = helpChoices },
     { title = function() return L.SETUP_GUIDE_TITLE, L.SETUP_GUIDE_TEXT end, choices = guideChoices },
 }
 S.SCREENS = SCREENS

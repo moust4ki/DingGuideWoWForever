@@ -1,6 +1,6 @@
 -- The setup assistant (UI/Setup.lua; Yendi: a window of text gets "next, next, next" without
--- reading): five screens of choices, the current or recommended one selected, shown once per
--- account at the first launch before the Keybinds tab; "Keep the recommended settings" ends it
+-- reading, then "still too many options"): four screens, three choices at most, the current or
+-- recommended one selected, shown once per account at the first launch before the Keybinds tab; "Keep the recommended settings" ends it
 -- from any screen; the last screen picks the guide. Each choice writes its setting; gamepad
 -- (D-pad, A, LB / RB, Y, B: each action once) and mouse; every language has every string and
 -- every text fits.
@@ -170,15 +170,9 @@ local CHECKS = {
     { 2, "SETUP_AUTO_QUESTS", function(ui) return ui.autoAccept and ui.autoTurnin end },
     { 2, "SETUP_AUTO_SELL", function(ui) return ui.sellGrey end },
     { 2, "SETUP_AUTO_REPAIR", function(ui) return ui.repair end },
-    { 2, "SETUP_AUTO_REWARD", function(ui) return ui.chooseReward end },
-    { 2, "SETUP_AUTO_FLY", function(ui) return ui.autoFly end },
     { 3, "SETUP_ROUTE_HEARTH", function(ui) return ui.hearth end },
-    { 3, "SETUP_ROUTE_ELITES", function(ui) return ui.elites end },
-    { 3, "SETUP_ROUTE_DUNGEONS", function(ui) return ui.dungeons end },
+    { 3, "SETUP_ROUTE_GROUP", function(ui) return ui.elites and ui.dungeons end },
     { 3, "SETUP_ROUTE_DEATHSKIP", function(ui) return ui.deathSkip end },
-    { 4, "SETUP_HELP_MOBS", function(ui) return ui.mobIcons end },
-    { 4, "SETUP_HELP_OFFERS", function(ui) return ui.offers end },
-    { 4, "SETUP_HELP_WEAPON", function() return Ding.db.panel.weaponReminder end },
 }
 
 T.test("each choice writes its setting at once, both ways, with A and with a click", function()
@@ -198,7 +192,7 @@ T.test("each choice writes its setting at once, both ways, with A and with a cli
     closeAll()
 end)
 
-T.test("quests: one choice for accepting and turning in; dungeons: all or none, the choices per dungeon go", function()
+T.test("quests: one choice for accepting and turning in; group quests: elites and every dungeon together", function()
     start()
     Ding.db.ui.autoTurnin = false
     S:Open(2)
@@ -206,35 +200,42 @@ T.test("quests: one choice for accepting and turning in; dungeons: all or none, 
     pressOn(L.SETUP_AUTO_QUESTS)
     T.ok(Ding.db.ui.autoAccept and Ding.db.ui.autoTurnin, "both not on")
     S:Show(3)
-    Ding.db.ui.dungeonChoice = { Deadmines = true }
-    pressOn(L.SETUP_ROUTE_DUNGEONS)
-    T.ok(Ding.db.ui.dungeons and Ding.db.ui.dungeonChoice == nil, "dungeons: not all, or the choices per dungeon stay")
+    Ding.db.ui.elites, Ding.db.ui.dungeons, Ding.db.ui.dungeonChoice = true, false, { Deadmines = true }
+    S:Show(3)
+    T.ok(not rowOf(L.SETUP_ROUTE_GROUP).on, "shown on with the dungeons off")
+    pressOn(L.SETUP_ROUTE_GROUP)
+    T.ok(Ding.db.ui.elites and Ding.db.ui.dungeons and Ding.db.ui.dungeonChoice == nil,
+        "group quests: not both on, or the choices per dungeon stay")
+    pressOn(L.SETUP_ROUTE_GROUP)
+    T.ok(not Ding.db.ui.elites and not Ding.db.ui.dungeons, "group quests: not both off")
     closeAll()
 end)
 
-T.test("the guide's explanations: left out until that option exists; shown and written once it does", function()
+T.test("few choices: three at most on a settings screen; the help on screen and the rarer automations are not asked", function()
     start()
-    S:Open(4)
-    T.ok(rowOf(L.SETUP_HELP_WHY) == nil or Ding.DEFAULTS.panel.why ~= nil, "the explanations without their option")
+    S:Open()
+    for screen = 1, #S.SCREENS - 1 do
+        S:Show(screen)
+        T.ok(#rows() <= 3, ("screen %d: %d choices"):format(screen, #rows()))
+    end
+    T.eq(#S.SCREENS, 4, "screens")
+    for _, def in ipairs(S.SCREENS) do
+        for _, choice in ipairs(def.choices()) do
+            T.ok(choice.id ~= "mobs" and choice.id ~= "why" and choice.id ~= "offers" and choice.id ~= "weapon"
+                and choice.id ~= "reward" and choice.id ~= "fly", "asked: " .. tostring(choice.id))
+        end
+    end
     closeAll()
-    -- The option of claude/why-reasons (Ding.db.panel.why, on by default).
-    local had = Ding.DEFAULTS.panel.why
-    Ding.DEFAULTS.panel.why, Ding.db.panel.why = true, true
-    S:Open(4)
-    T.ok(rowOf(L.SETUP_HELP_WHY) and rowOf(L.SETUP_HELP_WHY).on, "the explanations not offered")
-    pressOn(L.SETUP_HELP_WHY)
-    T.eq(Ding.db.panel.why, false, "the explanations not turned off")
-    closeAll()
-    Ding.DEFAULTS.panel.why, Ding.db.panel.why = had, had
 end)
 
 ---------------------------------------------------------------------------
 -- Keep the recommended settings, close
 ---------------------------------------------------------------------------
--- Settings away from the defaults, as an account that played with them.
+-- Settings away from the defaults, as an account that played with them: some the assistant
+-- asks, some it leaves to the settings (reward, monster marks, weapon reminder).
 local function customize()
     local ui = Ding.db.ui
-    ui.chooseReward, ui.elites, ui.mobIcons, ui.sellGrey = true, true, false, false
+    ui.chooseReward, ui.elites, ui.mobIcons, ui.sellGrey, ui.deathSkip = true, true, false, false, true
     ui.dungeonChoice = { Deadmines = true }
     Ding.db.panel.weaponReminder = false
 end
@@ -244,17 +245,19 @@ T.test("Keep the recommended settings, from every screen: the defaults, but for 
         start()
         customize()
         S:Open(2)
-        pressOn(L.SETUP_AUTO_FLY)           -- changed here: kept
-        T.ok(Ding.db.ui.autoFly, "autoFly not on")
+        pressOn(L.SETUP_AUTO_REPAIR)        -- changed here: kept
+        T.ok(not Ding.db.ui.repair, "repair not off")
         S:Show(screen)
         T.ok(chipsOn(S.frame.keep).PAD4, "Y not on Keep the recommended settings")
         H.press("PAD4")
         T.ok(not S:IsShown(), screen .. ": Y does not end the assistant")
         local ui = Ding.db.ui
-        T.ok(ui.autoFly, screen .. ": a choice made here went back to its default")
-        T.ok(not ui.chooseReward and not ui.elites and ui.mobIcons and ui.sellGrey, screen .. ": not back to the defaults")
+        T.ok(not ui.repair, screen .. ": a choice made here went back to its default")
+        T.ok(not ui.elites and ui.sellGrey and not ui.deathSkip, screen .. ": not back to the defaults")
         T.ok(ui.dungeonChoice == nil, screen .. ": the choices per dungeon stay")
-        T.ok(Ding.db.panel.weaponReminder, screen .. ": the weapon reminder not back on")
+        -- What the assistant does not ask stays as the player set it.
+        T.ok(ui.chooseReward and not ui.mobIcons and not Ding.db.panel.weaponReminder,
+            screen .. ": a setting the assistant does not ask changed")
         T.eq(Ding.Engine.guide.id, LEVELING, screen .. ": the guide changed")
     end
     -- With the mouse: the button.
@@ -282,7 +285,7 @@ T.test("B, Start, the close cross or Esc close it as it is: the settings stay as
         end
         T.ok(not S:IsShown(), how .. ": not closed")
         T.ok(Ding.db.ui.setupDone, how .. ": not remembered as done")
-        T.ok(Ding.db.ui.chooseReward and Ding.db.ui.elites and not Ding.db.ui.mobIcons, how .. ": settings changed")
+        T.ok(Ding.db.ui.elites and not Ding.db.ui.sellGrey and Ding.db.ui.deathSkip, how .. ": settings changed")
         T.eq(bindings(), 0, how .. ": temporary bindings left")
     end
 end)
@@ -297,12 +300,12 @@ T.test("what first: the packs (Leveling recommended, the current one checked) an
         Ding.RegisterGuide({ id = "test-pack-1", pack = "test-pack", title = "Test", minLevel = 1, maxLevel = 10,
             steps = { { accept = 456 }, { turnin = 456 } } })
     end
-    S:Open(5)
+    S:Open(4)
     local leveling, zones, items = Ding:GetGuidePack(Ding.BUILTIN_PACK), Ding:GetGuidePack(Ding.ZONES_PACK),
         Ding:GetGuidePack(Ding.ITEMS_PACK)
     local r = rowOf(leveling.title)
     T.ok(r and r.on and r.choice.tag == L.SETUP_RECOMMENDED, "Leveling not recommended and checked")
-    T.eq(rows()[S.focus[5]], r, "the focus is not on the current guide")
+    T.eq(rows()[S.focus[4]], r, "the focus is not on the current guide")
     T.ok(rowOf(zones.title) and not rowOf(zones.title).on, "Zones missing")
     T.ok(rowOf(items.title).choice.sub:find(Ding:GetGuide(ITEMS).title, 1, true), "the item pack does not name its item")
     T.ok(rowOf("Test pack").choice.sub:find("Someone", 1, true), "a community pack without its author")
@@ -313,18 +316,18 @@ T.test("what first: the packs (Leveling recommended, the current one checked) an
     T.ok(not S:IsShown(), "a pick does not end the assistant")
     T.eq(Ding.Engine.guide.pack, Ding.ZONES_PACK, "Zones not taken")
     -- A click on another.
-    S:Open(5)
+    S:Open(4)
     click(rowOf(leveling.title))
     T.eq(Ding.Engine.guide.pack, Ding.BUILTIN_PACK, "a click does not take Leveling")
     -- Where I am: the guide taken up again.
     local reset, called = Ding.Engine.Reset, false
     Ding.Engine.Reset = function() called = true end
-    S:Open(5)
+    S:Open(4)
     pressOn(L.SETUP_RESUME)
     Ding.Engine.Reset = reset
     T.ok(called and not S:IsShown(), "taking the guide up where I am does not run")
     -- Finish keeps the guide.
-    S:Open(5)
+    S:Open(4)
     H.press("PADRSHOULDER")
     T.ok(not S:IsShown(), "RB on the last screen does not finish")
     T.eq(Ding.Engine.guide.pack, Ding.BUILTIN_PACK, "Finish changed the guide")
@@ -435,8 +438,8 @@ end)
 T.test("a fight: the first launch's assistant closes, then comes back where it was, its choices kept", function()
     firstLaunch()
     H.press("PADRSHOULDER")
-    pressOn(L.SETUP_AUTO_FLY)
-    T.ok(Ding.db.ui.autoFly)
+    pressOn(L.SETUP_AUTO_SELL)
+    T.ok(not Ding.db.ui.sellGrey)
     -- The event comes just before the lockdown, while bindings can still be cleared.
     H.fire("PLAYER_REGEN_DISABLED")
     H.setCombat(true)
@@ -450,7 +453,7 @@ T.test("a fight: the first launch's assistant closes, then comes back where it w
     H.tick(1.5)
     T.ok(S:IsShown() and S.screen == 2, "not back on its screen after the fight")
     H.press("PAD4")
-    T.ok(Ding.db.ui.autoFly, "the choice made before the fight was not kept")
+    T.ok(not Ding.db.ui.sellGrey, "the choice made before the fight was not kept")
     T.ok(Cfg.frame and Cfg.frame:IsShown() and Cfg.tab == Cfg.TAB.bindings, "the Keybinds tab does not follow")
     closeAll()
     -- Reopened by hand, a fight only closes it.
@@ -503,9 +506,6 @@ T.test("every language: every string, texts never cut, nothing overlaps, a small
     local english = loadStrings("enUS")
     local languages = { "enUS" }
     for _, name in ipairs(dofile(tools .. "/guide_texts.lua").LOCALES) do languages[#languages + 1] = name end
-    -- The why choice too (claude/why-reasons' option), as if it were there.
-    local had = Ding.DEFAULTS.panel.why
-    Ding.DEFAULTS.panel.why = true
     for _, name in ipairs(languages) do
         local strings = loadStrings(name)
         for key in pairs(english) do
@@ -543,7 +543,6 @@ T.test("every language: every string, texts never cut, nothing overlaps, a small
             closeAll()
         end
     end
-    Ding.DEFAULTS.panel.why = had
     useStrings(own)
     pad(true)
 end)

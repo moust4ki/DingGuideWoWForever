@@ -30,12 +30,12 @@ instead from the *Arrow* tab of the settings (off by default).
 - **Guides optimized for XP per hour.** The routes are generated offline from the game data:
   quests grouped to avoid back-and-forth, poor-value detours left out, never a quest above
   your level (one level above at most). The new quests of Forever are included.
-- **A setup assistant** at the first launch: five short screens of choices, the recommended
-  ones already selected. How you play (gamepad or keyboard and mouse), what Ding does for you
-  (quests, gray items, repairs, rewards, flights), your route (hearthstone, elite and dungeon
-  quests, death skips), the help on screen, then the guide to start with. "Keep the recommended
-  settings" ends it from any screen; everything can be changed later in the settings. Run it
-  again from the *Guide* tab ("Run the setup assistant again") or with `/ding intro`.
+- **A setup assistant** at the first launch: four short screens, a few choices each, the
+  recommended ones already selected. How you play (gamepad or keyboard and mouse), what Ding
+  does for you (quests, gray items, repairs), your route (hearthstone, group quests, death
+  skips), then the guide to start with. "Keep the recommended settings" ends it from any
+  screen; everything else is on by default, and all of it can be changed later in the settings.
+  Run it again from the *Guide* tab ("Run the setup assistant again") or with `/ding intro`.
 - **Resumes where you really are.** Ding picks the guide for your race, class and level. When
   you resume, it first sends you to finish the guide's old quests still in your log, then
   skips what you have done.

@@ -645,8 +645,8 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   - The guide's focus mode has no button doing what a hint says: it does not change.
 
 - **Setup assistant** (not in the mockup, `UI/Setup.lua`; Yendi: an onboarding of choices, not
-  of text): a 460-wide window like the directory's (window look, opaque, DIALOG). Title bar 32
-  high: "Ding! · Setup" 13 SemiBold (Ding! in `accent`, the dot `text.disabled`), the close
+  of text, three choices at most per screen): a 460-wide window like the directory's (window look,
+  opaque, DIALOG). Title bar 32 high: "Ding! · Setup" 13 SemiBold (Ding! in `accent`, the dot `text.disabled`), the close
   cross with the round B chip before it (gamepad). A screen, 20 in: its title 16 SemiBold
   `text` (the arrow distance's size), 6 below one sentence 12 Regular `text`, both wrapped
   whole; 12 below, the choices, 12 from the sides, 2 apart: rows of the settings' look (inset
@@ -666,7 +666,7 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   `circle` in `text.disabled`, the current screen's 8 units in `accent`, hover `text.secondary`).
   No hint bar: every action has its control.
 - **Settings, Guide tab** (Help): a header "Help" and a button row "Run the setup assistant
-  again" ("How you play, automation, route, help and guide.", button "Open"), before "Defaults
+  again" ("How you play, automation, route and guide.", button "Open"), before "Defaults
   for this tab".
 
 ## To check in game (Forever 1.60)

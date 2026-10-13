@@ -4,9 +4,9 @@
 
 Nothing else to install: QuestieDB is no longer needed, and TomTom stays optional.
 
-- **Setup assistant** at the first launch: five short screens to choose how you play, what
-  Ding! does for you, your route, the help on screen and the guide to start with, the
-  recommended choices already selected. "Keep the recommended settings" ends it at once; run
+- **Setup assistant** at the first launch: four short screens to choose how you play, what
+  Ding! does for you, your route and the guide to start with, the recommended choices already
+  selected. "Keep the recommended settings" ends it at once; run
   it again from the Guide tab or with `/ding intro`.
 - **NPC directory**: open it from the new button of the guide window, a key binding or
   `/ding find <text>`.
