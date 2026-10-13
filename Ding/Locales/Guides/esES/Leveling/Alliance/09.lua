@@ -21,6 +21,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a09-ashenvale-and-stonetalon-mou
         "Pronto domesticarás una mascota temporal. Consigue Garra (Rango 3) para tu mascota.",
     ["Let the conversation play out. The NPC is indoors."] =
         "Deja que termine la conversación. El PNJ está dentro.",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Domestica aquí una bestia para aprender el siguiente rango de Garra",
     ["Tame an Ashenvale Bear with Tame Beast. Track down a chestnut-furred bear."] =
         "Domestica un Ashenvale Bear con Domesticar bestia. Busca un oso de pelaje castaño.",
     ["Get your companion back from the stable master."] =

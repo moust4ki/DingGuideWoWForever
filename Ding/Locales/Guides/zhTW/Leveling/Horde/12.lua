@@ -5,8 +5,12 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h12-hillsbrad-foothills", {
         "希爾斯布萊德丘陵 (30-32)",
     ["Undercity first, then Hillsbrad Foothills: Tarren Mill."] =
         "先到幽暗城，再前往希爾斯布萊德丘陵：塔倫米爾。",
+    ["Learn Cooking from the trainer"] =
+        "向訓練師學習烹飪",
     ["You'll need this to pick up an upcoming quest."] =
         "接取之後的一個任務需要這個。",
+    ["Learn Crossbows and Two-Handed Swords at the weapon master"] =
+        "向武器大師學習弩和雙手劍",
     ["Leap up and take the trail behind that tree"] =
         "跳上去，走那棵樹後面的小路",
     ["Wait for the talking to finish"] =

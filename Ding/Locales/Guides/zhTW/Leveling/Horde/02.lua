@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h02-tauren-starter", {
         "牛頭人起始區 (1-13)",
     ["Mulgore: Camp Narache, where tauren start. This frees room in your bags. You receive one further along the route."] =
         "莫高雷：納拉其營地，牛頭人的起點。這能騰出背包空間。路線後面會拿到一個。",
+    ["Loot the beasts you kill on the way here"] =
+        "拾取你在來路上擊殺的野獸",
     ["Pick up anything that sells for 10 copper or more. You'll level faster with this."] =
         "拾取所有能賣10銅幣以上的物品。這能讓你升級更快。",
     ["The NPC is indoors."] =
@@ -47,6 +49,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h02-tauren-starter", {
         "目標是狼。",
     ["With the coming hand-ins, this gets you to level 9."] =
         "加上接下來的交任務，這會讓你升到9級。",
+    ["Learn First Aid from the trainer"] =
+        "向訓練師學習急救",
     ["Fight the dwarves."] =
         "攻擊矮人。",
     ["Kill harpies."] =
@@ -69,6 +73,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h02-tauren-starter", {
         "以一隻草原捕食者為目標使用它。目標是狼。",
     ["Use the item on any Swoop. Hunt the black-feathered birds."] =
         "對任意一隻猛鷲使用物品。獵殺黑色羽毛的鳥。",
+    ["Tame a pet here"] =
+        "在這裡馴服一隻寵物",
     ["Choose an animal of level 9-10 and make it your pet with the Tame Beast spell. This pet is temporary; a lasting one comes shortly."] =
         "選一隻9-10級的動物，用馴服野獸法術把牠收為寵物。這隻寵物是臨時的；很快就會有永久的寵物。",
     ["Flight master at Camp Taurajo"] =
@@ -79,6 +85,14 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h02-tauren-starter", {
         "沿著道路走，保持警覺。這一帶的敵人等級比你高。",
     ["Flight master at the Crossroads"] =
         "十字路口飛行管理員",
+    ["Learn Blacksmithing from the trainer"] =
+        "向訓練師學習鍛造",
+    ["Learn Mining from the trainer"] =
+        "向訓練師學習採礦",
+    ["Learn Staves at the weapon master"] =
+        "向武器大師學習法杖",
+    ["Learn Two-Handed Maces at the weapon master"] =
+        "向武器大師學習雙手錘",
     ["This is food for your pet."] =
         "這是給你寵物的食物。",
     ["The NPC is indoors, one floor up."] =
@@ -137,6 +151,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h02-tauren-starter", {
         "這個NPC在下方的暗影裂口裡。",
     ["This clears the quest's time limit."] =
         "這會解除任務的時間限制。",
+    ["Learn Bows at the weapon master"] =
+        "向武器大師學習弓",
     ["The foes here are scorpions."] =
         "這裡的敵人是蠍子。",
     ["The quest giver stands among the boulders."] =

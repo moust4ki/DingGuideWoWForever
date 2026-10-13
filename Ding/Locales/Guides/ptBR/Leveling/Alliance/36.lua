@@ -51,6 +51,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a36-azshara-and-felwood", {
         "Mestre de voo de Visteterna",
     ["The flight master stands past the walls, outdoors."] =
         "O mestre de voo fica do lado de fora das muralhas.",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Dome uma fera aqui para aprender o próximo grau de Garra",
     ["Tame an Angerclaw Mauler with your Tame Beast spell. Track down a plague-ridden bear with a chestnut coat."] =
         "Use o feitiço Domar Fera em um Espancador Garraivoso. Encontre um urso empesteado de pelagem castanha.",
     ["Get your companion back from the stable master."] =

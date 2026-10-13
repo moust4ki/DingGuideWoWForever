@@ -17,6 +17,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a05-darkshore", {
         "Pronto domesticarás una mascota temporal. Aquí tu mascota aprende Garra (Rango 2).",
     ["Flight master in Auberdine"] =
         "Maestro de vuelo de Auberdine",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Domestica aquí una bestia para aprender el siguiente rango de Garra",
     ["You will let it go shortly. Send your pet against a Thistle Bear."] =
         "La abandonarás pronto. Envía a tu mascota contra un Thistle Bear.",
     ["Get your companion back from the stable master."] =

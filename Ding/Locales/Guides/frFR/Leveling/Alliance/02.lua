@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a02-dwarf-and-gnome-starter", {
         "Départ nain et gnome (1-13)",
     ["Dun Morogh: Coldridge Valley, where dwarves and gnomes start. This frees room in your bags. You receive one further along the route."] =
         "Dun Morogh : la vallée de Frigrecif, où commencent les nains et les gnomes. Ça libère de la place dans tes sacs. Tu en reçois un plus loin sur le parcours.",
+    ["Loot the beasts you kill on the way here"] =
+        "Fouille les bêtes que tu tues en chemin",
     ["Pick up anything that sells for 10 copper or more."] =
         "Ramasse tout ce qui se vend 10 pièces de cuivre ou plus.",
     ["Head indoors"] =
@@ -41,10 +43,16 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a02-dwarf-and-gnome-starter", {
         "Traverse le tunnel, puis reste sur la route",
     ["Heal Mountaineer Dolf with Lesser Heal (Rank 2). Buff Mountaineer Dolf with Power Word: Fortitude."] =
         "Soigne le montagnard Dolf avec Soins inférieurs (Rang 2). Donne Mot de pouvoir : Robustesse au montagnard Dolf.",
+    ["Learn Blacksmithing from the trainer"] =
+        "Apprends la Forge auprès de l'entraîneur",
+    ["Learn Mining from the trainer"] =
+        "Apprends le Minage auprès de l'entraîneur",
     ["The NPC waits on the lower level, indoors."] =
         "Le PNJ attend au niveau inférieur, à l'intérieur.",
     ["The quest wants yetis; seek them out. Targets are in the cavern and around its entrance too."] =
         "La quête demande des yétis : va les chercher. Les cibles sont dans la grotte et aussi autour de l'entrée.",
+    ["Learn First Aid from the trainer"] =
+        "Apprends le Secourisme auprès de l'entraîneur",
     ["The NPC is indoors. Do it only if you can."] =
         "Le PNJ est à l'intérieur. Fais-le seulement si tu peux.",
     ["Stay on the trail"] =
@@ -81,10 +89,14 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a02-dwarf-and-gnome-starter", {
         "Utilise l'objet sur n'importe quel Ice Claw Bear.",
     ["This one roams, so scan the surrounding area. Keep it as pet food for later."] =
         "Celui-ci se déplace : fouille les environs. Garde-le comme nourriture pour ton familier.",
+    ["Tame a pet here"] =
+        "Apprivoise un familier ici",
     ["Find one Ice Claw Bear and use Tame Beast on it. Push eastward if you still need more."] =
         "Trouve un Ice Claw Bear et lance Apprivoiser une bête dessus. Pousse vers l'est s'il t'en faut encore.",
     ["Targets are in the cavern and around its entrance too. Hold on to it: a Paladin task coming up uses it."] =
         "Les cibles sont dans la grotte et aussi autour de l'entrée. Garde-le : une prochaine quête de paladin s'en sert.",
+    ["Learn Cooking from the trainer"] =
+        "Apprends la Cuisine auprès de l'entraîneur",
     ["This one roams, so scan the surrounding area. Without this, one quest can't be picked up."] =
         "Celui-ci se déplace : fouille les environs. Sans ça, une quête ne peut pas être prise.",
     ["The NPC is past the tunnel; stay on the road."] =
@@ -101,6 +113,12 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a02-dwarf-and-gnome-starter", {
         "Laisse-toi tuer exprès par les monstres d'ici. C'est le chemin le plus rapide.",
     ["This one roams, so scan the surrounding area. The NPC can be indoors or out."] =
         "Celui-ci se déplace : fouille les environs. Le PNJ peut être dedans ou dehors.",
+    ["Learn Two-Handed Axes and Two-Handed Maces at the weapon master"] =
+        "Apprends les Haches à deux mains et les Masses à deux mains auprès du maître d'armes",
+    ["Learn Two-Handed Maces at the weapon master"] =
+        "Apprends les Masses à deux mains auprès du maître d'armes",
+    ["Learn Thrown at the weapon master"] =
+        "Apprends les Armes de jet auprès du maître d'armes",
     ["Head down into the Deeprun Tram station"] =
         "Descends dans la station du tram des profondeurs",
     ["Pass through the portal to teleport."] =
@@ -113,6 +131,18 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a02-dwarf-and-gnome-starter", {
         "Prends le tram des profondeurs jusqu'à Hurlevent. Le PNJ se tient contre le mur, sur le quai central.",
     ["This one roams, so scan the surrounding area. The NPC is indoors. Be ready for a fight right away."] =
         "Celui-ci se déplace : fouille les environs. Le PNJ est à l'intérieur. Prépare-toi à combattre tout de suite.",
+    ["Learn Two-Handed Swords and Staves at the weapon master"] =
+        "Apprends les Épées à deux mains et les Bâtons auprès du maître d'armes",
+    ["Learn Two-Handed Swords at the weapon master"] =
+        "Apprends les Épées à deux mains auprès du maître d'armes",
+    ["Learn Swords at the weapon master"] =
+        "Apprends les Épées auprès du maître d'armes",
+    ["Learn Staves at the weapon master"] =
+        "Apprends les Bâtons auprès du maître d'armes",
+    ["Learn Swords and Daggers at the weapon master"] =
+        "Apprends les Épées et les Dagues auprès du maître d'armes",
+    ["Learn Swords and Staves at the weapon master"] =
+        "Apprends les Épées et les Bâtons auprès du maître d'armes",
     ["Head up the incline"] =
         "Monte la pente",
     ["Flight master in Stormwind"] =

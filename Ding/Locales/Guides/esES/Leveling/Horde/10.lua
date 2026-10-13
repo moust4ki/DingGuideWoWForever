@@ -19,6 +19,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h10-ashenvale", {
         "Pronto domesticarás una mascota temporal. Aquí consigues Garra (Rango 4).",
     ["Flight master at Splintertree Post"] =
         "Maestro de vuelo del Puesto del Hachazo",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Domestica aquí una bestia para aprender el siguiente rango de Garra",
     ["Tame any Elder Ashenvale Bear with Tame Beast."] =
         "Domestica cualquier Elder Ashenvale Bear con Domesticar bestia.",
     ["Get your companion back from the stable master."] =

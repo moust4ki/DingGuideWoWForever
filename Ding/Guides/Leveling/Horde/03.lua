@@ -13,7 +13,7 @@ Ding.RegisterGuide({
     steps    = {
         { accept = 4641, -- level 1
           note = "Durotar: the Valley of Trials, where orcs and trolls start." },
-        { go = { 1411, 43.76, 70.46 }, classes = { "WARRIOR", "SHAMAN", "WARLOCK" }, -- level 1
+        { go = { 1411, 43.76, 70.46 }, classes = { "WARRIOR", "SHAMAN", "WARLOCK" }, text = "Loot the beasts you kill on the way here", -- level 1
           note = "Pick up anything that sells for 10 copper or more. You'll level faster with this." },
         { accept = 97279, races = { "Orc", "Troll" } }, -- level 1
         { vendor = true, talk = 3158, classes = { "WARRIOR", "SHAMAN", "WARLOCK" } }, -- level 1
@@ -172,9 +172,9 @@ Ding.RegisterGuide({
           note = "The NPC waits on the tower's highest floor." },
         { turnin = 2161, -- level 7
           note = "The NPC is indoors." },
-        { go = { 1411, 51.87, 40.83 }, classes = { "WARRIOR", "ROGUE" } }, -- level 7
+        { go = { 1411, 51.87, 40.83 }, classes = { "WARRIOR", "ROGUE" }, text = "Learn Mining from the trainer" }, -- level 7
         { talk = 3175, classes = { "WARRIOR", "ROGUE" } }, -- level 7
-        { go = { 1411, 52.09, 40.69 }, classes = { "WARRIOR", "ROGUE" } }, -- level 7
+        { go = { 1411, 52.09, 40.69 }, classes = { "WARRIOR", "ROGUE" }, text = "Learn Blacksmithing from the trainer" }, -- level 7
         { accept = 96822, races = { "Orc", "Troll" } }, -- level 7
         { talk = 3174, classes = { "WARRIOR", "ROGUE" } }, -- level 7
         { talk = 3168, buy = { { 2901, 1, 3168 } }, classes = { "WARRIOR", "ROGUE" } }, -- level 7
@@ -221,7 +221,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { train = true, talk = 3173, classes = { "SHAMAN" }, -- level 8
           note = "The NPC is indoors." },
-        { go = { 1411, 54.11, 41.87 }, classes = { "WARRIOR", "ROGUE" } }, -- level 8
+        { go = { 1411, 54.11, 41.87 }, classes = { "WARRIOR", "ROGUE" }, text = "Learn First Aid from the trainer" }, -- level 8
         { talk = 5943, classes = { "WARRIOR", "ROGUE" }, -- level 8
           note = "The NPC is indoors." },
         { complete = 825, sticky = { 815, 817, 826 }, -- level 8
@@ -341,7 +341,7 @@ Ding.RegisterGuide({
           note = "The NPC stands on the highest level of this structure." },
         { train = true, talk = 10088, classes = { "HUNTER" }, -- level 10
           note = "The NPC stands on the highest level of this structure." },
-        { go = { 1411, 49.85, 17.35 }, classes = { "HUNTER" }, -- level 10
+        { go = { 1411, 49.85, 17.35 }, classes = { "HUNTER" }, text = "Tame a pet here", -- level 10
           note = "Find one Venomtail Scorpid and use Tame Beast on it. The foes here are scorpions. Here you tame a pet to keep." },
         { train = true, talk = 3173, classes = { "SHAMAN" }, -- level 10
           note = "The NPC is indoors." },
@@ -429,7 +429,7 @@ Ding.RegisterGuide({
           note = "This NPC is found down in the Cleft of Shadow." },
         { train = true, talk = 3353, classes = { "WARRIOR" }, -- level 12
           note = "The NPC is indoors." },
-        { go = { 1454, 81.59, 19.59 }, classes = { "WARRIOR" } }, -- level 12
+        { go = { 1454, 81.59, 19.59 }, classes = { "WARRIOR" }, text = "Learn Staves at the weapon master" }, -- level 12
         { talk = 2704, classes = { "WARRIOR" }, -- level 12
           note = "The NPC is indoors." },
         { train = true, talk = 3352, classes = { "HUNTER" }, -- level 12
@@ -463,7 +463,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { accept = 97558, races = { "Orc", "Troll" } }, -- level 12
         { go = { 1458, 63.25, 48.55 }, fly = true, talk = 4551, classes = { "ROGUE", "MAGE", "WARLOCK" }, text = "Fly to Undercity" }, -- level 12
-        { go = { 1458, 57.26, 32.71 }, classes = { "ROGUE" } }, -- level 12
+        { go = { 1458, 57.26, 32.71 }, classes = { "ROGUE" }, text = "Learn Swords at the weapon master" }, -- level 12
         { talk = 11870, classes = { "ROGUE" } }, -- level 12
         { turnin = 1478, races = { "Orc" }, classes = { "WARLOCK" } }, -- level 12
         { useitem = 6284, when = { log = 1471 }, races = { "Orc" }, classes = { "WARLOCK" }, -- level 12

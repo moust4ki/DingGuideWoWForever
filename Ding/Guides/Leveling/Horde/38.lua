@@ -38,9 +38,9 @@ Ding.RegisterGuide({
           note = "For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears. The prisoner is held in a cage of yellow wood." },
         { go = { 1448, 35.48, 58.84 }, text = "Climb the trail and exit the cavern" }, -- level 54
         { go = { 1448, 36.7, 66.81 }, text = "Circle the mountain, then stay on the trail" }, -- level 54
+        { go = { 1448, 32.44, 66.55 }, text = "Go to the corrupted moonwell" }, -- level 54
         { useitem = 12565, -- level 54
           note = "A green cat, a Corrupted Saber, appears when you use it. Hold on until it begins to trail you. Beware of foes lurking in stealth." },
-        { go = { 1448, 32.44, 66.55 } }, -- level 54
         { go = { 1448, 37.6, 49.22 }, text = "Walk west beside the river" }, -- level 54
         { complete = 4506, talk = 9937, -- level 54
           note = "The kitten is the green cat beside you. Look beside Winna Hazzard." },

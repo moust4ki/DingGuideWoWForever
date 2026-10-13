@@ -33,6 +33,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a13-stonetalon-mountains-and-ash
         "把宠物寄存在兽栏管理员处。",
     ["You will tame a short-term pet shortly. You pick up Claw (Rank 4) here."] =
         "你马上要驯服一只临时宠物。你的宠物在这里学会爪击（等级4）。",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "在这里驯服一只野兽，学会下一级爪击",
     ["Tame any Elder Ashenvale Bear with Tame Beast."] =
         "用驯服野兽驯服任意一只Elder Ashenvale Bear。",
     ["Get your companion back from the stable master."] =

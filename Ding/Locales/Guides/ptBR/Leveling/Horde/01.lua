@@ -7,6 +7,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h01-undead-starter", {
         "Clareiras de Tirisfal: Plangemortis, onde os mortos-vivos se erguem. Isso libera espaço nas suas bolsas. Você recebe um mais adiante na rota.",
     ["The NPC stands outdoors, next to the crypt."] =
         "O NPC fica do lado de fora, ao lado da cripta.",
+    ["Loot the beasts you kill on the way here"] =
+        "Saqueie as feras que você matar no caminho até aqui",
     ["Pick up anything that sells for 10 copper or more. You'll level faster with this."] =
         "Pegue tudo o que se vende por 10 de cobre ou mais. Com isso, você sobe de nível mais rápido.",
     ["The NPC is indoors."] =
@@ -61,6 +63,10 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h01-undead-starter", {
         "O NPC patrulha uma rota longa; procure ao longo dela.",
     ["The NPC waits on the lower level, indoors."] =
         "O NPC espera no nível de baixo, lá dentro.",
+    ["Learn Mining from the trainer"] =
+        "Aprenda Mineração com o instrutor",
+    ["Learn Blacksmithing from the trainer"] =
+        "Aprenda Ferraria com o instrutor",
     ["Climb the trail"] =
         "Suba a trilha",
     ["The NPC waits on the tower's highest floor."] =
@@ -85,6 +91,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h01-undead-starter", {
         "Fique na trilha e continue subindo os degraus",
     ["The NPC stands on the highest level of this structure."] =
         "O NPC fica no nível mais alto desta construção.",
+    ["Learn First Aid from the trainer"] =
+        "Aprenda Primeiros Socorros com o instrutor",
     ["Loot the gray chests built from metal. Search in and around the sunken wrecks. Your targets sit below the water's surface."] =
         "Saqueie os baús cinza de metal. Procure dentro e em volta dos destroços afundados. Seus alvos ficam abaixo da superfície da água.",
     ["The target is a troll in crimson robes. This one roams, so scan the surrounding area."] =
@@ -107,10 +115,14 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h01-undead-starter", {
         "Atravesse a passagem",
     ["Fly to Orgrimmar"] =
         "Voe até Orgrimmar",
+    ["Learn Staves at the weapon master"] =
+        "Aprenda Báculos com o mestre de armas",
     ["The quest comes from a bounty sign."] =
         "A missão vem de um cartaz de recompensa.",
     ["Look for an iron slab marked with a skull. Wait for the talking to finish"] =
         "Procure uma laje de ferro marcada com uma caveira. Espere a conversa terminar",
+    ["Learn Swords at the weapon master"] =
+        "Aprenda Espadas com o mestre de armas",
     ["Use the item at the pink marking."] =
         "Use o item na marca rosa.",
     ["Move gradually northwest toward Agamand Mills."] =

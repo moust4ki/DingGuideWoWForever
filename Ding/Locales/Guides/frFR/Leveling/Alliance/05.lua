@@ -17,6 +17,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a05-darkshore", {
         "Tu vas bientôt apprivoiser un familier temporaire. Ici, ton familier apprend Griffe (Rang 2).",
     ["Flight master in Auberdine"] =
         "Maître de vol d'Auberdine",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Apprivoise ici une bête pour apprendre le rang suivant de Griffe",
     ["You will let it go shortly. Send your pet against a Thistle Bear."] =
         "Tu vas bientôt le relâcher. Envoie ton familier sur un Thistle Bear.",
     ["Get your companion back from the stable master."] =

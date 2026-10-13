@@ -35,6 +35,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a10-wetlands", {
         "Ziele gibt es im Grabmal und darum herum.",
     ["Keep it; an upcoming task asks for it. The NPC is indoors."] =
         "Behalte es; eine kommende Aufgabe verlangt es. Der NPC ist drinnen.",
+    ["Learn Guns at the weapon master"] =
+        "Lerne Schusswaffen beim Waffenmeister",
     ["Head down into the Deeprun Tram station"] =
         "Geh hinunter in die Station der Tiefenbahn",
     ["Pass through the portal to teleport."] =

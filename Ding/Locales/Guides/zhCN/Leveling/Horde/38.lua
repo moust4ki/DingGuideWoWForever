@@ -29,6 +29,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h38-felwood-and-winterspring", {
         "沿小路往上，离开洞穴",
     ["Circle the mountain, then stay on the trail"] =
         "绕过山，然后沿小路走",
+    ["Go to the corrupted moonwell"] =
+        "前往被污染的月亮井",
     ["A green cat, a Corrupted Saber, appears when you use it. Hold on until it begins to trail you. Beware of foes lurking in stealth."] =
         "使用它时会出现一只绿色的猫，即Corrupted Saber。等它开始跟着你。当心潜行中的敌人。",
     ["Walk west beside the river"] =

@@ -17,6 +17,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a05-darkshore", {
         "Du zähmst gleich ein Tier für kurze Zeit. Hier lernt dein Tier Klaue (Rang 2).",
     ["Flight master in Auberdine"] =
         "Flugmeister in Auberdine",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Zähme hier ein Tier, um den nächsten Rang von Klaue zu lernen",
     ["You will let it go shortly. Send your pet against a Thistle Bear."] =
         "Du lässt es gleich wieder frei. Schick dein Tier auf einen Distelbären.",
     ["Get your companion back from the stable master."] =

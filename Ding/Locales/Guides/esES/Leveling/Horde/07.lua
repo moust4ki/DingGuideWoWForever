@@ -29,6 +29,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h07-hillsbrad-foothills", {
         "Pronto domesticarás una mascota temporal. Consigue Garra (Rango 3) para tu mascota.",
     ["The quest comes from a bounty sign."] =
         "La misión sale de un cartel de recompensa.",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Domestica aquí una bestia para aprender el siguiente rango de Garra",
     ["Pick any Gray Bear and use Tame Beast on it."] =
         "Elige cualquier Gray Bear y usa Domesticar bestia sobre él.",
     ["Get your companion back from the stable master."] =

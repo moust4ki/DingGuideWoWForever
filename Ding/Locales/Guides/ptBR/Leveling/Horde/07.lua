@@ -29,6 +29,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h07-hillsbrad-foothills", {
         "Em breve você vai domar um ajudante temporário. Obtenha Garra (Grau 3) para o seu ajudante.",
     ["The quest comes from a bounty sign."] =
         "A missão vem de um cartaz de recompensa.",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Dome uma fera aqui para aprender o próximo grau de Garra",
     ["Pick any Gray Bear and use Tame Beast on it."] =
         "Escolha qualquer Urso Cinzento e use Domar Fera nele.",
     ["Get your companion back from the stable master."] =

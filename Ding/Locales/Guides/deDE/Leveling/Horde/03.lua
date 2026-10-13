@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h03-orc-and-troll-starter", {
         "Start: Orc und Troll (1-13)",
     ["Durotar: the Valley of Trials, where orcs and trolls start."] =
         "Durotar: Tal der Prüfungen, wo Orcs und Trolle beginnen.",
+    ["Loot the beasts you kill on the way here"] =
+        "Plündere die Tiere, die du auf dem Weg hierher tötest",
     ["Pick up anything that sells for 10 copper or more. You'll level faster with this."] =
         "Heb alles auf, was sich für 10 Kupfer oder mehr verkaufen lässt. Damit levelst du schneller.",
     ["Your targets are within the cavern."] =
@@ -51,6 +53,10 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h03-orc-and-troll-starter", {
         "Dieses Ziel wandert umher, also such die Umgebung ab.",
     ["The NPC waits on the tower's highest floor."] =
         "Der NPC wartet im obersten Stockwerk des Turms.",
+    ["Learn Mining from the trainer"] =
+        "Lerne Bergbau beim Lehrer",
+    ["Learn Blacksmithing from the trainer"] =
+        "Lerne Schmiedekunst beim Lehrer",
     ["Heal Grunt Kor'ja with the second rank of Lesser Heal. Buff Grunt Kor'ja with Power Word: Fortitude."] =
         "Heile Grunzer Kor'ja mit Rang 2 von Geringes Heilen. Buffe Grunzer Kor'ja mit Machtwort: Seelenstärke.",
     ["Head indoors"] =
@@ -65,6 +71,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h03-orc-and-troll-starter", {
         "Lass dich hier absichtlich von den Monstern töten. So früh kostet dich der Tod nichts. Das ist der schnellste Weg hinüber.",
     ["The NPC is out back, at the rear of the structure."] =
         "Der NPC ist draußen auf der Rückseite des Gebäudes.",
+    ["Learn First Aid from the trainer"] =
+        "Lerne Erste Hilfe beim Lehrer",
     ["Loot the gray chests built from metal. Search in and around the sunken wrecks. Your targets sit below the water's surface."] =
         "Plündere die grauen Metalltruhen. Such in und um die versunkenen Wracks. Deine Ziele sind unter der Wasseroberfläche.",
     ["The target is a troll in crimson robes. This one roams, so scan the surrounding area."] =
@@ -91,6 +99,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h03-orc-and-troll-starter", {
         "Dieser NPC ist unten in der Kluft der Schatten.",
     ["This clears the quest's time limit."] =
         "Damit entfällt das Zeitlimit der Quest.",
+    ["Tame a pet here"] =
+        "Zähme hier einen Begleiter",
     ["Find one Venomtail Scorpid and use Tame Beast on it. The foes here are scorpions. Here you tame a pet to keep."] =
         "Such einen Venomtail Scorpid und wirke Wildtier zähmen auf ihn. Die Gegner hier sind Skorpione. Hier zähmst du ein Tier, das du behältst.",
     ["Kill Water Seekers and Thornweavers."] =
@@ -113,12 +123,16 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h03-orc-and-troll-starter", {
         "Erhalte Sapta Sight",
     ["The quest giver stands among the boulders."] =
         "Der Questgeber steht zwischen den Felsbrocken.",
+    ["Learn Staves at the weapon master"] =
+        "Lerne Stäbe beim Waffenmeister",
     ["Fly to Undercity"] =
         "Flieg nach Unterstadt",
     ["The quest comes from a bounty sign."] =
         "Die Quest stammt von einem Kopfgeldaushang.",
     ["Look for an iron slab marked with a skull. Wait for the talking to finish"] =
         "Such nach einer Eisenplatte mit einem Schädel darauf. Warte, bis das Gespräch endet",
+    ["Learn Swords at the weapon master"] =
+        "Lerne Schwerter beim Waffenmeister",
     ["Use the item at the pink marking."] =
         "Benutze den Gegenstand an der rosa Markierung.",
     ["The targets are gray, demon-like hounds. This leads to a quest for later levels."] =

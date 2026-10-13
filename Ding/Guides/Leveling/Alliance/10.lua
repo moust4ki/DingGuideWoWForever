@@ -100,7 +100,7 @@ Ding.RegisterGuide({
           note = "This one roams, so scan the surrounding area." },
         { talk = 8720, collect = { { 2458, 2 }, { 2455, 4 } }, -- level 25
           note = "Keep it; an upcoming task asks for it. The NPC is indoors." },
-        { go = { 1455, 61.12, 89.58 }, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" } }, -- level 25
+        { go = { 1455, 61.12, 89.58 }, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, text = "Learn Guns at the weapon master" }, -- level 25
         { talk = 11865, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 25
           note = "The NPC is indoors." },
         { turnin = 1072 }, -- level 25

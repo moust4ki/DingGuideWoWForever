@@ -19,6 +19,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h10-ashenvale", {
         "Tu vas bientôt apprivoiser un familier temporaire. Ici, ton familier apprend Griffe (Rang 4).",
     ["Flight master at Splintertree Post"] =
         "Maître de vol du poste de Bois-Brisé",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Apprivoise ici une bête pour apprendre le rang suivant de Griffe",
     ["Tame any Elder Ashenvale Bear with Tame Beast."] =
         "Apprivoise n'importe quel Elder Ashenvale Bear avec Apprivoiser une bête.",
     ["Get your companion back from the stable master."] =

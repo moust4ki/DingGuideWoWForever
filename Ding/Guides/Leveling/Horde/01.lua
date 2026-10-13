@@ -15,7 +15,7 @@ Ding.RegisterGuide({
           note = "Tirisfal Glades: Deathknell, where the undead rise. This frees room in your bags. You receive one further along the route." },
         { accept = 363, -- level 1
           note = "The NPC stands outdoors, next to the crypt." },
-        { go = { 1420, 29.46, 69.54 }, classes = { "WARRIOR", "WARLOCK" }, -- level 1
+        { go = { 1420, 29.46, 69.54 }, classes = { "WARRIOR", "WARLOCK" }, text = "Loot the beasts you kill on the way here", -- level 1
           note = "Pick up anything that sells for 10 copper or more. You'll level faster with this." },
         { vendor = true, talk = 2116, classes = { "WARRIOR", "WARLOCK" }, -- level 1
           note = "The NPC is indoors." },
@@ -182,9 +182,9 @@ Ding.RegisterGuide({
           note = "The NPC is indoors, one floor up." },
         { train = true, talk = 2130, classes = { "ROGUE" }, -- level 7
           note = "The NPC is indoors, one floor up." },
-        { go = { 1411, 51.87, 40.83 }, classes = { "WARRIOR", "ROGUE" } }, -- level 8
+        { go = { 1411, 51.87, 40.83 }, classes = { "WARRIOR", "ROGUE" }, text = "Learn Mining from the trainer" }, -- level 8
         { talk = 3175, classes = { "WARRIOR", "ROGUE" } }, -- level 8
-        { go = { 1411, 52.09, 40.69 }, classes = { "WARRIOR", "ROGUE" } }, -- level 8
+        { go = { 1411, 52.09, 40.69 }, classes = { "WARRIOR", "ROGUE" }, text = "Learn Blacksmithing from the trainer" }, -- level 8
         { accept = 96822, races = { "Scourge" } }, -- level 8
         { talk = 3174, classes = { "WARRIOR", "ROGUE" } }, -- level 8
         { talk = 3168, buy = { { 2901, 1, 3168 } }, classes = { "WARRIOR", "ROGUE" } }, -- level 8
@@ -242,7 +242,7 @@ Ding.RegisterGuide({
         { turnin = 2161, -- level 9
           note = "The NPC is indoors." },
         { turnin = 96822, races = { "Scourge" } }, -- level 9
-        { go = { 1411, 54.11, 41.87 }, classes = { "WARRIOR", "ROGUE" } }, -- level 9
+        { go = { 1411, 54.11, 41.87 }, classes = { "WARRIOR", "ROGUE" }, text = "Learn First Aid from the trainer" }, -- level 9
         { talk = 5943, classes = { "WARRIOR", "ROGUE" }, -- level 9
           note = "The NPC is indoors." },
         { complete = 825, sticky = { 815, 817, 826 }, -- level 9
@@ -334,7 +334,7 @@ Ding.RegisterGuide({
           note = "The NPC waits on the tower's highest floor." },
         { turnin = 831, -- level 11
           note = "The NPC is indoors." },
-        { go = { 1454, 81.59, 19.59 }, classes = { "WARRIOR" } }, -- level 11
+        { go = { 1454, 81.59, 19.59 }, classes = { "WARRIOR" }, text = "Learn Staves at the weapon master" }, -- level 11
         { talk = 2704, classes = { "WARRIOR" }, -- level 11
           note = "The NPC is indoors." },
         { accept = 1818, classes = { "WARRIOR" }, -- level 11
@@ -369,7 +369,7 @@ Ding.RegisterGuide({
         { accept = 97961, races = { "Scourge" } }, -- level 11
         { turnin = 1478, accept = 1473, classes = { "WARLOCK" } }, -- level 11
         { turnin = 1885, accept = 1886, classes = { "ROGUE" } }, -- level 11
-        { go = { 1458, 57.26, 32.71 }, classes = { "ROGUE" } }, -- level 11
+        { go = { 1458, 57.26, 32.71 }, classes = { "ROGUE" }, text = "Learn Swords at the weapon master" }, -- level 11
         { talk = 11870, classes = { "ROGUE" } }, -- level 11
         { turnin = 5660, classes = { "PRIEST" } }, -- level 11
         { turnin = 1881, accept = 1882, sticky = { 374, 370 }, classes = { "MAGE" }, -- level 11

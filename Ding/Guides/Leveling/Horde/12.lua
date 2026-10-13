@@ -13,11 +13,10 @@ Ding.RegisterGuide({
         { talk = 4549, bank = 5850, -- level 30
           note = "Undercity first, then Hillsbrad Foothills: Tarren Mill." },
         { talk = 4549, collect = { { 3564, 1 }, { 3692, 1 } }, spots = { { 1458, 65.94, 44.78 } } }, -- level 30
-        { go = { 1458, 62.08, 44.86 } }, -- level 30
+        { go = { 1458, 62.08, 44.86 }, text = "Learn Cooking from the trainer" }, -- level 30
         { talk = 4552, -- level 30
           note = "You'll need this to pick up an upcoming quest." },
-        { go = { 1458, 57.26, 32.71 }, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" } }, -- level 30
-        { go = { 1458, 57.26, 32.71 }, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" } }, -- level 30
+        { go = { 1458, 57.26, 32.71 }, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, text = "Learn Crossbows and Two-Handed Swords at the weapon master" }, -- level 30
         { talk = 11870, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" } }, -- level 30
         { accept = 1164 }, -- level 30
         { go = { 1421, 42.08, 40.61 }, races = { "Orc", "Tauren", "Troll" }, classes = { "SHAMAN" }, text = "Leap up and take the trail behind that tree" }, -- level 30

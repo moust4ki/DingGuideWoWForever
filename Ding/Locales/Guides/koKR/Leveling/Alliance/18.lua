@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a18-desolace", {
         "잊혀진 땅: 나이젤의 야영지가 북동쪽 구석에 있는 얼라이언스 거점입니다.",
     ["You will tame a short-term pet shortly. Here your pet picks up Claw (Rank 5)."] =
         "곧 임시 소환수를 길들입니다. 여기서 소환수가 할퀴기 (5 레벨)를 배웁니다.",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "여기서 야수를 길들여 할퀴기의 다음 등급을 배우세요",
     ["Tame a Scorpashi Lasher with Tame Beast."] =
         "야수 길들이기로 스콜파시 꼬리전갈을 길들이세요.",
     ["Head uphill into Nijel's Point"] =

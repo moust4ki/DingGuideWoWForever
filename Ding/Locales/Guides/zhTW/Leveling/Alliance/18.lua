@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a18-desolace", {
         "淒涼之地：東北角的尼耶爾前哨站是聯盟據點。",
     ["You will tame a short-term pet shortly. Here your pet picks up Claw (Rank 5)."] =
         "你很快就要馴服一隻臨時寵物。你的寵物在這裡學會爪擊（等級5）。",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "在這裡馴服一隻野獸，學會下一級爪擊",
     ["Tame a Scorpashi Lasher with Tame Beast."] =
         "用馴服野獸馴服一隻荒土鞭尾蠍。",
     ["Head uphill into Nijel's Point"] =

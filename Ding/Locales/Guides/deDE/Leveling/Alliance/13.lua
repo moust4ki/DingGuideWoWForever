@@ -33,6 +33,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a13-stonetalon-mountains-and-ash
         "Stell dein Tier beim Stallmeister in den Stall.",
     ["You will tame a short-term pet shortly. You pick up Claw (Rank 4) here."] =
         "Du zähmst gleich ein Tier für kurze Zeit. Hier bekommst du Klaue (Rang 4).",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Zähme hier ein Tier, um den nächsten Rang von Klaue zu lernen",
     ["Tame any Elder Ashenvale Bear with Tame Beast."] =
         "Zähme mit Wildtier zähmen einen beliebigen Elder Ashenvale Bear.",
     ["Get your companion back from the stable master."] =

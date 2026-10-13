@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a02-dwarf-and-gnome-starter", {
         "Start: Zwerg und Gnom (1-13)",
     ["Dun Morogh: Coldridge Valley, where dwarves and gnomes start. This frees room in your bags. You receive one further along the route."] =
         "Dun Morogh: Eisklammtal, wo Zwerge und Gnome beginnen. Das schafft Platz in deinen Taschen. Weiter auf der Route bekommst du eins.",
+    ["Loot the beasts you kill on the way here"] =
+        "Plündere die Tiere, die du auf dem Weg hierher tötest",
     ["Pick up anything that sells for 10 copper or more."] =
         "Heb alles auf, was sich für 10 Kupfer oder mehr verkaufen lässt.",
     ["Head indoors"] =
@@ -41,10 +43,16 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a02-dwarf-and-gnome-starter", {
         "Geh durch den Tunnel, dann bleib auf der Straße",
     ["Heal Mountaineer Dolf with Lesser Heal (Rank 2). Buff Mountaineer Dolf with Power Word: Fortitude."] =
         "Heile Gebirgsjäger Dolf mit Geringes Heilen (Rang 2). Wirke Machtwort: Seelenstärke auf Gebirgsjäger Dolf.",
+    ["Learn Blacksmithing from the trainer"] =
+        "Lerne Schmiedekunst beim Lehrer",
+    ["Learn Mining from the trainer"] =
+        "Lerne Bergbau beim Lehrer",
     ["The NPC waits on the lower level, indoors."] =
         "Der NPC wartet drinnen auf der unteren Ebene.",
     ["The quest wants yetis; seek them out. Targets are in the cavern and around its entrance too."] =
         "Die Quest verlangt Yetis; such sie auf. Ziele gibt es in der Höhle und auch rund um ihren Eingang.",
+    ["Learn First Aid from the trainer"] =
+        "Lerne Erste Hilfe beim Lehrer",
     ["The NPC is indoors. Do it only if you can."] =
         "Der NPC ist drinnen. Mach das nur, wenn du kannst.",
     ["Stay on the trail"] =
@@ -81,10 +89,14 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a02-dwarf-and-gnome-starter", {
         "Benutze den Gegenstand an einem beliebigen Eisklauenbären.",
     ["This one roams, so scan the surrounding area. Keep it as pet food for later."] =
         "Dieses Ziel wandert umher, also such die Umgebung ab. Behalte es als Futter für dein Tier.",
+    ["Tame a pet here"] =
+        "Zähme hier einen Begleiter",
     ["Find one Ice Claw Bear and use Tame Beast on it. Push eastward if you still need more."] =
         "Such einen Eisklauenbären und wirke Wildtier zähmen auf ihn. Geh weiter nach Osten, wenn du noch mehr brauchst.",
     ["Targets are in the cavern and around its entrance too. Hold on to it: a Paladin task coming up uses it."] =
         "Ziele gibt es in der Höhle und auch rund um ihren Eingang. Behalte es: Eine kommende Paladinaufgabe braucht es.",
+    ["Learn Cooking from the trainer"] =
+        "Lerne Kochkunst beim Lehrer",
     ["This one roams, so scan the surrounding area. Without this, one quest can't be picked up."] =
         "Dieses Ziel wandert umher, also such die Umgebung ab. Ohne das kannst du eine Quest nicht annehmen.",
     ["The NPC is past the tunnel; stay on the road."] =
@@ -101,6 +113,12 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a02-dwarf-and-gnome-starter", {
         "Lass dich hier absichtlich von den Monstern töten. Das ist der schnellste Weg hinüber.",
     ["This one roams, so scan the surrounding area. The NPC can be indoors or out."] =
         "Dieses Ziel wandert umher, also such die Umgebung ab. Der NPC kann drinnen oder draußen sein.",
+    ["Learn Two-Handed Axes and Two-Handed Maces at the weapon master"] =
+        "Lerne Zweihandäxte und Zweihandstreitkolben beim Waffenmeister",
+    ["Learn Two-Handed Maces at the weapon master"] =
+        "Lerne Zweihandstreitkolben beim Waffenmeister",
+    ["Learn Thrown at the weapon master"] =
+        "Lerne Wurfwaffen beim Waffenmeister",
     ["Head down into the Deeprun Tram station"] =
         "Geh hinunter in die Station der Tiefenbahn",
     ["Pass through the portal to teleport."] =
@@ -113,6 +131,18 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a02-dwarf-and-gnome-starter", {
         "Nimm die Tiefenbahn nach Sturmwind. Der NPC steht an der Wand auf dem mittleren Bahnsteig.",
     ["This one roams, so scan the surrounding area. The NPC is indoors. Be ready for a fight right away."] =
         "Dieses Ziel wandert umher, also such die Umgebung ab. Der NPC ist drinnen. Mach dich sofort auf einen Kampf gefasst.",
+    ["Learn Two-Handed Swords and Staves at the weapon master"] =
+        "Lerne Zweihandschwerter und Stäbe beim Waffenmeister",
+    ["Learn Two-Handed Swords at the weapon master"] =
+        "Lerne Zweihandschwerter beim Waffenmeister",
+    ["Learn Swords at the weapon master"] =
+        "Lerne Schwerter beim Waffenmeister",
+    ["Learn Staves at the weapon master"] =
+        "Lerne Stäbe beim Waffenmeister",
+    ["Learn Swords and Daggers at the weapon master"] =
+        "Lerne Schwerter und Dolche beim Waffenmeister",
+    ["Learn Swords and Staves at the weapon master"] =
+        "Lerne Schwerter und Stäbe beim Waffenmeister",
     ["Head up the incline"] =
         "Geh den Hang hinauf",
     ["Flight master in Stormwind"] =

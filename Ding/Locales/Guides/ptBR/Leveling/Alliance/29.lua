@@ -19,6 +19,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a29-the-hinterlands", {
         "O NPC está lá dentro.",
     ["Gather the big plumes colored brown and ivory. Drop the Ground Clutter option down to 1. Find it in the game options, under System, then Graphics."] =
         "Recolha as penas grandes marrons e cor de marfim. Reduza a opção Ground Clutter para 1. Fica nas opções do jogo, em Sistema e depois Gráficos.",
+    ["Hop onto the ledge"] =
+        "Pule na saliência",
     ["Hop onto the ledge here. Monsters are unable to reach you from this spot. Hold off until you have left combat."] =
         "Pule na saliência aqui. Os monstros não conseguem alcançar você neste ponto. Espere até sair do combate.",
     ["Other creatures use these spawn points too."] =

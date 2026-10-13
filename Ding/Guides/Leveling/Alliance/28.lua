@@ -107,7 +107,7 @@ Ding.RegisterGuide({
           note = "Hunt gorillas. Bears appear at the same spawn spots." },
         { complete = 1452, -- level 46
           note = "Hunt bears. They appear in the same spots as the apes." },
-        { go = { 1444, 66.72, 46.61 }, -- level 46
+        { go = { 1444, 66.72, 46.61 }, text = "Head to the big cage", -- level 46
           note = "Kill the foes near the big cage first. This helps with the following step." },
         { go = { 1444, 65.62, 46.83 }, text = "Climb the trail" }, -- level 46
         { accept = 2969 }, -- level 46

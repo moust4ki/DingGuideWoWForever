@@ -13,6 +13,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h04-silverpine-forest", {
         "Deixe a conversa terminar. Escolte o Sicário Orlando e mantenha-o vivo.",
     ["Hunt the wolves whose fur is jet black."] =
         "Cace os lobos de pelo preto retinto.",
+    ["Tame a pet here"] =
+        "Dome um ajudante aqui",
     ["Pick one Ferocious Grizzled Bear and tame it with Tame Beast. Release your current pet before this. Here you tame a pet to keep."] =
         "Escolha um Urso Cinzento Feroz e dome-o com Domar Fera. Abandone seu ajudante atual antes disso. Aqui você doma um ajudante permanente.",
     ["Fly to The Sepulcher"] =

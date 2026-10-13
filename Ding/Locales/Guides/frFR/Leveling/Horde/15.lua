@@ -39,6 +39,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h15-desolace", {
         "Le PNJ est à l'intérieur.",
     ["Fly to Shadowprey Village"] =
         "Vole jusqu'au village de Proie-de-l'Ombre",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Apprivoise ici une bête pour apprendre le rang suivant de Griffe",
     ["Tame a Scorpashi Lasher with Tame Beast."] =
         "Apprivoise un Scorpashi Lasher avec Apprivoiser une bête.",
     ["Get your companion back from the stable master."] =

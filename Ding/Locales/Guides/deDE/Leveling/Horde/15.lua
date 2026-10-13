@@ -39,6 +39,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h15-desolace", {
         "Der NPC ist drinnen.",
     ["Fly to Shadowprey Village"] =
         "Flieg nach Shadowprey Village",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Zähme hier ein Tier, um den nächsten Rang von Klaue zu lernen",
     ["Tame a Scorpashi Lasher with Tame Beast."] =
         "Zähme einen Scorpashi Lasher mit Wildtier zähmen.",
     ["Get your companion back from the stable master."] =

@@ -57,7 +57,7 @@ Ding.RegisterGuide({
         { accept = 6142, classes = { "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK", "DRUID" }, -- level 35
           note = "The NPC is indoors." },
         { go = { 1443, 21.54, 74.17 }, fly = true, talk = 6726, text = "Fly to Shadowprey Village" }, -- level 35
-        { go = { 1443, 33.46, 77.24 }, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, -- level 35
+        { go = { 1443, 33.46, 77.24 }, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, text = "Tame a beast here to learn the next rank of Claw", -- level 35
           note = "Tame a Scorpashi Lasher with Tame Beast." },
         { go = { 1443, 26.31, 74.88 }, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, text = "Take the trail toward Shadowprey Village" }, -- level 35
         { talk = 11105, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, text = "Get your companion back from the stable master." }, -- level 35

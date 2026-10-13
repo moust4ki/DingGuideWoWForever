@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h02-tauren-starter", {
         "Início dos taurens (1-13)",
     ["Mulgore: Camp Narache, where tauren start. This frees room in your bags. You receive one further along the route."] =
         "Mulgore: Aldeia Narache, onde os taurens começam. Isso libera espaço nas suas bolsas. Você recebe um mais adiante na rota.",
+    ["Loot the beasts you kill on the way here"] =
+        "Saqueie as feras que você matar no caminho até aqui",
     ["Pick up anything that sells for 10 copper or more. You'll level faster with this."] =
         "Pegue tudo o que se vende por 10 de cobre ou mais. Com isso, você sobe de nível mais rápido.",
     ["The NPC is indoors."] =
@@ -47,6 +49,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h02-tauren-starter", {
         "Os alvos são lobos.",
     ["With the coming hand-ins, this gets you to level 9."] =
         "Com as próximas entregas, isso te leva ao nível 9.",
+    ["Learn First Aid from the trainer"] =
+        "Aprenda Primeiros Socorros com o instrutor",
     ["Fight the dwarves."] =
         "Lute contra os anões.",
     ["Kill harpies."] =
@@ -69,6 +73,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h02-tauren-starter", {
         "Mire-o em um Espreitador-da-pradaria. Os alvos são lobos.",
     ["Use the item on any Swoop. Hunt the black-feathered birds."] =
         "Use o item em qualquer Rapineiro. Cace as aves de penas pretas.",
+    ["Tame a pet here"] =
+        "Dome um ajudante aqui",
     ["Choose an animal of level 9-10 and make it your pet with the Tame Beast spell. This pet is temporary; a lasting one comes shortly."] =
         "Escolha um animal de nível 9-10 e faça dele seu ajudante com o feitiço Domar Fera. Este ajudante é temporário; um permanente vem em breve.",
     ["Flight master at Camp Taurajo"] =
@@ -79,6 +85,14 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h02-tauren-starter", {
         "Fique na estrada e mantenha-se atento. Os inimigos desta área têm nível acima do seu.",
     ["Flight master at the Crossroads"] =
         "Mestre de voo da Encruzilhada",
+    ["Learn Blacksmithing from the trainer"] =
+        "Aprenda Ferraria com o instrutor",
+    ["Learn Mining from the trainer"] =
+        "Aprenda Mineração com o instrutor",
+    ["Learn Staves at the weapon master"] =
+        "Aprenda Báculos com o mestre de armas",
+    ["Learn Two-Handed Maces at the weapon master"] =
+        "Aprenda Maças de Duas Mãos com o mestre de armas",
     ["This is food for your pet."] =
         "Isto é comida para o seu ajudante.",
     ["The NPC is indoors, one floor up."] =
@@ -137,6 +151,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h02-tauren-starter", {
         "Este NPC fica lá embaixo, no Antro das Sombras.",
     ["This clears the quest's time limit."] =
         "Isto elimina o limite de tempo da missão.",
+    ["Learn Bows at the weapon master"] =
+        "Aprenda Arcos com o mestre de armas",
     ["The foes here are scorpions."] =
         "Os inimigos aqui são escorpiões.",
     ["The quest giver stands among the boulders."] =

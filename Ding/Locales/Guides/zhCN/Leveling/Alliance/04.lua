@@ -29,4 +29,6 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a04-westfall", {
         "飞往月光林地",
     ["Flight master at Rut'theran Village"] =
         "鲁瑟兰村的飞行管理员",
+    ["Learn Bows and Staves at the weapon master"] =
+        "向武器大师学习弓和法杖",
 })

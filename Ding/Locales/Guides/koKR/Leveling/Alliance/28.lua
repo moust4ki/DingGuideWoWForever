@@ -63,6 +63,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a28-feralas-and-tanaris", {
         "고릴라를 사냥하세요. 곰도 같은 생성 위치에 나타납니다.",
     ["Hunt bears. They appear in the same spots as the apes."] =
         "곰을 사냥하세요. 유인원과 같은 위치에 나타납니다.",
+    ["Head to the big cage"] =
+        "큰 우리로 가세요",
     ["Kill the foes near the big cage first. This helps with the following step."] =
         "먼저 큰 우리 근처의 적을 처치하세요. 다음 단계에 도움이 됩니다.",
     ["This sets Captured Sprite Darters free. Save as many of them as possible. Keep 6 or more of them alive."] =

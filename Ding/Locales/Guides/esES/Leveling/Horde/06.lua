@@ -15,6 +15,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-h06-ashenvale", {
         "El PNJ está dentro.",
     ["Hunt naga."] =
         "Caza nagas.",
+    ["Learn Two-Handed Axes at the weapon master"] =
+        "Aprende Hachas de dos manos con el maestro de armas",
     ["The quest giver waits in the tent."] =
         "El PNJ de misión espera en la tienda.",
     ["Let the conversation play out. The quest giver waits in the tent."] =

@@ -89,7 +89,7 @@ Ding.RegisterGuide({
           note = "You will tame a short-term pet shortly. You pick up Claw (Rank 7) here." },
         { go = { 1452, 62.36, 36.55 }, fly = true, talk = 11138, text = "Flight master at Everlook", -- level 52
           note = "The flight master stands past the walls, outdoors." },
-        { go = { 1448, 47.45, 15.37 }, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 52
+        { go = { 1448, 47.45, 15.37 }, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, text = "Tame a beast here to learn the next rank of Claw", -- level 52
           note = "Tame an Angerclaw Mauler with your Tame Beast spell. Track down a plague-ridden bear with a chestnut coat." },
         { turnin = 5156, -- level 52
           note = "The NPC is indoors." },

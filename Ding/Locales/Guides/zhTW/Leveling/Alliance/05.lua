@@ -17,6 +17,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a05-darkshore", {
         "你很快就要馴服一隻臨時寵物。你的寵物在這裡學會爪擊（等級2）。",
     ["Flight master in Auberdine"] =
         "奧伯丁的飛行管理員",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "在這裡馴服一隻野獸，學會下一級爪擊",
     ["You will let it go shortly. Send your pet against a Thistle Bear."] =
         "你很快就會放走牠。讓你的寵物攻擊一隻薊熊。",
     ["Get your companion back from the stable master."] =

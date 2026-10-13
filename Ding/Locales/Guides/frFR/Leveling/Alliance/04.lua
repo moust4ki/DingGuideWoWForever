@@ -29,4 +29,6 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a04-westfall", {
         "Vole jusqu'à Reflet-de-Lune",
     ["Flight master at Rut'theran Village"] =
         "Maître de vol du village de Rut'theran",
+    ["Learn Bows and Staves at the weapon master"] =
+        "Apprends les Arcs et les Bâtons auprès du maître d'armes",
 })

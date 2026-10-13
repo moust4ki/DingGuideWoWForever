@@ -44,7 +44,7 @@ Ding.RegisterGuide({
         { accept = 299, races = { "Human", "Dwarf", "NightElf", "Gnome" }, -- level 28
           note = "Your objective lies in a little cavern." },
         { complete = 295, races = { "Human", "Dwarf", "NightElf", "Gnome" } }, -- level 28
-        { go = { 1437, 37.07, 43.02 }, text = "Climb the trail" }, -- level 28
+        { go = { 1437, 37.07, 43.02 }, races = { "Human", "Dwarf", "NightElf", "Gnome" }, text = "Climb the trail" }, -- level 28
         { turnin = 295, races = { "Human", "Dwarf", "NightElf", "Gnome" } }, -- level 28
         { accept = 296, races = { "Human", "Dwarf", "NightElf", "Gnome" }, -- level 28
           note = "This one roams, so scan the surrounding area." },

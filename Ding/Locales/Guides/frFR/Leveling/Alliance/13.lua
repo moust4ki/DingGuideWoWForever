@@ -33,6 +33,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a13-stonetalon-mountains-and-ash
         "Laisse ton familier au maître des écuries.",
     ["You will tame a short-term pet shortly. You pick up Claw (Rank 4) here."] =
         "Tu vas bientôt apprivoiser un familier temporaire. Ici, ton familier apprend Griffe (Rang 4).",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Apprivoise ici une bête pour apprendre le rang suivant de Griffe",
     ["Tame any Elder Ashenvale Bear with Tame Beast."] =
         "Apprivoise n'importe quel Elder Ashenvale Bear avec Apprivoiser une bête.",
     ["Get your companion back from the stable master."] =

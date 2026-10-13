@@ -19,6 +19,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h10-ashenvale", {
         "곧 임시 소환수를 길들입니다. 여기서 할퀴기 (4 레벨)를 배웁니다.",
     ["Flight master at Splintertree Post"] =
         "토막나무 주둔지 비행 조련사",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "여기서 야수를 길들여 할퀴기의 다음 등급을 배우세요",
     ["Tame any Elder Ashenvale Bear with Tame Beast."] =
         "야수 길들이기로 아무 덩치큰 잿빛골짜기곰이나 길들이세요.",
     ["Get your companion back from the stable master."] =

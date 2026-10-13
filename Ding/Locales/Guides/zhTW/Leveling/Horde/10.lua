@@ -19,6 +19,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h10-ashenvale", {
         "你很快就要馴服一隻臨時寵物。在這裡學會爪擊（等級4）。",
     ["Flight master at Splintertree Post"] =
         "碎木崗哨飛行管理員",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "在這裡馴服一隻野獸，學會下一級爪擊",
     ["Tame any Elder Ashenvale Bear with Tame Beast."] =
         "用馴服野獸馴服任意一隻老梣谷熊。",
     ["Get your companion back from the stable master."] =

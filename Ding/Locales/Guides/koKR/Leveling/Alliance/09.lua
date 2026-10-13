@@ -21,6 +21,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a09-ashenvale-and-stonetalon-mou
         "곧 임시 소환수를 길들입니다. 소환수에게 할퀴기 (3 레벨)를 배우게 하세요.",
     ["Let the conversation play out. The NPC is indoors."] =
         "대화가 끝날 때까지 기다리세요. NPC는 건물 안에 있습니다.",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "여기서 야수를 길들여 할퀴기의 다음 등급을 배우세요",
     ["Tame an Ashenvale Bear with Tame Beast. Track down a chestnut-furred bear."] =
         "야수 길들이기로 잿빛골짜기곰을 길들이세요. 밤색 털의 곰을 찾으세요.",
     ["Get your companion back from the stable master."] =
