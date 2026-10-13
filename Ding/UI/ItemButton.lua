@@ -92,6 +92,30 @@ end
 ---------------------------------------------------------------------------
 -- Construction
 ---------------------------------------------------------------------------
+-- Why the button shows this item, and what its dimmed look or its number mean, in words.
+function B:Explain()
+    local lines = {}
+    local id = self.item or self.spell
+    if not id then return lines end
+    local wanted, q, kind = self:Wanted()
+    local step = Ding.Engine:CurrentStep()
+    local up = Ding.Gear and Ding.Gear.upgrade
+    if wanted ~= id then
+        lines[#lines + 1] = L.ITEM_FOR_STEP           -- in combat: the item it really uses
+    elseif kind == "spell" or (id == B.HEARTHSTONE and not (step and step.hearth)) then
+        lines[#lines + 1] = L.ITEM_FASTEST
+    elseif q then
+        lines[#lines + 1] = L.ITEM_FOR_QUEST:format(L.QUOTE:format(Ding.Data:QuestName(q)))
+    elseif up and up.id == id and not (step and step.use) then
+        lines[#lines + 1] = L.ITEM_UPGRADE
+    else
+        lines[#lines + 1] = L.ITEM_FOR_STEP
+    end
+    if (self.left or 0) > 0 then lines[#lines + 1] = L.ITEM_COOLDOWN:format(math.ceil(self.left)) end
+    if self.usable == false then lines[#lines + 1] = L.ITEM_UNUSABLE end
+    return lines
+end
+
 local function showTooltip(self)
     local id = B.item or B.spell
     if not id then return end
@@ -103,6 +127,7 @@ local function showTooltip(self)
     elseif not pcall(GameTooltip.SetItemByID, GameTooltip, id) then
         GameTooltip:SetText(Compat.ItemName(id) or Ding.Data:ItemName(id) or L.BIND_ITEM)
     end
+    for _, line in ipairs(B:Explain()) do GameTooltip:AddLine(line, C.accent[1], C.accent[2], C.accent[3], true) end
     local key = Ding.Gamepad:BindingText(B.BINDING)
     if key then GameTooltip:AddLine(key, 0.8, 0.8, 0.8) end
     GameTooltip:AddLine(L.ITEM_DRAG, 0.8, 0.8, 0.8)
@@ -262,6 +287,7 @@ function B:Render()
     end
     local pressed = (self.pressedUntil or 0) > GetTime()
     local key = Ding.db.panel.keyHints and Ding.Gamepad:BindingKey(self.BINDING)
+    self.left, self.usable = left, usable     -- said in words by its tooltip (B:Explain)
 
     b.veil:SetShown(left > 0)
     b.seconds:SetText(left > 0 and tostring(math.ceil(left)) or "")

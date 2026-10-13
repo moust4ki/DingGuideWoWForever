@@ -329,7 +329,8 @@ function O:Entries(kind)
         local q, e = offer.quest, { quest = offer.quest }
         local level = q and Ding.Data:QuestLevel(q) or 0
         local name = q and Ding.Data:QuestExists(q) and Ding.Data:QuestName(q) or offer.title or "?"
-        e.name = level > 0 and L.QUEST_WITH_LEVEL:format(level, name) or name
+        -- No card to hover here (the panel takes no mouse): the level in words, not "[24]".
+        e.name = level > 0 and L.OFFER_NAME:format(name, level) or name
         e.result = q and self:Classify(q, ctx) or { kind = "none" }
         e.verdict, e.text = self:Verdict(e.result, q, ctx)
         out[#out + 1] = e

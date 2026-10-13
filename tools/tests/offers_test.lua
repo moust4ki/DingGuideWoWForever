@@ -198,7 +198,7 @@ T.test("several quests: one row each, in the window's order, beside the gossip w
         T.eq(table.concat(f.rows[i].name.color, ","), table.concat({ unpack(UI.C.text, 1, 3) }, ","), "name " .. i)
     end
     T.eq(H.plain(f.title:GetText()), "Ding! · Ces quêtes et ton guide")
-    T.eq(rows[1].name, "[24] Fournitures en provenance de Darkshire", "the quest's name in the client's language")
+    T.eq(rows[1].name, "Fournitures en provenance de Darkshire (niveau 24)", "the quest's name and level in words, in the client's language")
     local point, rel, relPoint, x, y = f:GetPoint()
     T.eq(point, "TOPLEFT")
     T.eq(rel, UIParent)

@@ -418,7 +418,7 @@ local function dungeonPage(canvas, width)
         UI.HeaderRow(canvas, L.DUNGEONS_BY_LEVEL, width),
     }
     for _, d in ipairs(Ding.Engine:DungeonInfo()) do
-        local levels = d.min and (" " .. UI.Colored("secondary", L.GUIDE_RANGE:format(d.min, d.max))) or ""
+        local levels = d.min and (" " .. UI.Colored("secondary", "· " .. L.GUIDE_RANGE:format(d.min, d.max))) or ""
         rows[#rows + 1] = UI.CheckRow(canvas, Cfg, {
             label = d.name .. levels,
             get = function() return Ding:DungeonWanted(d.name) end,

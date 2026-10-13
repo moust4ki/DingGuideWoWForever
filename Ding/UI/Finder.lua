@@ -100,7 +100,7 @@ end
 ---------------------------------------------------------------------------
 -- What the pages show
 ---------------------------------------------------------------------------
--- "8 min" (the fastest way, Core/Travel.lua), "< 1 min"; "320 yd" without a time.
+-- "8 min away" (the fastest way, Core/Travel.lua), "under 1 min away"; "320 yd" without a time.
 local function cost(entry)
     if entry and entry.seconds then
         if entry.seconds < 60 then return L.DIR_UNDER_MINUTE end
@@ -110,7 +110,7 @@ local function cost(entry)
     return ""
 end
 
--- The ways the trip takes besides walking, after a line: "… · flight, boat".
+-- The ways the trip takes besides walking, after a line: "… · by flight, boat".
 local MEANS = { fly = "DIR_BY_FLY", boat = "DIR_BY_BOAT", zeppelin = "DIR_BY_ZEPPELIN", tram = "DIR_BY_TRAM",
     hearth = "DIR_BY_HEARTH", teleport = "DIR_BY_TELEPORT" }
 local function withMeans(text, entry)
@@ -123,21 +123,21 @@ local function withMeans(text, entry)
         end
     end
     if #names == 0 then return text end
-    return text .. " · " .. table.concat(names, ", ")
+    return text .. " · " .. L.DIR_BY:format(table.concat(names, ", "))
 end
 
--- "Buliwyf Stonehand · Ironforge · flight"
+-- "Buliwyf Stonehand · Ironforge · by flight"
 local function npcLine(entry)
     local place = Dir():Place(entry.point)
     return withMeans((entry.name or "?") .. (place and (" · " .. place) or ""), entry)
 end
 
--- "Guns, Bows, Thrown +2"
+-- "Guns, Bows, Thrown and 2 more"
 local function choiceNames(choices)
     local names = {}
     for i = 1, math.min(3, #choices) do names[i] = choices[i].label end
     local text = table.concat(names, ", ")
-    if #choices > 3 then text = text .. " " .. L.PREVIEW_MORE:format(#choices - 3) end
+    if #choices > 3 then text = text .. " " .. UI.More(#choices - 3) end
     return text
 end
 
@@ -184,7 +184,7 @@ function F:Rows(page)
                 sub = choiceNames(e.choices)
             else
                 local count = #D:Fastest(e.kind, within)
-                sub = (e.best.name or "?") .. (count > 1 and (" " .. L.PREVIEW_MORE:format(count - 1)) or "")
+                sub = (e.best.name or "?") .. (count > 1 and (" " .. UI.More(count - 1)) or "")
             end
             add({ label = name, sub = sub, right = cost(e.best), caret = true,
                 open = { kind = "citylist", city = page.city, category = e.category,

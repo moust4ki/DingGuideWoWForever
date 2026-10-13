@@ -158,7 +158,9 @@ T.test("spot: without a quest in the log, the monsters of the coming steps", fun
     local row = grindRow()
     P:ShowQuest(row, P.frame)
     T.eq(GameTooltip.text, spot.name)
-    T.ok(GameTooltip.lines[1] and H.plain(GameTooltip.lines[1]):find(tostring(spot.maxLevel), 1, true),
+    -- First what the row's look means ("to do"), then the levels.
+    T.eq(GameTooltip.lines[1], L.STATE_TODO)
+    T.ok(GameTooltip.lines[2] and H.plain(GameTooltip.lines[2]):find(tostring(spot.maxLevel), 1, true),
         "no levels in the card")
 end)
 

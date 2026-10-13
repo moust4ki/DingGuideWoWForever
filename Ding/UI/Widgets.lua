@@ -71,6 +71,13 @@ function UI.StripColors(s)
     return (s:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", ""))
 end
 
+-- After a list cut short, what is left in words ("and 2 more"; `quests`: "and 1 more quest"),
+-- never a bare "+2".
+function UI.More(n, quests)
+    if quests then return n == 1 and L.MORE_QUESTS_ONE or L.MORE_QUESTS:format(n) end
+    return n == 1 and L.MORE_ONE or L.MORE:format(n)
+end
+
 ---------------------------------------------------------------------------
 -- Fonts: Noto Sans in four weights (OFL, shipped in Media/Fonts).
 ---------------------------------------------------------------------------

@@ -47,8 +47,14 @@ return function(opts)
         assert(type(radians) == "number", "SetRotation expects radians")
         self.rotation = radians
     end
-    function Methods:EnableMouse(v) self.mouse = v and true or false end
+    function Methods:EnableMouse(v)
+        self.mouse = v and true or false
+        self.mouseClicks = self.mouse
+    end
     function Methods:IsMouseEnabled() return self.mouse == true end
+    -- Hover without taking the clicks (the minimap pins: the minimap keeps its clicks).
+    function Methods:SetMouseClickEnabled(v) self.mouseClicks = v and true or false end
+    function Methods:IsMouseClickEnabled() return self.mouseClicks == true end
     function Methods:GetCenter() return 400, 300 end
     function Methods:SetAlpha(a)
         assert(type(a) == "number" and a >= 0 and a <= 1, "SetAlpha expects 0-1")

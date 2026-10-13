@@ -100,8 +100,9 @@ T.test("Darkshire to Buliwyf: the row says flight, the arrow flies first, then w
     F:Activate(rowIndex(L.DIR_WEAPONS)); H.flush()
     local i = rowIndex(L.WEAPON_GUNS)
     local row = F.rows[i]
-    T.ok(row.sub:find("Buliwyf Stonehand · Ironforge · " .. L.DIR_BY_FLY, 1, true), row.sub)
-    T.ok(row.right:match("^%d+ min$"), "no time in minutes: " .. row.right)
+    T.ok(row.sub:find("Buliwyf Stonehand · Ironforge · " .. L.DIR_BY:format(L.DIR_BY_FLY), 1, true), row.sub)
+    local minutes = tonumber(row.right:match("%d+"))
+    T.eq(row.right, L.DIR_MINUTES:format(minutes or -1), "no time in minutes, in words")
     T.eq(row.entry.means[1], "fly")
     F:Activate(i); H.flush()
     T.ok(F.trip and F.trip.npc == BULIWYF, "no trip to Buliwyf")

@@ -18,6 +18,7 @@ local LIST_PAD, ROW_GAP = 4, 2
 local ROW_PAD_X, ROW_PAD_Y, ROW_GAP_X, ICON = 6, 4, 8, 16
 local COUNTER_MIN = 28
 local COMPACT_HEIGHT = 28
+local FOCUS_HINTS = 22       -- focus mode's hint bar
 local HOLD = 1.5             -- seconds a finished step stays on screen
 local LOG_ALMOST_FULL = 16   -- quests in the log (20 at most) from which unused ones are pointed out
 local FOCUS_KEYS = { "PADDUP", "PADDDOWN", "PAD1", "PAD2", "PAD3", "PAD4", "PADLSHOULDER", "PADRSHOULDER",
@@ -204,15 +205,16 @@ local function questRow(line)
     local q = line.quest
     local row = { action = action, quest = q, kind = line.glyph or GLYPH_OF[action] or "other", counter = line.counter,
         sub = line.sub, service = line.service, item = line.item, wrap = line.wrap, talent = line.talent,
-        goal = line.goal, goalStep = line.goalStep, entry = line.entry, what = line.what }
+        goal = line.goal, goalStep = line.goalStep, entry = line.entry, what = line.what, prequestOf = line.prequestOf }
     if action == "gear" then row.kind = "use" end
     if action == "talent" then row.kind = "level" end
+    -- A quest line done says so in words, like the objectives ("Turned in …"), not only in green.
     if action == "accept" then
-        row.text = L.ROW_ACCEPT:format(questName(q))
+        row.text = (line.done and L.ROW_ACCEPTED or L.ROW_ACCEPT):format(questName(q))
     elseif action == "turnin" then
-        row.text = L.ROW_TURNIN:format(questName(q))
+        row.text = (line.done and L.ROW_TURNEDIN or L.ROW_TURNIN):format(questName(q))
     elseif action == "complete" then
-        row.text = L.ROW_COMPLETE:format(questName(q))
+        row.text = (line.done and L.ROW_COMPLETED or L.ROW_COMPLETE):format(questName(q))
     elseif action == "grind" then
         -- The monster to farm for a level step, with its levels; its quest when one needs it.
         local levels = npcLevels(line.minLevel, line.maxLevel)
@@ -228,7 +230,7 @@ local function questRow(line)
     if line.done then
         row.state = "done"
     elseif line.dim and line.requires then
-        row.state = "impossible"
+        row.state, row.requires = "impossible", line.requires
         row.text = row.text .. " · " .. L.ROW_REQUIRES:format(line.requires)
     elseif line.impossible or line.dim then
         row.state = "impossible"
@@ -247,8 +249,8 @@ local function pending(line)
 end
 
 -- A next step on one dimmed line: what it asks first, with its quest's level, and how many
--- other quests it still deals with ("Turn in [2] “Name” +1"); a step without a quest keeps
--- its own text.
+-- other quests it still deals with ("Turn in [2] “Name” and 1 more quest"); a step without a
+-- quest keeps its own text.
 local function previewRow(step)
     local main, first = {}, nil
     for _, line in ipairs(Ding.Engine:Describe(step, true)) do
@@ -270,7 +272,7 @@ local function previewRow(step)
             end
         end
         row.text = L[QUEST_VERBS[first.action]]:format(leveledName(q))
-            .. (more > 0 and " " .. L.PREVIEW_MORE:format(more) or "")
+            .. (more > 0 and " " .. UI.More(more, true) or "")
             .. (first.dim and first.requires and " · " .. L.ROW_REQUIRES:format(first.requires) or "")
     end
     row.action, row.state, row.preview = "preview", "preview", true
@@ -363,13 +365,25 @@ function P:Rows(content)
                 if row.prequestOf then
                     text = text .. UI.Colored("secondary", " · " .. L.PREQUEST_OF:format(Ding.Data:QuestName(row.prequestOf)))
                 end
-                grouped[#grouped + 1] = { action = "header", quest = q, kind = "header", state = "header", text = text }
+                grouped[#grouped + 1] = { action = "header", quest = q, kind = "header", state = "header", text = text,
+                    prequestOf = row.prequestOf }
             end
             row.nested = true
         end
         grouped[#grouped + 1] = row
     end
     rows = grouped
+    -- An accept that waits on its chain (grey): the quest of the catch-up rows above it, said
+    -- by its card (P:RowMeaning).
+    for _, row in ipairs(rows) do
+        if row.prequestOf and row.quest then
+            for _, other in ipairs(rows) do
+                if other.action == "accept" and other.quest == row.prequestOf and other.state == "impossible" then
+                    other.waitsOn = other.waitsOn or row.quest
+                end
+            end
+        end
+    end
     -- A target in another zone: its zone (and its NPC) after the row's text.
     for _, row in ipairs(rows) do
         if row.state ~= "done" and row.action ~= "level" and row.action ~= "header" then
@@ -424,9 +438,15 @@ function P:Rows(content)
         rows[#rows + 1] = row
     end
     for _, row in ipairs(lastNotices) do rows[#rows + 1] = row end
-    -- The next steps, dimmed (option): what the step after this one will ask.
+    -- The next steps, dimmed (option): what the step after this one will ask, under a header
+    -- that says so (dimmed rows alone looked like work to do now).
+    local ahead = {}
     for _, line in ipairs(preview) do
-        rows[#rows + 1] = previewRow(line.step)
+        ahead[#ahead + 1] = previewRow(line.step)
+    end
+    if #ahead > 0 then
+        rows[#rows + 1] = { action = "previewHeader", kind = "header", state = "header", text = L.PREVIEW_HEADER }
+        for _, row in ipairs(ahead) do rows[#rows + 1] = row end
     end
     return rows
 end
@@ -567,16 +587,67 @@ function P:Aim(row)
     if #points > 0 then Ding.Arrow:Focus(points) end
 end
 
--- The quest of a row, in a tooltip next to `owner`: name, level, objectives. Ding never
--- opens the game's quest log itself: driving Blizzard's frames from an addon spreads its
--- taint there, and on Forever their secret values then fail by the dozen.
+-- What a row's look says, in words, for its card (hover, X in focus mode): its state (done,
+-- to do, not possible yet and why, marked by hand, skipped, a step further on, along the way)
+-- and a lone counter. Yendi: no meaning carried by a color or an icon alone. Rows that are not
+-- the step's (services, upgrades, offers) and notices say everything in their text already.
+function P:RowMeaning(row)
+    local lines = {}
+    if not row or row.extra then return lines end
+    local state = row.state
+    if row.preview then
+        lines[#lines + 1] = L.STATE_PREVIEW
+    elseif state == "done" then
+        lines[#lines + 1] = L.STATE_DONE
+    elseif state == "todo" and row.action ~= "jump" then
+        lines[#lines + 1] = row.sticky and L.STATE_STICKY or row.along and L.STATE_ALONG or L.STATE_TODO
+    elseif state == "impossible" then
+        if row.requires then
+            lines[#lines + 1] = L.STATE_LEVEL:format(row.requires)
+        elseif row.waitsOn then
+            lines[#lines + 1] = L.STATE_CHAIN:format(quoted(row.waitsOn))
+        elseif row.quest and (row.action == "turnin" or row.action == "complete") then
+            lines[#lines + 1] = L.STATE_NOT_TAKEN
+        end
+    elseif state == "manual" then
+        lines[#lines + 1] = L.STATE_MANUAL
+    elseif state == "skipped" then
+        lines[#lines + 1] = L.STATE_SKIPPED
+    end
+    -- A goal's lone number (destroy, bank): the items still in the bags.
+    local goal = row.goal
+    if goal and (goal.kind == "destroy" or goal.kind == "bank") and tonumber(row.counter) and state ~= "done" then
+        lines[#lines + 1] = L.GOAL_LEFT:format(tonumber(row.counter))
+    end
+    return lines
+end
+
+-- The card's last line: what a click on the row does, or A in focus mode (the gamepad's).
+local function clickLine()
+    local text = P.focusing and L.ROW_CLICK_PAD:format(Ding.Gamepad:ButtonName("PAD1")) or L.ROW_CLICK
+    GameTooltip:AddLine(text, 0.6, 0.6, 0.6, true)
+end
+
+local function addMeaning(row)
+    for _, text in ipairs(P:RowMeaning(row)) do GameTooltip:AddLine(text, 0.8, 0.8, 0.8, true) end
+end
+
+-- The quest of a row, in a tooltip next to `owner`: name, what the row's look means, level
+-- (above the player's: why it is orange), objectives. Ding never opens the game's quest log
+-- itself: driving Blizzard's frames from an addon spreads its taint there, and on Forever
+-- their secret values then fail by the dozen. A row without a quest: its text and what its
+-- look means, when there is something to say.
 function P:ShowQuest(row, owner)
     local q = row and row.quest
     if row and row.action == "gear" and row.item then
-        -- The upgrade itself: the game's own card of the item.
+        -- The upgrade itself: the game's own card of the item, and what its "+12" counts.
         GameTooltip:SetOwner(owner, "ANCHOR_RIGHT")
         if not pcall(GameTooltip.SetItemByID, GameTooltip, row.item) then
             GameTooltip:SetText(Compat.ItemName(row.item) or "?")
+        end
+        local up = Ding.Gear and Ding.Gear.upgrade
+        if up and up.id == row.item then
+            GameTooltip:AddLine(L.GEAR_GAIN:format(math.floor(up.gain + 0.5)), C.accent[1], C.accent[2], C.accent[3], true)
         end
         GameTooltip:Show()
         return
@@ -596,17 +667,25 @@ function P:ShowQuest(row, owner)
         -- The monster to farm: its name and levels.
         GameTooltip:SetOwner(owner, "ANCHOR_RIGHT")
         GameTooltip:SetText(Ding.Data:NpcName(row.npc) or "?", 1, 0.82, 0)
+        addMeaning(row)
         local info = Ding.Data:NpcInfo(row.npc)
         if info then GameTooltip:AddLine(npcLevels(info.minLevel, info.maxLevel), 0.8, 0.8, 0.8) end
-        GameTooltip:AddLine(L.ROW_CLICK, 0.6, 0.6, 0.6, true)
+        clickLine()
         GameTooltip:Show()
         return
     end
-    if not q then return end
+    if not q then return self:ShowRowText(row, owner) end
     GameTooltip:SetOwner(owner, "ANCHOR_RIGHT")
     GameTooltip:SetText(Ding.Data:QuestName(q), 1, 0.82, 0)
-    local level = Ding.Data:QuestLevel(q)
-    if level and level > 0 then GameTooltip:AddLine(L.QUEST_LEVEL:format(level), 0.8, 0.8, 0.8) end
+    addMeaning(row)
+    -- "[29]" in the window is the quest's level; orange: above the player's.
+    local level, mine = Ding.Data:QuestLevel(q), UnitLevel("player")
+    if level and level > 0 then
+        local text = level > mine and L.QUEST_LEVEL_ABOVE:format(level, mine) or L.QUEST_LEVEL:format(level)
+        GameTooltip:AddLine(text, 0.8, 0.8, 0.8, true)
+    end
+    -- "· before “Name”": a quest earlier in the chain of a quest of the step.
+    if row.prequestOf then GameTooltip:AddLine(L.PREQUEST_DETAIL:format(quoted(row.prequestOf)), 0.8, 0.8, 0.8, true) end
     if Compat.IsInLog(q) then
         for _, obj in ipairs(Compat.GetObjectives(q)) do
             if obj.text then
@@ -618,7 +697,23 @@ function P:ShowQuest(row, owner)
         GameTooltip:AddLine(L.NOT_IN_LOG, 0.8, 0.8, 0.8, true)
     end
     -- noAim: a card shown elsewhere than in the guide window (settings).
-    if not row.noAim then GameTooltip:AddLine(L.ROW_CLICK, 0.6, 0.6, 0.6, true) end
+    if not row.noAim and not row.preview then clickLine() end
+    -- Focus mode: Right finds the quest in the guide (the mouse has the step menu for it).
+    if self.focusing and not row.noAim then
+        GameTooltip:AddLine(L.ROW_FIND_PAD:format(Ding.Gamepad:ButtonName("PADDRIGHT")), 0.6, 0.6, 0.6, true)
+    end
+    GameTooltip:Show()
+end
+
+-- A row without a quest (a level, a trip, a goal, a step further on): its text whole and what
+-- its look means; nothing when its look says nothing more than its text.
+function P:ShowRowText(row, owner)
+    local lines = self:RowMeaning(row)
+    if #lines == 0 then return end
+    GameTooltip:SetOwner(owner, "ANCHOR_RIGHT")
+    GameTooltip:SetText(UI.StripColors(row.text or ""), 1, 1, 1, 1, true)
+    for _, text in ipairs(lines) do GameTooltip:AddLine(text, 0.8, 0.8, 0.8, true) end
+    if not row.preview and #self:PointsOf(row) > 0 then clickLine() end
     GameTooltip:Show()
 end
 
@@ -626,19 +721,30 @@ local function hideQuest(owner)
     if GameTooltip:GetOwner() == owner then GameTooltip:Hide() end
 end
 
+-- Step shown and total: the held step while it stays on screen.
+local function progress(E, held)
+    local total = #E.guide.steps
+    if held then return held.index, total end
+    return E.finished and total or math.min(E.index, total), total
+end
+
 -- The minimized window keeps one line (design): hovering it shows that row whole, with its
--- note, when the line is cut or the note hidden. The gamepad's focus mode opens the window.
+-- note, what its look means and the "3/42" in words. The gamepad's focus mode opens the window.
 function P:ShowCompactText(owner)
     local data = self.compact and self.compactRow
     if not data or (data.text or "") == "" then return end
-    local ok, cut = pcall(self.frame.mini.text.IsTruncated, self.frame.mini.text)
-    if ok and not cut and not data.sub then return end
     GameTooltip:SetOwner(owner, "ANCHOR_BOTTOM")
     GameTooltip:SetText(UI.StripColors(data.text), 1, 1, 1, 1, true)
     if data.sub then
         for line in (data.sub .. "\n"):gmatch("(.-)\n") do
             GameTooltip:AddLine(UI.StripColors(line), C.secondary[1], C.secondary[2], C.secondary[3], true)
         end
+    end
+    -- A step marked by hand: its note under the row says it already.
+    if not (data.sub and (data.state == "manual" or data.state == "skipped")) then addMeaning(data) end
+    local E = Ding.Engine
+    if E.guide then
+        GameTooltip:AddLine(L.COMPACT_STEP:format(progress(E, self.holding)), 0.8, 0.8, 0.8, true)
     end
     GameTooltip:Show()
 end
@@ -869,6 +975,10 @@ function P:Create()
     f.fillHolder:SetHeight(3)
     f.fillHolder:SetFrameLevel(f.trackHolder:GetFrameLevel() + 1)
     f.fill = UI.Shape(f.fillHolder, "bar", C.accent, "ARTWORK"):Place(f.fillHolder)
+    -- Focus mode (a gamepad's): what A, X and B do on the focused row, under the progress (no
+    -- button on screen does it). Plain hints, not buttons: they fit the narrowest window.
+    f.focusHints = Ding.Gamepad:NewHintBar(f, db.width - 16, FOCUS_HINTS)
+    f.focusHints:Hide()
 
     -- Minimized: count, icon, text, counter, expand; 2-unit progress line at the bottom.
     f.mini = CreateFrame("Frame", nil, f)
@@ -1191,7 +1301,7 @@ local function skippedLines(E, content)
         content[#content + 1] = { action = "notice", notice = "skipped", text = text }
     end
     if #notes > MAX_SKIP_LINES then
-        content[#content + 1] = { action = "notice", notice = "skipped", text = L.SKIPPED_MORE:format(#notes - MAX_SKIP_LINES) }
+        content[#content + 1] = { action = "notice", notice = "skipped", text = UI.More(#notes - MAX_SKIP_LINES) }
     end
 end
 
@@ -1290,7 +1400,7 @@ function P:Extras(step, content)
             if i <= 3 then names[i] = w.label end
         end
         local text = table.concat(names, ", ")
-        if #weapon.weapons > 3 then text = text .. " " .. L.PREVIEW_MORE:format(#weapon.weapons - 3) end
+        if #weapon.weapons > 3 then text = text .. " " .. UI.More(#weapon.weapons - 3) end
         local best = weapon.best
         content[#content + 1] = { action = "weapon", entry = best, what = weapon.weapons[1].label,
             text = (#weapon.weapons > 1 and L.WEAPONS_TO_LEARN or L.WEAPON_TO_LEARN):format(text, best.name or "?",
@@ -1348,13 +1458,6 @@ function P:Extras(step, content)
         end
         content[#content + 1] = { action = "wrapup", wrap = "stay", text = L.WRAP_STAY }
     end
-end
-
--- Step shown and total: the held step while it stays on screen.
-local function progress(E, held)
-    local total = #E.guide.steps
-    if held then return held.index, total end
-    return E.finished and total or math.min(E.index, total), total
 end
 
 -- The engine moved on because the step on screen got done: keep it, all green, 1.5 s.
@@ -1564,13 +1667,24 @@ function P:LayoutFull()
     f.fillHolder:SetPoint("TOPLEFT", f, "TOPLEFT", 8, y)
     f.fillHolder:SetWidth(math.max(4, (width - 16) * ratio))
     f.fillHolder:SetShown(ratio > 0)
-    f:SetHeight(-y + 3 + 8)
+    local hints = self.focusing and Ding.Gamepad:Active() and self:FocusHints()
+    f.focusHints:SetShown(hints and true or false)
+    if hints then
+        f.focusHints:SetRoom(width - 16)
+        f.focusHints:SetHints(hints)
+        f.focusHints:ClearAllPoints()
+        f.focusHints:SetPoint("TOPLEFT", f, "TOPLEFT", 8, y - 3 - 6)
+        f:SetHeight(-y + 3 + 6 + FOCUS_HINTS + 6)
+    else
+        f:SetHeight(-y + 3 + 8)
+    end
 end
 
 function P:LayoutCompact()
     local f, E = self.frame, Ding.Engine
     local width, m = Ding.db.panel.width, f.mini
     f.finder.key:Hide()
+    f.focusHints:Hide()
     for _, region in ipairs({ f.menu, f.close, f.minimize, f.finder, f.title, f.titleArea, f.titleDivider,
         f.stepDivider, f.prev, f.next, f.stepText, f.stepTotal, f.zone, f.lb, f.rb, f.trackHolder, f.fillHolder }) do
         region:Hide()
@@ -1660,6 +1774,55 @@ end
 -- B leaves.
 -- Only these keys are taken; the others keep their game binding.
 ---------------------------------------------------------------------------
+-- What A does on the focused row, for the hint bar: nil when it does nothing there, or when the
+-- row carries the A chip itself (a control).
+function P:FocusAction(row)
+    if not row or row.state == "button" or row.preview then return nil end
+    local button = _G.DingItemButton
+    if row.kind == "use" and button and button:IsShown() and (not row.item or row.item == Ding.ItemButton.item) then
+        return L.FOCUS_USE
+    end
+    local action = row.action
+    if action == "notice" then return row.notice == "cleanup" and L.HINT_OPEN or nil end
+    if action == "gear" then return nil end
+    if action == "jump" then return L.HINT_GO end
+    if action == "talent" or action == "wrapup" then return L.HINT_SELECT end
+    if action == "service" or action == "weapon" then return L.FOCUS_AIM end
+    return #self:PointsOf(row) > 0 and L.FOCUS_AIM or nil
+end
+
+-- A row X shows a card for (P:ShowQuest).
+function P:HasCard(row)
+    if not row then return false end
+    if row.quest or row.action == "grind" or (row.action == "gear" and row.item) or (row.action == "talent" and row.talent) then
+        return true
+    end
+    return #self:RowMeaning(row) > 0
+end
+
+-- The focus mode's hint bar: A (what it does on that row), X (its card), B (leave).
+function P:FocusHints()
+    local list = {}
+    local row = self.focusIndex ~= 0 and self.rowsShown and self.rowsShown[self.focusIndex] or nil
+    local a = self:FocusAction(row)
+    if a then list[#list + 1] = UI.Hint("PAD1", a) end
+    if self:HasCard(row) then list[#list + 1] = UI.Hint("PAD3", L.FOCUS_DETAIL) end
+    list[#list + 1] = UI.Hint("PAD2", L.FOCUS_LEAVE)
+    return list
+end
+
+-- The directory's button focused (above the first row): its name, as the mouse's hover says it.
+function P:ShowFinderTip()
+    local b = self.frame.finder
+    if not (self.focusing and self.focusIndex == 0) then
+        if GameTooltip:GetOwner() == b then GameTooltip:Hide() end
+        return
+    end
+    GameTooltip:SetOwner(b, "ANCHOR_TOP")
+    GameTooltip:SetText(L.BIND_FINDER)
+    GameTooltip:Show()
+end
+
 function P:StartFocus()
     if InCombatLockdown() or not self.frame then return end
     -- The settings window and the move mode own the gamepad while they are open.
@@ -1682,6 +1845,7 @@ function P:StopFocus()
     if not self.focusing then return end
     self.focusing = false
     for _, row in ipairs(self.frame.rows) do hideQuest(row) end
+    hideQuest(self.frame.finder)
     Ding.Gamepad:Release(self.frame)
     self:Update()
 end
@@ -1699,6 +1863,7 @@ function P:OnFocusKey(key)
             self.focusIndex = clamp((self.focusIndex or 1) + (key == "PADDUP" and -1 or 1), 0, count)
             syncItemKey()
             self:Update()
+            self:ShowFinderTip()
         end
     elseif key == "PAD1" then
         if self.focusIndex == 0 then
