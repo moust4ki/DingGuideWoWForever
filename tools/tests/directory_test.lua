@@ -327,7 +327,9 @@ T.test("trip: the guide window says it; the NPC's window ends it; B or the trip 
     T.ok(F:Go("bank"))
     local trip = F.trip
     local row
-    for _, r in ipairs(P.rowsShown or {}) do if r.action == "trip" then row = r end end
+    for _, r in ipairs(P.rowsShown or {}) do
+        if r.action == "notice" and r.notice == "trip" then row = r end
+    end
     T.ok(row, "no trip line in the guide window")
     T.ok(H.plain(row.text):find(L.FINDER_TRIP:format(trip.name, L.DIR_BANK), 1, true), H.plain(row.text))
     T.eq(row.sub, L.DIR_TRIP_PAD:format(Ding.Gamepad:ButtonName("PAD1")))
@@ -353,7 +355,9 @@ T.test("trip: the guide window says it; the NPC's window ends it; B or the trip 
     -- The trip line: A in focus mode (or a click) takes the arrow back.
     F:Go("vendor")
     P:StartFocus(); H.flush()
-    for i, r in ipairs(P.rowsShown) do if r.action == "trip" then P.focusIndex = i end end
+    for i, r in ipairs(P.rowsShown) do
+        if r.action == "notice" and r.notice == "trip" then P.focusIndex = i end
+    end
     H.press("PAD1")
     T.eq(F.trip, nil, "A on the trip line does not end it")
     P:StopFocus()

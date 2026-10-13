@@ -41,11 +41,12 @@ end
 ---------------------------------------------------------------------------
 -- Rows
 ---------------------------------------------------------------------------
-T.test("accept row: Accept \"quest\", with the guide note below", function()
+T.test("accept row: Accept \"[level] quest\", with the guide note below", function()
     start()
     local row = P.rowsShown[1]
     T.eq(row.state, "todo")
-    T.eq(H.plain(row.text), L.ROW_ACCEPT:format(L.QUOTE:format(Ding.Data:QuestName(456))))
+    T.eq(H.plain(row.text), L.ROW_ACCEPT:format(L.QUEST_WITH_LEVEL:format(Ding.Data:QuestLevel(456),
+        L.QUOTE:format(Ding.Data:QuestName(456)))))
     T.ok(row.text:find("|cff5bb4ff", 1, true), "quest name not a blue link")
     T.eq(row.sub, "Guide note.")
 end)
@@ -54,21 +55,22 @@ T.test("log objectives: verb, name, counter; past tense once done", function()
     start()
     H.accept(456); H.flush()
     T.eq(E.index, 2, rowTexts())
-    T.ok(#P.rowsShown >= 2, "objectives missing: " .. rowTexts())
-    local row = P.rowsShown[1]
+    T.ok(#P.rowsShown >= 3, "objectives missing: " .. rowTexts())
+    T.eq(P.rowsShown[1].action, "header")
+    local row = P.rowsShown[2]
     T.eq(row.kind, "kill")
     T.eq(row.counter, "0/1")
     T.ok(H.plain(row.text):find("^" .. L.ROW_KILL:format("")), "verb: " .. H.plain(row.text))
-    local r = P.frame.rows[1]
+    local r = P.frame.rows[2]
     T.ok(r.counter:IsShown() and r.counter.color[1] == C.todo[1], "red counter missing")
     T.eq(r.icon.tex.texture, Ding.UI.TEX .. "icon_diamond", "diamond for \"kill\"")
     -- Objectives done: the step stays until the turn-in, rows in the past tense.
     E.hold = true
     H.complete(456); H.flush()
-    row = P.rowsShown[1]
+    row = P.rowsShown[2]
     T.eq(row.state, "done", rowTexts())
     T.eq(H.plain(row.text), L.ROW_KILLED:format(row.target), "not in the past tense")
-    T.eq(P.frame.rows[1].icon.tex.texture, Ding.UI.TEX .. "icon_check", "check mark for done objectives")
+    T.eq(P.frame.rows[2].icon.tex.texture, Ding.UI.TEX .. "icon_check", "check mark for done objectives")
 end)
 
 -- The client's objectives as Forever can give them: `finished` secret, counts at 0. `fixed`:
@@ -218,35 +220,82 @@ T.test("a display error stops neither the engine nor the other displays, reporte
     T.eq(reported, 1, "error not reported, or reported every time")
 end)
 
-T.test("objectives: their quest name below, unless the step already gives it", function()
+T.test("objectives: under a header with their quest's level and name, unless the step names it", function()
     start()
     H.accept(456); H.flush()
     T.eq(E.index, 2)
-    local quest = L.FOR_QUEST:format(L.QUOTE:format(Ding.Data:QuestName(456)))
-    T.eq(P.rowsShown[1].sub, quest, "the objectives' quest missing")
-    T.eq(P.rowsShown[2].sub, nil, "quest repeated under each objective")
-    -- An accept row of the same quest in the step already names it.
+    local header = P.rowsShown[1]
+    T.eq(header.action, "header")
+    T.eq(header.state, "header")
+    T.eq(header.quest, 456)
+    T.eq(H.plain(header.text), L.QUEST_WITH_LEVEL:format(Ding.Data:QuestLevel(456), L.QUOTE:format(Ding.Data:QuestName(456))))
+    T.ok(header.text:find("|cff5bb4ff", 1, true), "quest name not a blue link")
+    for i = 2, #P.rowsShown do
+        local row = P.rowsShown[i]
+        T.eq(row.action, "objective")
+        T.ok(row.nested, "objective not under its header")
+        T.eq(row.sub, nil, "quest repeated under an objective")
+    end
+    -- In the window: SemiBold, no icon nor background; the objectives indented.
+    local h, o = P.frame.rows[1], P.frame.rows[2]
+    T.ok(not h.icon:IsShown() and not h.bg:IsShown(), "header with an icon or a background")
+    T.eq(h.text.fontObject, Ding.UI.Font("semibold", 12))
+    T.eq(o.text.fontObject, Ding.UI.Font("regular", 12))
+    T.ok(o.icon:IsShown(), "objective without its icon")
+    T.ok(select(4, o:GetPoint()) > select(4, h:GetPoint()), "objectives not indented")
+    -- A turn-in row of the same quest in the step already names it: no header.
     Ding.RegisterGuide({ id = "t-named", title = "Named", races = { "NightElf" }, steps = {
         { turnin = 456, complete = 456 },
     } })
     E:SetGuide("t-named", 1, true); H.flush()
     for _, row in ipairs(P.rowsShown) do
-        T.ok(row.action ~= "objective" or row.sub ~= quest, "quest named twice")
+        T.ok(row.action ~= "header", "quest named twice")
+        T.ok(not row.nested, "objective indented without a header")
     end
+end)
+
+T.test("objectives of two quests: one header each; the target binding passes over them", function()
+    Ding.RegisterGuide({ id = "t-two", title = "Two", races = { "NightElf" }, steps = {
+        { complete = { 456, 916 } },
+    } })
+    start()
+    H.accept(456); H.accept(916); H.flush()
+    E:SetGuide("t-two", 1, true); H.flush()
+    local headers = {}
+    for i, row in ipairs(P.rowsShown) do
+        if row.action == "header" then headers[#headers + 1] = i end
+    end
+    T.eq(#headers, 2, rowTexts())
+    T.eq(headers[1], 1)
+    T.eq(P.rowsShown[headers[1]].quest, 456)
+    T.eq(P.rowsShown[headers[2]].quest, 916)
+    for i = headers[1] + 1, headers[2] - 1 do T.eq(P.rowsShown[i].quest, 456) end
+    T.eq(P.rowsShown[headers[2] + 1].quest, 916)
+    P:StartFocus()
+    local stops = 0
+    for _ = 1, #P.rowsShown do
+        P:CycleTarget()
+        if P.cycle and P.cycle.at > 0 then
+            stops = stops + 1
+            T.ok(P.rowsShown[P.focusIndex].action ~= "header", "the target binding stops on a header")
+        end
+    end
+    T.ok(stops > 0, "no stop")
+    P:StopFocus()
 end)
 
 T.test("click on an objective row: the arrow goes there, the quest card shows", function()
     start()
     H.accept(456); H.flush()
     local problems = H.problems()
-    local r = P.frame.rows[1]
+    local r = P.frame.rows[2]
     r.scripts.OnClick(r)
     T.ok(A.forced, "the arrow does not aim at the row")
     T.eq(GameTooltip:GetOwner(), r, "card not next to the row")
     T.eq(GameTooltip.text, Ding.Data:QuestName(456), "card without the quest")
     local lines = table.concat(GameTooltip.lines, " | ")
     T.ok(lines:find(L.QUEST_LEVEL:format(Ding.Data:QuestLevel(456)), 1, true), "level missing: " .. lines)
-    T.ok(lines:find(P.rowsShown[1].target, 1, true), "objectives missing: " .. lines)
+    T.ok(lines:find(P.rowsShown[2].target, 1, true), "objectives missing: " .. lines)
     -- Never the game's own windows (taint): the mock turns such calls into problems.
     T.eq(H.problems(), problems, "Ding touched the game's interface")
     r.scripts.OnLeave(r)
@@ -268,7 +317,12 @@ T.test("focus mode: X shows the quest card, the D-pad closes it", function()
     P:StartFocus()
     H.press("PAD3")
     T.ok(GameTooltip:IsShown() and GameTooltip.text == Ding.Data:QuestName(456), "X does not show the quest")
-    T.eq(GameTooltip:GetOwner(), P.frame.rows[1])
+    T.eq(GameTooltip:GetOwner(), P.frame.rows[2])
+    -- On the quest's header too.
+    H.press("PADDUP")
+    T.eq(P.focusIndex, 1)
+    H.press("PAD3")
+    T.ok(GameTooltip:IsShown() and GameTooltip:GetOwner() == P.frame.rows[1], "X on the header: no card")
     H.press("PADDDOWN")
     T.ok(not GameTooltip:IsShown(), "card still shown after changing rows")
     H.press("PAD3")
@@ -401,6 +455,31 @@ end)
 ---------------------------------------------------------------------------
 -- Gamepad focus mode (DING_FOCUS)
 ---------------------------------------------------------------------------
+T.test("narrow window (240): the header, indented objectives and a notice box fit", function()
+    start()
+    H.accept(456); H.flush()
+    P:SetWidth(240)
+    E.skipNotes = { { quest = 916, reason = "grey" } }
+    E:Refresh()
+    local notice
+    for i, data in ipairs(P.rowsShown) do
+        local r = P.frame.rows[i]
+        T.ok(select(4, r:GetPoint()) + r:GetWidth() <= 240 - 4, "row " .. i .. " goes past the window")
+        T.ok(r.text:GetWidth() >= 120, ("row %d: text %d wide"):format(i, r.text:GetWidth()))
+        if data.action == "notice" then notice = r end
+    end
+    T.ok(notice, "no notice: " .. rowTexts())
+    T.eq(H.plain(notice.text:GetText()), L.SKIPPED_GREY:format(Ding.Data:QuestName(916)))
+    T.eq(notice.text.fontObject, Ding.UI.Font("regular", 11))
+    T.ok(not notice.icon:IsShown() and notice.bg:IsShown(), "a notice is a box without an icon")
+    -- Not under the objectives.
+    for _, data in ipairs(P.rowsShown) do
+        T.ok(data.action == "notice" or not (data.sub and data.sub:find(notice.text:GetText(), 1, true)), "notice under a row")
+    end
+    E.skipNotes = nil
+    P:SetWidth(300)
+end)
+
 T.test("focus mode: only its keys are taken, the D-pad browses, A aims, B exits", function()
     start()
     H.accept(456); H.flush()
@@ -410,13 +489,20 @@ T.test("focus mode: only its keys are taken, the D-pad browses, A aims, B exits"
     T.ok(map.PADDLEFT, "Left (ignore a gear upgrade) is not taken")
     T.ok(map.PADDRIGHT, "Right (find the quest in the guide) is not taken")
     T.eq(map.PADLSTICK, nil, "a key focus mode does not use is taken")
-    T.eq(P.focusIndex, 1)
-    T.ok(P.frame.rows[1].focus.ring:IsShown(), "focus ring missing")
-    H.press("PADDDOWN")
+    -- The focus starts on the first objective, past its quest's header.
     T.eq(P.focusIndex, 2)
-    T.ok(P.frame.rows[2].focus.ring:IsShown() and not P.frame.rows[1].focus.ring:IsShown(), "focus not moved")
+    T.ok(P.frame.rows[2].focus.ring:IsShown(), "focus ring missing")
+    H.press("PADDDOWN")
+    T.eq(P.focusIndex, 3)
+    T.ok(P.frame.rows[3].focus.ring:IsShown() and not P.frame.rows[2].focus.ring:IsShown(), "focus not moved")
     H.press("PAD1")
     T.ok(A.forced, "A does not aim at the row")
+    -- A on the header: the arrow to the quest's objectives.
+    A:Unfocus()
+    H.press("PADDUP"); H.press("PADDUP")
+    T.eq(P.focusIndex, 1)
+    H.press("PAD1")
+    T.ok(A.forced, "A on the header does not aim at the quest")
     H.press("PAD2")
     T.ok(not P.focusing and H.overrides[P.frame] == nil, "B does not exit focus mode")
 end)

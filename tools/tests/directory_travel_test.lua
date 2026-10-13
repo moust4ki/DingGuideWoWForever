@@ -81,7 +81,7 @@ end
 
 local function tripRow()
     for _, r in ipairs(P.rowsShown or {}) do
-        if r.action == "trip" then return r end
+        if r.action == "notice" and r.notice == "trip" then return r end
     end
 end
 

@@ -234,6 +234,12 @@ local CLEANUP_PAGE = {
     signature = function() return table.concat(Ding.Engine:UnusedLogQuests(), ",") end,
 }
 
+-- The guide window's "log almost full" notice (A or a click): straight to that page.
+function Cfg:OpenCleanup()
+    self:Open("guide")
+    if self.frame and self.frame:IsShown() then self:OpenPage(CLEANUP_PAGE) end
+end
+
 -- Guides as text (Core/Import.lua): import one, export the active one, delete the imported
 -- ones. The window closes the settings; closing it comes back to this page.
 local IMPORTED_PAGE

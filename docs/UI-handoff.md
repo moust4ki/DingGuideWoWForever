@@ -457,8 +457,12 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   off) it fades out during the hunt and comes back on leaving.
 - **Death** (Yendi's feedback): a ghost is led to its corpse ("Your corpse", arrival at 30 m),
   then the arrow goes back to the guide.
-- **Quest of an objective** (Yendi's feedback): under the first objective of a quest, the
-  sub-line "For “quest”" when no row of the step names it. Hovering or clicking a row (X in
+- **Quest of an objective** (Yendi's feedback): a header row above a quest's objectives, its
+  level and name "[22] “quest”" in 12 SemiBold (the level `text.secondary`, the name a link, or
+  all of it in `above` orange over the player's level), no icon nor background, text at the
+  icons' x, padding 4 above and none below; its objectives indented by 8. No header when a row
+  of the step names the quest; a quest is named with its level everywhere in the window
+  ("Accept [22] “quest”"). Hovering or clicking a row (X in
   focus mode): the quest's card in a tooltip (name, level, objectives and counters); clicking
   also sends the arrow there. Ding **never opens the game's quest log** or any Blizzard
   window: called from an addon, they are tainted and, on Forever, their secret values fail en
@@ -468,9 +472,8 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
 
 - **Travel** (not in the mockup): the arrow's label line 1 says what to take ("Fly to …",
   "Try to fly to …" from a flight master never seen, "Take the boat to …", "Hearthstone to …",
-  "Teleport to …") when walking is not the fastest; the window repeats it as a hint under the
-  step, then the itinerary as a second hint ("Route: walk 1:20, fly 6:30 (8:30 in all)", same
-  style). For a teleport, the item button shows the spell (its icon, name and cooldown, like
+  "Teleport to …") when walking is not the fastest; the window repeats it in a notice under
+  the step, the itinerary under it ("Route: walk 1:20, fly 6:30 (8:30 in all)"). For a teleport, the item button shows the spell (its icon, name and cooldown, like
   an item). On the game's flight map, a 300 × 32 Ding banner (window look,
   13 SemiBold, the destination in the accent color) at the top of the screen and a 34 px accent
   ring over the destination node, placed where the game's node button stands (read only).
@@ -495,11 +498,8 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   title bar, left of minimize (a map pin: an 8-unit `text.secondary` circle with a 3-unit
   `bg` dot, over a 7-unit downward caret); tooltip "NPC directory". In focus mode, up from the
   first row: the outer focus ring around it and the A chip on its left (the title shortens).
-- **Guide window rows added under the step** (after "along the way"): during a trip of the NPC
-  directory, "On the way to … (…): the guide resumes once there." with sub-lines: the travel
-  hint and the route (which otherwise go under the step's last row), then "A: back to the
-  guide" ("Click: …" without a gamepad); "Weapon to learn: Guns — Buliwyf Stonehand,
-  Ironforge"; "New spells at your class
+- **Guide window rows added under the step** (after "along the way"): "Weapon to learn: Guns —
+  Buliwyf Stonehand, Ironforge"; "New spells at your class
   trainer (cost)", or "New spells may wait at your class trainer (level N)" before the first
   visit (glyph of an "other" row) and "Equip [item]" with the item's icon, its gain
   as the counter ("+4") and a sub-line saying how to equip or ignore it. Focus mode also takes
@@ -539,6 +539,14 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
 - **Step language 2** (not in the mockup): the dungeons' page of the Route tab (above); the
   arrow's label on a patrol, "text · point 2 of 5"; as a ghost on a death skip with a spirit
   healer, "Spirit healer".
+- **Notices** (not in the mockup): what concerns the whole window (the way there, a trip to a
+  service, steps passed, bags almost full, quest log almost full) is a box of its own instead of
+  a sub-line of the last row: row background `#FFFFFF0A` (`subtle`), radius 4, no icon, text
+  11/14 Regular `text.secondary` at the icons' x on up to three lines, the other lines of the
+  same notice as its sub-line. The quest log's one adds "A: see the list" (mouse: "Click: see the
+  list") and opens the settings on the cleanup page. A trip of the NPC directory: "On the way to
+  … (…): the guide resumes once there.", the travel hint and the route in the same box (no
+  travel box then), and "A: back to the guide" ("Click: …"); A or a click ends the trip.
 - **New continent** (not in the mockup): an ordinary "other" row under the step, "New continent:
   talk to … (flight master) to learn its flight paths".
 - **Persistent objectives, wrap-up, preview** (not in the mockup): sticky objectives are along-the-way
