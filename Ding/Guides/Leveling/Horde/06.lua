@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Horde/06.lua.
--- Simulated (warrior): Orc 22 (17%) -> 22 (39%) in 44 min, 4 quests turned in; Scourge 22 (17%) -> 22 (39%) in 44 min, 4 quests turned in; Tauren 22 (11%) -> 22 (33%) in 44 min, 4 quests turned in; Troll 22 (17%) -> 22 (39%) in 44 min, 4 quests turned in; Skyborne 22 (18%) -> 22 (40%) in 44 min, 4 quests turned in.
+-- Simulated (warrior): Orc 22 (17%) -> 22 (54%) in 54 min, 6 quests turned in; Scourge 22 (17%) -> 22 (54%) in 54 min, 6 quests turned in; Tauren 22 (11%) -> 22 (48%) in 54 min, 6 quests turned in; Troll 22 (17%) -> 22 (54%) in 54 min, 6 quests turned in; Skyborne 22 (18%) -> 22 (55%) in 54 min, 6 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-h06-ashenvale",
     title    = "Ashenvale (21-22)",
@@ -13,6 +13,11 @@ Ding.RegisterGuide({
         { go = { 1442, 78.31, 42.46 }, text = "Take the passage and trace the lantern trail into Ashenvale", -- level 22
           note = "Ashenvale: Splintertree Post, in the east of the zone. The way in is the tunnel from Stonetalon. Stay clear of Astranaar." },
         { go = { 1442, 81.58, 30.07 }, text = "Exit the tunnel into Ashenvale" }, -- level 22
+        { accept = 98252 }, -- level 22
+        { accept = 98251 }, -- level 22
+        { complete = 98251 }, -- level 22
+        { turnin = 98251 }, -- level 22
+        { turnin = 98252 }, -- level 22
         { go = { 1440, 12.29, 33.86 }, fly = true, talk = 11901, text = "Flight master at Zoram'gar Outpost" }, -- level 22
         { turnin = 6562, -- level 22
           note = "The NPC is indoors." },

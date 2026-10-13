@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Alliance/27.lua.
--- Simulated (warrior): Human 43 (71%) -> 44 (14%) in 2 h 22, 11 quests turned in; Dwarf 43 (71%) -> 44 (14%) in 2 h 22, 11 quests turned in; NightElf 43 (71%) -> 44 (14%) in 2 h 23, 11 quests turned in; Gnome 43 (71%) -> 44 (14%) in 2 h 22, 11 quests turned in; Skyborne 43 (71%) -> 44 (14%) in 2 h 22, 11 quests turned in.
+-- Simulated (warrior): Human 43 (71%) -> 44 (14%) in 2 h 22, 11 quests turned in; Dwarf 43 (71%) -> 44 (14%) in 2 h 22, 11 quests turned in; NightElf 43 (71%) -> 44 (14%) in 2 h 23, 11 quests turned in; Gnome 43 (71%) -> 44 (14%) in 2 h 23, 11 quests turned in; Skyborne 43 (71%) -> 44 (14%) in 2 h 22, 11 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-a27-tanaris",
     title    = "Tanaris (43-44)",

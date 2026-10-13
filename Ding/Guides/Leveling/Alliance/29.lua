@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Alliance/29.lua.
--- Simulated (warrior): Human 48 (57%) -> 49 (0%) in 3 h 10, 4 quests turned in; Dwarf 48 (57%) -> 49 (0%) in 3 h 10, 4 quests turned in; NightElf 48 (57%) -> 49 (0%) in 3 h 10, 4 quests turned in; Gnome 48 (57%) -> 49 (0%) in 3 h 10, 4 quests turned in; Skyborne 48 (57%) -> 49 (0%) in 3 h 10, 4 quests turned in.
+-- Simulated (warrior): Human 48 (57%) -> 49 (0%) in 3 h 09, 4 quests turned in; Dwarf 48 (57%) -> 49 (0%) in 3 h 09, 4 quests turned in; NightElf 48 (57%) -> 49 (0%) in 3 h 09, 4 quests turned in; Gnome 48 (57%) -> 49 (0%) in 3 h 09, 4 quests turned in; Skyborne 48 (57%) -> 49 (0%) in 3 h 09, 4 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-a29-the-hinterlands",
     title    = "The Hinterlands (48-49)",

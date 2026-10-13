@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Alliance/07.lua.
--- Simulated (warrior): Human 19 (18%) -> 20 (84%) in 2 h 58, 29 quests turned in; Dwarf 19 (18%) -> 20 (83%) in 2 h 57, 28 quests turned in; NightElf 19 (18%) -> 20 (84%) in 2 h 49, 27 quests turned in; Gnome 19 (18%) -> 20 (83%) in 2 h 57, 28 quests turned in; Skyborne 19 (18%) -> 20 (84%) in 2 h 49, 27 quests turned in.
+-- Simulated (warrior): Human 19 (23%) -> 20 (85%) in 2 h 55, 28 quests turned in; Dwarf 19 (23%) -> 20 (84%) in 2 h 51, 26 quests turned in; NightElf 19 (23%) -> 20 (85%) in 2 h 50, 26 quests turned in; Gnome 19 (23%) -> 20 (84%) in 2 h 51, 26 quests turned in; Skyborne 19 (23%) -> 20 (85%) in 2 h 47, 26 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-a07-redridge-and-westfall",
     title    = "Redridge and Westfall (19-20)",
@@ -36,14 +36,15 @@ Ding.RegisterGuide({
         { turnin = 120, accept = 121 }, -- level 19
         { turnin = 135, accept = 141, -- level 19
           note = "The NPC is indoors, one floor up." },
-        { accept = 92752 }, -- level 19
+        { accept = 97894 }, -- level 19
+        { accept = 97926 }, -- level 19
+        { turnin = 97914 }, -- level 19
+        { accept = 97220, races = { "NightElf" } }, -- level 19
         { turnin = 141, accept = 142 }, -- level 19
-        { accept = 92753 }, -- level 19
         { collect = { { 814, 5 } }, keep = 814, -- level 19
           note = "The targets are spread over several spots." },
         { complete = 142, patrol = { { 1436, 44.5, 25 }, { 1436, 44.24, 27.92 }, { 1436, 42.92, 29.35 }, { 1436, 41.79, 30.86 }, { 1436, 41.15, 33.08 }, { 1436, 40.42, 34.46 }, { 1436, 39.55, 35.1 }, { 1436, 38.2, 36.37 }, { 1436, 37.71, 37.46 }, { 1436, 37, 40.54 }, { 1436, 36.85, 42.3 }, { 1436, 36.66, 43.32 }, { 1436, 36.34, 43.96 }, { 1436, 35.6, 43.94 }, { 1436, 33.03, 42.82 }, { 1436, 31.5, 44.49 }, { 1436, 32.62, 43.05 }, { 1436, 33.62, 42.98 }, { 1436, 35.32, 43.78 }, { 1436, 37.19, 44.7 }, { 1436, 37.87, 45.54 }, { 1436, 38.44, 45.28 }, { 1436, 40.53, 48.21 }, { 1436, 41.63, 50.3 }, { 1436, 42.02, 52.47 }, { 1436, 43.08, 54.27 }, { 1436, 43.42, 59.17 }, { 1436, 44.75, 64.01 }, { 1436, 45.56, 64.94 }, { 1436, 45.45, 66.44 }, { 1436, 45.84, 67.83 }, { 1436, 45.46, 68.88 }, { 1436, 44.46, 69.54 } }, -- level 19
           note = "The target patrols a long route by the road. The target's route also goes far into Jangolode Mine and Gold Coast Quarry. It takes roughly 5 minutes to reappear." },
-        { turnin = 92753 }, -- level 19
         { accept = { 103, 104 } }, -- level 19
         { turnin = 103, when = { ready = 103 } }, -- level 19
         { complete = 104, -- level 19
@@ -54,7 +55,6 @@ Ding.RegisterGuide({
         { accept = 155, -- level 19
           note = "For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears." },
         { turnin = 92744 }, -- level 19
-        { turnin = 92752 }, -- level 19
         { complete = 155, -- level 19
           note = "Escort The Defias Traitor and keep him alive." },
         { turnin = 155 }, -- level 19
@@ -118,15 +118,11 @@ Ding.RegisterGuide({
           note = "The NPC is on an upper floor of the tower." },
         { train = true, talk = 5504, races = { "NightElf" }, classes = { "DRUID" } }, -- level 20
         { accept = 3765 }, -- level 20
-        { accept = 97894 }, -- level 20
-        { accept = 97926 }, -- level 20
         { turnin = 118, accept = 119, -- level 20
           note = "The NPC is indoors." },
         { turnin = 91723, races = { "Human" } }, -- level 20
         { complete = 91732, races = { "Human" } }, -- level 20
         { complete = 91732, races = { "Dwarf", "Gnome" } }, -- level 20
-        { complete = 97916, races = { "Dwarf", "Gnome" } }, -- level 20
-        { turnin = 97916, races = { "Dwarf", "Gnome" } }, -- level 20
         { accept = 94, -- level 20
           note = "The NPC waits on the tower's highest floor." },
         { complete = 91725, races = { "Human" } }, -- level 20
@@ -136,7 +132,9 @@ Ding.RegisterGuide({
         { complete = 125, -- level 20
           note = "Your targets sit below the water's surface." },
         { turnin = 125, accept = 89 }, -- level 20
-        { turnin = 119, accept = { 122, 124 }, sticky = { 122, 92 } }, -- level 20
+        { turnin = 119, accept = 122, sticky = { 122, 92 } }, -- level 20
+        { accept = 124, races = { "Human", "Dwarf", "Gnome", "Skyborne" } }, -- level 20
+        { accept = 124, races = { "NightElf" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "PRIEST", "MAGE", "WARLOCK" } }, -- level 20
         { complete = 92, keep = 1080, -- level 20
           note = "Hunt the red-feathered birds." },
         { complete = 122, -- level 20
@@ -149,17 +147,19 @@ Ding.RegisterGuide({
         { turnin = 92, -- level 20
           note = "The NPC is indoors." },
         { turnin = 130, accept = 131 }, -- level 20
-        { turnin = 131, sticky = 124, -- level 20
+        { turnin = 131, -- level 20
           note = "This one roams, so scan the surrounding area. The NPC is indoors." },
         { complete = 89, -- level 20
           note = "Your targets here are gnolls. Skip Redridge Alphas; they don't carry them." },
-        { complete = 124 }, -- level 20
+        { complete = 124, races = { "Human", "Dwarf", "Gnome", "Skyborne" } }, -- level 20
+        { complete = 124, races = { "NightElf" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "PRIEST", "MAGE", "WARLOCK" } }, -- level 20
         { turnin = 2281, accept = 2282, classes = { "ROGUE" } }, -- level 20
         { go = { 1433, 46.84, 45.28 }, classes = { "ROGUE" }, text = "Raise Lockpicking to 95", -- level 20
           note = "Look for little gray coffers of metal. The NPC is indoors." },
         { complete = 2282, classes = { "ROGUE" }, -- level 20
           note = "The NPC is indoors." },
-        { turnin = 124 }, -- level 20
+        { turnin = 124, races = { "Human", "Dwarf", "Gnome", "Skyborne" } }, -- level 20
+        { turnin = 124, races = { "NightElf" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "PRIEST", "MAGE", "WARLOCK" } }, -- level 20
         { turnin = 89 }, -- level 20
         { turnin = 2282, when = { ready = 2282 }, classes = { "ROGUE" } }, -- level 20
         { destroy = 7907, classes = { "ROGUE" } }, -- level 20

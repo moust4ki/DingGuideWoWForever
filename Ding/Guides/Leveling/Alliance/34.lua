@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Alliance/34.lua.
--- Simulated (warrior): Human 51 (15%) -> 51 (66%) in 1 h 10, 16 quests turned in; Dwarf 51 (15%) -> 51 (66%) in 1 h 10, 16 quests turned in; NightElf 51 (15%) -> 51 (63%) in 1 h 10, 16 quests turned in; Gnome 51 (15%) -> 51 (66%) in 1 h 10, 16 quests turned in; Skyborne 51 (15%) -> 51 (66%) in 1 h 10, 16 quests turned in.
+-- Simulated (warrior): Human 51 (15%) -> 51 (66%) in 1 h 10, 17 quests turned in; Dwarf 51 (15%) -> 51 (66%) in 1 h 10, 16 quests turned in; NightElf 51 (15%) -> 51 (63%) in 1 h 10, 16 quests turned in; Gnome 51 (15%) -> 51 (66%) in 1 h 10, 16 quests turned in; Skyborne 51 (15%) -> 51 (66%) in 1 h 10, 16 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-a34-blasted-lands-and-burning-steppes",
     title    = "Blasted Lands and Burning Steppes (51-51)",
@@ -48,9 +48,9 @@ Ding.RegisterGuide({
         { turnin = 3823 }, -- level 51
         { accept = 4512, -- level 51
           note = "The NPC is indoors." },
-        { turnin = 3368, races = { "Gnome" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" }, -- level 51
+        { turnin = 3368, races = { "Gnome", "Skyborne" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 51
+        { turnin = 3368, races = { "Human", "Dwarf" }, -- level 51
           note = "This one roams, so scan the surrounding area. The NPC is indoors." },
-        { turnin = 3368, races = { "Human", "Dwarf", "Skyborne" } }, -- level 51
         { accept = 3448 }, -- level 51
         { turnin = 3448, -- level 51
           note = "The NPC is indoors." },
@@ -72,6 +72,7 @@ Ding.RegisterGuide({
         { accept = 7803, when = { item = { 4306, 60 } } }, -- level 51
         { turnin = 7803, when = { item = { 4306, 60 }, ready = 7803 } }, -- level 51
         { accept = 7804, when = { item = { 4338, 60 } } }, -- level 51
+        { turnin = 95041, races = { "Human" } }, -- level 51
         { turnin = 95041, races = { "NightElf" } }, -- level 51
         { turnin = 7804, when = { item = { 4338, 60 }, ready = 7804 } }, -- level 51
         { accept = 7805, when = { done = { 7802, 7803, 7804 }, item = { 14047, 60 } } }, -- level 51

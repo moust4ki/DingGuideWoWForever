@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Horde/10.lua.
--- Simulated (warrior): Orc 26 (65%) -> 28 (25%) in 2 h 38, 24 quests turned in; Scourge 26 (65%) -> 28 (25%) in 2 h 31, 25 quests turned in; Tauren 26 (62%) -> 28 (25%) in 2 h 37, 25 quests turned in; Troll 26 (65%) -> 28 (25%) in 2 h 38, 24 quests turned in; Skyborne 26 (76%) -> 28 (25%) in 2 h 10, 24 quests turned in.
+-- Simulated (warrior): Orc 26 (73%) -> 28 (25%) in 2 h 17, 24 quests turned in; Scourge 26 (73%) -> 28 (25%) in 2 h 17, 24 quests turned in; Tauren 26 (70%) -> 28 (25%) in 2 h 25, 24 quests turned in; Troll 26 (73%) -> 28 (25%) in 2 h 17, 24 quests turned in; Skyborne 26 (85%) -> 28 (25%) in 1 h 54, 23 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-h10-ashenvale",
     title    = "Ashenvale (26-28)",
@@ -48,7 +48,7 @@ Ding.RegisterGuide({
         { go = { 1440, 72.38, 49.87 }, text = "Take the riverside trail, then climb this trail" }, -- level 26
         { complete = 6441, -- level 26
           note = "Hunt down satyrs. Beware of foes lurking in stealth." },
-        { level = 27, patrol = { { 1440, 68.65, 53.46 }, { 1440, 67.65, 54.56 }, { 1440, 66.24, 54.14 }, { 1440, 66.35, 51.75 }, { 1440, 66.63, 56.64 } }, -- level 26
+        { level = 27, patrol = { { 1440, 68.65, 53.46 }, { 1440, 67.65, 54.56 }, { 1440, 66.24, 54.14 }, { 1440, 66.35, 51.75 }, { 1440, 66.63, 56.64 } }, -- level 27
           note = "Beware of foes lurking in stealth." },
         { accept = 24, collect = { { 16304, 1 } }, useitem = 16304, patrol = { { 1440, 62.56, 49.85 }, { 1440, 62.15, 49.84 }, { 1440, 61.39, 50.03 }, { 1440, 60.99, 50.3 }, { 1440, 61.06, 50.88 }, { 1440, 60.91, 51.52 }, { 1440, 60.56, 52.44 }, { 1440, 59.89, 53.35 }, { 1440, 59.62, 53.73 }, { 1440, 59.26, 54.17 }, { 1440, 59.04, 54.81 }, { 1440, 58.83, 55.25 }, { 1440, 57.76, 56.01 }, { 1440, 57.42, 56.01 }, { 1440, 56.97, 56.01 }, { 1440, 56.36, 55.88 }, { 1440, 56.15, 55.42 }, { 1440, 55.75, 55.46 }, { 1440, 54.1, 54.98 }, { 1440, 52.2, 54.4 } }, when = { done = 6383 }, -- level 27
           note = "The target is a panther with black fur. The target roams a wide route. The target appears close to 62.4, 50.0 in Ashenvale." },
@@ -63,15 +63,12 @@ Ding.RegisterGuide({
         { complete = 6482, -- level 27
           note = "Escort Ruul Snowhoof and keep him alive." },
         { complete = 216 }, -- level 27
-        { accept = 98251 }, -- level 27
-        { complete = 98251 }, -- level 27
-        { turnin = 98251 }, -- level 27
         { accept = 78132 }, -- level 27
         { turnin = 78132 }, -- level 27
         { accept = 78133 }, -- level 27
         { turnin = 78133 }, -- level 27
-        { accept = 78134, races = { "Scourge", "Tauren", "Skyborne" } }, -- level 27
-        { turnin = 78134, races = { "Scourge", "Tauren", "Skyborne" } }, -- level 27
+        { accept = 78134 }, -- level 27
+        { turnin = 78134 }, -- level 27
         { complete = 1534, useitem = 7767, when = { log = 1534 }, races = { "Orc", "Tauren", "Troll", "Skyborne" }, classes = { "SHAMAN" }, -- level 27
           note = "Stay clear of Astranaar." },
         { accept = 23, collect = { { 16303, 1 } }, useitem = 16303, patrol = { { 1440, 42.63, 63.18 }, { 1440, 43.04, 63.13 }, { 1440, 43.21, 63.8 }, { 1440, 43.77, 63.82 }, { 1440, 43.19, 63.85 }, { 1440, 43.17, 63.12 }, { 1440, 42.65, 63.2 }, { 1440, 42.61, 64.02 }, { 1440, 42.3, 64.76 }, { 1440, 41.81, 65.32 }, { 1440, 40.88, 66.41 }, { 1440, 40.28, 66.32 }, { 1440, 39.74, 65.38 }, { 1440, 39.72, 63.86 }, { 1440, 39.86, 62.96 }, { 1440, 39.7, 63.82 }, { 1440, 39.83, 65.45 }, { 1440, 41.45, 66.65 }, { 1440, 41.44, 67.49 }, { 1440, 41.71, 68.31 }, { 1440, 41.99, 68.69 }, { 1440, 42.37, 68.39 }, { 1440, 42.88, 68.48 }, { 1440, 43.26, 68.13 }, { 1440, 43.83, 68.82 }, { 1440, 43.33, 68.18 }, { 1440, 42.5, 68.43 }, { 1440, 41.99, 68.69 }, { 1440, 41.76, 68.21 }, { 1440, 41.5, 67.45 }, { 1440, 41.46, 66.47 }, { 1440, 40.26, 66.29 }, { 1440, 39.71, 65.48 }, { 1440, 39.64, 64.32 }, { 1440, 39.61, 63.85 }, { 1440, 39.78, 62.84 }, { 1440, 39.6, 63.74 }, { 1440, 39.72, 65.5 }, { 1440, 40.16, 66.27 }, { 1440, 40.57, 66.01 }, { 1440, 41.61, 65.7 }, { 1440, 42.24, 64.94 }, { 1440, 42.56, 64.08 } }, when = { done = 6383 }, -- level 27

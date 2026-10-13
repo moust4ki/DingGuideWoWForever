@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Alliance/23.lua.
--- Simulated (warrior): Human 40 (79%) -> 41 (24%) in 2 h 19, 9 quests turned in; Dwarf 40 (79%) -> 41 (24%) in 2 h 19, 9 quests turned in; NightElf 40 (79%) -> 41 (24%) in 2 h 19, 9 quests turned in; Gnome 40 (79%) -> 41 (24%) in 2 h 19, 9 quests turned in; Skyborne 40 (79%) -> 41 (24%) in 2 h 19, 9 quests turned in.
+-- Simulated (warrior): Human 40 (79%) -> 41 (24%) in 2 h 27, 9 quests turned in; Dwarf 40 (79%) -> 41 (24%) in 2 h 27, 9 quests turned in; NightElf 40 (79%) -> 41 (24%) in 2 h 27, 9 quests turned in; Gnome 40 (79%) -> 41 (24%) in 2 h 27, 9 quests turned in; Skyborne 40 (79%) -> 41 (24%) in 2 h 27, 9 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-a23-desolace",
     title    = "Desolace (40-41)",
@@ -59,6 +59,7 @@ Ding.RegisterGuide({
           note = "Wait for the talking to finish" },
         { accept = 1106 }, -- level 41
         { turnin = 1187, accept = 1188 }, -- level 41
+        { complete = 98155 }, -- level 41
         { turnin = 261, -- level 41
           note = "The NPC is indoors." },
         { accept = 1052, dungeon = "Scarlet Monastery" }, -- level 41

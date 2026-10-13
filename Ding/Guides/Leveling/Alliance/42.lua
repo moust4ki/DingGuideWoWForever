@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Alliance/42.lua.
--- Simulated (warrior): Human 58 (67%) -> 59 (4%) in 3 h 12, 10 quests turned in; Dwarf 58 (67%) -> 59 (4%) in 3 h 12, 10 quests turned in; NightElf 58 (67%) -> 59 (4%) in 3 h 12, 10 quests turned in; Gnome 58 (67%) -> 59 (4%) in 3 h 12, 10 quests turned in; Skyborne 58 (67%) -> 59 (4%) in 3 h 12, 10 quests turned in.
+-- Simulated (warrior): Human 58 (67%) -> 59 (4%) in 3 h 13, 11 quests turned in; Dwarf 58 (67%) -> 59 (4%) in 3 h 13, 11 quests turned in; NightElf 58 (67%) -> 59 (4%) in 3 h 13, 11 quests turned in; Gnome 58 (67%) -> 59 (4%) in 3 h 13, 11 quests turned in; Skyborne 58 (67%) -> 59 (4%) in 3 h 13, 11 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-a42-winterspring",
     title    = "Winterspring (58-59)",
@@ -39,9 +39,11 @@ Ding.RegisterGuide({
         { complete = 4809, -- level 58
           note = "Hunt the chimaeras." },
         { turnin = 977, accept = 5163 }, -- level 58
+        { accept = 6606 }, -- level 58
         { complete = 5163, useitem = 12928, -- level 58
           note = "Target Legacki with the item." },
         { turnin = 4809 }, -- level 58
+        { turnin = 6606 }, -- level 58
         { talk = 13917, collect = { { 12663, 1 }, { 11173, 1 }, { 11172, 11 } }, spots = { { 1452, 61.51, 36.91 } }, -- level 58
           note = "The NPC is indoors." },
         { turnin = 8464 }, -- level 58

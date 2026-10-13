@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Horde/03.lua.
--- Simulated (warrior): Orc 1 (0%) -> 13 (85%) in 9 h 02, 68 quests turned in; Troll 1 (0%) -> 13 (85%) in 9 h 02, 68 quests turned in.
+-- Simulated (warrior): Orc 1 (0%) -> 13 (85%) in 9 h 01, 63 quests turned in; Troll 1 (0%) -> 13 (85%) in 9 h 01, 63 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-h03-orc-and-troll-starter",
     title    = "Orc and Troll start (1-13)",
@@ -255,13 +255,6 @@ Ding.RegisterGuide({
         { turnin = 96652, races = { "Orc", "Troll" } }, -- level 9
         { accept = 99048, races = { "Orc", "Troll" } }, -- level 9
         { turnin = 99048, races = { "Orc", "Troll" } }, -- level 9
-        { accept = 97900, races = { "Orc", "Troll" } }, -- level 9
-        { accept = 97902, races = { "Orc", "Troll" } }, -- level 9
-        { accept = 97903, races = { "Orc", "Troll" } }, -- level 9
-        { accept = 97904, races = { "Orc", "Troll" } }, -- level 9
-        { complete = 97904, races = { "Orc", "Troll" } }, -- level 9
-        { turnin = 97904, races = { "Orc", "Troll" } }, -- level 9
-        { accept = 97907, races = { "Orc", "Troll" } }, -- level 9
         { accept = 99049, races = { "Orc", "Troll" } }, -- level 9
         { complete = 99049, races = { "Orc", "Troll" } }, -- level 9
         { turnin = 825, -- level 9
@@ -284,14 +277,6 @@ Ding.RegisterGuide({
         { turnin = 837, -- level 9
           note = "The NPC is indoors, one floor up." },
         { turnin = 96821, races = { "Orc", "Troll" } }, -- level 10
-        { complete = 97900, races = { "Orc", "Troll" } }, -- level 10
-        { turnin = 97900, races = { "Orc", "Troll" } }, -- level 10
-        { complete = 97902, races = { "Orc", "Troll" } }, -- level 10
-        { turnin = 97902, races = { "Orc", "Troll" } }, -- level 10
-        { complete = 97903, races = { "Orc", "Troll" } }, -- level 10
-        { turnin = 97903, races = { "Orc", "Troll" } }, -- level 10
-        { complete = 97907, races = { "Orc", "Troll" } }, -- level 10
-        { turnin = 97907, races = { "Orc", "Troll" } }, -- level 10
         { turnin = 99049, races = { "Orc", "Troll" } }, -- level 10
         { train = true, talk = 3706, races = { "Troll" }, classes = { "PRIEST" }, -- level 10
           note = "The NPC is indoors." },

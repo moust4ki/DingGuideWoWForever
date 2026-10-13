@@ -50,8 +50,7 @@ Ding.RegisterGuide({
         { complete = 2845, useitem = 9189, -- level 52
           note = "Let the conversation play out. Shay Leafrunner trails behind you; keep her alive. Keep near her, as she tends to stray." },
         { turnin = 2845 }, -- level 52
-        { turnin = 4142, races = { "Human", "Dwarf", "Gnome", "Skyborne" } }, -- level 52
-        { turnin = 4142, races = { "NightElf" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "WARLOCK", "DRUID" } }, -- level 52
+        { turnin = 4142 }, -- level 52
         { complete = 3909, talk = 7775, -- level 52
           note = "Finish the quest named The Videre Elixir. Keep the elixir in your bags; never consume it. You will die from it." },
         { turnin = 2942, elite = true, when = { item = 9307 } }, -- level 52

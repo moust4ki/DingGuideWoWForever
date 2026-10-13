@@ -37,10 +37,6 @@ M.PARAMS = {
     eliteRadius = 40,  -- yards: a place this close to an elite monster's spawn is not free
 }
 
--- Fields of the export read here beyond X.QUEST (QuestieDB's src/meta/questMeta.lua).
-local F = { requiredSkill = 18, requiredMinRep = 19, requiredSourceItems = 21, breadcrumbFor = 27,
-    extraObjectives = 29, requiredSpell = 30, requiredMaxLevel = 32, availableUntilCompleted = 33,
-    disabledBy = 36 }
 local FACTION_CODE = { Alliance = "A", Horde = "H" }
 local GRID = 300      -- yards: cell of the index of the route's places
 
@@ -82,11 +78,11 @@ function M.screen(q, quest, D, exclude, versions)
     if X.hasBit(special, 2) then return "escort or event" end
     if zone < 0 and zone ~= X.CAMPING then return "category (event, profession, class...)" end
     if (quest[QK.parentQuest] or 0) ~= 0 then return "subquest" end
-    if X.hasEntries(quest[F.requiredSkill]) then return "profession" end
-    if X.hasEntries(quest[F.requiredMinRep]) then return "reputation" end
-    if num(quest[F.requiredSpell]) then return "spell" end
-    if X.hasEntries(quest[F.requiredSourceItems]) then return "items to hold" end
-    if num(quest[F.availableUntilCompleted]) or num(quest[F.disabledBy]) then return "limited availability" end
+    if X.hasEntries(quest[QK.requiredSkill]) then return "profession" end
+    if X.hasEntries(quest[QK.requiredMinRep]) then return "reputation" end
+    if num(quest[QK.requiredSpell]) then return "spell" end
+    if X.hasEntries(quest[QK.requiredSourceItems]) then return "items to hold" end
+    if num(quest[QK.availableUntilCompleted]) or num(quest[QK.disabledByQuest]) then return "limited availability" end
     local v = versions and versions[M.signature(quest)]
     if v then return "another version of a route quest" end
     return nil
@@ -95,7 +91,7 @@ end
 -- What the data cannot tell about a quest's objectives (nil: nothing): it is then borderline
 -- at best.
 local function doubt(quest)
-    if X.hasEntries(quest[F.extraObjectives]) then return "scripted objectives" end
+    if X.hasEntries(quest[QK.extraObjectives]) then return "scripted objectives" end
     if not X.hasObjectives(quest) then
         -- Taken and handed in to the same one with nothing to do: an objective QuestieDB lacks.
         local s, e = quest[QK.startedBy] or {}, quest[QK.finishedBy] or {}
@@ -222,8 +218,8 @@ function M.audit(input)
                 local xp, estimated = D.questXP(q, quest)
                 local c = { q = q, quest = quest, name = quest[QK.name], races = raceList, starts = starts, ends = ends,
                     xp = xp, estimated = estimated, qLevel = quest[QK.questLevel] or 0,
-                    req = quest[QK.requiredLevel] or 0, maxLevel = num(quest[F.requiredMaxLevel]),
-                    breadcrumbFor = num(quest[F.breadcrumbFor]), doubt = doubt(quest) }
+                    req = quest[QK.requiredLevel] or 0, maxLevel = num(quest[QK.requiredMaxLevel]),
+                    breadcrumbFor = num(quest[QK.breadcrumbForQuestId]), doubt = doubt(quest) }
                 cands[#cands + 1] = c
                 isCand[q] = c
             end

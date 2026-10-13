@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Alliance/08.lua.
--- Simulated (warrior): Human 20 (84%) -> 22 (49%) in 3 h 25, 17 quests turned in; Dwarf 20 (83%) -> 22 (48%) in 3 h 25, 17 quests turned in; NightElf 20 (84%) -> 22 (52%) in 3 h 25, 18 quests turned in; Gnome 20 (83%) -> 22 (48%) in 3 h 25, 17 quests turned in; Skyborne 20 (84%) -> 22 (48%) in 3 h 25, 17 quests turned in.
+-- Simulated (warrior): Human 20 (85%) -> 22 (49%) in 3 h 25, 17 quests turned in; Dwarf 20 (84%) -> 22 (48%) in 3 h 25, 17 quests turned in; NightElf 20 (85%) -> 22 (52%) in 3 h 25, 18 quests turned in; Gnome 20 (84%) -> 22 (48%) in 3 h 25, 17 quests turned in; Skyborne 20 (85%) -> 22 (49%) in 3 h 25, 17 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-a08-darkshore",
     title    = "Darkshore (20-21)",

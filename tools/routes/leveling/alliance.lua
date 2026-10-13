@@ -9,9 +9,16 @@ return {
     -- Races that join on the way: the Skyborne, after their own start (tools/routes/skyborne_alliance.lua).
     entries = { Skyborne = { section = "leveling-a04-westfall", level = 13 } },
     -- Quests the route leaves out on purpose (tools/write_leveling.lua, tools/audit_free_quests.lua).
+    -- Forever's Deadmines chain (92748, 92750, 92751, 92752, 92753, 92819: each one's giver is the
+    -- previous one's ender): the data has none of its prerequisites, so a link would be offered
+    -- alone, and 92753 is done inside the Deadmines.
     exclude = {
-        [92750] = "Detonation at a Distance: a link of Forever's Deadmines chain whose prerequisites the data lacks; its order cannot be trusted",
-        [92751] = "Detonation at a Distance: the next link of the same chain",
+        [92748] = "Explosive Consultation: first link of Forever's Deadmines chain, prerequisites missing from the data",
+        [92750] = "Detonation at a Distance: a link of Forever's Deadmines chain, prerequisites missing from the data",
+        [92751] = "Detonation at a Distance: a link of Forever's Deadmines chain, prerequisites missing from the data",
+        [92752] = "Explosive Consultation: a link of Forever's Deadmines chain, prerequisites missing from the data",
+        [92753] = "Destruction in Deadmines: done inside the Deadmines (a dungeon), prerequisites missing from the data",
+        [92819] = "Destruction in Deadmines: the end of Forever's Deadmines chain, after the dungeon",
     },
     sections = {
         {

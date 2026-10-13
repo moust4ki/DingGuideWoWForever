@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Alliance/25.lua.
--- Simulated (warrior): Human 42 (25%) -> 43 (37%) in 4 h 23, 25 quests turned in; Dwarf 42 (25%) -> 43 (37%) in 4 h 23, 26 quests turned in; NightElf 42 (25%) -> 43 (37%) in 4 h 23, 24 quests turned in; Gnome 42 (25%) -> 43 (37%) in 4 h 23, 25 quests turned in; Skyborne 42 (25%) -> 43 (37%) in 4 h 23, 26 quests turned in.
+-- Simulated (warrior): Human 42 (25%) -> 43 (37%) in 4 h 23, 25 quests turned in; Dwarf 42 (25%) -> 43 (37%) in 4 h 23, 25 quests turned in; NightElf 42 (25%) -> 43 (37%) in 4 h 23, 24 quests turned in; Gnome 42 (25%) -> 43 (37%) in 4 h 23, 24 quests turned in; Skyborne 42 (25%) -> 43 (37%) in 4 h 23, 25 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-a25-stranglethorn-vale",
     title    = "Stranglethorn Vale (42-43)",
@@ -16,8 +16,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { accept = 1477, -- level 42
           note = "The NPC waits on the tower's highest floor." },
-        { turnin = 78148, races = { "Human", "Dwarf", "Gnome", "Skyborne" } }, -- level 42
-        { turnin = 97286, races = { "Human" }, classes = { "MAGE" } }, -- level 42
+        { turnin = 78148, races = { "Human" } }, -- level 42
         { accept = 79536 }, -- level 42
         { turnin = 79536 }, -- level 42
         { go = { 1453, 51.56, 73.67 }, text = "Head indoors" }, -- level 42

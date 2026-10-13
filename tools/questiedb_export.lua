@@ -5,9 +5,11 @@ local M = {}
 
 M.QUEST = {
     name = 1, startedBy = 2, finishedBy = 3, requiredLevel = 4, questLevel = 5,
-    requiredRaces = 6, requiredClasses = 7, triggerEnd = 9, objectives = 10, sourceItem = 11,
+    requiredRaces = 6, requiredClasses = 7, triggerEnd = 9, objectives = 10, sourceItem = 11, sourceItemId = 11,
     preQuestGroup = 12, preQuestSingle = 13, exclusiveTo = 16, zoneOrSort = 17,
-    specialFlags = 24, parentQuest = 25,
+    requiredSkill = 18, requiredMinRep = 19, requiredSourceItems = 21,
+    specialFlags = 24, parentQuest = 25, breadcrumbForQuestId = 27, extraObjectives = 29, requiredSpell = 30,
+    requiredMaxLevel = 32, availableUntilCompleted = 33, disabledByQuest = 36,
 }
 M.NPC = { name = 1, spawns = 7 }
 M.OBJECT = { name = 1, spawns = 4 }

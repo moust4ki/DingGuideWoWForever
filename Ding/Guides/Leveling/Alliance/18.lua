@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Alliance/18.lua.
--- Simulated (warrior): Human 35 (95%) -> 37 (21%) in 4 h 42, 24 quests turned in; Dwarf 35 (99%) -> 37 (21%) in 4 h 38, 24 quests turned in; NightElf 36 (8%) -> 37 (23%) in 4 h 16, 24 quests turned in; Gnome 35 (99%) -> 37 (21%) in 4 h 38, 24 quests turned in; Skyborne 36 (1%) -> 37 (21%) in 4 h 32, 24 quests turned in.
+-- Simulated (warrior): Human 36 (7%) -> 37 (22%) in 4 h 16, 24 quests turned in; Dwarf 36 (17%) -> 37 (32%) in 4 h 16, 24 quests turned in; NightElf 36 (21%) -> 37 (35%) in 4 h 16, 24 quests turned in; Gnome 36 (24%) -> 37 (38%) in 4 h 16, 24 quests turned in; Skyborne 36 (23%) -> 37 (37%) in 4 h 16, 24 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-a18-desolace",
     title    = "Desolace (35-37)",
@@ -20,13 +20,13 @@ Ding.RegisterGuide({
         { talk = 11104, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, text = "Get your companion back from the stable master." }, -- level 35
         { talk = 11104, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 35
           note = "Release the short-term pet you tamed." },
-        { sethearth = "Nijel's Point", talk = 11103, -- level 35
+        { sethearth = "Nijel's Point", talk = 11103, -- level 36
           note = "The NPC is indoors." },
-        { turnin = 1453, accept = { 1454, 1458 } }, -- level 35
-        { accept = 1387 }, -- level 35
-        { accept = 1382 }, -- level 35
-        { accept = 1437 }, -- level 35
-        { complete = 1458, -- level 35
+        { turnin = 1453, accept = { 1454, 1458 } }, -- level 36
+        { accept = 1387 }, -- level 36
+        { accept = 1382 }, -- level 36
+        { accept = 1437 }, -- level 36
+        { complete = 1458, -- level 36
           note = "Hunt down satyrs. Beware of foes lurking in stealth." },
         { level = 35, xp = 64450, patrol = { { 1443, 69.36, 15.83 }, { 1443, 72.37, 13.34 }, { 1443, 73.43, 16.43 }, { 1443, 76.34, 14.95 }, { 1443, 77.34, 18.15 }, { 1443, 74.65, 19.76 }, { 1443, 75.96, 22.56 }, { 1443, 72.34, 24.24 }, { 1443, 74.35, 26.63 }, { 1443, 77.34, 26.65 }, { 1443, 76.34, 29.85 }, { 1443, 71.26, 19.34 }, { 1443, 80.43, 16.44 }, { 1443, 73.36, 9.23 } }, -- level 36
           note = "With the coming hand-ins, this brings you to level 36." },
@@ -85,7 +85,7 @@ Ding.RegisterGuide({
         { complete = 6161, -- level 36
           note = "Hunt naga. The targets are on islands and beneath the surface." },
         { turnin = 6161, object = 177786 }, -- level 36
-        { level = 37, patrol = { { 1443, 28.35, 12.24 }, { 1443, 30.44, 9.54 }, { 1443, 27.36, 9.05 }, { 1443, 29.97, 6.37 }, { 1443, 33.69, 10.39 }, { 1443, 29.15, 15.44 } }, -- level 36
+        { level = 37, patrol = { { 1443, 28.35, 12.24 }, { 1443, 30.44, 9.54 }, { 1443, 27.36, 9.05 }, { 1443, 29.97, 6.37 }, { 1443, 33.69, 10.39 }, { 1443, 29.15, 15.44 } }, -- level 37
           note = "This spreads out the grinding so less is left later." },
         { go = { 1443, 40.69, 28.9 }, text = "Climb the trail" }, -- level 37
         { turnin = 6027, -- level 37

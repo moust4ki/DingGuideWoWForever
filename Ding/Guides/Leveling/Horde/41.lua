@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Horde/41.lua.
--- Simulated (warrior): Orc 59 (15%) -> 60 (0%) in 5 h 56, 15 quests turned in; Scourge 59 (15%) -> 60 (0%) in 5 h 56, 15 quests turned in; Tauren 59 (15%) -> 60 (0%) in 5 h 56, 15 quests turned in; Troll 59 (15%) -> 60 (0%) in 5 h 56, 15 quests turned in; Skyborne 59 (15%) -> 60 (0%) in 5 h 56, 15 quests turned in.
+-- Simulated (warrior): Orc 59 (15%) -> 60 (0%) in 5 h 35, 16 quests turned in; Scourge 59 (15%) -> 60 (0%) in 5 h 35, 16 quests turned in; Tauren 59 (15%) -> 60 (0%) in 5 h 35, 16 quests turned in; Troll 59 (15%) -> 60 (0%) in 5 h 35, 16 quests turned in; Skyborne 59 (15%) -> 60 (0%) in 5 h 35, 16 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-h41-silithus",
     title    = "Silithus (59-60)",
@@ -39,6 +39,7 @@ Ding.RegisterGuide({
         { complete = 8284, -- level 59
           note = "Look for fragments of rock that glow blue." },
         { turnin = 8284, accept = 8285, sticky = { 8278, 8281 } }, -- level 59
+        { accept = 9416 }, -- level 59
         { turnin = 8285, accept = 8279, -- level 59
           note = "Your objective lies in a little cavern." },
         { complete = 8304, talk = 15170, -- level 59
@@ -55,6 +56,7 @@ Ding.RegisterGuide({
         { complete = 8279, -- level 59
           note = "This one roams, so scan the surrounding area." },
         { complete = 8318 }, -- level 59
+        { turnin = 9416 }, -- level 59
         { turnin = 8279, accept = 8287, -- level 59
           note = "Your objective lies in a little cavern." },
         { destroy = { 20394, 20395, 20396 } }, -- level 59

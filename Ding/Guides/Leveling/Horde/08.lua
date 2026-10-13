@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Horde/08.lua.
--- Simulated (warrior): Orc 24 (84%) -> 25 (89%) in 1 h 58, 13 quests turned in; Scourge 24 (84%) -> 25 (89%) in 1 h 58, 13 quests turned in; Tauren 24 (81%) -> 25 (86%) in 1 h 58, 13 quests turned in; Troll 24 (84%) -> 25 (89%) in 1 h 58, 13 quests turned in; Skyborne 24 (85%) -> 25 (90%) in 1 h 58, 13 quests turned in.
+-- Simulated (warrior): Orc 24 (96%) -> 25 (99%) in 1 h 58, 13 quests turned in; Scourge 24 (96%) -> 25 (99%) in 1 h 58, 13 quests turned in; Tauren 24 (91%) -> 25 (95%) in 1 h 58, 13 quests turned in; Troll 24 (96%) -> 25 (99%) in 1 h 58, 13 quests turned in; Skyborne 24 (97%) -> 26 (0%) in 1 h 58, 13 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-h08-the-barrens",
     title    = "The Barrens (24-25)",
@@ -67,15 +67,15 @@ Ding.RegisterGuide({
           note = "Beware of foes lurking in stealth. The NPC is indoors." },
         { complete = 893, keep = 5093, -- level 24
           note = "Kill Stalkers and Pathfinders. Beware of foes lurking in stealth." },
-        { complete = 893, keep = 5092, -- level 24
+        { complete = 893, keep = 5092, -- level 25
           note = "Beware of foes lurking in stealth." },
-        { complete = 893, keep = 5094, -- level 24
+        { complete = 893, keep = 5094, -- level 25
           note = "Beware of foes lurking in stealth." },
-        { collect = { { 5103, 1 } }, useitem = 5103, sticky = 843, -- level 24
+        { collect = { { 5103, 1 } }, useitem = 5103, sticky = 843, -- level 25
           note = "The target is a red winged serpent. The target roams; check the area." },
-        { accept = 885, races = { "Orc", "Tauren", "Troll" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK", "DRUID" } }, -- level 24
-        { accept = 885, races = { "Scourge", "Skyborne" } }, -- level 24
-        { complete = 843, -- level 24
+        { accept = 885, races = { "Orc", "Tauren", "Troll" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK", "DRUID" } }, -- level 25
+        { accept = 885, races = { "Scourge", "Skyborne" } }, -- level 25
+        { complete = 843, -- level 25
           note = "This one roams, so scan the surrounding area. The targets are spread over several spots." },
         { complete = 843 }, -- level 25
         { go = { 1413, 46.79, 84.83 }, text = "Climb the trail" }, -- level 25

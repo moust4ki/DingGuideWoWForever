@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Alliance/02.lua.
--- Simulated (warrior): Dwarf 1 (0%) -> 14 (9%) in 8 h 24, 84 quests turned in; Gnome 1 (0%) -> 14 (3%) in 8 h 16, 83 quests turned in.
+-- Simulated (warrior): Dwarf 1 (0%) -> 13 (88%) in 8 h 07, 78 quests turned in; Gnome 1 (0%) -> 13 (88%) in 8 h 07, 78 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-a02-dwarf-and-gnome-starter",
     title    = "Dwarf and Gnome start (1-13)",
@@ -325,10 +325,7 @@ Ding.RegisterGuide({
         { go = { 1426, 70.67, 56.43 }, text = "Head out of the cave" }, -- level 10
         { turnin = 433 }, -- level 10
         { turnin = 432 }, -- level 10
-        { accept = 95217, races = { "Dwarf", "Gnome" } }, -- level 10
         { go = { 1426, 68.34, 54.54 }, text = "Learn Cooking from the trainer" }, -- level 10
-        { complete = 95217, races = { "Dwarf", "Gnome" } }, -- level 10
-        { turnin = 95217, races = { "Dwarf", "Gnome" } }, -- level 10
         { talk = 1355, -- level 10
           note = "This one roams, so scan the surrounding area. Without this, one quest can't be picked up." },
         { accept = 419, -- level 10
@@ -339,17 +336,17 @@ Ding.RegisterGuide({
         { turnin = 417 }, -- level 10
         { turnin = 413, accept = 414, -- level 10
           note = "Keep to the road as it crosses the underground passages." },
-        { accept = 224 }, -- level 11
-        { accept = 267, -- level 11
+        { accept = 224 }, -- level 10
+        { accept = 267, -- level 10
           note = "The NPC is indoors, one floor up." },
-        { go = { 1432, 33.9, 50.98 }, fly = true, talk = 1572, text = "Fly to Thelsamar" }, -- level 11
-        { turnin = 414, accept = 1339, patrol = { { 1432, 32.7, 49.76 }, { 1432, 33.3, 49.22 }, { 1432, 33.91, 48.42 }, { 1432, 34.36, 47.6 }, { 1432, 34.87, 47 }, { 1432, 35.6, 46.71 }, { 1432, 36.12, 46.32 }, { 1432, 37.14, 45.96 }, { 1432, 37.26, 45.56 }, { 1432, 37.33, 44.48 }, { 1432, 37.23, 43.29 }, { 1432, 36.68, 42.04 } }, -- level 11
+        { go = { 1432, 33.9, 50.98 }, fly = true, talk = 1572, text = "Fly to Thelsamar" }, -- level 10
+        { turnin = 414, accept = 1339, patrol = { { 1432, 32.7, 49.76 }, { 1432, 33.3, 49.22 }, { 1432, 33.91, 48.42 }, { 1432, 34.36, 47.6 }, { 1432, 34.87, 47 }, { 1432, 35.6, 46.71 }, { 1432, 36.12, 46.32 }, { 1432, 37.14, 45.96 }, { 1432, 37.26, 45.56 }, { 1432, 37.33, 44.48 }, { 1432, 37.23, 43.29 }, { 1432, 36.68, 42.04 } }, -- level 10
           note = "The NPC patrols a long route; look along it." },
-        { turnin = 1339, accept = 1338, -- level 11
+        { turnin = 1339, accept = 1338, -- level 10
           note = "The NPC is indoors, one floor up." },
-        { go = { 1432, 29.79, 16.03 }, deathskip = true, text = "Die on purpose at this spot", -- level 11
+        { go = { 1432, 29.79, 16.03 }, deathskip = true, text = "Die on purpose at this spot", -- level 10
           note = "Die to the monsters here on purpose. This is the quickest way over." },
-        { deathskip = true, revive = { 1432, 32.48, 47 }, text = "Get yourself killed, then resurrect with the spirit healer" }, -- level 11
+        { deathskip = true, revive = { 1432, 32.48, 47 }, text = "Get yourself killed, then resurrect with the spirit healer" }, -- level 10
         { talk = 6491 }, -- level 11
         { sethearth = "Stoutlager Inn", talk = 6734, -- level 11
           note = "The NPC is indoors." },
@@ -419,9 +416,6 @@ Ding.RegisterGuide({
         { accept = 95998, races = { "Dwarf", "Gnome" } }, -- level 11
         { complete = 95998, races = { "Dwarf", "Gnome" } }, -- level 11
         { turnin = 95998, races = { "Dwarf", "Gnome" } }, -- level 11
-        { accept = 91751, races = { "Dwarf", "Gnome" } }, -- level 11
-        { complete = 91751, races = { "Dwarf", "Gnome" } }, -- level 11
-        { turnin = 91751, races = { "Dwarf", "Gnome" } }, -- level 11
         { accept = 99127, races = { "Dwarf", "Gnome" } }, -- level 11
         { complete = 99127, races = { "Dwarf", "Gnome" } }, -- level 11
         { turnin = 99127, races = { "Dwarf", "Gnome" } }, -- level 11
@@ -435,31 +429,18 @@ Ding.RegisterGuide({
         { accept = 96626, races = { "Dwarf", "Gnome" } }, -- level 11
         { complete = 96626, races = { "Dwarf", "Gnome" } }, -- level 11
         { turnin = 96626, races = { "Dwarf", "Gnome" } }, -- level 11
-        { accept = 97916, races = { "Dwarf", "Gnome" } }, -- level 11
-        { accept = 97919, races = { "Dwarf", "Gnome" } }, -- level 11
-        { complete = 97919, races = { "Dwarf", "Gnome" } }, -- level 11
-        { turnin = 97919, races = { "Dwarf", "Gnome" } }, -- level 11
-        { accept = 97920, races = { "Dwarf", "Gnome" } }, -- level 11
-        { complete = 97920, races = { "Dwarf", "Gnome" } }, -- level 11
-        { turnin = 97920, races = { "Dwarf", "Gnome" } }, -- level 11
-        { accept = 97922, races = { "Dwarf", "Gnome" } }, -- level 11
-        { complete = 97922, races = { "Dwarf", "Gnome" } }, -- level 11
-        { turnin = 97922, races = { "Dwarf", "Gnome" } }, -- level 11
-        { accept = 97924, races = { "Dwarf", "Gnome" } }, -- level 12
-        { complete = 97924, races = { "Dwarf", "Gnome" } }, -- level 12
-        { turnin = 97924, races = { "Dwarf", "Gnome" } }, -- level 12
-        { accept = 97925, races = { "Dwarf", "Gnome" } }, -- level 12
-        { accept = 99128, races = { "Dwarf" } }, -- level 12
-        { complete = 99128, races = { "Dwarf" } }, -- level 12
-        { turnin = 99128, races = { "Dwarf" } }, -- level 12
-        { turnin = 35, accept = { 37, 52 }, sticky = 52 }, -- level 12
-        { turnin = 37, accept = 45 }, -- level 12
-        { accept = 5545, sticky = 5545 }, -- level 12
-        { turnin = 45, accept = 71 }, -- level 12
-        { complete = 5545, -- level 12
+        { accept = 99128, races = { "Dwarf", "Gnome" } }, -- level 11
+        { complete = 99128, races = { "Dwarf", "Gnome" } }, -- level 11
+        { turnin = 99128, races = { "Dwarf", "Gnome" } }, -- level 11
+        { accept = 99129, races = { "Dwarf", "Gnome" } }, -- level 11
+        { turnin = 35, accept = { 37, 52 }, sticky = 52 }, -- level 11
+        { turnin = 37, accept = 45 }, -- level 11
+        { accept = 5545, sticky = 5545 }, -- level 11
+        { turnin = 45, accept = 71 }, -- level 11
+        { complete = 5545, -- level 11
           note = "Look for little stacks of brown wood. Look around tree trunks at ground level." },
-        { accept = 91732, races = { "Dwarf", "Gnome" } }, -- level 12
-        { complete = 52 }, -- level 12
+        { accept = 91732, races = { "Dwarf", "Gnome" } }, -- level 11
+        { complete = 52 }, -- level 11
         { complete = 52, -- level 12
           note = "The targets are wolves." },
         { turnin = 5545 }, -- level 12
@@ -472,8 +453,6 @@ Ding.RegisterGuide({
         { complete = 91733, races = { "Dwarf", "Gnome" } }, -- level 12
         { turnin = 91733, races = { "Dwarf", "Gnome" } }, -- level 12
         { complete = 94792, races = { "Dwarf", "Gnome" }, classes = { "HUNTER" } }, -- level 12
-        { complete = 97925, races = { "Dwarf", "Gnome" } }, -- level 12
-        { turnin = 97925, races = { "Dwarf", "Gnome" } }, -- level 12
         { accept = 184, useitem = 1972, when = { item = 1972 } }, -- level 12
         { turnin = 83, -- level 12
           note = "The NPC waits outside, at the building's front." },
@@ -539,13 +518,13 @@ Ding.RegisterGuide({
           note = "The targets are rat-like humanoids." },
         { turnin = 353, -- level 12
           note = "The NPC is indoors, one floor up." },
-        { collect = { { 3172, 3 } }, keep = 3172 }, -- level 13
-        { collect = { { 3174, 3 } }, keep = 3174, -- level 13
+        { collect = { { 3172, 3 } }, keep = 3172 }, -- level 12
+        { collect = { { 3174, 3 } }, keep = 3174, -- level 12
           note = "Hunt spiders for it." },
-        { collect = { { 3173, 3 } }, keep = 3173 }, -- level 13
-        { turnin = 416, patrol = { { 1432, 32.7, 49.76 }, { 1432, 33.3, 49.22 }, { 1432, 33.91, 48.42 }, { 1432, 34.36, 47.6 }, { 1432, 34.87, 47 }, { 1432, 35.6, 46.71 }, { 1432, 36.12, 46.32 }, { 1432, 37.14, 45.96 }, { 1432, 37.26, 45.56 }, { 1432, 37.33, 44.48 }, { 1432, 37.23, 43.29 }, { 1432, 36.68, 42.04 } }, -- level 13
+        { collect = { { 3173, 3 } }, keep = 3173 }, -- level 12
+        { turnin = 416, patrol = { { 1432, 32.7, 49.76 }, { 1432, 33.3, 49.22 }, { 1432, 33.91, 48.42 }, { 1432, 34.36, 47.6 }, { 1432, 34.87, 47 }, { 1432, 35.6, 46.71 }, { 1432, 36.12, 46.32 }, { 1432, 37.14, 45.96 }, { 1432, 37.26, 45.56 }, { 1432, 37.33, 44.48 }, { 1432, 37.23, 43.29 }, { 1432, 36.68, 42.04 } }, -- level 12
           note = "The NPC patrols a long route; look along it." },
-        { turnin = 418, sticky = 224, when = { ready = 418 }, -- level 13
+        { turnin = 418, sticky = 224, when = { ready = 418 }, -- level 12
           note = "The NPC is indoors." },
         { go = { 1432, 29.26, 66.68 }, text = "Take the road to where the trail starts" }, -- level 13
         { complete = 267 }, -- level 13
@@ -565,5 +544,6 @@ Ding.RegisterGuide({
           note = "The NPC is indoors, one floor up." },
         { turnin = 39 }, -- level 13
         { turnin = 94792, races = { "Dwarf", "Gnome" }, classes = { "HUNTER" } }, -- level 13
+        { turnin = 99129, races = { "Dwarf", "Gnome" } }, -- level 13
     },
 })

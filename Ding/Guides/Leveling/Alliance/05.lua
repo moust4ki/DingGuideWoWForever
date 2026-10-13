@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Alliance/05.lua.
--- Simulated (warrior): Human 16 (1%) -> 18 (19%) in 3 h 00, 30 quests turned in; Dwarf 16 (21%) -> 18 (37%) in 3 h 09, 30 quests turned in; NightElf 16 (19%) -> 18 (13%) in 2 h 50, 21 quests turned in; Gnome 16 (16%) -> 18 (33%) in 3 h 09, 30 quests turned in; Skyborne 15 (40%) -> 18 (13%) in 3 h 48, 30 quests turned in.
+-- Simulated (warrior): Human 15 (99%) -> 18 (21%) in 3 h 00, 30 quests turned in; Dwarf 16 (7%) -> 18 (26%) in 3 h 09, 30 quests turned in; NightElf 16 (14%) -> 18 (13%) in 2 h 54, 21 quests turned in; Gnome 16 (7%) -> 18 (26%) in 3 h 09, 30 quests turned in; Skyborne 15 (40%) -> 18 (13%) in 3 h 48, 30 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-a05-darkshore",
     title    = "Darkshore (15-18)",
@@ -143,6 +143,7 @@ Ding.RegisterGuide({
         { accept = 982 }, -- level 17
         { turnin = 958, -- level 17
           note = "The NPC is indoors." },
+        { accept = 97914, races = { "Human", "Dwarf", "Gnome", "Skyborne" } }, -- level 17
         { turnin = 957, when = { log = 957 } }, -- level 17
         { complete = 982, -- level 17
           note = "Go to the lowest deck of the wreck. Swim in by way of a porthole." },
@@ -159,6 +160,7 @@ Ding.RegisterGuide({
         { train = true, talk = 12042, races = { "NightElf" }, classes = { "DRUID" } }, -- level 17
         { turnin = 1138 }, -- level 18
         { turnin = 982 }, -- level 18
+        { accept = 97914, races = { "NightElf" } }, -- level 18
         { talk = 1448, buy = { { 4371, 1, 1448 } }, when = { noitem = 4371 }, -- level 18
           note = "This one roams, so scan the surrounding area. The NPC is indoors. Do it only if you can." },
         { vendor = true, talk = 1448, when = { noitem = 4371 } }, -- level 18
