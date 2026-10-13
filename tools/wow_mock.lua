@@ -1437,9 +1437,10 @@ return function(opts)
             for i, r in ipairs(rows) do
                 if plain(r.text) == "" then problem(("%s: row %d is empty"):format(label, i)) end
                 -- manual / skipped: a step the player marked done or skipped (Engine:StepMark);
-                -- header: a quest above its objectives; notice: a box for the whole window.
+                -- header: a quest above its objectives; notice: a box for the whole window;
+                -- button: a control (cancel the directory's trip).
                 if not ({ done = true, todo = true, impossible = true, manual = true, skipped = true, preview = true,
-                    header = true, notice = true })[r.state] then
+                    header = true, notice = true, button = true })[r.state] then
                     problem(("%s: row %d has no state (%s)"):format(label, i, tostring(r.state)))
                 end
             end
