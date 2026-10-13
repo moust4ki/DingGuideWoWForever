@@ -89,8 +89,7 @@ Ding.RegisterGuide({
         { go = { 1450, 48.06, 67.4 }, fly = true, talk = 10897, races = { "NightElf" }, classes = { "DRUID" }, text = "Fly to Moonglade" }, -- level 15
         { go = { 1438, 58.43, 94.06 }, fly = true, talk = 3838, text = "Flight master at Rut'theran Village" }, -- level 15
         { accept = 98391, races = { "Dwarf", "Gnome", "Skyborne" }, classes = { "PRIEST" } }, -- level 15
-        { go = { 1457, 57.59, 46.69 }, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" } }, -- level 15
-        { go = { 1457, 57.59, 46.69 }, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" } }, -- level 15
+        { go = { 1457, 57.59, 46.69 }, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, text = "Learn Bows and Staves at the weapon master" }, -- level 15
         { talk = 11866, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" } }, -- level 15
     },
 })

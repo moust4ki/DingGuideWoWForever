@@ -53,6 +53,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h05-the-barrens-and-stonetalon-m
         "Dieser NPC ist unten in der Kluft der Schatten.",
     ["The NPC stands on the highest level of this structure."] =
         "Der NPC steht auf der obersten Ebene dieses Gebäudes.",
+    ["Learn Staves at the weapon master"] =
+        "Lerne Stäbe beim Waffenmeister",
     ["Steal from Gamon using Pick Pocket. The NPC is indoors."] =
         "Bestiehl Gamon mit Taschendiebstahl. Der NPC ist drinnen.",
     ["Use it on Tazan's Satchel. The item is already in your inventory."] =
@@ -109,6 +111,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h05-the-barrens-and-stonetalon-m
         "Die Ziele sind Schildkröten. Die Ziele sind unter Wasser und am Ufer.",
     ["The target is a raptor. It shows up a short way off."] =
         "Das Ziel ist ein Raptor. Es erscheint ein Stück entfernt.",
+    ["Visit the caged quilboar"] =
+        "Besuche den eingesperrten Stacheleber",
     ["Trade your Blood Shards to gain buffs. Trade any spare Blood Shards to him during your Barrens questing. Ask him for the Spirit of the Wind buff"] =
         "Tausch deine Blutsplitter gegen Buffs ein. Gib ihm beim Questen im Brachland deine übrigen Blutsplitter. Bitte ihn um den Buff Geist des Windes",
     ["The quest giver waits on the hilltop."] =
@@ -117,6 +121,12 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h05-the-barrens-and-stonetalon-m
         "Jage die geflügelten Schlangen.",
     ["Take the lift up into Thunder Bluff"] =
         "Fahr mit dem Aufzug hinauf nach Donnerfels",
+    ["Learn Two-Handed Maces and Staves at the weapon master"] =
+        "Lerne Zweihandstreitkolben und Stäbe beim Waffenmeister",
+    ["Learn Guns at the weapon master"] =
+        "Lerne Schusswaffen beim Waffenmeister",
+    ["Learn Maces at the weapon master"] =
+        "Lerne Streitkolben beim Waffenmeister",
     ["Fly to Thunder Bluff"] =
         "Flieg nach Donnerfels",
     ["Go into the cavern"] =

@@ -17,6 +17,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a05-darkshore", {
         "곧 임시 소환수를 길들입니다. 여기서 소환수가 할퀴기 (2 레벨)를 배웁니다.",
     ["Flight master in Auberdine"] =
         "아우버다인 비행 조련사",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "여기서 야수를 길들여 할퀴기의 다음 등급을 배우세요",
     ["You will let it go shortly. Send your pet against a Thistle Bear."] =
         "곧 풀어 줄 것입니다. 소환수가 엉겅퀴곰을 공격하게 하세요.",
     ["Get your companion back from the stable master."] =

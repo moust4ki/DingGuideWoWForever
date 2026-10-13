@@ -51,6 +51,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h35-felwood-and-winterspring", {
         "你很快就要馴服一隻臨時寵物。你在這裡學到爪擊（等級7）。",
     ["Flight master at Everlook"] =
         "永望鎮的飛行管理員",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "在這裡馴服一隻野獸，學會下一級爪擊",
     ["Tame an Angerclaw Mauler with your Tame Beast spell. Track down a plague-ridden bear with a chestnut coat."] =
         "用你的馴服野獸法術馴服一隻怒爪巨熊。找出一隻栗色毛皮、染上瘟疫的熊。",
     ["The NPC is upstairs, out on the balcony."] =

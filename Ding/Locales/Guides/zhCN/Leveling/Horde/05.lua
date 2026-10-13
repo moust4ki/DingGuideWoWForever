@@ -53,6 +53,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h05-the-barrens-and-stonetalon-m
         "该NPC在下面的暗影裂口里。",
     ["The NPC stands on the highest level of this structure."] =
         "NPC在这座建筑的最高层。",
+    ["Learn Staves at the weapon master"] =
+        "向武器大师学习法杖",
     ["Steal from Gamon using Pick Pocket. The NPC is indoors."] =
         "对Gamon使用搜索偷取。NPC在室内。",
     ["Use it on Tazan's Satchel. The item is already in your inventory."] =
@@ -109,6 +111,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h05-the-barrens-and-stonetalon-m
         "目标是海龟。目标在水下和岸边。",
     ["The target is a raptor. It shows up a short way off."] =
         "目标是一只迅猛龙。它会在不远处出现。",
+    ["Visit the caged quilboar"] =
+        "拜访笼中的野猪人",
     ["Trade your Blood Shards to gain buffs. Trade any spare Blood Shards to him during your Barrens questing. Ask him for the Spirit of the Wind buff"] =
         "用你的血之碎片换取增益效果。在贫瘠之地做任务时，把多余的血之碎片都拿来跟他交换。向他索取Spirit of the Wind增益效果",
     ["The quest giver waits on the hilltop."] =
@@ -117,6 +121,12 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h05-the-barrens-and-stonetalon-m
         "猎杀有翼的蛇。",
     ["Take the lift up into Thunder Bluff"] =
         "乘升降梯上雷霆崖",
+    ["Learn Two-Handed Maces and Staves at the weapon master"] =
+        "向武器大师学习双手锤和法杖",
+    ["Learn Guns at the weapon master"] =
+        "向武器大师学习枪械",
+    ["Learn Maces at the weapon master"] =
+        "向武器大师学习单手锤",
     ["Fly to Thunder Bluff"] =
         "飞往雷霆崖",
     ["Go into the cavern"] =

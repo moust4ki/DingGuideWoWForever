@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h02-tauren-starter", {
         "Start: Tauren (1-13)",
     ["Mulgore: Camp Narache, where tauren start. This frees room in your bags. You receive one further along the route."] =
         "Mulgore: Camp Narache, wo Tauren beginnen. Das schafft Platz in deinen Taschen. Weiter auf der Route bekommst du eins.",
+    ["Loot the beasts you kill on the way here"] =
+        "Plündere die Tiere, die du auf dem Weg hierher tötest",
     ["Pick up anything that sells for 10 copper or more. You'll level faster with this."] =
         "Heb alles auf, was sich für 10 Kupfer oder mehr verkaufen lässt. Damit levelst du schneller.",
     ["The NPC is indoors."] =
@@ -47,6 +49,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h02-tauren-starter", {
         "Die Ziele sind Wölfe.",
     ["With the coming hand-ins, this gets you to level 9."] =
         "Mit den nächsten Abgaben bringt dich das auf Stufe 9.",
+    ["Learn First Aid from the trainer"] =
+        "Lerne Erste Hilfe beim Lehrer",
     ["Fight the dwarves."] =
         "Kämpfe gegen die Zwerge.",
     ["Kill harpies."] =
@@ -69,6 +73,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h02-tauren-starter", {
         "Ziele damit auf einen Prairie Stalker. Die Ziele sind Wölfe.",
     ["Use the item on any Swoop. Hunt the black-feathered birds."] =
         "Benutze den Gegenstand an einem beliebigen Swoop. Jage die schwarz gefiederten Vögel.",
+    ["Tame a pet here"] =
+        "Zähme hier einen Begleiter",
     ["Choose an animal of level 9-10 and make it your pet with the Tame Beast spell. This pet is temporary; a lasting one comes shortly."] =
         "Wähle ein Tier der Stufe 9-10 und mach es mit dem Zauber Wildtier zähmen zu deinem Tier. Dieses Tier ist nur vorübergehend; ein dauerhaftes folgt bald.",
     ["Flight master at Camp Taurajo"] =
@@ -79,6 +85,14 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h02-tauren-starter", {
         "Bleib auf der Straße und sei wachsam. Die Gegner in dieser Gegend haben eine höhere Stufe als du.",
     ["Flight master at the Crossroads"] =
         "Flugmeister am Wegekreuz",
+    ["Learn Blacksmithing from the trainer"] =
+        "Lerne Schmiedekunst beim Lehrer",
+    ["Learn Mining from the trainer"] =
+        "Lerne Bergbau beim Lehrer",
+    ["Learn Staves at the weapon master"] =
+        "Lerne Stäbe beim Waffenmeister",
+    ["Learn Two-Handed Maces at the weapon master"] =
+        "Lerne Zweihandstreitkolben beim Waffenmeister",
     ["This is food for your pet."] =
         "Das ist Futter für dein Tier.",
     ["The NPC is indoors, one floor up."] =
@@ -137,6 +151,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h02-tauren-starter", {
         "Dieser NPC ist unten in der Kluft der Schatten.",
     ["This clears the quest's time limit."] =
         "Damit entfällt das Zeitlimit der Quest.",
+    ["Learn Bows at the weapon master"] =
+        "Lerne Bogen beim Waffenmeister",
     ["The foes here are scorpions."] =
         "Die Gegner hier sind Skorpione.",
     ["The quest giver stands among the boulders."] =

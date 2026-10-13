@@ -11,6 +11,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h22-tanaris", {
         "把宠物寄存在兽栏管理员处。",
     ["You will tame a short-term pet shortly. Your pet picks up Claw (Rank 6) here."] =
         "你马上要驯服一只临时宠物。你的宠物在这里学会爪击（等级6）。",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "在这里驯服一只野兽，学会下一级爪击",
     ["Tame a Scorpid Hunter with Tame Beast. The foes here are scorpions."] =
         "用驯服野兽驯服一只Scorpid Hunter。这里的敌人是蝎子。",
     ["Get your companion back from the stable master."] =

@@ -5,8 +5,12 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h12-hillsbrad-foothills", {
         "힐스브래드 구릉지 (30-32)",
     ["Undercity first, then Hillsbrad Foothills: Tarren Mill."] =
         "언더시티에 먼저 들른 다음 힐스브래드 구릉지: 타렌 밀농장으로 가세요.",
+    ["Learn Cooking from the trainer"] =
+        "상급자에게서 요리를 배우세요",
     ["You'll need this to pick up an upcoming quest."] =
         "다음에 받을 퀘스트에 필요합니다.",
+    ["Learn Crossbows and Two-Handed Swords at the weapon master"] =
+        "무기 전문가에게서 석궁과 양손 도검을 배우세요",
     ["Leap up and take the trail behind that tree"] =
         "뛰어올라 저 나무 뒤의 길로 가세요",
     ["Wait for the talking to finish"] =

@@ -154,7 +154,7 @@ Ding.RegisterGuide({
           note = "The NPC stands on the highest level of this structure." },
         { train = true, talk = 10088, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, -- level 18
           note = "The NPC stands on the highest level of this structure." },
-        { go = { 1454, 81.59, 19.59 }, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" } }, -- level 18
+        { go = { 1454, 81.59, 19.59 }, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, text = "Learn Staves at the weapon master" }, -- level 18
         { talk = 2704, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, -- level 18
           note = "The NPC is indoors." },
         { train = true, talk = 3328, races = { "Orc", "Scourge", "Troll" }, classes = { "ROGUE" }, -- level 18
@@ -334,7 +334,7 @@ Ding.RegisterGuide({
         { turnin = 878, races = { "Orc", "Scourge", "Troll" }, classes = { "ROGUE" } }, -- level 20
         { accept = 5052 }, -- level 20
         { turnin = 5052, when = { ready = 5052 } }, -- level 20
-        { go = { 1413, 44.5, 59.27 } }, -- level 20
+        { go = { 1413, 44.5, 59.27 }, text = "Visit the caged quilboar" }, -- level 20
         { talk = 3430, -- level 20
           note = "Trade your Blood Shards to gain buffs. Trade any spare Blood Shards to him during your Barrens questing. Ask him for the Spirit of the Wind buff" },
         { turnin = 882, accept = 907 }, -- level 20
@@ -355,11 +355,11 @@ Ding.RegisterGuide({
         { accept = 853 }, -- level 21
         { go = { 1456, 31.81, 66.07 }, text = "Take the lift up into Thunder Bluff" }, -- level 21
         { turnin = 76156, races = { "Tauren" }, classes = { "WARRIOR", "SHAMAN", "DRUID" } }, -- level 21
-        { go = { 1456, 40.99, 62.69 } }, -- level 21
-        { go = { 1456, 40.99, 62.69 } }, -- level 21
-        { go = { 1456, 40.99, 62.69 } }, -- level 21
-        { go = { 1456, 40.99, 62.69 } }, -- level 21
-        { talk = 11869 }, -- level 21
+        { go = { 1456, 40.99, 62.69 }, classes = { "WARRIOR" }, text = "Learn Two-Handed Maces and Staves at the weapon master" }, -- level 21
+        { go = { 1456, 40.99, 62.69 }, classes = { "HUNTER" }, text = "Learn Guns at the weapon master" }, -- level 21
+        { go = { 1456, 40.99, 62.69 }, classes = { "ROGUE" }, text = "Learn Maces at the weapon master" }, -- level 21
+        { go = { 1456, 40.99, 62.69 }, classes = { "PRIEST", "WARLOCK" }, text = "Learn Staves at the weapon master" }, -- level 21
+        { talk = 11869, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST", "WARLOCK" } }, -- level 21
         { sethearth = "Thunder Bluff", talk = 6746, -- level 21
           note = "The NPC is indoors." },
         { go = { 1456, 46.92, 49.89 }, fly = true, talk = 2995, text = "Fly to Thunder Bluff", -- level 21

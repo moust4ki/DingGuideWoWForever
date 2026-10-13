@@ -60,7 +60,7 @@ Ding.RegisterGuide({
         { accept = 498, -- level 22
           note = "The NPC is indoors." },
         { complete = 1536, useitem = 7768, when = { log = 1536 }, races = { "Orc", "Tauren", "Troll", "Skyborne" }, classes = { "SHAMAN" } }, -- level 22
-        { go = { 1424, 66.45, 18.96 }, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, -- level 22
+        { go = { 1424, 66.45, 18.96 }, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, text = "Tame a beast here to learn the next rank of Claw", -- level 22
           note = "Pick any Gray Bear and use Tame Beast on it." },
         { talk = 10057, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, text = "Get your companion back from the stable master." }, -- level 22
         { talk = 10057, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, -- level 22

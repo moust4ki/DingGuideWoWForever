@@ -87,4 +87,12 @@ Ding.RegisterGuideTranslation("esES", "leveling-a11-duskwood-and-redridge-mounta
         "El objetivo es el quinto jefe de la mazmorra.",
     ["You'll find them all over the instance."] =
         "Los encontrarás por toda la instancia.",
+    ["Learn Guns, Two-Handed Axes and Two-Handed Maces at the weapon master"] =
+        "Aprende Armas de fuego, Hachas de dos manos y Mazas de dos manos con el maestro de armas",
+    ["Learn Two-Handed Axes at the weapon master"] =
+        "Aprende Hachas de dos manos con el maestro de armas",
+    ["Learn Guns and Two-Handed Axes at the weapon master"] =
+        "Aprende Armas de fuego y Hachas de dos manos con el maestro de armas",
+    ["Learn Guns and Maces at the weapon master"] =
+        "Aprende Armas de fuego y Mazas con el maestro de armas",
 })

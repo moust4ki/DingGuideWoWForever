@@ -39,6 +39,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h15-desolace", {
         "NPC는 건물 안에 있습니다.",
     ["Fly to Shadowprey Village"] =
         "그늘수렵 마을로 날아가세요",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "여기서 야수를 길들여 할퀴기의 다음 등급을 배우세요",
     ["Tame a Scorpashi Lasher with Tame Beast."] =
         "야수 길들이기로 스콜파시 꼬리전갈을 길들이세요.",
     ["Get your companion back from the stable master."] =

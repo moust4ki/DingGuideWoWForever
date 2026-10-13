@@ -53,6 +53,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h05-the-barrens-and-stonetalon-m
         "Este NPC fica lá embaixo, no Antro das Sombras.",
     ["The NPC stands on the highest level of this structure."] =
         "O NPC fica no nível mais alto desta construção.",
+    ["Learn Staves at the weapon master"] =
+        "Aprenda Báculos com o mestre de armas",
     ["Steal from Gamon using Pick Pocket. The NPC is indoors."] =
         "Roube de Gamon com Pick Pocket. O NPC está lá dentro.",
     ["Use it on Tazan's Satchel. The item is already in your inventory."] =
@@ -109,6 +111,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h05-the-barrens-and-stonetalon-m
         "Os alvos são tartarugas. Os alvos ficam debaixo d'água e ao longo da margem.",
     ["The target is a raptor. It shows up a short way off."] =
         "O alvo é um raptor. Aparece a uma curta distância.",
+    ["Visit the caged quilboar"] =
+        "Visite o javatusco enjaulado",
     ["Trade your Blood Shards to gain buffs. Trade any spare Blood Shards to him during your Barrens questing. Ask him for the Spirit of the Wind buff"] =
         "Troque seus Estilhaços de Sangue por bônus. Durante as missões nos Sertões, troque com ele os Estilhaços de Sangue que sobrarem. Peça a ele o bônus Espírito do Vento",
     ["The quest giver waits on the hilltop."] =
@@ -117,6 +121,12 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h05-the-barrens-and-stonetalon-m
         "Cace as serpentes aladas.",
     ["Take the lift up into Thunder Bluff"] =
         "Suba de elevador até o Penhasco do Trovão",
+    ["Learn Two-Handed Maces and Staves at the weapon master"] =
+        "Aprenda Maças de Duas Mãos e Báculos com o mestre de armas",
+    ["Learn Guns at the weapon master"] =
+        "Aprenda Armas de Fogo com o mestre de armas",
+    ["Learn Maces at the weapon master"] =
+        "Aprenda Maças com o mestre de armas",
     ["Fly to Thunder Bluff"] =
         "Voe até o Penhasco do Trovão",
     ["Go into the cavern"] =

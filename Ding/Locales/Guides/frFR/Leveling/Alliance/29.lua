@@ -19,6 +19,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a29-the-hinterlands", {
         "Le PNJ est à l'intérieur.",
     ["Gather the big plumes colored brown and ivory. Drop the Ground Clutter option down to 1. Find it in the game options, under System, then Graphics."] =
         "Ramasse les grandes plumes marron et ivoire. Baisse l'option des détails au sol à 1. Elle se trouve dans les options du jeu, sous Système, puis Graphismes.",
+    ["Hop onto the ledge"] =
+        "Saute sur la corniche",
     ["Hop onto the ledge here. Monsters are unable to reach you from this spot. Hold off until you have left combat."] =
         "Saute sur la corniche ici. Les monstres ne peuvent pas t'atteindre ici. Attends d'être sorti du combat.",
     ["Other creatures use these spawn points too."] =

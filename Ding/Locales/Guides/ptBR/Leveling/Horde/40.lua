@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h40-winterspring", {
         "Hibérnia: Visteterna, no meio da zona.",
     ["You will tame a short-term pet shortly. Pick up Claw (Rank 8) for your pet."] =
         "Em breve você vai domar um ajudante temporário. Obtenha Garra (Grau 8) para o seu ajudante.",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Dome uma fera aqui para aprender o próximo grau de Garra",
     ["Tame a Winterspring Screecher with the Tame Beast spell. Hunt the white owls."] =
         "Use o feitiço Domar Fera em uma Guinchadora de Hibérnia. Cace as corujas brancas.",
     ["Get your companion back from the stable master."] =
@@ -29,6 +31,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h40-winterspring", {
         "Este se desloca, então procure pelos arredores. O NPC fica dentro da passagem.",
     ["Fly to Moonglade"] =
         "Voe até a Clareira da Lua",
+    ["Head indoors"] =
+        "Vá para dentro",
     ["The NPC is indoors. Wait for the talking to finish"] =
         "O NPC está lá dentro. Espere a conversa terminar",
     ["One last lengthy stretch of monster farming. Dungeon runs are a fine choice here too, as you like. This number shrinks while you kill monsters."] =

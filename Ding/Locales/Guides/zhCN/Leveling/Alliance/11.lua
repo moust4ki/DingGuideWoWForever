@@ -87,4 +87,12 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-a11-duskwood-and-redridge-mounta
         "目标是副本的第五个首领。",
     ["You'll find them all over the instance."] =
         "副本里到处都有。",
+    ["Learn Guns, Two-Handed Axes and Two-Handed Maces at the weapon master"] =
+        "向武器大师学习枪械、双手斧和双手锤",
+    ["Learn Two-Handed Axes at the weapon master"] =
+        "向武器大师学习双手斧",
+    ["Learn Guns and Two-Handed Axes at the weapon master"] =
+        "向武器大师学习枪械和双手斧",
+    ["Learn Guns and Maces at the weapon master"] =
+        "向武器大师学习枪械和单手锤",
 })

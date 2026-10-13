@@ -51,6 +51,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a36-azshara-and-felwood", {
         "Maître de vol de Long-guet",
     ["The flight master stands past the walls, outdoors."] =
         "Le maître de vol est au-delà des murs, dehors.",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Apprivoise ici une bête pour apprendre le rang suivant de Griffe",
     ["Tame an Angerclaw Mauler with your Tame Beast spell. Track down a plague-ridden bear with a chestnut coat."] =
         "Apprivoise un Angerclaw Mauler avec ton sort Apprivoiser une bête. Traque un ours pestiféré au pelage châtain.",
     ["Get your companion back from the stable master."] =

@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a02-dwarf-and-gnome-starter", {
         "矮人和地精起始區 (1-13)",
     ["Dun Morogh: Coldridge Valley, where dwarves and gnomes start. This frees room in your bags. You receive one further along the route."] =
         "丹莫洛：寒脊山谷，矮人和地精的起點。這能騰出背包空間。路線後面會拿到一個。",
+    ["Loot the beasts you kill on the way here"] =
+        "拾取你在來路上擊殺的野獸",
     ["Pick up anything that sells for 10 copper or more."] =
         "拾取所有能賣10銅幣以上的物品。",
     ["Head indoors"] =
@@ -41,10 +43,16 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a02-dwarf-and-gnome-starter", {
         "穿過隧道，然後沿著道路走",
     ["Heal Mountaineer Dolf with Lesser Heal (Rank 2). Buff Mountaineer Dolf with Power Word: Fortitude."] =
         "用次級治療術（等級2）治療巡山人多爾夫。對巡山人多爾夫施放真言術：韌。",
+    ["Learn Blacksmithing from the trainer"] =
+        "向訓練師學習鍛造",
+    ["Learn Mining from the trainer"] =
+        "向訓練師學習採礦",
     ["The NPC waits on the lower level, indoors."] =
         "NPC在室內的下層。",
     ["The quest wants yetis; seek them out. Targets are in the cavern and around its entrance too."] =
         "任務需要雪人；去找牠們。目標在洞穴裡，入口周圍也有。",
+    ["Learn First Aid from the trainer"] =
+        "向訓練師學習急救",
     ["The NPC is indoors. Do it only if you can."] =
         "NPC在室內。能做到才做。",
     ["Stay on the trail"] =
@@ -81,10 +89,14 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a02-dwarf-and-gnome-starter", {
         "對任意一隻冰爪熊使用這個物品。",
     ["This one roams, so scan the surrounding area. Keep it as pet food for later."] =
         "這個會四處走動，留意周圍一帶。留著之後當寵物食物。",
+    ["Tame a pet here"] =
+        "在這裡馴服一隻寵物",
     ["Find one Ice Claw Bear and use Tame Beast on it. Push eastward if you still need more."] =
         "找一隻冰爪熊，對牠施放馴服野獸。如果還不夠，就繼續往東走。",
     ["Targets are in the cavern and around its entrance too. Hold on to it: a Paladin task coming up uses it."] =
         "目標在洞穴裡，入口周圍也有。留著它：接下來的聖騎士任務會用到。",
+    ["Learn Cooking from the trainer"] =
+        "向訓練師學習烹飪",
     ["This one roams, so scan the surrounding area. Without this, one quest can't be picked up."] =
         "這個會四處走動，留意周圍一帶。沒有這個就無法接其中一個任務。",
     ["The NPC is past the tunnel; stay on the road."] =
@@ -101,6 +113,12 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a02-dwarf-and-gnome-starter", {
         "故意讓這裡的怪物殺死你。這是過去最快的方法。",
     ["This one roams, so scan the surrounding area. The NPC can be indoors or out."] =
         "這個會四處走動，留意周圍一帶。NPC可能在室內，也可能在室外。",
+    ["Learn Two-Handed Axes and Two-Handed Maces at the weapon master"] =
+        "向武器大師學習雙手斧和雙手錘",
+    ["Learn Two-Handed Maces at the weapon master"] =
+        "向武器大師學習雙手錘",
+    ["Learn Thrown at the weapon master"] =
+        "向武器大師學習投擲武器",
     ["Head down into the Deeprun Tram station"] =
         "往下進入礦道地鐵車站",
     ["Pass through the portal to teleport."] =
@@ -113,6 +131,18 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a02-dwarf-and-gnome-starter", {
         "搭礦道地鐵前往暴風城。NPC站在中央月台的牆邊。",
     ["This one roams, so scan the surrounding area. The NPC is indoors. Be ready for a fight right away."] =
         "這個會四處走動，留意周圍一帶。NPC在室內。準備好立刻戰鬥。",
+    ["Learn Two-Handed Swords and Staves at the weapon master"] =
+        "向武器大師學習雙手劍和法杖",
+    ["Learn Two-Handed Swords at the weapon master"] =
+        "向武器大師學習雙手劍",
+    ["Learn Swords at the weapon master"] =
+        "向武器大師學習單手劍",
+    ["Learn Staves at the weapon master"] =
+        "向武器大師學習法杖",
+    ["Learn Swords and Daggers at the weapon master"] =
+        "向武器大師學習單手劍和匕首",
+    ["Learn Swords and Staves at the weapon master"] =
+        "向武器大師學習單手劍和法杖",
     ["Head up the incline"] =
         "走上斜坡",
     ["Flight master in Stormwind"] =

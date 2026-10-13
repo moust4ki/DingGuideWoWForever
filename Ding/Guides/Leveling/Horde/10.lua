@@ -34,7 +34,7 @@ Ding.RegisterGuide({
           note = "You will tame a short-term pet shortly. You pick up Claw (Rank 4) here." },
         { accept = 6441 }, -- level 26
         { go = { 1440, 73.14, 61.65 }, fly = true, talk = 12616, text = "Flight master at Splintertree Post" }, -- level 26
-        { go = { 1440, 62.17, 68.03 }, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, -- level 26
+        { go = { 1440, 62.17, 68.03 }, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, text = "Tame a beast here to learn the next rank of Claw", -- level 26
           note = "Tame any Elder Ashenvale Bear with Tame Beast." },
         { talk = 15131, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, text = "Get your companion back from the stable master." }, -- level 26
         { talk = 15131, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, -- level 26

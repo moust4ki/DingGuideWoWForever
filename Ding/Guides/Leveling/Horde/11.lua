@@ -174,7 +174,7 @@ Ding.RegisterGuide({
           note = "The NPC stands on the highest level of this structure." },
         { train = true, talk = 10088, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, -- level 30
           note = "The NPC stands on the highest level of this structure." },
-        { go = { 1454, 81.5, 19.65 }, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" } }, -- level 30
+        { go = { 1454, 81.5, 19.65 }, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, text = "Learn Two-Handed Axes at the weapon master" }, -- level 30
         { talk = 2704, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, -- level 30
           note = "The NPC is indoors." },
         { train = true, talk = 6018, races = { "Scourge", "Troll" }, classes = { "PRIEST" }, -- level 30

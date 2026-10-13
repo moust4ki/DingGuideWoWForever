@@ -13,7 +13,7 @@ Ding.RegisterGuide({
     steps    = {
         { destroy = 6948, -- level 1
           note = "Mulgore: Camp Narache, where tauren start. This frees room in your bags. You receive one further along the route." },
-        { go = { 1412, 44.95, 80.98 }, classes = { "WARRIOR", "SHAMAN" }, -- level 1
+        { go = { 1412, 44.95, 80.98 }, classes = { "WARRIOR", "SHAMAN" }, text = "Loot the beasts you kill on the way here", -- level 1
           note = "Pick up anything that sells for 10 copper or more. You'll level faster with this." },
         { vendor = true, talk = 3072, classes = { "WARRIOR", "SHAMAN" }, -- level 1
           note = "The NPC is indoors." },
@@ -163,7 +163,7 @@ Ding.RegisterGuide({
         { accept = 99079, races = { "Tauren" } }, -- level 9
         { turnin = 99081, races = { "Tauren" } }, -- level 9
         { accept = 99101, races = { "Tauren" } }, -- level 9
-        { go = { 1412, 46.11, 63.9 }, classes = { "WARRIOR" } }, -- level 9
+        { go = { 1412, 46.11, 63.9 }, classes = { "WARRIOR" }, text = "Learn First Aid from the trainer" }, -- level 9
         { talk = 5939, classes = { "WARRIOR" }, -- level 9
           note = "The NPC is indoors." },
         { complete = 758, useitem = 5415 }, -- level 9
@@ -219,7 +219,7 @@ Ding.RegisterGuide({
         { turnin = 751, patrol = { { 1412, 50.32, 62.97 }, { 1412, 51.36, 63.45 }, { 1412, 52.74, 63.73 }, { 1412, 53.88, 64.1 }, { 1412, 54.95, 64.23 }, { 1412, 56.92, 65.24 } }, -- level 10
           note = "The NPC patrols the road; look along it." },
         { turnin = 99079, races = { "Tauren" } }, -- level 10
-        { go = { 1412, 57.06, 62.37 }, classes = { "HUNTER" }, -- level 10
+        { go = { 1412, 57.06, 62.37 }, classes = { "HUNTER" }, text = "Tame a pet here", -- level 10
           note = "Choose an animal of level 9-10 and make it your pet with the Tame Beast spell. This pet is temporary; a lasting one comes shortly." },
         { go = { 1413, 44.51, 59.1 }, fly = true, talk = 10378, text = "Flight master at Camp Taurajo" }, -- level 11
         { go = { 1413, 44.51, 59.1 }, fly = true, talk = 10378, text = "Fly to Thunder Bluff" }, -- level 11
@@ -231,16 +231,16 @@ Ding.RegisterGuide({
         { turnin = 6361, accept = 6362 }, -- level 11
         { turnin = 6362, accept = 6363, -- level 11
           note = "The NPC is indoors." },
-        { go = { 1456, 39.41, 55.12 }, classes = { "WARRIOR" } }, -- level 11
+        { go = { 1456, 39.41, 55.12 }, classes = { "WARRIOR" }, text = "Learn Blacksmithing from the trainer" }, -- level 11
         { talk = 2998, classes = { "WARRIOR" } }, -- level 11
-        { go = { 1456, 34.31, 57.84 }, classes = { "WARRIOR" } }, -- level 11
+        { go = { 1456, 34.31, 57.84 }, classes = { "WARRIOR" }, text = "Learn Mining from the trainer" }, -- level 11
         { accept = 76156, races = { "Tauren" }, classes = { "WARRIOR", "SHAMAN", "DRUID" } }, -- level 11
         { talk = 3001, classes = { "WARRIOR" }, -- level 11
           note = "The NPC is indoors." },
         { talk = 3002, buy = { { 2901, 1, 3002 } }, classes = { "WARRIOR" }, -- level 11
           note = "The NPC is indoors." },
-        { go = { 1456, 40.99, 62.69 }, classes = { "WARRIOR", "HUNTER", "DRUID" } }, -- level 11
-        { go = { 1456, 40.99, 62.69 }, classes = { "WARRIOR", "HUNTER", "DRUID" } }, -- level 11
+        { go = { 1456, 40.99, 62.69 }, classes = { "WARRIOR", "HUNTER" }, text = "Learn Staves at the weapon master" }, -- level 11
+        { go = { 1456, 40.99, 62.69 }, classes = { "DRUID" }, text = "Learn Two-Handed Maces at the weapon master" }, -- level 11
         { talk = 11869, classes = { "WARRIOR", "HUNTER", "DRUID" } }, -- level 11
         { sethearth = "Thunder Bluff", talk = 6746, classes = { "DRUID" }, -- level 11
           note = "The NPC is indoors." },
@@ -276,7 +276,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { turnin = 886, classes = { "DRUID" } }, -- level 11
         { turnin = 6364 }, -- level 11
-        { go = { 1411, 35.37, 47.36 }, classes = { "HUNTER" }, -- level 11
+        { go = { 1411, 35.37, 47.36 }, classes = { "HUNTER" }, text = "Tame a pet here", -- level 11
           note = "Find one Venomtail Scorpid and use Tame Beast on it. Release your current pet before this. Here you tame a pet to keep." },
         { turnin = 2984, accept = 1524, classes = { "SHAMAN" }, -- level 11
           note = "This one roams, so scan the surrounding area." },
@@ -435,9 +435,9 @@ Ding.RegisterGuide({
           note = "This NPC is found down in the Cleft of Shadow." },
         { abandon = 812, -- level 13
           note = "This clears the quest's time limit." },
-        { go = { 1454, 81.59, 19.59 }, classes = { "WARRIOR", "HUNTER" } }, -- level 13
-        { go = { 1454, 81.59, 19.59 }, classes = { "WARRIOR", "HUNTER" } }, -- level 13
+        { go = { 1454, 81.59, 19.59 }, classes = { "WARRIOR" }, text = "Learn Staves at the weapon master" }, -- level 13
         { accept = 96874, races = { "Tauren" } }, -- level 13
+        { go = { 1454, 81.59, 19.59 }, classes = { "HUNTER" }, text = "Learn Bows at the weapon master" }, -- level 13
         { talk = 2704, classes = { "WARRIOR", "HUNTER" }, -- level 13
           note = "The NPC is indoors." },
         { complete = 813, -- level 13

@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h40-winterspring", {
         "Winterquell: Ewige Warte, in der Mitte des Gebiets.",
     ["You will tame a short-term pet shortly. Pick up Claw (Rank 8) for your pet."] =
         "Du zähmst gleich ein Tier für kurze Zeit. Hol dir Klaue (Rang 8) für dein Tier.",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Zähme hier ein Tier, um den nächsten Rang von Klaue zu lernen",
     ["Tame a Winterspring Screecher with the Tame Beast spell. Hunt the white owls."] =
         "Zähme einen Winterspring Screecher mit dem Zauber Wildtier zähmen. Jage die weißen Eulen.",
     ["Get your companion back from the stable master."] =
@@ -29,6 +31,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h40-winterspring", {
         "Dieses Ziel wandert umher, also such die Umgebung ab. Der NPC steht im Durchgang.",
     ["Fly to Moonglade"] =
         "Flieg zur Mondlichtung",
+    ["Head indoors"] =
+        "Geh hinein",
     ["The NPC is indoors. Wait for the talking to finish"] =
         "Der NPC ist drinnen. Warte, bis das Gespräch endet",
     ["One last lengthy stretch of monster farming. Dungeon runs are a fine choice here too, as you like. This number shrinks while you kill monsters."] =

@@ -70,7 +70,7 @@ Ding.RegisterGuide({
         { go = { 1452, 60.51, 36.24 }, fly = true, talk = 11139, text = "Flight master at Everlook" }, -- level 53
         { turnin = 6162 }, -- level 53
         { turnin = 4505 }, -- level 53
-        { go = { 1448, 39.04, 50.44 }, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, -- level 53
+        { go = { 1448, 39.04, 50.44 }, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, text = "Tame a beast here to learn the next rank of Claw", -- level 53
           note = "Tame an Angerclaw Mauler with your Tame Beast spell. Track down a plague-ridden bear with a chestnut coat." },
         { turnin = 4102, -- level 53
           note = "This one roams, so scan the surrounding area." },

@@ -9,6 +9,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a18-desolace", {
         "Desolação: o Posto do Nijel, no canto nordeste, é a base da Aliança.",
     ["You will tame a short-term pet shortly. Here your pet picks up Claw (Rank 5)."] =
         "Em breve você vai domar um ajudante temporário. Aqui seu ajudante aprende Garra (Grau 5).",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Dome uma fera aqui para aprender o próximo grau de Garra",
     ["Tame a Scorpashi Lasher with Tame Beast."] =
         "Use Domar Fera em um Escorpachi Açoitador.",
     ["Head uphill into Nijel's Point"] =

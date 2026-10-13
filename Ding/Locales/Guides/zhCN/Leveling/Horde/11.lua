@@ -109,6 +109,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h11-thousand-needles", {
         "它会四处游荡，在周围找找。该NPC在下面的暗影裂口里。",
     ["The NPC stands on the highest level of this structure."] =
         "NPC在这座建筑的最高层。",
+    ["Learn Two-Handed Axes at the weapon master"] =
+        "向武器大师学习双手斧",
     ["This one roams, so scan the surrounding area. The NPC is indoors."] =
         "它会四处游荡，在周围找找。NPC在室内。",
 })

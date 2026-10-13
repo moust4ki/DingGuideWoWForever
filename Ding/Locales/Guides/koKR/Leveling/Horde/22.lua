@@ -11,6 +11,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h22-tanaris", {
         "야수 관리인에게 소환수를 맡기세요.",
     ["You will tame a short-term pet shortly. Your pet picks up Claw (Rank 6) here."] =
         "곧 임시 소환수를 길들입니다. 여기서 소환수가 할퀴기 (6 레벨)를 배웁니다.",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "여기서 야수를 길들여 할퀴기의 다음 등급을 배우세요",
     ["Tame a Scorpid Hunter with Tame Beast. The foes here are scorpions."] =
         "야수 길들이기로 사막전갈을 길들이세요. 여기의 적은 전갈입니다.",
     ["Get your companion back from the stable master."] =

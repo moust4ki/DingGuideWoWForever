@@ -7,6 +7,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h01-undead-starter", {
         "Tirisfal: Todesend, wo sich die Untoten erheben. Das schafft Platz in deinen Taschen. Weiter auf der Route bekommst du eins.",
     ["The NPC stands outdoors, next to the crypt."] =
         "Der NPC steht draußen neben der Krypta.",
+    ["Loot the beasts you kill on the way here"] =
+        "Plündere die Tiere, die du auf dem Weg hierher tötest",
     ["Pick up anything that sells for 10 copper or more. You'll level faster with this."] =
         "Heb alles auf, was sich für 10 Kupfer oder mehr verkaufen lässt. Damit levelst du schneller.",
     ["The NPC is indoors."] =
@@ -61,6 +63,10 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h01-undead-starter", {
         "Der NPC patrouilliert eine lange Route; such entlang dieser Route.",
     ["The NPC waits on the lower level, indoors."] =
         "Der NPC wartet drinnen auf der unteren Ebene.",
+    ["Learn Mining from the trainer"] =
+        "Lerne Bergbau beim Lehrer",
+    ["Learn Blacksmithing from the trainer"] =
+        "Lerne Schmiedekunst beim Lehrer",
     ["Climb the trail"] =
         "Steig den Weg hinauf",
     ["The NPC waits on the tower's highest floor."] =
@@ -85,6 +91,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h01-undead-starter", {
         "Bleib auf dem Pfad und steig weiter die Treppe hinauf",
     ["The NPC stands on the highest level of this structure."] =
         "Der NPC steht auf der obersten Ebene dieses Gebäudes.",
+    ["Learn First Aid from the trainer"] =
+        "Lerne Erste Hilfe beim Lehrer",
     ["Loot the gray chests built from metal. Search in and around the sunken wrecks. Your targets sit below the water's surface."] =
         "Plündere die grauen Metalltruhen. Such in und um die versunkenen Wracks. Deine Ziele sind unter der Wasseroberfläche.",
     ["The target is a troll in crimson robes. This one roams, so scan the surrounding area."] =
@@ -107,10 +115,14 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h01-undead-starter", {
         "Durchquere den Durchgang",
     ["Fly to Orgrimmar"] =
         "Flieg nach Orgrimmar",
+    ["Learn Staves at the weapon master"] =
+        "Lerne Stäbe beim Waffenmeister",
     ["The quest comes from a bounty sign."] =
         "Die Quest stammt von einem Kopfgeldaushang.",
     ["Look for an iron slab marked with a skull. Wait for the talking to finish"] =
         "Such nach einer Eisenplatte mit einem Schädel darauf. Warte, bis das Gespräch endet",
+    ["Learn Swords at the weapon master"] =
+        "Lerne Schwerter beim Waffenmeister",
     ["Use the item at the pink marking."] =
         "Benutze den Gegenstand an der rosa Markierung.",
     ["Move gradually northwest toward Agamand Mills."] =

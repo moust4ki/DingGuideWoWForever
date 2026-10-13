@@ -13,6 +13,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h04-silverpine-forest", {
         "대화가 끝날 때까지 기다리세요. 죽음의추적자 엘런드를 호위하며 살려 두세요.",
     ["Hunt the wolves whose fur is jet black."] =
         "털이 새까만 늑대를 사냥하세요.",
+    ["Tame a pet here"] =
+        "여기서 소환수를 길들이세요",
     ["Pick one Ferocious Grizzled Bear and tame it with Tame Beast. Release your current pet before this. Here you tame a pet to keep."] =
         "사나운 불곰 한 마리를 골라 야수 길들이기로 길들이세요. 그 전에 지금 소환수를 놓아주세요. 여기서 계속 데리고 다닐 소환수를 길들입니다.",
     ["Fly to The Sepulcher"] =

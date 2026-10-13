@@ -3178,4 +3178,65 @@ return {
         "야외에서 사용하고 움직이지 말고 그 위에 머무르세요: 잠든 1분마다 경험치가 1%씩, 최대 3%까지 늘어납니다.",
     ["Try the sleeping bag"] =
         "침낭을 사용해 보세요",
+    -- Ding - Leveling: what each trip is for (trainers, weapon masters, pets)
+    ["Loot the beasts you kill on the way here"] =
+        "여기로 오면서 처치한 야수의 전리품을 챙기세요",
+    ["Learn First Aid from the trainer"] =
+        "상급자에게서 응급치료를 배우세요",
+    ["Learn Blacksmithing from the trainer"] =
+        "상급자에게서 대장기술을 배우세요",
+    ["Learn Mining from the trainer"] =
+        "상급자에게서 채광을 배우세요",
+    ["Learn Cooking from the trainer"] =
+        "상급자에게서 요리를 배우세요",
+    ["Learn Herbalism from the trainer"] =
+        "상급자에게서 약초채집을 배우세요",
+    ["Learn Thrown at the weapon master"] =
+        "무기 전문가에게서 투척 무기를 배우세요",
+    ["Learn Staves at the weapon master"] =
+        "무기 전문가에게서 지팡이를 배우세요",
+    ["Learn Swords at the weapon master"] =
+        "무기 전문가에게서 한손 도검을 배우세요",
+    ["Learn Maces at the weapon master"] =
+        "무기 전문가에게서 한손 둔기를 배우세요",
+    ["Learn Bows at the weapon master"] =
+        "무기 전문가에게서 활을 배우세요",
+    ["Learn Guns at the weapon master"] =
+        "무기 전문가에게서 총을 배우세요",
+    ["Learn Two-Handed Swords at the weapon master"] =
+        "무기 전문가에게서 양손 도검을 배우세요",
+    ["Learn Two-Handed Axes at the weapon master"] =
+        "무기 전문가에게서 양손 도끼를 배우세요",
+    ["Learn Two-Handed Maces at the weapon master"] =
+        "무기 전문가에게서 양손 둔기를 배우세요",
+    ["Learn Swords and Daggers at the weapon master"] =
+        "무기 전문가에게서 한손 도검과 단검을 배우세요",
+    ["Learn Swords and Staves at the weapon master"] =
+        "무기 전문가에게서 한손 도검과 지팡이를 배우세요",
+    ["Learn Bows and Staves at the weapon master"] =
+        "무기 전문가에게서 활과 지팡이를 배우세요",
+    ["Learn Guns and Maces at the weapon master"] =
+        "무기 전문가에게서 총과 한손 둔기를 배우세요",
+    ["Learn Guns and Two-Handed Axes at the weapon master"] =
+        "무기 전문가에게서 총과 양손 도끼를 배우세요",
+    ["Learn Two-Handed Swords and Staves at the weapon master"] =
+        "무기 전문가에게서 양손 도검과 지팡이를 배우세요",
+    ["Learn Two-Handed Axes and Two-Handed Maces at the weapon master"] =
+        "무기 전문가에게서 양손 도끼와 양손 둔기를 배우세요",
+    ["Learn Two-Handed Maces and Staves at the weapon master"] =
+        "무기 전문가에게서 양손 둔기와 지팡이를 배우세요",
+    ["Learn Crossbows and Two-Handed Swords at the weapon master"] =
+        "무기 전문가에게서 석궁과 양손 도검을 배우세요",
+    ["Learn Guns, Two-Handed Axes and Two-Handed Maces at the weapon master"] =
+        "무기 전문가에게서 총, 양손 도끼, 양손 둔기를 배우세요",
+    ["Tame a pet here"] =
+        "여기서 소환수를 길들이세요",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "여기서 야수를 길들여 할퀴기의 다음 등급을 배우세요",
+    ["Head to the big cage"] =
+        "큰 우리로 가세요",
+    ["Visit the caged quilboar"] =
+        "우리에 갇힌 가시멧돼지를 찾아가세요",
+    ["Go to the corrupted moonwell"] =
+        "타락한 달샘으로 가세요",
 }

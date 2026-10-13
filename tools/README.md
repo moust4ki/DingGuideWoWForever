@@ -425,6 +425,12 @@ Forever:
 - **Simulation** of each race as a warrior (travel of `route_travel.lua`, the inns of the
   route, `level` + `xp` or a fractional level, conditions, time spent with NPCs): the
   `-- level N` of a step is the lowest level a race reaches there.
+- **A trip right after the same trip**: a `go` that only travels, to the place where the
+  character's previous step (no `when` on it) already took it, is left out for that character:
+  the steps in between are for other races or classes. Left out for everyone it applies to, it
+  goes (unless it has a note); else it is restricted (`races`, `classes`) when they can name
+  the others. Every `go` of a route says where or why in its `text`: `check_guides.lua` warns
+  about a `go` without one and fails on the same trip twice in a row.
 
 A `fly` or `train` label becomes the step's `text` (texts are translated). `--report` lists
 the repairs, the quests left out with their reason, the Forever quests added and those that

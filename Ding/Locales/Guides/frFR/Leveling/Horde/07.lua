@@ -29,6 +29,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h07-hillsbrad-foothills", {
         "Tu vas bientôt apprivoiser un familier temporaire. Fais apprendre Griffe (Rang 3) à ton familier.",
     ["The quest comes from a bounty sign."] =
         "La quête vient d'un avis de recherche.",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Apprivoise ici une bête pour apprendre le rang suivant de Griffe",
     ["Pick any Gray Bear and use Tame Beast on it."] =
         "Choisis n'importe quel Gray Bear et lance Apprivoiser une bête dessus.",
     ["Get your companion back from the stable master."] =

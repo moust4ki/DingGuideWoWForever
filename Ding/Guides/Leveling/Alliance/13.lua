@@ -53,7 +53,7 @@ Ding.RegisterGuide({
         { talk = 10052, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, text = "Leave your pet with the stable master." }, -- level 30
         { talk = 10052, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 30
           note = "You will tame a short-term pet shortly. You pick up Claw (Rank 4) here." },
-        { go = { 1440, 61.64, 63.55 }, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 30
+        { go = { 1440, 61.64, 63.55 }, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, text = "Tame a beast here to learn the next rank of Claw", -- level 30
           note = "Tame any Elder Ashenvale Bear with Tame Beast." },
         { talk = 10052, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, text = "Get your companion back from the stable master." }, -- level 30
         { talk = 10052, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 30

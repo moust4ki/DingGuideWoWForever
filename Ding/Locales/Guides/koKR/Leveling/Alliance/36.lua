@@ -51,6 +51,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a36-azshara-and-felwood", {
         "눈망루 마을 비행 조련사",
     ["The flight master stands past the walls, outdoors."] =
         "비행 조련사는 성벽 너머 바깥에 서 있습니다.",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "여기서 야수를 길들여 할퀴기의 다음 등급을 배우세요",
     ["Tame an Angerclaw Mauler with your Tame Beast spell. Track down a plague-ridden bear with a chestnut coat."] =
         "야수 길들이기 주문으로 덩치큰 성난발톱곰을 길들이세요. 밤색 털의 역병 걸린 곰을 찾아내세요.",
     ["Get your companion back from the stable master."] =

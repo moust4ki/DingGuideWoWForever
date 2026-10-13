@@ -3177,4 +3177,65 @@ return {
         "Benutze ihn im Freien und bleib reglos darauf: Jede Minute Schlaf bringt 1 % Erfahrung, bis zu 3 %.",
     ["Try the sleeping bag"] =
         "Probiere den Schlafsack aus",
+    -- Ding - Leveling: what each trip is for (trainers, weapon masters, pets)
+    ["Loot the beasts you kill on the way here"] =
+        "Plündere die Tiere, die du auf dem Weg hierher tötest",
+    ["Learn First Aid from the trainer"] =
+        "Lerne Erste Hilfe beim Lehrer",
+    ["Learn Blacksmithing from the trainer"] =
+        "Lerne Schmiedekunst beim Lehrer",
+    ["Learn Mining from the trainer"] =
+        "Lerne Bergbau beim Lehrer",
+    ["Learn Cooking from the trainer"] =
+        "Lerne Kochkunst beim Lehrer",
+    ["Learn Herbalism from the trainer"] =
+        "Lerne Kräuterkunde beim Lehrer",
+    ["Learn Thrown at the weapon master"] =
+        "Lerne Wurfwaffen beim Waffenmeister",
+    ["Learn Staves at the weapon master"] =
+        "Lerne Stäbe beim Waffenmeister",
+    ["Learn Swords at the weapon master"] =
+        "Lerne Schwerter beim Waffenmeister",
+    ["Learn Maces at the weapon master"] =
+        "Lerne Streitkolben beim Waffenmeister",
+    ["Learn Bows at the weapon master"] =
+        "Lerne Bogen beim Waffenmeister",
+    ["Learn Guns at the weapon master"] =
+        "Lerne Schusswaffen beim Waffenmeister",
+    ["Learn Two-Handed Swords at the weapon master"] =
+        "Lerne Zweihandschwerter beim Waffenmeister",
+    ["Learn Two-Handed Axes at the weapon master"] =
+        "Lerne Zweihandäxte beim Waffenmeister",
+    ["Learn Two-Handed Maces at the weapon master"] =
+        "Lerne Zweihandstreitkolben beim Waffenmeister",
+    ["Learn Swords and Daggers at the weapon master"] =
+        "Lerne Schwerter und Dolche beim Waffenmeister",
+    ["Learn Swords and Staves at the weapon master"] =
+        "Lerne Schwerter und Stäbe beim Waffenmeister",
+    ["Learn Bows and Staves at the weapon master"] =
+        "Lerne Bogen und Stäbe beim Waffenmeister",
+    ["Learn Guns and Maces at the weapon master"] =
+        "Lerne Schusswaffen und Streitkolben beim Waffenmeister",
+    ["Learn Guns and Two-Handed Axes at the weapon master"] =
+        "Lerne Schusswaffen und Zweihandäxte beim Waffenmeister",
+    ["Learn Two-Handed Swords and Staves at the weapon master"] =
+        "Lerne Zweihandschwerter und Stäbe beim Waffenmeister",
+    ["Learn Two-Handed Axes and Two-Handed Maces at the weapon master"] =
+        "Lerne Zweihandäxte und Zweihandstreitkolben beim Waffenmeister",
+    ["Learn Two-Handed Maces and Staves at the weapon master"] =
+        "Lerne Zweihandstreitkolben und Stäbe beim Waffenmeister",
+    ["Learn Crossbows and Two-Handed Swords at the weapon master"] =
+        "Lerne Armbrüste und Zweihandschwerter beim Waffenmeister",
+    ["Learn Guns, Two-Handed Axes and Two-Handed Maces at the weapon master"] =
+        "Lerne Schusswaffen, Zweihandäxte und Zweihandstreitkolben beim Waffenmeister",
+    ["Tame a pet here"] =
+        "Zähme hier einen Begleiter",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Zähme hier ein Tier, um den nächsten Rang von Klaue zu lernen",
+    ["Head to the big cage"] =
+        "Geh zum großen Käfig",
+    ["Visit the caged quilboar"] =
+        "Besuche den eingesperrten Stacheleber",
+    ["Go to the corrupted moonwell"] =
+        "Geh zum verderbten Mondbrunnen",
 }

@@ -53,6 +53,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h05-the-barrens-and-stonetalon-m
         "Ce PNJ se trouve en bas, dans la Faille de l'ombre.",
     ["The NPC stands on the highest level of this structure."] =
         "Le PNJ se tient au plus haut niveau de ce bâtiment.",
+    ["Learn Staves at the weapon master"] =
+        "Apprends les Bâtons auprès du maître d'armes",
     ["Steal from Gamon using Pick Pocket. The NPC is indoors."] =
         "Vole Gamon avec Vol à la tire. Le PNJ est à l'intérieur.",
     ["Use it on Tazan's Satchel. The item is already in your inventory."] =
@@ -109,6 +111,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h05-the-barrens-and-stonetalon-m
         "Les cibles sont des tortues. Les cibles sont sous l'eau et le long du rivage.",
     ["The target is a raptor. It shows up a short way off."] =
         "La cible est un raptor. Apparaît non loin.",
+    ["Visit the caged quilboar"] =
+        "Va voir le huran en cage",
     ["Trade your Blood Shards to gain buffs. Trade any spare Blood Shards to him during your Barrens questing. Ask him for the Spirit of the Wind buff"] =
         "Échange tes éclats de sang contre des bonus. Pendant tes quêtes dans les Tarides, échange-lui tes éclats de sang en trop. Demande-lui le bonus Spirit of the Wind",
     ["The quest giver waits on the hilltop."] =
@@ -117,6 +121,12 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h05-the-barrens-and-stonetalon-m
         "Chasse les serpents ailés.",
     ["Take the lift up into Thunder Bluff"] =
         "Monte en ascenseur jusqu'aux Pitons-du-Tonnerre",
+    ["Learn Two-Handed Maces and Staves at the weapon master"] =
+        "Apprends les Masses à deux mains et les Bâtons auprès du maître d'armes",
+    ["Learn Guns at the weapon master"] =
+        "Apprends les Armes à feu auprès du maître d'armes",
+    ["Learn Maces at the weapon master"] =
+        "Apprends les Masses auprès du maître d'armes",
     ["Fly to Thunder Bluff"] =
         "Vole jusqu'aux Pitons-du-Tonnerre",
     ["Go into the cavern"] =

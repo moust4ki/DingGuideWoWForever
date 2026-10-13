@@ -51,6 +51,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a36-azshara-and-felwood", {
         "永望鎮的飛行管理員",
     ["The flight master stands past the walls, outdoors."] =
         "飛行管理員在城牆外的戶外。",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "在這裡馴服一隻野獸，學會下一級爪擊",
     ["Tame an Angerclaw Mauler with your Tame Beast spell. Track down a plague-ridden bear with a chestnut coat."] =
         "用你的馴服野獸法術馴服一隻怒爪巨熊。找出一隻栗色毛皮、染上瘟疫的熊。",
     ["Get your companion back from the stable master."] =

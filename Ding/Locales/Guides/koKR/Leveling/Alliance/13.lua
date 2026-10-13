@@ -33,6 +33,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a13-stonetalon-mountains-and-ash
         "야수 관리인에게 소환수를 맡기세요.",
     ["You will tame a short-term pet shortly. You pick up Claw (Rank 4) here."] =
         "곧 임시 소환수를 길들입니다. 여기서 할퀴기 (4 레벨)를 배웁니다.",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "여기서 야수를 길들여 할퀴기의 다음 등급을 배우세요",
     ["Tame any Elder Ashenvale Bear with Tame Beast."] =
         "야수 길들이기로 아무 덩치큰 잿빛골짜기곰이나 길들이세요.",
     ["Get your companion back from the stable master."] =

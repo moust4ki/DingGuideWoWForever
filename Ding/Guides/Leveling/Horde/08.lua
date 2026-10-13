@@ -43,7 +43,7 @@ Ding.RegisterGuide({
         { vendor = true, talk = 5815, races = { "Orc", "Scourge" }, classes = { "WARLOCK" }, -- level 24
           note = "This NPC is found down in the Cleft of Shadow." },
         { accept = 879, when = { done = 5052 } }, -- level 24
-        { go = { 1413, 44.5, 59.27 }, when = { item = { 5075, 4 } } }, -- level 24
+        { go = { 1413, 44.5, 59.27 }, when = { item = { 5075, 4 } }, text = "Visit the caged quilboar" }, -- level 24
         { talk = 3430, when = { item = { 5075, 4 } }, -- level 24
           note = "Trade your Blood Shards to gain buffs. Trade any spare Blood Shards to him during your Barrens questing. Ask him for the Spirit of the Wind buff" },
         { accept = 893 }, -- level 24

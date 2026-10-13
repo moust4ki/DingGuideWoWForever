@@ -13,7 +13,7 @@ Ding.RegisterGuide({
     steps    = {
         { destroy = 6948, -- level 1
           note = "Dun Morogh: Coldridge Valley, where dwarves and gnomes start. This frees room in your bags. You receive one further along the route." },
-        { go = { 1426, 30.63, 74.46 }, classes = { "WARRIOR", "WARLOCK" }, -- level 1
+        { go = { 1426, 30.63, 74.46 }, classes = { "WARRIOR", "WARLOCK" }, text = "Loot the beasts you kill on the way here", -- level 1
           note = "Pick up anything that sells for 10 copper or more." },
         { vendor = true, talk = 829, classes = { "WARRIOR", "WARLOCK" } }, -- level 1
         { go = { 1426, 28.84, 69.11 }, classes = { "WARRIOR" }, text = "Head indoors", -- level 1
@@ -160,7 +160,7 @@ Ding.RegisterGuide({
         { turnin = 5625, when = { ready = 5625 }, races = { "Dwarf" }, classes = { "PRIEST" }, -- level 6
           note = "The NPC is indoors." },
         { accept = 400 }, -- level 6
-        { go = { 1426, 45.38, 51.97 }, classes = { "WARRIOR", "PALADIN", "ROGUE" } }, -- level 6
+        { go = { 1426, 45.38, 51.97 }, classes = { "WARRIOR", "PALADIN", "ROGUE" }, text = "Learn Blacksmithing from the trainer" }, -- level 6
         { accept = 98321, races = { "Dwarf", "Gnome" } }, -- level 6
         { talk = 1241, classes = { "WARRIOR", "PALADIN", "ROGUE" }, -- level 6
           note = "This one roams, so scan the surrounding area. The NPC is indoors." },
@@ -170,7 +170,7 @@ Ding.RegisterGuide({
         { accept = 313 }, -- level 6
         { turnin = 400 }, -- level 6
         { accept = 5541 }, -- level 6
-        { go = { 1426, 49.97, 50.25 }, classes = { "WARRIOR", "PALADIN", "ROGUE" } }, -- level 6
+        { go = { 1426, 49.97, 50.25 }, classes = { "WARRIOR", "PALADIN", "ROGUE" }, text = "Learn Mining from the trainer" }, -- level 6
         { turnin = 96628, races = { "Dwarf", "Gnome" } }, -- level 6
         { talk = 5392, sticky = 317, classes = { "WARRIOR", "PALADIN", "ROGUE" }, -- level 6
           note = "The NPC waits on the lower level, indoors." },
@@ -204,7 +204,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { train = true, talk = 1229, classes = { "WARRIOR" }, -- level 8
           note = "The NPC is indoors." },
-        { go = { 1426, 47.13, 52.58 }, classes = { "WARRIOR", "ROGUE" } }, -- level 8
+        { go = { 1426, 47.13, 52.58 }, classes = { "WARRIOR", "ROGUE" }, text = "Learn First Aid from the trainer" }, -- level 8
         { talk = 2326, classes = { "WARRIOR", "ROGUE" }, -- level 8
           note = "The NPC is indoors. Do it only if you can." },
         { accept = 412, -- level 8
@@ -312,7 +312,7 @@ Ding.RegisterGuide({
         { talk = 5124, buy = { { 117, 1, 5124 } }, patrol = { { 1455, 64.2, 79.07 }, { 1455, 60.47, 83.8 }, { 1455, 57.46, 83.92 }, { 1455, 56.71, 82.22 }, { 1455, 57.68, 78.33 }, { 1455, 61.27, 73.29 }, { 1455, 64.45, 69.68 }, { 1455, 66.55, 69.45 }, { 1455, 68, 70.97 }, { 1455, 67.33, 74.11 }, { 1455, 65.78, 76.95 } }, races = { "Dwarf" }, classes = { "HUNTER" }, -- level 10
           note = "This one roams, so scan the surrounding area. Keep it as pet food for later." },
         { vendor = true, talk = 5124, races = { "Dwarf" }, classes = { "HUNTER" } }, -- level 10
-        { go = { 1426, 51.83, 44.46 }, races = { "Dwarf" }, classes = { "HUNTER" }, -- level 10
+        { go = { 1426, 51.83, 44.46 }, races = { "Dwarf" }, classes = { "HUNTER" }, text = "Tame a pet here", -- level 10
           note = "Find one Ice Claw Bear and use Tame Beast on it. Push eastward if you still need more." },
         { accept = 433 }, -- level 10
         { accept = 432, sticky = 432 }, -- level 10
@@ -326,7 +326,7 @@ Ding.RegisterGuide({
         { turnin = 433 }, -- level 10
         { turnin = 432 }, -- level 10
         { accept = 95217, races = { "Dwarf", "Gnome" } }, -- level 10
-        { go = { 1426, 68.34, 54.54 } }, -- level 10
+        { go = { 1426, 68.34, 54.54 }, text = "Learn Cooking from the trainer" }, -- level 10
         { complete = 95217, races = { "Dwarf", "Gnome" } }, -- level 10
         { turnin = 95217, races = { "Dwarf", "Gnome" } }, -- level 10
         { talk = 1355, -- level 10
@@ -356,11 +356,11 @@ Ding.RegisterGuide({
         { accept = 6387, -- level 11
           note = "This one roams, so scan the surrounding area. The NPC can be indoors or out." },
         { turnin = 6387, accept = 6391 }, -- level 11
-        { go = { 1455, 61.12, 89.58 }, classes = { "WARRIOR" } }, -- level 11
-        { go = { 1455, 61.12, 89.58 }, classes = { "WARRIOR" } }, -- level 11
+        { go = { 1455, 61.12, 89.58 }, races = { "Gnome" }, classes = { "WARRIOR" }, text = "Learn Two-Handed Axes and Two-Handed Maces at the weapon master" }, -- level 11
+        { go = { 1455, 61.12, 89.58 }, races = { "Dwarf" }, classes = { "WARRIOR" }, text = "Learn Two-Handed Maces at the weapon master" }, -- level 11
         { talk = 11865, classes = { "WARRIOR" }, -- level 11
           note = "The NPC is indoors." },
-        { go = { 1455, 62.27, 89.56 }, classes = { "WARRIOR" } }, -- level 11
+        { go = { 1455, 62.27, 89.56 }, classes = { "WARRIOR" }, text = "Learn Thrown at the weapon master" }, -- level 11
         { talk = 13084, classes = { "WARRIOR" }, -- level 11
           note = "The NPC is indoors." },
         { go = { 1455, 44.51, 49.54 }, text = "Stay on the trail" }, -- level 11
@@ -402,10 +402,12 @@ Ding.RegisterGuide({
         { go = { 1453, 42.28, 81.85 }, races = { "Gnome" }, classes = { "WARLOCK" }, text = "Head indoors" }, -- level 11
         { turnin = 1715, accept = 1688, races = { "Gnome" }, classes = { "WARLOCK" }, -- level 11
           note = "The NPC waits on the lower level, indoors." },
-        { go = { 1453, 63.92, 69.12 }, classes = { "WARRIOR", "PALADIN", "ROGUE", "PRIEST", "MAGE", "WARLOCK" } }, -- level 11
-        { go = { 1453, 63.92, 69.12 }, classes = { "WARRIOR", "PALADIN", "ROGUE", "PRIEST", "MAGE", "WARLOCK" } }, -- level 11
-        { go = { 1453, 63.92, 69.12 }, classes = { "WARRIOR", "PALADIN", "ROGUE", "PRIEST", "MAGE", "WARLOCK" } }, -- level 11
-        { go = { 1453, 63.92, 69.12 }, classes = { "WARRIOR", "PALADIN", "ROGUE", "PRIEST", "MAGE", "WARLOCK" } }, -- level 11
+        { go = { 1453, 63.92, 69.12 }, classes = { "WARRIOR" }, text = "Learn Two-Handed Swords and Staves at the weapon master" }, -- level 11
+        { go = { 1453, 63.92, 69.12 }, classes = { "PALADIN" }, text = "Learn Two-Handed Swords at the weapon master" }, -- level 11
+        { go = { 1453, 63.92, 69.12 }, classes = { "ROGUE" }, text = "Learn Swords at the weapon master" }, -- level 11
+        { go = { 1453, 63.92, 69.12 }, classes = { "PRIEST" }, text = "Learn Staves at the weapon master" }, -- level 11
+        { go = { 1453, 63.92, 69.12 }, classes = { "MAGE" }, text = "Learn Swords and Daggers at the weapon master" }, -- level 11
+        { go = { 1453, 63.92, 69.12 }, classes = { "WARLOCK" }, text = "Learn Swords and Staves at the weapon master" }, -- level 11
         { talk = 11867, classes = { "WARRIOR", "PALADIN", "ROGUE", "PRIEST", "MAGE", "WARLOCK" }, -- level 11
           note = "The NPC is indoors." },
         { go = { 1453, 68.01, 72.6 }, text = "Head up the incline", -- level 11

@@ -19,6 +19,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-a29-the-hinterlands", {
         "NPC在室內。",
     ["Gather the big plumes colored brown and ivory. Drop the Ground Clutter option down to 1. Find it in the game options, under System, then Graphics."] =
         "收集棕色和象牙色的大羽毛。將地面雜物（Ground Clutter）選項調到1。在遊戲選項的「系統」中，再到「圖形」裡找到它。",
+    ["Hop onto the ledge"] =
+        "跳上岩架",
     ["Hop onto the ledge here. Monsters are unable to reach you from this spot. Hold off until you have left combat."] =
         "跳上這裡的岩架。怪物在這個位置無法碰到你。等你脫離戰鬥再進行。",
     ["Other creatures use these spawn points too."] =

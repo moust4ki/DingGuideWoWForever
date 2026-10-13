@@ -39,6 +39,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-h15-desolace", {
         "O NPC está lá dentro.",
     ["Fly to Shadowprey Village"] =
         "Voe até a Aldeia Pescassombra",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Dome uma fera aqui para aprender o próximo grau de Garra",
     ["Tame a Scorpashi Lasher with Tame Beast."] =
         "Use Domar Fera em um Escorpachi Açoitador.",
     ["Get your companion back from the stable master."] =

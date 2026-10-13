@@ -17,6 +17,8 @@ Ding.RegisterGuideTranslation("ptBR", "leveling-a05-darkshore", {
         "Em breve você vai domar um ajudante temporário. Aqui seu ajudante aprende Garra (Grau 2).",
     ["Flight master in Auberdine"] =
         "Mestre de voo em Auberdine",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Dome uma fera aqui para aprender o próximo grau de Garra",
     ["You will let it go shortly. Send your pet against a Thistle Bear."] =
         "Você vai libertá-lo em breve. Mande seu ajudante atacar um Ursocardo.",
     ["Get your companion back from the stable master."] =

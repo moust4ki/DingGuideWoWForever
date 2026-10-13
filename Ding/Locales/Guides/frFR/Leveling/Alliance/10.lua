@@ -35,6 +35,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-a10-wetlands", {
         "Les cibles sont dans la tombe et autour.",
     ["Keep it; an upcoming task asks for it. The NPC is indoors."] =
         "Garde-le : une prochaine quête le demande. Le PNJ est à l'intérieur.",
+    ["Learn Guns at the weapon master"] =
+        "Apprends les Armes à feu auprès du maître d'armes",
     ["Head down into the Deeprun Tram station"] =
         "Descends dans la station du tram des profondeurs",
     ["Pass through the portal to teleport."] =

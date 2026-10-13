@@ -9,8 +9,9 @@
 -- Guides are chained through `next` (one guide, or one per faction: the chain forks) and
 -- replayed in order, once per race (and per class when steps are class-specific). Checks: the quest exists and is open to the race and
 -- class, its prerequisites were turned in earlier in the chain, it is in the log before
--- being worked on or turned in, it is not taken twice, the log never exceeds 20, and the
--- items of `use` exist. Translations: every guide text (title, text, note) is translated
+-- being worked on or turned in, it is not taken twice, the log never exceeds 20, the
+-- items of `use` exist, and no character gets the same trip (`go` alone) twice in a row; a
+-- `go` without a text is a warning. Translations: every guide text (title, text, note) is translated
 -- in each language (Ding's: the shipped ones; a pack's: those it has translations for), and
 -- no translation is left without its English text.
 -- Exit code: 0 when there is no error, 1 otherwise, 2 on bad usage.
@@ -335,6 +336,10 @@ function Ding.RegisterGuide(def)
                 elseif go[2] < 0 or go[2] > 100 or go[3] < 0 or go[3] > 100 then
                     report("error", at, "go coordinates outside 0-100")
                 end
+                -- (Without a text, the window only shows the coordinates.)
+                if step.text == nil then
+                    report("warning", at, "go without text: say where the player goes, or what for")
+                end
             end
             if step.level ~= nil and type(step.level) ~= "number" then report("error", at, "level expects a number") end
             if step.sethearth ~= nil and (type(step.sethearth) ~= "string" or step.sethearth == "") then
@@ -600,6 +605,21 @@ for side, races in pairs(X.FACTION_RACES) do
     for _, race in ipairs(races) do RACE_SIDE[race] = side end
 end
 
+-- A step that only travels: a go and nothing for the player to do there.
+local ACTION_KEYS = { "accept", "turnin", "complete", "level", "sethearth", "hearth", "deathskip", "train", "fly",
+    "vendor", "repair", "kill", "collect", "talk", "gossip", "useitem", "buy", "object", "equip", "destroy", "bank",
+    "unbank", "abandon", "patrol" }
+local function onlyTravels(step)
+    if type(step.go) ~= "table" or type(step.go[2]) ~= "number" or type(step.go[3]) ~= "number" then return false end
+    for _, key in ipairs(ACTION_KEYS) do
+        if step[key] ~= nil then return false end
+    end
+    return true
+end
+local function samePlace(a, b)
+    return a[1] == b[1] and math.abs(a[2] - b[2]) <= 0.1 and math.abs(a[3] - b[3]) <= 0.1
+end
+
 -- side: the replayed character's faction.
 local function stepApplies(guide, step, race, class, side)
     if guide.races and not contains(guide.races, race) then return false end
@@ -741,6 +761,9 @@ local function replay(chain, race, class)
 
     local side = chain.faction or chain[1].faction or RACE_SIDE[race]
     for _, guide in ipairs(chain) do
+        -- The step this character played just before, in this guide (a guide may be started
+        -- on its own: its first trip is never one too many).
+        local previous
         for i, step in ipairs(guide.steps) do
             local cond = stepApplies(guide, step, race, class, side) and whenState(step.when) or "no"
             -- (A step under conditions is a branch: played when all its actions can be, as the
@@ -749,6 +772,13 @@ local function replay(chain, race, class)
             if cond ~= "no" then
                 local at = string.format("%s, step %d", guide.id, i)
                 local extra = step.dungeon or step.elite
+
+                -- The same trip twice in a row: the second one is passed on arrival, the window
+                -- shows the same line twice.
+                if previous and onlyTravels(step) and onlyTravels(previous.step) and samePlace(step.go, previous.step.go) then
+                    report("error", at, ("the same go as step %d, right before it: merge the two steps"):format(previous.index))
+                end
+                previous = { step = step, index = i }
 
                 for _, q in ipairs(step.complete or {}) do
                     if not extra and log[q] and not mainAccepted[q] then

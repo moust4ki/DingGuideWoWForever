@@ -5,6 +5,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a02-dwarf-and-gnome-starter", {
         "드워프와 노움 시작 (1-13)",
     ["Dun Morogh: Coldridge Valley, where dwarves and gnomes start. This frees room in your bags. You receive one further along the route."] =
         "던 모로: 눈마루 골짜기는 드워프와 노움이 시작하는 곳입니다. 가방 공간을 확보할 수 있습니다. 경로를 더 진행하면 하나를 받습니다.",
+    ["Loot the beasts you kill on the way here"] =
+        "여기로 오면서 처치한 야수의 전리품을 챙기세요",
     ["Pick up anything that sells for 10 copper or more."] =
         "판매가가 10코퍼 이상인 것은 모두 주우세요.",
     ["Head indoors"] =
@@ -41,10 +43,16 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a02-dwarf-and-gnome-starter", {
         "터널을 지나간 다음 길을 따라가세요",
     ["Heal Mountaineer Dolf with Lesser Heal (Rank 2). Buff Mountaineer Dolf with Power Word: Fortitude."] =
         "하급 치유 (2 레벨)로 산악경비대 돌프를 치유하세요. 산악경비대 돌프에게 신의 권능: 인내를 걸어 주세요.",
+    ["Learn Blacksmithing from the trainer"] =
+        "상급자에게서 대장기술을 배우세요",
+    ["Learn Mining from the trainer"] =
+        "상급자에게서 채광을 배우세요",
     ["The NPC waits on the lower level, indoors."] =
         "NPC는 건물 안 아래층에서 기다립니다.",
     ["The quest wants yetis; seek them out. Targets are in the cavern and around its entrance too."] =
         "이 퀘스트의 대상은 설인입니다. 찾아다니세요. 대상은 동굴 안과 입구 주변에도 있습니다.",
+    ["Learn First Aid from the trainer"] =
+        "상급자에게서 응급치료를 배우세요",
     ["The NPC is indoors. Do it only if you can."] =
         "NPC는 건물 안에 있습니다. 가능할 때만 하세요.",
     ["Stay on the trail"] =
@@ -81,10 +89,14 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a02-dwarf-and-gnome-starter", {
         "아무 얼음발톱흰곰에게나 아이템을 사용하세요.",
     ["This one roams, so scan the surrounding area. Keep it as pet food for later."] =
         "이 대상은 돌아다니므로 주변을 살펴보세요. 나중에 소환수 먹이로 쓰도록 보관하세요.",
+    ["Tame a pet here"] =
+        "여기서 소환수를 길들이세요",
     ["Find one Ice Claw Bear and use Tame Beast on it. Push eastward if you still need more."] =
         "얼음발톱흰곰을 하나 찾아 야수 길들이기를 사용하세요. 더 필요하면 동쪽으로 더 가세요.",
     ["Targets are in the cavern and around its entrance too. Hold on to it: a Paladin task coming up uses it."] =
         "대상은 동굴 안과 입구 주변에도 있습니다. 보관하세요: 곧 할 성기사 퀘스트에 쓰입니다.",
+    ["Learn Cooking from the trainer"] =
+        "상급자에게서 요리를 배우세요",
     ["This one roams, so scan the surrounding area. Without this, one quest can't be picked up."] =
         "이 대상은 돌아다니므로 주변을 살펴보세요. 이것이 없으면 퀘스트 하나를 받을 수 없습니다.",
     ["The NPC is past the tunnel; stay on the road."] =
@@ -101,6 +113,12 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a02-dwarf-and-gnome-starter", {
         "여기 있는 몬스터에게 일부러 죽으세요. 건너가는 가장 빠른 방법입니다.",
     ["This one roams, so scan the surrounding area. The NPC can be indoors or out."] =
         "이 대상은 돌아다니므로 주변을 살펴보세요. NPC는 건물 안이나 밖에 있을 수 있습니다.",
+    ["Learn Two-Handed Axes and Two-Handed Maces at the weapon master"] =
+        "무기 전문가에게서 양손 도끼와 양손 둔기를 배우세요",
+    ["Learn Two-Handed Maces at the weapon master"] =
+        "무기 전문가에게서 양손 둔기를 배우세요",
+    ["Learn Thrown at the weapon master"] =
+        "무기 전문가에게서 투척 무기를 배우세요",
     ["Head down into the Deeprun Tram station"] =
         "깊은굴 지하철 역으로 내려가세요",
     ["Pass through the portal to teleport."] =
@@ -113,6 +131,18 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a02-dwarf-and-gnome-starter", {
         "깊은굴 지하철을 타고 스톰윈드로 가세요. NPC는 가운데 승강장의 벽 옆에 서 있습니다.",
     ["This one roams, so scan the surrounding area. The NPC is indoors. Be ready for a fight right away."] =
         "이 대상은 돌아다니므로 주변을 살펴보세요. NPC는 건물 안에 있습니다. 바로 전투가 시작되니 대비하세요.",
+    ["Learn Two-Handed Swords and Staves at the weapon master"] =
+        "무기 전문가에게서 양손 도검과 지팡이를 배우세요",
+    ["Learn Two-Handed Swords at the weapon master"] =
+        "무기 전문가에게서 양손 도검을 배우세요",
+    ["Learn Swords at the weapon master"] =
+        "무기 전문가에게서 한손 도검을 배우세요",
+    ["Learn Staves at the weapon master"] =
+        "무기 전문가에게서 지팡이를 배우세요",
+    ["Learn Swords and Daggers at the weapon master"] =
+        "무기 전문가에게서 한손 도검과 단검을 배우세요",
+    ["Learn Swords and Staves at the weapon master"] =
+        "무기 전문가에게서 한손 도검과 지팡이를 배우세요",
     ["Head up the incline"] =
         "비탈을 올라가세요",
     ["Flight master in Stormwind"] =

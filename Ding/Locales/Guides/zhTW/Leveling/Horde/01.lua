@@ -7,6 +7,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h01-undead-starter", {
         "提里斯法林地：喪鐘鎮，不死族甦醒之地。這能騰出背包空間。路線後面會拿到一個。",
     ["The NPC stands outdoors, next to the crypt."] =
         "NPC站在戶外，墓穴旁邊。",
+    ["Loot the beasts you kill on the way here"] =
+        "拾取你在來路上擊殺的野獸",
     ["Pick up anything that sells for 10 copper or more. You'll level faster with this."] =
         "拾取所有能賣10銅幣以上的物品。這能讓你升級更快。",
     ["The NPC is indoors."] =
@@ -61,6 +63,10 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h01-undead-starter", {
         "NPC沿著一條很長的路線巡邏；沿路尋找。",
     ["The NPC waits on the lower level, indoors."] =
         "NPC在室內的下層。",
+    ["Learn Mining from the trainer"] =
+        "向訓練師學習採礦",
+    ["Learn Blacksmithing from the trainer"] =
+        "向訓練師學習鍛造",
     ["Climb the trail"] =
         "沿小路往上爬",
     ["The NPC waits on the tower's highest floor."] =
@@ -85,6 +91,8 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h01-undead-starter", {
         "沿著小路走，繼續爬上台階",
     ["The NPC stands on the highest level of this structure."] =
         "NPC站在這座建築的最高層。",
+    ["Learn First Aid from the trainer"] =
+        "向訓練師學習急救",
     ["Loot the gray chests built from metal. Search in and around the sunken wrecks. Your targets sit below the water's surface."] =
         "拾取灰色的金屬箱子。在沉船殘骸內外搜尋。目標在水面下。",
     ["The target is a troll in crimson robes. This one roams, so scan the surrounding area."] =
@@ -107,10 +115,14 @@ Ding.RegisterGuideTranslation("zhTW", "leveling-h01-undead-starter", {
         "穿過通道",
     ["Fly to Orgrimmar"] =
         "飛往奧格瑪",
+    ["Learn Staves at the weapon master"] =
+        "向武器大師學習法杖",
     ["The quest comes from a bounty sign."] =
         "任務來自一塊懸賞告示牌。",
     ["Look for an iron slab marked with a skull. Wait for the talking to finish"] =
         "尋找一塊刻有骷髏標記的鐵板。等對話結束",
+    ["Learn Swords at the weapon master"] =
+        "向武器大師學習單手劍",
     ["Use the item at the pink marking."] =
         "在粉紅色標記處使用物品。",
     ["Move gradually northwest toward Agamand Mills."] =

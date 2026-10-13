@@ -19,7 +19,7 @@ Ding.RegisterGuide({
         { turnin = 435, accept = { 449, 429 } }, -- level 13
         { collect = { { 3164, 6 } }, keep = 3164, -- level 13
           note = "Hunt the wolves whose fur is jet black." },
-        { go = { 1421, 51.23, 21.65 }, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, -- level 13
+        { go = { 1421, 51.23, 21.65 }, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, text = "Tame a pet here", -- level 13
           note = "Pick one Ferocious Grizzled Bear and tame it with Tame Beast. Release your current pet before this. Here you tame a pet to keep." },
         { go = { 1421, 45.59, 42.55 }, fly = true, talk = 2226, text = "Fly to The Sepulcher" }, -- level 13
         { go = { 1421, 45.59, 42.55 }, fly = true, talk = 2226, races = { "Scourge" }, text = "Fly to Undercity" }, -- level 14

@@ -17,6 +17,8 @@ Ding.RegisterGuideTranslation("frFR", "leveling-h08-the-barrens", {
         "Sors de la grotte",
     ["This NPC is found down in the Cleft of Shadow."] =
         "Ce PNJ se trouve en bas, dans la Faille de l'ombre.",
+    ["Visit the caged quilboar"] =
+        "Va voir le huran en cage",
     ["Trade your Blood Shards to gain buffs. Trade any spare Blood Shards to him during your Barrens questing. Ask him for the Spirit of the Wind buff"] =
         "Échange tes éclats de sang contre des bonus. Pendant tes quêtes dans les Tarides, échange-lui tes éclats de sang en trop. Demande-lui le bonus Spirit of the Wind",
     ["The target is a dinosaur with blue hide. The targets are spread over several spots."] =

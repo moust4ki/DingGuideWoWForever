@@ -29,6 +29,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h38-felwood-and-winterspring", {
         "Steig den Pfad hinauf und verlass die Höhle",
     ["Circle the mountain, then stay on the trail"] =
         "Geh um den Berg herum, dann bleib auf dem Weg",
+    ["Go to the corrupted moonwell"] =
+        "Geh zum verderbten Mondbrunnen",
     ["A green cat, a Corrupted Saber, appears when you use it. Hold on until it begins to trail you. Beware of foes lurking in stealth."] =
         "Wenn du es benutzt, erscheint eine grüne Katze, ein Corrupted Saber. Warte, bis sie dir zu folgen beginnt. Vorsicht vor getarnten Gegnern.",
     ["Walk west beside the river"] =

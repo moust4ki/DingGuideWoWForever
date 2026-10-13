@@ -63,6 +63,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a28-feralas-and-tanaris", {
         "Jage Gorillas. Bären erscheinen an denselben Spawnpunkten.",
     ["Hunt bears. They appear in the same spots as the apes."] =
         "Jage Bären. Sie erscheinen an denselben Stellen wie die Affen.",
+    ["Head to the big cage"] =
+        "Geh zum großen Käfig",
     ["Kill the foes near the big cage first. This helps with the following step."] =
         "Töte zuerst die Gegner nahe dem großen Käfig. Das hilft beim nächsten Schritt.",
     ["This sets Captured Sprite Darters free. Save as many of them as possible. Keep 6 or more of them alive."] =

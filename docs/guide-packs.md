@@ -235,7 +235,10 @@ arrow goes to the nearest of them. The steps without a quest (`train`, `fly`, `v
 further in the guide: a later quest turned in, or accepted in the next steps. A step that
 only travels (`go`, `fly` or `hearth`, nothing else) passes as soon as the step after it is
 already done: nothing is left at the end of the trip. So keep a trip and what it leads to in
-two steps, the trip first.
+two steps, the trip first. Give every `go` a `text` that says where or what for (without one,
+the window only shows the coordinates), and never follow a trip with the same trip: the
+player is already there, the second one passes on arrival and repeats the line. Trips for
+different classes to one place are fine (`classes` on each), one per character.
 
 ```lua
 { accept = { 456, 458 } },                                    -- two quests at once
@@ -363,7 +366,8 @@ Ding's validator replays your sections with the QuestieDB data, for every race a
 they are written for, and reports mistakes before anyone plays them: unknown quests,
 quests of another race or class, a prerequisite not turned in earlier, a quest turned in
 without being taken, a quest log above 20 quests, unknown items, coordinates outside 0-100,
-ids already used by Ding, untranslated texts. It needs Lua 5.1 and Git.
+the same trip twice in a row for a character, ids already used by Ding, untranslated texts;
+a `go` without a `text` is a warning. It needs Lua 5.1 and Git.
 
 ```sh
 git clone https://github.com/moust4ki/DingGuideWoWForever.git Ding

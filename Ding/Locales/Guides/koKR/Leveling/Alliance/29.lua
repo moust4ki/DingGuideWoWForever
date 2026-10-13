@@ -19,6 +19,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a29-the-hinterlands", {
         "NPC는 건물 안에 있습니다.",
     ["Gather the big plumes colored brown and ivory. Drop the Ground Clutter option down to 1. Find it in the game options, under System, then Graphics."] =
         "갈색과 상아색의 큰 깃털을 모으세요. Ground Clutter 옵션을 1로 낮추세요. 게임 설정의 시스템 아래 그래픽에서 찾을 수 있습니다.",
+    ["Hop onto the ledge"] =
+        "바위턱 위로 뛰어오르세요",
     ["Hop onto the ledge here. Monsters are unable to reach you from this spot. Hold off until you have left combat."] =
         "여기 바위턱 위로 뛰어오르세요. 이 자리에서는 몬스터가 닿지 못합니다. 전투가 끝날 때까지 기다리세요.",
     ["Other creatures use these spawn points too."] =

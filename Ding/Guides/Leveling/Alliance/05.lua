@@ -24,7 +24,7 @@ Ding.RegisterGuide({
         { go = { 1439, 36.39, 45.54 }, fly = true, talk = 3841, text = "Flight master in Auberdine" }, -- level 15
         { accept = 1141, when = { item = { 12238, 6 } } }, -- level 15
         { turnin = 1141, when = { item = 12238, ready = 1141 } }, -- level 15
-        { go = { 1439, 38.46, 46.23 }, races = { "Dwarf" }, classes = { "HUNTER" }, -- level 15
+        { go = { 1439, 38.46, 46.23 }, races = { "Dwarf" }, classes = { "HUNTER" }, text = "Tame a beast here to learn the next rank of Claw", -- level 15
           note = "You will let it go shortly. Send your pet against a Thistle Bear." },
         { talk = 10085, races = { "Dwarf" }, classes = { "HUNTER" }, text = "Get your companion back from the stable master." }, -- level 15
         { talk = 10085, races = { "Dwarf" }, classes = { "HUNTER" }, -- level 15

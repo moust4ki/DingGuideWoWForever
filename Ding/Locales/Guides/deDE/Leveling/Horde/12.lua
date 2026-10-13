@@ -5,8 +5,12 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h12-hillsbrad-foothills", {
         "Vorgebirge des Hügellands (30-32)",
     ["Undercity first, then Hillsbrad Foothills: Tarren Mill."] =
         "Zuerst Unterstadt, dann das Vorgebirge des Hügellands: Tarrens Mühle.",
+    ["Learn Cooking from the trainer"] =
+        "Lerne Kochkunst beim Lehrer",
     ["You'll need this to pick up an upcoming quest."] =
         "Das brauchst du, um eine kommende Quest anzunehmen.",
+    ["Learn Crossbows and Two-Handed Swords at the weapon master"] =
+        "Lerne Armbrüste und Zweihandschwerter beim Waffenmeister",
     ["Leap up and take the trail behind that tree"] =
         "Spring hinauf und nimm den Pfad hinter diesem Baum",
     ["Wait for the talking to finish"] =

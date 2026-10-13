@@ -19,6 +19,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-a29-the-hinterlands", {
         "Der NPC ist drinnen.",
     ["Gather the big plumes colored brown and ivory. Drop the Ground Clutter option down to 1. Find it in the game options, under System, then Graphics."] =
         "Sammle die großen braun-elfenbeinfarbenen Federn. Setz die Option Bodenvegetation auf 1 herunter. Du findest sie in den Spieloptionen unter System, dann Grafik.",
+    ["Hop onto the ledge"] =
+        "Spring auf den Vorsprung",
     ["Hop onto the ledge here. Monsters are unable to reach you from this spot. Hold off until you have left combat."] =
         "Spring hier auf den Vorsprung. Monster können dich hier nicht erreichen. Warte, bis du nicht mehr im Kampf bist.",
     ["Other creatures use these spawn points too."] =

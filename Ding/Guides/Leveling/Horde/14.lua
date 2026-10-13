@@ -40,7 +40,6 @@ Ding.RegisterGuide({
         { go = { 1441, 66.29, 86.12 }, when = { log = 1148 }, text = "Head out of the cave" }, -- level 33
         { complete = 1148, sticky = { 1105, 1104, 1175, 1110 }, when = { log = 1148 }, -- level 33
           note = "Targets are in the cavern and around its entrance too." },
-        { go = { 1441, 66.29, 86.12 }, when = { done = 1148 }, text = "Head out of the cave" }, -- level 33
         { go = { 1441, 66.29, 86.12 }, text = "Head out of the cave" }, -- level 33
         { complete = 1175 }, -- level 33
         { complete = 1176, -- level 33

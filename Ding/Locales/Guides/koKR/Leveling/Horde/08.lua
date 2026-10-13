@@ -17,6 +17,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h08-the-barrens", {
         "동굴을 나가세요",
     ["This NPC is found down in the Cleft of Shadow."] =
         "이 NPC는 아래쪽 어둠의 틈에 있습니다.",
+    ["Visit the caged quilboar"] =
+        "우리에 갇힌 가시멧돼지를 찾아가세요",
     ["Trade your Blood Shards to gain buffs. Trade any spare Blood Shards to him during your Barrens questing. Ask him for the Spirit of the Wind buff"] =
         "혈석 파편을 교환해 강화 효과를 받으세요. 불모의 땅 퀘스트 중에 남는 혈석 파편은 그와 교환하세요. 그에게 Spirit of the Wind 강화 효과를 받으세요",
     ["The target is a dinosaur with blue hide. The targets are spread over several spots."] =

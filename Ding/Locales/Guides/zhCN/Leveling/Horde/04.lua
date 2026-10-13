@@ -13,6 +13,8 @@ Ding.RegisterGuideTranslation("zhCN", "leveling-h04-silverpine-forest", {
         "等对话结束。护送Deathstalker Erland，保证他活着。",
     ["Hunt the wolves whose fur is jet black."] =
         "猎杀毛色漆黑的狼。",
+    ["Tame a pet here"] =
+        "在这里驯服一只宠物",
     ["Pick one Ferocious Grizzled Bear and tame it with Tame Beast. Release your current pet before this. Here you tame a pet to keep."] =
         "选一只Ferocious Grizzled Bear，用驯服野兽驯服它。在此之前先放生你当前的宠物。在这里驯服一只长期保留的宠物。",
     ["Fly to The Sepulcher"] =

@@ -13,6 +13,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h04-silverpine-forest", {
         "Lass das Gespräch zu Ende laufen. Eskortiere Todespirscher Erland und halte ihn am Leben.",
     ["Hunt the wolves whose fur is jet black."] =
         "Jage die Wölfe mit pechschwarzem Fell.",
+    ["Tame a pet here"] =
+        "Zähme hier einen Begleiter",
     ["Pick one Ferocious Grizzled Bear and tame it with Tame Beast. Release your current pet before this. Here you tame a pet to keep."] =
         "Such dir einen Ferocious Grizzled Bear aus und zähme ihn mit Wildtier zähmen. Lass vorher dein aktuelles Tier frei. Hier zähmst du ein Tier, das du behältst.",
     ["Fly to The Sepulcher"] =

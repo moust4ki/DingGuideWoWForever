@@ -35,6 +35,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-a10-wetlands", {
         "대상은 무덤 안과 주변 모두에 있습니다.",
     ["Keep it; an upcoming task asks for it. The NPC is indoors."] =
         "보관하세요. 곧 할 퀘스트에 필요합니다. NPC는 건물 안에 있습니다.",
+    ["Learn Guns at the weapon master"] =
+        "무기 전문가에게서 총을 배우세요",
     ["Head down into the Deeprun Tram station"] =
         "깊은굴 지하철 역으로 내려가세요",
     ["Pass through the portal to teleport."] =

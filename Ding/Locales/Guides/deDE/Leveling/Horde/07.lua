@@ -29,6 +29,8 @@ Ding.RegisterGuideTranslation("deDE", "leveling-h07-hillsbrad-foothills", {
         "Du zähmst gleich ein Tier für kurze Zeit. Hol dir Klaue (Rang 3) für dein Tier.",
     ["The quest comes from a bounty sign."] =
         "Die Quest stammt von einem Kopfgeldaushang.",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Zähme hier ein Tier, um den nächsten Rang von Klaue zu lernen",
     ["Pick any Gray Bear and use Tame Beast on it."] =
         "Such dir einen beliebigen Gray Bear aus und wirke Wildtier zähmen auf ihn.",
     ["Get your companion back from the stable master."] =

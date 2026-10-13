@@ -29,6 +29,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h07-hillsbrad-foothills", {
         "곧 임시 소환수를 길들입니다. 소환수에게 할퀴기 (3 레벨)를 배우게 하세요.",
     ["The quest comes from a bounty sign."] =
         "퀘스트는 현상수배 게시판에서 받습니다.",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "여기서 야수를 길들여 할퀴기의 다음 등급을 배우세요",
     ["Pick any Gray Bear and use Tame Beast on it."] =
         "아무 회색곰이나 골라 야수 길들이기를 사용하세요.",
     ["Get your companion back from the stable master."] =

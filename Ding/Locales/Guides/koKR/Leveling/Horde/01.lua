@@ -7,6 +7,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h01-undead-starter", {
         "티리스팔 숲: 데스넬은 언데드가 깨어나는 곳입니다. 가방 공간을 확보할 수 있습니다. 경로를 더 진행하면 하나를 받습니다.",
     ["The NPC stands outdoors, next to the crypt."] =
         "NPC는 묘실 옆 바깥에 서 있습니다.",
+    ["Loot the beasts you kill on the way here"] =
+        "여기로 오면서 처치한 야수의 전리품을 챙기세요",
     ["Pick up anything that sells for 10 copper or more. You'll level faster with this."] =
         "판매가가 10코퍼 이상인 것은 모두 주우세요. 이렇게 하면 레벨업이 더 빨라집니다.",
     ["The NPC is indoors."] =
@@ -61,6 +63,10 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h01-undead-starter", {
         "NPC는 긴 경로를 순찰합니다. 경로를 따라 찾아보세요.",
     ["The NPC waits on the lower level, indoors."] =
         "NPC는 건물 안 아래층에서 기다립니다.",
+    ["Learn Mining from the trainer"] =
+        "상급자에게서 채광을 배우세요",
+    ["Learn Blacksmithing from the trainer"] =
+        "상급자에게서 대장기술을 배우세요",
     ["Climb the trail"] =
         "길을 따라 올라가세요",
     ["The NPC waits on the tower's highest floor."] =
@@ -85,6 +91,8 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h01-undead-starter", {
         "길을 벗어나지 말고 계단을 계속 올라가세요",
     ["The NPC stands on the highest level of this structure."] =
         "NPC는 이 건물의 꼭대기 층에 서 있습니다.",
+    ["Learn First Aid from the trainer"] =
+        "상급자에게서 응급치료를 배우세요",
     ["Loot the gray chests built from metal. Search in and around the sunken wrecks. Your targets sit below the water's surface."] =
         "금속으로 만든 회색 상자에서 전리품을 챙기세요. 가라앉은 난파선 안과 주변을 찾아보세요. 대상은 수면 아래에 있습니다.",
     ["The target is a troll in crimson robes. This one roams, so scan the surrounding area."] =
@@ -107,10 +115,14 @@ Ding.RegisterGuideTranslation("koKR", "leveling-h01-undead-starter", {
         "통로를 지나가세요",
     ["Fly to Orgrimmar"] =
         "오그리마로 날아가세요",
+    ["Learn Staves at the weapon master"] =
+        "무기 전문가에게서 지팡이를 배우세요",
     ["The quest comes from a bounty sign."] =
         "퀘스트는 현상수배 게시판에서 받습니다.",
     ["Look for an iron slab marked with a skull. Wait for the talking to finish"] =
         "해골이 새겨진 철판을 찾으세요. 대화가 끝날 때까지 기다리세요",
+    ["Learn Swords at the weapon master"] =
+        "무기 전문가에게서 한손 도검을 배우세요",
     ["Use the item at the pink marking."] =
         "분홍색 표시에서 아이템을 사용하세요.",
     ["Move gradually northwest toward Agamand Mills."] =

@@ -51,6 +51,8 @@ Ding.RegisterGuideTranslation("esES", "leveling-a36-azshara-and-felwood", {
         "Maestro de vuelo de Vista Eterna",
     ["The flight master stands past the walls, outdoors."] =
         "El maestro de vuelo está pasada la muralla, al aire libre.",
+    ["Tame a beast here to learn the next rank of Claw"] =
+        "Domestica aquí una bestia para aprender el siguiente rango de Garra",
     ["Tame an Angerclaw Mauler with your Tame Beast spell. Track down a plague-ridden bear with a chestnut coat."] =
         "Domestica un Angerclaw Mauler con tu hechizo Domesticar bestia. Busca un oso apestado de pelaje castaño.",
     ["Get your companion back from the stable master."] =
