@@ -901,8 +901,11 @@ accent #5BB4FF, the Noto Sans font shipped with the addon, rounded shapes from t
     service steps).
   - Weapon masters, **by weapon**: DingDB's `weaponSkills` (`tools/data/corrections/
     10_weapon_masters.lua`, the eight weapon masters). Only the weapons the class can use (the
-    gear table of `Core/Gear.lua`), that the character does not know (its proficiency spell is
-    known, or the skill lines list the weapon's name), from the level the master asks (polearms:
+    gear table of `Core/Gear.lua`), that the character surely does not know (known: it has the
+    weapon skill's spell, `IsPlayerSpell` with the Classic ids, the same in every language, or
+    wears such a weapon, or the client's skill lines name it; Forever has no skill lines and its
+    `IsSpellKnown` says false for weapon skills; when the client cannot tell, the list shows
+    every weapon the class can use, claiming nothing), from the level the master asks (polearms:
     20), and that a weapon master of its side teaches. The category goes when nothing is left.
   - Profession trainers, **by profession**: the trainer flag and a word of the profession in the
     English subtitle ("Alchem", "Blacksmith", "Enchant", "Engineer", "Herbalis", "Leatherwork" /
@@ -974,10 +977,11 @@ accent #5BB4FF, the Noto Sans font shipped with the addon, rounded shapes from t
   A weapon master's trainer window is not taken for the class trainer's (`Training:Record`).
 - **Weapon to learn** (guide window, option "Remind me of weapons to learn" in the Guide tab,
   on by default): a row "Weapon to learn: Guns — Buliwyf Stonehand, Ironforge" (the weapon
-  master the fewest seconds away) only when the player has such a weapon in hand: worn, in the
-  bags, or among a quest's rewards while its window is open (`QUEST_DETAIL` / `QUEST_COMPLETE`
-  to `QUEST_FINISHED`), whose type the class can use (`Core/Gear.lua`), that the player has not
-  learned, from the level its master asks, and that the player did not dismiss. Never only
+  master the fewest seconds away) only when the player has such a weapon in hand: in the bags,
+  or among a quest's rewards while its window is open (`QUEST_DETAIL` / `QUEST_COMPLETE`
+  to `QUEST_FINISHED`), whose type the class can use (`Core/Gear.lua`) and that the player
+  surely has not learned (as in the directory above: never a guess, and a weapon worn is known;
+  when the client cannot tell, no row), from the level its master asks, and that the player did not dismiss. Never only
   because a weapon master is close by (Yendi: polearms suggested in Stormwind, unexplained).
   Under it, why in plain words ("In your bags: [Old Blunderbuss]. Your class can use this kind
   of weapon (Guns), but you have not learned it yet.") and what to do ("Click: go to the master

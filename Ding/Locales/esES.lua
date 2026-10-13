@@ -261,7 +261,6 @@ Ding.Locales.esES = {
     DIR_BY_TELEPORT = "teletransporte",
     WEAPON_TO_LEARN = "Arma por aprender: %s — %s, %s",
     WEAPON_SOURCE_BAGS = "En tus bolsas: %s.",
-    WEAPON_SOURCE_WORN = "Llevas %s.",
     WEAPON_SOURCE_REWARD = "Una recompensa de misión: %s.",
     WEAPON_WHY = "Tu clase puede usar este tipo de arma (%s), pero aún no la has aprendido.",
     WEAPON_ROW_PAD = "Modo foco, A: ir al maestro · Izquierda: no volver a sugerirla",

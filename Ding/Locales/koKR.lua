@@ -259,7 +259,6 @@ Ding.Locales.koKR = {
     DIR_BY_TELEPORT = "순간이동",
     WEAPON_TO_LEARN = "배울 무기: %s — %s, %s",
     WEAPON_SOURCE_BAGS = "가방에 있음: %s.",
-    WEAPON_SOURCE_WORN = "착용 중: %s.",
     WEAPON_SOURCE_REWARD = "퀘스트 보상: %s.",
     WEAPON_WHY = "직업이 이 무기 종류(%s)를 쓸 수 있지만 아직 배우지 않았습니다.",
     WEAPON_ROW_PAD = "포커스 모드, A: 전문가에게 가기 · 왼쪽: 다시 제안하지 않기",

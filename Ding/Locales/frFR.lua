@@ -257,7 +257,6 @@ Ding.Locales.frFR = {
     DIR_BY_TELEPORT = "téléportation",
     WEAPON_TO_LEARN = "Arme à apprendre : %s — %s, %s",
     WEAPON_SOURCE_BAGS = "Dans tes sacs : %s.",
-    WEAPON_SOURCE_WORN = "Tu portes %s.",
     WEAPON_SOURCE_REWARD = "Une récompense de quête : %s.",
     WEAPON_WHY = "Ta classe peut manier ce type d'arme (%s), mais tu ne sais pas encore t'en servir.",
     WEAPON_ROW_PAD = "Mode focus, A : aller voir le maître · Gauche : ne plus me le proposer",

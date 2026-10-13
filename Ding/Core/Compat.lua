@@ -168,6 +168,18 @@ function C.SpellKnown(spellID)
     return ok and plain(known) and true or false
 end
 
+-- The character has this spell, passive ones included (weapon skills): true or false, nil when
+-- the client cannot tell. IsPlayerSpell only: on Forever, IsSpellKnown says false for a weapon
+-- skill the character has (Polearms, 200, for a hunter who uses one).
+function C.PlayerSpell(spellID)
+    if type(IsPlayerSpell) ~= "function" then return nil end
+    local ok, known = safe(IsPlayerSpell, spellID)
+    if not ok then return nil end
+    known = plain(known)
+    if known == nil then return nil end
+    return known and true or false
+end
+
 -- Seconds before a spell can be cast again (0 when ready or unknown).
 function C.SpellCooldown(spellID)
     local start, duration

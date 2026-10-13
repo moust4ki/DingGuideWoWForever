@@ -557,6 +557,34 @@ T.test("weapon reminder: never again for that weapon (a right click, Left in foc
     H.clearItems()
 end)
 
+T.test("weapon reminder: when the client cannot tell, nothing is suggested, whatever the skill lines' language", function()
+    start({ class = "HUNTER", race = "Dwarf", map = 1426, x = 47, y = 52 })
+    Ding.char.weaponsDismissed = nil
+    local isPlayerSpell = _G.IsPlayerSpell
+    _G.IsPlayerSpell = nil
+    gunInBags()
+    T.eq(reminder(), nil, "a reminder although nobody can tell what the hunter knows")
+    T.eq(#Dir:WeaponsToLearn(), 0)
+    -- The directory's weapon masters: every weapon the class can use, claiming nothing.
+    local entry = entry("weapons")
+    T.ok(entry and #entry.choices == #Dir:Weapons(), "the weapon masters do not list every usable weapon")
+    -- Skill lines in another language than Ding's never prove a weapon unknown.
+    for _, names in ipairs({ { "Schusswaffen", "Bogen" }, { "총", "활" }, { "枪械", "弓" }, { "Armes à feu" } }) do
+        H.setSkillLines(names)
+        Dir:Forget(); P:Update()
+        T.eq(reminder(), nil, "a reminder from skill lines: " .. names[1])
+    end
+    H.setSkillLines({})
+    _G.IsPlayerSpell = isPlayerSpell
+    -- The client tells: the gun is suggested again; known, it is not.
+    Dir:Forget(); P:Update()
+    T.ok(reminder(), "no reminder once the client can tell")
+    H.learnSpell(266)
+    Dir:Forget(); P:Update()
+    T.eq(reminder(), nil)
+    H.clearItems()
+end)
+
 T.test("weapon reminder: the option, said plainly in the Guide tab, turns it off", function()
     start({ class = "HUNTER", race = "Dwarf", map = 1426, x = 47, y = 52 })
     Ding.char.weaponsDismissed = nil

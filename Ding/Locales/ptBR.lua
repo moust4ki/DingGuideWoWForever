@@ -259,7 +259,6 @@ Ding.Locales.ptBR = {
     DIR_BY_TELEPORT = "teleporte",
     WEAPON_TO_LEARN = "Arma a aprender: %s — %s, %s",
     WEAPON_SOURCE_BAGS = "Nas suas bolsas: %s.",
-    WEAPON_SOURCE_WORN = "Você usa %s.",
     WEAPON_SOURCE_REWARD = "Uma recompensa de missão: %s.",
     WEAPON_WHY = "Sua classe pode usar este tipo de arma (%s), mas você ainda não a aprendeu.",
     WEAPON_ROW_PAD = "Modo foco, A: ir ao mestre · Esquerda: não sugerir mais",

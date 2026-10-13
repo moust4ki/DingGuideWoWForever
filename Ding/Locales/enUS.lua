@@ -259,7 +259,6 @@ Ding.Locales.enUS = {
     DIR_BY_TELEPORT = "teleport",
     WEAPON_TO_LEARN = "Weapon to learn: %s — %s, %s",
     WEAPON_SOURCE_BAGS = "In your bags: %s.",
-    WEAPON_SOURCE_WORN = "You wear %s.",
     WEAPON_SOURCE_REWARD = "A quest reward: %s.",
     WEAPON_WHY = "Your class can use this kind of weapon (%s), but you have not learned it yet.",
     WEAPON_ROW_PAD = "Focus mode, A: go to the master · Left: never suggest it again",

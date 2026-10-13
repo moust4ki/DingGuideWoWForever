@@ -258,7 +258,6 @@ Ding.Locales.deDE = {
     DIR_BY_TELEPORT = "Teleport",
     WEAPON_TO_LEARN = "Waffe zu lernen: %s — %s, %s",
     WEAPON_SOURCE_BAGS = "In deinen Taschen: %s.",
-    WEAPON_SOURCE_WORN = "Du trägst %s.",
     WEAPON_SOURCE_REWARD = "Eine Questbelohnung: %s.",
     WEAPON_WHY = "Deine Klasse kann diese Waffenart (%s) führen, aber du hast sie noch nicht gelernt.",
     WEAPON_ROW_PAD = "Fokusmodus, A: zum Lehrer · Links: nicht mehr vorschlagen",

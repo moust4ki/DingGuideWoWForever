@@ -562,7 +562,12 @@ return function(opts)
     _G.IsIndoors = function() return false end
     -- Spells the player knows (H.learnSpell) and their cooldowns (H.setSpellCooldown).
     local knownSpells, spellCooldowns = {}, {}
-    _G.IsSpellKnown = function(id) return knownSpells[id] == true end
+    -- Like Forever: IsPlayerSpell knows the weapon skills, IsSpellKnown says false for them.
+    local WEAPON_SKILL_SPELLS = { [196] = true, [197] = true, [198] = true, [199] = true, [200] = true, [201] = true,
+        [202] = true, [227] = true, [264] = true, [266] = true, [1180] = true, [2567] = true, [5011] = true,
+        [5009] = true, [15590] = true }
+    _G.IsSpellKnown = function(id) return knownSpells[id] == true and not WEAPON_SKILL_SPELLS[id] end
+    _G.IsPlayerSpell = function(id) return knownSpells[id] == true end
     _G.GetSpellCooldown = function(id)
         local c = spellCooldowns[id]
         return c and c.start or 0, c and c.duration or 0, 1
@@ -572,10 +577,11 @@ return function(opts)
         [18960] = "Teleport: Moonglade" }
     _G.GetSpellInfo = function(id) return SPELL_NAMES[id] or ("Spell " .. tostring(id)), nil, 136235 end
     _G.GetSpellTexture = function() return 136235 end
-    -- Skill lines (the skills panel): a header, then the skills of H.setSkillLines.
+    -- Skill lines (the skills panel): Forever has none (GetNumSkillLines is nil); a test gives
+    -- the client some with H.setSkillLines: a header, then those skills.
     local skillLines = {}
-    _G.GetNumSkillLines = function() return #skillLines + 1 end
-    _G.GetSkillLineInfo = function(i)
+    local function getNumSkillLines() return #skillLines + 1 end
+    local function getSkillLineInfo(i)
         if i == 1 then return "Weapon Skills", true end
         local name = skillLines[i - 1]
         if not name then return nil end
@@ -1934,7 +1940,12 @@ return function(opts)
     function H.talentCalls() return talentCalls end
     function H.resetTalents() talentRanks, talentPoints, talentCalls = {}, 0, {} end
     function H.forgetSpells() knownSpells, spellCooldowns = {}, {} end
-    function H.setSkillLines(names) skillLines = names or {} end
+    function H.setSkillLines(names)
+        skillLines = names or {}
+        local any = names and #names > 0
+        _G.GetNumSkillLines = any and getNumSkillLines or nil
+        _G.GetSkillLineInfo = any and getSkillLineInfo or nil
+    end
     function H.setSpellCooldown(id, start, duration) spellCooldowns[id] = { start = start, duration = duration } end
     function H.setTrainerServices(list) trainerServices = list end
     function H.equipped(slot) return equipped[slot] end

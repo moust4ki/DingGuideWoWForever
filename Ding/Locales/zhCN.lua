@@ -259,7 +259,6 @@ Ding.Locales.zhCN = {
     DIR_BY_TELEPORT = "传送",
     WEAPON_TO_LEARN = "可学武器：%s — %s，%s",
     WEAPON_SOURCE_BAGS = "背包中：%s。",
-    WEAPON_SOURCE_WORN = "你装备着%s。",
     WEAPON_SOURCE_REWARD = "任务奖励：%s。",
     WEAPON_WHY = "你的职业能使用这类武器（%s），但你还没有学会。",
     WEAPON_ROW_PAD = "焦点模式，A：去找武器大师 · 左：不再提示",

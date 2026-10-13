@@ -548,47 +548,71 @@ end
 ---------------------------------------------------------------------------
 -- Weapons
 ---------------------------------------------------------------------------
--- The weapons the player's class can use (a weapon master teaches them), with `known`.
+-- The weapon types the player wears (main hand, off hand, ranged): item subclasses.
+local function wornWeapons()
+    local out = {}
+    for _, slot in ipairs({ 16, 17, 18 }) do
+        local id = Compat.EquippedID(slot)
+        if id then
+            local classID, subclassID = Compat.ItemClass(id)
+            if classID == 2 and subclassID then out[subclassID] = true end
+        end
+    end
+    return out
+end
+
+-- The weapons the player's class can use (a weapon master teaches them), with `known`: true
+-- (the character has the weapon skill's spell, wears such a weapon, or the client's skill lines
+-- name it), false (the client says it does not have the spell), nil (nobody can tell: never
+-- suggested then). The weapon skill's spell, by its id, is the same in every language; Forever
+-- has no skill lines (GetNumSkillLines) and its IsSpellKnown says false for weapon skills.
 function Dir:Weapons()
     local allowed = {}
     for _, s in ipairs((Ding.Gear.WEAPONS or {})[Compat.PlayerClass()] or {}) do allowed[s] = true end
     local skills = Compat.SkillNames()
     local english = Ding.Locales and Ding.Locales.enUS or {}
+    local worn = wornWeapons()
     local out = {}
     for _, w in ipairs(WEAPONS) do
         if allowed[w.subclass] then
             local label = L[w.label]
-            local known = Compat.SpellKnown(w.spell) or skills[label] or skills[english[w.label] or ""] or false
-            out[#out + 1] = { skill = w.skill, kind = "weapon:" .. w.skill, label = label, known = known and true,
+            local spell = Compat.PlayerSpell(w.spell)
+            local known
+            if spell or worn[w.subclass] or skills[label] or skills[english[w.label] or ""] then
+                known = true
+            elseif spell == false then
+                known = false
+            end
+            out[#out + 1] = { skill = w.skill, kind = "weapon:" .. w.skill, label = label, known = known,
                 level = w.level }
         end
     end
     return out
 end
 
--- The weapons the player can learn now: usable, not known, the level reached, and a weapon
--- master of the player's side teaches it.
+-- The client tells which weapon skills the character has (Compat.PlayerSpell).
+function Dir:CanTellWeapons()
+    return Compat.PlayerSpell(WEAPONS[1].spell) ~= nil
+end
+
+-- The weapons the player can learn now: usable, surely not known, the level reached, and a
+-- weapon master of the player's side teaches it.
 function Dir:WeaponsToLearn()
     local level, out = UnitLevel("player"), {}
     for _, w in ipairs(self:Weapons()) do
-        if not w.known and level >= (w.level or 1) and #self:Ids(w.kind) > 0 then out[#out + 1] = w end
+        if w.known == false and level >= (w.level or 1) and #self:Ids(w.kind) > 0 then out[#out + 1] = w end
     end
     return out
 end
 
--- A weapon the player has in hand and could learn: worn, in the bags, or offered as a quest
--- reward while the quest's window is open. Its weapon entry, where it is ("worn", "bags",
--- "reward") and the item (a link when the client gives one), or nil.
+-- A weapon the player has in hand and could learn: in the bags, or offered as a quest reward
+-- while the quest's window is open (a weapon worn is known). Its weapon entry, where it is
+-- ("bags", "reward") and the item (a link when the client gives one), or nil.
 local function heldWeapon(learnable)
     local function check(item)
         local classID, subclassID = Compat.ItemClass(item)
         local w = classID == 2 and WEAPON_BY_SUBCLASS[subclassID]
         return w and learnable[w.skill] or nil
-    end
-    for _, slot in ipairs({ 16, 17, 18 }) do
-        local id = Compat.EquippedID(slot)
-        local found = id and check(id)
-        if found then return found, "worn", id end
     end
     for _, bag in ipairs(Compat.BAGS) do
         for slot = 1, Compat.BagSize(bag) do
@@ -611,12 +635,12 @@ local function dismissed()
     return Ding.char and Ding.char.weaponsDismissed or {}
 end
 
--- The weapon reminder of the guide window. Only a weapon the player has in hand: worn, in the
--- bags, or a quest reward on screen, whose type the class can use but the player has not
+-- The weapon reminder of the guide window. Only a weapon the player has in hand: in the bags,
+-- or a quest reward on screen, whose type the class can use but the player has not
 -- learned (a weapon master teaches it), and that the player did not dismiss. Never only
 -- because a weapon master is close by (Yendi: polearms suggested in Stormwind, for nothing).
 -- { weapons = { the weapon's entry of Weapons() }, best = the master's entry the fewest seconds
--- away, source = "worn" | "bags" | "reward", item = link or id } or nil; kept a few seconds.
+-- away, source = "bags" | "reward", item = link or id } or nil; kept a few seconds.
 function Dir:WeaponReminder()
     local now = GetTime()
     local r = self.reminder
@@ -673,7 +697,9 @@ function Dir:Choices(category, all)
     if category.choices == "ammo" then
         for _, kind in ipairs({ "arrows", "bullets" }) do out[#out + 1] = { kind = kind, label = self:Label(kind) } end
     elseif category.choices == "weapons" then
-        for _, w in ipairs(all and self:Weapons() or self:WeaponsToLearn()) do
+        -- The weapons to learn; when the client cannot tell what the character knows, every
+        -- weapon the class can use (the list then claims nothing).
+        for _, w in ipairs((all or not self:CanTellWeapons()) and self:Weapons() or self:WeaponsToLearn()) do
             out[#out + 1] = { kind = w.kind, label = w.label, known = w.known }
         end
     elseif category.choices == "professions" then

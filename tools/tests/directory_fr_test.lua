@@ -71,4 +71,43 @@ T.test("the weapon reminder in French", function()
     H.clearItems()
 end)
 
+T.test("a French hunter who knows polearms and wears one: never told to learn them", function()
+    start({ map = 1453, x = 63.5, y = 69 })
+    H.player.level = 28
+    -- Forever: IsPlayerSpell(200) is true, IsSpellKnown(200) false, no skill lines.
+    H.learnSpell(200); H.learnSpell(264)
+    T.eq(IsSpellKnown(200), false)
+    T.eq(GetNumSkillLines, nil)
+    H.setItemInfo(950110, { name = "Hallebarde", classID = 2, subclassID = 6, equipLoc = "INVTYPE_2HWEAPON" })
+    H.setItemInfo(950111, { name = "Vouge", classID = 2, subclassID = 6, equipLoc = "INVTYPE_2HWEAPON" })
+    H.equip(16, 950110)
+    H.putInBag(0, 3, 950111)
+    H.fire("BAG_UPDATE_DELAYED"); H.flush()
+    Dir:Forget(); P:Update()
+    for _, r in ipairs(P.rowsShown or {}) do
+        T.ok(r.action ~= "weapon", "told to learn a weapon: " .. H.plain(r.text or ""))
+    end
+    for _, w in ipairs(Dir:WeaponsToLearn()) do
+        T.ok(w.skill ~= 229 and w.skill ~= 45, "polearms or bows to learn: " .. w.label)
+    end
+    -- The directory's weapon masters do not list them either.
+    F:Open(1); H.flush()
+    local i = rowIndex("Maîtres d'armes")
+    if i then
+        F:Activate(i); H.flush()
+        T.eq(rowIndex("Armes d'hast"), nil, "polearms in the weapons to learn")
+        T.eq(rowIndex("Arcs"), nil, "bows in the weapons to learn")
+    end
+    F:Close(); H.flush()
+    -- Worn alone (the spell unknown to the client): still known.
+    H.learnSpell(200, false)
+    Dir:Forget()
+    local polearms
+    for _, w in ipairs(Dir:Weapons()) do
+        if w.skill == 229 then polearms = w end
+    end
+    T.eq(polearms.known, true, "a weapon worn is not known")
+    H.clearEquipment(); H.clearItems()
+end)
+
 T.run()
