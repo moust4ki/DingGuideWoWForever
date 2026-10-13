@@ -275,12 +275,58 @@ local function addSpawns(out, spawns, label)
     end
 end
 
--- An NPC's spawns; each point names it (`npc`), so that it can be targeted.
+-- The dungeon (AreaID) an NPC or object is only found in, or nil: Ding/DB's `dungeon`; with
+-- QuestieDB, a spawn area that is a dungeon (its spawns inside have no place on a map).
+local function dungeonOf(kind, id)
+    if D.backend == "ding" then
+        local rec = DB[KINDS[kind]][id]
+        local index = DB.LAYOUT[kind].dungeon
+        return rec and index and rec[index] or nil
+    end
+    local spawns = get(kind, "spawns", id)
+    local private = questieZones()
+    local dungeons = private and private.dungeons
+    if type(spawns) ~= "table" or type(dungeons) ~= "table" then return nil end
+    local areas = {}
+    for area in pairs(spawns) do areas[#areas + 1] = area end
+    table.sort(areas)
+    for _, area in ipairs(areas) do
+        if dungeons[area] then return area end
+    end
+    return nil
+end
+
+-- A dungeon's name: the client's (its own language) when the dungeon has a map, else English.
+function D:DungeonName(areaID)
+    local map = self:UiMap(areaID)
+    local name = map and Ding.Compat.MapName(map)
+    if name then return name end
+    if self.backend == "ding" then return DB.zones.dungeonNames[areaID] end
+    local private = questieZones()
+    local entry = private and type(private.dungeons) == "table" and private.dungeons[areaID]
+    return type(entry) == "table" and entry[1] or nil
+end
+
+-- Only inside a dungeon: its entrances, named "<name>, in <dungeon>" (no `npc`: from outside,
+-- it cannot be targeted).
+local function addEntrances(out, kind, id, name)
+    local area = dungeonOf(kind, id)
+    if not area then return end
+    local label = L.IN_DUNGEON:format(name or "?", D:DungeonName(area) or "?")
+    for _, p in ipairs(D:DungeonEntrances(area)) do
+        out[#out + 1] = { map = p.map, x = p.x, y = p.y, label = label, dungeon = area }
+    end
+end
+
+-- An NPC's spawns; each point names it (`npc`), so that it can be targeted. Only inside a
+-- dungeon: the dungeon's entrances.
 function D:NpcPoints(npcID, out)
     out = out or {}
     local first = #out + 1
-    addSpawns(out, get("Npc", "spawns", npcID), self:NpcName(npcID))
+    local name = self:NpcName(npcID)
+    addSpawns(out, get("Npc", "spawns", npcID), name)
     for i = first, #out do out[i].npc = npcID end
+    if #out < first then addEntrances(out, "Npc", npcID, name) end
     return out
 end
 
@@ -292,7 +338,10 @@ end
 
 function D:ObjectPoints(objectID, out)
     out = out or {}
-    addSpawns(out, get("Object", "spawns", objectID), self:ObjectName(objectID))
+    local first = #out + 1
+    local name = self:ObjectName(objectID)
+    addSpawns(out, get("Object", "spawns", objectID), name)
+    if #out < first then addEntrances(out, "Object", objectID, name) end
     return out
 end
 

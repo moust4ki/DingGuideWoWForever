@@ -58,6 +58,7 @@ Ding.Locales.deDE = {
     SCALE_SET = "Fenstergröße: %.2f",
     OPTIONAL = "(optional)",
     ANOTHER_CONTINENT = "Anderer Kontinent",
+    IN_DUNGEON = "%s, in %s",
     ARRIVED = "Du bist da",
     IN_AREA = "Du bist im Gebiet",
     CORPSE = "Dein Leichnam",

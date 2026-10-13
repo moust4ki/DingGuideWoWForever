@@ -13,8 +13,8 @@ M.FIELDS = {
         questLevel = "level", requiredRaces = "mask", requiredClasses = "mask", triggerEnd = "trigger",
         objectives = "objectives", sourceItemId = "id", preQuestGroup = "ids", preQuestSingle = "ids" },
     Npc = { name = "string", minLevel = "level", maxLevel = "level", rank = "rank", spawns = "spawns",
-        friendlyToFaction = "faction", subName = "string", npcFlags = "mask" },
-    Object = { name = "string", spawns = "spawns" },
+        friendlyToFaction = "faction", subName = "string", npcFlags = "mask", dungeon = "id" },
+    Object = { name = "string", spawns = "spawns", dungeon = "id" },
     Item = { name = "string", npcDrops = "ids", objectDrops = "ids", vendors = "ids" },
 }
 

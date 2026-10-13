@@ -29,7 +29,8 @@ end)
 T.test("with the export: dungeon content and what the player makes appear are told apart", function()
     local out = run(quote(T.combined))
     local add, dungeon, made = out:match("Total: (%d+) to add, (%d+) inside a dungeon, (%d+) made by the player")
-    T.ok(add and tonumber(dungeon) > 0 and tonumber(made) > 0, out:sub(-300))
+    -- A dungeon with known entrances is no gap any more: what is left there has none.
+    T.ok(add and tonumber(dungeon) >= 0 and tonumber(made) > 0, out:sub(-300))
     T.ok(not out:find("unknown", 1, true), "every gap explained")
 end)
 

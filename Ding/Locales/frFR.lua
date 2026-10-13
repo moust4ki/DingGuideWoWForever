@@ -58,6 +58,7 @@ Ding.Locales.frFR = {
     SCALE_SET = "Échelle de la fenêtre : %.2f",
     OPTIONAL = "(facultatif)",
     ANOTHER_CONTINENT = "Autre continent",
+    IN_DUNGEON = "%s, dans %s",
     ARRIVED = "Tu y es",
     IN_AREA = "Tu es dans la zone",
     CORPSE = "Ton corps",

@@ -22,7 +22,8 @@ database (thanks to its authors). You may remove the QuestieDB addon if no other
   https://github.com/moust4ki/DingGuideWoWForever/blob/main/docs/create-a-guide-with-ai.md
 - Travel: the arrow takes the fastest way, with known flight paths, boats, zeppelins, the
   tram, your hearthstone and teleports. The destination is highlighted on the flight map,
-  and the target's zone is shown under the arrow and on the world map.
+  and the target's zone is shown under the arrow and on the world map. A target inside a
+  dungeon leads to the dungeon's entrance.
 - New route options: hearthstone steps (on), death skips (off), elite quests (off), dungeon
   quests (off, or chosen dungeon by dungeon), take the planned flight automatically (off).
 - Along the way: experience and kills left on level steps, objectives of the other quests
