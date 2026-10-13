@@ -5,7 +5,8 @@
 --   local T = dofile(<tools dir> .. "/testlib.lua")(arg[1] [, { guides = { shipped ids },
 --                                                                 locale = "enUS",
 --                                                                 addons = { pack addon dirs } }])
---   bare = true: tests of the offline tools, without Ding nor the mocked API.
+--   tooltipScript = true: a client with the OnTooltipSetUnit script instead of the tooltip
+--   processor. bare = true: tests of the offline tools, without Ding nor the mocked API.
 --   T.test("what it checks", function() T.eq(actual, expected) end)
 --   T.run()
 local here = debug.getinfo(1, "S").source:match("^@(.*)[/\\]") or "."
@@ -24,7 +25,7 @@ return function(combined, opts)
         -- default): adding guides to Ding never changes what the unit tests see.
         H = dofile(here .. "/wow_mock.lua")({ combined = combined, quiet = true,
             guides = opts.guides or { "nightelf-01-shadowglen" }, locale = opts.locale,
-            addons = opts.addons })
+            addons = opts.addons, tooltipScript = opts.tooltipScript })
         Ding = H.Ding
         T.H, T.Ding = H, Ding
 

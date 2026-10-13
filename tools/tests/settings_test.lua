@@ -166,10 +166,13 @@ T.test("dungeons: one row with how many are on; A opens their page, sorted by le
     H.focusOn(Cfg, function(r) return r == checks[1] end, "Beta")
     H.press("PAD1")
     T.eq(Ding.db.ui.dungeonChoice.Beta, false)
-    -- The help follows the page: B goes back.
-    local labelsShown = {}
-    for _, item in ipairs(Cfg.frame.help.items) do labelsShown[#labelsShown + 1] = item.label:GetText() end
-    T.ok(table.concat(labelsShown, ","):find(L.HINT_BACK, 1, true), "no B Back on the page")
+    -- The help follows the page: B goes back, its chip on the page's title (not on the close
+    -- cross, not in the footer).
+    T.ok(Cfg.page.rows[1].key:IsShown(), "no B on the page's title")
+    T.ok(not Cfg.frame.back:IsShown(), "B on the close cross, on a page")
+    for _, item in ipairs(Cfg.frame.help.items) do
+        T.ok(not item.label:IsShown() or item.label:GetText() ~= L.HINT_BACK, "\"B Back\" repeats the page's title")
+    end
     H.press("PAD2")
     T.eq(Cfg.page, nil, "B does not go back")
     T.ok(Cfg.frame:IsShown(), "B closed the window")

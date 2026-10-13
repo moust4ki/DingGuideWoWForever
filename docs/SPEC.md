@@ -575,6 +575,34 @@ the first one says "Along the way · For “quest”". Hovering, clicking (A in 
 for the step's objectives. The objective the level step already farms is not repeated. Looked
 at every 2 s while the window is shown, and on every quest log change.
 
+### Quest monsters (`UI/QuestMobs.lua`)
+
+Above the **enemy nameplates** of the monsters a log quest still needs, a small mark of Ding's
+(its own frame, parented to the game's plate, which is never changed): a diamond for a monster
+to kill, a dot for one that drops an item a quest needs (DingDB's item drops), then the
+objective's counter ("3/8"). The current step's monsters (its quests and their missing links,
+the monster a level step farms, its `kill` and `collect` goals) are in the accent color; those
+of the log's other quests are quieter (grey glyph, plain border, 80 %). A finished objective,
+or a quest ready to turn in, loses its mark. On a **friendly** plate (when the game shows
+them): the current step's quest giver "!" and turn-in NPC "?". The **unit tooltip** gets one
+line per objective (three at most): "Ding! · “Quest name” 3/8", the quest in the client's
+language; hooked through the client's tooltip processor (`TooltipDataProcessor`), else its
+`OnTooltipSetUnit` script, never replaced.
+
+What counts is computed again with the window's rows (`Engine:Refresh`, so after every quest
+log change), per creature id; the objectives are matched to DingDB's targets the way "Along
+the way" does it (`Along:Objectives`, `Along:StepQuests`). A plate's monster is read once,
+when it appears (`UnitGUID`): when the client keeps the GUID secret (in combat, maybe), the
+plate keeps what it had, else its name is matched with the monsters Ding knows; a player is
+never marked. Nothing is protected: frames are only created, anchored, shown and hidden.
+
+Options (Arrow and maps tab, "Quest monsters"): marks on the plates (on), the tooltip line
+(on), **"Show enemy nameplates farther"** (off): the client's `nameplateMaxDistance` at its
+maximum (Ding asks for 60 yards, the client keeps its own limit), the value before put back
+when the option goes off (`Ding.db.farPlatesFrom`, outside the settings, so that the tab's
+defaults and "Restore all defaults" put it back too); never changed in combat (after the
+fight). Turned on or off in the settings, the chat says the distance now.
+
 ### Interface
 
 The design (dimensions, colors, fonts, states, texts) is in [`UI-handoff.md`](UI-handoff.md),
@@ -832,7 +860,8 @@ accent #5BB4FF, the Noto Sans font shipped with the addon, rounded shapes from t
   - **Automation**: Quests (accept, turn in, rewards, skip gray), Merchant (sell gray,
     repair), Equipment (equip upgrades, talent build), Flights (take the flight).
   - **Arrow and maps**: arrow, style, size, farming loop, move; the world map mark, the
-    minimap pins; the target's skull; "More options" folded: orientation, TomTom, reset the
+    minimap pins; the target's skull; quest monsters (marks on the nameplates, the tooltip
+    line, enemy nameplates farther); "More options" folded: orientation, TomTom, reset the
     arrow's position.
   - **Keybinds**: unchanged.
   - **Appearance**: window (opacity, scale, preview, lock, minimized in combat, hidden in
@@ -860,8 +889,8 @@ gamepad buttons). Every gamepad action therefore has an equivalent:
   keyboard key just like a gamepad button.
 - Move mode: drag the frame with the mouse; "Save", "Cancel" and "Reset" buttons on the
   plate, Enter saves, Esc cancels.
-- **The help bar is clickable** (settings and the move mode plate): a click on
-  "A Select", "B Back", "Y Reset" or "LB/RB Tabs" does what the button does.
+- **The help bar is clickable** (settings, import window and the move mode plate): a click
+  on "A Open", "Y Reset", "B Cancel" or "Y Select for Ctrl+C" does what the button does.
   These hints look like buttons (background, border, lighter on hover); the D-pad hint and
   the mouse help text, which cannot be clicked, stay plain text. Yendi's feedback: with no
   gamepad plugged in, you could neither confirm nor cancel, since A and B were only pictures.
@@ -871,6 +900,15 @@ gamepad buttons). Every gamepad action therefore has an equivalent:
   the help bar and these messages talk mouse and keyboard ("Click: change · Right-click:
   default · Esc: close"), with no glyph; with a gamepad, nothing changes. `mouse_test`
   checks it.
+- **Each action once** (Yendi's feedback: "the gamepad interface and the mouse interface
+  coexist, so I get duplicate buttons"). With a gamepad, a button on screen carries the chips
+  of the gamepad buttons that press it (A on the focused one, B on the one that closes or goes
+  back, Y on the one that selects), and the help bar lists only what no button does (D-pad,
+  Y to select for Ctrl+C, a row's A when the row has no chip…). In the settings, B is on the
+  close cross (on a page: on the page's title) and LB / RB at the ends of the tabs, so the
+  footer no longer repeats them. Without a gamepad: the buttons alone, no chip, the mouse
+  help. A window open while a gamepad is plugged in or out follows it. `single_action_test`
+  checks every window, gamepad or not, in every language (buttons and hints fit).
 
 ### Gamepad
 

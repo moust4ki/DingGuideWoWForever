@@ -588,14 +588,73 @@ function C.NpcUnitName()
     return type(name) == "string" and name or nil
 end
 
--- The creature id of the NPC whose window is open ("Creature-0-…-<id>-…"), or nil.
-function C.NpcUnitID()
-    local ok, guid = safe(UnitGUID, "npc")
-    guid = ok and plain(guid)
+-- The creature id of a GUID ("Creature-0-…-<id>-…"); false for one that is no creature's (a
+-- player); nil without a GUID, or when the client keeps it secret (in combat, maybe).
+function C.GuidNpcID(guid)
+    guid = plain(guid)
     if type(guid) ~= "string" then return nil end
     local kind, id = guid:match("^(%a+)%-%d+%-%d+%-%d+%-%d+%-(%d+)")
-    if kind ~= "Creature" and kind ~= "Vehicle" then return nil end
+    if kind ~= "Creature" and kind ~= "Vehicle" then return false end
     return tonumber(id)
+end
+
+-- The creature id of a unit, the same way.
+function C.UnitNpcID(unit)
+    local ok, guid = safe(UnitGUID, unit)
+    if not ok then return nil end
+    return C.GuidNpcID(guid)
+end
+
+function C.UnitExists(unit)
+    local ok, exists = safe(UnitExists, unit)
+    return ok and plain(exists) and true or false
+end
+
+-- The creature id of the NPC whose window is open, or nil.
+function C.NpcUnitID() return C.UnitNpcID("npc") or nil end
+
+-- A unit's name, or nil (none, or kept secret).
+function C.UnitName(unit)
+    local ok, name = safe(UnitName, unit)
+    name = ok and plain(name)
+    return type(name) == "string" and name ~= "" and name or nil
+end
+
+-- The player can attack the unit: true / false, nil when the client cannot tell.
+function C.UnitAttackable(unit)
+    local ok, yes = safe(UnitCanAttack, "player", unit)
+    if not ok then return nil end
+    if plain(yes) == nil then
+        -- nil (no), or a value the client keeps secret (unknown).
+        if type(issecretvalue) == "function" then
+            local okS, secret = pcall(issecretvalue, yes)
+            if not okS or secret then return nil end
+        end
+        return false
+    end
+    return yes and true or false
+end
+
+-- The game's nameplate of a unit token ("nameplate3"), or nil (none, or one the client keeps
+-- from addons). Ding only parents its own frames to it.
+function C.NamePlateForUnit(unit)
+    if not (C_NamePlate and C_NamePlate.GetNamePlateForUnit) then return nil end
+    local ok, plate = safe(C_NamePlate.GetNamePlateForUnit, unit)
+    return ok and type(plate) == "table" and plate or nil
+end
+
+-- A console variable: its value as text, or nil.
+function C.GetCVar(name)
+    local value = first({ C_CVar and C_CVar.GetCVar, GetCVar }, name)
+    value = plain(value)
+    return value ~= nil and tostring(value) or nil
+end
+
+-- Sets a console variable; true when the client took it.
+function C.SetCVar(name, value)
+    local fn = (C_CVar and C_CVar.SetCVar) or SetCVar
+    local ok, result = safe(fn, name, tostring(value))
+    return ok and result ~= false
 end
 
 -- The text of the n-th option of the open dialogue (C_GossipInfo, else the legacy list of
