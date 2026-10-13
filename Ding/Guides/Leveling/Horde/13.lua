@@ -9,6 +9,17 @@ Ding.RegisterGuide({
     faction  = "Horde",
     minLevel = 32, maxLevel = 33,
     next     = "leveling-h14-thousand-needles",
+    leftOut  = {
+        [640] = { kind = "prereq" },
+        [641] = { kind = "prereq" },
+        [643] = { kind = "prereq" },
+        [644] = { kind = "prereq" },
+        [673] = { kind = "version" },
+        [679] = { kind = "version" },
+        [687] = { kind = "prereq" },
+        [8120] = { kind = "away" },
+        [8171] = { kind = "away" },
+    },
     steps    = {
         { complete = 676, -- level 32
           note = "Arathi Highlands: Hammerfall, in the east of the zone. Your targets are within the cavern." },
@@ -33,14 +44,14 @@ Ding.RegisterGuide({
         { complete = 672, -- level 32
           note = "The targets are raptors. Stay away from Refuge Pointe." },
         { complete = 677 }, -- level 32
-        { level = 32, xp = 43760, patrol = { { 1417, 65.74, 67.95 }, { 1417, 62.85, 67.63 }, { 1417, 65.36, 71.37 }, { 1417, 64.95, 73.64 }, { 1417, 66.94, 73.55 }, { 1417, 68.64, 71.84 }, { 1417, 70.43, 70.36 }, { 1417, 69.16, 68.36 }, { 1417, 69.84, 66.45 }, { 1417, 72.44, 65.74 }, { 1417, 71.35, 63.05 }, { 1417, 68.96, 61.34 }, { 1417, 66.44, 63.36 }, { 1417, 60.83, 72.25 } }, -- level 32
+        { level = 32, xp = 43760, patrol = { { 1417, 65.74, 67.95 }, { 1417, 62.85, 67.63 }, { 1417, 65.36, 71.37 }, { 1417, 64.95, 73.64 }, { 1417, 66.94, 73.55 }, { 1417, 68.64, 71.84 }, { 1417, 70.43, 70.36 }, { 1417, 69.16, 68.36 }, { 1417, 69.84, 66.45 }, { 1417, 72.44, 65.74 }, { 1417, 71.35, 63.05 }, { 1417, 68.96, 61.34 }, { 1417, 66.44, 63.36 }, { 1417, 60.83, 72.25 } }, why = { kind = "level", levels = { 28, 36 } }, -- level 32
           note = "Together with the next turn-ins, this brings you to level 33." },
         { turnin = { 671, 672 }, accept = 674 }, -- level 32
         { turnin = 674, accept = 675, -- level 32
           note = "This one roams, so scan the surrounding area." },
         { turnin = 675 }, -- level 32
         { turnin = 677 }, -- level 32
-        { turnin = 509, accept = 513, -- level 32
+        { turnin = 509, accept = 513, why = { chain = 1, kind = "detour", quest = 509, seconds = 60, xp = 3500 }, -- level 32
           note = "The NPC is indoors." },
         { train = true, talk = 4568, races = { "Scourge", "Troll" }, classes = { "MAGE" }, -- level 32
           note = "The NPC is indoors, one floor up." },

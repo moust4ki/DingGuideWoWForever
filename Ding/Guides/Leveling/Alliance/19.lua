@@ -91,7 +91,7 @@ Ding.RegisterGuide({
         { complete = 189, -- level 37
           note = "The targets are trolls." },
         { complete = 1712, classes = { "WARRIOR" } }, -- level 37
-        { level = 37, xp = 69700, patrol = { { 1434, 24.56, 11.34 }, { 1434, 22.76, 10.35 }, { 1434, 22.37, 13.17 }, { 1434, 25.43, 13.65 }, { 1434, 27.25, 11.15 }, { 1434, 29.43, 12.17 }, { 1434, 25.44, 9.14 } }, -- level 37
+        { level = 37, xp = 69700, patrol = { { 1434, 24.56, 11.34 }, { 1434, 22.76, 10.35 }, { 1434, 22.37, 13.17 }, { 1434, 25.43, 13.65 }, { 1434, 27.25, 11.15 }, { 1434, 29.43, 12.17 }, { 1434, 25.44, 9.14 } }, why = { kind = "level", levels = { 36, 41 } }, -- level 37
           note = "With the coming hand-ins, this gets you to level 38." },
         { turnin = 195, accept = 196 }, -- level 37
         { turnin = 188 }, -- level 37
@@ -107,7 +107,7 @@ Ding.RegisterGuide({
           note = "Climb to the highest floor of the building." },
         { turnin = 189, -- level 38
           note = "Climb to the highest floor of the building." },
-        { turnin = 601, accept = 602, -- level 38
+        { turnin = 601, accept = 602, why = { kind = "carry", quest = 602, seconds = 23940, xp = 1400 }, -- level 38
           note = "The NPC is upstairs, out on the balcony." },
         { talk = 2625, bank = { 3960, 4306 }, -- level 38
           note = "You need them later for \"Magical Analysis\" and \"Caught!\": keep them in the bank to free bag slots." },

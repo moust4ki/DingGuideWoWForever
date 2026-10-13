@@ -61,7 +61,7 @@ Ding.RegisterGuide({
           note = "This NPC is found down in the Cleft of Shadow." },
         { train = true, talk = 3353, classes = { "WARRIOR" }, -- level 42
           note = "The NPC is indoors." },
-        { accept = 2981 }, -- level 42
+        { accept = 2981, why = { kind = "carry", once = true, quest = 2981, seconds = 9360, xp = 900 } }, -- level 42
         { train = true, talk = 3352, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, -- level 42
           note = "The NPC stands on the highest level of this structure." },
         { train = true, talk = 10088, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, -- level 42

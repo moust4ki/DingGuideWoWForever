@@ -46,7 +46,7 @@ Ding.RegisterGuide({
         { complete = 208, elite = true, -- level 50
           note = "The quarry is a pale tiger, an elite at 43. It calls 2 small adds of a lesser level; neither one is elite. When it drops to about 50% health." },
         { turnin = 208, elite = true }, -- level 50
-        { turnin = 624, accept = 625, -- level 50
+        { turnin = 624, accept = 625, why = { back = true, chain = 2, kind = "detour", quest = 624, seconds = 840, short = true, xp = 10000 }, -- level 50
           note = "Look underneath the bridge. Your targets sit below the water's surface." },
         { turnin = 93176 }, -- level 50
         { turnin = 608, -- level 50
@@ -58,7 +58,7 @@ Ding.RegisterGuide({
         { talk = 2625, collect = { { 6287, 1 }, { 4306, 15 } }, spots = { { 1434, 26.6, 76.53 } } }, -- level 50
         { sethearth = "Stormwind City", talk = 6740, -- level 50
           note = "The NPC is indoors." },
-        { turnin = 1469, -- level 50
+        { turnin = 1469, why = { kind = "detour", quest = 1469, seconds = 300, short = true, xp = 1600 }, -- level 50
           note = "The NPC is indoors." },
         { go = { 1453, 69.09, 30.83 }, text = "Head down into the Deeprun Tram station", -- level 50
           note = "Pass through the portal to teleport." },

@@ -9,6 +9,13 @@ Ding.RegisterGuide({
     faction  = "Horde",
     minLevel = 38, maxLevel = 39,
     next     = "leveling-h19-badlands",
+    leftOut  = {
+        [7082] = { kind = "away" },
+        [7101] = { kind = "away" },
+        [7124] = { kind = "away" },
+        [8272] = { kind = "prereq" },
+        [92434] = { kind = "detour", seconds = 240, xp = 2700 },
+    },
     steps    = {
         { go = { 1424, 61.6, 20.85 }, text = "Travel to Tarren Mill", -- level 38
           note = "Hillsbrad Foothills: Tarren Mill first, then Alterac Mountains and Arathi Highlands." },
@@ -46,7 +53,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors, one floor up." },
         { complete = 566, -- level 38
           note = "The target is on the lower level, indoors. If it is not around, move on without it. No rush; you may complete this afterwards." },
-        { turnin = 506, accept = 507, -- level 38
+        { turnin = 506, accept = 507, why = { back = true, chain = 2, kind = "detour", quest = 506, quests = 4, seconds = 300, short = true, total = 13000, xp = 10000 }, -- level 38
           note = "The NPC is indoors." },
         { turnin = 566, sticky = 545, when = { ready = 566 } }, -- level 38
         { go = { 1416, 38.86, 39.49 }, text = "Climb the slope, then leap the wall" }, -- level 38
@@ -56,7 +63,7 @@ Ding.RegisterGuide({
           note = "The target is indoors, one floor up. Beware of foes lurking in stealth." },
         { turnin = 507, accept = 508, -- level 39
           note = "The NPC is indoors, one floor up." },
-        { turnin = 545, -- level 39
+        { turnin = 545, why = { kind = "detour", quest = 508, quests = 3, seconds = 60, total = 8700, xp = 3900 }, -- level 39
           note = "The NPC is indoors." },
         { turnin = 557, -- level 39
           note = "The NPC is indoors." },
@@ -121,6 +128,6 @@ Ding.RegisterGuide({
         { turnin = 662 }, -- level 39
         { turnin = 664 }, -- level 39
         { turnin = 666, accept = 668 }, -- level 39
-        { turnin = 668, accept = 669 }, -- level 39
+        { turnin = 668, accept = 669, why = { kind = "carry", once = true, quest = 669, seconds = 15240, xp = 3200 } }, -- level 39
     },
 })

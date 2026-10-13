@@ -9,6 +9,16 @@ Ding.RegisterGuide({
     faction  = "Horde",
     minLevel = 40, maxLevel = 41,
     next     = "leveling-h21-desolace",
+    leftOut  = {
+        [1418] = { kind = "away" },
+        [1430] = { kind = "far" },
+        [2681] = { kind = "away" },
+        [2701] = { kind = "prereq" },
+        [2702] = { kind = "prereq" },
+        [3512] = { kind = "prereq" },
+        [3627] = { kind = "prereq" },
+        [3628] = { kind = "prereq" },
+    },
     steps    = {
         { go = { 1413, 62.37, 37.62 }, text = "Travel to Ratchet", -- level 40
           note = "The Barrens: Ratchet first, then Stranglethorn Vale and the Swamp of Sorrows: Stonard." },
@@ -90,10 +100,10 @@ Ding.RegisterGuide({
         { turnin = 209, -- level 41
           note = "Climb to the highest floor of the building." },
         { turnin = 598, elite = true }, -- level 41
-        { turnin = 585, accept = 1261 }, -- level 41
+        { turnin = 585, accept = 1261, why = { continent = true, kind = "carry", quest = 1261, seconds = 16080, xp = 3200 } }, -- level 41
         { turnin = 196 }, -- level 41
         { accept = 197, elite = true }, -- level 41
-        { accept = 1372, -- level 41
+        { accept = 1372, why = { kind = "detour", quest = 1372, seconds = 60, xp = 300 }, -- level 41
           note = "Keep clear of Darkshire." },
         { turnin = 1372 }, -- level 41
         { complete = 1116, -- level 41
@@ -130,11 +140,11 @@ Ding.RegisterGuide({
           note = "Hunt the little winged dragonkin." },
         { turnin = 1116, -- level 41
           note = "Climb to the highest floor of the building." },
-        { accept = { 1117, 2864 }, -- level 41
+        { accept = { 1117, 2864 }, why = { continent = true, kind = "carry", quest = 1117, seconds = 6420, xp = 2800 }, -- level 41
           note = "Let the conversation play out. Climb to the highest floor of the building." },
-        { accept = 1183, -- level 41
+        { accept = 1183, why = { continent = true, kind = "carry", quest = 1183, seconds = 6540, xp = 700 }, -- level 41
           note = "The NPC is upstairs, out on the balcony." },
-        { accept = 2872, -- level 41
+        { accept = 2872, why = { continent = true, kind = "carry", once = true, quest = 2872, seconds = 5160, short = true, xp = 400 }, -- level 41
           note = "The NPC is indoors." },
         { sethearth = "Camp Taurajo", talk = 7714, -- level 41
           note = "The NPC is indoors." },

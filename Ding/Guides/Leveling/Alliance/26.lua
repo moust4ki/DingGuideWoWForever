@@ -29,9 +29,9 @@ Ding.RegisterGuide({
         { turnin = 1425 }, -- level 43
         { go = { 1419, 65.5, 24.38 }, fly = true, talk = 8609, text = "Fly to Nethergarde Keep", -- level 43
           note = "The NPC is atop the raised platform." },
-        { accept = 1395, -- level 43
+        { accept = 1395, why = { action = "accept", back = true, kind = "detour", quest = 1395, seconds = 480, short = true, xp = 2900 }, -- level 43
           note = "A timer runs on this one; don't dawdle." },
-        { turnin = 1395, -- level 43
+        { turnin = 1395, why = { kind = "detour", quest = 1395, seconds = 60, xp = 2900 }, -- level 43
           note = "A timer runs on this one; don't dawdle." },
         { accept = 580, elite = true }, -- level 43
         { accept = 1119, when = { done = 621 }, -- level 43

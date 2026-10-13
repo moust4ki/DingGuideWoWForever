@@ -9,6 +9,17 @@ Ding.RegisterGuide({
     faction  = "Alliance",
     minLevel = 32, maxLevel = 33,
     next     = "leveling-a16-dustwallow-marsh-and-thousand-needles",
+    leftOut  = {
+        [523] = { kind = "prereq" },
+        [540] = { kind = "far" },
+        [542] = { kind = "prereq" },
+        [687] = { kind = "prereq" },
+        [695] = { kind = "prereq" },
+        [697] = { kind = "prereq" },
+        [8105] = { kind = "away" },
+        [8166] = { kind = "away" },
+        [98459] = { kind = "away" },
+    },
     steps    = {
         { go = { 1424, 49.43, 55.53 }, text = "Travel to Southshore", -- level 33
           note = "Hillsbrad Foothills: Southshore, on the coast in the south." },
@@ -54,7 +65,7 @@ Ding.RegisterGuide({
           note = "The targets are spread over several spots." },
         { complete = 505 }, -- level 33
         { complete = 564 }, -- level 33
-        { accept = 563, -- level 33
+        { accept = 563, why = { kind = "carry", quest = 563, seconds = 25440, xp = 3200 }, -- level 33
           note = "The NPC is indoors." },
         { turnin = 98219, races = { "Human", "Dwarf", "NightElf", "Gnome" }, classes = { "PALADIN" } }, -- level 33
         { turnin = { 510, 505 }, -- level 33
@@ -67,7 +78,7 @@ Ding.RegisterGuide({
         { talk = 2381, buy = { { 2321, 1, 2381 } }, when = { done = 565 }, -- level 33
           note = "The NPC is indoors." },
         { turnin = 565, when = { item = 2997, log = 565 } }, -- level 33
-        { accept = 681 }, -- level 33
+        { accept = 681, why = { chain = 4, kind = "detour", quest = 659, quests = 7, seconds = 480, short = true, total = 20000, xp = 13000 } }, -- level 33
         { turnin = 690, races = { "Dwarf", "NightElf" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "WARLOCK", "DRUID" } }, -- level 33
         { turnin = 690, races = { "Human", "Gnome", "Skyborne" } }, -- level 33
         { turnin = 659, accept = 658 }, -- level 33
@@ -75,7 +86,7 @@ Ding.RegisterGuide({
           note = "Beware of foes lurking in stealth. Further hidden ones lurk on the high ridgelines. Some are indoors as well." },
         { go = { 1425, 11.1, 46.2 }, fly = true, talk = 8018, text = "Fly to Aerie Peak", -- level 33
           note = "The NPC is at the summit of the trail. This spares you time further on." },
-        { turnin = 681 }, -- level 33
+        { turnin = 681, why = { kind = "detour", quest = 681, seconds = 240, short = true, xp = 2500 } }, -- level 33
         { turnin = 514, -- level 33
           note = "The NPC is indoors." },
         { turnin = 98313 }, -- level 33

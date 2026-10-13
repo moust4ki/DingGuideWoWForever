@@ -9,6 +9,13 @@ Ding.RegisterGuide({
     faction  = "Horde",
     minLevel = 28, maxLevel = 30,
     next     = "leveling-h12-hillsbrad-foothills",
+    leftOut  = {
+        [1121] = { kind = "exclusive" },
+        [1150] = { kind = "log" },
+        [1151] = { kind = "prereq" },
+        [1152] = { kind = "prereq" },
+        [2770] = { kind = "away" },
+    },
     steps    = {
         { go = { 1413, 45.1, 57.68 }, text = "Travel to Camp Taurajo", -- level 28
           note = "The Barrens: Camp Taurajo first, then Thousand Needles: Freewind Post." },
@@ -47,7 +54,7 @@ Ding.RegisterGuide({
           note = "Look for a big, pale egg. The targets are spread over several spots." },
         { complete = 1153, -- level 28
           note = "Kill Surveyors and Diggers. The targets are kobolds. They are rare and scattered widely." },
-        { level = 28, xp = 34950, patrol = { { 1441, 44.46, 40.15 }, { 1441, 41.96, 37.96 }, { 1441, 39.03, 37.54 }, { 1441, 41.06, 41.24 }, { 1441, 45.45, 44.05 }, { 1441, 47.54, 40.95 }, { 1441, 43.35, 35.23 }, { 1441, 38.96, 32.23 } }, -- level 28
+        { level = 28, xp = 34950, patrol = { { 1441, 44.46, 40.15 }, { 1441, 41.96, 37.96 }, { 1441, 39.03, 37.54 }, { 1441, 41.06, 41.24 }, { 1441, 45.45, 44.05 }, { 1441, 47.54, 40.95 }, { 1441, 43.35, 35.23 }, { 1441, 38.96, 32.23 } }, why = { kind = "level", levels = { 26, 37 } }, -- level 28
           note = "With the coming hand-ins, this brings you to level 29." },
         { go = { 1441, 46.96, 48.28 }, text = "Take the lift upward" }, -- level 28
         { turnin = 4821, accept = 4865 }, -- level 28
@@ -83,13 +90,13 @@ Ding.RegisterGuide({
         { accept = 5088, elite = true }, -- level 29
         { talk = 8356, bank = 5838, -- level 29
           note = "The NPC is indoors. You need it later for \"Frostmaw\": keep it in the bank to free a bag slot." },
-        { turnin = 1153 }, -- level 29
+        { turnin = 1153, why = { kind = "detour", quest = 1153, seconds = 120, xp = 2400 } }, -- level 29
         { turnin = 4767 }, -- level 29
         { accept = 5064 }, -- level 29
         { accept = 5147 }, -- level 29
         { accept = 98070 }, -- level 29
         { complete = 98070 }, -- level 29
-        { level = 30, patrol = { { 1441, 44.46, 40.15 }, { 1441, 41.96, 37.96 }, { 1441, 39.03, 37.54 }, { 1441, 41.06, 41.24 }, { 1441, 45.45, 44.05 }, { 1441, 47.54, 40.95 }, { 1441, 43.35, 35.23 }, { 1441, 38.96, 32.23 } }, -- level 29
+        { level = 30, patrol = { { 1441, 44.46, 40.15 }, { 1441, 41.96, 37.96 }, { 1441, 39.03, 37.54 }, { 1441, 41.06, 41.24 }, { 1441, 45.45, 44.05 }, { 1441, 47.54, 40.95 }, { 1441, 43.35, 35.23 }, { 1441, 38.96, 32.23 } }, why = { kind = "level", levels = { 29, 36 } }, -- level 29
           note = "Hard quests are coming up. This spreads out the grinding so less is left later." },
         { go = { 1441, 31.29, 36.91 }, text = "Climb the trail and cross the rope bridges" }, -- level 30
         { go = { 1441, 35.05, 31.46 }, text = "Walk over the rope bridge" }, -- level 30
@@ -139,7 +146,7 @@ Ding.RegisterGuide({
           note = "Your targets are within the cavern." },
         { go = { 1456, 29.77, 29.79 }, text = "Head out of the cave" }, -- level 30
         { accept = 1145 }, -- level 30
-        { turnin = 1111, accept = 1112 }, -- level 30
+        { turnin = 1111, accept = 1112, why = { kind = "carry", quest = 1112, seconds = 33060, xp = 1400 } }, -- level 30
         { turnin = 220, when = { log = 220 }, races = { "Orc", "Tauren", "Troll", "Skyborne" }, classes = { "SHAMAN" } }, -- level 30
         { accept = 63, when = { done = 220 }, races = { "Orc", "Tauren", "Troll", "Skyborne" }, classes = { "SHAMAN" } }, -- level 30
         { talk = 5901, collect = { { 6637, 1 } }, spots = { { 1413, 65.86, 43.84 } }, races = { "Orc", "Tauren", "Troll" }, classes = { "SHAMAN" }, -- level 30
@@ -163,7 +170,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { train = true, talk = 3344, races = { "Orc", "Tauren", "Troll" }, classes = { "SHAMAN" }, -- level 30
           note = "The NPC is indoors." },
-        { turnin = 1145, accept = 1146 }, -- level 30
+        { turnin = 1145, accept = 1146, why = { kind = "carry", quest = 1146, seconds = 32160, xp = 2000 } }, -- level 30
         { train = true, talk = 3352, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, -- level 30
           note = "The NPC stands on the highest level of this structure." },
         { train = true, talk = 10088, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, -- level 30
@@ -173,7 +180,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { train = true, talk = 6018, races = { "Scourge", "Troll" }, classes = { "PRIEST" }, -- level 30
           note = "The NPC is indoors." },
-        { turnin = 1431, accept = 1432, -- level 30
+        { turnin = 1431, accept = 1432, why = { kind = "carry", quest = 1432, seconds = 63360, xp = 1200 }, -- level 30
           note = "This one roams, so scan the surrounding area. The NPC is indoors." },
     },
 })

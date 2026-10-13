@@ -9,6 +9,24 @@ Ding.RegisterGuide({
     faction  = "Alliance",
     minLevel = 25, maxLevel = 27,
     next     = "leveling-a12-wetlands",
+    leftOut  = {
+        [55] = { kind = "prereq" },
+        [116] = { kind = "far" },
+        [143] = { kind = "log" },
+        [145] = { kind = "prereq" },
+        [146] = { kind = "prereq" },
+        [229] = { kind = "prereq" },
+        [231] = { kind = "prereq" },
+        [245] = { kind = "log" },
+        [347] = { kind = "prereq" },
+        [1044] = { kind = "log" },
+        [91899] = { kind = "away" },
+        [91900] = { kind = "away" },
+        [91904] = { kind = "away" },
+        [91905] = { kind = "away" },
+        [95999] = { kind = "detour", seconds = 180, xp = 1800 },
+        [99267] = { kind = "away" },
+    },
     steps    = {
         { go = { 1431, 75.79, 45.32 }, text = "Travel to Darkshire", -- level 25
           note = "Duskwood: Darkshire, in the east of the zone." },
@@ -17,7 +35,7 @@ Ding.RegisterGuide({
         { sethearth = "Darkshire", talk = 6790, -- level 25
           note = "The NPC is indoors." },
         { accept = 56 }, -- level 25
-        { turnin = 66, accept = 67, -- level 25
+        { turnin = 66, accept = 67, why = { kind = "carry", quest = 67, seconds = 9960, xp = 1200 }, -- level 25
           note = "The NPC is indoors." },
         { accept = 96139 }, -- level 25
         { accept = { 163, 165, 164 }, -- level 25
@@ -53,9 +71,9 @@ Ding.RegisterGuide({
           note = "Rob one Malformed Defias Drone with Pickpocket. This one roams, so scan the surrounding area." },
         { complete = 2359, classes = { "ROGUE" }, -- level 26
           note = "Use Sap on Klaven Mortwake, then open the chest. Opening it puts a harmful effect on you. Climb to the highest floor of the building." },
-        { turnin = 67, accept = 68, -- level 26
+        { turnin = 67, accept = 68, why = { back = true, chain = 11, kind = "detour", quest = 67, seconds = 300, short = true, xp = 13000 }, -- level 26
           note = "Be ready for a fight right away. The object is indoors." },
-        { accept = 79192 }, -- level 26
+        { accept = 79192, why = { continent = true, kind = "carry", once = true, quest = 79192, seconds = 27720, short = true, xp = 1100 } }, -- level 26
         { go = { 1436, 52.69, 72.3 }, races = { "Human", "Dwarf" }, classes = { "PALADIN" }, text = "Climb the trail across the mountains" }, -- level 26
         { go = { 1436, 38.79, 83.76 }, races = { "Human", "Dwarf" }, classes = { "PALADIN" }, text = "Take the trail that circles the peak" }, -- level 26
         { turnin = 1650, accept = 1651, races = { "Human", "Dwarf" }, classes = { "PALADIN" } }, -- level 26
@@ -123,8 +141,8 @@ Ding.RegisterGuide({
         { train = true, talk = 5484, races = { "Human", "Dwarf", "NightElf" }, classes = { "PRIEST" } }, -- level 27
         { train = true, talk = 5479, classes = { "WARRIOR" }, -- level 27
           note = "The NPC is indoors, one floor up." },
-        { turnin = 70, accept = 72 }, -- level 27
-        { turnin = 72, accept = 74, -- level 27
+        { turnin = 70, accept = 72, why = { chain = 7, kind = "detour", quest = 72, quests = 11, seconds = 60, total = 14000, xp = 7900 } }, -- level 27
+        { turnin = 72, accept = 74, why = { kind = "carry", quest = 74, seconds = 42480, xp = 1200 }, -- level 27
           note = "Be ready for a fight right away." },
         { go = { 1453, 42.28, 81.85 }, text = "Head indoors" }, -- level 27
         { accept = 335, races = { "Dwarf", "NightElf" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "WARLOCK", "DRUID" } }, -- level 27
@@ -215,8 +233,8 @@ Ding.RegisterGuide({
           note = "You need it later for \"Juice Delivery\": keep it in the bank to free a bag slot." },
         { bank = 1451, when = { done = 159 }, -- level 28
           note = "You need it later for \"Juice Delivery\": keep it in the bank to free a bag slot." },
-        { go = { 1453, 52.93, 51.05 }, text = "Head indoors" }, -- level 28
-        { accept = 95161 }, -- level 28
+        { go = { 1453, 52.93, 51.05 }, text = "Head indoors", why = { action = "accept", kind = "detour", quest = 95161, seconds = 180, xp = 200 } }, -- level 28
+        { accept = 95161, why = { kind = "carry", quest = 95161, seconds = 29460, xp = 200 } }, -- level 28
         { accept = 2923, dungeon = "Gnomeregan" }, -- level 28
         { turnin = 269, elite = true }, -- level 28
         { accept = 270, elite = true }, -- level 28

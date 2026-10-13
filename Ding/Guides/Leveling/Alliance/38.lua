@@ -67,7 +67,7 @@ Ding.RegisterGuide({
         { go = { 1449, 46.26, 45.59 }, text = "Climb the trail" }, -- level 53
         { complete = 974, useitem = 12472, -- level 53
           note = "The object is up on the summit." },
-        { turnin = 974, accept = 980 }, -- level 53
+        { turnin = 974, accept = 980, why = { kind = "carry", quest = 980, seconds = 11580, xp = 2800 } }, -- level 53
         { complete = 3882 }, -- level 53
         { complete = 4501 }, -- level 53
         { complete = 4496, elite = true, when = { log = 4496 } }, -- level 53
@@ -126,7 +126,7 @@ Ding.RegisterGuide({
         { turnin = 4504 }, -- level 53
         { talk = 7799, collect = { { 11511, 1 }, { 11682, 1 }, { 11243, 3 }, { 12383, 10 } }, spots = { { 1446, 52.35, 28.88 } }, -- level 53
           note = "The NPC is indoors." },
-        { accept = 5159 }, -- level 53
+        { accept = 5159, why = { kind = "carry", once = true, quest = 5159, seconds = 4440, xp = 2700 } }, -- level 53
         { turnin = 4502, elite = true }, -- level 53
         { train = true, talk = 12042, races = { "NightElf" }, classes = { "DRUID" } }, -- level 53
         { complete = 4441, useitem = 11682, -- level 53
@@ -159,12 +159,12 @@ Ding.RegisterGuide({
         { turnin = 1047, accept = 6761, -- level 54
           note = "Climb to the highest floor of the building." },
         { accept = 3781, when = { done = 3764 } }, -- level 54
-        { turnin = 6761, accept = 6762, -- level 54
+        { turnin = 6761, accept = 6762, why = { kind = "carry", quest = 6762, seconds = 128400, xp = 1400 }, -- level 54
           note = "The NPC is indoors, on the central storey." },
         { turnin = 3781, when = { log = 3781 } }, -- level 54
         { turnin = 978, accept = 979, -- level 54
           note = "The NPC is indoors." },
-        { accept = 5250, -- level 54
+        { accept = 5250, why = { kind = "carry", once = true, quest = 5250, seconds = 41040, xp = 600 }, -- level 54
           note = "The NPC is indoors, one floor up." },
         { train = true, talk = 7312, races = { "Human", "Gnome" }, classes = { "MAGE" }, -- level 54
           note = "The NPC is indoors." },

@@ -9,6 +9,9 @@ Ding.RegisterGuide({
     faction  = "Alliance",
     minLevel = 29, maxLevel = 30,
     next     = "leveling-a14-duskwood-and-stranglethorn-vale",
+    leftOut  = {
+        [2925] = { kind = "detour", seconds = 60, xp = 200 },
+    },
     steps    = {
         { go = { 1442, 37.1, 8.1 }, text = "Travel to Stonetalon Peak", -- level 30
           note = "Stonetalon Mountains: Stonetalon Peak, in the far north of the zone." },
@@ -22,7 +25,7 @@ Ding.RegisterGuide({
         { complete = 1057 }, -- level 30
         { go = { 1443, 67.44, 15.7 }, text = "Take the road, then climb the trail into Nijel's Point" }, -- level 30
         { go = { 1443, 64.62, 10.6 }, fly = true, talk = 6706, text = "Fly to Nijel's Point" }, -- level 30
-        { turnin = 1057, accept = 1059 }, -- level 30
+        { turnin = 1057, accept = 1059, why = { chain = 1, kind = "detour", quest = 1057, seconds = 420, short = true, xp = 3500 } }, -- level 30
         { accept = 1140 }, -- level 30
         { accept = 78089, races = { "Dwarf" }, classes = { "PALADIN" } }, -- level 30
         { accept = 1022 }, -- level 30
@@ -47,7 +50,7 @@ Ding.RegisterGuide({
         { complete = 98418, races = { "NightElf", "Gnome", "Skyborne" } }, -- level 30
         { turnin = 4581, accept = 1011, -- level 30
           note = "This one roams, so scan the surrounding area." },
-        { turnin = 1022, accept = 1037 }, -- level 30
+        { turnin = 1022, accept = 1037, why = { kind = "carry", quest = 1037, seconds = 7620, xp = 600 } }, -- level 30
         { turnin = 1031, when = { ready = 1031 } }, -- level 30
         { accept = 1032, when = { done = 1031 } }, -- level 30
         { talk = 10052, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, text = "Leave your pet with the stable master." }, -- level 30
@@ -132,7 +135,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { train = true, talk = 4091, races = { "Human", "Dwarf", "NightElf" }, classes = { "PRIEST" }, -- level 31
           note = "The NPC is indoors." },
-        { turnin = 1038, accept = 1039 }, -- level 31
+        { turnin = 1038, accept = 1039, why = { kind = "carry", once = true, quest = 1039, seconds = 39420, xp = 1200 } }, -- level 31
         { accept = 2928, dungeon = "Gnomeregan" }, -- level 31
         { train = true, talk = 7312, races = { "Human", "Gnome" }, classes = { "MAGE" }, -- level 31
           note = "The NPC is indoors." },
@@ -149,7 +152,7 @@ Ding.RegisterGuide({
         { turnin = 683, accept = 686 }, -- level 31
         { turnin = 686, accept = 689, -- level 31
           note = "The NPC is indoors." },
-        { accept = 1179, -- level 31
+        { accept = 1179, why = { continent = true, kind = "carry", quest = 1179, seconds = 31620, xp = 2500 }, -- level 31
           note = "The NPC is indoors." },
         { accept = 2924, dungeon = "Gnomeregan" }, -- level 31
         { turnin = 2923, dungeon = "Gnomeregan", when = { log = 2923 } }, -- level 31

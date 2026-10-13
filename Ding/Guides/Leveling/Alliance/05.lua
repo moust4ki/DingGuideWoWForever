@@ -140,7 +140,7 @@ Ding.RegisterGuide({
         { accept = 982 }, -- level 17
         { turnin = 958, -- level 17
           note = "The NPC is indoors." },
-        { accept = 97914, races = { "Human", "Dwarf", "Gnome", "Skyborne" } }, -- level 17
+        { accept = 97914, races = { "Human", "Dwarf", "Gnome", "Skyborne" }, why = { continent = true, kind = "carry", quest = 97914, seconds = 10260, xp = 800 } }, -- level 17
         { turnin = 957, when = { log = 957 } }, -- level 17
         { complete = 982, -- level 17
           note = "Go to the lowest deck of the wreck. Swim in by way of a porthole." },
@@ -152,12 +152,12 @@ Ding.RegisterGuide({
           note = "Hunt the crabs." },
         { turnin = 965, accept = 966 }, -- level 17
         { complete = 966 }, -- level 17
-        { turnin = 966, accept = 967 }, -- level 17
+        { turnin = 966, accept = 967, why = { kind = "carry", quest = 967, seconds = 30420, xp = 1000 } }, -- level 17
         { level = 18, patrol = { { 1439, 52.37, 32.37 }, { 1439, 52.46, 34.63 }, { 1439, 50.16, 34.36 } } }, -- level 17
         { train = true, talk = 12042, races = { "NightElf" }, classes = { "DRUID" } }, -- level 17
         { turnin = 1138 }, -- level 18
         { turnin = 982 }, -- level 18
-        { accept = 97914, races = { "NightElf" } }, -- level 18
+        { accept = 97914, races = { "NightElf" }, why = { continent = true, kind = "carry", once = true, quest = 97914, seconds = 8520, short = true, xp = 800 } }, -- level 18
         { talk = 1448, buy = { { 4371, 1, 1448 } }, when = { noitem = 4371 }, -- level 18
           note = "The NPC is indoors. Do it only if you can." },
         { vendor = true, talk = 1448, when = { noitem = 4371 } }, -- level 18

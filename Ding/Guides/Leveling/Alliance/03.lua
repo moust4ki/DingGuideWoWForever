@@ -10,6 +10,26 @@ Ding.RegisterGuide({
     races    = { "NightElf" },
     minLevel = 1, maxLevel = 13,
     next     = "leveling-a04-westfall",
+    leftOut  = {
+        [483] = { kind = "detour", seconds = 60, xp = 800 },
+        [486] = { kind = "prereq" },
+        [730] = { kind = "away" },
+        [941] = { kind = "prereq" },
+        [951] = { kind = "log" },
+        [981] = { kind = "version" },
+        [1143] = { kind = "version" },
+        [2399] = { kind = "detour", seconds = 120, xp = 90 },
+        [2498] = { kind = "prereq" },
+        [2499] = { kind = "prereq" },
+        [2519] = { kind = "detour", seconds = 60, xp = 90 },
+        [2541] = { kind = "detour", seconds = 360, xp = 700 },
+        [4510] = { kind = "prereq" },
+        [7792] = { kind = "log" },
+        [7798] = { kind = "log" },
+        [96634] = { kind = "prereq" },
+        [98067] = { kind = "away" },
+        [98403] = { kind = "version" },
+    },
     steps    = {
         { destroy = 6948, -- level 1
           note = "Teldrassil: Shadowglen, where night elves start. This frees room in your bags. You receive one further along the route." },
@@ -157,7 +177,7 @@ Ding.RegisterGuide({
         { complete = 919, -- level 6
           note = "Look for brown clumps of roots." },
         { complete = 918 }, -- level 6
-        { turnin = { 918, 919 }, accept = 922, sticky = 488 }, -- level 6
+        { turnin = { 918, 919 }, accept = 922, sticky = 488, why = { kind = "carry", quest = 922, seconds = 6840, xp = 300 } }, -- level 6
         { complete = 929, useitem = 5619 }, -- level 7
         { turnin = 475, accept = 476, -- level 7
           note = "The NPC is indoors, one floor up." },
@@ -204,7 +224,7 @@ Ding.RegisterGuide({
         { go = { 1438, 54.61, 52.48 }, text = "Go into the cavern" }, -- level 8
         { complete = 932, -- level 8
           note = "The target is a satyr. The targets are spread over several spots. Your targets are within the cavern." },
-        { level = 8, xp = 3890, patrol = { { 1438, 54.61, 52.48 }, { 1438, 52.95, 50.43 }, { 1438, 53.37, 48.36 } }, -- level 8
+        { level = 8, xp = 3890, patrol = { { 1438, 54.61, 52.48 }, { 1438, 52.95, 50.43 }, { 1438, 53.37, 48.36 } }, why = { kind = "level", levels = { 8, 11 } }, -- level 8
           note = "With the coming hand-ins, this gets you to level 9. Your targets are within the cavern." },
         { go = { 1438, 54.61, 52.48 }, text = "Head out of the cave" }, -- level 8
         { accept = 98391, races = { "NightElf" }, classes = { "PRIEST" } }, -- level 8
@@ -246,7 +266,7 @@ Ding.RegisterGuide({
         { accept = 98398, races = { "NightElf" } }, -- level 9
         { turnin = 98398, races = { "NightElf" } }, -- level 9
         { accept = 940 }, -- level 9
-        { level = 10, patrol = { { 1438, 35.35, 36.34 }, { 1438, 33.35, 35.63 }, { 1438, 34.25, 33.34 }, { 1438, 35.17, 38.75 }, { 1438, 37.66, 37.84 }, { 1438, 38.24, 40.43 }, { 1438, 36.34, 41.65 }, { 1438, 37.15, 43.54 } } }, -- level 9
+        { level = 10, patrol = { { 1438, 35.35, 36.34 }, { 1438, 33.35, 35.63 }, { 1438, 34.25, 33.34 }, { 1438, 35.17, 38.75 }, { 1438, 37.66, 37.84 }, { 1438, 38.24, 40.43 }, { 1438, 36.34, 41.65 }, { 1438, 37.15, 43.54 } }, why = { kind = "level", levels = { 9, 17 } } }, -- level 9
         { go = { 1438, 35.35, 36.34 }, deathskip = true, text = "Die on purpose at this spot", -- level 9
           note = "Die to the monsters here on purpose. Dying costs you nothing this early. This is the quickest way over." },
         { deathskip = true, revive = { 1457, 76.94, 27.23 }, text = "Get yourself killed, then resurrect with the spirit healer" }, -- level 9
@@ -264,7 +284,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors at street level." },
         { accept = 5921, classes = { "DRUID" }, -- level 10
           note = "The NPC is indoors, on the central storey." },
-        { turnin = 940, accept = 952, -- level 10
+        { turnin = 940, accept = 952, why = { kind = "carry", quest = 952, seconds = 63660, xp = 900 }, -- level 10
           note = "The NPC waits on the tower's highest floor." },
         { train = true, talk = 4091, classes = { "PRIEST" }, -- level 10
           note = "The NPC is indoors." },
@@ -337,7 +357,7 @@ Ding.RegisterGuide({
           note = "Die to the monsters here on purpose. You need to stand close to this spot. Dying costs you nothing this early." },
         { deathskip = true, revive = { 1457, 77.07, 27.13 }, text = "Get yourself killed, then resurrect with the spirit healer" }, -- level 10
         { talk = 6491 }, -- level 10
-        { accept = 6344 }, -- level 10
+        { accept = 6344, why = { action = "accept", back = true, chain = 2, kind = "detour", quest = 1683, quests = 5, seconds = 180, total = 1800, xp = 1500 } }, -- level 10
         { turnin = 1684, accept = 1683, classes = { "WARRIOR" } }, -- level 10
         { go = { 1438, 48.72, 62.79 }, classes = { "WARRIOR" }, text = "Circle the mountain, then climb the trail" }, -- level 10
         { complete = 1683, classes = { "WARRIOR" } }, -- level 10
@@ -515,7 +535,7 @@ Ding.RegisterGuide({
           note = "The NPC stands by the wall on the central platform. Head to the Deeprun Tram's Ironforge platform." },
         { turnin = 6662, -- level 13
           note = "Take the Deeprun Tram over to Stormwind City. The NPC stands by the wall on the central platform." },
-        { accept = 353, -- level 13
+        { accept = 353, why = { kind = "carry", quest = 353, seconds = 21300, xp = 1100 }, -- level 13
           note = "The NPC is indoors." },
         { turnin = 1338 }, -- level 13
         { accept = 1640, classes = { "WARRIOR" }, -- level 14

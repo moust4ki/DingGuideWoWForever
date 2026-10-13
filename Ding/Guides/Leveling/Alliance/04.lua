@@ -9,6 +9,16 @@ Ding.RegisterGuide({
     faction  = "Alliance",
     minLevel = 13, maxLevel = 15,
     next     = "leveling-a05-darkshore",
+    leftOut  = {
+        [13] = { kind = "version" },
+        [14] = { kind = "version" },
+        [138] = { kind = "prereq" },
+        [139] = { kind = "prereq" },
+        [140] = { kind = "prereq" },
+        [144] = { kind = "prereq" },
+        [79008] = { kind = "far", turnin = true },
+        [92911] = { kind = "version" },
+    },
     steps    = {
         { go = { 1436, 53.98, 52.98 }, text = "Travel to Westfall", -- level 13
           note = "Westfall: Sentinel Hill is the hub, in the middle of the zone. The first stop is the farm in the north." },
@@ -60,13 +70,13 @@ Ding.RegisterGuide({
         { turnin = 9 }, -- level 14
         { turnin = 38, -- level 15
           note = "The NPC is indoors." },
-        { turnin = 12, accept = 65 }, -- level 15
+        { turnin = 12, accept = 65, why = { kind = "carry", quest = 65, seconds = 20880, xp = 1400 } }, -- level 15
         { turnin = 102 }, -- level 15
         { turnin = 153 }, -- level 15
         { accept = 92744 }, -- level 15
         { complete = 92745 }, -- level 15
         { turnin = 92745 }, -- level 15
-        { accept = 93928, races = { "Dwarf", "Skyborne" } }, -- level 15
+        { accept = 93928, races = { "Dwarf", "Skyborne" }, why = { kind = "carry", quest = 93928, seconds = 274800, xp = 70 } }, -- level 15
         { train = true, talk = 7312, races = { "Human", "Gnome" }, classes = { "MAGE" }, -- level 15
           note = "The NPC is indoors." },
         { train = true, talk = 5114, classes = { "WARRIOR" }, -- level 15

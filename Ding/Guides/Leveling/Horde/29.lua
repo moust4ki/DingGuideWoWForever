@@ -9,6 +9,12 @@ Ding.RegisterGuide({
     faction  = "Horde",
     minLevel = 48, maxLevel = 49,
     next     = "leveling-h30-feralas-and-ungoro-crater",
+    leftOut  = {
+        [495] = { kind = "detour", seconds = 60, xp = 60 },
+        [1446] = { kind = "away" },
+        [7849] = { kind = "far" },
+        [7850] = { kind = "far" },
+    },
     steps    = {
         { go = { 1454, 55.9, 62.71 }, text = "Travel to the Undercity", -- level 48
           note = "Undercity first, then the Hinterlands: Revantusk Village." },
@@ -18,12 +24,12 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { talk = 3309, bank = { 10556, 11186, 11188, 11185, 11184 }, -- level 48
           note = "The NPC is indoors. You need them later for \"The Stone Circle\" and \"Crystals of Power\": keep them in the bank to free bag slots." },
-        { accept = 2995 }, -- level 48
+        { accept = 2995, why = { kind = "detour", quest = 864, quests = 2, seconds = 60, total = 8200, xp = 5100 } }, -- level 48
         { go = { 1458, 52.8, 77.62 }, text = "Take the trail downhill" }, -- level 48
         { turnin = 864, when = { log = 864 } }, -- level 48
         { vendor = true, talk = 2401, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, -- level 48
           note = "Buy plenty of arrows or bullets. Stock up first: nobody in the Hinterlands sells arrows or bullets for level 40." },
-        { accept = 2933 }, -- level 48
+        { accept = 2933, why = { kind = "carry", quest = 2933, seconds = 9360, xp = 3600 } }, -- level 48
         { go = { 1425, 20.77, 47.97 }, text = "Climb the trail" }, -- level 48
         { turnin = 650, accept = 77 }, -- level 48
         { complete = 2641, -- level 48
@@ -80,15 +86,15 @@ Ding.RegisterGuide({
         { accept = 7843, when = { done = 7842 } }, -- level 48
         { destroy = 4589 }, -- level 48
         { turnin = { 7828, 7829, 7830 } }, -- level 48
-        { turnin = 2933, accept = 2934, -- level 48
+        { turnin = 2933, accept = 2934, why = { back = true, chain = 1, kind = "detour", quest = 2933, seconds = 60, xp = 7500 }, -- level 48
           note = "The NPC is indoors." },
         { complete = 7843, useitem = 19036, when = { log = 7843 }, -- level 48
           note = "Steer clear of hostile Alliance NPCs. Warning: this turns on your PvP flag." },
         { go = { 1425, 20.49, 48.14 }, text = "Climb the trail" }, -- level 48
-        { turnin = 77, accept = 81 }, -- level 48
+        { turnin = 77, accept = 81, why = { continent = true, kind = "carry", quest = 81, seconds = 32760, xp = 4400 } }, -- level 48
         { destroy = 8684, sticky = 2934 }, -- level 48
         { go = { 1425, 35.87, 63.94 }, text = "Head into Shadra'Alor" }, -- level 48
-        { turnin = 1429, accept = 1444, -- level 48
+        { turnin = 1429, accept = 1444, why = { kind = "carry", quest = 1444, seconds = 34440, xp = 3000 }, -- level 48
           note = "The NPC or item sits on the rocky shelf above." },
         { complete = 2934, -- level 48
           note = "Hunt spiders for it." },
@@ -101,7 +107,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { go = { 1425, 35.86, 64.24 }, text = "Get out of Shadra'Alor" }, -- level 48
         { go = { 1425, 72.45, 66.04 }, text = "Take the road that circles the peak, then descend the trail" }, -- level 48
-        { turnin = 2934, -- level 48
+        { turnin = 2934, why = { kind = "detour", quest = 2934, seconds = 60, xp = 3900 }, -- level 48
           note = "The NPC is indoors." },
         { turnin = 2995 }, -- level 48
         { go = { 1458, 52.8, 77.62 }, text = "Take the trail downhill" }, -- level 48

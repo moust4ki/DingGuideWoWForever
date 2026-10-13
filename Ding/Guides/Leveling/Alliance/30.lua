@@ -43,7 +43,7 @@ Ding.RegisterGuide({
         { turnin = { 2875, 8366 }, -- level 49
           note = "The NPC is indoors." },
         { turnin = 2876, when = { log = 2876 } }, -- level 49
-        { turnin = 2873, accept = 2874, -- level 49
+        { turnin = 2873, accept = 2874, why = { continent = true, kind = "carry", quest = 2874, seconds = 12240, xp = 3900 }, -- level 49
           note = "The NPC is indoors." },
         { turnin = 8365 }, -- level 49
         { turnin = 351, when = { log = 351 }, -- level 49

@@ -10,6 +10,30 @@ Ding.RegisterGuide({
     races    = { "Dwarf", "Gnome" },
     minLevel = 1, maxLevel = 13,
     next     = "leveling-a04-westfall",
+    leftOut  = {
+        [17] = { kind = "far" },
+        [161] = { kind = "away" },
+        [217] = { kind = "prereq" },
+        [237] = { kind = "prereq" },
+        [256] = { kind = "away" },
+        [258] = { kind = "prereq" },
+        [263] = { kind = "prereq" },
+        [271] = { kind = "prereq" },
+        [278] = { kind = "prereq" },
+        [280] = { kind = "prereq" },
+        [283] = { kind = "prereq" },
+        [454] = { kind = "prereq" },
+        [467] = { kind = "far", turnin = true },
+        [468] = { kind = "log" },
+        [531] = { kind = "prereq" },
+        [704] = { kind = "far" },
+        [79975] = { kind = "away" },
+        [86585] = { kind = "away" },
+        [86667] = { kind = "away" },
+        [86776] = { kind = "away" },
+        [98319] = { kind = "detour", seconds = 60, xp = 300 },
+        [98323] = { kind = "prereq", quest = 98319 },
+    },
     steps    = {
         { destroy = 6948, -- level 1
           note = "Dun Morogh: Coldridge Valley, where dwarves and gnomes start. This frees room in your bags. You receive one further along the route." },
@@ -43,7 +67,7 @@ Ding.RegisterGuide({
         { turnin = 233, accept = { 234, 183 } }, -- level 2
         { complete = 183 }, -- level 3
         { turnin = 183 }, -- level 3
-        { level = 4, patrol = { { 1426, 22.16, 71.15 }, { 1426, 24.17, 71.25 }, { 1426, 26.17, 71.16 }, { 1426, 25.37, 68.46 }, { 1426, 23.43, 68.45 }, { 1426, 21.23, 69.36 }, { 1426, 19.94, 71.37 } } }, -- level 3
+        { level = 4, patrol = { { 1426, 22.16, 71.15 }, { 1426, 24.17, 71.25 }, { 1426, 26.17, 71.16 }, { 1426, 25.37, 68.46 }, { 1426, 23.43, 68.45 }, { 1426, 21.23, 69.36 }, { 1426, 19.94, 71.37 } }, why = { kind = "level", levels = { 3, 5 } } }, -- level 3
         { turnin = 234 }, -- level 4
         { accept = 3364 }, -- level 4
         { go = { 1426, 28.84, 69.11 }, text = "Head indoors" }, -- level 4
@@ -116,7 +140,7 @@ Ding.RegisterGuide({
           note = "Your targets are within the cavern." },
         { go = { 1426, 26.84, 79.8 }, text = "Head out of the cave" }, -- level 5
         { turnin = 218, accept = 282 }, -- level 5
-        { level = 5, xp = 2600, patrol = { { 1426, 26.84, 79.8 }, { 1426, 25.15, 79.15 }, { 1426, 22.85, 79.37 }, { 1426, 20.23, 75.86 }, { 1426, 29.43, 79.04 }, { 1426, 30.37, 81.96 }, { 1426, 28.34, 82.65 } }, -- level 5
+        { level = 5, xp = 2600, patrol = { { 1426, 26.84, 79.8 }, { 1426, 25.15, 79.15 }, { 1426, 22.85, 79.37 }, { 1426, 20.23, 75.86 }, { 1426, 29.43, 79.04 }, { 1426, 30.37, 81.96 }, { 1426, 28.34, 82.65 } }, why = { kind = "level", levels = { 5, 8 } }, -- level 5
           note = "With the coming hand-ins, this gets you to level 6. Targets are in the cavern and around its entrance too." },
         { go = { 1426, 26.84, 79.8 }, deathskip = true, text = "Die on purpose at this spot", -- level 5
           note = "Die to the monsters here on purpose. Dying costs you nothing this early. This is the quickest way over." },
@@ -177,7 +201,7 @@ Ding.RegisterGuide({
         { complete = 5541 }, -- level 6
         { complete = 313, -- level 6
           note = "The quest wants yetis; seek them out. Targets are in the cavern and around its entrance too." },
-        { level = 7, patrol = { { 1426, 42.27, 53.97 }, { 1426, 41.43, 51.17 }, { 1426, 41.57, 48.94 }, { 1426, 39.64, 48.75 }, { 1426, 39.45, 46.16 }, { 1426, 41.57, 45.34 } }, -- level 6
+        { level = 7, patrol = { { 1426, 42.27, 53.97 }, { 1426, 41.43, 51.17 }, { 1426, 41.57, 48.94 }, { 1426, 39.64, 48.75 }, { 1426, 39.45, 46.16 }, { 1426, 41.57, 45.34 } }, why = { kind = "level", levels = { 6, 10 } }, -- level 6
           note = "Targets are in the cavern and around its entrance too." },
         { go = { 1426, 42.26, 54.1 }, text = "Head out of the cave" }, -- level 7
         { turnin = 5541 }, -- level 7
@@ -190,7 +214,7 @@ Ding.RegisterGuide({
         { turnin = 317, accept = 318 }, -- level 7
         { turnin = 313 }, -- level 7
         { accept = 99158, races = { "Dwarf", "Gnome" }, classes = { "PRIEST" } }, -- level 7
-        { level = 8, patrol = { { 1426, 44.14, 48.65 }, { 1426, 43.24, 45.43 }, { 1426, 47.46, 50.35 }, { 1426, 50.15, 52.54 }, { 1426, 44.44, 55.16 }, { 1426, 43.85, 51.94 }, { 1426, 45.43, 58.63 }, { 1426, 41.34, 59.16 } } }, -- level 7
+        { level = 8, patrol = { { 1426, 44.14, 48.65 }, { 1426, 43.24, 45.43 }, { 1426, 47.46, 50.35 }, { 1426, 50.15, 52.54 }, { 1426, 44.44, 55.16 }, { 1426, 43.85, 51.94 }, { 1426, 45.43, 58.63 }, { 1426, 41.34, 59.16 } }, why = { kind = "level", levels = { 6, 10 } } }, -- level 7
         { train = true, talk = 1231, races = { "Dwarf" }, classes = { "HUNTER" } }, -- level 7
         { train = true, talk = 5612, races = { "Gnome" }, classes = { "WARLOCK" } }, -- level 7
         { vendor = true, talk = 6328, races = { "Gnome" }, classes = { "WARLOCK" } }, -- level 7
@@ -247,7 +271,7 @@ Ding.RegisterGuide({
           note = "Targets are in the cavern and around its entrance too." },
         { go = { 1426, 25.1, 50.95 }, text = "Head out of the cave" }, -- level 9
         { complete = 412 }, -- level 9
-        { level = 9, xp = 4300, patrol = { { 1426, 24.34, 42.96 }, { 1426, 25.94, 41.83 }, { 1426, 24.44, 39.77 }, { 1426, 27.05, 36.46 }, { 1426, 25.43, 45.57 } }, -- level 9
+        { level = 9, xp = 4300, patrol = { { 1426, 24.34, 42.96 }, { 1426, 25.94, 41.83 }, { 1426, 24.44, 39.77 }, { 1426, 27.05, 36.46 }, { 1426, 25.43, 45.57 } }, why = { kind = "level", levels = { 8, 11 } }, -- level 9
           note = "With the coming turn-ins, this gets you to level 10." },
         { go = { 1426, 31.03, 32.59 }, text = "Climb the trail", -- level 9
           note = "Once in the Wetlands, head north. Leap down from the ledge. This makes Menethil Harbor quicker to get to." },
@@ -260,7 +284,7 @@ Ding.RegisterGuide({
         { talk = 6491 }, -- level 9
         { go = { 1437, 10.19, 56.4 }, text = "Step back outside" }, -- level 9
         { go = { 1437, 9.53, 59.72 }, fly = true, talk = 1571, text = "Fly to Menethil Harbor" }, -- level 9
-        { turnin = 287, accept = 291 }, -- level 9
+        { turnin = 287, accept = 291, why = { kind = "carry", quest = 291, seconds = 4080, xp = 400 } }, -- level 9
         { turnin = 412, -- level 9
           note = "The NPC is indoors." },
         { turnin = 320 }, -- level 9
@@ -366,7 +390,7 @@ Ding.RegisterGuide({
         { turnin = 6391, accept = 6388, -- level 11
           note = "The NPC waits on the lower level, indoors." },
         { accept = 1715, races = { "Gnome" }, classes = { "WARLOCK" } }, -- level 11
-        { turnin = 6388, accept = 6392 }, -- level 11
+        { turnin = 6388, accept = 6392, why = { kind = "carry", quest = 6392, seconds = 6600, xp = 1100 } }, -- level 11
         { go = { 1455, 76.62, 51.1 }, text = "Head down into the Deeprun Tram station", -- level 11
           note = "Pass through the portal to teleport." },
         { accept = 6661, -- level 11
@@ -377,7 +401,7 @@ Ding.RegisterGuide({
           note = "The NPC stands by the wall on the central platform. Head to the Deeprun Tram's Ironforge platform." },
         { turnin = 6662, -- level 11
           note = "Take the Deeprun Tram over to Stormwind City. The NPC stands by the wall on the central platform." },
-        { accept = 353, -- level 11
+        { accept = 353, why = { kind = "carry", quest = 353, seconds = 7320, xp = 1100 }, -- level 11
           note = "The NPC is indoors." },
         { turnin = 1338 }, -- level 11
         { accept = 1638, classes = { "WARRIOR" }, -- level 11
@@ -410,7 +434,7 @@ Ding.RegisterGuide({
         { go = { 1453, 68.01, 72.6 }, text = "Head up the incline", -- level 11
           note = "The NPC is indoors." },
         { go = { 1453, 70.92, 72.47 }, fly = true, talk = 352, text = "Flight master in Stormwind" }, -- level 11
-        { accept = 40 }, -- level 11
+        { accept = 40, why = { chain = 5, kind = "detour", quest = 40, quests = 8, seconds = 300, short = true, total = 2900, xp = 2400 } }, -- level 11
         { accept = 94792, races = { "Dwarf", "Gnome" }, classes = { "HUNTER" } }, -- level 11
         { turnin = 40, accept = 35 }, -- level 11
         { accept = 95998, races = { "Dwarf", "Gnome" } }, -- level 11
@@ -445,7 +469,7 @@ Ding.RegisterGuide({
           note = "The targets are wolves." },
         { turnin = 5545 }, -- level 12
         { accept = 83 }, -- level 12
-        { turnin = { 52, 71 }, accept = { 39, 109 }, sticky = 83 }, -- level 12
+        { turnin = { 52, 71 }, accept = { 39, 109 }, sticky = 83, why = { kind = "carry", quest = 109, seconds = 6780, xp = 600 } }, -- level 12
         { complete = 1688, talk = 881, races = { "Gnome" }, classes = { "WARLOCK" }, -- level 12
           note = "The NPC is indoors." },
         { complete = 83 }, -- level 12
@@ -453,7 +477,7 @@ Ding.RegisterGuide({
         { complete = 91733, races = { "Dwarf", "Gnome" } }, -- level 12
         { turnin = 91733, races = { "Dwarf", "Gnome" } }, -- level 12
         { complete = 94792, races = { "Dwarf", "Gnome" }, classes = { "HUNTER" } }, -- level 12
-        { accept = 184, useitem = 1972, when = { item = 1972 } }, -- level 12
+        { accept = 184, useitem = 1972, when = { item = 1972 }, why = { kind = "carry", quest = 184, seconds = 5580, xp = 600 } }, -- level 12
         { turnin = 83, -- level 12
           note = "The NPC waits outside, at the building's front." },
         { level = 12, patrol = { { 1429, 78.34, 75.65 }, { 1429, 75.43, 76.45 }, { 1429, 75.36, 73.35 }, { 1429, 77.35, 78.86 }, { 1429, 80.44, 78.95 }, { 1429, 81.55, 76.17 }, { 1429, 85.57, 78.97 }, { 1429, 88.06, 80.76 }, { 1429, 85.26, 82.46 }, { 1429, 85.76, 85.83 }, { 1429, 81.03, 84.03 }, { 1429, 78.04, 82.46 }, { 1429, 87.37, 75.36 }, { 1429, 87.65, 72.23 }, { 1429, 87.14, 68.97 }, { 1429, 85.34, 66.23 }, { 1429, 87.64, 63.17 }, { 1429, 84.43, 62.66 }, { 1429, 83.37, 59.24 }, { 1429, 86.54, 59.84 }, { 1429, 79.96, 59.23 }, { 1429, 78.95, 62.56 }, { 1429, 76.45, 60.75 }, { 1429, 76.06, 64.76 }, { 1429, 72.37, 65.23 }, { 1429, 84.37, 71.16 }, { 1429, 89.74, 77.97 } } }, -- level 12
@@ -542,7 +566,7 @@ Ding.RegisterGuide({
         { accept = 1785, when = { done = 1784 }, races = { "Dwarf" }, classes = { "PALADIN" } }, -- level 13
         { turnin = 1785, when = { log = 1785 }, races = { "Dwarf" }, classes = { "PALADIN" }, -- level 13
           note = "The NPC is indoors, one floor up." },
-        { turnin = 39 }, -- level 13
+        { turnin = 39, why = { kind = "detour", quest = 39, quests = 2, seconds = 120, total = 1300, xp = 1100 } }, -- level 13
         { turnin = 94792, races = { "Dwarf", "Gnome" }, classes = { "HUNTER" } }, -- level 13
         { turnin = 99129, races = { "Dwarf", "Gnome" } }, -- level 13
     },

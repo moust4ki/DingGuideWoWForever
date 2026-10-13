@@ -59,7 +59,7 @@ Ding.RegisterGuide({
         { turnin = 1321, accept = 1322, sticky = 1322 }, -- level 38
         { complete = 1201, -- level 38
           note = "These foes hide in stealth." },
-        { accept = 1270, noauto = 1270, -- level 38
+        { accept = 1270, noauto = 1270, why = { kind = "carry", quest = 1270, seconds = 36060, xp = 2900 }, -- level 38
           note = "For this quest you guard an NPC on the move. If the NPC is absent, stay until he reappears. Clear the raptors around before you begin." },
         { complete = 1270, -- level 38
           note = "Let the conversation play out. Guard \"Stinky\" Ignatz as you escort him." },
@@ -82,7 +82,7 @@ Ding.RegisterGuide({
         { complete = 1273, -- level 38
           note = "Let the conversation play out. Escort Ogron, guarding him from attackers. Fight off the foes that come at you" },
         { turnin = 1177 }, -- level 38
-        { turnin = 1273, accept = 1276 }, -- level 38
+        { turnin = 1273, accept = 1276, why = { kind = "carry", quest = 1276, seconds = 28800, xp = 1400 } }, -- level 38
         { turnin = 1206, when = { log = 1206 } }, -- level 38
         { accept = 1203, when = { item = 3853 } }, -- level 38
         { turnin = 1203, when = { item = 3853 } }, -- level 38
@@ -94,7 +94,7 @@ Ding.RegisterGuide({
           note = "Let yourself drown for a quick trip." },
         { deathskip = true, revive = { 1445, 39.66, 30.81 }, text = "Get yourself killed, then resurrect with the spirit healer" }, -- level 38
         { talk = 6491 }, -- level 38
-        { turnin = { 1202, 1239 }, accept = 1240 }, -- level 38
+        { turnin = { 1202, 1239 }, accept = 1240, why = { continent = true, kind = "carry", once = true, quest = 1240, seconds = 29160, short = true, xp = 2800 } }, -- level 38
         { train = true, talk = 12042, races = { "Tauren" }, classes = { "DRUID" } }, -- level 38
         { train = true, talk = 5883, races = { "Scourge", "Troll" }, classes = { "MAGE" }, -- level 38
           note = "The NPC is indoors." },
@@ -127,7 +127,7 @@ Ding.RegisterGuide({
         { go = { 1458, 47.94, 76.55 }, text = "Climb the trail" }, -- level 38
         { turnin = 232, accept = 238 }, -- level 38
         { go = { 1458, 52.8, 77.62 }, text = "Take the trail downhill" }, -- level 38
-        { turnin = 238, accept = 243 }, -- level 38
+        { turnin = 238, accept = 243, why = { continent = true, kind = "carry", once = true, quest = 243, seconds = 46860, short = true, xp = 2000 } }, -- level 38
         { talk = 15683, collect = { { 4480, 8 }, { 4479, 8 }, { 4481, 8 }, { 6052, 2 } }, classes = { "WARRIOR" }, -- level 38
           note = "Save it: the warrior's Whirlwind weapon questline asks for it." },
         { talk = 8720, collect = { { 4611, 9 }, { 3829, 1 }, { 4389, 1 }, { 929, 1 }, { 3823, 1 } }, when = { maxlevel = 45 }, -- level 38

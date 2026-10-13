@@ -29,7 +29,7 @@ Ding.RegisterGuide({
         { turnin = 654, when = { item = 9440 } }, -- level 42
         { destroy = { 8524, 9437, 9439, 9442 } }, -- level 42
         { turnin = 992, elite = true }, -- level 42
-        { level = 43, collect = { { 8483, 1 }, { 8483, 1 } }, patrol = { { 1446, 62.75, 30.36 }, { 1446, 63.17, 32.36 }, { 1446, 65.25, 32.76 }, { 1446, 63.25, 34.57 }, { 1446, 64.03, 28.35 }, { 1446, 59.84, 24.03 } }, -- level 42
+        { level = 43, collect = { { 8483, 1 }, { 8483, 1 } }, patrol = { { 1446, 62.75, 30.36 }, { 1446, 63.17, 32.36 }, { 1446, 65.25, 32.76 }, { 1446, 63.25, 34.57 }, { 1446, 64.03, 28.35 }, { 1446, 59.84, 24.03 } }, why = { kind = "level", levels = { 42, 46 } }, -- level 42
           note = "Targets here are human. Each set of 5 handed in at Gadgetzan gives 380 xp. This number shrinks while you kill monsters." },
         { talk = 7799, collect = { { 10699, 1 } }, spots = { { 1446, 52.35, 28.88 } }, -- level 43
           note = "The NPC is indoors." },

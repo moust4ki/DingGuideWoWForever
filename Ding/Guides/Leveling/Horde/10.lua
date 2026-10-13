@@ -77,7 +77,7 @@ Ding.RegisterGuide({
         { accept = 1918, collect = { { 16408, 1 } }, useitem = 16408, -- level 27
           note = "The target is a watery being tinted a deeper green. The target roams; check the area." },
         { complete = 25 }, -- level 27
-        { level = 27, xp = 14950, patrol = { { 1440, 52.44, 62.83 }, { 1440, 53.44, 60.75 }, { 1440, 55.04, 62.15 }, { 1440, 57.63, 63.96 }, { 1440, 50.35, 61.23 } }, -- level 27
+        { level = 27, xp = 14950, patrol = { { 1440, 52.44, 62.83 }, { 1440, 53.44, 60.75 }, { 1440, 55.04, 62.15 }, { 1440, 57.63, 63.96 }, { 1440, 50.35, 61.23 } }, why = { kind = "level", levels = { 23, 30 } }, -- level 27
           note = "Together with the next turn-ins, this brings you to level 28. Steer away from Silverwind Refuge." },
         { complete = 1195, useitem = 5867 }, -- level 27
         { go = { 1440, 59.55, 68.19 }, text = "Climb the trail, then return by road to Splintertree Post" }, -- level 27

@@ -9,6 +9,22 @@ Ding.RegisterGuide({
     faction  = "Alliance",
     minLevel = 21, maxLevel = 24,
     next     = "leveling-a10-wetlands",
+    leftOut  = {
+        [1012] = { kind = "far" },
+        [1017] = { kind = "far" },
+        [1081] = { kind = "prereq" },
+        [1082] = { kind = "prereq" },
+        [1083] = { kind = "prereq" },
+        [1084] = { kind = "prereq" },
+        [1091] = { kind = "prereq" },
+        [1092] = { kind = "prereq" },
+        [1094] = { kind = "log" },
+        [1096] = { kind = "prereq" },
+        [1167] = { kind = "far", turnin = true },
+        [2931] = { kind = "away" },
+        [79974] = { kind = "log" },
+        [95737] = { kind = "log" },
+    },
     steps    = {
         { turnin = 967, accept = 970, -- level 22
           note = "Ashenvale: Maestra's Post in the west, then Astranaar in the middle of the zone." },
@@ -23,8 +39,8 @@ Ding.RegisterGuide({
         { go = { 1440, 34.35, 47.96 }, fly = true, talk = 4267, text = "Fly to Astranaar", -- level 22
           note = "Keep to the road the whole way." },
         { accept = 1008 }, -- level 22
-        { accept = 1070 }, -- level 22
-        { accept = 1056 }, -- level 22
+        { accept = 1070, why = { kind = "carry", quest = 1070, seconds = 6420, xp = 800 } }, -- level 22
+        { accept = 1056, why = { kind = "carry", quest = 1056, seconds = 10020, xp = 500 } }, -- level 22
         { accept = 1054, races = { "Dwarf" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "MAGE", "WARLOCK", "DRUID" } }, -- level 22
         { accept = 1054, races = { "Gnome" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 22
         { accept = 991, races = { "Human", "Dwarf", "Gnome", "Skyborne" } }, -- level 22
@@ -116,12 +132,12 @@ Ding.RegisterGuide({
         { turnin = { 4730, 4731, 4732, 4733 } }, -- level 23
         { turnin = 4740 }, -- level 23
         { turnin = 98025, races = { "Dwarf", "NightElf", "Gnome", "Skyborne" } }, -- level 23
-        { accept = 98461 }, -- level 23
+        { accept = 98461, why = { continent = true, kind = "carry", quest = 98461, seconds = 10320, xp = 1100 } }, -- level 23
         { turnin = 731, accept = 741, when = { log = 731 } }, -- level 23
         { turnin = 731, accept = 741, when = { done = 731 } }, -- level 23
         { turnin = 994, -- level 23
           note = "The NPC is indoors." },
-        { accept = 990 }, -- level 23
+        { accept = 990, why = { kind = "carry", once = true, quest = 990, seconds = 9180, xp = 400 } }, -- level 23
         { turnin = 741, accept = 942, when = { log = 741 }, -- level 23
           note = "The quest giver stands outdoors, not indoors." },
         { accept = 5678, races = { "Human" }, classes = { "PRIEST" } }, -- level 23
@@ -164,7 +180,7 @@ Ding.RegisterGuide({
         { complete = 1071 }, -- level 23
         { turnin = 1093, -- level 23
           note = "The NPC is indoors." },
-        { turnin = 1071, accept = { 1072, 1075 }, -- level 24
+        { turnin = 1071, accept = { 1072, 1075 }, why = { continent = true, kind = "carry", quest = 1072, seconds = 16200, xp = 800 }, -- level 24
           note = "Look for it high on the clifftop." },
         { complete = 1134, -- level 24
           note = "The targets are wyverns." },

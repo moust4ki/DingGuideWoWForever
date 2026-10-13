@@ -9,6 +9,9 @@ Ding.RegisterGuide({
     faction  = "Alliance",
     minLevel = 49, maxLevel = 50,
     next     = "leveling-a32-stranglethorn-vale",
+    leftOut  = {
+        [4144] = { kind = "prereq" },
+    },
     steps    = {
         { go = { 1449, 71.64, 75.96 }, text = "Travel to Un'Goro Crater", -- level 49
           note = "Un'Goro Crater: Marshal's Refuge is the hub, in the north. The first stop is in the south-east." },
@@ -30,7 +33,7 @@ Ding.RegisterGuide({
           note = "Gather from clumps of multicolored crystals. Spawn points are shared, so pick up every one you find. Gathering it causes other hues to show up." },
         { complete = 3845, useitem = 11107 }, -- level 49
         { destroy = { 11108, 3108 } }, -- level 49
-        { turnin = 3845, accept = 3908 }, -- level 49
+        { turnin = 3845, accept = 3908, why = { kind = "carry", quest = 3908, seconds = 68280, xp = 5100 } }, -- level 49
         { turnin = 3884 }, -- level 49
         { go = { 1449, 43.41, 6.84 }, text = "Go into the cavern" }, -- level 49
         { accept = 4284, -- level 49
@@ -43,9 +46,9 @@ Ding.RegisterGuide({
         { complete = 4141, -- level 49
           note = "The targets are mobile plant monsters." },
         { collect = { { 11018, 25 } }, keep = 11018 }, -- level 49
-        { level = 49, xp = 117440, patrol = { { 1449, 69.24, 35.25 }, { 1449, 71.94, 36.34 }, { 1449, 74.65, 38.14 }, { 1449, 72.16, 41.64 }, { 1449, 74.46, 43.86 }, { 1449, 75.37, 47.56 }, { 1449, 69.43, 38.97 }, { 1449, 66.35, 39.54 }, { 1449, 64.37, 37.17 }, { 1449, 66.35, 33.15 }, { 1449, 63.05, 32.56 }, { 1449, 64.06, 29.34 }, { 1449, 67.35, 29.55 }, { 1449, 70.26, 31.34 }, { 1449, 73.34, 32.45 }, { 1449, 70.44, 27.45 }, { 1449, 69.34, 24.45 }, { 1449, 66.37, 25.95 }, { 1449, 68.46, 20.37 }, { 1449, 71.44, 21.37 } }, -- level 49
+        { level = 49, xp = 117440, patrol = { { 1449, 69.24, 35.25 }, { 1449, 71.94, 36.34 }, { 1449, 74.65, 38.14 }, { 1449, 72.16, 41.64 }, { 1449, 74.46, 43.86 }, { 1449, 75.37, 47.56 }, { 1449, 69.43, 38.97 }, { 1449, 66.35, 39.54 }, { 1449, 64.37, 37.17 }, { 1449, 66.35, 33.15 }, { 1449, 63.05, 32.56 }, { 1449, 64.06, 29.34 }, { 1449, 67.35, 29.55 }, { 1449, 70.26, 31.34 }, { 1449, 73.34, 32.45 }, { 1449, 70.44, 27.45 }, { 1449, 69.34, 24.45 }, { 1449, 66.37, 25.95 }, { 1449, 68.46, 20.37 }, { 1449, 71.44, 21.37 } }, why = { kind = "level", levels = { 45, 52 } }, -- level 49
           note = "Together with the next turn-ins, this brings you to level 50." },
-        { turnin = 4141, accept = 4142 }, -- level 49
+        { turnin = 4141, accept = 4142, why = { kind = "carry", quest = 4142, seconds = 65580, xp = 3800 } }, -- level 49
         { go = { 1449, 45.2, 5.8 }, fly = true, talk = 10583, text = "Flight master at Marshal's Refuge" }, -- level 49
         { turnin = 2605, accept = 2606 }, -- level 49
         { talk = 7799, collect = { { 9245, 1 }, { 5807, 1 }, { 3900, 12 } }, spots = { { 1446, 52.35, 28.88 } }, -- level 49

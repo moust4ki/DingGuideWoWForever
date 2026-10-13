@@ -9,6 +9,22 @@ Ding.RegisterGuide({
     faction  = "Horde",
     minLevel = 13, maxLevel = 15,
     next     = "leveling-h05-the-barrens-and-stonetalon-mountains",
+    leftOut  = {
+        [99] = { kind = "version" },
+        [424] = { kind = "version" },
+        [428] = { kind = "away" },
+        [440] = { kind = "detour", seconds = 120, xp = 600 },
+        [442] = { kind = "prereq" },
+        [443] = { kind = "far" },
+        [444] = { kind = "prereq" },
+        [448] = { kind = "prereq" },
+        [451] = { kind = "version" },
+        [479] = { kind = "far" },
+        [480] = { kind = "prereq" },
+        [516] = { kind = "log" },
+        [91920] = { kind = "far" },
+        [92401] = { kind = "log" },
+    },
     steps    = {
         { go = { 1421, 56.18, 9.18 }, text = "Travel to Silverpine Forest", -- level 13
           note = "Silverpine Forest: the Sepulcher is the hub, in the middle. The first stop is on the road in the north." },
@@ -30,13 +46,13 @@ Ding.RegisterGuide({
         { turnin = 449, accept = { 3221, 437 }, -- level 13
           note = "This is below ground, on the crypt's lower floor." },
         { accept = 91921 }, -- level 13
-        { turnin = 3221, accept = { 1359, 447 }, -- level 13
+        { turnin = 3221, accept = { 1359, 447 }, why = { kind = "carry", quest = 447, seconds = 4980, xp = 900 }, -- level 13
           note = "The NPC stands outdoors, next to the crypt." },
         { turnin = 445, races = { "Orc", "Scourge", "Tauren", "Troll" } }, -- level 13
         { turnin = 429, when = { ready = 429 } }, -- level 13
         { accept = 430, when = { done = 429 } }, -- level 13
         { destroy = 3164 }, -- level 13
-        { turnin = 6321, accept = 6323, races = { "Scourge" } }, -- level 14
+        { turnin = 6321, accept = 6323, races = { "Scourge" }, why = { kind = "carry", quest = 6323, seconds = 3960, xp = 400 } }, -- level 14
         { complete = 421, -- level 13
           note = "The targets are worgen." },
         { turnin = 421, accept = 422 }, -- level 13
@@ -81,12 +97,12 @@ Ding.RegisterGuide({
         { go = { 1421, 43.04, 41.43 }, text = "Go down into the tomb" }, -- level 14
         { turnin = 439, -- level 14
           note = "This is below ground, on the crypt's lower floor." },
-        { turnin = 6323, accept = 6322, races = { "Scourge" }, -- level 15
+        { turnin = 6323, accept = 6322, races = { "Scourge" }, why = { back = true, chain = 1, kind = "detour", quest = 6322, quests = 4, seconds = 300, short = true, total = 1800, xp = 1300 }, -- level 15
           note = "The NPC is on Undercity's upper level." },
         { turnin = 6322, accept = 6324, races = { "Scourge" }, -- level 15
           note = "The NPC is on Undercity's upper level." },
         { accept = 97891, races = { "Scourge" } }, -- level 15
-        { turnin = 6324, races = { "Scourge" } }, -- level 15
+        { turnin = 6324, races = { "Scourge" }, why = { back = true, kind = "detour", quest = 6324, seconds = 300, short = true, xp = 1100 } }, -- level 15
         { go = { 1458, 52.78, 77.59 }, text = "Take the trail downhill" }, -- level 14
         { turnin = 447 }, -- level 14
         { turnin = 1359, accept = 1358 }, -- level 15

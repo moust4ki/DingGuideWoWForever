@@ -9,6 +9,11 @@ Ding.RegisterGuide({
     faction  = "Alliance",
     minLevel = 48, maxLevel = 49,
     next     = "leveling-a30-tanaris",
+    leftOut  = {
+        [2990] = { kind = "far", turnin = true },
+        [4297] = { kind = "prereq" },
+        [4298] = { kind = "prereq" },
+    },
     steps    = {
         { go = { 1425, 9.75, 44.47 }, text = "Travel to Aerie Peak", -- level 48
           note = "The Hinterlands: Aerie Peak, in the west of the zone." },
@@ -16,7 +21,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors. The NPC is at the summit of the trail." },
         { go = { 1425, 20.76, 47.85 }, text = "Climb the trail" }, -- level 48
         { turnin = 1452 }, -- level 48
-        { accept = 1469, sticky = 3661, -- level 48
+        { accept = 1469, sticky = 3661, why = { kind = "carry", quest = 1469, seconds = 31680, xp = 1600 }, -- level 48
           note = "Wait for the talking to finish" },
         { complete = 2988 }, -- level 48
         { complete = 2988 }, -- level 48

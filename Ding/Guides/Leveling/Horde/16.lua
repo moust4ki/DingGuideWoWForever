@@ -9,6 +9,15 @@ Ding.RegisterGuide({
     faction  = "Horde",
     minLevel = 36, maxLevel = 37,
     next     = "leveling-h17-dustwallow-marsh",
+    leftOut  = {
+        [348] = { kind = "far" },
+        [592] = { kind = "prereq" },
+        [670] = { kind = "far", turnin = true },
+        [3626] = { kind = "prereq" },
+        [3721] = { kind = "prereq" },
+        [8553] = { kind = "prereq" },
+        [8554] = { kind = "prereq" },
+    },
     steps    = {
         { go = { 1434, 32.17, 28.9 }, text = "Travel to Grom'gol Base Camp", -- level 36
           note = "Stranglethorn Vale: Grom'gol Base Camp, on the west coast. The zeppelin from Orgrimmar lands there." },
@@ -76,7 +85,7 @@ Ding.RegisterGuide({
         { turnin = 188 }, -- level 37
         { turnin = 192 }, -- level 37
         { accept = 193, elite = true }, -- level 37
-        { accept = 638 }, -- level 37
+        { accept = 638, why = { kind = "carry", quest = 638, seconds = 16080, xp = 700 } }, -- level 37
         { turnin = 569 }, -- level 37
         { turnin = 570 }, -- level 37
         { turnin = 1182, -- level 37

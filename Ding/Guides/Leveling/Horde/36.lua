@@ -57,7 +57,7 @@ Ding.RegisterGuide({
         { go = { 1449, 46.26, 45.59 }, text = "Climb the trail" }, -- level 53
         { complete = 974, useitem = 12472, -- level 53
           note = "The object is up on the summit." },
-        { turnin = 974, accept = 980 }, -- level 53
+        { turnin = 974, accept = 980, why = { kind = "carry", quest = 980, seconds = 29940, xp = 2800 } }, -- level 53
         { complete = 4145, -- level 53
           note = "The targets are mobile plant monsters." },
         { complete = 3882 }, -- level 53
@@ -119,7 +119,7 @@ Ding.RegisterGuide({
           note = "Your targets are within the cavern." },
         { destroy = 11482 }, -- level 53
         { go = { 1449, 43.41, 6.84 }, text = "Head out of the cave" }, -- level 53
-        { turnin = 4496, -- level 53
+        { turnin = 4496, why = { kind = "detour", quest = 4496, seconds = 300, short = true, xp = 5300 }, -- level 53
           note = "The NPC is indoors." },
         { turnin = 4120, -- level 54
           note = "The NPC is indoors." },
@@ -154,7 +154,7 @@ Ding.RegisterGuide({
           note = "The NPC patrols a long route; look along it." },
         { turnin = 3518, accept = 3562, -- level 54
           note = "The NPC is indoors." },
-        { turnin = { 3762, 1000 }, accept = { 3761, 1123 }, -- level 54
+        { turnin = { 3762, 1000 }, accept = { 3761, 1123 }, why = { kind = "carry", quest = 1123, seconds = 106920, xp = 1400 }, -- level 54
           note = "The NPC is indoors." },
         { turnin = 3761, when = { ready = 3761 } }, -- level 54
         { destroy = 11018, -- level 54
@@ -164,10 +164,10 @@ Ding.RegisterGuide({
         { turnin = 3782, when = { log = 3782 }, -- level 54
           note = "The NPC is indoors." },
         { turnin = 4502, elite = true }, -- level 54
-        { turnin = 4147, -- level 54
+        { turnin = 4147, why = { chain = 2, kind = "detour", quest = 5158, quests = 4, seconds = 240, short = true, total = 13000, xp = 11000 }, -- level 54
           note = "The NPC is indoors." },
         { turnin = 5158 }, -- level 54
-        { accept = 5159, -- level 54
+        { accept = 5159, why = { kind = "carry", once = true, quest = 5159, seconds = 4860, xp = 2700 }, -- level 54
           note = "Wait for the talking to finish" },
         { train = true, talk = 3328, races = { "Orc", "Scourge", "Troll" }, classes = { "ROGUE" }, -- level 54
           note = "This NPC is found down in the Cleft of Shadow." },

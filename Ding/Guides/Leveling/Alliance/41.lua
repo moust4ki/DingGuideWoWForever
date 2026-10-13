@@ -9,6 +9,29 @@ Ding.RegisterGuide({
     faction  = "Alliance",
     minLevel = 57, maxLevel = 58,
     next     = "leveling-a42-winterspring",
+    leftOut  = {
+        [5168] = { kind = "far" },
+        [5213] = { kind = "prereq" },
+        [5246] = { kind = "log" },
+        [5247] = { kind = "prereq" },
+        [5248] = { kind = "prereq" },
+        [5263] = { kind = "prereq" },
+        [5264] = { kind = "prereq" },
+        [5265] = { kind = "prereq" },
+        [5465] = { kind = "prereq" },
+        [5503] = { kind = "exclusive" },
+        [5531] = { kind = "prereq" },
+        [5781] = { kind = "far" },
+        [5845] = { kind = "prereq" },
+        [5846] = { kind = "prereq" },
+        [5861] = { kind = "prereq" },
+        [5941] = { kind = "prereq" },
+        [5942] = { kind = "prereq" },
+        [8947] = { kind = "prereq" },
+        [9033] = { kind = "prereq" },
+        [9229] = { kind = "prereq" },
+        [9230] = { kind = "prereq" },
+    },
     steps    = {
         { go = { 1455, 32.21, 63.26 }, text = "Travel to Ironforge", -- level 57
           note = "Ironforge first, then the Plaguelands: Chillwind Camp and Light's Hope Chapel." },
@@ -21,7 +44,7 @@ Ding.RegisterGuide({
         { turnin = 3701 }, -- level 57
         { sethearth = "Southshore", talk = 2352, -- level 57
           note = "The NPC is indoors." },
-        { turnin = 7261 }, -- level 57
+        { turnin = 7261, why = { kind = "detour", quest = 7261, seconds = 120, xp = 6600 } }, -- level 57
         { accept = 5219 }, -- level 57
         { accept = 5097, elite = true }, -- level 57
         { turnin = 6028 }, -- level 57
@@ -69,7 +92,7 @@ Ding.RegisterGuide({
         { turnin = 5222, accept = 5223 }, -- level 57
         { turnin = 4984, accept = 4985, sticky = 4985, -- level 57
           note = "The NPC is indoors." },
-        { accept = { 5542, 5543, 5544 }, sticky = { 5544, 5542, 5543 } }, -- level 57
+        { accept = { 5542, 5543, 5544 }, sticky = { 5544, 5542, 5543 }, why = { kind = "carry", once = true, quest = 5542, seconds = 29160, xp = 5800 } }, -- level 57
         { complete = 6185, elite = true }, -- level 57
         { complete = 6185, elite = true, -- level 57
           note = "Elites roam close by; keep your distance." },
@@ -87,11 +110,11 @@ Ding.RegisterGuide({
         { complete = 5149, useitem = 12886 }, -- level 57
         { turnin = 5149, sticky = { 5542, 5543 }, when = { item = 12885 }, -- level 57
           note = "The NPC is within the ruined home." },
-        { accept = { 5152, 5241 }, when = { done = 5149 } }, -- level 57
+        { accept = { 5152, 5241 }, when = { done = 5149 }, why = { kind = "carry", quest = 5152, seconds = 29340, xp = 2900 } }, -- level 57
         { complete = 5544, -- level 57
           note = "Look for big yellow grubs." },
         { complete = { 5542, 5543 } }, -- level 57
-        { level = 57, xp = 189550, patrol = { { 1423, 34.58, 71.45 }, { 1423, 31.85, 69.49 }, { 1423, 29.64, 71.46 }, { 1423, 26.38, 72.7 }, { 1423, 26.49, 66.21 }, { 1423, 28.83, 63.24 }, { 1423, 27.56, 58.92 }, { 1423, 24.85, 59.13 }, { 1423, 22.97, 56.78 }, { 1423, 24.3, 54.25 }, { 1423, 26.94, 54.15 }, { 1423, 21.72, 52.89 }, { 1423, 19.38, 54.34 }, { 1423, 16.74, 55.05 }, { 1423, 14.5, 57.77 }, { 1423, 16.76, 59.83 }, { 1423, 17.64, 62.46 }, { 1423, 13.5, 63.71 }, { 1423, 14.04, 67.13 }, { 1423, 17.94, 68.29 }, { 1423, 21.35, 59.28 }, { 1423, 13.15, 54.17 }, { 1423, 31.24, 58.22 }, { 1423, 35.1, 58.39 }, { 1423, 35.11, 55.52 }, { 1423, 38.78, 55.6 }, { 1423, 38.54, 61.27 }, { 1423, 40.95, 62.25 }, { 1423, 42.85, 66.13 }, { 1423, 39.69, 68.29 }, { 1423, 35.81, 67.41 }, { 1423, 36.55, 63.62 } }, -- level 57
+        { level = 57, xp = 189550, patrol = { { 1423, 34.58, 71.45 }, { 1423, 31.85, 69.49 }, { 1423, 29.64, 71.46 }, { 1423, 26.38, 72.7 }, { 1423, 26.49, 66.21 }, { 1423, 28.83, 63.24 }, { 1423, 27.56, 58.92 }, { 1423, 24.85, 59.13 }, { 1423, 22.97, 56.78 }, { 1423, 24.3, 54.25 }, { 1423, 26.94, 54.15 }, { 1423, 21.72, 52.89 }, { 1423, 19.38, 54.34 }, { 1423, 16.74, 55.05 }, { 1423, 14.5, 57.77 }, { 1423, 16.76, 59.83 }, { 1423, 17.64, 62.46 }, { 1423, 13.5, 63.71 }, { 1423, 14.04, 67.13 }, { 1423, 17.94, 68.29 }, { 1423, 21.35, 59.28 }, { 1423, 13.15, 54.17 }, { 1423, 31.24, 58.22 }, { 1423, 35.1, 58.39 }, { 1423, 35.11, 55.52 }, { 1423, 38.78, 55.6 }, { 1423, 38.54, 61.27 }, { 1423, 40.95, 62.25 }, { 1423, 42.85, 66.13 }, { 1423, 39.69, 68.29 }, { 1423, 35.81, 67.41 }, { 1423, 36.55, 63.62 } }, why = { kind = "level", levels = { 55, 60 } }, -- level 57
           note = "With the coming hand-ins, this gets you to level 58." },
         { complete = 5542 }, -- level 57
         { accept = { 6021, 5281 }, -- level 57
@@ -167,7 +190,7 @@ Ding.RegisterGuide({
         { turnin = 5225, accept = 5226 }, -- level 58
         { complete = 4985, -- level 58
           note = "Spiders also appear at these spawn spots." },
-        { turnin = 4985, accept = 4986, -- level 58
+        { turnin = 4985, accept = 4986, why = { continent = true, kind = "carry", quest = 4986, seconds = 10320, xp = 5800 }, -- level 58
           note = "The NPC is indoors." },
         { turnin = 5904, accept = 6389, -- level 58
           note = "The object is indoors. It shows up on top of the box." },
@@ -180,8 +203,8 @@ Ding.RegisterGuide({
         { complete = 6023, elite = true, -- level 58
           note = "This one roams, so scan the surrounding area. Targets are in the tower and around its base. If an elite stands on the tower's roof, hold back outside." },
         { turnin = 6023, elite = true }, -- level 58
-        { turnin = 5181, when = { log = 5181 } }, -- level 58
-        { turnin = 6389 }, -- level 58
+        { turnin = 5181, when = { log = 5181 }, why = { back = true, kind = "detour", quest = 5181, seconds = 60, xp = 6000 } }, -- level 58
+        { turnin = 6389, why = { kind = "detour", quest = 5237, quests = 3, seconds = 120, total = 18000, xp = 9300 } }, -- level 58
         { turnin = 5226 }, -- level 58
         { accept = 5237 }, -- level 58
         { turnin = 5237 }, -- level 58

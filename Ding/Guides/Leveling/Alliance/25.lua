@@ -9,20 +9,23 @@ Ding.RegisterGuide({
     faction  = "Alliance",
     minLevel = 42, maxLevel = 43,
     next     = "leveling-a26-swamp-of-sorrows",
+    leftOut  = {
+        [1271] = { kind = "unsure" },
+    },
     steps    = {
         { go = { 1455, 35.92, 60.14 }, text = "Travel to Stormwind", -- level 42
           note = "Stormwind first, then Stranglethorn Vale." },
         { talk = 2461, collect = { { 4502, 1 }, { 5826, 1 } }, spots = { { 1455, 35.87, 60.19 } }, -- level 42
           note = "The NPC is indoors." },
-        { accept = 1477, -- level 42
+        { accept = 1477, why = { action = "accept", kind = "detour", quest = 1364, quests = 4, seconds = 180, total = 5800, xp = 3300 }, -- level 42
           note = "The NPC waits on the tower's highest floor." },
         { turnin = 78148, races = { "Human" } }, -- level 42
         { accept = 79536 }, -- level 42
         { turnin = 79536 }, -- level 42
         { go = { 1453, 51.56, 73.67 }, text = "Head indoors" }, -- level 42
-        { accept = 1364, races = { "Dwarf", "NightElf" }, -- level 42
+        { accept = 1364, races = { "Dwarf", "NightElf" }, why = { kind = "carry", once = true, quest = 1364, seconds = 19500, xp = 3300 }, -- level 42
           note = "The NPC is indoors, one floor up." },
-        { accept = 1364, races = { "Human", "Gnome", "Skyborne" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "WARLOCK", "DRUID" } }, -- level 42
+        { accept = 1364, races = { "Human", "Gnome", "Skyborne" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "WARLOCK", "DRUID" }, why = { kind = "carry", once = true, quest = 1364, seconds = 19500, xp = 3300 } }, -- level 42
         { accept = 209, -- level 42
           note = "Climb to the highest floor of the building." },
         { turnin = 669, -- level 42
@@ -89,7 +92,7 @@ Ding.RegisterGuide({
           note = "The NPC is upstairs, out on the balcony." },
         { turnin = 611, -- level 42
           note = "The NPC is upstairs, out on the balcony." },
-        { turnin = 617, accept = 623 }, -- level 42
+        { turnin = 617, accept = 623, why = { continent = true, kind = "carry", quest = 623, seconds = 10980, xp = 2700 } }, -- level 42
         { talk = 2625 }, -- level 42
         { bank = 2725, when = { item = 2725 }, -- level 42
           note = "You need it later for \"Chapter I\": keep it in the bank to free a bag slot." },

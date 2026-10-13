@@ -9,6 +9,18 @@ Ding.RegisterGuide({
     faction  = "Horde",
     minLevel = 52, maxLevel = 53,
     next     = "leveling-h36-ungoro-crater",
+    leftOut  = {
+        [4810] = { kind = "far", turnin = true },
+        [4907] = { kind = "prereq" },
+        [5055] = { kind = "prereq" },
+        [5057] = { kind = "prereq" },
+        [5128] = { kind = "prereq" },
+        [5204] = { kind = "prereq" },
+        [5242] = { kind = "far" },
+        [5385] = { kind = "prereq" },
+        [6603] = { kind = "away" },
+        [6605] = { kind = "away" },
+    },
     steps    = {
         { go = { 1448, 51.21, 82.11 }, text = "Travel to Emerald Sanctuary", -- level 52
           note = "Felwood: Emerald Sanctuary, in the south of the zone." },
@@ -36,7 +48,7 @@ Ding.RegisterGuide({
         { complete = 4505, useitem = 12566, -- level 52
           note = "Beware of foes lurking in stealth." },
         { complete = 6162 }, -- level 52
-        { level = 52, xp = 155500, collect = { { 21377, 1 } }, keep = 21377, patrol = { { 1448, 48.45, 89.23 }, { 1448, 46.17, 89.24 }, { 1448, 46.76, 91.83 }, { 1448, 47.97, 93.45 }, { 1448, 49.46, 91.57 } }, -- level 52
+        { level = 52, xp = 155500, collect = { { 21377, 1 } }, keep = 21377, patrol = { { 1448, 48.45, 89.23 }, { 1448, 46.17, 89.24 }, { 1448, 46.76, 91.83 }, { 1448, 47.97, 93.45 }, { 1448, 49.46, 91.57 } }, why = { kind = "level", levels = { 52, 56 } }, -- level 52
           note = "Together with the next turn-ins, this brings you to level 53. Tougher foes are coming up next. Dungeon runs are a fine choice here too, as you like." },
         { turnin = 5155, accept = 5157 }, -- level 52
         { go = { 1448, 38.49, 59.73 }, text = "Stay on the trail to reach Jaedenar" }, -- level 53
@@ -55,7 +67,7 @@ Ding.RegisterGuide({
           note = "The targets are furbolgs." },
         { complete = 5082, -- level 53
           note = "Other creatures use these spawn points too." },
-        { turnin = { 5082, 5083 }, accept = { 5084, 3909 } }, -- level 53
+        { turnin = { 5082, 5083 }, accept = { 5084, 3909 }, why = { action = "accept", back = true, chain = 8, kind = "detour", quest = 3909, quests = 15, seconds = 480, short = true, total = 66000, xp = 38000 } }, -- level 53
         { talk = 11119, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, text = "Leave your pet with the stable master." }, -- level 53
         { talk = 11119, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, -- level 53
           note = "You will tame a short-term pet shortly. You pick up Claw (Rank 7) here." },
@@ -71,10 +83,10 @@ Ding.RegisterGuide({
           note = "Tame an Angerclaw Mauler with your Tame Beast spell. Track down a plague-ridden bear with a chestnut coat." },
         { turnin = 4102 }, -- level 53
         { talk = 9529, collect = { { 11511, 1 } } }, -- level 53
-        { turnin = 5157, accept = 5158 }, -- level 53
+        { turnin = 5157, accept = 5158, why = { kind = "carry", quest = 5158, seconds = 12300, xp = 2600 } }, -- level 53
         { turnin = 5156, -- level 53
           note = "The NPC is indoors." },
-        { turnin = 3541, accept = 3563, -- level 53
+        { turnin = 3541, accept = 3563, why = { kind = "carry", once = true, quest = 3563, seconds = 12600, xp = 3800 }, -- level 53
           note = "The NPC is upstairs, out on the balcony." },
         { talk = 8673, collect = { { 10561, 1 } }, -- level 53
           note = "The NPC is indoors. Hold on to it for a task in Un'Goro Crater later." },

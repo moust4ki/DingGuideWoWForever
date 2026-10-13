@@ -13,7 +13,7 @@ Ding.RegisterGuide({
         { go = { 1447, 22.26, 51.48 }, text = "Travel to Valormok", -- level 54
           note = "Azshara: Valormok, in the west of the zone." },
         { accept = 3505 }, -- level 54
-        { turnin = { 3562, 3563 }, accept = 3542 }, -- level 54
+        { turnin = { 3562, 3563 }, accept = 3542, why = { continent = true, kind = "carry", quest = 3542, seconds = 50940, xp = 2600 } }, -- level 54
         { accept = 3601, sticky = 3601, -- level 54
           note = "The quest giver waits on the hilltop." },
         { complete = 3505 }, -- level 54
@@ -29,6 +29,6 @@ Ding.RegisterGuide({
         { go = { 1447, 45.92, 38.66 }, text = "Climb the trail" }, -- level 54
         { turnin = 5534, when = { log = 5534 }, -- level 54
           note = "The quest giver waits on the hilltop." },
-        { turnin = 3506, accept = 3507 }, -- level 54
+        { turnin = 3506, accept = 3507, why = { kind = "carry", once = true, quest = 3507, seconds = 46200, xp = 7300 } }, -- level 54
     },
 })

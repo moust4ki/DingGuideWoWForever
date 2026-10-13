@@ -9,12 +9,27 @@ Ding.RegisterGuide({
     faction  = "Alliance",
     minLevel = 51, maxLevel = 51,
     next     = "leveling-a35-western-plaguelands",
+    leftOut  = {
+        [2991] = { kind = "prereq" },
+        [2993] = { kind = "prereq" },
+        [4024] = { kind = "version" },
+        [4128] = { kind = "away" },
+        [4263] = { kind = "prereq" },
+        [4701] = { kind = "away" },
+        [4729] = { kind = "away" },
+        [4764] = { kind = "away" },
+        [4765] = { kind = "prereq" },
+        [4862] = { kind = "away" },
+        [5081] = { kind = "prereq" },
+        [5102] = { kind = "prereq" },
+        [6402] = { kind = "prereq" },
+    },
     steps    = {
         { go = { 1419, 67.57, 19.29 }, text = "Travel to Nethergarde Keep", -- level 51
           note = "Blasted Lands: Nethergarde Keep, in the north-east, then the Burning Steppes." },
         { accept = 2783, -- level 51
           note = "The NPC waits on the tower's highest floor." },
-        { turnin = 2783, accept = 2801 }, -- level 51
+        { turnin = 2783, accept = 2801, why = { back = true, kind = "detour", quest = 2783, quests = 2, seconds = 60, total = 5100, xp = 4500 } }, -- level 51
         { complete = 2801, talk = 7572 }, -- level 51
         { turnin = 2801 }, -- level 51
         { accept = { 2581, 2583, 2585 } }, -- level 51
@@ -52,8 +67,8 @@ Ding.RegisterGuide({
         { accept = 3448 }, -- level 51
         { turnin = 3448, -- level 51
           note = "The NPC is indoors." },
-        { accept = 3449, when = { notdone = 3451 } }, -- level 51
-        { accept = 3790, -- level 51
+        { accept = 3449, when = { notdone = 3451 }, why = { continent = true, kind = "carry", quest = 3449, seconds = 35280, xp = 2600 } }, -- level 51
+        { accept = 3790, why = { continent = true, kind = "carry", quest = 3790, seconds = 12960, xp = 500 }, -- level 51
           note = "The NPC is indoors." },
         { sethearth = "Ironforge", talk = 5111, -- level 51
           note = "The NPC is indoors." },
@@ -91,7 +106,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { accept = 5090, patrol = { { 1455, 57.37, 78.89 }, { 1455, 50.1, 81.12 }, { 1455, 39.64, 79.21 }, { 1455, 34.31, 74.41 }, { 1455, 24.63, 55.29 }, { 1455, 24.41, 38.39 }, { 1455, 27.76, 25.17 }, { 1455, 32.19, 22.87 }, { 1455, 34.69, 33.9 }, { 1455, 40.34, 37.63 }, { 1455, 48.19, 31.04 }, { 1455, 55.96, 35.06 }, { 1455, 57.37, 48.53 }, { 1455, 48.25, 57.91 }, { 1455, 46.27, 47.72 }, { 1455, 39.89, 44.36 }, { 1455, 38.47, 38.27 }, { 1455, 34.54, 32.8 }, { 1455, 33.36, 21.21 }, { 1455, 39.41, 12.37 }, { 1455, 44.36, 10.82 }, { 1455, 52.98, 10.51 }, { 1455, 59.03, 13.8 }, { 1455, 70.44, 33.91 }, { 1455, 71.22, 44.74 }, { 1455, 70.07, 55.04 }, { 1455, 67.35, 65.11 } }, -- level 51
           note = "The NPC patrols a long route; look along it." },
-        { turnin = 2989, when = { log = 2989, ready = 2989 }, -- level 51
+        { turnin = 2989, when = { log = 2989, ready = 2989 }, why = { kind = "detour", quest = 626, quests = 3, seconds = 660, short = true, total = 15000, xp = 6100 }, -- level 51
           note = "The NPC is indoors. The NPC is at the summit of the trail." },
         { turnin = 2877, -- level 51
           note = "The NPC is indoors." },

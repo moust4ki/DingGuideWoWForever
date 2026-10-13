@@ -9,6 +9,11 @@ Ding.RegisterGuide({
     faction  = "Horde",
     minLevel = 21, maxLevel = 22,
     next     = "leveling-h07-hillsbrad-foothills",
+    leftOut  = {
+        [6565] = { kind = "prereq" },
+        [6571] = { kind = "far" },
+        [6621] = { kind = "log" },
+    },
     steps    = {
         { go = { 1442, 78.31, 42.46 }, text = "Take the passage and trace the lantern trail into Ashenvale", -- level 22
           note = "Ashenvale: Splintertree Post, in the east of the zone. The way in is the tunnel from Stonetalon. Stay clear of Astranaar." },
@@ -46,7 +51,7 @@ Ding.RegisterGuide({
         { accept = 1064, -- level 22
           note = "Let the conversation play out. The quest giver waits in the tent." },
         { go = { 1456, 29.77, 29.79 }, text = "Go into the cavern" }, -- level 22
-        { turnin = 1064, accept = 1065, -- level 22
+        { turnin = 1064, accept = 1065, why = { continent = true, kind = "carry", quest = 1065, seconds = 4260, xp = 1400 }, -- level 22
           note = "Your targets are within the cavern." },
         { train = true, talk = 3045, races = { "Scourge", "Troll" }, classes = { "PRIEST" }, -- level 22
           note = "Your targets are within the cavern." },

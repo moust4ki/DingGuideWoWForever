@@ -8,6 +8,15 @@ Ding.RegisterGuide({
     title    = "Silithus (59-60)",
     faction  = "Alliance",
     minLevel = 59, maxLevel = 60,
+    leftOut  = {
+        [6844] = { kind = "prereq" },
+        [8282] = { kind = "far" },
+        [8309] = { kind = "away" },
+        [8310] = { kind = "away" },
+        [8323] = { kind = "log" },
+        [8800] = { kind = "away" },
+        [9023] = { kind = "away" },
+    },
     steps    = {
         { go = { 1451, 81.87, 18.93 }, text = "Travel to Silithus", -- level 59
           note = "Silithus: Valor's Rest, in the north-east, then Cenarion Hold." },
