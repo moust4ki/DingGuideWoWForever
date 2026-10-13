@@ -449,7 +449,8 @@ target (the nearest candidate) goes through a travel planner, the fastest way in
   without Shift (LT) held, Ding takes that flight (`TakeTaxiNode(index)` through
   `Compat.TakeTaxi`: the only call of the taxi API Ding makes, allowed by name in `taint_test`;
   the game's flight map frame is never touched), after `Dismount()` when mounted, and says
-  "Flying to …" in the chat. Off, or anything else: #25's highlight only.
+  "Flying to …" in the chat. Off, or anything else: only the highlight of the destination on
+  the flight map.
 - **Data**: flight masters from QuestieDB (`npcFlags` bit 8, `friendlyToFaction`), zeppelin
   towers and the Booty Bay - Ratchet boat where their masters stand in QuestieDB, the tram
   where QuestieDB's dungeon table enters it (Forever coordinates); only the Alliance boats
