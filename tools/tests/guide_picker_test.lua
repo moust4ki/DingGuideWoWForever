@@ -266,7 +266,7 @@ T.test("a guide above the character's level is greyed out, \"lvl N+\"", function
     close()
 end)
 
-T.test("the help bar follows the list opening", function()
+T.test("the help bar and the chips follow the list opening", function()
     start(G)
     open()
     local function labels()
@@ -276,13 +276,16 @@ T.test("the help bar follows the list opening", function()
         end
         return table.concat(out, ",")
     end
+    local f = C.frame
     T.ok(labels():find(Ding.L.HINT_SELECT, 1, true), "\"Select\" missing: " .. labels())
-    T.ok(labels():find(Ding.L.HINT_TABS, 1, true), "\"Tabs\" missing: " .. labels())
+    T.ok(f.lb:IsShown() and f.rb:IsShown() and f.back:IsShown(), "LB, RB or B chip missing")
     press("PAD1")
     T.ok(labels():find(Ding.L.HINT_BACK, 1, true), "\"Back\" missing: " .. labels())
-    T.ok(not labels():find(Ding.L.HINT_TABS, 1, true), "\"Tabs\" shown with the list open")
+    T.ok(not f.lb:IsShown() and not f.rb:IsShown(), "LB / RB shown with the list open")
+    T.ok(not f.back:IsShown(), "B on the close cross with the list open")
     press("PAD2")
-    T.ok(labels():find(Ding.L.HINT_TABS, 1, true), "help not restored: " .. labels())
+    T.ok(f.lb:IsShown() and f.back:IsShown(), "chips not restored")
+    T.ok(not labels():find(Ding.L.HINT_BACK, 1, true), "help not restored: " .. labels())
     close()
 end)
 

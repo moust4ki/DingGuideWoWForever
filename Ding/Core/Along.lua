@@ -39,18 +39,48 @@ local function finished(obj)
     return have ~= nil and need ~= nil and need > 0 and have >= need
 end
 
+local function hasPoints(target) return #target.points > 0 end
+
+-- The quests the current step works on: its own, and the missing link of their chains
+-- ({ [quest] = true }; shared with Ding.QuestMobs).
+function AW:StepQuests()
+    local E = Ding.Engine
+    local step = E:CurrentStep()
+    local set = {}
+    for _, key in ipairs({ "accept", "complete", "turnin" }) do
+        for _, q in ipairs(step and step[key] or {}) do
+            set[q] = true
+            local p = E:CatchUp(q, step)
+            if p then set[p] = true end
+        end
+    end
+    return set
+end
+
+-- The unfinished objectives of a quest of the log, each with the database target its text
+-- names: { { index, objective (Compat.GetObjectives), target } }. `accept(target)`, when
+-- given, leaves out the targets it refuses (shared with Ding.QuestMobs).
+function AW:Objectives(q, accept)
+    local out = {}
+    for i, obj in ipairs(Compat.GetObjectives(q)) do
+        local text = obj.text and obj.text:lower()
+        if text and text ~= "" and not finished(obj) then
+            for _, target in ipairs(targets(q)) do
+                local name = target.name and target.name:lower()
+                if name and name ~= "" and text:find(name, 1, true) and (not accept or accept(target)) then
+                    out[#out + 1] = { index = i, objective = obj, target = target }
+                    break
+                end
+            end
+        end
+    end
+    return out
+end
+
 -- Quests of the log in the order the guide does them (the next steps first), then the
 -- others; without those the current step works on.
 local function orderedQuests(E)
-    local step = E:CurrentStep()
-    local skip, seen, out = {}, {}, {}
-    for _, key in ipairs({ "accept", "complete", "turnin" }) do
-        for _, q in ipairs(step and step[key] or {}) do
-            skip[q] = true
-            local p = E:CatchUp(q, step)
-            if p then skip[p] = true end
-        end
-    end
+    local skip, seen, out = AW:StepQuests(), {}, {}
     local inLog = {}
     local logQuests = E:LogQuests()
     for _, q in ipairs(logQuests) do inLog[q] = true end
@@ -88,21 +118,12 @@ function AW:Rebuild()
     for _, q in ipairs(E:StickyQuests()) do sticky[q] = true end
     for _, q in ipairs(orderedQuests(E)) do
         if not E:IsReady(q) then
-            for i, obj in ipairs(Compat.GetObjectives(q)) do
-                local text = obj.text and obj.text:lower()
-                if text and text ~= "" and not finished(obj) then
-                    for _, target in ipairs(targets(q)) do
-                        local name = target.name and target.name:lower()
-                        if name and name ~= "" and text:find(name, 1, true) and #target.points > 0 then
-                            -- The monster the level step already sends the player to.
-                            local same = grind and grind.quest == q and grind.objective == target.name
-                            if not same then
-                                entries[#entries + 1] = { quest = q, index = i, key = q .. ":" .. i,
-                                    points = target.points, sticky = sticky[q] or nil }
-                            end
-                            break
-                        end
-                    end
+            for _, o in ipairs(self:Objectives(q, hasPoints)) do
+                -- The monster the level step already sends the player to.
+                local same = grind and grind.quest == q and grind.objective == o.target.name
+                if not same then
+                    entries[#entries + 1] = { quest = q, index = o.index, key = q .. ":" .. o.index,
+                        points = o.target.points, sticky = sticky[q] or nil }
                 end
             end
         end

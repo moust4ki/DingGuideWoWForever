@@ -361,6 +361,9 @@ function D:ObjectPoints(objectID, out)
     return out
 end
 
+-- The monsters that drop an item (ids, never changed by the caller).
+function D:ItemDropNpcs(itemID) return get("Item", "npcDrops", itemID) or {} end
+
 -- Where an item can be obtained: monsters and objects that drop it.
 function D:ItemSourcePoints(itemID, out)
     out = out or {}
@@ -401,34 +404,42 @@ end
 function D:StarterName(questID) return self:GiverName(get("Quest", "startedBy", questID)) end
 function D:FinisherName(questID) return self:GiverName(get("Quest", "finishedBy", questID)) end
 
+-- The NPCs that give a quest, or take it back (ids, never changed by the caller).
+function D:StarterNpcs(questID) return (get("Quest", "startedBy", questID) or {})[1] or {} end
+function D:FinisherNpcs(questID) return (get("Quest", "finishedBy", questID) or {})[1] or {} end
+
 ---------------------------------------------------------------------------
--- Objectives: list of { name = string, points = {...} } in the database's order.
+-- Objectives: list of { name = string, points = {...}, kind, npcs } in the database's order.
 -- Groups: 1 creature, 2 object, 3 item, 5 kill credit. The trigger area comes last.
+-- kind: "kill" (creature, kill credit), "object", "drop" (an item; `item`), "area";
+-- npcs: the monsters to kill, or those that drop the item (never changed by the caller).
 ---------------------------------------------------------------------------
 function D:ObjectiveTargets(questID)
     local targets = {}
     local objectives = get("Quest", "objectives", questID) or {}
 
     for _, o in ipairs(objectives[1] or {}) do
-        targets[#targets + 1] = { name = self:NpcName(o[1]), points = self:NpcPoints(o[1]) }
+        targets[#targets + 1] = { name = self:NpcName(o[1]), points = self:NpcPoints(o[1]), kind = "kill",
+            npcs = { o[1] } }
     end
     for _, o in ipairs(objectives[2] or {}) do
-        targets[#targets + 1] = { name = self:ObjectName(o[1]), points = self:ObjectPoints(o[1]) }
+        targets[#targets + 1] = { name = self:ObjectName(o[1]), points = self:ObjectPoints(o[1]), kind = "object" }
     end
     for _, o in ipairs(objectives[3] or {}) do
-        targets[#targets + 1] = { name = self:ItemName(o[1]), points = self:ItemSourcePoints(o[1]) }
+        targets[#targets + 1] = { name = self:ItemName(o[1]), points = self:ItemSourcePoints(o[1]), kind = "drop",
+            item = o[1], npcs = self:ItemDropNpcs(o[1]) }
     end
     for _, o in ipairs(objectives[5] or {}) do
         local points = {}
         for _, npcID in ipairs(o[1] or {}) do self:NpcPoints(npcID, points) end
-        targets[#targets + 1] = { name = o[3] or self:NpcName(o[2]), points = points }
+        targets[#targets + 1] = { name = o[3] or self:NpcName(o[2]), points = points, kind = "kill", npcs = o[1] or {} }
     end
 
     local trigger = get("Quest", "triggerEnd", questID)
     if type(trigger) == "table" then
         local points = {}
         addSpawns(points, trigger[2], trigger[1])
-        targets[#targets + 1] = { name = trigger[1], points = points }
+        targets[#targets + 1] = { name = trigger[1], points = points, kind = "area" }
     end
     for _, target in ipairs(targets) do markArea(target.points, 1) end
     return targets

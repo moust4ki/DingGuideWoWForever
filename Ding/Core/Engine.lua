@@ -1611,6 +1611,7 @@ function E:Refresh()
     self:NoteSticky()
     self.candidates = Ding.Data.available and self:Candidates(step, self.index) or {}
     if Ding.Along then Ding:Safe(Ding.Along.Refresh, Ding.Along) end
+    if Ding.QuestMobs then Ding:Safe(Ding.QuestMobs.Refresh, Ding.QuestMobs) end
     -- Each display on its own: one failing must not stop the others nor the engine.
     if Ding.Panel and Ding.Panel.Update then Ding:Safe(Ding.Panel.Update, Ding.Panel) end
     if Ding.Arrow and Ding.Arrow.Update then Ding:Safe(Ding.Arrow.Update, Ding.Arrow) end
