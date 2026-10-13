@@ -618,8 +618,10 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
     Open`, `◂ ▸ Adjust`, `Y Reset`, `A Bind` · `Y Unbind`…).
   - **Move mode plate**: Save (A), Cancel (B) and Reset (Y) buttons with their chips; the
     hints keep `◂▴▾▸ Move` and `LB RB Step 1 / 20`.
-  - Nearby services and the guide's focus mode have no button doing what a hint says: they do
-    not change.
+  - **NPC directory**: A on the focused row, B on the close cross (in a list: on the list's
+    title), LB / RB at the ends of the tabs; the footer keeps a plain text ("Fastest way:
+    flights, boats, hearthstone."), the mouse help without a gamepad.
+  - The guide's focus mode has no button doing what a hint says: it does not change.
 
 ## To check in game (Forever 1.60)
 

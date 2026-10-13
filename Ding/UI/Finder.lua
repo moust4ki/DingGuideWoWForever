@@ -4,8 +4,9 @@
 -- tab; A or a click opens a row's list or sends the arrow to its NPC until that NPC's window
 -- opens; B, Esc or a right click go back or close; B on the first page during a trip also takes
 -- the arrow back to the guide. With a gamepad each action shows once: A on the focused row, B on
--- the close cross or the list's title, LB / RB at the ends of the tabs. The window takes the
--- D-pad, A, B and the shoulders only while it is open, out of combat (temporary bindings).
+-- the close cross or the list's title, LB / RB at the ends of the tabs (a gamepad plugged in or
+-- out lays it out again: UI/Gamepad.lua). The window takes the D-pad, A, B and the shoulders
+-- only while it is open, out of combat (temporary bindings).
 -- What it lists: Core/Directory.lua.
 local _, Ding = ...
 local L = Ding.L
@@ -577,9 +578,3 @@ function F:OnKey(key)
 end
 
 Ding:On("PLAYER_REGEN_DISABLED", function() F:Close() end)
--- A gamepad plugged in or out: the chips come or go.
-local function gamepadChanged()
-    if F.frame and F.frame:IsShown() then Ding:Safe(F.Layout, F) end
-end
-Ding:On("GAME_PAD_CONNECTED", gamepadChanged)
-Ding:On("GAME_PAD_DISCONNECTED", gamepadChanged)
