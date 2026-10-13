@@ -972,12 +972,20 @@ accent #5BB4FF, the Noto Sans font shipped with the addon, rounded shapes from t
   - `/ding cancel` ("Trip cancelled: the arrow follows the guide again.", or "No trip in
     progress.").
   A weapon master's trainer window is not taken for the class trainer's (`Training:Record`).
-- **Weapon to learn** (guide window, option "Weapon to learn" in the Guide tab, on by default):
-  a row "Weapon to learn: Guns — Buliwyf Stonehand, Ironforge" when a weapon the class can use
-  but does not know is in the bags or worn (its fastest weapon master), else when a weapon master
-  who could teach the player something stands within 800 yards ("Weapons to learn: Axes, Guns
-  — Buliwyf Stonehand, Ironforge"). A click (A in focus mode) sends the arrow there. Not during
-  a trip.
+- **Weapon to learn** (guide window, option "Remind me of weapons to learn" in the Guide tab,
+  on by default): a row "Weapon to learn: Guns — Buliwyf Stonehand, Ironforge" (the weapon
+  master the fewest seconds away) only when the player has such a weapon in hand: worn, in the
+  bags, or among a quest's rewards while its window is open (`QUEST_DETAIL` / `QUEST_COMPLETE`
+  to `QUEST_FINISHED`), whose type the class can use (`Core/Gear.lua`), that the player has not
+  learned, from the level its master asks, and that the player did not dismiss. Never only
+  because a weapon master is close by (Yendi: polearms suggested in Stormwind, unexplained).
+  Under it, why in plain words ("In your bags: [Old Blunderbuss]. Your class can use this kind
+  of weapon (Guns), but you have not learned it yet.") and what to do ("Click: go to the master
+  · Right-click: never suggest it again", in focus mode "A: go to the master · Left: never
+  suggest it again"). A click (A) sends the arrow there; a right click (Left in focus mode)
+  dismisses that weapon type for the character (`Ding.char.weaponsDismissed[skill line]`, a
+  chat line says so); the step menu's "mark as done" acts on the guide's step, never on it. Not
+  during a trip.
 - **Class training reminder** (`Core/Training.lua`): when a class trainer's window is open, Ding
   notes what can be learned now and at which level the rest comes, with its cost
   (`GetTrainerServiceInfo`, `…LevelReq`, `…Cost`; only what the trainer's list shows, its filters

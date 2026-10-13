@@ -100,6 +100,7 @@ return function(combined, opts)
         H.setTrainerServices({})
         -- A class trainer already visited, nothing waiting (a test of the reminder sets nil).
         Ding.char.training, Ding.char.gearDeclined = { now = 0, future = {}, level = 1 }, nil
+        Ding.char.weaponsDismissed = nil
         Ding.char.trainingReminded = nil
         Ding.Gear.upgrade = nil
         if Ding.GearHint then Ding.GearHint:Hide() end

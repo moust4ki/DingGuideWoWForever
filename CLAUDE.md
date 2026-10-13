@@ -304,7 +304,8 @@ Contracts between modules:
   `flights` (`[npc]` = name of the flight path known, or true), `bind` (`{ map, x, y, name }`,
   the inn of the hearthstone), `training` (`{ now, future = { [level] = cost }, level }`; nil
   before the first visit: even levels), `trainingReminded` (level of the last chat reminder
-  near a class trainer), `gearDeclined` (`[itemID] = true`), `sticky` (`[questID] = true`,
+  near a class trainer), `gearDeclined` (`[itemID] = true`), `weaponsDismissed` (`[skill line] =
+  true`: weapons the reminder never suggests again), `sticky` (`[questID] = true`,
   persistent objectives; a quest the active guide makes sticky only past the step shown
   leaves it), `wrapUp` (guide id in "turn in first" mode), `stay` (`[guide id] =
   true`), `talentBuild` (id of the talent build followed, "off" for none, nil: the class's

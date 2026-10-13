@@ -514,7 +514,7 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   `bg` dot, over a 7-unit downward caret); tooltip "NPC directory". In focus mode, up from the
   first row: the outer focus ring around it and the A chip on its left (the title shortens).
 - **Guide window rows added under the step** (after "along the way"): "Weapon to learn: Guns —
-  Buliwyf Stonehand, Ironforge"; "New spells at your class
+  Buliwyf Stonehand, Ironforge" with a sub-line saying why and how to go or dismiss it; "New spells at your class
   trainer (cost)", or "New spells may wait at your class trainer (level N)" before the first
   visit (glyph of an "other" row) and "Equip [item]" with the item's icon, its gain
   as the counter ("+4") and a sub-line saying how to equip or ignore it. Focus mode also takes

@@ -19,7 +19,6 @@ local JUMP_CANDIDATES = 2        -- the same around the inn and the teleports' l
 local FEW = 24                   -- a kind with this many NPCs at most: all of them are priced
 local REACH_TTL, REACH_MOVE = 5, 60   -- travel times are computed again past these (s, yd)
 local REMINDER_TTL = 10          -- seconds the weapon reminder is kept
-local WEAPON_NEAR = 800          -- yards: a weapon master this close is worth a reminder
 local SEARCH_NPCS = 20           -- NPCs found by name, at most
 
 -- npcFlags bits of the services (Classic flags).
@@ -577,8 +576,10 @@ function Dir:WeaponsToLearn()
     return out
 end
 
--- A weapon the player carries (bags, or worn) and could learn: its weapon entry, or nil.
-local function carriedWeapon(learnable)
+-- A weapon the player has in hand and could learn: worn, in the bags, or offered as a quest
+-- reward while the quest's window is open. Its weapon entry, where it is ("worn", "bags",
+-- "reward") and the item (a link when the client gives one), or nil.
+local function heldWeapon(learnable)
     local function check(item)
         local classID, subclassID = Compat.ItemClass(item)
         local w = classID == 2 and WEAPON_BY_SUBCLASS[subclassID]
@@ -587,70 +588,81 @@ local function carriedWeapon(learnable)
     for _, slot in ipairs({ 16, 17, 18 }) do
         local id = Compat.EquippedID(slot)
         local found = id and check(id)
-        if found then return found end
+        if found then return found, "worn", id end
     end
     for _, bag in ipairs(Compat.BAGS) do
         for slot = 1, Compat.BagSize(bag) do
             local item = Compat.BagItem(bag, slot)
             local found = item and (item.link or item.id) and check(item.link or item.id)
-            if found then return found end
+            if found then return found, "bags", item.link or item.id end
+        end
+    end
+    if Dir.questOpen then
+        for _, choice in ipairs(Compat.RewardChoices()) do
+            local found = choice.link and check(choice.link)
+            if found then return found, "reward", choice.link end
         end
     end
     return nil
 end
 
--- The weapon reminder of the guide window: a weapon the player carries and could learn, else
--- the weapons a weapon master close by (his city, its gates) could teach. { weapons = { entries
--- of Weapons() }, best = the master's entry } or nil; kept a few seconds.
+-- The weapon types the player said never to suggest again (Ding.char.weaponsDismissed).
+local function dismissed()
+    return Ding.char and Ding.char.weaponsDismissed or {}
+end
+
+-- The weapon reminder of the guide window. Only a weapon the player has in hand: worn, in the
+-- bags, or a quest reward on screen, whose type the class can use but the player has not
+-- learned (a weapon master teaches it), and that the player did not dismiss. Never only
+-- because a weapon master is close by (Yendi: polearms suggested in Stormwind, for nothing).
+-- { weapons = { the weapon's entry of Weapons() }, best = the master's entry the fewest seconds
+-- away, source = "worn" | "bags" | "reward", item = link or id } or nil; kept a few seconds.
 function Dir:WeaponReminder()
     local now = GetTime()
     local r = self.reminder
     if r and now - r.t < REMINDER_TTL then return r.value end
     local value
-    local learn = self:WeaponsToLearn()
-    if #learn > 0 then
-        local learnable = {}
-        for _, w in ipairs(learn) do learnable[w.skill] = w end
-        local carried = carriedWeapon(learnable)
-        if carried then
-            local best = self:Best(carried.kind)
-            if best then value = { weapons = { carried }, best = best } end
+    local learnable, no = nil, dismissed()
+    for _, w in ipairs(self:WeaponsToLearn()) do
+        if not no[w.skill] then
+            learnable = learnable or {}
+            learnable[w.skill] = w
         end
-        if not value then
-            local continent, px, py = Compat.GetPlayerWorld()
-            local near, nearD
-            for _, w in ipairs(learn) do
-                for _, npc in ipairs(self:Ids(w.kind)) do
-                    local point, d = spawnOf(npc, continent, px, py)
-                    if point and d and d <= WEAPON_NEAR and (not nearD or d < nearD) then near, nearD = npc, d end
-                end
-            end
-            if near then
-                local weapons = {}
-                local teaches = {}
-                for _, skill in ipairs(Ding.Data:NpcWeaponSkills(near) or {}) do teaches[skill] = true end
-                for _, w in ipairs(learn) do
-                    if teaches[w.skill] then weapons[#weapons + 1] = w end
-                end
-                local point = spawnOf(near, continent, px, py)
-                local reach = self:Reach()
-                local best = { kind = weapons[1].kind, npc = near, name = Ding.Data:NpcName(near), point = point,
-                    distance = nearD }
-                if reach then best.seconds, best.means = reach:Route(point) end
-                value = { weapons = weapons, best = best }
-            end
-        end
+    end
+    local held, source, item
+    if learnable then held, source, item = heldWeapon(learnable) end
+    if held then
+        local best = self:Best(held.kind)
+        if best then value = { weapons = { held }, best = best, source = source, item = item } end
     end
     self.reminder = { t = now, value = value }
     return value
 end
 
--- Bags, skills and level change what the reminder says.
+-- Never suggest this weapon type again (skill line id), for this character.
+function Dir:DismissWeapon(skill)
+    if not (Ding.char and skill) then return end
+    Ding.char.weaponsDismissed = Ding.char.weaponsDismissed or {}
+    Ding.char.weaponsDismissed[skill] = true
+    self.reminder = nil
+end
+
+-- Bags, skills, level and a quest's rewards change what the reminder says.
 local function forget() Dir.reminder = nil end
 for _, event in ipairs({ "BAG_UPDATE_DELAYED", "SKILL_LINES_CHANGED", "LEARNED_SPELL_IN_TAB", "PLAYER_LEVEL_UP",
     "PLAYER_EQUIPMENT_CHANGED" }) do
     Ding:On(event, forget)
 end
+for _, event in ipairs({ "QUEST_DETAIL", "QUEST_COMPLETE" }) do
+    Ding:On(event, function()
+        Dir.questOpen = true
+        forget()
+    end)
+end
+Ding:On("QUEST_FINISHED", function()
+    Dir.questOpen = nil
+    forget()
+end)
 
 ---------------------------------------------------------------------------
 -- Entries of the window

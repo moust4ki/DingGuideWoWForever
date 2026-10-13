@@ -465,40 +465,110 @@ local function reminder()
     end
 end
 
-T.test("weapon reminder: a gun in the bags, a weapon master close by; its option; A goes", function()
-    start({ class = "HUNTER", race = "Dwarf", map = 1426, x = 47, y = 52 })
-    P:Update()
-    T.eq(reminder(), nil, "a reminder far from any weapon master, nothing in the bags")
-    H.setItemInfo(950101, { name = "Old Blunderbuss", classID = 2, subclassID = 3, equipLoc = "INVTYPE_RANGED" })
-    H.putInBag(0, 3, 950101)
+local GUN = 950101
+local function gunInBags()
+    H.setItemInfo(GUN, { name = "Old Blunderbuss", classID = 2, subclassID = 3, equipLoc = "INVTYPE_RANGED" })
+    H.putInBag(0, 3, GUN)
     H.fire("BAG_UPDATE_DELAYED"); H.flush()
     P:Update()
+end
+
+T.test("weapon reminder: only a weapon in hand, with why in plain words; A goes; known, it goes", function()
+    start({ class = "HUNTER", race = "Dwarf", map = 1426, x = 47, y = 52 })
+    Ding.char.weaponsDismissed = nil
+    P:Update()
+    T.eq(reminder(), nil, "a reminder with nothing in hand")
+    -- Next to Buliwyf alone: nothing (a weapon master close by is no reason).
+    H.player.map, H.player.x, H.player.y = 1455, 60.5, 88
+    Dir:Forget()
+    P:Update()
+    T.eq(reminder(), nil, "a reminder only because a weapon master is close by")
+    -- A gun in the bags: the row, why, and what A / a click and Left / a right click do.
+    gunInBags()
     local row = reminder()
     T.ok(row, "no reminder for a gun in the bags")
     T.eq(H.plain(row.text), L.WEAPON_TO_LEARN:format(L.WEAPON_GUNS, "Buliwyf Stonehand", "Ironforge"))
+    local sub = H.plain(row.sub)
+    T.ok(sub:find(H.plain(L.WEAPON_SOURCE_BAGS:format(Ding.Compat.ItemInfo(GUN).link)), 1, true), sub)
+    T.ok(sub:find(L.WEAPON_WHY:format(L.WEAPON_GUNS), 1, true), sub)
+    T.ok(sub:find(L.WEAPON_ROW_PAD, 1, true), "no gamepad help: " .. sub)
+    H.setGamepadConnected(false); P:Update()
+    T.ok(H.plain(reminder().sub):find(L.WEAPON_ROW_MOUSE, 1, true), "no mouse help")
+    H.setGamepadConnected(true); P:Update()
+    -- A (a click) goes to the master.
+    P:Aim(reminder())
+    T.ok(F.trip and F.trip.npc == BULIWYF, "the reminder does not send the arrow")
+    F:Cancel()
     -- Known: gone.
     H.learnSpell(266)
     H.fire("LEARNED_SPELL_IN_TAB"); H.flush()
     P:Update()
     T.eq(reminder(), nil, "the reminder stays once guns are known")
-    -- Next to Buliwyf: the weapons he could teach.
-    H.player.map, H.player.x, H.player.y = 1455, 60.5, 88
-    Dir:Forget()
+    H.clearItems()
+end)
+
+T.test("weapon reminder: a quest reward on screen names the reward, until its window closes", function()
+    start({ class = "HUNTER", race = "Dwarf", map = 1426, x = 47, y = 52 })
+    Ding.char.weaponsDismissed = nil
+    H.setItemInfo(GUN, { name = "Old Blunderbuss", classID = 2, subclassID = 3, equipLoc = "INVTYPE_RANGED" })
+    H.setItemInfo(950102, { name = "Plain Shirt", classID = 4, subclassID = 1, equipLoc = "INVTYPE_BODY" })
+    -- The quest's reward window, with the gun among the choices.
+    H.showQuest({ rewards = { [456] = { GUN, 950102 } } }, "complete", 456)
+    H.fire("QUEST_COMPLETE"); H.flush()
+    P:Update()
+    local row = reminder()
+    T.ok(row, "no reminder for a weapon offered as a reward")
+    local prefix = L.WEAPON_SOURCE_REWARD:match("^(.-)%%s")
+    T.ok(H.plain(row.sub):find(prefix, 1, true) and H.plain(row.sub):find("Old Blunderbuss", 1, true), H.plain(row.sub))
+    H.closeDialog(); H.flush()
+    P:Update()
+    T.eq(reminder(), nil, "the reward's reminder stays once its window closes")
+end)
+
+T.test("weapon reminder: never again for that weapon (a right click, Left in focus mode), per character", function()
+    start({ class = "HUNTER", race = "Dwarf", map = 1426, x = 47, y = 52 })
+    Ding.char.weaponsDismissed = nil
+    gunInBags()
+    local row, i = reminder(), nil
+    for j, r in ipairs(P.rowsShown) do if r == row then i = j end end
+    local r = P.frame.rows[i]
+    r.scripts.OnClick(r, "RightButton"); H.flush()
+    T.ok(not (P.stepMenu and P.stepMenu:IsShown()), "a right click opened the step menu")
+    T.eq(Ding.char.weaponsDismissed[46], true, "not saved for the character")
+    T.eq(reminder(), nil, "the reminder stays once dismissed")
+    Dir:Forget(); P:Update()
+    T.eq(reminder(), nil, "the dismissed weapon comes back")
+    -- Another weapon still comes; Left in focus mode dismisses it too.
+    H.setItemInfo(950103, { name = "Light Crossbow", classID = 2, subclassID = 18, equipLoc = "INVTYPE_RANGED" })
+    H.putInBag(0, 4, 950103)
+    H.fire("BAG_UPDATE_DELAYED"); H.flush()
     P:Update()
     row = reminder()
-    T.ok(row and H.plain(row.text):find("Buliwyf Stonehand", 1, true), "no reminder next to Buliwyf")
-    T.ok(H.plain(row.text):find(L.WEAPON_AXES, 1, true), H.plain(row.text))
-    -- A (a click) goes there.
-    P:Aim(row)
-    T.ok(F.trip and F.trip.npc == BULIWYF, "the reminder does not send the arrow")
-    F:Cancel()
-    -- The option, in the Guide tab.
+    T.ok(row and row.what == L.WEAPON_CROSSBOWS, "another weapon is not suggested")
+    P:StartFocus(); H.flush()
+    for j, rr in ipairs(P.rowsShown) do if rr.action == "weapon" then P.focusIndex = j end end
+    P:Update()
+    H.press("PADDLEFT")
+    T.eq(Ding.char.weaponsDismissed[226], true, "Left in focus mode does not dismiss it")
+    T.eq(reminder(), nil)
+    P:StopFocus()
+    -- The step was not touched.
+    T.eq(E.index, 1)
+    H.clearItems()
+end)
+
+T.test("weapon reminder: the option, said plainly in the Guide tab, turns it off", function()
+    start({ class = "HUNTER", race = "Dwarf", map = 1426, x = 47, y = 52 })
+    Ding.char.weaponsDismissed = nil
+    gunInBags()
+    T.ok(reminder(), "no reminder with the option on")
     Ding.Config:Open("guide"); H.flush()
     local found
     for _, r in ipairs(Ding.Config.TABS[Ding.Config.TAB.guide].rows) do
         if r.opts and r.opts.label == L.OPT_WEAPON_REMINDER then found = r end
     end
     T.ok(found, "no option in the Guide tab")
+    T.eq(found.opts.desc, L.OPT_WEAPON_REMINDER_DESC)
     found.opts.set(false)
     Ding.Config:Close(); H.flush()
     Dir:Forget()

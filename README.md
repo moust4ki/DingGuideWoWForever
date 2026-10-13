@@ -62,9 +62,9 @@ instead from the *Arrow* tab of the settings (off by default).
   Gadgetzan, Ratchet, Everlook) with what each offers. Each row says how long it takes and by
   which way (flight, boat, zeppelin, tram, hearthstone). Pick one: the arrow takes you there
   leg by leg, the guide window says what to take, and the guide resumes once you talk to that
-  NPC. When a weapon you can use
-  but do not know is in your bags, or its weapon master is close by, the guide window says
-  where to learn it.
+  NPC. When you carry (or a quest offers) a weapon your class can use but you have not
+  learned, the guide window says so, why, and which weapon master teaches it; right-click it
+  (Left in focus mode) never to see that weapon suggested again.
 - **Minimap button.** Left-click for the settings, right-click to show or hide the guide.
 - **Community guides.** Ding runs other guides too: install a guide pack and pick it in the
   settings (*Guide* tab, first list), then its section in the second list. See

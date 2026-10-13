@@ -21,8 +21,9 @@ Nothing else to install: QuestieDB is no longer needed, and TomTom stays optiona
   - Cancel the trip from the "Cancel the trip" line of the guide window, its right-click menu,
     the directory or `/ding cancel`; moving the guide yourself (next, skip, mark as done) ends
     it too.
-- **Weapon to learn**: a line in the guide window when your class can learn a new weapon, with
-  the weapon master to see.
+- **Weapon to learn**: when you carry (or a quest offers) a weapon your class can use but you
+  have not learned, the guide window says so, why, and which weapon master teaches it; a right
+  click (Left in focus mode) and it is never suggested again.
 - **Quest monsters**: a mark above the nameplate of the monsters your quests need, with the
   count; a line in their tooltip; an option to see enemy nameplates from farther.
 - **Beside an NPC's window**: what the guide does with each quest the NPC offers: now, later in

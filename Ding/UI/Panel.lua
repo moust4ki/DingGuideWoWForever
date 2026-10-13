@@ -205,7 +205,8 @@ local function questRow(line)
     local q = line.quest
     local row = { action = action, quest = q, kind = line.glyph or GLYPH_OF[action] or "other", counter = line.counter,
         sub = line.sub, service = line.service, item = line.item, wrap = line.wrap, talent = line.talent,
-        goal = line.goal, goalStep = line.goalStep, entry = line.entry, what = line.what, prequestOf = line.prequestOf }
+        goal = line.goal, goalStep = line.goalStep, entry = line.entry, what = line.what, prequestOf = line.prequestOf,
+        skill = line.skill }
     if action == "gear" then row.kind = "use" end
     if action == "talent" then row.kind = "level" end
     -- A quest line done says so in words, like the objectives ("Turned in …"), not only in green.
@@ -566,6 +567,14 @@ function P:Jump()
     self:Update()
 end
 
+-- A weapon to learn the player does not want: that weapon type is never suggested again.
+function P:DismissWeapon(row)
+    if not (row and row.skill and Ding.Directory) then return end
+    Ding.Directory:DismissWeapon(row.skill)
+    Ding:Print(L.WEAPON_DISMISSED:format(row.what or "?"))
+    self:Update()
+end
+
 -- Mouse click or A in focus mode: the arrow points to this row's target.
 function P:Aim(row)
     -- A service row (training): the nearest trainer, through the NPC directory.
@@ -827,8 +836,10 @@ local function newRow(parent)
     r.key:Hide()
     r:SetScript("OnClick", function(self, button)
         if button == "RightButton" then
-            -- On a gear upgrade: not wanted, never offered again. On a jump offer: never mind.
+            -- On a gear upgrade: not wanted, never offered again. On a weapon to learn: never
+            -- suggested again. On a jump offer: never mind.
             if self.data and self.data.action == "gear" then return Ding.Gear:Decline() end
+            if self.data and self.data.action == "weapon" then return P:DismissWeapon(self.data) end
             if self.data and self.data.action == "jump" then return P:CancelFind() end
             return P:OpenStepMenu(self.data)
         end
@@ -1419,18 +1430,18 @@ function P:Extras(step, content)
             text = type(due) == "number" and L.TRAINING_DUE:format(Compat.MoneyText(due))
                 or L.TRAINING_DUE_GUESS:format(UnitLevel("player")) }
     end
+    -- A weapon in hand the player cannot use yet: why (where it is, what the class could
+    -- learn), the master to see, and how never to see it again.
     local weapon = Ding.db.panel.weaponReminder and not trip and Ding.Directory and Ding.Directory:WeaponReminder()
     if weapon then
-        local names = {}
-        for i, w in ipairs(weapon.weapons) do
-            if i <= 3 then names[i] = w.label end
-        end
-        local text = table.concat(names, ", ")
-        if #weapon.weapons > 3 then text = text .. " " .. UI.More(#weapon.weapons - 3) end
-        local best = weapon.best
-        content[#content + 1] = { action = "weapon", entry = best, what = weapon.weapons[1].label,
-            text = (#weapon.weapons > 1 and L.WEAPONS_TO_LEARN or L.WEAPON_TO_LEARN):format(text, best.name or "?",
-                Ding.Directory:Place(best.point) or "?") }
+        local w, best = weapon.weapons[1], weapon.best
+        local item = type(weapon.item) == "string" and weapon.item or Compat.ItemName(weapon.item) or "?"
+        local where = L["WEAPON_SOURCE_" .. weapon.source:upper()]:format(item)
+        local pad = Ding.Gamepad:Active()
+        content[#content + 1] = { action = "weapon", entry = best, what = w.label, skill = w.skill,
+            text = L.WEAPON_TO_LEARN:format(w.label, best.name or "?", Ding.Directory:Place(best.point) or "?"),
+            sub = where .. " " .. L.WEAPON_WHY:format(w.label) .. "\n"
+                .. (pad and L.WEAPON_ROW_PAD or L.WEAPON_ROW_MOUSE) }
     end
     local up = Ding.Gear and Ding.Gear.upgrade
     if up then
@@ -1910,9 +1921,11 @@ function P:OnFocusKey(key)
     elseif key == "PAD2" or key == "PADFORWARD" then
         self:StopFocus()
     elseif key == "PADDLEFT" then
-        -- On a gear upgrade: not wanted. On a jump offer: never mind.
+        -- On a gear upgrade: not wanted. On a weapon to learn: never again. On a jump offer:
+        -- never mind.
         local row = self.rowsShown and self.rowsShown[self.focusIndex]
         if row and row.action == "gear" then Ding.Gear:Decline() end
+        if row and row.action == "weapon" then self:DismissWeapon(row) end
         if row and row.action == "jump" then self:CancelFind() end
     elseif key == "PADDRIGHT" then
         -- On a row with a quest: where the guide deals with it.
