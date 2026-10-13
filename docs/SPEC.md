@@ -442,7 +442,8 @@ target (the nearest candidate) goes through a travel planner, the fastest way in
   cached per 300-yard cell); the share of looks in a zone more than 4 levels above the player
   (Classic zone levels, `Travel.ZONE_LEVELS`) makes the walk up to 2.5 times as long, so a flight
   or a boat around wins sooner.
-- **Itinerary**: when the plan takes anything but a walk, the window writes it under the step,
+- **Itinerary**: when the plan takes anything but a walk, the window writes it in the travel
+  notice (under the step),
   "Route: walk 1:20, fly 6:30 to Redridge Mountains, walk 0:40 (8:30 in all)"
   (`Travel:Itinerary(Travel.plan)`): each leg that is not a walk names the zone it leads to.
 - **A continent never seen**: no flight map opened there yet (`Ding.char.taxiSeen[continent]`,
@@ -472,7 +473,7 @@ target (the nearest candidate) goes through a travel planner, the fastest way in
 - **The arrow** follows the first leg that is not a walk: it points to the flight master with
   "Fly to Lakeshire, Redridge", to the dock with "Take the boat to Darkshore" (zeppelin, tram),
   or keeps the target with "Hearthstone to Goldshire" (the item button then offers the
-  hearthstone). The window repeats it under the step. Once at a dock, the arrow waits for the
+  hearthstone). The window repeats it in a notice under the step. Once at a dock, the arrow waits for the
   far side ("on board") until the player gets there (5 minutes at most after leaving the dock).
   On a flight, the plan starts where it lands (`TakeTaxiNode`, watched with `hooksecurefunc`).
   A `go` step is still validated on its own point.
@@ -534,7 +535,7 @@ when they arrive (`GET_ITEM_INFO_RECEIVED`, or a second later); nothing is taken
 The Guide tab lists, under "Quest log cleanup", the quests of the log that neither the active
 guide nor the guides after it ever use (prerequisites of their quests included), each with its
 card ("Details", A or a click). When the log holds 16 quests or more, the window says how many
-can go. The player abandons them **from the game's quest log**: abandoning needs the quest
+can go, in a notice of its own; A or a click on it opens that list. The player abandons them **from the game's quest log**: abandoning needs the quest
 selected in that log (`SelectQuestLogEntry` / `C_QuestLog.SetSelectedQuest`), which Ding never
 calls (taint, `taint_test`).
 
@@ -587,9 +588,22 @@ accent #5BB4FF, the Noto Sans font shipped with the addon, rounded shapes from t
   One line per action and per quest log objective: icon (check mark, ◆ kill, ● collect,
   item, ? turn in, ! accept), text on two lines at most with names in blue, a "2/6" counter
   on the right, the guide note underneath. States: done (green), to do (red),
-  impossible (gray: level too low, quest missing from the log). Under a quest's first
-  objective, "For “quest”" if the step does not already name it. Hovering over or clicking a
-  line: its quest's card (name, level, objectives); the click also sends the arrow there.
+  impossible (gray: level too low, quest missing from the log). A quest is always named with
+  its level first, "Accept [22] “quest”" (`L.QUEST_WITH_LEVEL`). A quest's objectives come
+  under a header row with its level and name, "[22] “quest”" (state "header", no icon), indented,
+  unless a row of the step already names the quest (a turn-in of the same quest). Hovering over
+  or clicking a line (a header too): its quest's card (name, level, objectives); the click also
+  sends the arrow there (from a header: the nearest of the quest's objectives). Focus mode
+  starts on the first row to do (past the header); the D-pad also stops on headers; the
+  "target" binding (`DING_CYCLE`) passes over them.
+- **Notices** (state "notice", `action = "notice"`): what concerns the whole window rather than
+  one row of the step gets a box of its own (no icon, 11 Regular on up to three lines): right
+  under the step, the way there (`travel`: the travel hint, then the itinerary), a trip to a
+  nearby service (`trip`) and why steps were passed (`skipped`); after the rows added under
+  the step, the bags almost full (`bags`) and the quest log almost full (`cleanup`, with "A: see
+  the list" or "Click: see the list": the settings open on the cleanup page). The guide's notes
+  and the step's own hints (service, "press Next", marked by hand, option steps) stay under the
+  step.
   A step the player has just finished stays displayed for 1.5 s, in green. The objectives of
   a quest that is ready to turn in or already turned in are done (in green, full counter),
   even when the client resets them to 0 (quest turned in, past step reviewed with

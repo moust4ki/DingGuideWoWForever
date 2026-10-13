@@ -256,7 +256,7 @@ T.test("the arrow follows the leg, the window says it; reaching the place still 
     T.eq(A.hint, L.TRAVEL_FLY:format("Lakeshire, Redridge"))
     local found = false
     for _, row in ipairs(P.rowsShown or {}) do
-        if row.sub and H.plain(row.sub):find(A.hint, 1, true) then found = true end
+        if row.notice == "travel" and H.plain(row.text) == A.hint then found = true end
     end
     T.ok(found, "the window does not say how to get there")
     -- Landed at Lakeshire, at the step's place: the go step is done.
