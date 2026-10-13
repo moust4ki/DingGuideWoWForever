@@ -72,9 +72,13 @@ missing field is `nil`.
 **NPC**: `name`, `subName` (its subtitle, English), `minLevel`, `maxLevel`, `rank` (0 normal,
 1 elite, 2 rare elite, 3 boss, 4 rare), `friendlyToFaction` (`"A"`, `"H"` or `"AH"`),
 `npcFlags` (services: vendor 4, flight master 8, trainer 16, innkeeper 128, repair 16384...),
-`spawns`.
+`spawns`, `dungeon`.
 
-**Object**: `name`, `spawns`.
+**Object**: `name`, `spawns`, `dungeon`.
+
+`dungeon` (NPC, object): the AreaID of the dungeon it is only found in, when none of its spawns is
+on a map outside; `LibDingDB.Entrances(dungeon)` gives the way in, and `zones.dungeonNames` the
+dungeon's English name. Ding leads to the entrance of such a target.
 
 **Item**: `name`, `npcDrops` and `objectDrops` (who drops it), `vendors` (NPCs that sell it).
 

@@ -59,6 +59,7 @@ Ding.Locales.ptBR = {
     SCALE_SET = "Escala da janela: %.2f",
     OPTIONAL = "(opcional)",
     ANOTHER_CONTINENT = "Outro continente",
+    IN_DUNGEON = "%s, em %s",
     ARRIVED = "Você chegou",
     IN_AREA = "Você está na área",
     CORPSE = "Seu corpo",

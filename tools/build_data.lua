@@ -44,11 +44,13 @@ local FIELDS = {
         "requiredRaces", 6, "requiredClasses", 7, "triggerEnd", 9, "objectives", 10, "sourceItemId", 11,
         "preQuestGroup", 12, "preQuestSingle", 13 },
     Npc = { "name", 1, "minLevel", 4, "maxLevel", 5, "rank", 6, "spawns", 7, "friendlyToFaction", 13,
-        "subName", 14, "npcFlags", 15 },
-    Object = { "name", 1, "spawns", 4 },
+        "subName", 14, "npcFlags", 15, "dungeon", "spawns:7" },
+    Object = { "name", 1, "spawns", 4, "dungeon", "spawns:4" },
     Item = { "name", 1, "npcDrops", 2, "objectDrops", 3, "vendors", 14 },
 }
 -- Our layout: the position of each field in a record (Core/Data.lua reads the same table).
+-- `dungeon` is ours: the AreaID of the dungeon an NPC or object is only found in (its spawns are
+-- all inside it), so that Ding can lead to the dungeon's entrance.
 local LAYOUT = {}
 for kind, list in pairs(FIELDS) do
     LAYOUT[kind] = {}
@@ -145,10 +147,27 @@ local function spawnsByMap(spawns)
     return any and maps or nil
 end
 
+-- The dungeon (AreaID) of spawns that are all inside one: none of them on a map outside.
+local function dungeonOf(spawns)
+    if type(spawns) ~= "table" or spawnsByMap(spawns) then return nil end
+    local areas = {}
+    for area in pairs(spawns) do areas[#areas + 1] = area end
+    table.sort(areas)
+    for _, area in ipairs(areas) do
+        if dungeonsBySide.Alliance[area] then return area end
+    end
+    return nil
+end
+
 local function convert(kind, row)
     local rec = {}
     for i, f in ipairs(LAYOUT[kind]) do
-        local v = row[f.from]
+        local v
+        if f.name == "dungeon" then
+            v = dungeonOf(row[tonumber(f.from:match("%d+"))])
+        else
+            v = row[f.from]
+        end
         if f.name == "spawns" then
             v = spawnsByMap(v)
         elseif f.name == "triggerEnd" and type(v) == "table" then
@@ -330,7 +349,7 @@ Ding.DB = {
     },
     corrected = %s,
     quests = {}, npcs = {}, objects = {}, items = {},
-    zones = { areaToUiMap = {}, dungeons = {}, dungeonsHorde = {} },
+    zones = { areaToUiMap = {}, dungeons = {}, dungeonsHorde = {}, dungeonNames = {} },
     names = { quests = {}, npcs = {}, objects = {}, items = {} },
 }
 ]]):format(source, table.concat(layout, "\n"), serialize(correctedIds)))
@@ -360,6 +379,12 @@ do
     end
     parts[#parts + 1] = "z.dungeons = " .. serialize(alliance) .. "\n"
     parts[#parts + 1] = "z.dungeonsHorde = " .. serialize(hordeOnly) .. "\n"
+    -- English names of the dungeons (the client names them in its own language when it can).
+    local names = {}
+    for area, entry in pairs(dungeonsBySide.Alliance) do
+        if type(entry) == "table" and type(entry[1]) == "string" then names[area] = entry[1] end
+    end
+    parts[#parts + 1] = "z.dungeonNames = " .. serialize(names) .. "\n"
     write("Zones.lua", table.concat(parts))
 end
 

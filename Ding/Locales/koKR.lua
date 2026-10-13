@@ -59,6 +59,7 @@ Ding.Locales.koKR = {
     SCALE_SET = "창 크기: %.2f",
     OPTIONAL = "(선택)",
     ANOTHER_CONTINENT = "다른 대륙",
+    IN_DUNGEON = "%s (%s 안)",
     ARRIVED = "도착했습니다",
     IN_AREA = "목표 지역 안입니다",
     CORPSE = "내 시체",
