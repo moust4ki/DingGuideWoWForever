@@ -460,7 +460,7 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   form an area. "You’re in the area" (the same green ring as "You’re here") as soon as the
   player is within 40 m of one of them; the player only leaves it beyond 60 m, so it does not
   flicker. With the farming loop (on by default) the arrow stays on the way instead, toward the
-  loop's next stop, its label "name · stop 2/6"; without a loop (fewer than 3 stops, option
+  loop's next stop, its label "name · farming loop: 2 of 6"; without a loop (fewer than 3 stops, option
   off) it fades out during the hunt and comes back on leaving.
 - **Death** (Yendi's feedback): a ghost is led to its corpse ("Your corpse", arrival at 30 m),
   then the arrow goes back to the guide.
@@ -494,8 +494,8 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   Inside a list, a 30-high title row: accent left caret, the B chip (gamepad), the list's name
   13 SemiBold; a click goes back. Rows 38 high, 2 apart, 6 from the sides (row background
   `bg.control`, radius 4): the name 12 Medium, under it 11 Regular `text.secondary` ("Buliwyf
-  Stonehand · Ironforge · flight", or what an NPC offers), on the right the time 12 SemiBold
-  accent ("8 min", "< 1 min") or, for a row that opens a list, a `text.secondary` right caret;
+  Stonehand · Ironforge · by flight", or what an NPC offers), on the right the time 12 SemiBold
+  accent ("8 min away", "under 1 min away") or, for a row that opens a list, a `text.secondary` right caret;
   the inset focus ring of list rows, with the A chip before the time or the caret (gamepad). A
   row with nothing to offer: its name `text.disabled`. Nine rows shown, then the wheel or the
   focus scrolls. Footer 28 high under a divider: with a gamepad, the plain text "Fastest way:
@@ -608,7 +608,9 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   counter 11 SemiBold 4 after an 8 glyph column, 6 at the right; without a counter, an 18
   square with the glyph centered. Current step: glyph and border `accent`, counter `text`;
   another quest: glyph and counter `text.secondary`, border `border`, the mark at 80 %. In
-  the unit tooltip, one line per objective: "Ding!" in `accent`, then " · “Quest” 3/8" in
+  the unit tooltip, one line per objective: "Ding!" in `accent`, then " · Kill for “Quest” 3/8 ·
+  current step" (or "Loot for", "Quest to take:", "Quest to turn in:"; "current step" only on the
+  accent marks) in
   `text` (the step's) or `text.secondary` (another quest's).
 - **Target line** (not in the mockup): under the arrow's distance, gap 2, a glyph chip of the
   target binding then "Target: name" in 11 Regular `#A3A9B3` with the text shadow; only when
@@ -641,7 +643,36 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   - **NPC directory**: A on the focused row, B on the close cross (in a list: on the list's
     title), LB / RB at the ends of the tabs; the footer keeps a plain text ("Fastest way:
     flights, boats, hearthstone."), the mouse help without a gamepad.
-  - The guide's focus mode has no button doing what a hint says: it does not change.
+  - The guide's focus mode has no button doing what a hint says: its hint bar (below) lists A,
+    X and B; A is left out on a row that carries the A chip (a control) and on the directory's
+    button.
+- **Plain words** (Yendi, v1.4.0: "the player must understand"; no meaning carried only by a
+  color, an icon or shorthand; SPEC "Plain words"). What changes on screen:
+  - Every row of the guide window has a card (hover, X in focus mode): first what its look means
+    ("Still to do.", "Done.", "Not possible yet: …", "Marked done by hand: …", "Skipped for
+    later: …", "A step further on: …", "Along the way: …"), in `#CCCCCC` like the card's other
+    lines; a quest's "[29]" as "Quest level 29" (above the player's: why it is orange), "·
+    before “Name”" in a sentence. A row without a quest: its text whole in white, then those
+    lines; notices, controls and the extras have no card.
+  - Quest lines done change verb ("Accepted / Turned in / Completed [2] “Name”").
+  - Next steps: a "Next steps" header row above them, the quest headers' style (12 SemiBold
+    `text.secondary`, no icon nor background).
+  - Focus mode (gamepad only): a hint bar 22 high under the progress, 6 below it, 8 from the
+    sides, plain hints (not buttons, so that three fit at 240: `A Arrow` · `X Details` · `B
+    Leave`); the window grows by its height. The directory's button, focused, shows its tooltip.
+  - Minimized window: hovering it always shows the card (row, note, state, "Step 3 of 42").
+  - Arrow: "distance unknown" instead of "?"; the label wraps under LABEL_MAX instead of
+    being cut ("name · farming loop: 2 of 6").
+  - Minimap pins: hovered, a tooltip ("Ding! · name" then what the pin is); they take the mouse's
+    motion only, the minimap keeps its clicks (`SetMouseClickEnabled(false)`; a client without
+    it: no hover).
+  - Item button tooltip: an accent line under the item's card: why it is there, its cooldown in
+    seconds, "Cannot be used right now." when dimmed. A gear upgrade's card in the window: its
+    "+12" in an accent line.
+  - NPC directory: "8 min away", "under 1 min away", "· by flight, boat", "and 2 more".
+  - Offers panel: "Name (level 24)" (the panel takes no mouse: no card to explain "[24]").
+  - Settings: "levels 10–20", "from level 20"; the minimap pins' and nameplate marks'
+    descriptions name their shapes.
 
 ## To check in game (Forever 1.60)
 
@@ -653,7 +684,12 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
 - Sharp nine-slices at 100 % scale (corners of 6, 4, 3, 2), shadows and halos.
 - Rotation of `caret_up` (◂ ▸ ▾), rounded mask of item icons (`CreateMaskTexture`).
 - `GetQuestObjectives` texts (type, counters) and `QUEST_MONSTERS_KILLED` patterns in French.
-- Focus mode: `SetOverrideBindingClick` to `DingItemButton` (A uses the item).
+- Focus mode: `SetOverrideBindingClick` to `DingItemButton` (A uses the item); its hint bar
+  (A, X, B) fits at 240 in every language.
+- Minimap pins: `SetMouseClickEnabled(false)` keeps the minimap's clicks (pings) under a pin
+  while hovering it shows its tooltip.
+- The arrow's label on two lines (a long farming loop or travel hint): centered, the distance
+  under it.
 - Item button: `PostClick`, right-click drag, `IsItemInRange`, `IsUsableItem`.
 - Minimap button: position around the round minimap, dragging.
 - `C_GamePad.IsEnabled` or the `GamePadEnable` variable to hide the chips without a gamepad.

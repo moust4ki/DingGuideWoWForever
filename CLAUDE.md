@@ -152,7 +152,10 @@ Contracts between modules:
   (`notice` = "travel" | "trip" | "skipped"; `P:Content` lines of the same kind make one box),
   then the rows `along = true` of `Along.shown` (objectives of other quests near the player,
   after the step's rows and its notes), the extras, the notices "bags" | "cleanup", and the
-  preview.
+  preview (under a row `action = "previewHeader"`). Plain words (SPEC): `Panel:RowMeaning(row)`
+  -> what a row's look means, in words, for its card (`Panel:ShowQuest`: hover, X in focus mode;
+  a grey row's `requires` or `waitsOn`); `UI.More(n, quests)` ("and 2 more", never "+2");
+  `QuestMobs:Words(e)`, `ItemButton:Explain()`, `MinimapPins:Explain(pin)`: their tooltips.
   `Engine.autoMoved`: the engine moved on by itself (the window keeps the finished step for
   1.5 s; `Panel:EndHold()` ends it, and "next" or "skip" meanwhile does only that).
   `Engine:IsManual(step)` -> step validated by "next" only.

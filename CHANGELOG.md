@@ -23,6 +23,16 @@ Nothing else to install: QuestieDB is no longer needed, and TomTom stays optiona
   count; a line in their tooltip; an option to see enemy nameplates from farther.
 - **Beside an NPC's window**: what the guide does with each quest the NPC offers: now, later in
   the guide, in another section, or not in the guide and why.
+- **Plain words**: what a color, an icon or a number means is now said in words too.
+  - Hover a line of the guide window (X in focus mode with a gamepad): done, still to do, not
+    possible yet and why, marked by hand or skipped; the quest's level, and why it is orange
+    when it is above yours.
+  - Quest lines done say so ("Turned in …"); the next steps sit under a "Next steps" header;
+    "and 2 more" instead of "+2".
+  - With a gamepad, focus mode shows what A, X and B do.
+  - The minimized window, the minimap pins, the item button, the quest monsters' tooltip line,
+    the NPC directory ("8 min away", "by flight"), the panel beside an NPC ("level 24") and the
+    arrow ("distance unknown", "farming loop: 2 of 10") say what they show.
 - **Guide window**
   - Each quest's level and name above its objectives; the next steps show the quest's level too.
   - Texts are never cut: rows grow to show them whole.
@@ -48,7 +58,6 @@ Nothing else to install: QuestieDB is no longer needed, and TomTom stays optiona
   - "Next" moves to the step the preview shows, one step at a time.
   - No more "AddOn blocked" popup on `/ding export`.
   - With a gamepad, each action shows once in the windows.
-  - French: "repère" for the stops of a hunting loop.
 
 ## v1.3.0
 

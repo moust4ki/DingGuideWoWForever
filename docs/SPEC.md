@@ -553,7 +553,7 @@ target (the nearest candidate) goes through a travel planner, the fastest way in
   tunnel to Loch Modan", "Enter Ironforge through its gates"; within 60 yards of a passage's line
   (on the lift, in the tunnel; not a portal), to its far end, then on to the target: within 25
   yards of a far end at once, even on a plan made a moment ago (a lift: once its ride changes
-  the map). The NPC directory's ways ("· flight, boat") leave passages out, like walks. The window
+  the map). The NPC directory's ways ("· by flight, boat") leave passages out, like walks. The window
   repeats it in a notice under the step. Once at a dock, the arrow waits for the
   far side ("on board") until the player gets there (5 minutes at most after leaving the dock).
   On a flight, the plan starts where it lands (`TakeTaxiNode`, watched with `hooksecurefunc`).
@@ -592,8 +592,42 @@ and "Stay in this section" (remembered, `Ding.char.stay`). A click or A in focus
 the steps a resume in progress passes, `Engine:NextSteps`): its first line still to do
 (`Engine:Describe(step, true)`, without the quests the engine passes: level too low to take
 them, grey). A quest line names the quest with its level and how many other quests the step
-still deals with: "Turn in [2] “Name” +1" (`L.QUEST_WITH_LEVEL`, `L.PREVIEW_MORE`); a step
-without a quest keeps its own text.
+still deals with: "Turn in [2] “Name” and 1 more quest" (`L.QUEST_WITH_LEVEL`, `UI.More`); a
+step without a quest keeps its own text. A "Next steps" header row sits above them (dimmed rows
+alone looked like work to do now).
+
+### Plain words
+
+Yendi (v1.4.0): the player must understand everything in plain words; no meaning carried only
+by a color, an icon or developer shorthand. Every code also says itself in words, where it
+clutters least:
+
+- **A row's card** (hover, X in focus mode; `Panel:RowMeaning(row)`, `Panel:ShowQuest`): first
+  what the row's look means: "Still to do." (red), "Done." (green), "Not possible yet: level 12
+  required." / "…: take the quest first." / "…: “Name” comes first in its chain." (grey; the
+  row's `requires` or `waitsOn`), "Marked done by hand: the game has not confirmed it." (violet),
+  "Skipped for later: still to do." (amber), "A step further on…" (dimmed), "Along the way…",
+  "Still to do: the guide keeps it on screen…", a goal's lone number ("4 still in your bags.").
+  Then a quest's level ("Quest level 29", the window's "[29]"; above the player's, the orange:
+  "Quest level 29, above yours (27): harder, but the guide plans it."), "· before “Name”" in a
+  sentence, and the action in the gamepad's words in focus mode ("A: the arrow goes there.",
+  "Right: find this quest in the guide."). A row without a quest gets a card too (its text and
+  these lines), except notices, controls and the extras, whose text says it all. A gear
+  upgrade's "+12": "+12 on the guide's score for your class".
+- **Quest lines done** say it in their text, like the objectives: "Accepted / Turned in /
+  Completed [2] “Name”".
+- **Minimized window**: its card says the row, its state and "Step 3 of 42" (the "3/42").
+- **Focus mode** (gamepad): a hint bar under the progress says what A does on the focused row
+  (Arrow, Use, Open, Select, Go; nothing when the row carries the A chip), X (Details, when the
+  row has a card) and B (Leave); the directory's button, focused, shows its name.
+- **Lists cut short**: "and 2 more" (`UI.More`), never "+2".
+- Elsewhere: the arrow's "distance unknown" (not "?"), its farming loop "name · farming loop: 2
+  of 10" (the label wraps, never cut); the minimap pins say what they are when hovered; the
+  nameplate mark's tooltip line "Kill for / Loot for “Quest” 3/8 · current step", "Quest to
+  take / to turn in"; the item button's tooltip says why this item ("For “Quest”.", "The fastest
+  way…", "An upgrade…"), its cooldown and a dimmed look; the NPC directory's "8 min away" and
+  "by flight, boat"; the offers panel's "Name (level 24)"; the settings' "levels 10–20" and
+  "from level 20".
 
 ### Minimap pins (`UI/MinimapPins.lua`)
 
@@ -764,7 +798,7 @@ accent #5BB4FF, the Noto Sans font shipped with the addon, rounded shapes from t
   Arrow and maps tab, `arrow.loop`, on by default): the spawns of the same monster or object within
   300 yards of the nearest one, one stop per 25 yards, at most 12, in nearest-neighbour order
   from there (3 stops at least, else the plain area); the arrow leads to the next stop, reached
-  within 15 yards, then the one after, and around ("Young Nightsaber · stop 2/6"). The loop
+  within 15 yards, then the one after, and around ("Young Nightsaber · farming loop: 2 of 6"). The loop
   stays while the nearest spawn is of the same monster near the loop and on the same step
   (`Arrow.farm`). A **ghost** is first led to its corpse.
 - **Cycle** (binding "Arrow: next target of the step", `DING_CYCLE`): the arrow goes to the
@@ -857,13 +891,13 @@ accent #5BB4FF, the Noto Sans font shipped with the addon, rounded shapes from t
   the hearthstone, teleports), else the fewest yards. Priced: every NPC of a kind of 24 or fewer,
   else the 4 nearest on the player's continent and the 2 nearest to where the hearthstone or a
   teleport lands. A row says where the NPC stands (the city or town, below, else the zone), the
-  ways besides walking (`reach:Route`: "· flight", "· boat, flight", "· zeppelin, flight",
-  tram, hearthstone, teleport) and the time ("8 min", "< 1 min"; yards without a time).
+  ways besides walking (`reach:Route`: "· by flight", "· by boat, flight", "· by zeppelin, flight",
+  tram, hearthstone, teleport) and the time ("8 min away", "under 1 min away"; yards without a time).
 
   The window ("Ding! · Directory", 360 wide) has two tabs, LB / RB or a click:
   - **Nearby**: one row per category (name, "NPC · place · ways", the time); a category with
     sub-choices (ammunition, weapon masters, profession trainers) shows the first ones and opens
-    their list, one row per choice ("Guns", "Buliwyf Stonehand · Ironforge · flight", "8 min"). A
+    their list, one row per choice ("Guns", "Buliwyf Stonehand · Ironforge · by flight", "8 min away"). A
     category without any NPC is grayed ("None known nearby").
   - **Cities**: the capitals of the player's side (Stormwind, Ironforge, Darnassus; Orgrimmar,
     Thunder Bluff, Undercity: on their own map) and the neutral towns (Booty Bay, Gadgetzan,
