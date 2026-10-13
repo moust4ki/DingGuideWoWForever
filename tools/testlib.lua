@@ -135,7 +135,7 @@ return function(combined, opts)
         Ding.Config.unfolded = {}
         Ding.Panel.findOffer = nil
         -- Goals without a quest: their progress, the items to keep, an open dialogue.
-        Ding.char.goals, Ding.char.keep, Ding.Goals.gossipOpen = nil, nil, nil
+        Ding.char.goals, Ding.char.keep, Ding.Goals.gossipOpen, Ding.Goals.bankOpen = nil, nil, nil, nil
         Ding.Goals:HideGossip()
         Ding.Travel:Reset()
         if Ding.TaxiMap then Ding.TaxiMap:Hide() end

@@ -3,13 +3,14 @@
 -- first, the guide window says what to take and the whole way, under the trip's line; then
 -- the NPC, until its window opens.
 local tools = (arg[0]:match("^(.*)[/\\]") or ".") .. "/.."
-local T = dofile(tools .. "/testlib.lua")(arg[1], { locale = "enUS" })
+local A11 = "leveling-a11-duskwood-and-redridge-mountains"
+local T = dofile(tools .. "/testlib.lua")(arg[1], { locale = "enUS", guides = { A11 } })
 local Ding, H = T.Ding, T.H
 local E, P, A, L, F, Dir, Travel = Ding.Engine, Ding.Panel, Ding.Arrow, Ding.L, Ding.Finder, Ding.Directory,
     Ding.Travel
 
 local BULIWYF, ANSEKHWA = 11865, 11869
-local DARKSHIRE_FM, IRONFORGE_FM, ORGRIMMAR_FM, THUNDER_BLUFF_FM = 2409, 1573, 3310, 2995
+local DARKSHIRE_FM, IRONFORGE_FM, ORGRIMMAR_FM, THUNDER_BLUFF_FM, STORMWIND_FM = 2409, 1573, 3310, 2995, 352
 
 Ding.RegisterGuide({ id = "t-directory-travel", title = "Directory travel",
     steps = { { accept = 456 }, { level = 60 } } })
@@ -192,6 +193,42 @@ T.test("Orgrimmar to Thunder Bluff: the wind rider; Undercity: the zeppelin, the
     F:Cancel()
     at(1458, 60, 50)
     T.eq(tripRow(), nil)
+end)
+
+T.test("a guide's bank step in Darkshire: the arrow flies to Stormwind's bank, until its window opens", function()
+    start({ race = "Human", class = "WARRIOR", level = 28, map = 1431, x = 75, y = 46,
+        flights = { [DARKSHIRE_FM] = "Darkshire", [STORMWIND_FM] = "Stormwind" } })
+    local index
+    for i, step in ipairs(Ding:GetGuide(A11).steps) do
+        if step.bank == 916 and step.when and step.when.log == 74 then index = i end
+    end
+    T.ok(index, "no bank step in " .. A11)
+    T.quests({ [74] = "log" })
+    H.setItem(916, 1)
+    E:SetGuide(A11, index, true); H.flush()
+    H.tick(1)
+    T.eq(E.index, index, "the bank step is passed")
+    local bank = Dir:Best("bank")
+    T.eq(Dir:Place(bank.point), "Stormwind City", "not Stormwind's bank")
+    T.eq(table.concat(bank.means, ","), "fly")
+    at(1431, 75, 46)
+    T.eq(A.point and A.point.npc, bank.npc, "the arrow does not lead to the bank")
+    T.ok(Travel.leg and Travel.leg.kind == "fly" and Travel.leg.flight == STORMWIND_FM, "no flight to Stormwind")
+    T.eq(A.hint, L.TRAVEL_FLY:format("Stormwind"))
+    -- Landed: on foot to the banker; his window open, the arrow has nothing left to show there.
+    H.land(1453, 70.9, 72.5)
+    at(1453, 70.9, 72.5)
+    T.eq(Travel.leg, nil)
+    T.eq(A.point and A.point.npc, bank.npc, "the arrow does not walk to the bank")
+    H.fire("BANKFRAME_OPENED"); H.flush()
+    H.tick(1)
+    at(1453, 64, 80.8)
+    T.ok(not (A.point and A.point.npc == bank.npc), "the arrow still points to the bank in its window")
+    -- The item deposited: the step is done.
+    H.setItem(916, nil)
+    H.fire("BAG_UPDATE", 0); H.fire("BANKFRAME_CLOSED"); H.flush()
+    H.tick(1)
+    T.ok(E.index > index, "the bank step stays once the item is banked")
 end)
 
 T.run()

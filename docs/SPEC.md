@@ -137,8 +137,8 @@ a bare id are read too):
 | `useitem` | item id(s) | its spell cast (`UNIT_SPELLCAST_SUCCEEDED` = `C_Item.GetItemSpell`), its count below the step's start, or the objectives of the step's `complete` quests advanced; offered on the item button |
 | `object` | object id(s) | `LOOT_OPENED`, `GOSSIP_SHOW`, `QUEST_DETAIL` or `ITEM_TEXT_BEGIN` within 20 yards of one of its spawns (or `spots`) |
 | `equip` | item id(s) | worn in any slot (`GetInventoryItemID`); offered on the item button |
-| `destroy`, `bank` | item id(s) | none left in the bags (never done by Ding) |
-| `unbank` | item id(s) | in the bags |
+| `destroy`, `bank` | item id(s) | none left in the bags (never done by Ding); `bank`: the arrow on the bank the fewest seconds away (`Directory:Best("bank")`, the travel planner), not while the bank's window is open (`BANKFRAME_OPENED` / `_CLOSED`) |
+| `unbank` | item id(s) | in the bags; the arrow on the bank like `bank` |
 | `abandon` | quest id(s) | out of the log (never done by Ding) |
 | `keep` | item id(s) | reminder only: `Ding.char.keep`, never sold as a grey item (`Core/Merchant.lua`) |
 | `spots` | `{ uiMapId, x, y }` list | authored places for `kill`, `collect`, `object` (an area) instead of QuestieDB's spawns |
