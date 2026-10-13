@@ -200,7 +200,8 @@ local LEFT = {
     unsure = function() return L.WHY_Q_UNSURE end,
 }
 
--- The text of a `leftOut` entry, or nil.
+-- The text of a `leftOut` entry, or nil: a clause that completes "The guide does not do this
+-- quest: ..." (the panel beside an NPC, UI/Offers.lua), without a capital nor a final period.
 function W.LeftOutText(entry)
     if type(entry) == "string" then return entry ~= "" and entry or nil end
     if type(entry) ~= "table" then return nil end
@@ -209,9 +210,10 @@ function W.LeftOutText(entry)
     return f and f(entry) or nil
 end
 
--- Why the guide leaves quest `q` out, in a sentence: from the active section's `leftOut`,
--- else from another section of its pack that is for this character. Returns the text, the
--- entry and its guide; nil when no section says why (the guide does not know: say nothing).
+-- Why the guide leaves quest `q` out, as a clause (W.LeftOutText): from the active section's
+-- `leftOut`, else from another section of its pack that is for this character. Returns the
+-- clause, the entry and its guide; nil when no section says why (the guide does not know: say
+-- nothing).
 function W:Quest(q, guide)
     guide = guide or Ding.Engine.guide
     if not guide or not q then return nil end

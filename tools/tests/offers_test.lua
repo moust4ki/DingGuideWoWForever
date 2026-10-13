@@ -144,6 +144,7 @@ end)
 
 T.test("the route's own reason, from Ding.Why when it is there", function()
     start(1)
+    local real = Ding.Why
     Ding.Why = { Quest = function(_, q)
         if q == NIGHT_WATCH then return "elle rapporte trop peu d'XP pour le détour" end
         if q == FOREVER then return { text = "elle demande une réputation" } end
@@ -155,7 +156,7 @@ T.test("the route's own reason, from Ding.Why when it is there", function()
         "the player's race or class first")
     Ding.Why = { Quest = function() error("broken") end }
     T.eq(select(2, verdict(NIGHT_WATCH)), "Le guide ne prévoit pas cette quête.", "an error in Ding.Why: unknown")
-    Ding.Why = nil
+    Ding.Why = real
 end)
 
 T.test("a gray quest the guide skips", function()

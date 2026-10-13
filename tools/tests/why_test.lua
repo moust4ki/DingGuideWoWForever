@@ -238,23 +238,30 @@ end)
 ---------------------------------------------------------------------------
 -- Quests left out
 ---------------------------------------------------------------------------
-T.test("Why:Quest: the reason a section gives for leaving a quest out, in a sentence", function()
+T.test("Why:Quest: the reason a section gives for leaving a quest out, as a clause", function()
     start(1)
-    T.eq((W:Quest(NIGHT_WATCH)), "Elle rapporte trop peu d'XP pour le détour (environ 300 XP pour environ 4 min).")
-    T.eq((W:Quest(ZOMBIE)), "Ses objectifs sont loin du chemin du guide.")
+    T.eq((W:Quest(NIGHT_WATCH)), "elle rapporte trop peu d'XP pour le détour (environ 300 XP pour environ 4 min)")
+    T.eq((W:Quest(ZOMBIE)), "ses objectifs sont loin du chemin du guide")
     T.eq((W:Quest(EFFIGY)), "Plain text reason.")
     -- From another section of the pack.
     local text, entry, guide = W:Quest(145)
-    T.eq(text, "Elle suit « La légende de Stalvan », que le guide ne fait pas.")
+    T.eq(text, "elle suit « La légende de Stalvan », que le guide ne fait pas")
     T.eq(entry.kind, "prereq")
     T.eq(guide.id, "t-why-2")
     -- Nothing said: the guide does not know.
     T.eq(W:Quest(STALVAN2), nil)
     T.eq(W:Quest(999999), nil)
-    -- Every kind has its sentence.
+    -- Every kind has its clause; the panel beside an NPC says it in its own sentence.
     for kind in pairs(W.LEFT.kinds) do
-        T.ok(W.LeftOutText({ kind = kind, xp = 500, seconds = 120 }), "no text for " .. kind)
+        local clause = W.LeftOutText({ kind = kind, xp = 500, seconds = 120 })
+        T.ok(clause and not clause:find("^%u") and not clause:find("%.$"), "not a clause for " .. kind .. ": "
+            .. tostring(clause))
     end
+    T.eq(L.OFFER_NOT_DONE:format((W:Quest(ZOMBIE))), "Le guide ne fait pas cette quête : ses objectifs sont loin"
+        .. " du chemin du guide.")
+    -- The panel beside an NPC asks through its one entry point.
+    T.eq(Ding.Offers:WhyLeftOut(ZOMBIE), "ses objectifs sont loin du chemin du guide")
+    T.eq(Ding.Offers:WhyLeftOut(STALVAN2), nil)
 end)
 
 T.test("translations: the texts of why and leftOut are translated like the notes", function()

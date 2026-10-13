@@ -475,7 +475,9 @@ without drowning the window, and only with what is true:
   a quest (too little XP for the detour, with its figures; its giver, objectives or turn-in off
   the route; the log full there; a prerequisite or another version the route does not do...).
   `Why:Quest(q)` reads the active section, then the other sections of its pack for the
-  character, for the panel beside an NPC's window (`UI/Offers.lua`).
+  character, for the panel beside an NPC's window (`UI/Offers.lua`): a clause that ends its
+  sentence, "The guide does not do this quest: it is worth too little XP for the detour (about
+  300 XP for about 4 min)."
 - **Honesty**: the Leveling routes come from older routes; for many choices only the measured
   effect is known. The reasons are computed offline (`tools/route_why.lua`, §5) from the route's
   simulation and QuestieDB's chains, and say nothing else: a detour that also visits a trainer, a

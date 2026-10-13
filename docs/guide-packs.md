@@ -285,7 +285,8 @@ know is better left out.
     follow.
 
 A section's `leftOut` names the quests it does not take, so that the player beside an NPC
-knows why: `{ [quest id] = "text" }`, or `{ kind = ... }` with `detour` (`xp`, `seconds`: too
+knows why ("The guide does not do this quest: <reason>."): `{ [quest id] = "text" }` (the end of
+that sentence: "too far for the XP it brings"), or `{ kind = ... }` with `detour` (`xp`, `seconds`: too
 little XP for the detour), `long` (`xp`, `seconds`: the detour is too long), `away` (the route
 does not pass by its giver at a fitting level), `far` (its objectives are far from the route;
 `turnin = true`: its turn-in), `log` (the quest log is full there), `prereq` (it follows a
