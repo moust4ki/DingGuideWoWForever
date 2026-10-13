@@ -13,9 +13,11 @@ M.FIELDS = {
         questLevel = "level", requiredRaces = "mask", requiredClasses = "mask", triggerEnd = "trigger",
         objectives = "objectives", sourceItemId = "id", preQuestGroup = "ids", preQuestSingle = "ids" },
     Npc = { name = "string", minLevel = "level", maxLevel = "level", rank = "rank", spawns = "spawns",
-        friendlyToFaction = "faction", subName = "string", npcFlags = "mask", dungeon = "id" },
+        friendlyToFaction = "faction", subName = "string", npcFlags = "mask", dungeon = "id",
+        weaponSkills = "ids" },
     Object = { name = "string", spawns = "spawns", dungeon = "id" },
-    Item = { name = "string", npcDrops = "ids", objectDrops = "ids", vendors = "ids" },
+    Item = { name = "string", npcDrops = "ids", objectDrops = "ids", vendors = "ids", class = "small",
+        subClass = "small", requiredLevel = "level", flags = "mask" },
 }
 
 local function isId(v) return type(v) == "number" and v == math.floor(v) and v > 0 and v < 2 ^ 31 end
@@ -42,6 +44,7 @@ local SHAPES = {
     level = function(v) return type(v) == "number" and v == math.floor(v) and v >= -1 and v <= 100 end,
     mask = function(v) return type(v) == "number" and v == math.floor(v) and v >= 0 and v < 2 ^ 53 end,
     rank = function(v) return type(v) == "number" and v == math.floor(v) and v >= 0 and v <= 4 end,
+    small = function(v) return type(v) == "number" and v == math.floor(v) and v >= 0 and v <= 255 end,
     id = isId,
     ids = isIds,
     spawns = isSpawns,
