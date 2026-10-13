@@ -123,6 +123,13 @@ return function(tools, locale)
         T.ok(cardHas(card(i), L.QUEST_TURNED_IN), "turned in")
     end)
 
+    T.test("1 a reminder to keep an item is a line under the step, never a row \"to do\"", function()
+        scene("a11-two-quests")
+        T.eq(#all(function(r) return r.goal and r.goal.kind == "keep" end), 0, "a keep reminder as a row: " .. describe())
+        local keep = L.GOAL_KEEP:format(D:ItemName(1468))
+        T.ok(find(function(r) return r.ofStep and has(r.sub, keep) end), "the reminder is not under the step: " .. keep)
+    end)
+
     T.test("2 why lines: only for a surprising step, after the note; the reason on demand; option off", function()
         local ctx = scene("a11-westfall-detour")
         local step = E:CurrentStep()
@@ -584,6 +591,27 @@ return function(tools, locale)
         T.ok(A.forced, "A does not aim at the row")
         P:StopFocus()
         pad(false)
+    end)
+
+    T.test("19 the target binding stops on the step's own rows only, never a header nor another quest", function()
+        for _, name in ipairs({ "a12-cursed-crew-carried", "a11-extras", "a12-along-behind" }) do
+            scene(name)
+            pad(true)
+            P:StartFocus()
+            H.flush()
+            local stops = 0
+            for _ = 1, #rows() + 1 do
+                P:CycleTarget()
+                if P.cycle and P.cycle.at > 0 then
+                    stops = stops + 1
+                    local row = rows()[P.focusIndex]
+                    T.ok(row.ofStep and row.action ~= "header", name .. ": the binding stops on " .. plain(row.text))
+                end
+            end
+            T.ok(stops > 0, name .. ": no stop")
+            P:StopFocus()
+            pad(false)
+        end
     end)
 
     T.test("20 the mouse does everything: click = A, hover = X, right click = the step menu", function()

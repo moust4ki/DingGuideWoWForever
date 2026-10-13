@@ -120,6 +120,7 @@ Ding.Locales.frFR = {
     QUEST_LEVEL_ABOVE = "Quête de niveau %d, au-dessus du tien (%d) : plus difficile, mais le guide la prévoit.",
     PREQUEST_DETAIL = "Elle vient avant %s dans sa chaîne : le guide la fait d'abord.",
     GOAL_LEFT = "Encore %d dans tes sacs.",
+    LEVEL_PERCENT_DONE = "%d %% de ce niveau déjà fait.",
     GEAR_GAIN = "Mieux que ce que tu portes : +%d au score du guide pour ta classe.",
     COMPACT_STEP = "Étape %d sur %d",
     DISTANCE_UNKNOWN = "distance inconnue",

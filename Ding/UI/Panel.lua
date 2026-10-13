@@ -332,7 +332,7 @@ end
 function P:Rows(content)
     content = content or self:Content()
     local itemID, itemQuest = Ding.ItemButton:Wanted()
-    local rows, notes, hints, along, extra, preview, notices = {}, {}, {}, {}, {}, {}, {}
+    local rows, notes, hints, along, extra, preview, notices, keeps = {}, {}, {}, {}, {}, {}, {}, {}
     for _, line in ipairs(content) do
         if line.indent then
             -- Objectives are listed from the quest log below; notes and hints become sub-lines.
@@ -350,6 +350,10 @@ function P:Rows(content)
             extra[#extra + 1] = line
         elseif line.action == "preview" then
             preview[#preview + 1] = line
+        elseif line.action == "goal" and line.goal and line.goal.kind == "keep" then
+            -- "Keep [item]: a later step needs it" is a reminder, never done nor to do: a line
+            -- under the step, not a red row the game can never tick.
+            keeps[#keeps + 1] = line
         elseif line.action == "complete" and line.quest and not line.impossible then
             local list = objectiveRows(line.quest, itemID, itemQuest, line.done)
             for _, row in ipairs(list) do row.prequestOf = line.prequestOf end
@@ -358,6 +362,12 @@ function P:Rows(content)
         else
             rows[#rows + 1] = questRow(line)
         end
+    end
+    -- A step that only says what to keep: its reminders stay rows.
+    if #rows == 0 then
+        for _, line in ipairs(keeps) do rows[#rows + 1] = questRow(line) end
+    else
+        for i = #keeps, 1, -1 do table.insert(hints, 1, keeps[i].text) end
     end
     if #rows == 0 then return rows end
     -- Why the guide makes a surprising choice here (Core/Why.lua): a short line after the note.
@@ -509,12 +519,13 @@ function P:PointsOf(row)
 end
 
 -- Binding DING_CYCLE: the arrow on the step's next target, in the rows' order (that of
--- focus mode), then back to the nearest of all. In focus mode, the focus follows.
+-- focus mode), then back to the nearest of all. In focus mode, the focus follows. Only the
+-- step's own rows: not another quest's, a row besides the step (an offer to jump has a quest),
+-- a notice nor a step further on.
 function P:CycleTarget()
     local E, stops = Ding.Engine, {}
     for i, row in ipairs(self.rowsShown or {}) do
-        if not (row.preview or row.along or row.sticky) and row.action ~= "wrapup" and row.action ~= "service"
-            and row.action ~= "gear" and row.action ~= "header" and row.action ~= "notice" then
+        if row.ofStep and row.action ~= "header" then
             local points = self:PointsOf(row)
             if #points > 0 then stops[#stops + 1] = { index = i, points = points } end
         end
@@ -661,6 +672,9 @@ function P:RowMeaning(row)
     if goal and (goal.kind == "destroy" or goal.kind == "bank") and tonumber(row.counter) and state ~= "done" then
         lines[#lines + 1] = L.GOAL_LEFT:format(tonumber(row.counter))
     end
+    -- A level's lone percent: how much of the level is done.
+    local percent = row.action == "level" and row.counter and tonumber(row.counter:match("%d+"))
+    if percent and state ~= "done" then lines[#lines + 1] = L.LEVEL_PERCENT_DONE:format(percent) end
     return lines
 end
 

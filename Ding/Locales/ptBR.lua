@@ -122,6 +122,7 @@ Ding.Locales.ptBR = {
     QUEST_LEVEL_ABOVE = "Missão de nível %d, acima do seu (%d): mais difícil, mas o guia a inclui.",
     PREQUEST_DETAIL = "Vem antes de %s na sequência: o guia a faz primeiro.",
     GOAL_LEFT = "Ainda %d nas suas bolsas.",
+    LEVEL_PERCENT_DONE = "%d %% deste nível já feito.",
     GEAR_GAIN = "Melhor do que o que você usa: +%d na pontuação do guia para sua classe.",
     COMPACT_STEP = "Etapa %d de %d",
     DISTANCE_UNKNOWN = "distância desconhecida",

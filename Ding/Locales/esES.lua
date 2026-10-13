@@ -124,6 +124,7 @@ Ding.Locales.esES = {
     QUEST_LEVEL_ABOVE = "Misión de nivel %d, por encima del tuyo (%d): más difícil, pero la guía la incluye.",
     PREQUEST_DETAIL = "Va antes de %s en su cadena: la guía la hace primero.",
     GOAL_LEFT = "Aún %d en tus bolsas.",
+    LEVEL_PERCENT_DONE = "%d %% de este nivel ya hecho.",
     GEAR_GAIN = "Mejor que lo que llevas: +%d en la puntuación de la guía para tu clase.",
     COMPACT_STEP = "Paso %d de %d",
     DISTANCE_UNKNOWN = "distancia desconocida",

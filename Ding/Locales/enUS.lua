@@ -122,6 +122,7 @@ Ding.Locales.enUS = {
     QUEST_LEVEL_ABOVE = "Quest level %d, above yours (%d): harder, but the guide plans it.",
     PREQUEST_DETAIL = "It comes before %s in its chain: the guide does it first.",
     GOAL_LEFT = "%d still in your bags.",
+    LEVEL_PERCENT_DONE = "%d %% of this level already done.",
     GEAR_GAIN = "Better than what you wear: +%d on the guide's score for your class.",
     COMPACT_STEP = "Step %d of %d",
     DISTANCE_UNKNOWN = "distance unknown",

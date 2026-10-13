@@ -122,6 +122,7 @@ Ding.Locales.zhCN = {
     QUEST_LEVEL_ABOVE = "任务等级%d，高于你的等级（%d）：更难，但指南仍安排了它。",
     PREQUEST_DETAIL = "它是任务链中%s的前置：指南先完成它。",
     GOAL_LEFT = "背包中还有%d个。",
+    LEVEL_PERCENT_DONE = "本级已完成 %d%%。",
     GEAR_GAIN = "比你身上的装备更好：按你职业的指南评分+%d。",
     COMPACT_STEP = "第%d步，共%d步",
     DISTANCE_UNKNOWN = "距离未知",

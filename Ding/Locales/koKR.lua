@@ -122,6 +122,7 @@ Ding.Locales.koKR = {
     QUEST_LEVEL_ABOVE = "퀘스트 레벨 %d, 내 레벨(%d)보다 높음: 더 어렵지만 가이드에 포함되어 있습니다.",
     PREQUEST_DETAIL = "연계 퀘스트에서 %s보다 앞섭니다: 가이드가 먼저 진행합니다.",
     GOAL_LEFT = "가방에 아직 %d개 있습니다.",
+    LEVEL_PERCENT_DONE = "이 레벨의 %d%%를 이미 채웠습니다.",
     GEAR_GAIN = "착용 중인 장비보다 좋음: 직업 기준 가이드 점수 +%d.",
     COMPACT_STEP = "%d단계 (총 %d단계)",
     DISTANCE_UNKNOWN = "거리 알 수 없음",

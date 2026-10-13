@@ -11,6 +11,7 @@ STEP   < Étape 24 / 160 >   zone: Le cimetière de Raven Hill
     card:
       | Atteins le niveau 26
       | À faire.
+      | 58 % de ce niveau déjà fait.
       |  
       | Pourquoi ?
       | Le guide prévoit cette étape ici.

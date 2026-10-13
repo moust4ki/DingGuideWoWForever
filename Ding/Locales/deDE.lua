@@ -121,6 +121,7 @@ Ding.Locales.deDE = {
     QUEST_LEVEL_ABOVE = "Queststufe %d, über deiner (%d): schwerer, aber der Guide plant sie ein.",
     PREQUEST_DETAIL = "Sie kommt in der Questreihe vor %s: Der Guide erledigt sie zuerst.",
     GOAL_LEFT = "Noch %d in deinen Taschen.",
+    LEVEL_PERCENT_DONE = "%d %% dieser Stufe schon geschafft.",
     GEAR_GAIN = "Besser als deine Ausrüstung: +%d in der Wertung des Guides für deine Klasse.",
     COMPACT_STEP = "Schritt %d von %d",
     DISTANCE_UNKNOWN = "Entfernung unbekannt",
