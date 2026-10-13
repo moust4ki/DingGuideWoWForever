@@ -273,6 +273,7 @@ Ding.Locales.enUS = {
     IMPORT_ANOTHER = "Import another",
     IMPORT_ERROR_LINE = "Error: %s",
     IMPORT_WARNING_LINE = "Warning: %s",
+    IMPORT_WAIT_KEYBOARD = "The chat still has the keyboard: once it is closed, this box takes it.",
     EXPORT_TITLE = "Export: %s",
     EXPORT_HELP = "The text is selected: copy it with Ctrl+C.",
     EXPORT_MOUSE = "Ctrl+C: copy · Esc: close",

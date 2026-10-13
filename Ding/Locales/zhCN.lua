@@ -273,6 +273,7 @@ Ding.Locales.zhCN = {
     IMPORT_ANOTHER = "再导入一个",
     IMPORT_ERROR_LINE = "错误：%s",
     IMPORT_WARNING_LINE = "警告：%s",
+    IMPORT_WAIT_KEYBOARD = "聊天框仍占用键盘：关闭聊天框后，此文本框将接管键盘。",
     EXPORT_TITLE = "导出：%s",
     EXPORT_HELP = "文本已选中：用 Ctrl+C 复制。",
     EXPORT_MOUSE = "Ctrl+C：复制 · Esc：关闭",

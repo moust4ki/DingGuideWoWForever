@@ -273,6 +273,7 @@ Ding.Locales.ptBR = {
     IMPORT_ANOTHER = "Importar outro",
     IMPORT_ERROR_LINE = "Erro: %s",
     IMPORT_WARNING_LINE = "Aviso: %s",
+    IMPORT_WAIT_KEYBOARD = "O chat ainda está com o teclado: quando for fechado, esta caixa o assume.",
     EXPORT_TITLE = "Exportar: %s",
     EXPORT_HELP = "O texto está selecionado: copie com Ctrl+C.",
     EXPORT_MOUSE = "Ctrl+C: copiar · Esc: fechar",

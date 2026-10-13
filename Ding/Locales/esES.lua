@@ -275,6 +275,7 @@ Ding.Locales.esES = {
     IMPORT_ANOTHER = "Importar otra",
     IMPORT_ERROR_LINE = "Error: %s",
     IMPORT_WARNING_LINE = "Aviso: %s",
+    IMPORT_WAIT_KEYBOARD = "El chat todavía tiene el teclado: al cerrarlo, este cuadro lo toma.",
     EXPORT_TITLE = "Exportar: %s",
     EXPORT_HELP = "El texto está seleccionado: cópialo con Ctrl+C.",
     EXPORT_MOUSE = "Ctrl+C: copiar · Esc: cerrar",

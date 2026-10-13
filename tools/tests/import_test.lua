@@ -478,6 +478,68 @@ T.test("window: /ding export shows the active guide selected and locked; one lin
     T.ok(not f:IsShown(), "a window for a guide that does not exist")
 end)
 
+-- In game (13/10/2026, gamepad interface on): /ding export typed in the chat opened the window
+-- and the game's "AddOn blocked" popup. Taking the keyboard from the chat inside Ding's code
+-- made the chat's own focus-lost handler run in Ding's name, and it ends in actions only the
+-- Blizzard UI may take. The window waits until the chat lets go of the keyboard.
+T.test("window: never takes the keyboard from the game's chat", function()
+    start()
+    H.chat("/ding export")
+    local f = W.frame
+    T.ok(f:IsShown(), "/ding export from the chat does not open the window")
+    T.ok(H.chatHasKeyboard(), "the keyboard was taken from the chat")
+    T.ok(not f.text.edit:HasFocus(), "the text took the keyboard from the chat")
+    T.eq(f.status:GetText(), L.IMPORT_WAIT_KEYBOARD)
+    -- A click in the box, the Select all button and Y wait as well.
+    f.text.scripts.OnMouseDown(f.text)
+    f.buttons[1].scripts.OnClick(f.buttons[1])
+    press("PAD4")
+    T.ok(H.chatHasKeyboard(), "selecting took the keyboard from the chat")
+    -- The chat closed: the text takes the keyboard, selected.
+    f.text.edit.selection = nil
+    H.closeChat()
+    H.tick(0.1)
+    T.ok(f.text.edit:HasFocus() and f.text.edit.selection, "the text is not selected once the chat is closed")
+    T.eq(f.status:GetText(), "")
+    press("PAD2")
+
+    -- /ding import: the box takes the paste once the chat is closed.
+    H.chat("/ding import")
+    T.ok(f:IsShown() and H.chatHasKeyboard() and not f.text.edit:HasFocus(), "/ding import took the keyboard")
+    H.closeChat()
+    H.tick(0.1)
+    T.ok(f.text.edit:HasFocus(), "the text box does not take the paste once the chat is closed")
+    press("PAD2")
+
+    -- Closed before the chat: nothing waits any more.
+    H.chat("/ding export")
+    press("PAD2")
+    H.closeChat()
+    H.tick(0.1)
+    T.ok(not f.text.edit:HasFocus(), "a closed window took the keyboard")
+
+    -- The settings' Export button, the chat still open behind them.
+    H.chat("/ding config")
+    C:Open("guide", 1); H.flush()
+    for _ = 1, 40 do
+        if C.focus and C.focus.opts and C.focus.opts.label == L.IMPORTED_ROW then break end
+        press("PADDDOWN")
+    end
+    press("PAD1")
+    for _ = 1, 40 do
+        if C.focus and C.focus.opts and C.focus.opts.label == L.EXPORT_ROW then break end
+        press("PADDDOWN")
+    end
+    C.focus.scripts.OnClick(C.focus, "LeftButton")
+    T.ok(f:IsShown() and H.chatHasKeyboard() and not f.text.edit:HasFocus(), "the Export button took the keyboard")
+    H.closeChat()
+    H.tick(0.1)
+    T.ok(f.text.edit:HasFocus(), "the exported text does not take the keyboard once the chat is closed")
+    W:Close()
+    if C.frame:IsShown() then C:Close() end
+    H.flush()
+end)
+
 T.test("window: combat closes it", function()
     start()
     W:Open("import")
