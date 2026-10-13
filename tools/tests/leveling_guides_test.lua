@@ -1,0 +1,204 @@
+-- The guides of Ding - Leveling, written by tools/write_leveling.lua from the Leveling routes
+-- (tools/routes/leveling/*.lua): one guide per section, the route's order kept, the steps tagged
+-- for Ding's options complete; and, in the zone guides, no route text on a tagged step.
+local tools = (arg[0]:match("^(.*)[/\\]") or ".") .. "/.."
+local T = dofile(tools .. "/testlib.lua")(arg[1], { bare = true })
+
+local function ids(v)
+    if type(v) == "number" then return { v } end
+    return v or {}
+end
+local function readGuide(file)
+    local def
+    local saved = _G.Ding
+    _G.Ding = { RegisterGuide = function(d) def = d end }
+    dofile(tools .. "/../Ding/Guides/" .. file)
+    _G.Ding = saved
+    return def
+end
+
+local FACTIONS = {}
+for _, name in ipairs({ "alliance", "horde" }) do
+    local route = dofile(tools .. "/routes/leveling/" .. name .. ".lua")
+    local guides = {}
+    for _, s in ipairs(route.sections) do
+        local file = ("Leveling/%s/%s.lua"):format(route.faction, s.id:match("^leveling%-%a(%d+)"))
+        guides[#guides + 1] = { section = s, def = readGuide(file), file = file }
+    end
+    FACTIONS[#FACTIONS + 1] = { route = route, guides = guides }
+end
+
+T.test("one guide per route section, in Ding's default pack", function()
+    for _, f in ipairs(FACTIONS) do
+        for _, g in ipairs(f.guides) do
+            local s, def = g.section, g.def
+            T.ok(def, g.file .. " missing")
+            T.eq(def.id, s.id)
+            T.eq(def.pack, nil, s.id .. ": Ding - Leveling")
+            T.eq(def.faction, f.route.faction)
+            T.eq(def.title, ("%s (%d-%d)"):format(s.title, s.minLevel, s.maxLevel))
+            T.eq(def.next, s.next, s.id .. ": next")
+            T.eq(table.concat(def.races or {}, ","), table.concat(s.races or {}, ","), s.id .. ": races")
+        end
+    end
+end)
+
+-- The Leveling route is the plan: the quest actions a guide keeps follow the route order (a
+-- repair may move a few: a quest waiting for its prerequisite).
+T.test("the route order holds", function()
+    for _, f in ipairs(FACTIONS) do
+        for _, g in ipairs(f.guides) do
+            -- Positions of each action in the route section (an objective may come back at
+            -- several places: the n-th one in the guide stands for the n-th one there).
+            local index = {}
+            local n = 0
+            local function at(key)
+                n = n + 1
+                index[key] = index[key] or {}
+                table.insert(index[key], n)
+            end
+            for _, step in ipairs(g.section.steps) do
+                -- (A quest accepted and turned in on one step is done on the spot: accept first.)
+                local accepted, instant = {}, {}
+                for _, q in ipairs(ids(step.accept)) do accepted[q] = true end
+                for _, q in ipairs(ids(step.turnin)) do
+                    if accepted[q] then instant[#instant + 1] = q else at("turnin" .. q) end
+                end
+                for _, q in ipairs(ids(step.accept)) do at("accept" .. q) end
+                for _, q in ipairs(ids(step.complete)) do at("complete" .. q) end
+                for _, q in ipairs(instant) do at("turnin" .. q) end
+            end
+            local seq, seen = {}, {}
+            for _, step in ipairs(g.def.steps) do
+                for _, k in ipairs({ "turnin", "accept", "complete" }) do
+                    for _, q in ipairs(ids(step[k])) do
+                        local list = index[k .. q]
+                        if list then
+                            seen[k .. q] = (seen[k .. q] or 0) + 1
+                            seq[#seq + 1] = list[math.min(seen[k .. q], #list)]
+                        end
+                    end
+                end
+            end
+            -- Longest run in route order (longest non-decreasing subsequence).
+            local tails = {}
+            for _, v in ipairs(seq) do
+                local lo, hi = 1, #tails + 1
+                while lo < hi do
+                    local mid = math.floor((lo + hi) / 2)
+                    if tails[mid] <= v then lo = mid + 1 else hi = mid end
+                end
+                tails[lo] = v
+            end
+            T.ok(#seq == 0 or #tails >= 0.9 * #seq,
+                ("%s: %d of %d actions in route order"):format(g.section.id, #tails, #seq))
+        end
+    end
+end)
+
+T.test("a dungeon or elite quest is tagged on every step, its death skips complete", function()
+    for _, f in ipairs(FACTIONS) do
+        local tagOf, plain = {}, {}
+        for _, g in ipairs(f.guides) do
+            for i, step in ipairs(g.def.steps) do
+                local tag = step.dungeon or (step.elite and "elite")
+                for _, k in ipairs({ "turnin", "accept", "complete" }) do
+                    for _, q in ipairs(ids(step[k])) do
+                        if tag then
+                            tagOf[q] = tagOf[q] or tag
+                        else
+                            plain[q] = plain[q] or (g.section.id .. ", step " .. i)
+                        end
+                    end
+                end
+                if step.deathskip then
+                    T.eq(type(step.text), "string", g.section.id .. ", step " .. i .. ": death skip without text")
+                end
+            end
+        end
+        for q, tag in pairs(tagOf) do
+            T.ok(not plain[q], ("quest %d is tagged %s, not at %s"):format(q, tag, tostring(plain[q])))
+        end
+    end
+end)
+
+-- The Skyborne starts (tools/routes/skyborne_<side>.lua): a Skyborne has a side from
+-- creation, one start per side with the quests open to it, then that side's Leveling route;
+-- the Skyborne join the Leveling routes (`entries`), which keep for them what the other races'
+-- starts already did.
+T.test("Skyborne: a start per side, then the faction's Leveling route", function()
+    local X = dofile(tools .. "/questiedb_export.lua")
+    local db = X.load(T.combined)
+    local bits = X.RACE_FACTION_BITS.Skyborne
+    local NEXT = { Alliance = "leveling-a04-westfall", Horde = "leveling-h04-silverpine-forest" }
+    for _, side in ipairs({ "Alliance", "Horde" }) do
+        local route = dofile(tools .. "/routes/skyborne_" .. side:lower() .. ".lua")
+        local def = readGuide(route.guides[1].file)
+        T.eq(def.faction, side)
+        T.eq(table.concat(def.races, ","), "Skyborne")
+        T.eq(def.next, NEXT[side])
+        local n = 0
+        for _, step in ipairs(def.steps) do
+            for _, q in ipairs(ids(step.accept)) do
+                n = n + 1
+                T.ok(X.raceAllowed(db.Quest[q], bits[side]), ("%s: quest %d is closed to that side"):format(side, q))
+            end
+        end
+        T.ok(n > 50, side .. ": quests on Zephras Isle: " .. n)
+        -- The way off the isle closes the start; the isle's class quests are for their class.
+        local exit = side == "Alliance" and 94946 or 95349
+        local last = def.steps[#def.steps]
+        local out = side == "Alliance" and def.steps[#def.steps - 1] or last
+        T.eq(ids(out.turnin)[1], exit, side .. ": exit quest turned in at the end")
+        if side == "Alliance" then T.ok(last.go and last.go[1] == 1416, "Alliance: the portal in Dalaran last") end
+        local classSteps = 0
+        for _, step in ipairs(def.steps) do
+            if step.classes then
+                classSteps = classSteps + 1
+                T.eq(#step.classes, 1, side .. ": a class quest step is for one class")
+            end
+        end
+        T.ok(classSteps > 0, side .. ": class quests of the isle")
+    end
+    for _, f in ipairs(FACTIONS) do
+        local entry = f.route.entries and f.route.entries.Skyborne
+        T.ok(entry, f.route.faction .. ": Skyborne entry")
+        local joined = false
+        for _, g in ipairs(f.guides) do
+            if g.section.id == entry.section then joined = true end
+            for i, step in ipairs(g.def.steps) do
+                if not joined and step.races then
+                    for _, r in ipairs(step.races) do
+                        T.ok(r ~= "Skyborne", ("%s, step %d: Skyborne before they join"):format(g.section.id, i))
+                    end
+                end
+            end
+        end
+        T.ok(joined, entry.section .. " found")
+    end
+    -- Westfall: the human start did these quests; the other races, the Skyborne included, get them.
+    local westfall = FACTIONS[1].guides[4].def
+    local found = false
+    for _, step in ipairs(westfall.steps) do
+        if ids(step.accept)[1] == 64 and step.races then
+            found = table.concat(step.races, ","):find("Skyborne", 1, true) ~= nil
+        end
+    end
+    T.ok(found, "Westfall: accept 64 for the Skyborne too")
+end)
+
+T.test("the zone guides keep route texts off the steps behind an option", function()
+    -- (Off, the option takes its whole step away: a zone intro there would be lost.)
+    for _, name in ipairs({ "human", "dwarf_gnome", "nightelf", "alliance", "orc_troll", "tauren", "undead", "horde" }) do
+        local route = dofile(tools .. "/routes/" .. name .. ".lua")
+        for _, g in ipairs(route.guides) do
+            local def = readGuide(g.file)
+            for i, step in ipairs(def.steps) do
+                local tagged = step.sethearth or step.hearth or step.deathskip or step.dungeon or step.elite
+                T.ok(not (tagged and step.note), ("%s, step %d: note on a tagged step"):format(def.id, i))
+            end
+        end
+    end
+end)
+
+T.run()

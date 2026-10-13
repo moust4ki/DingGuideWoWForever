@@ -1,0 +1,4 @@
+# Binary media: never touched by line-ending conversion.
+*.tga binary
+*.ttf binary
+*.png binary

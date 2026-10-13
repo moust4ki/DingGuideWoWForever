@@ -1,0 +1,26 @@
+# Packaging for CurseForge (BigWigs packager, .github/workflows/release.yml).
+# The addon lives in Ding/: its content becomes the root of the Ding folder of the zip.
+# Only the addon and its license ship; tools, docs, the example guide pack and the QuestieDB
+# data stay out.
+package-as: Ding
+
+move-folders:
+  Ding/Ding: Ding
+
+ignore:
+  - tools
+  - docs
+  - examples
+  - README.md
+  - CLAUDE.md
+
+# Release notes on CurseForge and GitHub, written in English for players (the commit
+# messages are in French and full of development notes). Add an entry before each tag.
+manual-changelog:
+  filename: CHANGELOG.md
+  markup-type: markdown
+
+# QuestieDB, the hard dependency, is not on CurseForge: the description says how to
+# install it. TomTom is an optional alternative arrow.
+optional-dependencies:
+  - tomtom

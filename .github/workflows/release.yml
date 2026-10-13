@@ -1,0 +1,55 @@
+# Publishing Ding with the BigWigs packager (.pkgmeta).
+# - Tag v* (v0.2.0, v0.2.0-beta1): the whole test suite runs, then the zip is built,
+#   checked (tools/check_package.py) and only then uploaded to CurseForge (project 1739053,
+#   ## X-Curse-Project-ID in Ding.toc) and to the GitHub releases. A tag containing "beta"
+#   or "alpha" publishes a beta or alpha file.
+# - Pull request: the same zip is built and checked, nothing is uploaded; it can be
+#   downloaded from the run's artifacts.
+# Secret: CF_API_TOKEN (CurseForge API token, https://authors.curseforge.com/#/settings/api-tokens).
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+  pull_request:
+
+jobs:
+  tests:
+    if: github.event_name == 'push'
+    uses: ./.github/workflows/tests.yml
+
+  package:
+    needs: tests
+    # Runs when the tests passed, or were skipped (pull request: tests.yml runs on its own).
+    if: ${{ !failure() && !cancelled() }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0    # the version and the changelog come from the tags
+
+      - name: Build the zip (no upload)
+        uses: BigWigsMods/packager@v2
+        with:
+          args: -d
+
+      - name: Check the zip
+        run: python3 tools/check_package.py .release/*.zip
+
+      - name: Keep the zip
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ding-zip
+          path: .release/*.zip
+          retention-days: 7
+
+      - name: Publish to CurseForge and GitHub
+        if: github.event_name == 'push'
+        uses: BigWigsMods/packager@v2
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          # packager v2 reads GITHUB_API_TOKEN (newer versions read GH_API_TOKEN first)
+          GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,432 @@
+# Offline tools
+
+Lua 5.1 scripts that read QuestieDB's **Forever** export. They are used to write and check
+the guides; nothing here is loaded by the game.
+
+| Script | Purpose |
+| --- | --- |
+| `list_zone.lua` | Lists the quests of a zone available to a race, sorted by level |
+| `check_guides.lua` | Replays the guides and checks quests, prerequisites, quest log |
+| `smoke_test.lua` | Runs the addon with a simulated WoW API and plays the guides |
+| `run_tests.lua` | Runs the unit tests in `tests/` |
+| `wow_mock.lua` | Shared module: simulated WoW API, in-memory QuestieDB, loading of Ding |
+| `testlib.lua` | Shared module: small unit test framework |
+| `draft_guide.lua` | Writes the guides of a route (`routes/*.lua`) from the export |
+| `write_leveling.lua` | Writes Ding - Leveling from the Leveling routes (`routes/leveling/*.lua`) (section 7) |
+| `fit_windows.lua` | Re-cuts the level windows of a route from the simulation: each guide starts where the previous one ends |
+| `route_model.lua` | Shared module: the optimizer's time and XP model (parameters to recalibrate) |
+| `route_data.lua` | Shared module: map geometry, spawn groups, target counts, drop rates |
+| `route_solver.lua` | Shared module: simulation of a tour, greedy tour, local search |
+| `route_travel.lua` | Shared module: travel network (flight masters of the faction, boats, zeppelins, tram), inn names |
+| `route_work.lua` | Shared module: spawn groups of an objective, ways to do a quest's objectives |
+| `questiedb_export.lua` | Shared module: reading the export, field indexes, masks |
+| `media/textures.py` | Python 3, no dependencies: draws the kit texture missing from the handoff and puts the origin of the TGAs at the bottom (`python3 tools/media/textures.py Ding/Media/Textures`) |
+| `translate_guides.lua` | Writes the translations of each guide in the TOC, one per language (`Ding/Locales/Guides/<locale>/`), from the `routes/locales/<locale>.lua` dictionaries, and their lines in `Ding.toc` (`lua5.1 tools/translate_guides.lua [locale...]`); exit code 1 if a translation is missing |
+| `guide_texts.lua` | Shared module: language dictionaries, translation of a note sentence by sentence, writing of the translation files |
+| `check_package.py` | Python 3, no dependencies: checks the zip built by the BigWigs packager before publishing (`python3 tools/check_package.py .release/Ding-*.zip`, from the repository root) |
+| `media/icon.py` | Python 3, no dependencies: turns the icon `docs/icon.png` into `icon.tga` (64, minimap) and `icon32.tga` (32, addon list) (`python3 tools/media/icon.py docs/icon.png Ding/Media/Textures`) |
+
+## 1. Getting the QuestieDB export
+
+You need a **Lua 5.1** interpreter (`lua5.1` on Debian/Ubuntu, package `lua5.1`).
+QuestieDB also ships binaries in `tools/lua-binary/` of its repository (`lua.exe` on
+Windows, which `run_tests.lua` also works with).
+
+Clone QuestieDB **outside the Ding repository** (its data has no explicit license: we never
+copy it into Ding), then run the export from its root:
+
+```sh
+git clone --depth 1 https://github.com/Questie/QuestieDB.git ../QuestieDB
+cd ../QuestieDB
+lua5.1 tools/export-forever.lua --include-authored
+```
+
+The export writes `src/corrections/Forever/combined/forever{Quest,Npc,Item,Object}DB.lua`.
+Each file returns a table `{ [id] = { positional fields } }`; the field indexes are in
+`src/meta/*Meta.lua` (quest: 1 name, 2 giver, 3 turn-in, 4 required level, 5 quest level,
+6 races, 10 objectives, 12-13 prerequisites, 17 zone…).
+Run the export again after each `git pull` of QuestieDB.
+
+Below, `$QDB` stands for this folder:
+
+```sh
+QDB=../QuestieDB/src/corrections/Forever/combined
+```
+
+## 2. Listing the quests of a zone
+
+```sh
+lua5.1 tools/list_zone.lua $QDB <areaId> <race bit | race name>
+lua5.1 tools/list_zone.lua $QDB 141 8          # Teldrassil, Night Elf
+lua5.1 tools/list_zone.lua $QDB 141 NightElf   # same
+```
+
+- `areaId`: zone id (AreaTable), for example 141 Teldrassil, 148 Darkshore,
+  12 Elwynn Forest, 1 Dun Morogh, 14 Durotar, 215 Mulgore, 85 Tirisfal Glades.
+- Race bits: Human 1, Orc 2, Dwarf 4, Night Elf 8, Undead 16,
+  Tauren 32, Gnome 64, Troll 128.
+
+A quest is listed if its zone is `areaId`, or if its giver (NPC, object, or monster that
+drops the starting item) spawns in that zone: the quests of a subzone such as
+Shadowglen (188) therefore show up with Teldrassil (141).
+
+Columns: id, quest level, required level, name, prerequisites
+(`a|b`: either one; `a+b`: all of them; `active:n`: quest n in the quest log),
+giver => turn-in with coordinates (`+n`: other spawns), then the special cases
+(classes, `repeatable`, zone or category when it is not `areaId`). Output in English:
+the tool is also offered to guide pack authors (`docs/guide-packs.md`).
+
+## 3. Checking the guides
+
+```sh
+lua5.1 tools/check_guides.lua $QDB                 # guides listed in Ding/Ding.toc
+lua5.1 tools/check_guides.lua $QDB my_guide.lua    # specific files
+lua5.1 tools/check_guides.lua $QDB --addon examples/DingExamplePack   # a guide pack
+```
+
+The messages are in English: this is also the validator for pack authors
+(`docs/guide-packs.md`, section 10). With `--addon`, the script loads the files of the pack's
+`.toc`, checks its `Ding.RegisterGuidePack` and the `pack` of each section (missing, unknown,
+id `ding`), rejects a section id already used by one of Ding's guides (those are read for
+their ids only) and accepts a `next` pointing to one of Ding's guides (`info`). The required
+translations are those of the languages the pack translates.
+
+The script loads the guides with a fake `Ding.RegisterGuide`, chains them through `next`
+and replays them in order, once per race (and per class if some steps depend on it).
+It reports:
+
+- **errors**: unknown quest, quest reserved for another race or class, prerequisites not
+  turned in earlier in the chain, exclusive quest already taken, quest completed or turned in
+  without having been accepted, quest accepted twice, quest log above 20 quests, malformed
+  step, `next` loop;
+- **warnings**: unknown key (typo), next guide not found, quest turned in without a
+  `complete` step although it has objectives, required level above the guide;
+- **translations** (warnings): guide with no translation in a shipped language, English text
+  (`title`, `text`, `note`) not translated, translation whose English text no longer exists;
+  a translation of an unknown guide is an error;
+- **info**: maximum size of the quest log and quests still in progress at the end of the
+  chain.
+
+Exit code: 0 with no errors, 1 if there are errors, 2 if the command line is incorrect.
+
+`optional` steps count as done: the quest log is therefore evaluated in the worst case.
+
+Goals and conditions (`kill`, `collect`, `buy`, `talk`, `gossip`, `spots`, `patrol`,
+`revive`, `xp`, `when`...) are checked for their shape (errors) and their NPC, item and
+object ids against QuestieDB (warnings). A step under `when` is a branch: it is replayed when
+its conditions hold, or cannot be known offline (items in the bags, the player's level), and
+all its quest actions can be played; it is passed otherwise. `abandon` takes quests out of
+the log. `when.item` is read as the engine reads it: an id, a pair `{ itemId, count }` (the
+count below 1000), a list of ids (all held) or a list of pairs; any other shape is an error.
+
+A turn-in that needs an item the player brings from elsewhere (one vendors sell, or one
+nothing drops), for a quest no `complete` step works on, is an error unless the item was
+bought earlier in the chain (`buy`), given by a quest turned in before, or the turn-in step
+applies only while the item is held (`when = { item = id }`): without it, the player would
+be stuck on the step. A turn-in that applies only once the quest is ready (`when.ready`), or
+only with one of its items held, needs no `complete` step (no warning).
+
+## 4. Offline test bench
+
+```sh
+lua5.1 tools/smoke_test.lua $QDB                  # prints the panel after each step
+lua5.1 tools/smoke_test.lua $QDB --quiet          # problems only
+lua5.1 tools/smoke_test.lua $QDB --skip-optional  # optional quests never start
+lua5.1 tools/smoke_test.lua $QDB --locale enUS    # English client (frFR by default)
+lua5.1 tools/smoke_test.lua $QDB --tomtom         # with a simulated TomTom (its arrow replaces Ding's)
+```
+
+Loads the files of `Ding/Ding.toc` with a simulated WoW API (frames, quest log, maps) and a
+QuestieDB built from the export, then plays each guide chain like a player: accept, complete,
+turn in, level up, walk to the `go` points.
+It then drives the settings window **with simulated gamepad presses only** (first launch,
+assigning a button with a conflict, every element of the five tabs, confirmations, move mode
+with key repeat, combat, dungeon, collapsed version).
+
+It reports Lua errors (including inside events), unknown frame methods (typos),
+contradictory anchors, steps that do not complete on their own, temporary bindings left
+behind and panel anomalies. Non-zero exit code if there is a problem.
+
+Each guide starts at no less than its minimum level (the player kills monsters on the way).
+
+It does not replace a test in game: the API is simulated (the arrow is not checked,
+objectives are filled in one go, XP is approximate).
+
+## 5. Unit tests
+
+```sh
+lua5.1 tools/run_tests.lua $QDB           # every tools/tests/*_test.lua file
+lua5.1 tools/run_tests.lua $QDB engine    # only those whose name contains "engine"
+```
+
+Each file runs in its own process: it loads Ding once with the simulated API
+(`wow_mock.lua`), then each test starts over from a fresh character (`T.reset`). `T.quests`
+puts quests in the quest log without side effects; `T.eq`, `T.ok` and `T.fails` check. A
+Lua error in an event fails the current test.
+
+The unit tests only load the shipped guides they name (Shadowglen by default,
+`testlib(arg[1], { guides = { ... } })`): adding guides to Ding does not change their results.
+The test bench scenarios play Shadowglen by its id, not "the first guide".
+
+The unit tests check the fine-grained logic (when a step is done, choice of the guide,
+validation of the guides); the test bench checks the whole run with the gamepad.
+
+## 6. Generating the guides of a route
+
+```sh
+lua5.1 tools/draft_guide.lua $QDB tools/routes/human.lua              # writes Ding/Guides/Human/*.lua
+lua5.1 tools/draft_guide.lua $QDB tools/routes/alliance.lua --report  # before/after table per guide
+lua5.1 tools/draft_guide.lua $QDB tools/routes/nightelf.lua --out /tmp/draft --trace
+```
+
+| Option | Purpose |
+| --- | --- |
+| `--out <dir>` | writes somewhere other than `Ding/Guides` (translations in `<dir>/Locales`) |
+| `--report` | per guide: distance, estimated time, XP, XP/h, quests removed by the optimizer and why |
+| `--trace` | every action of the chosen tour, then the quests left out during selection |
+| `--iterations <n>` | number of local search moves per guide (20,000 by default) |
+| `--greedy` | no optimization: the "nearest first" tour of earlier versions |
+| `--quest-above <n>` | quests at most `n` levels above the simulated player (2 by default) |
+| `--mob-above <n>` | objective monsters at most `n` levels above the simulated player (1 by default) |
+| `--grind-stop <s>` | grinding stops of a guide, in seconds, at most for a quest a later guide needs (3,600 by default) |
+| `--fit` | each guide starts at the level the previous one reached, not at its `minLevel`; prints the windows that chain without grinding |
+| `--dry-run` | writes no file (simulation and reports only) |
+
+A **route** (`tools/routes/*.lua`) is our own work: the sequence of guides of a track
+(races, zones, level range, quests to add or leave out, travel notes). For each guide, the
+script picks the zone's quests, builds a first tour the way a player would, then improves it
+for **XP per hour**.
+
+- **Quest selection**: giver in the zone (`areas`, and inside `box` for a starting valley),
+  open to every race of the track, no profession, reputation or event, open to every class
+  (or to all but one, which gets its own variant: its steps, and those of any follow-up that
+  depends on it only through that variant, carry `classes = { … }`), not repeatable, level
+  within the range (`minQuestLevel`, `maxQuestLevel`), objectives found in the zone and not
+  elite, turned in within the zone, in a city of `extraAreas` or in one of the next two guides
+  (`carry`). A quest that is too low comes back if it opens a chain that was kept. A quest
+  started by an item becomes optional, unless it opens a chain; it is left out if QuestieDB
+  gives the starting item a drop chance below 10 %.
+- **Travel** (`route_travel.lua`): world distance (yards, Forever map geometry read from
+  QuestieDB's `data/Forever/conversion.json`) at 7 yards/s, × 1.25 for detours, mount at
+  level 40; flight paths from level 14 between the flight masters of the faction (QuestieDB's
+  NPC flags) in the zones known so far (capitals, the route's zones up to this guide,
+  `knownAreas`); boats, zeppelins and the Deeprun Tram between land masses and continents
+  (docks placed by us, 5 1/2 minutes with the wait). A trip is the best of the straight walk
+  and walk, network, walk; shortest paths are computed once per speed class and trips are
+  cached. **Hearthstone** (`route_solver.lua`): to the bound inn when it is ready and saves
+  a minute (30 s, once an hour); binding at each inn of the guide's zones is an action the
+  search adds where it saves time (`sethearth` step), each use a `hearth` step.
+- **Model** (`route_model.lua`, `PARAMS` table). Objectives: number of targets read from
+  the quest text ("Kill 10 Kobold Vermin"; "a/an/the <name>", or a name mentioned in a text without a
+  number, counts as one), 8 otherwise; at most 60 monsters per item to loot; drop rates from
+  QuestieDB (60 % otherwise); time per target (combat, rest, walking to the next one
+  depending on the density of the spawn group) and waiting for respawns when the group is too
+  small. Each spawn group has the level of the monsters found there (an item may drop from
+  monsters of several levels: the weakest ones get their own groups too). Quest XP from the
+  `QuestXP` table (reduced beyond 5 levels), monster XP from the Classic formula. All these
+  figures are estimates, to be recalibrated with `DingDB.timings`.
+- **First tour** (`route_solver.lua`): the player always goes to the nearest action (accept,
+  complete, turn in), keeps the quest log under 18 quests, takes a quest only when its
+  monsters will be within reach a level later at most (a log full of quests whose monsters are
+  still too strong blocks the tour), waits at most one level, and never beyond the guide's
+  maximum level, when a quest or its monsters require it. This is the "before" column of the
+  report.
+- **Optimization**: simulated annealing on the sequence of actions (move an action or a
+  block, swap, reverse a segment, remove or add a quest with its chain, remove then reinsert a
+  few neighboring quests), then reinsertion of the left-out quests that pay off and a final
+  polish. Every rule is checked by simulation: prerequisites, exclusive quests, required level
+  (simulated XP), gray quests (which the engine would skip), quest log, quests started by an
+  item (picked up while killing the monsters of another quest), quests carried from one guide
+  to the next. Fixed seed derived from the guide's id: two runs write the same files.
+- **Criterion**: the time to reach the guide's maximum level, making up the missing XP by
+  grinding (from 50 s per monster at level 5 to 70 s at level 60, searching included). A
+  quest is therefore kept if it pays off faster than grinding, detour included: too far away
+  or too long, it is removed. Monsters killed for a quest never count for more than grinding
+  (nothing to gain by killing them twice instead of grouping two quests), a grinding stop in
+  the middle of a guide (`level` step) counts as lost time plus 15 minutes (a wall, Yendi's
+  feedback: fewer, longer stops rather than one per level), and the tour must end near the
+  start of the next guide (its hub: where most of its quests start, or `start`).
+- **Levels** (Yendi's rule, 12/10/2026): a quest is taken at most **2 levels above the
+  player** (`PARAMS.questAbove`; its required level, a limit of the game, never above), its
+  monsters fought at most **1 level above** (`PARAMS.mobAbove`, average of their range,
+  rounded down, in the spawn group chosen). The level is simulated with the quests' XP in
+  full (the game's own figures) and 90 % of the monsters' XP (`PARAMS.killXPMargin`: counts,
+  drop rates and levels are estimates; so is the XP of a quest missing from the `QuestXP`
+  table). A quest that is too high is done later in the guide, once the level is reached;
+  otherwise it is offered to the next guide ("deferred", then "deferred from <guide>" in the
+  next guide's report), and removed if it still does not pay off there. A `level` step
+  ("Finish the level on nearby monsters before moving on.") comes before the quests it
+  unlocks when no other quest gets the player there and the stop pays off; for a quest that a
+  later guide needs (never dropped by the search), the stops of a guide add up to an hour at
+  most (`PARAMS.maxGrindStop`): further, it waits for a later guide. A guide ends with a
+  `level` step when the simulated level does not reach the next guide's minimum: in game, it
+  completes on its own if the player is already at that level. The route's last guide
+  reports the grinding left up to its maximum level, without a step. Each step carries the
+  simulated level as a comment (`-- level N`); `tests/guide_levels_test.lua` checks that no
+  quest is accepted above `N + 2` nor below its required level, and that the monsters of
+  each quest worked on are within `N + 1` somewhere in the guide's zones.
+- **Steps**: neighboring actions (100 yards, 250 for objectives) form a step, in the order
+  turn in, accept, complete; objectives join a step only while their monsters stay within
+  reach of its level. `intro` and `notes` add our advice; in a guide over several zones, the
+  first step in each zone gets that zone's intro (`zoneIntrosFrom`: the zone routes it comes
+  from; a starting valley's intro, a guide with a `box`, only inside its box), unless the
+  previous guide left the player there. Route texts never go on a step behind an option.
+- **Extras** (`extras = true` in the route): dungeon quests (`route_data.lua` questDungeon:
+  an objective found only inside one of the dungeons of DUNGEONS, or a quest of a dungeon's
+  zone that fights monsters or triggers an event, which QuestieDB sometimes places at the
+  entrance) and elite quests, tagged `dungeon = "<name>"` or `elite = true` for Ding's
+  options (off by default). A dungeon quest is never part of the tour, which never counts on
+  an extra either: one is
+  offered after the first step that passes by its giver at its level, once the guide has
+  turned in its prerequisites, when its ender is in the same town (accept, objectives and
+  turn-in in a row) and no quest of the route needs it.
+- **Class quests** (`classQuests = true`, with `extras`): a quest for one class (its
+  `requiredClasses`, its class category in QuestieDB's sorts, `questiedb_export.lua`
+  CLASS_SORTS, or its class trainer) is offered like an extra, on steps
+  `classes = { "<CLASS>" }`, its ender anywhere in the guide's zones; the next quest of a
+  class chain may follow right after.
+- **The way out** (`finish` of a guide): steps written as they are after the tour (and its
+  level step), e.g. the Skyborne exit quest turned in at Dalaran, then the portal there; their
+  quests stay out of the tour.
+- **Death skips** (`deathSkips = true`): before a long trip (3 minutes saved at least) whose
+  end is close to the graveyard nearest to the place left (QuestieDB's spirit healers), a
+  step `deathskip = true` with its text; not above level 10 when objectives come during the
+  resurrection sickness. Ding's option, off by default.
+
+**Level windows** (`minLevel`, `maxLevel` of each guide): a guide whose minimum level is
+above what the previous one reaches ends that one with a `level` step. `fit_windows.lua`
+cuts the windows from the simulation instead:
+
+```sh
+lua5.1 tools/fit_windows.lua $QDB tools/routes/human.lua   # rewrites the windows of the route
+```
+
+It runs `draft_guide.lua --fit --dry-run` (each guide starts where the previous one ended),
+then writes `minLevel` = the level reached when the guide starts, `maxLevel` = the next
+guide's `minLevel`, again until nothing moves (the window is also the optimizer's target).
+The route's first `minLevel` stays, and so does the last `maxLevel` of a route that leads
+nowhere. Run it again after a change of the model or of a route, tracks first: the first
+`minLevel` of a trunk is the lowest level its tracks reach. With `--fit`, the selection no
+longer depends on the window (quests up to level 60, any required level). The title of a
+guide is the zone named by the route plus its window: "Westfall (11-16)".
+
+In the route, `include` forces a quest (even outside the filters, even gray, even reserved
+for certain classes): the optimizer
+never removes it, nor what it depends on, even if that means grinding to reach it; `exclude`
+leaves it out. The quests that a later guide of the route needs (prerequisites) are not
+removed either, unless their level is out of reach: they then wait for the next guide. `seed`
+changes the seed of the search, `start = { areaId, x, y }` the starting point of a guide.
+`faction` gives the faction of the written guides ("Alliance" by default, "Horde" for Horde
+routes), `pack` their guide pack (`ding-zones` for the zone guides; none: Ding's default
+pack, Leveling). `areaMinQuestLevel = { [areaId] = level }` keeps only the quests of a zone
+from that level on. `multiZone = true` (a guide over many zones): the first tour waits for a
+level only when it opens three quests at least (or for a short stop), there is always
+another zone to go to.
+
+A zone shared between the race tracks and the common trunk (The Barrens, Stonetalon
+Mountains, Silverpine Forest on the Horde side) is split by quest level: the tracks stop at
+level 19 quests (`maxQuestLevel`), the trunk starts at 20 (`minQuestLevel`) and leaves out
+(`exclude`) the quests whose chain starts below 20, whether or not a track may have done them
+(`lowChains` in `routes/horde.lua`). This way no quest is taken twice, whatever the race.
+
+Titles and notes are in English in the guide; the script also writes their translations
+(dictionaries of `routes/locales/`, which name each zone once: the level range of a title is
+kept as it is) into `Ding/Locales/Guides/<locale>/`.
+
+The script only writes quest ids and our notes. Running the script again rewrites the
+files: a lasting change is made in the route (`include`, `exclude`, `notes`), then
+everything is checked again with `check_guides.lua` and `smoke_test.lua`.
+
+**Two packs.** Ding's default pack, **Ding - Leveling**, comes from the Leveling routes
+(`tools/routes/leveling/<faction>.lua`, written by `write_leveling.lua`, see 7). The zone routes
+below write the **Ding - Zones** pack, one guide per zone (`pack = "ding-zones"`), which keeps
+the ids of the first versions (characters keep their progress).
+
+The zone tracks:
+
+| Route | Races | Guides |
+| --- | --- | --- |
+| `human.lua` | Human | Northshire, Elwynn, Westfall, Loch Modan (1-18) |
+| `dwarf_gnome.lua` | Dwarf, Gnome | Coldridge Valley, Dun Morogh, Loch Modan, Westfall (1-18) |
+| `nightelf.lua` | Night Elf | Teldrassil, Darkshore, Loch Modan (6-21), after the hand-written Shadowglen |
+| `alliance.lua` | all | common trunk 18-60, from Redridge to Silithus (Blasted Lands at 48) |
+| `orc_troll.lua` | Orc, Troll | Valley of Trials, Durotar, The Barrens (1-19) |
+| `tauren.lua` | Tauren | Camp Narache, Mulgore, The Barrens (1-19) |
+| `undead.lua` | Undead | Deathknell, Tirisfal Glades, Silverpine Forest, The Barrens (1-20) |
+| `horde.lua` | all (Horde) | common trunk 19-60, from The Barrens to Silithus |
+
+## 7. Ding - Leveling from the Leveling routes
+
+```sh
+lua5.1 tools/write_leveling.lua $QDB tools/routes/leveling/alliance.lua [--report] [--dry-run] [--no-additions]
+lua5.1 tools/write_leveling.lua $QDB tools/routes/leveling/horde.lua
+lua5.1 tools/translate_guides.lua
+```
+
+`tools/routes/leveling/<faction>.lua` holds the Leveling route of a faction: its sections (race
+starts, then the shared sections up to 60), each with its zones, level range and steps in
+Ding's keys: quests, travel, and the goals and conditions of `docs/guide-packs.md` (`talk`,
+`kill`, `collect`, `spots`, `patrol`, `useitem`, `buy`, `vendor`, `sticky`, `when`, `revive`,
+`level` + `xp`...), plus `gossipOption` / `gossipText` (a dialogue option's id and English
+text, kept as data until `gossip` takes them). That order is kept, and `write_leveling.lua` changes it as little as possible for
+Forever:
+
+- **Tags**: a quest done in a dungeon or against elites carries `dungeon` / `elite` on every
+  one of its steps (split from the untagged quests of a step), and so do its follow-ups; the
+  `go` to a death skip's place joins the shortcut (`deathskip = true`).
+- **Repairs**, replayed for every race and class of the faction with the rules of
+  `check_guides.lua`: a quest missing from Forever, closed to the race or class, already
+  done, never turned in later by the route, or exclusive with one done is left out for them;
+  a missing prerequisite whose giver stands on the same map is done right before; one still
+  in the log makes the quest wait for its turn-in. A step whose quest only some races or
+  classes keep is restricted to them (`races`, `classes`); repairs, then removals, are
+  replayed until nothing changes.
+- **Goals and conditions** are written as they are. A step under `when` is a branch: the
+  replay plays it only when its conditions hold and all its actions can be played (as
+  `check_guides.lua` does), and keeps it as written otherwise, without repairs. `abandon`
+  frees room in the log; `sticky` keeps only the quests each race and class has taken by
+  then. A route's `when.item` list of one pair is written as that pair, or its id.
+- **Carried items**: a quest whose turn-in needs an item brought from elsewhere (one the route
+  buys, one vendors sell, or one nothing drops) is turned in under `when = { item = id }`, and
+  accepted under it too when the route buys the item and no step works on the quest; its
+  follow-ups, through the chain, are accepted once it is turned in (`when = { done = q }`)
+  and turned in or worked while in the log (`when = { log = q }`). A player without the item
+  (a section started midway, a purchase skipped) passes the chain instead of being stuck.
+- **Done along the way**: a quest that no step works on for every race and class is turned
+  in once ready (`when = { ready = q }`), passed otherwise, and so are its follow-ups. The
+  simulation turns these in without working them, and does not count on an item found
+  elsewhere (pages, crafts) unless the route buys it.
+- **How a section begins** (`tools/routes/leveling/travel.lua`, our texts): its `intro` (the zone
+  and its hub) on the first step and, when the section before ends elsewhere, a go step to
+  the first quest giver that applies to every race (`travel`, the step's text). A section
+  that opens with the route's own go keeps it, with the intro.
+- **Forever's own quests** (absent from QuestieDB's Classic data and from the route) are
+  inserted where the detour is smallest, in route order, after their prerequisites, with
+  room in the quest log, at a level that fits: required level reached, quest at most +2,
+  monsters at most +1, not grey. Only they follow the caps (`guide_levels_test`).
+- **Simulation** of each race as a warrior (travel of `route_travel.lua`, the inns of the
+  route, `level` + `xp` or a fractional level, conditions, time spent with NPCs): the
+  `-- level N` of a step is the lowest level a race reaches there.
+
+A `fly` or `train` label becomes the step's `text` (texts are translated). `--report` lists
+the repairs, the quests left out with their reason, the Forever quests added and those that
+found no place. The route stays the place to change anything: the guides are written again
+on each run.
+
+**Races that join on the way** (`entries = { Skyborne = { section = id, level = n } }` in a
+Leveling route): the Skyborne have a side from creation (one race bit per side,
+`questiedb_export.lua` RACE_FACTION_BITS, and Zephras Isle's quests for one side or both).
+Each side has its Skyborne start on the isle (`routes/skyborne_alliance.lua`,
+`routes/skyborne_horde.lua`, written by `draft_guide.lua` with the bit of that side), then
+the Skyborne join their faction's route at that section. They are replayed from there like
+the other races: the steps the other starts already did are kept for them (`races` includes
+`Skyborne`). A route without a side (`neutral = true`) is still possible: it writes no
+faction, keeps the quests open to both sides and takes `next = { Alliance = id, Horde = id }`;
+`check_guides.lua` replays each branch of such a chain with the bit of its side.
+
+`--deviation` measures the 10 % rule (Yendi, 12/10/2026: the optimizer may depart from the
+route order only when it saves 10 % of a section's time): each section's quests, for the first
+race that plays it, costed in route order and after `route_solver.lua`'s search from it. The
+measure is indicative only (the optimizer does an objective in one visit where the base
+route may split it, and leaves out the steps without quests), so nothing is reordered yet:
+the route order stays everywhere.

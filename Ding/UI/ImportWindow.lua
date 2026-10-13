@@ -1,0 +1,326 @@
+-- Guides as text, in Ding's own window (/ding import, /ding export, the Guide tab's page of
+-- imported guides): the text in a box (paste with Ctrl+V, copy with Ctrl+C), what Ding found
+-- under it in a second box (plain text, to copy back to whoever wrote the guide), and the
+-- buttons. Gamepad: D-pad left / right between the buttons, A presses the focused one, Y
+-- selects the text (or the report) for Ctrl+C, B closes; temporary bindings, out of combat
+-- only. Mouse and keyboard: the buttons are clicked, Esc closes.
+local _, Ding = ...
+local L = Ding.L
+local UI = Ding.UI
+local C = UI.C
+
+local W = {}
+Ding.ImportWindow = W
+
+local WIDTH, HEIGHT, PAD, TITLE, FOOTER = 560, 440, 12, 32, 40
+local TEXT_HEIGHT, REPORT_HEIGHT = 196, 104
+local KEYS = { "PADDLEFT", "PADDRIGHT", "PAD1", "PAD2", "PAD4" }
+
+local function G() return Ding.Gamepad end
+
+---------------------------------------------------------------------------
+-- Pieces
+---------------------------------------------------------------------------
+-- A box of text that scrolls: a multi-line edit box in a scroll frame. A read-only box (or
+-- a text set locked) puts its text back when it is typed into (selecting and Ctrl+C still
+-- work).
+local function textBox(parent, height, readOnly)
+    local box = CreateFrame("Frame", nil, parent)
+    box:SetHeight(height)
+    box.bg = UI.Shape(box, "row", C.control, "BACKGROUND"):Place(box)
+    local scroll = CreateFrame("ScrollFrame", nil, box)
+    scroll:SetPoint("TOPLEFT", box, "TOPLEFT", 8, -6)
+    scroll:SetPoint("BOTTOMRIGHT", box, "BOTTOMRIGHT", -8, 6)
+    scroll:EnableMouseWheel(true)
+    local edit = CreateFrame("EditBox", nil, scroll)
+    edit:SetMultiLine(true)
+    edit:SetAutoFocus(false)
+    edit:SetMaxLetters(0)
+    edit:SetFontObject(UI.Font("regular", 11))
+    edit:SetTextColor(unpack(readOnly and C.secondary or C.text))
+    edit:SetWidth(WIDTH - 2 * PAD - 16)
+    edit:SetHeight(height - 12)
+    scroll:SetScrollChild(edit)
+    scroll:SetScript("OnMouseWheel", function(self, delta)
+        local range = self:GetVerticalScrollRange() or 0
+        self:SetVerticalScroll(math.max(0, math.min(range, self:GetVerticalScroll() - delta * 28)))
+    end)
+    -- The cursor stays in view while typing or moving through the text.
+    edit:SetScript("OnCursorChanged", function(_, _, y, _, h)
+        local top, view = scroll:GetVerticalScroll(), scroll:GetHeight()
+        y = -(y or 0)
+        if y < top then
+            scroll:SetVerticalScroll(y)
+        elseif y + (h or 0) > top + view then
+            scroll:SetVerticalScroll(y + (h or 0) - view)
+        end
+    end)
+    edit:SetScript("OnEscapePressed", function(self)
+        self:ClearFocus()
+        W:Close()
+    end)
+    edit:SetScript("OnTextChanged", function(self, typed)
+        if typed and self.fixed then
+            self:SetText(self.fixed)
+            self:HighlightText()
+        end
+    end)
+    box:EnableMouse(true)
+    box:SetScript("OnMouseDown", function() edit:SetFocus() end)
+    function box:SetValue(text, locked)
+        edit.fixed = (readOnly or locked) and text or nil
+        edit:SetText(text)
+        scroll:SetVerticalScroll(0)
+    end
+    function box:GetValue() return edit:GetText() or "" end
+    -- Everything selected, ready for Ctrl+C.
+    function box:SelectAll()
+        edit:SetFocus()
+        edit:HighlightText()
+    end
+    box.scroll, box.edit = scroll, edit
+    return box
+end
+
+local function newButton(parent, index)
+    local b = CreateFrame("Button", nil, parent)
+    b:SetHeight(26)
+    b:RegisterForClicks("LeftButtonUp")
+    b.bg = UI.Shape(b, "row", C.control, "BACKGROUND"):Place(b)
+    b.hover = UI.Shape(b, "row", C.hover, "BACKGROUND", 1):Place(b)
+    b.hover:Hide()
+    b.focus = UI.Focus(b, true)
+    b.text = UI.Text(b, "medium", 12, C.text)
+    b.text:SetPoint("CENTER", b, "CENTER", 0, 0)
+    b:SetScript("OnClick", function() W:Press(index) end)
+    b:SetScript("OnEnter", function()
+        b.hover:Show()
+        W:SetFocus(index)
+    end)
+    b:SetScript("OnLeave", function() b.hover:Hide() end)
+    return b
+end
+
+---------------------------------------------------------------------------
+-- Window
+---------------------------------------------------------------------------
+function W:Create()
+    if self.frame then return end
+    local f = CreateFrame("Frame", "DingImport", UIParent)
+    f:SetFrameStrata("DIALOG")
+    f:SetClampedToScreen(true)
+    f:EnableMouse(true)
+    f:SetSize(WIDTH, HEIGHT)
+    f:SetPoint("CENTER", UIParent, "CENTER", 0, 40)
+    f.look = UI.Window(f)
+    f.title = UI.Text(f, "semibold", 13, C.text)
+    f.title:SetPoint("TOPLEFT", f, "TOPLEFT", PAD, -10)
+    f.help = UI.Text(f, "regular", 11, C.secondary)
+    f.help:SetPoint("TOPLEFT", f, "TOPLEFT", PAD, -TITLE)
+    f.help:SetPoint("TOPRIGHT", f, "TOPRIGHT", -PAD, -TITLE)
+    f.help:SetJustifyH("LEFT")
+    f.text = textBox(f, TEXT_HEIGHT, false)
+    f.text:SetPoint("TOPLEFT", f, "TOPLEFT", PAD, -(TITLE + 20))
+    f.text:SetPoint("TOPRIGHT", f, "TOPRIGHT", -PAD, -(TITLE + 20))
+    f.status = UI.Text(f, "medium", 12, C.text)
+    f.status:SetPoint("TOPLEFT", f.text, "BOTTOMLEFT", 0, -10)
+    f.status:SetPoint("TOPRIGHT", f.text, "BOTTOMRIGHT", 0, -10)
+    f.status:SetJustifyH("LEFT")
+    f.report = textBox(f, REPORT_HEIGHT, true)
+    f.report:SetPoint("TOPLEFT", f.status, "BOTTOMLEFT", 0, -6)
+    f.report:SetPoint("TOPRIGHT", f.status, "BOTTOMRIGHT", 0, -6)
+    f.buttons = {}
+    f.hints = G():NewHintBar(f, WIDTH / 2, 22, function(key) W:OnKey(key) end)
+    f.hints:SetPoint("BOTTOMLEFT", f, "BOTTOMLEFT", PAD, 9)
+    f:SetScript("OnHide", function() W:OnHide() end)
+    f:Hide()
+    if type(UISpecialFrames) == "table" then table.insert(UISpecialFrames, "DingImport") end
+    self.frame = f
+end
+
+-- The buttons of the moment: { label, run, primary }, laid out from the right.
+function W:SetButtons(list)
+    local f = self.frame
+    self.actions = list
+    local x = -PAD
+    for i = #list, 1, -1 do
+        local b = f.buttons[i] or newButton(f, i)
+        f.buttons[i] = b
+        local action = list[i]
+        b.text:SetText(action.label)
+        b.bg:SetColor(action.primary and C.accent or C.control)
+        b.text:SetTextColor(unpack(action.primary and C.onAccent or C.text))
+        b:SetWidth(math.max(88, b.text:GetStringWidth() + 28))
+        b:ClearAllPoints()
+        b:SetPoint("BOTTOMRIGHT", f, "BOTTOMRIGHT", x, 8)
+        x = x - b:GetWidth() - 8
+        b:Show()
+    end
+    for i = #list + 1, #f.buttons do f.buttons[i]:Hide() end
+    self:SetFocus(1)
+end
+
+function W:SetFocus(index)
+    self.focusIndex = math.max(1, math.min(index or 1, #(self.actions or {})))
+    local pad = G():Active()
+    for i, b in ipairs(self.frame.buttons) do b.focus:SetShown(pad and i == self.focusIndex and b:IsShown()) end
+    self:UpdateHelp()
+end
+
+function W:UpdateHelp()
+    local action = self.actions and self.actions[self.focusIndex]
+    if G():Active() then
+        self.frame.hints:SetHints({
+            UI.Hint("PAD1", action and action.label or ""),
+            UI.Hint("PAD4", L.IMPORT_SELECT),
+            UI.Hint("PAD2", L.IMPORT_CLOSE),
+        })
+    else
+        self.frame.hints:SetHints({ UI.Hint(nil, self.mode == "export" and L.EXPORT_MOUSE or L.IMPORT_MOUSE) })
+    end
+end
+
+function W:Press(index)
+    local action = self.actions and self.actions[index or self.focusIndex]
+    if action then action.run() end
+end
+
+-- What Ding found: a colored line, then one plain line per problem (copied as they are).
+function W:ShowReport(status, color, report)
+    local f = self.frame
+    f.status:SetText(status or "")
+    f.status:SetTextColor(unpack(color or C.text))
+    local lines = {}
+    for _, line in ipairs(report and report.errors or {}) do lines[#lines + 1] = L.IMPORT_ERROR_LINE:format(line) end
+    for _, line in ipairs(report and report.warnings or {}) do lines[#lines + 1] = L.IMPORT_WARNING_LINE:format(line) end
+    f.report:SetValue(table.concat(lines, "\n"))
+    f.report:SetShown(#lines > 0)
+end
+
+---------------------------------------------------------------------------
+-- Import
+---------------------------------------------------------------------------
+function W:Import()
+    local packId, report = Ding.Import:Import(self.frame.text:GetValue())
+    if not packId then
+        self:ShowReport(L.IMPORT_FAILED:format(#report.errors, #report.warnings), C.todo, report)
+        return false
+    end
+    local pack = Ding:GetGuidePack(packId)
+    local steps = 0
+    for _, guide in Ding:IterateGuides(packId) do steps = steps + #guide.steps end
+    self.imported = packId
+    self:ShowReport(L.IMPORT_DONE:format(pack and pack.title or packId, steps, #report.warnings), C.done, report)
+    self:SetButtons({
+        { label = L.IMPORT_FOLLOW, primary = true, run = function() W:Follow() end },
+        { label = L.IMPORT_ANOTHER, run = function() W:Open("import", nil, W.back) end },
+        { label = L.IMPORT_CLOSE, run = function() W:Close() end },
+    })
+    return true
+end
+
+-- The imported guide becomes the character's guide.
+function W:Follow()
+    local packId = self.imported
+    self.back = nil
+    self:Close()
+    if packId then Ding.Engine:SetPack(packId) end
+end
+
+---------------------------------------------------------------------------
+-- Opening
+---------------------------------------------------------------------------
+-- mode: "import", or "export" with `id` (a pack or a guide; the active guide when nil).
+-- back: run once the window closes (the settings page it was opened from).
+function W:Open(mode, id, back)
+    if InCombatLockdown() then
+        Ding:Print(L.CONFIG_COMBAT)
+        return false
+    end
+    local text
+    if mode == "export" then
+        text = Ding.Import:Export(id, false)
+        if not text then
+            Ding:Print(L.EXPORT_NONE:format(id or ""))
+            return false
+        end
+    end
+    self:Create()
+    local f = self.frame
+    if Ding.Config.frame and Ding.Config.frame:IsShown() then Ding.Config:Close() end
+    if Ding.Finder.frame and Ding.Finder.frame:IsShown() then Ding.Finder:Close() end
+    if Ding.Panel.focusing then Ding.Panel:StopFocus() end
+    self.mode, self.exportId, self.compact, self.imported = mode, id, false, nil
+    self.back = back
+    self:ShowReport(nil)
+    if mode == "export" then
+        local guide = Ding:GetGuidePack(id or "") or Ding:GetGuide(id or "") or Ding.Engine.guide
+        f.title:SetText(UI.Colored("accent", Ding.TITLE) .. UI.Colored("disabled", " · ") .. L.EXPORT_TITLE:format(guide and guide.title or ""))
+        f.help:SetText(L.EXPORT_HELP)
+        f.text:SetValue(text, true)
+        self:SetButtons({
+            { label = L.EXPORT_SELECT, primary = true, run = function() W.frame.text:SelectAll() end },
+            { label = L.EXPORT_ONE_LINE, run = function() W:ToggleCompact() end },
+            { label = L.IMPORT_CLOSE, run = function() W:Close() end },
+        })
+    else
+        f.title:SetText(UI.Colored("accent", Ding.TITLE) .. UI.Colored("disabled", " · ") .. L.IMPORT_TITLE)
+        f.help:SetText(L.IMPORT_HELP)
+        f.text:SetValue("")
+        self:SetButtons({
+            { label = L.IMPORT_BUTTON, primary = true, run = function() W:Import() end },
+            { label = L.IMPORT_CANCEL, run = function() W:Close() end },
+        })
+    end
+    if not f:IsShown() then
+        f:Show()
+        G():Take(f, function(key) W:OnKey(key) end, 0.4, 0.12, KEYS)
+    end
+    if mode == "export" then f.text:SelectAll() else f.text.edit:SetFocus() end
+    return true
+end
+
+-- The exported text in full, or on one line (safe for the chat).
+function W:ToggleCompact()
+    self.compact = not self.compact
+    local text = Ding.Import:Export(self.exportId, self.compact)
+    if not text then return end
+    self.frame.text:SetValue(text, true)
+    self.actions[2].label = self.compact and L.EXPORT_FULL or L.EXPORT_ONE_LINE
+    self:SetButtons(self.actions)
+    self:SetFocus(2)
+    self.frame.text:SelectAll()
+end
+
+function W:Close()
+    if self.frame then self.frame:Hide() end
+end
+
+function W:OnHide()
+    local f = self.frame
+    if not f then return end
+    G():Release(f)
+    f.text.edit:ClearFocus()
+    f.report.edit:ClearFocus()
+    local back = self.back
+    self.back = nil
+    if back and not InCombatLockdown() then back() end
+end
+
+function W:OnKey(key)
+    local count = #(self.actions or {})
+    if key == "PADDLEFT" then
+        self:SetFocus(self.focusIndex <= 1 and count or self.focusIndex - 1)
+    elseif key == "PADDRIGHT" then
+        self:SetFocus(self.focusIndex >= count and 1 or self.focusIndex + 1)
+    elseif key == "PAD1" then
+        self:Press()
+    elseif key == "PAD4" then
+        local f = self.frame
+        if self.mode ~= "export" and f.report:IsShown() then f.report:SelectAll() else f.text:SelectAll() end
+    elseif key == "PAD2" then
+        self:Close()
+    end
+end
+
+Ding:On("PLAYER_REGEN_DISABLED", function() W:Close() end)

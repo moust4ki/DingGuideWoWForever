@@ -1,0 +1,32 @@
+-- Brazilian Portuguese text of Guides/Leveling/Horde/22.lua: [English text] = Brazilian Portuguese text.
+-- Written by tools/translate_guides.lua from tools/routes/locales/ptBR.lua.
+Ding.RegisterGuideTranslation("ptBR", "leveling-h22-tanaris", {
+    ["Tanaris (41-42)"] =
+        "Tanaris (41-42)",
+    ["Travel to Gadgetzan"] =
+        "Viaje até Geringontzan",
+    ["Tanaris: Gadgetzan, in the north of the zone."] =
+        "Tanaris: Geringontzan, no norte da zona.",
+    ["Leave your pet with the stable master."] =
+        "Deixe seu ajudante com o mestre do estábulo.",
+    ["You will tame a short-term pet shortly. Your pet picks up Claw (Rank 6) here."] =
+        "Em breve você vai domar um ajudante temporário. Seu ajudante aprende Garra (Grau 6) aqui.",
+    ["Tame a Scorpid Hunter with Tame Beast. The foes here are scorpions."] =
+        "Use Domar Fera em um Caçador Escorpídeo. Os inimigos aqui são escorpiões.",
+    ["Get your companion back from the stable master."] =
+        "Recupere seu ajudante com o mestre do estábulo.",
+    ["Release the short-term pet you tamed."] =
+        "Liberte o ajudante temporário que você domou.",
+    ["The NPC is indoors."] =
+        "O NPC está lá dentro.",
+    ["Targets here are human."] =
+        "Os alvos aqui são humanos.",
+    ["A tougher foe is coming up."] =
+        "Um inimigo mais difícil vem por aí.",
+    ["Grab the loot."] =
+        "Pegue o saque.",
+    ["Wait for the talking to finish"] =
+        "Espere a conversa terminar",
+    ["Hold on until Rizzle has fled. The NPC is indoors."] =
+        "Espere até Rebu fugir. O NPC está lá dentro.",
+})

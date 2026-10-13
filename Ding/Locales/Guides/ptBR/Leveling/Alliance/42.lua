@@ -1,0 +1,52 @@
+-- Brazilian Portuguese text of Guides/Leveling/Alliance/42.lua: [English text] = Brazilian Portuguese text.
+-- Written by tools/translate_guides.lua from tools/routes/locales/ptBR.lua.
+Ding.RegisterGuideTranslation("ptBR", "leveling-a42-winterspring", {
+    ["Winterspring (58-59)"] =
+        "Hibérnia (58-59)",
+    ["Leave your pet with the stable master."] =
+        "Deixe seu ajudante com o mestre do estábulo.",
+    ["Winterspring: Everlook, in the middle of the zone."] =
+        "Hibérnia: Visteterna, no meio da zona.",
+    ["You will tame a short-term pet shortly. Pick up Claw (Rank 8) for your pet."] =
+        "Em breve você vai domar um ajudante temporário. Obtenha Garra (Grau 8) para o seu ajudante.",
+    ["Tame a Winterspring Screecher with the Tame Beast spell. Hunt the white owls."] =
+        "Use o feitiço Domar Fera em uma Guinchadora de Hibérnia. Cace as corujas brancas.",
+    ["Get your companion back from the stable master."] =
+        "Recupere seu ajudante com o mestre do estábulo.",
+    ["Release the short-term pet you tamed."] =
+        "Liberte o ajudante temporário que você domou.",
+    ["The NPC is indoors."] =
+        "O NPC está lá dentro.",
+    ["The quest wants yetis; seek them out. Targets are in the cavern and around its entrance too."] =
+        "A missão pede yetis; vá atrás deles. Os alvos ficam na caverna e também em volta da entrada.",
+    ["Head out of the cave"] =
+        "Saia da caverna",
+    ["Either the patriarch or the matriarch yetis work. The quest wants yetis; seek them out. Targets are in the cavern and around its entrance too."] =
+        "Servem tanto os yetis patriarcas quanto as matriarcas. A missão pede yetis; vá atrás deles. Os alvos ficam na caverna e também em volta da entrada.",
+    ["Climb across the mountain to the far side"] =
+        "Atravesse a montanha até o outro lado",
+    ["Hunt the chimaeras."] =
+        "Cace as quimeras.",
+    ["Target Legacki with the item."] =
+        "Use o item em Legacki.",
+    ["Fly to Moonglade"] =
+        "Voe até a Clareira da Lua",
+    ["The NPC is indoors. Wait for the talking to finish"] =
+        "O NPC está lá dentro. Espere a conversa terminar",
+    ["The NPC is indoors, on the central storey."] =
+        "O NPC está lá dentro, no andar do meio.",
+    ["Target Sprinkle with it."] =
+        "Use-o em Sguisha.",
+    ["Head down the passage that opens on Lost Rigger Cove"] =
+        "Desça pela passagem que dá em Lost Rigger Cove",
+    ["Wait for the talking to finish"] =
+        "Espere a conversa terminar",
+    ["Take the passage out of Lost Rigger Cove"] =
+        "Pegue a passagem para sair de Lost Rigger Cove",
+    ["Go into the cavern"] =
+        "Entre na caverna",
+    ["Your targets are within the cavern."] =
+        "Seus alvos estão dentro da caverna.",
+    ["Target Quixxil with it."] =
+        "Use-o em Quixxil.",
+})

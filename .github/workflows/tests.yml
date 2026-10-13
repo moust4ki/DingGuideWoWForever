@@ -1,0 +1,59 @@
+# Ding's offline checks: syntax, guides, unit tests, smoke test.
+# The QuestieDB export is rebuilt on every run, outside the repository (it has no license).
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_call:    # release.yml: a tag is published only if these tests pass
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Lua 5.1
+        run: sudo apt-get update && sudo apt-get install -y lua5.1
+
+      - name: Syntax
+        run: find Ding tools examples -name '*.lua' -print0 | xargs -0 -n1 luac5.1 -p
+
+      - name: QuestieDB export
+        run: |
+          git clone --depth 1 https://github.com/Questie/QuestieDB.git ../QuestieDB
+          cd ../QuestieDB && lua5.1 tools/export-forever.lua --include-authored
+
+      - name: Guide validation
+        run: lua5.1 tools/check_guides.lua ../QuestieDB/src/corrections/Forever/combined
+
+      - name: Example guide pack validation
+        run: lua5.1 tools/check_guides.lua ../QuestieDB/src/corrections/Forever/combined --addon examples/DingExamplePack
+
+      - name: Unit tests
+        run: lua5.1 tools/run_tests.lua ../QuestieDB/src/corrections/Forever/combined
+
+      - name: Smoke test
+        run: lua5.1 tools/smoke_test.lua ../QuestieDB/src/corrections/Forever/combined --quiet
+
+      - name: Smoke test without optional quests
+        run: lua5.1 tools/smoke_test.lua ../QuestieDB/src/corrections/Forever/combined --quiet --skip-optional
+
+      - name: Smoke test in English
+        run: lua5.1 tools/smoke_test.lua ../QuestieDB/src/corrections/Forever/combined --quiet --locale enUS
+
+      - name: Smoke test with TomTom
+        run: lua5.1 tools/smoke_test.lua ../QuestieDB/src/corrections/Forever/combined --quiet --tomtom
+
+      - name: Smoke test in the other languages
+        run: |
+          for locale in deDE esES ptBR koKR zhCN zhTW; do
+            echo "== $locale"
+            lua5.1 tools/smoke_test.lua ../QuestieDB/src/corrections/Forever/combined --quiet --locale $locale
+          done
+
+      - name: Guide translations up to date
+        run: |
+          lua5.1 tools/translate_guides.lua
+          git diff --exit-code -- Ding/Locales/Guides Ding/Ding.toc

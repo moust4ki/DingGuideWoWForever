@@ -1,0 +1,34 @@
+<Bindings>
+    <Binding name="DING_NEXT" header="DING" category="ADDONS">
+        Ding.Engine:Next()
+    </Binding>
+    <Binding name="DING_PREV" category="ADDONS">
+        Ding.Engine:Prev()
+    </Binding>
+    <Binding name="DING_TOGGLE" category="ADDONS">
+        Ding.Panel:Toggle()
+    </Binding>
+    <Binding name="DING_CONFIG" category="ADDONS">
+        Ding.Config:Toggle()
+    </Binding>
+    <Binding name="DING_COMPACT" category="ADDONS">
+        Ding.Panel:ToggleCompact()
+    </Binding>
+    <Binding name="DING_FOCUS" category="ADDONS">
+        Ding.Panel:ToggleFocus()
+    </Binding>
+    <Binding name="DING_SKIP" category="ADDONS">
+        Ding.Engine:Skip()
+    </Binding>
+    <Binding name="DING_UNSKIP" category="ADDONS">
+        Ding.Panel:BackToSkipped()
+    </Binding>
+    <Binding name="DING_FINDER" category="ADDONS">
+        Ding.Finder:Toggle()
+    </Binding>
+    <Binding name="DING_CYCLE" category="ADDONS">
+        Ding.Panel:CycleTarget()
+    </Binding>
+    <Binding name="CLICK DingItemButton:LeftButton" category="ADDONS"/>
+    <Binding name="CLICK DingItemButton:Target" category="ADDONS"/>
+</Bindings>
