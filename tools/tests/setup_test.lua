@@ -528,16 +528,19 @@ T.test("every language: every string, texts never cut, nothing overlaps, a small
                 local s = S:Current()
                 T.ok((s.heading:GetText() or "") ~= "" and (s.text:GetText() or "") ~= "", where .. ": an empty screen")
                 T.ok(not s.heading:IsTruncated() and not s.text:IsTruncated(), ("%s: screen %d cut"):format(where, screen))
-                T.ok(s:GetHeight() <= height - 32 - 1 - 1 - 81, ("%s: screen %d taller than the window"):format(where, screen))
+                local layout = S.LAYOUT
+                T.ok(s:GetHeight() <= height - layout.title - 1 - 1 - layout.footer,
+                    ("%s: screen %d taller than the window"):format(where, screen))
                 for _, r in ipairs(rows()) do
                     T.ok(not r.label:IsTruncated() and not r.sub:IsTruncated(), where .. ": a choice cut")
-                    local need = 8 + r.label:GetStringHeight() + (r.sub:IsShown() and 2 + r.sub:GetStringHeight() or 0) + 8
+                    local need = layout.rowPad + r.label:GetStringHeight()
+                        + (r.sub:IsShown() and 2 + r.sub:GetStringHeight() or 0) + layout.rowPad
                     T.ok(r:GetHeight() >= need, ("%s: the choice %q needs %d"):format(where, r.choice.label, need))
                 end
                 T.eq(f:GetHeight(), height, where .. ": the window changes height with the screen")
                 local dotsLeft = (f:GetWidth() - f.dots:GetWidth()) / 2
-                T.ok(12 + f.prev:GetWidth() + 8 <= dotsLeft, where .. ": Previous runs into the dots")
-                T.ok(12 + f.next:GetWidth() + 8 <= dotsLeft, where .. ": Next runs into the dots")
+                T.ok(layout.inset + f.prev:GetWidth() + 8 <= dotsLeft, where .. ": Previous runs into the dots")
+                T.ok(layout.inset + f.next:GetWidth() + 8 <= dotsLeft, where .. ": Next runs into the dots")
                 T.ok(f.keep.text:GetStringWidth() + 24 + 28 <= f.keep:GetWidth(), where .. ": Keep does not fit")
             end
             closeAll()

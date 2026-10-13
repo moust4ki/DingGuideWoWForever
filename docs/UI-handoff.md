@@ -409,8 +409,8 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   - Automation: accept, turn in, skip gray quests, collapse in combat, hide in dungeons,
     choose quest rewards, sell gray items, repair at merchants, mark the target (solo), then
     under the label "Steps the guide can offer": manage the hearthstone, death skips, dungeon
-    quests, elite quests, vendor and repair steps (36/44 rows with their description, like the
-    mockup's);
+    quests, elite quests, vendor and repair steps (rows with their description, like the
+    mockup's; 30 / 36 high since the density below);
   - Keybinds: "Open Ding settings" first, then next, previous, item, target the arrow's NPC or
     monster, browse the guide, show,
     collapse, skip, go back; button names; show gamepad buttons; game keybinds;
@@ -494,19 +494,22 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   ring over the destination node, placed where the game's node button stands (read only).
 
 - **NPC directory** (not in the mockup; it replaces the "Nearby services" list): a 360-wide
-  window like the settings (window look, opaque). Title bar 32 high: "Ding! · Directory" 13
+  window like the settings (window look, opaque). Title bar 28 high: "Ding! · Directory" 13
   SemiBold (Ding! in `accent`, the dot `text.disabled`), the close cross on the right with the
-  round B chip before it (gamepad, on a tab's first page). Tab strip 30 high, the settings' tab
+  round B chip before it (gamepad, on a tab's first page). Tab strip 28 high, the settings' tab
   look (12 SemiBold, `text.secondary`, the active one `text` with a 2-unit accent underline):
   LB chip, "Nearby", "Cities", RB chip (chips with a gamepad only), then a `border` divider.
-  Inside a list, a 30-high title row: accent left caret, the B chip (gamepad), the list's name
-  13 SemiBold; a click goes back. Rows 38 high, 2 apart, 6 from the sides (row background
+  Inside a list, a 26-high title row: accent left caret, the B chip (gamepad), the list's name
+  13 SemiBold; a click goes back. Rows 36 high, 2 apart, 6 from the sides (row background
   `bg.control`, radius 4): the name 12 Medium, under it 11 Regular `text.secondary` ("Buliwyf
-  Stonehand · Ironforge · by flight", or what an NPC offers), on the right the time 12 SemiBold
-  accent ("8 min away", "under 1 min away") or, for a row that opens a list, a `text.secondary` right caret;
-  the inset focus ring of list rows, with the A chip before the time or the caret (gamepad). A
-  row with nothing to offer: its name `text.disabled`. Nine rows shown, then the wheel or the
-  focus scrolls. Footer 28 high under a divider: with a gamepad, the plain text "Fastest way:
+  Stonehand · Ironforge · by flight", or what an NPC offers), both 8 in. On the right, 8 in: a
+  `text.secondary` right caret for a row that opens a list; 6 left of it (or of the edge), the
+  time 12 SemiBold accent ("8 min away", "under 1 min away"). The inset focus ring of list rows;
+  with a gamepad the focused row's A chip takes the caret's place, and every row keeps the
+  chip's room (the time sits left of it), so that nothing moves with the focus and the chip
+  never covers the time; the texts stop 8 before the time. A row with nothing to offer: its name
+  `text.disabled`. Nine rows shown, then the wheel or the focus scrolls. Footer 26 high under a
+  divider: with a gamepad, the plain text "Fastest way:
   flights, boats, hearthstone." (every action has its chip); without one, the mouse help
   ("Click: go · Right-click or Esc: close", "… : back" in a list).
 - **The guide window's directory button** (not in the mockup): a 20 × 20 icon button in the
@@ -541,21 +544,22 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   is named on a Ding banner (like the flight map's), "Pick “…”", while the dialogue is open.
 - **Settings by intent** (Yendi: "a huge mass of information; the dungeons are an endless
   list"), instead of screen 03's five tabs:
-  - Window 560 × 440 (was 520 × 420) so that **six tabs** fit: `Guide`, `Route`, `Automation`,
+  - Window 560 wide (was 520) so that **six tabs** fit: `Guide`, `Route`, `Automation`,
     `Arrow and maps`, `Keybinds`, `Appearance`; tab padding 12 down to 6, then 11-unit labels,
-    when a language is long. Every tab: padding 12, gap 4.
-  - **Block headers**: 24 high, 11 SemiBold `text.secondary`, bottom-aligned 8 in ("Quests",
+    when a language is long. 392 high since the density below (440 before, 420 in the mockup).
+    Every tab: padding 8, gap 2 (were 12 and 4).
+  - **Block headers**: 20 high, 11 SemiBold `text.secondary`, bottom-aligned 8 in ("Quests",
     "Merchant", "Equipment", "Flights"; "Travel", "Group content", "Stops"; "Arrow", "Maps",
     "Target"; "Window", "Item button", "Minimap and sound").
   - **Descriptions on one line** (11 Regular `text.secondary`, cut beyond), shortened.
   - **Long lists on a page**: a page row (label, the value on the right in 12 Medium, `caret`
     RIGHT 8 `text.secondary`, accent when focused; `A Open`) opens a page over the tab's content:
-    a title row (`caret` LEFT 8 accent, then the title 13 SemiBold, 30 high, a click goes back),
+    a title row (`caret` LEFT 8 accent, then the title 13 SemiBold, 26 high, a click goes back),
     then the list. "Dungeon quests: Off / All / 3 of 12" opens "All" and "None" (button rows),
     a "By level" header and one check row per dungeon, "name 17–21" (levels in
     `text.secondary`). B, Esc, a right click or the title go back to the row; LB / RB leave the
     page for a tab. The quest log cleanup is a page too.
-  - **Folded rows**: a fold row, 32 high, `caret` RIGHT (folded) or DOWN (open) 8 then the label
+  - **Folded rows**: a fold row, 28 high, `caret` RIGHT (folded) or DOWN (open) 8 then the label
     12 Regular `text.secondary` ("More options" / "Fewer options"; "Advanced" in Appearance);
     A or a click.
   - **"Defaults for this tab"**: a button row (confirmed) at the end of every tab but Keybinds.
@@ -701,24 +705,43 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
 
 - **Setup assistant** (not in the mockup, `UI/Setup.lua`; Yendi: an onboarding of choices, not
   of text, three choices at most per screen): a 460-wide window like the directory's (window look,
-  opaque, DIALOG). Title bar 32 high: "Ding! · Setup" 13 SemiBold (Ding! in `accent`, the dot `text.disabled`), the close
-  cross with the round B chip before it (gamepad). A screen, 20 in: its title 16 SemiBold
-  `text` (the arrow distance's size), 6 below one sentence 12 Regular `text`, both wrapped
-  whole; 12 below, the choices, 12 from the sides, 2 apart: rows of the settings' look (inset
+  opaque, DIALOG). Title bar 28 high: "Ding! · Setup" 13 SemiBold (Ding! in `accent`, the dot `text.disabled`), the close
+  cross with the round B chip before it (gamepad). A screen, 14 in: its title 16 SemiBold
+  `text` (the arrow distance's size), 4 below one sentence 12 Regular `text`, both wrapped
+  whole; 8 below, the choices, 8 from the sides, 2 apart: rows of the settings' look (inset
   focus: `accentBg` fill and the 2-unit accent ring; the A chip at the right, 8 in, gamepad),
-  at least 32 high, growing with their texts. In a row, 8 in: a check box (the settings' 16-unit
+  at least 28 high, growing with their texts. In a row, 6 from the top and 8 in: a check box (the settings' 16-unit
   box: `accent` with the check, or the `muted` outline), a radio (the 16-unit `ring` in `muted`,
   an 8-unit accent `circle` when chosen), or, for a guide, the accent check on the current one;
   the label 12 Regular `text` 34 in (`text.disabled` for a pack with nothing for the
   character), under it 11 Regular `text.secondary` (a pack's levels or items), both wrapped; on
   the right before the A chip's room, "Recommended" 11 SemiBold `accent`. The window is as high
-  as its tallest screen in the client's language, the same on every screen. Footer 81 high under
-  a divider: "Keep the recommended settings" across (26 high, `bg.control`, 12 Medium, the Y
-  chip before it), 8 below Previous on the left and Next on the right (26 high, radius 4, 12
+  as its tallest screen in the client's language, the same on every screen. Footer 70 high under
+  a divider, 8 from its edges: "Keep the recommended settings" across (24 high, `bg.control`, 12 Medium, the Y
+  chip before it), 6 below Previous on the left and Next on the right (24 high, radius 4, 12
   Medium, at least 96 wide; Previous `bg.control`, `text.disabled` on the first screen; Next
   `accent` with `onAccent` text, "Finish" on the last screen, its width that of the longer
   label; LB and RB chips), the screen dots centered between them (14 wide and 2 apart: a 6-unit
   `circle` in `text.disabled`, the current screen's 8 units in `accent`, hover `text.secondary`).
+- **Density** (v1.4.0; the user: "the preferences UI is too big, too airy; a bit denser, not
+  much"; a full redesign of the settings and the assistant comes later): the settings, the NPC
+  directory and the setup assistant share their sizes (`UI.SIZE` in `UI/Widgets.lua`), about
+  15 to 20 % tighter than above: title bars 28 (32), tab bars 28 (36 / 30), hint bars 26
+  (32 / 28), rows of one line 30 (36), of a label and its description 36 (44; the directory's
+  38), "More options" 28 (32), block headers 20 (24), a page's title 26 (30), padding 8 (12),
+  2 between rows (4); the sliders 66 high (78), the dropdown's field 28 (32) and its entries 24
+  (28), the Appearance preview 86 (100), the settings' push buttons 22 (24), the assistant's 24
+  (26). Texts are never cut (a description stays one line, as before), the focus rings keep
+  their 2 units, the rows stay as wide.
+- **Size of the settings windows** (v1.4.0; the user's screen draws the 520-unit mockup window
+  about 1.5 times bigger than the mockup they compared it with: the game's UI scale on a
+  high-resolution screen): the Appearance tab's "Settings windows size" slider, under a
+  "Settings windows" header, 60 % to 120 % by 5 %, 85 % by default, sets the scale of the
+  settings, the NPC directory, the setup assistant and import / export (`UI.Dialog`,
+  `Ding.db.ui.dialogScale`); not the guide window, which has its own "Window scale". The open
+  window follows at once (with the mouse, once it lets go of the thumb: the window would move
+  under it). The windows stay centered, as far from the screen's center whatever their size,
+  and on the screen.
   No hint bar: every action has its control.
 - **Settings, Guide tab** (Help): a header "Help" and a button row "Run the setup assistant
   again" ("How you play, automation, route and guide.", button "Open"), before "Defaults

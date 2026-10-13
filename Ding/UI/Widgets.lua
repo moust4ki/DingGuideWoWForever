@@ -60,6 +60,63 @@ local C = {
 }
 UI.C = C
 
+-- Sizes shared by Ding's dialog windows (settings, NPC directory, setup assistant, import /
+-- export), so that they stay alike. A little denser than the design's first handoff, at the
+-- user's request ("too big, too airy": docs/UI-handoff.md, Density); the handoff's values in
+-- brackets.
+UI.SIZE = {
+    title = 28,       -- title bar [32]
+    tabs = 28,        -- tab bar [settings 36, directory 30]
+    footer = 26,      -- hint bar [settings 32, directory 28]
+    pad = 8,          -- from the window's edge to its rows [12]
+    gap = 2,          -- between two rows [4]
+    row = 30,         -- a row of one line [36]
+    row2 = 36,        -- a row of two lines, a label and a line under it [44; directory 38]
+    fold = 28,        -- "More options" [32]
+    header = 20,      -- a block's header [24]
+    pageTitle = 26,   -- a page's title [30]
+    button = 24,      -- push buttons [26]
+}
+local SIZE = UI.SIZE
+
+-- Ding's dialog windows are drawn at the size chosen in the Appearance tab (Ding.db.ui.
+-- dialogScale, 60 % to 120 %): on a high-resolution screen the game's UI scale draws them big.
+-- The guide window has its own size.
+UI.DIALOG_SCALE = { min = 0.6, max = 1.2, default = 0.85 }
+local dialogs = {}
+
+function UI.DialogScale()
+    local S = UI.DIALOG_SCALE
+    local v = tonumber(Ding.db and Ding.db.ui and Ding.db.ui.dialogScale) or S.default
+    return math.max(S.min, math.min(S.max, v))
+end
+
+-- A dialog window at the size chosen: `dialogX`, `dialogY` units from the screen's center
+-- whatever its size, and kept on the screen.
+local function placeDialog(frame)
+    local scale = UI.DialogScale()
+    frame:SetScale(scale)
+    frame:ClearAllPoints()
+    frame:SetPoint("CENTER", UIParent, "CENTER", frame.dialogX / scale, frame.dialogY / scale)
+end
+
+-- A dialog window of Ding: its size follows the setting, its place the screen's center.
+function UI.Dialog(frame, x, y)
+    frame.dialogX, frame.dialogY = x or 0, y or 0
+    frame:SetClampedToScreen(true)
+    dialogs[#dialogs + 1] = frame
+    placeDialog(frame)
+end
+
+-- Sets the dialog windows' size (0.6 to 1.2), the open ones at once.
+function UI.SetDialogScale(value)
+    local S = UI.DIALOG_SCALE
+    local scale = math.max(S.min, math.min(S.max, tonumber(value) or S.default))
+    Ding.db.ui.dialogScale = scale
+    for _, frame in ipairs(dialogs) do placeDialog(frame) end
+    return scale
+end
+
 -- Inline color codes for texts made of several colors.
 local HEX = {
     accent = "5bb4ff", text = "e8eaed", secondary = "a3a9b3", muted = "7d838c", disabled = "5f656e",
@@ -634,7 +691,7 @@ local function placeLabel(row, x, rightRoom)
         UI.Wrap(row.desc, 11, 1)
         row.desc:SetWidth(width)
         row.desc:SetText(type(row.opts.desc) == "function" and row.opts.desc() or row.opts.desc)
-        local block = 16 + 2 + 14
+        local block = 16 + 2 + 14     -- line heights of 12 and 11 (UI.Wrap)
         row.label:SetPoint("TOPLEFT", row, "TOPLEFT", x, -math.floor((row:GetHeight() - block) / 2))
         row.desc:SetPoint("TOPLEFT", row.label, "BOTTOMLEFT", 0, -2)
     else
@@ -652,7 +709,7 @@ end
 
 -- opts: label, desc, get(), set(value)
 function UI.CheckRow(parent, owner, opts, width)
-    local row = baseRow(parent, owner, opts, opts.desc and 44 or 36, width)
+    local row = baseRow(parent, owner, opts, opts.desc and SIZE.row2 or SIZE.row, width)
     row.kind = "check"
     row.box = CreateFrame("Frame", nil, row)
     row.box:SetSize(16, 16)
@@ -687,22 +744,26 @@ function UI.CheckRow(parent, owner, opts, width)
     return row
 end
 
--- Slider block of the Appearance tab. opts: label, min, max, step, default, get(), set(v),
--- format(v) -> text, help (bottom center, optional)
-local SLIDER_HEIGHT = 8 + 16 + 8 + 16 + 8 + 14 + 8
+-- Slider block of the Appearance tab. opts: label, min, max, step, default, get(),
+-- set(v, dragging) (dragging: the mouse still moves the thumb; a last set(v) comes when it lets
+-- go), format(v) -> text, help (bottom center, optional)
+local SLIDER = { top = 6, track = 16 + 6, under = 16 + 4, bottom = 14 + 6 }    -- [8, 24, 24, 22]
+local SLIDER_HEIGHT = SLIDER.top + SLIDER.track + SLIDER.under + SLIDER.bottom
 function UI.SliderRow(parent, owner, opts, width)
     local row = baseRow(parent, owner, opts, SLIDER_HEIGHT, width)
     row.kind = "slider"
     row.label:SetFontObject(UI.Font("medium", 12))
-    row.label:SetPoint("TOPLEFT", row, "TOPLEFT", 8, -8)
+    row.label:SetPoint("TOPLEFT", row, "TOPLEFT", 8, -SLIDER.top)
     row.value = UI.Text(row, "semibold", 12, C.text)
     row.value:SetJustifyH("RIGHT")
-    row.value:SetPoint("TOPRIGHT", row, "TOPRIGHT", -8, -8)
+    row.value:SetPoint("TOPRIGHT", row, "TOPRIGHT", -8, -SLIDER.top)
 
+    local trackTop = SLIDER.top + SLIDER.track
+    local underTop = trackTop + SLIDER.under
     local track = CreateFrame("Button", nil, row)
     track:SetHeight(16)
-    track:SetPoint("TOPLEFT", row, "TOPLEFT", 8, -32)
-    track:SetPoint("TOPRIGHT", row, "TOPRIGHT", -8, -32)
+    track:SetPoint("TOPLEFT", row, "TOPLEFT", 8, -trackTop)
+    track:SetPoint("TOPRIGHT", row, "TOPRIGHT", -8, -trackTop)
     track:RegisterForClicks("LeftButtonDown")
     row.track = track
     local rail = CreateFrame("Frame", nil, track)
@@ -718,17 +779,17 @@ function UI.SliderRow(parent, owner, opts, width)
     row.thumb = UI.Icon(track, "circle", 14, C.text, "OVERLAY", 2)
 
     row.minText = UI.Text(row, "regular", 11, C.secondary)
-    row.minText:SetPoint("TOPLEFT", row, "TOPLEFT", 8, -56)
+    row.minText:SetPoint("TOPLEFT", row, "TOPLEFT", 8, -underTop)
     row.maxText = UI.Text(row, "regular", 11, C.secondary)
     row.maxText:SetJustifyH("RIGHT")
-    row.maxText:SetPoint("TOPRIGHT", row, "TOPRIGHT", -8, -56)
+    row.maxText:SetPoint("TOPRIGHT", row, "TOPRIGHT", -8, -underTop)
     row.minText:SetText(opts.format(opts.min))
     row.maxText:SetText(opts.format(opts.max))
     if opts.help then
         -- "D-pad ◂ ▸ · 5 % steps": the carets are textures, the font has no such glyphs.
         local help = CreateFrame("Frame", nil, row)
         help:SetHeight(14)
-        help:SetPoint("TOP", row, "TOP", 0, -56)
+        help:SetPoint("TOP", row, "TOP", 0, -underTop)
         help.prefix = UI.Text(help, "regular", 11, C.secondary)
         help.prefix:SetText(L.SLIDER_HELP_PAD)
         help.left = UI.Caret(help, "LEFT", 8, C.secondary)
@@ -748,7 +809,7 @@ function UI.SliderRow(parent, owner, opts, width)
         return math.max(opts.min, math.min(opts.max, v))
     end
     local function setValue(v)
-        opts.set(snap(v))
+        opts.set(snap(v), track.dragging)
         row:Refresh()
     end
 
@@ -764,7 +825,11 @@ function UI.SliderRow(parent, owner, opts, width)
         self.dragging = true
         fromCursor()
     end)
-    track:SetScript("OnMouseUp", function(self) self.dragging = false end)
+    track:SetScript("OnMouseUp", function(self)
+        if not self.dragging then return end
+        self.dragging = false
+        setValue(opts.get())
+    end)
     track:SetScript("OnUpdate", function(self) if self.dragging then fromCursor() end end)
 
     local refresh, setFocused = row.Refresh, row.SetFocused
@@ -800,7 +865,7 @@ end
 -- A choice among values (◂ value ▸). opts: values = { { value, text } }, get, set, default
 -- or text() / left() / right() without values.
 function UI.SelectorRow(parent, owner, opts, width)
-    local row = baseRow(parent, owner, opts, opts.desc and 44 or 36, width)
+    local row = baseRow(parent, owner, opts, opts.desc and SIZE.row2 or SIZE.row, width)
     row.kind = "selector"
     local right = UI.Caret(row, "RIGHT", 8, C.secondary)
     right:SetPoint("RIGHT", row, "RIGHT", -10, 0)
@@ -864,10 +929,10 @@ end
 
 -- A command (move, reset...). opts: button (text), run(), confirm (A twice within 4 s)
 function UI.ButtonRow(parent, owner, opts, width)
-    local row = baseRow(parent, owner, opts, opts.desc and 44 or 36, width)
+    local row = baseRow(parent, owner, opts, opts.desc and SIZE.row2 or SIZE.row, width)
     row.kind = "button"
     local b = CreateFrame("Frame", nil, row)
-    b:SetHeight(24)
+    b:SetHeight(22)     -- [24], in a row of SIZE.row
     b.bg = UI.Shape(b, "row", C.control, "ARTWORK"):Place(b)
     b.text = UI.Text(b, "medium", 12, C.text, "OVERLAY")
     b.text:SetPoint("CENTER", b, "CENTER", 0, 0)
@@ -928,7 +993,7 @@ end
 -- A long list on a page of its own: the row says how much is on (value()), A or a click
 -- opens the page (open()). opts: label, desc, value() -> text, open()
 function UI.PageRow(parent, owner, opts, width)
-    local row = baseRow(parent, owner, opts, opts.desc and 44 or 36, width)
+    local row = baseRow(parent, owner, opts, opts.desc and SIZE.row2 or SIZE.row, width)
     row.kind = "page"
     local caret = UI.Caret(row, "RIGHT", 8, C.secondary)
     caret:SetPoint("RIGHT", row, "RIGHT", -10, 0)
@@ -956,7 +1021,7 @@ end
 -- "More options": rows used rarely, folded. A or a click unfolds or folds them.
 -- opts: label, get() -> unfolded, set(unfolded)
 function UI.FoldRow(parent, owner, opts, width)
-    local row = baseRow(parent, owner, opts, 32, width)
+    local row = baseRow(parent, owner, opts, SIZE.fold, width)
     row.kind = "fold"
     row.label:SetTextColor(unpack(C.secondary))
     local caret = UI.Caret(row, "DOWN", 8, C.secondary)
@@ -981,7 +1046,7 @@ end
 -- between the caret and the name (ShowKey): the footer does not repeat it.
 function UI.PageTitleRow(parent, text, width, back)
     local row = CreateFrame("Button", nil, parent)
-    row:SetSize(width, 30)
+    row:SetSize(width, SIZE.pageTitle)
     row:RegisterForClicks("LeftButtonUp", "RightButtonUp")
     row.caret = UI.Caret(row, "LEFT", 8, C.accent)
     row.caret:SetPoint("LEFT", row, "LEFT", 8, 0)
@@ -1008,7 +1073,7 @@ end
 
 -- A Ding key binding (DING_NEXT...): A waits for a button, Y clears it.
 function UI.BindingRow(parent, owner, opts, width)
-    local row = baseRow(parent, owner, opts, 36, width)
+    local row = baseRow(parent, owner, opts, SIZE.row, width)
     row.kind = "binding"
     placeLabel(row, 8, 180)
     row.chip = UI.Glyph(row, { height = 18, font = 10, bg = C.glyphBg, text = C.text })
@@ -1053,12 +1118,12 @@ function UI.BindingRow(parent, owner, opts, width)
 end
 
 ---------------------------------------------------------------------------
--- Dropdown (Guide tab): a 32-high field showing the choice; A opens the list below it.
+-- Dropdown (Guide tab): a 28-high field showing the choice; A opens the list below it.
 -- opts: items() -> { { value, text, detail, dim, current } }, get(), set(value), empty
 -- While the list is open, owner.dropdown is the list and owner routes keys to
 -- list:OnKey(key) (true when handled).
 ---------------------------------------------------------------------------
-local DROPDOWN = { boxHeight = 32, itemHeight = 28, gap = 2, visible = 8, pad = 4 }
+local DROPDOWN = { boxHeight = 28, itemHeight = 24, gap = 2, visible = 8, pad = 4 }     -- [32, 28]
 UI.DROPDOWN = DROPDOWN
 
 local function dropdownItem(list, i)
@@ -1317,7 +1382,7 @@ end
 -- Header of a block of rows ("Quests", "Merchant"): small, secondary, a little space above.
 function UI.HeaderRow(parent, text, width)
     local row = CreateFrame("Frame", nil, parent)
-    row:SetSize(width, 24)
+    row:SetSize(width, SIZE.header)
     row.label = UI.Text(row, "semibold", 11, C.secondary)
     row.label:SetPoint("BOTTOMLEFT", row, "BOTTOMLEFT", 8, 2)
     row.label:SetText(text)

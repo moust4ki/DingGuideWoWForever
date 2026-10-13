@@ -1244,8 +1244,10 @@ accent #5BB4FF, the Noto Sans font shipped with the addon, rounded shapes from t
     arrow's position.
   - **Keybinds**: unchanged.
   - **Appearance**: window (opacity, scale, preview, lock, minimized in combat, hidden in
-    dungeons, move), item button, minimap button and sound; "Advanced" folded: reset the
-    window's position, debug, timings, restore all defaults.
+    dungeons, move), the settings windows' size (60 % to 120 %, 85 % by default: the settings,
+    the NPC directory, the setup assistant, import / export; `UI.Dialog`), item button, minimap
+    button and sound; "Advanced" folded: reset the window's position, debug, timings, restore
+    all defaults.
   A list longer than about 6 rows goes on a **page**: its row says how much is on, A or a click
   opens it, B, Esc, a right click or its title go back, LB / RB leave it for a tab; the help
   bar follows it. Every tab but Keybinds ends with **"Defaults for this tab"** (confirmed):

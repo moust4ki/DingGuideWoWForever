@@ -17,8 +17,12 @@ local Compat = Ding.Compat
 local F = {}
 Ding.Finder = F
 
-local WIDTH, TITLE, TABS, PAGE_TITLE, ROW, GAP, PAD, FOOTER = 360, 32, 30, 30, 38, 2, 6, 28
+local SIZE = UI.SIZE
+local WIDTH, PAD = 360, 6
+local TITLE, TABS, PAGE_TITLE, FOOTER = SIZE.title, SIZE.tabs, SIZE.pageTitle, SIZE.footer
+local ROW, GAP = SIZE.row2, SIZE.gap
 local VISIBLE = 9                -- rows shown at once; more scroll
+local EDGE, SPACE = 8, 6         -- a row's inner margin; between the time and the caret or A
 local KEYS = { "PADDUP", "PADDDOWN", "PADDLEFT", "PADDRIGHT", "PAD1", "PAD2", "PADFORWARD", "PADLSHOULDER",
     "PADRSHOULDER" }
 local TAB_PAGES = { "nearby", "cities" }
@@ -256,16 +260,14 @@ local function newRow(parent, i)
     r.bg = UI.Shape(r, "row", C.control, "BACKGROUND"):Place(r)
     r.focus = UI.Focus(r)
     r.label = UI.Text(r, "medium", 12, C.text)
-    r.label:SetPoint("TOPLEFT", r, "TOPLEFT", 8, -4)
     r.sub = UI.Text(r, "regular", 11, C.secondary)
     r.sub:SetPoint("TOPLEFT", r.label, "BOTTOMLEFT", 0, -2)
     r.time = UI.Text(r, "semibold", 12, C.accent)
     r.time:SetJustifyH("RIGHT")
-    r.time:SetPoint("RIGHT", r, "RIGHT", -8, 0)
     r.caret = UI.Caret(r, "RIGHT", 8, C.secondary)
-    r.caret:SetPoint("RIGHT", r, "RIGHT", -10, 0)
     r.key = UI.Glyph(r)
     r.key:SetKey("PAD1")
+    r.key:SetPoint("RIGHT", r, "RIGHT", -EDGE, 0)
     r:SetScript("OnClick", function(self, button)
         if button == "RightButton" then return F:Back() end
         F:Activate(self.index)
@@ -283,7 +285,7 @@ function F:Create()
     f:SetClampedToScreen(true)
     f:EnableMouse(true)
     f:SetWidth(WIDTH)
-    f:SetPoint("CENTER", UIParent, "CENTER", 0, 80)
+    UI.Dialog(f, 0, 80)
     f.look = UI.Window(f)
 
     -- Title bar: "Ding! · Directory", B, close cross.
@@ -396,19 +398,36 @@ function F:Layout()
     f.list:SetPoint("TOPLEFT", f, "TOPLEFT", 0, -top)
     f.list:SetSize(WIDTH, height)
     f.list.child:SetHeight(math.max(1, #self.rows * (ROW + GAP) - GAP))
+    -- On the right of a row, from its edge: a slot for the caret (a list) or, on the focused row
+    -- with a gamepad, the A chip in its place; then the time. With a gamepad every row keeps the
+    -- chip's room, so that nothing moves with the focus; the texts stop before them.
+    local slot = pad and UI.KeysWidth({ "PAD1" }) - 6 or 8     -- the chip alone, without its gap to a label
     for i, row in ipairs(self.rows) do
         local r = f.rows[i] or newRow(f.list.child, i)
         f.rows[i] = r
         r.index, r.data = i, row
+        local mark = (pad or row.caret) and slot or 0
         r.label:SetText(row.label or "")
         r.label:SetTextColor(unpack(row.dim and C.disabled or C.text))
+        r.label:ClearAllPoints()
+        if row.sub then
+            r.label:SetPoint("TOPLEFT", r, "TOPLEFT", EDGE, -math.floor((ROW - (16 + 2 + 14)) / 2))
+        else
+            r.label:SetPoint("LEFT", r, "LEFT", EDGE, 0)
+        end
         r.sub:SetText(row.sub or "")
         r.sub:SetShown(row.sub ~= nil)
-        r.time:SetText(row.right or "")
+        r.caret:ClearAllPoints()
+        r.caret:SetPoint("CENTER", r, "RIGHT", -(EDGE + mark / 2), 0)
         r.caret:SetShown(row.caret == true)
-        local right = row.caret and 26 or (UI.Measure(r.time) + 16)
-        r.label:SetWidth(WIDTH - 2 * PAD - 16 - right - 24)
-        r.sub:SetWidth(WIDTH - 2 * PAD - 16 - right - 24)
+        r.time:SetText(row.right or "")
+        r.time:ClearAllPoints()
+        local timeRight = EDGE + mark + (mark > 0 and SPACE or 0)
+        r.time:SetPoint("RIGHT", r, "RIGHT", -timeRight, 0)
+        local time = (row.right or "") ~= "" and UI.Measure(r.time) or 0
+        local text = WIDTH - 2 * PAD - EDGE - timeRight - (time > 0 and time + EDGE or 0)
+        r.label:SetWidth(math.max(40, text))
+        r.sub:SetWidth(math.max(40, text))
         r:Show()
     end
     for i = #self.rows + 1, #f.rows do f.rows[i]:Hide() end
@@ -421,7 +440,7 @@ function F:Layout()
     self:SetFocus(page.focus)
 end
 
--- The focused row: its ring, A on it (gamepad), and in view.
+-- The focused row: its ring, A on it in the caret's place (gamepad), and in view.
 function F:SetFocus(i)
     local page, f = self:Page(), self.frame
     if not page then return end
@@ -431,18 +450,9 @@ function F:SetFocus(i)
         local on = j == i and r:IsShown()
         r.focus:SetShown(on)
         local data = r.data or {}
-        local key = on and pad and not data.dim
-        r.key:SetShown(key and true or false)
-        if key then
-            r.key:ClearAllPoints()
-            if data.caret then
-                r.key:SetPoint("RIGHT", r.caret, "LEFT", -6, 0)
-            elseif data.right and data.right ~= "" then
-                r.key:SetPoint("RIGHT", r.time, "LEFT", -6, 0)
-            else
-                r.key:SetPoint("RIGHT", r, "RIGHT", -8, 0)
-            end
-        end
+        local key = on and pad and not data.dim and true or false
+        r.key:SetShown(key)
+        r.caret:SetShown(data.caret == true and not key)
     end
     -- Scrolled so that the focused row shows.
     local offset = self.offset or 0

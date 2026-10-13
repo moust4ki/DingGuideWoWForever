@@ -23,12 +23,16 @@ local C = UI.C
 local S = {}
 Ding.Setup = S
 
-local WIDTH, TITLE, PAD, INSET, BUTTON = 460, 32, 20, 12, 26
-local FOOTER = 10 + BUTTON + 8 + BUTTON + 11     -- Keep, then Previous · the dots · Next
-local HEADING, GAP, ROWS_TOP, ROW_GAP = 16, 6, 12, 2
+local SIZE = UI.SIZE
+local WIDTH, TITLE, PAD, INSET, BUTTON = 460, SIZE.title, 14, SIZE.pad, SIZE.button     -- [460, 32, 20, 12, 26]
+local EDGE, BETWEEN = 8, 6                       -- the footer's margins; between its two lines
+local FOOTER = EDGE + BUTTON + BETWEEN + BUTTON + EDGE     -- Keep, then Previous · the dots · Next
+local HEADING, GAP, ROWS_TOP, ROW_GAP = 16, 4, 8, SIZE.gap     -- [16, 6, 12, 2]
+local ROW_PAD, ROW_MIN = 6, 28                   -- a choice's margin above and below; its height [8, 32]
 local ROW_WIDTH = WIDTH - 2 * INSET
 local MARK, CHIP = 8 + 16 + 10, 24               -- the mark before a label; room for the A chip
 local DOT, DOT_GAP = 14, 2
+S.LAYOUT = { title = TITLE, footer = FOOTER, rowPad = ROW_PAD, inset = INSET }
 local KEYS = { "PADDUP", "PADDDOWN", "PAD1", "PAD2", "PAD4", "PADLSHOULDER", "PADRSHOULDER", "PADFORWARD" }
 
 local function G() return Ding.Gamepad end
@@ -214,7 +218,7 @@ local function newRow(parent)
     r.focus = UI.Focus(r)
     local box = CreateFrame("Frame", nil, r)
     box:SetSize(16, 16)
-    box:SetPoint("TOPLEFT", r, "TOPLEFT", 8, -8)
+    box:SetPoint("TOPLEFT", r, "TOPLEFT", 8, -ROW_PAD)
     box.fill = UI.Shape(box, "small", C.accent, "ARTWORK"):Place(box)
     box.stroke = UI.Shape(box, "smallBorder", C.muted, "ARTWORK"):Place(box)
     box.check = UI.Icon(box, "icon_check", 11, C.onAccent, "OVERLAY")
@@ -226,13 +230,13 @@ local function newRow(parent)
     r.box = box
     r.label = UI.Text(r, "regular", 12, C.text)
     UI.Wrap(r.label, 12)
-    r.label:SetPoint("TOPLEFT", r, "TOPLEFT", MARK, -8)
+    r.label:SetPoint("TOPLEFT", r, "TOPLEFT", MARK, -ROW_PAD)
     r.sub = UI.Text(r, "regular", 11, C.secondary)
     UI.Wrap(r.sub, 11)
     r.sub:SetPoint("TOPLEFT", r.label, "BOTTOMLEFT", 0, -2)
     r.tag = UI.Text(r, "semibold", 11, C.accent)
     r.tag:SetJustifyH("RIGHT")
-    r.tag:SetPoint("TOPRIGHT", r, "TOPRIGHT", -(8 + CHIP), -9)
+    r.tag:SetPoint("TOPRIGHT", r, "TOPRIGHT", -(8 + CHIP), -(ROW_PAD + 1))
     r.key = UI.Glyph(r)
     r.key:SetPoint("RIGHT", r, "RIGHT", -8, 0)
     r.key:Hide()
@@ -266,12 +270,12 @@ local function layoutRow(r, choice)
     r.label:SetWidth(width)
     r.label:SetText(choice.label)
     r.label:SetTextColor(unpack(choice.dim and C.disabled or C.text))
-    local height = 8 + r.label:GetStringHeight()
+    local height = ROW_PAD + r.label:GetStringHeight()
     r.sub:SetWidth(width)
     r.sub:SetText(choice.sub or "")
     r.sub:SetShown(choice.sub ~= nil)
     if choice.sub then height = height + 2 + r.sub:GetStringHeight() end
-    height = math.max(32, math.ceil(height + 8))
+    height = math.max(ROW_MIN, math.ceil(height + ROW_PAD))
     r:SetHeight(height)
     return height
 end
@@ -324,7 +328,7 @@ function S:Create()
     f:SetClampedToScreen(true)
     f:EnableMouse(true)
     f:SetSize(WIDTH, 400)
-    f:SetPoint("CENTER", UIParent, "CENTER", 0, 40)
+    UI.Dialog(f, 0, 40)
     f.look = UI.Window(f)
 
     -- Title bar: "Ding! · Setup", B, close cross.
@@ -348,16 +352,16 @@ function S:Create()
     f.divider = UI.Divider(f, -100)
     f.keep = newButton(f, function() S:Keep() end)
     f.keep:SetWidth(ROW_WIDTH)
-    f.keep:SetPoint("BOTTOMLEFT", f, "BOTTOMLEFT", INSET, 11 + BUTTON + 8)
+    f.keep:SetPoint("BOTTOMLEFT", f, "BOTTOMLEFT", INSET, EDGE + BUTTON + BETWEEN)
     f.prev = newButton(f, function() S:Show(S.screen - 1) end)
-    f.prev:SetPoint("BOTTOMLEFT", f, "BOTTOMLEFT", INSET, 11)
+    f.prev:SetPoint("BOTTOMLEFT", f, "BOTTOMLEFT", INSET, EDGE)
     f.next = newButton(f, function() S:Next() end)
-    f.next:SetPoint("BOTTOMRIGHT", f, "BOTTOMRIGHT", -INSET, 11)
+    f.next:SetPoint("BOTTOMRIGHT", f, "BOTTOMRIGHT", -INSET, EDGE)
     f.next.bg:SetColor(C.accent)
     f.next.text:SetTextColor(unpack(C.onAccent))
     f.dots = CreateFrame("Frame", nil, f)
     f.dots:SetSize(#SCREENS * DOT + (#SCREENS - 1) * DOT_GAP, DOT)
-    f.dots:SetPoint("BOTTOM", f, "BOTTOM", 0, 11 + (BUTTON - DOT) / 2)
+    f.dots:SetPoint("BOTTOM", f, "BOTTOM", 0, EDGE + (BUTTON - DOT) / 2)
     for i = 1, #SCREENS do f.dots[i] = newDot(f.dots, i) end
 
     f:SetScript("OnHide", function() S:OnHide() end)
