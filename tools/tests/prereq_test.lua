@@ -308,9 +308,14 @@ T.test("many steps skipped: two rows and \"and N more\"", function()
     start("t-many", {}, 12)
     T.eq(E.index, 5)
     T.eq(#E.skipNotes, 4)
-    local hints = 0
-    for _, l in ipairs(P:Content()) do if l.kind == "hint" and l.indent then hints = hints + 1 end end
-    T.eq(hints, 3)
+    local lines = 0
+    for _, l in ipairs(P:Content()) do if l.action == "notice" and l.notice == "skipped" then lines = lines + 1 end end
+    T.eq(lines, 3)
+    -- One box of their own: the first reason, then the others under it.
+    local boxes = {}
+    for _, row in ipairs(P.rowsShown) do if row.notice == "skipped" then boxes[#boxes + 1] = row end end
+    T.eq(#boxes, 1)
+    T.ok(boxes[1].sub and H.plain(boxes[1].sub):find(L.SKIPPED_MORE:format(2), 1, true), tostring(boxes[1].sub))
     T.ok(hasText((function()
         local out = {}
         for _, l in ipairs(P:Content()) do out[#out + 1] = H.plain(l.text) end

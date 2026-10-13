@@ -25,6 +25,7 @@ return function(opts)
     -- which catches typos that luac cannot see.
     ---------------------------------------------------------------------------
     local allWidgets = {}
+    local rawType = type      -- type() before the mock's secret values change it (below)
     local function noop() end
     local Methods = {}
     for _, m in ipairs({ "SetFrameStrata", "SetClampedToScreen", "SetMovable", "EnableMouse",
@@ -97,6 +98,13 @@ return function(opts)
     function Methods:GetEffectiveScale() return self.scale or 1 end
     function Methods:SetScript(name, fn) self.scripts = self.scripts or {}; self.scripts[name] = fn end
     function Methods:GetScript(name) return self.scripts and self.scripts[name] end
+    -- A hook runs after the script, which it never replaces.
+    function Methods:HookScript(name, fn)
+        assert(type(name) == "string" and type(fn) == "function", "HookScript(name, fn)")
+        self.hooks = self.hooks or {}
+        self.hooks[name] = self.hooks[name] or {}
+        table.insert(self.hooks[name], fn)
+    end
     function Methods:Show()
         if self.shown == false then
             self.shown = true
@@ -146,9 +154,18 @@ return function(opts)
     local function plainText(w)
         return (tostring(w.text or ""):gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", ""))
     end
+    -- 6 per character, 12 for a wide one (Chinese, Japanese, Korean: from U+3000), bytes of a
+    -- character counted once.
+    local function measure(text)
+        local width = 0
+        for lead in text:gmatch("[^\128-\191]") do
+            width = width + (lead:byte() >= 0xE3 and 12 or 6)
+        end
+        return width
+    end
     -- Like the modern client, the measure is bounded by a width already set (0 = none).
     function Methods:GetStringWidth()
-        local full = #plainText(self) * 6
+        local full = measure(plainText(self))
         if self.w and self.w > 0 then return math.min(full, self.w) end
         return full
     end
@@ -202,9 +219,13 @@ return function(opts)
     end
     function Methods:GetVerticalScroll() return self.scroll or 0 end
     function Methods:SetOwner(owner)
-        self.owner, self.lines = owner, {}
+        self.owner, self.lines, self.lineColors = owner, {}, {}
     end
-    function Methods:AddLine(text) self.lines = self.lines or {}; self.lines[#self.lines + 1] = text end
+    function Methods:AddLine(text, r, g, b)
+        self.lines, self.lineColors = self.lines or {}, self.lineColors or {}
+        self.lines[#self.lines + 1] = text
+        self.lineColors[#self.lines] = r and { r, g, b } or nil
+    end
     function Methods:SetCooldown(start, duration)
         assert(type(start) == "number" and type(duration) == "number", "SetCooldown(start, duration)")
         self.cooldownStart, self.cooldownDuration = start, duration
@@ -359,6 +380,29 @@ return function(opts)
     function Minimap:GetZoom() return 0 end
     _G.GetCursorPosition = function() return 400, 300 end
     _G.GameTooltip = newWidget("GameTooltip")
+    -- Unit tooltips (H.mouseover): the client's tooltip processor, like modern clients, or
+    -- with opts.tooltipScript the older OnTooltipSetUnit script. Ding may only hook them.
+    local tooltipPostCalls, tooltipUnit = {}, nil
+    if not opts.tooltipScript then
+        _G.Enum = { TooltipDataType = { Unit = 2 } }
+        _G.TooltipDataProcessor = { AddTooltipPostCall = function(kind, fn)
+            assert(kind == Enum.TooltipDataType.Unit and type(fn) == "function", "AddTooltipPostCall(kind, fn)")
+            tooltipPostCalls[#tooltipPostCalls + 1] = fn
+        end }
+    end
+    function GameTooltip:HasScript(name) return opts.tooltipScript == true and name == "OnTooltipSetUnit" end
+    function GameTooltip:SetUnit(unit)
+        self.lines, self.lineColors, tooltipUnit = {}, {}, unit
+        local name = UnitName(unit)
+        if rawType(name) == "string" then self.lines[1] = name end
+        local data = { type = 2, guid = UnitGUID(unit) }
+        for _, fn in ipairs(tooltipPostCalls) do fn(self, data) end
+        for _, fn in ipairs(self.hooks and self.hooks.OnTooltipSetUnit or {}) do fn(self) end
+    end
+    function GameTooltip:GetUnit()
+        if not tooltipUnit then return nil end
+        return UnitName(tooltipUnit), tooltipUnit
+    end
     _G.DEFAULT_CHAT_FRAME = { AddMessage = function(_, msg)
         say("   [chat] " .. msg:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", ""))
     end }
@@ -478,9 +522,19 @@ return function(opts)
     end
     _G.SaveBindings = function(set) assert(set == 1 or set == 2, "binding set") end
     _G.GetCurrentBindingSet = function() return 2 end
-    _G.GetCVar = function(name)
-        return ({ GamePadEmulateShift = "PADLTRIGGER", GamePadEmulateCtrl = "PADRTRIGGER", GamePadEmulateAlt = "NONE",
-            GamePadEnable = "1", rotateMinimap = "0" })[name]
+    -- Console variables; SetCVar keeps a variable under the client's own maximum (the
+    -- nameplate distance's) and is never called in combat (Ding waits for the fight's end).
+    local cvars = { GamePadEmulateShift = "PADLTRIGGER", GamePadEmulateCtrl = "PADRTRIGGER", GamePadEmulateAlt = "NONE",
+        GamePadEnable = "1", rotateMinimap = "0", nameplateMaxDistance = "20" }
+    local cvarMax = { nameplateMaxDistance = 41 }
+    _G.GetCVar = function(name) return cvars[name] end
+    _G.SetCVar = function(name, value)
+        assert(type(name) == "string" and type(value) == "string", "SetCVar(name, value as text)")
+        if inCombat then problem("SetCVar in combat: " .. name) end
+        local max = cvarMax[name]
+        if max and tonumber(value) and tonumber(value) > max then value = tostring(max) end
+        cvars[name] = value
+        return true
     end
     _G.IsIndoors = function() return false end
     -- Spells the player knows (H.learnSpell) and their cooldowns (H.setSpellCooldown).
@@ -601,7 +655,7 @@ return function(opts)
     local SECRET = setmetatable({}, { __tostring = function() return "<secret>" end })
     _G.issecretvalue = function(v) return rawequal(v, SECRET) end
     -- In the client a secret is a number: type() and tonumber() let it through.
-    local rawType, rawToNumber = type, tonumber
+    local rawToNumber = tonumber
     _G.type = function(v) if rawequal(v, SECRET) then return "number" end return rawType(v) end
     _G.tonumber = function(v, ...) if rawequal(v, SECRET) then return v end return rawToNumber(v, ...) end
     _G.GetUnitSpeed = function() return SECRET, SECRET, SECRET, SECRET end
@@ -701,17 +755,36 @@ return function(opts)
         if not it then return nil end
         return id, "Armor", "Mail", it.equipLoc or "", 134400, it.classID, it.subclassID
     end
-    _G.UnitExists = function(unit) return unit == "target" and hasTarget end
+    -- Nameplates (H.addPlate / H.removePlate): unit tokens "nameplateN" with their frame (the
+    -- client reuses its frames), GUID (H.SECRET: kept secret), name and whether the player
+    -- can attack them.
+    local plateUnits, plateFrames = {}, {}
+    _G.C_NamePlate = { GetNamePlateForUnit = function(unit)
+        local p = plateUnits[unit]
+        return p and p.frame or nil
+    end }
+    _G.UnitExists = function(unit)
+        if plateUnits[unit] then return true end
+        return unit == "target" and hasTarget
+    end
+    _G.UnitCanAttack = function(who, unit)
+        assert(who == "player", "UnitCanAttack(player, unit)")
+        local p = plateUnits[unit]
+        if p then return p.attackable end
+        return false
+    end
     -- The target's name (H.setTarget("name")), the group, raid markers.
     local targetName, inGroup, raidMarks = nil, false, {}
     local npcName = nil       -- the NPC whose window is open (H.setNpcName)
     local npcID = nil         -- its creature id (an NPC of H.talk with an `id`)
     _G.UnitGUID = function(unit)
+        if plateUnits[unit] then return plateUnits[unit].guid end
         if unit == "npc" and npcID then return ("Creature-0-4170-0-12-%d-00002A3B4C"):format(npcID) end
         if unit == "player" then return "Player-4170-00000001" end
         return nil
     end
     _G.UnitName = function(unit)
+        if plateUnits[unit] then return plateUnits[unit].name end
         if unit == "target" then return targetName end
         if unit == "npc" then return npcName end
         if unit == "player" then return "Player" end
@@ -852,8 +925,12 @@ return function(opts)
             -- Like the client: localized text, type, counts.
             for i, name in ipairs(log[q].objectives) do
                 local kind, done = (log[q].types or {})[i] or "monster", log[q].done
-                list[#list + 1] = { text = objectiveText(kind, name, done and 1 or 0, 1), type = kind,
-                    finished = done, numFulfilled = done and 1 or 0, numRequired = 1 }
+                -- Counts of H.setObjective, else 0/1 (1/1 once the quest is done).
+                local c = log[q].counts and log[q].counts[i]
+                local have, need = done and 1 or 0, 1
+                if c then have, need = done and c[2] or c[1], c[2] end
+                list[#list + 1] = { text = objectiveText(kind, name, have, need), type = kind,
+                    finished = done or have >= need, numFulfilled = have, numRequired = need }
             end
             return list
         end,
@@ -1330,8 +1407,10 @@ return function(opts)
             if #rows == 0 then problem(label .. ": no row in the window") end
             for i, r in ipairs(rows) do
                 if plain(r.text) == "" then problem(("%s: row %d is empty"):format(label, i)) end
-                -- manual / skipped: a step the player marked done or skipped (Engine:StepMark).
-                if not ({ done = true, todo = true, impossible = true, manual = true, skipped = true, preview = true })[r.state] then
+                -- manual / skipped: a step the player marked done or skipped (Engine:StepMark);
+                -- header: a quest above its objectives; notice: a box for the whole window.
+                if not ({ done = true, todo = true, impossible = true, manual = true, skipped = true, preview = true,
+                    header = true, notice = true })[r.state] then
                     problem(("%s: row %d has no state (%s)"):format(label, i, tostring(r.state)))
                 end
             end
@@ -1339,7 +1418,7 @@ return function(opts)
         if QUIET then return end
         print(("== %s | %s | %s%s | %d px"):format(label, plain(f.title.text), plain(f.stepText.text),
             plain(f.stepTotal.text), f.h))
-        local marks = { done = "[x] ", todo = "[ ] ", impossible = "[-] " }
+        local marks = { done = "[x] ", todo = "[ ] ", impossible = "[-] ", notice = "(i) " }
         for _, r in ipairs(rows) do
             print("    " .. (marks[r.state] or "") .. plain(r.text) .. (r.counter and ("  " .. r.counter) or ""))
             if r.sub then print("        " .. (plain(r.sub):gsub("\n", " / "))) end
@@ -1886,6 +1965,46 @@ return function(opts)
     end
     function H.taxi() return taxi end
     H.SECRET = SECRET
+    -- An objective's counts: have of need (the quest stays in progress).
+    function H.setObjective(q, i, have, need)
+        assert(log[q], "quest not in the log: " .. tostring(q))
+        log[q].counts = log[q].counts or {}
+        log[q].counts[i] = { have, need }
+    end
+    -- A nameplate appears: its unit token and { npc = creature id, name, guid (default: the
+    -- creature's; H.SECRET: kept secret), attackable (default true) }; returns its frame.
+    function H.addPlate(unit, p)
+        local frame = table.remove(plateFrames) or newWidget("Frame", UIParent)
+        local guid = p.guid or (p.npc and ("Creature-0-6782-0-248144-%d-00004E289B"):format(p.npc)) or nil
+        plateUnits[unit] = { frame = frame, guid = guid, name = p.name, attackable = p.attackable ~= false }
+        fire("NAME_PLATE_UNIT_ADDED", unit)
+        flush()
+        return frame
+    end
+    function H.removePlate(unit)
+        local p = plateUnits[unit]
+        if not p then return end
+        fire("NAME_PLATE_UNIT_REMOVED", unit)
+        plateUnits[unit] = nil
+        plateFrames[#plateFrames + 1] = p.frame
+        flush()
+    end
+    function H.resetPlates()
+        local units = {}
+        for unit in pairs(plateUnits) do units[#units + 1] = unit end
+        for _, unit in ipairs(units) do H.removePlate(unit) end
+    end
+    -- Changes a plate's unit without an event (its GUID kept secret from now on, its name).
+    function H.setPlate(unit, field, value) plateUnits[unit][field] = value end
+    -- The unit's tooltip (the mouse over it): its lines, the name first.
+    function H.mouseover(unit)
+        GameTooltip:SetOwner(UIParent)
+        GameTooltip:SetUnit(unit)
+        flush()
+        return GameTooltip.lines
+    end
+    function H.cvar(name) return cvars[name] end
+    function H.setCVarRaw(name, value) cvars[name] = value end
     function H.now() return now end
     return H
 end

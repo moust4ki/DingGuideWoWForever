@@ -54,6 +54,7 @@ local function applyAllSettings()
         A:ApplyStyle()
         A.point = nil
     end
+    Ding.QuestMobs:Apply()
     refreshAll()
 end
 
@@ -155,8 +156,8 @@ local TAB_SETTINGS = {
     automation = { { "ui", "autoAccept" }, { "ui", "autoTurnin" }, { "ui", "chooseReward" }, { "ui", "skipGrey" },
         { "ui", "sellGrey" }, { "ui", "repair" }, { "ui", "autoEquip" }, { "ui", "autoFly" } },
     arrow = { { "arrow", "shown" }, { "arrow", "style" }, { "arrow", "size" }, { "arrow", "loop" },
-        { "arrow", "worldMap" }, { "minimap", "pins" }, { "ui", "markTarget" }, { "arrow", "tomtom" },
-        { "arrow", "mode" } },
+        { "arrow", "worldMap" }, { "minimap", "pins" }, { "ui", "markTarget" }, { "ui", "mobIcons" },
+        { "ui", "mobTooltip" }, { "ui", "farPlates" }, { "arrow", "tomtom" }, { "arrow", "mode" } },
     appearance = { { "panel", "bgAlpha" }, { "panel", "scale" }, { "panel", "locked" },
         { "panel", "compactInCombat" }, { "panel", "hideInInstance" }, { "panel", "itemButton" },
         { "minimap", "shown" }, { "ui", "sound" }, { nil, "debug" } },
@@ -233,6 +234,12 @@ local CLEANUP_PAGE = {
     key = "cleanup", title = L.CLEANUP, build = cleanupPage,
     signature = function() return table.concat(Ding.Engine:UnusedLogQuests(), ",") end,
 }
+
+-- The guide window's "log almost full" notice (A or a click): straight to that page.
+function Cfg:OpenCleanup()
+    self:Open("guide")
+    if self.frame and self.frame:IsShown() then self:OpenPage(CLEANUP_PAGE) end
+end
 
 -- Guides as text (Core/Import.lua): import one, export the active one, delete the imported
 -- ones. The window closes the settings; closing it comes back to this page.
@@ -569,6 +576,32 @@ local function arrowRows(canvas, width)
             label = L.MARK_TARGET, desc = L.MARK_TARGET_DESC,
             get = function() return Ding.db.ui.markTarget end,
             set = function(v) Ding.db.ui.markTarget = v and true or false end,
+        }, width),
+        -- Quest monsters (UI/QuestMobs.lua): nameplates and tooltips.
+        UI.HeaderRow(canvas, L.HEADER_QUEST_MOBS, width),
+        UI.CheckRow(canvas, Cfg, {
+            label = L.MOB_ICONS, desc = L.MOB_ICONS_DESC,
+            get = function() return Ding.db.ui.mobIcons ~= false end,
+            set = function(v)
+                Ding.db.ui.mobIcons = v and true or false
+                Ding.QuestMobs:Apply()
+            end,
+        }, width),
+        UI.CheckRow(canvas, Cfg, {
+            label = L.MOB_TOOLTIP, desc = L.MOB_TOOLTIP_DESC,
+            get = function() return Ding.db.ui.mobTooltip ~= false end,
+            set = function(v)
+                Ding.db.ui.mobTooltip = v and true or false
+                Ding.QuestMobs:Apply()
+            end,
+        }, width),
+        UI.CheckRow(canvas, Cfg, {
+            label = L.FAR_PLATES, desc = L.FAR_PLATES_DESC,
+            get = function() return Ding.db.ui.farPlates end,
+            set = function(v)
+                Ding.db.ui.farPlates = v and true or false
+                Ding.QuestMobs:ApplyDistance(true)
+            end,
         }, width),
         foldRow(canvas, width, "arrow"),
     }
@@ -1072,13 +1105,11 @@ function Cfg:RefreshRows()
     local view = f and self:View()
     if not view or not view.rows then return end
     for _, row in ipairs(view.rows) do row:Refresh() end
-    local pad = G():Active()
+    -- The focused row again: its A chip follows the gamepad.
+    if self.focus then self.focus:SetFocused(true) end
     f.lb:SetKey("PADLSHOULDER")
     f.rb:SetKey("PADRSHOULDER")
     f.back:SetKey("PAD2")
-    f.lb:SetShown(pad)
-    f.rb:SetShown(pad)
-    f.back:SetShown(pad)
     layoutTabs(f)
     self:UpdateHelp()
 end
@@ -1166,11 +1197,24 @@ local function mouseHelp(self, row)
     return L.MOUSE_HINT
 end
 
+-- Each action shows once (Yendi: the same action as a hint and as a button). With a gamepad,
+-- a chip sits on what its button does when that is on screen: B on the close cross (on a tab)
+-- or on the page's title (on a page), LB / RB at the ends of the tabs, A on the focused row
+-- when the row has one (check box, button). The footer keeps the others.
 function Cfg:UpdateHelp()
     local f = self.frame
     if not f then return end
     local row = self.focus
-    if not G():Active() then
+    local pad = G():Active()
+    -- While a list is open, a button waited for or a conflict settled, B and LB / RB do
+    -- something else (or nothing): their chips go away, the footer says it.
+    local busy = self.dropdown or self.capturing or self.conflictRow
+    local confirming = row and row.confirming
+    f.lb:SetShown(pad and not busy)
+    f.rb:SetShown(pad and not busy)
+    f.back:SetShown(pad and not busy and not confirming and not self.page)
+    if self.page then self.page.rows[1]:ShowKey(pad and not busy and not confirming) end
+    if not pad then
         f.help:SetHints({ UI.Hint(nil, mouseHelp(self, row)) })
         return
     end
@@ -1179,12 +1223,13 @@ function Cfg:UpdateHelp()
         hints = { hint("PAD1", L.HINT_SELECT), hint("PAD2", L.HINT_BACK) }
     elseif self.capturing then
         hints = { hint("PAD2", L.HINT_CANCEL) }
-    elseif self.conflictRow or (row and row.confirming) then
+    elseif self.conflictRow then
         hints = { hint("PAD1", L.HINT_CONFIRM), hint("PAD2", L.HINT_CANCEL) }
+    elseif confirming then
+        -- The row's button says "Confirm? (A)".
+        hints = { hint("PAD2", L.HINT_CANCEL) }
     else
         hints = row and row:Hints() or {}
-        hints[#hints + 1] = hint("PAD2", L.HINT_BACK)
-        hints[#hints + 1] = hint({ "PADLSHOULDER", "PADRSHOULDER" }, L.HINT_TABS)
     end
     f.help:SetHints(hints)
 end

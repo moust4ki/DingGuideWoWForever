@@ -59,7 +59,7 @@ T.test("services: the list with the gamepad: D-pad, A sends the arrow, then the 
     T.eq(A.point.npc, trip.npc, "the arrow does not go to the vendor")
     local found = false
     for _, row in ipairs(P.rowsShown or {}) do
-        if row.sub and H.plain(row.sub):find(L.FINDER_TRIP:format(trip.name, L.FINDER_VENDOR), 1, true) then found = true end
+        if row.notice == "trip" and H.plain(row.text) == L.FINDER_TRIP:format(trip.name, L.FINDER_VENDOR) then found = true end
     end
     T.ok(found, "the window does not say where the arrow goes")
     -- Another merchant does not end it; this one does.
