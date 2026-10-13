@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Horde/07.lua.
--- Simulated (warrior): Orc 22 (33%) -> 24 (81%) in 5 h 19, 19 quests turned in; Scourge 22 (33%) -> 24 (81%) in 5 h 19, 19 quests turned in; Tauren 22 (30%) -> 24 (78%) in 5 h 19, 19 quests turned in; Troll 22 (33%) -> 24 (81%) in 5 h 19, 19 quests turned in; Skyborne 22 (40%) -> 24 (85%) in 5 h 20, 19 quests turned in.
+-- Simulated (warrior): Orc 22 (39%) -> 24 (84%) in 5 h 20, 19 quests turned in; Scourge 22 (39%) -> 24 (84%) in 5 h 20, 19 quests turned in; Tauren 22 (33%) -> 24 (81%) in 5 h 19, 19 quests turned in; Troll 22 (39%) -> 24 (84%) in 5 h 20, 19 quests turned in; Skyborne 22 (40%) -> 24 (85%) in 5 h 20, 19 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-h07-hillsbrad-foothills",
     title    = "Hillsbrad Foothills (22-24)",

@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Horde/11.lua.
--- Simulated (warrior): Orc 28 (25%) -> 30 (34%) in 7 h 00, 23 quests turned in; Scourge 28 (25%) -> 30 (34%) in 7 h 00, 23 quests turned in; Tauren 28 (25%) -> 30 (34%) in 7 h 01, 23 quests turned in; Troll 28 (25%) -> 30 (34%) in 7 h 00, 23 quests turned in; Skyborne 28 (25%) -> 30 (34%) in 7 h 00, 23 quests turned in.
+-- Simulated (warrior): Orc 28 (25%) -> 30 (34%) in 7 h 00, 23 quests turned in; Scourge 28 (25%) -> 30 (34%) in 7 h 00, 23 quests turned in; Tauren 28 (25%) -> 30 (34%) in 7 h 00, 23 quests turned in; Troll 28 (25%) -> 30 (34%) in 7 h 00, 23 quests turned in; Skyborne 28 (25%) -> 30 (34%) in 7 h 00, 23 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-h11-thousand-needles",
     title    = "Thousand Needles (28-30)",
@@ -146,7 +146,6 @@ Ding.RegisterGuide({
         { go = { 1456, 29.77, 29.79 }, text = "Head out of the cave" }, -- level 30
         { accept = 1145 }, -- level 30
         { turnin = 1111, accept = 1112 }, -- level 30
-        { complete = 92706, races = { "Tauren" } }, -- level 30
         { turnin = 220, when = { log = 220 }, races = { "Orc", "Tauren", "Troll", "Skyborne" }, classes = { "SHAMAN" } }, -- level 30
         { accept = 63, when = { done = 220 }, races = { "Orc", "Tauren", "Troll", "Skyborne" }, classes = { "SHAMAN" } }, -- level 30
         { talk = 5901, collect = { { 6637, 1 } }, spots = { { 1413, 65.86, 43.84 } }, races = { "Orc", "Tauren", "Troll" }, classes = { "SHAMAN" }, -- level 30

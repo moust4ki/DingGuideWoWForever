@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Horde/05.lua.
--- Simulated (warrior): Orc 15 (25%) -> 22 (11%) in 12 h 42, 69 quests turned in; Scourge 15 (61%) -> 22 (11%) in 12 h 22, 65 quests turned in; Tauren 15 (47%) -> 22 (7%) in 12 h 27, 66 quests turned in; Troll 15 (25%) -> 22 (11%) in 12 h 42, 69 quests turned in; Skyborne 15 (7%) -> 22 (18%) in 13 h 10, 70 quests turned in.
+-- Simulated (warrior): Orc 15 (25%) -> 22 (17%) in 12 h 42, 70 quests turned in; Scourge 15 (62%) -> 22 (17%) in 12 h 21, 66 quests turned in; Tauren 15 (47%) -> 22 (11%) in 12 h 27, 66 quests turned in; Troll 15 (25%) -> 22 (17%) in 12 h 42, 70 quests turned in; Skyborne 15 (7%) -> 22 (18%) in 13 h 10, 70 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-h05-the-barrens-and-stonetalon-mountains",
     title    = "The Barrens and Stonetalon (15-21)",
@@ -15,9 +15,6 @@ Ding.RegisterGuide({
         { accept = 1859, races = { "Orc" }, classes = { "ROGUE" }, -- level 15
           note = "The NPC is indoors, one floor up." },
         { accept = 840 }, -- level 15
-        { complete = 96874, races = { "Scourge" } }, -- level 15
-        { complete = 96874, races = { "Tauren" } }, -- level 15
-        { complete = 96874, races = { "Orc", "Troll" } }, -- level 15
         { accept = 97282, races = { "Skyborne" } }, -- level 15
         { complete = 97282, races = { "Skyborne" } }, -- level 15
         { turnin = 97282, races = { "Skyborne" } }, -- level 15
@@ -102,7 +99,7 @@ Ding.RegisterGuide({
         { complete = { 821, 903 } }, -- level 16
         { complete = 867, -- level 17
           note = "Kill harpies." },
-        { accept = 95494, races = { "Orc", "Scourge", "Troll" } }, -- level 17
+        { accept = 95494, races = { "Orc", "Scourge", "Tauren", "Troll" } }, -- level 17
         { accept = 95507 }, -- level 17
         { complete = 95507 }, -- level 17
         { turnin = 95507 }, -- level 17
@@ -194,7 +191,7 @@ Ding.RegisterGuide({
         { complete = 875, elite = true, -- level 18
           note = "Keep away from Sister Rathtalon. The target is a harpy with emerald plumage; beware, it is elite. The target circles in the air, so search around." },
         { turnin = 881, accept = 905 }, -- level 18
-        { accept = 95774, races = { "Skyborne" } }, -- level 18
+        { accept = 95774, races = { "Orc", "Scourge", "Troll", "Skyborne" } }, -- level 18
         { destroy = 10327 }, -- level 18
         { accept = 4921 }, -- level 18
         { turnin = 875, elite = true }, -- level 18
@@ -267,7 +264,7 @@ Ding.RegisterGuide({
         { turnin = 3261, accept = 882 }, -- level 20
         { accept = 878, races = { "Orc", "Scourge", "Troll" }, classes = { "WARRIOR", "HUNTER", "PRIEST", "SHAMAN", "MAGE", "WARLOCK", "DRUID" } }, -- level 20
         { accept = 878, races = { "Tauren", "Skyborne" } }, -- level 20
-        { complete = 95774, races = { "Skyborne" } }, -- level 20
+        { complete = 95774, races = { "Orc", "Scourge", "Troll", "Skyborne" } }, -- level 20
         { collect = { { 5099, 1 } }, -- level 20
           note = "Look for a kodo with grey hide. This one roams, so scan the surrounding area. The targets are spread over several spots." },
         { useitem = 5099 }, -- level 20
@@ -283,12 +280,11 @@ Ding.RegisterGuide({
         { collect = { { 10338, 1 } }, spots = { { 1413, 60.66, 35.66 }, { 1413, 60.96, 31.84 }, { 1413, 62.63, 33.37 } } }, -- level 20
         { complete = 882, useitem = 10338, -- level 20
           note = "The target is a raptor. It shows up a short way off." },
-        { complete = 95494, races = { "Orc", "Scourge", "Troll" } }, -- level 20
+        { complete = 95494, races = { "Orc", "Scourge", "Tauren", "Troll" } }, -- level 20
         { turnin = 2381, when = { ready = 2381 }, races = { "Orc", "Scourge", "Troll", "Skyborne" }, classes = { "ROGUE" } }, -- level 20
         { turnin = 888, -- level 20
           note = "The NPC is indoors, one floor up." },
         { turnin = 1094, accept = 1095 }, -- level 20
-        { accept = 92706, races = { "Tauren" } }, -- level 20
         { talk = 3496, collect = { { 4894, 5 }, { 4893, 5 } }, spots = { { 1413, 62.58, 37.39 } } }, -- level 20
         { turnin = { 865, 1069 } }, -- level 20
         { destroy = 5570 }, -- level 20
@@ -296,7 +292,7 @@ Ding.RegisterGuide({
         { turnin = 876, elite = true }, -- level 20
         { accept = 1060, elite = true }, -- level 20
         { turnin = 899 }, -- level 20
-        { turnin = 95774, races = { "Skyborne" } }, -- level 20
+        { turnin = 95774, races = { "Orc", "Scourge", "Troll", "Skyborne" } }, -- level 20
         { destroy = 5085 }, -- level 20
         { turnin = 880, accept = { 1489, 3301 } }, -- level 20
         { train = true, talk = 5883, races = { "Scourge", "Troll" }, classes = { "MAGE" }, -- level 20
@@ -334,10 +330,10 @@ Ding.RegisterGuide({
         { turnin = 878, races = { "Orc", "Scourge", "Troll" }, classes = { "ROGUE" } }, -- level 20
         { accept = 5052 }, -- level 20
         { turnin = 5052, when = { ready = 5052 } }, -- level 20
-        { go = { 1413, 44.5, 59.27 } }, -- level 20
-        { talk = 3430, -- level 20
+        { go = { 1413, 44.5, 59.27 } }, -- level 21
+        { talk = 3430, -- level 21
           note = "Trade your Blood Shards to gain buffs. Trade any spare Blood Shards to him during your Barrens questing. Ask him for the Spirit of the Wind buff" },
-        { turnin = 882, accept = 907 }, -- level 20
+        { turnin = 882, accept = 907 }, -- level 21
         { turnin = 883, races = { "Skyborne" }, classes = { "WARRIOR", "HUNTER", "PRIEST", "SHAMAN", "MAGE", "WARLOCK", "DRUID" } }, -- level 21
         { turnin = 883, races = { "Tauren" }, classes = { "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK" } }, -- level 21
         { complete = 907, -- level 21
@@ -396,14 +392,14 @@ Ding.RegisterGuide({
         { go = { 1413, 48.37, 32.96 }, dungeon = "Wailing Caverns", text = "Stay on the trail" }, -- level 21
         { go = { 1413, 47.25, 33.51 }, dungeon = "Wailing Caverns", text = "Descend the slope" }, -- level 21
         { go = { 1413, 45.94, 36.02 }, dungeon = "Wailing Caverns", text = "Drop with care onto the rock, then go into the cave" }, -- level 21
-        { accept = 1487, dungeon = "Wailing Caverns", races = { "Orc" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST", "MAGE", "DRUID" } }, -- level 21
-        { accept = 1487, dungeon = "Wailing Caverns", races = { "Scourge" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "SHAMAN", "MAGE", "DRUID" } }, -- level 21
-        { accept = 1487, dungeon = "Wailing Caverns", races = { "Skyborne" }, -- level 21
+        { accept = 1487, dungeon = "Wailing Caverns", -- level 21
           note = "Your targets are within the cavern." },
-        { accept = 1487, dungeon = "Wailing Caverns", races = { "Tauren" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK" } }, -- level 21
-        { accept = 1487, dungeon = "Wailing Caverns", races = { "Troll" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 21
+        { accept = 1486, dungeon = "Wailing Caverns", races = { "Orc" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST", "MAGE", "DRUID" } }, -- level 21
+        { accept = 1486, dungeon = "Wailing Caverns", races = { "Scourge" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "SHAMAN", "MAGE", "DRUID" } }, -- level 21
         { accept = 1486, dungeon = "Wailing Caverns", races = { "Skyborne" }, -- level 21
           note = "Your targets are within the cavern." },
+        { accept = 1486, dungeon = "Wailing Caverns", races = { "Tauren" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK" } }, -- level 21
+        { accept = 1486, dungeon = "Wailing Caverns", races = { "Troll" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 21
         { go = { 1413, 46.01, 36.27 }, dungeon = "Wailing Caverns", text = "Go into the cavern" }, -- level 21
         { complete = 959, dungeon = "Wailing Caverns", -- level 21
           note = "These foes hide in stealth. The targets are spread over several spots. Your targets are within the cavern." },
@@ -419,25 +415,25 @@ Ding.RegisterGuide({
           note = "The targets are oozes." },
         { complete = 962, dungeon = "Wailing Caverns", -- level 21
           note = "Look for little green shrubs bearing violet blooms." },
+        { complete = 1486, dungeon = "Wailing Caverns", races = { "Orc" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST", "MAGE", "DRUID" } }, -- level 21
+        { complete = 1486, dungeon = "Wailing Caverns", races = { "Scourge" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "SHAMAN", "MAGE", "DRUID" } }, -- level 21
         { complete = 1486, dungeon = "Wailing Caverns", races = { "Skyborne" } }, -- level 21
-        { complete = 1487, dungeon = "Wailing Caverns", races = { "Orc" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST", "MAGE", "DRUID" } }, -- level 21
-        { complete = 1487, dungeon = "Wailing Caverns", races = { "Scourge" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "SHAMAN", "MAGE", "DRUID" } }, -- level 21
-        { complete = 1487, dungeon = "Wailing Caverns", races = { "Skyborne" } }, -- level 21
-        { complete = 1487, dungeon = "Wailing Caverns", races = { "Tauren" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK" } }, -- level 21
-        { complete = 1487, dungeon = "Wailing Caverns", races = { "Troll" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 21
+        { complete = 1486, dungeon = "Wailing Caverns", races = { "Tauren" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK" } }, -- level 21
+        { complete = 1486, dungeon = "Wailing Caverns", races = { "Troll" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 21
+        { complete = 1487, dungeon = "Wailing Caverns" }, -- level 21
         { dungeon = "Wailing Caverns", useitem = 10441, when = { item = 10441 } }, -- level 21
         { accept = 6981, dungeon = "Wailing Caverns", when = { item = 10441 }, races = { "Skyborne" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST", "MAGE", "DRUID" } }, -- level 21
         { go = { 1413, 50.31, 35.39 }, dungeon = "Wailing Caverns", text = "Climb the mountainside" }, -- level 21
         { go = { 1413, 47.25, 33.51 }, dungeon = "Wailing Caverns", text = "Descend the slope" }, -- level 21
         { go = { 1413, 45.94, 36.02 }, dungeon = "Wailing Caverns", text = "Drop with care onto the rock, then go into the cave" }, -- level 21
-        { turnin = 1487, dungeon = "Wailing Caverns", races = { "Orc" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST", "MAGE", "DRUID" } }, -- level 21
-        { turnin = 1487, dungeon = "Wailing Caverns", races = { "Scourge" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "SHAMAN", "MAGE", "DRUID" } }, -- level 21
-        { turnin = 1487, dungeon = "Wailing Caverns", races = { "Skyborne" }, -- level 21
+        { turnin = 1487, dungeon = "Wailing Caverns", -- level 21
           note = "Your targets are within the cavern." },
-        { turnin = 1487, dungeon = "Wailing Caverns", races = { "Tauren" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK" } }, -- level 21
-        { turnin = 1487, dungeon = "Wailing Caverns", races = { "Troll" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 21
+        { turnin = 1486, dungeon = "Wailing Caverns", races = { "Orc" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST", "MAGE", "DRUID" } }, -- level 21
+        { turnin = 1486, dungeon = "Wailing Caverns", races = { "Scourge" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "SHAMAN", "MAGE", "DRUID" } }, -- level 21
         { turnin = 1486, dungeon = "Wailing Caverns", races = { "Skyborne" }, -- level 21
           note = "Your targets are within the cavern." },
+        { turnin = 1486, dungeon = "Wailing Caverns", races = { "Tauren" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK" } }, -- level 21
+        { turnin = 1486, dungeon = "Wailing Caverns", races = { "Troll" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 21
         { complete = 6981, dungeon = "Wailing Caverns", when = { log = 6981 } }, -- level 21
         { dungeon = "Wailing Caverns", talk = 3442, when = { log = 6981 } }, -- level 21
         { complete = 6981, dungeon = "Wailing Caverns", when = { log = 6981 } }, -- level 21
@@ -488,7 +484,7 @@ Ding.RegisterGuide({
         { turnin = 1510, accept = 1511, races = { "Orc", "Scourge", "Skyborne" }, classes = { "WARLOCK" } }, -- level 21
         { turnin = 6461, -- level 21
           note = "The NPC is indoors." },
-        { turnin = 6401 }, -- level 21
+        { turnin = 6401 }, -- level 22
         { go = { 1442, 49.25, 61.94 }, text = "Climb the trail" }, -- level 22
         { accept = 6562, -- level 22
           note = "This one roams, so scan the surrounding area." },

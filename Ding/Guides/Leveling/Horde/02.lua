@@ -437,7 +437,6 @@ Ding.RegisterGuide({
           note = "This clears the quest's time limit." },
         { go = { 1454, 81.59, 19.59 }, classes = { "WARRIOR", "HUNTER" } }, -- level 13
         { go = { 1454, 81.59, 19.59 }, classes = { "WARRIOR", "HUNTER" } }, -- level 13
-        { accept = 96874, races = { "Tauren" } }, -- level 13
         { talk = 2704, classes = { "WARRIOR", "HUNTER" }, -- level 13
           note = "The NPC is indoors." },
         { complete = 813, -- level 13

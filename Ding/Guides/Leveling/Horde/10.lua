@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Horde/10.lua.
--- Simulated (warrior): Orc 26 (62%) -> 28 (25%) in 2 h 45, 24 quests turned in; Scourge 26 (62%) -> 28 (25%) in 2 h 37, 25 quests turned in; Tauren 26 (60%) -> 28 (25%) in 2 h 43, 24 quests turned in; Troll 26 (62%) -> 28 (25%) in 2 h 45, 24 quests turned in; Skyborne 26 (76%) -> 28 (25%) in 2 h 10, 24 quests turned in.
+-- Simulated (warrior): Orc 26 (65%) -> 28 (25%) in 2 h 38, 24 quests turned in; Scourge 26 (65%) -> 28 (25%) in 2 h 31, 25 quests turned in; Tauren 26 (62%) -> 28 (25%) in 2 h 37, 25 quests turned in; Troll 26 (65%) -> 28 (25%) in 2 h 38, 24 quests turned in; Skyborne 26 (76%) -> 28 (25%) in 2 h 10, 24 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-h10-ashenvale",
     title    = "Ashenvale (26-28)",
@@ -17,7 +17,7 @@ Ding.RegisterGuide({
         { vendor = true, talk = 3313, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, -- level 26
           note = "The NPC is indoors. A lengthy stretch of quests is coming up." },
         { accept = 6541 }, -- level 26
-        { turnin = 95494, races = { "Orc", "Scourge", "Troll" } }, -- level 26
+        { turnin = 95494, races = { "Orc", "Scourge", "Tauren", "Troll" } }, -- level 26
         { turnin = 6541, -- level 26
           note = "The NPC is on the tower's middle floor." },
         { accept = 6504, when = { item = { { 16645, 1 }, { 16646, 1 }, { 16647, 1 }, { 16648, 1 }, { 16649, 1 }, { 16650, 1 }, { 16651, 1 }, { 16652, 1 }, { 16653, 1 }, { 16654, 1 }, { 16655, 1 }, { 16656, 1 } } } }, -- level 26
@@ -77,10 +77,8 @@ Ding.RegisterGuide({
         { accept = 23, collect = { { 16303, 1 } }, useitem = 16303, patrol = { { 1440, 42.63, 63.18 }, { 1440, 43.04, 63.13 }, { 1440, 43.21, 63.8 }, { 1440, 43.77, 63.82 }, { 1440, 43.19, 63.85 }, { 1440, 43.17, 63.12 }, { 1440, 42.65, 63.2 }, { 1440, 42.61, 64.02 }, { 1440, 42.3, 64.76 }, { 1440, 41.81, 65.32 }, { 1440, 40.88, 66.41 }, { 1440, 40.28, 66.32 }, { 1440, 39.74, 65.38 }, { 1440, 39.72, 63.86 }, { 1440, 39.86, 62.96 }, { 1440, 39.7, 63.82 }, { 1440, 39.83, 65.45 }, { 1440, 41.45, 66.65 }, { 1440, 41.44, 67.49 }, { 1440, 41.71, 68.31 }, { 1440, 41.99, 68.69 }, { 1440, 42.37, 68.39 }, { 1440, 42.88, 68.48 }, { 1440, 43.26, 68.13 }, { 1440, 43.83, 68.82 }, { 1440, 43.33, 68.18 }, { 1440, 42.5, 68.43 }, { 1440, 41.99, 68.69 }, { 1440, 41.76, 68.21 }, { 1440, 41.5, 67.45 }, { 1440, 41.46, 66.47 }, { 1440, 40.26, 66.29 }, { 1440, 39.71, 65.48 }, { 1440, 39.64, 64.32 }, { 1440, 39.61, 63.85 }, { 1440, 39.78, 62.84 }, { 1440, 39.6, 63.74 }, { 1440, 39.72, 65.5 }, { 1440, 40.16, 66.27 }, { 1440, 40.57, 66.01 }, { 1440, 41.61, 65.7 }, { 1440, 42.24, 64.94 }, { 1440, 42.56, 64.08 } }, when = { done = 6383 }, -- level 27
           note = "Look for a gray druid-style bear. The target roams a wide route. Stay clear of Astranaar." },
         { complete = 25 }, -- level 27
-        { collect = { { 16408, 1 } }, useitem = 16408, -- level 27
+        { accept = 1918, collect = { { 16408, 1 } }, useitem = 16408, -- level 27
           note = "The target is a watery being tinted a deeper green. The target roams; check the area." },
-        { accept = 1918, races = { "Orc", "Scourge", "Troll", "Skyborne" } }, -- level 27
-        { accept = 1918, races = { "Tauren" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK", "DRUID" } }, -- level 27
         { complete = 25 }, -- level 27
         { level = 27, xp = 14950, patrol = { { 1440, 52.44, 62.83 }, { 1440, 53.44, 60.75 }, { 1440, 55.04, 62.15 }, { 1440, 57.63, 63.96 }, { 1440, 50.35, 61.23 } }, -- level 27
           note = "Together with the next turn-ins, this brings you to level 28. Steer away from Silverwind Refuge." },
@@ -91,13 +89,10 @@ Ding.RegisterGuide({
         { turnin = { 24, 23 } }, -- level 27
         { turnin = 6482, -- level 27
           note = "The NPC is indoors." },
-        { turnin = 25 }, -- level 27
-        { turnin = 1918, accept = 824, races = { "Orc", "Scourge", "Troll", "Skyborne" } }, -- level 27
-        { turnin = 1918, accept = 824, races = { "Tauren" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK", "DRUID" } }, -- level 27
+        { turnin = { 25, 1918 }, accept = 824 }, -- level 27
         { turnin = 6441 }, -- level 27
-        { turnin = 824, races = { "Orc", "Scourge", "Troll", "Skyborne" }, -- level 27
+        { turnin = 824, -- level 27
           note = "The NPC is indoors." },
-        { turnin = 824, races = { "Tauren" }, classes = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK", "DRUID" } }, -- level 27
         { turnin = 6462, -- level 27
           note = "The NPC is indoors." },
         { turnin = 216 }, -- level 27

@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Horde/09.lua.
--- Simulated (warrior): Orc 25 (86%) -> 26 (62%) in 2 h 26, 5 quests turned in; Scourge 25 (86%) -> 26 (62%) in 2 h 26, 5 quests turned in; Tauren 25 (83%) -> 26 (60%) in 2 h 26, 5 quests turned in; Troll 25 (86%) -> 26 (62%) in 2 h 26, 5 quests turned in; Skyborne 25 (90%) -> 26 (76%) in 2 h 34, 7 quests turned in.
+-- Simulated (warrior): Orc 25 (89%) -> 26 (65%) in 2 h 26, 5 quests turned in; Scourge 25 (89%) -> 26 (65%) in 2 h 26, 5 quests turned in; Tauren 25 (86%) -> 26 (62%) in 2 h 26, 5 quests turned in; Troll 25 (89%) -> 26 (65%) in 2 h 26, 5 quests turned in; Skyborne 25 (90%) -> 26 (76%) in 2 h 34, 7 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-h09-stonetalon-mountains",
     title    = "Stonetalon Mountains (25-26)",

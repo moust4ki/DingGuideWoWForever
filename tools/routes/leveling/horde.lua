@@ -8,6 +8,10 @@ return {
     faction = "Horde",
     -- Races that join on the way: the Skyborne, after their own start (tools/routes/skyborne_horde.lua).
     entries = { Skyborne = { section = "leveling-h04-silverpine-forest", level = 13 } },
+    -- Forever quests never added to this route, with the reason.
+    exclude = {
+        [96874] = "This Is Spinal Axe: taken at the start, turned in in Ashenvale ten levels later, little XP for the detour",
+    },
     sections = {
         {
             id = "leveling-h01-undead-starter", title = "Undead start",
