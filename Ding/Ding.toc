@@ -52,6 +52,7 @@ Core\Services.lua
 Core\Merchant.lua
 Core\Training.lua
 Core\Gear.lua
+Core\Directory.lua
 Core\Talents.lua
 Core\Goals.lua
 Core\AutoQuest.lua

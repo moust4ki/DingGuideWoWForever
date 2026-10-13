@@ -464,6 +464,35 @@ end
 -- Factions an NPC is friendly to: "A", "H", "AH" or nil.
 function D:NpcFriendly(id) return get("Npc", "friendlyToFaction", id) end
 
+---------------------------------------------------------------------------
+-- The NPC directory (Core/Directory.lua): every NPC, what it is, what it sells
+---------------------------------------------------------------------------
+function D:NpcIds() return allIds("Npc") end
+function D:ItemIds() return allIds("Item") end
+
+-- An NPC's services bits (npcFlags, 0 when unknown) and its subtitle in English ("Weapon
+-- Master", "Journeyman Alchemist"), whatever the client's language.
+function D:NpcFlags(id) return get("Npc", "npcFlags", id) or 0 end
+function D:NpcSubName(id) return raw("Npc", "subName", id) end
+
+-- The weapon skills a weapon master teaches (skill line ids), or nil: a field of DingDB's own.
+function D:NpcWeaponSkills(id)
+    local skills = get("Npc", "weaponSkills", id)
+    return type(skills) == "table" and skills or nil
+end
+
+-- What an item is: { class, subClass, requiredLevel, flags } (the game's item class and
+-- subclass; nil when the data does not say), or nil for an unknown item.
+function D:ItemInfo(id)
+    if self.backend == "ding" and not DB.items[id] then return nil end
+    local function number(field)
+        local v = get("Item", field, id)
+        return type(v) == "number" and v or nil
+    end
+    return { class = number("class"), subClass = number("subClass"), requiredLevel = number("requiredLevel"),
+        flags = number("flags") }
+end
+
 -- Every flight master: { npc, name, friendly ("A", "H", "AH"), points }.
 function D:FlightMasters()
     if flightMasters then return flightMasters end

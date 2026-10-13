@@ -495,6 +495,15 @@ return function(opts)
         [18960] = "Teleport: Moonglade" }
     _G.GetSpellInfo = function(id) return SPELL_NAMES[id] or ("Spell " .. tostring(id)), nil, 136235 end
     _G.GetSpellTexture = function() return 136235 end
+    -- Skill lines (the skills panel): a header, then the skills of H.setSkillLines.
+    local skillLines = {}
+    _G.GetNumSkillLines = function() return #skillLines + 1 end
+    _G.GetSkillLineInfo = function(i)
+        if i == 1 then return "Weapon Skills", true end
+        local name = skillLines[i - 1]
+        if not name then return nil end
+        return name, false, false, 1, 0, 0, 300
+    end
     _G.IsUsableSpell = function(id) return knownSpells[id] == true, false end
     -- Talents: the same small tree for every class (made-up names), the points free
     -- (H.setTalentPoints) and the ranks learned; LearnTalent follows the client's rules
@@ -870,7 +879,10 @@ return function(opts)
         [1420] = "Tirisfal Glades", [1429] = "Elwynn Forest", [1434] = "Stranglethorn Vale", [1436] = "Westfall",
         [1437] = "Wetlands", [1438] = "Teldrassil", [1439] = "Darkshore", [1445] = "Dustwallow Marsh",
         [1453] = "Stormwind City", [1455] = "Ironforge", [1457] = "Darnassus", [1431] = "Duskwood",
-        [1433] = "Redridge Mountains" }
+        [1433] = "Redridge Mountains", [1412] = "Mulgore", [1426] = "Dun Morogh", [1446] = "Tanaris",
+        [1452] = "Winterspring", [1454] = "Orgrimmar", [1456] = "Thunder Bluff", [1458] = "Undercity" }
+    -- Area names (C_Map.GetAreaInfo): the neutral towns.
+    local AREA_NAMES = { [35] = "Booty Bay", [976] = "Gadgetzan", [392] = "Ratchet", [2255] = "Everlook" }
     -- Sub-maps (a dungeon, a cave) of a zone: { name, mapType 4 or 5, parent zone }.
     local SUB_MAPS = { [1581] = { name = "The Deadmines", mapType = 4, parent = 1436 } }
     local function place(map)
@@ -899,6 +911,7 @@ return function(opts)
             end
             return nil
         end,
+        GetAreaInfo = function(area) return AREA_NAMES[area] end,
         GetMapInfo = function(map)
             -- Real UiMapIDs are far below 90000: above, a map the client does not know.
             if type(map) ~= "number" or map >= 90000 then return nil end
@@ -1817,6 +1830,7 @@ return function(opts)
     function H.talentCalls() return talentCalls end
     function H.resetTalents() talentRanks, talentPoints, talentCalls = {}, 0, {} end
     function H.forgetSpells() knownSpells, spellCooldowns = {}, {} end
+    function H.setSkillLines(names) skillLines = names or {} end
     function H.setSpellCooldown(id, start, duration) spellCooldowns[id] = { start = start, duration = duration } end
     function H.setTrainerServices(list) trainerServices = list end
     function H.equipped(slot) return equipped[slot] end

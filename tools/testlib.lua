@@ -106,6 +106,8 @@ return function(combined, opts)
         end
         ui.autoEquip = false
         H.forgetSpells()
+        H.setSkillLines({})
+        if Ding.Directory then Ding.Directory:Forget() end
         Ding.db.flightTimes = nil
         H.resetTalents()
         Ding.char.talentBuild, Ding.Talents.armed = nil, nil

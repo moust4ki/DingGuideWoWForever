@@ -703,6 +703,29 @@ function C.MapName(uiMapID)
     return type(name) == "string" and name ~= "" and name or nil
 end
 
+-- Localized name of an area (AreaID: a town such as Booty Bay, 35), or nil.
+function C.AreaName(areaID)
+    if not (C_Map and C_Map.GetAreaInfo) then return nil end
+    local ok, name = safe(C_Map.GetAreaInfo, areaID)
+    name = ok and plain(name)
+    return type(name) == "string" and name ~= "" and name or nil
+end
+
+-- The names of the character's skill lines (the skills panel: weapons, professions...), as a
+-- set; empty when the client cannot tell.
+function C.SkillNames()
+    local out = {}
+    local ok, count = safe(GetNumSkillLines)
+    count = ok and plain(count)
+    if type(count) ~= "number" then return out end
+    for i = 1, count do
+        local okI, name, header = safe(GetSkillLineInfo, i)
+        name = okI and plain(name)
+        if type(name) == "string" and not plain(header) then out[name] = true end
+    end
+    return out
+end
+
 -- The zone (UiMap type 3) a map belongs to: the map itself, or its parent for a dungeon,
 -- a city's sub-map or a cave. Its id and localized name, or nil.
 function C.ZoneOf(uiMapID)

@@ -40,6 +40,9 @@ SlashCmdList.DING = function(input)
     elseif cmd == "export" then
         -- A pack or a guide by its id (/ding list), else the active guide.
         Ding.ImportWindow:Open("export", rest ~= "" and rest or nil)
+    elseif cmd == "find" then
+        -- The NPC directory's search: a service, a weapon, a profession or a name.
+        Ding.Finder:Find(rest)
     elseif cmd == "where" then
         -- For guide authors: the player's position, written as a `go` step.
         local map, x, y = Ding.Compat.GetPlayerMapPosition()

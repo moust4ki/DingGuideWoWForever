@@ -149,7 +149,7 @@ end
 -- The saved settings each tab shows ("Defaults for this tab" puts them back). The keys
 -- never change: only where they are shown.
 local TAB_SETTINGS = {
-    guide = { { "panel", "shown" }, { "panel", "preview" } },
+    guide = { { "panel", "shown" }, { "panel", "preview" }, { "panel", "weaponReminder" } },
     route = { { "ui", "hearth" }, { "ui", "deathSkip" }, { "ui", "elites" }, { "ui", "dungeons" },
         { "ui", "dungeonChoice" }, { "ui", "trainerSteps" }, { "ui", "flightSteps" }, { "ui", "serviceSteps" } },
     automation = { { "ui", "autoAccept" }, { "ui", "autoTurnin" }, { "ui", "chooseReward" }, { "ui", "skipGrey" },
@@ -321,6 +321,15 @@ local function guideRows(canvas, width)
             get = function() return panel.preview or 0 end,
             set = function(v)
                 panel.preview = v
+                P:Update()
+            end,
+        }, width),
+        -- A weapon the class can use but does not know: its weapon master (Core/Directory.lua).
+        UI.CheckRow(canvas, Cfg, {
+            label = L.OPT_WEAPON_REMINDER, desc = L.OPT_WEAPON_REMINDER_DESC,
+            get = function() return panel.weaponReminder end,
+            set = function(v)
+                panel.weaponReminder = v and true or false
                 P:Update()
             end,
         }, width),
