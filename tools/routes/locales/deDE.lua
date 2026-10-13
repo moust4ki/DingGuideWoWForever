@@ -15,8 +15,8 @@ return {
         "Tarindrella steht etwas südwestlich von Aldrassil (57.8, 45.2).",
     ["The class trainers are inside Aldrassil."] =
         "Die Klassenlehrer sind in Aldrassil.",
-    ["Gilshalan needs level 3: if you are not there yet, Ding will remind you before the cave."] =
-        "Für Gilshalan brauchst du Stufe 3: Sonst erinnert dich Ding vor der Höhle daran.",
+    ["Gilshalan needs level 3: if you are not there yet, Ding! will remind you before the cave."] =
+        "Für Gilshalan brauchst du Stufe 3: Sonst erinnert dich Ding! vor der Höhle daran.",
     ["One single loop: mangy nightsabers and boars to the north, moss on the grells, totems to the west (54, 40)."] =
         "Eine einzige Runde: räudige Nachtsäbler und Keiler im Norden, Moos von den Grells, Totems im Westen (54, 40).",
     ["Iverron waits in front of the cave, to the north (54.6, 33)."] =

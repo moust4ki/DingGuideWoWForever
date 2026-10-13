@@ -12,7 +12,7 @@ the guides; nothing here is loaded by the game.
 | `wow_mock.lua` | Shared module: simulated WoW API, in-memory QuestieDB, loading of Ding |
 | `testlib.lua` | Shared module: small unit test framework |
 | `draft_guide.lua` | Writes the guides of a route (`routes/*.lua`) from the export |
-| `write_leveling.lua` | Writes Ding - Leveling from the Leveling routes (`routes/leveling/*.lua`) (section 7) |
+| `write_leveling.lua` | Writes Ding! - Leveling from the Leveling routes (`routes/leveling/*.lua`) (section 7) |
 | `fit_windows.lua` | Re-cuts the level windows of a route from the simulation: each guide starts where the previous one ends |
 | `route_model.lua` | Shared module: the optimizer's time and XP model (parameters to recalibrate) |
 | `route_data.lua` | Shared module: map geometry, spawn groups, target counts, drop rates |
@@ -337,9 +337,9 @@ The script only writes quest ids and our notes. Running the script again rewrite
 files: a lasting change is made in the route (`include`, `exclude`, `notes`), then
 everything is checked again with `check_guides.lua` and `smoke_test.lua`.
 
-**Two packs.** Ding's default pack, **Ding - Leveling**, comes from the Leveling routes
+**Two packs.** Ding's default pack, **Ding! - Leveling**, comes from the Leveling routes
 (`tools/routes/leveling/<faction>.lua`, written by `write_leveling.lua`, see 7). The zone routes
-below write the **Ding - Zones** pack, one guide per zone (`pack = "ding-zones"`), which keeps
+below write the **Ding! - Zones** pack, one guide per zone (`pack = "ding-zones"`), which keeps
 the ids of the first versions (characters keep their progress).
 
 The zone tracks:
@@ -355,7 +355,7 @@ The zone tracks:
 | `undead.lua` | Undead | Deathknell, Tirisfal Glades, Silverpine Forest, The Barrens (1-20) |
 | `horde.lua` | all (Horde) | common trunk 19-60, from The Barrens to Silithus |
 
-## 7. Ding - Leveling from the Leveling routes
+## 7. Ding! - Leveling from the Leveling routes
 
 ```sh
 lua5.1 tools/write_leveling.lua $QDB tools/routes/leveling/alliance.lua [--report] [--dry-run] [--no-additions]

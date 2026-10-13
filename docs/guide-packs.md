@@ -33,14 +33,14 @@ format, with a prompt ready to copy.
 
 In Ding's settings (`/ding config`, or the minimap button), the **Guide** tab has two lists:
 
-- **Active guide**: one of Ding's own three guides ("Ding - Leveling", the default, "Ding -
-  Zones" and "Ding - Items") or one of the installed packs, with its author and the levels it
+- **Active guide**: one of Ding's own three guides ("Ding! - Leveling", the default, "Ding -
+  Zones" and "Ding! - Items") or one of the installed packs, with its author and the levels it
   covers for your character. A pack with nothing for your race or class is greyed (it can
   still be picked). The packs are grouped by [category](#4-the-pack-dingregisterguidepack):
   "Leveling (XP)" first, then "Items", and so on, each under a header that cannot be picked.
-- **Section**: the parts of the chosen guide. In Ding - Leveling, a section is a stretch of
+- **Section**: the parts of the chosen guide. In Ding! - Leveling, a section is a stretch of
   the route over one or a few zones ("Duskwood & Redridge Mountains (25-27)"); in Ding -
-  Zones, a leveling zone ("Shadowglen (1-6)"); in Ding - Items, an item worth getting off the
+  Zones, a leveling zone ("Shadowglen (1-6)"); in Ding! - Items, an item worth getting off the
   route ("Cozy Sleeping Bag", a bedroll worth up to 3% more experience); a pack cuts its route
   as it likes.
 

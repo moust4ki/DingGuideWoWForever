@@ -63,10 +63,10 @@ API caveats (see QuestieDB's `docs/api.md`):
 ## 2. Guide format
 
 A guide is a Lua file that calls `Ding.RegisterGuide`: it is a **section** of a **guide
-pack**. Ding ships three: **Ding - Leveling** (id `ding`, the default, the pack of the guides
+pack**. Ding ships three: **Ding! - Leveling** (id `ding`, the default, the pack of the guides
 that have no `pack`: each section is a stretch of the Leveling routes, a race start then
-shared sections up to 60 over one or a few zones), **Ding - Zones** (id `ding-zones`: one section per zone, the ids
-of Ding's first guides) and **Ding - Items** (id `ding-items`, category `items`: one section
+shared sections up to 60 over one or a few zones), **Ding! - Zones** (id `ding-zones`: one section per zone, the ids
+of Ding's first guides) and **Ding! - Items** (id `ding-items`, category `items`: one section
 per item worth getting off the leveling route, for both sides: the Cozy Sleeping Bag first). A third-party addon provides a pack by declaring
 `## Dependencies: Ding`, then calling `Ding.RegisterGuidePack({ id, title, author, category })` before
 its sections, which carry `pack = "<id>"`; like Ding, it must be released under GPL v3 (no
@@ -866,7 +866,7 @@ Output: a guide file in the format above, and its translation.
    **Level windows**: `tools/fit_windows.lua` cuts each guide's window from the level the
    previous one reaches, so that no guide ends with a `level` step just to reach the next
    one's minimum (see `tools/README.md` §6).
-   **Leveling guides** (Ding - Leveling): `tools/write_leveling.lua` writes them from the Leveling
+   **Leveling guides** (Ding! - Leveling): `tools/write_leveling.lua` writes them from the Leveling
    routes (`tools/routes/leveling/<faction>.lua`: the route's
    order, shortcuts and race and class steps are kept as written; Forever
    changes it as little as possible (a quest missing, closed or already done is left out for

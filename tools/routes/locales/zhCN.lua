@@ -17,8 +17,8 @@ return {
         "塔琳德拉站在奥达希尔西南不远处 (57.8, 45.2)。",
     ["The class trainers are inside Aldrassil."] =
         "职业训练师都在奥达希尔里面。",
-    ["Gilshalan needs level 3: if you are not there yet, Ding will remind you before the cave."] =
-        "基尔沙兰的任务需要3级：等级不够的话，Ding会在进洞前提醒。",
+    ["Gilshalan needs level 3: if you are not there yet, Ding! will remind you before the cave."] =
+        "基尔沙兰的任务需要3级：等级不够的话，Ding!会在进洞前提醒。",
     ["One single loop: mangy nightsabers and boars to the north, moss on the grells, totems to the west (54, 40)."] =
         "一圈搞定：北边打癞皮夜刃豹和野猪，劣魔身上取魔苔，西边找图腾 (54, 40)。",
     ["Iverron waits in front of the cave, to the north (54.6, 33)."] =

@@ -16,8 +16,8 @@ return {
         "타린드렐라는 알드랏실에서 조금 남서쪽에 있습니다 (57.8, 45.2).",
     ["The class trainers are inside Aldrassil."] =
         "직업 상급자는 알드랏실 안에 있습니다.",
-    ["Gilshalan needs level 3: if you are not there yet, Ding will remind you before the cave."] =
-        "길스할란의 퀘스트는 3레벨부터입니다: 아직이라면 동굴에 가기 전에 Ding이 다시 알려 줍니다.",
+    ["Gilshalan needs level 3: if you are not there yet, Ding! will remind you before the cave."] =
+        "길스할란의 퀘스트는 3레벨부터입니다: 아직이라면 동굴에 가기 전에 Ding!이 다시 알려 줍니다.",
     ["One single loop: mangy nightsabers and boars to the north, moss on the grells, totems to the west (54, 40)."] =
         "한 바퀴로 끝내세요: 북쪽에서 병든 흑호와 멧돼지, 그렐에게서 이끼, 서쪽에서 토템 (54, 40).",
     ["Iverron waits in front of the cave, to the north (54.6, 33)."] =

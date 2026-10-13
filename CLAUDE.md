@@ -80,14 +80,14 @@ Ding/
     Guides/<locale>/<Race>/NN_<Zone>.lua   translation of a guide, Ding.RegisterGuideTranslation
   Media/Textures/   white textures of the design kit, to tint (rr4_stroke1: tools/media/textures.py)
   Media/Fonts/      Noto Sans Regular, Medium, SemiBold, Bold (license OFL.txt)
-  Guides/Leveling/<Faction>/<NN>.lua   "Ding - Leveling", the default pack: the sections of the
+  Guides/Leveling/<Faction>/<NN>.lua   "Ding! - Leveling", the default pack: the sections of the
                                 Leveling routes (tools/write_leveling.lua from
                                 tools/routes/leveling/<faction>.lua); Leveling/Skyborne/0N.lua:
                                 the Skyborne starts, one per side (tools/routes/
                                 skyborne_<side>.lua), then that side's Leveling route
-  Guides/<Race>/NN_<Zone>.lua   "Ding - Zones" pack (pack = "ding-zones"): one guide per zone
+  Guides/<Race>/NN_<Zone>.lua   "Ding! - Zones" pack (pack = "ding-zones"): one guide per zone
                                 (English texts), calls Ding.RegisterGuide
-  Guides/Items/NN_<Item>.lua    "Ding - Items" pack (pack = "ding-items", category "items"): an
+  Guides/Items/NN_<Item>.lua    "Ding! - Items" pack (pack = "ding-items", category "items"): an
                                 item worth getting off the route, for both sides (`faction`
                                 steps), hand-written
 examples/DingExamplePack/   example guide pack (a separate addon, not in the zip), tested
@@ -258,6 +258,9 @@ Contracts between modules:
   `tools/routes/locales/frFR.lua`, examples' `Locales/frFR.lua`), the localized TOC fields
   (`## Notes-frFR`), and the French texts a test expects from the mocked client (frFR by
   default).
+- The name players see is **Ding!**: `Ding.TITLE` in titles and the chat prefix, "Ding!" in every
+  interface text and pack name, in every language. The code, the folder, the saved variables,
+  `/ding` and the packs' `## Dependencies: Ding` keep "Ding", with no special character.
 - Languages: English is the default language; translations **one file per language** in
   French (frFR), German (deDE), Spanish (esES, also for esMX), Brazilian Portuguese (ptBR),
   Korean (koKR), Simplified Chinese (zhCN) and Traditional Chinese (zhTW). Interface texts

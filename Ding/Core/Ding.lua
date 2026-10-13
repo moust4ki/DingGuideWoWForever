@@ -131,7 +131,7 @@ end)
 -- Output helpers
 ---------------------------------------------------------------------------
 function Ding:Print(msg)
-    DEFAULT_CHAT_FRAME:AddMessage("|cff33ff99Ding|r " .. tostring(msg))
+    DEFAULT_CHAT_FRAME:AddMessage("|cff33ff99" .. Ding.TITLE .. "|r " .. tostring(msg))
 end
 
 function Ding:Debug(msg)
