@@ -2,8 +2,9 @@
 -- Game data from Questie (https://github.com/Questie/Questie) and QuestieDB
 -- (https://github.com/Questie/QuestieDB), under the GNU General Public License v3; see
 -- Ding/DB/CREDITS.md.
--- Ding's game database: what Core/Data.lua reads instead of QuestieDB. Records are positional;
--- LAYOUT gives each field's position. Spawns: { [uiMapID] = { x, y, x, y, ... } } (0-100).
+-- DingDB, Ding's game database: what Core/Data.lua reads (and LibDingDB shows other addons).
+-- Records are positional; LAYOUT gives each field's position. Spawns: { [uiMapID] = { x, y, x,
+-- y, ... } } (0-100). `corrected`: the ids DingDB's own corrections changed (docs/dingdb.md).
 local _, Ding = ...
 Ding.DB = {
     source = "QuestieDB v1.0.6",
@@ -13,6 +14,7 @@ Ding.DB = {
     Object = { name = 1, spawns = 2 },
     Item = { name = 1, npcDrops = 2, objectDrops = 3, vendors = 4 },
     },
+    corrected = {["items"]={},["npcs"]={},["objects"]={},["quests"]={}},
     quests = {}, npcs = {}, objects = {}, items = {},
     zones = { areaToUiMap = {}, dungeons = {}, dungeonsHorde = {} },
     names = { quests = {}, npcs = {}, objects = {}, items = {} },

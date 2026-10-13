@@ -13,6 +13,8 @@ the guides; nothing here is loaded by the game.
 | `testlib.lua` | Shared module: small unit test framework |
 | `draft_guide.lua` | Writes the guides of a route (`routes/*.lua`) from the export |
 | `build_data.lua` | Writes Ding's game database (`Ding/DB`) from a QuestieDB release (section 1) |
+| `check_data.lua` | Checks DingDB's corrections (`data/corrections/*.lua`, docs/dingdb.md) |
+| `audit_data.lua` | What the guides need that DingDB lacks (places of givers, NPCs, objectives) |
 | `write_leveling.lua` | Writes Ding! - Leveling from the Leveling routes (`routes/leveling/*.lua`) (section 7) |
 | `fit_windows.lua` | Re-cuts the level windows of a route from the simulation: each guide starts where the previous one ends |
 | `route_model.lua` | Shared module: the optimizer's time and XP model (parameters to recalibrate) |

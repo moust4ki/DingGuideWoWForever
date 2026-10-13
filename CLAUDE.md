@@ -24,6 +24,7 @@ Ding/
     Compat.lua      Ding.Compat: protected API calls (C_QuestLog, C_Map first, pcall)
     Data.lua        Ding.Data: game data (names, quests, NPCs, spawns as UiMap points) from
                     Ding/DB, or from the QuestieDB addon when Ding/DB is missing
+    DingDB.lua      LibDingDB: DingDB for other addons (read-only copies, docs/dingdb.md)
     Registry.lua    Ding.RegisterGuidePack, Ding.RegisterGuide (sections of a pack; without
                     `pack`: Ding's), choice of the section by race/class/level
     Timing.lua      Ding.Timing: real duration of each step -> DingDB.timings (zone, deaths,
@@ -244,6 +245,11 @@ Contracts between modules:
   (loaded by that client only). `Ding.DB.source` names the release. The QuestieDB addon is only
   a fallback when `Ding/DB` is missing (`Data:UseBackend`); the getters keep QuestieDB's
   semantics (docs: https://github.com/Questie/QuestieDB/blob/master/docs/api.md).
+- **DingDB** is the public name of `Ding/DB` (docs/dingdb.md, a public contract like
+  docs/guide-packs.md): other addons read it through the global `LibDingDB` (the global `DingDB`
+  is Ding's saved settings); corrections and additions go in `tools/data/corrections/*.lua`
+  (plain data, checked by `tools/check_data.lua` and `tools/dingdb_corrections.lua`), applied by
+  `build_data.lua` on top of Questie's data; `Ding.DB.corrected` lists the ids they change.
 - **Updating the data** on a new QuestieDB release: export that release (tag), run
   `tools/build_data.lua <combined dir> --source "QuestieDB vX.Y.Z"`, then the whole suite with
   that export (`db_parity_test` compares Ding/DB with it); CI clones the tag named in
@@ -335,8 +341,9 @@ find Ding tools examples -name '*.lua' -print0 | xargs -0 -n1 luac5.1 -p
 git clone --depth 1 --branch v1.0.6 https://github.com/Questie/QuestieDB.git ../QuestieDB
 (cd ../QuestieDB && lua5.1 tools/export-forever.lua --include-authored)
 
-# Ding's game database from that export (Ding/DB)
+# DingDB (Ding/DB) from that export and tools/data/corrections; the corrections alone
 lua5.1 tools/build_data.lua ../QuestieDB/src/corrections/Forever/combined --source "QuestieDB v1.0.6"
+lua5.1 tools/check_data.lua
 
 # Guide validation (non-zero exit code on errors)
 lua5.1 tools/check_guides.lua ../QuestieDB/src/corrections/Forever/combined

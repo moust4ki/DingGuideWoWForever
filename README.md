@@ -50,6 +50,9 @@ instead from the *Arrow* tab of the settings (off by default).
 - **Community guides.** Ding runs other guides too: install a guide pack and pick it in the
   settings (*Guide* tab, first list), then its section in the second list. See
   [Community guide packs](#community-guide-packs).
+- **DingDB, an open game database.** Ding's game data (quests, NPCs, objects, items, places,
+  names in 9 languages) is open: other addons can read it (`LibDingDB`), and anyone can correct
+  it or add to it. See [docs/dingdb.md](docs/dingdb.md).
 - **Languages.** English, French, German, Spanish (Spain and Latin America), Brazilian
   Portuguese, Korean, Simplified and Traditional Chinese: Ding follows your game's language.
   Quest, NPC and item names come from Ding's game data in that language. Each language has its own
@@ -130,7 +133,7 @@ The Noto Sans fonts in `Ding/Media/Fonts` are under the SIL Open Font License 1.
 
 ### Credits
 
-Ding's game data (`Ding/DB`: quests, NPCs, objects, items, places and their names) is built
+DingDB, Ding's game data (`Ding/DB`: quests, NPCs, objects, items, places and their names), is built
 from the database of [Questie](https://github.com/Questie/Questie) and
 [QuestieDB](https://github.com/Questie/QuestieDB), released under the GNU GPL v3: thanks to
 their authors and contributors. See [`Ding/DB/CREDITS.md`](Ding/DB/CREDITS.md).
