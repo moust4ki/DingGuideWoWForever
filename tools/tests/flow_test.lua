@@ -172,8 +172,91 @@ T.test("preview: one to three dimmed lines of the next steps, off by default", f
     local preview = rows(function(r) return r.preview end)
     T.eq(#preview, 2)
     T.eq(preview[1].state, "preview")
-    T.eq(H.plain(preview[1].text), H.plain(P:Rows({ E:Describe(Ding:GetGuide("t-sticky").steps[2], true)[1] })[1].text))
+    T.eq(preview[1].text, L.ROW_ACCEPT:format(L.QUEST_WITH_LEVEL:format(Ding.Data:QuestLevel(458),
+        L.QUOTE:format(Ding.Data:QuestName(458)))))
     T.ok(P.rowsShown[#P.rowsShown].preview, "the preview is not last")
+    Ding.db.panel.preview = 0
+end)
+
+-- 456 and 458 are level 2 and 1 quests, 4495 and 916 level 4 (916 needs level 3).
+Ding.RegisterGuide({ id = "t-preview", title = "Preview", races = { "NightElf" }, steps = {
+    { go = { 1438, 40, 40 }, text = "Start here" },  -- 1
+    { accept = 456 },                                 -- 2
+    { complete = 456 },                               -- 3
+    { turnin = 456, accept = 457 },                   -- 4
+    { accept = { 4495, 458, 916 } },                  -- 5
+    { level = 7 },                                    -- 6
+    { train = true },                                 -- 7
+    { go = { 1438, 50, 50 }, text = "Head out of the cave" },    -- 8
+} })
+
+-- The preview rows under step `index`, shown as the window lists them.
+local function previews(index)
+    E.index, E.hold = index, true
+    E:Refresh()
+    return rows(function(r) return r.preview end)
+end
+
+local function leveled(q)
+    local level = Ding.Data:QuestLevel(q)
+    T.ok(level > 0, "no level for quest " .. q)
+    return L.QUEST_WITH_LEVEL:format(level, L.QUOTE:format(Ding.Data:QuestName(q)))
+end
+
+T.test("preview: a quest step names the action and the quest with its level", function()
+    start("t-preview", 1)
+    Ding.db.panel.preview = 3
+    local preview = previews(1)
+    T.eq(#preview, 3)
+    T.eq(preview[1].text, L.ROW_ACCEPT:format(leveled(456)))
+    T.eq(preview[2].text, L.ROW_COMPLETE:format(leveled(456)))
+    -- Several quests: the first one, then how many others ("+1").
+    T.eq(preview[3].text, L.ROW_TURNIN:format(leveled(456)) .. " " .. L.PREVIEW_MORE:format(1))
+    for _, row in ipairs(preview) do
+        T.eq(row.state, "preview")
+        T.eq(row.quest, 456, "the tooltip shows another quest")
+        T.eq(row.counter, nil)
+        T.eq(row.sub, nil)
+        -- A quest above the player's level does not say its level twice.
+        T.ok(not row.text:find(L.QUEST_LEVEL:format(2), 1, true), "level said twice: " .. row.text)
+    end
+    -- Dimmed in the window, with no color inside the text.
+    local shown = P.frame.rows[#P.rowsShown]
+    T.eq(shown.text:GetText(), preview[3].text)
+    T.eq(shown.text.color[1], Ding.UI.C.muted[1], "the preview is not dimmed")
+    Ding.db.panel.preview = 0
+end)
+
+T.test("preview: several quests, without the ones done or that the engine passes", function()
+    -- Level 2: 4495 and 458 can be taken, 916 needs level 3 (taken later, the step goes on).
+    start("t-preview", 2)
+    Ding.db.panel.preview = 1
+    T.eq(Ding.Data:QuestRequiredLevel(916), 3)
+    T.eq(previews(4)[1].text, L.ROW_ACCEPT:format(leveled(4495)) .. " " .. L.PREVIEW_MORE:format(1))
+    H.accept(4495); H.flush()
+    local row = previews(4)[1]
+    T.eq(row.quest, 458)
+    T.eq(row.text, L.ROW_ACCEPT:format(leveled(458)))
+    -- Only 916 left, too high to take: the step is passed, the preview shows the next one.
+    H.accept(458); H.flush()
+    T.eq(previews(4)[1].text, L.REACH_LEVEL:format(7))
+    Ding.db.panel.preview = 0
+end)
+
+T.test("preview: a step without a quest keeps its own text", function()
+    start("t-preview", 5)
+    Ding.db.panel.preview = 3
+    local preview = previews(5)
+    T.eq(#preview, 3)
+    T.eq(preview[1].text, L.REACH_LEVEL:format(7))
+    T.eq(preview[2].text, L.TRAIN)
+    T.eq(preview[3].text, "Head out of the cave")
+    for _, row in ipairs(preview) do T.eq(row.quest, nil) end
+    -- Gamepad and mouse: A or a click on a preview row moves the arrow nowhere, and the
+    -- target binding passes over it.
+    A:Unfocus()
+    P:Aim(preview[1])
+    T.eq(A.forced, nil, "a preview row moved the arrow")
     Ding.db.panel.preview = 0
 end)
 

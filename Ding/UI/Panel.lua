@@ -55,6 +55,12 @@ local function questName(q, plain)
     return plain and quoted(q) or link(quoted(q))
 end
 
+-- The quest with its level first, "[29] “Name”" (the next steps' preview).
+local function leveledName(q)
+    local level = Ding.Data:QuestLevel(q)
+    return level > 0 and L.QUEST_WITH_LEVEL:format(level, quoted(q)) or quoted(q)
+end
+
 ---------------------------------------------------------------------------
 -- Rows: what the window lists for the current step
 ---------------------------------------------------------------------------
@@ -216,6 +222,46 @@ local function questRow(line)
     return row
 end
 
+local QUEST_VERBS = { accept = "ROW_ACCEPT", turnin = "ROW_TURNIN", complete = "ROW_COMPLETE" }
+
+-- A line the player still has to do: not done, not a quest the engine passes (level too low
+-- to take it, grey).
+local function pending(line)
+    return not line.done and not line.dim and not (line.quest and Ding.Engine:IsGrey(line.quest))
+end
+
+-- A next step on one dimmed line: what it asks first, with its quest's level, and how many
+-- other quests it still deals with ("Turn in [2] “Name” +1"); a step without a quest keeps
+-- its own text.
+local function previewRow(step)
+    local main, first = {}, nil
+    for _, line in ipairs(Ding.Engine:Describe(step, true)) do
+        if not line.indent then main[#main + 1] = line end
+    end
+    for _, line in ipairs(main) do
+        if pending(line) then first = line break end
+    end
+    first = first or main[1]
+    if not first then return nil end
+    local row = questRow(first)
+    local q = QUEST_VERBS[first.action] and first.quest
+    if q then
+        local more, seen = 0, { [q] = true }
+        for _, line in ipairs(main) do
+            if QUEST_VERBS[line.action] and line.quest and pending(line) and not seen[line.quest] then
+                seen[line.quest] = true
+                more = more + 1
+            end
+        end
+        row.text = L[QUEST_VERBS[first.action]]:format(leveledName(q))
+            .. (more > 0 and " " .. L.PREVIEW_MORE:format(more) or "")
+            .. (first.dim and first.requires and " · " .. L.ROW_REQUIRES:format(first.requires) or "")
+    end
+    row.action, row.state, row.preview = "preview", "preview", true
+    row.counter, row.sub = nil, nil
+    return row
+end
+
 -- Rows of the step on screen, with the guide's notes and Ding's hints as sub-lines.
 function P:Rows(content)
     content = content or self:Content()
@@ -307,13 +353,7 @@ function P:Rows(content)
     end
     -- The next steps, dimmed (option): what the step after this one will ask.
     for _, line in ipairs(preview) do
-        local first = Ding.Engine:Describe(line.step, true)[1]
-        if first then
-            local row = questRow(first)
-            row.action, row.state, row.preview = "preview", "preview", true
-            row.counter, row.sub = nil, nil
-            rows[#rows + 1] = row
-        end
+        rows[#rows + 1] = previewRow(line.step)
     end
     return rows
 end

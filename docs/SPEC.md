@@ -497,8 +497,12 @@ and "Stay in this section" (remembered, `Ding.char.stay`). A click or A in focus
 
 ### Next steps preview
 
-"Next steps shown" (Appearance, 0 to 3, off by default): under the step's rows, the first line
-(`Engine:Describe(step, true)`) of the next steps still to do, dimmed (state "preview").
+"Next steps shown" (Guide tab, 0 to 3, off by default): under the step's rows, one dimmed line
+(state "preview") per next step still to do: its first line still to do
+(`Engine:Describe(step, true)`, without the quests the engine passes: level too low to take
+them, grey). A quest line names the quest with its level and how many other quests the step
+still deals with: "Turn in [2] “Name” +1" (`L.QUEST_WITH_LEVEL`, `L.PREVIEW_MORE`); a step
+without a quest keeps its own text.
 
 ### Minimap pins (`UI/MinimapPins.lua`)
 
