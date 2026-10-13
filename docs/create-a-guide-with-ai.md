@@ -125,7 +125,7 @@ QuestieDB too.
 A chain of clues on both continents, from level 14, that ends with a bedroll worth up to 3%
 more experience. Quests 79008 (Alliance) or 79007 (Horde), then 79192, 79980, 79974, 79975
 and 79976, all on objects (424005, 424012, 406918, 424006, ...); the reward is item 211527.
-This is Ding's own "Ding - Items" guide, as text: import it as it is to try the window.
+This is Ding's own "Ding! - Items" guide, as text: import it as it is to try the window.
 
 <!-- example: tools/tests/import_test.lua imports this block and expects no error -->
 ```lua

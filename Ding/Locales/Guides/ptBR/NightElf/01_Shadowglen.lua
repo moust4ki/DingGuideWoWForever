@@ -11,8 +11,8 @@ Ding.RegisterGuideTranslation("ptBR", "nightelf-01-shadowglen", {
         "Tarindrella fica um pouco a sudoeste de Aldrassil (57.8, 45.2).",
     ["The class trainers are inside Aldrassil."] =
         "Os instrutores de classe ficam dentro de Aldrassil.",
-    ["Gilshalan needs level 3: if you are not there yet, Ding will remind you before the cave."] =
-        "Gilshalan exige nível 3: se você ainda não chegou lá, o Ding avisará antes da caverna.",
+    ["Gilshalan needs level 3: if you are not there yet, Ding! will remind you before the cave."] =
+        "Gilshalan exige nível 3: se você ainda não chegou lá, o Ding! avisará antes da caverna.",
     ["One single loop: mangy nightsabers and boars to the north, moss on the grells, totems to the west (54, 40)."] =
         "Um só circuito: sabres-da-noite sarnentos e javalis ao norte, musgo nos capetas, totens a oeste (54, 40).",
     ["Iverron waits in front of the cave, to the north (54.6, 33)."] =

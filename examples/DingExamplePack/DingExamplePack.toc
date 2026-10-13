@@ -1,7 +1,7 @@
 ## Interface: 16001
-## Title: Ding Example Pack
-## Notes: Example guide pack for Ding: the Night Elf start, in two sections.
-## Author: Ding contributors
+## Title: Ding! Example Pack
+## Notes: Example guide pack for Ding! (the Night Elf start, in two sections).
+## Author: Ding! contributors
 ## Version: 1.0.0
 ## Dependencies: Ding
 ## X-License: GPL-3.0

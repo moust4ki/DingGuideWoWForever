@@ -6,14 +6,14 @@
 https://github.com/Questie/QuestieDB/releases/latest and extract its `QuestieDB` folder into
 `Interface/AddOns`.
 
-- Ding is now called **Ding!** in its titles (the addon list, its windows, the options). Your
-  settings and progress stay as they are.
+- Ding is now called **Ding!**: in the addon list, its windows, guide names, messages and
+  options. Your settings and progress stay as they are.
 - New leveling routes from 1 to 60, for both factions and every start.
-  - **Ding - Leveling**, the new default guide: one route over several zones, with Forever's
+  - **Ding! - Leveling**, the new default guide: one route over several zones, with Forever's
     quests, quests up to 2 levels above you and monsters up to 1 level above, and no more
     "kill monsters until level X" walls in the middle of a zone.
-  - **Ding - Zones**: the previous guides, one section per zone.
-  - **Ding - Items**: guides for items worth a detour. First one: the Cozy Sleeping Bag
+  - **Ding! - Zones**: the previous guides, one section per zone.
+  - **Ding! - Items**: guides for items worth a detour. First one: the Cozy Sleeping Bag
     (up to 3% more experience), for both factions.
   - Skyborne: one start for each faction, the isle's class quests and, for the Alliance, the
     way off the isle.

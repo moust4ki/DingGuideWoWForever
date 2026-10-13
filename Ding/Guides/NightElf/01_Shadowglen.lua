@@ -20,7 +20,7 @@ Ding.RegisterGuide({
         { train = true,
           note = "The class trainers are inside Aldrassil." },
         { accept = { 916, 4495 },
-          note = "Gilshalan needs level 3: if you are not there yet, Ding will remind you before the cave." },
+          note = "Gilshalan needs level 3: if you are not there yet, Ding! will remind you before the cave." },
         { complete = { 457, 459, 97977 },
           note = "One single loop: mangy nightsabers and boars to the north, moss on the grells, totems to the west (54, 40)." },
         { turnin = 4495, accept = 3519,

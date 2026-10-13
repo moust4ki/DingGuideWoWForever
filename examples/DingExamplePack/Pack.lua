@@ -3,6 +3,6 @@
 Ding.RegisterGuidePack({
     id     = "example",
     title  = "Example pack",
-    author = "Ding contributors",
+    author = "Ding! contributors",
     category = "leveling",   -- the group of the list: "leveling" (default), "items", ...
 })

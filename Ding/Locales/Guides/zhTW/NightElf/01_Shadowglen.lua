@@ -11,8 +11,8 @@ Ding.RegisterGuideTranslation("zhTW", "nightelf-01-shadowglen", {
         "塔琳德拉站在奧達希爾稍偏西南處(57.8, 45.2)。",
     ["The class trainers are inside Aldrassil."] =
         "職業訓練師在奧達希爾裡面。",
-    ["Gilshalan needs level 3: if you are not there yet, Ding will remind you before the cave."] =
-        "基爾沙蘭的任務需要等級3：等級不夠的話，Ding會在進洞穴前提醒。",
+    ["Gilshalan needs level 3: if you are not there yet, Ding! will remind you before the cave."] =
+        "基爾沙蘭的任務需要等級3：等級不夠的話，Ding!會在進洞穴前提醒。",
     ["One single loop: mangy nightsabers and boars to the north, moss on the grells, totems to the west (54, 40)."] =
         "繞一圈即可完成：北邊打癩皮夜刃豹和野豬，劣魔身上取魔苔，西邊找圖騰(54, 40)。",
     ["Iverron waits in front of the cave, to the north (54.6, 33)."] =
