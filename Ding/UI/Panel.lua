@@ -1662,9 +1662,9 @@ end
 ---------------------------------------------------------------------------
 function P:StartFocus()
     if InCombatLockdown() or not self.frame then return end
-    -- The settings window, the presentation and the move mode own the gamepad while they are open.
+    -- The settings window, the setup assistant and the move mode own the gamepad while they are open.
     local config = Ding.Config.frame
-    if (config and config:IsShown()) or Ding.Intro:IsShown() or Ding.Gamepad:IsMoving() then return end
+    if (config and config:IsShown()) or Ding.Setup:IsShown() or Ding.Gamepad:IsMoving() then return end
     if not Ding.db.panel.shown then self:SetShown(true) end
     if self.compact then self:SetCompact(false) end
     self.focusing = true

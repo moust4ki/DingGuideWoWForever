@@ -4,10 +4,10 @@
 
 Nothing else to install: QuestieDB is no longer needed, and TomTom stays optional.
 
-- **A short presentation** at the first launch, in six pages: what Ding! does, why its routes
-  sometimes send you far or leave a quest out, how to play your own way, where to find an NPC,
-  the controls and the settings. Skip it at any page; see it again from the Guide tab or with
-  `/ding intro`.
+- **Setup assistant** at the first launch: five short screens to choose how you play, what
+  Ding! does for you, your route, the help on screen and the guide to start with, the
+  recommended choices already selected. "Keep the recommended settings" ends it at once; run
+  it again from the Guide tab or with `/ding intro`.
 - **NPC directory**: open it from the new button of the guide window, a key binding or
   `/ding find <text>`.
   - **Nearby**, anywhere in the world: the nearest vendor, repairer, innkeeper, bank, auction

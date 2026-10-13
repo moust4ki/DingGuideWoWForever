@@ -30,11 +30,12 @@ instead from the *Arrow* tab of the settings (off by default).
 - **Guides optimized for XP per hour.** The routes are generated offline from the game data:
   quests grouped to avoid back-and-forth, poor-value detours left out, never a quest above
   your level (one level above at most). The new quests of Forever are included.
-- **A short presentation** at the first launch: six pages on what Ding does, why its routes
-  sometimes send you far or leave out a quest an NPC offers (on purpose: the trip is worth it),
-  how to take steps in your own order, where to find an NPC, the controls and the settings.
-  Skip it at any page; see it again from the *Guide* tab ("Show the introduction again") or
-  with `/ding intro`.
+- **A setup assistant** at the first launch: five short screens of choices, the recommended
+  ones already selected. How you play (gamepad or keyboard and mouse), what Ding does for you
+  (quests, gray items, repairs, rewards, flights), your route (hearthstone, elite and dungeon
+  quests, death skips), the help on screen, then the guide to start with. "Keep the recommended
+  settings" ends it from any screen; everything can be changed later in the settings. Run it
+  again from the *Guide* tab ("Run the setup assistant again") or with `/ding intro`.
 - **Resumes where you really are.** Ding picks the guide for your race, class and level. When
   you resume, it first sends you to finish the guide's old quests still in your log, then
   skips what you have done.
@@ -78,9 +79,10 @@ instead from the *Arrow* tab of the settings (off by default).
 
 ## With a gamepad
 
-On first launch, Ding shows its presentation (A goes on, LB / RB or the D-pad change pages, B
-skips it), then opens its settings on the **Keybinds** tab: bind a button to "Open Ding
-settings" (for example LT+Start), then to "Next step", "Previous step" and "Use the quest item".
+On first launch, Ding opens its setup assistant (the D-pad picks a choice, A ticks it, LB / RB
+change screens, Y keeps the recommended settings, B closes), then its settings on the
+**Keybinds** tab: bind a button to "Open Ding settings" (for example LT+Start), then to "Next
+step", "Previous step" and "Use the quest item".
 In the settings window: A selects, B closes, LB / RB change tabs, the D-pad picks and adjusts,
 Y resets to default.
 
@@ -107,14 +109,15 @@ Everything works without a gamepad too. In the settings, click to choose, toggle
 (click again when a button asks), right-click to put a setting back to its default or to
 unbind a key, and press Escape to close. To bind a key, click its row and press the key. To
 move the guide window, the arrow or the item button, drag it with the mouse, then click
-Save. The presentation has Previous and Next buttons and page dots to click; Escape closes it.
+Save. In the setup assistant, click a choice, Previous, Next or "Keep the recommended settings";
+Escape closes it. Chosen "Keyboard and mouse" there, the Keybinds tab does not open after it.
 The gamepad hints at the bottom ("A Open", "Y Reset"…) can be clicked too. Without a
 gamepad plugged in, that help speaks of the mouse and the keyboard, and the buttons show no
 gamepad button.
 
 ## Commands
 
-`/ding` show/hide · `/ding config` settings · `/ding intro` (the presentation again) · `/ding list` (guides and their sections) ·
+`/ding` show/hide · `/ding config` settings · `/ding intro` (the setup assistant again) · `/ding list` (guides and their sections) ·
 `/ding guide <id>` · `/ding where` (your position, for guide authors) · `/ding passages [n]` (the
 lifts, gates and tunnels near you, for testers; the arrow points at the n-th) · `/ding import` (a guide as
 text) · `/ding export [id]` (a guide as text) · `/ding find <text>` (the NPC directory: a service,

@@ -964,7 +964,7 @@ accent #5BB4FF, the Noto Sans font shipped with the addon, rounded shapes from t
   digestible"), six tabs, each in small titled blocks with one-line descriptions:
   - **Guide**: the guide and its section, "Take this guide up where I am", show the guide, the
     next steps preview, "Stay in this section" undone (when chosen), the quest log cleanup
-    (a page), guides as text (a page), "Show the introduction again" (Help).
+    (a page), guides as text (a page), "Run the setup assistant again" (Help).
   - **Route** (what the guide makes you do): hearthstone, death skips; elite quests, dungeon
     quests (one row, "3 of 12", the list on a page); class trainer, flight path, vendor and
     repair steps.
@@ -986,33 +986,52 @@ accent #5BB4FF, the Noto Sans font shipped with the addon, rounded shapes from t
   buttons; everything applies live. `Config:Open(key)` takes a tab's key (`Config.TAB`).
 - **Minimap button**: left click for settings, right click to show / hide the guide, drag to
   move around the minimap; can be hidden (Appearance, `/ding minimap`).
-- **Presentation** (`UI/Intro.lua`; Yendi, in game: lost on a long Duskwood - Westfall -
-  Duskwood trip, on quests the NPCs offer that the guide leaves out, on a bank step, on a step
-  marked done by mistake). "Ding! · Introduction", six short pages in plain words (no color
-  code): what Ding does (it accepts and turns in the guide's quests and moves on by itself, the
-  window says what, the arrow where); the routes are built for XP per hour, so a long trip, a
-  quest left out or a bank step is on purpose, and Ding says why (beside an NPC's window, the
-  step's notes, why a step was passed); taking things in another order (Ding catches up; the
-  step menu or the "Next step" / "Skip step" bindings; "Previous step" brings a step back); the
-  NPC directory and the arrow's travel; the controls, gamepad then mouse; the settings, one line
-  per tab. Shown once per account (`Ding.db.ui.introSeen`), 2 s after the first login,
-  **before** the Keybinds tab of the first launch, which follows once it is closed; an account
-  that already had Ding sees it once too (new in 1.4.0). Skipped at any page (B, Start, Esc, the
-  close cross): it counts as seen. Closed by a fight (the temporary bindings must go), the first
-  launch's presentation comes back on its page a second after the fight, still unseen; opened
-  by hand, a fight only closes it. Another Ding window opening (settings, directory, import)
-  closes it quietly: seen, and the Keybinds tab waits for the next login. Again from the Guide
-  tab (header "Help", "Show the introduction again", back to that row once closed) or
-  `/ding intro`.
-  Window 460 wide (window look, opaque, DIALOG, clamped to the screen), as high as its longest
-  page in the client's language (the title 16 SemiBold, then the text 12 Regular wrapped whole):
-  no text is ever cut and the buttons stay in place from page to page. Footer: Previous
-  (disabled on the first page), the page dots (the current one accent; a click opens a page),
-  Next (accent; "Let's go!" on the last page, which closes). Gamepad (temporary bindings, out
-  of combat): A goes on, RB or the D-pad right next page, LB or the D-pad left previous page, B
-  or Start closes; each action once: A and RB on Next (A only on the last page), LB on Previous,
-  B by the close cross, the focus ring on Next; no hint bar, every action has its button.
-  Mouse: the buttons, the dots, the cross, Esc.
+- **Setup assistant** (`UI/Setup.lua`; Yendi, in game: lost on a long Duskwood - Westfall -
+  Duskwood trip, on quests the NPCs offer that the guide leaves out, on a bank step; then, on six
+  pages of text: "if this window pops up I press next, next, next without reading"). "Ding! ·
+  Setup", five screens, each a title, one sentence in plain words, then choices:
+  1. **Welcome**: what Ding does in one sentence, then how the player plays (one choice):
+     "Gamepad, Xbox buttons", "Gamepad, PlayStation buttons" (`ui.buttonStyle`, at once),
+     "Keyboard and mouse" (the button names stay; the Keybinds tab does not follow and
+     `ui.welcomed` is set). Preselected and tagged "Recommended": the gamepad in use
+     (`Gamepad:Active`) with its button names, else keyboard and mouse.
+  2. **What Ding! does for you**: accept and turn in the guide's quests (`autoAccept` and
+     `autoTurnin` together), sell gray items, repair, choose the best reward, take the planned
+     flight.
+  3. **Your route**: "Sometimes the guide sends you far or leaves a quest out: it's on purpose,
+     and it tells you why."; hearthstone steps, elite quests, dungeon quests (all or none, as the
+     Route tab's page: the choices per dungeon go), death skips.
+  4. **Help on screen**: the marks above quest monsters (`mobIcons`), the guide's explanations
+     (`panel.why`, shown only once that option exists in `Ding.DEFAULTS`: claude/why-reasons),
+     the panel beside an NPC's window (`offers`), the weapon to learn (`panel.weaponReminder`).
+  5. **What do you want to do first?**: one row per guide pack (`Ding:GuidePacks`: its sections
+     for an item pack, else the levels it covers for the character; its author for a community
+     pack; "Recommended" on Ding's Leveling, a check on the current one), then "Take my guide up
+     where I am" (`Engine:Reset`). A pick sets the pack like the Guide tab (`Engine:SetPack`) and
+     ends the assistant; Finish keeps the guide. The sentence says that everything can be changed
+     later in the settings.
+  A check or a choice writes its setting at once, through the same calls as the settings window
+  (`Engine:Update`, `Offers:Apply`, `QuestMobs:Apply`, `Panel:Update`); a screen shows the
+  current values. **"Keep the recommended settings"** (a button on every screen, Y) ends it: every
+  setting the player did not change in this run goes back to its default (`Ding.DEFAULTS`); the
+  guide stays. B, Start, Esc and the close cross end it as it is. Shown once per account
+  (`Ding.db.ui.setupDone`), 2 s after the first login, **before** the Keybinds tab of the first
+  launch, which follows once it is closed (with a gamepad); an account that already had Ding
+  sees it once too (new in 1.4.0). Closed by a fight (the temporary bindings must go), the first
+  launch's assistant comes back on its screen a second after the fight, its choices kept;
+  opened by hand, a fight only closes it. Another Ding window opening (settings, directory,
+  import) closes it quietly: done, and the Keybinds tab waits for the next login. Again from
+  the Guide tab (header "Help", "Run the setup assistant again", back to that row once closed)
+  or `/ding intro`. "Restore all defaults" does not run it again.
+  Window 460 wide (window look, opaque, DIALOG, clamped to the screen), as high as its tallest
+  screen in the client's language: every text wraps whole, nothing is ever cut, the buttons
+  stay in place. Footer: "Keep the recommended settings" across, then Previous (disabled on the
+  first screen), the screen dots (a click opens a screen), Next (accent; "Finish" on the last
+  screen). Gamepad (temporary bindings, out of combat): the D-pad up / down between the choices
+  (around), A ticks or picks, LB / RB the screens, Y keeps the recommended settings, B or Start
+  closes; each action once: A on the focused choice, LB on Previous, RB on Next, Y on Keep, B by
+  the close cross; no hint bar. Mouse: hover focuses a choice, a click ticks or picks; the
+  buttons, the dots, the cross, Esc.
 
 ### Keyboard and mouse
 
@@ -1073,8 +1092,9 @@ gamepad buttons). Every gamepad action therefore has an equivalent:
   original position.
 - Binding a button from the Keybinds tab, with conflict detection; buttons are shown as
   Xbox chips (A, LB, LT+Right) or PlayStation chips (symbols).
-- First launch: the presentation (Interface, above), then the window opens on the bindings so
-  the player can bind "Open Ding settings".
+- First launch: the setup assistant (Interface, above), then, unless the player chose the
+  keyboard and the mouse there, the window opens on the bindings so the player can bind "Open
+  Ding settings".
 
 ### API compatibility
 

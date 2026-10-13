@@ -35,15 +35,15 @@ local fire, flush, tick, press, hold, release = H.fire, H.flush, H.tick, H.press
 local padDown, focusOn, selectTab, play = H.padDown, H.focusOn, H.selectTab, H.play
 
 local function firstLaunch()
-    local C, I = Ding.Config, Ding.Intro
-    -- The presentation first (UI/Intro.lua): A through its pages, the last one closes it.
-    expect(I:IsShown() and I.page == 1, "first launch: the presentation does not open")
-    expect(not (C.frame and C.frame:IsShown()), "first launch: the settings open over the presentation")
-    for _ = 1, #I.PAGES do press("PAD1") end
-    expect(not I:IsShown(), "first launch: A on the last page does not close the presentation")
-    expect(Ding.db.ui.introSeen, "first launch: the presentation is not remembered")
-    expect(overrides[I.frame] == nil, "first launch: the presentation's temporary bindings are left")
-    -- Then the Keybinds tab.
+    local C, S = Ding.Config, Ding.Setup
+    -- The setup assistant first (UI/Setup.lua): RB through its screens, Finish on the last one.
+    expect(S:IsShown() and S.screen == 1, "first launch: the setup assistant does not open")
+    expect(not (C.frame and C.frame:IsShown()), "first launch: the settings open over the setup assistant")
+    for _ = 1, #S.SCREENS do press("PADRSHOULDER") end
+    expect(not S:IsShown(), "first launch: Finish on the last screen does not close the setup assistant")
+    expect(Ding.db.ui.setupDone, "first launch: the setup assistant is not remembered")
+    expect(overrides[S.frame] == nil, "first launch: the setup assistant's temporary bindings are left")
+    -- Then the Keybinds tab (a gamepad is plugged in).
     expect(C.frame and C.frame:IsShown(), "first launch: the settings window does not open")
     if not (C.frame and C.frame:IsShown()) then return end
     expect(C.tab == C.TAB.bindings and C.focus and C.focus.opts.action == "DING_CONFIG",
@@ -51,7 +51,7 @@ local function firstLaunch()
     expect(Ding.db.ui.welcomed, "first launch not remembered")
     expect(#registered == 1, "AddOns > Ding category not registered")
     local special = table.concat(UISpecialFrames, ",")
-    expect(special:find("DingConfigFrame", 1, true) and special:find("DingIntro", 1, true),
+    expect(special:find("DingConfigFrame", 1, true) and special:find("DingSetup", 1, true),
         "Escape would not close the windows")
     press("PAD1")
     expect(C.capturing, "A does not start waiting for a button")
