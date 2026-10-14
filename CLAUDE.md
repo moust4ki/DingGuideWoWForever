@@ -132,6 +132,10 @@ Ding/
   Guides/Items/NN_<Item>.lua    "Ding! - Items" pack (pack = "ding-items", category "items"): an
                                 item worth getting off the route, for both sides (`faction`
                                 steps), hand-written
+  Guides/Class/<Side>/<Class>.lua  "Ding! - Class quests" pack (pack = "ding-class", category
+                                "class"): one guide per class and side (`faction`, `classes`),
+                                the class's chains in level order, hand-written (SPEC, Class
+                                quests)
 examples/DingExamplePack/   example guide pack (a separate addon, not in the zip), tested
 tools/              offline scripts (Lua 5.1): list_zone, check_guides, smoke_test, run_tests;
                     route_why.lua: the reasons of the Leveling guides (`why`, `leftOut`), measured
@@ -197,14 +201,15 @@ Contracts between modules:
   `Engine.autoMoved`: the engine moved on by itself (the window keeps the finished step for
   1.5 s; `Panel:EndHold()` ends it, and "next" or "skip" meanwhile does only that).
   `Engine:IsManual(step)` -> step validated by "next" only.
-- Packs: `Ding:GuidePacks()` (packs that have sections: Ding's three, Leveling, Zones then
-  Items, first, then by title),
+- Packs: `Ding:GuidePacks()` (packs that have sections: Ding's four, Leveling, Zones, Items
+  then Class quests, first, then by title),
   `Ding:GetGuidePack(id)`, `Ding:IterateGuides(packId)` (sections of a pack, in registration
   order), `Ding:SuggestGuide(packId)` (Ding's when unknown; nil when nothing fits the
   character), `Engine:SetPack(id)` (the section last followed in it, `Ding.char.packGuide`,
   while it has quest work left at the player's level, else the suggested one), `guide.pack`,
   `Ding.BUILTIN_PACK` (= "ding", Leveling), `Ding.ZONES_PACK` (= "ding-zones"),
-  `Ding.ITEMS_PACK` (= "ding-items"), `pack.category` (`Ding.GUIDE_CATEGORIES`: "leveling" by
+  `Ding.ITEMS_PACK` (= "ding-items"), `Ding.CLASS_PACK` (= "ding-class": the Guide tab's section
+  list shows only the character's own sections of a "class" pack), `pack.category` (`Ding.GUIDE_CATEGORIES`: "leveling" by
   default, "items", "reputations", "professions", "class"; unknown -> "leveling");
   `Engine:KeepsGrey(guide)`: a guide of a pack that is not "leveling" keeps its grey quests
   ("Skip grey quests" only applies to leveling routes).

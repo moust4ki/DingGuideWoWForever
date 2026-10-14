@@ -67,11 +67,13 @@ Getter semantics, the same for both sources (QuestieDB's `docs/api.md`):
 ## 2. Guide format
 
 A guide is a Lua file that calls `Ding.RegisterGuide`: it is a **section** of a **guide
-pack**. Ding ships three: **Ding! - Leveling** (id `ding`, the default, the pack of the guides
+pack**. Ding ships four: **Ding! - Leveling** (id `ding`, the default, the pack of the guides
 that have no `pack`: each section is a stretch of the Leveling routes, a race start then
 shared sections up to 60 over one or a few zones), **Ding! - Zones** (id `ding-zones`: one section per zone, the ids
-of Ding's first guides) and **Ding! - Items** (id `ding-items`, category `items`: one section
-per item worth getting off the leveling route, for both sides: the Cozy Sleeping Bag first). A third-party addon provides a pack by declaring
+of Ding's first guides), **Ding! - Items** (id `ding-items`, category `items`: one section
+per item worth getting off the leveling route, for both sides: the Cozy Sleeping Bag first)
+and **Ding! - Class quests** (id `ding-class`, category `class`: one section per class and
+side, `Ding/Guides/Class/<Side>/<Class>.lua`, see "Class quests" below). A third-party addon provides a pack by declaring
 `## Dependencies: Ding`, then calling `Ding.RegisterGuidePack({ id, title, author, category })` before
 its sections, which carry `pack = "<id>"`; like Ding, it must be released under GPL v3 (no
 exception: everything built on Ding stays free). The author documentation is
@@ -286,6 +288,44 @@ keys of section 2 above.
   the gamepad interface): the text takes it once the keyboard is free, the status line says
   so meanwhile.
 
+### Class quests (`Ding/Guides/Class`)
+
+The pack **Ding! - Class quests** (`Ding.CLASS_PACK` = `ding-class`, `builtin = 4`, category
+`class`) holds one section per class and side: `class-<side>-<class>`
+(`Ding/Guides/Class/<Side>/<Class>.lua`, hand-written like the Items guide, English texts
+translated through `tools/routes/locales`). Each has `faction` and `classes = { <CLASS> }`;
+its race-specific chains carry `races` on their steps, and a guide whose every quest is for
+some races only in DingDB carries them itself (the Alliance paladins: Humans and Dwarves).
+
+- **Content**: the class's important chains in level order, the level that opens each one
+  (from the quests' required level): a druid's forms, a hunter's first pet, a warlock's demons
+  and mounts, a warrior's stances and Whirlwind weapon, a paladin's Redemption, Verigan's Fist
+  and mounts, a shaman's totems, a rogue's poisons, the priests' and mages' race and class
+  quests, up to the level 50 chains of the Temple of Atal'Hakkar and the level 60 epic mounts.
+  Forever's own class quests are in: Skyborne starts, the Great Cat Spirit at 20, the Forsaken
+  paladins, the Alliance shamans, the Human, Gnome and Skyborne hunters' pets, Delgren's
+  paladin chain, the Syndicate of Ravenholdt, Rau Cliffrunner's and Veyric Thunderhame's
+  shaman quests. Raid and armor-set quests of level 60 are left out. Where DingDB has no
+  prerequisite (most of Forever's quests), the order follows who gives and who takes each quest.
+- **Plain words**: the first step of a chain says, under it (`why` with `short`), from which
+  level and what it is for ("From level 10: the chain that teaches Bear Form."); the step that
+  teaches something says so ("Turning this in teaches Bear Form."); notes say where the NPC
+  or the objective is. Breadcrumb quests (a trainer sending you to another) are `optional`.
+- **Options**: a quest done inside a dungeon has `dungeon = "<name>"` on all its steps and on
+  the quests that follow it (per-dungeon choice in the Route tab, off by default), elite
+  quests `elite = true`: with the option off, the guide goes on without them.
+- **Picking it**: `Engine:SetPack(Ding.CLASS_PACK)` takes the section of the character's class
+  and side (`Ding:SuggestGuide`); the Guide tab's section list shows that one only; the setup
+  assistant's last screen names it under the pack. A class guide keeps its grey quests
+  (`Engine:KeepsGrey`). It never leads to another section: the player goes back to their
+  leveling pack in the Guide tab; the Leveling routes pass a class quest the player already did.
+- **Checks**: `tools/check_guides.lua` replays a class guide for each race of its side (and the
+  Skyborne its steps name) with its class only; a quest's own id in its `preQuestSingle` is how
+  the data writes a group of alternatives (Call of Earth), not a prerequisite.
+  `tools/tests/class_quests_test.lua`: one section per class and side, the right class only,
+  the section list, the assistant, every quest, item and NPC in DingDB, every text in every
+  language; the smoke test plays each one with the race of its side that has the most steps.
+
 ---
 
 ## 3. Engine
@@ -309,11 +349,11 @@ keys of section 2 above.
   that level. A guide counts as "started" only if one of its quests was accepted or turned in
   (a quest out of reach does not count).
 - The player can switch guides at any time with the two drop-down lists of the Guide tab:
-  **the guide** (Ding's three "built in" packs, Leveling, Zones then Items, then the installed packs
-  by title, with their author and the levels they cover for the character; grayed out if it
-  has nothing for them), then
+  **the guide** (Ding's four "built in" packs, Leveling, Zones, Items then Class quests, then the
+  installed packs by title, with their author and the levels they cover for the character;
+  grayed out if it has nothing for them), then
   **the section** (only those of the chosen pack, including those for another race or class,
-  grayed out). Choosing a pack loads its section for the character (same rule as above,
+  grayed out; a pack of category `class` lists the character's own sections only). Choosing a pack loads its section for the character (same rule as above,
   otherwise its first section) and resumes it where the player is; choosing the active pack
   again changes nothing.
 - The pack is remembered per character (`Ding.char.pack`). At login, if the remembered

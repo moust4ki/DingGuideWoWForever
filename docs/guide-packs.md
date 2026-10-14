@@ -33,16 +33,18 @@ format, with a prompt ready to copy.
 
 In Ding's settings (`/ding config`, or the minimap button), the **Guide** tab has two lists:
 
-- **Active guide**: one of Ding's own three guides ("Ding! - Leveling", the default, "Ding -
-  Zones" and "Ding! - Items") or one of the installed packs, with its author and the levels it
+- **Active guide**: one of Ding's own four guides ("Ding! - Leveling", the default, "Ding -
+  Zones", "Ding! - Items" and "Ding! - Class quests") or one of the installed packs, with its author and the levels it
   covers for your character. A pack with nothing for your race or class is greyed (it can
   still be picked). The packs are grouped by [category](#4-the-pack-dingregisterguidepack):
   "Leveling (XP)" first, then "Items", and so on, each under a header that cannot be picked.
 - **Section**: the parts of the chosen guide. In Ding! - Leveling, a section is a stretch of
   the route over one or a few zones ("Duskwood & Redridge Mountains (25-27)"); in Ding -
   Zones, a leveling zone ("Shadowglen (1-6)"); in Ding! - Items, an item worth getting off the
-  route ("Cozy Sleeping Bag", a bedroll worth up to 3% more experience); a pack cuts its route
-  as it likes.
+  route ("Cozy Sleeping Bag", a bedroll worth up to 3% more experience); in Ding! - Class
+  quests, the quests of your class ("Druid quests"), the only section listed for you; a pack
+  cuts its route as it likes. A pack of category `"class"` lists only the sections for the
+  character's own class and side.
 
 Picking a pack starts its section for your character and level, taken up where you really
 are (quests already done are passed). Going back to a pack you followed before (after an
@@ -110,7 +112,7 @@ Ding.RegisterGuidePack({
 
 | Field | Required | Meaning |
 | --- | --- | --- |
-| `id` | yes | Unique among the installed packs, and stable: each character remembers it. `ding`, `ding-zones` and `ding-items` are Ding's own packs. |
+| `id` | yes | Unique among the installed packs, and stable: each character remembers it. `ding`, `ding-zones`, `ding-items` and `ding-class` are Ding's own packs. |
 | `title` | no | Name shown in the settings. Write it in English, or pick it with `GetLocale()`. |
 | `author` | no | Your name, shown after the title. |
 | `category` | no | What the pack is for, the group it is listed under: `"leveling"` (the default: a route for experience), `"items"` (a quest chain for an item, a toy, a bag…), `"reputations"`, `"professions"`, `"class"`. Any other value is listed under leveling (the validator warns). The player's option "Skip grey quests" only applies to leveling packs: the others are followed for their reward and keep every quest. |
