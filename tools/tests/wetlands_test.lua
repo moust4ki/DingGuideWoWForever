@@ -171,6 +171,28 @@ T.test("Ormer's Revenge in the log without its talon: complete it first, never a
     T.ok(said and said:find(L.ROW_COMPLETE:match("^(.-)%%s"), 1, true) == 1, "the preview says turn in: " .. tostring(said))
 end)
 
+-- In game (14/10/2026, an Alliance character of level 28): the guide said to accept Carnage
+-- (98283, a Forever quest) from Rethiel the Greenwarden, who only had Blisters on the Land
+-- (275, in progress) to offer. Carnage is the fifth quest of his series, after Blisters on the
+-- Land, and an elite quest; QuestieDB knew neither (tools/data/corrections/20_forever_quests.lua).
+T.test("Carnage: after Blisters on the Land is turned in, behind the elite option", function()
+    local CARNAGE, BLISTERS, CARNAGE_NPC = 98283, 275, 271336
+    local single = Ding.Data:QuestPrereqs(CARNAGE)
+    T.eq(single and table.concat(single, ","), tostring(BLISTERS), "DingDB: Carnage needs Blisters on the Land")
+    local DB = Ding.DB
+    T.eq(DB.npcs[CARNAGE_NPC][DB.LAYOUT.Npc.rank], 1, "DingDB: Carnage is an elite")
+    local turnedIn = stepOf(function(s) return has(s.turnin, BLISTERS) end)
+    local seen = 0
+    for i, step in ipairs(Ding:GetGuide(GUIDE).steps) do
+        if has(step.accept, CARNAGE) or has(step.complete, CARNAGE) or has(step.turnin, CARNAGE) then
+            seen = seen + 1
+            T.ok(i > turnedIn, ("step %d works on Carnage before Blisters on the Land is turned in (step %d)"):format(i, turnedIn))
+            T.eq(step.elite, true, "step " .. i .. ": Carnage is an elite quest")
+        end
+    end
+    T.eq(seen, 3, "accepted, done and turned in")
+end)
+
 T.test("further on, the Cursed Crew is said as another quest of the log", function()
     arrive()
     E:SetGuide(GUIDE, APPRENTICE, true); H.flush()

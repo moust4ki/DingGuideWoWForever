@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Alliance/16.lua.
--- Simulated (warrior): Human 34 (5%) -> 35 (10%) in 3 h 40, 31 quests turned in; Dwarf 34 (18%) -> 35 (22%) in 3 h 40, 31 quests turned in; NightElf 34 (23%) -> 35 (26%) in 3 h 40, 31 quests turned in; Gnome 34 (26%) -> 35 (29%) in 3 h 40, 31 quests turned in; Skyborne 34 (25%) -> 35 (28%) in 3 h 40, 31 quests turned in.
+-- Simulated (warrior): Human 33 (100%) -> 35 (5%) in 3 h 40, 31 quests turned in; Dwarf 34 (12%) -> 35 (16%) in 3 h 40, 31 quests turned in; NightElf 34 (17%) -> 35 (21%) in 3 h 40, 31 quests turned in; Gnome 34 (21%) -> 35 (24%) in 3 h 40, 31 quests turned in; Skyborne 34 (20%) -> 35 (23%) in 3 h 40, 31 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-a16-dustwallow-marsh-and-thousand-needles",
     title    = "Dustwallow and Thousand Needles (33-34)",
@@ -17,16 +17,16 @@ Ding.RegisterGuide({
         [3843] = { kind = "prereq" },
     },
     steps    = {
-        { go = { 1445, 67.52, 51.25 }, fly = true, talk = 4321, text = "Flight master at Theramore", -- level 34
+        { go = { 1445, 67.52, 51.25 }, fly = true, talk = 4321, text = "Flight master at Theramore", -- level 33
           note = "Dustwallow Marsh: Theramore Isle, off the east coast." },
-        { talk = 4897, buy = { { 3713, 3, 4897 } }, -- level 34
+        { talk = 4897, buy = { { 3713, 3, 4897 } }, -- level 33
           note = "The NPC is indoors." },
-        { accept = 1135, -- level 34
+        { accept = 1135, -- level 33
           note = "The NPC is indoors." },
-        { sethearth = "Theramore Isle", talk = 6272, -- level 34
+        { sethearth = "Theramore Isle", talk = 6272, -- level 33
           note = "The NPC is indoors." },
-        { accept = 1282 }, -- level 34
-        { turnin = 1302, -- level 34
+        { accept = 1282 }, -- level 33
+        { turnin = 1302, -- level 33
           note = "The NPC is indoors, one floor up." },
         { turnin = 1264, accept = 1265, -- level 34
           note = "The NPC is indoors, one floor up." },
@@ -104,11 +104,11 @@ Ding.RegisterGuide({
         { turnin = 1178, accept = 1180, -- level 34
           note = "The NPC is indoors, one floor up." },
         { turnin = 1798, accept = 1758, races = { "Human", "Gnome", "Skyborne" }, classes = { "WARLOCK" } }, -- level 34
-        { turnin = 1718, accept = 1719, classes = { "WARRIOR" } }, -- level 35
-        { complete = 1719, classes = { "WARRIOR" }, -- level 35
+        { turnin = 1718, accept = 1719, classes = { "WARRIOR" } }, -- level 34
+        { complete = 1719, classes = { "WARRIOR" }, -- level 34
           note = "Stand on the metal grating to begin the battle. Shows up once you defeat six challengers." },
-        { turnin = 1719, when = { ready = 1719 }, classes = { "WARRIOR" } }, -- level 35
+        { turnin = 1719, when = { ready = 1719 }, classes = { "WARRIOR" } }, -- level 34
         { accept = 1791, when = { done = 1719 }, classes = { "WARRIOR" }, why = { continent = true, kind = "carry", quest = 1791, seconds = 10380, xp = 200 } }, -- level 35
-        { turnin = { 1111, 1039 }, accept = { 1112, 1040 }, why = { kind = "carry", once = true, quest = 1112, seconds = 25200, xp = 1400 } }, -- level 35
+        { turnin = { 1111, 1039 }, accept = { 1112, 1040 }, why = { kind = "carry", once = true, quest = 1112, seconds = 25380, xp = 1400 } }, -- level 35
     },
 })

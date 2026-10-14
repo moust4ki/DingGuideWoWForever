@@ -142,6 +142,10 @@ return {
     T.eq(db.Npc[11867][X.NPC.name], raw.Npc[11867][X.NPC.name])
     T.eq(db.Item[159], nil, "removed")
     T.ok(corrected.quests[783] and corrected.quests[990001] and corrected.npcs[823] and corrected.items[159])
+    -- The shipped corrections, by default: Carnage needs Blisters on the Land.
+    local shipped = X.loadCorrected(T.combined)
+    T.eq(shipped.Quest[98283][QK.preQuestSingle][1], 275)
+    T.eq(raw.Quest[98283][QK.preQuestSingle], nil, "(the export does not know it)")
 end)
 
 T.test("the corrections shipped with Ding are valid", function()

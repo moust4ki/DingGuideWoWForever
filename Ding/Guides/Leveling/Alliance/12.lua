@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Alliance/12.lua.
--- Simulated (warrior): Human 28 (44%) -> 30 (4%) in 3 h 37, 29 quests turned in; Dwarf 28 (43%) -> 30 (10%) in 3 h 46, 30 quests turned in; NightElf 28 (41%) -> 30 (8%) in 3 h 45, 30 quests turned in; Gnome 28 (43%) -> 30 (10%) in 3 h 46, 30 quests turned in; Skyborne 28 (44%) -> 30 (5%) in 3 h 31, 30 quests turned in.
+-- Simulated (warrior): Human 28 (44%) -> 29 (96%) in 3 h 24, 28 quests turned in; Dwarf 28 (43%) -> 30 (2%) in 3 h 33, 29 quests turned in; NightElf 28 (41%) -> 29 (100%) in 3 h 33, 29 quests turned in; Gnome 28 (43%) -> 30 (2%) in 3 h 33, 29 quests turned in; Skyborne 28 (44%) -> 29 (96%) in 3 h 18, 29 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-a12-wetlands",
     title    = "Wetlands (27-29)",
@@ -58,10 +58,8 @@ Ding.RegisterGuide({
         { go = { 1437, 34.07, 40.91 }, text = "Head out of Whelgar's Excavation Site" }, -- level 28
         { complete = 464, -- level 28
           note = "The targets are orcs." },
-        { accept = 98283 }, -- level 28
         { turnin = 277, accept = 275 }, -- level 28
         { complete = 98072, races = { "Dwarf", "NightElf", "Gnome", "Skyborne" } }, -- level 28
-        { complete = 98283 }, -- level 29
         { complete = 335, races = { "Dwarf", "NightElf" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "WARLOCK", "DRUID" } }, -- level 29
         { complete = 335, races = { "Human", "Gnome", "Skyborne" } }, -- level 29
         { train = true, talk = 12042, races = { "NightElf" }, classes = { "DRUID" } }, -- level 29
@@ -112,7 +110,9 @@ Ding.RegisterGuide({
           note = "These foes hide in stealth. Most often found in or beside water." },
         { turnin = 275 }, -- level 29
         { complete = 98245, races = { "Dwarf", "NightElf", "Gnome" } }, -- level 29
-        { turnin = 98283 }, -- level 29
+        { accept = 98283, elite = true }, -- level 29
+        { complete = 98283, elite = true }, -- level 29
+        { turnin = 98283, elite = true }, -- level 29
         { accept = 95646 }, -- level 29
         { complete = 95646 }, -- level 29
         { turnin = 95646 }, -- level 29
@@ -140,13 +140,13 @@ Ding.RegisterGuide({
           note = "Keep to the road the whole way." },
         { turnin = 292, when = { log = 292 }, why = { chain = 1, kind = "detour", quest = 292, quests = 3, seconds = 180, total = 5700, xp = 3700 }, -- level 29
           note = "The NPC is indoors." },
-        { accept = 293, when = { done = 292 }, why = { kind = "carry", quest = 293, seconds = 15300, xp = 2500 } }, -- level 30
-        { turnin = 98223 }, -- level 30
-        { accept = 321, elite = true }, -- level 30
-        { turnin = 321, elite = true }, -- level 30
-        { accept = 324, elite = true }, -- level 30
-        { complete = 324, elite = true }, -- level 30
-        { turnin = 324, elite = true }, -- level 30
-        { accept = 322, elite = true }, -- level 30
+        { accept = 293, when = { done = 292 }, why = { kind = "carry", quest = 293, seconds = 15300, xp = 2500 } }, -- level 29
+        { turnin = 98223 }, -- level 29
+        { accept = 321, elite = true }, -- level 29
+        { turnin = 321, elite = true }, -- level 29
+        { accept = 324, elite = true }, -- level 29
+        { complete = 324, elite = true }, -- level 29
+        { turnin = 324, elite = true }, -- level 29
+        { accept = 322, elite = true }, -- level 29
     },
 })

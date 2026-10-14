@@ -14,7 +14,7 @@ Ding.DB = {
     Object = { name = 1, spawns = 2, dungeon = 3 },
     Item = { name = 1, npcDrops = 2, objectDrops = 3, vendors = 4, class = 5, subClass = 6, requiredLevel = 7, flags = 8 },
     },
-    corrected = {["items"]={},["npcs"]={2704,11865,11866,11867,11868,11869,11870,13084},["objects"]={},["quests"]={}},
+    corrected = {["items"]={},["npcs"]={2704,11865,11866,11867,11868,11869,11870,13084,271336},["objects"]={},["quests"]={98283}},
     quests = {}, npcs = {}, objects = {}, items = {},
     zones = { areaToUiMap = {}, dungeons = {}, dungeonsHorde = {}, dungeonNames = {} },
     names = { quests = {}, npcs = {}, objects = {}, items = {} },

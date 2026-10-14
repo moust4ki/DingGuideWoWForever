@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.6.0
+
+Nothing else to install: QuestieDB is no longer needed, and TomTom stays optional.
+
+- **Wetlands (27-29)**: Carnage, the last quest Rethiel the Greenwarden gives, now comes after
+  Blisters on the Land is turned in (he does not offer it before), and as an elite quest: it
+  shows only when **Elite quests** is on in Settings > Route.
+
 ## v1.5.0
 
 Nothing else to install: QuestieDB is no longer needed, and TomTom stays optional.

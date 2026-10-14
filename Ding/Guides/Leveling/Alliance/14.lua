@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Alliance/14.lua.
--- Simulated (warrior): Human 31 (26%) -> 33 (0%) in 4 h 20, 52 quests turned in; Dwarf 31 (31%) -> 33 (16%) in 4 h 31, 54 quests turned in; NightElf 31 (36%) -> 33 (20%) in 4 h 31, 54 quests turned in; Gnome 31 (41%) -> 33 (24%) in 4 h 31, 54 quests turned in; Skyborne 31 (36%) -> 33 (17%) in 4 h 32, 52 quests turned in.
+-- Simulated (warrior): Human 31 (19%) -> 32 (94%) in 4 h 20, 52 quests turned in; Dwarf 31 (23%) -> 33 (9%) in 4 h 31, 54 quests turned in; NightElf 31 (29%) -> 33 (14%) in 4 h 31, 54 quests turned in; Gnome 31 (34%) -> 33 (18%) in 4 h 31, 54 quests turned in; Skyborne 31 (30%) -> 33 (12%) in 4 h 32, 52 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-a14-duskwood-and-stranglethorn-vale",
     title    = "Duskwood and Stranglethorn (30-32)",
@@ -130,10 +130,10 @@ Ding.RegisterGuide({
         { turnin = 1244, accept = 1245, sticky = 98, patrol = { { 1431, 74.85, 44.22 }, { 1431, 74.57, 41.17 }, { 1431, 73.91, 39.65 }, { 1431, 72.79, 38.29 }, { 1431, 72.34, 37.25 }, { 1431, 72.28, 35.14 }, { 1431, 72.64, 33.47 }, { 1431, 73.37, 32.57 } }, -- level 31
           note = "The NPC patrols the road; look along it." },
         { complete = 335, races = { "Dwarf", "NightElf" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "WARLOCK", "DRUID" } }, -- level 32
-        { complete = 335, races = { "Human", "Gnome", "Skyborne" } }, -- level 32
-        { complete = 98, -- level 32
+        { complete = 335, races = { "Human", "Gnome", "Skyborne" } }, -- level 31
+        { complete = 98, -- level 31
           note = "The target can be in the house or around it." },
-        { turnin = 98, -- level 32
+        { turnin = 98, -- level 31
           note = "The NPC is indoors." },
         { complete = 222, -- level 32
           note = "The objective is underground, in the mine shaft. Just out of the mine." },
@@ -233,7 +233,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { accept = 1250, -- level 32
           note = "The NPC is indoors." },
-        { turnin = 1250, accept = 1264, why = { continent = true, kind = "carry", quest = 1264, seconds = 15720, xp = 1300 }, -- level 32
+        { turnin = 1250, accept = 1264, why = { continent = true, kind = "carry", quest = 1264, seconds = 15660, xp = 1300 }, -- level 32
           note = "The NPC is indoors." },
         { accept = 98216 }, -- level 32
         { complete = 98216 }, -- level 32
@@ -253,18 +253,18 @@ Ding.RegisterGuide({
         { complete = 98297, races = { "Human" } }, -- level 32
         { turnin = 98297, races = { "Human" } }, -- level 32
         { accept = 98297, races = { "Dwarf", "NightElf", "Gnome" } }, -- level 32
-        { accept = 647, races = { "Human", "Skyborne" }, why = { action = "accept", kind = "detour", quest = 647, seconds = 60, xp = 3100 } }, -- level 33
-        { accept = 98300, races = { "Dwarf", "NightElf", "Gnome", "Skyborne" }, why = { kind = "carry", quest = 98300, seconds = 11280, xp = 2400 } }, -- level 32
+        { accept = 647, races = { "Human", "Skyborne" }, why = { action = "accept", kind = "detour", quest = 647, seconds = 60, xp = 3100 } }, -- level 32
+        { accept = 98300, races = { "Dwarf", "NightElf", "Gnome", "Skyborne" }, why = { kind = "carry", quest = 98300, seconds = 11220, xp = 2400 } }, -- level 32
         { turnin = 98245, races = { "Dwarf", "NightElf", "Gnome" } }, -- level 32
         { complete = 98291, races = { "Dwarf", "NightElf", "Gnome" } }, -- level 32
         { turnin = 98291, races = { "Dwarf", "NightElf", "Gnome" } }, -- level 32
-        { accept = 98291, races = { "Skyborne" } }, -- level 33
-        { complete = 98291, races = { "Skyborne" } }, -- level 33
+        { accept = 98291, races = { "Skyborne" } }, -- level 32
+        { complete = 98291, races = { "Skyborne" } }, -- level 32
         { turnin = 98291, races = { "Skyborne" } }, -- level 33
         { accept = 87491, races = { "Dwarf", "NightElf", "Gnome" } }, -- level 32
         { turnin = 87491, races = { "Dwarf", "NightElf", "Gnome" } }, -- level 32
-        { accept = 87318, races = { "Dwarf", "NightElf", "Gnome" } }, -- level 33
-        { turnin = 87318, races = { "Dwarf", "NightElf", "Gnome" } }, -- level 33
+        { accept = 87318, races = { "Dwarf", "NightElf", "Gnome" } }, -- level 32
+        { turnin = 87318, races = { "Dwarf", "NightElf", "Gnome" } }, -- level 32
         { accept = 88758, races = { "Dwarf", "NightElf", "Gnome" } }, -- level 33
         { turnin = 88758, races = { "Dwarf", "NightElf", "Gnome" } }, -- level 33
         { complete = 98297, races = { "Dwarf", "NightElf", "Gnome" } }, -- level 33
