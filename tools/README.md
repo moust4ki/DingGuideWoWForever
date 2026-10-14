@@ -156,6 +156,7 @@ lua5.1 tools/smoke_test.lua $QDB --quiet          # problems only
 lua5.1 tools/smoke_test.lua $QDB --skip-optional  # optional quests never start
 lua5.1 tools/smoke_test.lua $QDB --locale enUS    # English client (frFR by default)
 lua5.1 tools/smoke_test.lua $QDB --tomtom         # with a simulated TomTom (its arrow replaces Ding's)
+lua5.1 tools/smoke_test.lua $QDB --only class-    # only the chains whose id starts so (here: the class guides)
 ```
 
 Loads the files of `Ding/Ding.toc` with a simulated WoW API (frames, quest log, maps) and a

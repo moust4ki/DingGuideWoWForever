@@ -3,21 +3,25 @@
 -- prints what the panel shows after each step. It catches Lua errors, steps that never
 -- advance and panel layout problems; it cannot replace a test in game.
 -- usage: lua5.1 tools/smoke_test.lua <combined dir> [--quiet] [--skip-optional] [--locale enUS] [--tomtom]
+--        [--only <id prefix>]
 --   --quiet          only problems and the summary
 --   --skip-optional  optional quests never start (item that never drops...)
 --   --locale X       client language (default frFR)
 --   --tomtom         a simulated TomTom is installed while the guides are played: its
 --                    arrow replaces Ding's at every step
+--   --only P         plays only the chains whose first guide's id starts with P (the
+--                    scenarios still run): a quicker run while working on some guides
 -- Exit code: 0 when everything ran, 1 on a Lua error or a stuck step, 2 on bad usage.
 local here = arg[0]:match("^(.*)[/\\]") or "."
 
-local COMBINED, QUIET, SKIP_OPTIONAL, LOCALE, WITH_TOMTOM
+local COMBINED, QUIET, SKIP_OPTIONAL, LOCALE, WITH_TOMTOM, ONLY
 local i = 1
 while arg[i] do
     if arg[i] == "--quiet" then QUIET = true
     elseif arg[i] == "--skip-optional" then SKIP_OPTIONAL = true
     elseif arg[i] == "--locale" then i = i + 1; LOCALE = arg[i]
     elseif arg[i] == "--tomtom" then WITH_TOMTOM = true
+    elseif arg[i] == "--only" then i = i + 1; ONLY = arg[i]
     else COMBINED = arg[i] end
     i = i + 1
 end
@@ -93,7 +97,27 @@ fire("ADDON_LOADED", "Ding")
 local E, P = Ding.Engine, Ding.Panel
 
 local roots = {}
-for id, g in Ding:IterateGuides() do if not referenced[id] then roots[#roots + 1] = g end end
+for id, g in Ding:IterateGuides() do
+    if not referenced[id] and (not ONLY or id:sub(1, #ONLY) == ONLY) then roots[#roots + 1] = g end
+end
+
+-- The race a chain is played with: the first guide's first race, else, for a guide of some
+-- classes (a class guide), the race of its side with the most steps of its own, else the
+-- side's first race.
+local function chainRace(guide)
+    if guide.races then return guide.races[1] end
+    local side = guide.faction or "Alliance"
+    local best, most = X.FACTION_RACES[side][1], -1
+    if not guide.classes then return best end
+    for _, race in ipairs(X.FACTION_RACES[side]) do
+        local n = 0
+        for _, step in ipairs(guide.steps) do
+            for _, r in ipairs(step.races or {}) do if r == race then n = n + 1 end end
+        end
+        if n > most then best, most = race, n end
+    end
+    return best
+end
 
 -- Shadowglen's Crystal Phial (quest 921) has a "Use:" effect: the item button must offer it.
 local PHIAL, ITEM_KEY = 5185, "SHIFT-PAD4"
@@ -146,7 +170,7 @@ end
 
 local loggedIn = false
 for _, guide in ipairs(roots) do
-    player.race = guide.races and guide.races[1] or X.FACTION_RACES[guide.faction or "Alliance"][1]
+    player.race = chainRace(guide)
     player.faction = guide.faction or "Alliance"
     player.class = guide.classes and guide.classes[1] or "WARRIOR"
     player.level, player.xp, player.map = guide.minLevel, 0, 1438
@@ -674,7 +698,8 @@ ok, err = pcall(function()
     for _, e in ipairs(C.dropdown.entries) do
         if e.header then headers[#headers + 1] = e.text end
     end
-    expect(table.concat(headers, ",") == L.CATEGORY_LEVELING .. "," .. L.CATEGORY_ITEMS,
+    -- (Ding's own class pack, Ding! - Class quests, adds the third group.)
+    expect(table.concat(headers, ",") == L.CATEGORY_LEVELING .. "," .. L.CATEGORY_ITEMS .. "," .. L.CATEGORY_CLASS,
         "guide list: the category headers are " .. table.concat(headers, ","))
     press("PAD2")
     pick("smoke-items")
