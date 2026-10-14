@@ -49,6 +49,8 @@ Nothing else to install: QuestieDB is no longer needed, and TomTom stays optiona
 - **Easy Controller and Ding! side by side**: Ding! never changes the game's gamepad settings
   and its default button never takes a key Easy Controller uses; Ding!'s windows work as usual
   with Easy Controller on.
+- Settings: on a line with a description, the two lines are centered on the line and its check
+  box (the label used to touch the line's frame).
 
 ## v1.4.0
 
