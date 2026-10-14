@@ -11,7 +11,7 @@ local X = dofile(tools .. "/questiedb_export.lua")
 local Model = dofile(tools .. "/route_model.lua")
 local RouteData = dofile(tools .. "/route_data.lua")
 local QK = X.QUEST
-local db = X.load(T.combined)
+local db = X.loadCorrected(T.combined)
 local D = RouteData.new(db, T.combined)
 local QUEST_ABOVE, MOB_ABOVE = Model.PARAMS.questAbove, Model.PARAMS.mobAbove
 

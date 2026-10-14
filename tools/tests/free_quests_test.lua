@@ -11,7 +11,7 @@ local Model = dofile(tools .. "/route_model.lua")
 local Free = dofile(tools .. "/route_free.lua")
 local QK = X.QUEST
 
-local db = X.load(T.combined)
+local db = X.loadCorrected(T.combined)
 local D = RouteData.new(db, T.combined)
 local Jobs = Work.new(D)
 

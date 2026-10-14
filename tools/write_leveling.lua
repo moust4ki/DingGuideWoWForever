@@ -79,7 +79,7 @@ end
 local OUT_LOCALES = OUT and (OUT .. "/Locales")
 OUT = OUT or (root .. "/Ding/Guides")
 
-local db = X.load(COMBINED)
+local db = X.loadCorrected(COMBINED)
 local D = RouteData.new(db, COMBINED)
 local Jobs = Work.new(D)
 local route = dofile(ROUTE)

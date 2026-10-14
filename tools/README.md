@@ -69,6 +69,13 @@ answers from `Ding/DB` and from QuestieDB, and CI clones the release named in `D
 `build_data.lua` keeps only the fields `Core/Data.lua` reads, converts the spawns from AreaIDs
 to UiMapIDs, and writes the names of each language in `Ding/DB/Locales/<locale>.lua`.
 
+DingDB's own corrections (`tools/data/corrections`, `docs/dingdb.md`) go on top of the export
+in `Ding/DB`, and also in what the tools that write and check guides read
+(`questiedb_export.lua`, `loadCorrected`: `check_guides.lua`, `write_leveling.lua`,
+`draft_guide.lua`, `list_zone.lua`): a prerequisite or an elite fixed there changes where the
+Leveling routes place the quest and what `check_guides.lua` replays. `build_data.lua`,
+`audit_data.lua` and the mocked QuestieDB of the tests read the export as it is.
+
 Below, `$QDB` stands for this folder:
 
 ```sh

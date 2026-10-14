@@ -128,7 +128,7 @@ end)
 -- starts already did.
 T.test("Skyborne: a start per side, then the faction's Leveling route", function()
     local X = dofile(tools .. "/questiedb_export.lua")
-    local db = X.load(T.combined)
+    local db = X.loadCorrected(T.combined)
     local bits = X.RACE_FACTION_BITS.Skyborne
     local NEXT = { Alliance = "leveling-a04-westfall", Horde = "leveling-h04-silverpine-forest" }
     for _, side in ipairs({ "Alliance", "Horde" }) do
@@ -247,7 +247,7 @@ T.test("notes: the NPC only where there is one, roaming only where someone moves
     local X = dofile(tools .. "/questiedb_export.lua")
     local Texts = dofile(tools .. "/guide_texts.lua")
     local QK = X.QUEST
-    local db = X.load(T.combined)
+    local db = X.loadCorrected(T.combined)
     local dict = dofile(tools .. "/routes/locales/frFR.lua")
     local ROAMS = "This one roams, so scan the surrounding area."
     -- (Phrases about another NPC than the step's target.)
@@ -329,7 +329,7 @@ end)
 -- one, or right after it (steps that only bank in between). Elsewhere the player has no bank.
 T.test("bank steps: at a banker, with a note saying why", function()
     local X = dofile(tools .. "/questiedb_export.lua")
-    local db = X.load(T.combined)
+    local db = X.loadCorrected(T.combined)
     local function banker(id)
         local flags = db.Npc[id] and db.Npc[id][15] or 0
         return type(flags) == "number" and math.floor(flags / 256) % 2 == 1 -- (the banker flag)
