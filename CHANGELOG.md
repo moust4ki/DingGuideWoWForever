@@ -19,6 +19,9 @@ Nothing else to install: QuestieDB is no longer needed, and TomTom stays optiona
   level 10: the chain that teaches Bear Form"), and the step that teaches it says so. You only
   see your own class's guide; pick your leveling guide again in Settings > Guide when you are
   done. Quests inside a dungeon show when that dungeon is on in Settings > Route.
+- **Wetlands (27-29)**: Carnage, the last quest Rethiel the Greenwarden gives, now comes after
+  Blisters on the Land is turned in (he does not offer it before), and as an elite quest: it
+  shows only when **Elite quests** is on in Settings > Route.
 
 ## v1.5.0
 

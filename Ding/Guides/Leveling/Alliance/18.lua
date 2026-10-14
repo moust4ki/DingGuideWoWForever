@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Alliance/18.lua.
--- Simulated (warrior): Human 36 (7%) -> 37 (22%) in 4 h 16, 24 quests turned in; Dwarf 36 (17%) -> 37 (32%) in 4 h 16, 24 quests turned in; NightElf 36 (21%) -> 37 (35%) in 4 h 16, 24 quests turned in; Gnome 36 (24%) -> 37 (38%) in 4 h 16, 24 quests turned in; Skyborne 36 (23%) -> 37 (37%) in 4 h 16, 24 quests turned in.
+-- Simulated (warrior): Human 36 (2%) -> 37 (21%) in 4 h 29, 24 quests turned in; Dwarf 36 (12%) -> 37 (27%) in 4 h 16, 24 quests turned in; NightElf 36 (16%) -> 37 (31%) in 4 h 16, 24 quests turned in; Gnome 36 (19%) -> 37 (34%) in 4 h 16, 24 quests turned in; Skyborne 36 (18%) -> 37 (33%) in 4 h 16, 24 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-a18-desolace",
     title    = "Desolace (35-37)",
@@ -87,7 +87,7 @@ Ding.RegisterGuide({
         { complete = 6161, -- level 36
           note = "Hunt naga. The targets are on islands and beneath the surface." },
         { turnin = 6161, object = 177786 }, -- level 36
-        { level = 37, patrol = { { 1443, 28.35, 12.24 }, { 1443, 30.44, 9.54 }, { 1443, 27.36, 9.05 }, { 1443, 29.97, 6.37 }, { 1443, 33.69, 10.39 }, { 1443, 29.15, 15.44 } }, -- level 37
+        { level = 37, patrol = { { 1443, 28.35, 12.24 }, { 1443, 30.44, 9.54 }, { 1443, 27.36, 9.05 }, { 1443, 29.97, 6.37 }, { 1443, 33.69, 10.39 }, { 1443, 29.15, 15.44 } }, -- level 36
           note = "This spreads out the grinding so less is left later." },
         { go = { 1443, 40.69, 28.9 }, text = "Climb the trail" }, -- level 37
         { turnin = 6027, -- level 37
@@ -98,7 +98,7 @@ Ding.RegisterGuide({
           note = "Look for tan sacks by the houses. Some of them are not usable. Magram Pack Runners patrol with 2 hyena escorts; steer clear." },
         { turnin = 1370, accept = 1373 }, -- level 37
         { train = true, talk = 12042, races = { "NightElf" }, classes = { "DRUID" } }, -- level 37
-        { turnin = 1456, accept = 1457, why = { continent = true, kind = "carry", quest = 1457, seconds = 29760, xp = 1500 } }, -- level 37
+        { turnin = 1456, accept = 1457, why = { continent = true, kind = "carry", quest = 1457, seconds = 30540, xp = 1500 } }, -- level 37
         { complete = 1459, -- level 37
           note = "The foes here are scorpions. Basilisks compete for the same spawn points." },
         { go = { 1443, 67.44, 15.7 }, text = "Head uphill into Nijel's Point" }, -- level 37

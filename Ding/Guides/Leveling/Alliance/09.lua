@@ -22,7 +22,7 @@ Ding.RegisterGuide({
         [1096] = { kind = "prereq" },
         [1167] = { kind = "far", turnin = true },
         [2931] = { kind = "away" },
-        [79974] = { kind = "log" },
+        [79974] = { kind = "away" },
         [95737] = { kind = "log" },
     },
     steps    = {

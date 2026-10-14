@@ -77,7 +77,7 @@ if arg[2] == "--addon" then
     addonDir = arg[3] and arg[3]:gsub("[/\\]+$", "")
     if not addonDir or arg[4] then usage() end
 end
-local db = X.load(dir)
+local db = X.loadCorrected(dir)
 
 ---------------------------------------------------------------------------
 -- Report

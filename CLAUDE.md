@@ -406,6 +406,10 @@ Contracts between modules:
   is Ding's saved settings); corrections and additions go in `tools/data/corrections/*.lua`
   (plain data, checked by `tools/check_data.lua` and `tools/dingdb_corrections.lua`), applied by
   `build_data.lua` on top of Questie's data; `Ding.DB.corrected` lists the ids they change.
+  The tools that write and check guides (`check_guides`, `write_leveling`, `draft_guide`,
+  `list_zone`, the route tests) read the export with the same corrections on top
+  (`questiedb_export.lua` `loadCorrected`): a fixed prerequisite or elite moves the quest in the
+  routes once they are written again.
 - **Updating the data** on a new QuestieDB release: export that release (tag), run
   `tools/build_data.lua <combined dir> --source "QuestieDB vX.Y.Z"`, then the whole suite with
   that export (`db_parity_test` compares Ding/DB with it); CI clones the tag named in

@@ -119,6 +119,108 @@ function M.load(dir)
     return db
 end
 
+-- Where each field a DingDB correction may set sits in the export's records (QuestieDB's
+-- indexes). `spawns` and a trigger's place are converted (corrections give them by UiMapID, the
+-- export by AreaID); `dungeon` and `weaponSkills` are DingDB's own fields, unknown to the export.
+local CORRECTED = {
+    Quest = { name = 1, startedBy = 2, finishedBy = 3, requiredLevel = 4, questLevel = 5, requiredRaces = 6,
+        requiredClasses = 7, triggerEnd = 9, objectives = 10, sourceItemId = 11, preQuestGroup = 12,
+        preQuestSingle = 13 },
+    Npc = { name = 1, minLevel = 4, maxLevel = 5, rank = 6, spawns = 7, friendlyToFaction = 13, subName = 14,
+        npcFlags = 15 },
+    Object = { name = 1, spawns = 4 },
+    Item = { name = 1, npcDrops = 2, objectDrops = 3, vendors = 14, class = 12, subClass = 13,
+        requiredLevel = 10, flags = 7 },
+}
+
+-- AreaID -> UiMapID of the export's zone tables (support/Forever/Zones, a QuestieLoader module).
+function M.areaToMap(dir)
+    local root = dir:gsub("[/\\]src[/\\]corrections[/\\]Forever[/\\]combined[/\\]?$", "")
+    local path = root .. "/support/Forever/Zones/areaIdToUiMapId.lua"
+    local chunk = loadfile(path)
+    local private = {}
+    if chunk then
+        local module = { private = private }
+        setfenv(chunk, setmetatable({ QuestieLoader = {
+            ImportModule = function() return module end, CreateModule = function() return module end,
+        } }, { __index = _G }))
+        if not pcall(chunk) then chunk = nil end
+    end
+    if not chunk then error("Cannot read " .. path, 0) end
+    local out = {}
+    for _, key in ipairs({ "areaIdToUiMapId", "areaIdToUiMapIdOverride" }) do
+        local src = private[key]
+        if type(src) == "string" then src = loadstring(src)() end
+        for area, map in pairs(src or {}) do out[area] = map end
+    end
+    return out
+end
+
+-- The export with DingDB's corrections on top (tools/data/corrections, docs/dingdb.md): the data
+-- Ding plays with in game, for the tools that write and check guides. build_data.lua reads the
+-- export as it is (it applies the corrections in DingDB's own layout). Returns db, and the ids the
+-- corrections changed ({ quests = { [id] = true }, ... }). A file the check refuses stops the tool.
+function M.loadCorrected(dir, correctionsDir)
+    local here = debug.getinfo(1, "S").source:match("^@(.*)[/\\]") or "."
+    local C = dofile(here .. "/dingdb_corrections.lua")
+    local db = M.load(dir)
+    local files, problems = C.load(correctionsDir or (here .. "/data/corrections"))
+    for _, f in ipairs(files) do
+        for _, e in ipairs(C.check(f.data, f.file)) do problems[#problems + 1] = e end
+    end
+    if #problems > 0 then
+        io.stderr:write("DingDB corrections refused (tools/check_data.lua shows them too):\n  "
+            .. table.concat(problems, "\n  ") .. "\n")
+        os.exit(1)
+    end
+    -- { [uiMap] = { x, y, ... } } -> { [area] = { { x, y }, ... } }, through the smallest AreaID
+    -- of that map (the export's coordinates are the map's).
+    local mapArea
+    local function byArea(spawns)
+        if not mapArea then
+            mapArea = {}
+            for area, map in pairs(M.areaToMap(dir)) do
+                if not mapArea[map] or area < mapArea[map] then mapArea[map] = area end
+            end
+        end
+        local out = {}
+        for map, coords in pairs(spawns) do
+            local area = assert(mapArea[map], "DingDB correction: no AreaID for UiMapID " .. tostring(map))
+            out[area] = out[area] or {}
+            for i = 1, #coords, 2 do table.insert(out[area], { coords[i], coords[i + 1] }) end
+        end
+        return out
+    end
+    -- C.apply with the export's positions; a field the export has no place for goes under a
+    -- text key, removed afterwards, and the names in other languages are not kept.
+    local pos = {}
+    for kind, fields in pairs(CORRECTED) do
+        pos[kind] = {}
+        for field in pairs(C.FIELDS[kind]) do pos[kind][field] = fields[field] or ("ding:" .. field) end
+    end
+    for _, f in ipairs(files) do
+        for key, list in pairs(f.data) do
+            local kind = C.KINDS[key]
+            for _, rec in pairs(kind and list or {}) do
+                if type(rec) == "table" then
+                    if type(rec.spawns) == "table" then rec.spawns = byArea(rec.spawns) end
+                    if type(rec.triggerEnd) == "table" then rec.triggerEnd = { rec.triggerEnd[1], byArea(rec.triggerEnd[2]) } end
+                end
+            end
+        end
+    end
+    local corrected = C.apply(files, db, {}, pos)
+    for key, ids in pairs(corrected) do
+        for id in pairs(ids) do
+            local row = db[C.KINDS[key]][id]
+            for k in pairs(row or {}) do
+                if type(k) == "string" then row[k] = nil end
+            end
+        end
+    end
+    return db, corrected
+end
+
 local function hasEntries(t)
     return type(t) == "table" and next(t) ~= nil
 end

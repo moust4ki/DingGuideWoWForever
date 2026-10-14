@@ -134,6 +134,9 @@ return {
 - **Languages**: deDE, esES, esMX, frFR, koKR, ptBR, ruRU, zhCN, zhTW.
 - **Check** your file: `lua5.1 tools/check_data.lua` lists every mistake (unknown field, wrong
   shape, a position outside 0-100...).
+- **Guides**: Ding's tools read the same corrections when they write and check its guides: a
+  prerequisite or an elite fixed here also moves the quest in the Leveling routes. When a
+  correction touches a quest they use, write them again (`tools/README.md`, section 7).
 - **Build** DingDB again and run the tests (`tools/README.md`, section 1), then open a pull
   request. Not comfortable with that? Open an
   [issue](https://github.com/moust4ki/DingGuideWoWForever/issues) with the ids, the places and

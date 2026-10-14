@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Alliance/17.lua.
--- Simulated (warrior): Human 35 (10%) -> 36 (7%) in 2 h 59, 25 quests turned in; Dwarf 35 (22%) -> 36 (17%) in 2 h 59, 25 quests turned in; NightElf 35 (26%) -> 36 (21%) in 2 h 59, 25 quests turned in; Gnome 35 (29%) -> 36 (24%) in 2 h 59, 25 quests turned in; Skyborne 35 (28%) -> 36 (23%) in 2 h 59, 25 quests turned in.
+-- Simulated (warrior): Human 35 (5%) -> 36 (2%) in 2 h 59, 25 quests turned in; Dwarf 35 (16%) -> 36 (12%) in 2 h 59, 25 quests turned in; NightElf 35 (21%) -> 36 (16%) in 2 h 59, 25 quests turned in; Gnome 35 (24%) -> 36 (19%) in 2 h 59, 25 quests turned in; Skyborne 35 (23%) -> 36 (18%) in 2 h 59, 25 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-a17-stranglethorn-vale",
     title    = "Stranglethorn Vale (34-35)",
@@ -83,7 +83,7 @@ Ding.RegisterGuide({
           note = "Climb to the highest floor of the building." },
         { turnin = 213, -- level 35
           note = "Climb to the highest floor of the building." },
-        { turnin = { 578, 1182 }, accept = 1183, why = { continent = true, kind = "carry", quest = 1183, seconds = 16860, xp = 700 }, -- level 35
+        { turnin = { 578, 1182 }, accept = 1183, why = { continent = true, kind = "carry", quest = 1183, seconds = 17040, xp = 700 }, -- level 35
           note = "The NPC is upstairs, out on the balcony." },
         { talk = 2625, bank = { 5852, 2719 }, -- level 35
           note = "You need them later for \"Goblin Sponsorship\" and \"The Hidden Key\": keep them in the bank to free bag slots." },
@@ -129,28 +129,28 @@ Ding.RegisterGuide({
         { go = { 1431, 73.01, 75.09 }, text = "Exit the mine shaft" }, -- level 35
         { turnin = 1043, -- level 35
           note = "The NPC is indoors." },
-        { talk = 15659, collect = { { 5996, 2 } }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "MAGE" }, -- level 36
+        { talk = 15659, collect = { { 5996, 2 } }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "MAGE" }, -- level 35
           note = "The NPC is indoors." },
-        { talk = 2455, collect = { { 3721, 1 } }, spots = { { 1453, 64.24, 80.81 } }, -- level 36
+        { talk = 2455, collect = { { 3721, 1 } }, spots = { { 1453, 64.24, 80.81 } }, -- level 35
           note = "The NPC is indoors." },
-        { go = { 1453, 42.29, 81.76 }, races = { "Human", "Gnome" }, classes = { "WARLOCK" }, text = "Head indoors", -- level 36
+        { go = { 1453, 42.29, 81.76 }, races = { "Human", "Gnome" }, classes = { "WARLOCK" }, text = "Head indoors", -- level 35
           note = "The NPC waits on the lower level, indoors." },
-        { train = true, talk = 461, races = { "Human", "Gnome" }, classes = { "WARLOCK" } }, -- level 36
-        { vendor = true, talk = 5520, races = { "Human", "Gnome" }, classes = { "WARLOCK" }, -- level 36
+        { train = true, talk = 461, races = { "Human", "Gnome" }, classes = { "WARLOCK" } }, -- level 35
+        { vendor = true, talk = 5520, races = { "Human", "Gnome" }, classes = { "WARLOCK" }, -- level 35
           note = "The NPC waits on the lower level, indoors." },
-        { go = { 1453, 52.93, 51.05 }, races = { "Human", "Dwarf" }, classes = { "PALADIN" }, text = "Head indoors", -- level 36
+        { go = { 1453, 52.93, 51.05 }, races = { "Human", "Dwarf" }, classes = { "PALADIN" }, text = "Head indoors", -- level 35
           note = "The NPC is indoors." },
-        { train = true, talk = 5492, races = { "Human", "Dwarf" }, classes = { "PALADIN" } }, -- level 36
-        { go = { 1453, 52.93, 51.05 }, races = { "Human", "Dwarf", "NightElf" }, classes = { "PRIEST" }, text = "Head indoors", -- level 36
+        { train = true, talk = 5492, races = { "Human", "Dwarf" }, classes = { "PALADIN" } }, -- level 35
+        { go = { 1453, 52.93, 51.05 }, races = { "Human", "Dwarf", "NightElf" }, classes = { "PRIEST" }, text = "Head indoors", -- level 35
           note = "This one roams, so scan the surrounding area. The NPC is indoors." },
-        { train = true, talk = 5484, races = { "Human", "Dwarf", "NightElf" }, classes = { "PRIEST" } }, -- level 36
-        { train = true, talk = 5479, classes = { "WARRIOR" }, -- level 36
+        { train = true, talk = 5484, races = { "Human", "Dwarf", "NightElf" }, classes = { "PRIEST" } }, -- level 35
+        { train = true, talk = 5479, classes = { "WARRIOR" }, -- level 35
           note = "The NPC is indoors, one floor up." },
-        { train = true, talk = 918, classes = { "ROGUE" } }, -- level 36
-        { train = true, talk = 5515, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 36
+        { train = true, talk = 918, classes = { "ROGUE" } }, -- level 35
+        { train = true, talk = 5515, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 35
           note = "The NPC is indoors." },
-        { go = { 1453, 73.19, 46.69 }, text = "Head into Stormwind Keep", why = { kind = "detour", quest = 563, seconds = 60, xp = 3200 } }, -- level 36
-        { turnin = 563, -- level 36
+        { go = { 1453, 73.19, 46.69 }, text = "Head into Stormwind Keep", why = { kind = "detour", quest = 563, seconds = 60, xp = 3200 } }, -- level 35
+        { turnin = 563, -- level 35
           note = "The NPC is indoors." },
         { accept = 1453, why = { action = "accept", chain = 8, kind = "detour", quest = 1453, seconds = 120, xp = 22000 }, -- level 36
           note = "This one roams, so scan the surrounding area. The NPC is indoors." },
