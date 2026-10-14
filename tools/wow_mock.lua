@@ -413,6 +413,7 @@ return function(opts)
     local GAMEPAD_CONTEXT = 9
     local gamepadInterface, contextBindings = false, {}
     local padHeld = {}         -- gamepad buttons held (H.padHold)
+    local loadedAddOns = {}    -- other addons loaded (H.setAddOnLoaded)
     local registered = {}      -- AddOns category
 
     local LOCALE = opts.locale or "frFR"
@@ -628,9 +629,11 @@ return function(opts)
     local cvars = { GamePadEmulateShift = "PADLTRIGGER", GamePadEmulateCtrl = "PADRTRIGGER", GamePadEmulateAlt = "NONE",
         GamePadEnable = "1", rotateMinimap = "0", nameplateMaxDistance = "20" }
     local cvarMax = { nameplateMaxDistance = 41 }
+    local cvarsSet = {}        -- every variable SetCVar changed, in order (H.cvarsSet)
     _G.GetCVar = function(name) return cvars[name] end
     _G.SetCVar = function(name, value)
         assert(type(name) == "string" and type(value) == "string", "SetCVar(name, value as text)")
+        cvarsSet[#cvarsSet + 1] = name
         if inCombat then problem("SetCVar in combat: " .. name) end
         local max = cvarMax[name]
         if max and tonumber(value) and tonumber(value) > max then value = tostring(max) end
@@ -810,7 +813,8 @@ return function(opts)
             end
             return nil
         end,
-        IsAddOnLoaded = function() return false, false end,
+        -- H.setAddOnLoaded(name, true): another addon the player has (Easy Controller...).
+        IsAddOnLoaded = function(name) return loadedAddOns[name] == true, loadedAddOns[name] == true end,
     }
     -- Legacy functions that exist but fail on Forever: Ding must survive them.
     _G.IsAddOnLoaded = function() error("legacy IsAddOnLoaded is broken") end
@@ -2104,6 +2108,8 @@ return function(opts)
         for key, command in pairs(keys or {}) do contextBindings[key] = command end
     end
     function H.setCVar(name, value) cvars[name] = value end
+    function H.cvarsSet() return cvarsSet end
+    function H.setAddOnLoaded(name, on) loadedAddOns[name] = on and true or nil end
     -- A target (true, or its name), or none.
     function H.setTarget(v)
         hasTarget = v and true or false

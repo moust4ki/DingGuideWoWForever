@@ -414,6 +414,13 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   gamepad) shows the first with "and 2 more" in 11 Regular `text.secondary` before its chip; a
   new button replaces them all, a key the keys (the other kind stays). The info line gives a
   combination the player's settings allow as its example.
+- **Setup assistant, first screen: how to open Ding! later** (v1.5.0, asked by the user). Under
+  the choices, `ROWS_TOP` below the last one and 8 in from the rows, one line of 11 Regular
+  `text.secondary`: with a gamepad, "To open Ding! later:" and the binding's chip right after it
+  (6 apart, the chips' 18 high, centered on the line), else where to bind one; with the
+  keyboard and mouse, the minimap button and the guide window's menu button in words (the menu
+  glyph is a texture: not in the text), and the key when one is bound. The window keeps the
+  height of its tallest screen.
 - **Always nine-slice**: rounded shapes are cut by hand (`SetTexCoord`, one texel per unit);
   `SetTextureSliceMargins` is not used.
 - **No arrows or shapes in text**: Noto Sans has neither ← → nor ◂ ▸ ▴ ▾ nor ✕ □ △ ○.
@@ -771,6 +778,10 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   for this tab".
 
 ## To check in game (Forever 1.60)
+
+- With Easy Controller: the list of docs/compatibility.md (LT + A bound and working in play, its
+  windows and Ding's taking the gamepad in turn, nothing lost after `/reload`); the assistant's
+  first line with LT + Start's chip.
 
 - Keybinds tab with the gamepad interface on: A alone, LT + A, LT + D-pad down, RT + X saved
   and shown as pressed (`/dump GetBindingKey("DING_CONFIG")`), then working in play (a binding

@@ -37,6 +37,15 @@ Nothing else to install: QuestieDB is no longer needed, and TomTom stays optiona
   another addon (Easy Controller...) already uses, is explained in words. Tap B to cancel, hold
   B to bind B itself. If an action of Ding! ended up on several buttons, its row says "and 2
   more": bind it again, or press Y, to clean it up.
+- **A button to open Ding! from the start**: "Open Ding! settings" gets **LT + Start** on the
+  gamepad if nothing uses it (or **RB + Up** if your game settings make RB a modifier), and the
+  setup assistant shows it on its first screen; with the keyboard and mouse, it names the
+  minimap button and the guide window's menu button. `/ding help` says it too. Already bound,
+  or taken by something else: nothing is changed.
+- **Easy Controller and Ding! side by side**: Ding! never changes the game's gamepad settings,
+  never takes a key Easy Controller uses, and while one of its windows (chat keyboard, wheels,
+  phrases, its settings or guide) is open, Ding!'s windows wait for it to close before taking
+  the gamepad.
 
 ## v1.4.0
 

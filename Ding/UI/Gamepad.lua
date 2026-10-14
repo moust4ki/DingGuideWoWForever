@@ -335,6 +335,45 @@ function G:WhoUses(action, key)
     return nil
 end
 
+---------------------------------------------------------------------------
+-- "Open Ding! settings" on the gamepad from the start. Wished: RB + Up (beside Easy
+-- Controller's RB + Down). The game binds a button with Shift, Ctrl or Alt only, which its
+-- gamepad settings give to some buttons, and Ding never changes those settings: RB + Up when
+-- RB already is one of them, else LT + Start, else RT + Start (Start with a trigger: a
+-- combination the game's gamepad interface leaves free; a trigger with the D-pad or a face
+-- button is a slot of its gamepad bars). Once per account, with a gamepad in use, never over a
+-- button the action has, nor over a key in use (G:WhoUses: another addon, the game).
+---------------------------------------------------------------------------
+function G:DefaultConfigKeys()
+    local list = {}
+    for _, pair in ipairs({ { "PADRSHOULDER", "PADDUP" }, { "PADLTRIGGER", "PADFORWARD" }, { "PADRTRIGGER", "PADFORWARD" } }) do
+        local mod = modifierOf(pair[1])
+        if mod then list[#list + 1] = mod.prefix .. pair[2] end
+    end
+    return list
+end
+
+-- Returns the key bound, or nil (nothing to do, or nothing free).
+function G:BindDefaultConfig()
+    local ui = Ding.db.ui
+    if ui.configKeyDone or InCombatLockdown() or not self:Active() then return nil end
+    ui.configKeyDone = true
+    for _, key in ipairs(self:BindingKeys("DING_CONFIG")) do
+        if self:IsPadKey(key) then return nil end
+    end
+    for _, key in ipairs(self:DefaultConfigKeys()) do
+        if not self:WhoUses("DING_CONFIG", key) and self:Bind("DING_CONFIG", key) then return key end
+    end
+    return nil
+end
+
+-- How to open the settings, in words (the chat's /ding help): their key or button first.
+function G:OpenText()
+    local key = self:BindingKey("DING_CONFIG")
+    if key then return L.HELP_OPEN_KEY:format(self:KeyName(key)) end
+    return L.HELP_OPEN
+end
+
 -- Why `key` cannot be taken for a Ding action, in words ("LT+A is used by Easy Controller…"),
 -- or nil when it can (free, or a saved binding A replaces).
 function G:TakenText(key, who)
@@ -446,6 +485,43 @@ function G:NewHintBar(parent, width, height, onPress)
 end
 
 ---------------------------------------------------------------------------
+-- Other gamepad addons (docs/compatibility.md). Easy Controller (the author's own addon) takes
+-- the gamepad's buttons for its windows (chat keyboard, phrases, wheels, its settings, its
+-- guide) with override bindings of its own. Ding never sets its navigation over theirs: while
+-- one of those windows is open, a Ding window waits for it to close before it takes the
+-- buttons. Ding never changes the game's gamepad settings (GamePadEmulate...: the modifiers
+-- Easy Controller sets up). G:HasWindow() tells other addons that a Ding window holds the
+-- gamepad.
+---------------------------------------------------------------------------
+local PAD_ADDONS = {
+    { addon = "EasyController", name = "Easy Controller", frames = { "ControllerKeyboardFrame",
+        "ControllerKeyboardConsolePort", "ControllerKeyboardPhrases", "ControllerKeyboardWheel",
+        "ControllerKeyboardConfigFrame", "ControllerKeyboardGuide" } },
+}
+
+-- The name of the addon whose window holds the gamepad now, or nil.
+function G:OtherPadWindow()
+    for _, other in ipairs(PAD_ADDONS) do
+        if Ding.Compat.IsAddOnLoaded(other.addon) then
+            for _, name in ipairs(other.frames) do
+                local frame = _G[name]
+                if type(frame) == "table" and frame.IsShown then
+                    local ok, shown = pcall(frame.IsShown, frame)
+                    if ok and shown then return other.name end
+                end
+            end
+        end
+    end
+    return nil
+end
+
+-- A Ding window (settings, setup assistant, NPC directory, focus mode, move mode) holds the
+-- gamepad's buttons, or waits to: for other gamepad addons to leave them alone meanwhile.
+function G:HasWindow()
+    return self.owner ~= nil
+end
+
+---------------------------------------------------------------------------
 -- Temporary navigation bindings
 ---------------------------------------------------------------------------
 G.held = {}
@@ -481,8 +557,20 @@ function G:Dispatch(key, down)
     end
 end
 
+-- A Ding window waiting for another addon's window to give the gamepad back takes it then.
+local waitCheck = 0
+local function takeWhenFree(elapsed)
+    waitCheck = waitCheck + elapsed
+    if waitCheck < 0.25 then return end
+    waitCheck = 0
+    if InCombatLockdown() or G:OtherPadWindow() then return end
+    G.waiting = nil
+    if G.owner and not G:IsCapturing() then applyNav(G.owner, G.keys or NAV_KEYS) end
+end
+
 local driver = CreateFrame("Frame")
 driver:SetScript("OnUpdate", function(_, elapsed)
+    if G.waiting then takeWhenFree(elapsed) end
     local key = G.repeatKey
     if not key then return end
     G.repeatAge = G.repeatAge + elapsed
@@ -499,19 +587,28 @@ end)
 
 -- Routes `keys` (the navigation keys by default) to handler(key, isRepeat) until
 -- Release(owner). Other keys keep their game binding.
+-- Another addon's window holding the gamepad (Easy Controller's keyboard...): the keys wait
+-- for it to close (G.waiting, said once in the chat), never set over its own.
 function G:Take(owner, handler, delay, interval, keys)
     if self.owner and self.owner ~= owner then pcall(ClearOverrideBindings, self.owner) end
     self.owner, self.handler = owner, handler
     self.keys = keys or NAV_KEYS
     self.repeatDelay, self.repeatInterval = delay or 0.4, interval or 0.12
     self.held, self.repeatKey = {}, nil
+    local other = self:OtherPadWindow()
+    if other then
+        if not self.waiting then Ding:Print(L.PAD_WAIT_ADDON:format(other)) end
+        self.waiting = other
+        return
+    end
+    self.waiting = nil
     applyNav(owner, self.keys)
 end
 
 -- `key` clicks the button named `name` instead of reaching the handler (a secure
 -- button: the guide's focus mode uses the quest item with A), or nil to restore it.
 function G:Redirect(key, name)
-    if not self.owner then return end
+    if not self.owner or self.waiting then return end
     pcall(SetOverrideBindingClick, self.owner, true, key, name or ("DingNav_" .. key))
 end
 
@@ -519,7 +616,7 @@ function G:Release(owner)
     pcall(ClearOverrideBindings, owner)
     if self.owner == owner then
         self.owner, self.handler, self.repeatKey, self.keys = nil, nil, nil, nil
-        self.held = {}
+        self.held, self.waiting = {}, nil
     end
 end
 

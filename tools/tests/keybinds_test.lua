@@ -80,7 +80,7 @@ T.test("the bug: RB then X, then D-pad down: each new button replaces the last, 
     close()
 end)
 
-T.test("combinations with the game's modifiers: LT + A, RT + X, LT + RT + Start, LB + Y", function()
+T.test("combinations with the game's modifiers: LT + A, LT + D-pad down, RT + X, LT + RT + Start, LB + Y", function()
     local row = open()
     -- The mocked client: LT is Shift, RT is Ctrl (GamePadEmulateShift / Ctrl).
     startCapture(row)
@@ -94,8 +94,17 @@ T.test("combinations with the game's modifiers: LT + A, RT + X, LT + RT + Start,
     T.ok(Cfg.frame:IsShown(), "releasing the buttons after the capture closes the window")
 
     startCapture(row)
+    H.padHold("PADLTRIGGER"); H.padHold("PADDDOWN"); H.padRelease("PADDDOWN"); H.padRelease("PADLTRIGGER")
+    T.eq(keysOf(ACTION), "SHIFT-PADDDOWN", "LT + D-pad down")
+    T.eq(row.chip.key, "LT+" .. L.PAD_DOWN)
+    -- Its chip: LT, "+", the D-pad's down caret.
+    local parts = row.chip.glyph.parts
+    T.eq(#parts, 3)
+    T.eq(parts[1].text, "LT"); T.eq(parts[2].text, "+"); T.eq(parts[3].caret, "DOWN")
+
+    startCapture(row)
     H.padHold("PADRTRIGGER"); H.padHold("PAD3"); H.padRelease("PAD3"); H.padRelease("PADRTRIGGER")
-    T.eq(keysOf(ACTION), "CTRL-PAD3", "RT + X replaces LT + A")
+    T.eq(keysOf(ACTION), "CTRL-PAD3", "RT + X replaces LT + D-pad down")
     T.eq(row.chip.key, "RT+X")
 
     startCapture(row)

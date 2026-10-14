@@ -74,7 +74,10 @@ Ding/
                     a combination with the game's modifier buttons, B held, keys), saved
                     bindings (Bind: replaces the action's keys of that kind, BindingKeys,
                     ShownKeys: the input in use's, WhoUses: an addon's override, the game's
-                    gamepad interface, a saved binding)
+                    gamepad interface, a saved binding), BindDefaultConfig ("Open Ding!
+                    settings": RB + Up when RB is a game modifier, else LT / RT + Start, once),
+                    other gamepad addons (OtherPadWindow: Easy Controller's windows, Take waits
+                    for them; HasWindow for them to read; docs/compatibility.md)
     Arrow.lua       Ding.Arrow: the design's arrow (on the way, behind, arrived), name,
                     distance, time; its loop runs on a separate frame (`go` steps validate
                     with the arrow hidden)
@@ -139,6 +142,8 @@ docs/UI-handoff.md  Claude Design handoff (dimensions, colors, fonts, states) + 
                     reference for the UI (its colors: the dingdark theme)
 docs/UI-themes.md   the themes' handoff (tokens, flags, window styles, the picker) + how it is
                     implemented and what to check in game
+docs/compatibility.md  what Ding and the gamepad addons (Easy Controller, ConsolePort) and TomTom
+                    change in the game, how they stay out of each other's way, checks in game
 .pkgmeta            BigWigs packager config: the content of Ding/ at the root of the zip,
                     without tools nor docs
 .github/workflows/ tests.yml (every PR), release.yml (tag v*: tests, checked zip, CurseForge +
@@ -328,7 +333,8 @@ Contracts between modules:
   `minimap` (`shown`, `angle`), `ui` (`theme` (UI/Themes.lua, "halo"), `opacityTouched` (the
   opacity slider moved: it no longer follows the theme's default), `buttonStyle`, `sound`,
   `welcomed`, `setupDone` (the
-  setup assistant was closed by the player; a fight during the first launch's keeps it pending), `autoAccept`,
+  setup assistant was closed by the player; a fight during the first launch's keeps it pending),
+  `configKeyDone` (the default gamepad button of "Open Ding! settings" was offered), `autoAccept`,
   `autoTurnin`, `skipGrey`, `hearth`, `deathSkip`, `dungeons`, `elites`, `chooseReward`,
   `sellGrey`, `repair`, `markTarget`, `serviceSteps`, `trainerSteps`, `flightSteps`, `autoEquip`, `autoFly`, `offers`, `dungeonChoice` (`[name] = bool`),
   `mobIcons`, `mobTooltip`, `farPlates`), `farPlatesFrom` (the nameplate distance before

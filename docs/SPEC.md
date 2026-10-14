@@ -1286,7 +1286,11 @@ textures and font flags, never a size nor a position.
      "Gamepad, Xbox buttons", "Gamepad, PlayStation buttons" (`ui.buttonStyle`, at once),
      "Keyboard and mouse" (the button names stay; the Keybinds tab does not follow and
      `ui.welcomed` is set). Preselected and tagged "Recommended": the gamepad in use
-     (`Gamepad:Active`) with its button names, else keyboard and mouse.
+     (`Gamepad:Active`) with its button names, else keyboard and mouse. Under the choices, one
+     line says how to open Ding! later (`Setup.OpenNote`): with a gamepad, "To open Ding!
+     later:" and the chip of the button "Open Ding! settings" has (else where to bind one); with
+     the keyboard and the mouse, the button around the minimap, the guide window's menu button,
+     and the key when one is bound.
   2. **What Ding! does for you** ("To save you time, Ding! can do some things for you."): accept
      and turn in the guide's quests (`autoAccept` and `autoTurnin` together), sell gray items,
      repair. Choosing the reward and taking the planned flight stay in the Automation tab only:
@@ -1309,8 +1313,16 @@ textures and font flags, never a size nor a position.
   back to its default (`Ding.DEFAULTS`); the settings it does not ask and the guide stay. B,
   Start, Esc and the close cross end it as it is. Shown once per account
   (`Ding.db.ui.setupDone`), 2 s after the first login, **before** the Keybinds tab of the first
-  launch, which follows once it is closed (with a gamepad); an account that already had Ding
-  sees it once too (new in 1.4.0). Closed by a fight (the temporary bindings must go), the first
+  launch, which follows once it is closed (with a gamepad, while "Open Ding! settings" has no
+  button); an account that already had Ding sees it once too (new in 1.4.0). Right before it,
+  "Open Ding! settings" gets its default gamepad button (`Gamepad:BindDefaultConfig`, once per
+  account, `Ding.db.ui.configKeyDone`; a later login when no gamepad was in use): RB + Up when
+  the game's gamepad settings already make RB Shift, Ctrl or Alt, else LT + Start, else RT +
+  Start (a trigger with Start is a combination the game's gamepad interface leaves free; with
+  the D-pad or a face button it is a slot of its gamepad bars), never over a gamepad button the
+  action has nor a key in use (another addon, the game: `Gamepad:WhoUses`); Ding never changes
+  the game's gamepad settings for it. Another addon's window holding the gamepad (Easy
+  Controller's own first-launch guide) makes the assistant wait for it to close. Closed by a fight (the temporary bindings must go), the first
   launch's assistant comes back on its screen a second after the fight, its choices kept;
   opened by hand, a fight only closes it. Another Ding window opening (settings, directory,
   import) closes it quietly: done, and the Keybinds tab waits for the next login. Again from
@@ -1404,9 +1416,15 @@ gamepad buttons). Every gamepad action therefore has an equivalent:
     gamepad's while one is active), "and 2 more" when an action has several; Y unbinds what it
     shows. (Before v1.5.0 a new button was added beside the old ones and the row showed the
     first: "RB" whatever was pressed.)
-- First launch: the setup assistant (Interface, above), then, unless the player chose the
-  keyboard and the mouse there, the window opens on the bindings so the player can bind "Open
-  Ding settings".
+- First launch: "Open Ding settings" gets a default gamepad button when one is free (LT +
+  Start usually; RB + Up when RB is one of the game's modifiers), then the setup assistant
+  (Interface, above) says how to open Ding! later; then, unless the player chose the keyboard
+  and the mouse there or the action has a button, the window opens on the bindings so the
+  player can bind "Open Ding settings". `/ding help` says how to open the settings too.
+- Other gamepad addons (docs/compatibility.md): while one of Easy Controller's windows holds the
+  gamepad, a Ding window waits for it to close before taking its buttons (said once in the
+  chat); `Gamepad:HasWindow()` tells them a Ding window holds the gamepad; Ding never changes
+  the game's gamepad settings (`GamePadEmulate*`) and never takes their keys.
 
 ### API compatibility
 
