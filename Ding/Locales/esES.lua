@@ -649,7 +649,6 @@ Ding.Locales.esES = {
     ARROW_TEST = "Mira al objetivo: ¿la flecha apunta al frente?",
     MOVE_ARROW = "Mover la flecha",
     RESET_POS_ARROW = "Posición inicial de la flecha",
-    BINDINGS_INFO = "A asigna un botón, Y lo quita. Ding! lo guarda en la asignación de teclas del juego.",
     BIND_NEXT = "Paso siguiente",
     BIND_PREV = "Paso anterior",
     BIND_TOGGLE = "Mostrar/ocultar la guía",

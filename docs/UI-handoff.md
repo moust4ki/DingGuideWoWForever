@@ -404,11 +404,11 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   settings.
 - **Keybinds rows: combinations and words** (v1.5.0; reported in game: every button pressed
   showed "RB"). A gamepad button is taken when it is released alone, so that a held button can
-  start a combination ("LT+A": the game binds a button with the buttons its gamepad settings
-  make Shift, Ctrl or Alt); B tapped cancels, B held one second is taken like any button. While
+  start a chord of Ding's ("LB+Up", "LT+A": two buttons, the chip "LB + Up" with its plus); B
+  tapped cancels, B held one second is taken like any button. While
   a button is awaited, a conflict settled or a combination refused ("RB+Up: the game only
-  combines a button with LT or RT"; "LT+X: Easy Controller uses it too and may win in play. A
-  binds it anyway, B cancels"), the words take the room beside the label on up to two lines of 11 Regular in
+  combines a button with LT or RT", for the quest item only; "RB+Down: Easy Controller uses it
+  too and may win in play. A binds it anyway, B cancels"), the words take the room beside the label on up to two lines of 11 Regular in
   `accent` (the label then keeps at most 40 % of the row, its whole name back afterwards). An
   action with several buttons of the kind shown (a key with the keyboard, a button with the
   gamepad) shows the first with "and 2 more" in 11 Regular `text.secondary` before its chip; a
@@ -785,12 +785,12 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   windows and Ding's taking the gamepad in turn, nothing lost after `/reload`); the assistant's
   first line with LT + Start's chip.
 
-- Keybinds tab with the gamepad interface on: A alone, LT + A, LT + D-pad down, RT + X saved
-  and shown as pressed (`/dump GetBindingKey("DING_CONFIG")`), then working in play (a binding
-  of Ding against the game's own gamepad bindings: `GetBindingAction(key, false,
-  Enum.BindingContext.GamepadModeInGameCore)`); RB + Up refused in words; B tapped cancels, B
-  held binds B; the client's `OnGamePadButtonUp` reaching the capture frame; the two lines of
-  words beside the label in French and German.
+- Keybinds tab with the gamepad interface on: A alone (a game binding), LB + Up, LT + A, LT +
+  D-pad down (chords) saved and shown as pressed; in play, a chord runs its action once and the
+  gamepad bar's action on its second button does not (out of combat); B tapped cancels, B held
+  binds B; the client's `OnGamePadButtonUp` reaching the capture frame; the two lines of words
+  beside the label in French and German. Focus mode and the settings with Easy Controller on:
+  the D-pad moves in them, no spell cast (`DingPadInput`).
 
 - Why the guide makes its choices: the line under the Duskwood step that turns in "The Legend of
   Stalvan" at Moonbrook (Leveling, Alliance section 11), at 240 and 300 wide; the "Why?" part of

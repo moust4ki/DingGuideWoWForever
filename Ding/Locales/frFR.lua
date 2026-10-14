@@ -644,7 +644,6 @@ Ding.Locales.frFR = {
     ARROW_TEST = "Face à la cible : la flèche est-elle devant ?",
     MOVE_ARROW = "Déplacer la flèche",
     RESET_POS_ARROW = "Position d'origine de la flèche",
-    BINDINGS_INFO = "A assigne un bouton, Y l'efface. Ding! l'enregistre dans les raccourcis du jeu.",
     BIND_NEXT = "Étape suivante",
     BIND_PREV = "Étape précédente",
     BIND_TOGGLE = "Afficher/masquer le guide",

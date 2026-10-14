@@ -1852,6 +1852,61 @@ return function(opts)
         padRelease(button)
     end
 
+    -- The client's way with a gamepad button in play: the shown frames that take the gamepad's
+    -- buttons first (Ding's capture first, then its window and chord frames: a handler returning
+    -- false keeps the press, and its release comes back to that frame), then the override
+    -- bindings (Ding's own clicks, then the others' commands), the game's gamepad interface's
+    -- (while it is on), the saved ones. H.fired(): the commands the game ran for them.
+    local padTaker, fired = {}, {}
+    local function padFrames()
+        local list, capture = {}, _G.DingCaptureFrame
+        if capture and capture.gamepadButtons and capture:IsShown() then list[1] = capture end
+        for _, w in ipairs(allWidgets) do
+            if w ~= capture and w.gamepadButtons and w.scripts and w.scripts.OnGamePadButtonDown and w:IsShown() then
+                list[#list + 1] = w
+            end
+        end
+        return list
+    end
+    local function dingClick(key)
+        for _, map in pairs(overrides) do
+            if map[key] then return _G[map[key]] end
+        end
+    end
+    local function gamepadDown(button)
+        padHeld[button] = true
+        for _, f in ipairs(padFrames()) do
+            if f.scripts.OnGamePadButtonDown(f, button) == false then
+                padTaker[button] = f
+                flush()
+                return
+            end
+        end
+        local b = dingClick(button)
+        if b then
+            b.scripts.OnClick(b, "LeftButton", true)
+        else
+            local command
+            for _, map in pairs(overrideActions) do command = command or map[button] end
+            if not command and gamepadInterface then command = contextBindings[button] end
+            command = command or bindings[button]
+            if command then fired[#fired + 1] = command end
+        end
+        flush()
+    end
+    local function gamepadUp(button)
+        padHeld[button] = nil
+        local f = padTaker[button]
+        padTaker[button] = nil
+        if f then
+            if f.scripts.OnGamePadButtonUp then f.scripts.OnGamePadButtonUp(f, button) end
+        else
+            local b = dingClick(button)
+            if b then b.scripts.OnClick(b, "LeftButton", false) end
+        end
+        flush()
+    end
+
     -- A key of the keyboard pressed (and let go) while Ding waits for one.
     local function keyDown(key, mods)
         local f = captureFrame("key")
@@ -1892,6 +1947,7 @@ return function(opts)
         problem = problem, say = say, expect = expect, plain = plain, checkPanel = checkPanel,
         fire = fire, flush = flush, tick = tick, press = press, hold = hold, release = release,
         padDown = padDown, padHold = padHold, padRelease = padRelease, keyDown = keyDown,
+        gamepadDown = gamepadDown, gamepadUp = gamepadUp,
         focusOn = focusOn, selectTab = selectTab, overrideActions = overrideActions,
         contextBindings = contextBindings,
         accept = accept, complete = complete, turnin = turnin, play = play, grindTo = grindTo, kill = kill,
@@ -2108,6 +2164,16 @@ return function(opts)
         for key, command in pairs(keys or {}) do contextBindings[key] = command end
     end
     function H.setCVar(name, value) cvars[name] = value end
+    -- A whole press in play (H.gamepadDown, then H.gamepadUp).
+    function H.gamepadPress(button)
+        gamepadDown(button)
+        gamepadUp(button)
+    end
+    -- The commands the game ran for gamepad buttons in play (H.gamepadDown), and none again.
+    function H.fired() return fired end
+    function H.clearFired()
+        for i = #fired, 1, -1 do fired[i] = nil end
+    end
     function H.cvarsSet() return cvarsSet end
     function H.setAddOnLoaded(name, on) loadedAddOns[name] = on and true or nil end
     -- A target (true, or its name), or none.

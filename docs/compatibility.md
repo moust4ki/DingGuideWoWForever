@@ -1,17 +1,17 @@
 # Ding! beside other addons
 
 What Ding! changes in the game, what the gamepad addons of WoW Forever change, and how they stay
-out of each other's way. Checked by `tools/tests/compat_test.lua` and `keybinds_test.lua` (the
-mocked client); the list at the end is what only the game can confirm.
+out of each other's way. Checked by `tools/tests/compat_test.lua`, `chords_test.lua` and
+`keybinds_test.lua` (the mocked client); the list at the end is what only the game can confirm.
 
 ## What Ding! changes in the game
 
 | | Ding! |
 |---|---|
 | Game settings (CVars) | `nameplateMaxDistance` only, with "Show enemy nameplates farther" (the value before is put back when it goes off). **Never** the gamepad's: `GamePadEmulateShift` / `Ctrl` / `Alt`, cursor, camera. |
-| Saved key bindings | Only what the player binds in the Keybinds tab, and once the default button of "Open Ding! settings" (below). The game's own Keybindings list them under "Ding!". |
+| Saved key bindings | Only what the player binds in the Keybinds tab: keys and single gamepad buttons in the game's bindings (its Keybindings list them under "Ding!"); two gamepad buttons (a chord) in Ding's own saved settings (`DingDB.chords`), with "Open Ding! settings" on RB + Up by default (below). |
 | Temporary (override) bindings | On its own frames only, while a window or mode of Ding's is open: the settings, the setup assistant, the NPC directory, import / export, the guide's focus mode, the move mode. Removed when it closes and before every fight. |
-| Frames taking the gamepad's buttons | `DingCaptureFrame`, only while a Keybinds row waits for a button. |
+| Frames taking the gamepad's buttons | `DingCaptureFrame` while a Keybinds row waits for a button; `DingPadInput` while a window of Ding's is open, for that window's buttons only (any other button goes on to the game); `DingChordInput` while a chord's first button is held, out of combat, for that chord's second button only. |
 | Hooks | The flight map's `TakeTaxiNode`, the unit tooltip (a line about quest monsters). |
 | Global names | `Ding`, `LibDingDB`, `DingDB` / `DingCharDB` (saved variables), frames named `Ding…`, `BINDING_*_DING_*`. |
 | Slash command | `/ding` |
@@ -24,21 +24,31 @@ The author's own gamepad addon (chat keyboard, wheels, back paddles, gamepad map
 |---|---|
 | Game settings | `GamePadEmulateAlt` / `GamePadEmulateCtrl` (its "triggers as modifiers": RT or LT made Alt / Ctrl so every trigger layer has keys of its own); gives back `GamePadStickAxisButtons` and camera speeds its older versions changed; the Edit Mode layout (compact gamepad bar); vibration. |
 | Saved key bindings | Its own commands (`CONTROLLERKEYBOARD_*`, its toggles); none of Ding's. |
-| Temporary (override) bindings | Its mapping (free inputs, the game's buttons it replaces, the shoulders kept), set again a moment after any override binding changes (it hooks `SetOverrideBinding*` and `ClearOverrideBindings`); its windows take the gamepad while open: chat keyboard (`ControllerKeyboardFrame`, `ControllerKeyboardConsolePort`), quick phrases, wheels, its settings, its first-launch guide. |
+| Temporary (override) bindings | Its mapping (free inputs, the game's buttons it replaces, the shoulders kept), set again a moment after any override binding changes (it hooks `SetOverrideBinding*` and `ClearOverrideBindings`); its windows take the gamepad while open: chat keyboard, quick phrases, wheels, its settings, its first-launch guide. |
+| Its own chord | Its settings' shortcut, RB + D-pad down by default: watched (`IsKeyDown` of both buttons), never bound; the second button's own action runs too. |
 | Global names | `ControllerKeyboard…` frames, `ControllerKeyboardDB`; slash `/ec`, `/easycontroller`, `/ck`, `/controllerkeyboard`. Nothing in common with Ding's. |
 
-**How Ding stays out of its way**
+**How Ding stays out of its way, and keeps its own buttons**
 
-- Ding reads the modifiers Easy Controller sets up (`GamePadEmulate*`) and builds its
-  combinations with them ("LT+A" = `SHIFT-PAD1` when LT is Shift); it never changes them. A
-  combination it cannot make is explained in words in the Keybinds tab ("RB+Up: the game only
-  combines a button with LT or RT").
-- A key Easy Controller holds (its override bindings: its mapping, its wheels…) is named in the
-  Keybinds tab ("LT+X: Easy Controller uses it too and may win in play. A binds it anyway, B
-  cancels"): A binds it, Easy Controller's own stays as it is. The default button of "Open
-  Ding! settings" never takes one.
+- Ding never changes the gamepad modifiers (`GamePadEmulate*`) Easy Controller sets up. Two
+  gamepad buttons make a chord of Ding's whatever they are (LB + Up, RB + Up, LT + A…): Ding
+  watches it itself, as Easy Controller does its RB + Down, instead of a game binding (the game
+  binds a button with Shift, Ctrl or Alt only, and its gamepad interface went before such a
+  binding: LT + Start did nothing in play).
+- While a chord's first button is held, out of combat, Ding reads the gamepad's buttons first
+  and keeps the chord's second button from the game, so the gamepad bar does not act too (Easy
+  Controller's RB + Down lets it act). The first button keeps its own use (RB: the game's
+  targeting); any other button goes on. In combat that cannot change: the chord still runs, and
+  the second button's own action with it.
+- A key or a chord Easy Controller has (its mapping's override bindings; its shortcut, read
+  from its saved settings) is named in the Keybinds tab ("RB+Down: Easy Controller uses it too
+  and may win in play. A binds it anyway, B cancels"): A binds it, Easy Controller's own stays
+  as it is. The default chord of "Open Ding! settings" never takes one.
 - Ding's windows (settings, setup assistant, NPC directory, import / export, focus mode, move
-  mode) take their buttons as usual with Easy Controller on. An earlier build waited while one of
+  mode) read their buttons first, before any binding (`DingPadInput`), so neither the game's
+  gamepad interface nor Easy Controller's mapping (which sets its bindings again a moment after
+  Ding's) goes before them: reported, in focus mode with Easy Controller on the D-pad cast the
+  gamepad bar's spells. Only the window's buttons are kept. An earlier build waited while one of
   Easy Controller's windows was shown: it left Ding unusable as soon as Easy Controller was
   enabled (probably one of its frames stays shown all the time), and it is gone.
 - `Ding.Gamepad:HasWindow()` says when a Ding window holds the gamepad, for Easy Controller to
@@ -48,33 +58,25 @@ The author's own gamepad addon (chat keyboard, wheels, back paddles, gamepad map
 
 1. In `Mapping.lua`, `M:CoreActive()`: return false while
    `Ding and Ding.Gamepad and Ding.Gamepad.HasWindow and Ding.Gamepad:HasWindow()`. Its repair
-   (0.15 s after Ding sets its window's bindings) can otherwise set again the game buttons it
-   replaced, with priority, over the settings' D-pad, A, B or LB / RB; once Ding's window closes,
-   its hook sees `ClearOverrideBindings` and the repair puts them back.
+   then leaves Ding's window bindings alone (Ding reads the window's buttons first anyway); once
+   Ding's window closes, its hook sees `ClearOverrideBindings` and the repair puts its own back.
 2. In `ConfigWindow.lua`, `C:GameIsFree()`: the same test, so RB + D-pad down does not open Easy
    Controller's panel while a Ding window (or Ding's Keybinds capture) holds the gamepad.
 
-## The default button of "Open Ding! settings"
+## The default of "Open Ding! settings"
 
-Asked: RB + Up (beside Easy Controller's RB + Down). The game binds a button with Shift, Ctrl or
-Alt only, and those are buttons its gamepad settings name (`GamePadEmulateShift` / `Ctrl` /
-`Alt`): RB + Up can be a binding only when RB is one of them. Making RB one would change what RB
-alone does for the game's targeting and Easy Controller's mapping, so Ding never does it.
-Easy Controller's own RB + Down is not a binding: it watches the two buttons, and the game's
-D-pad down action runs too.
-
-So, once per account with a gamepad in use (`Gamepad:BindDefaultConfig`): **RB + Up** when the
-game's settings already make RB a modifier, else **LT + Start**, else **RT + Start** (a trigger
-with Start is a combination the game's gamepad interface leaves free; a trigger with the D-pad or
-a face button is a slot of its gamepad bars). Never over a gamepad button the action already
-has, never over a key in use (Easy Controller's, the game's, another action's). The setup
-assistant shows the result on its first screen; with nothing free, the Keybinds tab follows it.
+**RB + Up**, a chord of Ding's: the player's choice, neither the game nor Easy Controller uses it
+(Easy Controller has RB + Down). **LB + Up** when RB + Up is already another action's chord or
+Easy Controller's shortcut. Once per account with a gamepad in use (`Gamepad:BindDefaultConfig`,
+`DingDB.ui.configChordDone`), never over a gamepad button or chord the player gave the action.
+The first v1.5.0 builds set LT + Start as a game binding, which did nothing in play: it is
+replaced by RB + Up. The setup assistant shows the chord on its first screen; `/ding help` too.
 
 ## ConsolePort
 
-Not tested on WoW Forever. It sets the gamepad modifiers itself (`GamePadEmulate*`): Ding reads
-them like Easy Controller's. Its override bindings are named in the Keybinds tab ("ConsolePort uses it too
-ConsolePort"), A binds them anyway. Open Ding's settings with ConsolePort's own menus closed.
+Not tested on WoW Forever. It sets the gamepad modifiers itself (`GamePadEmulate*`); Ding's
+chords do not depend on them. Its override bindings are named in the Keybinds tab ("ConsolePort
+uses it too"), A binds them anyway. Open Ding's settings with ConsolePort's own menus closed.
 
 ## TomTom
 
@@ -84,19 +86,20 @@ setting, nothing of TomTom's shipped.
 
 ## To check in game, with Easy Controller and Ding! both enabled
 
-1. Ding!'s settings (minimap button, or its button): the D-pad, A, B and LB / RB move in them
-   right away, with Easy Controller enabled.
-2. Settings of Ding!, Keybinds: bind LT + A to "Next step" (hold LT, press A): the row shows
-   "LT+A"; in play, LT + A goes to the next step. If Easy Controller already uses LT + A, the
-   row says so: A binds it anyway (Easy Controller's may still win in play), B keeps it as it is.
-3. LT + D-pad down the same way; RB + Up refused in words (RB is not one of the game's
-   modifiers).
-4. Ding's focus mode (its binding), then one of Easy Controller's wheels, then the focus mode
-   again: each one's buttons work, none left to the other once closed.
-5. Ding's settings open, press RB + D-pad down: Easy Controller's panel should not open over
+1. **RB + Up** opens Ding!'s settings (out of combat), and the gamepad bar's D-pad up does not
+   act with it. In them the D-pad, A, B and LB / RB move right away.
+2. Settings of Ding!, Keybinds: bind **LB + Up** to "Next step" (hold LB, press Up): the row
+   shows "LB+Up"; in play, LB + Up goes to the next step once, Up alone keeps its bar action.
+3. **LT + A** and **LT + D-pad down** the same way (LT's left bar must not act on them); RB +
+   Down is named as Easy Controller's: A takes it anyway.
+4. Ding's focus mode (its binding or a chord): the D-pad moves through the lines, no spell cast;
+   B gives the gamepad back; then one of Easy Controller's wheels: its buttons work.
+5. In combat, a chord still runs (its second button's bar action runs too).
+6. Ding's settings open, press RB + D-pad down: Easy Controller's panel should not open over
    them (until suggestion 2 above, it may).
-6. `/reload`: Ding's bindings (Keybinds tab) and Easy Controller's mapping are all there.
-7. What the client holds, in the chat:
-   `/run for _,a in ipairs({"DING_CONFIG","DING_NEXT"})do print(a,GetBindingKey(a))end print("Shift",GetCVar("GamePadEmulateShift"),"Ctrl",GetCVar("GamePadEmulateCtrl"),"Alt",GetCVar("GamePadEmulateAlt"))`
-   and what each press sends (for 20 s; holding LT then A should print `PAD1 SHIFT-PAD1`):
-   `/run local f=CreateFrame("Frame")f:EnableGamePadButton(true)f:SetScript("OnGamePadButtonDown",function(_,b)print(b,CreateKeyChordStringUsingMetaKeyState(GetConvertedKeyOrButton(b)))return true end)C_Timer.After(20,function()f:Hide()end)`
+7. `/reload`: Ding's chords and bindings (Keybinds tab) and Easy Controller's mapping are all
+   there.
+8. If a chord does nothing, what the client reports for each press (20 s; holding LB then Up
+   should print `PADLSHOULDER` then `PADDUP true`, the second value: LB still seen held):
+   `/run local f=CreateFrame("Frame")f:EnableGamePadButton(true)f:SetScript("OnGamePadButtonDown",function(_,b)print(b,IsKeyDown("PADLSHOULDER"))return true end)C_Timer.After(20,function()f:Hide()end)`
+   and Ding's chords: `/run for a,k in pairs(DingDB.chords or {})do print(a,k)end`

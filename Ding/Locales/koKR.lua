@@ -647,7 +647,6 @@ Ding.Locales.koKR = {
     ARROW_TEST = "대상을 바라보세요: 화살표가 정면인가요?",
     MOVE_ARROW = "화살표 이동",
     RESET_POS_ARROW = "화살표 기본 위치",
-    BINDINGS_INFO = "A로 버튼 지정, Y로 해제. Ding!은 게임 단축키 설정에 저장합니다.",
     BIND_NEXT = "다음 단계",
     BIND_PREV = "이전 단계",
     BIND_TOGGLE = "가이드 표시/숨기기",

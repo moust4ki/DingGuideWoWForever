@@ -29,7 +29,8 @@ local function fresh()
     for key, a in pairs(H.bindings) do
         if a == ACTION then H.bindings[key] = nil end
     end
-    Ding.db.ui.configKeyDone = nil
+    Ding.db.chords = {}
+    Ding.db.ui.configKeyDone, Ding.db.ui.configChordDone = nil, nil
 end
 
 local function gamepadSettingsUntouched(what)
@@ -38,44 +39,48 @@ local function gamepadSettingsUntouched(what)
     end
 end
 
-T.test("default button of \"Open Ding! settings\": LT + Start when free, once", function()
+T.test("default of \"Open Ding! settings\": the chord RB + Up, once; LB + Up when RB + Up is taken", function()
     fresh()
-    T.eq(G:BindDefaultConfig(), "SHIFT-PADFORWARD")
-    T.eq(keysOf(ACTION), "SHIFT-PADFORWARD")
-    T.eq(G:BindingText(ACTION), "LT+Start")
-    T.ok(Ding.db.ui.configKeyDone, "not remembered")
-    H.bindings["SHIFT-PADFORWARD"] = nil
+    T.eq(G:BindDefaultConfig(), "PADRSHOULDER+PADDUP")
+    T.eq(keysOf(ACTION), "PADRSHOULDER+PADDUP")
+    T.eq(G:BindingText(ACTION), "RB+" .. L.PAD_UP)
+    T.ok(Ding.db.ui.configChordDone, "not remembered")
+    Ding.db.chords[ACTION] = nil
     T.eq(G:BindDefaultConfig(), nil, "offered twice")
     T.eq(keysOf(ACTION), "", "bound again after the player took it off")
-end)
 
-T.test("RB + Up (the wish) when the game's gamepad settings make RB a modifier", function()
+    -- RB + Up already another action's chord: LB + Up.
     fresh()
-    H.setCVar("GamePadEmulateAlt", "PADRSHOULDER")
-    T.eq(G:BindDefaultConfig(), "ALT-PADDUP")
-    T.eq(G:BindingText(ACTION), "RB+" .. L.PAD_UP)
-    H.setCVar("GamePadEmulateAlt", "NONE")
-    -- Without any modifier in the game's settings: nothing to bind, nothing changed.
+    Ding.db.chords.DING_NEXT = "PADRSHOULDER+PADDUP"
+    T.eq(G:BindDefaultConfig(), "PADLSHOULDER+PADDUP")
+    T.eq(Ding.db.chords.DING_NEXT, "PADRSHOULDER+PADDUP", "the player's chord taken")
+    -- Both taken: nothing.
     fresh()
-    H.setCVar("GamePadEmulateShift", "none")
-    H.setCVar("GamePadEmulateCtrl", "none")
+    Ding.db.chords.DING_NEXT = "PADRSHOULDER+PADDUP"
+    Ding.db.chords.DING_PREV = "PADLSHOULDER+PADDUP"
     T.eq(G:BindDefaultConfig(), nil)
     T.eq(keysOf(ACTION), "")
-    H.setCVar("GamePadEmulateShift", "PADLTRIGGER")
-    H.setCVar("GamePadEmulateCtrl", "PADRTRIGGER")
-    gamepadSettingsUntouched("no modifier")
+    Ding.db.chords = {}
+    gamepadSettingsUntouched("default")
 end)
 
-T.test("never over a button the action has, nor a key in use; without a gamepad, later", function()
+T.test("default: never over a gamepad button the player gave; the first v1.5.0 default replaced", function()
     fresh()
     H.bindings.PAD3 = ACTION
     T.eq(G:BindDefaultConfig(), nil, "a second button added")
     T.eq(keysOf(ACTION), "PAD3")
 
+    -- LT + Start, set by the first v1.5.0 builds (it did nothing in play): RB + Up instead.
     fresh()
-    H.bindings["SHIFT-PADFORWARD"] = "TOGGLEWORLDMAP"
-    T.eq(G:BindDefaultConfig(), "CTRL-PADFORWARD", "LT + Start taken from the world map")
-    T.eq(H.bindings["SHIFT-PADFORWARD"], "TOGGLEWORLDMAP")
+    H.bindings["SHIFT-PADFORWARD"] = ACTION
+    Ding.db.ui.configKeyDone = true
+    T.eq(G:BindDefaultConfig(), "PADRSHOULDER+PADDUP")
+    T.eq(keysOf(ACTION), "PADRSHOULDER+PADDUP", "LT + Start kept beside it")
+    -- The player's own LT + Start (no earlier default): kept.
+    fresh()
+    H.bindings["SHIFT-PADFORWARD"] = ACTION
+    T.eq(G:BindDefaultConfig(), nil)
+    T.eq(keysOf(ACTION), "SHIFT-PADFORWARD")
     H.bindings["SHIFT-PADFORWARD"] = nil
 
     fresh()
@@ -83,27 +88,34 @@ T.test("never over a button the action has, nor a key in use; without a gamepad,
     G.Active = function() return false end
     T.eq(G:BindDefaultConfig(), nil)
     G.Active = active
-    T.ok(not Ding.db.ui.configKeyDone, "not offered again once a gamepad is in use")
+    T.ok(not Ding.db.ui.configChordDone, "not offered again once a gamepad is in use")
 end)
 
-T.test("Easy Controller loaded: its keys never taken by default, bound by hand with a word", function()
+T.test("Easy Controller loaded: its chord and keys never taken by default, bound by hand with a word", function()
     fresh()
     H.setAddOnLoaded("EasyController", true)
-    local ec = CreateFrame("Frame")
-    SetOverrideBinding(ec, true, "SHIFT-PADFORWARD", "CONTROLLERKEYBOARD_NOOP")
-    T.eq(G:BindDefaultConfig(), "CTRL-PADFORWARD", "Easy Controller's LT + Start taken by default")
-    T.eq(H.overrideActions[ec]["SHIFT-PADFORWARD"], "CONTROLLERKEYBOARD_NOOP")
-    -- By hand: named, A binds it anyway.
+    -- Its settings' shortcut set to RB + Up: Ding's default goes to LB + Up.
+    _G.ControllerKeyboardDB = { settings = { shortcut = { hold = "PADRSHOULDER", press = "PADDUP" },
+        features = { configShortcut = true } } }
+    T.eq(G:EasyControllerChord(), "PADRSHOULDER+PADDUP")
+    T.eq(G:BindDefaultConfig(), "PADLSHOULDER+PADDUP", "Easy Controller's RB + Up taken by default")
+    -- Its shortcut as it ships (RB + Down): RB + Up stays free.
+    fresh()
+    _G.ControllerKeyboardDB.settings.shortcut = { hold = "PADRSHOULDER", press = "PADDDOWN" }
+    T.eq(G:BindDefaultConfig(), "PADRSHOULDER+PADDUP")
+    -- By hand: RB + Down named, A takes it anyway.
     Cfg:Open("bindings", 1); H.flush()
     H.focusOn(Cfg, function(r) return r.opts and r.opts.action == ACTION end, ACTION)
     H.press("PAD1")
-    H.padDown("PADFORWARD", { shift = true })
-    T.eq(Cfg.focus.status:GetText(), L.BIND_ALSO_ADDON:format("LT+Start", "Easy Controller"))
+    H.padHold("PADRSHOULDER"); H.padHold("PADDDOWN"); H.padRelease("PADDDOWN"); H.padRelease("PADRSHOULDER")
+    T.eq(Cfg.focus.status:GetText(), L.BIND_ALSO_ADDON:format("RB+" .. L.PAD_DOWN, "Easy Controller"))
     H.press("PAD1")
-    T.eq(keysOf(ACTION), "SHIFT-PADFORWARD", "A does not bind Easy Controller's key")
-    T.eq(H.overrideActions[ec]["SHIFT-PADFORWARD"], "CONTROLLERKEYBOARD_NOOP", "Easy Controller's binding changed")
+    T.eq(keysOf(ACTION), "PADRSHOULDER+PADDDOWN", "A does not take Easy Controller's chord")
+    -- Its shortcut turned off: nothing in the way.
+    _G.ControllerKeyboardDB.settings.features.configShortcut = false
+    T.eq(G:EasyControllerChord(), nil)
     Cfg:Close(); H.flush()
-    ClearOverrideBindings(ec)
+    _G.ControllerKeyboardDB = nil
     H.setAddOnLoaded("EasyController", false)
     gamepadSettingsUntouched("Easy Controller")
 end)
@@ -160,7 +172,7 @@ T.test("first launch with Easy Controller loaded and its guide shown: the assist
     H.tick(2.5)
     T.ok(S:IsShown(), "the assistant does not come")
     T.ok(H.overrides[S.frame] and H.overrides[S.frame].PADRSHOULDER, "the assistant without its buttons")
-    T.eq(keysOf(ACTION), "SHIFT-PADFORWARD", "the default button not set at login")
+    T.eq(keysOf(ACTION), "PADRSHOULDER+PADDUP", "the default chord not set at login")
     S:Close(); H.tick(0.1)
     T.ok(not (Cfg.frame and Cfg.frame:IsShown()), "the Keybinds tab comes although the default button is set")
     easyControllerShown(false)

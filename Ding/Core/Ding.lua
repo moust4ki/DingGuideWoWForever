@@ -54,6 +54,9 @@ local DEFAULTS = {
     },
     timings = {},
     imported = {},   -- [pack id] = { pack, guides, at }: guides imported as text (Import)
+    -- [action] = "PADLSHOULDER+PADDUP": gamepad chords Ding watches itself (UI/Gamepad.lua);
+    -- kept by "Restore all defaults", like the game's key bindings.
+    chords = {},
 }
 Ding.DEFAULTS = DEFAULTS
 local SETTINGS = { "panel", "arrow", "item", "minimap", "ui" }

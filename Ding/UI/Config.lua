@@ -965,12 +965,9 @@ local BINDINGS = {
     { action = "DING_UNSKIP", label = L.BIND_UNSKIP },
 }
 
--- How to bind, with a combination the game can make as the example ("LT+A": the first button
--- its gamepad settings make Shift, Ctrl or Alt).
+-- How to bind, with a chord as the example: a button held, another pressed ("LB+Up").
 local function bindingsInfo()
-    local modifier = G():ModifierButtons()[1]
-    if not modifier then return L.BINDINGS_INFO end
-    return L.BINDINGS_INFO_COMBO:format(G():KeyName(modifier) .. "+" .. G():KeyName("PAD1"))
+    return L.BINDINGS_INFO_COMBO:format(G():KeyName("PADLSHOULDER+PADDUP"))
 end
 
 local function bindingRows(canvas, width)
@@ -1542,6 +1539,7 @@ function Cfg:StartCapture(row)
     row:Refresh()
     self:UpdateHelp()
     G():Capture({
+        chords = G():ChordAllowed(action),
         say = function(text)
             row.notice = text
             row:Refresh()

@@ -647,7 +647,6 @@ Ding.Locales.zhTW = {
     ARROW_TEST = "面向目標：箭頭是否指向正前方？",
     MOVE_ARROW = "移動箭頭",
     RESET_POS_ARROW = "箭頭預設位置",
-    BINDINGS_INFO = "按A綁定按鈕，按Y解除綁定。Ding!會將設定存入遊戲的按鍵設定。",
     BIND_NEXT = "下一步",
     BIND_PREV = "上一步",
     BIND_TOGGLE = "顯示/隱藏指南",

@@ -2,7 +2,9 @@
 -- Reported in game (WoW Forever, gamepad): every button pressed showed "RB". The capture read
 -- each button right, but a new button was added to the action's old ones instead of replacing
 -- them, and the row showed the first: RB, pressed first for an "RB + Up" (the client's
--- bindings then held RB, D-pad down, up, left and X for "Open Ding! settings").
+-- bindings then held RB, D-pad down, up, left and X for "Open Ding! settings"). Two gamepad
+-- buttons make a chord of Ding's (watched in play: chords_test); single buttons and keys stay
+-- the game's bindings.
 local tools = (arg[0]:match("^(.*)[/\\]") or ".") .. "/.."
 local T = dofile(tools .. "/testlib.lua")(arg[1])
 local Ding, H = T.Ding, T.H
@@ -23,6 +25,7 @@ local function open(action)
     for key, a in pairs(H.bindings) do
         if a == action then H.bindings[key] = nil end
     end
+    Ding.db.chords[action] = nil
     Cfg:Open("bindings", 1); H.flush()
     H.focusOn(Cfg, function(r) return r.opts and r.opts.action == action end, action)
     return Cfg.focus
@@ -80,22 +83,24 @@ T.test("the bug: RB then X, then D-pad down: each new button replaces the last, 
     close()
 end)
 
-T.test("combinations with the game's modifiers: LT + A, LT + D-pad down, RT + X, LT + RT + Start, LB + Y", function()
+T.test("two buttons make a chord of Ding's: LT + A, LT + D-pad down, RT + X, LB + Up, RB + Up", function()
     local row = open()
-    -- The mocked client: LT is Shift, RT is Ctrl (GamePadEmulateShift / Ctrl).
+    H.bindings.PAD3 = ACTION
     startCapture(row)
     H.padHold("PADLTRIGGER")
     T.ok(Cfg.capturing, "LT alone (a modifier) ends the wait")
     H.padHold("PAD1")
     T.ok(not Cfg.capturing, "LT + A not taken when A goes down")
     H.padRelease("PAD1"); H.padRelease("PADLTRIGGER")
-    T.eq(keysOf(ACTION), "SHIFT-PAD1")
+    T.eq(keysOf(ACTION), "PADLTRIGGER+PAD1", "not a chord, or X kept beside it")
+    T.eq(Ding.db.chords[ACTION], "PADLTRIGGER+PAD1")
+    T.eq(H.bindings.PAD3, nil, "the gamepad button stays in the game's bindings")
     T.eq(row.chip.key, "LT+A")
     T.ok(Cfg.frame:IsShown(), "releasing the buttons after the capture closes the window")
 
     startCapture(row)
     H.padHold("PADLTRIGGER"); H.padHold("PADDDOWN"); H.padRelease("PADDDOWN"); H.padRelease("PADLTRIGGER")
-    T.eq(keysOf(ACTION), "SHIFT-PADDDOWN", "LT + D-pad down")
+    T.eq(keysOf(ACTION), "PADLTRIGGER+PADDDOWN", "LT + D-pad down")
     T.eq(row.chip.key, "LT+" .. L.PAD_DOWN)
     -- Its chip: LT, "+", the D-pad's down caret.
     local parts = row.chip.glyph.parts
@@ -104,30 +109,51 @@ T.test("combinations with the game's modifiers: LT + A, LT + D-pad down, RT + X,
 
     startCapture(row)
     H.padHold("PADRTRIGGER"); H.padHold("PAD3"); H.padRelease("PAD3"); H.padRelease("PADRTRIGGER")
-    T.eq(keysOf(ACTION), "CTRL-PAD3", "RT + X replaces LT + D-pad down")
+    T.eq(keysOf(ACTION), "PADRTRIGGER+PAD3", "RT + X replaces LT + D-pad down")
     T.eq(row.chip.key, "RT+X")
 
+    -- Buttons the game makes no modifier: a chord all the same (reported: LB + Up refused).
     startCapture(row)
-    H.padHold("PADLTRIGGER"); H.padHold("PADRTRIGGER"); H.padHold("PADFORWARD")
-    H.padRelease("PADFORWARD"); H.padRelease("PADRTRIGGER"); H.padRelease("PADLTRIGGER")
-    T.eq(keysOf(ACTION), "CTRL-SHIFT-PADFORWARD")
-    T.eq(row.chip.key, "RT+LT+Start")
+    H.padHold("PADLSHOULDER")
+    T.ok(Cfg.capturing, "LB taken while it is held: an LB + Up could not start")
+    H.padHold("PADDUP"); H.padRelease("PADDUP"); H.padRelease("PADLSHOULDER")
+    T.eq(keysOf(ACTION), "PADLSHOULDER+PADDUP")
+    T.eq(row.chip.key, "LB+" .. L.PAD_UP)
+    startCapture(row)
+    H.padHold("PADRSHOULDER"); H.padHold("PADDUP"); H.padRelease("PADDUP"); H.padRelease("PADRSHOULDER")
+    T.eq(keysOf(ACTION), "PADRSHOULDER+PADDUP")
 
-    -- LB made Alt by the game's settings: LB + Y.
-    H.setCVar("GamePadEmulateAlt", "PADLSHOULDER")
+    -- Without any modifier in the game's settings: chords all the same.
+    H.setCVar("GamePadEmulateShift", "none")
+    H.setCVar("GamePadEmulateCtrl", "NONE")
     startCapture(row)
-    H.padHold("PADLSHOULDER"); H.padHold("PAD4"); H.padRelease("PAD4"); H.padRelease("PADLSHOULDER")
-    T.eq(keysOf(ACTION), "ALT-PAD4")
-    T.eq(row.chip.key, "LB+Y")
-    H.setCVar("GamePadEmulateAlt", "NONE")
+    H.padHold("PADLTRIGGER"); H.padHold("PAD1"); H.padRelease("PAD1"); H.padRelease("PADLTRIGGER")
+    T.eq(keysOf(ACTION), "PADLTRIGGER+PAD1")
+    H.setCVar("GamePadEmulateShift", "PADLTRIGGER")
+    H.setCVar("GamePadEmulateCtrl", "PADRTRIGGER")
+
+    -- A chord another action has: named, A takes it.
+    Ding.db.chords.DING_NEXT = "PADLSHOULDER+PADDLEFT"
+    startCapture(row)
+    H.padHold("PADLSHOULDER"); H.padHold("PADDLEFT")
+    T.ok(Cfg.conflictRow == row, "another action's chord taken without a word")
+    T.eq(row.status:GetText(), L.BIND_CONFLICT:format(L.BIND_NEXT))
+    H.padRelease("PADDLEFT"); H.padRelease("PADLSHOULDER")
+    H.press("PAD1")
+    T.eq(keysOf(ACTION), "PADLSHOULDER+PADDLEFT")
+    T.eq(Ding.db.chords.DING_NEXT, nil, "the chord stays the other action's too")
     close()
 end)
 
-T.test("a combination the game cannot make (RB + Up): said in words, the wait goes on", function()
-    local row = open()
+T.test("the quest item (a secure click): its combinations stay the game's, RB + Up said why not", function()
+    local action = "CLICK DingItemButton:LeftButton"
+    local row = open(action)
+    startCapture(row)
+    H.padHold("PADLTRIGGER"); H.padHold("PAD3"); H.padRelease("PAD3"); H.padRelease("PADLTRIGGER")
+    T.eq(keysOf(action), "SHIFT-PAD3", "LT + X not the game's binding")
+    T.eq(Ding.db.chords[action], nil, "a chord for a secure click")
     startCapture(row)
     H.padHold("PADRSHOULDER")
-    T.ok(Cfg.capturing, "RB taken while it is held: an RB + Up could not start")
     H.padHold("PADDUP")
     T.ok(Cfg.capturing, "the wait ends on a combination the game cannot make")
     local combo = G:ButtonName("PADRSHOULDER") .. "+" .. G:ButtonName("PADDUP")
@@ -135,11 +161,10 @@ T.test("a combination the game cannot make (RB + Up): said in words, the wait go
     -- Their release is no press of RB alone.
     H.padRelease("PADDUP"); H.padRelease("PADRSHOULDER")
     T.ok(Cfg.capturing, "the release after a refused combination is taken")
-    T.eq(keysOf(ACTION), "", "something bound")
+    T.eq(keysOf(action), "SHIFT-PAD3", "something bound")
     H.padDown("PAD3")
-    T.eq(keysOf(ACTION), "PAD3", "the next button is not taken after a refusal")
+    T.eq(keysOf(action), "PAD3", "the next button is not taken after a refusal")
     T.eq(row.notice, nil, "the words stay once bound")
-
     -- No button is a modifier in the game's settings: no combination at all.
     H.setCVar("GamePadEmulateShift", "none")
     H.setCVar("GamePadEmulateCtrl", "NONE")
@@ -152,6 +177,7 @@ T.test("a combination the game cannot make (RB + Up): said in words, the wait go
     T.ok(not Cfg.capturing, "B does not cancel")
     H.setCVar("GamePadEmulateShift", "PADLTRIGGER")
     H.setCVar("GamePadEmulateCtrl", "PADRTRIGGER")
+    H.bindings.PAD3 = nil
     close()
 end)
 
@@ -275,11 +301,11 @@ T.test("the game's gamepad interface uses the button too: said in words, A binds
     H.press("PAD1")
     T.eq(keysOf(ACTION), "PAD1", "A did not bind it anyway")
     T.eq(H.contextBindings.PAD1, "GAMEPADACTIONBUTTON1", "the game's gamepad binding changed")
-    -- A combination the game leaves free: bound at once.
+    -- A chord: Ding keeps its second button from the game while the first is held, bound at once.
     startCapture(row)
     H.padHold("PADLTRIGGER"); H.padHold("PAD1"); H.padRelease("PAD1"); H.padRelease("PADLTRIGGER")
     T.ok(not Cfg.capturing and not Cfg.conflictRow, "LT + A not bound at once")
-    T.eq(keysOf(ACTION), "SHIFT-PAD1")
+    T.eq(keysOf(ACTION), "PADLTRIGGER+PAD1")
     H.setGamepadInterface(false)
     close()
 end)
@@ -303,6 +329,13 @@ T.test("another addon uses the key (Easy Controller): named, A binds it anyway, 
     H.press("PAD2")
     T.eq(keysOf(ACTION), "SHIFT-PAD3", "B bound it")
     T.ok(Cfg.frame:IsShown(), "B closed the window")
+    -- The chord LT + X: Easy Controller binds SHIFT-PAD3 (LT is Shift): named the same way.
+    startCapture(row)
+    H.padHold("PADLTRIGGER"); H.padHold("PAD3")
+    T.eq(row.status:GetText(), L.BIND_ALSO_ADDON:format("LT+X", "Easy Controller"))
+    H.padRelease("PAD3"); H.padRelease("PADLTRIGGER")
+    H.press("PAD1")
+    T.eq(keysOf(ACTION), "PADLTRIGGER+PAD3", "A did not take the chord anyway")
     ClearOverrideBindings(ec)
     ClearOverrideBindings(other)
     close()

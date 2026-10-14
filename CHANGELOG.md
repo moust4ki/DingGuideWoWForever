@@ -31,18 +31,21 @@ Nothing else to install: QuestieDB is no longer needed, and TomTom stays optiona
 - The arrow says where under the target's name: the flight master and its zone, the zone of a
   target outside yours, or the stop of the farming loop ("Farming loop: stop 2 of 10").
 - **Keybinds with the gamepad fixed**: a button you bind now replaces the old one (it used to
-  be added beside it, and the row kept showing the first one, often "RB"). Combinations work:
-  hold LT (or another button the game's gamepad settings make Shift, Ctrl or Alt) and press A
-  for LT + A. A combination the game cannot make is explained in words; a button the game's
+  be added beside it, and the row kept showing the first one, often "RB"). **Any two gamepad
+  buttons make a shortcut**: hold one, press the other (LB + Up, RB + Up, LT + A, LT + D-pad
+  down…); Ding! watches them itself, like Easy Controller's RB + Down, and while you hold the
+  first button it keeps the second one from the game (out of combat). A button the game's
   gamepad interface or another addon (Easy Controller...) also uses is named, and A binds it
-  anyway. Tap B to cancel, hold
-  B to bind B itself. If an action of Ding! ended up on several buttons, its row says "and 2
+  anyway. Tap B to cancel, hold B to bind B itself. If an action of Ding! ended up on several buttons, its row says "and 2
   more": bind it again, or press Y, to clean it up.
-- **A button to open Ding! from the start**: "Open Ding! settings" gets **LT + Start** on the
-  gamepad if nothing uses it (or **RB + Up** if your game settings make RB a modifier), and the
-  setup assistant shows it on its first screen; with the keyboard and mouse, it names the
-  minimap button and the guide window's menu button. `/ding help` says it too. Already bound,
-  or taken by something else: nothing is changed.
+- **RB + Up opens Ding!**: "Open Ding! settings" gets **RB + Up** on the gamepad (LB + Up if you
+  already use RB + Up), and the setup assistant shows it on its first screen; with the keyboard
+  and mouse, it names the minimap button and the guide window's menu button. `/ding help` says
+  it too. A button you gave it yourself is kept.
+- **Ding!'s windows keep their buttons**: in focus mode, the settings, the directory and the
+  setup assistant, the D-pad, A, B and the shoulders are Ding!'s while the window is open, even
+  with the game's gamepad interface and Easy Controller (the D-pad used to cast the gamepad
+  bar's spells in focus mode).
 - **Easy Controller and Ding! side by side**: Ding! never changes the game's gamepad settings
   and its default button never takes a key Easy Controller uses; Ding!'s windows work as usual
   with Easy Controller on.

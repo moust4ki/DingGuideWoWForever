@@ -647,7 +647,6 @@ Ding.Locales.enUS = {
     ARROW_TEST = "Face the arrow's target: is it straight ahead?",
     MOVE_ARROW = "Move arrow",
     RESET_POS_ARROW = "Arrow default position",
-    BINDINGS_INFO = "A binds a button, Y unbinds it. Ding! saves it in the game's key bindings.",
     BIND_NEXT = "Next step",
     BIND_PREV = "Previous step",
     BIND_TOGGLE = "Show/hide the guide",

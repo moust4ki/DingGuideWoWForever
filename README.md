@@ -86,14 +86,13 @@ instead from the *Arrow* tab of the settings (off by default).
 
 ## With a gamepad
 
-On first launch, Ding gives "Open Ding settings" a gamepad button when one is free: **LT +
-Start** with the game's usual gamepad settings (LT acts as Shift), or **RB + Up** if your game
-settings make RB a modifier; the setup assistant shows it on its first screen (the D-pad picks a
-choice, A ticks it, LB / RB change screens, Y keeps the recommended settings, B closes). Without
-a free button, the settings open on the **Keybinds** tab afterwards to bind one. There, bind
-"Next step", "Previous step" and "Use the quest item" too: hold LT (or another button your game
-settings make Shift, Ctrl or Alt) and press a button for a combination such as LT + A; tap B to
-cancel, hold B to bind B itself. `/ding help` reminds you how to open the settings.
+On first launch, **RB + Up** opens Ding's settings (LB + Up if you already use RB + Up); the
+setup assistant shows it on its first screen (the D-pad picks a choice, A ticks it, LB / RB
+change screens, Y keeps the recommended settings, B closes). In the **Keybinds** tab, bind "Next
+step", "Previous step" and "Use the quest item" too: a single button, or two buttons (hold one,
+press the other: LB + Up, LT + A…), which Ding watches itself and keeps from the game while you
+hold the first; tap B to cancel, hold B to bind B itself. `/ding help` reminds you how to open
+the settings.
 Easy Controller and Ding work side by side: see
 [docs/compatibility.md](docs/compatibility.md).
 In the settings window: A selects, B closes, LB / RB change tabs, the D-pad picks and adjusts,

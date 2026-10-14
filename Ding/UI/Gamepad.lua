@@ -100,9 +100,22 @@ local function baseKey(key)
     return rest
 end
 
--- A gamepad button ("PAD1", "SHIFT-PADDUP"), not a key of the keyboard or the mouse.
+-- A gamepad button ("PAD1", "SHIFT-PADDUP", a chord), not a key of the keyboard or the mouse.
 function G:IsPadKey(key)
     return type(key) == "string" and baseKey(key):sub(1, 3) == "PAD"
+end
+
+-- A chord of Ding's: two gamepad buttons, the first one held ("PADLSHOULDER+PADDUP": LB + Up).
+-- The game binds a button with Shift, Ctrl or Alt only, and its gamepad interface can go before
+-- such a binding (reported: LT + Start did nothing in play): Ding watches its chords itself, as
+-- Easy Controller does its RB + Down (see "Chords in play" below). Returns its two buttons.
+local function chordParts(key)
+    if type(key) ~= "string" then return nil end
+    return key:match("^(PAD%w+)%+(PAD%w+)$")
+end
+
+function G:IsChord(key)
+    return chordParts(key) ~= nil
 end
 
 -- Is a gamepad in use? The chips of the guide window hide without one.
@@ -133,8 +146,11 @@ function G:ButtonName(button)
 end
 
 -- Splits "SHIFT-PADDRIGHT" into its buttons: { "PADLTRIGGER", "PADDRIGHT" } (Shift is
--- emulated by LT on a gamepad), or a word when a modifier has no gamepad button.
+-- emulated by LT on a gamepad), or a word when a modifier has no gamepad button; a chord
+-- "PADLSHOULDER+PADDUP" into { "PADLSHOULDER", "PADDUP" }.
 local function splitKey(key)
+    local hold, press = chordParts(key)
+    if hold then return { hold, press } end
     local parts, rest = {}, key
     -- A key of the keyboard keeps its modifiers' names: "Ctrl+N", not "RT+N".
     local pad = G:IsPadKey(key)
@@ -222,7 +238,26 @@ local function saveBindings()
     pcall(SaveBindings, ok and set or 1)
 end
 
--- Every key bound to `action`, in the order the game gives them (the order they were bound).
+-- Ding's chords, per account: Ding.db.chords[action] = "PADLSHOULDER+PADDUP", one a chord.
+local function chords()
+    Ding.db.chords = Ding.db.chords or {}
+    return Ding.db.chords
+end
+
+-- A key in the game's bindings, or a chord in Ding's (action nil: unbound). A chord goes to one
+-- action only.
+local function setKey(key, action, context)
+    if not chordParts(key) then return setBinding(key, action, context) end
+    local list = chords()
+    for other, chord in pairs(list) do
+        if chord == key then list[other] = nil end
+    end
+    if action then list[action] = key end
+    return true
+end
+
+-- Every key bound to `action`: its chord first, then the game's keys in the order the game
+-- gives them (the order they were bound).
 function G:BindingKeys(action)
     local context = contextOf(action)
     local ok, keys = pcall(function()
@@ -230,6 +265,8 @@ function G:BindingKeys(action)
         return { GetBindingKey(action) }
     end)
     local list = {}
+    local chord = Ding.db and Ding.db.chords and Ding.db.chords[action]
+    if chord then list[1] = chord end
     if not ok then return list end
     for _, key in ipairs(keys) do
         if type(key) == "string" and key ~= "" then list[#list + 1] = key end
@@ -262,23 +299,24 @@ end
 -- as G:ShownKeys).
 function G:Unbind(action, pad)
     local context = contextOf(action)
-    for _, key in ipairs(self:ShownKeys(action, pad)) do setBinding(key, nil, context) end
+    for _, key in ipairs(self:ShownKeys(action, pad)) do setKey(key, nil, context) end
     saveBindings()
 end
 
--- Binds `key` to `action` in place of the action's keys of the same kind, and saves. False
+-- Binds `key` (a key, a button, a chord) to `action` in place of the action's keys of the same
+-- kind (a chord or a gamepad button replaces its gamepad buttons and chord), and saves. False
 -- when the game refuses the key: the action keeps the keys it had.
 function G:Bind(action, key)
     local context = contextOf(action)
     local pad, removed = self:IsPadKey(key), {}
     for _, old in ipairs(self:BindingKeys(action)) do
         if old ~= key and self:IsPadKey(old) == pad then
-            setBinding(old, nil, context)
+            setKey(old, nil, context)
             removed[#removed + 1] = old
         end
     end
-    if not setBinding(key, action, context) then
-        for _, old in ipairs(removed) do setBinding(old, action, context) end
+    if not setKey(key, action, context) then
+        for _, old in ipairs(removed) do setKey(old, action, context) end
         return false
     end
     saveBindings()
@@ -308,21 +346,63 @@ local function actionAt(key, checkOverride, context)
     return ok and type(action) == "string" and action or ""
 end
 
+local function addonOf(action)
+    local lower = action:lower()
+    for _, addon in ipairs(ADDONS) do
+        if lower:find(addon.find, 1, true) then return addon.name end
+    end
+    return L.BIND_SOMEONE
+end
+
+-- Easy Controller's own chord (its settings' shortcut, RB + Down by default) as a chord key, or
+-- nil (not loaded, or the shortcut off). Its saved settings are only read.
+function G:EasyControllerChord()
+    if not Ding.Compat.IsAddOnLoaded("EasyController") then return nil end
+    local db = rawget(_G, "ControllerKeyboardDB")
+    local settings = type(db) == "table" and db.settings
+    if type(settings) ~= "table" then return nil end
+    if type(settings.features) == "table" and settings.features.configShortcut == false then return nil end
+    local chord = settings.shortcut
+    if type(chord) == "table" and type(chord.hold) == "string" and type(chord.press) == "string" then
+        return chord.hold .. "+" .. chord.press
+    end
+    return nil
+end
+
+-- Who else has a chord: another action of Ding's (replaced by A), Easy Controller's own chord,
+-- or another addon's binding on the same buttons when the first is one of the game's
+-- modifiers (LT + A = SHIFT-PAD1). The game's own use of the second button does not count: Ding
+-- keeps that press from the game while the first button is held.
+local function chordUsedBy(action, key)
+    for other, chord in pairs(chords()) do
+        if chord == key and other ~= action then
+            return { kind = "binding", name = bindingName(other) or other, action = other }
+        end
+    end
+    if G:EasyControllerChord() == key then return { kind = "addon", name = "Easy Controller", action = key } end
+    local hold, press = chordParts(key)
+    local mod = modifierOf(hold)
+    if mod then
+        local over, saved = actionAt(mod.prefix .. press, true), actionAt(mod.prefix .. press, false)
+        if over ~= "" and over ~= saved and not over:find("^CLICK Ding") then
+            return { kind = "addon", name = addonOf(over), action = over }
+        end
+    end
+    return nil
+end
+
 -- Who else has `key`, the one that wins first, or nil:
---   { kind = "addon", name }    another addon's override binding (Easy Controller...): it would
---                               win over Ding's binding, which Ding never takes from it;
+--   { kind = "addon", name }    another addon's override binding (Easy Controller...): it can
+--                               win over Ding's binding in play; Ding never changes it;
 --   { kind = "gamepad", name }  the game's gamepad interface (its own bindings, while it is on);
 --   { kind = "binding", name, action }  a saved binding of the game or of Ding, which A replaces.
 function G:WhoUses(action, key)
+    if chordParts(key) then return chordUsedBy(action, key) end
     local saved = actionAt(key, false)
     local over = actionAt(key, true)
     -- Ding's own temporary bindings (the windows' navigation) are not in the way.
     if over ~= "" and over ~= saved and over ~= action and not over:find("^CLICK Ding") then
-        local lower = over:lower()
-        for _, addon in ipairs(ADDONS) do
-            if lower:find(addon.find, 1, true) then return { kind = "addon", name = addon.name, action = over } end
-        end
-        return { kind = "addon", name = L.BIND_SOMEONE, action = over }
+        return { kind = "addon", name = addonOf(over), action = over }
     end
     local context = gamepadContext()
     local own = context and actionAt(key, false, context) or ""
@@ -336,32 +416,28 @@ function G:WhoUses(action, key)
 end
 
 ---------------------------------------------------------------------------
--- "Open Ding! settings" on the gamepad from the start. Wished: RB + Up (beside Easy
--- Controller's RB + Down). The game binds a button with Shift, Ctrl or Alt only, which its
--- gamepad settings give to some buttons, and Ding never changes those settings: RB + Up when
--- RB already is one of them, else LT + Start, else RT + Start (Start with a trigger: a
--- combination the game's gamepad interface leaves free; a trigger with the D-pad or a face
--- button is a slot of its gamepad bars). Once per account, with a gamepad in use, never over a
--- button the action has, nor over a key in use (G:WhoUses: another addon, the game).
+-- "Open Ding! settings" on the gamepad from the start: the chord RB + Up (the player's choice:
+-- neither the game nor Easy Controller uses it, Easy Controller has RB + Down), else LB + Up when
+-- RB + Up is taken (another action's chord, Easy Controller's). Once per account
+-- (Ding.db.ui.configChordDone) with a gamepad in use, never over a gamepad button or chord the
+-- player gave the action. The default of the first v1.5.0 builds (LT + Start as a game binding,
+-- which did nothing in play) is replaced by it.
 ---------------------------------------------------------------------------
-function G:DefaultConfigKeys()
-    local list = {}
-    for _, pair in ipairs({ { "PADRSHOULDER", "PADDUP" }, { "PADLTRIGGER", "PADFORWARD" }, { "PADRTRIGGER", "PADFORWARD" } }) do
-        local mod = modifierOf(pair[1])
-        if mod then list[#list + 1] = mod.prefix .. pair[2] end
-    end
-    return list
-end
+G.DEFAULT_CHORDS = { "PADRSHOULDER+PADDUP", "PADLSHOULDER+PADDUP" }
+local OLD_DEFAULTS = { ["SHIFT-PADFORWARD"] = true, ["CTRL-PADFORWARD"] = true, ["ALT-PADFORWARD"] = true,
+    ["SHIFT-PADDUP"] = true, ["CTRL-PADDUP"] = true, ["ALT-PADDUP"] = true }
 
--- Returns the key bound, or nil (nothing to do, or nothing free).
+-- Returns the chord bound, or nil (nothing to do, or nothing free).
 function G:BindDefaultConfig()
     local ui = Ding.db.ui
-    if ui.configKeyDone or InCombatLockdown() or not self:Active() then return nil end
-    ui.configKeyDone = true
+    if ui.configChordDone or InCombatLockdown() or not self:Active() then return nil end
+    ui.configChordDone = true
+    local old = ui.configKeyDone
+    ui.configKeyDone = nil
     for _, key in ipairs(self:BindingKeys("DING_CONFIG")) do
-        if self:IsPadKey(key) then return nil end
+        if self:IsPadKey(key) and not (old and OLD_DEFAULTS[key]) then return nil end
     end
-    for _, key in ipairs(self:DefaultConfigKeys()) do
+    for _, key in ipairs(G.DEFAULT_CHORDS) do
         if not self:WhoUses("DING_CONFIG", key) and self:Bind("DING_CONFIG", key) then return key end
     end
     return nil
@@ -538,8 +614,169 @@ function G:Dispatch(key, down)
     end
 end
 
+-- The open window's buttons are read first by a frame of Ding's (OnGamePadButtonDown, as the
+-- key binding capture does), before any binding: neither the game's gamepad interface nor
+-- another addon's override bindings go before them (reported: in Ding's focus mode the D-pad
+-- cast the gamepad bar's spells; Easy Controller sets its bindings again a moment after
+-- Ding's). The override bindings stay under it, for a client where that frame would get
+-- nothing. Only the window's keys are kept; any other button goes on to the game.
+local padInput
+
+local function onWindowPress(button)
+    if not G.owner or G:IsCapturing() or not (G.keySet and G.keySet[button]) or G.redirected[button] then
+        return true
+    end
+    padInput.eaten[button] = true
+    G:Dispatch(button, true)
+    return false
+end
+
+local function onWindowRelease(button)
+    if not padInput.eaten[button] then return true end
+    padInput.eaten[button] = nil
+    G:Dispatch(button, false)
+    return false
+end
+
+local function setPadInput(on)
+    if InCombatLockdown() then return end
+    if not padInput then
+        if not on then return end
+        padInput = CreateFrame("Frame", "DingPadInput", UIParent)
+        padInput:SetAllPoints(UIParent)
+        padInput:SetFrameStrata("FULLSCREEN_DIALOG")
+        padInput.eaten = {}
+        pcall(padInput.SetScript, padInput, "OnGamePadButtonDown", function(_, button) return onWindowPress(button) end)
+        pcall(padInput.SetScript, padInput, "OnGamePadButtonUp", function(_, button) return onWindowRelease(button) end)
+    end
+    padInput.eaten = {}
+    padInput:SetShown(on)
+    if padInput.EnableGamePadButton then pcall(padInput.EnableGamePadButton, padInput, on) end
+end
+
+---------------------------------------------------------------------------
+-- Chords in play (Ding.db.chords): watched like Easy Controller's own RB + Down, IsKeyDown of
+-- both buttons every frame, never bound (binding the second button while the first is held
+-- broke the game's own RB combinations in Easy Controller). While a chord's first button is
+-- held, out of combat, a frame of Ding's reads the gamepad's buttons first and keeps the chord's
+-- second button from the game (its gamepad bar would act too); any other button goes on. In
+-- combat that frame cannot change: the chord still runs, the second button's own action with
+-- it. A chord does nothing while a Ding window holds the gamepad, while a Keybinds row waits,
+-- while the chat has the keyboard or a game window the gamepad's focus. The quest item's
+-- actions are secure: no chord (their combinations stay the game's, with its modifiers).
+---------------------------------------------------------------------------
+local CHORD_RUN = {
+    DING_NEXT = function() Ding.Engine:Next() end,
+    DING_PREV = function() Ding.Engine:Prev() end,
+    DING_TOGGLE = function() Ding.Panel:Toggle() end,
+    DING_CONFIG = function() Ding.Config:Toggle() end,
+    DING_COMPACT = function() Ding.Panel:ToggleCompact() end,
+    DING_FOCUS = function() Ding.Panel:ToggleFocus() end,
+    DING_SKIP = function() Ding.Engine:Skip() end,
+    DING_UNSKIP = function() Ding.Panel:BackToSkipped() end,
+    DING_FINDER = function() Ding.Finder:Toggle() end,
+    DING_CYCLE = function() Ding.Panel:CycleTarget() end,
+}
+G.CHORD_RUN = CHORD_RUN
+
+-- Can `action` take a chord (it is not a secure click)?
+function G:ChordAllowed(action)
+    return CHORD_RUN[action] ~= nil
+end
+
+local chordOn = {}       -- [chord] = true: both buttons down, its action run once
+local chordInput         -- the frame reading the buttons while a chord's first button is held
+
+local function buttonDown(button)
+    local ok, down = pcall(IsKeyDown, button)
+    return ok and down == true
+end
+
+local function chordsFree()
+    if G.owner or G:IsCapturing() then return false end
+    local ok, focus = pcall(GetCurrentKeyBoardFocus)
+    if ok and focus then return false end
+    local manager = GamepadMode and GamepadMode.FrameControlsManager
+    if type(manager) == "table" and manager.GetActiveFrame then
+        local okActive, active = pcall(manager.GetActiveFrame, manager)
+        if okActive and active then return false end
+    end
+    return true
+end
+
+local function runChord(action, key)
+    if chordOn[key] then return end
+    chordOn[key] = true
+    local run = CHORD_RUN[action]
+    if run then Ding:Safe(run) end
+end
+
+local function onChordPress(button)
+    if not chordsFree() then return true end
+    for action, key in pairs(Ding.db and Ding.db.chords or {}) do
+        local hold, press = chordParts(key)
+        if press == button and hold ~= button and buttonDown(hold) then
+            chordInput.eaten[button] = true
+            runChord(action, key)
+            return false
+        end
+    end
+    return true
+end
+
+local function onChordRelease(button)
+    if not chordInput.eaten[button] then return true end
+    chordInput.eaten[button] = nil
+    return false
+end
+
+-- force: before a fight (the frame cannot change in combat).
+local function setChordInput(on, force)
+    if InCombatLockdown() then return end
+    if not chordInput then
+        if not on then return end
+        chordInput = CreateFrame("Frame", "DingChordInput", UIParent)
+        chordInput:SetAllPoints(UIParent)
+        chordInput:SetFrameStrata("FULLSCREEN_DIALOG")
+        chordInput.eaten = {}
+        pcall(chordInput.SetScript, chordInput, "OnGamePadButtonDown", function(_, button) return onChordPress(button) end)
+        pcall(chordInput.SetScript, chordInput, "OnGamePadButtonUp", function(_, button) return onChordRelease(button) end)
+        chordInput:Hide()
+    end
+    if on == chordInput:IsShown() then return end
+    -- A second button kept from the game: its release comes back to this frame first.
+    if not on and next(chordInput.eaten) and not force then return end
+    if not on then chordInput.eaten = {} end
+    chordInput:SetShown(on)
+    if chordInput.EnableGamePadButton then pcall(chordInput.EnableGamePadButton, chordInput, on) end
+end
+
+local function watchChords()
+    local list = Ding.db and Ding.db.chords
+    if not list or not next(list) then
+        setChordInput(false)
+        return
+    end
+    local free, holding = chordsFree(), false
+    for action, key in pairs(list) do
+        local hold, press = chordParts(key)
+        local both = false
+        if hold and buttonDown(hold) then
+            holding = true
+            both = buttonDown(press)
+        end
+        if not both then
+            chordOn[key] = nil
+        elseif free then
+            runChord(action, key)
+        end
+    end
+    setChordInput(free and holding)
+end
+
 local driver = CreateFrame("Frame")
 driver:SetScript("OnUpdate", function(_, elapsed)
+    watchChords()
     local key = G.repeatKey
     if not key then return end
     G.repeatAge = G.repeatAge + elapsed
@@ -554,21 +791,28 @@ driver:SetScript("OnUpdate", function(_, elapsed)
     end
 end)
 
+Ding:On("PLAYER_REGEN_DISABLED", function() setChordInput(false, true) end)
+
 -- Routes `keys` (the navigation keys by default) to handler(key, isRepeat) until
 -- Release(owner). Other keys keep their game binding.
 function G:Take(owner, handler, delay, interval, keys)
     if self.owner and self.owner ~= owner then pcall(ClearOverrideBindings, self.owner) end
     self.owner, self.handler = owner, handler
     self.keys = keys or NAV_KEYS
+    self.keySet, self.redirected = {}, {}
+    for _, key in ipairs(self.keys) do self.keySet[key] = true end
     self.repeatDelay, self.repeatInterval = delay or 0.4, interval or 0.12
     self.held, self.repeatKey = {}, nil
     applyNav(owner, self.keys)
+    setChordInput(false, true)
+    setPadInput(true)
 end
 
 -- `key` clicks the button named `name` instead of reaching the handler (a secure
 -- button: the guide's focus mode uses the quest item with A), or nil to restore it.
 function G:Redirect(key, name)
     if not self.owner then return end
+    self.redirected[key] = name and true or nil
     pcall(SetOverrideBindingClick, self.owner, true, key, name or ("DingNav_" .. key))
 end
 
@@ -576,9 +820,12 @@ function G:Release(owner)
     pcall(ClearOverrideBindings, owner)
     if self.owner == owner then
         self.owner, self.handler, self.repeatKey, self.keys = nil, nil, nil, nil
+        self.keySet, self.redirected = nil, {}
         self.held = {}
+        setPadInput(false)
     end
 end
+G.redirected = {}
 
 ---------------------------------------------------------------------------
 -- Capturing a button, a combination or a key (key binding rows)
@@ -586,10 +833,12 @@ end
 -- The capture reads the buttons themselves (OnGamePadButtonDown / Up, OnKeyDown), with
 -- Ding's navigation bindings released until it ends, and lets nothing through to the game.
 -- A gamepad button is taken on its release when it was pressed alone, so that a held button
--- can start a combination: a second button while it is held makes "LT+A". The game binds a
--- button with Shift, Ctrl or Alt only, which its gamepad settings give to some buttons
--- (GamePadEmulateShift / Ctrl / Alt: LT, RT...): a combination is taken on its second
--- button when the first is one of those, and refused in words otherwise.
+-- can start a combination: a second button while it is held makes a chord of Ding's ("LB+Up",
+-- "LT+A", G.CHORD_RUN). For the quest item's actions (secure clicks, no chord) the game's
+-- binding stays: the game binds a button with Shift, Ctrl or Alt only, which its gamepad
+-- settings give to some buttons (GamePadEmulateShift / Ctrl / Alt: LT, RT...), so a
+-- combination is taken on its second button when the first is one of those, and refused in
+-- words otherwise.
 -- B tapped alone cancels; held HOLD_B seconds it is taken like any button. Escape cancels
 -- too, and so does a wait of CAPTURE_TIMEOUT seconds without a press.
 ---------------------------------------------------------------------------
@@ -633,7 +882,10 @@ function G:StopCapture(key)
     capture = nil
     setCaptureInput(frame, false)
     frame:Hide()
-    if self.owner then applyNav(self.owner, self.keys or NAV_KEYS) end
+    if self.owner then
+        applyNav(self.owner, self.keys or NAV_KEYS)
+        setPadInput(true)
+    end
     if opts.done then opts.done(key) end
 end
 
@@ -668,17 +920,27 @@ local function onPadDown(button)
     if not c then return true end
     c.last = GetTime()
     if c.held[button] then return false end
-    local first
-    for b in pairs(c.held) do
-        if not modifierOf(b) then first = b end
+    -- The button held first (a chord's), and the first held that is no modifier of the game's.
+    local first, firstAt, plain
+    for b, at in pairs(c.held) do
+        if not firstAt or at < firstAt then first, firstAt = b, at end
+        if not modifierOf(b) then plain = b end
     end
     c.held[button] = c.last
-    -- A modifier waits for the button it goes with; a button pressed after a refusal waits
-    -- for every button to be up.
-    if modifierOf(button) or c.spoiled then return false end
-    if first then
+    if c.spoiled then return false end
+    -- A Ding action: any held button and this one make a chord (Ding watches it in play).
+    if c.opts.chords and first then
+        c.single = nil
+        take(first .. "+" .. button)
+        return false
+    end
+    -- A modifier waits for the button it goes with.
+    if modifierOf(button) then return false end
+    -- The quest item's actions stay the game's bindings: a held button the game makes no
+    -- modifier cannot join one.
+    if plain then
         c.single, c.spoiled = nil, true
-        say(comboText(first, button))
+        say(comboText(plain, button))
         return false
     end
     local prefix = modifierPrefix(c.held)
@@ -745,9 +1007,10 @@ local function onCaptureUpdate()
     end
 end
 
--- opts.done(key): the key taken ("SHIFT-PADDRIGHT"), nil when cancelled;
--- opts.refuse(key) -> text or nil: why that key cannot be taken (the capture goes on);
--- opts.say(text): a word for the player while the capture goes on.
+-- opts.done(key): the key taken ("SHIFT-PADDRIGHT", a chord "PADLSHOULDER+PADDUP"), nil when
+-- cancelled; opts.chords: two gamepad buttons make a chord of Ding's (else a combination of the
+-- game's, with its modifiers); opts.refuse(key) -> text or nil: why that key cannot be taken
+-- (the capture goes on); opts.say(text): a word for the player while the capture goes on.
 -- (A function alone is opts.done.)
 function G:Capture(opts)
     if type(opts) == "function" then opts = { done = opts } end
@@ -769,6 +1032,7 @@ function G:Capture(opts)
     if frame:IsShown() then self:StopCapture(nil) end
     capture = { held = {}, last = GetTime(), opts = opts }
     if self.owner then pcall(ClearOverrideBindings, self.owner) end
+    setPadInput(false)
     frame:Show()
     setCaptureInput(frame, true)
 end

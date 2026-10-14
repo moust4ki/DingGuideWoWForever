@@ -646,7 +646,6 @@ Ding.Locales.deDE = {
     ARROW_TEST = "Zum Ziel drehen: zeigt der Pfeil geradeaus?",
     MOVE_ARROW = "Pfeil verschieben",
     RESET_POS_ARROW = "Standardposition des Pfeils",
-    BINDINGS_INFO = "A belegt eine Taste, Y löscht sie. Ding! speichert sie in den Tastenbelegungen des Spiels.",
     BIND_NEXT = "Nächster Schritt",
     BIND_PREV = "Vorheriger Schritt",
     BIND_TOGGLE = "Guide zeigen/verbergen",

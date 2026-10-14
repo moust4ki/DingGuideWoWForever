@@ -74,8 +74,12 @@ Ding/
                     a combination with the game's modifier buttons, B held, keys), saved
                     bindings (Bind: replaces the action's keys of that kind, BindingKeys,
                     ShownKeys: the input in use's, WhoUses: an addon's override, the game's
-                    gamepad interface, a saved binding), BindDefaultConfig ("Open Ding!
-                    settings": RB + Up when RB is a game modifier, else LT / RT + Start, once),
+                    gamepad interface, a saved binding; a chord: another action's, Easy
+                    Controller's), chords ("PADLSHOULDER+PADDUP" in Ding.db.chords: two
+                    buttons, watched each frame, the second kept from the game by DingChordInput
+                    while the first is held; CHORD_RUN), the windows' own reading of the
+                    gamepad (DingPadInput, before any binding), BindDefaultConfig ("Open Ding!
+                    settings": the chord RB + Up, else LB + Up, once),
                     other gamepad addons (HasWindow for them to read; Ding never waits for
                     theirs nor changes GamePadEmulate*; docs/compatibility.md)
     Arrow.lua       Ding.Arrow: the design's arrow (on the way, behind, arrived), name,
@@ -334,14 +338,15 @@ Contracts between modules:
   opacity slider moved: it no longer follows the theme's default), `buttonStyle`, `sound`,
   `welcomed`, `setupDone` (the
   setup assistant was closed by the player; a fight during the first launch's keeps it pending),
-  `configKeyDone` (the default gamepad button of "Open Ding! settings" was offered), `autoAccept`,
+  `configChordDone` (the default chord of "Open Ding! settings" was offered), `autoAccept`,
   `autoTurnin`, `skipGrey`, `hearth`, `deathSkip`, `dungeons`, `elites`, `chooseReward`,
   `sellGrey`, `repair`, `markTarget`, `serviceSteps`, `trainerSteps`, `flightSteps`, `autoEquip`, `autoFly`, `offers`, `dungeonChoice` (`[name] = bool`),
   `mobIcons`, `mobTooltip`, `farPlates`), `farPlatesFrom` (the nameplate distance before
   "Show enemy nameplates farther", put back when it goes off),
   `timings`, `flightTimes` (`["<from npc>:<to npc>"] = { seconds, count }`, flights measured),
   `imported` (`[pack id] = { pack, guides, at }`: guides imported as text, kept by "restore
-  all defaults"),
+  all defaults"), `chords` (`[action] = "PADLSHOULDER+PADDUP"`: Ding's gamepad chords, kept by
+  "restore all defaults"),
   `debug`,
   `layout` (settings version: `Ding.Migrate`; 3: themes, Halo for everyone). Defaults:
   `Ding.DEFAULTS`.
@@ -466,8 +471,10 @@ Contracts between modules:
   (using an item requires it: attributes, showing and position only out of combat, anchored
   to UIParent only).
 - Gamepad: never a button captured for good on a shown window. Commands go through key
-  bindings (`Bindings.xml`); navigation in a window goes through temporary bindings
-  (settings, move mode, the guide's focus mode) that only take the useful keys.
+  bindings (`Bindings.xml`) or Ding's chords (two gamepad buttons, watched: `Ding.db.chords`);
+  navigation in a window goes through temporary bindings (settings, move mode, the guide's
+  focus mode) that only take the useful keys, read first by `DingPadInput` while the window is
+  open (the game's gamepad interface and other addons' overrides would go before a binding).
 - Keyboard and mouse: every gamepad action has an equivalent (click = A, right-click = Y or
   cancel, Escape = B, clickable buttons in move mode). Without an active gamepad
   (`Gamepad:Active`), the help and the messages speak of the mouse and the keyboard;

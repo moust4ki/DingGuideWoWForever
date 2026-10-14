@@ -647,7 +647,6 @@ Ding.Locales.ptBR = {
     ARROW_TEST = "Vire-se para o alvo: a seta aponta à frente?",
     MOVE_ARROW = "Mover seta",
     RESET_POS_ARROW = "Posição padrão da seta",
-    BINDINGS_INFO = "A atribui um botão, Y o remove. O Ding! salva nos atalhos do jogo.",
     BIND_NEXT = "Próxima etapa",
     BIND_PREV = "Etapa anterior",
     BIND_TOGGLE = "Mostrar/ocultar o guia",

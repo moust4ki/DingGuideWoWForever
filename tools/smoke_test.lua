@@ -37,9 +37,9 @@ local padDown, focusOn, selectTab, play = H.padDown, H.focusOn, H.selectTab, H.p
 local function firstLaunch()
     local C, S = Ding.Config, Ding.Setup
     -- The setup assistant first (UI/Setup.lua): RB through its screens, Finish on the last one.
-    -- "Open Ding! settings" got its default button at login (LT is Shift in the game's
-    -- gamepad settings here: LT + Start, Gamepad:BindDefaultConfig); the assistant says so.
-    expect(bindings["SHIFT-PADFORWARD"] == "DING_CONFIG", "first launch: no default button to open the settings")
+    -- "Open Ding! settings" got its default chord at login (RB + Up, watched by Ding:
+    -- Gamepad:BindDefaultConfig); the assistant says so.
+    expect(Ding.db.chords.DING_CONFIG == "PADRSHOULDER+PADDUP", "first launch: no default chord to open the settings")
     expect(S:IsShown() and S.screen == 1, "first launch: the setup assistant does not open")
     expect(not (C.frame and C.frame:IsShown()), "first launch: the settings open over the setup assistant")
     local screen = S.frame and S.frame.screens[1]

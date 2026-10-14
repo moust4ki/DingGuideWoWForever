@@ -1315,13 +1315,12 @@ textures and font flags, never a size nor a position.
   (`Ding.db.ui.setupDone`), 2 s after the first login, **before** the Keybinds tab of the first
   launch, which follows once it is closed (with a gamepad, while "Open Ding! settings" has no
   button); an account that already had Ding sees it once too (new in 1.4.0). Right before it,
-  "Open Ding! settings" gets its default gamepad button (`Gamepad:BindDefaultConfig`, once per
-  account, `Ding.db.ui.configKeyDone`; a later login when no gamepad was in use): RB + Up when
-  the game's gamepad settings already make RB Shift, Ctrl or Alt, else LT + Start, else RT +
-  Start (a trigger with Start is a combination the game's gamepad interface leaves free; with
-  the D-pad or a face button it is a slot of its gamepad bars), never over a gamepad button the
-  action has nor a key in use (another addon, the game: `Gamepad:WhoUses`); Ding never changes
-  the game's gamepad settings for it. Closed by a fight (the temporary bindings must go), the first
+  "Open Ding! settings" gets its default chord (`Gamepad:BindDefaultConfig`, once per account,
+  `Ding.db.ui.configChordDone`; a later login when no gamepad was in use): **RB + Up** (the
+  player's choice: neither the game nor Easy Controller uses it, Easy Controller has RB +
+  Down), else LB + Up when RB + Up is another action's chord or Easy Controller's; never over a
+  gamepad button or chord the player gave the action. The LT + Start game binding the first
+  v1.5.0 builds set (it did nothing in play) is replaced by it. Closed by a fight (the temporary bindings must go), the first
   launch's assistant comes back on its screen a second after the fight, its choices kept;
   opened by hand, a fight only closes it. Another Ding window opening (settings, directory,
   import) closes it quietly: done, and the Keybinds tab waits for the next login. Again from
@@ -1388,7 +1387,12 @@ gamepad buttons). Every gamepad action therefore has an equivalent:
   directory.
   Only these buttons are taken; the mode stops in combat.
 - Settings window: temporary bindings (`SetOverrideBindingClick`) set when it opens
-  and removed when it closes. A confirms, B closes or cancels, Y resets to default or clears,
+  and removed when it closes. Every Ding window that takes the gamepad (settings, setup
+  assistant, NPC directory, import / export, focus mode, move mode) also reads its buttons with
+  a frame of its own first (`DingPadInput`, `OnGamePadButtonDown`), before any binding: neither
+  the game's gamepad interface nor another addon's override bindings go before them (reported:
+  in focus mode, Easy Controller on, the D-pad cast the gamepad bar's spells); only the
+  window's keys are kept, any other button goes on to the game. A confirms, B closes or cancels, Y resets to default or clears,
   LB / RB change tab, the D-pad selects and adjusts (repeats when held). The window
   closes on entering combat.
 - Move mode for the guide window, the arrow and the item button with the D-pad (steps
@@ -1398,34 +1402,49 @@ gamepad buttons). Every gamepad action therefore has an equivalent:
   Xbox chips (A, LB, LT+Right) or PlayStation chips (symbols). The capture (`Gamepad:Capture`)
   reads the buttons themselves, Ding's navigation bindings released until it ends, and lets
   none through to the game:
-  - a button is taken when released alone; held, it can start a combination: the game binds a
-    button only with Shift, Ctrl or Alt, which its gamepad settings give to some buttons
-    (`GamePadEmulateShift` / `Ctrl` / `Alt`, LT and RT usually), so "LT+A" is taken when A goes
-    down and "RB+Up" is refused in words when RB is none of them (or that no button is one), the
-    wait going on;
+  - a button is taken when released alone (a game binding); held, it starts a **chord**: any
+    held button and a second one ("LB+Up", "LT+A", "RB+X"), taken when the second goes down and
+    saved in `Ding.db.chords` (per account, kept by "Restore all defaults"), never in the game's
+    bindings (the game binds a button with Shift, Ctrl or Alt only, and its gamepad interface
+    went before such a binding: LT + Start did nothing in play). The quest item's two actions
+    are secure clicks, which a chord cannot run: for them a combination stays the game's, with
+    its modifiers (`GamePadEmulateShift` / `Ctrl` / `Alt`, LT and RT usually), "RB+Up" refused in
+    words;
   - B tapped cancels, B held one second is taken; Escape, a fight (the window closes) or 20
     seconds without a press cancel; a key of the keyboard is taken with its modifiers;
   - in the way, said in words, A binds anyway and B keeps things as they were: a saved binding
-    of the game or of Ding (named, replaced); another addon's override binding (named: Easy
-    Controller, ConsolePort; its own is left as it is and may win in play) or a button of the
+    or another action's chord (named, replaced); another addon's override binding or Easy
+    Controller's own chord (its settings' shortcut, read from its saved settings; named: Easy
+    Controller, ConsolePort; theirs is left as it is and may win in play) or a button of the
     game's gamepad interface (its binding context `GamepadModeInGameCore`, while it is on; it
     may win in play). Refusing them left nothing to bind with Easy Controller on (v1.5.0
     report);
-  - saved like the game's own Keybindings (the action's binding context): a gamepad button
-    replaces the action's gamepad buttons, a key its keys, the other kind stays; the game
+  - saved like the game's own Keybindings (the action's binding context): a gamepad button or a
+    chord replaces the action's gamepad buttons and chord, a key its keys, the other kind stays; the game
     refusing it is said, the old one kept. The row shows the kind of the input in use (the
     gamepad's while one is active), "and 2 more" when an action has several; Y unbinds what it
     shows. (Before v1.5.0 a new button was added beside the old ones and the row showed the
     first: "RB" whatever was pressed.)
-- First launch: "Open Ding settings" gets a default gamepad button when one is free (LT +
-  Start usually; RB + Up when RB is one of the game's modifiers), then the setup assistant
+- **Chords in play** (`Gamepad:Capture` above, "Chords in play" in UI/Gamepad.lua): watched
+  like Easy Controller's own RB + Down, `IsKeyDown` of both buttons every frame, never bound
+  (binding the second button while the first is held broke the game's own RB combinations in
+  Easy Controller). While a chord's first button is held, out of combat, a frame of Ding's
+  (`DingChordInput`) reads the gamepad's buttons first and keeps the chord's second button from
+  the game (its gamepad bar would act too); the first button keeps its own use (RB: the game's
+  targeting), any other button goes on. In combat that frame cannot change (it goes before the
+  lockdown): the chord still runs, the second button's own action with it. A chord does
+  nothing while a Ding window holds the gamepad, while a Keybinds row waits, while the chat has
+  the keyboard or a game window the gamepad's focus. Its action runs what the binding of
+  Bindings.xml runs (`Gamepad.CHORD_RUN`).
+- First launch: "Open Ding settings" gets the chord RB + Up when it is free (else LB + Up),
+  then the setup assistant
   (Interface, above) says how to open Ding! later; then, unless the player chose the keyboard
   and the mouse there or the action has a button, the window opens on the bindings so the
   player can bind "Open Ding settings". `/ding help` says how to open the settings too.
 - Other gamepad addons (docs/compatibility.md): Ding's windows take their buttons whatever
   Easy Controller shows (waiting for its windows left Ding unusable: v1.5.0 report);
   `Gamepad:HasWindow()` tells them a Ding window holds the gamepad; Ding never changes the
-  game's gamepad settings (`GamePadEmulate*`) and its default button never takes their keys.
+  game's gamepad settings (`GamePadEmulate*`) and its default chord never takes theirs.
 
 ### API compatibility
 
