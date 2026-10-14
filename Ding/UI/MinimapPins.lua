@@ -90,13 +90,38 @@ local function hideAll(self)
     for _, d in ipairs(self.dots) do d:Hide() end
 end
 
--- Half the yards the minimap shows, at its zoom, indoors or out.
+-- Whether the minimap shows its indoor view. IsIndoors answers for mounts, not for the
+-- minimap: in Ironforge (mounts allowed) the minimap shows the city's inside view at the
+-- indoor scale, and the pins sat at two thirds of their distance (in game, 14/10/2026). The
+-- client keeps one zoom per view (minimapZoom outdoors, minimapInsideZoom indoors): the
+-- minimap's zoom tells which view it is in when the two differ; IsIndoors only when they
+-- are the same.
+local function indoorView(zoom)
+    local okIn, inside = pcall(GetCVar, "minimapInsideZoom")
+    local okOut, outside = pcall(GetCVar, "minimapZoom")
+    inside = okIn and tonumber(Compat.Plain(inside) or "") or nil
+    outside = okOut and tonumber(Compat.Plain(outside) or "") or nil
+    if inside and outside and inside ~= outside then
+        if zoom == inside then return true end
+        if zoom == outside then return false end
+    end
+    local ok, indoors = pcall(IsIndoors)
+    return ok and Compat.Plain(indoors) and true or false
+end
+
+-- Half the yards the minimap shows: the client's own figure when it gives one
+-- (C_Minimap.GetViewRadius), else from its zoom and view.
 local function radiusYards()
+    local CM = _G.C_Minimap
+    if CM and CM.GetViewRadius then
+        local ok, r = pcall(CM.GetViewRadius)
+        r = ok and Compat.Plain(r) or nil
+        if type(r) == "number" and r > 0 then return r end
+    end
     local map = minimap()
     local ok, zoom = pcall(map.GetZoom, map)
     zoom = ok and Compat.Plain(zoom) or 0
-    local okIn, indoors = pcall(IsIndoors)
-    local sizes = (okIn and Compat.Plain(indoors)) and INDOORS or OUTDOORS
+    local sizes = indoorView(zoom) and INDOORS or OUTDOORS
     return (sizes[zoom] or sizes[0]) / 2
 end
 

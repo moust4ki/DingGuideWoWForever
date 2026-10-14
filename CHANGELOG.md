@@ -27,6 +27,9 @@ Nothing else to install: QuestieDB is no longer needed, and TomTom stays optiona
   ("marked as done by hand" on a step you never touched).
 - A turn-in step passed because you already turned the quest in now says "already done"
   instead of "it does not concern you now".
+- The ring around the arrow's target on the minimap sits on the target in a city's inside view
+  too (Ironforge): it used the outdoor scale there and only reached the target once you were
+  on it.
 
 ## v1.5.0
 

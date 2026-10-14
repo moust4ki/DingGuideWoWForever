@@ -301,6 +301,43 @@ T.test("pins: the target on the minimap, at its distance", function()
     T.ok(math.abs(magnitude(MP.target) - 102 * 70 / (466 + 2 / 3) * 2) < 1, "wrong distance on the minimap")
 end)
 
+-- In game (14/10/2026, Ironforge): the minimap showed the city's inside view, IsIndoors said
+-- "outdoors" (mounts are allowed there), and the ring sat at two thirds of its distance,
+-- coming onto the target only once there.
+T.test("pins: the minimap's indoor view, though IsIndoors says outdoors", function()
+    start("t-pins")
+    H.player.x, H.player.y = 50, 50
+    A.point = nil; A:Tick()
+    local getCVar, getZoom = _G.GetCVar, Minimap.GetZoom
+    _G.GetCVar = function(name)
+        if name == "minimapZoom" then return "1" end
+        if name == "minimapInsideZoom" then return "0" end
+        return getCVar(name)
+    end
+    Minimap.GetZoom = function() return 0 end      -- the indoor view's zoom
+    MP:Update()
+    local indoor = magnitude(MP.target)
+    Minimap.GetZoom = function() return 1 end      -- out again: the outdoor view's zoom
+    MP:Update()
+    local outdoor = magnitude(MP.target)
+    _G.GetCVar, Minimap.GetZoom = getCVar, getZoom
+    -- 102 yards; the minimap shows 300 yards across indoors at zoom 0, 400 outdoors at 1.
+    T.ok(math.abs(indoor - 102 * 70 / 300 * 2) < 1, "indoor view at the outdoor scale: " .. indoor)
+    T.ok(math.abs(outdoor - 102 * 70 / 400 * 2) < 1, "outdoor view: " .. outdoor)
+end)
+
+T.test("pins: the client's own view radius when it gives one", function()
+    start("t-pins")
+    H.player.x, H.player.y = 50, 50
+    A.point = nil; A:Tick()
+    local saved = _G.C_Minimap
+    _G.C_Minimap = { GetViewRadius = function() return 150 end }
+    MP:Update()
+    local r = magnitude(MP.target)
+    _G.C_Minimap = saved
+    T.ok(math.abs(r - 102 * 70 / 150) < 1, "the client's radius is not used: " .. r)
+end)
+
 T.test("pins: an arrow on the edge when the target is farther", function()
     start("t-pins")
     H.player.x, H.player.y = 50, 50
