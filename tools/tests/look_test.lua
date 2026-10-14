@@ -91,16 +91,30 @@ T.test("kit textures: uncompressed 32-bit TGA, powers of 2, bottom-left origin",
     T.ok(count >= 34, "kit textures missing: " .. count)
 end)
 
-T.test("addon icon (.toc) and minimap button icon: shipped with Ding", function()
+T.test("addon icon (.toc: the logo) and minimap button icon (in its own colors): shipped with Ding", function()
     local toc = assert(io.open(tools .. "/../Ding/Ding.toc")):read("*a")
     local icon = toc:match("## IconTexture: Interface\\AddOns\\Ding\\([^\r\n]+)")
     T.ok(icon, "IconTexture does not point to a Ding texture")
+    T.eq(icon, "Media\\Textures\\logo64", "the AddOns list does not show the logo")
     local file = io.open(tools .. "/../Ding/" .. icon:gsub("\\", "/") .. ".tga", "rb")
     T.ok(file, ".toc icon missing: " .. tostring(icon))
     if file then file:close() end
     showEverything()
     local b = _G.DingMinimapButton
-    T.eq(b.icon.texture, UI.TEX .. "icon", "the minimap button does not have Ding's icon")
+    T.eq(b.icon.texture, UI.TEX .. "minimap_icon64", "the minimap button does not have Ding's icon")
+    T.ok(b.icon.vertexColor[1] == 1 and b.icon.vertexColor[2] == 1 and b.icon.vertexColor[3] == 1
+        and b.icon.vertexColor[4] == 1, "the icon is tinted")
+    -- Under 24 pixels on the screen (a small UI scale): the 32-texel icon.
+    b:SetScale(0.6)
+    Ding.Minimap:Update()
+    T.eq(b.icon.texture, UI.TEX .. "minimap_icon32", "no small icon at a small scale")
+    b:SetScale(1)
+    Ding.Minimap:Update()
+    T.eq(b.icon.texture, UI.TEX .. "minimap_icon64")
+    -- The old white icons are gone.
+    for _, name in ipairs({ "icon", "icon32" }) do
+        T.eq(io.open(tools .. "/../Ding/Media/Textures/" .. name .. ".tga", "rb"), nil, name .. ".tga still shipped")
+    end
 end)
 
 T.test("font refused by the client: the game font takes over, no text breaks", function()

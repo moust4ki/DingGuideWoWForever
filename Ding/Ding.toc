@@ -12,7 +12,7 @@
 ## OptionalDeps: TomTom
 ## SavedVariables: DingDB
 ## SavedVariablesPerCharacter: DingCharDB
-## IconTexture: Interface\AddOns\Ding\Media\Textures\icon32
+## IconTexture: Interface\AddOns\Ding\Media\Textures\logo64
 
 Core\Ding.lua
 Locales\enUS.lua

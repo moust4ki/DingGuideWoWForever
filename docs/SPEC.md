@@ -1251,8 +1251,9 @@ textures and font flags, never a size nor a position.
     repair steps.
   - **Automation**: Quests (accept, turn in, rewards, skip gray), Merchant (sell gray,
     repair), Equipment (equip upgrades, talent build), Flights (take the flight).
-  - **Arrow and maps**: arrow, its **look** (six cards like the themes': the theme's arrow by
-    default, Halo, Ardoise, Bandes, Ding! or the game's minimap arrow, with any theme; focusing
+  - **Arrow and maps**: arrow, its **look** (seven cards like the themes': the theme's arrow by
+    default, Halo, Ardoise, Bandes, Ding!, Gold (the arrow of Ding!'s icon) or the game's minimap
+    arrow, with any theme; focusing
     one shows it on the real arrow, A or a click keeps it, leaving puts the kept one back, Y:
     the theme's; `Ding.db.arrow.skin`), size, farming loop, move; the world map mark, the
     minimap pins; the target's skull; quest monsters (marks on the nameplates, the tooltip
@@ -1273,7 +1274,8 @@ textures and font flags, never a size nor a position.
   the saved settings it shows (`Config.TAB_SETTINGS`) go back to `Ding.DEFAULTS`. The saved
   keys never moved: only where they are shown. A footer reminds the player of the useful
   buttons; everything applies live. `Config:Open(key)` takes a tab's key (`Config.TAB`).
-- **Minimap button**: left click for settings, right click to show / hide the guide, drag to
+- **Minimap button** (Ding!'s icon, the gold arrow on a dark disc): left click for settings,
+  right click to show / hide the guide, drag to
   move around the minimap; can be hidden (Appearance, `/ding minimap`).
 - **Setup assistant** (`UI/Setup.lua`; Yendi, in game: lost on a long Duskwood - Westfall -
   Duskwood trip, on quests the NPCs offer that the guide leaves out, on a bank step; then, on six

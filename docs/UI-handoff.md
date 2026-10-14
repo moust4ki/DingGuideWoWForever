@@ -131,6 +131,7 @@ All white, to be tinted with `SetVertexColor`. Preview: `Media/textures_preview.
 | `circle.tga` | 64 | — | A/B/X/Y chips, slider thumb, ● collect (6×6) |
 | `ring.tga` | 64 | — | "Arrived" circle (shown at 48×48 → 3 px stroke) |
 | `arrow.tga` | 128 | — | Arrow (shown at 56×56, `SetRotation`) |
+| `minimap_icon64.tga`, `minimap_icon32.tga`, `logo64.tga`, `logo32.tga`, `arrow_gold.tga` | 64 / 32 / 128 | — | Since v1.5.0, **real colors** (never tinted): the minimap button's icon, the logo (TOC), the gold arrow skin (docs/UI-themes.md) |
 | `icon_check.tga` | 32 | — | Check mark (shown at 11×11 inside a 16 px icon) |
 | `icon_check_large.tga` | 64 | — | Check mark inside the "arrived" circle (22×22) |
 | `icon_diamond.tga` | 32 | — | ◆ kill (shown at 6×6) |
@@ -452,7 +453,9 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
 - **TomTom**: optional and **off by default**; Ding's arrow is enough (Yendi's request); the
   old settings are migrated to Ding's arrow.
 - **Minimap button** (Yendi's request): left click opens the settings, right click the guide;
-  drag it around the minimap; it can be hidden in Appearance and with `/ding minimap`.
+  drag it around the minimap; it can be hidden in Appearance and with `/ding minimap`. Its icon
+  since v1.5.0: `minimap_icon64` (`minimap_icon32` under 24 pixels), the gold arrow of the new
+  icon, in its own colors (docs/UI-themes.md, "The icon").
 - **Data**: `DingDB` keeps Ding's own structure (`panel`, `arrow`, `item`, `minimap`, `ui`),
   migrated once (`layout = 2`): arrow at center + 120, size taken from the old scale, window
   scale clamped to 50-150 %. Design defaults: background 85 %, window 100 %, arrow 56, gray

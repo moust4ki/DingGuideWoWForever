@@ -786,10 +786,10 @@ local function arrowPreview(card, id, width, height)
         local look = UI.Theme.ArrowLook(id)
         local file = Ding.Arrow.SkinFile
         self.skin = look.id
-        self.route:SetTexture(file(look.skin, "arrow"))
-        self.back:SetTexture(file(look.skin, "arrowBack"))
-        self.ring:SetTexture(file(look.skin, "arrived"))
-        self.check:SetTexture(file(look.skin, "arrivedCheck"))
+        self.route:SetTexture(file(look.files, "arrow"))
+        self.back:SetTexture(file(look.files, "arrowBack"))
+        self.ring:SetTexture(file(look.files, "arrived"))
+        self.check:SetTexture(file(look.files, "arrivedCheck"))
         UI.Tint(self.route, look.tint)
         UI.Tint(self.back, look.backTint)
         UI.Tint(self.disc, look.disc)
@@ -818,7 +818,7 @@ local function themeGrid(canvas, width)
     })
 end
 
--- The arrow picker (Arrow and maps): six skins in three columns, usable with any theme; a card
+-- The arrow picker (Arrow and maps): seven skins in three columns, usable with any theme; a card
 -- shows its skin on the real arrow (Arrow:PreviewSkin); Y: the theme's arrow.
 local function arrowGrid(canvas, width)
     local A = Ding.Arrow

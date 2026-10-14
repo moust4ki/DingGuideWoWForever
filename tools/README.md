@@ -31,7 +31,7 @@ the guides; nothing here is loaded by the game.
 | `translate_guides.lua` | Writes the translations of each guide in the TOC, one per language (`Ding/Locales/Guides/<locale>/`), from the `routes/locales/<locale>.lua` dictionaries, and their lines in `Ding.toc` (`lua5.1 tools/translate_guides.lua [locale...]`); exit code 1 if a translation is missing |
 | `guide_texts.lua` | Shared module: language dictionaries, translation of a note sentence by sentence, writing of the translation files |
 | `check_package.py` | Python 3, no dependencies: checks the zip built by the BigWigs packager before publishing (`python3 tools/check_package.py .release/Ding-*.zip`, from the repository root) |
-| `media/icon.py` | Python 3, no dependencies: turns the icon `docs/icon.png` into `icon.tga` (64, minimap) and `icon32.tga` (32, addon list) (`python3 tools/media/icon.py docs/icon.png Ding/Media/Textures`) |
+| `docs/icon/*.svg` | The icon's vector sources (logo, minimap button, gold arrow, CurseForge avatar): `logo64` / `logo32`, `minimap_icon64` / `minimap_icon32` and `arrow_gold` in `Ding/Media/Textures` are exports of them, in their own colors |
 
 ## 1. Getting the QuestieDB export
 

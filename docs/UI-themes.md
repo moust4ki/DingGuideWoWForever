@@ -396,12 +396,17 @@ Reused as they are: `rr2_fill`, `rr3_fill`, `rr4_fill`, `rr6_fill`, `rr6_stroke1
   the theme on screen.
 
 ### Arrow picker (Settings › Arrow and maps; Yendi's request after the handoff)
-- Six cards in three columns, after "Show the arrow": **Theme's arrow** (`theme`, the default:
-  the active theme's skin), **Halo** (`arrow_halo_gold` / `arrow_halo_back`, real colors),
-  **Ardoise** (`arrow_slate`), **Bandes** (`arrow_band`, outlined ring and check), **Ding!**
-  (`arrow`) and **Minimap** (the game's minimap arrow, the former "Arrow style"), each usable
-  with any theme (`UI.ArrowSkins`; every theme's arrow is its skin). A card shows its skin in its
+- Seven cards in three columns, after "Show the arrow": **Theme's arrow** (`theme`, the
+  default: the active theme's skin), **Halo** (`arrow_halo_gold` / `arrow_halo_back`, real
+  colors), **Ardoise** (`arrow_slate`), **Bandes** (`arrow_band`, outlined ring and check),
+  **Ding!** (`arrow`), **Gold** (`gold`, « Or »: `arrow_gold`, the arrow of Ding!'s icon, see
+  below) and **Minimap** (the game's minimap arrow, the former "Arrow style"), each usable with
+  any theme (`UI.ArrowSkins`; every theme's arrow is its skin). A card shows its skin in its
   three states (on the way, behind, arrived) on our scene, 48 high.
+- **Gold** (design handoff "icon", 2a "Éclat"): real colors, never tinted in any state nor theme
+  (`realColors`); no dark copy under it, its glow is baked (`noShadow`); behind, the label line
+  in `arrowBack` says it; arrived: the active theme's ring and check (and Ardoise's disc). In
+  Halo it looks like the theme's own arrow, as expected.
 - Colors (`UI.Theme.ArrowLook`): on its own theme a skin takes that theme's tints (Ardoise's
   light arrow, its dark disc under the ring); with another theme a tinted skin takes the accent
   and `arrowBack`; Halo's real colors are never tinted; arrived: the skin's ring and check in
@@ -413,6 +418,17 @@ Reused as they are: `rr2_fill`, `rr3_fill`, `rr4_fill`, `rr6_fill`, `rr6_stroke1
   arrow; footer `Y Default arrow` only. With the default places, the settings window covers the
   arrow (both near the screen's center): the cards show each skin themselves.
 - Migration: `arrow.style` "classic" becomes the Minimap skin, "ding" the theme's arrow.
+
+### The icon (design handoff "icon", treatment 2a "Éclat")
+- `minimap_icon64` / `minimap_icon32` (the minimap button: the gold arrow on a dark disc with
+  rays; the 32-texel one when the button is drawn under 24 pixels), `logo64` / `logo32` (the
+  logo: `## IconTexture` of the TOC, the AddOns list) and `arrow_gold` (the gold skin): real
+  colors with 8-bit alpha, never tinted (`SetVertexColor(1, 1, 1, 1)`). Their vector sources
+  are in `docs/icon/`. They replace `icon.tga` / `icon32.tga` (and `tools/media/icon.py`).
+- Nothing else in the addon showed the old icon: `logo32` waits for a place (a title, an
+  "About"). The CurseForge avatar and hero images are page assets, never in the addon.
+- The minimap button keeps its own look (Ding's round button, 32, a soft shadow, no game
+  texture): the handoff's "31 × 31 with the game's tracking border" does not apply; no mask.
 
 ### Saved settings
 - `Ding.db.ui.theme` ("halo" by default, new and existing installs: settings layout 3),
@@ -442,6 +458,9 @@ Reused as they are: `rr2_fill`, `rr3_fill`, `rr4_fill`, `rr6_fill`, `rr6_stroke1
   every theme.
 
 ## To check in game (Forever 1.60)
+- The minimap icon at 100 % and at small UI scales (the 32-texel one under 24 pixels): the arrow
+  readable, the rays not cut; `## IconTexture` (logo64) in the AddOns list.
+- `arrow_gold` at 40, 56 and 80 and at every angle: an even outline all around, no shadow copy.
 - `Texture:SetGradient(orientation, CreateColor(...), CreateColor(...))` on 1.60 (bands, the
   card and the tab glow); `Compat.SetGradient` falls back to `SetGradientAlpha`, then to a plain
   mean color. After Bandes, another theme: no gradient left on a row or a bar

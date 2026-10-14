@@ -35,11 +35,13 @@ local LOOP_MERGE = 25           -- spawns closer than this are one stop
 local LOOP_REACH = 15           -- yards: the stop is reached, on to the next one
 local LOOP_MIN, LOOP_MAX = 3, 12 -- stops: fewer, no loop (the plain area); at most
 -- Arrow skins (UI.ArrowSkins, UI/Themes.lua): "theme" (the active theme's arrow, the default),
--- "halo", "ardoise", "bandes", "ding", "classic" (the game's minimap arrow); textures point up.
+-- "halo", "ardoise", "bandes", "ding", "gold", "classic" (the game's minimap arrow); textures
+-- point up.
 A.DEFAULT_SKIN = "theme"
--- A skin's texture: a file of the kit, or a path of the client's own ("Interface\...").
-local function file(skin, key)
-    local name = skin[key]
+-- A texture of a skin (UI.Theme.ArrowLook(id).files): a file of the kit, or a path of the
+-- client's own ("Interface\...").
+local function file(files, key)
+    local name = files[key]
     return name:find("\\", 1, true) and name or UI.TEX .. name
 end
 A.SkinFile = file
@@ -184,13 +186,15 @@ function A:ApplyStyle()
     local f = self.frame
     if not f then return end
     local look = UI.Theme.ArrowLook(self:Skin())
-    local skin = look.skin
-    local arrow = file(skin, self.state == "behind" and "arrowBack" or "arrow")
+    local files = look.files
+    local arrow = file(files, self.state == "behind" and "arrowBack" or "arrow")
     f.arrow:SetTexture(arrow)
     f.shadow:SetTexture(arrow)
-    for _, t in ipairs({ f.ring, f.ringShadow }) do t:SetTexture(file(skin, "arrived")) end
-    for _, t in ipairs({ f.check, f.checkShadow }) do t:SetTexture(file(skin, "arrivedCheck")) end
+    for _, t in ipairs({ f.ring, f.ringShadow }) do t:SetTexture(file(files, "arrived")) end
+    for _, t in ipairs({ f.check, f.checkShadow }) do t:SetTexture(file(files, "arrivedCheck")) end
     UI.Tint(f.arrow, self.state == "behind" and look.backTint or look.tint)
+    -- A skin with its glow baked (gold) has no dark copy under it.
+    UI.Tint(f.shadow, C.textShadow, look.shadow and 1 or 0)
     UI.Tint(f.arrivedBg, look.disc)
 end
 

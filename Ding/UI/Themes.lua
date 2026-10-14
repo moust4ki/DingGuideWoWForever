@@ -270,7 +270,8 @@ UI.ThemeOrder = { "halo", "ardoise", "bandes", "dingdark" }
 -- there (arrowTint, arrowBackTint, arrivedBg); with another theme a tinted skin takes that
 -- theme's accent and arrowBack. `realColors`: carries its own colors (never tinted). A path
 -- ("Interface\...") is the client's own texture (not shipped). "theme" (the default) is the
--- active theme's skin.
+-- active theme's skin. Without `arrived`, the active theme's ring and check (and its disc);
+-- `noShadow`: its glow is baked, no dark copy under it.
 local WHITE = { 1, 1, 1, 1 }
 UI.ArrowSkins = {
     halo = { arrow = "arrow_halo_gold", arrowBack = "arrow_halo_back", arrived = "ring",
@@ -281,14 +282,17 @@ UI.ArrowSkins = {
         arrivedCheck = "icon_check_large_outlined", native = "bandes" },
     ding = { arrow = "arrow", arrowBack = "arrow", arrived = "ring", arrivedCheck = "icon_check_large",
         native = "dingdark" },
+    -- The gold arrow of Ding!'s icon (design handoff "icon"): real colors and a baked glow.
+    gold = { arrow = "arrow_gold", arrowBack = "arrow_gold", realColors = true, noShadow = true },
     classic = { arrow = "Interface\\Minimap\\MinimapArrow", arrowBack = "Interface\\Minimap\\MinimapArrow",
         arrived = "ring", arrivedCheck = "icon_check_large" },
 }
-UI.ArrowSkinOrder = { "theme", "halo", "ardoise", "bandes", "ding", "classic" }
+UI.ArrowSkinOrder = { "theme", "halo", "ardoise", "bandes", "ding", "gold", "classic" }
 UI.ARROW_SKIN_NAMES = {
     theme = { L.ARROW_SKIN_THEME, L.ARROW_SKIN_THEME_DESC }, halo = { L.ARROW_SKIN_HALO, L.ARROW_SKIN_HALO_DESC },
     ardoise = { L.ARROW_SKIN_ARDOISE, L.ARROW_SKIN_ARDOISE_DESC }, bandes = { L.ARROW_SKIN_BANDES, L.ARROW_SKIN_BANDES_DESC },
-    ding = { L.ARROW_SKIN_DING, L.ARROW_SKIN_DING_DESC }, classic = { L.ARROW_SKIN_CLASSIC, L.ARROW_SKIN_CLASSIC_DESC },
+    ding = { L.ARROW_SKIN_DING, L.ARROW_SKIN_DING_DESC }, gold = { L.ARROW_SKIN_GOLD, L.ARROW_SKIN_GOLD_DESC },
+    classic = { L.ARROW_SKIN_CLASSIC, L.ARROW_SKIN_CLASSIC_DESC },
 }
 -- Each theme's arrow is its skin.
 local THEME_SKIN = { halo = "halo", ardoise = "ardoise", bandes = "bandes", dingdark = "ding" }
@@ -354,13 +358,15 @@ function Theme.SceneOutline()
     return nil
 end
 
--- The arrow's look for skin `id` ("theme" or unknown: the active theme's): { skin, tint,
--- backTint, disc } (tokens). Its own theme's tints on its native theme, else the accent and the
--- "turn around" color; a skin in real colors is never tinted.
+-- The arrow's look for skin `id` ("theme" or unknown: the active theme's): { id, skin, files
+-- (arrow, arrowBack, arrived, arrivedCheck), tint, backTint, disc, shadow } (tokens). Its own
+-- theme's tints on its native theme, else the accent and the "turn around" color; a skin in real
+-- colors is never tinted; a skin without its own arrival takes the theme's ring, check and disc.
 function Theme.ArrowLook(id)
     local theme = Theme.current
     local skinId = UI.ArrowSkins[id] and id or theme.arrowSkin
     local skin = UI.ArrowSkins[skinId]
+    local own = UI.ArrowSkins[theme.arrowSkin]
     local native = skin.native == theme.id
     local tint, backTint
     if skin.realColors then
@@ -370,8 +376,10 @@ function Theme.ArrowLook(id)
     else
         tint, backTint = C.accent, C.arrowBack
     end
-    return { id = skinId, skin = skin, tint = tint, backTint = backTint,
-        disc = native and C.arrivedBg or skin.disc or NONE }
+    local files = { arrow = skin.arrow, arrowBack = skin.arrowBack,
+        arrived = skin.arrived or own.arrived, arrivedCheck = skin.arrivedCheck or own.arrivedCheck }
+    return { id = skinId, skin = skin, files = files, tint = tint, backTint = backTint,
+        disc = (native or not skin.arrived) and C.arrivedBg or skin.disc or NONE, shadow = not skin.noShadow }
 end
 
 -- Bands (windowStyle "bands") follow the opacity slider: their alpha x setting / default.
