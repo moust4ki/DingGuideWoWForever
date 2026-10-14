@@ -544,6 +544,7 @@ Ding.Locales.ptBR = {
     IMPORT_REPLACES = "substitui o guia importado %s",
     IMPORT_TWICE = "o id de guia %s aparece duas vezes",
     PACK_BY = "por %s",
+    PACK_CLASS = "Ding! - Missões de classe",
     PACK_ITEMS = "Ding! - Itens",
     PACK_LEVELING = "Ding! - Evolução de nível",
     PACK_ZONES = "Ding! - Zonas",

@@ -544,6 +544,7 @@ Ding.Locales.zhCN = {
     IMPORT_REPLACES = "替换已导入的指南 %s",
     IMPORT_TWICE = "指南 ID %s 出现了两次",
     PACK_BY = "作者：%s",
+    PACK_CLASS = "Ding! - 职业任务",
     PACK_ITEMS = "Ding! - 物品",
     PACK_LEVELING = "Ding! - 升级",
     PACK_ZONES = "Ding! - 分区域",

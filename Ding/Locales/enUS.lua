@@ -544,6 +544,7 @@ Ding.Locales.enUS = {
     IMPORT_REPLACES = "replaces the imported guide %s",
     IMPORT_TWICE = "guide id %s is used twice",
     PACK_BY = "by %s",
+    PACK_CLASS = "Ding! - Class quests",
     PACK_ITEMS = "Ding! - Items",
     PACK_LEVELING = "Ding! - Leveling",
     PACK_ZONES = "Ding! - Zones",

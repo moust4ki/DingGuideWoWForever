@@ -541,6 +541,7 @@ Ding.Locales.frFR = {
     IMPORT_REPLACES = "remplace le guide importé %s",
     IMPORT_TWICE = "l'id de guide %s est utilisé deux fois",
     PACK_BY = "par %s",
+    PACK_CLASS = "Ding! - Quêtes de classe",
     PACK_ITEMS = "Ding! - Objets",
     PACK_LEVELING = "Ding! - Montée de niveau",
     PACK_ZONES = "Ding! - Zones",

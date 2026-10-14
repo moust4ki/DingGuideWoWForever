@@ -127,23 +127,30 @@ local function allPacks()
 end
 
 -- Sections of the active pack for the second dropdown: the ones for another character, or
--- above the character's level, are greyed (they can still be picked).
+-- above the character's level, are greyed (they can still be picked). A class pack lists the
+-- character's own sections only: another class's quests are of no use to it.
 local function packSections()
     local items = {}
     local active = Ding.Engine.guide
     local level = UnitLevel("player")
-    for id, guide in Ding:IterateGuides(activePack()) do
-        local levels = L.GUIDE_RANGE:format(guide.minLevel, guide.maxLevel)
-        local detail, dim = levels, false
-        if not Ding:GuideMatchesPlayer(guide) then
-            detail, dim = levels .. " · " .. L.GUIDE_OTHER_CHAR, true
-        elseif guide.minLevel > level then
-            detail, dim = levels .. " · " .. L.GUIDE_LEVEL_MIN:format(guide.minLevel), true
+    local packId = activePack()
+    local pack = Ding:GetGuidePack(packId)
+    local ownOnly = pack ~= nil and pack.category == "class"
+    for id, guide in Ding:IterateGuides(packId) do
+        local mine = Ding:GuideMatchesPlayer(guide)
+        if mine or not ownOnly then
+            local levels = L.GUIDE_RANGE:format(guide.minLevel, guide.maxLevel)
+            local detail, dim = levels, false
+            if not mine then
+                detail, dim = levels .. " · " .. L.GUIDE_OTHER_CHAR, true
+            elseif guide.minLevel > level then
+                detail, dim = levels .. " · " .. L.GUIDE_LEVEL_MIN:format(guide.minLevel), true
+            end
+            items[#items + 1] = {
+                value = id, text = guide.title, levels = levels, detail = detail,
+                dim = dim, current = active and active.id == id,
+            }
         end
-        items[#items + 1] = {
-            value = id, text = guide.title, levels = levels, detail = detail,
-            dim = dim, current = active and active.id == id,
-        }
     end
     return items
 end
