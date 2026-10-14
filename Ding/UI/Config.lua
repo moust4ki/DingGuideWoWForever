@@ -13,7 +13,7 @@ local Cfg = {}
 Ding.Config = Cfg
 
 local SIZE = UI.SIZE
-local WIDTH, HEIGHT = 560, 392      -- [560, 440]
+local WIDTH, HEIGHT = 560, 430      -- [560, 440]; 392 before the theme cards
 local TITLE_HEIGHT, TABS_HEIGHT, FOOTER_HEIGHT = SIZE.title, SIZE.tabs, SIZE.footer
 local CONTENT_TOP = TITLE_HEIGHT + 1 + TABS_HEIGHT + 1
 local CONTENT_HEIGHT = HEIGHT - CONTENT_TOP - FOOTER_HEIGHT - 1
@@ -46,6 +46,7 @@ end
 local function applyAllSettings()
     local P, A = Ding.Panel, Ding.Arrow
     UI.SetDialogScale(Ding.db.ui.dialogScale)
+    UI.Theme.Apply(Ding.db.ui.theme)
     if P.frame then
         P.frame:SetScale(Ding.db.panel.scale)
         P:ApplyPosition()
@@ -159,10 +160,11 @@ local TAB_SETTINGS = {
     automation = { { "ui", "autoAccept" }, { "ui", "autoTurnin" }, { "ui", "offers" }, { "ui", "chooseReward" },
         { "ui", "skipGrey" }, { "ui", "sellGrey" }, { "ui", "repair" }, { "ui", "suggestGear" }, { "ui", "autoEquip" },
         { "ui", "autoFly" } },
-    arrow = { { "arrow", "shown" }, { "arrow", "style" }, { "arrow", "size" }, { "arrow", "loop" },
+    arrow = { { "arrow", "shown" }, { "arrow", "skin" }, { "arrow", "size" }, { "arrow", "loop" },
         { "arrow", "worldMap" }, { "minimap", "pins" }, { "ui", "markTarget" }, { "ui", "mobIcons" },
         { "ui", "mobTooltip" }, { "ui", "farPlates" }, { "arrow", "tomtom" }, { "arrow", "mode" } },
-    appearance = { { "panel", "bgAlpha" }, { "panel", "scale" }, { "ui", "dialogScale" }, { "panel", "locked" },
+    appearance = { { "ui", "theme" }, { "ui", "opacityTouched" }, { "panel", "bgAlpha" }, { "panel", "scale" },
+        { "ui", "dialogScale" }, { "panel", "locked" },
         { "panel", "compactInCombat" }, { "panel", "hideInInstance" }, { "panel", "itemButton" },
         { "minimap", "shown" }, { "ui", "sound" }, { nil, "debug" } },
 }
@@ -555,6 +557,288 @@ local function automationRows(canvas, width)
 end
 
 ---------------------------------------------------------------------------
+-- Picker cards (docs/UI-themes.md): the themes (Appearance) and the arrow's skins (Arrow and
+-- maps). A grid of cards, 6 apart, 4 below the row above. A card: padding 6, a preview (a scene
+-- of our own, theme_preview_bg, with what the card is), its name (12 SemiBold) with "Active"
+-- (11 SemiBold accent) or the A chip on the right, its description (11 Regular, wrapped).
+---------------------------------------------------------------------------
+local CARD = { gap = 6, top = 4, pad = 6, preview = 34, inner = 4, name = 16 }
+Cfg.CARD = CARD
+
+-- The scene behind a card's preview: the middle of the 256 x 64 texture, at its proportions.
+local function cardScene(card, width, height)
+    local p = CreateFrame("Frame", nil, card)
+    p:SetSize(width, height)
+    p:SetPoint("TOPLEFT", card, "TOPLEFT", CARD.pad, -CARD.pad)
+    local scene = p:CreateTexture(nil, "BACKGROUND")
+    scene:SetTexture(UI.TEX .. "theme_preview_bg")
+    scene:SetAllPoints(p)
+    local h = math.min(1, (height / width) * 4)
+    scene:SetTexCoord(0, 1, 0.5 - h / 2, 0.5 + h / 2)
+    p.scene = scene
+    return p
+end
+
+-- A grid of cards, one focusable row. D-pad left / right (and up / down between the grid's
+-- lines) move between cards and show the focused one live (spec.show); A or a click saves it
+-- (spec.save); leaving the cards (up, down, LB / RB, B, closing) without A puts the saved one
+-- back (spec.restore); Y saves spec.default. Mouse: hovering a card shows it, a click saves it,
+-- leaving the card puts the saved one back; no chips. Each action once: A is on the focused
+-- card, B on the title bar, LB / RB on the tabs, the footer keeps Y (spec.hint).
+-- spec: kind, label, ids, columns, previewHeight, preview(card, id, width, height) -> frame,
+-- name(id), desc(id), saved() -> id, show(id), restore(), save(id), default, hint
+local function cardGrid(canvas, width, spec)
+    local ids, columns = spec.ids, spec.columns
+    local cardWidth = math.floor((width - CARD.gap * (columns - 1)) / columns)
+    local previewHeight = spec.previewHeight or CARD.preview
+    local row = UI.BaseRow(canvas, Cfg, { label = spec.label or "" }, 10, width)
+    row.kind = spec.kind
+    row.label:Hide()
+    row.cards = {}
+    local function indexOf(id)
+        for i, other in ipairs(ids) do
+            if other == id then return i end
+        end
+        return 1
+    end
+    row.index = indexOf(spec.saved())
+
+    local tallest = 0
+    for i, id in ipairs(ids) do
+        local card = CreateFrame("Button", nil, row)
+        card:SetSize(cardWidth, 10)
+        card:RegisterForClicks("LeftButtonUp", "RightButtonUp")
+        card.id = id
+        card.bg = UI.Shape(card, "card", C.themeCardBg, "BACKGROUND"):Place(card)
+        card.focus = UI.Focus(card)
+        card.preview = spec.preview(card, id, cardWidth - 2 * CARD.pad, previewHeight)
+        local top = CARD.pad + previewHeight + CARD.inner
+        card.name = UI.Text(card, "semibold", 12, C.text)
+        card.name:SetPoint("TOPLEFT", card, "TOPLEFT", CARD.pad, -(top + 2))
+        card.name:SetText(spec.name(id))
+        card.active = UI.Text(card, "semibold", 11, C.accent)
+        card.active:SetJustifyH("RIGHT")
+        card.active:SetPoint("TOPRIGHT", card, "TOPRIGHT", -CARD.pad, -(top + 2))
+        card.active:SetText(L.THEME_ACTIVE)
+        card.key = UI.Glyph(card)
+        card.key:SetPoint("TOPRIGHT", card, "TOPRIGHT", -CARD.pad, -(top + 1))
+        card.key:SetKey("PAD1")
+        card.key:Hide()
+        card.desc = UI.Text(card, "regular", 11, C.secondary)
+        UI.Wrap(card.desc, 11)
+        card.desc:SetWidth(cardWidth - 2 * CARD.pad)
+        card.desc:SetPoint("TOPLEFT", card, "TOPLEFT", CARD.pad, -(top + CARD.name + CARD.inner))
+        card.desc:SetText(spec.desc(id))
+        tallest = math.max(tallest, top + CARD.name + CARD.inner + card.desc:GetStringHeight() + CARD.pad)
+        card:SetScript("OnEnter", function()
+            Cfg:SetFocus(row)
+            row:Show(i, true)
+        end)
+        card:SetScript("OnLeave", function()
+            if row.index == i and not row.saving then row:Show(indexOf(spec.saved()), true) end
+        end)
+        card:SetScript("OnClick", function(_, button)
+            Cfg:SetFocus(row)
+            if button == "RightButton" then return row:Reset() end
+            row.index = i
+            row:Activate()
+        end)
+        row.cards[i] = card
+    end
+    local lines = math.ceil(#ids / columns)
+    for i, card in ipairs(row.cards) do
+        card:SetHeight(tallest)
+        local col, line = (i - 1) % columns, math.floor((i - 1) / columns)
+        card:SetPoint("TOPLEFT", row, "TOPLEFT", col * (cardWidth + CARD.gap), -(CARD.top + line * (tallest + CARD.gap)))
+    end
+    row:SetHeight(CARD.top + lines * tallest + (lines - 1) * CARD.gap)
+
+    -- The cards' state: "Active" on the saved one, the focus on the focused card (A chip on a
+    -- card that A would save, with a gamepad).
+    function row:Refresh()
+        local saved = spec.saved()
+        local pad = Ding.Gamepad:Active()
+        for i, card in ipairs(self.cards) do
+            local focused = self.focused and self.index == i
+            card.focus:SetShown(focused)
+            local isActive = card.id == saved
+            card.active:SetShown(isActive)
+            local chip = focused and pad and not isActive
+            if chip then card.key:SetKey("PAD1") end
+            card.key:SetShown(chip and true or false)
+            local right = isActive and UI.Measure(card.active) or (chip and card.key:GetWidth() or 0)
+            card.name:SetWidth(math.max(20, cardWidth - 2 * CARD.pad - (right > 0 and right + 6 or 0)))
+        end
+    end
+
+    -- Card i focused; `preview`: shown on screen (the saved one: back to it).
+    function row:Show(i, preview)
+        self.index = math.max(1, math.min(#ids, i))
+        if preview then
+            if ids[self.index] == spec.saved() then spec.restore() else spec.show(ids[self.index]) end
+        end
+        self:Refresh()
+    end
+
+    function row:SetFocused(focused)
+        local was = self.focused
+        self.focused = focused
+        if focused and not was then self.index = indexOf(spec.saved()) end
+        if not focused and was then spec.restore() end
+        self:Refresh()
+    end
+    -- Left / right within a line; up / down between lines (true: moved; else the focus leaves).
+    local function column(i) return (i - 1) % columns end
+    function row:Left()
+        if column(self.index) > 0 then self:Show(self.index - 1, true) end
+    end
+    function row:Right()
+        if column(self.index) < columns - 1 and self.index < #ids then self:Show(self.index + 1, true) end
+    end
+    function row:Up()
+        if self.index <= columns then return false end
+        self:Show(self.index - columns, true)
+        return true
+    end
+    function row:Down()
+        local line = math.floor((self.index - 1) / columns)
+        if line >= lines - 1 then return false end
+        self:Show(math.min(#ids, self.index + columns), true)
+        return true
+    end
+    function row:Activate()
+        self.saving = true
+        spec.save(ids[self.index])
+        self.saving = false
+        self:Refresh()
+        Cfg:UpdateHelp()
+    end
+    function row:Reset()
+        self.index = indexOf(spec.default)
+        self:Activate()
+    end
+    function row:Hints() return { UI.Hint("PAD4", spec.hint) } end
+    function row:Tooltip() return spec.label end
+    row:Refresh()
+    return row
+end
+
+-- A theme's own look on its card: its tokens, not the theme on screen (a card shows its theme
+-- whatever is previewed). The bar: "Ding! Step 29 / 87", 10 Regular.
+local function themePreview(card, id, width, height)
+    local theme = UI.Themes[id]
+    local p = cardScene(card, width, height)
+    local TC, style = theme.C, theme.flags.windowStyle
+    local bar = CreateFrame("Frame", nil, p)
+    bar:SetPoint("LEFT", p, "LEFT", 10, 0)
+    bar.text = UI.Text(bar, "regular", 10, TC.text, "OVERLAY", "chip")
+    bar.text:SetPoint("LEFT", bar, "LEFT", 5, 0)
+    local current = Ding.Engine.guide and Ding.Engine:StepNumber(Ding.Engine.index) or 29
+    local total = Ding.Engine.guide and select(2, Ding.Engine:StepNumber(Ding.Engine.index)) or 87
+    bar.text:SetText("|cff" .. UI.HexOf(TC.accent) .. Ding.TITLE .. "|r " .. L.STEP_LABEL:format(current)
+        .. L.STEP_TOTAL:format(total))
+    local textWidth = UI.Measure(bar.text)
+    bar.text:SetWidth(textWidth + 1)
+    bar:SetSize(textWidth + (style == "bands" and 19 or 10), 14)
+    local radius = theme.radius.window > 0 and theme.radius.window or theme.radius.row
+    if style == "feather" then
+        local spec = UI.SLICES.soft_rect
+        bar.bg = UI.Slice(bar, "soft_rect", spec[1], spec[2], "BACKGROUND"):Place(bar, 6)
+        bar.bg:SetColor(TC.bg[1], TC.bg[2], TC.bg[3], theme.opacityDefault / 100)
+    else
+        local file = "rr" .. math.min(radius, 4) .. "_fill"
+        bar.bg = UI.Slice(bar, file, UI.SLICES[file][1], UI.SLICES[file][2], "BACKGROUND"):Place(bar)
+        if style == "bands" then
+            bar.bg:SetColor(TC.panelTitlebar)
+        else
+            bar.bg:SetColor(TC.bg[1], TC.bg[2], TC.bg[3], theme.opacityDefault / 100)
+        end
+        if theme.flags.windowBorder then
+            bar.border = UI.Slice(bar, "rr4_stroke1", 4, 32, "BORDER"):Place(bar)
+            bar.border:SetColor(TC.border)
+        end
+    end
+    p.bar = bar
+    return p
+end
+
+-- An arrow skin on its card, in its three states: on the way, behind, arrived (ring and check),
+-- in the colors it takes with the theme on screen (UI.Theme.ArrowLook; painted again with it).
+local ARROW_PREVIEW = { height = 48, arrow = 30, ring = 26, check = 12 }
+local function arrowPreview(card, id, width, height)
+    local p = cardScene(card, width, height)
+    local step = width / 3
+    local function icon(size, x, layer)
+        local t = p:CreateTexture(nil, "ARTWORK", nil, layer or 0)
+        t:SetSize(size, size)
+        t:SetPoint("CENTER", p, "LEFT", x, 0)
+        return t
+    end
+    p.route = icon(ARROW_PREVIEW.arrow, step / 2)
+    p.route:SetRotation(-0.42)
+    p.back = icon(ARROW_PREVIEW.arrow, step * 1.5)
+    p.back:SetRotation(math.pi - 0.5)
+    p.disc = icon(ARROW_PREVIEW.ring, step * 2.5, 1)
+    p.disc:SetTexture(UI.TEX .. "circle")
+    p.ring = icon(ARROW_PREVIEW.ring, step * 2.5, 2)
+    p.check = icon(ARROW_PREVIEW.check, step * 2.5, 3)
+    local function paint(self)
+        local look = UI.Theme.ArrowLook(id)
+        local file = Ding.Arrow.SkinFile
+        self.skin = look.id
+        self.route:SetTexture(file(look.files, "arrow"))
+        self.back:SetTexture(file(look.files, "arrowBack"))
+        self.ring:SetTexture(file(look.files, "arrived"))
+        self.check:SetTexture(file(look.files, "arrivedCheck"))
+        UI.Tint(self.route, look.tint)
+        UI.Tint(self.back, look.backTint)
+        UI.Tint(self.disc, look.disc)
+        UI.Tint(self.ring, C.done)
+        UI.Tint(self.check, C.done)
+    end
+    paint(p)
+    UI.Skin(p, paint)
+    return p
+end
+
+-- The theme picker (Appearance): one line of four cards; a card shows the theme on the guide
+-- window, the arrow and this window (UI.Theme.Apply(id, true)); Y: Halo.
+local function themeGrid(canvas, width)
+    local T = UI.Theme
+    return cardGrid(canvas, width, {
+        kind = "themes", label = L.THEME_HEADER, ids = UI.ThemeOrder, columns = #UI.ThemeOrder,
+        preview = themePreview,
+        name = function(id) return UI.Themes[id].name end,
+        desc = function(id) return UI.Themes[id].desc end,
+        saved = T.Saved,
+        show = function(id) T.Apply(id, true) end,
+        restore = T.Restore,
+        save = function(id) T.Apply(id) end,
+        default = T.DEFAULT, hint = L.HINT_THEME_DEFAULT,
+    })
+end
+
+-- The arrow picker (Arrow and maps): seven skins in three columns, usable with any theme; a card
+-- shows its skin on the real arrow (Arrow:PreviewSkin); Y: the theme's arrow.
+local function arrowGrid(canvas, width)
+    local A = Ding.Arrow
+    return cardGrid(canvas, width, {
+        kind = "arrows", label = L.ARROW_SKIN, ids = UI.ArrowSkinOrder, columns = 3,
+        previewHeight = ARROW_PREVIEW.height, preview = arrowPreview,
+        name = function(id) return UI.ARROW_SKIN_NAMES[id][1] end,
+        desc = function(id) return UI.ARROW_SKIN_NAMES[id][2] end,
+        saved = function()
+            local id = Ding.db.arrow.skin
+            return (id == "theme" or UI.ArrowSkins[id]) and id or A.DEFAULT_SKIN
+        end,
+        show = function(id) A:PreviewSkin(id) end,
+        restore = function() A:PreviewSkin(nil) end,
+        save = function(id) A:SetSkin(id) end,
+        default = A.DEFAULT_SKIN, hint = L.HINT_ARROW_DEFAULT,
+    })
+end
+
+---------------------------------------------------------------------------
 -- Arrow and maps
 ---------------------------------------------------------------------------
 local function arrowRows(canvas, width)
@@ -566,12 +850,8 @@ local function arrowRows(canvas, width)
             get = function() return db.shown end,
             set = function(v) db.shown = v; A:Update() end,
         }, width),
-        UI.SelectorRow(canvas, Cfg, {
-            label = L.ARROW_STYLE, default = "ding",
-            values = { { "ding", L.ARROW_STYLE_DING }, { "classic", L.ARROW_STYLE_CLASSIC } },
-            get = function() return db.style end,
-            set = function(v) A:SetStyle(v) end,
-        }, width),
+        -- The arrow's look: six skins, shown live on the real arrow (arrowGrid).
+        arrowGrid(canvas, width),
         UI.SliderRow(canvas, Cfg, {
             label = L.ARROW_SIZE, min = 40, max = 80, step = 4, default = 56,
             format = function(v) return ("%d"):format(v) end,
@@ -685,10 +965,15 @@ local BINDINGS = {
     { action = "DING_UNSKIP", label = L.BIND_UNSKIP },
 }
 
+-- How to bind, with a chord as the example: a button held, another pressed ("LB+Up").
+local function bindingsInfo()
+    return L.BINDINGS_INFO_COMBO:format(G():KeyName("PADLSHOULDER+PADDUP"))
+end
+
 local function bindingRows(canvas, width)
     local rows = {}
     if Cfg.welcome then rows[#rows + 1] = UI.BannerRow(canvas, L.WELCOME_TITLE, L.WELCOME_TEXT, width) end
-    rows[#rows + 1] = UI.InfoRow(canvas, L.BINDINGS_INFO, width)
+    rows[#rows + 1] = UI.InfoRow(canvas, bindingsInfo(), width)
     for _, b in ipairs(BINDINGS) do
         rows[#rows + 1] = UI.BindingRow(canvas, Cfg, { label = b.label, action = b.action }, width)
     end
@@ -711,99 +996,38 @@ end
 ---------------------------------------------------------------------------
 -- Appearance
 ---------------------------------------------------------------------------
--- Appearance preview: a scene with the minimized guide window, at the chosen opacity.
-local function previewRow(canvas, width)
-    local row = CreateFrame("Frame", nil, canvas)
-    row:SetSize(width, 6 + 80)      -- [8 + 92]
-    local scene = CreateFrame("Frame", nil, row)
-    scene:SetPoint("TOPLEFT", row, "TOPLEFT", 0, -6)
-    scene:SetPoint("BOTTOMRIGHT", row, "BOTTOMRIGHT", 0, 0)
-    UI.Shape(scene, "row", C.scene, "BACKGROUND"):Place(scene)
-    local w = CreateFrame("Frame", nil, scene)
-    w:SetSize(300, 28)
-    w:SetPoint("CENTER", scene, "CENTER", 0, 0)
-    w.look = UI.Window(w)
-    for i = -1, 1 do
-        local t = w:CreateTexture(nil, "ARTWORK")
-        t:SetColorTexture(unpack(C.secondary))
-        t:SetSize(10, 1.5)
-        t:SetPoint("CENTER", w, "LEFT", 14, i * 3.5)
-    end
-    w.count = UI.Text(w, "semibold", 11, C.muted)
-    w.count:SetPoint("LEFT", w, "LEFT", 30, 0)
-    w.icon = UI.Shape(w, "small", C.todoIconBg, "ARTWORK")
-    w.iconHolder = CreateFrame("Frame", nil, w)
-    w.iconHolder:SetSize(14, 14)
-    w.icon:Place(w.iconHolder)
-    w.glyph = UI.Icon(w.iconHolder, "icon_diamond", 5, C.todo, "OVERLAY")
-    w.glyph:SetPoint("CENTER", w.iconHolder, "CENTER", 0, 0)
-    w.text = UI.Text(w, "regular", 12, C.text)
-    w.counter = UI.Text(w, "semibold", 12, C.todo)
-    w.counter:SetJustifyH("RIGHT")
-    w.counter:SetPoint("RIGHT", w, "RIGHT", -30, 0)
-    w.line = w:CreateTexture(nil, "ARTWORK")
-    w.line:SetColorTexture(unpack(C.accent))
-    w.line:SetHeight(2)
-    w.line:SetPoint("BOTTOMLEFT", w, "BOTTOMLEFT", 3, 1)
-    row.window = w
-
-    function row:Refresh()
-        w.look:SetBgAlpha(Ding.db.panel.bgAlpha or 0.85)
-        local E = Ding.Engine
-        local data, current, total
-        if E.guide then
-            for _, r in ipairs(Ding.Panel:Rows()) do
-                if r.state == "todo" then data = r break end
-            end
-            total = #E.guide.steps
-            current = E.finished and total or math.min(E.index, total)
-        end
-        w.count:SetText(L.COMPACT_COUNT:format(current or 3, total or 42))
-        w.iconHolder:ClearAllPoints()
-        w.iconHolder:SetPoint("LEFT", w.count, "RIGHT", 6, 0)
-        w.text:ClearAllPoints()
-        w.text:SetPoint("LEFT", w.iconHolder, "RIGHT", 6, 0)
-        w.counter:SetText(data and data.counter or (data and "" or "2/6"))
-        w.text:SetWidth(math.max(20, 300 - 30 - w.count:GetStringWidth() - 6 - 14 - 6 - 30 - w.counter:GetStringWidth() - 6))
-        w.text:SetText(data and UI.StripColors(data.text) or L.PREVIEW_SAMPLE)
-        w.line:SetWidth(math.max(1, 294 * (current or 3) / (total or 42)))
-    end
-    row:Refresh()
-    return row
-end
-
 local function appearanceRows(canvas, width)
     local panel, ui = Ding.db.panel, Ding.db.ui
     local P = Ding.Panel
     local rows = {}
     local function add(row) rows[#rows + 1] = row end
-    local preview
+    add(UI.HeaderRow(canvas, L.THEME_HEADER, width))
+    add(themeGrid(canvas, width))
+    add(UI.InfoRow(canvas, L.THEME_NOTE, width))
     add(UI.HeaderRow(canvas, L.HEADER_WINDOW, width))
+    -- The opacity follows the theme's default until the player moves it (Y: back to it).
     add(UI.SliderRow(canvas, Cfg, {
-        label = L.BG_OPACITY, min = 0, max = 100, step = 5, default = 85, format = percent,
+        label = L.BG_OPACITY, min = 0, max = 100, step = 5, format = percent,
+        default = function() return UI.Theme.current.opacityDefault end,
         help = L.SLIDER_HELP_STEP:format(5),
-        get = function() return math.floor((panel.bgAlpha or 0.85) * 100 + 0.5) end,
-        set = function(v)
-            P:SetBackgroundAlpha(v / 100)
-            if preview then preview:Refresh() end
-        end,
+        get = function() return math.floor(UI.Theme.Opacity() * 100 + 0.5) end,
+        set = function(v) P:SetBackgroundAlpha(v / 100, true) end,
+        reset = function() P:SetBackgroundAlpha(UI.Theme.current.opacityDefault / 100, false) end,
     }, width))
     add(UI.SliderRow(canvas, Cfg, {
         label = L.WINDOW_SCALE, min = 50, max = 150, step = 5, default = 100, format = percent,
         get = function() return math.floor((panel.scale or 1) * 100 + 0.5) end,
         set = function(v) P:SetScale(v / 100) end,
     }, width))
-    preview = previewRow(canvas, width)
-    add(preview)
-    add(UI.CheckRow(canvas, Cfg, {
-        label = L.LOCK,
-        get = function() return panel.locked end,
-        set = function(v) panel.locked = v end,
-    }, width))
     add(UI.CheckRow(canvas, Cfg, {
         label = L.COMBAT_COMPACT,
         get = function() return panel.compactInCombat end,
         set = function(v) panel.compactInCombat = v end,
+    }, width))
+    add(UI.CheckRow(canvas, Cfg, {
+        label = L.LOCK,
+        get = function() return panel.locked end,
+        set = function(v) panel.locked = v end,
     }, width))
     add(UI.CheckRow(canvas, Cfg, {
         label = L.HIDE_INSTANCE,
@@ -914,25 +1138,31 @@ local BINDINGS_TAB = Cfg.TAB.bindings
 ---------------------------------------------------------------------------
 -- Window
 ---------------------------------------------------------------------------
--- Tab: label only; the active one is light with a 2-unit accent underline.
+-- Tab: label only; the active one in the theme's tab color with a 2-unit accent underline
+-- (Ardoise: an accent glow from the bottom; Bandes: an accent tint).
 local function tabButton(parent, text)
     local b = CreateFrame("Button", nil, parent)
     b:SetHeight(TABS_HEIGHT)
     b:RegisterForClicks("LeftButtonUp")
+    b.activeBg = b:CreateTexture(nil, "BACKGROUND")
+    b.activeBg:SetTexture(UI.WHITE)
+    b.activeBg:SetAllPoints(b)
+    UI.Paint(b.activeBg, C.tabActiveBg, "VERTICAL")
     b.label = UI.Text(b, "semibold", 12, C.secondary)
     b.label:SetPoint("CENTER", b, "CENTER", 0, 0)
     b.label:SetText(text)
     b.underline = b:CreateTexture(nil, "ARTWORK")
-    b.underline:SetColorTexture(unpack(C.accent))
+    UI.Fill(b.underline, C.accent)
     b.underline:SetHeight(2)
     b.underline:SetPoint("BOTTOMLEFT", b, "BOTTOMLEFT", 0, 0)
     b.underline:SetPoint("BOTTOMRIGHT", b, "BOTTOMRIGHT", 0, 0)
     function b:SetActive(active)
         self.active = active
-        self.label:SetTextColor(unpack(active and C.text or C.secondary))
+        UI.Color(self.label, active and C.tabActive or C.secondary)
         self.underline:SetShown(active)
+        self.activeBg:SetShown(active)
     end
-    b:SetScript("OnEnter", function(self) if not self.active then self.label:SetTextColor(unpack(C.text)) end end)
+    b:SetScript("OnEnter", function(self) if not self.active then UI.Color(self.label, C.text) end end)
     b:SetScript("OnLeave", function(self) self:SetActive(self.active) end)
     return b
 end
@@ -947,11 +1177,11 @@ local function layoutTabs(f)
         for i, b in ipairs(f.tabs) do sum = sum + b.label:GetStringWidth() + 2 * p + (i > 1 and 2 or 0) end
         return sum
     end
-    for _, b in ipairs(f.tabs) do b.label:SetFontObject(UI.Font("semibold", 12)) end
+    for _, b in ipairs(f.tabs) do UI.SetFont(b.label, "semibold", 12) end
     local pad = 12
     while pad > 6 and total(pad) > room do pad = pad - 2 end
     if total(pad) > room then
-        for _, b in ipairs(f.tabs) do b.label:SetFontObject(UI.Font("semibold", 11)) end
+        for _, b in ipairs(f.tabs) do UI.SetFont(b.label, "semibold", 11) end
     end
     local x = 8 + lb + 4
     for _, b in ipairs(f.tabs) do
@@ -971,13 +1201,15 @@ function Cfg:Create()
     f:SetClampedToScreen(true)
     f:EnableMouse(true)
     f:Hide()
-    f.look = UI.Window(f)
+    f.look = UI.Window(f, "dialog")
     if type(UISpecialFrames) == "table" then table.insert(UISpecialFrames, "DingConfigFrame") end
+    UI.DialogBars(f, TITLE_HEIGHT, TABS_HEIGHT)
 
-    -- Title bar: "Ding · Settings", B glyph, close cross.
+    -- Title bar: "Ding · Settings" (the theme's title font), B glyph, close cross.
     f.title = UI.Text(f, "semibold", 13, C.text)
+    UI.SetTitleFont(f.title, "settings")
     f.title:SetPoint("LEFT", f, "TOPLEFT", 12, -TITLE_HEIGHT / 2)
-    f.title:SetText(UI.Colored("accent", Ding.TITLE) .. UI.Colored("disabled", " · ") .. L.SETTINGS)
+    UI.Title(f.title, L.SETTINGS)
     f.close = UI.IconButton(f, 24)
     f.close:SetPoint("RIGHT", f, "TOPRIGHT", -6, -TITLE_HEIGHT / 2)
     f.close.label = UI.Text(f.close, "regular", 16, C.secondary)
@@ -986,7 +1218,7 @@ function Cfg:Create()
     f.close:SetScript("OnClick", function() Cfg:Close() end)
     f.back = UI.Glyph(f)
     f.back:SetPoint("RIGHT", f.close, "LEFT", -8, 0)
-    UI.Divider(f, -TITLE_HEIGHT)
+    UI.Separator(f, -TITLE_HEIGHT)
 
     -- Tabs, with LB / RB at the ends.
     f.lb = UI.Glyph(f)
@@ -999,7 +1231,7 @@ function Cfg:Create()
         b:SetScript("OnClick", function() Cfg:SelectTab(i) end)
         f.tabs[i] = b
     end
-    UI.Divider(f, -(TITLE_HEIGHT + 1 + TABS_HEIGHT), C.border)
+    UI.Divider(f, -(TITLE_HEIGHT + 1 + TABS_HEIGHT), C.tabLine)
 
     local content = CreateFrame("ScrollFrame", nil, f)
     content:SetPoint("TOPLEFT", f, "TOPLEFT", 0, -CONTENT_TOP)
@@ -1119,7 +1351,7 @@ local function dropPage(self)
     if not page then return nil end
     if self.focus then
         self.focus:SetFocused(false)
-        if GameTooltip:GetOwner() == self.focus then GameTooltip:Hide() end
+        Ding.Panel.HideCard(self.focus)
     end
     self.focus = nil
     page.canvas:Hide()
@@ -1152,19 +1384,26 @@ function Cfg:SelectTab(i, focusIndex)
     self:SetFocus(tab.focusable[index])
 end
 
-function Cfg:RefreshRows()
+-- `painting`: a theme change (the rows' texts again, the focus stays as it is).
+function Cfg:RefreshRows(painting)
     local f = self.frame
     local view = f and self:View()
     if not view or not view.rows then return end
     for _, row in ipairs(view.rows) do row:Refresh() end
     -- The focused row again: its A chip follows the gamepad.
-    if self.focus then self.focus:SetFocused(true) end
+    if self.focus and not painting then self.focus:SetFocused(true) end
     f.lb:SetKey("PADLSHOULDER")
     f.rb:SetKey("PADRSHOULDER")
     f.back:SetKey("PAD2")
     layoutTabs(f)
     self:UpdateHelp()
 end
+
+-- A theme shown or saved (UI.Theme.Apply): the rows' values again (the opacity follows the
+-- theme), nothing rebuilt.
+UI.Theme.OnApply(function()
+    if Cfg.frame and Cfg.frame:IsShown() then Cfg:RefreshRows(true) end
+end)
 
 function Cfg:OnEngineRefresh()
     if not (self.frame and self.frame:IsShown()) then return end
@@ -1204,7 +1443,7 @@ end
 
 -- A quest card shown from a row (quest log cleanup) goes with the focus.
 local function hideCard(row)
-    if row and GameTooltip:GetOwner() == row then GameTooltip:Hide() end
+    if row then Ding.Panel.HideCard(row) end
 end
 
 function Cfg:SetFocus(row)
@@ -1289,26 +1528,39 @@ end
 ---------------------------------------------------------------------------
 -- Key binding capture
 ---------------------------------------------------------------------------
+-- The row waits for a button, a combination or a key (Gamepad:Capture). Someone else having
+-- the key (a saved binding, another addon, the game's gamepad interface) is said in words:
+-- A binds it anyway, B keeps things as they were; the game refusing the key says so.
 function Cfg:StartCapture(row)
     if InCombatLockdown() then return end
+    local action = row.opts.action
     self.capturing = row
-    row.capturing = true
+    row.capturing, row.notice = true, nil
     row:Refresh()
     self:UpdateHelp()
-    G():Capture(function(key)
-        row.capturing = false
-        self.capturing = nil
-        if key then
-            local _, name = G():ConflictFor(row.opts.action, key)
-            if name then
-                row.conflict = name
-                self.conflictRow, self.pendingKey = row, key
-            else
-                G():Bind(row.opts.action, key)
+    G():Capture({
+        chords = G():ChordAllowed(action),
+        say = function(text)
+            row.notice = text
+            row:Refresh()
+        end,
+        done = function(key)
+            row.capturing, row.notice = false, nil
+            self.capturing = nil
+            if key then
+                local who = G():WhoUses(action, key)
+                if who then
+                    row.conflict = { who = who, key = key }
+                    self.conflictRow, self.pendingKey = row, key
+                elseif G():Bind(action, key) then
+                    row.boundPad = G():IsPadKey(key)
+                else
+                    row.notice = L.BIND_REFUSED:format(G():KeyName(key))
+                end
             end
-        end
-        refreshAll()
-    end)
+            refreshAll()
+        end,
+    })
 end
 
 -- Mouse: a binding conflict waits for a click on its row (replace) or a right click
@@ -1331,7 +1583,13 @@ function Cfg:ResolveConflict(accept)
     self.conflictRow, self.pendingKey = nil, nil
     if not row then return end
     row.conflict = nil
-    if accept then G():Bind(row.opts.action, key) end
+    if accept then
+        if G():Bind(row.opts.action, key) then
+            row.boundPad = G():IsPadKey(key)
+        else
+            row.notice = L.BIND_REFUSED:format(G():KeyName(key))
+        end
+    end
     refreshAll()
 end
 
@@ -1378,9 +1636,10 @@ function Cfg:OnKey(key)
     elseif key == "PADRSHOULDER" then
         self:SelectTab(self.tab % #TABS + 1)
     elseif key == "PADDUP" then
-        self:MoveFocus(-1)
+        -- A grid of cards first moves between its own lines.
+        if not (row and row.cards and row:Up()) then self:MoveFocus(-1) end
     elseif key == "PADDDOWN" then
-        self:MoveFocus(1)
+        if not (row and row.cards and row:Down()) then self:MoveFocus(1) end
     elseif key == "PADDLEFT" then
         if row then row:Left() end
     elseif key == "PADDRIGHT" then
@@ -1435,6 +1694,8 @@ function Cfg:OnHide()
     end
     G():Release(self.frame)
     self.welcome = false
+    -- Next time, the Keybinds rows show the input in use's keys again.
+    for _, row in ipairs(TABS[BINDINGS_TAB].rows or {}) do row.boundPad = nil end
 end
 
 -- The window hides while the guide window, the arrow or the item button moves.

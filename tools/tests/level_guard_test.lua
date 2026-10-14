@@ -8,7 +8,8 @@ local T = dofile(tools .. "/testlib.lua")(arg[1])
 local Ding, H = T.Ding, T.H
 local E, P, L = Ding.Engine, Ding.Panel, Ding.L
 
-local ORANGE, BLUE = "|cffff8040", "|cff5bb4ff"
+-- The theme's colors of a quest above the player's level and of a quest name.
+local ORANGE, BLUE = "|cff" .. Ding.UI.HexOf(Ding.UI.C.above), "|cff" .. Ding.UI.HexOf(Ding.UI.C.quest)
 -- "[4] “Webwood Venom”": the quest's level before its name.
 local function leveled(q, level) return L.QUEST_WITH_LEVEL:format(level, L.QUOTE:format(Ding.Data:QuestName(q))) end
 

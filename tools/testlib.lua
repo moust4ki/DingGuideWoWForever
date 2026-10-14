@@ -39,9 +39,30 @@ return function(combined, opts)
         if Ding.Setup then Ding.Setup:Close() end
         H.flush()
         if Ding.Config.frame then Ding.Config:Close() end
+        GameTooltip:Hide()
     end
 
     function T.test(name, fn) tests[#tests + 1] = { name = name, fn = fn } end
+
+    -- The card on screen, read like GameTooltip: the guide window's rows show Ding's own card
+    -- (UI.Card), the game's tooltip shows the rest (an item, a talent, a button's name). `text`
+    -- (the title), `lines`, IsShown(), GetOwner(), Hide() (both).
+    if Ding then
+        T.tip = setmetatable({}, { __index = function(_, k)
+            local Card = Ding.UI.Card
+            if k == "IsShown" then return function() return Card:IsShown() or GameTooltip:IsShown() end end
+            if k == "Hide" then
+                return function()
+                    Card:Hide()
+                    GameTooltip:Hide()
+                end
+            end
+            local tip = Card:IsShown() and Card or GameTooltip
+            local v = tip[k]
+            if type(v) == "function" then return function(_, ...) return v(tip, ...) end end
+            return v
+        end })
+    end
 
     -- A quest as the guide window names it: "[2] “The Balance of Nature” (part 1 of 2)" (its
     -- level, its name quoted, its part of a chain that shares its name).
@@ -160,6 +181,9 @@ return function(combined, opts)
         Ding.db.arrow.loop = true
         Ding.Arrow.farm, Ding.Arrow.forced, Ding.Panel.cycle = nil, nil, nil
         Ding.Along.entries, Ding.Along.shown = {}, {}
+        -- No card left from the last test.
+        Ding.UI.Card:Hide()
+        GameTooltip:Hide()
         H.flush()
     end
 

@@ -12,7 +12,7 @@
 ## OptionalDeps: TomTom
 ## SavedVariables: DingDB
 ## SavedVariablesPerCharacter: DingCharDB
-## IconTexture: Interface\AddOns\Ding\Media\Textures\icon32
+## IconTexture: Interface\AddOns\Ding\Media\Textures\logo64
 
 Core\Ding.lua
 Locales\enUS.lua
@@ -61,6 +61,7 @@ Core\Rewards.lua
 Core\GuideText.lua
 Core\Import.lua
 Core\Why.lua
+UI\Themes.lua
 UI\Widgets.lua
 UI\Gamepad.lua
 UI\Arrow.lua

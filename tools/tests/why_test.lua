@@ -6,6 +6,7 @@
 local tools = (arg[0]:match("^(.*)[/\\]") or ".") .. "/.."
 local A11 = "leveling-a11-duskwood-and-redridge-mountains"
 local T = dofile(tools .. "/testlib.lua")(arg[1], { guides = { A11 } })
+local Tip = T.tip    -- the card on screen (Ding's card or the game's tooltip)
 local Ding, H = T.Ding, T.H
 local E, P, W, L = Ding.Engine, Ding.Panel, Ding.Why, Ding.L
 
@@ -61,8 +62,8 @@ end
 local function hover(i)
     local r = P.frame.rows[i]
     r.scripts.OnEnter(r)
-    local shown = GameTooltip:IsShown() and GameTooltip:GetOwner() == r
-    local text, lines = GameTooltip.text, table.concat(GameTooltip.lines or {}, " | ")
+    local shown = Tip:IsShown() and Tip:GetOwner() == r
+    local text, lines = Tip.text, table.concat(Tip.lines or {}, " | ")
     r.scripts.OnLeave(r)
     return shown, text, lines
 end
@@ -117,12 +118,12 @@ T.test("focus mode: X shows the reason with the quest's card", function()
     start(2, { log = { STALVAN2 } })
     P:StartFocus()
     H.press("PAD3")
-    T.ok(GameTooltip:IsShown(), "X shows no card")
-    local lines = table.concat(GameTooltip.lines, " | ")
+    T.ok(Tip:IsShown(), "X shows no card")
+    local lines = table.concat(Tip.lines, " | ")
     find(lines, L.WHY_TITLE, "X")
     find(lines, "Ce détour ajoute environ 5 min au trajet.", "X")
     P:StopFocus()
-    T.ok(not GameTooltip:IsShown(), "card still shown after leaving focus mode")
+    T.ok(not Tip:IsShown(), "card still shown after leaving focus mode")
 end)
 
 T.test("a row without a quest (a trip): its card is its text and why; X too", function()
@@ -141,7 +142,7 @@ T.test("a row without a quest (a trip): its card is its text and why; X too", fu
     P:StartFocus()
     P.focusIndex = i
     H.press("PAD3")
-    T.ok(GameTooltip:IsShown() and GameTooltip:GetOwner() == P.frame.rows[i], "X on the trip: no card")
+    T.ok(Tip:IsShown() and Tip:GetOwner() == P.frame.rows[i], "X on the trip: no card")
     P:StopFocus()
 end)
 

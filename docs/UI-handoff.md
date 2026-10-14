@@ -3,6 +3,8 @@ Ding's interface sheet: the reference for the UI. Taken from the Claude Design h
 "Ding, addon WoW Classic" (October 11, 2026), wanted exactly as is by Yendi. The mockup's
 HTML file is not in the repository (Yendi keeps the handoff archive).
 The accepted deviations and what remains to be checked in game are at the end of the sheet.
+Since v1.5.0 the look comes from a theme (docs/UI-themes.md): this sheet is the "Ding dark"
+theme's (its colors) and every theme's sizes, which themes never change.
 -->
 
 # Handoff: Ding — interface (WoW Classic)
@@ -11,6 +13,7 @@ The accepted deviations and what remains to be checked in game are at the end of
 
 | Screen | Files |
 |---|---|
+| Themes (the colors of the tokens, flags, textures): [`UI-themes.md`](UI-themes.md) | `Ding/UI/Themes.lua` (`UI.Themes`, `UI.Theme.Apply`) |
 | Tokens, fonts, shapes, focus, chips, settings rows | `Ding/UI/Widgets.lua` (`UI.C`, `UI.Font`, `UI.Shape`, `UI.Window`, `UI.Focus`, `UI.Glyph`, `UI.*Row`) |
 | 01 Guide window, collapsed version, focus mode | `Ding/UI/Panel.lua` |
 | 02 Arrow | `Ding/UI/Arrow.lua` (TomTom: `Ding/UI/TomTom.lua`) |
@@ -39,6 +42,10 @@ Ding is a free, open-source World of Warcraft Classic addon that guides the play
 ---
 
 ## Design tokens
+
+The colors below are the **Ding dark** theme's (`UI.Themes.dingdark`); the other themes,
+Halo (the default since v1.5.0), Ardoise and Bandes, and the tokens added since, are in
+[`UI-themes.md`](UI-themes.md). Code reads every color through `UI.C`.
 
 ### Colors
 | Token | Hex | RGBA (0–1) for `SetVertexColor` / `SetTextColor` | Usage |
@@ -124,6 +131,7 @@ All white, to be tinted with `SetVertexColor`. Preview: `Media/textures_preview.
 | `circle.tga` | 64 | — | A/B/X/Y chips, slider thumb, ● collect (6×6) |
 | `ring.tga` | 64 | — | "Arrived" circle (shown at 48×48 → 3 px stroke) |
 | `arrow.tga` | 128 | — | Arrow (shown at 56×56, `SetRotation`) |
+| `minimap_icon64.tga`, `minimap_icon32.tga`, `logo64.tga`, `logo32.tga`, `arrow_gold.tga` | 64 / 32 / 128 | — | Since v1.5.0, **real colors** (never tinted): the minimap button's icon, the logo (TOC), the gold arrow skin (docs/UI-themes.md) |
 | `icon_check.tga` | 32 | — | Check mark (shown at 11×11 inside a 16 px icon) |
 | `icon_check_large.tga` | 64 | — | Check mark inside the "arrived" circle (22×22) |
 | `icon_diamond.tga` | 32 | — | ◆ kill (shown at 6×6) |
@@ -394,6 +402,25 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   stops in combat and when the settings open.
 - **Y resets to default** (sliders, choices) and clears a keybind; X is not used in the
   settings.
+- **Keybinds rows: combinations and words** (v1.5.0; reported in game: every button pressed
+  showed "RB"). A gamepad button is taken when it is released alone, so that a held button can
+  start a chord of Ding's ("LB+Up", "LT+A": two buttons, the chip "LB + Up" with its plus); B
+  tapped cancels, B held one second is taken like any button. While
+  a button is awaited, a conflict settled or a combination refused ("RB+Up: the game only
+  combines a button with LT or RT", for the quest item only; "RB+Down: Easy Controller uses it
+  too and may win in play. A binds it anyway, B cancels"), the words take the room beside the label on up to two lines of 11 Regular in
+  `accent` (the label then keeps at most 40 % of the row, its whole name back afterwards). An
+  action with several buttons of the kind shown (a key with the keyboard, a button with the
+  gamepad) shows the first with "and 2 more" in 11 Regular `text.secondary` before its chip; a
+  new button replaces them all, a key the keys (the other kind stays). The info line gives a
+  combination the player's settings allow as its example.
+- **Setup assistant, first screen: how to open Ding! later** (v1.5.0, asked by the user). Under
+  the choices, `ROWS_TOP` below the last one and 8 in from the rows, one line of 11 Regular
+  `text.secondary`: with a gamepad, "To open Ding! later:" and the binding's chip right after it
+  (6 apart, the chips' 18 high, centered on the line), else where to bind one; with the
+  keyboard and mouse, the minimap button and the guide window's menu button in words (the menu
+  glyph is a texture: not in the text), and the key when one is bound. The window keeps the
+  height of its tallest screen.
 - **Always nine-slice**: rounded shapes are cut by hand (`SetTexCoord`, one texel per unit);
   `SetTextureSliceMargins` is not used.
 - **No arrows or shapes in text**: Noto Sans has neither ← → nor ◂ ▸ ▴ ▾ nor ✕ □ △ ○.
@@ -404,8 +431,9 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
 - **Objective names**: they come from the client, in the singular ("Kill 6 Mottled Boar").
   In French, the past tense is « … : fait ».
 - **Settings not in the mockup**, built from the design's components:
-  - Arrow: show the arrow, TomTom arrow, size (40-80), style (Ding or the minimap arrow, as a
-    fallback), orientation (with the test question), move, default position;
+  - Arrow: show the arrow, TomTom arrow, size (40-80), its look (since v1.5.0 the arrow picker
+    of docs/UI-themes.md; the minimap arrow is one of its cards), orientation (with the test
+    question), move, default position;
   - Automation: accept, turn in, skip gray quests, collapse in combat, hide in dungeons,
     choose quest rewards, sell gray items, repair at merchants, mark the target (solo), then
     under the label "Steps the guide can offer": manage the hearthstone, death skips, dungeon
@@ -444,7 +472,9 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
 - **TomTom**: optional and **off by default**; Ding's arrow is enough (Yendi's request); the
   old settings are migrated to Ding's arrow.
 - **Minimap button** (Yendi's request): left click opens the settings, right click the guide;
-  drag it around the minimap; it can be hidden in Appearance and with `/ding minimap`.
+  drag it around the minimap; it can be hidden in Appearance and with `/ding minimap`. Its icon
+  since v1.5.0: `minimap_icon64` (`minimap_icon32` under 24 pixels), the gold arrow of the new
+  icon, in its own colors (docs/UI-themes.md, "The icon").
 - **Data**: `DingDB` keeps Ding's own structure (`panel`, `arrow`, `item`, `minimap`, `ui`),
   migrated once (`layout = 2`): arrow at center + 120, size taken from the old scale, window
   scale clamped to 50-150 %. Design defaults: background 85 %, window 100 %, arrow 56, gray
@@ -727,12 +757,14 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   much"; a full redesign of the settings and the assistant comes later): the settings, the NPC
   directory and the setup assistant share their sizes (`UI.SIZE` in `UI/Widgets.lua`), about
   15 to 20 % tighter than above: title bars 28 (32), tab bars 28 (36 / 30), hint bars 26
-  (32 / 28), rows of one line 30 (36), of a label and its description 36 (44; the directory's
-  38), "More options" 28 (32), block headers 20 (24), a page's title 26 (30), padding 8 (12),
+  (32 / 28), rows of one line 30 (36), of a label and its description 38 (44; 36 in v1.4.0, the
+  label touched the frame), the directory's 38, "More options" 28 (32), block headers 20 (24), a page's title 26 (30), padding 8 (12),
   2 between rows (4); the sliders 66 high (78), the dropdown's field 28 (32) and its entries 24
   (28), the Appearance preview 86 (100), the settings' push buttons 22 (24), the assistant's 24
   (26). Texts are never cut (a description stays one line, as before), the focus rings keep
-  their 2 units, the rows stay as wide.
+  their 2 units, the rows stay as wide. On a row with a description, the label sits just above
+  the row's middle and the description just below it (2 apart), so the two lines are centered
+  on the row and on its check box whatever the font's real line heights (the user, v1.5.0).
 - **Size of the settings windows** (v1.4.0; the user's screen draws the 520-unit mockup window
   about 1.5 times bigger than the mockup they compared it with: the game's UI scale on a
   high-resolution screen): the Appearance tab's "Settings windows size" slider, under a
@@ -748,6 +780,17 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   for this tab".
 
 ## To check in game (Forever 1.60)
+
+- With Easy Controller: the list of docs/compatibility.md (LT + A bound and working in play, its
+  windows and Ding's taking the gamepad in turn, nothing lost after `/reload`); the assistant's
+  first line with LT + Start's chip.
+
+- Keybinds tab with the gamepad interface on: A alone (a game binding), LB + Up, LT + A, LT +
+  D-pad down (chords) saved and shown as pressed; in play, a chord runs its action once and the
+  gamepad bar's action on its second button does not (out of combat); B tapped cancels, B held
+  binds B; the client's `OnGamePadButtonUp` reaching the capture frame; the two lines of words
+  beside the label in French and German. Focus mode and the settings with Easy Controller on:
+  the D-pad moves in them, no spell cast (`DingPadInput`).
 
 - Why the guide makes its choices: the line under the Duskwood step that turns in "The Legend of
   Stalvan" at Moonbrook (Leveling, Alliance section 11), at 240 and 300 wide; the "Why?" part of

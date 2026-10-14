@@ -38,9 +38,10 @@ end
 local function showTooltip(self)
     GameTooltip:SetOwner(self, "ANCHOR_LEFT")
     GameTooltip:SetText(Ding.TITLE)
-    GameTooltip:AddLine(L.MINIMAP_LEFT, 0.8, 0.8, 0.8)
-    GameTooltip:AddLine(L.MINIMAP_RIGHT, 0.8, 0.8, 0.8)
-    GameTooltip:AddLine(L.MINIMAP_DRAG, 0.8, 0.8, 0.8)
+    local c = C.cardText
+    GameTooltip:AddLine(L.MINIMAP_LEFT, c[1], c[2], c[3])
+    GameTooltip:AddLine(L.MINIMAP_RIGHT, c[1], c[2], c[3])
+    GameTooltip:AddLine(L.MINIMAP_DRAG, c[1], c[2], c[3])
     GameTooltip:Show()
 end
 
@@ -53,10 +54,13 @@ function M:Create()
     b:RegisterForClicks("LeftButtonUp", "RightButtonUp")
     b:RegisterForDrag("LeftButton")
 
-    -- Ding's icon (disc, arrow and spark, drawn in Media/Textures/icon.tga) on a soft shadow.
-    b.shadow = UI.Icon(b, "circle", SIZE + 2, { 0, 0, 0, 0.35 }, "BACKGROUND", 0)
+    -- Ding's icon (the gold arrow on its dark disc, in its own colors: never tinted) on a soft
+    -- shadow.
+    b.shadow = UI.Icon(b, "circle", SIZE + 2, C.shadow, "BACKGROUND", 0)
     b.shadow:SetPoint("CENTER", b, "CENTER", 0, -1)
-    b.icon = UI.Icon(b, "icon", SIZE, { 1, 1, 1, 1 }, "ARTWORK")
+    b.icon = b:CreateTexture(nil, "ARTWORK")
+    b.icon:SetSize(SIZE, SIZE)
+    b.icon:SetVertexColor(1, 1, 1, 1)
     b.icon:SetPoint("CENTER", b, "CENTER", 0, 0)
     b.hover = UI.Icon(b, "circle", SIZE - 6, C.hover, "HIGHLIGHT")
     b.hover:SetPoint("CENTER", b, "CENTER", 0, 0)
@@ -76,8 +80,23 @@ function M:Create()
     self:Update()
 end
 
+-- The icon's texture: 64 texels, or 32 when the button is drawn under 24 pixels (a small UI
+-- scale), where the large one would blur.
+local SMALL = 24
+function M:IconFile()
+    local pixels = SIZE * self.button:GetEffectiveScale()
+    local ok, _, height = pcall(GetPhysicalScreenSize)
+    if ok and type(height) == "number" and height > 0 then pixels = pixels * height / 768 end
+    return UI.TEX .. (pixels < SMALL and "minimap_icon32" or "minimap_icon64")
+end
+
 function M:Update()
     if not self.button then return end
     self:Place()
+    self.button.icon:SetTexture(self:IconFile())
     self.button:SetShown(Ding.db.minimap.shown and true or false)
+end
+
+for _, event in ipairs({ "UI_SCALE_CHANGED", "DISPLAY_SIZE_CHANGED" }) do
+    Ding:On(event, function() M:Update() end)
 end

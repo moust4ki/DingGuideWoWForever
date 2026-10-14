@@ -236,16 +236,16 @@ local function tabButton(parent, text)
     b.label:SetPoint("CENTER", b, "CENTER", 0, 0)
     b.label:SetText(text)
     b.underline = b:CreateTexture(nil, "ARTWORK")
-    b.underline:SetColorTexture(unpack(C.accent))
+    UI.Fill(b.underline, C.accent)
     b.underline:SetHeight(2)
     b.underline:SetPoint("BOTTOMLEFT", b, "BOTTOMLEFT", 0, 0)
     b.underline:SetPoint("BOTTOMRIGHT", b, "BOTTOMRIGHT", 0, 0)
     function b:SetActive(active)
         self.active = active
-        self.label:SetTextColor(unpack(active and C.text or C.secondary))
+        UI.Color(self.label, active and C.tabActive or C.secondary)
         self.underline:SetShown(active)
     end
-    b:SetScript("OnEnter", function(self) if not self.active then self.label:SetTextColor(unpack(C.text)) end end)
+    b:SetScript("OnEnter", function(self) if not self.active then UI.Color(self.label, C.text) end end)
     b:SetScript("OnLeave", function(self) self:SetActive(self.active) end)
     b:SetWidth(UI.Measure(b.label) + 24)
     return b
@@ -286,12 +286,14 @@ function F:Create()
     f:EnableMouse(true)
     f:SetWidth(WIDTH)
     UI.Dialog(f, 0, 80)
-    f.look = UI.Window(f)
+    f.look = UI.Window(f, "dialog")
+    UI.DialogBars(f, TITLE, TABS)
 
     -- Title bar: "Ding! · Directory", B, close cross.
     f.title = UI.Text(f, "semibold", 13, C.text)
+    UI.SetTitleFont(f.title, "settings")
     f.title:SetPoint("LEFT", f, "TOPLEFT", 12, -TITLE / 2)
-    f.title:SetText(UI.Colored("accent", Ding.TITLE) .. UI.Colored("disabled", " · ") .. L.FINDER_TITLE)
+    UI.Title(f.title, L.FINDER_TITLE)
     f.close = UI.IconButton(f, 24)
     f.close:SetPoint("RIGHT", f, "TOPRIGHT", -6, -TITLE / 2)
     f.close.label = UI.Text(f.close, "regular", 16, C.secondary)
@@ -301,7 +303,7 @@ function F:Create()
     f.back = UI.Glyph(f)
     f.back:SetKey("PAD2")
     f.back:SetPoint("RIGHT", f.close, "LEFT", -8, 0)
-    UI.Divider(f, -TITLE)
+    UI.Separator(f, -TITLE)
 
     -- Tabs between LB and RB.
     f.lb = UI.Glyph(f)
@@ -315,7 +317,7 @@ function F:Create()
         b:SetScript("OnClick", function() F:SelectTab(i) end)
         f.tabs[i] = b
     end
-    UI.Divider(f, -(TITLE + 1 + TABS), C.border)
+    UI.Divider(f, -(TITLE + 1 + TABS), C.tabLine)
 
     -- A list's title: back caret, B, its name; a click goes back.
     local t = CreateFrame("Button", nil, f)
@@ -364,6 +366,11 @@ end
 -- The page on screen, top of the stack.
 function F:Page() return self.stack and self.stack[#self.stack] end
 
+-- A theme change: the open list's rows again (their colors follow the theme).
+UI.Theme.OnApply(function()
+    if F.frame and F.frame:IsShown() then Ding:Safe(F.Layout, F) end
+end)
+
 -- Lays the page out: title or tabs, rows, height, focus, help.
 function F:Layout()
     local f, page = self.frame, self:Page()
@@ -408,7 +415,7 @@ function F:Layout()
         r.index, r.data = i, row
         local mark = (pad or row.caret) and slot or 0
         r.label:SetText(row.label or "")
-        r.label:SetTextColor(unpack(row.dim and C.disabled or C.text))
+        UI.Color(r.label, row.dim and C.disabled or C.text)
         r.label:ClearAllPoints()
         if row.sub then
             r.label:SetPoint("TOPLEFT", r, "TOPLEFT", EDGE, -math.floor((ROW - (16 + 2 + 14)) / 2))

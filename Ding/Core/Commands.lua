@@ -106,5 +106,6 @@ SlashCmdList.DING = function(input)
         Ding:Print(Ding.db.debug and L.DEBUG_ON or L.DEBUG_OFF)
     else
         Ding:Print(L.HELP)
+        Ding:Print(Ding.Gamepad:OpenText())
     end
 end

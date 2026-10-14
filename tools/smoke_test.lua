@@ -37,22 +37,32 @@ local padDown, focusOn, selectTab, play = H.padDown, H.focusOn, H.selectTab, H.p
 local function firstLaunch()
     local C, S = Ding.Config, Ding.Setup
     -- The setup assistant first (UI/Setup.lua): RB through its screens, Finish on the last one.
+    -- "Open Ding! settings" got its default chord at login (RB + Up, watched by Ding:
+    -- Gamepad:BindDefaultConfig); the assistant says so.
+    expect(Ding.db.chords.DING_CONFIG == "PADRSHOULDER+PADDUP", "first launch: no default chord to open the settings")
     expect(S:IsShown() and S.screen == 1, "first launch: the setup assistant does not open")
     expect(not (C.frame and C.frame:IsShown()), "first launch: the settings open over the setup assistant")
+    local screen = S.frame and S.frame.screens[1]
+    expect(screen and screen.note:GetText() == Ding.L.SETUP_OPEN_LATER and screen.noteKey:IsShown(),
+        "first launch: the assistant does not say how to open Ding! later")
     for _ = 1, #S.SCREENS do press("PADRSHOULDER") end
     expect(not S:IsShown(), "first launch: Finish on the last screen does not close the setup assistant")
     expect(Ding.db.ui.setupDone, "first launch: the setup assistant is not remembered")
     expect(overrides[S.frame] == nil, "first launch: the setup assistant's temporary bindings are left")
-    -- Then the Keybinds tab (a gamepad is plugged in).
+    -- The button is bound: no Keybinds tab after the assistant; the button opens the settings.
+    flush()
+    expect(not (C.frame and C.frame:IsShown()), "first launch: the Keybinds tab opens although the button is bound")
+    expect(Ding.db.ui.welcomed, "first launch not remembered")
+    C:Toggle()     -- what the DING_CONFIG binding runs
     expect(C.frame and C.frame:IsShown(), "first launch: the settings window does not open")
     if not (C.frame and C.frame:IsShown()) then return end
-    expect(C.tab == C.TAB.bindings and C.focus and C.focus.opts.action == "DING_CONFIG",
-        'first launch: focus expected on "Open Ding settings"')
-    expect(Ding.db.ui.welcomed, "first launch not remembered")
     expect(#registered == 1, "AddOns > Ding category not registered")
     local special = table.concat(UISpecialFrames, ",")
     expect(special:find("DingConfigFrame", 1, true) and special:find("DingSetup", 1, true),
         "Escape would not close the windows")
+    -- Bound again by hand in the Keybinds tab: LT + Start.
+    selectTab(C, C.TAB.bindings)
+    focusOn(C, function(r) return r.opts.action == "DING_CONFIG" end, "Open Ding settings")
     press("PAD1")
     expect(C.capturing, "A does not start waiting for a button")
     padDown("PADLTRIGGER", { shift = true })
@@ -554,7 +564,8 @@ ok, err = pcall(function()
     press("PAD1")
     tick(4.5)
     expect(not C.focus.confirming, "the confirmation does not expire after 4 s")
-    expect(db.panel.scale == 1 and db.panel.bgAlpha == 0.85 and db.arrow.size == 56, "appearance settings changed")
+    expect(db.panel.scale == 1 and math.abs(db.panel.bgAlpha - Ding.UI.Theme.current.opacityDefault / 100) < 1e-6
+        and db.arrow.size == 56, "appearance settings changed")
     expect(db.arrow.mode == 0 and db.ui.buttonStyle == "xbox", "arrow or gamepad settings changed")
 
     -- Move mode: the guide window, with key repeat, LB fine step, Y default, B cancel, A save.
@@ -1038,7 +1049,8 @@ ok, err = pcall(function()
     expect(C.page and C.page.key == "cleanup", "cleanup: no page")
     focusOn(C, function(r) return r.opts and r.opts.label == Ding.Data:QuestName(916) end, "cleanup quest")
     press("PAD1")
-    expect(GameTooltip.text == Ding.Data:QuestName(916) and H.log()[916], "cleanup: no card, or the quest left")
+    -- The card of the guide window's rows (Ding's own frame: UI.Card).
+    expect(Ding.UI.Card.text == Ding.Data:QuestName(916) and H.log()[916], "cleanup: no card, or the quest left")
     checkPanel("cleanup page")
     H.setQuest(916, nil); fire("QUEST_LOG_UPDATE"); tick(1)
     local listed = false
@@ -1715,11 +1727,11 @@ ok, err = pcall(function()
     checkPanel("why: the line under the step")
     local r = P.frame.rows[1]
     r.scripts.OnEnter(r)
-    expect(table.concat(GameTooltip.lines or {}, " "):find(L.WHY_TITLE, 1, true), "why: not in the row's tooltip")
+    expect(table.concat(Ding.UI.Card.lines or {}, " "):find(L.WHY_TITLE, 1, true), "why: not in the row's tooltip")
     r.scripts.OnLeave(r)
     P:StartFocus()
     press("PAD3")
-    expect(GameTooltip:IsShown() and table.concat(GameTooltip.lines or {}, " "):find(L.WHY_TITLE, 1, true),
+    expect(Ding.UI.Card:IsShown() and table.concat(Ding.UI.Card.lines or {}, " "):find(L.WHY_TITLE, 1, true),
         "why: X shows no reason")
     P:StopFocus()
     db.panel.why = false

@@ -6,13 +6,15 @@
 -- in a review (panel_snapshot_test.lua compares them).
 --
 -- usage: lua5.1 tools/panel_snapshot.lua <combined dir> [scenario ...] [--locale frFR]
---                                        [--write <dir>] [--list]
+--                                        [--theme <id>] [--write <dir>] [--list]
 --   no scenario: all of them, one after the other. --write: one file per scenario
---   (<dir>/<scenario>.txt) instead of the standard output. --list: the scenarios and what
---   each one shows.
+--   (<dir>/<scenario>.txt, <dir>/<scenario>@<theme>.txt for another theme than Ding dark)
+--   instead of the standard output. --list: the scenarios and what each one shows. --theme:
+--   the look (UI/Themes.lua), "dingdark" by default: the snapshots of every scenario were
+--   written with it; Snap.THEMED lists the scenarios kept in the other themes too.
 -- As a module (tests): dofile("tools/panel_snapshot.lua") returns
---   { scenarios, GUIDES, Bind(T) -> view }, view:Setup(scenario or name), view:Render(scenario),
---   view:Snapshot(name) (setup then render).
+--   { scenarios, GUIDES, THEMED, Bind(T) -> view }, view:Setup(scenario or name),
+--   view:Render(scenario), view:Snapshot(name[, theme]) (setup then render).
 local here = debug.getinfo(1, "S").source:match("^@(.*)[/\\]") or "."
 local Snap = {}
 Snap.scenarios = dofile(here .. "/panel_scenarios.lua")
@@ -22,16 +24,29 @@ Snap.GUIDES = Snap.scenarios.GUIDES
 local byName = {}
 for _, sc in ipairs(Snap.scenarios) do byName[sc.name] = sc end
 Snap.byName = byName
+-- The look of the snapshots, and the scenarios also kept in the other themes.
+Snap.THEME = "dingdark"
+Snap.THEMED = { themes = { "halo", "ardoise", "bandes" }, scenarios = { "a12-fragments", "a11-minimized" } }
 
--- Color tokens of Ding's design (UI.C) in words, for the looks of a row. Several tokens share a
--- value (border and hover): the first name that matches wins, in this order.
+-- Color tokens of the theme (UI.C) in words, for the looks of a row. Several tokens share a
+-- value (border and hover): the first name that matches wins, in this order. A theme's own words
+-- come first (the to-do of Halo is its gold accent, the one of Bandes a white on a blue band).
 local COLOR_WORDS = {
     { "doneRowBg", "green" }, { "todoRowBg", "red" }, { "manualRowBg", "violet" },
-    { "skippedRowBg", "amber" }, { "subtle", "grey box" }, { "control", "button" },
+    { "skippedRowBg", "amber" }, { "noticeBg", "grey box" }, { "control", "button" },
     { "done", "green" }, { "todo", "red" }, { "manual", "violet" }, { "skipped", "amber" },
-    { "above", "orange" }, { "accent", "blue" }, { "text", "white" }, { "glyph", "white" },
-    { "secondary", "light grey" }, { "muted", "dim grey" }, { "disabled", "grey" },
-    { "extraRowBg", "neutral" }, { "extra", "neutral" },
+    { "above", "orange" }, { "accent", "blue" }, { "text", "white" }, { "chipText", "white" },
+    { "secondary", "light grey" }, { "subText", "light grey" }, { "muted", "dim grey" }, { "disabled", "grey" },
+}
+local THEME_WORDS = {
+    halo = { { "todo", "gold" }, { "accent", "gold" }, { "quest", "gold" }, { "link", "light blue" },
+        { "skipped", "teal" } },
+    ardoise = { { "todoRowBg", "amber" }, { "todo", "amber" }, { "accent", "gold" }, { "link", "light blue" },
+        { "skippedRowBg", "teal" }, { "skipped", "teal" } },
+    bandes = { { "doneRowBg", "green band" }, { "todoRowBg", "blue band" }, { "infoRowBg", "dark band" },
+        { "noticeBg", "dark band" }, { "panelStepbar", "dark band" }, { "manualRowBg", "violet band" },
+        { "skippedRowBg", "amber band" },
+        { "todo", "white" } },
 }
 local GLYPHS = { icon_check = "check", icon_diamond = "diamond", circle = "dot" }
 
@@ -50,19 +65,34 @@ function Snap.Bind(T)
     end
     local function colorWord(rgba)
         if not rgba then return "?" end
-        for _, pair in ipairs(COLOR_WORDS) do
-            if C[pair[1]] and same(rgba, C[pair[1]]) then return pair[2] end
+        for _, words in ipairs({ THEME_WORDS[UI.Theme.current.id] or {}, COLOR_WORDS }) do
+            for _, pair in ipairs(words) do
+                if C[pair[1]] and same(rgba, C[pair[1]]) then return pair[2] end
+            end
         end
         return ("rgb %.2f %.2f %.2f"):format(rgba[1], rgba[2], rgba[3])
     end
     view.colorWord = colorWord
+
+    -- A font in words: its weight and size ("semibold 12"), "game font 13" for the client's
+    -- own; Noto Sans Regular 12 (the rows' text) says nothing.
+    local function fontWord(font)
+        if not font then return nil end
+        local path, size, flags = font:GetFont()
+        local weight = tostring(path):match("NotoSans%-(%a+)%.ttf")
+        local word = weight and (weight:lower() .. " " .. tostring(size)) or ("game font " .. tostring(size))
+        if flags and flags ~= "" then word = word .. " " .. flags:lower() end
+        if word == "regular 12" then return nil end
+        return word
+    end
+    view.fontWord = fontWord
 
     -- A text as the player reads it: colors gone, but the orange of a quest above the player's
     -- level kept as {orange: ...} (a color that carries a meaning, said in words elsewhere); an
     -- item link as the client shows it, its name in brackets.
     local function readable(s)
         s = tostring(s or "")
-        s = s:gsub("|cffff8040(.-)|r", "{orange: %1}")
+        s = s:gsub("|cff" .. UI.HexOf(C.above) .. "(.-)|r", "{orange: %1}")
         s = s:gsub("|H.-|h(.-)|h", "%1")
         return H.plain(s)
     end
@@ -96,10 +126,8 @@ function Snap.Bind(T)
             parts[#parts + 1] = "no icon"
         end
         parts[#parts + 1] = "text " .. colorWord(r.text.color)
-        local font = r.text.fontObject and r.text.fontObject.name
-        if font and font ~= "DingFont_regular12" then
-            parts[#parts + 1] = font:gsub("^DingFont_", ""):gsub("(%a)(%d)", "%1 %2")
-        end
+        local font = fontWord(r.text.fontObject)
+        if font then parts[#parts + 1] = font end
         if data.nested then parts[#parts + 1] = "indented" end
         if r.counter:IsShown() then
             parts[#parts + 1] = "counter " .. tostring(r.counter:GetText()) .. " " .. colorWord(r.counter.color)
@@ -109,9 +137,21 @@ function Snap.Bind(T)
         return table.concat(parts, ", ")
     end
 
-    -- The card a row shows: hover (mouse), or X in focus mode (`focus`).
-    local function card(r, i, focus)
+    -- The card a row shows (the card of Ding, or the game tooltip for an item or a talent):
+    -- hover (mouse), or X in focus mode (`focus`).
+    local Card = UI.Card
+    local function shownCard(owner)
+        for _, tip in ipairs({ Card, GameTooltip }) do
+            if tip:IsShown() and tip:GetOwner() == owner then return tip end
+        end
+    end
+    local function hideCards()
+        Card:Hide()
         GameTooltip:Hide()
+    end
+    view.shownCard = shownCard
+    local function card(r, i, focus)
+        hideCards()
         if focus then
             P.focusIndex = i
             P:Update()
@@ -120,12 +160,13 @@ function Snap.Bind(T)
             r.scripts.OnEnter(r)
         end
         local out
-        if GameTooltip:IsShown() and GameTooltip:GetOwner() == r then
-            out = { readable(GameTooltip.text) }
-            for _, line in ipairs(GameTooltip.lines or {}) do out[#out + 1] = readable(line) end
+        local tip = shownCard(r)
+        if tip then
+            out = { readable(tip.text) }
+            for _, line in ipairs(tip.lines or {}) do out[#out + 1] = readable(line) end
         end
         if not focus then r.scripts.OnLeave(r) end
-        GameTooltip:Hide()
+        hideCards()
         return out
     end
 
@@ -163,9 +204,12 @@ function Snap.Bind(T)
         local focus = sc.focus and true or false
         add(("# %s"):format(sc.name))
         add(("# %s"):format(sc.about))
-        add(("# %s, %s %s level %d, window %d wide, scale %s%s"):format(Ding.locale or GetLocale(),
+        local theme = UI.Theme.current.id
+        add(("# %s, %s %s level %d, window %d wide, scale %s%s%s"):format(Ding.locale or GetLocale(),
             H.player.race, H.player.class, H.player.level, Ding.db.panel.width, tostring(Ding.db.panel.scale or 1),
-            Ding.Gamepad:Active() and ", gamepad" or ", mouse"))
+            Ding.Gamepad:Active() and ", gamepad" or ", mouse",
+            theme ~= Snap.THEME and (", theme " .. theme .. ", background " .. math.floor(UI.Theme.Opacity() * 100 + 0.5)
+                .. " %") or ""))
         if ctx and ctx.warning then add("!! " .. ctx.warning) end
         add("")
         if P.compact then
@@ -174,16 +218,18 @@ function Snap.Bind(T)
             add("MINIMIZED")
             add(("  %s | %s icon | %s%s"):format(readable(m.count:GetText()), colorWord(m.icon.tex.vertexColor),
                 readable(m.text:GetText()), m.counter:IsShown() and (" | " .. tostring(m.counter:GetText())) or ""))
+            if m.band:IsShown() then add("  " .. colorWord(m.band.color) .. " behind the line") end
             if m.text:IsTruncated() then add("  (the line is cut by an ellipsis: hover shows it whole)") end
-            GameTooltip:Hide()
+            hideCards()
             f.scripts.OnEnter(f)
-            if GameTooltip:IsShown() then
+            local tip = shownCard(f)
+            if tip then
                 add("  hover card:")
-                add("    " .. readable(GameTooltip.text))
-                for _, line in ipairs(GameTooltip.lines or {}) do add("    " .. readable(line)) end
+                add("    " .. readable(tip.text))
+                for _, line in ipairs(tip.lines or {}) do add("    " .. readable(line)) end
             end
             f.scripts.OnLeave(f)
-            GameTooltip:Hide()
+            hideCards()
             add(("  state of its row: %s"):format(tostring(data.state)))
             return table.concat(out, "\n") .. "\n"
         end
@@ -227,7 +273,7 @@ function Snap.Bind(T)
             end
         end
         if focus then
-            GameTooltip:Hide()
+            hideCards()
             P.focusIndex = 1
             P:Update()
         end
@@ -248,8 +294,11 @@ function Snap.Bind(T)
         return table.concat(out, "\n") .. "\n"
     end
 
-    function view:Snapshot(name)
+    -- `theme`: the look (Snap.THEME by default); the background at the default of that theme.
+    function view:Snapshot(name, theme)
         local sc = assert(byName[name], "no scenario " .. tostring(name))
+        Ding.db.ui.opacityTouched = nil
+        UI.Theme.Apply(theme or Snap.THEME)
         local ctx = self:Setup(sc)
         local text = self:Render(sc, ctx)
         Snap.scenarios.Teardown(sc, { T = T, H = H, Ding = Ding, E = E, P = P, L = L, pad = pad })
@@ -266,12 +315,14 @@ local cli = { ... }
 if #cli == 0 then return Snap end
 
 local combined = cli[1]
-local locale, write, list, names = "frFR", nil, false, {}
+local locale, write, list, names, theme = "frFR", nil, false, {}, nil
 local i = 2
 while cli[i] do
     local a = cli[i]
     if a == "--locale" then
         locale, i = cli[i + 1], i + 1
+    elseif a == "--theme" then
+        theme, i = cli[i + 1], i + 1
     elseif a == "--write" then
         write, i = cli[i + 1], i + 1
     elseif a == "--list" then
@@ -296,12 +347,13 @@ for _, name in ipairs(names) do
         io.stderr:write("unknown scenario: " .. name .. " (--list)\n")
         os.exit(2)
     end
-    local text = view:Snapshot(name)
+    local text = view:Snapshot(name, theme)
     if write then
-        local file = assert(io.open(write .. "/" .. name .. ".txt", "wb"))
+        local path = write .. "/" .. name .. ((theme and theme ~= Snap.THEME) and ("@" .. theme) or "") .. ".txt"
+        local file = assert(io.open(path, "wb"))
         file:write(text)
         file:close()
-        print("written: " .. write .. "/" .. name .. ".txt")
+        print("written: " .. path)
     else
         io.write(text, "\n")
     end

@@ -5,6 +5,7 @@
 -- directory, the offers panel, the settings; and every language has every one of these words.
 local tools = (arg[0]:match("^(.*)[/\\]") or ".") .. "/.."
 local T = dofile(tools .. "/testlib.lua")(arg[1])
+local Tip = T.tip    -- the card on screen (Ding's card or the game's tooltip)
 local Ding, H = T.Ding, T.H
 local E, P, A, B, QM, MP, UI = Ding.Engine, Ding.Panel, Ding.Arrow, Ding.ItemButton, Ding.QuestMobs,
     Ding.MinimapPins, Ding.UI
@@ -61,10 +62,10 @@ end
 
 -- The card of a row of the window, as the mouse's hover shows it: its title and lines.
 local function card(frame)
-    GameTooltip:Hide()
+    Tip:Hide()
     frame.scripts.OnEnter(frame)
-    if not (GameTooltip:IsShown() and GameTooltip:GetOwner() == frame) then return nil end
-    return { title = H.plain(GameTooltip.text), lines = table.concat(GameTooltip.lines, " | "), list = GameTooltip.lines }
+    if not (Tip:IsShown() and Tip:GetOwner() == frame) then return nil end
+    return { title = H.plain(Tip.text), lines = table.concat(Tip.lines, " | "), list = Tip.lines }
 end
 
 local function has(text, part) return text and text:find(part, 1, true) ~= nil end
@@ -197,8 +198,8 @@ T.test("minimized: the card says the row, its state and \"Step 1 of 4\"", functi
     P:SetCompact(true)
     local f = P.frame
     f.scripts.OnEnter(f)
-    T.ok(GameTooltip:IsShown() and GameTooltip:GetOwner() == f, "no card over the minimized window")
-    local lines = table.concat(GameTooltip.lines, " | ")
+    T.ok(Tip:IsShown() and Tip:GetOwner() == f, "no card over the minimized window")
+    local lines = table.concat(Tip.lines, " | ")
     T.ok(has(lines, L.COMPACT_STEP:format(1, 4)), "\"1/4\" not said in words: " .. lines)
     T.ok(has(lines, L.STATE_TODO), "state missing: " .. lines)
     f.scripts.OnLeave(f)
@@ -228,16 +229,16 @@ T.test("focus mode, gamepad: A, X and B said under the rows; none with the mouse
     T.ok(P.frame:GetHeight() > height, "the hints do not have their own room")
     -- X on the row: its card, with A (not a click) and Right in words.
     H.press("PAD3")
-    local lines = table.concat(GameTooltip.lines, " | ")
+    local lines = table.concat(Tip.lines, " | ")
     T.ok(has(lines, L.ROW_CLICK_PAD:format(Ding.Gamepad:ButtonName("PAD1"))), "a click in focus mode: " .. lines)
     T.ok(has(lines, L.ROW_FIND_PAD:format(Ding.Gamepad:ButtonName("PADDRIGHT"))), "Right not said")
     -- The directory's button above the first row: its name, as the hover says it; A is on it.
     while P.focusIndex > 0 do H.press("PADDUP") end
-    T.eq(GameTooltip:GetOwner(), P.frame.finder)
-    T.eq(GameTooltip.text, L.BIND_FINDER)
+    T.eq(Tip:GetOwner(), P.frame.finder)
+    T.eq(Tip.text, L.BIND_FINDER)
     T.eq(table.concat(hintLabels(), ","), "PAD2=" .. L.FOCUS_LEAVE, "A said twice")
     H.press("PADDDOWN")
-    T.ok(GameTooltip:GetOwner() ~= P.frame.finder or not GameTooltip:IsShown(), "the directory's card stays")
+    T.ok(Tip:GetOwner() ~= P.frame.finder or not Tip:IsShown(), "the directory's card stays")
     H.press("PAD2")
     T.ok(not P.frame.focusHints:IsShown(), "hints after focus mode")
     T.eq(P.frame:GetHeight(), height)
@@ -298,9 +299,12 @@ T.test("arrow: no position, \"distance unknown\"; the farming loop's label never
     A:Tick()
     C_Map.GetPlayerMapPosition = get
     T.ok(has(H.plain(A.frame.distance:GetText()), L.DISTANCE_UNKNOWN), "a bare \"?\": " .. tostring(A.frame.distance:GetText()))
-    A.frame.label:SetText(L.FARM_LOOP:format("Jeune sabre-de-nuit tacheté", 10, 12))
-    A.frame.label:SetWidth(240)
+    A.frame.label:SetText("Jeune sabre-de-nuit tacheté")
+    A.frame.label:SetWidth(220)
     T.ok(not A.frame.label:IsTruncated(), "the loop's label is cut")
+    A.frame.detail:SetText(L.FARM_LOOP:format(10, 12))
+    A.frame.detail:SetWidth(220)
+    T.ok(not A.frame.detail:IsTruncated(), "the loop's line is cut")
 end)
 
 T.test("minimap pins: hovered, a pin says what it is; the minimap keeps its clicks", function()
@@ -311,8 +315,8 @@ T.test("minimap pins: hovered, a pin says what it is; the minimap keeps its clic
     T.ok(pin:IsMouseEnabled() and not pin:IsMouseClickEnabled(), "the pin takes the minimap's clicks")
     A.shownPoint = { label = "Sabre", continent = 1 }
     pin.scripts.OnEnter(pin)
-    T.ok(has(H.plain(GameTooltip.text), "Sabre"), "no name")
-    T.eq(GameTooltip.lines[1], L.PIN_TARGET)
+    T.ok(has(H.plain(Tip.text), "Sabre"), "no name")
+    T.eq(Tip.lines[1], L.PIN_TARGET)
     pin.scripts.OnLeave(pin)
     local _, line = MP:Explain(MP.edge)
     T.eq(line, L.PIN_EDGE)
@@ -347,7 +351,7 @@ T.test("item button: why this item, its cooldown and a dimmed look, in words", f
     local b = _G.DingItemButton
     T.ok(b:IsShown(), "no item button")
     b.scripts.OnEnter(b)
-    local lines = table.concat(GameTooltip.lines, " | ")
+    local lines = table.concat(Tip.lines, " | ")
     T.ok(has(lines, L.ITEM_FOR_QUEST:format(L.QUOTE:format(D:QuestName(CROWN)))), "why this item: " .. lines)
     H.setItem(PHIAL, 1, { use = true, start = H.now(), duration = 30, unusable = true })
     H.fire("BAG_UPDATE_COOLDOWN")

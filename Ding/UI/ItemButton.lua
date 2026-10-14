@@ -129,8 +129,9 @@ local function showTooltip(self)
     end
     for _, line in ipairs(B:Explain()) do GameTooltip:AddLine(line, C.accent[1], C.accent[2], C.accent[3], true) end
     local key = Ding.Gamepad:BindingText(B.BINDING)
-    if key then GameTooltip:AddLine(key, 0.8, 0.8, 0.8) end
-    GameTooltip:AddLine(L.ITEM_DRAG, 0.8, 0.8, 0.8)
+    local c = C.cardText
+    if key then GameTooltip:AddLine(key, c[1], c[2], c[3]) end
+    GameTooltip:AddLine(L.ITEM_DRAG, c[1], c[2], c[3])
     GameTooltip:Show()
 end
 
@@ -153,8 +154,7 @@ function B:Create()
     b:SetAttribute("type-Target", "macro")
     b:SetAttribute("macrotext-Target", "")
 
-    b.look = UI.Window(b, C.itemBg, C.strong)
-    b.look:SetBgAlpha(C.itemBg[4])
+    b.look = UI.Window(b, "item")
     b.icon = UI.ItemIcon(b, ICON)
     b.icon:SetPoint("CENTER", b, "CENTER", 0, 0)
     b.veil = UI.Shape(b, "row", C.cooldown, "ARTWORK", 2):Place(b.icon)
@@ -170,7 +170,7 @@ function B:Create()
     UI.Shadow(b.name)
 
     -- Glyph of the binding: an 18 circle overlapping the bottom-right corner by 6.
-    b.glyph = UI.Glyph(b, { height = 18, font = 10, bg = C.control, text = C.text, border = C.strong })
+    b.glyph = UI.Glyph(b, { height = 18, font = 10, bg = C.itemChipBg, text = C.itemChipText, border = C.itemChipBorder })
     b.glyph:SetPoint("CENTER", b, "BOTTOMRIGHT", -3, 3)
     b.glyph:SetFrameLevel(b:GetFrameLevel() + 2)
 
@@ -300,15 +300,15 @@ function B:Render()
         local name = spell and (Compat.SpellName(spell) or "") or Compat.ItemName(id) or Ding.Data:ItemName(id) or ""
         local up = Ding.Gear and Ding.Gear:Suggested()
         b.name:SetText(up and up.id == id and L.EQUIP_ITEM:format(name) or name)
-        b.name:SetTextColor(unpack(C.text))
+        UI.Color(b.name, C.text)
     else
         b.name:SetText(L.OUT_OF_RANGE)
-        b.name:SetTextColor(unpack(C.todo))
+        UI.Color(b.name, C.todo)
     end
     if key then
         b.glyph:SetKey(key)
         local dim = left > 0 or not usable or not inRange
-        b.glyph:SetColors(pressed and C.accent or C.control, pressed and C.onAccent or (dim and C.muted or C.text))
+        b.glyph:SetColors(pressed and C.accent or C.itemChipBg, pressed and C.onAccent or (dim and C.muted or C.itemChipText))
         b.glyph:SetAlpha(1)
     else
         -- Opacity only: a child of the secure button is left alone in combat.
@@ -408,6 +408,9 @@ local function scheduleUpdate()
     end)
 end
 B.ScheduleUpdate = scheduleUpdate
+
+-- A theme change: the look of its state again (border, name, glyph).
+UI.Theme.OnApply(function() if B.button then Ding:Safe(B.Render, B) end end)
 
 ---------------------------------------------------------------------------
 -- Events

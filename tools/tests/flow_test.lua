@@ -391,7 +391,10 @@ T.test("loop: among the spawns, the arrow goes from stop to stop and around", fu
     A.point = nil; A:Tick()
     local farm = A.farm
     T.ok(farm and #farm.points >= 3, "no loop among the spawns")
-    T.eq(H.plain(A.frame.label:GetText()), L.FARM_LOOP:format(spawn.label, farm.at, #farm.points))
+    -- The area's name, then the loop's stop on the line under it.
+    T.eq(H.plain(A.frame.label:GetText()), spawn.label)
+    T.eq(H.plain(A.frame.detail:GetText()), L.FARM_LOOP:format(farm.at, #farm.points))
+    T.ok(A.frame.detail:IsShown(), "the loop's line is hidden")
     T.ok(A.state ~= "arrived", "the loop arrives")
     -- Each stop reached: the next one, then the first again.
     local seen = {}

@@ -39,6 +39,13 @@ instead from the *Arrow* tab of the settings (off by default).
 - **Resumes where you really are.** Ding picks the guide for your race, class and level. When
   you resume, it first sends you to finish the guide's old quests still in your log, then
   skips what you have done.
+- **Themes.** Pick the look in the settings (*Appearance*), with a live preview while you
+  choose: **Forever · Halo** (the default: no frame, a soft veil under the text, the game's
+  gold), **Forever · Slate** (a dark panel with gold hairlines), **Forever · Bands** (a band
+  behind each line, outlined text for light scenes) or **Ding dark** (Ding!'s original
+  look). The background's opacity follows the theme until you set your own. The arrow has its
+  own picker (*Arrow and maps*): the theme's arrow, or any of the others (the gold arrow of
+  Ding!'s icon among them), with any theme.
 - **Guide window.** One line per action and objective, with counters (2/6), done / to do /
   not yet possible states and the guide's notes. Hover a line to see its quest (name, level,
   objectives); click it to send the arrow there. Right-click the window to mark the step as
@@ -46,8 +53,8 @@ instead from the *Arrow* tab of the settings (off by default).
   amber: skipped); go back to such a step ("previous") to undo it, from the line under it or the
   same menu. Minimizes to a single line, automatically in combat if you want. Closing it
   hides the arrow too; the minimap button brings both back.
-- **Waypoint arrow.** Distance and time to the target, red with "turn around" when it is
-  behind you. Among the monsters you have to kill, it tells you you're in the area. When you
+- **Waypoint arrow.** Distance and time to the target, in the theme's "turn around" color
+  when it is behind you. Among the monsters you have to kill, it tells you you're in the area. When you
   die, it leads your ghost back to your corpse.
 - **Automation.** Accepts and turns in the guide's quests when you talk to an NPC (you still
   choose your reward), catches up on missing prerequisite quests, can skip gray quests.
@@ -79,10 +86,15 @@ instead from the *Arrow* tab of the settings (off by default).
 
 ## With a gamepad
 
-On first launch, Ding opens its setup assistant (the D-pad picks a choice, A ticks it, LB / RB
-change screens, Y keeps the recommended settings, B closes), then its settings on the
-**Keybinds** tab: bind a button to "Open Ding settings" (for example LT+Start), then to "Next
-step", "Previous step" and "Use the quest item".
+On first launch, **RB + Up** opens Ding's settings (LB + Up if you already use RB + Up); the
+setup assistant shows it on its first screen (the D-pad picks a choice, A ticks it, LB / RB
+change screens, Y keeps the recommended settings, B closes). In the **Keybinds** tab, bind "Next
+step", "Previous step" and "Use the quest item" too: a single button, or two buttons (hold one,
+press the other: LB + Up, LT + A…), which Ding watches itself and keeps from the game while you
+hold the first; tap B to cancel, hold B to bind B itself. `/ding help` reminds you how to open
+the settings.
+Easy Controller and Ding work side by side: see
+[docs/compatibility.md](docs/compatibility.md).
 In the settings window: A selects, B closes, LB / RB change tabs, the D-pad picks and adjusts,
 Y resets to default.
 

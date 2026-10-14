@@ -86,7 +86,11 @@ T.test("mark as done: step validated by hand, violet when going back to it", fun
     T.eq(E:StepMark(1), "manual", "\"previous\" cleared the mark")
     for _, row in ipairs(stepRows()) do T.eq(row.state, "manual", row.text) end
     T.ok(hasHint(L.STEP_MARKED_DONE), "no \"marked by hand\" hint")
-    T.ok(P.frame.rows[1].bg.color[1] == C.manualRowBg[1], "background not violet")
+    -- Violet: the row's glyph (and its background in the themes that tint rows).
+    local r = P.frame.rows[1]
+    local glyph = r.icon.tex:IsShown() and r.icon.tex.vertexColor or r.icon.letter.color
+    T.ok(glyph and glyph[1] == C.manual[1], "glyph not violet")
+    T.ok(not r.bg:IsShown() or r.bg.color[1] == C.manualRowBg[1], "background not violet")
 end)
 
 T.test("skip: step recorded as skipped, amber when going back to it", function()

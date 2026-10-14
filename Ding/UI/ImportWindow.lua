@@ -43,7 +43,7 @@ function W:Focus(box, select)
         self.pendingFocus = { box = box, select = select }
         if (f.status:GetText() or "") == "" then
             f.status:SetText(L.IMPORT_WAIT_KEYBOARD)
-            f.status:SetTextColor(unpack(C.secondary))
+            UI.Color(f.status, C.secondary)
         end
         return false
     end
@@ -78,7 +78,7 @@ local function textBox(parent, height, readOnly)
     edit:SetAutoFocus(false)
     edit:SetMaxLetters(0)
     edit:SetFontObject(UI.Font("regular", 11))
-    edit:SetTextColor(unpack(readOnly and C.secondary or C.text))
+    UI.Color(edit, readOnly and C.secondary or C.text)
     edit:SetWidth(WIDTH - 2 * PAD - 16)
     edit:SetHeight(height - 12)
     scroll:SetScrollChild(edit)
@@ -150,8 +150,9 @@ function W:Create()
     f:EnableMouse(true)
     f:SetSize(WIDTH, HEIGHT)
     UI.Dialog(f, 0, 40)
-    f.look = UI.Window(f)
+    f.look = UI.Window(f, "dialog")
     f.title = UI.Text(f, "semibold", 13, C.text)
+    UI.SetTitleFont(f.title, "settings")
     f.title:SetPoint("TOPLEFT", f, "TOPLEFT", PAD, -10)
     f.help = UI.Text(f, "regular", 11, C.secondary)
     f.help:SetPoint("TOPLEFT", f, "TOPLEFT", PAD, -TITLE)
@@ -197,7 +198,7 @@ function W:LayoutButtons()
         local action = list[i]
         b.text:SetText(action.label)
         b.bg:SetColor(action.primary and C.accent or C.control)
-        b.text:SetTextColor(unpack(action.primary and C.onAccent or C.text))
+        UI.Color(b.text, action.primary and C.onAccent or C.text)
         local room = pad and UI.KeysWidth({ "PAD1", action.key }) or 0
         b:SetWidth(math.max(88, b.text:GetStringWidth() + 28 + room))
         b:ClearAllPoints()
@@ -270,7 +271,7 @@ end
 function W:ShowReport(status, color, report)
     local f = self.frame
     f.status:SetText(status or "")
-    f.status:SetTextColor(unpack(color or C.text))
+    UI.Color(f.status, color or C.text)
     local lines = {}
     for _, line in ipairs(report and report.errors or {}) do lines[#lines + 1] = L.IMPORT_ERROR_LINE:format(line) end
     for _, line in ipairs(report and report.warnings or {}) do lines[#lines + 1] = L.IMPORT_WARNING_LINE:format(line) end
@@ -337,7 +338,7 @@ function W:Open(mode, id, back)
     self:ShowReport(nil)
     if mode == "export" then
         local guide = Ding:GetGuidePack(id or "") or Ding:GetGuide(id or "") or Ding.Engine.guide
-        f.title:SetText(UI.Colored("accent", Ding.TITLE) .. UI.Colored("disabled", " · ") .. L.EXPORT_TITLE:format(guide and guide.title or ""))
+        UI.Title(f.title, L.EXPORT_TITLE:format(guide and guide.title or ""))
         f.help:SetText(L.EXPORT_HELP)
         f.text:SetValue(text, true)
         self:SetButtons({
@@ -346,7 +347,7 @@ function W:Open(mode, id, back)
             { label = L.IMPORT_CLOSE, key = "PAD2", run = function() W:Close() end },
         })
     else
-        f.title:SetText(UI.Colored("accent", Ding.TITLE) .. UI.Colored("disabled", " · ") .. L.IMPORT_TITLE)
+        UI.Title(f.title, L.IMPORT_TITLE)
         f.help:SetText(L.IMPORT_HELP)
         f.text:SetValue("")
         self:SetButtons({

@@ -3,6 +3,7 @@
 -- and the migration of settings saved before the design.
 local tools = (arg[0]:match("^(.*)[/\\]") or ".") .. "/.."
 local T = dofile(tools .. "/testlib.lua")(arg[1])
+local Tip = T.tip    -- the card on screen (Ding's card or the game's tooltip)
 local Ding, H = T.Ding, T.H
 local E, P, A, Cfg, B = Ding.Engine, Ding.Panel, Ding.Arrow, Ding.Config, Ding.ItemButton
 local L, C = Ding.L, Ding.UI.C
@@ -46,7 +47,7 @@ T.test("accept row: Accept \"[level] quest\", with the guide note below", functi
     local row = P.rowsShown[1]
     T.eq(row.state, "todo")
     T.eq(H.plain(row.text), L.ROW_ACCEPT:format(T.questLabel(456)))
-    T.ok(row.text:find("|cff5bb4ff", 1, true), "quest name not a blue link")
+    T.ok(row.text:find("|cff" .. Ding.UI.HexOf(Ding.UI.C.quest), 1, true), "quest name not in the quest color")
     T.eq(row.sub, "Guide note.")
 end)
 
@@ -250,7 +251,7 @@ T.test("objectives: under a header with their quest's level and name, unless the
     T.eq(header.state, "header")
     T.eq(header.quest, 456)
     T.eq(H.plain(header.text), T.questLabel(456))
-    T.ok(header.text:find("|cff5bb4ff", 1, true), "quest name not a blue link")
+    T.ok(header.text:find("|cff" .. Ding.UI.HexOf(Ding.UI.C.quest), 1, true), "quest name not in the quest color")
     for i = 2, #P.rowsShown do
         local row = P.rowsShown[i]
         T.eq(row.action, "objective")
@@ -260,8 +261,8 @@ T.test("objectives: under a header with their quest's level and name, unless the
     -- In the window: SemiBold, no icon nor background; the objectives indented.
     local h, o = P.frame.rows[1], P.frame.rows[2]
     T.ok(not h.icon:IsShown() and not h.bg:IsShown(), "header with an icon or a background")
-    T.eq(h.text.fontObject, Ding.UI.Font("semibold", 12))
-    T.eq(o.text.fontObject, Ding.UI.Font("regular", 12))
+    T.eq(h.text.fontObject, Ding.UI.TitleFont("header", "scene"))
+    T.eq(o.text.fontObject, Ding.UI.Font("regular", 12, "scene"))
     T.ok(o.icon:IsShown(), "objective without its icon")
     T.ok(select(4, o:GetPoint()) > select(4, h:GetPoint()), "objectives not indented")
     -- A turn-in row of the same quest in the step already names it: no header.
@@ -312,23 +313,23 @@ T.test("click on an objective row: the arrow goes there, a short card: the objec
     local r = P.frame.rows[2]
     r.scripts.OnClick(r)
     T.ok(A.forced, "the arrow does not aim at the row")
-    T.eq(GameTooltip:GetOwner(), r, "card not next to the row")
-    T.eq(GameTooltip.text, H.plain(P.rowsShown[2].text), "the objective is not the card's title")
-    local lines = table.concat(GameTooltip.lines, " | ")
+    T.eq(Tip:GetOwner(), r, "card not next to the row")
+    T.eq(Tip.text, H.plain(P.rowsShown[2].text), "the objective is not the card's title")
+    local lines = table.concat(Tip.lines, " | ")
     T.ok(lines:find(T.questLabel(456), 1, true), "its quest is missing: " .. lines)
     T.ok(not lines:find(P.rowsShown[3].target, 1, true), "the other objectives repeated: " .. lines)
     -- Never the game's own windows (taint): the mock turns such calls into problems.
     T.eq(H.problems(), problems, "Ding touched the game's interface")
     r.scripts.OnLeave(r)
-    T.ok(not GameTooltip:IsShown(), "card still shown after hovering")
+    T.ok(not Tip:IsShown(), "card still shown after hovering")
 end)
 
 T.test("card of a quest not accepted yet: \"not in your log yet\"", function()
     start()
     local r = P.frame.rows[1]            -- "Accept" 456, not in the log
     r.scripts.OnEnter(r)
-    T.eq(GameTooltip.text, Ding.Data:QuestName(456) .. " " .. L.QUEST_PART:format(Ding.Data:QuestPart(456)))
-    T.ok(table.concat(GameTooltip.lines, " | "):find(L.NOT_IN_LOG, 1, true), "mention missing")
+    T.eq(Tip.text, Ding.Data:QuestName(456) .. " " .. L.QUEST_PART:format(Ding.Data:QuestPart(456)))
+    T.ok(table.concat(Tip.lines, " | "):find(L.NOT_IN_LOG, 1, true), "mention missing")
     r.scripts.OnLeave(r)
 end)
 
@@ -337,18 +338,18 @@ T.test("focus mode: X shows the quest card, the D-pad closes it", function()
     H.accept(456); H.flush()
     P:StartFocus()
     H.press("PAD3")
-    T.ok(GameTooltip:IsShown() and GameTooltip.text == H.plain(P.rowsShown[2].text), "X does not show the objective")
-    T.eq(GameTooltip:GetOwner(), P.frame.rows[2])
+    T.ok(Tip:IsShown() and Tip.text == H.plain(P.rowsShown[2].text), "X does not show the objective")
+    T.eq(Tip:GetOwner(), P.frame.rows[2])
     -- On the quest's header too.
     H.press("PADDUP")
     T.eq(P.focusIndex, 1)
     H.press("PAD3")
-    T.ok(GameTooltip:IsShown() and GameTooltip:GetOwner() == P.frame.rows[1], "X on the header: no card")
+    T.ok(Tip:IsShown() and Tip:GetOwner() == P.frame.rows[1], "X on the header: no card")
     H.press("PADDDOWN")
-    T.ok(not GameTooltip:IsShown(), "card still shown after changing rows")
+    T.ok(not Tip:IsShown(), "card still shown after changing rows")
     H.press("PAD3")
     P:StopFocus()
-    T.ok(not GameTooltip:IsShown(), "card still shown after leaving focus mode")
+    T.ok(not Tip:IsShown(), "card still shown after leaving focus mode")
 end)
 
 T.test("class trainer step: the hint says it ends with the window, Next still works", function()
@@ -508,7 +509,7 @@ T.test("narrow window (240): the header, indented objectives and a notice box fi
     end
     T.ok(notice, "no notice: " .. rowTexts())
     T.eq(H.plain(notice.text:GetText()), L.SKIPPED_GREY:format(T.questLabel(916)))
-    T.eq(notice.text.fontObject, Ding.UI.Font("regular", 11))
+    T.eq(notice.text.fontObject, Ding.UI.Font("regular", 11, "scene"))
     T.ok(not notice.icon:IsShown() and notice.bg:IsShown(), "a notice is a box without an icon")
     -- Not under the objectives.
     for _, data in ipairs(P.rowsShown) do
@@ -568,15 +569,15 @@ T.test("long texts: never cut, the rows grow (240 wide)", function()
     local f = P.frame
     T.ok(f.mini.text:IsTruncated(), "the one-line text is not cut at 240: nothing to check")
     f.scripts.OnEnter(f)
-    T.ok(GameTooltip:IsShown() and GameTooltip:GetOwner() == f, "no card over the minimized window")
+    T.ok(Tip:IsShown() and Tip:GetOwner() == f, "no card over the minimized window")
     local row
     for _, data in ipairs(P:Rows()) do
         if data.state == "todo" then row = row or data end
     end
-    T.eq(GameTooltip.text, H.plain(row.text))
-    T.ok(table.concat(GameTooltip.lines, " "):find(LONG_NOTE, 1, true), "the note is missing from the card")
+    T.eq(Tip.text, H.plain(row.text))
+    T.ok(table.concat(Tip.lines, " "):find(LONG_NOTE, 1, true), "the note is missing from the card")
     f.scripts.OnLeave(f)
-    T.ok(not GameTooltip:IsShown(), "card still shown")
+    T.ok(not Tip:IsShown(), "card still shown")
     P:SetCompact(false)
     P:SetWidth(300)
 end)
@@ -726,7 +727,7 @@ T.test("old settings: arrow centered, size, scale, TomTom off, only once", funct
     T.eq(db.panel.scale, 1.5)
     T.eq(db.panel.textSize, nil)
     T.eq(db.ui.opacity, nil)
-    T.eq(db.layout, 2)
+    T.eq(db.layout, 3)
     db.arrow.tomtom = true
     Ding.Migrate(db)
     T.eq(db.arrow.tomtom, true, "migration replayed")

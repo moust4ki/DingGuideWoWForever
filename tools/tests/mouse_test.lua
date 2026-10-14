@@ -43,11 +43,12 @@ T.test("without a gamepad: the help bar speaks mouse and keyboard, without glyph
 end)
 
 T.test("right click on a setting: its default value", function()
-    open("appearance", 1)
+    open("appearance", 2)       -- after the theme cards
     T.eq(Cfg.focus.opts.label, L.BG_OPACITY)
-    Ding.Panel:SetBackgroundAlpha(0.5)
+    Ding.Panel:SetBackgroundAlpha(0.5, true)
     click(Cfg.focus, "RightButton")
-    T.eq(Ding.db.panel.bgAlpha, 0.85, "right click does not restore the default value")
+    T.eq(Ding.db.panel.bgAlpha, Ding.UI.Theme.current.opacityDefault / 100,
+        "right click does not restore the default value (the theme's)")
     close()
 end)
 
@@ -159,7 +160,7 @@ end)
 
 T.test("clickable help bar: \"Y Reset\" resets; B and LB / RB sit on the window, not in the footer", function()
     gamepad(true)
-    Cfg:Open("appearance", 1); H.flush()
+    Cfg:Open("appearance", 2); H.flush()
     local f = Cfg.frame
     T.eq(Cfg.focus.opts.label, L.BG_OPACITY)
     T.ok(f.back:IsShown() and f.lb:IsShown() and f.rb:IsShown(), "B, LB or RB chip missing")
@@ -173,7 +174,7 @@ T.test("clickable help bar: \"Y Reset\" resets; B and LB / RB sit on the window,
     T.ok(not reset.hover:IsShown(), "highlight still there after hovering")
     Ding.Panel:SetBackgroundAlpha(0.5)
     click(reset.button)
-    T.eq(Ding.db.panel.bgAlpha, 0.85, "clicking \"Reset\" does not reset")
+    T.eq(Ding.db.panel.bgAlpha, Ding.UI.Theme.current.opacityDefault / 100, "clicking \"Reset\" does not reset")
     click(f.close)
     T.ok(not f:IsShown(), "the close cross does not close")
 end)

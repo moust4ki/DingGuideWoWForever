@@ -1,5 +1,57 @@
 # Changelog
 
+## v1.5.0
+
+Nothing else to install: QuestieDB is no longer needed, and TomTom stays optional.
+
+- **Themes**: choose the look of Ding! in Settings > Appearance. While you go from one theme to
+  the next, the guide window, the arrow and the settings show it at once; A (or a click) keeps
+  it, leaving the themes without it brings yours back.
+  - **Forever · Halo**: no frame, a soft dark veil under the text, the game's gold and its own
+    font for titles, light gamepad buttons like the game's.
+  - **Forever · Slate**: a dark panel with thin gold lines, lines tinted by their state, a gold
+    marker on the gamepad's focus, the arrow's text on a small plate.
+  - **Forever · Bands**: no window, a band behind each line, outlined text that stays readable
+    on snow and sand, a blue accent.
+  - **Ding dark**: the look of the previous versions.
+- **The default look is now Forever · Halo, for everyone**, also if you played an earlier
+  version: to get the old look back, pick **Ding dark** in Settings > Appearance. The
+  background's opacity follows each theme (Halo: 60 %) until you move the slider yourself; if
+  you had chosen your own, it is kept.
+- Quest names are in the game's quest gold, items and monsters in light blue; in the Forever
+  themes nothing still to do is red anymore (red reads as danger in the game).
+- The card shown when you hover a line of the guide window (X in focus mode) now has the
+  theme's look.
+- **The arrow's look** has its own picker in Settings > Arrow and maps: the theme's arrow (the
+  default), Halo's gold arrow, Slate's, Bands', Ding!'s, the new **Gold** arrow or the game's
+  minimap arrow, with any theme; the real arrow shows each one while you choose. If you had
+  picked the minimap arrow, you keep it.
+- **A new icon**: Ding!'s arrow in gold, with a burst of light, on the minimap button and in the
+  AddOns list.
+- The arrow says where under the target's name: the flight master and its zone, the zone of a
+  target outside yours, or the stop of the farming loop ("Farming loop: stop 2 of 10").
+- **Keybinds with the gamepad fixed**: a button you bind now replaces the old one (it used to
+  be added beside it, and the row kept showing the first one, often "RB"). **Any two gamepad
+  buttons make a shortcut**: hold one, press the other (LB + Up, RB + Up, LT + A, LT + D-pad
+  down…); Ding! watches them itself, like Easy Controller's RB + Down, and while you hold the
+  first button it keeps the second one from the game (out of combat). A button the game's
+  gamepad interface or another addon (Easy Controller...) also uses is named, and A binds it
+  anyway. Tap B to cancel, hold B to bind B itself. If an action of Ding! ended up on several buttons, its row says "and 2
+  more": bind it again, or press Y, to clean it up.
+- **RB + Up opens Ding!**: "Open Ding! settings" gets **RB + Up** on the gamepad (LB + Up if you
+  already use RB + Up), and the setup assistant shows it on its first screen; with the keyboard
+  and mouse, it names the minimap button and the guide window's menu button. `/ding help` says
+  it too. A button you gave it yourself is kept.
+- **Ding!'s windows keep their buttons**: in focus mode, the settings, the directory and the
+  setup assistant, the D-pad, A, B and the shoulders are Ding!'s while the window is open, even
+  with the game's gamepad interface and Easy Controller (the D-pad used to cast the gamepad
+  bar's spells in focus mode).
+- **Easy Controller and Ding! side by side**: Ding! never changes the game's gamepad settings
+  and its default button never takes a key Easy Controller uses; Ding!'s windows work as usual
+  with Easy Controller on.
+- Settings: on a line with a description, the two lines are centered on the line and its check
+  box (the label used to touch the line's frame).
+
 ## v1.4.0
 
 Nothing else to install: QuestieDB is no longer needed, and TomTom stays optional.

@@ -1,7 +1,9 @@
--- Direction arrow (screen 02 of docs/UI-handoff.md): 120 units above the screen center,
--- no background, not clickable. Under it, the target's name, then the distance and the
--- time to get there. Blue on the way, red when the target is behind, a green ring with
--- "You're here" on arrival (it fades after 3 s). Monsters to kill or things to gather
+-- Direction arrow (screen 02 of docs/UI-handoff.md, its themes in docs/UI-themes.md): 120
+-- units above the screen center, no background (Ardoise: its label on a plate), not
+-- clickable. Under it, what to take or the target's name, where (a detail line), then the
+-- distance and the time to get there. The theme's arrow on the way, its "turn around" arrow
+-- and color when the target is behind, a ring in the done color with "You're here" on arrival
+-- (it fades after 3 s). Monsters to kill or things to gather
 -- make an area: the player is there as soon as they are among the spawns, and the arrow
 -- then leads from spawn to spawn in a loop (option, on by default). A ghost is led
 -- to their corpse first. With TomTom installed (and the setting on), TomTom's arrow shows
@@ -19,7 +21,7 @@ Ding.Arrow = A
 local UPDATE_INTERVAL = 0.05
 local ROUTE_INTERVAL = 1.0      -- re-pick the nearest candidate every second
 local SIZE, MIN_SIZE, MAX_SIZE = 56, 40, 80
-local LABEL_MAX = 240
+local LABEL_MAX = 220
 local BEHIND = 2 * math.pi / 3  -- more than 120 degrees off: "turn around"
 local ARRIVED_FADE = 3          -- seconds before the arrival ring fades
 local RUN_SPEED = 7             -- yards per second, for the time while standing still
@@ -32,11 +34,17 @@ local LOOP_RADIUS = 300         -- yards around the nearest spawn that make one 
 local LOOP_MERGE = 25           -- spawns closer than this are one stop
 local LOOP_REACH = 15           -- yards: the stop is reached, on to the next one
 local LOOP_MIN, LOOP_MAX = 3, 12 -- stops: fewer, no loop (the plain area); at most
--- Arrow textures, pointing up: the design's, or the game's minimap arrow.
-A.TEXTURES = {
-    ding = UI.TEX .. "arrow",
-    classic = "Interface\\Minimap\\MinimapArrow",
-}
+-- Arrow skins (UI.ArrowSkins, UI/Themes.lua): "theme" (the active theme's arrow, the default),
+-- "halo", "ardoise", "bandes", "ding", "gold", "classic" (the game's minimap arrow); textures
+-- point up.
+A.DEFAULT_SKIN = "theme"
+-- A texture of a skin (UI.Theme.ArrowLook(id).files): a file of the kit, or a path of the
+-- client's own ("Interface\...").
+local function file(files, key)
+    local name = files[key]
+    return name:find("\\", 1, true) and name or UI.TEX .. name
+end
+A.SkinFile = file
 
 local atan2, sqrt, pi = math.atan2, math.sqrt, math.pi
 
@@ -75,8 +83,23 @@ function A:ApplySize()
     f:SetSize(size, size)
     f.arrow:SetSize(size, size)
     f.shadow:SetSize(size, size)
-    f.ring:SetSize(48 * k, 48 * k)
-    f.check:SetSize(22 * k, 22 * k)
+    for _, t in ipairs({ f.ring, f.ringShadow, f.arrivedBg }) do t:SetSize(48 * k, 48 * k) end
+    for _, t in ipairs({ f.check, f.checkShadow }) do t:SetSize(22 * k, 22 * k) end
+end
+
+-- A text over the game world: the theme's shadow, or its outline (Bandes).
+local function text(parent, weight, size, color)
+    return UI.Text(parent, weight, size, color, "OVERLAY", "world")
+end
+
+-- A texture with its shadow: the same texture, dark, one unit lower (as before themes).
+local function shadowed(f, layer)
+    local shadow = f:CreateTexture(nil, "ARTWORK", nil, layer)
+    shadow:SetPoint("CENTER", f, "CENTER", 0, -1)
+    UI.Tint(shadow, C.textShadow)
+    local t = f:CreateTexture(nil, "ARTWORK", nil, layer + 1)
+    t:SetPoint("CENTER", f, "CENTER", 0, 0)
+    return t, shadow
 end
 
 function A:Create()
@@ -86,41 +109,43 @@ function A:Create()
     f:SetClampedToScreen(true)
     f:EnableMouse(false)
 
-    f.shadow = f:CreateTexture(nil, "ARTWORK", nil, 0)
-    f.shadow:SetPoint("CENTER", f, "CENTER", 0, -1)
-    f.shadow:SetVertexColor(unpack(C.textShadow))
-    f.arrow = f:CreateTexture(nil, "ARTWORK", nil, 1)
-    f.arrow:SetPoint("CENTER", f, "CENTER", 0, 0)
-    f.ring = UI.Icon(f, "ring", 48, C.done, "ARTWORK", 2)
-    f.ring:SetPoint("CENTER", f, "CENTER", 0, 0)
-    f.check = UI.Icon(f, "icon_check_large", 22, C.done, "ARTWORK", 3)
-    f.check:SetPoint("CENTER", f, "CENTER", 0, 0)
+    f.arrow, f.shadow = shadowed(f, 0)
+    -- Arrived: the ring and the check (Ardoise: on a dark disc).
+    f.arrivedBg = UI.Icon(f, "circle", 48, C.arrivedBg, "ARTWORK", 2)
+    f.arrivedBg:SetPoint("CENTER", f, "CENTER", 0, 0)
+    f.ring, f.ringShadow = shadowed(f, 3)
+    f.check, f.checkShadow = shadowed(f, 5)
 
-    -- Label: the target's name, then "119 yd · 0:08".
-    f.label = UI.Text(f, "semibold", 13, C.text, "OVERLAY")
+    -- Label: the instruction or the target's name, a detail line, then "119 yd · 0:08".
+    -- Ardoise: on a small plate.
+    -- (Textures of the arrow's frame, under its texts; the region only places them.)
+    f.plateRegion = CreateFrame("Frame", nil, f)
+    f.plate = UI.Shape(f, "small", C.labelPlate, "BACKGROUND"):Place(f.plateRegion)
+    f.label = text(f, "semibold", 13, C.text)
+    UI.SetTitleFont(f.label, "arrow")
     f.label:SetJustifyH("CENTER")
-    -- Never cut: past LABEL_MAX the label goes on to a second line ("Boar · farming loop: 2 of 10").
-    UI.Wrap(f.label, 13)
+    -- Never cut: past LABEL_MAX the label goes on to a second line.
+    UI.Wrap(f.label, "arrow")
     f.label:SetPoint("TOP", f, "BOTTOM", 0, -8)
-    UI.Shadow(f.label)
+    f.detail = text(f, "regular", 11, C.arrowSub)
+    f.detail:SetJustifyH("CENTER")
+    UI.Wrap(f.detail, 11)
+    f.detail:SetPoint("TOP", f.label, "BOTTOM", 0, -2)
     f.line = CreateFrame("Frame", nil, f)
     f.line:SetHeight(20)
     f.line:SetPoint("TOP", f.label, "BOTTOM", 0, -2)
-    f.distance = UI.Text(f.line, "semibold", 16, C.text, "OVERLAY")
+    f.distance = text(f.line, "semibold", 16, C.text)
     f.distance:SetPoint("LEFT", f.line, "LEFT", 0, 0)
-    UI.Shadow(f.distance)
-    f.eta = UI.Text(f.line, "regular", 12, C.glyph, "OVERLAY")
+    f.eta = text(f.line, "regular", 12, C.arrowSub)
     f.eta:SetPoint("LEFT", f.distance, "RIGHT", 0, -1)
-    UI.Shadow(f.eta)
     -- "Target: name" with the glyph of the target binding (UI/ItemButton.lua), when bound.
     f.target = CreateFrame("Frame", nil, f)
     f.target:SetHeight(18)
     f.target:SetPoint("TOP", f.line, "BOTTOM", 0, -2)
     f.target.glyph = UI.Glyph(f.target)
     f.target.glyph:SetPoint("LEFT", f.target, "LEFT", 0, 0)
-    f.target.text = UI.Text(f.target, "regular", 11, C.secondary, "OVERLAY")
+    f.target.text = text(f.target, "regular", 11, C.secondary)
     f.target.text:SetPoint("LEFT", f.target.glyph, "RIGHT", 4, 0)
-    UI.Shadow(f.target.text)
     f.target:Hide()
 
     self.frame = f
@@ -149,17 +174,57 @@ function A:Create()
     self:Update()
 end
 
+-- The skin on screen: the one the picker shows, else the saved one (Ding.db.arrow.skin).
+function A:Skin()
+    local id = self.previewSkin or Ding.db.arrow.skin
+    return (id == "theme" or UI.ArrowSkins[id]) and id or self.DEFAULT_SKIN
+end
+
+-- The arrow's textures and tints in its state: the skin's (route and behind; arrived ring and
+-- check), in the theme's colors (UI.Theme.ArrowLook).
 function A:ApplyStyle()
     local f = self.frame
     if not f then return end
-    local path = self.TEXTURES[Ding.db.arrow.style] or self.TEXTURES.ding
-    f.arrow:SetTexture(path)
-    f.shadow:SetTexture(path)
+    local look = UI.Theme.ArrowLook(self:Skin())
+    local files = look.files
+    local arrow = file(files, self.state == "behind" and "arrowBack" or "arrow")
+    f.arrow:SetTexture(arrow)
+    f.shadow:SetTexture(arrow)
+    for _, t in ipairs({ f.ring, f.ringShadow }) do t:SetTexture(file(files, "arrived")) end
+    for _, t in ipairs({ f.check, f.checkShadow }) do t:SetTexture(file(files, "arrivedCheck")) end
+    UI.Tint(f.arrow, self.state == "behind" and look.backTint or look.tint)
+    -- A skin with its glow baked (gold) has no dark copy under it.
+    UI.Tint(f.shadow, C.textShadow, look.shadow and 1 or 0)
+    UI.Tint(f.arrivedBg, look.disc)
 end
 
-function A:SetStyle(style)
-    Ding.db.arrow.style = self.TEXTURES[style] and style or "ding"
+-- Saves the arrow's skin ("theme", a skin of UI.ArrowSkinOrder; unknown: "theme").
+function A:SetSkin(id)
+    Ding.db.arrow.skin = (id == "theme" or UI.ArrowSkins[id]) and id or self.DEFAULT_SKIN
+    self.previewSkin = nil
+    self:ShowPreview(false)
     self:ApplyStyle()
+end
+
+-- The picker shows skin `id` on the real arrow (nil: back to the saved one). While it does, the
+-- arrow stays on screen even without a target, like in move mode.
+function A:PreviewSkin(id)
+    self.previewSkin = id
+    self:ShowPreview(id ~= nil)
+    self:ApplyStyle()
+end
+
+function A:ShowPreview(on)
+    local f = self.frame
+    if not f then return end
+    if on and not self.showing then
+        self.showing = true
+        f:Show()
+        f:SetAlpha(1)
+    elseif not on and self.showing then
+        self.showing = false
+        self:Update()
+    end
 end
 
 function A:SetSize(size)
@@ -172,13 +237,10 @@ function A:SetDelegated(delegated)
     local f = self.frame
     if delegated == self.delegated then return end
     self.delegated = delegated
-    for _, region in ipairs({ f.label, f.line }) do region:SetShown(not delegated) end
+    for _, region in ipairs({ f.label, f.detail, f.line, f.plate }) do region:SetShown(not delegated) end
     if delegated then f.target:Hide() end
     if delegated then
-        f.arrow:Hide()
-        f.shadow:Hide()
-        f.ring:Hide()
-        f.check:Hide()
+        for _, t in ipairs({ f.arrow, f.shadow, f.ring, f.ringShadow, f.check, f.checkShadow, f.arrivedBg }) do t:Hide() end
     else
         self:SetState(self.state or "route", true)
     end
@@ -190,24 +252,73 @@ function A:SetTomTom(enabled)
     self:Update()
 end
 
--- "route" (blue arrow), "behind" (red arrow) or "arrived" (green ring and check).
+-- "route" (the theme's arrow), "behind" (its "turn around" arrow and color) or "arrived"
+-- (the ring and check in the done color).
 function A:SetState(state, force)
     local f = self.frame
     if state == self.state and not force then return end
     self.state = state
     local arrived = state == "arrived"
-    f.ring:SetShown(arrived)
-    f.check:SetShown(arrived)
+    for _, t in ipairs({ f.ring, f.ringShadow, f.check, f.checkShadow, f.arrivedBg }) do t:SetShown(arrived) end
     f.arrow:SetShown(not arrived)
     f.shadow:SetShown(not arrived)
-    f.arrow:SetVertexColor(unpack(state == "behind" and C.todo or C.accent))
-    f.distance:SetTextColor(unpack(arrived and C.done or C.text))
+    self:ApplyStyle()
+    UI.Tint(f.ring, C.done)
+    UI.Tint(f.check, C.done)
+    -- Behind: the whole distance line in the "turn around" color.
+    local back = state == "behind"
+    UI.Color(f.distance, arrived and C.done or (back and C.arrowBack or C.text))
+    UI.Color(f.eta, back and C.arrowBack or C.arrowSub)
     if arrived then
         self.arrivedAt = GetTime()
     else
         self.arrivedAt, self.arrivedFaded = nil, false
     end
 end
+
+-- A theme change: the textures and colors of the state, the plate (UI.Theme.OnApply).
+function A:ApplyTheme()
+    if not self.frame then return end
+    UI.Wrap(self.frame.label, "arrow")
+    self:SetState(self.state or "route", true)
+    self:LayoutLabel()
+end
+
+-- The label's lines: `text` (an instruction in the accent: "Fly to Ironforge"; else the
+-- target's name), `detail` under it (where, the farming loop's stop), then the distance line.
+-- Arrived: the name and "You're here" only. Ardoise: a plate behind them.
+function A:SetLabel(text, detail, accent)
+    self.labelText, self.detailText, self.labelAccent = text, detail, accent
+end
+
+function A:LayoutLabel()
+    local f = self.frame
+    local arrived = self.state == "arrived"
+    f.label:SetText(self.labelText or "")
+    UI.Color(f.label, self.labelAccent and not arrived and C.accent or C.text)
+    f.label:SetWidth(math.min(LABEL_MAX, math.max(1, UI.Measure(f.label))))
+    local detail = not arrived and self.detailText or nil
+    f.detail:SetShown(detail ~= nil and not self.delegated)
+    f.line:ClearAllPoints()
+    if detail then
+        f.detail:SetText(detail)
+        f.detail:SetWidth(math.min(LABEL_MAX, math.max(1, UI.Measure(f.detail))))
+        f.line:SetPoint("TOP", f.detail, "BOTTOM", 0, -2)
+    else
+        f.line:SetPoint("TOP", f.label, "BOTTOM", 0, -2)
+    end
+    f.line:SetWidth(math.max(1, f.distance:GetStringWidth() + (f.eta:IsShown() and f.eta:GetStringWidth() or 0)))
+    local plate = UI.Theme.current.flags.arrowLabelPlate and not self.delegated
+    f.plate:SetShown(plate and true or false)
+    if plate then
+        local w = math.max(f.label:GetWidth(), detail and f.detail:GetWidth() or 0, f.line:GetWidth())
+        local h = f.label:GetStringHeight() + (detail and (2 + f.detail:GetStringHeight()) or 0) + 2 + 20
+        f.plateRegion:ClearAllPoints()
+        f.plateRegion:SetPoint("TOP", f.label, "TOP", 0, 4)
+        f.plateRegion:SetSize(w + 20, h + 8)
+    end
+end
+UI.Theme.OnApply(function() A:ApplyTheme() end)
 
 -- The row the player clicked (or chose with A) in the guide window: the arrow points to
 -- these points until the step changes.
@@ -246,7 +357,7 @@ function A:Update()
         UI.FadeIn(self.frame, 0.2)
     else
         if not (visible() and hasPoints) then Ding.TomTom:Clear() end
-        if not self.moving then UI.FadeOut(self.frame, 0.2) end
+        if not (self.moving or self.showing) then UI.FadeOut(self.frame, 0.2) end
     end
     self:Tick()
 end
@@ -291,10 +402,6 @@ local function eta(distance)
     local seconds = math.floor(distance / v + 0.5)
     if seconds >= 6000 then return nil end
     return ("%d:%02d"):format(math.floor(seconds / 60), seconds % 60)
-end
-
-local function layoutLine(f)
-    f.line:SetWidth(math.max(1, f.distance:GetStringWidth() + (f.eta:IsShown() and f.eta:GetStringWidth() or 0)))
 end
 
 ---------------------------------------------------------------------------
@@ -457,7 +564,7 @@ function A:Tick()
         Ding.ItemButton:SetTarget(nil)
         f.target:Hide()
         self.shownPoint = nil
-        if not self.moving then UI.FadeOut(f, 0.2) end
+        if not (self.moving or self.showing) then UI.FadeOut(f, 0.2) end
         if self.hint then
             self.hint, Ding.Travel.leg = nil, nil
             if Ding.Panel and Ding.Panel.Update then Ding:Safe(Ding.Panel.Update, Ding.Panel) end
@@ -532,8 +639,18 @@ function A:Tick()
     self:SetDelegated(delegated and true or false)
     if not shown or self.delegated then return end
 
-    f.label:SetText(hint or (farm and L.FARM_LOOP:format(areaName or "", farm.at, #farm.points)) or point.label or "")
-    f.label:SetWidth(math.min(LABEL_MAX, math.max(1, UI.Measure(f.label))))
+    -- Line 1: what to take, or the target (the area's name on a farming loop); line 2: where
+    -- (the NPC to take it from, a zone that is not the player's), or the loop's stop.
+    local zone = Ding.Engine:ZoneLabel(point)
+    local detail
+    if farm then
+        detail = L.FARM_LOOP:format(farm.at, #farm.points)
+    elseif hint then
+        detail = point.label and (zone and (point.label .. " · " .. zone) or point.label) or zone
+    else
+        detail = zone
+    end
+    self:SetLabel(hint or (farm and areaName) or point.label or "", detail, hint ~= nil)
     local key = targetName and Ding.Gamepad:BindingKey(Ding.ItemButton.TARGET_BINDING)
     if key then
         f.target.glyph:SetKey(key)
@@ -547,10 +664,9 @@ function A:Tick()
         self:SetState("route")
         f.arrow:Hide()
         f.shadow:Hide()
-        local zone = Ding.Engine:ZoneLabel(point)
-        f.distance:SetText((otherContinent and L.ANOTHER_CONTINENT or L.DISTANCE_UNKNOWN) .. (zone and (" · " .. zone) or ""))
+        f.distance:SetText(otherContinent and L.ANOTHER_CONTINENT or L.DISTANCE_UNKNOWN)
         f.eta:Hide()
-        layoutLine(f)
+        self:LayoutLabel()
         return
     end
 
@@ -582,14 +698,12 @@ function A:Tick()
         local behind = off and off > BEHIND
         self:SetState(behind and "behind" or "route")
         if wasFaded then UI.FadeIn(f, 0.2) end
-        -- Far away in another zone: its name next to the distance.
-        local zone = Ding.Engine:ZoneLabel(point)
-        f.distance:SetText(L.YARDS:format(Compat.Number(distance)) .. (zone and (" · " .. zone) or ""))
+        f.distance:SetText(L.YARDS:format(Compat.Number(distance)))
         local time = not behind and eta(distance)
         f.eta:SetText(behind and (" · " .. L.TURN_AROUND) or (time and (" · " .. time) or ""))
         f.eta:Show()
     end
-    layoutLine(f)
+    self:LayoutLabel()
 
     if rotation and self.state ~= "arrived" then
         self.rotation = rotation

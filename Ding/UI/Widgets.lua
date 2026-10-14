@@ -1,11 +1,18 @@
--- Shared UI pieces of the Ding design (docs/UI-handoff.md): color tokens, Noto Sans fonts,
--- rounded shapes drawn as nine-slices of the design textures, gamepad glyphs, fades and
--- the settings rows. Plain frames only (no templates), so nothing here is protected.
+-- Shared UI pieces of the Ding design (docs/UI-handoff.md, docs/UI-themes.md): color tokens
+-- (UI.C, filled by the active theme: UI/Themes.lua), Noto Sans fonts, rounded shapes drawn as
+-- nine-slices of the design textures, gamepad glyphs, fades, the settings rows and the hover
+-- card. Plain frames only (no templates), so nothing here is protected.
+--
+-- Every paint goes through a token: UI.Color (texts), UI.Tint (textures), UI.Fill (color
+-- textures), UI.Paint (gradients), Slice:SetColor. The region remembers its last token, and a
+-- theme change paints it again with the new values (UI.Repaint); what a widget draws by
+-- itself (a window's style, a chip's shape) is its skin (UI.Skin).
 local _, Ding = ...
 local L = Ding.L
 
-local UI = {}
-Ding.UI = UI
+local UI = Ding.UI
+local C = UI.C
+local Compat = Ding.Compat
 
 local unpack = unpack
 
@@ -13,57 +20,12 @@ UI.MEDIA = "Interface\\AddOns\\Ding\\Media\\"
 UI.TEX = UI.MEDIA .. "Textures\\"
 UI.WHITE = "Interface\\Buttons\\WHITE8X8"
 
--- Design tokens (#RRGGBBAA as 0-1). The window background alpha comes from the settings.
-local C = {
-    bg = { 0.086, 0.094, 0.110, 1 },
-    control = { 0.133, 0.145, 0.169, 1 },
-    itemBg = { 0.086, 0.094, 0.110, 0.85 },
-    border = { 1, 1, 1, 0.078 },
-    divider = { 1, 1, 1, 0.059 },
-    subtle = { 1, 1, 1, 0.039 },
-    hover = { 1, 1, 1, 0.078 },
-    glyphBg = { 1, 1, 1, 0.122 },
-    strong = { 1, 1, 1, 0.149 },
-    text = { 0.910, 0.918, 0.929, 1 },
-    glyph = { 0.788, 0.804, 0.827, 1 },
-    secondary = { 0.639, 0.663, 0.702, 1 },
-    muted = { 0.490, 0.514, 0.549, 1 },
-    disabled = { 0.373, 0.396, 0.431, 1 },
-    accent = { 0.357, 0.706, 1, 1 },
-    accentBg = { 0.357, 0.706, 1, 0.122 },
-    accentHalo = { 0.357, 0.706, 1, 0.2 },
-    onAccent = { 0.043, 0.047, 0.055, 1 },
-    -- A gamepad chip on an accent button: a dark disc under a letter in the label's color.
-    glyphOnAccent = { 0.043, 0.047, 0.055, 0.2 },
-    done = { 0.298, 0.765, 0.541, 1 },
-    doneIconBg = { 0.298, 0.765, 0.541, 0.2 },
-    doneRowBg = { 0.298, 0.765, 0.541, 0.122 },
-    todo = { 0.898, 0.404, 0.420, 1 },
-    todoIconBg = { 0.898, 0.404, 0.420, 0.18 },
-    todoRowBg = { 0.898, 0.282, 0.302, 0.122 },
-    todoBorder = { 0.898, 0.404, 0.420, 0.5 },
-    -- A quest above the player's level: WoW's orange for hard quests (shown, never blocked).
-    above = { 1, 0.502, 0.251, 1 },
-    -- A step the player left by hand: marked done (violet) or skipped (amber), not the green
-    -- of what the game confirms.
-    manual = { 0.655, 0.545, 0.980, 1 },
-    manualIconBg = { 0.655, 0.545, 0.980, 0.2 },
-    manualRowBg = { 0.655, 0.545, 0.980, 0.122 },
-    skipped = { 0.910, 0.773, 0.278, 1 },
-    skippedIconBg = { 0.910, 0.773, 0.278, 0.2 },
-    skippedRowBg = { 0.910, 0.773, 0.278, 0.122 },
-    impossibleIconBg = { 1, 1, 1, 0.059 },
-    cooldown = { 0, 0, 0, 0.65 },
-    shadow = { 0, 0, 0, 0.35 },
-    textShadow = { 0, 0, 0, 0.8 },
-    scene = { 0.165, 0.145, 0.122, 1 },
-}
-UI.C = C
+local function theme() return UI.Theme.current end
 
 -- Sizes shared by Ding's dialog windows (settings, NPC directory, setup assistant, import /
 -- export), so that they stay alike. A little denser than the design's first handoff, at the
 -- user's request ("too big, too airy": docs/UI-handoff.md, Density); the handoff's values in
--- brackets.
+-- brackets. Themes never change them.
 UI.SIZE = {
     title = 28,       -- title bar [32]
     tabs = 28,        -- tab bar [settings 36, directory 30]
@@ -71,7 +33,7 @@ UI.SIZE = {
     pad = 8,          -- from the window's edge to its rows [12]
     gap = 2,          -- between two rows [4]
     row = 30,         -- a row of one line [36]
-    row2 = 36,        -- a row of two lines, a label and a line under it [44; directory 38]
+    row2 = 38,        -- a row of two lines, a label and a line under it [44; directory 38]
     fold = 28,        -- "More options" [32]
     header = 20,      -- a block's header [24]
     pageTitle = 26,   -- a page's title [30]
@@ -117,15 +79,100 @@ function UI.SetDialogScale(value)
     return scale
 end
 
--- Inline color codes for texts made of several colors.
-local HEX = {
-    accent = "5bb4ff", text = "e8eaed", secondary = "a3a9b3", muted = "7d838c", disabled = "5f656e",
-    done = "4cc38a", todo = "e5676b", above = "ff8040",
+---------------------------------------------------------------------------
+-- Painting through tokens, and painting again on a theme change
+---------------------------------------------------------------------------
+local painted = setmetatable({}, { __mode = "k" })    -- region -> true
+local skins = setmetatable({}, { __mode = "k" })      -- object -> skin(object, theme)
+local skinOrder = setmetatable({}, { __mode = "k" })  -- object -> registration number
+local skinCount = 0
+
+local function alphaOf(token, i, mul) return (token[i] or 1) * (mul or 1) end
+
+-- A text in a token's color.
+function UI.Color(fs, token)
+    fs:SetTextColor(token[1], token[2], token[3], token[4] or 1)
+    fs.dingPaint = { "color", token }
+    painted[fs] = true
+end
+
+-- A texture (white mask) tinted by a token; `mul` scales its alpha.
+function UI.Tint(tex, token, mul)
+    tex:SetVertexColor(token[1], token[2], token[3], alphaOf(token, 4, mul))
+    tex.dingPaint = { "tint", token, mul }
+    painted[tex] = true
+end
+
+-- A color texture (lines, plain areas).
+function UI.Fill(tex, token, mul)
+    tex:SetColorTexture(token[1], token[2], token[3], alphaOf(token, 4, mul))
+    tex.dingPaint = { "fill", token, mul }
+    painted[tex] = true
+end
+
+-- A texture (white, or a file) in a token's color, a gradient when the token has two colors
+-- (8 numbers): HORIZONTAL left to right, VERTICAL bottom to top (Compat.SetGradient).
+function UI.Paint(tex, token, orientation, mul)
+    if token[5] then
+        tex:SetVertexColor(1, 1, 1, 1)
+        Compat.SetGradient(tex, orientation or "HORIZONTAL",
+            { token[1], token[2], token[3], alphaOf(token, 4, mul) },
+            { token[5], token[6], token[7], alphaOf(token, 8, mul) })
+    else
+        tex:SetVertexColor(token[1], token[2], token[3], alphaOf(token, 4, mul))
+    end
+    tex.dingPaint = { "paint", token, mul, orientation }
+    painted[tex] = true
+end
+
+local PAINT = {
+    color = function(r, p) UI.Color(r, p[2]) end,
+    tint = function(r, p) UI.Tint(r, p[2], p[3]) end,
+    fill = function(r, p) UI.Fill(r, p[2], p[3]) end,
+    paint = function(r, p) UI.Paint(r, p[2], p[4], p[3]) end,
 }
-function UI.Colored(name, s) return "|cff" .. HEX[name] .. s .. "|r" end
+
+-- skin(object, theme): what `object` draws by itself, run again on every theme change, in
+-- the order the objects registered (a window before its parts).
+function UI.Skin(object, skin)
+    skins[object] = skin
+    skinCount = skinCount + 1
+    skinOrder[object] = skinCount
+end
+
+local slices = setmetatable({}, { __mode = "k" })
+
+-- After UI.Theme.Apply copied the new tokens: the recorded paints, the slices (their shape
+-- and color), then the skins.
+function UI.Repaint(t)
+    for region in pairs(painted) do
+        local p = region.dingPaint
+        if p then PAINT[p[1]](region, p) end
+    end
+    for slice in pairs(slices) do slice:Reskin() end
+    local list = {}
+    for object in pairs(skins) do list[#list + 1] = object end
+    table.sort(list, function(a, b) return skinOrder[a] < skinOrder[b] end)
+    for _, object in ipairs(list) do skins[object](object, t) end
+end
+
+-- Inline color codes for texts made of several colors, from the theme's tokens.
+local function hexOf(token)
+    local function byte(v) return math.floor(math.max(0, math.min(1, v)) * 255 + 0.5) end
+    return ("%02x%02x%02x"):format(byte(token[1]), byte(token[2]), byte(token[3]))
+end
+UI.HexOf = hexOf
+function UI.Colored(name, s) return "|cff" .. hexOf(C[name]) .. s .. "|r" end
 
 function UI.StripColors(s)
     return (s:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", ""))
+end
+
+-- "Ding! · Settings": the name in the accent, the dot dimmed; painted again with the theme.
+function UI.Title(fs, rest)
+    fs.dingTitle = rest
+    fs:SetText(UI.Colored("accent", Ding.TITLE) .. UI.Colored("disabled", " · ") .. rest)
+    UI.Skin(fs, function(self) self:SetText(UI.Colored("accent", Ding.TITLE) .. UI.Colored("disabled", " · ") .. self.dingTitle) end)
 end
 
 -- After a list cut short, what is left in words ("and 2 more"; `quests`: "and 1 more quest"),
@@ -136,46 +183,145 @@ function UI.More(n, quests)
 end
 
 ---------------------------------------------------------------------------
--- Fonts: Noto Sans in four weights (OFL, shipped in Media/Fonts).
+-- Fonts: Noto Sans in four weights (OFL, shipped in Media/Fonts), and the game's own font for
+-- titles in some themes (never shipped). A font object is kept per weight, size and surface;
+-- a theme change sets its file, flags and shadow again in place, so the texts using it follow.
+-- Surfaces: "dialog" (settings and Ding's windows), "scene" (the guide window), "card" (the
+-- hover card), "world" (the arrow, the item's name: over the game world), "chip" (gamepad
+-- chips: no shadow, no outline).
 ---------------------------------------------------------------------------
 local FONT_FILES = { regular = "Regular", medium = "Medium", semibold = "SemiBold", bold = "Bold" }
 -- Noto Sans has no Korean nor Chinese glyphs: those clients keep the game's own font.
 local GAME_FONT = { koKR = true, zhCN = true, zhTW = true }
 UI.GAME_FONT = GAME_FONT
-local fonts = {}
+local fonts, fontList = {}, {}
 
--- Font object for a weight ("regular", "medium", "semibold", "bold") and a size. If the
--- client refuses the file, the game's own font stands in at the same size.
-function UI.Font(weight, size)
-    local key = weight .. size
-    if fonts[key] then return fonts[key] end
-    local font = CreateFont("DingFont_" .. key)
-    local path = UI.MEDIA .. "Fonts\\NotoSans-" .. FONT_FILES[weight] .. ".ttf"
-    if GAME_FONT[Ding.locale] then path = STANDARD_TEXT_FONT or "Fonts\\FRIZQT__.TTF" end
-    local ok, loaded = pcall(font.SetFont, font, path, size, "")
-    -- A refused file leaves the font unset, and SetText on it would then error.
-    if not ok or loaded == false or not font:GetFont() then
-        pcall(font.SetFont, font, STANDARD_TEXT_FONT or "Fonts\\FRIZQT__.TTF", size, "")
+local function gamePath() return STANDARD_TEXT_FONT or "Fonts\\FRIZQT__.TTF" end
+local function notoPath(weight) return UI.MEDIA .. "Fonts\\NotoSans-" .. FONT_FILES[weight] .. ".ttf" end
+
+-- Titles by role (docs/UI-themes.md, Typography): the game's font at `game`, or Noto Sans
+-- SemiBold at `noto`; the line height stays the same in every theme. `flag`: the theme flag
+-- that picks the font.
+UI.TITLE_ROLES = {
+    window = { game = 13, noto = 12, line = 16, flag = "titleFont" },     -- guide window title
+    header = { game = 13, noto = 12, line = 16, flag = "titleFont" },     -- a quest's header
+    settings = { game = 14, noto = 13, line = 18, flag = "titleFont" },   -- dialog titles
+    arrow = { game = 14, noto = 13, line = 18, flag = "titleFont" },      -- the arrow's first line
+    block = { game = 12, noto = 11, line = 14, flag = "blockHeaderFont" },  -- settings block headers
+}
+
+-- Outline flag and shadow offset of a surface in the current theme.
+local function surfaceLook(surface)
+    if surface == "chip" then return "", nil end
+    local flags = theme().flags
+    local outline
+    if surface == "scene" then
+        outline = UI.Theme.SceneOutline()
+    elseif surface == "card" or surface == "world" then
+        outline = flags.fontOutline or nil
     end
-    fonts[key] = font
-    return font
+    local shadow = flags.textShadow
+    -- Over the game world a text always has its shadow, unless it is outlined.
+    if not shadow and surface == "world" and not outline then shadow = { 0, -1 } end
+    return outline or "", shadow
 end
 
--- One-line text by default; multi-line texts call UI.Wrap.
-function UI.Text(parent, weight, size, color, layer)
+local function setFont(entry)
+    local font, path, size = entry.font, nil, nil
+    if entry.role then
+        -- Korean and Chinese: the game's file whatever the theme, at the theme's size.
+        local role = UI.TITLE_ROLES[entry.role]
+        local game = theme().flags[role.flag] == "game"
+        path = (game or GAME_FONT[Ding.locale]) and gamePath() or notoPath("semibold")
+        size = game and role.game or role.noto
+    else
+        path, size = GAME_FONT[Ding.locale] and gamePath() or notoPath(entry.weight), entry.size
+    end
+    local flags, shadow = surfaceLook(entry.surface)
+    local ok, loaded = pcall(font.SetFont, font, path, size, flags)
+    -- A refused file leaves the font unset, and SetText on it would then error.
+    if not ok or loaded == false or not font:GetFont() then
+        pcall(font.SetFont, font, gamePath(), size, flags)
+    end
+    if font.SetShadowOffset then
+        local s = C.textShadow
+        if shadow then
+            font:SetShadowOffset(shadow[1], shadow[2])
+            font:SetShadowColor(s[1], s[2], s[3], s[4] or 1)
+        else
+            font:SetShadowOffset(0, 0)
+            font:SetShadowColor(s[1], s[2], s[3], 0)
+        end
+    end
+end
+
+local function makeFont(key, name, entry)
+    if fonts[key] then return fonts[key].font end
+    entry.font = CreateFont(name)
+    fonts[key] = entry
+    fontList[#fontList + 1] = entry
+    setFont(entry)
+    return entry.font
+end
+
+-- Font object for a weight ("regular", "medium", "semibold", "bold"), a size and a surface
+-- (default "dialog"). If the client refuses the file, the game's own font stands in.
+function UI.Font(weight, size, surface)
+    surface = surface or "dialog"
+    local key = (surface == "dialog" and "" or (surface .. "_")) .. weight .. size
+    return makeFont(key, "DingFont_" .. key, { weight = weight, size = size, surface = surface })
+end
+
+-- Font object of a title role (UI.TITLE_ROLES) on a surface.
+function UI.TitleFont(role, surface)
+    surface = surface or "dialog"
+    local key = "title:" .. role .. ":" .. surface
+    return makeFont(key, "DingTitleFont_" .. role .. "_" .. surface, { role = role, surface = surface })
+end
+
+-- Every font object again (a theme change, the guide window's opacity in halo).
+function UI.RefreshFonts()
+    for _, entry in ipairs(fontList) do setFont(entry) end
+end
+
+-- One-line text by default; multi-line texts call UI.Wrap. `surface`: see above.
+function UI.Text(parent, weight, size, color, layer, surface)
     local fs = parent:CreateFontString(nil, layer or "ARTWORK")
-    fs:SetFontObject(UI.Font(weight, size))
+    fs.dingSurface = surface
+    fs.dingWeight, fs.dingSize = weight, size
+    fs:SetFontObject(UI.Font(weight, size, surface))
     fs:SetJustifyH("LEFT")
     fs:SetWordWrap(false)
-    fs:SetTextColor(unpack(color or C.text))
+    UI.Color(fs, color or C.text)
     return fs
 end
 
+-- Another weight or size for a text, on its own surface.
+function UI.SetFont(fs, weight, size)
+    fs.dingWeight, fs.dingSize, fs.dingRole = weight, size, nil
+    fs:SetFontObject(UI.Font(weight, size, fs.dingSurface))
+end
+
+-- A title role's font for a text (UI.TITLE_ROLES); wrapped texts keep the role's line height.
+function UI.SetTitleFont(fs, role)
+    fs.dingRole = role
+    fs:SetFontObject(UI.TitleFont(role, fs.dingSurface))
+end
+
 -- Line height 16 for 12 px, 14 for 11 px (design typography), at most `lines` lines.
+-- `size` may be a title role: its line height whatever the theme's font.
 function UI.Wrap(fs, size, lines)
     fs:SetWordWrap(true)
     fs:SetJustifyV("TOP")
-    if fs.SetSpacing then pcall(fs.SetSpacing, fs, size >= 12 and 4 or 3) end
+    local spacing
+    local role = type(size) == "string" and UI.TITLE_ROLES[size]
+    if role then
+        local game = theme().flags[role.flag] == "game"
+        spacing = role.line - (game and role.game or role.noto)
+    else
+        spacing = size >= 12 and 4 or 3
+    end
+    if fs.SetSpacing then pcall(fs.SetSpacing, fs, spacing) end
     if lines and fs.SetMaxLines then pcall(fs.SetMaxLines, fs, lines) end
 end
 
@@ -186,10 +332,15 @@ function UI.Measure(fs)
     return fs:GetStringWidth()
 end
 
--- Texts drawn over the game world (arrow, item name) carry a dark shadow.
+-- Texts drawn over the game world (arrow, item name): their shadow (or the theme's outline)
+-- comes with their font, the "world" surface.
 function UI.Shadow(fs)
-    fs:SetShadowOffset(0, -1)
-    fs:SetShadowColor(unpack(C.textShadow))
+    fs.dingSurface = "world"
+    if fs.dingRole then
+        UI.SetTitleFont(fs, fs.dingRole)
+    elseif fs.dingWeight then
+        UI.SetFont(fs, fs.dingWeight, fs.dingSize)
+    end
 end
 
 ---------------------------------------------------------------------------
@@ -200,24 +351,32 @@ end
 local Slice = {}
 Slice.__index = Slice
 
--- file: texture name in Media/Textures; size: 32 or 64 (its width in texels).
-function UI.Slice(parent, file, margin, size, layer, sublevel)
-    local s = setmetatable({ parts = {}, margin = margin }, Slice)
-    local m = margin / size
+local function sliceCoords(s)
+    local m = s.margin / s.size
     local coords = { 0, m, 1 - m, 1 }
+    local i = 0
     for row = 0, 2 do
         for col = 0, 2 do
-            local t = parent:CreateTexture(nil, layer or "BACKGROUND", nil, sublevel or 0)
-            t:SetTexture(UI.TEX .. file)
+            i = i + 1
+            local t = s.parts[i]
+            t:SetTexture(UI.TEX .. s.file)
             t:SetTexCoord(coords[col + 1], coords[col + 2], coords[row + 1], coords[row + 2])
-            s.parts[#s.parts + 1] = t
         end
     end
+end
+
+-- file: texture name in Media/Textures; size: 32 or 64 (its width in texels).
+function UI.Slice(parent, file, margin, size, layer, sublevel)
+    local s = setmetatable({ parts = {}, margin = margin, size = size, file = file }, Slice)
+    for i = 1, 9 do s.parts[i] = parent:CreateTexture(nil, layer or "BACKGROUND", nil, sublevel or 0) end
+    sliceCoords(s)
+    slices[s] = true
     return s
 end
 
 -- Covers `region`, grown by `outset` on each side (negative: inside), moved down by `drop`.
 function Slice:Place(region, outset, drop)
+    self.region, self.outset, self.drop = region, outset, drop
     local o, d, m, p = outset or 0, drop or 0, self.margin, self.parts
     for _, t in ipairs(p) do t:ClearAllPoints() end
     p[1]:SetPoint("TOPLEFT", region, "TOPLEFT", -o, o - d)
@@ -238,11 +397,50 @@ function Slice:Place(region, outset, drop)
     return self
 end
 
-function Slice:SetColor(r, g, b, a)
-    if type(r) == "table" then r, g, b, a = r[1], r[2], r[3], r[4] end
-    self.color = { r, g, b, a or 1 }
-    for _, t in ipairs(self.parts) do t:SetVertexColor(r, g, b, a or 1) end
+-- Another texture of the kit (a theme's radius): coordinates and corners follow.
+function Slice:SetFile(file)
+    if file == self.file then return self end
+    local spec = UI.SLICES[file]
+    self.file, self.margin, self.size = file, spec[1], spec[2]
+    sliceCoords(self)
+    if self.region then self:Place(self.region, self.outset, self.drop) end
     return self
+end
+
+-- A color: numbers (r, g, b, a), or a token, its alpha times `mul`; a token of two colors is
+-- a gradient across the slice (HORIZONTAL by default, VERTICAL: bottom to top).
+local COLUMNS = { { 1, 4, 7 }, { 2, 5, 8 }, { 3, 6, 9 } }
+local ROWS = { { 7, 8, 9 }, { 4, 5, 6 }, { 1, 2, 3 } }    -- bottom, middle, top
+function Slice:SetColor(r, g, b, a)
+    local token, mul, orientation
+    if type(r) == "table" then
+        token, mul, orientation = r, g, b
+        r, g, b, a = token[1], token[2], token[3], alphaOf(token, 4, mul)
+    end
+    self.token, self.mul, self.orientation = token, mul, orientation
+    self.color = { r, g, b, a or 1 }
+    if token and token[5] then
+        local first = { r, g, b, a }
+        local last = { token[5], token[6], token[7], alphaOf(token, 8, mul) }
+        local groups = orientation == "VERTICAL" and ROWS or COLUMNS
+        for _, i in ipairs(groups[1]) do self.parts[i]:SetVertexColor(unpack(first)) end
+        for _, i in ipairs(groups[3]) do self.parts[i]:SetVertexColor(unpack(last)) end
+        for _, i in ipairs(groups[2]) do
+            self.parts[i]:SetVertexColor(1, 1, 1, 1)
+            Compat.SetGradient(self.parts[i], orientation or "HORIZONTAL", first, last)
+        end
+        self.gradient = last
+    else
+        self.gradient = nil
+        for _, t in ipairs(self.parts) do t:SetVertexColor(r, g, b, a or 1) end
+    end
+    return self
+end
+
+-- A theme change: the shape of its theme (UI.Shape) and its token's new values.
+function Slice:Reskin()
+    if self.shape then self:SetFile(UI.ShapeFile(self.shape)) end
+    if self.token then self:SetColor(self.token, self.mul, self.orientation) end
 end
 
 function Slice:SetShown(shown)
@@ -253,64 +451,178 @@ function Slice:Show() self:SetShown(true) end
 function Slice:Hide() self:SetShown(false) end
 function Slice:IsShown() return self.shown ~= false end
 
--- Shapes of the kit, by name: { file, margin, texture size }.
+-- Shapes of the kit, by name: a texture, or what the theme picks (its radii, its focus ring).
+local function rr(n) return "rr" .. n .. "_fill" end
 local SHAPES = {
-    window = { "rr6_fill", 6, 32 }, windowBorder = { "rr6_stroke1", 6, 32 },
-    row = { "rr4_fill", 4, 32 }, rowBorder = { "rr4_stroke1", 4, 32 }, ring = { "rr4_stroke2", 4, 32 },
-    halo = { "focus_halo", 7, 32 }, small = { "rr3_fill", 3, 32 }, smallBorder = { "rr3_stroke15", 3, 32 },
-    bar = { "rr2_fill", 2, 32 }, shadow = { "shadow", 24, 64 },
+    window = function(t) return rr(t.radius.window > 0 and t.radius.window or t.radius.row) end,
+    windowBorder = "rr6_stroke1",
+    row = function(t) return rr(t.radius.row) end,
+    rowBorder = "rr4_stroke1",
+    ring = function(t) return t.tex.focusRing end,
+    halo = "focus_halo",
+    small = function(t) return rr(t.radius.icon) end,
+    smallBorder = "rr3_stroke15",
+    bar = "rr2_fill",
+    card = function(t) return rr(t.radius.card) end,
+    shadow = "shadow",
+    feather = "soft_rect",
 }
-function UI.Shape(parent, shape, color, layer, sublevel)
+function UI.ShapeFile(shape)
     local s = SHAPES[shape]
-    local slice = UI.Slice(parent, s[1], s[2], s[3], layer, sublevel)
+    return type(s) == "function" and s(theme()) or s
+end
+
+function UI.Shape(parent, shape, color, layer, sublevel)
+    local file = UI.ShapeFile(shape)
+    local spec = UI.SLICES[file]
+    local slice = UI.Slice(parent, file, spec[1], spec[2], layer, sublevel)
+    slice.shape = shape
     if color then slice:SetColor(color) end
     return slice
 end
 
--- Window look: drop shadow, rounded background and 1-unit border.
--- Returns { shadow, fill, border, SetBgAlpha(alpha) }: with a see-through background the
--- border and the shadow fade too, so a 0 % window shows its texts only.
-function UI.Window(frame, bgColor, borderColor)
-    local w = {
-        shadow = UI.Shape(frame, "shadow", C.shadow, "BACKGROUND", -8):Place(frame, 16, 4),
-        fill = UI.Shape(frame, "window", bgColor or C.bg, "BACKGROUND", -7):Place(frame),
-        border = UI.Shape(frame, "windowBorder", borderColor or C.border, "BORDER", 7):Place(frame),
-    }
-    local base = { fill = bgColor or C.bg, border = borderColor or C.border }
+---------------------------------------------------------------------------
+-- Window looks. kind: "panel" (the guide window: its opacity, its bands drawn by the panel),
+-- "dialog" (settings, directory, setup, import, NPC offers, banners, plates), "card" (the
+-- hover card), "popup" (menus, dropdown lists), "item" (the item button). The theme's
+-- windowStyle: "feather" (a veil with soft edges, 20 outside the frame; 12 for the card),
+-- "panel" (rounded fill, shadow; Ding dark: a 1-unit border), "bands" (the guide window draws
+-- a band per row; the card is one band; dialogs are panels). Every piece is made once; a theme
+-- change only shows, hides and paints them.
+---------------------------------------------------------------------------
+local FEATHER_OUT = { card = 12 }
+
+function UI.WindowStyle(kind)
+    local style = theme().flags.windowStyle
+    if kind == "popup" or kind == "item" then return "panel" end
+    if kind == "dialog" and style == "bands" then return "panel" end
+    return style
+end
+
+-- Returns { shadow, feather, fill, border, topLine, SetBgAlpha(alpha), Skin() }: with a
+-- see-through background the border and the shadow fade too, so a 0 % window shows its texts
+-- only.
+function UI.Window(frame, kind)
+    kind = kind or "dialog"
+    local w = { frame = frame, kind = kind }
+    w.shadow = UI.Shape(frame, "shadow", nil, "BACKGROUND", -8):Place(frame, 16, 4)
+    w.feather = UI.Shape(frame, "feather", nil, "BACKGROUND", -8):Place(frame, FEATHER_OUT[kind] or 20)
+    w.fill = UI.Shape(frame, kind == "popup" and "row" or "window", nil, "BACKGROUND", -7):Place(frame)
+    w.border = UI.Shape(frame, kind == "popup" and "rowBorder" or "windowBorder", nil, "BORDER", 7):Place(frame)
+    -- A card's top line (Ardoise).
+    w.topLine = frame:CreateTexture(nil, "BORDER", nil, 6)
+    w.topLine:SetHeight(1)
+    w.topLine:SetPoint("TOPLEFT", frame, "TOPLEFT", 0, 0)
+    w.topLine:SetPoint("TOPRIGHT", frame, "TOPRIGHT", 0, 0)
+    local BG = { panel = C.bg, dialog = C.bgSettings, card = C.cardBg, popup = C.popup, item = C.itemBg }
+
+    function w:Skin()
+        local t = theme()
+        local style = UI.WindowStyle(kind)
+        self.style = style
+        local token = BG[kind]
+        -- The guide window's background: the opacity setting (SetBgAlpha) instead of the
+        -- token's alpha.
+        local alpha = self.alpha
+        local mul = alpha and alpha / math.max(token[4] or 1, 0.001) or nil
+        local feather = style == "feather"
+        local filled = style == "panel" or (style == "bands" and kind ~= "panel")
+        self.feather:SetShown(feather)
+        self.fill:SetShown(filled)
+        if feather then self.feather:SetColor(token, mul) end
+        if filled then self.fill:SetColor(token, mul) end
+        local bordered = style == "panel" and (t.flags.windowBorder or kind == "item" or kind == "popup")
+        self.border:SetShown(bordered)
+        local edge = kind == "item" and C.strong or C.border
+        if bordered then self.border:SetColor(edge, alpha and math.min(1, alpha / 0.5) or 1) end
+        local shadowed = style == "panel" or (kind == "card" and style ~= "bands" and style ~= "feather")
+        self.shadow:SetShown(shadowed)
+        if shadowed then self.shadow:SetColor(C.shadow, alpha or 1) end
+        local line = kind == "card" and (C.cardLine[4] or 0) > 0
+        self.topLine:SetShown(line)
+        if line then UI.Fill(self.topLine, C.cardLine) end
+    end
+
     function w:SetBgAlpha(alpha)
         self.alpha = alpha
-        local f, b = base.fill, base.border
-        self.fill:SetColor(f[1], f[2], f[3], alpha)
-        self.border:SetColor(b[1], b[2], b[3], b[4] * math.min(1, alpha / 0.5))
-        self.shadow:SetColor(0, 0, 0, C.shadow[4] * alpha)
+        self:Skin()
     end
-    w:SetBgAlpha(1)
+    UI.Skin(w, w.Skin)
+    w:Skin()
     return w
 end
 
 -- 1-unit separator line between two points of a frame, at vertical offset y.
 function UI.Divider(frame, y, color, left, right)
     local t = frame:CreateTexture(nil, "ARTWORK")
-    t:SetColorTexture(unpack(color or C.divider))
+    UI.Fill(t, color or C.divider)
     t:SetHeight(1)
     t:SetPoint("TOPLEFT", frame, "TOPLEFT", left or 1, y)
     t:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -(right or 1), y)
     return t
 end
 
--- Gamepad focus. Inside (list rows): accent fill and a 2-unit ring along the inner edge.
--- Outside (an isolated field): the ring 2 units outside the field, then a 3-unit halo.
+-- The line under a title bar or a step bar, by the theme: a gold line fading at both ends
+-- (feather), a plain line (panel), none (bands: the bars are bands).
+function UI.Separator(frame, y, left, right)
+    local t = frame:CreateTexture(nil, "ARTWORK")
+    t:SetHeight(1)
+    t:SetPoint("TOPLEFT", frame, "TOPLEFT", left or 1, y)
+    t:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -(right or 1), y)
+    local function skin(self)
+        local style = theme().flags.windowStyle
+        self.style = style
+        if style == "feather" then
+            self:SetTexture(UI.TEX .. "line_fade")
+            UI.Tint(self, C.line)
+        else
+            UI.Fill(self, C.line)
+        end
+        self:SetAlpha(style == "bands" and 0 or 1)
+    end
+    UI.Skin(t, skin)
+    skin(t)
+    return t
+end
+
+-- A dialog's title bar and tab strip backgrounds (Ardoise: a darker title bar; Bandes: an
+-- accent gradient under the title, a light tab strip); transparent in the other themes.
+function UI.DialogBars(frame, titleHeight, tabsHeight)
+    local function bar(y, height, token)
+        local holder = CreateFrame("Frame", nil, frame)
+        holder:SetHeight(height)
+        holder:SetPoint("TOPLEFT", frame, "TOPLEFT", 0, y)
+        holder:SetPoint("TOPRIGHT", frame, "TOPRIGHT", 0, y)
+        holder.bg = UI.Shape(frame, "window", token, "BACKGROUND", -5):Place(holder)
+        return holder
+    end
+    frame.titleBar = bar(0, titleHeight, C.bgTitlebar)
+    if tabsHeight then frame.tabsBar = bar(-(titleHeight + 1), tabsHeight, C.bgTabs) end
+end
+
+-- Gamepad focus. Inside (list rows): accent fill and a ring along the inner edge (the theme's:
+-- 2 units, 1.5 in Ardoise); Ardoise adds a chevron 9 left of the element. Outside (an isolated
+-- field): the ring 2 units outside the field, then a 3-unit halo (Ding dark only).
 function UI.Focus(frame, outside)
     local f = {
         fill = UI.Shape(frame, "row", C.accentBg, "BACKGROUND", 2):Place(frame),
         ring = UI.Shape(frame, "ring", C.accent, "OVERLAY", 6):Place(frame, outside and 2 or 0),
     }
     if outside then f.halo = UI.Shape(frame, "halo", C.accentHalo, "BACKGROUND", -6):Place(frame, 5) end
+    f.chevron = frame:CreateTexture(nil, "OVERLAY", nil, 7)
+    f.chevron:SetTexture(UI.TEX .. "chevron_focus")
+    f.chevron:SetSize(7, 16)
+    f.chevron:SetPoint("LEFT", frame, "LEFT", -9 - (outside and 2 or 0), 0)
+    UI.Tint(f.chevron, C.accent)
     function f:SetShown(shown)
+        self.shown = shown and true or false
         self.fill:SetShown(shown)
         self.ring:SetShown(shown)
         if self.halo then self.halo:SetShown(shown) end
+        self.chevron:SetShown(shown and theme().flags.focusChevron and true or false)
     end
+    function f:IsShown() return self.shown == true end
+    UI.Skin(f, function(self) self:SetShown(self.shown) end)
     f:SetShown(false)
     return f
 end
@@ -344,7 +656,7 @@ function UI.Icon(parent, file, size, color, layer, sublevel)
     local t = parent:CreateTexture(nil, layer or "ARTWORK", nil, sublevel or 0)
     t:SetTexture(UI.TEX .. file)
     t:SetSize(size, size)
-    t:SetVertexColor(unpack(color or C.text))
+    UI.Tint(t, color or C.text)
     return t
 end
 
@@ -361,7 +673,7 @@ function UI.Banner(name, width)
     b:SetPoint("TOP", UIParent, "TOP", 0, -96)
     b:SetFrameStrata("DIALOG")
     b:EnableMouse(false)
-    b.look = UI.Window(b)
+    b.look = UI.Window(b, "dialog")
     b.icon = UI.Caret(b, "RIGHT", 8, C.accent, "ARTWORK")
     b.icon:SetPoint("LEFT", b, "LEFT", 12, 0)
     b.text = UI.Text(b, "semibold", 13, C.text)
@@ -483,10 +795,11 @@ end
 ---------------------------------------------------------------------------
 -- Gamepad glyph: the name of a button in a small plate. Shoulders, triggers and words
 -- (LB, RB, LB RB, Start, keyboard keys) in a rounded pill; face buttons (A, B, X, Y) in
--- a circle. Ding.Gamepad:Glyph(key) says what to draw.
--- style: { height = 14, font = 9, bg = color, text = color, border = color or nil }
+-- a disc. The theme picks the shapes (tex.chipDisc, tex.chipPill: Forever's light embossed
+-- chips, outlined rings, or Ding dark's discs). Ding.Gamepad:Glyph(key) says what to draw.
+-- style: { height = 14, font = 9, bg = token, text = token, border = token or nil }
 ---------------------------------------------------------------------------
-local GLYPH = { height = 14, font = 9, bg = C.glyphBg, text = C.glyph }
+local GLYPH = { height = 14, font = 9, bg = C.chipBg, text = C.chipText }
 UI.GLYPH = GLYPH
 
 function UI.Glyph(parent, style)
@@ -494,8 +807,11 @@ function UI.Glyph(parent, style)
     local g = CreateFrame("Frame", nil, parent)
     g.style = style
     g:SetSize(style.height, style.height)
-    g.pill = UI.Shape(g, "small", style.bg, "BACKGROUND"):Place(g)
-    g.circle = UI.Icon(g, "circle", style.height, style.bg, "BACKGROUND")
+    local pill = theme().tex.chipPill
+    local spec = UI.SLICES[pill]
+    g.pill = UI.Slice(g, pill, spec[1], spec[2], "BACKGROUND"):Place(g)
+    g.pill:SetColor(style.bg)
+    g.circle = UI.Icon(g, theme().tex.chipDisc, style.height, style.bg, "BACKGROUND")
     g.circle:SetPoint("CENTER", g, "CENTER", 0, 0)
     if style.border then
         g.ring = UI.Icon(g, "ring", style.height, style.border, "BORDER")
@@ -507,7 +823,7 @@ function UI.Glyph(parent, style)
         local p = g.parts[i]
         if not p then
             p = {
-                text = UI.Text(g, "bold", style.font, style.text, "OVERLAY"),
+                text = UI.Text(g, "bold", style.font, style.text, "OVERLAY", "chip"),
                 tex = g:CreateTexture(nil, "OVERLAY"),
             }
             g.parts[i] = p
@@ -518,7 +834,7 @@ function UI.Glyph(parent, style)
     -- glyph = { face = bool, parts = { { text = "LB" } | { caret = "LEFT" } | { tex = file } } }
     -- (a part with space = true is followed by a wider gap).
     function g:SetGlyph(glyph, color)
-        local textColor = color or self.style.text
+        local textColor = color or self.textColor or self.style.text
         local h = self.style.height
         local icon = math.floor(h * 0.6 + 0.5)
         -- Measure, then center the content in the plate.
@@ -543,14 +859,14 @@ function UI.Glyph(parent, style)
             p.tex:ClearAllPoints()
             if item.text then
                 p.tex:Hide()
-                p.text:SetTextColor(unpack(textColor))
+                UI.Color(p.text, textColor)
                 p.text:SetPoint("LEFT", self, "LEFT", x, 0)
                 p.text:Show()
             else
                 p.text:Hide()
                 p.tex:SetTexture(UI.TEX .. (item.caret and "caret_up" or item.tex))
                 p.tex:SetRotation(item.caret and CARET[item.caret] or 0)
-                p.tex:SetVertexColor(unpack(textColor))
+                UI.Tint(p.tex, textColor)
                 p.tex:SetSize(icon, icon)
                 p.tex:SetPoint("LEFT", self, "LEFT", x, 0)
                 p.tex:Show()
@@ -567,8 +883,10 @@ function UI.Glyph(parent, style)
         self.glyph = glyph
     end
 
+    -- Plate and letter colors (tokens), kept through theme changes.
     function g:SetColors(bg, text)
-        self.circle:SetVertexColor(unpack(bg))
+        self.bgColor, self.textColor = bg, text
+        UI.Tint(self.circle, bg)
         self.pill:SetColor(bg)
         if self.glyph then self:SetGlyph(self.glyph, text) end
     end
@@ -577,6 +895,12 @@ function UI.Glyph(parent, style)
     function g:SetKey(key)
         self:SetGlyph(Ding.Gamepad:Glyph(key))
     end
+
+    UI.Skin(g, function(self, t)
+        local file = t.tex.chipPill
+        self.pill:SetFile(file)
+        self.circle:SetTexture(UI.TEX .. t.tex.chipDisc)
+    end)
     return g
 end
 
@@ -615,7 +939,7 @@ function UI.ButtonKeys(b, keys, accent)
         end
         g:SetKey(keys[i])
         g.padKey = keys[i]
-        g:SetColors(accent and C.glyphOnAccent or C.glyphBg, accent and C.onAccent or C.glyph)
+        g:SetColors(accent and C.glyphOnAccent or C.chipBg, accent and C.onAccent or C.chipText)
         g:ClearAllPoints()
         g:SetPoint("RIGHT", anchor, "LEFT", -gap, 0)
         g:Show()
@@ -671,7 +995,7 @@ local function baseRow(parent, owner, opts, height, width)
     function row:SetFocused(focused)
         self.focused = focused
         self.focus:SetShown(focused)
-        self.label:SetFontObject(UI.Font(focused and "medium" or "regular", 12))
+        UI.SetFont(self.label, focused and "medium" or "regular", 12)
     end
     function row:Hints() return {} end
     function row:Tooltip()
@@ -680,6 +1004,7 @@ local function baseRow(parent, owner, opts, height, width)
     end
     return row
 end
+UI.BaseRow = baseRow
 
 -- Label (and its description) on the left, vertically centered in the row.
 local function placeLabel(row, x, rightRoom)
@@ -691,9 +1016,10 @@ local function placeLabel(row, x, rightRoom)
         UI.Wrap(row.desc, 11, 1)
         row.desc:SetWidth(width)
         row.desc:SetText(type(row.opts.desc) == "function" and row.opts.desc() or row.opts.desc)
-        local block = 16 + 2 + 14     -- line heights of 12 and 11 (UI.Wrap)
-        row.label:SetPoint("TOPLEFT", row, "TOPLEFT", x, -math.floor((row:GetHeight() - block) / 2))
-        row.desc:SetPoint("TOPLEFT", row.label, "BOTTOMLEFT", 0, -2)
+        -- The two lines sit on either side of the row's middle, 2 apart: the block is centered
+        -- on the box and away from the focus ring whatever the font's real line heights.
+        row.label:SetPoint("BOTTOMLEFT", row, "LEFT", x, 1)
+        row.desc:SetPoint("TOPLEFT", row, "LEFT", x, -1)
     else
         row.label:SetPoint("LEFT", row, "LEFT", x, 0)
     end
@@ -706,6 +1032,7 @@ local function aGlyph(row)
     row.aGlyph:SetKey("PAD1")
     row.aGlyph:Hide()
 end
+UI.AGlyph = aGlyph
 
 -- opts: label, desc, get(), set(value)
 function UI.CheckRow(parent, owner, opts, width)
@@ -744,15 +1071,16 @@ function UI.CheckRow(parent, owner, opts, width)
     return row
 end
 
--- Slider block of the Appearance tab. opts: label, min, max, step, default, get(),
--- set(v, dragging) (dragging: the mouse still moves the thumb; a last set(v) comes when it lets
--- go), format(v) -> text, help (bottom center, optional)
+-- Slider block of the Appearance tab. opts: label, min, max, step, default (a number, or a
+-- function: the theme's opacity), get(), set(v, dragging) (dragging: the mouse still moves the
+-- thumb; a last set(v) comes when it lets go), format(v) -> text, help (bottom center,
+-- optional), reset() (Y, instead of set(default))
 local SLIDER = { top = 6, track = 16 + 6, under = 16 + 4, bottom = 14 + 6 }    -- [8, 24, 24, 22]
 local SLIDER_HEIGHT = SLIDER.top + SLIDER.track + SLIDER.under + SLIDER.bottom
 function UI.SliderRow(parent, owner, opts, width)
     local row = baseRow(parent, owner, opts, SLIDER_HEIGHT, width)
     row.kind = "slider"
-    row.label:SetFontObject(UI.Font("medium", 12))
+    UI.SetFont(row.label, "medium", 12)
     row.label:SetPoint("TOPLEFT", row, "TOPLEFT", 8, -SLIDER.top)
     row.value = UI.Text(row, "semibold", 12, C.text)
     row.value:SetJustifyH("RIGHT")
@@ -770,13 +1098,13 @@ function UI.SliderRow(parent, owner, opts, width)
     rail:SetHeight(4)
     rail:SetPoint("LEFT", track, "LEFT", 0, 0)
     rail:SetPoint("RIGHT", track, "RIGHT", 0, 0)
-    row.rail = UI.Shape(rail, "bar", C.glyphBg, "ARTWORK"):Place(rail)
+    row.rail = UI.Shape(rail, "bar", C.sliderTrack, "ARTWORK"):Place(rail)
     row.fillFrame = CreateFrame("Frame", nil, track)
     row.fillFrame:SetHeight(4)
     row.fillFrame:SetPoint("LEFT", track, "LEFT", 0, 0)
     row.fill = UI.Shape(row.fillFrame, "bar", C.accent, "ARTWORK", 1):Place(row.fillFrame)
-    row.thumbShadow = UI.Icon(track, "circle", 16, { 0, 0, 0, 0.5 }, "OVERLAY", 1)
-    row.thumb = UI.Icon(track, "circle", 14, C.text, "OVERLAY", 2)
+    row.thumbShadow = UI.Icon(track, "circle", 16, C.textShadow, "OVERLAY", 1)
+    row.thumb = UI.Icon(track, "circle", 14, C.thumb, "OVERLAY", 2)
 
     row.minText = UI.Text(row, "regular", 11, C.secondary)
     row.minText:SetPoint("TOPLEFT", row, "TOPLEFT", 8, -underTop)
@@ -848,12 +1176,19 @@ function UI.SliderRow(parent, owner, opts, width)
     end
     function row:SetFocused(focused)
         setFocused(self, focused)
-        self.label:SetFontObject(UI.Font("medium", 12))
-        self.value:SetTextColor(unpack(focused and C.accent or C.text))
+        UI.SetFont(self.label, "medium", 12)
+        UI.Color(self.value, focused and C.accent or C.text)
     end
     function row:Left() setValue(opts.get() - opts.step) end
     function row:Right() setValue(opts.get() + opts.step) end
-    function row:Reset() setValue(opts.default) end
+    function row:Reset()
+        if opts.reset then
+            opts.reset()
+            self:Refresh()
+            return
+        end
+        setValue(type(opts.default) == "function" and opts.default() or opts.default)
+    end
     function row:Activate() end
     function row:Hints()
         return { hint({ "PADDLEFT", "PADDRIGHT" }, L.HINT_ADJUST), hint("PAD4", L.HINT_RESET) }
@@ -906,8 +1241,8 @@ function UI.SelectorRow(parent, owner, opts, width)
     function row:SetFocused(focused)
         setFocused(self, focused)
         local c = focused and C.accent or C.secondary
-        left:SetVertexColor(unpack(c))
-        right:SetVertexColor(unpack(c))
+        UI.Tint(left, c)
+        UI.Tint(right, c)
     end
     function row:Left() step(-1) end
     function row:Right() step(1) end
@@ -943,7 +1278,7 @@ function UI.ButtonRow(parent, owner, opts, width)
     -- the button in its text ("Confirm? (A)").
     local function setButton(text, color)
         b.text:SetText(text)
-        b.text:SetTextColor(unpack(color or C.text))
+        UI.Color(b.text, color or C.text)
         local pad = Ding.Gamepad:Active() and not row.confirming
         UI.ButtonKeys(b, pad and row.focused and { "PAD1" } or nil)
         b:SetWidth(math.max(72, b.text:GetStringWidth() + 24 + (pad and UI.KeysWidth({ "PAD1" }) or 0)))
@@ -1009,7 +1344,7 @@ function UI.PageRow(parent, owner, opts, width)
     end
     function row:SetFocused(focused)
         setFocused(self, focused)
-        caret:SetVertexColor(unpack(focused and C.accent or C.secondary))
+        UI.Tint(caret, focused and C.accent or C.secondary)
     end
     function row:Activate() opts.open() end
     function row:Right() opts.open() end
@@ -1023,7 +1358,7 @@ end
 function UI.FoldRow(parent, owner, opts, width)
     local row = baseRow(parent, owner, opts, SIZE.fold, width)
     row.kind = "fold"
-    row.label:SetTextColor(unpack(C.secondary))
+    UI.Color(row.label, C.secondary)
     local caret = UI.Caret(row, "DOWN", 8, C.secondary)
     caret:SetPoint("LEFT", row, "LEFT", 8, 0)
     row.caret = caret
@@ -1072,47 +1407,87 @@ function UI.PageTitleRow(parent, text, width, back)
 end
 
 -- A Ding key binding (DING_NEXT...): A waits for a button, Y clears it.
+-- The action's button (the gamepad's with a gamepad, else the keyboard's), "and 2 more" when
+-- it has several of that kind; while a button is awaited, a conflict settled or a button
+-- refused, the words for it on two lines beside the label (row:Tooltip() has them whole, and
+-- every key of the action).
 function UI.BindingRow(parent, owner, opts, width)
     local row = baseRow(parent, owner, opts, SIZE.row, width)
     row.kind = "binding"
     placeLabel(row, 8, 180)
-    row.chip = UI.Glyph(row, { height = 18, font = 10, bg = C.glyphBg, text = C.text })
+    row.chip = UI.Glyph(row, { height = 18, font = 10, bg = C.chipBg, text = C.chipText })
     row.chip:SetPoint("RIGHT", row, "RIGHT", -8, 0)
     row.status = UI.Text(row, "regular", 11, C.disabled)
     row.status:SetJustifyH("RIGHT")
-    row.status:SetPoint("RIGHT", row, "RIGHT", -8, 0)
+    UI.Wrap(row.status, 11, 2)
+    local labelWidth = row.label:GetWidth()
+
+    local function message(self)
+        local G = Ding.Gamepad
+        if self.conflict then return G:ConflictText(self.conflict.key, self.conflict.who) end
+        if self.notice then return self.notice end
+        if self.capturing then return G:Active() and L.BIND_WAIT_PAD or L.BIND_WAIT end
+        return nil
+    end
 
     local refresh = row.Refresh
     function row:Refresh()
         refresh(self)
         local G = Ding.Gamepad
-        local message, color
-        if self.conflict then
-            local text = Ding.Gamepad:Active() and L.BIND_CONFLICT or L.BIND_CONFLICT_MOUSE
-            message, color = text:format(self.conflict), C.accent
-        elseif self.capturing then
-            message, color = L.BIND_WAIT, C.accent
-        end
-        local key = not message and G:BindingKey(opts.action)
-        if key then
-            self.chip:SetKey(key)
-            self.chip.key = G:KeyName(key)
+        local text = message(self)
+        -- The kind of key just bound here (a key of the keyboard with a gamepad on), else the
+        -- input in use's.
+        local keys = text and {} or G:ShownKeys(opts.action, self.boundPad)
+        self.keys = keys
+        self.status:ClearAllPoints()
+        self.label:SetWidth(labelWidth)
+        if keys[1] then
+            self.chip:SetKey(keys[1])
+            self.chip.key = G:KeyName(keys[1])
             self.chip:Show()
-            self.status:Hide()
-        else
-            self.chip.key = nil
-            self.chip:Hide()
-            self.status:SetText(message or L.NOT_BOUND)
-            self.status:SetTextColor(unpack(color or C.disabled))
-            self.status:Show()
+            self.status:SetPoint("RIGHT", self.chip, "LEFT", -6, 0)
+            self.status:SetWidth(0)
+            self.status:SetText(#keys > 1 and UI.More(#keys - 1) or "")
+            UI.Color(self.status, C.secondary)
+            self.status:SetShown(#keys > 1)
+            return
         end
+        self.chip.key = nil
+        self.chip:Hide()
+        -- Words take the room the label leaves, the label at most 40 % of the row while
+        -- they are there (cut, its whole name back afterwards).
+        local width = self:GetWidth()
+        local label = text and math.min(self.label:GetStringWidth(), math.floor(width * 0.4)) or labelWidth
+        if text then self.label:SetWidth(label) end
+        self.status:SetPoint("RIGHT", self, "RIGHT", -8, 0)
+        self.status:SetWidth(text and (width - 16 - label - 12) or 180)
+        self.status:SetText(text or L.NOT_BOUND)
+        UI.Color(self.status, text and C.accent or C.disabled)
+        self.status:Show()
     end
     function row:Activate() self.owner:StartCapture(self) end
+    function row:Cancel()
+        if self.notice and not self.capturing then
+            self.notice = nil
+            self:Refresh()
+        end
+    end
     function row:Reset()
-        Ding.Gamepad:Unbind(opts.action)
+        self.notice = nil
+        Ding.Gamepad:Unbind(opts.action, self.boundPad)
+        self.boundPad = nil
         self:Refresh()
     end
     function row:Hints() return { hint("PAD1", L.HINT_ASSIGN), hint("PAD4", L.HINT_UNBIND) } end
+    -- The tooltip: the words beside the label whole, or every button of the action.
+    function row:Tooltip()
+        local text = message(self)
+        if text then return opts.label, text end
+        local G, names = Ding.Gamepad, {}
+        for i, key in ipairs(G:BindingKeys(opts.action)) do names[i] = G:KeyName(key) end
+        if #names > 1 then return opts.label, L.BIND_ALL:format(table.concat(names, ", ")) end
+        return opts.label, nil
+    end
     row:Refresh()
     return row
 end
@@ -1152,11 +1527,7 @@ local function dropdownList(row)
     list:SetClampedToScreen(true)
     list:EnableMouse(true)
     list:EnableMouseWheel(true)
-    list.look = {
-        shadow = UI.Shape(list, "shadow", C.shadow, "BACKGROUND", -8):Place(list, 16, 4),
-        fill = UI.Shape(list, "row", C.control, "BACKGROUND", -7):Place(list),
-        border = UI.Shape(list, "rowBorder", C.border, "BORDER"):Place(list),
-    }
+    list.look = UI.Window(list, "popup")
     list:Hide()
     list.items, list.entries, list.index, list.offset = {}, {}, 1, 0
 
@@ -1207,15 +1578,15 @@ local function dropdownList(row)
                 item.text:ClearAllPoints()
                 if entry.header then
                     item.text:SetPoint("LEFT", item, "LEFT", 8, 0)
-                    item.text:SetFontObject(UI.Font("semibold", 11))
-                    item.text:SetTextColor(unpack(C.secondary))
+                    UI.SetFont(item.text, "semibold", 11)
+                    UI.Color(item.text, C.secondary)
                 else
                     item.text:SetPoint("LEFT", item, "LEFT", 8 + 12 + 8, 0)
-                    item.text:SetFontObject(UI.Font(focused and "medium" or "regular", 12))
-                    item.text:SetTextColor(unpack(entry.dim and C.disabled or C.text))
+                    UI.SetFont(item.text, focused and "medium" or "regular", 12)
+                    UI.Color(item.text, entry.dim and C.disabled or C.text)
                 end
                 item.detail:SetText(entry.detail or "")
-                item.detail:SetTextColor(unpack(entry.dim and C.disabled or C.secondary))
+                UI.Color(item.detail, entry.dim and C.disabled or C.secondary)
                 item.text:SetWidth(math.max(60, width - 2 * DROPDOWN.pad - 28 - 8 - 8 - item.detail:GetStringWidth()))
                 item.mark:SetShown(entry.current and not entry.header and true or false)
                 item.focus:SetShown(focused)
@@ -1379,11 +1750,13 @@ function UI.LabelRow(parent, text, width)
     return row
 end
 
--- Header of a block of rows ("Quests", "Merchant"): small, secondary, a little space above.
+-- Header of a block of rows ("Quests", "Merchant"): small, a little space above; the theme's
+-- color and font (Ardoise: the game's font in the accent).
 function UI.HeaderRow(parent, text, width)
     local row = CreateFrame("Frame", nil, parent)
     row:SetSize(width, SIZE.header)
-    row.label = UI.Text(row, "semibold", 11, C.secondary)
+    row.label = UI.Text(row, "semibold", 11, C.blockHeader)
+    UI.SetTitleFont(row.label, "block")
     row.label:SetPoint("BOTTOMLEFT", row, "BOTTOMLEFT", 8, 2)
     row.label:SetText(text)
     row.header = true
@@ -1419,4 +1792,105 @@ function UI.BannerRow(parent, title, text, width)
     row:SetSize(width, 8 + 16 + 4 + row.text:GetStringHeight() + 8)
     function row:Refresh() end
     return row
+end
+
+---------------------------------------------------------------------------
+-- Hover card: Ding's own tooltip frame for the guide window's rows (never the game's tooltip
+-- restyled). 220 wide, padding 8 / 10, 3 between lines: the title 12 SemiBold, the lines 11
+-- Regular in `cardText`, a click's line in the accent. Placed 10 to the right of the window,
+-- its top on the row's (on the left when the screen has no room). Read like GameTooltip:
+-- `text` (the title), `lines` (plain strings), IsShown, GetOwner.
+---------------------------------------------------------------------------
+local CARD = { width = 220, padX = 10, padY = 8, gap = 3, side = 10 }
+UI.CARD = CARD
+local Card = { lines = {}, text = nil }
+UI.Card = Card
+
+local function cardFrame()
+    if Card.frame then return Card.frame end
+    local f = CreateFrame("Frame", "DingCardFrame", UIParent)
+    f:SetFrameStrata("TOOLTIP")
+    f:SetClampedToScreen(true)
+    f:EnableMouse(false)
+    f:SetWidth(CARD.width)
+    f.look = UI.Window(f, "card")
+    f.title = UI.Text(f, "semibold", 12, C.text, "ARTWORK", "card")
+    UI.Wrap(f.title, 12)
+    f.title:SetPoint("TOPLEFT", f, "TOPLEFT", CARD.padX, -CARD.padY)
+    f.title:SetWidth(CARD.width - 2 * CARD.padX)
+    f.texts = {}
+    f:Hide()
+    Card.frame = f
+    return f
+end
+
+-- Roles of a line: nil (cardText), "accent" (a click, a "Why?"), "done", "text", "dim".
+local CARD_COLORS = { accent = "accent", done = "done", text = "text", dim = "muted" }
+
+function Card:SetOwner(owner, window)
+    self.owner, self.window = owner, window or owner
+    self.text, self.lines, self.roles = nil, {}, {}
+end
+
+function Card:GetOwner() return self.shown and self.owner or nil end
+function Card:IsShown() return self.shown == true end
+function Card:NumLines() return #self.lines + (self.text and 1 or 0) end
+
+function Card:SetText(text)
+    self.text = UI.StripColors(tostring(text or ""))
+end
+
+function Card:AddLine(text, role)
+    self.lines[#self.lines + 1] = tostring(text or "")
+    self.roles[#self.lines] = role or false
+end
+
+-- Lays the card out and places it next to its window.
+function Card:Show()
+    local f = cardFrame()
+    local width = CARD.width - 2 * CARD.padX
+    f.title:SetText(self.text or "")
+    local y = CARD.padY + f.title:GetStringHeight()
+    for i, line in ipairs(self.lines) do
+        local fs = f.texts[i]
+        if not fs then
+            fs = UI.Text(f, "regular", 11, C.cardText, "ARTWORK", "card")
+            UI.Wrap(fs, 11)
+            fs:SetWidth(width)
+            f.texts[i] = fs
+        end
+        local role = self.roles[i]
+        UI.Color(fs, role and C[CARD_COLORS[role]] or C.cardText)
+        fs:SetText(line)
+        fs:ClearAllPoints()
+        fs:SetPoint("TOPLEFT", f, "TOPLEFT", CARD.padX, -(y + CARD.gap))
+        fs:Show()
+        -- A blank line keeps its room, like the game's tooltip.
+        y = y + CARD.gap + math.max(fs:GetStringHeight(), line:match("^%s*$") and 6 or 0)
+    end
+    for i = #self.lines + 1, #f.texts do f.texts[i]:Hide() end
+    f:SetHeight(y + CARD.padY)
+    -- Next to the window, its top on the owner's; the window's scale.
+    local owner, window = self.owner, self.window
+    local scale = (owner.GetEffectiveScale and owner:GetEffectiveScale() or 1) / UIParent:GetEffectiveScale()
+    f:SetScale(scale)
+    f:ClearAllPoints()
+    local right = window.GetRight and window:GetRight()
+    local ownerRight = owner.GetRight and owner:GetRight()
+    local room = right and GetScreenWidth and (right + CARD.side + CARD.width) * scale <= GetScreenWidth()
+    if right and ownerRight and room ~= false then
+        f:SetPoint("TOPLEFT", owner, "TOPRIGHT", CARD.side + (right - ownerRight), 0)
+    elseif right and ownerRight then
+        local left, ownerLeft = window:GetLeft(), owner:GetLeft()
+        f:SetPoint("TOPRIGHT", owner, "TOPLEFT", -(CARD.side + (ownerLeft - left)), 0)
+    else
+        f:SetPoint("TOPLEFT", owner, "TOPRIGHT", CARD.side, 0)
+    end
+    f:Show()
+    self.shown = true
+end
+
+function Card:Hide()
+    self.shown = false
+    if self.frame then self.frame:Hide() end
 end
