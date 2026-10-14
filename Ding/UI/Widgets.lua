@@ -33,7 +33,7 @@ UI.SIZE = {
     pad = 8,          -- from the window's edge to its rows [12]
     gap = 2,          -- between two rows [4]
     row = 30,         -- a row of one line [36]
-    row2 = 36,        -- a row of two lines, a label and a line under it [44; directory 38]
+    row2 = 38,        -- a row of two lines, a label and a line under it [44; directory 38]
     fold = 28,        -- "More options" [32]
     header = 20,      -- a block's header [24]
     pageTitle = 26,   -- a page's title [30]
@@ -1016,9 +1016,10 @@ local function placeLabel(row, x, rightRoom)
         UI.Wrap(row.desc, 11, 1)
         row.desc:SetWidth(width)
         row.desc:SetText(type(row.opts.desc) == "function" and row.opts.desc() or row.opts.desc)
-        local block = 16 + 2 + 14     -- line heights of 12 and 11 (UI.Wrap)
-        row.label:SetPoint("TOPLEFT", row, "TOPLEFT", x, -math.floor((row:GetHeight() - block) / 2))
-        row.desc:SetPoint("TOPLEFT", row.label, "BOTTOMLEFT", 0, -2)
+        -- The two lines sit on either side of the row's middle, 2 apart: the block is centered
+        -- on the box and away from the focus ring whatever the font's real line heights.
+        row.label:SetPoint("BOTTOMLEFT", row, "LEFT", x, 1)
+        row.desc:SetPoint("TOPLEFT", row, "LEFT", x, -1)
     else
         row.label:SetPoint("LEFT", row, "LEFT", x, 0)
     end
