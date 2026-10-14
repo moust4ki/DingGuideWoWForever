@@ -70,6 +70,9 @@ local CHAR_DEFAULTS = {
     guideSig = nil,  -- signature of the active guide's steps: a changed guide is resumed
     early = {},      -- [questID] = true: taken ahead of the guide on the way (AutoQuest)
     skipped = {},    -- [guideId] = { [stepIndex] = true } steps skipped, still to do
+    markKeys = {},   -- [guideId] = { [stepIndex] = step key } of the marks above: a new version
+                     -- of the guide that moves a step moves its mark (Engine, followSteps)
+    lastKey = {},    -- [guideId] = { key, version }: the step of lastStep[guideId], for the same reason
     killXP = {},     -- the last kills, as a share of a monster of the player's level (Grind)
     deathskip = nil, -- { guide, step }: died during a death skip step, done once alive again
     layout = nil,    -- version of this character's data (Ding.MigrateChar)

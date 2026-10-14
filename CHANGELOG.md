@@ -22,6 +22,11 @@ Nothing else to install: QuestieDB is no longer needed, and TomTom stays optiona
 - **Wetlands (27-29)**: Carnage, the last quest Rethiel the Greenwarden gives, now comes after
   Blisters on the Land is turned in (he does not offer it before), and as an elite quest: it
   shows only when **Elite quests** is on in Settings > Route.
+- A step you marked done by hand keeps its mark when a new version of Ding writes the guide again
+  and the step moves: the mark used to stay on the step number, and fell on another step
+  ("marked as done by hand" on a step you never touched).
+- A turn-in step passed because you already turned the quest in now says "already done"
+  instead of "it does not concern you now".
 
 ## v1.5.0
 
