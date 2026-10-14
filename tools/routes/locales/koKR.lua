@@ -3495,4 +3495,1031 @@ return {
         "썬더 블러프",
     ["Thunderbrew Distillery"] =
         "카라노스",
+    -- Ding! - Class quests (hand-written guides)
+    ["Druid quests"] =
+        "드루이드 퀘스트",
+    ["At level 10, your trainer teaches Teleport: Moonglade: the quick way to Moonglade and back, used all through this guide."] =
+        "10레벨이 되면 상급자에게서 순간이동: 달의 숲을 배웁니다: 달의 숲을 빠르게 오가는 방법으로, 이 가이드 내내 사용합니다.",
+    ["Denatharion, the druid trainer of the Cenarion Enclave in Darnassus, sends you to Mathrengyl next to him."] =
+        "다르나서스 세나리온 자치령의 드루이드 상급자 데나타리온이 옆에 있는 마스렌길에게 보냅니다.",
+    ["Mathrengyl Bearwalker, upstairs in the Cenarion Enclave."] =
+        "마스렌길 베어워커는 세나리온 자치령 위층에 있습니다.",
+    ["From level 10: the chain that teaches Bear Form."] =
+        "10레벨부터: 곰 변신을 배우는 연계 퀘스트.",
+    ["Dendrite Starblaze waits on the upper floor of the great house of Nighthaven."] =
+        "덴드리트 스타블레이즈는 나이트헤이븐의 큰 건물 위층에서 기다립니다.",
+    ["The Great Bear Spirit waits northwest of the village, up the hill path: listen to all it has to say."] =
+        "거대한 곰의 혼은 마을 북서쪽, 언덕길 위에서 기다립니다: 하는 말을 끝까지 들으세요.",
+    ["Sindrayl, the hippogryph master south of Nighthaven: take this flight path for your next trips here."] =
+        "나이트헤이븐 남쪽의 히포그리프 조련사 신드라일: 다음에 여기 올 때를 위해 이 비행 경로를 익히세요.",
+    ["Lunaclaw's cave, in the hills east of Auberdine"] =
+        "아우버다인 동쪽 언덕의 초승달발톱 동굴",
+    ["Deep in the cave, use the Cenarion Moondust by the moonkin stone: Lunaclaw appears. Defeat her, then speak to her spirit."] =
+        "동굴 깊은 곳의 달빛야수 비석 옆에서 세나리온 달가루를 사용하세요: 초승달발톱이 나타납니다. 처치한 다음 그 영혼과 대화하세요.",
+    ["Turning this in teaches Bear Form."] =
+        "이 퀘스트를 완료하면 곰 변신을 배웁니다.",
+    ["From level 10: the Skyborne quests of the bear spirit, on Zephras Isle."] =
+        "10레벨부터: Zephras Isle에서 하는 곰의 혼 Skyborne 퀘스트.",
+    ["Alfina Nightgaze, the druid trainer of Dalaran, gives it."] =
+        "달라란의 드루이드 상급자 Alfina Nightgaze가 줍니다.",
+    ["Opens the way to Moonglade, the home of the druids."] =
+        "드루이드의 본거지인 달의 숲으로 가는 길을 엽니다.",
+    ["Sheldras Moontree, the druid trainer of Stormwind, in the park."] =
+        "셸드라스 문트리는 스톰윈드의 드루이드 상급자로, 공원에 있습니다.",
+    ["Five Earthroot will be needed: an herb found along the roads, picked with Herbalism or bought at the auction house."] =
+        "뱀뿌리 5개가 필요합니다: 길가에서 자라는 약초로, 약초채집으로 캐거나 경매장에서 삽니다.",
+    ["From level 14: the chain that teaches Cure Poison."] =
+        "14레벨부터: 해독을 배우는 연계 퀘스트.",
+    ["Fill the sampler at the mouth of the Cliffspring Falls cave, northeast of Auberdine."] =
+        "아우버다인 북동쪽, 절벽 폭포 동굴 입구에서 견본병을 채우세요.",
+    ["Alanndarian Nightsong, in her house in Auberdine."] =
+        "알란다리안 나이트송은 아우버다인의 자기 집에 있습니다.",
+    ["The Lunar Fungus grows in the small caves of the hills east of Auberdine, near Lunaclaw's."] =
+        "달버섯은 아우버다인 동쪽 언덕의 작은 동굴들, 초승달발톱 동굴 근처에서 자랍니다.",
+    ["Sickly Deer wander the woods of Darkshore: use the salve on them."] =
+        "병든 사슴이 어둠의 해안 숲을 돌아다닙니다: 사슴에게 연고를 사용하세요.",
+    ["Turning this in teaches Cure Poison."] =
+        "이 퀘스트를 완료하면 해독을 배웁니다.",
+    ["From level 16: the chain that teaches Aquatic Form."] =
+        "16레벨부터: 바다표범 변신을 배우는 연계 퀘스트.",
+    ["The Shrine Bauble, a small wicker urn, lies on the bottom of Lake Elune'ara: dive around the shrine."] =
+        "작은 고리버들 단지인 제단 구슬은 엘룬아라 호수 바닥에 있습니다: 제단 주변으로 잠수하세요.",
+    ["Use the bauble at the Shrine of Remulos, by the lake."] =
+        "호숫가의 레물로스의 제단에서 구슬을 사용하세요.",
+    ["The first half of the pendant lies under the water off the north of Darkshore."] =
+        "펜던트의 첫 번째 반쪽은 어둠의 해안 북쪽 앞바다 물속에 있습니다.",
+    ["The second half lies under the water off the western coast of Westfall."] =
+        "두 번째 반쪽은 서부 몰락지대 서쪽 해안 앞바다 물속에 있습니다.",
+    ["Back at the Shrine of Remulos: use a half pendant there to make it whole."] =
+        "레물로스의 제단으로 돌아가세요: 거기서 펜던트 반쪽을 사용해 하나로 합치세요.",
+    ["Turning this in teaches Aquatic Form."] =
+        "이 퀘스트를 완료하면 바다표범 변신을 배웁니다.",
+    ["Night Elves get it from Mathrengyl Bearwalker in Darnassus."] =
+        "나이트 엘프는 다르나서스의 마스렌길 베어워커에게서 받습니다.",
+    ["From level 20: Forever's chain of the Great Cat Spirit, in Moonglade."] =
+        "20레벨부터: 달의 숲에서 하는 Forever의 거대한 살쾡이의 혼 연계 퀘스트.",
+    ["The Great Cat Spirit rests in the south of Moonglade."] =
+        "거대한 살쾡이의 혼은 달의 숲 남쪽에서 쉬고 있습니다.",
+    ["The three relics lie in the southeast of Moonglade."] =
+        "유물 세 개는 달의 숲 남동쪽에 있습니다.",
+    ["The Avatar of Saeyleenan waits in the south of Moonglade."] =
+        "Avatar of Saeyleenan은 달의 숲 남쪽에서 기다립니다.",
+    ["Mathrengyl Bearwalker, upstairs in the Cenarion Enclave of Darnassus."] =
+        "마스렌길 베어워커는 다르나서스 세나리온 자치령 위층에 있습니다.",
+    ["Any druid trainer of a capital gives it."] =
+        "대도시의 드루이드 상급자라면 누구나 줍니다.",
+    ["From level 50: Torwa Pathfinder's chain in Un'Goro Crater, which ends in the Temple of Atal'Hakkar."] =
+        "50레벨부터: 운고로 분화구의 토르와 패스파인더 연계 퀘스트. 아탈학카르 신전에서 끝납니다.",
+    ["Torwa Pathfinder camps on the eastern side of the crater."] =
+        "토르와 패스파인더는 분화구 동쪽에서 야영하고 있습니다.",
+    ["The Gorishi wasps of the hive in the south carry the stings; the Bloodcaps grow on red plants all over the crater."] =
+        "남쪽 벌집의 고리쉬 말벌이 독침을 가지고 있고, 붉은갓버섯은 분화구 곳곳의 붉은 식물에서 자랍니다.",
+    ["Use the barb on a devilsaur: they roam the open plains of the crater."] =
+        "데빌사우루스에게 가시를 사용하세요: 데빌사우루스는 분화구의 탁 트인 평원을 돌아다닙니다.",
+    ["Atal'alarion, the guardian of the idol in the temple, drops the Putrid Vine."] =
+        "신전의 우상 수호자 아탈알라리온이 썩은 덩굴을 떨어뜨립니다.",
+    ["Hunter quests"] =
+        "사냥꾼 퀘스트",
+    ["Dazalar, the hunter trainer of Dolanaar."] =
+        "다잘라는 돌라나르의 사냥꾼 상급자입니다.",
+    ["From level 10: three beasts to tame, then you can tame a pet of your own."] =
+        "10레벨부터: 야수 세 마리를 길들인 다음, 자신의 소환수를 길들일 수 있습니다.",
+    ["Use the taming rod on a Webwood Lurker, east of Dolanaar. Once it is tamed, dismiss it: it turns on you again, so be ready."] =
+        "돌라나르 동쪽의 나무그물 늑대거미에게 조련용 막대를 사용하세요. 길들이면 소환수를 해제하세요: 다시 덤벼드니 대비하세요.",
+    ["Use the rod on a Nightsaber Stalker, west of Dolanaar, then dismiss it the same way."] =
+        "돌라나르 서쪽의 긴발톱 흑호에게 막대를 사용한 다음, 같은 방법으로 해제하세요.",
+    ["Use the rod on a Strigid Screecher, south of Dolanaar."] =
+        "돌라나르 남쪽의 비명소리 스트리기드 올빼미에게 막대를 사용하세요.",
+    ["Turning this in teaches Tame Beast: you can now keep a pet."] =
+        "이 퀘스트를 완료하면 야수 길들이기를 배웁니다: 이제 소환수를 데리고 다닐 수 있습니다.",
+    ["Jocaste, the hunter trainer of Darnassus, upstairs."] =
+        "조카스테는 다르나서스의 사냥꾼 상급자로, 위층에 있습니다.",
+    ["Your pet can now learn new skills."] =
+        "이제 소환수가 새 기술을 배울 수 있습니다.",
+    ["Grif Wildheart, the hunter trainer of Kharanos."] =
+        "그리프 와일드하트는 카라노스의 사냥꾼 상급자입니다.",
+    ["Use the taming rod on a Large Crag Boar, north of Kharanos. Once it is tamed, dismiss it: it turns on you again, so be ready."] =
+        "카라노스 북쪽의 큰 멧돼지에게 조련용 막대를 사용하세요. 길들이면 소환수를 해제하세요: 다시 덤벼드니 대비하세요.",
+    ["Use the rod on a Snow Leopard, south of Kharanos, then dismiss it the same way."] =
+        "카라노스 남쪽의 눈표범에게 막대를 사용한 다음, 같은 방법으로 해제하세요.",
+    ["Use the rod on an Ice Claw Bear, in the hills south of Kharanos."] =
+        "카라노스 남쪽 언덕의 얼음발톱흰곰에게 막대를 사용하세요.",
+    ["Belia Thundergranite, the pet trainer of Ironforge, in the Hall of Arms."] =
+        "빌리아 썬더그래니트는 아이언포지의 소환수 조련사로, 전투의 전당에 있습니다.",
+    ["Josephine Carson, the hunter trainer of Goldshire."] =
+        "Josephine Carson은 골드샤이어의 사냥꾼 상급자입니다.",
+    ["Use the taming rod on a Rockhide Boar, in the southeast of Elwynn Forest. Once it is tamed, dismiss it: it turns on you again, so be ready."] =
+        "엘윈 숲 남동쪽의 돌가죽멧돼지에게 조련용 막대를 사용하세요. 길들이면 소환수를 해제하세요: 다시 덤벼드니 대비하세요.",
+    ["Use the rod on a Gray Forest Wolf, in the east of the forest, then dismiss it the same way."] =
+        "숲 동쪽의 회색 숲늑대에게 막대를 사용한 다음, 같은 방법으로 해제하세요.",
+    ["Use the rod on a Young Forest Bear, in the west of the forest near Westbrook Garrison."] =
+        "숲 서쪽, 서부 주둔지 근처의 새끼곰에게 막대를 사용하세요.",
+    ["Isaac Chan, the pet trainer, stands next to Josephine."] =
+        "소환수 조련사 Isaac Chan은 Josephine 옆에 서 있습니다.",
+    ["Elayaa Easewind sends you to Quel'ana Quickgale."] =
+        "Elayaa Easewind가 Quel'ana Quickgale에게 보냅니다.",
+    ["Use the taming rod on a Windsong Crawler. Once it is tamed, dismiss it: it turns on you again, so be ready."] =
+        "Windsong Crawler에게 조련용 막대를 사용하세요. 길들이면 소환수를 해제하세요: 다시 덤벼드니 대비하세요.",
+    ["Use the rod on an Ornery Galestrider, then dismiss it the same way."] =
+        "Ornery Galestrider에게 막대를 사용한 다음, 같은 방법으로 해제하세요.",
+    ["Use the rod on a Vuldren Alpha."] =
+        "Vuldren Alpha에게 막대를 사용하세요.",
+    ["Quel'dora Quickgale, the pet trainer, stands next to Quel'ana."] =
+        "소환수 조련사 Quel'dora Quickgale은 Quel'ana 옆에 서 있습니다.",
+    ["Any hunter trainer of a capital gives it."] =
+        "대도시의 사냥꾼 상급자라면 누구나 줍니다.",
+    ["From level 50: Ogtinc's chain in Azshara, which ends in the Temple of Atal'Hakkar."] =
+        "50레벨부터: 아즈샤라의 오그틴크 연계 퀘스트. 아탈학카르 신전에서 끝납니다.",
+    ["Ogtinc lives up a hill path in the middle of Azshara."] =
+        "오그틴크는 아즈샤라 중앙의 언덕길 위에 살고 있습니다.",
+    ["The Mosshoof Coursers of northern Azshara carry the antlers; only some do."] =
+        "아즈샤라 북부의 덩치큰 이끼발굽순록 중 일부가 뿔을 가지고 있습니다.",
+    ["Wavethrashers haunt the Azshara shoreline; not every one leaves a scale."] =
+        "폭풍히드라가 아즈샤라 해안에 출몰합니다. 모두 비늘을 남기지는 않습니다.",
+    ["Morphaz, one of the green dragons of the temple, drops the tooth."] =
+        "신전의 녹색용 중 하나인 몰파즈가 이빨을 떨어뜨립니다.",
+    ["Mage quests"] =
+        "마법사 퀘스트",
+    ["Zaldimar Wefhellt, the mage trainer of Goldshire, upstairs in the inn."] =
+        "잘디마르 웨펠트는 골드샤이어의 마법사 상급자로, 여관 위층에 있습니다.",
+    ["From level 10: your trainer's first errand, a few minutes from Goldshire."] =
+        "10레벨부터: 골드샤이어에서 몇 분 거리에서 하는 상급자의 첫 심부름.",
+    ["Jennea Cannon, upstairs in the Wizard's Sanctum of the Mage Quarter, in Stormwind."] =
+        "제니아 캐논은 스톰윈드 마법사 지구의 마법사의 성소 위층에 있습니다.",
+    ["Stand in the water of Mirror Lake, in the west of Elwynn Forest, and use the flask there."] =
+        "엘윈 숲 서쪽의 거울 호수 물속에 서서 약병을 사용하세요.",
+    ["Magis Sparkmantle, the mage trainer of Kharanos."] =
+        "마지스 스파크맨틀은 카라노스의 마법사 상급자입니다.",
+    ["From level 10: your trainer's first errand, in Dun Morogh."] =
+        "10레벨부터: 던 모로에서 하는 상급자의 첫 심부름.",
+    ["Bink, the mage trainer of Ironforge, in the Hall of Mysteries."] =
+        "빙크는 아이언포지의 마법사 상급자로, 신비의 전당에 있습니다.",
+    ["Bink's toolbox lies by the gates of Gnomeregan, in the west of Dun Morogh."] =
+        "빙크의 공구 상자는 던 모로 서쪽, 놈리건 입구 옆에 있습니다.",
+    ["From level 10: the Skyborne mage quests of Zephras Isle."] =
+        "10레벨부터: Zephras Isle의 Skyborne 마법사 퀘스트.",
+    ["The wind-infused boughs lie on the ground west of the camp."] =
+        "바람이 깃든 나뭇가지는 야영지 서쪽 땅바닥에 있습니다.",
+    ["Your mage trainer gives it."] =
+        "마법사 상급자가 줍니다.",
+    ["From level 15: a chain in Stormwind that ends with a robe for you."] =
+        "15레벨부터: 스톰윈드의 연계 퀘스트. 끝에 로브를 받습니다.",
+    ["The chest of coffers and the cantation lie in Jennea's tower."] =
+        "속박의 상자와 현신의 주문서는 제니아의 탑에 있습니다.",
+    ["The Blue Recluse, the inn of the Mage Quarter"] =
+        "마법사 지구의 여관, 고독한 은둔자 선술집",
+    ["Read the cantation to reveal a Rift Spawn, fight it until it is stunned, then use a coffer on it. Three hide in the inn, one of them downstairs."] =
+        "현신의 주문서를 읽어 균열의 정령을 드러내고, 기절할 때까지 싸운 다음 속박의 상자를 사용하세요. 여관에 세 마리가 숨어 있고, 그중 하나는 아래층에 있습니다.",
+    ["The Charged Rift Gem lies in the Silver Stream Mine, in the north of Loch Modan; the linen comes from humanoids anywhere."] =
+        "충만한 균열석은 모단 호수 북쪽의 은여울 광산에 있습니다. 리넨은 어디서든 인간형 몬스터에게서 나옵니다.",
+    ["Wynne Larson, the robe merchant of the Mage Quarter."] =
+        "위니 라슨은 마법사 지구의 로브 상인입니다.",
+    ["Your reward: the Manaweave Robe."] =
+        "보상: 마나매듭 로브.",
+    ["From level 26: a chain that ends with a second robe."] =
+        "26레벨부터: 연계 퀘스트. 끝에 두 번째 로브를 받습니다.",
+    ["High Sorcerer Andromath, at the top of the Wizard's Sanctum."] =
+        "고위마술사 안드로매스는 마법사의 성소 꼭대기에 있습니다.",
+    ["The book lies in the Tower of Ilgalar, in the east of Redridge Mountains."] =
+        "책은 붉은마루 산맥 동쪽의 일갈라의 탑에 있습니다.",
+    ["The spiders of the western woods of Duskwood carry the silk."] =
+        "그늘숲 서쪽 숲의 거미가 비단을 가지고 있습니다.",
+    ["Your reward: the Astral Knot Garment."] =
+        "보상: 별매듭 로브.",
+    ["Your capital's mage trainer gives it."] =
+        "대도시의 마법사 상급자가 줍니다.",
+    ["From level 30: Tabetha's quests in Dustwallow Marsh, which end with a mage's wand."] =
+        "30레벨부터: 먼지진흙 습지대의 타베사 퀘스트. 끝에 마법사의 마법봉을 받습니다.",
+    ["Tabetha lives on her farm in the south of Dustwallow Marsh."] =
+        "타베사는 먼지진흙 습지대 남쪽의 자기 농장에 살고 있습니다.",
+    ["Magus Tirth, at the Shimmering Flats of Thousand Needles, near the race track."] =
+        "학자 틸스는 버섯구름 봉우리의 소금 평원, 경주로 근처에 있습니다.",
+    ["\"Plucky\" Johnson, the chicken by the tent: beckon to him with the emote so he turns back into a man, then ask him for the phrase."] =
+        "\"씩씩이\" 존슨은 천막 옆의 닭입니다: 손짓 감정 표현으로 사람으로 되돌린 다음 주문을 물어보세요.",
+    ["Tabetha gives it too."] =
+        "타베사도 줍니다.",
+    ["The Witherbark trolls of eastern Arathi Highlands carry the totem sticks."] =
+        "아라시 고원 동부의 마른나무껍질부족 트롤이 토템 막대를 가지고 있습니다.",
+    ["Use the stick on the central stone of the Circle of Outer Binding, in Arathi Highlands; clear its guards first. The Jade is a gem found while mining, or at the auction house."] =
+        "아라시 고원의 외부 봉인의 마법진 중앙에 있는 돌에 막대를 사용하세요. 먼저 경비병을 처치하세요. 비취는 채광 중에 나오는 보석이며, 경매장에서도 살 수 있습니다.",
+    ["The book lies in the Library of the Scarlet Monastery."] =
+        "책은 붉은십자군 수도원의 도서관에 있습니다.",
+    ["Your reward: a mage's wand."] =
+        "보상: 마법사의 마법봉.",
+    ["From level 35: Tabetha's second chain, which goes through Uldaman."] =
+        "35레벨부터: 울다만을 거치는 타베사의 두 번째 연계 퀘스트.",
+    ["The Burning Blade summoners of Mannoroc Coven, in southern Desolace, carry the orb."] =
+        "잊혀진 땅 남부, 만노로크 소굴의 불타는칼날단 소환사가 보주를 가지고 있습니다.",
+    ["Right there: Tabetha frees the demon of the orb; defeat it."] =
+        "바로 그 자리: 타베사가 보주의 악마를 풀어놓습니다. 처치하세요.",
+    ["The Obsidian Sentinel of Uldaman holds the power source."] =
+        "울다만의 흑요석 파수꾼이 마력원천을 가지고 있습니다.",
+    ["Right there: destroy the mana surges as they appear around Tabetha."] =
+        "바로 그 자리: 타베사 주변에 나타나는 마력의 폭풍을 파괴하세요.",
+    ["From level 40: Tabetha's task in Zul'Farrak."] =
+        "40레벨부터: 줄파락에서 하는 타베사의 임무.",
+    ["Hydromancer Velratha, by the sacred pool of Zul'Farrak, drops the tiara."] =
+        "줄파락의 신성한 연못 옆에 있는 유체술사 벨라타가 티아라를 떨어뜨립니다.",
+    ["Your capital's master mage gives it."] =
+        "대도시의 상급 마법사가 줍니다.",
+    ["From level 50: Archmage Xylem's chain in Azshara, which ends in the Temple of Atal'Hakkar."] =
+        "50레벨부터: 아즈샤라의 대마법사 실렘 연계 퀘스트. 아탈학카르 신전에서 끝납니다.",
+    ["Sanath Lim-yo, at the foot of Archmage Xylem's tower in Azshara: talk to him to be sent up to the archmage."] =
+        "사나스 림요는 아즈샤라에 있는 대마법사 실렘의 탑 아래에 있습니다: 대화하면 대마법사에게 올려 보내 줍니다.",
+    ["The blood elves of the ruins in northeastern Azshara carry the dust."] =
+        "아즈샤라 북동부 폐허의 블러드 엘프가 가루를 가지고 있습니다.",
+    ["The Spitelash sirens of the western shore of Azshara carry the coral."] =
+        "아즈샤라 서쪽 해안의 원한의꼬리일족 세이렌이 산호를 가지고 있습니다.",
+    ["Morphaz, one of the green dragons of the temple, drops the shard."] =
+        "신전의 녹색용 중 하나인 몰파즈가 파편을 떨어뜨립니다.",
+    ["From level 60: Lorekeeper Lydros' quest, inside Dire Maul."] =
+        "60레벨부터: 혈투의 전장 안에서 하는 현자 리드로스의 퀘스트.",
+    ["Hydrospawn, a water elemental of Dire Maul, drops the essence."] =
+        "혈투의 전장의 물의 정령 히드로스폰이 정수를 떨어뜨립니다.",
+    ["Paladin quests"] =
+        "성기사 퀘스트",
+    ["Brother Wilhelm, the paladin trainer of Goldshire, sends you to Stormwind."] =
+        "골드샤이어의 성기사 상급자 수사 빌헬름이 스톰윈드로 보냅니다.",
+    ["Duthorian Rall, in the Cathedral of Light."] =
+        "두소리안 랄은 빛의 대성당에 있습니다.",
+    ["From level 12: the chain that teaches Redemption."] =
+        "12레벨부터: 구원을 배우는 연계 퀘스트.",
+    ["Read the Tome of Divinity from your bags to start the next quest."] =
+        "가방에서 신앙의 고서를 읽어 다음 퀘스트를 시작하세요.",
+    ["Stephanie Turner, a poor woman of Old Town."] =
+        "스테파니 터너는 구 시가지의 가난한 여인입니다.",
+    ["She needs Linen Cloth: humanoids carry it everywhere."] =
+        "리넨 옷감이 필요합니다: 어디서든 인간형 몬스터가 가지고 있습니다.",
+    ["Gazin Tenorm, in the Cathedral of Light."] =
+        "가쟁 테놈은 빛의 대성당에 있습니다.",
+    ["Henze Faulk lies lifeless in the east of Elwynn Forest: use the Symbol of Life on him."] =
+        "헨즈 폴크는 엘윈 숲 동쪽에 숨진 채 누워 있습니다: 그에게 생명의 징표를 사용하세요.",
+    ["The Defias around Henze carry the script."] =
+        "헨즈 주변의 데피아즈단이 문서를 가지고 있습니다.",
+    ["Turning this in teaches Redemption."] =
+        "이 퀘스트를 완료하면 구원을 배웁니다.",
+    ["Azar Stronghammer, the paladin trainer of Kharanos, sends you to Ironforge."] =
+        "카라노스의 성기사 상급자 아자르 스트롱해머가 아이언포지로 보냅니다.",
+    ["Tiza Battleforge, in the Mystic Ward of Ironforge."] =
+        "타이자 배틀포지는 아이언포지의 마법 지구에 있습니다.",
+    ["John Turner, a poor man who walks the streets of Ironforge."] =
+        "존 터너는 아이언포지 거리를 걸어 다니는 가난한 남자입니다.",
+    ["He needs Linen Cloth: humanoids carry it everywhere."] =
+        "리넨 옷감이 필요합니다: 어디서든 인간형 몬스터가 가지고 있습니다.",
+    ["Muiredon Battleforge, beside Tiza."] =
+        "뮈레돈 배틀포지는 타이자 옆에 있습니다.",
+    ["Narm Faulk lies lifeless in the east of Dun Morogh: use the Symbol of Life on him."] =
+        "나름 폴크는 던 모로 동쪽에 숨진 채 누워 있습니다: 그에게 생명의 징표를 사용하세요.",
+    ["The Dark Iron spies around Narm carry the script."] =
+        "나름 주변의 검은무쇠단 비밀요원이 문서를 가지고 있습니다.",
+    ["From level 20: the Tome of Valor, then the Test of Righteousness, which ends with Verigan's Fist, a two-handed mace."] =
+        "20레벨부터: 용맹의 고서, 이어서 정의의 시험. 끝에 양손 둔기인 베리간의 망치를 받습니다.",
+    ["Read the Tome of Valor from your bags to start the next quest."] =
+        "가방에서 용맹의 고서를 읽어 다음 퀘스트를 시작하세요.",
+    ["Duthorian Rall, in the Cathedral of Light of Stormwind."] =
+        "두소리안 랄은 스톰윈드의 빛의 대성당에 있습니다.",
+    ["Daphne Stilwell, at her house in the south of Westfall. Take her quest only when ready: three waves of Defias attack, then more."] =
+        "대프니 스틸웰은 서부 몰락지대 남쪽의 자기 집에 있습니다. 준비가 됐을 때만 퀘스트를 받으세요: 데피아즈단이 세 차례 몰려온 뒤 더 옵니다.",
+    ["Stay by Daphne until the last wave falls; a friend helps."] =
+        "마지막 무리가 쓰러질 때까지 대프니 곁에 머무르세요. 동료가 있으면 도움이 됩니다.",
+    ["Jordan Stilwell, outside the gates of Ironforge."] =
+        "조던 스틸웰은 아이언포지 정문 밖에 있습니다.",
+    ["Four items: the lumber from the Deadmines, the hammer from Shadowfang Keep, the ore from Loch Modan and the Kor Gem from Darkshore."] =
+        "물건 네 개: 죽음의 폐광의 재목, 그림자송곳니 성채의 망치, 모단 호수의 광석, 어둠의 해안의 코르석.",
+    ["Bailor Stonehand, in Thelsamar."] =
+        "베일러 스톤핸드는 텔사마에 있습니다.",
+    ["The ore lies in a crate by a tree stump, in the northeast of Loch Modan."] =
+        "광석은 모단 호수 북동쪽, 나무 그루터기 옆의 상자 안에 있습니다.",
+    ["Thundris Windweaver, in Auberdine."] =
+        "툰드리스 윈드위버는 아우버다인에 있습니다.",
+    ["The naga of the Blackfathom Deeps entrance, under the water of Zoram Strand in Ashenvale, carry the corrupted gem. They are elite: bring a group."] =
+        "잿빛 골짜기 조람 해안의 물속, 검은심연의 나락 입구의 나가가 부정한 코르석을 가지고 있습니다. 정예이니 파티를 꾸려 가세요.",
+    ["The goblin woodcarvers of the Deadmines carry the lumber."] =
+        "죽음의 폐광의 고블린 목공이 재목을 가지고 있습니다.",
+    ["Jordan's hammer lies in the stables of Shadowfang Keep."] =
+        "조던의 망치는 그림자송곳니 성채의 마구간에 있습니다.",
+    ["Your reward: Verigan's Fist."] =
+        "보상: 베리간의 망치.",
+    ["Delgren the Purifier, at Maestra's Post in Ashenvale."] =
+        "수호자 델그렌은 잿빛 골짜기의 마에스트라 주둔지에 있습니다.",
+    ["From level 22: Forever's paladin chain of Delgren the Purifier."] =
+        "22레벨부터: 수호자 델그렌의 Forever 성기사 연계 퀘스트.",
+    ["Katherine the Pure, in the Cathedral of Light of Stormwind."] =
+        "성기사 캐서린은 스톰윈드의 빛의 대성당에 있습니다.",
+    ["Ursula Deline, the warlock trainer of the Mage Quarter."] =
+        "울슐라 델린은 마법사 지구의 흑마법사 상급자입니다.",
+    ["The Blackrock orcs of Redridge Mountains carry the summoner's salt."] =
+        "붉은마루 산맥의 검은바위부족 오크가 소환사의 소금을 가지고 있습니다.",
+    ["The demons of Demon Fall Canyon, in the southeast of Ashenvale, carry the motes."] =
+        "잿빛 골짜기 남동쪽, 악마벼락 협곡의 악마가 티끌을 가지고 있습니다.",
+    ["Bring them to the Spear of Mannoroth, in the canyon."] =
+        "협곡의 Spear of Mannoroth로 가져가세요.",
+    ["From level 40: the quest of your warhorse."] =
+        "40레벨부터: 전투마 퀘스트.",
+    ["Turning this in teaches Summon Warhorse."] =
+        "이 퀘스트를 완료하면 전투마 소환을 배웁니다.",
+    ["Lord Grayson Shadowbreaker, in the Cathedral of Light."] =
+        "그레이슨 섀도브레이커 경은 빛의 대성당에 있습니다.",
+    ["From level 50: the chain of the Mightstone, which ends in the Temple of Atal'Hakkar."] =
+        "50레벨부터: 퇴마석 연계 퀘스트. 아탈학카르 신전에서 끝납니다.",
+    ["Commander Ashlam Valorfist, at Chillwind Camp in the Western Plaguelands."] =
+        "사령관 아쉬람 발러피스트는 서부 역병지대의 서리바람 야영지에 있습니다.",
+    ["The skeletons of the fields of Andorhal carry the scourgestones."] =
+        "안도할 들판의 해골이 스컬지석을 가지고 있습니다.",
+    ["High Priest Thel'danis walks around Chillwind Camp."] =
+        "대사제 텔다니스는 서리바람 야영지 주변을 걸어 다닙니다.",
+    ["The six troll bosses of the temple's upper ring each drop one feather: Gasher, Zul'Lor, Mijan, Hukku, Zolo and Loro."] =
+        "신전 위층 둘레의 트롤 우두머리 여섯이 각각 깃털 하나를 떨어뜨립니다: 게이셔, 줄로, 마이잔, 후쿠, 졸로, 로로.",
+    ["From level 60: the long chain of your charger. It asks for about 200 gold and goes through Stratholme, Dire Maul and Scholomance."] =
+        "60레벨부터: 군마를 위한 긴 연계 퀘스트. 약 200골드가 들고 스트라솔름, 혈투의 전장, 스칼로맨스를 거칩니다.",
+    ["High Priest Rohan, in the Mystic Ward of Ironforge: the sacrifice he asks for is gold."] =
+        "대사제 로한은 아이언포지의 마법 지구에 있습니다: 그가 요구하는 희생은 골드입니다.",
+    ["Use the censer on the Terrordale Spirits, in the northwest of the Eastern Plaguelands."] =
+        "동부 역병지대 북서쪽의 테러데일 영혼에게 향로를 사용하세요.",
+    ["Grimand Elmore, in the Dwarven District of Stormwind."] =
+        "그리만트 엘모어는 스톰윈드의 드워프 지구에 있습니다.",
+    ["Grimand wants gold, Arthas' Tears (a herb), Runecloth, an Arcanite Bar, and holy water from the supply crates of Stratholme."] =
+        "그리만트는 골드, 아서스의 눈물 (약초), 룬무늬 옷감, 아케이나이트 주괴, 그리고 스트라솔름 보급품 상자의 성수를 원합니다.",
+    ["Merideth Carlson, the horse breeder of Southshore, makes the horse feed."] =
+        "사우스쇼어의 말 사육사 메리데스 칼슨이 말 사료를 만들어 줍니다.",
+    ["The Enriched Manna Biscuits are sold by the Argent Dawn's quartermasters."] =
+        "맛좋은 만나빵은 은빛 여명회 병참장교가 팝니다.",
+    ["The Ancient Equine Spirit waits in western Dire Maul, past Tendris Warpwood."] =
+        "고대 준마의 영혼은 혈투의 전장 서쪽, 굽이나무 텐드리스 너머에서 기다립니다.",
+    ["An Azerothian Diamond and a Pristine Black Diamond: found while mining and on monsters of the Plaguelands, or at the auction house."] =
+        "아제로스 다이아몬드와 온전한 검은 다이아몬드: 채광 중에, 그리고 역병지대 몬스터에게서 나오며, 경매장에서도 살 수 있습니다.",
+    ["In Scholomance, use the Divination Scryer to call Death Knight Darkreaver, defeat him, then use the charger's soul on his fallen mount."] =
+        "스칼로맨스에서 예언의 탐지기를 사용해 죽음의 기사 다크리버를 불러내 처치한 다음, 쓰러진 그의 탈것에 군마의 영혼을 사용하세요.",
+    ["Your reward: Summon Charger, your epic mount."] =
+        "보상: 영웅급 탈것인 군마 소환.",
+    ["Priest quests"] =
+        "사제 퀘스트",
+    ["Priestess Anetta, the priest trainer of Northshire Abbey."] =
+        "여사제 아네타는 노스샤이어 수도원의 사제 상급자입니다.",
+    ["From level 5: heal a wounded guard, and get your first robe."] =
+        "5레벨부터: 부상당한 경비병을 치유하고 첫 로브를 받으세요.",
+    ["Priestess Josetta, the priest trainer of Goldshire."] =
+        "여사제 조세타는 골드샤이어의 사제 상급자입니다.",
+    ["Guard Roberts lies wounded east of Goldshire: heal him with Lesser Heal, then give him Power Word: Fortitude."] =
+        "경비병 로버트가 골드샤이어 동쪽에 부상당한 채 누워 있습니다: 하급 치유로 치유한 다음 신의 권능: 인내를 걸어 주세요.",
+    ["Branstock Khalder, the priest trainer of Coldridge Valley."] =
+        "브란스토크 칼더는 눈마루 골짜기의 사제 상급자입니다.",
+    ["From level 5: heal a wounded mountaineer, and get your first robe."] =
+        "5레벨부터: 부상당한 산악경비대원을 치유하고 첫 로브를 받으세요.",
+    ["Maxan Anvol, the priest trainer of Kharanos."] =
+        "막산 앤볼은 카라노스의 사제 상급자입니다.",
+    ["Mountaineer Dolf lies wounded near Kharanos: heal him with Lesser Heal, then give him Power Word: Fortitude."] =
+        "산악경비대 돌프가 카라노스 근처에 부상당한 채 누워 있습니다: 하급 치유로 치유한 다음 신의 권능: 인내를 걸어 주세요.",
+    ["Shanda, the priest trainer of Aldrassil, in Shadowglen."] =
+        "샨다는 그늘 협곡 알드랏실의 사제 상급자입니다.",
+    ["From level 5: heal a wounded sentinel, and get your first robe."] =
+        "5레벨부터: 부상당한 파수꾼을 치유하고 첫 로브를 받으세요.",
+    ["Laurna Morninglight, the priest trainer of Dolanaar."] =
+        "라우르나 모닝라이트는 돌라나르의 사제 상급자입니다.",
+    ["Sentinel Shaya lies wounded south of Dolanaar: heal her with Lesser Heal, then give her Power Word: Fortitude."] =
+        "파수꾼 샤야가 돌라나르 남쪽에 부상당한 채 누워 있습니다: 하급 치유로 치유한 다음 신의 권능: 인내를 걸어 주세요.",
+    ["From level 10: the quest that teaches Desperate Prayer."] =
+        "10레벨부터: 구원의 기도를 배우는 퀘스트.",
+    ["High Priestess Laurena, in the Cathedral of Light of Stormwind."] =
+        "대여사제 로레나는 스톰윈드의 빛의 대성당에 있습니다.",
+    ["Priestess Josetta gives it too."] =
+        "여사제 조세타도 줍니다.",
+    ["From level 10: Forever's quest of Divine Grace, for Humans."] =
+        "10레벨부터: 인간을 위한 Forever의 Divine Grace 퀘스트.",
+    ["From level 10: Forever's quest of Confounding Flash, for Gnomes."] =
+        "10레벨부터: 노움을 위한 Forever의 Confounding Flash 퀘스트.",
+    ["High Priestess Mims, in the Mystic Ward of Ironforge."] =
+        "High Priestess Mims는 아이언포지의 마법 지구에 있습니다.",
+    ["From level 10: the quest that teaches Starshards."] =
+        "10레벨부터: 별조각을 배우는 퀘스트.",
+    ["Priestess Alathea, in the Temple of the Moon of Darnassus."] =
+        "여사제 알라시아는 다르나서스의 달의 신전에 있습니다.",
+    ["From level 20: the quest that teaches Feedback."] =
+        "20레벨부터: 역순환을 배우는 퀘스트.",
+    ["High Priest Rohan, in the Mystic Ward of Ironforge."] =
+        "대사제 로한은 아이언포지의 마법 지구에 있습니다.",
+    ["From level 20: the quest that teaches Fear Ward."] =
+        "20레벨부터: 공포의 수호물을 배우는 퀘스트.",
+    ["From level 20: Forever's second Gnome priest quest."] =
+        "20레벨부터: Forever의 두 번째 노움 사제 퀘스트.",
+    ["From level 20: the quest that teaches Elune's Grace."] =
+        "20레벨부터: 엘룬의 은총을 배우는 퀘스트.",
+    ["Any priest trainer of a capital gives it."] =
+        "대도시의 사제 상급자라면 누구나 줍니다.",
+    ["The Mosshoof Coursers of northern Azshara carry the glands; only some do."] =
+        "아즈샤라 북부의 덩치큰 이끼발굽순록 중 일부가 분비샘을 가지고 있습니다.",
+    ["The undead of the Western Plaguelands and the Zanzil zombies of Stranglethorn carry the ichor."] =
+        "서부 역병지대의 언데드와 가시덤불 골짜기의 잔질 좀비가 영액을 가지고 있습니다.",
+    ["Morphaz, one of the green dragons of the temple, carries the blood."] =
+        "신전의 녹색용 중 하나인 몰파즈가 피를 가지고 있습니다.",
+    ["Greta Mosshoof, at the Emerald Sanctuary in Felwood."] =
+        "그레타 모스후프는 악령의 숲의 에메랄드 성소에 있습니다.",
+    ["Rogue quests"] =
+        "도적 퀘스트",
+    ["Hogral Bakkan, the rogue trainer of Kharanos."] =
+        "호그럴 바칸은 카라노스의 도적 상급자입니다.",
+    ["From level 10: a first errand for the rogues of Ironforge."] =
+        "10레벨부터: 아이언포지 도적들을 위한 첫 심부름.",
+    ["Hulfdan Blackbeard, in the Forlorn Cavern of Ironforge."] =
+        "훌프단 블랙비어드는 아이언포지의 쓸쓸한 뒷골목에 있습니다.",
+    ["Onin MacHammar stands on a platform in the west of Dun Morogh, near Gnomeregan."] =
+        "오닌 맥해머는 던 모로 서쪽, 놈리건 근처의 발판 위에 서 있습니다.",
+    ["Learn Pick Lock at your trainer, then practice on lockboxes until your skill reaches 75."] =
+        "상급자에게서 자물쇠 따기를 배운 다음, 숙련도가 75가 될 때까지 잠긴 상자로 연습하세요.",
+    ["From level 16: Pick Lock opens the chests and boxes of the quests to come."] =
+        "16레벨부터: 자물쇠 따기로 앞으로 할 퀘스트의 궤짝과 상자를 엽니다.",
+    ["Master Mathias Shaw, on the top floor of SI:7's headquarters, in Old Town."] =
+        "단장 마티아스 쇼는 구 시가지 SI:7 본부의 꼭대기 층에 있습니다.",
+    ["From level 20: the chain that teaches your poisons."] =
+        "20레벨부터: 독 조제를 배우는 연계 퀘스트.",
+    ["Agent Kearnen watches from a hill in the southeast of Westfall."] =
+        "첩보원 켈넌은 서부 몰락지대 남동쪽 언덕에서 지켜보고 있습니다.",
+    ["Pick the Defias Tower Key from the pocket of a Malformed Defias Drone, by the tower; then, upstairs, sap Klaven Mortwake before you open the chest."] =
+        "탑 옆의 기괴한 데피아즈단 일꾼의 주머니에서 데피아즈단 탑 열쇠를 훔치세요. 그런 다음 위층에서 궤짝을 열기 전에 클라벤 몰트워크를 혼절시키세요.",
+    ["The chest leaves a sickness on you: that is the next quest."] =
+        "궤짝을 열면 병에 걸립니다: 그것이 다음 퀘스트입니다.",
+    ["Doc Mixilpixil works in the cellar of SI:7's headquarters."] =
+        "닥 믹실픽실은 SI:7 본부 지하에서 일합니다.",
+    ["Lie down in front of him (the emote) so he can examine you."] =
+        "그가 진찰할 수 있도록 그 앞에 누우세요 (눕기 감정 표현).",
+    ["Turning this in teaches your poisons."] =
+        "이 퀘스트를 완료하면 독 조제를 배웁니다.",
+    ["Myrokos Silentform, at Ravenholdt Manor in the Alterac Mountains: the way in is a cave in the north of Hillsbrad Foothills."] =
+        "미로코스 사일런트폼은 알터랙 산맥의 라벤홀트 장원에 있습니다: 힐스브래드 구릉지 북쪽의 동굴로 들어갑니다.",
+    ["From level 24: Forever's Syndicate quests, at Ravenholdt Manor."] =
+        "24레벨부터: 라벤홀트 장원에서 하는 Forever의 신디케이트 퀘스트.",
+    ["Lord Tomas is hiding in the east of Hillsbrad Foothills."] =
+        "Lord Tomas는 힐스브래드 구릉지 동쪽에 숨어 있습니다.",
+    ["Any rogue trainer of a capital gives it."] =
+        "대도시의 도적 상급자라면 누구나 줍니다.",
+    ["From level 50: Lord Jorach Ravenholdt's chain, which ends in the Temple of Atal'Hakkar."] =
+        "50레벨부터: 조라크 라벤홀트 경의 연계 퀘스트. 아탈학카르 신전에서 끝납니다.",
+    ["Lord Jorach Ravenholdt, in Ravenholdt Manor."] =
+        "조라크 라벤홀트 경은 라벤홀트 장원에 있습니다.",
+    ["The Timbermaw shamans of northern Azshara carry the bag."] =
+        "아즈샤라 북부의 나무구렁일족 주술사가 가방을 가지고 있습니다.",
+    ["Archmage Xylem, at the top of his tower in Azshara: Sanath Lim-yo, at its foot, sends you up."] =
+        "대마법사 실렘은 아즈샤라에 있는 자신의 탑 꼭대기에 있습니다: 탑 아래의 사나스 림요가 올려 보내 줍니다.",
+    ["The Forest Oozes of northeastern Azshara carry the fragments."] =
+        "아즈샤라 북동부의 숲수액괴물이 파편을 가지고 있습니다.",
+    ["Morphaz, one of the green dragons of the temple, drops the key."] =
+        "신전의 녹색용 중 하나인 몰파즈가 열쇠를 떨어뜨립니다.",
+    ["Shaman quests"] =
+        "주술사 퀘스트",
+    ["Teo Hammerstorm, the shaman trainer of Coldridge Valley."] =
+        "Teo Hammerstorm은 눈마루 골짜기의 주술사 상급자입니다.",
+    ["From level 4: the Call of Earth, your first totem."] =
+        "4레벨부터: 첫 번째 토템을 주는 대지의 부름.",
+    ["The Frostmane trolls south of the valley carry the pendant."] =
+        "골짜기 남쪽의 서리갈기트롤이 펜던트를 가지고 있습니다.",
+    ["On the hill west of the valley: drink the Earth Sapta to see the Minor Manifestation of Earth."] =
+        "골짜기 서쪽 언덕 위: 대지의 정기를 마셔 하급 대지의 현신을 보세요.",
+    ["Turning this in teaches your first earth totem."] =
+        "이 퀘스트를 완료하면 첫 번째 대지 토템을 배웁니다.",
+    ["Ingrid Dunwald in Kharanos, or Eldrun Stormbreaker in Ironforge."] =
+        "카라노스의 Ingrid Dunwald 또는 아이언포지의 Eldrun Stormbreaker.",
+    ["From level 10: the Call of Fire, your first fire totem."] =
+        "10레벨부터: 첫 번째 불 토템을 주는 불의 부름.",
+    ["Bruegs Kindleborn, in the far east of Dun Morogh, by the road to Loch Modan."] =
+        "Bruegs Kindleborn은 던 모로 동쪽 끝, 모단 호수로 가는 길가에 있습니다.",
+    ["Braldir Ashmantle, on a hill in the southwest of Loch Modan."] =
+        "Braldir Ashmantle은 모단 호수 남서쪽 언덕 위에 있습니다.",
+    ["The Tunnel Rat geomancers of Loch Modan carry the Fire Tar; the Stonesplinter seers of the south carry the pouches."] =
+        "모단 호수의 동굴쥐일족 흙점쟁이가 불붙인 타르를, 남쪽의 가루바위일족 점쟁이가 주머니를 가지고 있습니다.",
+    ["Right by Braldir: call the Minor Manifestation of Fire at the brazier, then defeat it for its ember."] =
+        "Braldir 바로 옆: 화로에서 하급 불의 현신을 불러낸 다음, 처치해서 불씨를 얻으세요.",
+    ["Light the Brazier of the Dormant Flame with the ember."] =
+        "불씨로 희미한 불씨의 화로에 불을 붙이세요.",
+    ["Bruegs Kindleborn, in the far east of Dun Morogh."] =
+        "Bruegs Kindleborn은 던 모로 동쪽 끝에 있습니다.",
+    ["Turning this in teaches your first fire totem."] =
+        "이 퀘스트를 완료하면 첫 번째 불 토템을 배웁니다.",
+    ["Eldrun Stormbreaker, the shaman trainer of Ironforge."] =
+        "Eldrun Stormbreaker는 아이언포지의 주술사 상급자입니다.",
+    ["From level 20: the Call of Water, your first water totem."] =
+        "20레벨부터: 첫 번째 물 토템을 주는 물의 부름.",
+    ["Norric Lochthane, by the dam in the north of Loch Modan."] =
+        "Norric Lochthane은 모단 호수 북쪽의 댐 옆에 있습니다.",
+    ["Hervdana Saegrund, in the southeast of the Wetlands."] =
+        "Hervdana Saegrund는 저습지 남동쪽에 있습니다.",
+    ["Fill the waterskin where Hervdana's quest says: DingDB does not hold this place yet."] =
+        "Hervdana의 퀘스트가 알려 주는 곳에서 물주머니를 채우세요: DingDB에는 아직 이 장소가 없습니다.",
+    ["At the Forgotten Shrine of Westfall: call the corrupt manifestation of water, then defeat it for its bracers."] =
+        "서부 몰락지대의 Forgotten Shrine: 타락한 물의 현신을 불러낸 다음, 처치해서 팔보호구를 얻으세요.",
+    ["The Minor Manifestation of Water rises beside the shrine."] =
+        "하급 물의 현신이 제단 옆에서 나타납니다.",
+    ["Turning this in teaches your first water totem."] =
+        "이 퀘스트를 완료하면 첫 번째 물 토템을 배웁니다.",
+    ["From level 30: the Call of Air, your first air totem."] =
+        "30레벨부터: 첫 번째 바람 토템을 주는 바람의 부름.",
+    ["Veyric Thunderhame, in the north of Arathi Highlands."] =
+        "Veyric Thunderhame은 아라시 고원 북쪽에 있습니다.",
+    ["Turning this in teaches your first air totem."] =
+        "이 퀘스트를 완료하면 첫 번째 바람 토템을 배웁니다.",
+    ["From level 30: Veyric Thunderhame's elemental quests, to level 40."] =
+        "30레벨부터: 40레벨까지 이어지는 Veyric Thunderhame의 정령 퀘스트.",
+    ["Four twisted totems: from the Stonevault troggs of the Badlands, the Maraudine centaurs of Desolace, the Lost Ones of the Swamp of Sorrows and the Mirefin murlocs of Dustwallow Marsh."] =
+        "뒤틀린 토템 네 개: 황야의 땅의 바위동굴일족 트로그, 잊혀진 땅의 마라우돈일족 켄타우로스, 슬픔의 늪의 드레노어 난민, 먼지진흙 습지대의 진흙아가미멀록에게서 얻습니다.",
+    ["Charlga Razorflank, the crone of Razorfen Kraul, carries the note."] =
+        "가시덩굴 우리의 노파 서슬깃 차를가가 쪽지를 가지고 있습니다.",
+    ["The Ravaging Tempests of western Thousand Needles carry the eye."] =
+        "버섯구름 봉우리 서부의 Ravaging Tempest가 눈을 가지고 있습니다.",
+    ["Bath'rah the Windwatcher, in the hills of the Alterac Mountains."] =
+        "바람의감시자 바스라는 알터랙 산맥의 언덕에 있습니다.",
+    ["Warlock quests"] =
+        "흑마법사 퀘스트",
+    ["Drusilla La Salle, the warlock trainer of Northshire Abbey."] =
+        "드루실라 라 살르는 노스샤이어 수도원의 흑마법사 상급자입니다.",
+    ["Your trainer's first errand, around Northshire Abbey."] =
+        "노스샤이어 수도원 주변에서 하는 상급자의 첫 심부름.",
+    ["The stolen books lie in the kobold camp east of the abbey."] =
+        "도둑맞은 책은 수도원 동쪽의 코볼트 야영지에 있습니다.",
+    ["Alamar Grimm, the warlock trainer of Coldridge Valley."] =
+        "알라마 그림은 눈마루 골짜기의 흑마법사 상급자입니다.",
+    ["Your trainer's first errand, around Coldridge Valley."] =
+        "눈마루 골짜기 주변에서 하는 상급자의 첫 심부름.",
+    ["The Frostmane novices of the troll cave in the south of the valley carry the charm."] =
+        "골짜기 남쪽 트롤 동굴의 서리갈기부족 견습마법사가 부적을 가지고 있습니다.",
+    ["Remen Marcot, in the inn of Goldshire, sends you to Stormwind."] =
+        "골드샤이어 여관의 레멘 마르콧이 스톰윈드로 보냅니다.",
+    ["Lago Blackwrench, in the Forlorn Cavern of Ironforge, sends you to Stormwind."] =
+        "아이언포지 쓸쓸한 뒷골목의 라고 블랙렌치가 스톰윈드로 보냅니다.",
+    ["Gakin the Darkbinder, in the cellar of the Slaughtered Lamb, in the Mage Quarter of Stormwind."] =
+        "대흑마법사 게이킨은 스톰윈드 마법사 지구의 어둠의 희생양 선술집 지하에 있습니다.",
+    ["From level 10: the chain that teaches Summon Voidwalker."] =
+        "10레벨부터: 보이드워커 소환을 배우는 연계 퀘스트.",
+    ["Surena Caledon hides in a house of the Brackwell Pumpkin Patch, in the east of Elwynn Forest."] =
+        "슈레나 캘리돈은 엘윈 숲 동쪽, 브랙웰 호박밭의 집에 숨어 있습니다.",
+    ["Down the stairs of the Slaughtered Lamb's crypt: use the choker on the summoning circle, then defeat the voidwalker."] =
+        "어둠의 희생양 선술집 지하 묘실의 계단 아래: 소환의 마법진에 목걸이를 사용한 다음 보이드워커를 처치하세요.",
+    ["Turning this in teaches Summon Voidwalker."] =
+        "이 퀘스트를 완료하면 보이드워커 소환을 배웁니다.",
+    ["Gakin the Darkbinder, in the cellar of the Slaughtered Lamb."] =
+        "대흑마법사 게이킨은 어둠의 희생양 선술집 지하에 있습니다.",
+    ["From level 20: the chain that teaches Summon Succubus."] =
+        "20레벨부터: 서큐버스 소환을 배우는 연계 퀘스트.",
+    ["Takar the Seer, north of Camp Taurajo in the Barrens: Horde land, stay clear of the guards."] =
+        "현자 타카르는 불모의 땅 타우라조 야영지 북쪽에 있습니다: 호드 지역이니 경비병을 피하세요.",
+    ["The Heartswood grows in the north of Ashenvale, near the Horde's lumber camp."] =
+        "사랑나무는 잿빛 골짜기 북쪽, 호드 벌목장 근처에서 자랍니다.",
+    ["In the Slaughtered Lamb's crypt again: use the heartswood core on the summoning circle, then defeat the succubus."] =
+        "다시 어둠의 희생양 선술집 지하 묘실: 소환의 마법진에 사랑나무 줄기를 사용한 다음 서큐버스를 처치하세요.",
+    ["Turning this in teaches Summon Succubus."] =
+        "이 퀘스트를 완료하면 서큐버스 소환을 배웁니다.",
+    ["From level 30: the chain that teaches Summon Felhunter."] =
+        "30레벨부터: 지옥사냥개 소환을 배우는 연계 퀘스트.",
+    ["Strahad Farsan, in Ratchet."] =
+        "스트라드 파선은 톱니항에 있습니다.",
+    ["Krom Stoutarm, in the Hall of Explorers of Ironforge."] =
+        "크롬 스타우트암은 아이언포지의 탐험가의 전당에 있습니다.",
+    ["The moldy tome lies in the southwest of Hillsbrad Foothills; the tattered manuscript, in a damaged chest of western Thousand Needles."] =
+        "곰팡이 슨 고서는 힐스브래드 구릉지 남서쪽에, 너덜너덜한 필사본은 버섯구름 봉우리 서부의 부서진 궤짝 안에 있습니다.",
+    ["The Dragonmaw orcs of the Wetlands carry the rod."] =
+        "저습지의 용아귀부족 오크가 마법봉을 가지고 있습니다.",
+    ["Right by Strahad: use the tome on the summoning circle, then defeat the felhunter."] =
+        "스트라드 바로 옆: 소환의 마법진에 고서를 사용한 다음 지옥사냥개를 처치하세요.",
+    ["Turning this in teaches Summon Felhunter."] =
+        "이 퀘스트를 완료하면 지옥사냥개 소환을 배웁니다.",
+    ["Demisette Cloyce, in the Slaughtered Lamb of Stormwind."] =
+        "드미제트 클로이스는 스톰윈드의 어둠의 희생양 선술집에 있습니다.",
+    ["From level 40: the quest of your felsteed."] =
+        "40레벨부터: 지옥마 퀘스트.",
+    ["Turning this in teaches Summon Felsteed."] =
+        "이 퀘스트를 완료하면 지옥마 소환을 배웁니다.",
+    ["Niby the Almighty and Impsy wait in a small camp of central Felwood."] =
+        "전지전능한 나이비와 임프시는 악령의 숲 중부의 작은 야영지에서 기다립니다.",
+    ["From level 50: the demonic quests of Niby and Impsy, in Felwood."] =
+        "50레벨부터: 악령의 숲에서 하는 나이비와 임프시의 악마 퀘스트.",
+    ["Felcloth drops from demons and satyrs, Azshara's above all; the auction house sells it too."] =
+        "지옥 옷감은 악마와 사티로스에게서 나오며, 특히 아즈샤라에서 잘 나옵니다. 경매장에서도 팝니다.",
+    ["The Irontree treants of northern Felwood carry the rotting wood; the oozes of the Bloodvenom river, the essence."] =
+        "악령의 숲 북부의 강철나무정령이 썩은 나무를, 피멍울 강의 수액괴물이 정수를 가지고 있습니다.",
+    ["Three essences: from the satyrs of Jaedenar in Felwood, the Legashi satyrs of Azshara, and the felguards by the Dark Portal in the Blasted Lands."] =
+        "정수 세 개: 악령의 숲 자에데나르의 사티로스, 아즈샤라의 레가쉬 사티로스, 저주받은 땅 어둠의 문 옆의 지옥군단병에게서 얻습니다.",
+    ["North of the camp, by the remains of Kroshius: use the item Impsy gives you to wake him, then defeat him."] =
+        "야영지 북쪽, 크로쉬우스의 유해 옆: 임프시가 준 아이템을 사용해 깨운 다음 처치하세요.",
+    ["Spackle Thornberry, the demon trainer of the Slaughtered Lamb."] =
+        "스파클 손베리는 어둠의 희생양 선술집의 악마 조련사입니다.",
+    ["From level 60: the long chain of your dreadsteed. It asks for costly materials and goes through Scholomance and Dire Maul."] =
+        "60레벨부터: 공포마를 위한 긴 연계 퀘스트. 값비싼 재료가 필요하며 스칼로맨스와 혈투의 전장을 거칩니다.",
+    ["Mor'zul Bloodbringer, in the west of the Burning Steppes."] =
+        "모르줄 블러드브링어는 불타는 평원 서쪽에 있습니다.",
+    ["The owlbeasts of Winterspring carry the blood."] =
+        "여명의 설원의 올빼미야수가 피를 가지고 있습니다.",
+    ["Gorzeeki Wildeyes, right by Mor'zul."] =
+        "고르지키 와일드아이즈는 모르줄 바로 옆에 있습니다.",
+    ["Mor'zul gives these three."] =
+        "이 세 퀘스트는 모르줄이 줍니다.",
+    ["These three ask for an alchemist's elixir, an enchanter's shard with ore of the Burning Steppes, and scales of black dragonkin: make them, find them, or buy them at the auction house."] =
+        "이 세 퀘스트에는 연금술사의 비약, 불타는 평원의 광석과 함께 쓰는 마법부여사의 결정, 검은용족의 비늘이 필요합니다: 직접 만들거나, 찾거나, 경매장에서 사세요.",
+    ["An Arcanite Bar: an alchemist makes it, or the auction house sells it."] =
+        "아케이나이트 주괴: 연금술사가 만들거나 경매장에서 팝니다.",
+    ["Lord Banehollow, in the shrine of Jaedenar, in Felwood."] =
+        "군주 베인할로우는 악령의 숲 자에데나르의 성소에 있습니다.",
+    ["Ulathek hides in Jaedenar too: defeat him for his heart."] =
+        "울라텍도 자에데나르에 숨어 있습니다: 처치해서 심장을 얻으세요.",
+    ["Ur'dan sells the stardust, right by Lord Banehollow."] =
+        "군주 베인할로우 바로 옆의 우르단이 별가루를 팝니다.",
+    ["In the alchemy lab of Scholomance, use the imp in a jar and let it do its work."] =
+        "스칼로맨스의 연금술 실험실에서 단지 안에 든 임프를 사용하고 임프가 일을 마치게 두세요.",
+    ["In Dire Maul, summon the Xorothian Dreadsteed with the ritual items and defeat it; then speak to its spirit."] =
+        "혈투의 전장에서 의식 물품으로 소로시안 공포마를 소환해 처치한 다음, 그 영혼과 대화하세요.",
+    ["Your reward: Summon Dreadsteed, your epic mount."] =
+        "보상: 영웅급 탈것인 공포마 소환.",
+    ["Warrior quests"] =
+        "전사 퀘스트",
+    ["Lyria Du Lac, the warrior trainer of Goldshire."] =
+        "리리아 뒤 라크는 골드샤이어의 전사 상급자입니다.",
+    ["From level 10: the chain that teaches Defensive Stance."] =
+        "10레벨부터: 방어 태세를 배우는 연계 퀘스트.",
+    ["Harry Burlguard, in the tavern of Old Town, in Stormwind."] =
+        "해리 벌가드는 스톰윈드 구 시가지의 선술집에 있습니다.",
+    ["Bartleby, a drunk in the same tavern: he attacks as soon as you take his quest."] =
+        "바틀비는 같은 선술집의 술꾼입니다: 퀘스트를 받자마자 공격해 옵니다.",
+    ["Turning this in teaches Defensive Stance."] =
+        "이 퀘스트를 완료하면 방어 태세를 배웁니다.",
+    ["Granis Swiftaxe, the warrior trainer of Kharanos."] =
+        "그라니스 스위프트액스는 카라노스의 전사 상급자입니다.",
+    ["Muren Stormpike, upstairs in the Hall of Arms of Ironforge."] =
+        "무렌 스톰파이크는 아이언포지 전투의 전당 위층에 있습니다.",
+    ["Vejrek waits in a Frostmane hut in the west of Dun Morogh."] =
+        "베즈렉은 던 모로 서쪽의 서리갈기부족 오두막에서 기다립니다.",
+    ["Kyra Windblade, the warrior trainer of Dolanaar."] =
+        "키라 윈드블레이드는 돌라나르의 전사 상급자입니다.",
+    ["Elanaria, on the Warrior's Terrace of Darnassus."] =
+        "엘라나리아는 다르나서스의 전사의 정원에 있습니다.",
+    ["Vorlus Vilehoof roams with the satyrs southwest of Dolanaar."] =
+        "볼루스 바일후프는 돌라나르 남서쪽에서 사티로스와 함께 돌아다닙니다.",
+    ["Seena Skybreaker, the warrior trainer of Zephras Isle."] =
+        "Seena Skybreaker는 Zephras Isle의 전사 상급자입니다.",
+    ["From level 10: the Skyborne warrior quest of Zephras Isle."] =
+        "10레벨부터: Zephras Isle의 Skyborne 전사 퀘스트.",
+    ["Zaal Stormshield carries the bulwark, in the north of the isle."] =
+        "섬 북쪽의 Zaal Stormshield가 방벽을 가지고 있습니다.",
+    ["Your capital's warrior trainer gives it."] =
+        "대도시의 전사 상급자가 줍니다.",
+    ["From level 30: the chain that teaches Berserker Stance."] =
+        "30레벨부터: 광폭 태세를 배우는 연계 퀘스트.",
+    ["Klannoc Macleod, on Fray Island, off the coast of the Barrens."] =
+        "클라녹 맥클라우드는 불모의 땅 앞바다의 격투의 섬에 있습니다.",
+    ["Step on the grate of the arena: six fighters come one at a time, then Big Will."] =
+        "투기장의 쇠창살 위에 올라서세요: 투사 여섯 명이 한 명씩 나온 다음 싸움꾼 윌이 나옵니다.",
+    ["Turning this in teaches Berserker Stance."] =
+        "이 퀘스트를 완료하면 광폭 태세를 배웁니다.",
+    ["From level 30: Bath'rah's chain, which ends with a Whirlwind weapon of your choice."] =
+        "30레벨부터: 바스라의 연계 퀘스트. 끝에 원하는 소용돌이 무기를 받습니다.",
+    ["Eight Liferoot: an herb, picked with Herbalism or bought at the auction house."] =
+        "생명의 뿌리 8개: 약초로, 약초채집으로 캐거나 경매장에서 삽니다.",
+    ["The Drywhisker kobolds of eastern Arathi Highlands carry the three charms."] =
+        "아라시 고원 동부의 마른수염 코볼트가 부적 세 개를 가지고 있습니다.",
+    ["At Bath'rah's cauldron, right by him: put the three charms in it."] =
+        "바스라 바로 옆의 가마솥: 부적 세 개를 넣으세요.",
+    ["The Bloodscalp trolls of northern Stranglethorn carry the tusks."] =
+        "가시덤불 골짜기 북부의 붉은머리부족 트롤이 엄니를 가지고 있습니다.",
+    ["Follow Bath'rah to the summoning, then defeat Cyclonian for its heart: a strong foe, bring help."] =
+        "바스라를 따라 소환 장소로 간 다음, 사이클로니안을 처치해 심장을 얻으세요: 강한 적이니 도움을 받으세요.",
+    ["Your reward: a Whirlwind weapon of your choice."] =
+        "보상: 원하는 소용돌이 무기.",
+    ["From level 50: the Fallen Hero's chain, which ends in the Temple of Atal'Hakkar."] =
+        "50레벨부터: 영웅의 넋 연계 퀘스트. 아탈학카르 신전에서 끝납니다.",
+    ["The Fallen Hero of the Horde, a spirit in the west of the Swamp of Sorrows."] =
+        "호드 영웅의 넋은 슬픔의 늪 서쪽에 있는 영혼입니다.",
+    ["The Helboars of the Blasted Lands."] =
+        "저주받은 땅의 지옥멧돼지.",
+    ["The Shadowsworn of the Blasted Lands, by the Dark Portal; they come back quickly."] =
+        "저주받은 땅 어둠의 문 옆의 어둠의혈맹. 금방 다시 나타납니다.",
+    ["Gennia Runetotem, the druid trainer of Bloodhoof Village, sends you to Thunder Bluff."] =
+        "블러드후프 마을의 드루이드 상급자 제니아 룬토템이 썬더 블러프로 보냅니다.",
+    ["Turak Runetotem, in the Elder Rise of Thunder Bluff."] =
+        "투락 룬토템은 썬더 블러프의 장로의 봉우리에 있습니다.",
+    ["Faustron, the wind rider master southwest of Nighthaven: take this flight path for your next trips here."] =
+        "나이트헤이븐 남서쪽의 와이번 조련사 파우스트론: 다음에 여기 올 때를 위해 이 비행 경로를 익히세요.",
+    ["Lunaclaw's spot, west of Camp Taurajo in the Barrens"] =
+        "불모의 땅 타우라조 야영지 서쪽, 초승달발톱이 있는 곳",
+    ["Use the Cenarion Lunardust by the moonkin stone: Lunaclaw appears. Defeat her, then speak to her spirit."] =
+        "달빛야수 비석 옆에서 세나리온 달가루를 사용하세요: 초승달발톱이 나타납니다. 처치한 다음 그 영혼과 대화하세요.",
+    ["Muln Earthfury gives it, in the northwest of Mulgore."] =
+        "멀고어 북서쪽의 Muln Earthfury가 줍니다.",
+    ["Fill the sampler in the bubbling pool at the top of Dreadmist Peak: three acolytes attack right after, so clear the top first or bring help."] =
+        "공포의 안개봉우리 꼭대기의 부글거리는 웅덩이에서 견본병을 채우세요: 바로 뒤에 수행사제 세 명이 공격하니, 먼저 꼭대기를 정리하거나 도움을 받으세요.",
+    ["Tonga Runetotem, just south of the Crossroads."] =
+        "통가 룬토템은 크로스로드 바로 남쪽에 있습니다.",
+    ["The kodos of the northern Barrens carry the Kodo Horns."] =
+        "불모의 땅 북부의 코도가 코도 뿔을 가지고 있습니다.",
+    ["Sickly Gazelles graze in the north of the Barrens: use the salve on them."] =
+        "병든 가젤이 불모의 땅 북부에서 풀을 뜯습니다: 가젤에게 연고를 사용하세요.",
+    ["The first half of the pendant lies under the water in the far north of the Barrens."] =
+        "펜던트의 첫 번째 반쪽은 불모의 땅 최북단의 물속에 있습니다.",
+    ["The second half lies under the water off the coast of Silverpine Forest."] =
+        "두 번째 반쪽은 은빛소나무 숲 앞바다 물속에 있습니다.",
+    ["Turak Runetotem gives it, in the Elder Rise of Thunder Bluff."] =
+        "썬더 블러프 장로의 봉우리의 투락 룬토템이 줍니다.",
+    ["Thotar, the hunter trainer of Razor Hill."] =
+        "소타르는 칼바위 언덕의 사냥꾼 상급자입니다.",
+    ["Use the taming rod on a Dire Mottled Boar, south of Razor Hill. Once it is tamed, dismiss it: it turns on you again, so be ready."] =
+        "칼바위 언덕 남쪽의 사나운 점박이멧돼지에게 조련용 막대를 사용하세요. 길들이면 소환수를 해제하세요: 다시 덤벼드니 대비하세요.",
+    ["Use the rod on a Surf Crawler, on the southern shore of Durotar, then dismiss it the same way."] =
+        "듀로타 남쪽 해안의 붉은톱니게에게 막대를 사용한 다음, 같은 방법으로 해제하세요.",
+    ["Use the rod on an Armored Scorpid, northwest of Razor Hill."] =
+        "칼바위 언덕 북서쪽의 등껍질전갈에게 막대를 사용하세요.",
+    ["Ormak Grimshot, the hunter trainer of Orgrimmar, in the Valley of Honor."] =
+        "오르막 그림샷은 오그리마의 사냥꾼 상급자로, 명예의 골짜기에 있습니다.",
+    ["Yaw Sharpmane, the hunter trainer of Bloodhoof Village."] =
+        "요 샤프메인은 블러드후프 마을의 사냥꾼 상급자입니다.",
+    ["Use the taming rod on an Adult Plainstrider, north of the village. Once it is tamed, dismiss it: it turns on you again, so be ready."] =
+        "마을 북쪽의 다자란 초원타조에게 조련용 막대를 사용하세요. 길들이면 소환수를 해제하세요: 다시 덤벼드니 대비하세요.",
+    ["Use the rod on a Prairie Stalker, southeast of the village, then dismiss it the same way."] =
+        "마을 남동쪽의 긴발톱 초원늑대에게 막대를 사용한 다음, 같은 방법으로 해제하세요.",
+    ["Use the rod on a Swoop, in the plains north of the village."] =
+        "마을 북쪽 평원의 검독수리에게 막대를 사용하세요.",
+    ["Holt Thunderhorn, the hunter trainer of Thunder Bluff, on the Hunter Rise."] =
+        "홀트 썬더혼은 썬더 블러프의 사냥꾼 상급자로, 수렵의 봉우리에 있습니다.",
+    ["Uthel'nay, the mage trainer of Orgrimmar, in the Valley of Spirits."] =
+        "우텔나이는 오그리마의 마법사 상급자로, 정기의 골짜기에 있습니다.",
+    ["From level 10: your trainer's first errand, in Durotar."] =
+        "10레벨부터: 듀로타에서 하는 상급자의 첫 심부름.",
+    ["Un'Thuwa, the mage trainer of Sen'jin Village."] =
+        "운투와는 센진 마을의 마법사 상급자입니다.",
+    ["The Ju-Ju Heaps stand on the Echo Isles, off the southern coast."] =
+        "주주 해골은 남쪽 해안 앞바다의 메아리 섬에 있습니다.",
+    ["Cain Firesong, the mage trainer of Brill."] =
+        "케인 파이어송은 브릴의 마법사 상급자입니다.",
+    ["From level 10: your trainer's first errand, in Tirisfal Glades."] =
+        "10레벨부터: 티리스팔 숲에서 하는 상급자의 첫 심부름.",
+    ["Anastasia Hartwell, the mage trainer of the Undercity, in the Magic Quarter."] =
+        "아나스타샤 하트웰은 언더시티의 마법사 상급자로, 마법 지구에 있습니다.",
+    ["The snapdragons grow by the farm of the Balnirs, in the east of Tirisfal Glades."] =
+        "금어초는 티리스팔 숲 동쪽, 발니르 농장 옆에서 자랍니다.",
+    ["From level 15: a chain in the Undercity that ends with a robe for you."] =
+        "15레벨부터: 언더시티의 연계 퀘스트. 끝에 로브를 받습니다.",
+    ["The chest of coffers and the cantation lie beside Anastasia."] =
+        "속박의 상자와 현신의 주문서는 아나스타샤 옆에 있습니다.",
+    ["The alchemist shop of the Undercity"] =
+        "언더시티의 연금술 상점",
+    ["Read the cantation to reveal a Rift Spawn, fight it until it is stunned, then use a coffer on it."] =
+        "현신의 주문서를 읽어 균열의 정령을 드러내고, 기절할 때까지 싸운 다음 속박의 상자를 사용하세요.",
+    ["The Dalaran mages of Ambermill, in Silverpine Forest, carry the mana gems; the linen comes from humanoids anywhere."] =
+        "은빛소나무 숲 앰버밀의 달라란 마법사가 마나석을 가지고 있습니다. 리넨은 어디서든 인간형 몬스터에게서 나옵니다.",
+    ["Josef Gregorian, the tailor of the Undercity's Rogues' Quarter."] =
+        "조셉 그레고리안은 언더시티 도적 지구의 재봉사입니다.",
+    ["Your reward: the Spellfire Robes."] =
+        "보상: 마법불꽃 로브.",
+    ["Deino, the mage trainer of Orgrimmar, in the Valley of Spirits."] =
+        "다이노는 오그리마의 마법사 상급자로, 정기의 골짜기에 있습니다.",
+    ["Fill the flask at the waterfall of Xavian, in eastern Ashenvale: take the path up from the south."] =
+        "잿빛 골짜기 동부, 사비안의 폭포에서 약병을 채우세요: 남쪽에서 올라가는 길을 이용하세요.",
+    ["The Laughing Sisters, nymphs of the woods of central Ashenvale, carry the hair."] =
+        "잿빛 골짜기 중부 숲의 님프인 미소띤 자매가 머리카락을 가지고 있습니다.",
+    ["Kil'hala, the tailor of the Crossroads."] =
+        "킬할라는 크로스로드의 재봉사입니다.",
+    ["Your reward: the Nether-lace Garment."] =
+        "보상: 황천의 로브.",
+    ["Shadow Priest Sarvis, at the start of Deathknell."] =
+        "어둠의사제 사비스는 데스넬 시작 지점에 있습니다.",
+    ["The Forsaken paladin's story, a chain added by Forever, starts in Deathknell."] =
+        "Forever가 추가한 연계 퀘스트인 포세이큰 성기사 이야기는 데스넬에서 시작됩니다.",
+    ["Aramis Hammerhand, the paladin trainer of Deathknell."] =
+        "Aramis Hammerhand는 데스넬의 성기사 상급자입니다.",
+    ["Shari Stilwell, the paladin trainer of Brill."] =
+        "Shari Stilwell은 브릴의 성기사 상급자입니다.",
+    ["Breton Samuels, at the outpost in the west of Tirisfal Glades."] =
+        "Breton Samuels는 티리스팔 숲 서쪽의 전초기지에 있습니다.",
+    ["Jorin Croge, a few steps away."] =
+        "Jorin Croge는 몇 걸음 떨어진 곳에 있습니다.",
+    ["The Vile Fin murlocs of the western coast."] =
+        "서쪽 해안의 썩은지느러미멀록.",
+    ["The lumber piles lie on the western coast, south of the murlocs."] =
+        "목재 더미는 서쪽 해안, 멀록이 있는 곳 남쪽에 있습니다.",
+    ["Danitha Morr, at the outpost."] =
+        "Danitha Morr는 전초기지에 있습니다.",
+    ["The Tarnished gather on the western coast; Rudolph Gelhardt, their paladin, carries the head the quest asks for."] =
+        "서쪽 해안에 Tarnished가 모여 있습니다. 그들의 성기사 Rudolph Gelhardt가 퀘스트에 필요한 머리를 가지고 있습니다.",
+    ["Lady Sylvanas Windrunner, in the Royal Quarter of the Undercity."] =
+        "여군주 실바나스 윈드러너는 언더시티의 왕실 지구에 있습니다.",
+    ["Danitha Morr, at the outpost in the west of Tirisfal Glades."] =
+        "Danitha Morr는 티리스팔 숲 서쪽의 전초기지에 있습니다.",
+    ["From level 12: the lessons in divinity, the next chapter of the Forsaken paladin's story."] =
+        "12레벨부터: 포세이큰 성기사 이야기의 다음 장인 신앙의 가르침.",
+    ["Tanis Alderwood, in the Undercity."] =
+        "Tanis Alderwood는 언더시티에 있습니다.",
+    ["Tanis needs Linen Cloth: humanoids carry it everywhere."] =
+        "Tanis는 리넨 옷감이 필요합니다: 어디서든 인간형 몬스터가 가지고 있습니다.",
+    ["Deathguard Billmuth, at the outpost."] =
+        "Deathguard Billmuth는 전초기지에 있습니다.",
+    ["Deathguard Falgan, in the east of Tirisfal Glades, near the Scarlet watch post."] =
+        "Deathguard Falgan은 티리스팔 숲 동쪽, 붉은십자군 감시초소 근처에 있습니다.",
+    ["The Scarlet zealots and friars of the watch post carry the attack plans."] =
+        "감시초소의 붉은십자군 광신도와 수사가 공격 계획서를 가지고 있습니다.",
+    ["From level 18: the story goes on in Silverpine Forest, around a moonsilver blade."] =
+        "18레벨부터: 이야기는 은빛소나무 숲에서 달빛 은으로 만든 칼날을 중심으로 이어집니다.",
+    ["Trevan Rol, at the Sepulcher."] =
+        "Trevan Rol은 공동묘지에 있습니다.",
+    ["Deathguard Baldren, at the Sepulcher."] =
+        "Deathguard Baldren은 공동묘지에 있습니다.",
+    ["The charred remains lie in the east of Silverpine Forest, facing Fenris Isle."] =
+        "불탄 잔해는 은빛소나무 숲 동쪽, 펜리스 섬 맞은편에 있습니다.",
+    ["Lumina Windsinger, held in Fenris Keep."] =
+        "Lumina Windsinger는 펜리스 요새에 갇혀 있습니다.",
+    ["The Rot Hide gnolls of Fenris Isle carry the key."] =
+        "펜리스 섬의 썩은가죽 놀이 열쇠를 가지고 있습니다.",
+    ["Lumina Windsinger waits again at the Sepulcher."] =
+        "Lumina Windsinger는 다시 공동묘지에서 기다립니다.",
+    ["Old Fire-Eye prowls the south of Silverpine Forest."] =
+        "Old Fire-Eye는 은빛소나무 숲 남쪽을 배회합니다.",
+    ["Ott, the weaponsmith of Tarren Mill."] =
+        "Ott는 타렌 밀농장의 무기제작자입니다.",
+    ["Ulric Frostveil, at Zoram'gar Outpost on the coast of Ashenvale."] =
+        "Ulric Frostveil은 잿빛 골짜기 해안의 조람가르 전초기지에 있습니다.",
+    ["From level 20: Ulric Frostveil's quest of the Kor Gem, in Ashenvale."] =
+        "20레벨부터: 잿빛 골짜기에서 하는 Ulric Frostveil의 코르석 퀘스트.",
+    ["The naga of the Blackfathom Deeps entrance, under the water of Zoram Strand, carry the corrupted gem. They are elite: bring a group."] =
+        "조람 해안 물속, 검은심연의 나락 입구의 나가가 부정한 코르석을 가지고 있습니다. 정예이니 파티를 꾸려 가세요.",
+    ["Ken'jai, the priest trainer of the Valley of Trials."] =
+        "켄자이는 시험의 골짜기의 사제 상급자입니다.",
+    ["From level 5: heal a wounded grunt, and get your first robe."] =
+        "5레벨부터: 부상당한 그런트를 치유하고 첫 로브를 받으세요.",
+    ["Tai'jin, the priest trainer of Razor Hill."] =
+        "타이진은 칼바위 언덕의 사제 상급자입니다.",
+    ["Grunt Kor'ja lies wounded south of Razor Hill: heal her with Lesser Heal, then give her Power Word: Fortitude."] =
+        "그런트 코르자가 칼바위 언덕 남쪽에 부상당한 채 누워 있습니다: 하급 치유로 치유한 다음 신의 권능: 인내를 걸어 주세요.",
+    ["Dark Cleric Duesten, the priest trainer of Deathknell."] =
+        "어둠의사제 듀스텐은 데스넬의 사제 상급자입니다.",
+    ["From level 5: heal a wounded deathguard, and get your first robe."] =
+        "5레벨부터: 부상당한 죽음의경비병을 치유하고 첫 로브를 받으세요.",
+    ["Dark Cleric Beryl, the priest trainer of Brill."] =
+        "어둠의사제 베릴은 브릴의 사제 상급자입니다.",
+    ["Deathguard Kel lies wounded north of Brill: heal him with Lesser Heal, then give him Power Word: Fortitude."] =
+        "죽음의경비병 켈이 브릴 북쪽에 부상당한 채 누워 있습니다: 하급 치유로 치유한 다음 신의 권능: 인내를 걸어 주세요.",
+    ["From level 10: the quest that teaches Hex of Weakness."] =
+        "10레벨부터: 약화의 주술을 배우는 퀘스트.",
+    ["Ur'kyo, the priest trainer of Orgrimmar, in the Valley of Spirits."] =
+        "우르쿄는 오그리마의 사제 상급자로, 정기의 골짜기에 있습니다.",
+    ["Aelthalyste, the priest trainer of the Undercity, in the War Quarter."] =
+        "애살리스테는 언더시티의 사제 상급자로, 전쟁 지구에 있습니다.",
+    ["From level 10: the quest that teaches Touch of Weakness."] =
+        "10레벨부터: 무력의 손길을 배우는 퀘스트.",
+    ["From level 20: the quest that teaches Shadowguard."] =
+        "20레벨부터: 어둠의 수호를 배우는 퀘스트.",
+    ["From level 20: the quest that teaches Devouring Plague."] =
+        "20레벨부터: 파멸의 역병을 배우는 퀘스트.",
+    ["Learn Pick Lock at your trainer, then practice on lockboxes until your skill reaches 75: Gallywix's lockbox, at 20, needs it."] =
+        "상급자에게서 자물쇠 따기를 배운 다음, 숙련도가 75가 될 때까지 잠긴 상자로 연습하세요: 20레벨에 여는 갤리윅스의 자물쇠 상자에 필요합니다.",
+    ["Shenthul, in a tent of the Cleft of Shadow, in Orgrimmar."] =
+        "셴툴은 오그리마 어둠의 틈의 천막 안에 있습니다.",
+    ["Shenthul greets you with a hand sign: answer it with the salute emote."] =
+        "셴툴이 손짓으로 인사합니다: 경례 감정 표현으로 답하세요.",
+    ["By the Venture Co. tower in the far north of the Barrens: target Taskmaster Fizzule, fire the flare gun twice, then salute him."] =
+        "불모의 땅 최북단의 투자개발회사 탑 옆: 감독관 피줄을 대상으로 지정하고 섬광탄포를 두 번 쏜 다음 그에게 경례하세요.",
+    ["In the tower: pick Silixiz's key from his pocket, kill the guards floor by floor, Gallywix at the top, then open his lockbox."] =
+        "탑 안: 실릭시즈의 주머니에서 열쇠를 훔치고, 층마다 경비병을 처치하고 꼭대기의 갤리윅스도 처치한 다음, 그의 자물쇠 상자를 여세요.",
+    ["The lockbox leaves a sickness on you: Shenthul sends you to be cured."] =
+        "자물쇠 상자를 열면 병에 걸립니다: 셴툴이 치료받으라고 보냅니다.",
+    ["Serge Hinott, the alchemist of Tarren Mill."] =
+        "서지 히노트는 타렌 밀농장의 연금술사입니다.",
+    ["Stay by Serge while he prepares the cure."] =
+        "서지가 치료제를 준비하는 동안 곁에 머무르세요.",
+    ["Canaga Earthcaller, in the Valley of Trials."] =
+        "카나가 어스콜러는 시험의 골짜기에 있습니다.",
+    ["The Felstalkers of the valley carry the hooves."] =
+        "골짜기의 하급 지옥사냥개가 발굽을 가지고 있습니다.",
+    ["Up the hill path south of the valley: drink the Earth Sapta to see the Minor Manifestation of Earth."] =
+        "골짜기 남쪽의 언덕길 위: 대지의 정기를 마셔 하급 대지의 현신을 보세요.",
+    ["Seer Ravenfeather, in Camp Narache."] =
+        "예언자 레이븐페더는 나라체 야영지에 있습니다.",
+    ["The Bristleback shamans east of the camp carry the salve."] =
+        "야영지 동쪽의 뾰족털일족 주술사가 연고를 가지고 있습니다.",
+    ["On the hill south of the camp: drink the Earth Sapta to see the Minor Manifestation of Earth."] =
+        "야영지 남쪽 언덕 위: 대지의 정기를 마셔 하급 대지의 현신을 보세요.",
+    ["Windshaper Boro, on Zephras Isle."] =
+        "Windshaper Boro는 Zephras Isle에 있습니다.",
+    ["Drink the Earth Sapta to see the Minor Manifestation of Earth, east of Boro."] =
+        "Boro 동쪽에서 대지의 정기를 마셔 하급 대지의 현신을 보세요.",
+    ["Swart, the shaman trainer of Razor Hill."] =
+        "스워트는 칼바위 언덕의 주술사 상급자입니다.",
+    ["Narm Skychaser, the shaman trainer of Bloodhoof Village."] =
+        "나름 스카이체이서는 블러드후프 마을의 주술사 상급자입니다.",
+    ["Kranal Fiss, at the Far Watch Post on the border of the Barrens."] =
+        "크라날 피스는 불모의 땅 경계의 전초 기지에 있습니다.",
+    ["Telf Joolam, on top of a mountain in the west of Durotar."] =
+        "텔프 줄람은 듀로타 서쪽의 산꼭대기에 있습니다.",
+    ["The Razormane of the northern Barrens carry the Fire Tar; the Burning Blade cultists of the cave north of Razor Hill carry the pouches."] =
+        "불모의 땅 북부의 서슬갈기일족이 불붙인 타르를, 칼바위 언덕 북쪽 동굴의 불타는칼날단 이교도가 주머니를 가지고 있습니다.",
+    ["Right by Telf: drink the Fire Sapta, then defeat the Minor Manifestation of Fire for its ember."] =
+        "텔프 바로 옆: 불의 정기를 마신 다음, 하급 불의 현신을 처치해 불씨를 얻으세요.",
+    ["Sessaria Skystride, on Zephras Isle."] =
+        "Sessaria Skystride는 Zephras Isle에 있습니다.",
+    ["Olariaan Swiftburn, in the south of the isle."] =
+        "Olariaan Swiftburn은 섬 남쪽에 있습니다.",
+    ["Skypriest Faladiel carries the heart."] =
+        "Skypriest Faladiel이 심장을 가지고 있습니다.",
+    ["Kuramaa, the spirit of mischief, carries the mask."] =
+        "장난의 정령 Kuramaa가 가면을 가지고 있습니다.",
+    ["Light the Brazier of Offering by Olariaan, then the Brazier of Eternal Flame by Sessaria."] =
+        "Olariaan 옆의 Brazier of Offering에 불을 붙인 다음, Sessaria 옆의 Brazier of Eternal Flame에 불을 붙이세요.",
+    ["Searn Firewarder, in the Valley of Wisdom of Orgrimmar."] =
+        "시안 파이어워더는 오그리마의 지혜의 골짜기에 있습니다.",
+    ["Xanis Flameweaver, on the Elder Rise of Thunder Bluff."] =
+        "사니스 프레임위버는 썬더 블러프의 장로의 봉우리에 있습니다.",
+    ["Islen Waterseer, by the coast east of the Barrens."] =
+        "이슬렌 워터시어는 불모의 땅 동쪽 해안가에 있습니다.",
+    ["Brine, in the south of the Barrens."] =
+        "브린은 불모의 땅 남쪽에 있습니다.",
+    ["Fill the waterskin at the quilboar watering hole, right by Brine."] =
+        "브린 바로 옆의 가시멧돼지 물웅덩이에서 물주머니를 채우세요.",
+    ["Fill it at the Spring Well of Tarren Mill, in Hillsbrad Foothills."] =
+        "힐스브래드 구릉지 타렌 밀농장의 우물에서 채우세요.",
+    ["Fill it at the ruins of the Stardust Fountain, in the south of Ashenvale."] =
+        "잿빛 골짜기 남쪽, 별가루의 폐허에 있는 분수에서 채우세요.",
+    ["By the Brazier of Everfount, in the lake of Silverpine Forest: use the brazier's water, then defeat the corrupt manifestation for its bracers."] =
+        "은빛소나무 숲 호수의 영원의 샘 제단 옆: 제단의 물을 사용한 다음, 타락한 현신을 처치해 팔보호구를 얻으세요.",
+    ["The Minor Manifestation of Water rises beside the brazier."] =
+        "하급 물의 현신이 제단 옆에서 나타납니다.",
+    ["Prate Cloudseer, on a mesa in the middle of Thousand Needles."] =
+        "프레이트 클라우드시어는 버섯구름 봉우리 중앙의 바위 고원 위에 있습니다.",
+    ["Rau Cliffrunner, at Freewind Post."] =
+        "라우 클리프러너는 높새바람 봉우리에 있습니다.",
+    ["From level 33: Forever's elemental quests of Rau Cliffrunner, in Thousand Needles."] =
+        "33레벨부터: 버섯구름 봉우리에서 하는 라우 클리프러너의 Forever 정령 퀘스트.",
+    ["Beram Skychaser in Thunder Bluff, or Sagorne Creststrider in Orgrimmar."] =
+        "썬더 블러프의 베람 스카이체이서 또는 오그리마의 사고른 크레스트스트라이더.",
+    ["From level 50: Bath'rah the Windwatcher's chain, which ends in the Temple of Atal'Hakkar."] =
+        "50레벨부터: 바람의감시자 바스라의 연계 퀘스트. 아탈학카르 신전에서 끝납니다.",
+    ["One Elemental Earth, Fire, Water and Air: elementals drop them, or the auction house sells them."] =
+        "대지의 원소, 불의 원소, 물의 원소, 바람의 원소 각 1개: 정령이 떨어뜨리거나 경매장에서 팝니다.",
+    ["The spiders and the bears of the Western Plaguelands carry the eyes and the claws."] =
+        "서부 역병지대의 거미와 곰이 눈과 발톱을 가지고 있습니다.",
+    ["Ruzan, in the Valley of Trials."] =
+        "루잔은 시험의 골짜기에 있습니다.",
+    ["Your trainer's first errand, in the Valley of Trials."] =
+        "시험의 골짜기에서 하는 상급자의 첫 심부름.",
+    ["The Vile Familiars of the cave south of the valley carry the heads."] =
+        "골짜기 남쪽 동굴의 악마의 하수인이 머리를 가지고 있습니다.",
+    ["Zureetha Fargaze, beside Ruzan."] =
+        "주리타 파게이즈는 루잔 옆에 있습니다.",
+    ["Venya Marthand, in Deathknell."] =
+        "벤야 말선드는 데스넬에 있습니다.",
+    ["Your trainer's first errand, in Deathknell."] =
+        "데스넬에서 하는 상급자의 첫 심부름.",
+    ["The Rattlecage Skeletons east of Deathknell carry the skulls."] =
+        "데스넬 동쪽의 덜그럭거리는 해골이 두개골을 가지고 있습니다.",
+    ["Ophek, in Razor Hill, sends you to Orgrimmar."] =
+        "칼바위 언덕의 오페크가 오그리마로 보냅니다.",
+    ["Gan'rul Bloodeye, in the Cleft of Shadow of Orgrimmar."] =
+        "간룰 블러드아이는 오그리마의 어둠의 틈에 있습니다.",
+    ["The Tablet of Verga lies in the Burning Blade stash at the back of Skull Rock, in the north of Durotar."] =
+        "베르가의 서판은 듀로타 북쪽, 해골 바위굴 안쪽의 불타는칼날단 은닉처에 있습니다.",
+    ["Right by Gan'rul: use the glyphs on the summoning circle, then defeat the voidwalker."] =
+        "간룰 바로 옆: 소환의 마법진에 소환의 문양을 사용한 다음 보이드워커를 처치하세요.",
+    ["Ageron Kargal, in Brill, sends you to the Undercity."] =
+        "브릴의 아제론 카갈이 언더시티로 보냅니다.",
+    ["Carendin Halgar, in the Magic Quarter of the Undercity."] =
+        "카렌딘 할가르는 언더시티의 마법 지구에 있습니다.",
+    ["Egalin's Grimoire lies in Perrine's chest, in the house south of Brill."] =
+        "에갈린의 흑마법서는 브릴 남쪽 집에 있는 페린의 궤짝 안에 있습니다.",
+    ["Right by Carendin: use the runes on the summoning circle, then defeat the voidwalker."] =
+        "카렌딘 바로 옆: 소환의 마법진에 소환의 룬을 사용한 다음 보이드워커를 처치하세요.",
+    ["Cazul, in the Cleft of Shadow."] =
+        "카줄은 어둠의 틈에 있습니다.",
+    ["Zankaja, in the Valley of Spirits of Orgrimmar."] =
+        "잔카자는 오그리마의 정기의 골짜기에 있습니다.",
+    ["Gazrog, at the Crossroads."] =
+        "가즈록은 크로스로드에 있습니다.",
+    ["Ken'zigla, at the camp of Malaka'jin in the far south of Stonetalon Mountains."] =
+        "켄지글라는 돌발톱 산맥 최남단의 말라카진 야영지에 있습니다.",
+    ["Grunt Logmar, by the road north of Camp Taurajo."] =
+        "그런트 로그마르는 타우라조 야영지 북쪽 길가에 있습니다.",
+    ["Grunt Dogran is held by the Kolkar in the Barrens: give him the draught."] =
+        "그런트 도그란은 불모의 땅에서 콜카르일족에게 붙잡혀 있습니다: 그에게 물약을 주세요.",
+    ["Right by Gan'rul: use Dogran's pendant on the summoning circle, then defeat the succubus."] =
+        "간룰 바로 옆: 소환의 마법진에 도그란의 펜던트를 사용한 다음 서큐버스를 처치하세요.",
+    ["Jorah Annison, in the Magic Quarter of the Undercity."] =
+        "조라 애니슨은 언더시티의 마법 지구에 있습니다.",
+    ["The Dragonmaw orcs of the Wetlands carry the rod: Alliance land, stay clear of the guards."] =
+        "저습지의 용아귀부족 오크가 마법봉을 가지고 있습니다: 얼라이언스 지역이니 경비병을 피하세요.",
+    ["Zevrost, the warlock trainer of the Cleft of Shadow."] =
+        "제브로스트는 어둠의 틈의 흑마법사 상급자입니다.",
+    ["Kurgul, the demon trainer of the Cleft of Shadow."] =
+        "쿠르굴은 어둠의 틈의 악마 조련사입니다.",
+    ["Your warrior trainer, in Razor Hill or Bloodhoof Village, sends you to Uzzek."] =
+        "칼바위 언덕이나 블러드후프 마을의 전사 상급자가 우제크에게 보냅니다.",
+    ["Uzzek, at the Far Watch Post on the border of the Barrens."] =
+        "우제크는 불모의 땅 경계의 전초 기지에 있습니다.",
+    ["From level 10: the quest that teaches Defensive Stance."] =
+        "10레벨부터: 방어 태세를 배우는 퀘스트.",
+    ["The Thunder Lizards of the north of Durotar carry the scales."] =
+        "듀로타 북부의 천둥도마뱀이 비늘을 가지고 있습니다.",
+    ["Thun'grim Firegaze, on a hill east of the Crossroads."] =
+        "툰그림 파이어게이즈는 크로스로드 동쪽 언덕 위에 있습니다.",
+    ["The steel bars lie in the Razormane camp below the hill."] =
+        "강철 주괴는 언덕 아래의 서슬갈기일족 야영지에 있습니다.",
+    ["Austil de Mon, the warrior trainer of Brill."] =
+        "오스틸 드 몽은 브릴의 전사 상급자입니다.",
+    ["Deathguard Dillinger, in Brill."] =
+        "죽음의경비병 딜링거는 브릴에 있습니다.",
+    ["Open the mausoleum north of Brill: Ulag the Cleaver comes out."] =
+        "브릴 북쪽의 납골당을 여세요: 학살자 울라그가 나옵니다.",
+    ["Coleman Farthing, in the inn of Brill."] =
+        "콜만 파딩은 브릴 여관에 있습니다.",
+    ["The four heirlooms lie in the crypt of the Agamand Mills, in the northwest of Tirisfal Glades."] =
+        "가보 네 개는 티리스팔 숲 북서쪽, 아가만드 방앗간의 지하 묘실에 있습니다.",
 }
