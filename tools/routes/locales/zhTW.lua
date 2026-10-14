@@ -3496,4 +3496,1031 @@ return {
         "雷霆崖",
     ["Thunderbrew Distillery"] =
         "卡拉諾斯",
+    -- Ding! - Class quests (hand-written guides)
+    ["Druid quests"] =
+        "德魯伊任務",
+    ["At level 10, your trainer teaches Teleport: Moonglade: the quick way to Moonglade and back, used all through this guide."] =
+        "10級時，訓練師會教你「傳送：月光林地」：往返月光林地的快捷方式，本指南全程都會用到。",
+    ["Denatharion, the druid trainer of the Cenarion Enclave in Darnassus, sends you to Mathrengyl next to him."] =
+        "達納蘇斯塞納里奧區的德魯伊訓練師德納薩里安，會派你去找他身旁的瑪斯雷。",
+    ["Mathrengyl Bearwalker, upstairs in the Cenarion Enclave."] =
+        "瑪斯雷·馭熊者，在塞納里奧區樓上。",
+    ["From level 10: the chain that teaches Bear Form."] =
+        "10級起：學會熊形態的系列任務。",
+    ["Dendrite Starblaze waits on the upper floor of the great house of Nighthaven."] =
+        "德迪利特·星焰在永夜港大屋的樓上等你。",
+    ["The Great Bear Spirit waits northwest of the village, up the hill path: listen to all it has to say."] =
+        "巨熊之靈在村莊西北方，沿山路往上走就能找到：把牠要說的話全部聽完。",
+    ["Sindrayl, the hippogryph master south of Nighthaven: take this flight path for your next trips here."] =
+        "辛德拉爾，永夜港南邊的角鷹獸管理員：取得這條飛行路線，方便之後再來這裡。",
+    ["Lunaclaw's cave, in the hills east of Auberdine"] =
+        "月爪梟獸的洞穴，位於奧伯丁東邊的山丘",
+    ["Deep in the cave, use the Cenarion Moondust by the moonkin stone: Lunaclaw appears. Defeat her, then speak to her spirit."] =
+        "在洞穴深處的月夜梟獸之石旁使用塞納里奧月塵：月爪梟獸就會出現。擊敗她，然後和她的靈魂交談。",
+    ["Turning this in teaches Bear Form."] =
+        "交付此任務即可學會熊形態。",
+    ["From level 10: the Skyborne quests of the bear spirit, on Zephras Isle."] =
+        "10級起：Zephras Isle上熊之靈的Skyborne任務。",
+    ["Alfina Nightgaze, the druid trainer of Dalaran, gives it."] =
+        "達拉然的德魯伊訓練師Alfina Nightgaze會給這個任務。",
+    ["Opens the way to Moonglade, the home of the druids."] =
+        "開啟通往月光林地的道路，那裡是德魯伊的家園。",
+    ["Sheldras Moontree, the druid trainer of Stormwind, in the park."] =
+        "沙德拉斯·月樹，暴風城的德魯伊訓練師，在公園裡。",
+    ["Five Earthroot will be needed: an herb found along the roads, picked with Herbalism or bought at the auction house."] =
+        "需要五株地根草：一種長在路邊的草藥，可用草藥學採集，或在拍賣場購買。",
+    ["From level 14: the chain that teaches Cure Poison."] =
+        "14級起：學會消毒術的系列任務。",
+    ["Fill the sampler at the mouth of the Cliffspring Falls cave, northeast of Auberdine."] =
+        "在奧伯丁東北方壁泉河瀑布的洞口裝滿取樣器。",
+    ["Alanndarian Nightsong, in her house in Auberdine."] =
+        "奧蘭達利亞·夜歌，在她位於奧伯丁的家中。",
+    ["The Lunar Fungus grows in the small caves of the hills east of Auberdine, near Lunaclaw's."] =
+        "月亮菇長在奧伯丁東邊山丘的小洞穴裡，靠近月爪梟獸的洞穴。",
+    ["Sickly Deer wander the woods of Darkshore: use the salve on them."] =
+        "生病的鹿在黑海岸的樹林中遊蕩：對牠們使用藥膏。",
+    ["Turning this in teaches Cure Poison."] =
+        "交付此任務即可學會消毒術。",
+    ["From level 16: the chain that teaches Aquatic Form."] =
+        "16級起：學會水棲形態的系列任務。",
+    ["The Shrine Bauble, a small wicker urn, lies on the bottom of Lake Elune'ara: dive around the shrine."] =
+        "神殿靈珠是一個柳條編的小甕，躺在伊露恩湖的湖底：在神殿周圍潛水尋找。",
+    ["Use the bauble at the Shrine of Remulos, by the lake."] =
+        "在湖邊的雷姆洛斯神殿使用靈珠。",
+    ["The first half of the pendant lies under the water off the north of Darkshore."] =
+        "墜飾的前半塊在黑海岸北部外海的水下。",
+    ["The second half lies under the water off the western coast of Westfall."] =
+        "後半塊在西部荒野西岸外海的水下。",
+    ["Back at the Shrine of Remulos: use a half pendant there to make it whole."] =
+        "回到雷姆洛斯神殿：在那裡使用半塊墜飾，將它合而為一。",
+    ["Turning this in teaches Aquatic Form."] =
+        "交付此任務即可學會水棲形態。",
+    ["Night Elves get it from Mathrengyl Bearwalker in Darnassus."] =
+        "夜精靈向達納蘇斯的瑪斯雷·馭熊者接取。",
+    ["From level 20: Forever's chain of the Great Cat Spirit, in Moonglade."] =
+        "20級起：月光林地中Forever的巨豹之靈系列任務。",
+    ["The Great Cat Spirit rests in the south of Moonglade."] =
+        "巨豹之靈在月光林地南部歇息。",
+    ["The three relics lie in the southeast of Moonglade."] =
+        "三件聖物位於月光林地東南部。",
+    ["The Avatar of Saeyleenan waits in the south of Moonglade."] =
+        "Avatar of Saeyleenan在月光林地南部等候。",
+    ["Mathrengyl Bearwalker, upstairs in the Cenarion Enclave of Darnassus."] =
+        "瑪斯雷·馭熊者，在達納蘇斯塞納里奧區的樓上。",
+    ["Any druid trainer of a capital gives it."] =
+        "任何主城的德魯伊訓練師都會給這個任務。",
+    ["From level 50: Torwa Pathfinder's chain in Un'Goro Crater, which ends in the Temple of Atal'Hakkar."] =
+        "50級起：托爾瓦·尋路者在安戈洛環形山的系列任務，最後在阿塔哈卡神廟結束。",
+    ["Torwa Pathfinder camps on the eastern side of the crater."] =
+        "托爾瓦·尋路者在環形山東側紮營。",
+    ["The Gorishi wasps of the hive in the south carry the stings; the Bloodcaps grow on red plants all over the crater."] =
+        "南邊蟲巢的格里什異種蠍身上帶著毒刺；血帽長在環形山各處的紅色植物上。",
+    ["Use the barb on a devilsaur: they roam the open plains of the crater."] =
+        "對一隻魔暴龍使用倒鉤：牠們在環形山的開闊平原上遊蕩。",
+    ["Atal'alarion, the guardian of the idol in the temple, drops the Putrid Vine."] =
+        "阿塔拉利恩，神廟中神像的守護者，會掉落腐爛的藤蔓。",
+    ["Hunter quests"] =
+        "獵人任務",
+    ["Dazalar, the hunter trainer of Dolanaar."] =
+        "達札拉，多蘭納爾的獵人訓練師。",
+    ["From level 10: three beasts to tame, then you can tame a pet of your own."] =
+        "10級起：先馴服三隻野獸，之後就能馴服屬於自己的寵物。",
+    ["Use the taming rod on a Webwood Lurker, east of Dolanaar. Once it is tamed, dismiss it: it turns on you again, so be ready."] =
+        "對多蘭納爾東邊的一隻樹林潛伏者使用馴獸棒。馴服後解散牠：牠會再次攻擊你，做好準備。",
+    ["Use the rod on a Nightsaber Stalker, west of Dolanaar, then dismiss it the same way."] =
+        "對多蘭納爾西邊的一隻夜刃捕食者使用馴獸棒，再用同樣的方式解散牠。",
+    ["Use the rod on a Strigid Screecher, south of Dolanaar."] =
+        "對多蘭納爾南邊的一隻巨翼惡梟使用馴獸棒。",
+    ["Turning this in teaches Tame Beast: you can now keep a pet."] =
+        "交付此任務即可學會馴服野獸：現在你可以擁有自己的寵物了。",
+    ["Jocaste, the hunter trainer of Darnassus, upstairs."] =
+        "祖卡斯特，達納蘇斯的獵人訓練師，在樓上。",
+    ["Your pet can now learn new skills."] =
+        "你的寵物現在可以學習新技能了。",
+    ["Grif Wildheart, the hunter trainer of Kharanos."] =
+        "格瑞夫，卡拉諾斯的獵人訓練師。",
+    ["Use the taming rod on a Large Crag Boar, north of Kharanos. Once it is tamed, dismiss it: it turns on you again, so be ready."] =
+        "對卡拉諾斯北邊的一隻大峭壁野豬使用馴獸棒。馴服後解散牠：牠會再次攻擊你，做好準備。",
+    ["Use the rod on a Snow Leopard, south of Kharanos, then dismiss it the same way."] =
+        "對卡拉諾斯南邊的一隻雪豹使用馴獸棒，再用同樣的方式解散牠。",
+    ["Use the rod on an Ice Claw Bear, in the hills south of Kharanos."] =
+        "對卡拉諾斯南邊山丘上的一隻冰爪熊使用馴獸棒。",
+    ["Belia Thundergranite, the pet trainer of Ironforge, in the Hall of Arms."] =
+        "貝莉亞·雷岩，鐵爐堡的寵物訓練師，在武器大廳。",
+    ["Josephine Carson, the hunter trainer of Goldshire."] =
+        "Josephine Carson，閃金鎮的獵人訓練師。",
+    ["Use the taming rod on a Rockhide Boar, in the southeast of Elwynn Forest. Once it is tamed, dismiss it: it turns on you again, so be ready."] =
+        "對艾爾文森林東南部的一隻石皮野豬使用馴獸棒。馴服後解散牠：牠會再次攻擊你，做好準備。",
+    ["Use the rod on a Gray Forest Wolf, in the east of the forest, then dismiss it the same way."] =
+        "對森林東部的一隻森林灰狼使用馴獸棒，再用同樣的方式解散牠。",
+    ["Use the rod on a Young Forest Bear, in the west of the forest near Westbrook Garrison."] =
+        "對森林西部西泉要塞附近的一隻小森林熊使用馴獸棒。",
+    ["Isaac Chan, the pet trainer, stands next to Josephine."] =
+        "寵物訓練師Isaac Chan站在Josephine旁邊。",
+    ["Elayaa Easewind sends you to Quel'ana Quickgale."] =
+        "Elayaa Easewind會派你去找Quel'ana Quickgale。",
+    ["Use the taming rod on a Windsong Crawler. Once it is tamed, dismiss it: it turns on you again, so be ready."] =
+        "對一隻Windsong Crawler使用馴獸棒。馴服後解散牠：牠會再次攻擊你，做好準備。",
+    ["Use the rod on an Ornery Galestrider, then dismiss it the same way."] =
+        "對一隻Ornery Galestrider使用馴獸棒，再用同樣的方式解散牠。",
+    ["Use the rod on a Vuldren Alpha."] =
+        "對一隻Vuldren Alpha使用馴獸棒。",
+    ["Quel'dora Quickgale, the pet trainer, stands next to Quel'ana."] =
+        "寵物訓練師Quel'dora Quickgale站在Quel'ana旁邊。",
+    ["Any hunter trainer of a capital gives it."] =
+        "任何主城的獵人訓練師都會給這個任務。",
+    ["From level 50: Ogtinc's chain in Azshara, which ends in the Temple of Atal'Hakkar."] =
+        "50級起：奧汀克在艾薩拉的系列任務，最後在阿塔哈卡神廟結束。",
+    ["Ogtinc lives up a hill path in the middle of Azshara."] =
+        "奧汀克住在艾薩拉中部一條山路的上方。",
+    ["The Mosshoof Coursers of northern Azshara carry the antlers; only some do."] =
+        "艾薩拉北部的苔蹄快步者身上帶著鹿角；但只有部分會有。",
+    ["Wavethrashers haunt the Azshara shoreline; not every one leaves a scale."] =
+        "碎浪多頭蛇出沒於艾薩拉的海岸線；不是每一隻都會留下鱗片。",
+    ["Morphaz, one of the green dragons of the temple, drops the tooth."] =
+        "摩弗拉斯，神廟中的綠龍之一，會掉落牙齒。",
+    ["Mage quests"] =
+        "法師任務",
+    ["Zaldimar Wefhellt, the mage trainer of Goldshire, upstairs in the inn."] =
+        "札爾迪瑪·維夫希爾特，閃金鎮的法師訓練師，在旅店樓上。",
+    ["From level 10: your trainer's first errand, a few minutes from Goldshire."] =
+        "10級起：訓練師交給你的第一件差事，離閃金鎮只有幾分鐘路程。",
+    ["Jennea Cannon, upstairs in the Wizard's Sanctum of the Mage Quarter, in Stormwind."] =
+        "詹妮亞·坎農，在暴風城法師區的巫師聖殿樓上。",
+    ["Stand in the water of Mirror Lake, in the west of Elwynn Forest, and use the flask there."] =
+        "站在艾爾文森林西部明鏡湖的水中，在那裡使用瓶子。",
+    ["Magis Sparkmantle, the mage trainer of Kharanos."] =
+        "瑪濟斯·石衣，卡拉諾斯的法師訓練師。",
+    ["From level 10: your trainer's first errand, in Dun Morogh."] =
+        "10級起：訓練師交給你的第一件差事，在丹莫洛。",
+    ["Bink, the mage trainer of Ironforge, in the Hall of Mysteries."] =
+        "彬克，鐵爐堡的法師訓練師，在秘法大廳。",
+    ["Bink's toolbox lies by the gates of Gnomeregan, in the west of Dun Morogh."] =
+        "彬克的工具箱在丹莫洛西部的諾姆瑞根大門旁。",
+    ["From level 10: the Skyborne mage quests of Zephras Isle."] =
+        "10級起：Zephras Isle的Skyborne法師任務。",
+    ["The wind-infused boughs lie on the ground west of the camp."] =
+        "注入風之力的樹枝散落在營地西邊的地上。",
+    ["Your mage trainer gives it."] =
+        "你的法師訓練師會給這個任務。",
+    ["From level 15: a chain in Stormwind that ends with a robe for you."] =
+        "15級起：暴風城的系列任務，最後會獲得一件長袍。",
+    ["The chest of coffers and the cantation lie in Jennea's tower."] =
+        "一盒封靈箱和顯形卷軸在詹妮亞的塔裡。",
+    ["The Blue Recluse, the inn of the Mage Quarter"] =
+        "藍色隱士，法師區的旅店",
+    ["Read the cantation to reveal a Rift Spawn, fight it until it is stunned, then use a coffer on it. Three hide in the inn, one of them downstairs."] =
+        "閱讀顯形卷軸讓裂隙怒靈現形，與牠戰鬥直到牠昏迷，再對牠使用封靈箱。旅店裡藏著三隻，其中一隻在樓下。",
+    ["The Charged Rift Gem lies in the Silver Stream Mine, in the north of Loch Modan; the linen comes from humanoids anywhere."] =
+        "充能裂隙寶石在洛克莫丹北部的銀溪礦坑；亞麻布可從任何地方的人型生物身上取得。",
+    ["Wynne Larson, the robe merchant of the Mage Quarter."] =
+        "威恩·拉爾森，法師區的長袍商人。",
+    ["Your reward: the Manaweave Robe."] =
+        "獎勵：法紋長袍。",
+    ["From level 26: a chain that ends with a second robe."] =
+        "26級起：最後會獲得第二件長袍的系列任務。",
+    ["High Sorcerer Andromath, at the top of the Wizard's Sanctum."] =
+        "高階巫士安多瑪斯，在巫師聖殿頂層。",
+    ["The book lies in the Tower of Ilgalar, in the east of Redridge Mountains."] =
+        "那本書在赤脊山東部的伊爾加拉之塔裡。",
+    ["The spiders of the western woods of Duskwood carry the silk."] =
+        "暮色森林西部樹林的蜘蛛身上帶著蛛絲。",
+    ["Your reward: the Astral Knot Garment."] =
+        "獎勵：星結之衣。",
+    ["Your capital's mage trainer gives it."] =
+        "你主城的法師訓練師會給這個任務。",
+    ["From level 30: Tabetha's quests in Dustwallow Marsh, which end with a mage's wand."] =
+        "30級起：塔貝薩在塵泥沼澤的任務，最後會獲得一把法師魔杖。",
+    ["Tabetha lives on her farm in the south of Dustwallow Marsh."] =
+        "塔貝薩住在塵泥沼澤南部她的農場上。",
+    ["Magus Tirth, at the Shimmering Flats of Thousand Needles, near the race track."] =
+        "魔導師提爾斯，在千針石林的閃光平原，靠近賽道。",
+    ["\"Plucky\" Johnson, the chicken by the tent: beckon to him with the emote so he turns back into a man, then ask him for the phrase."] =
+        "大膽的約翰森是帳篷旁的那隻雞：用招手表情對他招手，讓他變回人形，再向他詢問那句口訣。",
+    ["Tabetha gives it too."] =
+        "塔貝薩也會給這個任務。",
+    ["The Witherbark trolls of eastern Arathi Highlands carry the totem sticks."] =
+        "阿拉希高地東部的枯木食人妖身上帶著圖騰棒。",
+    ["Use the stick on the central stone of the Circle of Outer Binding, in Arathi Highlands; clear its guards first. The Jade is a gem found while mining, or at the auction house."] =
+        "在阿拉希高地外環禁錮法陣的中央石頭上使用圖騰棒；先清掉它的守衛。翡翠是一種採礦時可獲得的寶石，拍賣場也買得到。",
+    ["The book lies in the Library of the Scarlet Monastery."] =
+        "那本書在血色修道院的圖書館裡。",
+    ["Your reward: a mage's wand."] =
+        "獎勵：一把法師魔杖。",
+    ["From level 35: Tabetha's second chain, which goes through Uldaman."] =
+        "35級起：塔貝薩的第二個系列任務，途經奧達曼。",
+    ["The Burning Blade summoners of Mannoroc Coven, in southern Desolace, carry the orb."] =
+        "淒涼之地南部瑪諾洛克集會所的火刃召喚師身上帶著寶珠。",
+    ["Right there: Tabetha frees the demon of the orb; defeat it."] =
+        "就在原地：塔貝薩會釋放寶珠中的惡魔；擊敗它。",
+    ["The Obsidian Sentinel of Uldaman holds the power source."] =
+        "奧達曼的黑曜石哨兵持有能量源。",
+    ["Right there: destroy the mana surges as they appear around Tabetha."] =
+        "就在原地：法力怒靈出現在塔貝薩周圍時，將它們摧毀。",
+    ["From level 40: Tabetha's task in Zul'Farrak."] =
+        "40級起：塔貝薩在祖爾法拉克的任務。",
+    ["Hydromancer Velratha, by the sacred pool of Zul'Farrak, drops the tiara."] =
+        "祖爾法拉克聖池旁的水占師維蕾薩會掉落頭冠。",
+    ["Your capital's master mage gives it."] =
+        "你主城的法師大師會給這個任務。",
+    ["From level 50: Archmage Xylem's chain in Azshara, which ends in the Temple of Atal'Hakkar."] =
+        "50級起：大法師克希雷姆在艾薩拉的系列任務，最後在阿塔哈卡神廟結束。",
+    ["Sanath Lim-yo, at the foot of Archmage Xylem's tower in Azshara: talk to him to be sent up to the archmage."] =
+        "薩納斯，在艾薩拉大法師克希雷姆的塔下：和他交談，他會把你送上去見大法師。",
+    ["The blood elves of the ruins in northeastern Azshara carry the dust."] =
+        "艾薩拉東北部廢墟的血精靈身上帶著粉塵。",
+    ["The Spitelash sirens of the western shore of Azshara carry the coral."] =
+        "艾薩拉西岸的惡鞭海妖身上帶著珊瑚。",
+    ["Morphaz, one of the green dragons of the temple, drops the shard."] =
+        "摩弗拉斯，神廟中的綠龍之一，會掉落碎片。",
+    ["From level 60: Lorekeeper Lydros' quest, inside Dire Maul."] =
+        "60級起：博學者萊德羅斯的任務，在厄運之槌內。",
+    ["Hydrospawn, a water elemental of Dire Maul, drops the essence."] =
+        "海多斯博恩，厄運之槌的一隻水元素，會掉落精華。",
+    ["Paladin quests"] =
+        "聖騎士任務",
+    ["Brother Wilhelm, the paladin trainer of Goldshire, sends you to Stormwind."] =
+        "威爾海姆修士，閃金鎮的聖騎士訓練師，會派你前往暴風城。",
+    ["Duthorian Rall, in the Cathedral of Light."] =
+        "達索瑞恩·拉爾，在聖光大教堂。",
+    ["From level 12: the chain that teaches Redemption."] =
+        "12級起：學會救贖的系列任務。",
+    ["Read the Tome of Divinity from your bags to start the next quest."] =
+        "從背包閱讀聖潔之書，接取下一個任務。",
+    ["Stephanie Turner, a poor woman of Old Town."] =
+        "斯蒂芬妮·特納，舊城區的一位窮苦婦人。",
+    ["She needs Linen Cloth: humanoids carry it everywhere."] =
+        "她需要亞麻布：各地的人型生物身上都有。",
+    ["Gazin Tenorm, in the Cathedral of Light."] =
+        "傑生·坦諾姆，在聖光大教堂。",
+    ["Henze Faulk lies lifeless in the east of Elwynn Forest: use the Symbol of Life on him."] =
+        "亨茲·法奧克毫無生氣地躺在艾爾文森林東部：對他使用生命符記。",
+    ["The Defias around Henze carry the script."] =
+        "亨茲周圍的迪菲亞身上帶著手稿。",
+    ["Turning this in teaches Redemption."] =
+        "交付此任務即可學會救贖。",
+    ["Azar Stronghammer, the paladin trainer of Kharanos, sends you to Ironforge."] =
+        "阿札爾·戰錘，卡拉諾斯的聖騎士訓練師，會派你前往鐵爐堡。",
+    ["Tiza Battleforge, in the Mystic Ward of Ironforge."] =
+        "蒂薩·熱爐，在鐵爐堡的秘法區。",
+    ["John Turner, a poor man who walks the streets of Ironforge."] =
+        "約翰·特納，一位在鐵爐堡街頭走動的窮人。",
+    ["He needs Linen Cloth: humanoids carry it everywhere."] =
+        "他需要亞麻布：各地的人型生物身上都有。",
+    ["Muiredon Battleforge, beside Tiza."] =
+        "穆里頓·熱爐，在蒂薩旁邊。",
+    ["Narm Faulk lies lifeless in the east of Dun Morogh: use the Symbol of Life on him."] =
+        "納姆·法奧克毫無生氣地躺在丹莫洛東部：對他使用生命符記。",
+    ["The Dark Iron spies around Narm carry the script."] =
+        "納姆周圍的黑鐵間諜身上帶著手稿。",
+    ["From level 20: the Tome of Valor, then the Test of Righteousness, which ends with Verigan's Fist, a two-handed mace."] =
+        "20級起：先是「勇氣之書」，再是「正義試煉」，最後獲得雙手錘維里甘之拳。",
+    ["Read the Tome of Valor from your bags to start the next quest."] =
+        "從背包閱讀勇氣之書，接取下一個任務。",
+    ["Duthorian Rall, in the Cathedral of Light of Stormwind."] =
+        "達索瑞恩·拉爾，在暴風城的聖光大教堂。",
+    ["Daphne Stilwell, at her house in the south of Westfall. Take her quest only when ready: three waves of Defias attack, then more."] =
+        "達芙妮·斯迪威爾，在西部荒野南部她的房子。準備好再接她的任務：迪菲亞會發動三波攻擊，之後還有更多。",
+    ["Stay by Daphne until the last wave falls; a friend helps."] =
+        "待在達芙妮身邊，直到最後一波敵人倒下；找個朋友幫忙會有幫助。",
+    ["Jordan Stilwell, outside the gates of Ironforge."] =
+        "喬丹·斯迪威爾，在鐵爐堡大門外。",
+    ["Four items: the lumber from the Deadmines, the hammer from Shadowfang Keep, the ore from Loch Modan and the Kor Gem from Darkshore."] =
+        "四件物品：死亡礦坑的木材、影牙城堡的鐵錘、洛克莫丹的礦石，以及黑海岸的科爾寶石。",
+    ["Bailor Stonehand, in Thelsamar."] =
+        "白洛爾·石手，在塞爾薩瑪。",
+    ["The ore lies in a crate by a tree stump, in the northeast of Loch Modan."] =
+        "礦石在洛克莫丹東北部一個樹樁旁的箱子裡。",
+    ["Thundris Windweaver, in Auberdine."] =
+        "桑迪斯·織風，在奧伯丁。",
+    ["The naga of the Blackfathom Deeps entrance, under the water of Zoram Strand in Ashenvale, carry the corrupted gem. They are elite: bring a group."] =
+        "黑暗深淵入口的納迦，位於梣谷佐拉姆海岸的水下，身上帶著被污染的寶石。牠們是精英：請組隊前往。",
+    ["The goblin woodcarvers of the Deadmines carry the lumber."] =
+        "死亡礦坑的哥布林木匠身上帶著木材。",
+    ["Jordan's hammer lies in the stables of Shadowfang Keep."] =
+        "喬丹的鐵錘在影牙城堡的馬廄裡。",
+    ["Your reward: Verigan's Fist."] =
+        "獎勵：維里甘之拳。",
+    ["Delgren the Purifier, at Maestra's Post in Ashenvale."] =
+        "『淨化者』德爾葛蘭，在梣谷的邁斯特拉崗哨。",
+    ["From level 22: Forever's paladin chain of Delgren the Purifier."] =
+        "22級起：Forever的『淨化者』德爾葛蘭聖騎士系列任務。",
+    ["Katherine the Pure, in the Cathedral of Light of Stormwind."] =
+        "純潔的凱薩琳，在暴風城的聖光大教堂。",
+    ["Ursula Deline, the warlock trainer of the Mage Quarter."] =
+        "厄蘇拉·德林，法師區的術士訓練師。",
+    ["The Blackrock orcs of Redridge Mountains carry the summoner's salt."] =
+        "赤脊山的黑石獸人身上帶著召喚師之鹽。",
+    ["The demons of Demon Fall Canyon, in the southeast of Ashenvale, carry the motes."] =
+        "梣谷東南部魔隕峽谷的惡魔身上帶著微粒。",
+    ["Bring them to the Spear of Mannoroth, in the canyon."] =
+        "把它們帶到峽谷裡的瑪諾洛斯之矛。",
+    ["From level 40: the quest of your warhorse."] =
+        "40級起：你的戰馬任務。",
+    ["Turning this in teaches Summon Warhorse."] =
+        "交付此任務即可學會召喚戰馬。",
+    ["Lord Grayson Shadowbreaker, in the Cathedral of Light."] =
+        "格雷森·破影者領主，在聖光大教堂。",
+    ["From level 50: the chain of the Mightstone, which ends in the Temple of Atal'Hakkar."] =
+        "50級起：力量之石的系列任務，最後在阿塔哈卡神廟結束。",
+    ["Commander Ashlam Valorfist, at Chillwind Camp in the Western Plaguelands."] =
+        "指揮官阿胥拉姆·瓦羅菲斯特，在西瘟疫之地的冰風崗。",
+    ["The skeletons of the fields of Andorhal carry the scourgestones."] =
+        "安多哈爾田野上的骷髏身上帶著天譴石。",
+    ["High Priest Thel'danis walks around Chillwind Camp."] =
+        "高階牧師賽爾鄧尼斯在冰風崗一帶走動。",
+    ["The six troll bosses of the temple's upper ring each drop one feather: Gasher, Zul'Lor, Mijan, Hukku, Zolo and Loro."] =
+        "神廟上層環形區域的六個食人妖首領各掉落一根羽毛：加什爾、祖羅爾、米杉、胡庫、祖羅和洛若爾。",
+    ["From level 60: the long chain of your charger. It asks for about 200 gold and goes through Stratholme, Dire Maul and Scholomance."] =
+        "60級起：你的戰駒的漫長系列任務。需要約200金，並途經斯坦索姆、厄運之槌和通靈學院。",
+    ["High Priest Rohan, in the Mystic Ward of Ironforge: the sacrifice he asks for is gold."] =
+        "高階牧師洛漢，在鐵爐堡的秘法區：他要求的犧牲是金幣。",
+    ["Use the censer on the Terrordale Spirits, in the northwest of the Eastern Plaguelands."] =
+        "對東瘟疫之地西北部的恐懼谷的靈魂使用香爐。",
+    ["Grimand Elmore, in the Dwarven District of Stormwind."] =
+        "格瑞曼德·艾爾默，在暴風城的矮人區。",
+    ["Grimand wants gold, Arthas' Tears (a herb), Runecloth, an Arcanite Bar, and holy water from the supply crates of Stratholme."] =
+        "格瑞曼德需要金幣、阿薩斯之淚（一種草藥）、符文布、一塊奧金錠，以及斯坦索姆補給木箱裡的聖水。",
+    ["Merideth Carlson, the horse breeder of Southshore, makes the horse feed."] =
+        "梅麗德絲·卡爾森，南海鎮的養馬人，會製作馬飼料。",
+    ["The Enriched Manna Biscuits are sold by the Argent Dawn's quartermasters."] =
+        "可口的魔法點心由銀色黎明的軍需官出售。",
+    ["The Ancient Equine Spirit waits in western Dire Maul, past Tendris Warpwood."] =
+        "上古聖馬之魂在厄運之槌西區，位於特迪斯·扭木後方。",
+    ["An Azerothian Diamond and a Pristine Black Diamond: found while mining and on monsters of the Plaguelands, or at the auction house."] =
+        "一顆艾澤拉斯鑽石和一顆原始黑鑽石：採礦時或從瘟疫之地的怪物身上可以取得，也可在拍賣場購買。",
+    ["In Scholomance, use the Divination Scryer to call Death Knight Darkreaver, defeat him, then use the charger's soul on his fallen mount."] =
+        "在通靈學院中，使用預言水晶球召喚死亡騎士達克雷爾，擊敗他，再對他倒下的坐騎使用戰駒的靈魂。",
+    ["Your reward: Summon Charger, your epic mount."] =
+        "獎勵：召喚戰駒，你的史詩坐騎。",
+    ["Priest quests"] =
+        "牧師任務",
+    ["Priestess Anetta, the priest trainer of Northshire Abbey."] =
+        "女牧師安妮塔，北郡修道院的牧師訓練師。",
+    ["From level 5: heal a wounded guard, and get your first robe."] =
+        "5級起：治療一名受傷的衛兵，並獲得你的第一件長袍。",
+    ["Priestess Josetta, the priest trainer of Goldshire."] =
+        "女牧師潔塞塔，閃金鎮的牧師訓練師。",
+    ["Guard Roberts lies wounded east of Goldshire: heal him with Lesser Heal, then give him Power Word: Fortitude."] =
+        "衛兵羅伯茲受傷躺在閃金鎮東邊：用次級治療術治療他，再對他施放真言術：韌。",
+    ["Branstock Khalder, the priest trainer of Coldridge Valley."] =
+        "布蘭斯托克·卡德爾，寒脊山谷的牧師訓練師。",
+    ["From level 5: heal a wounded mountaineer, and get your first robe."] =
+        "5級起：治療一名受傷的巡山人，並獲得你的第一件長袍。",
+    ["Maxan Anvol, the priest trainer of Kharanos."] =
+        "馬克薩恩·安沃爾，卡拉諾斯的牧師訓練師。",
+    ["Mountaineer Dolf lies wounded near Kharanos: heal him with Lesser Heal, then give him Power Word: Fortitude."] =
+        "巡山人多爾夫受傷躺在卡拉諾斯附近：用次級治療術治療他，再對他施放真言術：韌。",
+    ["Shanda, the priest trainer of Aldrassil, in Shadowglen."] =
+        "珊達，幽影谷奧達希爾的牧師訓練師。",
+    ["From level 5: heal a wounded sentinel, and get your first robe."] =
+        "5級起：治療一名受傷的哨兵，並獲得你的第一件長袍。",
+    ["Laurna Morninglight, the priest trainer of Dolanaar."] =
+        "勞爾娜·晨光，多蘭納爾的牧師訓練師。",
+    ["Sentinel Shaya lies wounded south of Dolanaar: heal her with Lesser Heal, then give her Power Word: Fortitude."] =
+        "哨兵莎恩雅受傷躺在多蘭納爾南邊：用次級治療術治療她，再對她施放真言術：韌。",
+    ["From level 10: the quest that teaches Desperate Prayer."] =
+        "10級起：學會絕望禱言的任務。",
+    ["High Priestess Laurena, in the Cathedral of Light of Stormwind."] =
+        "高階牧師勞瑞娜，在暴風城的聖光大教堂。",
+    ["Priestess Josetta gives it too."] =
+        "女牧師潔塞塔也會給這個任務。",
+    ["From level 10: Forever's quest of Divine Grace, for Humans."] =
+        "10級起：Forever的「Divine Grace」任務，限人類。",
+    ["From level 10: Forever's quest of Confounding Flash, for Gnomes."] =
+        "10級起：Forever的「Confounding Flash」任務，限地精。",
+    ["High Priestess Mims, in the Mystic Ward of Ironforge."] =
+        "High Priestess Mims，在鐵爐堡的秘法區。",
+    ["From level 10: the quest that teaches Starshards."] =
+        "10級起：學會星辰碎片的任務。",
+    ["Priestess Alathea, in the Temple of the Moon of Darnassus."] =
+        "女祭司阿蘭希雅，在達納蘇斯的月神殿。",
+    ["From level 20: the quest that teaches Feedback."] =
+        "20級起：學會回饋的任務。",
+    ["High Priest Rohan, in the Mystic Ward of Ironforge."] =
+        "高階牧師洛漢，在鐵爐堡的秘法區。",
+    ["From level 20: the quest that teaches Fear Ward."] =
+        "20級起：學會防護恐懼結界的任務。",
+    ["From level 20: Forever's second Gnome priest quest."] =
+        "20級起：Forever的第二個地精牧師任務。",
+    ["From level 20: the quest that teaches Elune's Grace."] =
+        "20級起：學會伊露恩的恩典的任務。",
+    ["Any priest trainer of a capital gives it."] =
+        "任何主城的牧師訓練師都會給這個任務。",
+    ["The Mosshoof Coursers of northern Azshara carry the glands; only some do."] =
+        "艾薩拉北部的苔蹄快步者身上帶著腺體；但只有部分會有。",
+    ["The undead of the Western Plaguelands and the Zanzil zombies of Stranglethorn carry the ichor."] =
+        "西瘟疫之地的不死生物和荊棘谷的贊吉爾殭屍身上帶著腐液。",
+    ["Morphaz, one of the green dragons of the temple, carries the blood."] =
+        "摩弗拉斯，神廟中的綠龍之一，身上帶著血液。",
+    ["Greta Mosshoof, at the Emerald Sanctuary in Felwood."] =
+        "格雷塔·苔蹄，在費伍德森林的翡翠聖地。",
+    ["Rogue quests"] =
+        "盜賊任務",
+    ["Hogral Bakkan, the rogue trainer of Kharanos."] =
+        "霍格拉爾·巴坎，卡拉諾斯的盜賊訓練師。",
+    ["From level 10: a first errand for the rogues of Ironforge."] =
+        "10級起：為鐵爐堡盜賊跑的第一趟差事。",
+    ["Hulfdan Blackbeard, in the Forlorn Cavern of Ironforge."] =
+        "霍夫丹·黑鬚，在鐵爐堡的荒棄的洞穴。",
+    ["Onin MacHammar stands on a platform in the west of Dun Morogh, near Gnomeregan."] =
+        "奧寧·雨錘站在丹莫洛西部靠近諾姆瑞根的一座平台上。",
+    ["Learn Pick Lock at your trainer, then practice on lockboxes until your skill reaches 75."] =
+        "向訓練師學習開鎖，再拿帶鎖箱練習，直到技能達到75。",
+    ["From level 16: Pick Lock opens the chests and boxes of the quests to come."] =
+        "16級起：開鎖可以打開後續任務中的寶箱和箱子。",
+    ["Master Mathias Shaw, on the top floor of SI:7's headquarters, in Old Town."] =
+        "馬迪亞斯·肖爾，在舊城區軍情七處總部的頂樓。",
+    ["From level 20: the chain that teaches your poisons."] =
+        "20級起：學會毒藥的系列任務。",
+    ["Agent Kearnen watches from a hill in the southeast of Westfall."] =
+        "密探吉爾妮在西部荒野東南部的一座山丘上監視。",
+    ["Pick the Defias Tower Key from the pocket of a Malformed Defias Drone, by the tower; then, upstairs, sap Klaven Mortwake before you open the chest."] =
+        "從塔樓旁的醜陋的迪菲亞懶漢口袋裡偷取迪菲亞塔樓鑰匙；接著到樓上，先對克拉文·摩特維克使用悶棍，再打開箱子。",
+    ["The chest leaves a sickness on you: that is the next quest."] =
+        "箱子會讓你染上疾病：這就是下一個任務。",
+    ["Doc Mixilpixil works in the cellar of SI:7's headquarters."] =
+        "道克·米希匹克斯在軍情七處總部的地下室工作。",
+    ["Lie down in front of him (the emote) so he can examine you."] =
+        "在他面前躺下（表情動作），讓他為你檢查。",
+    ["Turning this in teaches your poisons."] =
+        "交付此任務即可學會毒藥。",
+    ["Myrokos Silentform, at Ravenholdt Manor in the Alterac Mountains: the way in is a cave in the north of Hillsbrad Foothills."] =
+        "麥洛克斯，在奧特蘭克山脈的拉文霍德莊園：入口是希爾斯布萊德丘陵北部的一個洞穴。",
+    ["From level 24: Forever's Syndicate quests, at Ravenholdt Manor."] =
+        "24級起：Forever的辛迪加任務，在拉文霍德莊園。",
+    ["Lord Tomas is hiding in the east of Hillsbrad Foothills."] =
+        "Lord Tomas躲在希爾斯布萊德丘陵東部。",
+    ["Any rogue trainer of a capital gives it."] =
+        "任何主城的盜賊訓練師都會給這個任務。",
+    ["From level 50: Lord Jorach Ravenholdt's chain, which ends in the Temple of Atal'Hakkar."] =
+        "50級起：喬拉齊·拉文霍德領主的系列任務，最後在阿塔哈卡神廟結束。",
+    ["Lord Jorach Ravenholdt, in Ravenholdt Manor."] =
+        "喬拉齊·拉文霍德領主，在拉文霍德莊園。",
+    ["The Timbermaw shamans of northern Azshara carry the bag."] =
+        "艾薩拉北部的木喉薩滿身上帶著袋子。",
+    ["Archmage Xylem, at the top of his tower in Azshara: Sanath Lim-yo, at its foot, sends you up."] =
+        "大法師克希雷姆，在他位於艾薩拉的塔頂：塔下的薩納斯會送你上去。",
+    ["The Forest Oozes of northeastern Azshara carry the fragments."] =
+        "艾薩拉東北部的森林軟泥怪身上帶著碎片。",
+    ["Morphaz, one of the green dragons of the temple, drops the key."] =
+        "摩弗拉斯，神廟中的綠龍之一，會掉落鑰匙。",
+    ["Shaman quests"] =
+        "薩滿任務",
+    ["Teo Hammerstorm, the shaman trainer of Coldridge Valley."] =
+        "Teo Hammerstorm，寒脊山谷的薩滿訓練師。",
+    ["From level 4: the Call of Earth, your first totem."] =
+        "4級起：「大地的召喚」，你的第一個圖騰。",
+    ["The Frostmane trolls south of the valley carry the pendant."] =
+        "山谷南邊的霜鬃食人妖身上帶著墜飾。",
+    ["On the hill west of the valley: drink the Earth Sapta to see the Minor Manifestation of Earth."] =
+        "在山谷西邊的山丘上：喝下大地靈契，就能看見小型大地之靈體。",
+    ["Turning this in teaches your first earth totem."] =
+        "交付此任務即可學會你的第一個大地圖騰。",
+    ["Ingrid Dunwald in Kharanos, or Eldrun Stormbreaker in Ironforge."] =
+        "卡拉諾斯的Ingrid Dunwald，或鐵爐堡的Eldrun Stormbreaker。",
+    ["From level 10: the Call of Fire, your first fire totem."] =
+        "10級起：「火焰的召喚」，你的第一個火焰圖騰。",
+    ["Bruegs Kindleborn, in the far east of Dun Morogh, by the road to Loch Modan."] =
+        "Bruegs Kindleborn，在丹莫洛最東邊，通往洛克莫丹的路旁。",
+    ["Braldir Ashmantle, on a hill in the southwest of Loch Modan."] =
+        "Braldir Ashmantle，在洛克莫丹西南部的一座山丘上。",
+    ["The Tunnel Rat geomancers of Loch Modan carry the Fire Tar; the Stonesplinter seers of the south carry the pouches."] =
+        "洛克莫丹的坑道鼠地卜師身上帶著火焰焦油；南部的碎石怪先知身上帶著袋子。",
+    ["Right by Braldir: call the Minor Manifestation of Fire at the brazier, then defeat it for its ember."] =
+        "就在Braldir旁邊：在火盆召喚小型火焰之靈體，擊敗它取得餘燼。",
+    ["Light the Brazier of the Dormant Flame with the ember."] =
+        "用餘燼點燃眠炎火盆。",
+    ["Bruegs Kindleborn, in the far east of Dun Morogh."] =
+        "Bruegs Kindleborn，在丹莫洛最東邊。",
+    ["Turning this in teaches your first fire totem."] =
+        "交付此任務即可學會你的第一個火焰圖騰。",
+    ["Eldrun Stormbreaker, the shaman trainer of Ironforge."] =
+        "Eldrun Stormbreaker，鐵爐堡的薩滿訓練師。",
+    ["From level 20: the Call of Water, your first water totem."] =
+        "20級起：「水之召喚」，你的第一個水之圖騰。",
+    ["Norric Lochthane, by the dam in the north of Loch Modan."] =
+        "Norric Lochthane，在洛克莫丹北部的水壩旁。",
+    ["Hervdana Saegrund, in the southeast of the Wetlands."] =
+        "Hervdana Saegrund，在濕地東南部。",
+    ["Fill the waterskin where Hervdana's quest says: DingDB does not hold this place yet."] =
+        "依照Hervdana任務所說的地點裝滿水囊：DingDB尚未收錄這個地點。",
+    ["At the Forgotten Shrine of Westfall: call the corrupt manifestation of water, then defeat it for its bracers."] =
+        "在西部荒野的遺忘神殿：召喚墮落的水之靈體，擊敗它取得護腕。",
+    ["The Minor Manifestation of Water rises beside the shrine."] =
+        "小型水之靈體會在神殿旁出現。",
+    ["Turning this in teaches your first water totem."] =
+        "交付此任務即可學會你的第一個水之圖騰。",
+    ["From level 30: the Call of Air, your first air totem."] =
+        "30級起：「空氣的召喚」，你的第一個空氣圖騰。",
+    ["Veyric Thunderhame, in the north of Arathi Highlands."] =
+        "Veyric Thunderhame，在阿拉希高地北部。",
+    ["Turning this in teaches your first air totem."] =
+        "交付此任務即可學會你的第一個空氣圖騰。",
+    ["From level 30: Veyric Thunderhame's elemental quests, to level 40."] =
+        "30級起：Veyric Thunderhame的元素任務，直到40級。",
+    ["Four twisted totems: from the Stonevault troggs of the Badlands, the Maraudine centaurs of Desolace, the Lost Ones of the Swamp of Sorrows and the Mirefin murlocs of Dustwallow Marsh."] =
+        "四個扭曲的圖騰：分別來自荒蕪之地的石窟穴居人、淒涼之地的瑪洛迪半人馬、悲傷沼澤的失落者，以及塵泥沼澤的沼鰭魚人。",
+    ["Charlga Razorflank, the crone of Razorfen Kraul, carries the note."] =
+        "卡爾加·刺肋，剃刀沼澤的老巫婆，身上帶著便箋。",
+    ["The Ravaging Tempests of western Thousand Needles carry the eye."] =
+        "千針石林西部的Ravaging Tempest身上帶著眼睛。",
+    ["Bath'rah the Windwatcher, in the hills of the Alterac Mountains."] =
+        "『觀風者』巴斯拉，在奧特蘭克山脈的山丘上。",
+    ["Warlock quests"] =
+        "術士任務",
+    ["Drusilla La Salle, the warlock trainer of Northshire Abbey."] =
+        "杜希拉·拉薩雷，北郡修道院的術士訓練師。",
+    ["Your trainer's first errand, around Northshire Abbey."] =
+        "訓練師交給你的第一件差事，在北郡修道院周圍。",
+    ["The stolen books lie in the kobold camp east of the abbey."] =
+        "被偷的書在修道院東邊的狗頭人營地。",
+    ["Alamar Grimm, the warlock trainer of Coldridge Valley."] =
+        "阿拉瑪爾·格里姆，寒脊山谷的術士訓練師。",
+    ["Your trainer's first errand, around Coldridge Valley."] =
+        "訓練師交給你的第一件差事，在寒脊山谷周圍。",
+    ["The Frostmane novices of the troll cave in the south of the valley carry the charm."] =
+        "山谷南部食人妖洞穴裡的霜鬃食人妖新兵身上帶著護符。",
+    ["Remen Marcot, in the inn of Goldshire, sends you to Stormwind."] =
+        "雷門·瑪考特，在閃金鎮的旅店，會派你前往暴風城。",
+    ["Lago Blackwrench, in the Forlorn Cavern of Ironforge, sends you to Stormwind."] =
+        "拉戈·黑鉗，在鐵爐堡的荒棄的洞穴，會派你前往暴風城。",
+    ["Gakin the Darkbinder, in the cellar of the Slaughtered Lamb, in the Mage Quarter of Stormwind."] =
+        "『黑暗縛靈師』加金，在暴風城法師區已宰的羔羊的地下室。",
+    ["From level 10: the chain that teaches Summon Voidwalker."] =
+        "10級起：學會召喚虛無行者的系列任務。",
+    ["Surena Caledon hides in a house of the Brackwell Pumpkin Patch, in the east of Elwynn Forest."] =
+        "蘇倫娜·凱爾東躲在艾爾文森林東部布拉克威爾南瓜田的一棟房子裡。",
+    ["Down the stairs of the Slaughtered Lamb's crypt: use the choker on the summoning circle, then defeat the voidwalker."] =
+        "沿著已宰的羔羊地穴的樓梯往下走：在召喚法陣上使用項圈，然後擊敗虛無行者。",
+    ["Turning this in teaches Summon Voidwalker."] =
+        "交付此任務即可學會召喚虛無行者。",
+    ["Gakin the Darkbinder, in the cellar of the Slaughtered Lamb."] =
+        "『黑暗縛靈師』加金，在已宰的羔羊的地下室。",
+    ["From level 20: the chain that teaches Summon Succubus."] =
+        "20級起：學會召喚魅魔的系列任務。",
+    ["Takar the Seer, north of Camp Taurajo in the Barrens: Horde land, stay clear of the guards."] =
+        "『先知』塔卡爾，在貧瘠之地的陶拉祖營地北邊：部落領地，遠離守衛。",
+    ["The Heartswood grows in the north of Ashenvale, near the Horde's lumber camp."] =
+        "同心樹長在梣谷北部，靠近部落的伐木場。",
+    ["In the Slaughtered Lamb's crypt again: use the heartswood core on the summoning circle, then defeat the succubus."] =
+        "再次來到已宰的羔羊的地穴：在召喚法陣上使用同心樹之核，然後擊敗魅魔。",
+    ["Turning this in teaches Summon Succubus."] =
+        "交付此任務即可學會召喚魅魔。",
+    ["From level 30: the chain that teaches Summon Felhunter."] =
+        "30級起：學會召喚惡魔獵犬的系列任務。",
+    ["Strahad Farsan, in Ratchet."] =
+        "斯坦哈德·法爾杉，在棘齒城。",
+    ["Krom Stoutarm, in the Hall of Explorers of Ironforge."] =
+        "克羅姆·粗臂，在鐵爐堡的探險者大廳。",
+    ["The moldy tome lies in the southwest of Hillsbrad Foothills; the tattered manuscript, in a damaged chest of western Thousand Needles."] =
+        "發黴的書籍在希爾斯布萊德丘陵西南部；破損的手稿則在千針石林西部的一個破損的箱子裡。",
+    ["The Dragonmaw orcs of the Wetlands carry the rod."] =
+        "濕地的龍喉獸人身上帶著魔棒。",
+    ["Right by Strahad: use the tome on the summoning circle, then defeat the felhunter."] =
+        "就在斯坦哈德旁邊：在召喚法陣上使用書籍，然後擊敗惡魔獵犬。",
+    ["Turning this in teaches Summon Felhunter."] =
+        "交付此任務即可學會召喚惡魔獵犬。",
+    ["Demisette Cloyce, in the Slaughtered Lamb of Stormwind."] =
+        "德米賽特·克勞斯，在暴風城的已宰的羔羊。",
+    ["From level 40: the quest of your felsteed."] =
+        "40級起：你的地獄戰馬任務。",
+    ["Turning this in teaches Summon Felsteed."] =
+        "交付此任務即可學會召喚地獄戰馬。",
+    ["Niby the Almighty and Impsy wait in a small camp of central Felwood."] =
+        "萬能的尼比和伊普斯在費伍德森林中部的一個小營地等候。",
+    ["From level 50: the demonic quests of Niby and Impsy, in Felwood."] =
+        "50級起：尼比和伊普斯在費伍德森林的惡魔任務。",
+    ["Felcloth drops from demons and satyrs, Azshara's above all; the auction house sells it too."] =
+        "惡魔布由惡魔和薩特掉落，尤其是艾薩拉的；拍賣場也有賣。",
+    ["The Irontree treants of northern Felwood carry the rotting wood; the oozes of the Bloodvenom river, the essence."] =
+        "費伍德森林北部的鐵木樹人身上帶著腐爛的木頭；血毒河的軟泥怪則帶著精華。",
+    ["Three essences: from the satyrs of Jaedenar in Felwood, the Legashi satyrs of Azshara, and the felguards by the Dark Portal in the Blasted Lands."] =
+        "三種精華：分別來自費伍德森林加德納爾的薩特、艾薩拉的雷加斯薩特，以及詛咒之地黑暗之門旁的惡魔守衛。",
+    ["North of the camp, by the remains of Kroshius: use the item Impsy gives you to wake him, then defeat him."] =
+        "營地北邊，克羅蘇斯的遺骸旁：使用伊普斯給你的物品喚醒他，然後擊敗他。",
+    ["Spackle Thornberry, the demon trainer of the Slaughtered Lamb."] =
+        "斯巴克爾，已宰的羔羊的惡魔訓練師。",
+    ["From level 60: the long chain of your dreadsteed. It asks for costly materials and goes through Scholomance and Dire Maul."] =
+        "60級起：你的恐懼戰馬的漫長系列任務。需要昂貴的材料，並途經通靈學院和厄運之槌。",
+    ["Mor'zul Bloodbringer, in the west of the Burning Steppes."] =
+        "莫蘇爾·召血者，在燃燒平原西部。",
+    ["The owlbeasts of Winterspring carry the blood."] =
+        "冬泉谷的梟獸身上帶著血液。",
+    ["Gorzeeki Wildeyes, right by Mor'zul."] =
+        "戈瑟奇·邪眼，就在莫蘇爾旁邊。",
+    ["Mor'zul gives these three."] =
+        "這三個任務由莫蘇爾給予。",
+    ["These three ask for an alchemist's elixir, an enchanter's shard with ore of the Burning Steppes, and scales of black dragonkin: make them, find them, or buy them at the auction house."] =
+        "這三個任務需要一瓶鍊金師的藥劑、一塊附魔師的碎片加上燃燒平原的礦石，以及黑龍的鱗片：自己製作、自己尋找，或在拍賣場購買。",
+    ["An Arcanite Bar: an alchemist makes it, or the auction house sells it."] =
+        "一塊奧金錠：由鍊金師製作，或在拍賣場購買。",
+    ["Lord Banehollow, in the shrine of Jaedenar, in Felwood."] =
+        "貝恩霍勒領主，在費伍德森林加德納爾的神殿裡。",
+    ["Ulathek hides in Jaedenar too: defeat him for his heart."] =
+        "烏拉泰克也躲在加德納爾：擊敗他取得他的心臟。",
+    ["Ur'dan sells the stardust, right by Lord Banehollow."] =
+        "烏爾丹出售星塵，就在貝恩霍勒領主旁邊。",
+    ["In the alchemy lab of Scholomance, use the imp in a jar and let it do its work."] =
+        "在通靈學院的鍊金實驗室使用瓶中的小鬼，讓牠完成工作。",
+    ["In Dire Maul, summon the Xorothian Dreadsteed with the ritual items and defeat it; then speak to its spirit."] =
+        "在厄運之槌中，用儀式物品召喚克索諾斯恐懼戰馬並擊敗它；然後和它的靈魂交談。",
+    ["Your reward: Summon Dreadsteed, your epic mount."] =
+        "獎勵：召喚恐懼戰馬，你的史詩坐騎。",
+    ["Warrior quests"] =
+        "戰士任務",
+    ["Lyria Du Lac, the warrior trainer of Goldshire."] =
+        "里瑞亞·杜拉克，閃金鎮的戰士訓練師。",
+    ["From level 10: the chain that teaches Defensive Stance."] =
+        "10級起：學會防禦姿態的系列任務。",
+    ["Harry Burlguard, in the tavern of Old Town, in Stormwind."] =
+        "哈里·伯加德，在暴風城舊城區的酒館。",
+    ["Bartleby, a drunk in the same tavern: he attacks as soon as you take his quest."] =
+        "巴托比，同一間酒館裡的醉漢：你一接下他的任務，他就會攻擊你。",
+    ["Turning this in teaches Defensive Stance."] =
+        "交付此任務即可學會防禦姿態。",
+    ["Granis Swiftaxe, the warrior trainer of Kharanos."] =
+        "格蘭尼斯·快斧，卡拉諾斯的戰士訓練師。",
+    ["Muren Stormpike, upstairs in the Hall of Arms of Ironforge."] =
+        "穆倫·雷矛，在鐵爐堡武器大廳的樓上。",
+    ["Vejrek waits in a Frostmane hut in the west of Dun Morogh."] =
+        "維吉雷克在丹莫洛西部的一間霜鬃食人妖小屋裡。",
+    ["Kyra Windblade, the warrior trainer of Dolanaar."] =
+        "凱拉·風刃，多蘭納爾的戰士訓練師。",
+    ["Elanaria, on the Warrior's Terrace of Darnassus."] =
+        "艾蘭娜瑞，在達納蘇斯的戰士區。",
+    ["Vorlus Vilehoof roams with the satyrs southwest of Dolanaar."] =
+        "沃魯斯·邪蹄和薩特一起在多蘭納爾西南方遊蕩。",
+    ["Seena Skybreaker, the warrior trainer of Zephras Isle."] =
+        "Seena Skybreaker，Zephras Isle的戰士訓練師。",
+    ["From level 10: the Skyborne warrior quest of Zephras Isle."] =
+        "10級起：Zephras Isle的Skyborne戰士任務。",
+    ["Zaal Stormshield carries the bulwark, in the north of the isle."] =
+        "Zaal Stormshield身上帶著壁壘，位於島嶼北部。",
+    ["Your capital's warrior trainer gives it."] =
+        "你主城的戰士訓練師會給這個任務。",
+    ["From level 30: the chain that teaches Berserker Stance."] =
+        "30級起：學會狂暴姿態的系列任務。",
+    ["Klannoc Macleod, on Fray Island, off the coast of the Barrens."] =
+        "克蘭諾克·馬克雷德，在貧瘠之地外海的勇士島。",
+    ["Step on the grate of the arena: six fighters come one at a time, then Big Will."] =
+        "踏上競技場的格柵：六名鬥士會一次一個上場，接著是比格維爾。",
+    ["Turning this in teaches Berserker Stance."] =
+        "交付此任務即可學會狂暴姿態。",
+    ["From level 30: Bath'rah's chain, which ends with a Whirlwind weapon of your choice."] =
+        "30級起：巴斯拉的系列任務，最後可自選一把旋風武器。",
+    ["Eight Liferoot: an herb, picked with Herbalism or bought at the auction house."] =
+        "八株活根草：一種草藥，可用草藥學採集，或在拍賣場購買。",
+    ["The Drywhisker kobolds of eastern Arathi Highlands carry the three charms."] =
+        "阿拉希高地東部的枯鬚狗頭人身上帶著三個符咒。",
+    ["At Bath'rah's cauldron, right by him: put the three charms in it."] =
+        "在巴斯拉身旁的大鍋：把三個符咒放進去。",
+    ["The Bloodscalp trolls of northern Stranglethorn carry the tusks."] =
+        "荊棘谷北部的血頂食人妖身上帶著獠牙。",
+    ["Follow Bath'rah to the summoning, then defeat Cyclonian for its heart: a strong foe, bring help."] =
+        "跟著巴斯拉前往召喚地點，然後擊敗塞克隆尼亞取得它的心臟：這是個強敵，請找幫手。",
+    ["Your reward: a Whirlwind weapon of your choice."] =
+        "獎勵：自選一把旋風武器。",
+    ["From level 50: the Fallen Hero's chain, which ends in the Temple of Atal'Hakkar."] =
+        "50級起：英雄之魂的系列任務，最後在阿塔哈卡神廟結束。",
+    ["The Fallen Hero of the Horde, a spirit in the west of the Swamp of Sorrows."] =
+        "部落英雄的靈魂，一個位於悲傷沼澤西部的亡魂。",
+    ["The Helboars of the Blasted Lands."] =
+        "詛咒之地的地獄野豬。",
+    ["The Shadowsworn of the Blasted Lands, by the Dark Portal; they come back quickly."] =
+        "詛咒之地黑暗之門旁的影誓；他們很快就會重生。",
+    ["Gennia Runetotem, the druid trainer of Bloodhoof Village, sends you to Thunder Bluff."] =
+        "根妮亞·符文圖騰，血蹄村的德魯伊訓練師，會派你前往雷霆崖。",
+    ["Turak Runetotem, in the Elder Rise of Thunder Bluff."] =
+        "圖拉克·符文圖騰，在雷霆崖的長者高地。",
+    ["Faustron, the wind rider master southwest of Nighthaven: take this flight path for your next trips here."] =
+        "法斯托恩，永夜港西南方的雙足飛龍管理員：取得這條飛行路線，方便之後再來這裡。",
+    ["Lunaclaw's spot, west of Camp Taurajo in the Barrens"] =
+        "月爪梟獸的所在地，位於貧瘠之地陶拉祖營地以西",
+    ["Use the Cenarion Lunardust by the moonkin stone: Lunaclaw appears. Defeat her, then speak to her spirit."] =
+        "在月夜梟獸之石旁使用塞納里奧銀塵：月爪梟獸就會出現。擊敗她，然後和她的靈魂交談。",
+    ["Muln Earthfury gives it, in the northwest of Mulgore."] =
+        "莫高雷西北部的Muln Earthfury會給這個任務。",
+    ["Fill the sampler in the bubbling pool at the top of Dreadmist Peak: three acolytes attack right after, so clear the top first or bring help."] =
+        "在鬼霧峰頂的冒泡池子裡裝滿取樣器：之後會立刻有三名侍僧攻擊你，所以先清理山頂，或找人幫忙。",
+    ["Tonga Runetotem, just south of the Crossroads."] =
+        "圖加·符文圖騰，就在十字路口南邊。",
+    ["The kodos of the northern Barrens carry the Kodo Horns."] =
+        "貧瘠之地北部的科多獸身上帶著科多獸角。",
+    ["Sickly Gazelles graze in the north of the Barrens: use the salve on them."] =
+        "生病的瞪羚在貧瘠之地北部吃草：對牠們使用藥膏。",
+    ["The first half of the pendant lies under the water in the far north of the Barrens."] =
+        "墜飾的前半塊在貧瘠之地最北端的水下。",
+    ["The second half lies under the water off the coast of Silverpine Forest."] =
+        "後半塊在銀松森林海岸外的水下。",
+    ["Turak Runetotem gives it, in the Elder Rise of Thunder Bluff."] =
+        "雷霆崖長者高地的圖拉克·符文圖騰會給這個任務。",
+    ["Thotar, the hunter trainer of Razor Hill."] =
+        "索塔爾，剃刀嶺的獵人訓練師。",
+    ["Use the taming rod on a Dire Mottled Boar, south of Razor Hill. Once it is tamed, dismiss it: it turns on you again, so be ready."] =
+        "對剃刀嶺南邊的一隻可怕的雜斑野豬使用馴獸棒。馴服後解散牠：牠會再次攻擊你，做好準備。",
+    ["Use the rod on a Surf Crawler, on the southern shore of Durotar, then dismiss it the same way."] =
+        "對杜洛塔南岸的一隻海浪蟹使用馴獸棒，再用同樣的方式解散牠。",
+    ["Use the rod on an Armored Scorpid, northwest of Razor Hill."] =
+        "對剃刀嶺西北方的一隻硬甲蠍使用馴獸棒。",
+    ["Ormak Grimshot, the hunter trainer of Orgrimmar, in the Valley of Honor."] =
+        "奧瑪克，奧格瑪的獵人訓練師，在榮譽谷。",
+    ["Yaw Sharpmane, the hunter trainer of Bloodhoof Village."] =
+        "雅文·刺鬃，血蹄村的獵人訓練師。",
+    ["Use the taming rod on an Adult Plainstrider, north of the village. Once it is tamed, dismiss it: it turns on you again, so be ready."] =
+        "對村莊北邊的一隻成年平原陸行鳥使用馴獸棒。馴服後解散牠：牠會再次攻擊你，做好準備。",
+    ["Use the rod on a Prairie Stalker, southeast of the village, then dismiss it the same way."] =
+        "對村莊東南方的一隻草原捕食者使用馴獸棒，再用同樣的方式解散牠。",
+    ["Use the rod on a Swoop, in the plains north of the village."] =
+        "對村莊北邊平原上的一隻猛鷲使用馴獸棒。",
+    ["Holt Thunderhorn, the hunter trainer of Thunder Bluff, on the Hunter Rise."] =
+        "浩特·雷角，雷霆崖的獵人訓練師，在獵人高地。",
+    ["Uthel'nay, the mage trainer of Orgrimmar, in the Valley of Spirits."] =
+        "尤塞爾奈，奧格瑪的法師訓練師，在精神谷。",
+    ["From level 10: your trainer's first errand, in Durotar."] =
+        "10級起：訓練師交給你的第一件差事，在杜洛塔。",
+    ["Un'Thuwa, the mage trainer of Sen'jin Village."] =
+        "安蘇瓦，森金村的法師訓練師。",
+    ["The Ju-Ju Heaps stand on the Echo Isles, off the southern coast."] =
+        "魂能骨堆位於南岸外海的回音群島上。",
+    ["Cain Firesong, the mage trainer of Brill."] =
+        "凱恩·火歌，布瑞爾的法師訓練師。",
+    ["From level 10: your trainer's first errand, in Tirisfal Glades."] =
+        "10級起：訓練師交給你的第一件差事，在提里斯法林地。",
+    ["Anastasia Hartwell, the mage trainer of the Undercity, in the Magic Quarter."] =
+        "安娜斯塔西婭·哈特威爾，幽暗城的法師訓練師，在魔法區。",
+    ["The snapdragons grow by the farm of the Balnirs, in the east of Tirisfal Glades."] =
+        "金魚草長在提里斯法林地東部的巴尼爾農場旁。",
+    ["From level 15: a chain in the Undercity that ends with a robe for you."] =
+        "15級起：幽暗城的系列任務，最後會獲得一件長袍。",
+    ["The chest of coffers and the cantation lie beside Anastasia."] =
+        "一盒封靈箱和顯形卷軸就在安娜斯塔西婭旁邊。",
+    ["The alchemist shop of the Undercity"] =
+        "幽暗城的鍊金術商店",
+    ["Read the cantation to reveal a Rift Spawn, fight it until it is stunned, then use a coffer on it."] =
+        "閱讀顯形卷軸讓裂隙怒靈現形，與牠戰鬥直到牠昏迷，再對牠使用封靈箱。",
+    ["The Dalaran mages of Ambermill, in Silverpine Forest, carry the mana gems; the linen comes from humanoids anywhere."] =
+        "銀松森林安伯米爾的達拉然法師身上帶著法力寶石；亞麻布可從任何地方的人型生物身上取得。",
+    ["Josef Gregorian, the tailor of the Undercity's Rogues' Quarter."] =
+        "喬瑟夫·格里高利，幽暗城盜賊區的裁縫。",
+    ["Your reward: the Spellfire Robes."] =
+        "獎勵：魔焰長袍。",
+    ["Deino, the mage trainer of Orgrimmar, in the Valley of Spirits."] =
+        "迪諾，奧格瑪的法師訓練師，在精神谷。",
+    ["Fill the flask at the waterfall of Xavian, in eastern Ashenvale: take the path up from the south."] =
+        "在梣谷東部的薩維亞瀑布裝滿瓶子：從南邊的小路上去。",
+    ["The Laughing Sisters, nymphs of the woods of central Ashenvale, carry the hair."] =
+        "歡笑之女是梣谷中部樹林的仙女，身上帶著頭髮。",
+    ["Kil'hala, the tailor of the Crossroads."] =
+        "基爾哈拉，十字路口的裁縫。",
+    ["Your reward: the Nether-lace Garment."] =
+        "獎勵：虛靈長袍。",
+    ["Shadow Priest Sarvis, at the start of Deathknell."] =
+        "暗影牧師薩維斯，在喪鐘鎮的起點。",
+    ["The Forsaken paladin's story, a chain added by Forever, starts in Deathknell."] =
+        "被遺忘者聖騎士的故事是Forever新增的系列任務，從喪鐘鎮開始。",
+    ["Aramis Hammerhand, the paladin trainer of Deathknell."] =
+        "Aramis Hammerhand，喪鐘鎮的聖騎士訓練師。",
+    ["Shari Stilwell, the paladin trainer of Brill."] =
+        "Shari Stilwell，布瑞爾的聖騎士訓練師。",
+    ["Breton Samuels, at the outpost in the west of Tirisfal Glades."] =
+        "Breton Samuels，在提里斯法林地西部的前哨站。",
+    ["Jorin Croge, a few steps away."] =
+        "Jorin Croge，就在幾步之外。",
+    ["The Vile Fin murlocs of the western coast."] =
+        "西岸的邪鰭魚人。",
+    ["The lumber piles lie on the western coast, south of the murlocs."] =
+        "木柴堆在西岸，魚人的南邊。",
+    ["Danitha Morr, at the outpost."] =
+        "Danitha Morr，在前哨站。",
+    ["The Tarnished gather on the western coast; Rudolph Gelhardt, their paladin, carries the head the quest asks for."] =
+        "Tarnished聚集在西岸；他們的聖騎士Rudolph Gelhardt身上帶著任務要求的頭顱。",
+    ["Lady Sylvanas Windrunner, in the Royal Quarter of the Undercity."] =
+        "希瓦娜斯·風行者，在幽暗城的皇家區。",
+    ["Danitha Morr, at the outpost in the west of Tirisfal Glades."] =
+        "Danitha Morr，在提里斯法林地西部的前哨站。",
+    ["From level 12: the lessons in divinity, the next chapter of the Forsaken paladin's story."] =
+        "12級起：神性課程，被遺忘者聖騎士故事的下一章。",
+    ["Tanis Alderwood, in the Undercity."] =
+        "Tanis Alderwood，在幽暗城。",
+    ["Tanis needs Linen Cloth: humanoids carry it everywhere."] =
+        "Tanis需要亞麻布：各地的人型生物身上都有。",
+    ["Deathguard Billmuth, at the outpost."] =
+        "Deathguard Billmuth，在前哨站。",
+    ["Deathguard Falgan, in the east of Tirisfal Glades, near the Scarlet watch post."] =
+        "Deathguard Falgan，在提里斯法林地東部，靠近血色十字軍崗哨。",
+    ["The Scarlet zealots and friars of the watch post carry the attack plans."] =
+        "崗哨的血色狂熱者和血色苦行修士身上帶著進攻計畫。",
+    ["From level 18: the story goes on in Silverpine Forest, around a moonsilver blade."] =
+        "18級起：故事在銀松森林繼續，圍繞著一把月銀之刃。",
+    ["Trevan Rol, at the Sepulcher."] =
+        "Trevan Rol，在瑟伯切爾。",
+    ["Deathguard Baldren, at the Sepulcher."] =
+        "Deathguard Baldren，在瑟伯切爾。",
+    ["The charred remains lie in the east of Silverpine Forest, facing Fenris Isle."] =
+        "燒焦的遺骸在銀松森林東部，面向芬里斯島。",
+    ["Lumina Windsinger, held in Fenris Keep."] =
+        "Lumina Windsinger，被關在芬里斯城堡。",
+    ["The Rot Hide gnolls of Fenris Isle carry the key."] =
+        "芬里斯島的腐皮豺狼人身上帶著鑰匙。",
+    ["Lumina Windsinger waits again at the Sepulcher."] =
+        "Lumina Windsinger再次在瑟伯切爾等候。",
+    ["Old Fire-Eye prowls the south of Silverpine Forest."] =
+        "Old Fire-Eye在銀松森林南部徘徊。",
+    ["Ott, the weaponsmith of Tarren Mill."] =
+        "奧特，塔倫米爾的武器鑄造師。",
+    ["Ulric Frostveil, at Zoram'gar Outpost on the coast of Ashenvale."] =
+        "Ulric Frostveil，在梣谷海岸的Zoram'gar Outpost。",
+    ["From level 20: Ulric Frostveil's quest of the Kor Gem, in Ashenvale."] =
+        "20級起：Ulric Frostveil在梣谷的科爾寶石任務。",
+    ["The naga of the Blackfathom Deeps entrance, under the water of Zoram Strand, carry the corrupted gem. They are elite: bring a group."] =
+        "黑暗深淵入口的納迦，位於佐拉姆海岸的水下，身上帶著被污染的寶石。牠們是精英：請組隊前往。",
+    ["Ken'jai, the priest trainer of the Valley of Trials."] =
+        "肯傑，試煉谷的牧師訓練師。",
+    ["From level 5: heal a wounded grunt, and get your first robe."] =
+        "5級起：治療一名受傷的蠻兵，並獲得你的第一件長袍。",
+    ["Tai'jin, the priest trainer of Razor Hill."] =
+        "泰金，剃刀嶺的牧師訓練師。",
+    ["Grunt Kor'ja lies wounded south of Razor Hill: heal her with Lesser Heal, then give her Power Word: Fortitude."] =
+        "蠻兵科雅受傷躺在剃刀嶺南邊：用次級治療術治療她，再對她施放真言術：韌。",
+    ["Dark Cleric Duesten, the priest trainer of Deathknell."] =
+        "黑暗教士杜斯滕，喪鐘鎮的牧師訓練師。",
+    ["From level 5: heal a wounded deathguard, and get your first robe."] =
+        "5級起：治療一名受傷的亡靈衛兵，並獲得你的第一件長袍。",
+    ["Dark Cleric Beryl, the priest trainer of Brill."] =
+        "黑暗教士貝里爾，布瑞爾的牧師訓練師。",
+    ["Deathguard Kel lies wounded north of Brill: heal him with Lesser Heal, then give him Power Word: Fortitude."] =
+        "亡靈衛兵科爾受傷躺在布瑞爾北邊：用次級治療術治療他，再對他施放真言術：韌。",
+    ["From level 10: the quest that teaches Hex of Weakness."] =
+        "10級起：學會虛弱妖術的任務。",
+    ["Ur'kyo, the priest trainer of Orgrimmar, in the Valley of Spirits."] =
+        "烏爾庫，奧格瑪的牧師訓練師，在精神谷。",
+    ["Aelthalyste, the priest trainer of the Undercity, in the War Quarter."] =
+        "艾薩萊斯特，幽暗城的牧師訓練師，在軍事區。",
+    ["From level 10: the quest that teaches Touch of Weakness."] =
+        "10級起：學會虛弱之觸的任務。",
+    ["From level 20: the quest that teaches Shadowguard."] =
+        "20級起：學會暗影守衛的任務。",
+    ["From level 20: the quest that teaches Devouring Plague."] =
+        "20級起：學會噬靈瘟疫的任務。",
+    ["Learn Pick Lock at your trainer, then practice on lockboxes until your skill reaches 75: Gallywix's lockbox, at 20, needs it."] =
+        "向訓練師學習開鎖，再拿帶鎖箱練習，直到技能達到75：20級時要開的加里維克斯的帶鎖箱需要它。",
+    ["Shenthul, in a tent of the Cleft of Shadow, in Orgrimmar."] =
+        "申蘇爾，在奧格瑪暗影裂口的一頂帳篷裡。",
+    ["Shenthul greets you with a hand sign: answer it with the salute emote."] =
+        "申蘇爾會用手勢向你打招呼：用敬禮表情回應他。",
+    ["By the Venture Co. tower in the far north of the Barrens: target Taskmaster Fizzule, fire the flare gun twice, then salute him."] =
+        "在貧瘠之地最北端的風險投資公司塔樓旁：選中監工費蘇勒，發射兩次信號槍，然後向他敬禮。",
+    ["In the tower: pick Silixiz's key from his pocket, kill the guards floor by floor, Gallywix at the top, then open his lockbox."] =
+        "在塔樓裡：從希里克斯的口袋偷取他的鑰匙，逐層擊殺守衛，頂層是加里維克斯，然後打開他的帶鎖箱。",
+    ["The lockbox leaves a sickness on you: Shenthul sends you to be cured."] =
+        "帶鎖箱會讓你染上疾病：申蘇爾會派你去治療。",
+    ["Serge Hinott, the alchemist of Tarren Mill."] =
+        "瑟爾格·希諾特，塔倫米爾的鍊金術師。",
+    ["Stay by Serge while he prepares the cure."] =
+        "在瑟爾格調製解藥時待在他身邊。",
+    ["Canaga Earthcaller, in the Valley of Trials."] =
+        "坎納甘·地鳴，在試煉谷。",
+    ["The Felstalkers of the valley carry the hooves."] =
+        "山谷裡的惡魔捕獵者身上帶著蹄子。",
+    ["Up the hill path south of the valley: drink the Earth Sapta to see the Minor Manifestation of Earth."] =
+        "沿山谷南邊的山路往上走：喝下大地靈契，就能看見小型大地之靈體。",
+    ["Seer Ravenfeather, in Camp Narache."] =
+        "先知鴉羽，在納拉其營地。",
+    ["The Bristleback shamans east of the camp carry the salve."] =
+        "營地東邊的刺背薩滿身上帶著藥膏。",
+    ["On the hill south of the camp: drink the Earth Sapta to see the Minor Manifestation of Earth."] =
+        "在營地南邊的山丘上：喝下大地靈契，就能看見小型大地之靈體。",
+    ["Windshaper Boro, on Zephras Isle."] =
+        "Windshaper Boro，在Zephras Isle。",
+    ["Drink the Earth Sapta to see the Minor Manifestation of Earth, east of Boro."] =
+        "喝下大地靈契，就能看見Boro東邊的小型大地之靈體。",
+    ["Swart, the shaman trainer of Razor Hill."] =
+        "斯瓦特，剃刀嶺的薩滿訓練師。",
+    ["Narm Skychaser, the shaman trainer of Bloodhoof Village."] =
+        "納姆·逐星，血蹄村的薩滿訓練師。",
+    ["Kranal Fiss, at the Far Watch Post on the border of the Barrens."] =
+        "卡納爾·菲斯，在貧瘠之地邊界的前沿哨所。",
+    ["Telf Joolam, on top of a mountain in the west of Durotar."] =
+        "泰爾夫·祖拉姆，在杜洛塔西部的一座山頂上。",
+    ["The Razormane of the northern Barrens carry the Fire Tar; the Burning Blade cultists of the cave north of Razor Hill carry the pouches."] =
+        "貧瘠之地北部的鋼鬃野豬人身上帶著火焰焦油；剃刀嶺北邊洞穴裡的火刃祭司身上帶著袋子。",
+    ["Right by Telf: drink the Fire Sapta, then defeat the Minor Manifestation of Fire for its ember."] =
+        "就在泰爾夫旁邊：喝下火焰靈契，然後擊敗小型火焰之靈體取得餘燼。",
+    ["Sessaria Skystride, on Zephras Isle."] =
+        "Sessaria Skystride，在Zephras Isle。",
+    ["Olariaan Swiftburn, in the south of the isle."] =
+        "Olariaan Swiftburn，在島嶼南部。",
+    ["Skypriest Faladiel carries the heart."] =
+        "Skypriest Faladiel身上帶著心臟。",
+    ["Kuramaa, the spirit of mischief, carries the mask."] =
+        "惡作劇之靈Kuramaa身上帶著面具。",
+    ["Light the Brazier of Offering by Olariaan, then the Brazier of Eternal Flame by Sessaria."] =
+        "點燃Olariaan旁邊的Brazier of Offering，再點燃Sessaria旁邊的Brazier of Eternal Flame。",
+    ["Searn Firewarder, in the Valley of Wisdom of Orgrimmar."] =
+        "希爾恩·火衛，在奧格瑪的智慧谷。",
+    ["Xanis Flameweaver, on the Elder Rise of Thunder Bluff."] =
+        "薩尼斯·織火，在雷霆崖的長者高地。",
+    ["Islen Waterseer, by the coast east of the Barrens."] =
+        "水之先知伊斯倫，在貧瘠之地東邊的海岸旁。",
+    ["Brine, in the south of the Barrens."] =
+        "布瑞恩，在貧瘠之地南部。",
+    ["Fill the waterskin at the quilboar watering hole, right by Brine."] =
+        "在布瑞恩旁邊的野豬人水坑裝滿水囊。",
+    ["Fill it at the Spring Well of Tarren Mill, in Hillsbrad Foothills."] =
+        "在希爾斯布萊德丘陵塔倫米爾的靈魂之井裝滿它。",
+    ["Fill it at the ruins of the Stardust Fountain, in the south of Ashenvale."] =
+        "在梣谷南部的星塵噴泉廢墟裝滿它。",
+    ["By the Brazier of Everfount, in the lake of Silverpine Forest: use the brazier's water, then defeat the corrupt manifestation for its bracers."] =
+        "在銀松森林湖中的永泉火盆旁：使用火盆的水，然後擊敗墮落的靈體取得護腕。",
+    ["The Minor Manifestation of Water rises beside the brazier."] =
+        "小型水之靈體會在火盆旁出現。",
+    ["Prate Cloudseer, on a mesa in the middle of Thousand Needles."] =
+        "普拉特·雲眼，在千針石林中央的一座石台上。",
+    ["Rau Cliffrunner, at Freewind Post."] =
+        "勞恩·峭壁行者，在亂風崗。",
+    ["From level 33: Forever's elemental quests of Rau Cliffrunner, in Thousand Needles."] =
+        "33級起：Forever在千針石林的勞恩·峭壁行者元素任務。",
+    ["Beram Skychaser in Thunder Bluff, or Sagorne Creststrider in Orgrimmar."] =
+        "雷霆崖的博拉姆·逐星，或奧格瑪的薩格尼。",
+    ["From level 50: Bath'rah the Windwatcher's chain, which ends in the Temple of Atal'Hakkar."] =
+        "50級起：『觀風者』巴斯拉的系列任務，最後在阿塔哈卡神廟結束。",
+    ["One Elemental Earth, Fire, Water and Air: elementals drop them, or the auction house sells them."] =
+        "元素之土、元素火焰、元素之水和元素空氣各一個：由元素生物掉落，或在拍賣場購買。",
+    ["The spiders and the bears of the Western Plaguelands carry the eyes and the claws."] =
+        "西瘟疫之地的蜘蛛和熊身上帶著眼睛和爪子。",
+    ["Ruzan, in the Valley of Trials."] =
+        "魯贊，在試煉谷。",
+    ["Your trainer's first errand, in the Valley of Trials."] =
+        "訓練師交給你的第一件差事，在試煉谷。",
+    ["The Vile Familiars of the cave south of the valley carry the heads."] =
+        "山谷南邊洞穴裡的邪靈劣魔身上帶著頭顱。",
+    ["Zureetha Fargaze, beside Ruzan."] =
+        "祖雷薩，在魯贊旁邊。",
+    ["Venya Marthand, in Deathknell."] =
+        "溫雅·瑪山德，在喪鐘鎮。",
+    ["Your trainer's first errand, in Deathknell."] =
+        "訓練師交給你的第一件差事，在喪鐘鎮。",
+    ["The Rattlecage Skeletons east of Deathknell carry the skulls."] =
+        "喪鐘鎮東邊的斷骨骷髏身上帶著頭骨。",
+    ["Ophek, in Razor Hill, sends you to Orgrimmar."] =
+        "奧菲克，在剃刀嶺，會派你前往奧格瑪。",
+    ["Gan'rul Bloodeye, in the Cleft of Shadow of Orgrimmar."] =
+        "甘盧爾·血眼，在奧格瑪的暗影裂口。",
+    ["The Tablet of Verga lies in the Burning Blade stash at the back of Skull Rock, in the north of Durotar."] =
+        "維爾加石板在杜洛塔北部骷髏石深處的火刃藏匿處。",
+    ["Right by Gan'rul: use the glyphs on the summoning circle, then defeat the voidwalker."] =
+        "就在甘盧爾旁邊：在召喚法陣上使用雕文，然後擊敗虛無行者。",
+    ["Ageron Kargal, in Brill, sends you to the Undercity."] =
+        "埃格隆·卡加爾，在布瑞爾，會派你前往幽暗城。",
+    ["Carendin Halgar, in the Magic Quarter of the Undercity."] =
+        "凱倫丁·哈加爾，在幽暗城的魔法區。",
+    ["Egalin's Grimoire lies in Perrine's chest, in the house south of Brill."] =
+        "埃加林的魔典在布瑞爾南邊房子裡的派瑞恩的箱子中。",
+    ["Right by Carendin: use the runes on the summoning circle, then defeat the voidwalker."] =
+        "就在凱倫丁旁邊：在召喚法陣上使用符文，然後擊敗虛無行者。",
+    ["Cazul, in the Cleft of Shadow."] =
+        "卡祖爾，在暗影裂口。",
+    ["Zankaja, in the Valley of Spirits of Orgrimmar."] =
+        "贊卡沙，在奧格瑪的精神谷。",
+    ["Gazrog, at the Crossroads."] =
+        "加茲羅格，在十字路口。",
+    ["Ken'zigla, at the camp of Malaka'jin in the far south of Stonetalon Mountains."] =
+        "肯茲格拉，在石爪山脈最南端的瑪拉卡金營地。",
+    ["Grunt Logmar, by the road north of Camp Taurajo."] =
+        "蠻兵勞格瑪，在陶拉祖營地北邊的路旁。",
+    ["Grunt Dogran is held by the Kolkar in the Barrens: give him the draught."] =
+        "蠻兵多格蘭被貧瘠之地的科卡爾抓住了：把傷藥交給他。",
+    ["Right by Gan'rul: use Dogran's pendant on the summoning circle, then defeat the succubus."] =
+        "就在甘盧爾旁邊：在召喚法陣上使用多格蘭的墜飾，然後擊敗魅魔。",
+    ["Jorah Annison, in the Magic Quarter of the Undercity."] =
+        "約拉·安尼森，在幽暗城的魔法區。",
+    ["The Dragonmaw orcs of the Wetlands carry the rod: Alliance land, stay clear of the guards."] =
+        "濕地的龍喉獸人身上帶著魔棒：聯盟領地，遠離守衛。",
+    ["Zevrost, the warlock trainer of the Cleft of Shadow."] =
+        "澤弗洛斯特，暗影裂口的術士訓練師。",
+    ["Kurgul, the demon trainer of the Cleft of Shadow."] =
+        "庫古爾，暗影裂口的惡魔訓練師。",
+    ["Your warrior trainer, in Razor Hill or Bloodhoof Village, sends you to Uzzek."] =
+        "你在剃刀嶺或血蹄村的戰士訓練師會派你去找猶塞克。",
+    ["Uzzek, at the Far Watch Post on the border of the Barrens."] =
+        "猶塞克，在貧瘠之地邊界的前沿哨所。",
+    ["From level 10: the quest that teaches Defensive Stance."] =
+        "10級起：學會防禦姿態的任務。",
+    ["The Thunder Lizards of the north of Durotar carry the scales."] =
+        "杜洛塔北部的雷霆蜥蜴身上帶著鱗片。",
+    ["Thun'grim Firegaze, on a hill east of the Crossroads."] =
+        "索恩格瑞姆·火眼，在十字路口東邊的一座山丘上。",
+    ["The steel bars lie in the Razormane camp below the hill."] =
+        "鋼錠在山丘下方的鋼鬃營地裡。",
+    ["Austil de Mon, the warrior trainer of Brill."] =
+        "奧斯蒂爾·德·蒙，布瑞爾的戰士訓練師。",
+    ["Deathguard Dillinger, in Brill."] =
+        "亡靈衛兵迪林格爾，在布瑞爾。",
+    ["Open the mausoleum north of Brill: Ulag the Cleaver comes out."] =
+        "打開布瑞爾北邊的陵墓：『斬擊者』奧拉格就會出來。",
+    ["Coleman Farthing, in the inn of Brill."] =
+        "庫勒曼·法席恩，在布瑞爾的旅店。",
+    ["The four heirlooms lie in the crypt of the Agamand Mills, in the northwest of Tirisfal Glades."] =
+        "四件傳家寶在提里斯法林地西北部阿加曼德磨坊的地穴裡。",
 }

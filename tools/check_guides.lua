@@ -21,7 +21,7 @@ local X = dofile(here .. "/questiedb_export.lua")
 local QK = X.QUEST
 
 local MAX_LOG = 20
-local BUILTIN_PACK, ZONES_PACK, ITEMS_PACK = "ding", "ding-zones", "ding-items"
+local BUILTIN_PACK, ZONES_PACK, ITEMS_PACK, CLASS_PACK = "ding", "ding-zones", "ding-items", "ding-class"
 local STEP_KEYS = {
     accept = true, turnin = true, complete = true, go = true, level = true, sethearth = true,
     train = true, hearth = true, fly = true, text = true, note = true, optional = true,
@@ -104,7 +104,7 @@ end
 ---------------------------------------------------------------------------
 local guides, order = {}, {}
 local packs = { [BUILTIN_PACK] = { id = BUILTIN_PACK }, [ZONES_PACK] = { id = ZONES_PACK },
-    [ITEMS_PACK] = { id = ITEMS_PACK } }
+    [ITEMS_PACK] = { id = ITEMS_PACK }, [CLASS_PACK] = { id = CLASS_PACK } }
 -- Ids of Ding's own guides, with --addon (read only, not checked).
 local builtinIds = {}
 local readingBuiltin = false
@@ -137,7 +137,7 @@ function Ding.RegisterGuidePack(def)
         return
     end
     where = "pack " .. def.id
-    if def.id == BUILTIN_PACK or def.id == ZONES_PACK or def.id == ITEMS_PACK then
+    if def.id == BUILTIN_PACK or def.id == ZONES_PACK or def.id == ITEMS_PACK or def.id == CLASS_PACK then
         report("error", where, "this id is one of Ding's own packs: choose another one")
         return
     end
@@ -645,20 +645,40 @@ local function contains(list, value)
     return false
 end
 
--- Races a chain is written for: the first guide's races, else its faction's races.
+-- Races a chain is written for: the first guide's races, else its faction's races, with the
+-- two-sided races its steps name (a class guide's Skyborne steps).
 local function chainRaces(chain)
     local first = chain[1]
     if first.races then return first.races end
-    if first.faction then return X.FACTION_RACES[first.faction] end
-    if chain.faction then return X.FACTION_RACES[chain.faction] end
+    local side = first.faction or chain.faction
+    if side then
+        local list, known = {}, {}
+        for _, race in ipairs(X.FACTION_RACES[side]) do
+            list[#list + 1] = race
+            known[race] = true
+        end
+        for _, g in ipairs(chain) do
+            for _, step in ipairs(g.steps) do
+                for _, race in ipairs(step.races or {}) do
+                    if not known[race] and X.raceBit(race, side) then
+                        known[race] = true
+                        list[#list + 1] = race
+                    end
+                end
+            end
+        end
+        return list
+    end
     local all = {}
     for race in pairs(X.RACE_BITS) do all[#all + 1] = race end
     table.sort(all)
     return all
 end
 
--- "*" = a character whose class has no specific step; then every class named by a step.
+-- "*" = a character whose class has no specific step; then every class named by a step. A
+-- chain for some classes only (a class guide's `classes`): those classes.
 local function chainClasses(chain)
+    if chain[1].classes then return chain[1].classes end
     local list, known = {}, {}
     for _, g in ipairs(chain) do
         for _, step in ipairs(g.steps) do
@@ -703,6 +723,18 @@ local function samePlace(a, b)
     return a[1] == b[1] and math.abs(a[2] - b[2]) <= 0.1 and math.abs(a[3] - b[3]) <= 0.1
 end
 
+-- A quest's preQuestSingle, or nil. A list naming the quest itself is how the data writes a
+-- group of alternatives (Call of Earth: one version per start), not a prerequisite: none, as the
+-- engine reads it (Engine:CatchUp leaves out the quests of the step itself).
+local function prereqSingle(q, quest)
+    local single = quest[QK.preQuestSingle]
+    if not X.hasEntries(single) then return nil end
+    for _, p in ipairs(single) do
+        if p == q then return nil end
+    end
+    return single
+end
+
 -- side: the replayed character's faction.
 local function stepApplies(guide, step, race, class, side)
     if guide.races and not contains(guide.races, race) then return false end
@@ -727,6 +759,8 @@ local function replay(chain, race, class)
     local mainTurnedIn, mainAccepted = {}, {}
     local maxLog, maxAt = 0, "-"
 
+    -- The classes of the guide being replayed (a class guide: every step is for them).
+    local guideClasses
     local function checkQuest(at, step, q)
         local quest = db.Quest[q]
         if not quest then
@@ -738,7 +772,7 @@ local function replay(chain, race, class)
         end
         local classMask = quest[QK.requiredClasses] or 0
         if classMask ~= 0 then
-            if not step.classes then
+            if not (step.classes or guideClasses) then
                 report("error", at, questName(q) .. " is for some classes only: add classes = { ... } to the step")
             elseif not X.hasBit(classMask, X.CLASS_BITS[class] or 0) then
                 report("error", at, questName(q) .. " is not available to the class " .. class)
@@ -819,8 +853,8 @@ local function replay(chain, race, class)
         for _, q in ipairs(step.accept or {}) do
             local quest = db.Quest[q]
             if not quest or done[q] or after[q] then return false end
-            local single = quest[QK.preQuestSingle]
-            if X.hasEntries(single) then
+            local single = prereqSingle(q, quest)
+            if single then
                 local any = false
                 for _, p in ipairs(single) do if done[p] then any = true end end
                 if not any then return false end
@@ -844,6 +878,7 @@ local function replay(chain, race, class)
 
     local side = chain.faction or chain[1].faction or RACE_SIDE[race]
     for _, guide in ipairs(chain) do
+        guideClasses = guide.classes
         -- The step this character played just before, in this guide (a guide may be started
         -- on its own: its first trip is never one too many).
         local previous
@@ -880,9 +915,9 @@ local function replay(chain, race, class)
                     if not extra then mainAccepted[q] = true end
                     local quest = db.Quest[q]
                     if not extra and quest then
-                        local single = quest[QK.preQuestSingle]
-                        local before, main = not X.hasEntries(single), not X.hasEntries(single)
-                        for _, p in ipairs(X.hasEntries(single) and single or {}) do
+                        local single = prereqSingle(q, quest)
+                        local before, main = not single, not single
+                        for _, p in ipairs(single or {}) do
                             if turnedIn[p] then before = true end
                             if mainTurnedIn[p] then main = true end
                         end
@@ -937,8 +972,8 @@ local function replay(chain, race, class)
                     elseif log[q] then
                         report("error", at, "accepts " .. questName(q) .. ", already in the quest log")
                     elseif quest then
-                        local single = quest[QK.preQuestSingle]
-                        if X.hasEntries(single) then
+                        local single = prereqSingle(q, quest)
+                        if single then
                             local any = false
                             for _, p in ipairs(single) do if turnedIn[p] then any = true end end
                             if not any then

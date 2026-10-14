@@ -7,16 +7,19 @@ local _, Ding = ...
 local guides, order = {}, {}
 Ding.guides = guides
 
--- Guide packs: [id] = { id, title, author, builtin }. Ding ships three: "Leveling" (`ding`, the
+-- Guide packs: [id] = { id, title, author, builtin }. Ding ships four: "Leveling" (`ding`, the
 -- default, guides without `pack`: level brackets over several zones), "Zones" (one section
--- per zone, `pack = "ding-zones"`) and "Items" (one section per item worth getting off the
--- leveling route, `pack = "ding-items"`, category "items"). builtin: their order in the list.
-local BUILTIN, ZONES, ITEMS = "ding", "ding-zones", "ding-items"
-Ding.BUILTIN_PACK, Ding.ZONES_PACK, Ding.ITEMS_PACK = BUILTIN, ZONES, ITEMS
+-- per zone, `pack = "ding-zones"`), "Items" (one section per item worth getting off the
+-- leveling route, `pack = "ding-items"`, category "items") and "Class quests" (one section per
+-- class and side, `pack = "ding-class"`, category "class": a character only sees its own).
+-- builtin: their order in the list.
+local BUILTIN, ZONES, ITEMS, CLASS = "ding", "ding-zones", "ding-items", "ding-class"
+Ding.BUILTIN_PACK, Ding.ZONES_PACK, Ding.ITEMS_PACK, Ding.CLASS_PACK = BUILTIN, ZONES, ITEMS, CLASS
 local packs = {
     [BUILTIN] = { id = BUILTIN, title = Ding.L.PACK_LEVELING, builtin = 1 },
     [ZONES] = { id = ZONES, title = Ding.L.PACK_ZONES, builtin = 2 },
     [ITEMS] = { id = ITEMS, title = Ding.L.PACK_ITEMS, builtin = 3, category = "items" },
+    [CLASS] = { id = CLASS, title = Ding.L.PACK_CLASS, builtin = 4, category = "class" },
 }
 -- [guide id] = { [English text] = translated text }, for the client's language only.
 local translations = {}

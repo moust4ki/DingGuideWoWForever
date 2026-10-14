@@ -120,8 +120,9 @@ local function routeChoices()
     }
 end
 
--- A pack's line under its name: its sections for an item pack ("Cozy Sleeping Bag"), else the
--- levels it covers for the character; its author for a community pack.
+-- A pack's line under its name: its sections for an item or class pack ("Cozy Sleeping Bag",
+-- "Druid quests": the character's own), else the levels it covers for the character; its
+-- author for a community pack.
 local function packSub(pack)
     local titles, low, high = {}, nil, nil
     for _, guide in Ding:IterateGuides(pack.id) do
@@ -134,7 +135,7 @@ local function packSub(pack)
     local sub
     if #titles == 0 then
         sub = L.GUIDE_OTHER_CHAR
-    elseif pack.category == "items" then
+    elseif pack.category == "items" or pack.category == "class" then
         sub = table.concat(titles, ", ", 1, math.min(2, #titles))
         if #titles > 2 then sub = sub .. " " .. L.PREVIEW_MORE:format(#titles - 2) end
     else

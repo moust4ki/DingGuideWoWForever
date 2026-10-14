@@ -3496,4 +3496,1031 @@ return {
         "Cima del Trueno",
     ["Thunderbrew Distillery"] =
         "Kharanos",
+    -- Ding! - Class quests (hand-written guides)
+    ["Druid quests"] =
+        "Misiones de druida",
+    ["At level 10, your trainer teaches Teleport: Moonglade: the quick way to Moonglade and back, used all through this guide."] =
+        "A nivel 10, tu instructor te enseña Teletransporte: Claro de la Luna: la forma rápida de ir al Claro de la Luna y volver, que se usa a lo largo de toda esta guía.",
+    ["Denatharion, the druid trainer of the Cenarion Enclave in Darnassus, sends you to Mathrengyl next to him."] =
+        "Denatharion, el instructor de druidas del Enclave Cenarion de Darnassus, te envía con Mathrengyl, que está a su lado.",
+    ["Mathrengyl Bearwalker, upstairs in the Cenarion Enclave."] =
+        "Mathrengyl Garroso, arriba en el Enclave Cenarion.",
+    ["From level 10: the chain that teaches Bear Form."] =
+        "Desde el nivel 10: la cadena que enseña Forma de oso.",
+    ["Dendrite Starblaze waits on the upper floor of the great house of Nighthaven."] =
+        "Dendrite Rafagaestelar espera en el piso de arriba de la casa grande de Amparo de la Noche.",
+    ["The Great Bear Spirit waits northwest of the village, up the hill path: listen to all it has to say."] =
+        "El Espíritu del gran oso espera al noroeste del poblado, subiendo por el sendero de la colina: escucha todo lo que tiene que decir.",
+    ["Sindrayl, the hippogryph master south of Nighthaven: take this flight path for your next trips here."] =
+        "Sindrayl, el maestro de hipogrifos al sur de Amparo de la Noche: consigue esta ruta de vuelo para tus próximos viajes aquí.",
+    ["Lunaclaw's cave, in the hills east of Auberdine"] =
+        "La cueva de Garraluna, en las colinas al este de Auberdine",
+    ["Deep in the cave, use the Cenarion Moondust by the moonkin stone: Lunaclaw appears. Defeat her, then speak to her spirit."] =
+        "Al fondo de la cueva, usa el Polvo lunar Cenarion junto a la piedra de lechúcico lunar: aparece Garraluna. Derrótala y luego habla con su espíritu.",
+    ["Turning this in teaches Bear Form."] =
+        "Al entregarla aprendes Forma de oso.",
+    ["From level 10: the Skyborne quests of the bear spirit, on Zephras Isle."] =
+        "Desde el nivel 10: las misiones Skyborne del espíritu del oso, en la isla de Zephras.",
+    ["Alfina Nightgaze, the druid trainer of Dalaran, gives it."] =
+        "Te la da Alfina Nightgaze, la instructora de druidas de Dalaran.",
+    ["Opens the way to Moonglade, the home of the druids."] =
+        "Abre el camino al Claro de la Luna, el hogar de los druidas.",
+    ["Sheldras Moontree, the druid trainer of Stormwind, in the park."] =
+        "Sheldras Moontree, el instructor de druidas de Ventormenta, en el parque.",
+    ["Five Earthroot will be needed: an herb found along the roads, picked with Herbalism or bought at the auction house."] =
+        "Harán falta cinco unidades de Raíz terrenal: una hierba que se encuentra junto a los caminos, que se recoge con Herboristería o se compra en la casa de subastas.",
+    ["From level 14: the chain that teaches Cure Poison."] =
+        "Desde el nivel 14: la cadena que enseña Curar envenenamiento.",
+    ["Fill the sampler at the mouth of the Cliffspring Falls cave, northeast of Auberdine."] =
+        "Llena la muestra en la entrada de la cueva del Salto de Fonroca, al noreste de Auberdine.",
+    ["Alanndarian Nightsong, in her house in Auberdine."] =
+        "Alanndarian Arrullanoche, en su casa de Auberdine.",
+    ["The Lunar Fungus grows in the small caves of the hills east of Auberdine, near Lunaclaw's."] =
+        "La Seta lunar crece en las pequeñas cuevas de las colinas al este de Auberdine, cerca de la de Garraluna.",
+    ["Sickly Deer wander the woods of Darkshore: use the salve on them."] =
+        "Los ciervos enfermos deambulan por los bosques de Costa Oscura: usa el bálsamo en ellos.",
+    ["Turning this in teaches Cure Poison."] =
+        "Al entregarla aprendes Curar envenenamiento.",
+    ["From level 16: the chain that teaches Aquatic Form."] =
+        "Desde el nivel 16: la cadena que enseña Forma acuática.",
+    ["The Shrine Bauble, a small wicker urn, lies on the bottom of Lake Elune'ara: dive around the shrine."] =
+        "El Adorno de altar, una pequeña urna de mimbre, está en el fondo del Lago Elune'ara: bucea alrededor del santuario.",
+    ["Use the bauble at the Shrine of Remulos, by the lake."] =
+        "Usa el adorno en el Santuario de Remulos, junto al lago.",
+    ["The first half of the pendant lies under the water off the north of Darkshore."] =
+        "La primera mitad del colgante está bajo el agua, frente al norte de Costa Oscura.",
+    ["The second half lies under the water off the western coast of Westfall."] =
+        "La segunda mitad está bajo el agua, frente a la costa oeste de los Páramos de Poniente.",
+    ["Back at the Shrine of Remulos: use a half pendant there to make it whole."] =
+        "De vuelta en el Santuario de Remulos: usa allí una mitad del colgante para completarlo.",
+    ["Turning this in teaches Aquatic Form."] =
+        "Al entregarla aprendes Forma acuática.",
+    ["Night Elves get it from Mathrengyl Bearwalker in Darnassus."] =
+        "Los elfos de la noche la reciben de Mathrengyl Garroso, en Darnassus.",
+    ["From level 20: Forever's chain of the Great Cat Spirit, in Moonglade."] =
+        "Desde el nivel 20: la cadena del Gran espíritu felino, propia de Forever, en el Claro de la Luna.",
+    ["The Great Cat Spirit rests in the south of Moonglade."] =
+        "El Gran espíritu felino descansa al sur del Claro de la Luna.",
+    ["The three relics lie in the southeast of Moonglade."] =
+        "Las tres reliquias están al sureste del Claro de la Luna.",
+    ["The Avatar of Saeyleenan waits in the south of Moonglade."] =
+        "El Avatar of Saeyleenan espera al sur del Claro de la Luna.",
+    ["Mathrengyl Bearwalker, upstairs in the Cenarion Enclave of Darnassus."] =
+        "Mathrengyl Garroso, arriba en el Enclave Cenarion de Darnassus.",
+    ["Any druid trainer of a capital gives it."] =
+        "Te la da cualquier instructor de druidas de una capital.",
+    ["From level 50: Torwa Pathfinder's chain in Un'Goro Crater, which ends in the Temple of Atal'Hakkar."] =
+        "Desde el nivel 50: la cadena de Abrecaminos Torwa en el Cráter de Un'Goro, que termina en el Templo de Atal'Hakkar.",
+    ["Torwa Pathfinder camps on the eastern side of the crater."] =
+        "Abrecaminos Torwa acampa en el lado este del cráter.",
+    ["The Gorishi wasps of the hive in the south carry the stings; the Bloodcaps grow on red plants all over the crater."] =
+        "Las avispas Gorishi de la colmena del sur llevan los aguijones; los champiñones de sangre crecen en plantas rojas por todo el cráter.",
+    ["Use the barb on a devilsaur: they roam the open plains of the crater."] =
+        "Usa la púa en un demosaurio: recorren las llanuras abiertas del cráter.",
+    ["Atal'alarion, the guardian of the idol in the temple, drops the Putrid Vine."] =
+        "Atal'alarion, el guardián del ídolo del templo, suelta la Viña podrida.",
+    ["Hunter quests"] =
+        "Misiones de cazador",
+    ["Dazalar, the hunter trainer of Dolanaar."] =
+        "Dazalar, el instructor de cazadores de Dolanaar.",
+    ["From level 10: three beasts to tame, then you can tame a pet of your own."] =
+        "Desde el nivel 10: tres bestias que domesticar y luego podrás domesticar una mascota propia.",
+    ["Use the taming rod on a Webwood Lurker, east of Dolanaar. Once it is tamed, dismiss it: it turns on you again, so be ready."] =
+        "Usa la Fusta de domador en un Rondador Tejemadera, al este de Dolanaar. Una vez domesticado, retíralo: vuelve a atacarte, así que prepárate.",
+    ["Use the rod on a Nightsaber Stalker, west of Dolanaar, then dismiss it the same way."] =
+        "Usa la fusta en un Acechador sable de la noche, al oeste de Dolanaar, y luego retíralo de la misma forma.",
+    ["Use the rod on a Strigid Screecher, south of Dolanaar."] =
+        "Usa la fusta en un Estridador estrígido, al sur de Dolanaar.",
+    ["Turning this in teaches Tame Beast: you can now keep a pet."] =
+        "Al entregarla aprendes Domesticar bestia: ya puedes tener una mascota.",
+    ["Jocaste, the hunter trainer of Darnassus, upstairs."] =
+        "Jocaste, la instructora de cazadores de Darnassus, arriba.",
+    ["Your pet can now learn new skills."] =
+        "Tu mascota ya puede aprender nuevas habilidades.",
+    ["Grif Wildheart, the hunter trainer of Kharanos."] =
+        "Grif Corazón Salvaje, el instructor de cazadores de Kharanos.",
+    ["Use the taming rod on a Large Crag Boar, north of Kharanos. Once it is tamed, dismiss it: it turns on you again, so be ready."] =
+        "Usa la Fusta de domador en un Grande jabalí del risco, al norte de Kharanos. Una vez domesticado, retíralo: vuelve a atacarte, así que prepárate.",
+    ["Use the rod on a Snow Leopard, south of Kharanos, then dismiss it the same way."] =
+        "Usa la fusta en un Leopardo de la nieve, al sur de Kharanos, y luego retíralo de la misma forma.",
+    ["Use the rod on an Ice Claw Bear, in the hills south of Kharanos."] =
+        "Usa la fusta en un Oso zarpahelada, en las colinas al sur de Kharanos.",
+    ["Belia Thundergranite, the pet trainer of Ironforge, in the Hall of Arms."] =
+        "Belia Tronagranito, la instructora de mascotas de Forjaz, en la Sala de Armas.",
+    ["Josephine Carson, the hunter trainer of Goldshire."] =
+        "Josephine Carson, la instructora de cazadores de Villadorada.",
+    ["Use the taming rod on a Rockhide Boar, in the southeast of Elwynn Forest. Once it is tamed, dismiss it: it turns on you again, so be ready."] =
+        "Usa la Fusta de domador en un Jabalí Ocultorroca, al sureste del Bosque de Elwynn. Una vez domesticado, retíralo: vuelve a atacarte, así que prepárate.",
+    ["Use the rod on a Gray Forest Wolf, in the east of the forest, then dismiss it the same way."] =
+        "Usa la fusta en un Lobo gris del bosque, al este del bosque, y luego retíralo de la misma forma.",
+    ["Use the rod on a Young Forest Bear, in the west of the forest near Westbrook Garrison."] =
+        "Usa la fusta en un Oso del bosque joven, al oeste del bosque, cerca del Cuartel de Arroyoeste.",
+    ["Isaac Chan, the pet trainer, stands next to Josephine."] =
+        "Isaac Chan, el instructor de mascotas, está junto a Josephine.",
+    ["Elayaa Easewind sends you to Quel'ana Quickgale."] =
+        "Elayaa Easewind te envía con Quel'ana Quickgale.",
+    ["Use the taming rod on a Windsong Crawler. Once it is tamed, dismiss it: it turns on you again, so be ready."] =
+        "Usa la Fusta de domador en un Windsong Crawler. Una vez domesticado, retíralo: vuelve a atacarte, así que prepárate.",
+    ["Use the rod on an Ornery Galestrider, then dismiss it the same way."] =
+        "Usa la fusta en un Ornery Galestrider y luego retíralo de la misma forma.",
+    ["Use the rod on a Vuldren Alpha."] =
+        "Usa la fusta en un Vuldren Alpha.",
+    ["Quel'dora Quickgale, the pet trainer, stands next to Quel'ana."] =
+        "Quel'dora Quickgale, la instructora de mascotas, está junto a Quel'ana.",
+    ["Any hunter trainer of a capital gives it."] =
+        "Te la da cualquier instructor de cazadores de una capital.",
+    ["From level 50: Ogtinc's chain in Azshara, which ends in the Temple of Atal'Hakkar."] =
+        "Desde el nivel 50: la cadena de Ogtinc en Azshara, que termina en el Templo de Atal'Hakkar.",
+    ["Ogtinc lives up a hill path in the middle of Azshara."] =
+        "Ogtinc vive en lo alto de un sendero de colina, en el centro de Azshara.",
+    ["The Mosshoof Coursers of northern Azshara carry the antlers; only some do."] =
+        "Los trotadores Pezuñamusgo del norte de Azshara llevan las astas; solo algunos.",
+    ["Wavethrashers haunt the Azshara shoreline; not every one leaves a scale."] =
+        "Los vándalos marinos rondan la costa de Azshara; no todos dejan una escama.",
+    ["Morphaz, one of the green dragons of the temple, drops the tooth."] =
+        "Morphaz, uno de los dragones verdes del templo, suelta el diente.",
+    ["Mage quests"] =
+        "Misiones de mago",
+    ["Zaldimar Wefhellt, the mage trainer of Goldshire, upstairs in the inn."] =
+        "Zaldimar Wefhellt, el instructor de magos de Villadorada, arriba en la posada.",
+    ["From level 10: your trainer's first errand, a few minutes from Goldshire."] =
+        "Desde el nivel 10: el primer encargo de tu instructor, a unos minutos de Villadorada.",
+    ["Jennea Cannon, upstairs in the Wizard's Sanctum of the Mage Quarter, in Stormwind."] =
+        "Jennea Cannon, arriba en el Sagrario del Mago del Barrio de los Magos, en Ventormenta.",
+    ["Stand in the water of Mirror Lake, in the west of Elwynn Forest, and use the flask there."] =
+        "Métete en el agua del Lago Espejo, al oeste del Bosque de Elwynn, y usa allí el frasco.",
+    ["Magis Sparkmantle, the mage trainer of Kharanos."] =
+        "Magis Chispamanto, el instructor de magos de Kharanos.",
+    ["From level 10: your trainer's first errand, in Dun Morogh."] =
+        "Desde el nivel 10: el primer encargo de tu instructor, en Dun Morogh.",
+    ["Bink, the mage trainer of Ironforge, in the Hall of Mysteries."] =
+        "Bink, la instructora de magos de Forjaz, en la Sala de los Misterios.",
+    ["Bink's toolbox lies by the gates of Gnomeregan, in the west of Dun Morogh."] =
+        "La Caja de herramientas de Bink está junto a las puertas de Gnomeregan, al oeste de Dun Morogh.",
+    ["From level 10: the Skyborne mage quests of Zephras Isle."] =
+        "Desde el nivel 10: las misiones Skyborne de mago de la isla de Zephras.",
+    ["The wind-infused boughs lie on the ground west of the camp."] =
+        "Las ramas imbuidas de viento están en el suelo, al oeste del campamento.",
+    ["Your mage trainer gives it."] =
+        "Te la da tu instructor de magos.",
+    ["From level 15: a chain in Stormwind that ends with a robe for you."] =
+        "Desde el nivel 15: una cadena en Ventormenta que termina con una toga para ti.",
+    ["The chest of coffers and the cantation lie in Jennea's tower."] =
+        "El cofre de arcas y el canto están en la torre de Jennea.",
+    ["The Blue Recluse, the inn of the Mage Quarter"] =
+        "El Ermitaño Azul, la posada del Barrio de los Magos",
+    ["Read the cantation to reveal a Rift Spawn, fight it until it is stunned, then use a coffer on it. Three hide in the inn, one of them downstairs."] =
+        "Lee el canto para revelar una Cría del risco, lucha con ella hasta que quede aturdida y luego usa un arca sobre ella. Hay tres escondidas en la posada, una de ellas en el piso de abajo.",
+    ["The Charged Rift Gem lies in the Silver Stream Mine, in the north of Loch Modan; the linen comes from humanoids anywhere."] =
+        "La Gema cargada de la falla está en la Mina de Fuenteplata, al norte de Loch Modan; el lino lo sueltan los humanoides de cualquier parte.",
+    ["Wynne Larson, the robe merchant of the Mage Quarter."] =
+        "Wynne Larson, la mercader de túnicas del Barrio de los Magos.",
+    ["Your reward: the Manaweave Robe."] =
+        "Tu recompensa: la Toga Tejemaná.",
+    ["From level 26: a chain that ends with a second robe."] =
+        "Desde el nivel 26: una cadena que termina con una segunda toga.",
+    ["High Sorcerer Andromath, at the top of the Wizard's Sanctum."] =
+        "El Sumo Hechicero Andromath, en lo alto del Sagrario del Mago.",
+    ["The book lies in the Tower of Ilgalar, in the east of Redridge Mountains."] =
+        "El libro está en la Torre de Ilgalar, al este de las Montañas Crestagrana.",
+    ["The spiders of the western woods of Duskwood carry the silk."] =
+        "Las arañas de los bosques del oeste del Bosque del Ocaso llevan la seda.",
+    ["Your reward: the Astral Knot Garment."] =
+        "Tu recompensa: las Prendas de nudo astral.",
+    ["Your capital's mage trainer gives it."] =
+        "Te la da el instructor de magos de tu capital.",
+    ["From level 30: Tabetha's quests in Dustwallow Marsh, which end with a mage's wand."] =
+        "Desde el nivel 30: las misiones de Tabetha en el Marjal Revolcafango, que terminan con una varita de mago.",
+    ["Tabetha lives on her farm in the south of Dustwallow Marsh."] =
+        "Tabetha vive en su granja, al sur del Marjal Revolcafango.",
+    ["Magus Tirth, at the Shimmering Flats of Thousand Needles, near the race track."] =
+        "Magus Tirth, en El Desierto de Sal de Las Mil Agujas, cerca de la pista de carreras.",
+    ["\"Plucky\" Johnson, the chicken by the tent: beckon to him with the emote so he turns back into a man, then ask him for the phrase."] =
+        "\"Desplumado\" Johnson, el pollo junto a la tienda: hazle señas con la emoción para que vuelva a ser un hombre y luego pídele la frase.",
+    ["Tabetha gives it too."] =
+        "Tabetha también te la da.",
+    ["The Witherbark trolls of eastern Arathi Highlands carry the totem sticks."] =
+        "Los trols Secacorteza del este de las Tierras Altas de Arathi llevan los palos de tótem.",
+    ["Use the stick on the central stone of the Circle of Outer Binding, in Arathi Highlands; clear its guards first. The Jade is a gem found while mining, or at the auction house."] =
+        "Usa el palo en la piedra central del Círculo de Vínculo Exterior, en las Tierras Altas de Arathi; antes, acaba con sus guardianes. El Jade es una gema que se encuentra al hacer minería, o en la casa de subastas.",
+    ["The book lies in the Library of the Scarlet Monastery."] =
+        "El libro está en la Biblioteca del Monasterio Escarlata.",
+    ["Your reward: a mage's wand."] =
+        "Tu recompensa: una varita de mago.",
+    ["From level 35: Tabetha's second chain, which goes through Uldaman."] =
+        "Desde el nivel 35: la segunda cadena de Tabetha, que pasa por Uldaman.",
+    ["The Burning Blade summoners of Mannoroc Coven, in southern Desolace, carry the orb."] =
+        "Los invocadores Filo Ardiente del Aquelarre Mannoroc, al sur de Desolace, llevan el orbe.",
+    ["Right there: Tabetha frees the demon of the orb; defeat it."] =
+        "Allí mismo: Tabetha libera al demonio del orbe; derrótalo.",
+    ["The Obsidian Sentinel of Uldaman holds the power source."] =
+        "El Centinela Obsidiano de Uldaman tiene la fuente de energía.",
+    ["Right there: destroy the mana surges as they appear around Tabetha."] =
+        "Allí mismo: destruye las oleadas de maná a medida que aparecen alrededor de Tabetha.",
+    ["From level 40: Tabetha's task in Zul'Farrak."] =
+        "Desde el nivel 40: el encargo de Tabetha en Zul'Farrak.",
+    ["Hydromancer Velratha, by the sacred pool of Zul'Farrak, drops the tiara."] =
+        "La Hidromántica Velratha, junto a la poza sagrada de Zul'Farrak, suelta la diadema.",
+    ["Your capital's master mage gives it."] =
+        "Te la da el maestro mago de tu capital.",
+    ["From level 50: Archmage Xylem's chain in Azshara, which ends in the Temple of Atal'Hakkar."] =
+        "Desde el nivel 50: la cadena del Archimago Xylem en Azshara, que termina en el Templo de Atal'Hakkar.",
+    ["Sanath Lim-yo, at the foot of Archmage Xylem's tower in Azshara: talk to him to be sent up to the archmage."] =
+        "Sanath Lim-yo, al pie de la torre del Archimago Xylem en Azshara: habla con él para que te envíe arriba, con el archimago.",
+    ["The blood elves of the ruins in northeastern Azshara carry the dust."] =
+        "Los elfos de sangre de las ruinas del noreste de Azshara llevan el polvo.",
+    ["The Spitelash sirens of the western shore of Azshara carry the coral."] =
+        "Las sirenas Látigo de Ira de la costa oeste de Azshara llevan el coral.",
+    ["Morphaz, one of the green dragons of the temple, drops the shard."] =
+        "Morphaz, uno de los dragones verdes del templo, suelta el fragmento.",
+    ["From level 60: Lorekeeper Lydros' quest, inside Dire Maul."] =
+        "Desde el nivel 60: la misión del Tradicionalista Lydros, dentro de La Masacre.",
+    ["Hydrospawn, a water elemental of Dire Maul, drops the essence."] =
+        "Hidromilecio, un elemental de agua de La Masacre, suelta la esencia.",
+    ["Paladin quests"] =
+        "Misiones de paladín",
+    ["Brother Wilhelm, the paladin trainer of Goldshire, sends you to Stormwind."] =
+        "El Hermano Fijalontad, el instructor de paladines de Villadorada, te envía a Ventormenta.",
+    ["Duthorian Rall, in the Cathedral of Light."] =
+        "Duthorian Rall, en la Catedral de la Luz.",
+    ["From level 12: the chain that teaches Redemption."] =
+        "Desde el nivel 12: la cadena que enseña Redención.",
+    ["Read the Tome of Divinity from your bags to start the next quest."] =
+        "Lee el Escrito sobre Divinidad desde tus bolsas para empezar la siguiente misión.",
+    ["Stephanie Turner, a poor woman of Old Town."] =
+        "Stephanie Turner, una mujer pobre del Casco Antiguo.",
+    ["She needs Linen Cloth: humanoids carry it everywhere."] =
+        "Necesita Paño de lino: lo llevan los humanoides de todas partes.",
+    ["Gazin Tenorm, in the Cathedral of Light."] =
+        "Gazin Tenorm, en la Catedral de la Luz.",
+    ["Henze Faulk lies lifeless in the east of Elwynn Forest: use the Symbol of Life on him."] =
+        "Henze Faulk yace sin vida al este del Bosque de Elwynn: usa el Símbolo de Vida sobre él.",
+    ["The Defias around Henze carry the script."] =
+        "Los Defias que rodean a Henze llevan el escrito.",
+    ["Turning this in teaches Redemption."] =
+        "Al entregarla aprendes Redención.",
+    ["Azar Stronghammer, the paladin trainer of Kharanos, sends you to Ironforge."] =
+        "Azar Martillopujante, el instructor de paladines de Kharanos, te envía a Forjaz.",
+    ["Tiza Battleforge, in the Mystic Ward of Ironforge."] =
+        "Tiza Forjabatalla, en la Sala Mística de Forjaz.",
+    ["John Turner, a poor man who walks the streets of Ironforge."] =
+        "John Turner, un hombre pobre que recorre las calles de Forjaz.",
+    ["He needs Linen Cloth: humanoids carry it everywhere."] =
+        "Necesita Paño de lino: lo llevan los humanoides de todas partes.",
+    ["Muiredon Battleforge, beside Tiza."] =
+        "Muiredon Forjabatalla, al lado de Tiza.",
+    ["Narm Faulk lies lifeless in the east of Dun Morogh: use the Symbol of Life on him."] =
+        "Narm Faulk yace sin vida al este de Dun Morogh: usa el Símbolo de Vida sobre él.",
+    ["The Dark Iron spies around Narm carry the script."] =
+        "Los espías Hierro Negro que rodean a Narm llevan el escrito.",
+    ["From level 20: the Tome of Valor, then the Test of Righteousness, which ends with Verigan's Fist, a two-handed mace."] =
+        "Desde el nivel 20: el Escrito sobre Valor y luego La prueba de rectitud, que termina con el Puño de Verigan, una maza de dos manos.",
+    ["Read the Tome of Valor from your bags to start the next quest."] =
+        "Lee el Escrito sobre Valor desde tus bolsas para empezar la siguiente misión.",
+    ["Duthorian Rall, in the Cathedral of Light of Stormwind."] =
+        "Duthorian Rall, en la Catedral de la Luz de Ventormenta.",
+    ["Daphne Stilwell, at her house in the south of Westfall. Take her quest only when ready: three waves of Defias attack, then more."] =
+        "Daphne Fontana, en su casa al sur de los Páramos de Poniente. Acepta su misión solo cuando te hayas preparado: atacan tres oleadas de Defias, y luego más.",
+    ["Stay by Daphne until the last wave falls; a friend helps."] =
+        "Quédate junto a Daphne hasta que caiga la última oleada; te ayuda un amigo.",
+    ["Jordan Stilwell, outside the gates of Ironforge."] =
+        "Jordan Fontana, fuera de las puertas de Forjaz.",
+    ["Four items: the lumber from the Deadmines, the hammer from Shadowfang Keep, the ore from Loch Modan and the Kor Gem from Darkshore."] =
+        "Cuatro objetos: la madera de Las Minas de la Muerte, el martillo del Castillo de Colmillo Oscuro, el mineral de Loch Modan y la gema Kor de Costa Oscura.",
+    ["Bailor Stonehand, in Thelsamar."] =
+        "Bailor Petramano, en Thelsamar.",
+    ["The ore lies in a crate by a tree stump, in the northeast of Loch Modan."] =
+        "El mineral está en una caja junto a un tocón, al noreste de Loch Modan.",
+    ["Thundris Windweaver, in Auberdine."] =
+        "Thundris Tejevientos, en Auberdine.",
+    ["The naga of the Blackfathom Deeps entrance, under the water of Zoram Strand in Ashenvale, carry the corrupted gem. They are elite: bring a group."] =
+        "Las nagas de la entrada de las Cavernas de Brazanegra, bajo el agua de La Ensenada de Zoram en Vallefresno, llevan la gema corrupta. Son élite: ve en grupo.",
+    ["The goblin woodcarvers of the Deadmines carry the lumber."] =
+        "Los talladores de madera goblin de Las Minas de la Muerte llevan la madera.",
+    ["Jordan's hammer lies in the stables of Shadowfang Keep."] =
+        "El martillo de Jordan está en los establos del Castillo de Colmillo Oscuro.",
+    ["Your reward: Verigan's Fist."] =
+        "Tu recompensa: el Puño de Verigan.",
+    ["Delgren the Purifier, at Maestra's Post in Ashenvale."] =
+        "Delgren el Purificador, en la Atalaya de Maestra, en Vallefresno.",
+    ["From level 22: Forever's paladin chain of Delgren the Purifier."] =
+        "Desde el nivel 22: la cadena de paladín de Delgren el Purificador, propia de Forever.",
+    ["Katherine the Pure, in the Cathedral of Light of Stormwind."] =
+        "Katherine la Pura, en la Catedral de la Luz de Ventormenta.",
+    ["Ursula Deline, the warlock trainer of the Mage Quarter."] =
+        "Ursula Deline, la instructora de brujos del Barrio de los Magos.",
+    ["The Blackrock orcs of Redridge Mountains carry the summoner's salt."] =
+        "Los orcos Roca Negra de las Montañas Crestagrana llevan la sal del invocador.",
+    ["The demons of Demon Fall Canyon, in the southeast of Ashenvale, carry the motes."] =
+        "Los demonios del Barranco del Demonio Caído, al sureste de Vallefresno, llevan las motas.",
+    ["Bring them to the Spear of Mannoroth, in the canyon."] =
+        "Llévalas a la Lanza de Mannoroth, en el barranco.",
+    ["From level 40: the quest of your warhorse."] =
+        "Desde el nivel 40: la misión de tu caballo de guerra.",
+    ["Turning this in teaches Summon Warhorse."] =
+        "Al entregarla aprendes Invocar caballo de guerra.",
+    ["Lord Grayson Shadowbreaker, in the Cathedral of Light."] =
+        "Lord Grisillo Quiebrasombras, en la Catedral de la Luz.",
+    ["From level 50: the chain of the Mightstone, which ends in the Temple of Atal'Hakkar."] =
+        "Desde el nivel 50: la cadena de la Piedra sagrada del poderío, que termina en el Templo de Atal'Hakkar.",
+    ["Commander Ashlam Valorfist, at Chillwind Camp in the Western Plaguelands."] =
+        "El Comandante Ashlam Puñovalor, en el Campamento del Orvallo, en las Tierras de la Peste del Oeste.",
+    ["The skeletons of the fields of Andorhal carry the scourgestones."] =
+        "Los esqueletos de los campos de Andorhal llevan las piedras de la Plaga.",
+    ["High Priest Thel'danis walks around Chillwind Camp."] =
+        "El Sumo Sacerdote Thel'danis pasea por el Campamento del Orvallo.",
+    ["The six troll bosses of the temple's upper ring each drop one feather: Gasher, Zul'Lor, Mijan, Hukku, Zolo and Loro."] =
+        "Los seis jefes trols del anillo superior del templo sueltan una pluma cada uno: Gasher, Zul'Lor, Mijan, Hukku, Zolo y Loh'ro.",
+    ["From level 60: the long chain of your charger. It asks for about 200 gold and goes through Stratholme, Dire Maul and Scholomance."] =
+        "Desde el nivel 60: la larga cadena de tu destrero. Pide unas 200 de oro y pasa por Stratholme, La Masacre y Scholomance.",
+    ["High Priest Rohan, in the Mystic Ward of Ironforge: the sacrifice he asks for is gold."] =
+        "El Sumo Sacerdote Rohan, en la Sala Mística de Forjaz: el sacrificio que pide es oro.",
+    ["Use the censer on the Terrordale Spirits, in the northwest of the Eastern Plaguelands."] =
+        "Usa el incensario en los espíritus del Valle del Terror, al noroeste de las Tierras de la Peste del Este.",
+    ["Grimand Elmore, in the Dwarven District of Stormwind."] =
+        "Grimand Elmore, en el Distrito de los Enanos de Ventormenta.",
+    ["Grimand wants gold, Arthas' Tears (a herb), Runecloth, an Arcanite Bar, and holy water from the supply crates of Stratholme."] =
+        "Grimand quiere oro, Lágrimas de Arthas (una hierba), Paño rúnico, un Lingote de arcanita y agua bendita de los cajones de provisiones de Stratholme.",
+    ["Merideth Carlson, the horse breeder of Southshore, makes the horse feed."] =
+        "Merideth Carlson, la criadora de caballos de Costasur, prepara el pienso para caballos.",
+    ["The Enriched Manna Biscuits are sold by the Argent Dawn's quartermasters."] =
+        "Las Galletas de maná enriquecido las venden los intendentes del Alba Argenta.",
+    ["The Ancient Equine Spirit waits in western Dire Maul, past Tendris Warpwood."] =
+        "El Antiguo espíritu equino espera en el oeste de La Masacre, pasado Tendris Alabeo.",
+    ["An Azerothian Diamond and a Pristine Black Diamond: found while mining and on monsters of the Plaguelands, or at the auction house."] =
+        "Un Diamante de Azeroth y un Diamante negro prístino: se encuentran al hacer minería y en monstruos de las Tierras de la Peste, o en la casa de subastas.",
+    ["In Scholomance, use the Divination Scryer to call Death Knight Darkreaver, defeat him, then use the charger's soul on his fallen mount."] =
+        "En Scholomance, usa el Arúspice para llamar al Caballero de la Muerte Atracoscuro, derrótalo y luego usa el alma del destrero sobre su montura caída.",
+    ["Your reward: Summon Charger, your epic mount."] =
+        "Tu recompensa: Invocar destrero, tu montura épica.",
+    ["Priest quests"] =
+        "Misiones de sacerdote",
+    ["Priestess Anetta, the priest trainer of Northshire Abbey."] =
+        "La Sacerdotisa Anetta, la instructora de sacerdotes de la Abadía de Villanorte.",
+    ["From level 5: heal a wounded guard, and get your first robe."] =
+        "Desde el nivel 5: sana a un guardia herido y consigue tu primera toga.",
+    ["Priestess Josetta, the priest trainer of Goldshire."] =
+        "La Sacerdotisa Josetta, la instructora de sacerdotes de Villadorada.",
+    ["Guard Roberts lies wounded east of Goldshire: heal him with Lesser Heal, then give him Power Word: Fortitude."] =
+        "El Guardia Roberts yace herido al este de Villadorada: sánalo con Sanación inferior y luego dale Palabra de poder: entereza.",
+    ["Branstock Khalder, the priest trainer of Coldridge Valley."] =
+        "Silo Khalder, el instructor de sacerdotes del Valle de Crestanevada.",
+    ["From level 5: heal a wounded mountaineer, and get your first robe."] =
+        "Desde el nivel 5: sana a un montaraz herido y consigue tu primera toga.",
+    ["Maxan Anvol, the priest trainer of Kharanos."] =
+        "Maxan Anvol, el instructor de sacerdotes de Kharanos.",
+    ["Mountaineer Dolf lies wounded near Kharanos: heal him with Lesser Heal, then give him Power Word: Fortitude."] =
+        "El Montaraz Dolf yace herido cerca de Kharanos: sánalo con Sanación inferior y luego dale Palabra de poder: entereza.",
+    ["Shanda, the priest trainer of Aldrassil, in Shadowglen."] =
+        "Shanda, la instructora de sacerdotes de Aldrassil, en Cañada Umbría.",
+    ["From level 5: heal a wounded sentinel, and get your first robe."] =
+        "Desde el nivel 5: sana a una centinela herida y consigue tu primera toga.",
+    ["Laurna Morninglight, the priest trainer of Dolanaar."] =
+        "Laurna Luzdelalba, la instructora de sacerdotes de Dolanaar.",
+    ["Sentinel Shaya lies wounded south of Dolanaar: heal her with Lesser Heal, then give her Power Word: Fortitude."] =
+        "La Centinela Shaya yace herida al sur de Dolanaar: sánala con Sanación inferior y luego dale Palabra de poder: entereza.",
+    ["From level 10: the quest that teaches Desperate Prayer."] =
+        "Desde el nivel 10: la misión que enseña Rezo desesperado.",
+    ["High Priestess Laurena, in the Cathedral of Light of Stormwind."] =
+        "La Suma Sacerdotisa Laurena, en la Catedral de la Luz de Ventormenta.",
+    ["Priestess Josetta gives it too."] =
+        "La Sacerdotisa Josetta también te la da.",
+    ["From level 10: Forever's quest of Divine Grace, for Humans."] =
+        "Desde el nivel 10: la misión de Divine Grace, propia de Forever, para humanos.",
+    ["From level 10: Forever's quest of Confounding Flash, for Gnomes."] =
+        "Desde el nivel 10: la misión de Confounding Flash, propia de Forever, para gnomos.",
+    ["High Priestess Mims, in the Mystic Ward of Ironforge."] =
+        "High Priestess Mims, en la Sala Mística de Forjaz.",
+    ["From level 10: the quest that teaches Starshards."] =
+        "Desde el nivel 10: la misión que enseña Astillas estelares.",
+    ["Priestess Alathea, in the Temple of the Moon of Darnassus."] =
+        "La Sacerdotisa Alathea, en el Templo de la Luna de Darnassus.",
+    ["From level 20: the quest that teaches Feedback."] =
+        "Desde el nivel 20: la misión que enseña Reacción.",
+    ["High Priest Rohan, in the Mystic Ward of Ironforge."] =
+        "El Sumo Sacerdote Rohan, en la Sala Mística de Forjaz.",
+    ["From level 20: the quest that teaches Fear Ward."] =
+        "Desde el nivel 20: la misión que enseña Custodia de miedo.",
+    ["From level 20: Forever's second Gnome priest quest."] =
+        "Desde el nivel 20: la segunda misión de sacerdote gnomo, propia de Forever.",
+    ["From level 20: the quest that teaches Elune's Grace."] =
+        "Desde el nivel 20: la misión que enseña Gracia de Elune.",
+    ["Any priest trainer of a capital gives it."] =
+        "Te la da cualquier instructor de sacerdotes de una capital.",
+    ["The Mosshoof Coursers of northern Azshara carry the glands; only some do."] =
+        "Los trotadores Pezuñamusgo del norte de Azshara llevan las glándulas; solo algunos.",
+    ["The undead of the Western Plaguelands and the Zanzil zombies of Stranglethorn carry the ichor."] =
+        "Los no-muertos de las Tierras de la Peste del Oeste y los zombis Zanzil de Tuercespina llevan el icor.",
+    ["Morphaz, one of the green dragons of the temple, carries the blood."] =
+        "Morphaz, uno de los dragones verdes del templo, lleva la sangre.",
+    ["Greta Mosshoof, at the Emerald Sanctuary in Felwood."] =
+        "Greta Pezuñamusgo, en el Santuario Esmeralda, en Frondavil.",
+    ["Rogue quests"] =
+        "Misiones de pícaro",
+    ["Hogral Bakkan, the rogue trainer of Kharanos."] =
+        "Hogral Bakkan, el instructor de pícaros de Kharanos.",
+    ["From level 10: a first errand for the rogues of Ironforge."] =
+        "Desde el nivel 10: un primer encargo para los pícaros de Forjaz.",
+    ["Hulfdan Blackbeard, in the Forlorn Cavern of Ironforge."] =
+        "Hulfdan Barbanegra, en La Caverna Abandonada de Forjaz.",
+    ["Onin MacHammar stands on a platform in the west of Dun Morogh, near Gnomeregan."] =
+        "Onin MacHammar está en una plataforma al oeste de Dun Morogh, cerca de Gnomeregan.",
+    ["Learn Pick Lock at your trainer, then practice on lockboxes until your skill reaches 75."] =
+        "Aprende Forzar cerradura con tu instructor y luego practica con arcones hasta que tu habilidad llegue a 75.",
+    ["From level 16: Pick Lock opens the chests and boxes of the quests to come."] =
+        "Desde el nivel 16: Forzar cerradura abre los cofres y las cajas de las próximas misiones.",
+    ["Master Mathias Shaw, on the top floor of SI:7's headquarters, in Old Town."] =
+        "El Maestro Mathias Shaw, en el último piso del cuartel general del IV:7, en el Casco Antiguo.",
+    ["From level 20: the chain that teaches your poisons."] =
+        "Desde el nivel 20: la cadena que te enseña los venenos.",
+    ["Agent Kearnen watches from a hill in the southeast of Westfall."] =
+        "Agente Kearnen vigila desde una colina al sureste de los Páramos de Poniente.",
+    ["Pick the Defias Tower Key from the pocket of a Malformed Defias Drone, by the tower; then, upstairs, sap Klaven Mortwake before you open the chest."] =
+        "Roba la Llave de la torre Defias del bolsillo de un Zángano defias deformado, junto a la torre; luego, arriba, usa Porrazo en Klaven Mortoalerta antes de abrir el cofre.",
+    ["The chest leaves a sickness on you: that is the next quest."] =
+        "El cofre te deja una enfermedad: esa es la siguiente misión.",
+    ["Doc Mixilpixil works in the cellar of SI:7's headquarters."] =
+        "Doc Mixilpixil trabaja en el sótano del cuartel general del IV:7.",
+    ["Lie down in front of him (the emote) so he can examine you."] =
+        "Túmbate delante de él (la emoción) para que pueda examinarte.",
+    ["Turning this in teaches your poisons."] =
+        "Al entregarla aprendes los venenos.",
+    ["Myrokos Silentform, at Ravenholdt Manor in the Alterac Mountains: the way in is a cave in the north of Hillsbrad Foothills."] =
+        "Myrokos Silenforma, en la Mansión Ravenholdt, en las Montañas de Alterac: se entra por una cueva al norte de las Laderas de Trabalomas.",
+    ["From level 24: Forever's Syndicate quests, at Ravenholdt Manor."] =
+        "Desde el nivel 24: las misiones de la Hermandad, propias de Forever, en la Mansión Ravenholdt.",
+    ["Lord Tomas is hiding in the east of Hillsbrad Foothills."] =
+        "Lord Tomas se esconde al este de las Laderas de Trabalomas.",
+    ["Any rogue trainer of a capital gives it."] =
+        "Te la da cualquier instructor de pícaros de una capital.",
+    ["From level 50: Lord Jorach Ravenholdt's chain, which ends in the Temple of Atal'Hakkar."] =
+        "Desde el nivel 50: la cadena de Lord Jorach Ravenholdt, que termina en el Templo de Atal'Hakkar.",
+    ["Lord Jorach Ravenholdt, in Ravenholdt Manor."] =
+        "Lord Jorach Ravenholdt, en la Mansión Ravenholdt.",
+    ["The Timbermaw shamans of northern Azshara carry the bag."] =
+        "Los chamanes Fauces de Madera del norte de Azshara llevan la bolsa.",
+    ["Archmage Xylem, at the top of his tower in Azshara: Sanath Lim-yo, at its foot, sends you up."] =
+        "El Archimago Xylem, en lo alto de su torre en Azshara: Sanath Lim-yo, al pie de ella, te envía arriba.",
+    ["The Forest Oozes of northeastern Azshara carry the fragments."] =
+        "Los mocos del bosque del noreste de Azshara llevan los fragmentos.",
+    ["Morphaz, one of the green dragons of the temple, drops the key."] =
+        "Morphaz, uno de los dragones verdes del templo, suelta la llave.",
+    ["Shaman quests"] =
+        "Misiones de chamán",
+    ["Teo Hammerstorm, the shaman trainer of Coldridge Valley."] =
+        "Teo Hammerstorm, el instructor de chamanes del Valle de Crestanevada.",
+    ["From level 4: the Call of Earth, your first totem."] =
+        "Desde el nivel 4: Clamor de Tierra, tu primer tótem.",
+    ["The Frostmane trolls south of the valley carry the pendant."] =
+        "Los trols Peloescarcha del sur del valle llevan el colgante.",
+    ["On the hill west of the valley: drink the Earth Sapta to see the Minor Manifestation of Earth."] =
+        "En la colina al oeste del valle: bebe la Sapta de tierra para ver la Manifestación de tierra menor.",
+    ["Turning this in teaches your first earth totem."] =
+        "Al entregarla aprendes tu primer tótem de tierra.",
+    ["Ingrid Dunwald in Kharanos, or Eldrun Stormbreaker in Ironforge."] =
+        "Ingrid Dunwald en Kharanos, o Eldrun Stormbreaker en Forjaz.",
+    ["From level 10: the Call of Fire, your first fire totem."] =
+        "Desde el nivel 10: La llamada del Fuego, tu primer tótem de fuego.",
+    ["Bruegs Kindleborn, in the far east of Dun Morogh, by the road to Loch Modan."] =
+        "Bruegs Kindleborn, en el extremo este de Dun Morogh, junto al camino de Loch Modan.",
+    ["Braldir Ashmantle, on a hill in the southwest of Loch Modan."] =
+        "Braldir Ashmantle, en una colina al suroeste de Loch Modan.",
+    ["The Tunnel Rat geomancers of Loch Modan carry the Fire Tar; the Stonesplinter seers of the south carry the pouches."] =
+        "Los geománticos Ratatúnel de Loch Modan llevan el Alquitrán; los profetas Rompecantos del sur llevan las bolsitas.",
+    ["Right by Braldir: call the Minor Manifestation of Fire at the brazier, then defeat it for its ember."] =
+        "Justo al lado de Braldir: llama a la Manifestación de fuego menor en el blandón y luego derrótala para conseguir su ascua.",
+    ["Light the Brazier of the Dormant Flame with the ember."] =
+        "Enciende el Blandón de la Llama Latente con el ascua.",
+    ["Bruegs Kindleborn, in the far east of Dun Morogh."] =
+        "Bruegs Kindleborn, en el extremo este de Dun Morogh.",
+    ["Turning this in teaches your first fire totem."] =
+        "Al entregarla aprendes tu primer tótem de fuego.",
+    ["Eldrun Stormbreaker, the shaman trainer of Ironforge."] =
+        "Eldrun Stormbreaker, el instructor de chamanes de Forjaz.",
+    ["From level 20: the Call of Water, your first water totem."] =
+        "Desde el nivel 20: La llamada del agua, tu primer tótem de agua.",
+    ["Norric Lochthane, by the dam in the north of Loch Modan."] =
+        "Norric Lochthane, junto a la presa, al norte de Loch Modan.",
+    ["Hervdana Saegrund, in the southeast of the Wetlands."] =
+        "Hervdana Saegrund, al sureste de Los Humedales.",
+    ["Fill the waterskin where Hervdana's quest says: DingDB does not hold this place yet."] =
+        "Llena la bota donde indica la misión de Hervdana: DingDB aún no tiene este lugar.",
+    ["At the Forgotten Shrine of Westfall: call the corrupt manifestation of water, then defeat it for its bracers."] =
+        "En el Santuario Olvidado de los Páramos de Poniente: llama a la manifestación de agua corrupta y luego derrótala para conseguir sus brazales.",
+    ["The Minor Manifestation of Water rises beside the shrine."] =
+        "La Manifestación de agua menor surge junto al santuario.",
+    ["Turning this in teaches your first water totem."] =
+        "Al entregarla aprendes tu primer tótem de agua.",
+    ["From level 30: the Call of Air, your first air totem."] =
+        "Desde el nivel 30: La llamada del aire, tu primer tótem de aire.",
+    ["Veyric Thunderhame, in the north of Arathi Highlands."] =
+        "Veyric Thunderhame, al norte de las Tierras Altas de Arathi.",
+    ["Turning this in teaches your first air totem."] =
+        "Al entregarla aprendes tu primer tótem de aire.",
+    ["From level 30: Veyric Thunderhame's elemental quests, to level 40."] =
+        "Desde el nivel 30: las misiones elementales de Veyric Thunderhame, hasta el nivel 40.",
+    ["Four twisted totems: from the Stonevault troggs of the Badlands, the Maraudine centaurs of Desolace, the Lost Ones of the Swamp of Sorrows and the Mirefin murlocs of Dustwallow Marsh."] =
+        "Cuatro tótems retorcidos: de los troggs Grutacanto de las Tierras Inhóspitas, los centauros Maraudine de Desolace, los Perdidos del Pantano de las Penas y los múrlocs Ancalodo del Marjal Revolcafango.",
+    ["Charlga Razorflank, the crone of Razorfen Kraul, carries the note."] =
+        "Charlga Filonavaja, la bruja de Horado Rajacieno, lleva la nota.",
+    ["The Ravaging Tempests of western Thousand Needles carry the eye."] =
+        "Las Ravaging Tempests del oeste de Las Mil Agujas llevan el ojo.",
+    ["Bath'rah the Windwatcher, in the hills of the Alterac Mountains."] =
+        "Bath'rah el Vigía del viento, en las colinas de las Montañas de Alterac.",
+    ["Warlock quests"] =
+        "Misiones de brujo",
+    ["Drusilla La Salle, the warlock trainer of Northshire Abbey."] =
+        "Drusilla La Salle, la instructora de brujos de la Abadía de Villanorte.",
+    ["Your trainer's first errand, around Northshire Abbey."] =
+        "El primer encargo de tu instructor, en los alrededores de la Abadía de Villanorte.",
+    ["The stolen books lie in the kobold camp east of the abbey."] =
+        "Los libros robados están en el campamento kóbold al este de la abadía.",
+    ["Alamar Grimm, the warlock trainer of Coldridge Valley."] =
+        "Alamar Grimm, el instructor de brujos del Valle de Crestanevada.",
+    ["Your trainer's first errand, around Coldridge Valley."] =
+        "El primer encargo de tu instructor, en los alrededores del Valle de Crestanevada.",
+    ["The Frostmane novices of the troll cave in the south of the valley carry the charm."] =
+        "Los novicios Peloescarcha de la cueva trol del sur del valle llevan el amuleto.",
+    ["Remen Marcot, in the inn of Goldshire, sends you to Stormwind."] =
+        "Remen Marcot, en la posada de Villadorada, te envía a Ventormenta.",
+    ["Lago Blackwrench, in the Forlorn Cavern of Ironforge, sends you to Stormwind."] =
+        "Llago Llavenegra, en La Caverna Abandonada de Forjaz, te envía a Ventormenta.",
+    ["Gakin the Darkbinder, in the cellar of the Slaughtered Lamb, in the Mage Quarter of Stormwind."] =
+        "Gakin el Presotenebra, en el sótano de El Cordero Degollado, en el Barrio de los Magos de Ventormenta.",
+    ["From level 10: the chain that teaches Summon Voidwalker."] =
+        "Desde el nivel 10: la cadena que enseña Invocar abisario.",
+    ["Surena Caledon hides in a house of the Brackwell Pumpkin Patch, in the east of Elwynn Forest."] =
+        "Surena Caledon se esconde en una casa del Huerto de Calabazas de Brackwell, al este del Bosque de Elwynn.",
+    ["Down the stairs of the Slaughtered Lamb's crypt: use the choker on the summoning circle, then defeat the voidwalker."] =
+        "Bajando las escaleras de la cripta de El Cordero Degollado: usa la gargantilla en el círculo de invocación y luego derrota al abisario.",
+    ["Turning this in teaches Summon Voidwalker."] =
+        "Al entregarla aprendes Invocar abisario.",
+    ["Gakin the Darkbinder, in the cellar of the Slaughtered Lamb."] =
+        "Gakin el Presotenebra, en el sótano de El Cordero Degollado.",
+    ["From level 20: the chain that teaches Summon Succubus."] =
+        "Desde el nivel 20: la cadena que enseña Invocar súcubo.",
+    ["Takar the Seer, north of Camp Taurajo in the Barrens: Horde land, stay clear of the guards."] =
+        "Takar el Vidente, al norte del Campamento Taurajo, en Los Baldíos: tierra de la Horda, mantente lejos de los guardias.",
+    ["The Heartswood grows in the north of Ashenvale, near the Horde's lumber camp."] =
+        "El Duramen crece al norte de Vallefresno, cerca del campamento maderero de la Horda.",
+    ["In the Slaughtered Lamb's crypt again: use the heartswood core on the summoning circle, then defeat the succubus."] =
+        "De nuevo en la cripta de El Cordero Degollado: usa el núcleo de duramen en el círculo de invocación y luego derrota al súcubo.",
+    ["Turning this in teaches Summon Succubus."] =
+        "Al entregarla aprendes Invocar súcubo.",
+    ["From level 30: the chain that teaches Summon Felhunter."] =
+        "Desde el nivel 30: la cadena que enseña Invocar manáfago.",
+    ["Strahad Farsan, in Ratchet."] =
+        "Strahad Farsan, en Trinquete.",
+    ["Krom Stoutarm, in the Hall of Explorers of Ironforge."] =
+        "Krom Brazorrecio, en la Sala de los Exploradores de Forjaz.",
+    ["The moldy tome lies in the southwest of Hillsbrad Foothills; the tattered manuscript, in a damaged chest of western Thousand Needles."] =
+        "El escrito mohoso está al suroeste de las Laderas de Trabalomas; el manuscrito andrajoso, en un cofre dañado del oeste de Las Mil Agujas.",
+    ["The Dragonmaw orcs of the Wetlands carry the rod."] =
+        "Los orcos Faucedraco de Los Humedales llevan la vara.",
+    ["Right by Strahad: use the tome on the summoning circle, then defeat the felhunter."] =
+        "Justo al lado de Strahad: usa el escrito en el círculo de invocación y luego derrota al manáfago.",
+    ["Turning this in teaches Summon Felhunter."] =
+        "Al entregarla aprendes Invocar manáfago.",
+    ["Demisette Cloyce, in the Slaughtered Lamb of Stormwind."] =
+        "Demisette Cloyce, en El Cordero Degollado de Ventormenta.",
+    ["From level 40: the quest of your felsteed."] =
+        "Desde el nivel 40: la misión de tu corcel vil.",
+    ["Turning this in teaches Summon Felsteed."] =
+        "Al entregarla aprendes Invocar corcel vil.",
+    ["Niby the Almighty and Impsy wait in a small camp of central Felwood."] =
+        "Niby el Todopoderoso y Diblis esperan en un pequeño campamento del centro de Frondavil.",
+    ["From level 50: the demonic quests of Niby and Impsy, in Felwood."] =
+        "Desde el nivel 50: las misiones demoníacas de Niby y Diblis, en Frondavil.",
+    ["Felcloth drops from demons and satyrs, Azshara's above all; the auction house sells it too."] =
+        "La Tela de inferi la sueltan demonios y sátiros, sobre todo los de Azshara; también se vende en la casa de subastas.",
+    ["The Irontree treants of northern Felwood carry the rotting wood; the oozes of the Bloodvenom river, the essence."] =
+        "Los antárboles Troncoferro del norte de Frondavil llevan la madera podrida; los mocos del río Veneno de Sangre, la esencia.",
+    ["Three essences: from the satyrs of Jaedenar in Felwood, the Legashi satyrs of Azshara, and the felguards by the Dark Portal in the Blasted Lands."] =
+        "Tres esencias: de los sátiros de Jaedenar en Frondavil, los sátiros Legashi de Azshara y los guardias viles junto al Portal Oscuro, en las Tierras Devastadas.",
+    ["North of the camp, by the remains of Kroshius: use the item Impsy gives you to wake him, then defeat him."] =
+        "Al norte del campamento, junto a los restos de Kroshius: usa el objeto que te da Diblis para despertarlo y luego derrótalo.",
+    ["Spackle Thornberry, the demon trainer of the Slaughtered Lamb."] =
+        "Spackle Espinamora, el instructor de demonios de El Cordero Degollado.",
+    ["From level 60: the long chain of your dreadsteed. It asks for costly materials and goes through Scholomance and Dire Maul."] =
+        "Desde el nivel 60: la larga cadena de tu corcel nefasto. Pide materiales caros y pasa por Scholomance y La Masacre.",
+    ["Mor'zul Bloodbringer, in the west of the Burning Steppes."] =
+        "Mor'zul Sangredoble, al oeste de las Estepas Ardientes.",
+    ["The owlbeasts of Winterspring carry the blood."] =
+        "Los lechúcicos de Cuna del Invierno llevan la sangre.",
+    ["Gorzeeki Wildeyes, right by Mor'zul."] =
+        "Gorzeeki Ojosalvajes, justo al lado de Mor'zul.",
+    ["Mor'zul gives these three."] =
+        "Mor'zul te da estas tres.",
+    ["These three ask for an alchemist's elixir, an enchanter's shard with ore of the Burning Steppes, and scales of black dragonkin: make them, find them, or buy them at the auction house."] =
+        "Estas tres piden un elixir de alquimista, un fragmento de encantador con mineral de las Estepas Ardientes y escamas de dragonante negro: fabrícalos, encuéntralos o cómpralos en la casa de subastas.",
+    ["An Arcanite Bar: an alchemist makes it, or the auction house sells it."] =
+        "Un Lingote de arcanita: lo fabrica un alquimista, o se vende en la casa de subastas.",
+    ["Lord Banehollow, in the shrine of Jaedenar, in Felwood."] =
+        "Lord Pesadilla, en el santuario de Jaedenar, en Frondavil.",
+    ["Ulathek hides in Jaedenar too: defeat him for his heart."] =
+        "Ulathek también se esconde en Jaedenar: derrótalo para conseguir su corazón.",
+    ["Ur'dan sells the stardust, right by Lord Banehollow."] =
+        "Ur'dan vende el polvo estelar, justo al lado de Lord Pesadilla.",
+    ["In the alchemy lab of Scholomance, use the imp in a jar and let it do its work."] =
+        "En el laboratorio de alquimia de Scholomance, usa el Diablillo en una jarra y deja que haga su trabajo.",
+    ["In Dire Maul, summon the Xorothian Dreadsteed with the ritual items and defeat it; then speak to its spirit."] =
+        "En La Masacre, invoca al Corcel de la Muerte Xorothiano con los objetos del ritual y derrótalo; luego habla con su espíritu.",
+    ["Your reward: Summon Dreadsteed, your epic mount."] =
+        "Tu recompensa: Invocar corcel nefasto, tu montura épica.",
+    ["Warrior quests"] =
+        "Misiones de guerrero",
+    ["Lyria Du Lac, the warrior trainer of Goldshire."] =
+        "Lyria Du Lac, la instructora de guerreros de Villadorada.",
+    ["From level 10: the chain that teaches Defensive Stance."] =
+        "Desde el nivel 10: la cadena que enseña Actitud defensiva.",
+    ["Harry Burlguard, in the tavern of Old Town, in Stormwind."] =
+        "Harry Burlguard, en la taberna del Casco Antiguo, en Ventormenta.",
+    ["Bartleby, a drunk in the same tavern: he attacks as soon as you take his quest."] =
+        "Bartleby, un borracho de la misma taberna: ataca en cuanto aceptas su misión.",
+    ["Turning this in teaches Defensive Stance."] =
+        "Al entregarla aprendes Actitud defensiva.",
+    ["Granis Swiftaxe, the warrior trainer of Kharanos."] =
+        "Granis Hachaveloz, el instructor de guerreros de Kharanos.",
+    ["Muren Stormpike, upstairs in the Hall of Arms of Ironforge."] =
+        "Muren Pico Tormenta, arriba en la Sala de Armas de Forjaz.",
+    ["Vejrek waits in a Frostmane hut in the west of Dun Morogh."] =
+        "Vejrek espera en una choza Peloescarcha al oeste de Dun Morogh.",
+    ["Kyra Windblade, the warrior trainer of Dolanaar."] =
+        "Kyra Espada del Viento, la instructora de guerreros de Dolanaar.",
+    ["Elanaria, on the Warrior's Terrace of Darnassus."] =
+        "Elanaria, en el Bancal del Guerrero de Darnassus.",
+    ["Vorlus Vilehoof roams with the satyrs southwest of Dolanaar."] =
+        "Vorlus Pezuñavil deambula con los sátiros al suroeste de Dolanaar.",
+    ["Seena Skybreaker, the warrior trainer of Zephras Isle."] =
+        "Seena Skybreaker, la instructora de guerreros de la isla de Zephras.",
+    ["From level 10: the Skyborne warrior quest of Zephras Isle."] =
+        "Desde el nivel 10: la misión Skyborne de guerrero de la isla de Zephras.",
+    ["Zaal Stormshield carries the bulwark, in the north of the isle."] =
+        "Zaal Stormshield lleva el baluarte, al norte de la isla.",
+    ["Your capital's warrior trainer gives it."] =
+        "Te la da el instructor de guerreros de tu capital.",
+    ["From level 30: the chain that teaches Berserker Stance."] =
+        "Desde el nivel 30: la cadena que enseña Actitud rabiosa.",
+    ["Klannoc Macleod, on Fray Island, off the coast of the Barrens."] =
+        "Klannoc Macleod, en la Isla de Batalla, frente a la costa de Los Baldíos.",
+    ["Step on the grate of the arena: six fighters come one at a time, then Big Will."] =
+        "Pisa la reja de la arena: llegan seis luchadores de uno en uno y luego Will el Grande.",
+    ["Turning this in teaches Berserker Stance."] =
+        "Al entregarla aprendes Actitud rabiosa.",
+    ["From level 30: Bath'rah's chain, which ends with a Whirlwind weapon of your choice."] =
+        "Desde el nivel 30: la cadena de Bath'rah, que termina con un arma espirálica a tu elección.",
+    ["Eight Liferoot: an herb, picked with Herbalism or bought at the auction house."] =
+        "Ocho unidades de Vidarraíz: una hierba que se recoge con Herboristería o se compra en la casa de subastas.",
+    ["The Drywhisker kobolds of eastern Arathi Highlands carry the three charms."] =
+        "Los kóbolds Mostacho Seco del este de las Tierras Altas de Arathi llevan los tres amuletos.",
+    ["At Bath'rah's cauldron, right by him: put the three charms in it."] =
+        "En el caldero de Bath'rah, justo a su lado: echa en él los tres amuletos.",
+    ["The Bloodscalp trolls of northern Stranglethorn carry the tusks."] =
+        "Los trols Cabellesangre del norte de Tuercespina llevan los colmillos.",
+    ["Follow Bath'rah to the summoning, then defeat Cyclonian for its heart: a strong foe, bring help."] =
+        "Sigue a Bath'rah hasta la invocación y luego derrota a Ciclonio para conseguir su corazón: es un enemigo fuerte, lleva ayuda.",
+    ["Your reward: a Whirlwind weapon of your choice."] =
+        "Tu recompensa: un arma espirálica a tu elección.",
+    ["From level 50: the Fallen Hero's chain, which ends in the Temple of Atal'Hakkar."] =
+        "Desde el nivel 50: la cadena del Héroe caído, que termina en el Templo de Atal'Hakkar.",
+    ["The Fallen Hero of the Horde, a spirit in the west of the Swamp of Sorrows."] =
+        "El Héroe caído de la Horda, un espíritu al oeste del Pantano de las Penas.",
+    ["The Helboars of the Blasted Lands."] =
+        "Los jabinfernos de las Tierras Devastadas.",
+    ["The Shadowsworn of the Blasted Lands, by the Dark Portal; they come back quickly."] =
+        "Los Sombra Jurada de las Tierras Devastadas, junto al Portal Oscuro; reaparecen rápido.",
+    ["Gennia Runetotem, the druid trainer of Bloodhoof Village, sends you to Thunder Bluff."] =
+        "Gennia Tótem de Runa, la instructora de druidas del Poblado Pezuña de Sangre, te envía a Cima del Trueno.",
+    ["Turak Runetotem, in the Elder Rise of Thunder Bluff."] =
+        "Turak Runatótem, en el Alto de los Ancestros de Cima del Trueno.",
+    ["Faustron, the wind rider master southwest of Nighthaven: take this flight path for your next trips here."] =
+        "Faustron, el maestro de jinetes del viento al suroeste de Amparo de la Noche: consigue esta ruta de vuelo para tus próximos viajes aquí.",
+    ["Lunaclaw's spot, west of Camp Taurajo in the Barrens"] =
+        "El lugar de Garraluna, al oeste del Campamento Taurajo, en Los Baldíos",
+    ["Use the Cenarion Lunardust by the moonkin stone: Lunaclaw appears. Defeat her, then speak to her spirit."] =
+        "Usa el Polvo lunar Cenarion junto a la piedra de lechúcico lunar: aparece Garraluna. Derrótala y luego habla con su espíritu.",
+    ["Muln Earthfury gives it, in the northwest of Mulgore."] =
+        "Te la da Muln Earthfury, al noroeste de Mulgore.",
+    ["Fill the sampler in the bubbling pool at the top of Dreadmist Peak: three acolytes attack right after, so clear the top first or bring help."] =
+        "Llena la muestra en el estanque burbujeante de lo alto de la Cima Calígine: justo después atacan tres acólitos, así que limpia antes la cima o lleva ayuda.",
+    ["Tonga Runetotem, just south of the Crossroads."] =
+        "Tonga Tótem de Runa, justo al sur de El Cruce.",
+    ["The kodos of the northern Barrens carry the Kodo Horns."] =
+        "Los kodos del norte de Los Baldíos llevan los Cuernos de kodo.",
+    ["Sickly Gazelles graze in the north of the Barrens: use the salve on them."] =
+        "Las gacelas enfermas pastan al norte de Los Baldíos: usa el bálsamo en ellas.",
+    ["The first half of the pendant lies under the water in the far north of the Barrens."] =
+        "La primera mitad del colgante está bajo el agua, en el extremo norte de Los Baldíos.",
+    ["The second half lies under the water off the coast of Silverpine Forest."] =
+        "La segunda mitad está bajo el agua, frente a la costa del Bosque de Argénteos.",
+    ["Turak Runetotem gives it, in the Elder Rise of Thunder Bluff."] =
+        "Te la da Turak Runatótem, en el Alto de los Ancestros de Cima del Trueno.",
+    ["Thotar, the hunter trainer of Razor Hill."] =
+        "Thotar, el instructor de cazadores de Cerrotajo.",
+    ["Use the taming rod on a Dire Mottled Boar, south of Razor Hill. Once it is tamed, dismiss it: it turns on you again, so be ready."] =
+        "Usa la Fusta de domador en un Jabalí jaspeado feroz, al sur de Cerrotajo. Una vez domesticado, retíralo: vuelve a atacarte, así que prepárate.",
+    ["Use the rod on a Surf Crawler, on the southern shore of Durotar, then dismiss it the same way."] =
+        "Usa la fusta en un Reptador de espuma, en la costa sur de Durotar, y luego retíralo de la misma forma.",
+    ["Use the rod on an Armored Scorpid, northwest of Razor Hill."] =
+        "Usa la fusta en un Escórpido acorazado, al noroeste de Cerrotajo.",
+    ["Ormak Grimshot, the hunter trainer of Orgrimmar, in the Valley of Honor."] =
+        "Ormak Tirosiniestro, el instructor de cazadores de Orgrimmar, en el Valle del Honor.",
+    ["Yaw Sharpmane, the hunter trainer of Bloodhoof Village."] =
+        "Yaw Crinafilada, el instructor de cazadores del Poblado Pezuña de Sangre.",
+    ["Use the taming rod on an Adult Plainstrider, north of the village. Once it is tamed, dismiss it: it turns on you again, so be ready."] =
+        "Usa la Fusta de domador en un Zancudo de llanura adulto, al norte del poblado. Una vez domesticado, retíralo: vuelve a atacarte, así que prepárate.",
+    ["Use the rod on a Prairie Stalker, southeast of the village, then dismiss it the same way."] =
+        "Usa la fusta en un Acechador de pradera, al sureste del poblado, y luego retíralo de la misma forma.",
+    ["Use the rod on a Swoop, in the plains north of the village."] =
+        "Usa la fusta en un Aguilón, en las llanuras al norte del poblado.",
+    ["Holt Thunderhorn, the hunter trainer of Thunder Bluff, on the Hunter Rise."] =
+        "Holt Tronacuerno, el instructor de cazadores de Cima del Trueno, en el Alto de los Cazadores.",
+    ["Uthel'nay, the mage trainer of Orgrimmar, in the Valley of Spirits."] =
+        "Uthel'nay, la instructora de magos de Orgrimmar, en el Valle de los Espíritus.",
+    ["From level 10: your trainer's first errand, in Durotar."] =
+        "Desde el nivel 10: el primer encargo de tu instructor, en Durotar.",
+    ["Un'Thuwa, the mage trainer of Sen'jin Village."] =
+        "Un'Thuwa, el instructor de magos del Poblado Sen'jin.",
+    ["The Ju-Ju Heaps stand on the Echo Isles, off the southern coast."] =
+        "Los Montones Ju-Ju están en las Islas del Eco, frente a la costa sur.",
+    ["Cain Firesong, the mage trainer of Brill."] =
+        "Cain Pirosón, el instructor de magos de Rémol.",
+    ["From level 10: your trainer's first errand, in Tirisfal Glades."] =
+        "Desde el nivel 10: el primer encargo de tu instructor, en los Claros de Tirisfal.",
+    ["Anastasia Hartwell, the mage trainer of the Undercity, in the Magic Quarter."] =
+        "Anastasia Hartwell, la instructora de magos de Entrañas, en el Barrio de la Magia.",
+    ["The snapdragons grow by the farm of the Balnirs, in the east of Tirisfal Glades."] =
+        "Las bocas de dragón crecen junto a la granja de los Balnir, al este de los Claros de Tirisfal.",
+    ["From level 15: a chain in the Undercity that ends with a robe for you."] =
+        "Desde el nivel 15: una cadena en Entrañas que termina con una toga para ti.",
+    ["The chest of coffers and the cantation lie beside Anastasia."] =
+        "El cofre de arcas y el canto están al lado de Anastasia.",
+    ["The alchemist shop of the Undercity"] =
+        "La tienda de alquimia de Entrañas",
+    ["Read the cantation to reveal a Rift Spawn, fight it until it is stunned, then use a coffer on it."] =
+        "Lee el canto para revelar una Cría del risco, lucha con ella hasta que quede aturdida y luego usa un arca sobre ella.",
+    ["The Dalaran mages of Ambermill, in Silverpine Forest, carry the mana gems; the linen comes from humanoids anywhere."] =
+        "Los magos de Dalaran de Molino Ámbar, en el Bosque de Argénteos, llevan las gemas de maná; el lino lo sueltan los humanoides de cualquier parte.",
+    ["Josef Gregorian, the tailor of the Undercity's Rogues' Quarter."] =
+        "Josef Gregorian, el sastre del Barrio de los Pícaros de Entrañas.",
+    ["Your reward: the Spellfire Robes."] =
+        "Tu recompensa: la Toga Fuegohechizo.",
+    ["Deino, the mage trainer of Orgrimmar, in the Valley of Spirits."] =
+        "Deino, la instructora de magos de Orgrimmar, en el Valle de los Espíritus.",
+    ["Fill the flask at the waterfall of Xavian, in eastern Ashenvale: take the path up from the south."] =
+        "Llena el frasco en la cascada de Xavian, al este de Vallefresno: sube por el sendero desde el sur.",
+    ["The Laughing Sisters, nymphs of the woods of central Ashenvale, carry the hair."] =
+        "Las Hermanas sonrientes, ninfas de los bosques del centro de Vallefresno, llevan el cabello.",
+    ["Kil'hala, the tailor of the Crossroads."] =
+        "Kil'hala, la sastra de El Cruce.",
+    ["Your reward: the Nether-lace Garment."] =
+        "Tu recompensa: las Prendas de encaje abisal.",
+    ["Shadow Priest Sarvis, at the start of Deathknell."] =
+        "El Sacerdote de las Sombras Sarvis, al principio de Camposanto.",
+    ["The Forsaken paladin's story, a chain added by Forever, starts in Deathknell."] =
+        "La historia del paladín renegado, una cadena añadida por Forever, empieza en Camposanto.",
+    ["Aramis Hammerhand, the paladin trainer of Deathknell."] =
+        "Aramis Hammerhand, el instructor de paladines de Camposanto.",
+    ["Shari Stilwell, the paladin trainer of Brill."] =
+        "Shari Stilwell, la instructora de paladines de Rémol.",
+    ["Breton Samuels, at the outpost in the west of Tirisfal Glades."] =
+        "Breton Samuels, en la avanzada del oeste de los Claros de Tirisfal.",
+    ["Jorin Croge, a few steps away."] =
+        "Jorin Croge, a pocos pasos.",
+    ["The Vile Fin murlocs of the western coast."] =
+        "Los múrlocs Anca Vil de la costa oeste.",
+    ["The lumber piles lie on the western coast, south of the murlocs."] =
+        "Los montones de madera están en la costa oeste, al sur de los múrlocs.",
+    ["Danitha Morr, at the outpost."] =
+        "Danitha Morr, en la avanzada.",
+    ["The Tarnished gather on the western coast; Rudolph Gelhardt, their paladin, carries the head the quest asks for."] =
+        "Los Tarnished se reúnen en la costa oeste; Rudolph Gelhardt, su paladín, lleva la cabeza que pide la misión.",
+    ["Lady Sylvanas Windrunner, in the Royal Quarter of the Undercity."] =
+        "Lady Sylvanas Brisaveloz, en el Barrio Real de Entrañas.",
+    ["Danitha Morr, at the outpost in the west of Tirisfal Glades."] =
+        "Danitha Morr, en la avanzada del oeste de los Claros de Tirisfal.",
+    ["From level 12: the lessons in divinity, the next chapter of the Forsaken paladin's story."] =
+        "Desde el nivel 12: las lecciones de divinidad, el siguiente capítulo de la historia del paladín renegado.",
+    ["Tanis Alderwood, in the Undercity."] =
+        "Tanis Alderwood, en Entrañas.",
+    ["Tanis needs Linen Cloth: humanoids carry it everywhere."] =
+        "Tanis necesita Paño de lino: lo llevan los humanoides de todas partes.",
+    ["Deathguard Billmuth, at the outpost."] =
+        "Deathguard Billmuth, en la avanzada.",
+    ["Deathguard Falgan, in the east of Tirisfal Glades, near the Scarlet watch post."] =
+        "Deathguard Falgan, al este de los Claros de Tirisfal, cerca del puesto de vigilancia Escarlata.",
+    ["The Scarlet zealots and friars of the watch post carry the attack plans."] =
+        "Los zelotes y frailes Escarlata del puesto de vigilancia llevan los planes de ataque.",
+    ["From level 18: the story goes on in Silverpine Forest, around a moonsilver blade."] =
+        "Desde el nivel 18: la historia sigue en el Bosque de Argénteos, en torno a una hoja de plata lunar.",
+    ["Trevan Rol, at the Sepulcher."] =
+        "Trevan Rol, en El Sepulcro.",
+    ["Deathguard Baldren, at the Sepulcher."] =
+        "Deathguard Baldren, en El Sepulcro.",
+    ["The charred remains lie in the east of Silverpine Forest, facing Fenris Isle."] =
+        "Los restos calcinados están al este del Bosque de Argénteos, frente a la Isla de Fenris.",
+    ["Lumina Windsinger, held in Fenris Keep."] =
+        "Lumina Windsinger, presa en el Castillo de Fenris.",
+    ["The Rot Hide gnolls of Fenris Isle carry the key."] =
+        "Los gnolls Putrepellejo de la Isla de Fenris llevan la llave.",
+    ["Lumina Windsinger waits again at the Sepulcher."] =
+        "Lumina Windsinger vuelve a esperar en El Sepulcro.",
+    ["Old Fire-Eye prowls the south of Silverpine Forest."] =
+        "Old Fire-Eye merodea por el sur del Bosque de Argénteos.",
+    ["Ott, the weaponsmith of Tarren Mill."] =
+        "Ott, el forjador de armas de Molino Tarren.",
+    ["Ulric Frostveil, at Zoram'gar Outpost on the coast of Ashenvale."] =
+        "Ulric Frostveil, en la Avanzada de Zoram'gar, en la costa de Vallefresno.",
+    ["From level 20: Ulric Frostveil's quest of the Kor Gem, in Ashenvale."] =
+        "Desde el nivel 20: la misión de la gema Kor de Ulric Frostveil, en Vallefresno.",
+    ["The naga of the Blackfathom Deeps entrance, under the water of Zoram Strand, carry the corrupted gem. They are elite: bring a group."] =
+        "Las nagas de la entrada de las Cavernas de Brazanegra, bajo el agua de La Ensenada de Zoram, llevan la gema corrupta. Son élite: ve en grupo.",
+    ["Ken'jai, the priest trainer of the Valley of Trials."] =
+        "Ken'jai, el instructor de sacerdotes del Valle de los Retos.",
+    ["From level 5: heal a wounded grunt, and get your first robe."] =
+        "Desde el nivel 5: sana a un bruto herido y consigue tu primera toga.",
+    ["Tai'jin, the priest trainer of Razor Hill."] =
+        "Tai'jin, la instructora de sacerdotes de Cerrotajo.",
+    ["Grunt Kor'ja lies wounded south of Razor Hill: heal her with Lesser Heal, then give her Power Word: Fortitude."] =
+        "Bruto Kor'ja yace herida al sur de Cerrotajo: sánala con Sanación inferior y luego dale Palabra de poder: entereza.",
+    ["Dark Cleric Duesten, the priest trainer of Deathknell."] =
+        "El Clérico oscuro Duesten, el instructor de sacerdotes de Camposanto.",
+    ["From level 5: heal a wounded deathguard, and get your first robe."] =
+        "Desde el nivel 5: sana a un guardia de la Muerte herido y consigue tu primera toga.",
+    ["Dark Cleric Beryl, the priest trainer of Brill."] =
+        "El Clérico oscuro Beryl, el instructor de sacerdotes de Rémol.",
+    ["Deathguard Kel lies wounded north of Brill: heal him with Lesser Heal, then give him Power Word: Fortitude."] =
+        "El Guardia de la Muerte Kel yace herido al norte de Rémol: sánalo con Sanación inferior y luego dale Palabra de poder: entereza.",
+    ["From level 10: the quest that teaches Hex of Weakness."] =
+        "Desde el nivel 10: la misión que enseña Maleficio de debilidad.",
+    ["Ur'kyo, the priest trainer of Orgrimmar, in the Valley of Spirits."] =
+        "Ur'kyo, el instructor de sacerdotes de Orgrimmar, en el Valle de los Espíritus.",
+    ["Aelthalyste, the priest trainer of the Undercity, in the War Quarter."] =
+        "Aelthalyste, la instructora de sacerdotes de Entrañas, en el Barrio de la Guerra.",
+    ["From level 10: the quest that teaches Touch of Weakness."] =
+        "Desde el nivel 10: la misión que enseña Toque de debilidad.",
+    ["From level 20: the quest that teaches Shadowguard."] =
+        "Desde el nivel 20: la misión que enseña Guardia de las Sombras.",
+    ["From level 20: the quest that teaches Devouring Plague."] =
+        "Desde el nivel 20: la misión que enseña Peste devoradora.",
+    ["Learn Pick Lock at your trainer, then practice on lockboxes until your skill reaches 75: Gallywix's lockbox, at 20, needs it."] =
+        "Aprende Forzar cerradura con tu instructor y luego practica con arcones hasta que tu habilidad llegue a 75: el arcón de Gallywix, a nivel 20, lo necesita.",
+    ["Shenthul, in a tent of the Cleft of Shadow, in Orgrimmar."] =
+        "Shenthul, en una tienda del Circo de las Sombras, en Orgrimmar.",
+    ["Shenthul greets you with a hand sign: answer it with the salute emote."] =
+        "Shenthul te saluda con una seña: respóndele con la emoción de saludo.",
+    ["By the Venture Co. tower in the far north of the Barrens: target Taskmaster Fizzule, fire the flare gun twice, then salute him."] =
+        "Junto a la torre de Ventura y Cía., en el extremo norte de Los Baldíos: selecciona al Capataz Burbujita, dispara dos veces la pistola de bengalas y luego salúdalo.",
+    ["In the tower: pick Silixiz's key from his pocket, kill the guards floor by floor, Gallywix at the top, then open his lockbox."] =
+        "En la torre: roba la llave de Silixiz de su bolsillo, mata a los guardias piso a piso, con Gallywix en lo alto, y luego abre su arcón.",
+    ["The lockbox leaves a sickness on you: Shenthul sends you to be cured."] =
+        "El arcón te deja una enfermedad: Shenthul te envía a que te curen.",
+    ["Serge Hinott, the alchemist of Tarren Mill."] =
+        "Serge Hinott, el alquimista de Molino Tarren.",
+    ["Stay by Serge while he prepares the cure."] =
+        "Quédate junto a Serge mientras prepara la cura.",
+    ["Canaga Earthcaller, in the Valley of Trials."] =
+        "Canaga Clamatierras, en el Valle de los Retos.",
+    ["The Felstalkers of the valley carry the hooves."] =
+        "Los acechadores viles del valle llevan las pezuñas.",
+    ["Up the hill path south of the valley: drink the Earth Sapta to see the Minor Manifestation of Earth."] =
+        "Subiendo por el sendero de la colina al sur del valle: bebe la Sapta de tierra para ver la Manifestación de tierra menor.",
+    ["Seer Ravenfeather, in Camp Narache."] =
+        "Vidente Pluma de Cuervo, en el Campamento Narache.",
+    ["The Bristleback shamans east of the camp carry the salve."] =
+        "Los chamanes Lomopelo al este del campamento llevan el bálsamo.",
+    ["On the hill south of the camp: drink the Earth Sapta to see the Minor Manifestation of Earth."] =
+        "En la colina al sur del campamento: bebe la Sapta de tierra para ver la Manifestación de tierra menor.",
+    ["Windshaper Boro, on Zephras Isle."] =
+        "Windshaper Boro, en la isla de Zephras.",
+    ["Drink the Earth Sapta to see the Minor Manifestation of Earth, east of Boro."] =
+        "Bebe la Sapta de tierra para ver la Manifestación de tierra menor, al este de Boro.",
+    ["Swart, the shaman trainer of Razor Hill."] =
+        "Swart, el instructor de chamanes de Cerrotajo.",
+    ["Narm Skychaser, the shaman trainer of Bloodhoof Village."] =
+        "Narm Cazacielo, el instructor de chamanes del Poblado Pezuña de Sangre.",
+    ["Kranal Fiss, at the Far Watch Post on the border of the Barrens."] =
+        "Kranal Fiss, en la Avanzada del Puente, en la frontera de Los Baldíos.",
+    ["Telf Joolam, on top of a mountain in the west of Durotar."] =
+        "Telf Joolam, en lo alto de una montaña al oeste de Durotar.",
+    ["The Razormane of the northern Barrens carry the Fire Tar; the Burning Blade cultists of the cave north of Razor Hill carry the pouches."] =
+        "Los Crines de Acero del norte de Los Baldíos llevan el Alquitrán; los fieles Filo Ardiente de la cueva al norte de Cerrotajo llevan las bolsitas.",
+    ["Right by Telf: drink the Fire Sapta, then defeat the Minor Manifestation of Fire for its ember."] =
+        "Justo al lado de Telf: bebe la Sapta de fuego y luego derrota a la Manifestación de fuego menor para conseguir su ascua.",
+    ["Sessaria Skystride, on Zephras Isle."] =
+        "Sessaria Skystride, en la isla de Zephras.",
+    ["Olariaan Swiftburn, in the south of the isle."] =
+        "Olariaan Swiftburn, al sur de la isla.",
+    ["Skypriest Faladiel carries the heart."] =
+        "Skypriest Faladiel lleva el corazón.",
+    ["Kuramaa, the spirit of mischief, carries the mask."] =
+        "Kuramaa, el espíritu de la travesura, lleva la máscara.",
+    ["Light the Brazier of Offering by Olariaan, then the Brazier of Eternal Flame by Sessaria."] =
+        "Enciende el Brazier of Offering junto a Olariaan y luego el Brazier of Eternal Flame junto a Sessaria.",
+    ["Searn Firewarder, in the Valley of Wisdom of Orgrimmar."] =
+        "Searn Guardafogo, en el Valle de la Sabiduría de Orgrimmar.",
+    ["Xanis Flameweaver, on the Elder Rise of Thunder Bluff."] =
+        "Xanis Tejedor de Fuego, en el Alto de los Ancestros de Cima del Trueno.",
+    ["Islen Waterseer, by the coast east of the Barrens."] =
+        "Islen Vident'aqua, junto a la costa al este de Los Baldíos.",
+    ["Brine, in the south of the Barrens."] =
+        "Salmuera, al sur de Los Baldíos.",
+    ["Fill the waterskin at the quilboar watering hole, right by Brine."] =
+        "Llena la bota en el abrevadero de los jabaespines, justo al lado de Salmuera.",
+    ["Fill it at the Spring Well of Tarren Mill, in Hillsbrad Foothills."] =
+        "Llénala en la Fontana de Molino Tarren, en las Laderas de Trabalomas.",
+    ["Fill it at the ruins of the Stardust Fountain, in the south of Ashenvale."] =
+        "Llénala en las ruinas de la Fuente del Polvo Estelar, al sur de Vallefresno.",
+    ["By the Brazier of Everfount, in the lake of Silverpine Forest: use the brazier's water, then defeat the corrupt manifestation for its bracers."] =
+        "Junto al Blandón de Siemprefuente, en el lago del Bosque de Argénteos: usa el agua del blandón y luego derrota a la manifestación corrupta para conseguir sus brazales.",
+    ["The Minor Manifestation of Water rises beside the brazier."] =
+        "La Manifestación de agua menor surge junto al blandón.",
+    ["Prate Cloudseer, on a mesa in the middle of Thousand Needles."] =
+        "Prate Vidente de las Nubes, en una meseta en el centro de Las Mil Agujas.",
+    ["Rau Cliffrunner, at Freewind Post."] =
+        "Rau Abiscorredor, en el Poblado Viento Libre.",
+    ["From level 33: Forever's elemental quests of Rau Cliffrunner, in Thousand Needles."] =
+        "Desde el nivel 33: las misiones elementales de Rau Abiscorredor, propias de Forever, en Las Mil Agujas.",
+    ["Beram Skychaser in Thunder Bluff, or Sagorne Creststrider in Orgrimmar."] =
+        "Beram Cazacielo en Cima del Trueno, o Sagorne Zanca Cresta en Orgrimmar.",
+    ["From level 50: Bath'rah the Windwatcher's chain, which ends in the Temple of Atal'Hakkar."] =
+        "Desde el nivel 50: la cadena de Bath'rah el Vigía del viento, que termina en el Templo de Atal'Hakkar.",
+    ["One Elemental Earth, Fire, Water and Air: elementals drop them, or the auction house sells them."] =
+        "Un Elemental de tierra, de fuego, de agua y de aire: los sueltan los elementales, o se venden en la casa de subastas.",
+    ["The spiders and the bears of the Western Plaguelands carry the eyes and the claws."] =
+        "Las arañas y los osos de las Tierras de la Peste del Oeste llevan los ojos y las garras.",
+    ["Ruzan, in the Valley of Trials."] =
+        "Ruzan, en el Valle de los Retos.",
+    ["Your trainer's first errand, in the Valley of Trials."] =
+        "El primer encargo de tu instructor, en el Valle de los Retos.",
+    ["The Vile Familiars of the cave south of the valley carry the heads."] =
+        "Los familiares viles de la cueva al sur del valle llevan las cabezas.",
+    ["Zureetha Fargaze, beside Ruzan."] =
+        "Zureetha Vistalonga, al lado de Ruzan.",
+    ["Venya Marthand, in Deathknell."] =
+        "Venya Martmani, en Camposanto.",
+    ["Your trainer's first errand, in Deathknell."] =
+        "El primer encargo de tu instructor, en Camposanto.",
+    ["The Rattlecage Skeletons east of Deathknell carry the skulls."] =
+        "Los esqueletos armadóseos al este de Camposanto llevan los cráneos.",
+    ["Ophek, in Razor Hill, sends you to Orgrimmar."] =
+        "Ophek, en Cerrotajo, te envía a Orgrimmar.",
+    ["Gan'rul Bloodeye, in the Cleft of Shadow of Orgrimmar."] =
+        "Ojo sangriento de Gan'rul, en el Circo de las Sombras de Orgrimmar.",
+    ["The Tablet of Verga lies in the Burning Blade stash at the back of Skull Rock, in the north of Durotar."] =
+        "La Tablilla de Verga está en el alijo del Filo Ardiente, al fondo de la Roca del Cráneo, al norte de Durotar.",
+    ["Right by Gan'rul: use the glyphs on the summoning circle, then defeat the voidwalker."] =
+        "Justo al lado de Gan'rul: usa los glifos en el círculo de invocación y luego derrota al abisario.",
+    ["Ageron Kargal, in Brill, sends you to the Undercity."] =
+        "Ageron Kargal, en Rémol, te envía a Entrañas.",
+    ["Carendin Halgar, in the Magic Quarter of the Undercity."] =
+        "Carendin Halgar, en el Barrio de la Magia de Entrañas.",
+    ["Egalin's Grimoire lies in Perrine's chest, in the house south of Brill."] =
+        "El Grimorio de Egalin está en el cofre de Perrine, en la casa al sur de Rémol.",
+    ["Right by Carendin: use the runes on the summoning circle, then defeat the voidwalker."] =
+        "Justo al lado de Carendin: usa las runas en el círculo de invocación y luego derrota al abisario.",
+    ["Cazul, in the Cleft of Shadow."] =
+        "Cazul, en el Circo de las Sombras.",
+    ["Zankaja, in the Valley of Spirits of Orgrimmar."] =
+        "Zankaja, en el Valle de los Espíritus de Orgrimmar.",
+    ["Gazrog, at the Crossroads."] =
+        "Gazrog, en El Cruce.",
+    ["Ken'zigla, at the camp of Malaka'jin in the far south of Stonetalon Mountains."] =
+        "Ken'zigla, en el campamento de Malaka'jin, en el extremo sur de la Sierra Espolón.",
+    ["Grunt Logmar, by the road north of Camp Taurajo."] =
+        "El Bruto Logmar, junto al camino al norte del Campamento Taurajo.",
+    ["Grunt Dogran is held by the Kolkar in the Barrens: give him the draught."] =
+        "El Bruto Dogran es prisionero de los Kolkar en Los Baldíos: dale el brebaje.",
+    ["Right by Gan'rul: use Dogran's pendant on the summoning circle, then defeat the succubus."] =
+        "Justo al lado de Gan'rul: usa el colgante de Dogran en el círculo de invocación y luego derrota al súcubo.",
+    ["Jorah Annison, in the Magic Quarter of the Undercity."] =
+        "Jorah Annison, en el Barrio de la Magia de Entrañas.",
+    ["The Dragonmaw orcs of the Wetlands carry the rod: Alliance land, stay clear of the guards."] =
+        "Los orcos Faucedraco de Los Humedales llevan la vara: tierra de la Alianza, mantente lejos de los guardias.",
+    ["Zevrost, the warlock trainer of the Cleft of Shadow."] =
+        "Zevrost, el instructor de brujos del Circo de las Sombras.",
+    ["Kurgul, the demon trainer of the Cleft of Shadow."] =
+        "Kurgul, el instructor de demonios del Circo de las Sombras.",
+    ["Your warrior trainer, in Razor Hill or Bloodhoof Village, sends you to Uzzek."] =
+        "Tu instructor de guerreros, en Cerrotajo o en el Poblado Pezuña de Sangre, te envía con Uzzek.",
+    ["Uzzek, at the Far Watch Post on the border of the Barrens."] =
+        "Uzzek, en la Avanzada del Puente, en la frontera de Los Baldíos.",
+    ["From level 10: the quest that teaches Defensive Stance."] =
+        "Desde el nivel 10: la misión que enseña Actitud defensiva.",
+    ["The Thunder Lizards of the north of Durotar carry the scales."] =
+        "Los truenagartos del norte de Durotar llevan las escamas.",
+    ["Thun'grim Firegaze, on a hill east of the Crossroads."] =
+        "Thun'grim Vistafuego, en una colina al este de El Cruce.",
+    ["The steel bars lie in the Razormane camp below the hill."] =
+        "Las barras de acero están en el campamento Crines de Acero, al pie de la colina.",
+    ["Austil de Mon, the warrior trainer of Brill."] =
+        "Austil de Mon, el instructor de guerreros de Rémol.",
+    ["Deathguard Dillinger, in Brill."] =
+        "El Guardia de la Muerte Dillinger, en Rémol.",
+    ["Open the mausoleum north of Brill: Ulag the Cleaver comes out."] =
+        "Abre el mausoleo al norte de Rémol: sale Ulag el Cuchillero.",
+    ["Coleman Farthing, in the inn of Brill."] =
+        "Coleman Lontananza, en la posada de Rémol.",
+    ["The four heirlooms lie in the crypt of the Agamand Mills, in the northwest of Tirisfal Glades."] =
+        "Las cuatro reliquias están en la cripta de los Molinos de Agamand, al noroeste de los Claros de Tirisfal.",
 }

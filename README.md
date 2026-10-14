@@ -30,6 +30,14 @@ instead from the *Arrow* tab of the settings (off by default).
 - **Guides optimized for XP per hour.** The routes are generated offline from the game data:
   quests grouped to avoid back-and-forth, poor-value detours left out, never a quest above
   your level (one level above at most). The new quests of Forever are included.
+- **Class quests.** A separate pack, *Ding! - Class quests* (*Guide* tab, under "Class"): the
+  guide of your class and side, its important quest chains in level order. A druid's bear,
+  aquatic and cat forms, a hunter's first pet, a warlock's demons and dreadsteed, a warrior's
+  stances and Whirlwind weapon, a paladin's Redemption and charger, a shaman's totems, a
+  rogue's poisons, the priests' and mages' race and class quests, with Forever's own (the
+  Skyborne, the Forsaken paladins, the Alliance shamans...). Each chain says from which level
+  it opens and what it teaches; you only see your class. Steps inside a dungeon show with the
+  *Dungeon quests* option of the *Route* tab.
 - **A setup assistant** at the first launch: four short screens, a few choices each, the
   recommended ones already selected. How you play (gamepad or keyboard and mouse), what Ding
   does for you (quests, gray items, repairs), your route (hearthstone, group quests, death

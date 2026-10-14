@@ -544,6 +544,7 @@ Ding.Locales.koKR = {
     IMPORT_REPLACES = "가져온 가이드 %s을(를) 대체합니다",
     IMPORT_TWICE = "가이드 ID %s이(가) 두 번 쓰였습니다",
     PACK_BY = "제작: %s",
+    PACK_CLASS = "Ding! - 직업 퀘스트",
     PACK_ITEMS = "Ding! - 아이템",
     PACK_LEVELING = "Ding! - 레벨업",
     PACK_ZONES = "Ding! - 지역별",
