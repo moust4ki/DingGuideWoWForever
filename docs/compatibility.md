@@ -33,13 +33,14 @@ The author's own gamepad addon (chat keyboard, wheels, back paddles, gamepad map
   combinations with them ("LT+A" = `SHIFT-PAD1` when LT is Shift); it never changes them. A
   combination it cannot make is explained in words in the Keybinds tab ("RB+Up: the game only
   combines a button with LT or RT").
-- A key Easy Controller holds (its override bindings: its mapping, its wheels…) is refused by
-  name in the Keybinds tab ("LT+X is used by Easy Controller, which comes first"), and never
-  taken by the default button of "Open Ding! settings".
-- While one of Easy Controller's windows is open (detected with `C_AddOns.IsAddOnLoaded` and its
-  frames), a Ding window does not set its buttons over Easy Controller's: it waits for that
-  window to close, says so once in the chat, and works with the mouse meanwhile. Ding's first
-  launch waits for Easy Controller's own guide to close.
+- A key Easy Controller holds (its override bindings: its mapping, its wheels…) is named in the
+  Keybinds tab ("LT+X: Easy Controller uses it too and may win in play. A binds it anyway, B
+  cancels"): A binds it, Easy Controller's own stays as it is. The default button of "Open
+  Ding! settings" never takes one.
+- Ding's windows (settings, setup assistant, NPC directory, import / export, focus mode, move
+  mode) take their buttons as usual with Easy Controller on. An earlier build waited while one of
+  Easy Controller's windows was shown: it left Ding unusable as soon as Easy Controller was
+  enabled (probably one of its frames stays shown all the time), and it is gone.
 - `Ding.Gamepad:HasWindow()` says when a Ding window holds the gamepad, for Easy Controller to
   read (below). Ding's bindings go when its windows close, which Easy Controller's hook sees.
 
@@ -72,9 +73,8 @@ assistant shows the result on its first screen; with nothing free, the Keybinds 
 ## ConsolePort
 
 Not tested on WoW Forever. It sets the gamepad modifiers itself (`GamePadEmulate*`): Ding reads
-them like Easy Controller's. Its override bindings are named in the Keybinds tab ("used by
-ConsolePort") and never taken. Ding does not detect its windows: open Ding's settings with
-ConsolePort's own menus closed.
+them like Easy Controller's. Its override bindings are named in the Keybinds tab ("ConsolePort uses it too
+ConsolePort"), A binds them anyway. Open Ding's settings with ConsolePort's own menus closed.
 
 ## TomTom
 
@@ -84,13 +84,13 @@ setting, nothing of TomTom's shipped.
 
 ## To check in game, with Easy Controller and Ding! both enabled
 
-1. Settings of Ding!, Keybinds: bind LT + A to "Next step" (hold LT, press A): the row shows
-   "LT+A"; in play, LT + A goes to the next step and nothing else happens. If Easy Controller
-   already uses LT + A, the row names it and nothing changes.
-2. LT + D-pad down the same way; RB + Up refused in words.
-3. Open Easy Controller's chat keyboard, then Ding's settings (from the minimap button): the
-   chat line says Ding waits; close the keyboard: the D-pad, A, B and LB / RB move in Ding's
-   settings.
+1. Ding!'s settings (minimap button, or its button): the D-pad, A, B and LB / RB move in them
+   right away, with Easy Controller enabled.
+2. Settings of Ding!, Keybinds: bind LT + A to "Next step" (hold LT, press A): the row shows
+   "LT+A"; in play, LT + A goes to the next step. If Easy Controller already uses LT + A, the
+   row says so: A binds it anyway (Easy Controller's may still win in play), B keeps it as it is.
+3. LT + D-pad down the same way; RB + Up refused in words (RB is not one of the game's
+   modifiers).
 4. Ding's focus mode (its binding), then one of Easy Controller's wheels, then the focus mode
    again: each one's buttons work, none left to the other once closed.
 5. Ding's settings open, press RB + D-pad down: Easy Controller's panel should not open over

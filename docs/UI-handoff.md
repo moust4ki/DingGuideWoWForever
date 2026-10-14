@@ -406,9 +406,9 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   showed "RB"). A gamepad button is taken when it is released alone, so that a held button can
   start a combination ("LT+A": the game binds a button with the buttons its gamepad settings
   make Shift, Ctrl or Alt); B tapped cancels, B held one second is taken like any button. While
-  a button is awaited, a conflict settled or a button refused ("RB+Up: the game only combines a
-  button with LT or RT", "A belongs to the game's gamepad interface", "LT+X is used by Easy
-  Controller"), the words take the room beside the label on up to two lines of 11 Regular in
+  a button is awaited, a conflict settled or a combination refused ("RB+Up: the game only
+  combines a button with LT or RT"; "LT+X: Easy Controller uses it too and may win in play. A
+  binds it anyway, B cancels"), the words take the room beside the label on up to two lines of 11 Regular in
   `accent` (the label then keeps at most 40 % of the row, its whole name back afterwards). An
   action with several buttons of the kind shown (a key with the keyboard, a button with the
   gamepad) shows the first with "and 2 more" in 11 Regular `text.secondary` before its chip; a

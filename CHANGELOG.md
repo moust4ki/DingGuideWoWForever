@@ -33,8 +33,9 @@ Nothing else to install: QuestieDB is no longer needed, and TomTom stays optiona
 - **Keybinds with the gamepad fixed**: a button you bind now replaces the old one (it used to
   be added beside it, and the row kept showing the first one, often "RB"). Combinations work:
   hold LT (or another button the game's gamepad settings make Shift, Ctrl or Alt) and press A
-  for LT + A. A combination the game cannot make, a button the game's gamepad interface or
-  another addon (Easy Controller...) already uses, is explained in words. Tap B to cancel, hold
+  for LT + A. A combination the game cannot make is explained in words; a button the game's
+  gamepad interface or another addon (Easy Controller...) also uses is named, and A binds it
+  anyway. Tap B to cancel, hold
   B to bind B itself. If an action of Ding! ended up on several buttons, its row says "and 2
   more": bind it again, or press Y, to clean it up.
 - **A button to open Ding! from the start**: "Open Ding! settings" gets **LT + Start** on the
@@ -42,10 +43,9 @@ Nothing else to install: QuestieDB is no longer needed, and TomTom stays optiona
   setup assistant shows it on its first screen; with the keyboard and mouse, it names the
   minimap button and the guide window's menu button. `/ding help` says it too. Already bound,
   or taken by something else: nothing is changed.
-- **Easy Controller and Ding! side by side**: Ding! never changes the game's gamepad settings,
-  never takes a key Easy Controller uses, and while one of its windows (chat keyboard, wheels,
-  phrases, its settings or guide) is open, Ding!'s windows wait for it to close before taking
-  the gamepad.
+- **Easy Controller and Ding! side by side**: Ding! never changes the game's gamepad settings
+  and its default button never takes a key Easy Controller uses; Ding!'s windows work as usual
+  with Easy Controller on.
 
 ## v1.4.0
 

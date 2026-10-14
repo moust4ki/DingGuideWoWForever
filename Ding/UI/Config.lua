@@ -1531,9 +1531,9 @@ end
 ---------------------------------------------------------------------------
 -- Key binding capture
 ---------------------------------------------------------------------------
--- The row waits for a button, a combination or a key (Gamepad:Capture). A key another addon
--- or the game's gamepad interface has is refused in words and the wait goes on; a saved
--- binding in the way asks to be replaced; the game refusing the key says so.
+-- The row waits for a button, a combination or a key (Gamepad:Capture). Someone else having
+-- the key (a saved binding, another addon, the game's gamepad interface) is said in words:
+-- A binds it anyway, B keeps things as they were; the game refusing the key says so.
 function Cfg:StartCapture(row)
     if InCombatLockdown() then return end
     local action = row.opts.action
@@ -1542,7 +1542,6 @@ function Cfg:StartCapture(row)
     row:Refresh()
     self:UpdateHelp()
     G():Capture({
-        refuse = function(key) return G():TakenText(key, G():WhoUses(action, key)) end,
         say = function(text)
             row.notice = text
             row:Refresh()
@@ -1552,8 +1551,8 @@ function Cfg:StartCapture(row)
             self.capturing = nil
             if key then
                 local who = G():WhoUses(action, key)
-                if who and who.kind == "binding" then
-                    row.conflict = who.name
+                if who then
+                    row.conflict = { who = who, key = key }
                     self.conflictRow, self.pendingKey = row, key
                 elseif G():Bind(action, key) then
                     row.boundPad = G():IsPadKey(key)

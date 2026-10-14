@@ -1424,9 +1424,7 @@ function UI.BindingRow(parent, owner, opts, width)
 
     local function message(self)
         local G = Ding.Gamepad
-        if self.conflict then
-            return (G:Active() and L.BIND_CONFLICT or L.BIND_CONFLICT_MOUSE):format(self.conflict)
-        end
+        if self.conflict then return G:ConflictText(self.conflict.key, self.conflict.who) end
         if self.notice then return self.notice end
         if self.capturing then return G:Active() and L.BIND_WAIT_PAD or L.BIND_WAIT end
         return nil

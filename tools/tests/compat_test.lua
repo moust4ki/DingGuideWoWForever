@@ -1,7 +1,8 @@
 -- Ding! beside Easy Controller (the author's gamepad addon) and the default button of "Open Ding!
--- settings" (docs/compatibility.md). Ding never changes the game's gamepad settings, never sets
--- its window bindings over another addon's open window, never takes a key someone has; the
--- setup assistant says how to open Ding! later.
+-- settings" (docs/compatibility.md). Ding never changes the game's gamepad settings; its windows
+-- take their buttons whatever Easy Controller shows (reported: waiting for its windows left Ding
+-- unusable); a key Easy Controller uses is bound by hand with a word, never by default; the setup
+-- assistant says how to open Ding! later.
 local tools = (arg[0]:match("^(.*)[/\\]") or ".") .. "/.."
 local T = dofile(tools .. "/testlib.lua")(arg[1])
 local Ding, H = T.Ding, T.H
@@ -85,72 +86,84 @@ T.test("never over a button the action has, nor a key in use; without a gamepad,
     T.ok(not Ding.db.ui.configKeyDone, "not offered again once a gamepad is in use")
 end)
 
-T.test("Easy Controller loaded: its keys left alone, the game's gamepad settings untouched", function()
+T.test("Easy Controller loaded: its keys never taken by default, bound by hand with a word", function()
     fresh()
     H.setAddOnLoaded("EasyController", true)
     local ec = CreateFrame("Frame")
     SetOverrideBinding(ec, true, "SHIFT-PADFORWARD", "CONTROLLERKEYBOARD_NOOP")
-    T.eq(G:BindDefaultConfig(), "CTRL-PADFORWARD", "Easy Controller's LT + Start taken")
+    T.eq(G:BindDefaultConfig(), "CTRL-PADFORWARD", "Easy Controller's LT + Start taken by default")
     T.eq(H.overrideActions[ec]["SHIFT-PADFORWARD"], "CONTROLLERKEYBOARD_NOOP")
-    -- Binding a combination by hand: Easy Controller's key refused by name.
+    -- By hand: named, A binds it anyway.
     Cfg:Open("bindings", 1); H.flush()
     H.focusOn(Cfg, function(r) return r.opts and r.opts.action == ACTION end, ACTION)
     H.press("PAD1")
     H.padDown("PADFORWARD", { shift = true })
-    T.eq(Cfg.focus.status:GetText(), L.BIND_TAKEN_ADDON:format("LT+Start", "Easy Controller"))
-    H.padDown("PAD2")
+    T.eq(Cfg.focus.status:GetText(), L.BIND_ALSO_ADDON:format("LT+Start", "Easy Controller"))
+    H.press("PAD1")
+    T.eq(keysOf(ACTION), "SHIFT-PADFORWARD", "A does not bind Easy Controller's key")
+    T.eq(H.overrideActions[ec]["SHIFT-PADFORWARD"], "CONTROLLERKEYBOARD_NOOP", "Easy Controller's binding changed")
     Cfg:Close(); H.flush()
     ClearOverrideBindings(ec)
     H.setAddOnLoaded("EasyController", false)
     gamepadSettingsUntouched("Easy Controller")
 end)
 
-T.test("Easy Controller's window open: Ding's windows wait for it, then take the gamepad", function()
-    fresh()
-    H.setAddOnLoaded("EasyController", true)
-    local keyboard = _G.ControllerKeyboardFrame or CreateFrame("Frame", "ControllerKeyboardFrame", UIParent)
-    keyboard:Show()
-    T.eq(G:OtherPadWindow(), "Easy Controller")
-    local lines = chat(function() Cfg:Open("guide", 1); H.flush() end)
-    T.ok(Cfg.frame:IsShown(), "the settings do not open")
-    T.eq(H.overrides[Cfg.frame], nil, "Ding's bindings set over Easy Controller's open window")
-    T.eq(lines[1], L.PAD_WAIT_ADDON:format("Easy Controller"))
-    T.ok(G:HasWindow(), "Easy Controller cannot tell a Ding window holds the gamepad")
-    H.tick(1)
-    T.eq(H.overrides[Cfg.frame], nil, "taken while Easy Controller's window is still open")
-    keyboard:Hide()
-    H.tick(0.5)
-    T.ok(H.overrides[Cfg.frame] and H.overrides[Cfg.frame].PAD1, "not taken once Easy Controller's window closed")
-    Cfg:Close(); H.flush()
-    T.eq(H.overrides[Cfg.frame], nil, "bindings left after closing")
-    T.ok(not G:HasWindow(), "a Ding window still said to hold the gamepad")
+-- Easy Controller's frames, all shown (some of them may always be, in the client).
+local EC_FRAMES = { "ControllerKeyboardFrame", "ControllerKeyboardConsolePort", "ControllerKeyboardPhrases",
+    "ControllerKeyboardWheel", "ControllerKeyboardConfigFrame", "ControllerKeyboardGuide" }
+local function easyControllerShown(on)
+    H.setAddOnLoaded("EasyController", on)
+    for _, name in ipairs(EC_FRAMES) do
+        local f = _G[name] or CreateFrame("Frame", name, UIParent)
+        f:SetShown(on)
+    end
+end
 
-    -- Closed while waiting: nothing taken afterwards.
-    keyboard:Show()
-    chat(function() Cfg:Open("guide", 1); H.flush() end)
-    Cfg:Close(); H.flush()
-    keyboard:Hide()
-    H.tick(0.5)
-    T.eq(next(H.overrides), nil, "bindings taken after the window closed")
-    H.setAddOnLoaded("EasyController", false)
+T.test("Easy Controller loaded, its windows shown: every Ding window takes its buttons at once", function()
+    fresh()
+    easyControllerShown(true)
+    local function takes(frame, what)
+        T.ok(H.overrides[frame] and H.overrides[frame].PAD1 and H.overrides[frame].PAD2,
+            what .. ": its buttons wait for Easy Controller")
+        T.ok(G:HasWindow(), what .. ": Easy Controller cannot tell a Ding window holds the gamepad")
+    end
+    local lines = chat(function()
+        Cfg:Open("guide", 1); H.flush()
+        takes(Cfg.frame, "settings")
+        H.press("PADRSHOULDER")
+        T.eq(Cfg.tab, 2, "RB does not change the settings' tab")
+        Cfg:Close(); H.flush()
+        S:Open(1); H.flush()
+        takes(S.frame, "setup assistant")
+        S:Close(true); H.flush()
+        Ding.Finder:Open(); H.flush()
+        takes(Ding.Finder.frame, "NPC directory")
+        Ding.Finder:Close(); H.flush()
+        Ding.ImportWindow:Open("import"); H.flush()
+        takes(Ding.ImportWindow.frame, "import window")
+        Ding.ImportWindow:Close(); H.flush()
+        Ding.Panel:StartFocus(); H.flush()
+        takes(Ding.Panel.frame, "focus mode")
+        Ding.Panel:StopFocus(); H.flush()
+    end)
+    T.eq(#lines, 0, "a chat line about Easy Controller: " .. tostring(lines[1]))
+    T.eq(next(H.overrides), nil, "bindings left after closing")
+    T.ok(not G:HasWindow(), "a Ding window still said to hold the gamepad")
+    easyControllerShown(false)
 end)
 
-T.test("first launch with Easy Controller's own guide open: the assistant waits for it", function()
+T.test("first launch with Easy Controller loaded and its guide shown: the assistant comes as usual", function()
     fresh()
-    H.setAddOnLoaded("EasyController", true)
-    local guide = _G.ControllerKeyboardGuide or CreateFrame("Frame", "ControllerKeyboardGuide", UIParent)
-    guide:Show()
+    easyControllerShown(true)
     Ding.db.ui.setupDone, Ding.db.ui.welcomed = false, false
     Cfg:Init()
-    H.tick(5)
-    T.ok(not S:IsShown(), "the assistant opens over Easy Controller's guide")
-    T.eq(keysOf(ACTION), "SHIFT-PADFORWARD", "the default button not set at login")
-    guide:Hide()
     H.tick(2.5)
-    T.ok(S:IsShown(), "the assistant does not come once the guide is closed")
+    T.ok(S:IsShown(), "the assistant does not come")
+    T.ok(H.overrides[S.frame] and H.overrides[S.frame].PADRSHOULDER, "the assistant without its buttons")
+    T.eq(keysOf(ACTION), "SHIFT-PADFORWARD", "the default button not set at login")
     S:Close(); H.tick(0.1)
     T.ok(not (Cfg.frame and Cfg.frame:IsShown()), "the Keybinds tab comes although the default button is set")
-    H.setAddOnLoaded("EasyController", false)
+    easyControllerShown(false)
 end)
 
 T.test("the assistant's first screen says how to open Ding! later: the chip, or the mouse's ways", function()

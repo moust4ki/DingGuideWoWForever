@@ -645,9 +645,7 @@ end
 
 -- At login (Config:Init): "Open Ding! settings" on the gamepad if it has nothing there
 -- (Gamepad:BindDefaultConfig, once), then the assistant, once per account, then `after(input)`
--- (the first launch's Keybinds tab); `after()` alone once it has been done. Another addon's
--- window holding the gamepad (Easy Controller's own guide at its first launch): the assistant
--- waits for it to close.
+-- (the first launch's Keybinds tab); `after()` alone once it has been done.
 function S:FirstLaunch(after)
     local function start()
         if not InCombatLockdown() then Ding:Safe(G().BindDefaultConfig, G()) end
@@ -656,7 +654,6 @@ function S:FirstLaunch(after)
             S.resume = { screen = 1, back = after }
             return
         end
-        if G():OtherPadWindow() then return C_Timer.After(2, start) end
         S.first = true
         S:Open(1, after)
     end

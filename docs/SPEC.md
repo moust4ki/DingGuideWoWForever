@@ -1321,8 +1321,7 @@ textures and font flags, never a size nor a position.
   Start (a trigger with Start is a combination the game's gamepad interface leaves free; with
   the D-pad or a face button it is a slot of its gamepad bars), never over a gamepad button the
   action has nor a key in use (another addon, the game: `Gamepad:WhoUses`); Ding never changes
-  the game's gamepad settings for it. Another addon's window holding the gamepad (Easy
-  Controller's own first-launch guide) makes the assistant wait for it to close. Closed by a fight (the temporary bindings must go), the first
+  the game's gamepad settings for it. Closed by a fight (the temporary bindings must go), the first
   launch's assistant comes back on its screen a second after the fight, its choices kept;
   opened by hand, a fight only closes it. Another Ding window opening (settings, directory,
   import) closes it quietly: done, and the Keybinds tab waits for the next login. Again from
@@ -1406,10 +1405,12 @@ gamepad buttons). Every gamepad action therefore has an equivalent:
     wait going on;
   - B tapped cancels, B held one second is taken; Escape, a fight (the window closes) or 20
     seconds without a press cancel; a key of the keyboard is taken with its modifiers;
-  - in the way: another addon's override binding (named: Easy Controller, ConsolePort; it
-    would win over Ding's) or a button of the game's gamepad interface (its binding context
-    `GamepadModeInGameCore`, while it is on) is refused in words and never taken; a saved
-    binding of the game or of Ding is named and A replaces it, B keeps it;
+  - in the way, said in words, A binds anyway and B keeps things as they were: a saved binding
+    of the game or of Ding (named, replaced); another addon's override binding (named: Easy
+    Controller, ConsolePort; its own is left as it is and may win in play) or a button of the
+    game's gamepad interface (its binding context `GamepadModeInGameCore`, while it is on; it
+    may win in play). Refusing them left nothing to bind with Easy Controller on (v1.5.0
+    report);
   - saved like the game's own Keybindings (the action's binding context): a gamepad button
     replaces the action's gamepad buttons, a key its keys, the other kind stays; the game
     refusing it is said, the old one kept. The row shows the kind of the input in use (the
@@ -1421,10 +1422,10 @@ gamepad buttons). Every gamepad action therefore has an equivalent:
   (Interface, above) says how to open Ding! later; then, unless the player chose the keyboard
   and the mouse there or the action has a button, the window opens on the bindings so the
   player can bind "Open Ding settings". `/ding help` says how to open the settings too.
-- Other gamepad addons (docs/compatibility.md): while one of Easy Controller's windows holds the
-  gamepad, a Ding window waits for it to close before taking its buttons (said once in the
-  chat); `Gamepad:HasWindow()` tells them a Ding window holds the gamepad; Ding never changes
-  the game's gamepad settings (`GamePadEmulate*`) and never takes their keys.
+- Other gamepad addons (docs/compatibility.md): Ding's windows take their buttons whatever
+  Easy Controller shows (waiting for its windows left Ding unusable: v1.5.0 report);
+  `Gamepad:HasWindow()` tells them a Ding window holds the gamepad; Ding never changes the
+  game's gamepad settings (`GamePadEmulate*`) and its default button never takes their keys.
 
 ### API compatibility
 

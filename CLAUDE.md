@@ -76,8 +76,8 @@ Ding/
                     ShownKeys: the input in use's, WhoUses: an addon's override, the game's
                     gamepad interface, a saved binding), BindDefaultConfig ("Open Ding!
                     settings": RB + Up when RB is a game modifier, else LT / RT + Start, once),
-                    other gamepad addons (OtherPadWindow: Easy Controller's windows, Take waits
-                    for them; HasWindow for them to read; docs/compatibility.md)
+                    other gamepad addons (HasWindow for them to read; Ding never waits for
+                    theirs nor changes GamePadEmulate*; docs/compatibility.md)
     Arrow.lua       Ding.Arrow: the design's arrow (on the way, behind, arrived), name,
                     distance, time; its loop runs on a separate frame (`go` steps validate
                     with the arrow hidden)
