@@ -1,5 +1,30 @@
 # Changelog
 
+## v1.5.0
+
+Nothing else to install: QuestieDB is no longer needed, and TomTom stays optional.
+
+- **Themes**: choose the look of Ding! in Settings > Appearance. While you go from one theme to
+  the next, the guide window, the arrow and the settings show it at once; A (or a click) keeps
+  it, leaving the themes without it brings yours back.
+  - **Forever · Halo**: no frame, a soft dark veil under the text, the game's gold and its own
+    font for titles, light gamepad buttons like the game's.
+  - **Forever · Slate**: a dark panel with thin gold lines, lines tinted by their state, a gold
+    marker on the gamepad's focus, the arrow's text on a small plate.
+  - **Forever · Bands**: no window, a band behind each line, outlined text that stays readable
+    on snow and sand, a blue accent.
+  - **Ding dark**: the look of the previous versions.
+- **The default look is now Forever · Halo, for everyone**, also if you played an earlier
+  version: to get the old look back, pick **Ding dark** in Settings > Appearance. The
+  background's opacity follows each theme (Halo: 60 %) until you move the slider yourself; if
+  you had chosen your own, it is kept.
+- Quest names are in the game's quest gold, items and monsters in light blue; in the Forever
+  themes nothing still to do is red anymore (red reads as danger in the game).
+- The card shown when you hover a line of the guide window (X in focus mode) now has the
+  theme's look.
+- The arrow says where under the target's name: the flight master and its zone, the zone of a
+  target outside yours, or the stop of the farming loop ("Farming loop: stop 2 of 10").
+
 ## v1.4.0
 
 Nothing else to install: QuestieDB is no longer needed, and TomTom stays optional.

@@ -241,7 +241,7 @@ T.test("the windows share their sizes, a little denser than the design's first h
     end
     T.eq(heights.one, SIZE.row, "a check row")
     T.eq(heights.two, SIZE.row2, "a check row with its description")
-    T.eq(Cfg.frame:GetHeight(), 392, "the settings window")
+    T.eq(Cfg.frame:GetHeight(), 430, "the settings window")
     closeAll()
     F:Open(1); H.flush()
     T.eq(F.frame.rows[1]:GetHeight(), SIZE.row2, "a directory row")

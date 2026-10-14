@@ -3,6 +3,7 @@
 -- the arrow towards it; and the step timings it feeds (Core/Timing.lua).
 local tools = (arg[0]:match("^(.*)[/\\]") or ".") .. "/.."
 local T = dofile(tools .. "/testlib.lua")(arg[1], { locale = "enUS" })
+local Tip = T.tip    -- the card on screen (Ding's card or the game's tooltip)
 local Ding, H = T.Ding, T.H
 local E, P, L, Grind = Ding.Engine, Ding.Panel, Ding.L, Ding.Grind
 
@@ -157,10 +158,10 @@ T.test("spot: without a quest in the log, the monsters of the coming steps", fun
     -- Hovering the row (X in focus mode): the monster's card, with its levels.
     local row = grindRow()
     P:ShowQuest(row, P.frame)
-    T.eq(GameTooltip.text, spot.name)
+    T.eq(Tip.text, spot.name)
     -- First what the row's look means ("to do"), then the levels.
-    T.eq(GameTooltip.lines[1], L.STATE_TODO)
-    T.ok(GameTooltip.lines[2] and H.plain(GameTooltip.lines[2]):find(tostring(spot.maxLevel), 1, true),
+    T.eq(Tip.lines[1], L.STATE_TODO)
+    T.ok(Tip.lines[2] and H.plain(Tip.lines[2]):find(tostring(spot.maxLevel), 1, true),
         "no levels in the card")
 end)
 

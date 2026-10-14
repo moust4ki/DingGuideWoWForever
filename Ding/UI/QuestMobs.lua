@@ -213,16 +213,16 @@ local function paint(b, e)
     b.letter:Hide()
     if glyph == b.letter then
         b.letter:SetText(e.kind == "accept" and "!" or "?")
-        b.letter:SetTextColor(unpack(tint))
+        UI.Color(b.letter, tint)
     else
         b.glyph:SetTexture(UI.TEX .. (e.kind == "drop" and "circle" or "icon_diamond"))
-        b.glyph:SetVertexColor(unpack(tint))
+        UI.Tint(b.glyph, tint)
     end
     glyph:ClearAllPoints()
     b.counter:ClearAllPoints()
     if counter then
         b.counter:SetText(counter)
-        b.counter:SetTextColor(unpack(current and C.text or C.secondary))
+        UI.Color(b.counter, current and C.text or C.secondary)
         local width = UI.Measure(b.counter)
         b:SetWidth(5 + 8 + 4 + width + 6)
         glyph:SetPoint("CENTER", b, "LEFT", 5 + 4, 0)

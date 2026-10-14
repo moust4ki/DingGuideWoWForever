@@ -3,6 +3,8 @@ Ding's interface sheet: the reference for the UI. Taken from the Claude Design h
 "Ding, addon WoW Classic" (October 11, 2026), wanted exactly as is by Yendi. The mockup's
 HTML file is not in the repository (Yendi keeps the handoff archive).
 The accepted deviations and what remains to be checked in game are at the end of the sheet.
+Since v1.5.0 the look comes from a theme (docs/UI-themes.md): this sheet is the "Ding dark"
+theme's (its colors) and every theme's sizes, which themes never change.
 -->
 
 # Handoff: Ding — interface (WoW Classic)
@@ -11,6 +13,7 @@ The accepted deviations and what remains to be checked in game are at the end of
 
 | Screen | Files |
 |---|---|
+| Themes (the colors of the tokens, flags, textures): [`UI-themes.md`](UI-themes.md) | `Ding/UI/Themes.lua` (`UI.Themes`, `UI.Theme.Apply`) |
 | Tokens, fonts, shapes, focus, chips, settings rows | `Ding/UI/Widgets.lua` (`UI.C`, `UI.Font`, `UI.Shape`, `UI.Window`, `UI.Focus`, `UI.Glyph`, `UI.*Row`) |
 | 01 Guide window, collapsed version, focus mode | `Ding/UI/Panel.lua` |
 | 02 Arrow | `Ding/UI/Arrow.lua` (TomTom: `Ding/UI/TomTom.lua`) |
@@ -39,6 +42,10 @@ Ding is a free, open-source World of Warcraft Classic addon that guides the play
 ---
 
 ## Design tokens
+
+The colors below are the **Ding dark** theme's (`UI.Themes.dingdark`); the other themes,
+Halo (the default since v1.5.0), Ardoise and Bandes, and the tokens added since, are in
+[`UI-themes.md`](UI-themes.md). Code reads every color through `UI.C`.
 
 ### Colors
 | Token | Hex | RGBA (0–1) for `SetVertexColor` / `SetTextColor` | Usage |

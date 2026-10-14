@@ -26,11 +26,16 @@ end
 ---------------------------------------------------------------------------
 T.test("the arrow names the target's zone when it is not the player's", function()
     start({ { go = { 1431, 50, 50 }, text = "Darkshire" } }, { 1429, 50, 50 })    -- Elwynn -> Duskwood
-    T.ok(H.plain(A.frame.distance:GetText()):find(" · Duskwood", 1, true), H.plain(A.frame.distance:GetText()))
+    -- On the line under the target's name, the distance alone under it.
+    local f = A.frame
+    T.ok(f.detail:IsShown() and H.plain(f.detail:GetText()) == "Duskwood", tostring(f.detail:GetText()))
+    T.ok(not H.plain(f.distance:GetText()):find("Duskwood", 1, true), H.plain(f.distance:GetText()))
+    T.eq(f.line.points[1][2], f.detail, "the distance is not under the zone")
     H.player.map, H.player.x, H.player.y = 1431, 40, 40
     E.playerZoneAt = nil
     A.point = nil; A:Tick()
-    T.ok(not H.plain(A.frame.distance:GetText()):find("Duskwood", 1, true), "the zone named inside it")
+    T.ok(not f.detail:IsShown(), "the zone named inside it")
+    T.eq(f.line.points[1][2], f.label, "the distance is not under the name")
 end)
 
 T.test("the step's line: the quest giver and the zone, only outside the player's zone", function()

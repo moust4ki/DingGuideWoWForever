@@ -63,8 +63,12 @@ Ding/
                     on demand (row tooltips), why a quest is left out (Why:Quest)
     Commands.lua    /ding
   UI/
-    Widgets.lua     Ding.UI: design tokens (UI.C), Noto Sans fonts (UI.Font), nine-slice kit
-                    shapes (UI.Shape, UI.Window), focus, gamepad glyphs, rows
+    Themes.lua      Ding.UI.Themes: the four themes (halo by default, ardoise, bandes,
+                    dingdark: their tokens, flags, textures, radii), UI.Theme.Apply / Restore
+    Widgets.lua     Ding.UI: design tokens (UI.C, filled by the theme), painting through tokens
+                    (UI.Color / Tint / Fill / Paint, UI.Skin), fonts by surface (UI.Font,
+                    UI.TitleFont), nine-slice kit shapes (UI.Shape, UI.Window), focus, gamepad
+                    glyphs, rows, the hover card (UI.Card)
     Gamepad.lua     Ding.Gamepad: button names and glyphs, temporary bindings, move mode,
                     binding capture
     Arrow.lua       Ding.Arrow: the design's arrow (on the way, behind, arrived), name,
@@ -126,7 +130,9 @@ docs/guide-packs.md public documentation for guide pack authors
 docs/create-a-guide-with-ai.md public: a guide as text, with an AI (format, example, prompt);
                     its example is imported by import_test
 docs/UI-handoff.md  Claude Design handoff (dimensions, colors, fonts, states) + deviations: the
-                    reference for the UI
+                    reference for the UI (its colors: the dingdark theme)
+docs/UI-themes.md   the themes' handoff (tokens, flags, window styles, the picker) + how it is
+                    implemented and what to check in game
 .pkgmeta            BigWigs packager config: the content of Ding/ at the root of the zip,
                     without tools nor docs
 .github/workflows/ tests.yml (every PR), release.yml (tag v*: tests, checked zip, CurseForge +
@@ -168,7 +174,8 @@ Contracts between modules:
   `other`), the extras (`extra = true`, state "extra"), the notices "bags" | "cleanup"; then the
   preview (under a row `action = "previewHeader"`, state
   "section"). The rules of the window: SPEC "Guide window: rules" (`panel_rules_test`);
-  `tools/panel_snapshot.lua` writes it as text for a scenario of `tools/panel_scenarios.lua`. Plain words (SPEC): `Panel:RowMeaning(row)`
+  `tools/panel_snapshot.lua` writes it as text for a scenario of `tools/panel_scenarios.lua` (in Ding
+  dark; `--theme`: another theme, `<scenario>@<theme>.txt` for `Snap.THEMED`). Plain words (SPEC): `Panel:RowMeaning(row)`
   -> what a row's look means, in words, for its card (`Panel:ShowQuest`: hover, X in focus mode;
   a grey row's `requires` or `waitsOn`); `UI.More(n, quests)` ("and 2 more", never "+2");
   `QuestMobs:Words(e)`, `ItemButton:Explain()`, `MinimapPins:Explain(pin)`: their tooltips.
@@ -263,6 +270,22 @@ Contracts between modules:
   `Along:StepQuests()`; `Data:ObjectiveTargets` gives each target `kind` and `npcs`;
   `Compat.UnitNpcID` (false for a player, nil when secret). `Panel:SetShown(v)`: the window and
   the arrow together (the arrow only shows with the window open).
+- Themes (docs/UI-themes.md): `UI.Themes[id]` = `{ id, name, desc, C, opacityDefault, flags,
+  tex, radius }`, `UI.ThemeOrder`, `UI.TOKENS` (every theme has every key: `themes_test`).
+  `UI.C[key]` is one table per token whose identity never changes: `UI.Theme.Apply(id[,
+  preview])` copies the theme's values into it (preview: not saved in `Ding.db.ui.theme`),
+  `UI.Theme.Restore()` (the saved theme back), `UI.Theme.Saved()`, `UI.Theme.current`,
+  `UI.Theme.Opacity()` (`Ding.db.panel.bgAlpha`), `UI.Theme.OnApply(fn)`. A theme never holds a
+  size, a padding nor a font size. **Every paint goes through a token**: `UI.Color(fs, token)`,
+  `UI.Tint(tex, token)`, `UI.Fill(tex, token)`, `UI.Paint(tex, token[, orientation])` (a
+  gradient token: 8 numbers), `Slice:SetColor(token[, alphaMul])`, `UI.Shape` (its texture
+  follows the theme's radii); what a widget draws by itself registers `UI.Skin(object, fn)`.
+  A theme change creates no frame (`themes_test`): it paints again, sets the font objects again
+  in place, runs the skins, then `Panel:Relayout()`. Fonts by surface: `UI.Text(parent, weight,
+  size, color, layer, surface)` ("dialog", "scene": the guide window, "card", "world": over the
+  game, "chip"), `UI.SetFont(fs, weight, size)`, `UI.SetTitleFont(fs, role)` (the game's font or
+  Noto Sans SemiBold, `UI.TITLE_ROLES`). The guide window's row cards: `UI.Card` (Ding's frame,
+  read like GameTooltip by the tests through `T.tip`); `Panel.HideCard(owner)`.
 - NPC directory: `Directory:Ids(kind)` (the NPC ids of the player's side; kinds "vendor",
   "repair", "food", "arrows", "bullets", "reagents", "poisons", "innkeeper", "flight", "trainer",
   "weapon:<skill line>", "profession:<key>", "trade", "bank", "auction", "stable"),
@@ -289,7 +312,9 @@ Contracts between modules:
   `bgAlpha`, `compactInCombat`, `hideInInstance`, `keyHints`, `itemButton`), `arrow`
   (position, `size` 40-80, `style`, `mode`, `tomtom`, `loop`: farming loop, `worldMap`: the
   target as the client's map waypoint), `item` (position of the item button),
-  `minimap` (`shown`, `angle`), `ui` (`buttonStyle`, `sound`, `welcomed`, `setupDone` (the
+  `minimap` (`shown`, `angle`), `ui` (`theme` (UI/Themes.lua, "halo"), `opacityTouched` (the
+  opacity slider moved: it no longer follows the theme's default), `buttonStyle`, `sound`,
+  `welcomed`, `setupDone` (the
   setup assistant was closed by the player; a fight during the first launch's keeps it pending), `autoAccept`,
   `autoTurnin`, `skipGrey`, `hearth`, `deathSkip`, `dungeons`, `elites`, `chooseReward`,
   `sellGrey`, `repair`, `markTarget`, `serviceSteps`, `trainerSteps`, `flightSteps`, `autoEquip`, `autoFly`, `offers`, `dungeonChoice` (`[name] = bool`),
@@ -299,8 +324,8 @@ Contracts between modules:
   `imported` (`[pack id] = { pack, guides, at }`: guides imported as text, kept by "restore
   all defaults"),
   `debug`,
-  `layout` (settings version:
-  `Ding.Migrate`). Defaults: `Ding.DEFAULTS`.
+  `layout` (settings version: `Ding.Migrate`; 3: themes, Halo for everyone). Defaults:
+  `Ding.DEFAULTS`.
   `Ding.char` (DingCharDB, character): `guide`, `pack` (pack of `guide`: if the guide goes
   away, a section of this pack, else of Ding's), `prevPack` (the pack before it: deleting an
   imported guide goes back there), `packGuide` (`[pack] = guide id`: the section
@@ -411,8 +436,10 @@ Contracts between modules:
   chat has it, during a slash command above all): the chat's focus-lost handler then runs in
   Ding's name and, with the gamepad interface, reaches Blizzard-only actions (the game's
   "AddOn blocked" popup). `ImportWindow:Focus` waits until `GetCurrentKeyBoardFocus()` is free.
-- Interface: the design of `docs/UI-handoff.md`, to the pixel. Colors through the `UI.C`
-  tokens, fonts through `UI.Font(weight, size)` (Noto Sans), shapes through `UI.Shape` /
+- Interface: the design of `docs/UI-handoff.md` and `docs/UI-themes.md`, to the pixel. Colors
+  only through the `UI.C` tokens and the painting helpers (no color literal in `Ding/UI` but
+  `UI/Themes.lua`: `themes_test`), fonts through `UI.Font(weight, size[, surface])` (Noto Sans),
+  shapes through `UI.Shape` /
   `UI.Window` (nine-slice kit textures), focus through `UI.Focus`, gamepad buttons through
   `UI.Glyph`. Never BackdropTemplate nor a WoW window texture (`look_test` checks it).
   **No arrows nor shapes in texts** (← → ◂ ▸ ✕ □ △ ○…): Noto Sans does not have them, they
@@ -506,6 +533,7 @@ agreement. Since v1.3.0 Ding carries its own game data: QuestieDB is no longer n
 What can only be validated in game: the arrow's orientation (`/ding arrowflip` or the Arrow
 tab), `QUEST_ACCEPTED` (a single `questID` argument on Forever) and the auto-advance, the
 rendering of the interface and the gamepad bindings, TomTom's API on Forever
-(`AddWaypoint`, `cleardistance = 0`), and the "to check in game" list of
+(`AddWaypoint`, `cleardistance = 0`), and the "to check in game" lists of
 `docs/UI-handoff.md` (TGA textures and kit fonts, nine-slice, masks, quest log objectives,
-focus mode, item button, minimap button, `C_GamePad`).
+focus mode, item button, minimap button, `C_GamePad`) and `docs/UI-themes.md` (gradients, the
+game's font on titles, light scenes at a low opacity).

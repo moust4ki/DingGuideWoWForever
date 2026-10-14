@@ -959,3 +959,22 @@ function C.Number(n)
     for i = head + 1, #digits, 3 do parts[#parts + 1] = digits:sub(i, i + 2) end
     return (n < 0 and "-" or "") .. table.concat(parts, sep)
 end
+
+-- A gradient on a texture, `a` to `b` ({ r, g, b, a } in 0-1; HORIZONTAL: left to right,
+-- VERTICAL: bottom to top). Clients since 10.0 take two colors made by CreateColor; older
+-- ones the eight numbers of SetGradientAlpha. Neither: the mean of both colors. Returns the
+-- way used ("color", "alpha" or "flat"), for the tests and the in-game check.
+function C.SetGradient(tex, orientation, a, b)
+    local r1, g1, b1, a1 = a[1], a[2], a[3], a[4] or 1
+    local r2, g2, b2, a2 = b[1], b[2], b[3], b[4] or 1
+    if type(CreateColor) == "function" and type(tex.SetGradient) == "function" then
+        local ok = pcall(tex.SetGradient, tex, orientation, CreateColor(r1, g1, b1, a1), CreateColor(r2, g2, b2, a2))
+        if ok then return "color" end
+    end
+    if type(tex.SetGradientAlpha) == "function" then
+        local ok = pcall(tex.SetGradientAlpha, tex, orientation, r1, g1, b1, a1, r2, g2, b2, a2)
+        if ok then return "alpha" end
+    end
+    tex:SetVertexColor((r1 + r2) / 2, (g1 + g2) / 2, (b1 + b2) / 2, (a1 + a2) / 2)
+    return "flat"
+end

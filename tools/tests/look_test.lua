@@ -1,5 +1,7 @@
--- The design (docs/UI-handoff.md): kit textures only, Noto Sans everywhere, no character
--- the font lacks, the sizes of the screens, row colors by state, background opacity.
+-- The design (docs/UI-handoff.md, docs/UI-themes.md): kit textures only, Noto Sans everywhere
+-- (the game's own font for some themes' titles), no character the font lacks, the sizes of the
+-- screens, row colors by state, background opacity. The look checks of Ding dark (the theme of
+-- the first handoff) run with that theme; tools/tests/themes_test.lua checks the others.
 local tools = (arg[0]:match("^(.*)[/\\]") or ".") .. "/.."
 local T = dofile(tools .. "/testlib.lua")(arg[1])
 local Ding, H = T.Ding, T.H
@@ -12,9 +14,10 @@ Ding.RegisterGuide({ id = "t-look", title = "Appearance", races = { "NightElf" }
     { accept = 456, complete = 458, turnin = 457 },
 } })
 
-local function start(guide)
+local function start(guide, theme)
     T.reset({ level = 1 })
-    Ding.db.panel.bgAlpha = 0.85
+    Ding.db.ui.opacityTouched = nil
+    UI.Theme.Apply(theme or "dingdark")
     E:SetGuide(guide or G, 1, true)
     H.flush()
 end
@@ -65,6 +68,7 @@ T.test("kit textures: every referenced file is shipped", function()
 end)
 
 T.test("kit textures: uncompressed 32-bit TGA, powers of 2, bottom-left origin", function()
+    local POWERS = { [4] = true, [16] = true, [32] = true, [64] = true, [128] = true, [256] = true }
     local handle = io.popen('ls "' .. tools .. '/../Ding/Media/Textures"')
     local count = 0
     for name in handle:lines() do
@@ -77,14 +81,14 @@ T.test("kit textures: uncompressed 32-bit TGA, powers of 2, bottom-left origin",
             local h = header:byte(15) + 256 * header:byte(16)
             T.eq(header:byte(3), 2, name .. ": uncompressed TGA expected")
             T.eq(header:byte(17), 32, name .. ": 32 bits expected")
-            T.ok(w == h and (w == 32 or w == 64 or w == 128), name .. ": size " .. w .. " x " .. h)
+            T.ok(POWERS[w] and POWERS[h], name .. ": size " .. w .. " x " .. h)
             -- Rows from the bottom, like Blizzard's files: a loader that ignores the origin
             -- flag cannot show them upside down.
             T.eq(math.floor(header:byte(18) / 32) % 2, 0, name .. ": origin at the top")
         end
     end
     handle:close()
-    T.ok(count >= 18, "kit textures missing: " .. count)
+    T.ok(count >= 34, "kit textures missing: " .. count)
 end)
 
 T.test("addon icon (.toc) and minimap button icon: shipped with Ding", function()
@@ -169,7 +173,7 @@ T.test("no interface or guide text uses a character missing from Noto Sans", fun
     end
 end)
 
-T.test("guide window: 300 wide, #16181C background at 85%, border and shadow follow", function()
+T.test("guide window (Ding dark): 300 wide, #16181C background at 85%, border and shadow follow", function()
     start()
     local f = P.frame
     T.eq(f.w, 300)
@@ -195,7 +199,7 @@ T.test("guide window: bars of 24 and 28, minimized to 300 x 28", function()
     P:SetCompact(false)
 end)
 
-T.test("rows: background, icon and text by state (done, to do, impossible)", function()
+T.test("rows (Ding dark): background, icon and text by state (done, to do, impossible)", function()
     start("t-look")
     T.quests({ [456] = "log", [458] = "log" })
     E:Refresh()
@@ -214,11 +218,11 @@ T.test("rows: background, icon and text by state (done, to do, impossible)", fun
     T.ok(same(impossible.icon.bg.color, C.impossibleIconBg), "impossible row icon")
 end)
 
-T.test("settings: 560 x 392 (the design's 440, denser at the user's request), six tabs by intent in order, LB and RB at the ends", function()
+T.test("settings: 560 x 430 (the design's 440, denser at the user's request, the theme cards), six tabs by intent in order, LB and RB at the ends", function()
     start()
     Cfg:Open("guide", 1); H.flush()
     local f = Cfg.frame
-    T.ok(f.w == 560 and f.h == 392, "window size")
+    T.ok(f.w == 560 and f.h == 430, "window size")
     local want = { L.TAB_GUIDE, L.TAB_ROUTE, L.TAB_AUTOMATION, L.TAB_ARROW, L.TAB_BINDINGS, L.TAB_APPEARANCE }
     T.eq(#f.tabs, #want)
     for i, b in ipairs(f.tabs) do T.eq(b.label:GetText(), want[i]) end
@@ -245,19 +249,19 @@ T.test("without a gamepad: the window and settings glyphs are hidden", function(
     T.ok(P.frame.lb:IsShown(), "LB hidden with a gamepad")
 end)
 
-T.test("Appearance: opacity updates the window and the preview live, \"reset all\" restores 85%", function()
+T.test("Appearance: the theme cards first, opacity updates the window live, \"reset all\" restores Halo at 60%", function()
     start()
     Cfg:Open("appearance", 1); H.flush()
-    T.eq(Cfg.focus.opts.label, L.BG_OPACITY, "first Appearance item")
+    T.eq(Cfg.focus.kind, "themes", "first Appearance item: the theme cards")
+    H.press("PADDDOWN")
+    T.eq(Cfg.focus.opts.label, L.BG_OPACITY, "second Appearance item")
     H.press("PADDLEFT")
     T.eq(Ding.db.panel.bgAlpha, 0.8)
+    T.ok(Ding.db.ui.opacityTouched, "moving the slider is not remembered")
     T.eq(alphaOf(P.frame.look.fill), 0.8, "the window does not follow")
-    local preview
-    for _, row in ipairs(Cfg:BuildTab(Cfg.TAB.appearance).rows) do preview = preview or row.window end
-    T.ok(preview, "preview not found")
-    T.eq(alphaOf(preview.look.fill), 0.8, "the preview does not follow")
     H.press("PAD4")
-    T.eq(Ding.db.panel.bgAlpha, 0.85, "Y does not restore 85%")
+    T.eq(Ding.db.panel.bgAlpha, 0.85, "Y does not restore the theme's default (85% in Ding dark)")
+    T.ok(not Ding.db.ui.opacityTouched, "Y: the slider follows the theme again")
     H.press("PADDDOWN")
     T.eq(Cfg.focus.opts.label, L.WINDOW_SCALE)
     H.press("PADDRIGHT")
@@ -266,7 +270,9 @@ T.test("Appearance: opacity updates the window and the preview live, \"reset all
     H.focusOn(Cfg, function(r) return r.opts and r.opts.label == L.RESET_ALL end, "default")
     H.press("PAD1"); H.press("PAD1")
     T.eq(Ding.db.panel.scale, 1)
-    T.eq(Ding.db.panel.bgAlpha, 0.85)
+    T.eq(Ding.db.ui.theme, "halo")
+    T.eq(UI.Theme.current.id, "halo")
+    T.eq(Ding.db.panel.bgAlpha, 0.6)
     Cfg:Close(); H.flush()
 end)
 

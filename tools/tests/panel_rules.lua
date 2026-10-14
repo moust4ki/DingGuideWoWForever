@@ -5,11 +5,15 @@
 return function(tools, locale)
     local Snap = dofile(tools .. "/panel_snapshot.lua")
     local T = dofile(tools .. "/testlib.lua")(arg[1], { guides = Snap.GUIDES, locale = locale })
+    local Tip = T.tip    -- the card on screen (Ding's card or the game's tooltip)
     local Ding, H = T.Ding, T.H
     local E, P, A, L, UI, D = Ding.Engine, Ding.Panel, Ding.Arrow, Ding.L, Ding.UI, Ding.Data
     local C = UI.C
     local view = Snap.Bind(T)
     local S = Snap.scenarios
+    -- The rules speak of the looks of Ding dark (the theme of the snapshots): a row's state
+    -- by its background. The other themes: tools/tests/themes_test.lua.
+    UI.Theme.Apply(Snap.THEME)
 
     ---------------------------------------------------------------------------
     -- Helpers
@@ -39,15 +43,15 @@ return function(tools, locale)
     -- The card of row i as the mouse's hover shows it: { title, lines... } in plain text, or nil.
     local function card(i)
         local r = frame(i)
-        GameTooltip:Hide()
+        Tip:Hide()
         r.scripts.OnEnter(r)
         local out
-        if GameTooltip:IsShown() and GameTooltip:GetOwner() == r then
-            out = { plain(GameTooltip.text) }
-            for _, line in ipairs(GameTooltip.lines or {}) do out[#out + 1] = plain(line) end
+        if Tip:IsShown() and Tip:GetOwner() == r then
+            out = { plain(Tip.text) }
+            for _, line in ipairs(Tip.lines or {}) do out[#out + 1] = plain(line) end
         end
         r.scripts.OnLeave(r)
-        GameTooltip:Hide()
+        Tip:Hide()
         return out
     end
     local function cardHas(c, part)
@@ -284,9 +288,9 @@ return function(tools, locale)
         local f, data = P.frame, P.compactRow
         T.ok(P.compact and data, "not minimized")
         f.scripts.OnEnter(f)
-        T.ok(GameTooltip:IsShown(), "no card")
-        local c = { plain(GameTooltip.text) }
-        for _, line in ipairs(GameTooltip.lines) do c[#c + 1] = plain(line) end
+        T.ok(Tip:IsShown(), "no card")
+        local c = { plain(Tip.text) }
+        for _, line in ipairs(Tip.lines) do c[#c + 1] = plain(line) end
         f.scripts.OnLeave(f)
         T.eq(c[1], plain(data.text))
         T.ok(cardHas(c, plain(data.sub)), "the note is missing")
@@ -332,7 +336,7 @@ return function(tools, locale)
         scene("a11-darkshire-accepts")
         local row, i = find(function(r) return r.quest == 66 end)
         T.ok(D:QuestLevel(66) > UnitLevel("player"), "66 is not above the player's level")
-        T.ok(has(row.text, "|cffff8040"), "not orange: " .. row.text)
+        T.ok(has(row.text, "|cff" .. UI.HexOf(C.above)), "not orange: " .. row.text)
         T.ok(cardHas(card(i), L.QUEST_LEVEL_ABOVE:format(D:QuestLevel(66), UnitLevel("player"))), "not said in words")
         -- Everywhere a quest is named: notices of steps passed, the "before" of a chain.
         scene("a11-bags-almost-full")
@@ -373,7 +377,8 @@ return function(tools, locale)
             T.eq(plain(header.text), leveled(q))
             local r = frame(i)
             T.ok(not r.icon:IsShown() and not r.bg:IsShown(), "a header with an icon or a background")
-            T.eq(font(i), UI.Font("semibold", 12))
+            -- The theme's title font (Noto Sans SemiBold 12 in Ding dark, the game's 13 in Halo).
+            T.eq(font(i), UI.TitleFont("header", "scene"))
             local nextRow = rows()[i + 1]
             T.ok(nextRow and nextRow.action == "objective" and nextRow.quest == q and nextRow.nested, "objective not under it")
             T.ok(select(4, frame(i + 1):GetPoint()) == select(4, r:GetPoint()) + 8, "objective not indented by 8")
@@ -505,7 +510,7 @@ return function(tools, locale)
                 T.eq(row.state, "notice")
                 T.eq(bg(i), "grey box")
                 T.ok(not frame(i).icon:IsShown(), "a notice with an icon")
-                T.eq(font(i), UI.Font("regular", 11))
+                T.eq(font(i), UI.Font("regular", 11, "scene"))
                 for _, other in ipairs(rows()) do
                     T.ok(other == row or not has(other.sub, row.text), name .. ": the notice under a row too")
                 end
@@ -733,8 +738,8 @@ return function(tools, locale)
                 T.ok(frame(i).focus.ring:IsShown(), "no focus ring on row " .. i)
                 if P:HasCard(rows()[i]) then
                     H.press("PAD3")
-                    T.ok(GameTooltip:IsShown() and GameTooltip:GetOwner() == frame(i), name .. ": X shows no card on row " .. i)
-                    GameTooltip:Hide()
+                    T.ok(Tip:IsShown() and Tip:GetOwner() == frame(i), name .. ": X shows no card on row " .. i)
+                    Tip:Hide()
                 end
             end
             P:StopFocus()
@@ -823,7 +828,7 @@ return function(tools, locale)
                     local r = frame(i)
                     local kind = kindOf(row)
                     local look = table.concat({ tostring(bg(i)), r.icon:IsShown() and "icon" or "no icon",
-                        tostring(r.text.fontObject and r.text.fontObject.name), view.colorWord(r.text.color),
+                        tostring(view.fontWord(r.text.fontObject)), view.colorWord(r.text.color),
                         tostring(r.icon:IsShown() and r.icon.bg:IsShown() and view.colorWord(r.icon.bg.color) or "") }, ", ")
                     if row.action == "gear" then look = look:gsub(", [^,]*$", "") end    -- the item's own icon
                     if looks[kind] and not (row.action == "gear" and kind == "extra") then
@@ -838,13 +843,13 @@ return function(tools, locale)
         -- The kinds the rules name, as the rules say.
         T.ok(looks.todo:find("^red, icon"), looks.todo)
         T.ok(looks.done:find("^green, icon"), looks.done)
-        T.ok(looks["quest header"]:find("^nil, no icon, DingFont_semibold12"), looks["quest header"])
-        T.ok(looks.section:find("^nil, no icon, DingFont_semibold11, dim grey"), looks.section)
-        T.ok(looks.notice:find("^grey box, no icon, DingFont_regular11"), looks.notice)
+        T.ok(looks["quest header"]:find("^nil, no icon, semibold 12"), looks["quest header"])
+        T.ok(looks.section:find("^nil, no icon, semibold 11, dim grey"), looks.section)
+        T.ok(looks.notice:find("^grey box, no icon, regular 11"), looks.notice)
         T.ok(looks.button:find("^button, no icon"), looks.button)
         T.ok(looks.extra:find("^nil, icon"), looks.extra)
         T.ok(looks.other:find("^nil, icon"), looks.other)
-        T.ok(looks["next step"]:find("^nil, icon, DingFont_regular12, dim grey"), looks["next step"])
+        T.ok(looks["next step"]:find("^nil, icon, nil, dim grey"), looks["next step"])
     end)
 
     T.test("23 the step's own work stands out: only its rows have a state's background", function()

@@ -45,6 +45,7 @@ return function(opts)
     function Methods:SetVertexColor(r, g, b, a)
         assert(type(r) == "number" and type(g) == "number" and type(b) == "number", "SetVertexColor(r, g, b[, a])")
         self.vertexColor = { r, g, b, a or 1 }
+        self.gradient = nil
     end
     function Methods:SetRotation(radians)
         assert(type(radians) == "number", "SetRotation expects radians")
@@ -139,6 +140,15 @@ return function(opts)
         if p and p[1] == "TOPLEFT" and p[2] == UIParent then return 768 / (self.scale or 1) + p[5] end
         return 600
     end
+    function Methods:GetRight() return self:GetLeft() + (self.w or 0) end
+    -- Gradients (Compat.SetGradient): the 10.0 signature, two colors from CreateColor; no
+    -- SetGradientAlpha, like a modern client.
+    function Methods:SetGradient(orientation, minColor, maxColor)
+        assert(orientation == "HORIZONTAL" or orientation == "VERTICAL", "SetGradient orientation")
+        assert(type(minColor) == "table" and minColor.GetRGBA and type(maxColor) == "table" and maxColor.GetRGBA,
+            "SetGradient(orientation, color, color): colors from CreateColor")
+        self.gradient = { orientation, { minColor:GetRGBA() }, { maxColor:GetRGBA() } }
+    end
     function Methods:SetParent(p) self.parent = p end
     function Methods:SetFrameLevel(n) self.level = n end
     function Methods:GetFrameLevel() return self.level or 1 end
@@ -199,9 +209,12 @@ return function(opts)
     function Methods:SetWordWrap(v) self.wordWrap = v and true or false end
     function Methods:SetMaxLines(n) self.maxLines = n end
     function Methods:IsTruncated() return select(2, layoutLines(self)) end
+    -- A font object changed in place (a theme's title font) changes its texts, like the client.
     function Methods:GetStringHeight()
-        return (self.fontSize or 12) * layoutLines(self)
+        local size = self.fontObject and select(2, self.fontObject:GetFont()) or self.fontSize
+        return (size or 12) * layoutLines(self)
     end
+    function Methods:GetFontObject() return self.fontObject end
     function Methods:SetTexture(path)
         assert(type(path) == "string" or type(path) == "number", "texture path or file id expected")
         self.texture = path
@@ -489,6 +502,15 @@ return function(opts)
         _G[name] = fontObject(size)
     end
     _G.STANDARD_TEXT_FONT = "Fonts\\FRIZQT__.TTF"
+    -- Colors for SetGradient (ColorMixin).
+    _G.CreateColor = function(r, g, b, a)
+        assert(type(r) == "number" and type(g) == "number" and type(b) == "number", "CreateColor(r, g, b[, a])")
+        local c = { r = r, g = g, b = b, a = a or 1 }
+        function c:GetRGBA() return self.r, self.g, self.b, self.a end
+        return c
+    end
+    _G.GetScreenWidth = function() return 1366 end
+    _G.GetScreenHeight = function() return 768 end
     -- Fonts created by Ding: a file under Interface\AddOns\Ding must exist in the repository.
     local fonts = {}
     _G.CreateFont = function(name)
@@ -503,10 +525,18 @@ return function(opts)
                 if not handle then return false end
                 handle:close()
             end
-            self.path, self.size = path, size
+            self.path, self.size, self.flags = path, size, flags
             return true
         end
-        function font:GetFont() return self.path, self.size, "" end
+        function font:GetFont() return self.path, self.size, self.flags or "" end
+        function font:SetShadowOffset(x, y)
+            assert(type(x) == "number" and type(y) == "number", "Font:SetShadowOffset(x, y)")
+            self.shadowOffset = { x, y }
+        end
+        function font:SetShadowColor(r, g, b, a)
+            assert(type(r) == "number" and type(g) == "number" and type(b) == "number", "Font:SetShadowColor(r, g, b[, a])")
+            self.shadowColor = { r, g, b, a or 1 }
+        end
         fonts[name] = font
         _G[name] = font
         return font

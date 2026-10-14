@@ -24,31 +24,36 @@ local LOG_ALMOST_FULL = 16   -- quests in the log (20 at most) from which unused
 local FOCUS_KEYS = { "PADDUP", "PADDDOWN", "PAD1", "PAD2", "PAD3", "PAD4", "PADLSHOULDER", "PADRSHOULDER",
     "PADFORWARD", "PADDLEFT", "PADDRIGHT" }
 
--- Row looks by state (design: done / to do / impossible).
+-- Row looks by state (design: done / to do / impossible). Token tables: the theme's values,
+-- whichever theme is on screen (UI/Themes.lua). `state`: a state's own tint, shown only when
+-- the theme tints rows by state (flags.stateRowBg; a band in "bands").
 local STATES = {
-    done = { row = C.doneRowBg, icon = C.doneIconBg, glyph = C.done, text = C.secondary, counter = C.done },
-    todo = { row = C.todoRowBg, icon = C.todoIconBg, glyph = C.todo, text = C.text, counter = C.todo },
-    impossible = { icon = C.impossibleIconBg, glyph = C.disabled, text = C.disabled, counter = C.disabled },
+    done = { row = C.doneRowBg, state = true, icon = C.doneIconBg, glyph = C.done, text = C.secondary, counter = C.done },
+    todo = { row = C.todoRowBg, state = true, icon = C.todoIconBg, glyph = C.todo, text = C.text, counter = C.todo },
+    impossible = { row = C.infoRowBg, icon = C.impossibleIconBg, glyph = C.disabled, text = C.disabled, counter = C.disabled },
     -- A step left by hand (Engine:StepMark): what is not really done takes the mark's color.
-    manual = { row = C.manualRowBg, icon = C.manualIconBg, glyph = C.manual, text = C.secondary, counter = C.manual },
-    skipped = { row = C.skippedRowBg, icon = C.skippedIconBg, glyph = C.skipped, text = C.text, counter = C.skipped },
+    manual = { row = C.manualRowBg, state = true, icon = C.manualIconBg, glyph = C.manual, text = C.secondary,
+        counter = C.manual },
+    skipped = { row = C.skippedRowBg, state = true, icon = C.skippedIconBg, glyph = C.skipped, text = C.text,
+        counter = C.skipped },
     -- A step further on (preview of the next steps): dimmed, no background.
-    preview = { icon = C.impossibleIconBg, glyph = C.disabled, text = C.muted, counter = C.disabled },
+    preview = { icon = C.previewIconBg, glyph = C.previewGlyph, text = C.muted, counter = C.previewGlyph },
     -- An objective of another quest (persistent, along the way): no background nor red, grey
     -- glyph and counter. Yendi: in red, it passed for the step's own work.
-    other = { icon = C.impossibleIconBg, glyph = C.secondary, text = C.secondary, counter = C.secondary },
+    other = { row = C.infoRowBg, icon = C.otherIconBg, glyph = C.secondary, text = C.secondary, counter = C.secondary },
     -- A row besides the step (training, weapon, upgrade, talent, wrap-up, a quest found
-    -- elsewhere): no background, a blue glyph. In red, the weapon to learn passed for a to-do.
-    extra = { icon = C.accentBg, glyph = C.accent, text = C.text, counter = C.accent },
+    -- elsewhere): no background, an accent glyph. In red, the weapon to learn passed for a to-do.
+    extra = { row = C.infoRowBg, icon = C.extraIconBg, glyph = C.extraGlyph, text = C.text, counter = C.accent },
     -- A quest above its objectives (its level and name): no background nor icon.
     header = { text = C.secondary, counter = C.secondary },
     -- A section's title ("Next steps", "Besides this step"): smaller, dimmed, no icon.
     section = { text = C.muted, counter = C.muted },
     -- A notice for the whole window (travel, bags, quest log): a box of its own, no icon.
-    notice = { row = C.subtle, text = C.secondary, counter = C.secondary },
+    notice = { row = C.noticeBg, text = C.subText, counter = C.subText },
     -- A control in the list (cancel the directory's trip): a button's background, no icon.
     button = { row = C.control, text = C.text, counter = C.text },
 }
+P.STATES = STATES
 -- Rows without an icon: their text starts where the icons do.
 local ICONLESS = { header = true, section = true, notice = true, button = true }
 -- Text of a row: weight and size. A quest's header in SemiBold; a section's title 11
@@ -68,7 +73,9 @@ local function inInstance()
     return ok and inside and true or false
 end
 
-local function link(s) return UI.Colored("accent", s) end
+-- Item, NPC and target names; quest names have their own color (`quest`, like the game's
+-- quest log in the Forever themes).
+local function link(s) return UI.Colored("link", s) end
 
 -- A gear upgrade in words, not a bare "+4" that reads like a quest's counter (Yendi): how much
 -- better than what it replaces, for the class (Rewards:Compare).
@@ -118,7 +125,7 @@ P.QuestLabel = function(q) return leveledName(q) end
 local function questName(q, plain)
     local level = Ding.Data:QuestLevel(q)
     if level > 0 and level > UnitLevel("player") then return UI.Colored("above", leveledName(q)) end
-    return leveledName(q, not plain and "accent" or nil)
+    return leveledName(q, not plain and "quest" or nil)
 end
 
 ---------------------------------------------------------------------------
@@ -734,9 +741,28 @@ function P:RowMeaning(row)
     return lines
 end
 
+-- The row cards are Ding's own frame (UI.Card: the theme's look, docs/UI-themes.md), next to
+-- the window; the game's own card of an item or a talent stays the game's tooltip. `tip`: the
+-- one being filled. Line roles: nil (the card's text), "accent" (what a click does, "Why?"),
+-- "done", "text".
+local Card = UI.Card
+local ROLE_TOKENS = { accent = C.accent, done = C.done, text = C.text }
+local function addLine(tip, text, role)
+    if tip == Card then return Card:AddLine(text, role) end
+    local c = ROLE_TOKENS[role] or C.cardText
+    tip:AddLine(text, c[1], c[2], c[3], true)
+end
+
+-- A row's card, owned by the row and placed next to the guide window; a card shown elsewhere
+-- (`row.noAim`: the settings' quest log cleanup) next to its own row.
+local function openCard(owner, row)
+    Card:SetOwner(owner, not (row and row.noAim) and P.frame or owner)
+    return Card
+end
+
 -- The card's last line: what a click on the row does, or A in focus mode (the gamepad's).
 -- `pick`: the row is a choice (the section's wrap-up), not a place.
-local function clickLine(pick)
+local function clickLine(tip, pick)
     local pad = P.focusing and Ding.Gamepad:Active()
     local text
     if pick then
@@ -744,19 +770,19 @@ local function clickLine(pick)
     else
         text = pad and L.ROW_CLICK_PAD:format(Ding.Gamepad:ButtonName("PAD1")) or L.ROW_CLICK
     end
-    GameTooltip:AddLine(text, 0.6, 0.6, 0.6, true)
+    addLine(tip, text, "accent")
 end
 
 -- What a click (A) does on a row besides the step, when its own sub-line does not say it
 -- already (the weapon to learn, the upgrade, the talent and the offer to jump say it under
 -- their text).
-local function extraClickLine(row)
-    if row.action == "service" then clickLine() end
-    if row.action == "wrapup" then clickLine(true) end
+local function extraClickLine(tip, row)
+    if row.action == "service" then clickLine(tip) end
+    if row.action == "wrapup" then clickLine(tip, true) end
 end
 
-local function addMeaning(row)
-    for _, text in ipairs(P:RowMeaning(row)) do GameTooltip:AddLine(text, 0.8, 0.8, 0.8, true) end
+local function addMeaning(tip, row)
+    for _, text in ipairs(P:RowMeaning(row)) do addLine(tip, text) end
 end
 
 -- Why the guide plans the step on screen (Core/Why.lua), at the end of a row's tooltip: for the
@@ -765,15 +791,15 @@ local function whyLines(row)
     return row and row.ofStep and Ding.Why:Detail(P.shownStep) or nil
 end
 
-local function addWhy(row)
+local function addWhy(tip, row)
     local lines = whyLines(row)
     if not lines then return end
-    GameTooltip:AddLine(" ")
-    GameTooltip:AddLine(L.WHY_TITLE, C.accent[1], C.accent[2], C.accent[3])
-    for _, line in ipairs(lines) do GameTooltip:AddLine(line, 0.8, 0.8, 0.8, true) end
+    addLine(tip, " ")
+    addLine(tip, L.WHY_TITLE, "accent")
+    for _, line in ipairs(lines) do addLine(tip, line) end
 end
 
--- The quest of a row, in a tooltip next to `owner`: name, what the row's look means, level
+-- The quest of a row, in a card next to `owner`: name, what the row's look means, level
 -- (above the player's: why it is orange), objectives, why the guide plans its step, then what
 -- a click (A) does. Ding never opens the game's quest log itself: driving Blizzard's frames
 -- from an addon spreads its taint there, and on Forever their secret values then fail by the
@@ -784,6 +810,7 @@ function P:ShowQuest(row, owner)
     if row and row.action == "gear" and row.item then
         -- The upgrade itself: the game's own card of the item, then in words what it replaces,
         -- what changes and how the guide compares them.
+        Card:Hide()
         GameTooltip:SetOwner(owner, "ANCHOR_RIGHT")
         if not pcall(GameTooltip.SetItemByID, GameTooltip, row.item) then
             GameTooltip:SetText(Compat.ItemName(row.item) or "?")
@@ -791,77 +818,71 @@ function P:ShowQuest(row, owner)
         local up = Ding.Gear and Ding.Gear:Suggested()
         if up and up.id == row.item then
             local verdict, cmp = gearVerdict(up)
-            GameTooltip:AddLine(verdict, C.accent[1], C.accent[2], C.accent[3], true)
-            if cmp and cmp.replaced then GameTooltip:AddLine(L.GEAR_REPLACES:format(cmp.replaced), 0.8, 0.8, 0.8, true) end
-            if cmp and #cmp.stats > 0 then
-                GameTooltip:AddLine(L.GEAR_STATS:format(statsText(cmp.stats)), 0.8, 0.8, 0.8, true)
-            end
-            GameTooltip:AddLine(L.GEAR_SCORE, 0.8, 0.8, 0.8, true)
+            addLine(GameTooltip, verdict, "accent")
+            if cmp and cmp.replaced then addLine(GameTooltip, L.GEAR_REPLACES:format(cmp.replaced)) end
+            if cmp and #cmp.stats > 0 then addLine(GameTooltip, L.GEAR_STATS:format(statsText(cmp.stats))) end
+            addLine(GameTooltip, L.GEAR_SCORE)
         end
-        addMeaning(row)
+        addMeaning(GameTooltip, row)
         GameTooltip:Show()
         return
     end
     if row and row.action == "talent" and row.talent then
         -- The talent itself: the game's own card of it.
         local t = row.talent
+        Card:Hide()
         GameTooltip:SetOwner(owner, "ANCHOR_RIGHT")
         if not pcall(GameTooltip.SetTalent, GameTooltip, t.tab, t.index) then
             GameTooltip:SetText(t.name or "?")
-            GameTooltip:AddLine(("%d/%d"):format(t.rank, t.maxRank), 0.8, 0.8, 0.8)
+            addLine(GameTooltip, ("%d/%d"):format(t.rank, t.maxRank))
         end
-        addMeaning(row)
+        addMeaning(GameTooltip, row)
         GameTooltip:Show()
         return
     end
     if row and row.action == "grind" and not q then
         -- The monster to farm: its name and levels.
-        GameTooltip:SetOwner(owner, "ANCHOR_RIGHT")
-        GameTooltip:SetText(Ding.Data:NpcName(row.npc) or "?", 1, 0.82, 0)
-        addMeaning(row)
+        local tip = openCard(owner, row)
+        tip:SetText(Ding.Data:NpcName(row.npc) or "?")
+        addMeaning(tip, row)
         local info = Ding.Data:NpcInfo(row.npc)
-        if info then GameTooltip:AddLine(npcLevels(info.minLevel, info.maxLevel), 0.8, 0.8, 0.8) end
-        addWhy(row)
-        clickLine()
-        GameTooltip:Show()
+        if info then addLine(tip, npcLevels(info.minLevel, info.maxLevel)) end
+        addWhy(tip, row)
+        clickLine(tip)
+        tip:Show()
         return
     end
     if not q then return self:ShowRowText(row, owner) end
     if row.action == "objective" then return self:ShowObjective(row, owner) end
-    GameTooltip:SetOwner(owner, "ANCHOR_RIGHT")
+    local tip = openCard(owner, row)
     local part = partText(q)
-    GameTooltip:SetText(Ding.Data:QuestName(q) .. (part and (" " .. part) or ""), 1, 0.82, 0)
-    addMeaning(row)
+    tip:SetText(Ding.Data:QuestName(q) .. (part and (" " .. part) or ""))
+    addMeaning(tip, row)
     -- "[29]" in the window is the quest's level; orange: above the player's.
     local level, mine = Ding.Data:QuestLevel(q), UnitLevel("player")
     if level and level > 0 then
-        local text = level > mine and L.QUEST_LEVEL_ABOVE:format(level, mine) or L.QUEST_LEVEL:format(level)
-        GameTooltip:AddLine(text, 0.8, 0.8, 0.8, true)
+        addLine(tip, level > mine and L.QUEST_LEVEL_ABOVE:format(level, mine) or L.QUEST_LEVEL:format(level))
     end
     -- "· before “Name”": a quest earlier in the chain of a quest of the step.
-    if row.prequestOf then GameTooltip:AddLine(L.PREQUEST_DETAIL:format(quoted(row.prequestOf)), 0.8, 0.8, 0.8, true) end
+    if row.prequestOf then addLine(tip, L.PREQUEST_DETAIL:format(quoted(row.prequestOf))) end
     if Compat.IsInLog(q) then
         for _, obj in ipairs(Compat.GetObjectives(q)) do
-            if obj.text then
-                local c = obj.finished and C.done or C.text
-                GameTooltip:AddLine(obj.text, c[1], c[2], c[3], true)
-            end
+            if obj.text then addLine(tip, obj.text, obj.finished and "done" or "text") end
         end
     elseif row.action ~= "header" then
         -- A header says it first already (P:RowMeaning). Turned in, never "not in your log yet"
         -- (a finished quest seen again with Previous).
-        local text = Ding.Engine:IsTurnedIn(q) and L.QUEST_TURNED_IN or L.NOT_IN_LOG
-        GameTooltip:AddLine(text, 0.8, 0.8, 0.8, true)
+        addLine(tip, Ding.Engine:IsTurnedIn(q) and L.QUEST_TURNED_IN or L.NOT_IN_LOG)
     end
-    addWhy(row)
+    addWhy(tip, row)
     -- noAim: a card shown elsewhere than in the guide window (settings). The offer to jump
     -- says under its text what a click does.
-    if not row.noAim and not row.preview and not row.extra then clickLine() end
+    if not row.noAim and not row.preview and not row.extra then clickLine(tip) end
     -- Focus mode: Right finds the quest in the guide (the mouse has the step menu for it).
     if self.focusing and Ding.Gamepad:Active() and not row.noAim and not row.extra then
-        GameTooltip:AddLine(L.ROW_FIND_PAD:format(Ding.Gamepad:ButtonName("PADDRIGHT")), 0.6, 0.6, 0.6, true)
+        addLine(tip, L.ROW_FIND_PAD:format(Ding.Gamepad:ButtonName("PADDRIGHT")), "accent")
     end
-    GameTooltip:Show()
+    tip:Show()
 end
 
 -- How many of a quest's objectives are done: done, total (all of them once ready).
@@ -881,30 +902,30 @@ end
 -- (when the guide has a reason) and what a click does.
 function P:ShowObjective(row, owner)
     local q = row.quest
-    GameTooltip:SetOwner(owner, "ANCHOR_RIGHT")
-    GameTooltip:SetText(UI.StripColors(row.text or ""), 1, 1, 1, 1, true)
-    addMeaning(row)
+    local tip = openCard(owner, row)
+    tip:SetText(UI.StripColors(row.text or ""))
+    addMeaning(tip, row)
     local have, need = (row.counter or ""):match("^(%d+)/(%d+)$")
     if have and row.state ~= "done" and tonumber(need) > 1 then
-        GameTooltip:AddLine(L.OBJECTIVE_SO_FAR:format(tonumber(have), tonumber(need)), 0.8, 0.8, 0.8, true)
+        addLine(tip, L.OBJECTIVE_SO_FAR:format(tonumber(have), tonumber(need)))
     end
     if Compat.IsInLog(q) then
         local done, total = objectivesDone(q)
-        GameTooltip:AddLine(L.CARD_QUEST_SUMMARY:format(leveledName(q), done, total), 0.8, 0.8, 0.8, true)
+        addLine(tip, L.CARD_QUEST_SUMMARY:format(leveledName(q), done, total))
     else
         local text = Ding.Engine:IsTurnedIn(q) and L.QUEST_TURNED_IN or L.NOT_IN_LOG
-        GameTooltip:AddLine(L.CARD_FOR_QUEST:format(leveledName(q)) .. " " .. text, 0.8, 0.8, 0.8, true)
+        addLine(tip, L.CARD_FOR_QUEST:format(leveledName(q)) .. " " .. text)
     end
     -- Orange in the window: why (the level line says it only then).
     local level, mine = Ding.Data:QuestLevel(q), UnitLevel("player")
-    if level > mine then GameTooltip:AddLine(L.QUEST_LEVEL_ABOVE:format(level, mine), 0.8, 0.8, 0.8, true) end
-    if row.prequestOf then GameTooltip:AddLine(L.PREQUEST_DETAIL:format(quoted(row.prequestOf)), 0.8, 0.8, 0.8, true) end
-    addWhy(row)
-    clickLine()
+    if level > mine then addLine(tip, L.QUEST_LEVEL_ABOVE:format(level, mine)) end
+    if row.prequestOf then addLine(tip, L.PREQUEST_DETAIL:format(quoted(row.prequestOf))) end
+    addWhy(tip, row)
+    clickLine(tip)
     if self.focusing and Ding.Gamepad:Active() then
-        GameTooltip:AddLine(L.ROW_FIND_PAD:format(Ding.Gamepad:ButtonName("PADDRIGHT")), 0.6, 0.6, 0.6, true)
+        addLine(tip, L.ROW_FIND_PAD:format(Ding.Gamepad:ButtonName("PADDRIGHT")), "accent")
     end
-    GameTooltip:Show()
+    tip:Show()
 end
 
 -- A row without a quest (a level, a trip, a goal, a step further on): its text whole, what its
@@ -912,21 +933,24 @@ end
 function P:ShowRowText(row, owner)
     local lines = self:RowMeaning(row)
     if #lines == 0 and not whyLines(row) then return end
-    GameTooltip:SetOwner(owner, "ANCHOR_RIGHT")
-    GameTooltip:SetText(UI.StripColors(row.text or ""), 1, 1, 1, 1, true)
-    for _, text in ipairs(lines) do GameTooltip:AddLine(text, 0.8, 0.8, 0.8, true) end
-    addWhy(row)
+    local tip = openCard(owner, row)
+    tip:SetText(UI.StripColors(row.text or ""))
+    for _, text in ipairs(lines) do addLine(tip, text) end
+    addWhy(tip, row)
     if row.extra then
-        extraClickLine(row)
+        extraClickLine(tip, row)
     elseif not row.preview and #self:PointsOf(row) > 0 then
-        clickLine()
+        clickLine(tip)
     end
-    GameTooltip:Show()
+    tip:Show()
 end
 
+-- Hides the card (or the game's card of an item, a talent) `owner` shows.
 local function hideQuest(owner)
+    if Card:GetOwner() == owner then Card:Hide() end
     if GameTooltip:GetOwner() == owner then GameTooltip:Hide() end
 end
+P.HideCard = hideQuest
 
 -- Step shown and total, among the character's steps (Engine:StepNumber): the held step while
 -- it stays on screen.
@@ -940,20 +964,16 @@ end
 function P:ShowCompactText(owner)
     local data = self.compact and self.compactRow
     if not data or (data.text or "") == "" then return end
-    GameTooltip:SetOwner(owner, "ANCHOR_BOTTOM")
-    GameTooltip:SetText(UI.StripColors(data.text), 1, 1, 1, 1, true)
+    local tip = openCard(owner)
+    tip:SetText(UI.StripColors(data.text))
     if data.sub then
-        for line in (data.sub .. "\n"):gmatch("(.-)\n") do
-            GameTooltip:AddLine(UI.StripColors(line), C.secondary[1], C.secondary[2], C.secondary[3], true)
-        end
+        for line in (data.sub .. "\n"):gmatch("(.-)\n") do addLine(tip, UI.StripColors(line)) end
     end
     -- A step marked by hand: its note under the row says it already.
-    if not (data.sub and (data.state == "manual" or data.state == "skipped")) then addMeaning(data) end
+    if not (data.sub and (data.state == "manual" or data.state == "skipped")) then addMeaning(tip, data) end
     local E = Ding.Engine
-    if E.guide then
-        GameTooltip:AddLine(L.COMPACT_STEP:format(progress(E, self.holding)), 0.8, 0.8, 0.8, true)
-    end
-    GameTooltip:Show()
+    if E.guide then addLine(tip, L.COMPACT_STEP:format(progress(E, self.holding))) end
+    tip:Show()
 end
 
 ---------------------------------------------------------------------------
@@ -972,10 +992,15 @@ end
 local function menuIcon(button)
     for i = -1, 1 do
         local t = button:CreateTexture(nil, "ARTWORK")
-        t:SetColorTexture(unpack(C.secondary))
+        UI.Fill(t, C.secondary)
         t:SetSize(10, 1.5)
         t:SetPoint("CENTER", button, "CENTER", 0, i * 3.5)
     end
+end
+
+-- A text of the guide window (the "scene" surface: the theme's shadow or outline).
+local function text(parent, weight, size, color, layer)
+    return UI.Text(parent, weight, size, color, layer, "scene")
 end
 
 local function newRow(parent)
@@ -989,28 +1014,38 @@ local function newRow(parent)
     r.icon.bg = UI.Shape(r.icon, "small", nil, "BACKGROUND"):Place(r.icon)
     r.icon.tex = r.icon:CreateTexture(nil, "ARTWORK")
     r.icon.tex:SetPoint("CENTER", r.icon, "CENTER", 0, 0)
-    r.icon.letter = UI.Text(r.icon, "bold", 11, C.text)
+    r.icon.letter = text(r.icon, "bold", 11, C.text)
     r.icon.letter:SetJustifyH("CENTER")
     r.icon.letter:SetPoint("CENTER", r.icon, "CENTER", 0, 0)
     r.icon.item = UI.ItemIcon(r.icon, ICON)
     r.icon.item:SetPoint("CENTER", r.icon, "CENTER", 0, 0)
     r.icon.border = UI.Shape(r.icon, "smallBorder", C.strong, "OVERLAY"):Place(r.icon)
-    r.text = UI.Text(r, "regular", 12, C.text)
+    r.text = text(r, "regular", 12, C.text)
     UI.Wrap(r.text, 12, NO_CAP)
     r.text:SetPoint("TOPLEFT", r, "TOPLEFT", ROW_PAD_X + ICON + ROW_GAP_X, -ROW_PAD_Y)
-    r.counter = UI.Text(r, "semibold", 12, C.todo)
+    r.counter = text(r, "semibold", 12, C.todo)
     r.counter:SetJustifyH("RIGHT")
     r.counter:SetPoint("TOPRIGHT", r, "TOPRIGHT", -ROW_PAD_X, -ROW_PAD_Y)
-    r.sub = UI.Text(r, "regular", 11, C.secondary)
+    r.sub = text(r, "regular", 11, C.subText)
     UI.Wrap(r.sub, 11, NO_CAP)
     r.sub:SetPoint("TOPLEFT", r.text, "BOTTOMLEFT", 0, -2)
     -- Above a section's title ("Good to know", "Next steps"): a 1-unit line across the row.
     r.rule = r:CreateTexture(nil, "ARTWORK")
-    r.rule:SetColorTexture(unpack(C.divider))
+    UI.Fill(r.rule, C.divider)
     r.rule:SetHeight(1)
     r.rule:SetPoint("TOPLEFT", r, "TOPLEFT", 0, -1)
     r.rule:SetPoint("TOPRIGHT", r, "TOPRIGHT", 0, -1)
-    -- A control row (cancel the trip): lighter under the mouse, A on it in focus mode.
+    -- Bands: the line on the right of the title instead, fading out, a dark line under it.
+    r.ruleRight = r:CreateTexture(nil, "ARTWORK")
+    r.ruleRight:SetTexture(UI.TEX .. "line_fade_right")
+    UI.Tint(r.ruleRight, C.line)
+    r.ruleRight:SetHeight(1)
+    r.ruleShadow = r:CreateTexture(nil, "ARTWORK")
+    UI.Fill(r.ruleShadow, C.lineShadow)
+    r.ruleShadow:SetHeight(1)
+    r.ruleShadow:SetPoint("TOPLEFT", r.ruleRight, "BOTTOMLEFT", 0, 0)
+    r.ruleShadow:SetPoint("TOPRIGHT", r.ruleRight, "BOTTOMRIGHT", 0, 0)
+    -- Lighter under the mouse; a control row (cancel the trip) carries A in focus mode.
     r.hover = UI.Shape(r, "row", C.hover, "HIGHLIGHT"):Place(r)
     r.key = UI.Glyph(r)
     r.key:SetPoint("RIGHT", r, "RIGHT", -ROW_PAD_X, 0)
@@ -1055,7 +1090,7 @@ local function setIcon(icon, data, look)
     elseif kind == "collect" then file = "circle"
     elseif kind == "accept" or kind == "turnin" then
         letter:SetText(kind == "accept" and "!" or "?")
-        letter:SetTextColor(unpack(look.glyph))
+        UI.Color(letter, look.glyph)
         letter:Show()
         return
     elseif kind == "level" then file, size = "caret_up", 8
@@ -1063,14 +1098,12 @@ local function setIcon(icon, data, look)
     tex:SetTexture(UI.TEX .. file)
     tex:SetSize(size, size)
     tex:SetRotation(rotation)
-    tex:SetVertexColor(unpack(look.glyph))
+    UI.Tint(tex, look.glyph)
     tex:Show()
 end
 
-local function dividerAt(f, y)
-    local t = UI.Divider(f, y)
-    return t
-end
+-- Bars and rows drawn as bands (windowStyle "bands"): their tint follows the opacity slider.
+local function bands() return UI.Theme.current.flags.windowStyle == "bands" end
 
 function P:Create()
     if self.frame then return end
@@ -1093,7 +1126,18 @@ function P:Create()
     end)
     f:SetScript("OnEnter", function(self) P:ShowCompactText(self) end)
     f:SetScript("OnLeave", hideQuest)
-    f.look = UI.Window(f)
+    f.look = UI.Window(f, "panel")
+    -- The bars' own backgrounds: Ardoise's darker title bar, a band each in Bandes.
+    local function band(y, height)
+        local holder = CreateFrame("Frame", nil, f)
+        holder:SetHeight(height)
+        holder:SetPoint("TOPLEFT", f, "TOPLEFT", 0, y)
+        holder:SetPoint("TOPRIGHT", f, "TOPRIGHT", 0, y)
+        holder.bg = UI.Shape(holder, "window", nil, "BACKGROUND", -6):Place(holder)
+        return holder
+    end
+    f.titleBand = band(0, TITLE_HEIGHT)
+    f.stepBand = band(-(TITLE_HEIGHT + 1), STEP_HEIGHT)
 
     -- Title bar: menu, "Ding · guide", minimize, close.
     f.menu = UI.IconButton(f, 20)
@@ -1104,7 +1148,7 @@ function P:Create()
 
     f.close = UI.IconButton(f, 20)
     f.close:SetPoint("TOPRIGHT", f, "TOPRIGHT", -4, -2)
-    f.close.label = UI.Text(f.close, "regular", 14, C.secondary)
+    f.close.label = text(f.close, "regular", 14, C.secondary)
     f.close.label:SetPoint("CENTER", f.close, "CENTER", 0, 1)
     f.close.label:SetText("×")
     f.close.tooltip = L.PANEL_CLOSE
@@ -1113,7 +1157,7 @@ function P:Create()
     f.minimize = UI.IconButton(f, 20)
     f.minimize:SetPoint("TOPRIGHT", f, "TOPRIGHT", -28, -2)
     local bar = f.minimize:CreateTexture(nil, "ARTWORK")
-    bar:SetColorTexture(unpack(C.secondary))
+    UI.Fill(bar, C.secondary)
     bar:SetSize(9, 1.5)
     bar:SetPoint("CENTER", f.minimize, "CENTER", 0, 0)
     f.minimize.tooltip = L.BIND_COMPACT
@@ -1135,7 +1179,9 @@ function P:Create()
     f.finder.key:SetPoint("RIGHT", f.finder, "LEFT", -6, 0)
     f.finder.key:Hide()
 
-    f.title = UI.Text(f, "semibold", 12, C.text)
+    -- The title in the theme's title font (the game's own in Halo and Ardoise), one line.
+    f.title = text(f, "semibold", 12, C.text)
+    UI.SetTitleFont(f.title, "window")
     f.title:SetPoint("TOPLEFT", f, "TOPLEFT", 28, -4)
     -- The title area drags the window; its tooltip gives the full guide name.
     f.titleArea = CreateFrame("Button", nil, f)
@@ -1152,12 +1198,12 @@ function P:Create()
         GameTooltip:Show()
     end)
     f.titleArea:SetScript("OnLeave", function() GameTooltip:Hide() end)
-    f.titleDivider = dividerAt(f, -TITLE_HEIGHT)
+    f.titleDivider = UI.Separator(f, -TITLE_HEIGHT)
 
     -- Step bar: LB ‹ Step 3 / 42 › RB ... zone.
     f.lb = UI.Glyph(f)
     f.prev = UI.IconButton(f, 24, C.subtle)
-    f.prev.label = UI.Text(f.prev, "semibold", 13, C.text)
+    f.prev.label = text(f.prev, "semibold", 13, C.text)
     f.prev.label:SetPoint("CENTER", f.prev, "CENTER", 0, 1)
     f.prev.label:SetText("‹")
     f.prev:RegisterForClicks("LeftButtonUp", "RightButtonUp")
@@ -1165,10 +1211,10 @@ function P:Create()
         if button == "RightButton" then P:BackToSkipped() else Ding.Engine:Prev() end
     end)
     f.prev.tooltip = L.BIND_PREV .. "\n" .. L.RIGHT_CLICK:format(L.BIND_UNSKIP)
-    f.stepText = UI.Text(f, "semibold", 12, C.text)
-    f.stepTotal = UI.Text(f, "regular", 12, C.muted)
+    f.stepText = text(f, "semibold", 12, C.text)
+    f.stepTotal = text(f, "regular", 12, C.muted)
     f.next = UI.IconButton(f, 24, C.subtle)
-    f.next.label = UI.Text(f.next, "semibold", 13, C.text)
+    f.next.label = text(f.next, "semibold", 13, C.text)
     f.next.label:SetPoint("CENTER", f.next, "CENTER", 0, 1)
     f.next.label:SetText("›")
     f.next:RegisterForClicks("LeftButtonUp", "RightButtonUp")
@@ -1177,15 +1223,16 @@ function P:Create()
     end)
     f.next.tooltip = L.BIND_NEXT .. "\n" .. L.RIGHT_CLICK:format(L.BIND_SKIP)
     f.rb = UI.Glyph(f)
-    f.zone = UI.Text(f, "regular", 11, C.secondary)
+    f.zone = text(f, "regular", 11, C.secondary)
     f.zone:SetJustifyH("RIGHT")
-    f.stepDivider = dividerAt(f, -(TITLE_HEIGHT + 1 + STEP_HEIGHT))
+    f.stepDivider = UI.Separator(f, -(TITLE_HEIGHT + 1 + STEP_HEIGHT))
 
-    -- Rows and progress bar.
+    -- Rows and progress bar (Bandes: a black edge around the track).
     f.rows = {}
     f.trackHolder = CreateFrame("Frame", nil, f)
     f.trackHolder:SetHeight(3)
-    f.track = UI.Shape(f.trackHolder, "bar", C.border, "ARTWORK"):Place(f.trackHolder)
+    f.trackEdge = UI.Shape(f.trackHolder, "bar", C.trackEdge, "BACKGROUND"):Place(f.trackHolder, 1)
+    f.track = UI.Shape(f.trackHolder, "bar", C.track, "ARTWORK"):Place(f.trackHolder)
     f.fillHolder = CreateFrame("Frame", nil, f)
     f.fillHolder:SetHeight(3)
     f.fillHolder:SetFrameLevel(f.trackHolder:GetFrameLevel() + 1)
@@ -1195,22 +1242,24 @@ function P:Create()
     f.focusHints = Ding.Gamepad:NewHintBar(f, db.width - 16, FOCUS_HINTS)
     f.focusHints:Hide()
 
-    -- Minimized: count, icon, text, counter, expand; 2-unit progress line at the bottom.
+    -- Minimized: count, icon, text, counter, expand; 2-unit progress line at the bottom. In
+    -- Bandes, the whole line is one band.
     f.mini = CreateFrame("Frame", nil, f)
     f.mini:SetAllPoints(f)
     local m = f.mini
+    m.band = UI.Shape(m, "window", nil, "BACKGROUND", -6):Place(m)
     m.menu = UI.IconButton(m, 20)
     menuIcon(m.menu)
     m.menu.tooltip = L.BIND_CONFIG
     m.menu:SetScript("OnClick", function() Ding.Config:Toggle() end)
-    m.count = UI.Text(m, "semibold", 11, C.muted)
+    m.count = text(m, "semibold", 11, C.muted)
     m.icon = CreateFrame("Frame", nil, m)
     m.icon:SetSize(14, 14)
     m.icon.bg = UI.Shape(m.icon, "small", nil, "BACKGROUND"):Place(m.icon)
     m.icon.tex = m.icon:CreateTexture(nil, "ARTWORK")
     m.icon.tex:SetPoint("CENTER", m.icon, "CENTER", 0, 0)
-    m.text = UI.Text(m, "regular", 12, C.text)
-    m.counter = UI.Text(m, "semibold", 12, C.todo)
+    m.text = text(m, "regular", 12, C.text)
+    m.counter = text(m, "semibold", 12, C.todo)
     m.counter:SetJustifyH("RIGHT")
     m.expand = UI.IconButton(m, 20)
     m.expand:SetPoint("RIGHT", m, "RIGHT", -4, 0)
@@ -1221,12 +1270,12 @@ function P:Create()
     m.expand.tooltip = L.BIND_COMPACT
     m.expand:SetScript("OnClick", function() P:SetCompact(false) end)
     m.line = m:CreateTexture(nil, "ARTWORK")
-    m.line:SetColorTexture(unpack(C.border))
+    UI.Fill(m.line, C.track)
     m.line:SetHeight(2)
     m.line:SetPoint("BOTTOMLEFT", m, "BOTTOMLEFT", 3, 1)
     m.line:SetPoint("BOTTOMRIGHT", m, "BOTTOMRIGHT", -3, 1)
     m.lineFill = m:CreateTexture(nil, "ARTWORK", nil, 1)
-    m.lineFill:SetColorTexture(unpack(C.accent))
+    UI.Fill(m.lineFill, C.accent)
     m.lineFill:SetHeight(2)
     m.lineFill:SetPoint("BOTTOMLEFT", m, "BOTTOMLEFT", 3, 1)
 
@@ -1304,9 +1353,40 @@ function P:SetWidth(value)
     return db.width
 end
 
-function P:SetBackgroundAlpha(alpha)
-    Ding.db.panel.bgAlpha = clamp(tonumber(alpha) or 0.85, 0, 1)
-    if self.frame then self.frame.look:SetBgAlpha(Ding.db.panel.bgAlpha) end
+-- The background's opacity (0-1). `touched`: the player moved the slider, the theme's default
+-- no longer replaces it (UI.Theme.Apply). In Halo the texts get their outline below 40 %.
+function P:SetBackgroundAlpha(alpha, touched)
+    local T = UI.Theme
+    Ding.db.panel.bgAlpha = clamp(tonumber(alpha) or T.current.opacityDefault / 100, 0, 1)
+    if touched ~= nil then Ding.db.ui.opacityTouched = touched or nil end
+    local outline = T.SceneOutline()
+    if outline ~= self.outline then
+        self.outline = outline
+        UI.RefreshFonts()
+    end
+    if self.frame then self:Update() end
+end
+
+-- Lays the window out again: a theme change (UI.Theme.Apply; wrapping changes with the title
+-- font), nothing rebuilt.
+function P:Relayout()
+    self.outline = UI.Theme.SceneOutline()
+    if self.frame then self:Update() end
+end
+
+-- The bars' own backgrounds: Ardoise's darker title bar; Bandes' bands (title bar, step bar,
+-- the minimized line), which follow the opacity slider like the rows' bands.
+function P:PaintBands()
+    local f = self.frame
+    local scale = UI.Theme.BandScale()
+    local function paint(slice, token, shown)
+        local visible = shown and (token[4] or 0) + (token[8] or 0) > 0
+        slice:SetShown(visible and true or false)
+        if visible then slice:SetColor(token, scale) end
+    end
+    paint(f.titleBand.bg, C.panelTitlebar, not self.compact)
+    paint(f.stepBand.bg, C.panelStepbar, not self.compact)
+    paint(f.mini.band, C.panelStepbar, self.compact and bands())
 end
 
 -- On screen: opened by the player, and not hidden in a dungeon (setting). The arrow
@@ -1374,12 +1454,12 @@ function P:OpenStepMenu(row)
         m:SetFrameLevel(catcher:GetFrameLevel() + 5)
         m:SetClampedToScreen(true)
         m:EnableMouse(true)
-        m.look = UI.Window(m)
+        m.look = UI.Window(m, "popup")
         m.cancel = menuItem(m, "", function() Ding.Finder:Cancel() end)
         m.arrived = menuItem(m, "", function() Ding.Finder:Cancel() end)
         m.undo = menuItem(m, "", function() Ding.Engine:Unmark() end)
         m.line = m:CreateTexture(nil, "ARTWORK")
-        m.line:SetColorTexture(unpack(C.divider))
+        UI.Fill(m.line, C.divider)
         m.line:SetHeight(1)
         m.done = menuItem(m, L.STEP_MENU_DONE, function() Ding.Engine:MarkDone() end)
         m.skip = menuItem(m, L.STEP_MENU_SKIP, function() Ding.Engine:Skip() end)
@@ -1762,8 +1842,15 @@ local function layoutRow(f, i, data, y, width)
     r:ClearAllPoints()
     r:SetPoint("TOPLEFT", f, "TOPLEFT", LIST_PAD + indent, y)
     r:SetWidth(width)
-    if look.row then
-        r.bg:SetColor(look.row)
+    -- The row's background: a state's tint only when the theme tints rows (Halo reads the
+    -- state from the word, the glyph and the counter); another quest's header, a band of
+    -- information in Bandes; bands follow the opacity slider.
+    local theme = UI.Theme.current
+    local rowToken = look.row
+    if data.state == "header" and data.other then rowToken = C.infoRowBg end
+    if look.state and not theme.flags.stateRowBg then rowToken = nil end
+    if rowToken and (rowToken[4] or 0) + (rowToken[8] or 0) > 0 then
+        r.bg:SetColor(rowToken, bands() and data.state ~= "button" and UI.Theme.BandScale() or nil)
         r.bg:Show()
     else
         r.bg:Hide()
@@ -1777,23 +1864,31 @@ local function layoutRow(f, i, data, y, width)
     local top = (data.state == "section" or data.other and data.action == "header") and ROW_PAD_Y + GROUP_GAP or ROW_PAD_Y
     r.text:ClearAllPoints()
     r.text:SetPoint("TOPLEFT", r, "TOPLEFT", textX, -top)
+    -- The step's own quest header in the theme's title font; the same line height everywhere.
     local style = TEXT_STYLES[data.state] or TEXT_STYLE
-    if r.style ~= style then
-        r.style = style
-        r.text:SetFontObject(UI.Font(style[1], style[2]))
-        UI.Wrap(r.text, style[2], NO_CAP)
+    local role = data.state == "header" and not data.other and "header" or nil
+    if r.style ~= style or r.role ~= role or r.styleTheme ~= theme.id then
+        r.style, r.role, r.styleTheme = style, role, theme.id
+        if role then
+            UI.SetTitleFont(r.text, role)
+            UI.Wrap(r.text, role, NO_CAP)
+        else
+            UI.SetFont(r.text, style[1], style[2])
+            UI.Wrap(r.text, style[2], NO_CAP)
+        end
     end
 
-    r.rule:SetShown(data.state == "section")
+    local section = data.state == "section"
+    r.rule:SetShown(section and not bands())
     local button = data.state == "button"
-    r.hover:SetShown(button)
+    r.hover:SetShown(not section)
     local chip = button and focused and Ding.Gamepad:Active()
     if chip then r.key:SetKey("PAD1") end
     r.key:SetShown(chip and true or false)
     local counterWidth = chip and r.key:GetWidth() or 0
     if data.counter and data.state ~= "impossible" then
         r.counter:SetText(data.counter)
-        r.counter:SetTextColor(unpack(look.counter))
+        UI.Color(r.counter, look.counter)
         counterWidth = math.max(COUNTER_MIN, UI.Measure(r.counter))
         r.counter:SetWidth(counterWidth)
         r.counter:Show()
@@ -1801,11 +1896,21 @@ local function layoutRow(f, i, data, y, width)
         r.counter:Hide()
     end
     local textWidth = width - textX - ROW_PAD_X - (counterWidth > 0 and counterWidth + ROW_GAP_X or 0)
-    r.text:SetWidth(textWidth)
     local text = data.text or ""
     if data.state == "impossible" or data.state == "preview" then text = UI.StripColors(text) end
     r.text:SetText(text)
-    r.text:SetTextColor(unpack(focused and C.text or look.text))
+    -- Bands: the section's line on the right of its title, 8 after it.
+    local ruleRight = section and bands()
+    if ruleRight then
+        local titleWidth = math.min(UI.Measure(r.text), textWidth)
+        r.ruleRight:ClearAllPoints()
+        r.ruleRight:SetPoint("TOPLEFT", r, "TOPLEFT", textX + titleWidth + 8, -(top + 7))
+        r.ruleRight:SetPoint("TOPRIGHT", r, "TOPRIGHT", -ROW_PAD_X, -(top + 7))
+    end
+    r.ruleRight:SetShown(ruleRight)
+    r.ruleShadow:SetShown(ruleRight)
+    r.text:SetWidth(textWidth)
+    UI.Color(r.text, focused and C.text or look.text)
     local height = r.text:GetStringHeight()
     if data.sub then
         r.sub:SetWidth(textWidth)
@@ -1963,13 +2068,13 @@ function P:LayoutCompact()
     m.icon.tex:SetTexture(UI.TEX .. glyph)
     m.icon.tex:SetSize(done and 9 or 5, done and 9 or 5)
     m.icon.tex:SetRotation(glyph == "caret_up" and -math.pi / 2 or 0)
-    m.icon.tex:SetVertexColor(unpack(look.glyph))
+    UI.Tint(m.icon.tex, look.glyph)
     x = x + 14 + 6
 
     local right = done and pad or (4 + 20 + 6)
     local counter = data.counter or ""
     m.counter:SetText(counter)
-    m.counter:SetTextColor(unpack(look.counter))
+    UI.Color(m.counter, look.counter)
     m.counter:ClearAllPoints()
     m.counter:SetPoint("RIGHT", m, "RIGHT", -right, 0)
     m.counter:SetShown(counter ~= "")
@@ -1978,7 +2083,7 @@ function P:LayoutCompact()
     m.text:SetPoint("LEFT", m, "LEFT", x, 0)
     m.text:SetWidth(math.max(20, width - x - right - counterWidth))
     m.text:SetText(UI.StripColors(data.text or ""))
-    m.text:SetTextColor(unpack(done and C.done or (data.state == "impossible" and C.disabled or C.text)))
+    UI.Color(m.text, done and C.done or (data.state == "impossible" and C.disabled or C.text))
 
     local ratio = total > 0 and (E.finished and 1 or current / total) or 0
     m.lineFill:SetWidth(math.max(1, (width - 6) * ratio))
@@ -1998,7 +2103,8 @@ function P:Update()
     end
     self:CheckHold()
     f:SetWidth(db.width)
-    f.look:SetBgAlpha(db.bgAlpha or 0.85)
+    f.look:SetBgAlpha(UI.Theme.Opacity())
+    self:PaintBands()
     if self.compact then
         self:LayoutCompact()
     else

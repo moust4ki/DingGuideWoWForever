@@ -21,12 +21,13 @@ local version = metadata(C_AddOns and C_AddOns.GetAddOnMetadata, "Version")
 Ding.version = (type(version) == "string" and version ~= "" and not version:find("@", 1, true))
     and version or "dev"
 
--- Defaults of the design (docs/UI-handoff.md): background 85 %, window 100 %, arrow 56
--- units, 120 above the screen center. Ding's own arrow: TomTom's is an opt-in.
+-- Defaults of the design (docs/UI-handoff.md, docs/UI-themes.md): the Halo theme, its
+-- background at 60 %, window 100 %, arrow 56 units, 120 above the screen center. Ding's own
+-- arrow: TomTom's is an opt-in.
 local DEFAULTS = {
     panel = {
         shown = true, point = "TOPRIGHT", x = -260, y = -220, scale = 1, width = 300,
-        locked = false, bgAlpha = 0.85, compactInCombat = true,
+        locked = false, bgAlpha = 0.60, compactInCombat = true,
         hideInInstance = false, keyHints = true, itemButton = true, preview = 0, weaponReminder = true,
         why = true,      -- why the guide makes its choices: lines under surprising steps, tooltips (Core/Why.lua)
     },
@@ -46,6 +47,9 @@ local DEFAULTS = {
         -- the enemy nameplates' distance raised to the client's maximum.
         mobIcons = true, mobTooltip = true, farPlates = false,
         dialogScale = 0.85,   -- the settings, the NPC directory, the setup assistant, import (UI.Dialog)
+        -- The look (UI/Themes.lua); opacityTouched: the player moved the opacity slider, which
+        -- then no longer follows the theme's default.
+        theme = "halo", opacityTouched = false,
     },
     timings = {},
     imported = {},   -- [pack id] = { pack, guides, at }: guides imported as text (Import)
@@ -92,10 +96,26 @@ function Ding:ResetSettings()
     self.db.ui.welcomed, self.db.ui.setupDone = true, true
 end
 
--- Settings saved before the design (layout 1) in the current shape, once.
-local LAYOUT = 2
+-- Settings saved before the design (layout 1), then before themes (layout 2), in the current
+-- shape, once.
+local LAYOUT = 3
+local OLD_OPACITY = 0.85      -- the background's default before themes
 local function migrate(db)
-    if (db.layout or 1) >= LAYOUT then return end
+    local layout = db.layout or 1
+    if layout >= LAYOUT then return end
+    if layout >= 2 then
+        -- v1.5.0: the Halo theme for everyone (the changelog says so). A background left at
+        -- the old default follows the theme's; one the player chose is kept.
+        local alpha = tonumber(db.panel.bgAlpha)
+        if alpha and math.abs(alpha - OLD_OPACITY) > 0.001 and math.abs(alpha - DEFAULTS.panel.bgAlpha) > 0.001 then
+            db.ui.opacityTouched = true
+        else
+            db.panel.bgAlpha = DEFAULTS.panel.bgAlpha
+        end
+        db.ui.theme = DEFAULTS.ui.theme
+        db.layout = LAYOUT
+        return
+    end
     local arrow = db.arrow
     if arrow.point == "TOP" and arrow.x == 0 and arrow.y == -120 then
         arrow.point, arrow.x, arrow.y = "CENTER", 0, 120

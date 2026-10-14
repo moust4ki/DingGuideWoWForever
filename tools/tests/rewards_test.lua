@@ -4,6 +4,7 @@
 -- from the game's quest log (Ding never selects nor abandons a quest there: taint).
 local tools = (arg[0]:match("^(.*)[/\\]") or ".") .. "/.."
 local T = dofile(tools .. "/testlib.lua")(arg[1], { locale = "enUS" })
+local Tip = T.tip    -- the card on screen (Ding's card or the game's tooltip)
 local Ding, H = T.Ding, T.H
 local E, P, L, Cfg, R = Ding.Engine, Ding.Panel, Ding.L, Ding.Config, Ding.Rewards
 
@@ -174,11 +175,11 @@ T.test("cleanup: a row in the Guide tab, the quests on a page; A shows a card, n
     T.eq(Cfg.focus.opts.button, L.CLEANUP_CARD)
     local row = Cfg.focus
     H.press("PAD1")
-    T.eq(GameTooltip.text, name, "no quest card")
-    T.ok(GameTooltip:GetOwner() == row, "the card is not next to the row")
+    T.eq(Tip.text, name, "no quest card")
+    T.ok(Tip:GetOwner() == row, "the card is not next to the row")
     T.ok(H.log()[916], "the quest left the log")
     H.press("PADDDOWN")
-    T.ok(not GameTooltip:IsShown(), "card kept after moving the focus")
+    T.ok(not Tip:IsShown(), "card kept after moving the focus")
     H.press("PAD2")
     T.eq(Cfg.page, nil, "B does not go back to the tab")
     T.eq(Cfg.focus.opts.label, L.CLEANUP_ROW, "the focus is not back on the row")
@@ -201,7 +202,7 @@ T.test("cleanup: with the mouse, a click shows the card; abandoned from the game
     end
     T.ok(row, "no row for 4495")
     row.scripts.OnClick(row, "LeftButton"); H.flush()
-    T.eq(GameTooltip.text, name)
+    T.eq(Tip.text, name)
     -- The player abandons it in the game's quest log: the page follows.
     T.quests({ [4495] = false })
     H.tick(1)

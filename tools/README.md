@@ -198,13 +198,16 @@ scenario of `panel_scenarios.lua` (a section and its step, the character, where 
 quests turned in or in the log with their counts, the window's width, focus mode...) and writes
 what the window shows: the title, the step bar, every row with its look in words ("red
 background, red diamond icon, counter 0/13 red"), its sub-lines, its card (hover, or X in
-focus mode) and the step menu.
+focus mode) and the step menu. The looks are those of a theme (`--theme`, Ding dark by
+default: the colors the rows were first described with); `a12-fragments` and `a11-minimized`
+are kept in the other themes too (`<scenario>@<theme>.txt`).
 
 ```sh
 lua5.1 tools/panel_snapshot.lua $QDB --list                    # the scenarios
 lua5.1 tools/panel_snapshot.lua $QDB a12-cursed-crew-ahead     # one, in French
 lua5.1 tools/panel_snapshot.lua $QDB --locale enUS             # all of them, in English
 lua5.1 tools/panel_snapshot.lua $QDB --write tools/tests/snapshots   # the French snapshots again
+lua5.1 tools/panel_snapshot.lua $QDB a12-fragments a11-minimized --theme halo --write tools/tests/snapshots
 ```
 
 `tests/panel_snapshot_test.lua` compares the French text with `tests/snapshots/<scenario>.txt`:

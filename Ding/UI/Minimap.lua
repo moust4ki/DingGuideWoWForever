@@ -38,9 +38,10 @@ end
 local function showTooltip(self)
     GameTooltip:SetOwner(self, "ANCHOR_LEFT")
     GameTooltip:SetText(Ding.TITLE)
-    GameTooltip:AddLine(L.MINIMAP_LEFT, 0.8, 0.8, 0.8)
-    GameTooltip:AddLine(L.MINIMAP_RIGHT, 0.8, 0.8, 0.8)
-    GameTooltip:AddLine(L.MINIMAP_DRAG, 0.8, 0.8, 0.8)
+    local c = C.cardText
+    GameTooltip:AddLine(L.MINIMAP_LEFT, c[1], c[2], c[3])
+    GameTooltip:AddLine(L.MINIMAP_RIGHT, c[1], c[2], c[3])
+    GameTooltip:AddLine(L.MINIMAP_DRAG, c[1], c[2], c[3])
     GameTooltip:Show()
 end
 

@@ -200,10 +200,10 @@ local function newDot(parent, i)
     d.icon:SetPoint("CENTER", d, "CENTER", 0, 0)
     d:SetScript("OnClick", function() S:Show(i) end)
     d:SetScript("OnEnter", function(self)
-        if S.screen ~= i then self.icon:SetVertexColor(unpack(C.secondary)) end
+        if S.screen ~= i then UI.Tint(self.icon, C.secondary) end
     end)
     d:SetScript("OnLeave", function(self)
-        self.icon:SetVertexColor(unpack(S.screen == i and C.accent or C.disabled))
+        UI.Tint(self.icon, S.screen == i and C.accent or C.disabled)
     end)
     return d
 end
@@ -259,7 +259,7 @@ local function layoutRow(r, choice)
     box.fill:SetShown(kind == "check" and on)
     box.stroke:SetShown(kind == "check" and not on)
     box.check:SetShown((kind == "check" or kind == "go") and on and true or false)
-    box.check:SetVertexColor(unpack(kind == "go" and C.accent or C.onAccent))
+    UI.Tint(box.check, kind == "go" and C.accent or C.onAccent)
     box.ring:SetShown(kind == "radio")
     box.dot:SetShown(kind == "radio" and on)
     r.on = on
@@ -269,7 +269,7 @@ local function layoutRow(r, choice)
     local width = ROW_WIDTH - MARK - 8 - CHIP - room
     r.label:SetWidth(width)
     r.label:SetText(choice.label)
-    r.label:SetTextColor(unpack(choice.dim and C.disabled or C.text))
+    UI.Color(r.label, choice.dim and C.disabled or C.text)
     local height = ROW_PAD + r.label:GetStringHeight()
     r.sub:SetWidth(width)
     r.sub:SetText(choice.sub or "")
@@ -329,10 +329,12 @@ function S:Create()
     f:EnableMouse(true)
     f:SetSize(WIDTH, 400)
     UI.Dialog(f, 0, 40)
-    f.look = UI.Window(f)
+    f.look = UI.Window(f, "dialog")
+    UI.DialogBars(f, TITLE)
 
     -- Title bar: "Ding! · Setup", B, close cross.
     f.title = UI.Text(f, "semibold", 13, C.text)
+    UI.SetTitleFont(f.title, "settings")
     f.title:SetPoint("LEFT", f, "TOPLEFT", 12, -TITLE / 2)
     f.close = UI.IconButton(f, 24)
     f.close:SetPoint("RIGHT", f, "TOPRIGHT", -6, -TITLE / 2)
@@ -343,7 +345,7 @@ function S:Create()
     f.back = UI.Glyph(f)
     f.back:SetKey("PAD2")
     f.back:SetPoint("RIGHT", f.close, "LEFT", -8, 0)
-    UI.Divider(f, -TITLE)
+    UI.Separator(f, -TITLE)
 
     f.screens = {}
     for i = 1, #SCREENS do f.screens[i] = newScreen(f, i) end
@@ -358,7 +360,7 @@ function S:Create()
     f.next = newButton(f, function() S:Next() end)
     f.next:SetPoint("BOTTOMRIGHT", f, "BOTTOMRIGHT", -INSET, EDGE)
     f.next.bg:SetColor(C.accent)
-    f.next.text:SetTextColor(unpack(C.onAccent))
+    UI.Color(f.next.text, C.onAccent)
     f.dots = CreateFrame("Frame", nil, f)
     f.dots:SetSize(#SCREENS * DOT + (#SCREENS - 1) * DOT_GAP, DOT)
     f.dots:SetPoint("BOTTOM", f, "BOTTOM", 0, EDGE + (BUTTON - DOT) / 2)
@@ -376,7 +378,7 @@ function S:Layout()
     local f = self.frame
     local pad = G():Active()
     local count = #SCREENS
-    f.title:SetText(UI.Colored("accent", Ding.TITLE) .. UI.Colored("disabled", " · ") .. L.SETUP_TITLE)
+    UI.Title(f.title, L.SETUP_TITLE)
     local tallest = 0
     for i, s in ipairs(f.screens) do
         tallest = math.max(tallest, layoutScreen(s, SCREENS[i]))
@@ -391,7 +393,7 @@ function S:Layout()
     for i = 1, count do
         local current = i == self.screen
         f.dots[i].icon:SetSize(current and 8 or 6, current and 8 or 6)
-        f.dots[i].icon:SetVertexColor(unpack(current and C.accent or C.disabled))
+        UI.Tint(f.dots[i].icon, current and C.accent or C.disabled)
     end
     f.back:SetShown(pad)
 
@@ -404,7 +406,7 @@ function S:Layout()
     prev.enabled = not first
     prev.hover:Hide()
     prev.text:SetText(L.SETUP_PREV)
-    prev.text:SetTextColor(unpack(first and C.disabled or C.text))
+    UI.Color(prev.text, first and C.disabled or C.text)
     UI.ButtonKeys(prev, pad and not first and { "PADLSHOULDER" } or nil)
     prev:SetWidth(math.max(96, UI.Measure(prev.text) + 28 + (pad and UI.KeysWidth({ "PADLSHOULDER" }) or 0)))
 

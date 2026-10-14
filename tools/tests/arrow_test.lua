@@ -51,8 +51,9 @@ local f = A.frame
 ---------------------------------------------------------------------------
 -- Styles
 ---------------------------------------------------------------------------
-T.test("Ding style by default, Minimap on request, unknown value = Ding", function()
+T.test("Ding style by default (the theme's arrow), Minimap on request, unknown value = Ding", function()
     T.eq(Ding.DEFAULTS.arrow.style, "ding")
+    Ding.UI.Theme.Apply("dingdark")
     start()
     T.eq(f.arrow.texture, A.TEXTURES.ding)
     A:SetStyle("classic")
@@ -60,6 +61,9 @@ T.test("Ding style by default, Minimap on request, unknown value = Ding", functi
     A:SetStyle("nope")
     T.eq(Ding.db.arrow.style, "ding")
     T.eq(f.arrow.texture, A.TEXTURES.ding)
+    Ding.UI.Theme.Apply("halo")
+    T.eq(f.arrow.texture, Ding.UI.TEX .. (A.state == "behind" and "arrow_halo_back" or "arrow_halo_gold"),
+        "Halo: its own arrows")
 end)
 
 T.test("Ding's texture ships with the addon", function()
@@ -280,7 +284,7 @@ local function sameColor(tex, color)
     return c and math.abs(c[1] - color[1]) < 1e-6 and math.abs(c[2] - color[2]) < 1e-6
 end
 
-T.test("on the way: blue arrow, name, distance and time", function()
+T.test("on the way: the theme's arrow (blue in Ding dark, gold in Halo), name, distance and time", function()
     done()
     start()
     facing(0)
@@ -288,21 +292,24 @@ T.test("on the way: blue arrow, name, distance and time", function()
     facing(ahead)                   -- facing the target: it is straight ahead
     T.ok(math.abs(math.sin(A.rotation)) < 1e-6 and math.cos(A.rotation) > 0, "target not straight ahead")
     T.eq(A.state, "route")
-    T.ok(sameColor(f.arrow, C_.accent), "arrow not blue")
+    T.ok(sameColor(f.arrow, C_.arrowTint), "arrow not in the theme's color")
+    T.eq(f.arrow.texture, Ding.UI.TEX .. Ding.UI.Theme.current.tex.arrow, "not the theme's arrow")
     T.eq(f.label:GetText(), "Point A")
     T.ok(H.plain(f.distance:GetText()):find("^%d+ m$"), "distance: " .. tostring(f.distance:GetText()))
     T.ok(H.plain(f.eta:GetText()):find("^ · %d+:%d%d$"), "time: " .. tostring(f.eta:GetText()))
     facing(0)
 end)
 
-T.test("behind (more than 120 degrees): red arrow, \"turn around\"", function()
+T.test("behind (more than 120 degrees): the turn-around arrow and color, \"turn around\"", function()
     done()
     start()
     facing(0)
     local ahead = A.rotation
     facing(ahead + math.pi)         -- back to the target
     T.eq(A.state, "behind")
-    T.ok(sameColor(f.arrow, C_.todo), "arrow not red")
+    T.ok(sameColor(f.arrow, C_.arrowBackTint), "arrow not in the turn-around color")
+    T.eq(f.arrow.texture, Ding.UI.TEX .. Ding.UI.Theme.current.tex.arrowBack, "not the theme's turn-around arrow")
+    T.ok(f.distance.color and math.abs(f.distance.color[1] - C_.arrowBack[1]) < 1e-6, "distance not in the turn-around color")
     T.eq(f.eta:GetText(), " · " .. Ding.L.TURN_AROUND)
     facing(0)
 end)

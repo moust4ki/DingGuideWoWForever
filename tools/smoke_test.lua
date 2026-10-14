@@ -554,7 +554,8 @@ ok, err = pcall(function()
     press("PAD1")
     tick(4.5)
     expect(not C.focus.confirming, "the confirmation does not expire after 4 s")
-    expect(db.panel.scale == 1 and db.panel.bgAlpha == 0.85 and db.arrow.size == 56, "appearance settings changed")
+    expect(db.panel.scale == 1 and math.abs(db.panel.bgAlpha - Ding.UI.Theme.current.opacityDefault / 100) < 1e-6
+        and db.arrow.size == 56, "appearance settings changed")
     expect(db.arrow.mode == 0 and db.ui.buttonStyle == "xbox", "arrow or gamepad settings changed")
 
     -- Move mode: the guide window, with key repeat, LB fine step, Y default, B cancel, A save.
@@ -1038,7 +1039,8 @@ ok, err = pcall(function()
     expect(C.page and C.page.key == "cleanup", "cleanup: no page")
     focusOn(C, function(r) return r.opts and r.opts.label == Ding.Data:QuestName(916) end, "cleanup quest")
     press("PAD1")
-    expect(GameTooltip.text == Ding.Data:QuestName(916) and H.log()[916], "cleanup: no card, or the quest left")
+    -- The card of the guide window's rows (Ding's own frame: UI.Card).
+    expect(Ding.UI.Card.text == Ding.Data:QuestName(916) and H.log()[916], "cleanup: no card, or the quest left")
     checkPanel("cleanup page")
     H.setQuest(916, nil); fire("QUEST_LOG_UPDATE"); tick(1)
     local listed = false
@@ -1715,11 +1717,11 @@ ok, err = pcall(function()
     checkPanel("why: the line under the step")
     local r = P.frame.rows[1]
     r.scripts.OnEnter(r)
-    expect(table.concat(GameTooltip.lines or {}, " "):find(L.WHY_TITLE, 1, true), "why: not in the row's tooltip")
+    expect(table.concat(Ding.UI.Card.lines or {}, " "):find(L.WHY_TITLE, 1, true), "why: not in the row's tooltip")
     r.scripts.OnLeave(r)
     P:StartFocus()
     press("PAD3")
-    expect(GameTooltip:IsShown() and table.concat(GameTooltip.lines or {}, " "):find(L.WHY_TITLE, 1, true),
+    expect(Ding.UI.Card:IsShown() and table.concat(Ding.UI.Card.lines or {}, " "):find(L.WHY_TITLE, 1, true),
         "why: X shows no reason")
     P:StopFocus()
     db.panel.why = false
