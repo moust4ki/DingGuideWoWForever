@@ -42,6 +42,13 @@ local function fired(command)
     return false
 end
 
+local function firedUp(command)
+    for _, c in ipairs(H.firedUp()) do
+        if c == command then return true end
+    end
+    return false
+end
+
 local function chordInputOn()
     local f = _G.DingChordInput
     return f ~= nil and f:IsShown() and f.gamepadButtons == true
@@ -90,7 +97,14 @@ T.test("RB + Up (the default) opens the settings; while a Ding window is open ch
     H.gamepadDown("PADDUP"); H.tick(0.1)
     T.ok(Cfg.frame and Cfg.frame:IsShown(), "RB + Up does not open the settings")
     T.ok(not fired(BAR.PADDUP), "the gamepad bar's Up ran too")
-    H.gamepadUp("PADDUP"); H.gamepadUp("PADRSHOULDER"); H.tick(0.1)
+    -- RB is still held: the settings leave it to the game until it is released (reported: the
+    -- game kept RB held, its release went to the settings' binding).
+    T.ok(H.overrides[Cfg.frame] and H.overrides[Cfg.frame].PAD1, "the settings without their buttons")
+    T.eq(H.overrides[Cfg.frame].PADRSHOULDER, nil, "the settings bind RB while the game holds it")
+    H.gamepadUp("PADDUP"); H.gamepadUp("PADRSHOULDER")
+    T.ok(firedUp(BAR.PADRSHOULDER), "RB's release does not reach the game")
+    H.tick(0.1)
+    T.ok(H.overrides[Cfg.frame].PADRSHOULDER, "RB not the settings' once released")
     T.ok(not chordInputOn(), "the chord frame reads the gamepad over the settings")
     T.ok(fired(BAR.PADRSHOULDER), "RB's own use taken from the game")
     -- In the settings, RB changes tab and Up moves the focus: no chord.
@@ -103,6 +117,29 @@ T.test("RB + Up (the default) opens the settings; while a Ding window is open ch
     T.ok(Cfg.frame:IsShown(), "RB + Up closed the settings from inside")
     T.ok(not fired(BAR.PADDUP) and not fired(BAR.PADRSHOULDER), "the settings' buttons reached the game")
     Cfg:Close(); H.flush()
+end)
+
+T.test("LB + Up opens focus mode: LB's release reaches the game, then LB is focus mode's", function()
+    start()
+    Ding.db.chords.DING_FOCUS = "PADLSHOULDER+PADDUP"
+    H.gamepadDown("PADLSHOULDER"); H.tick(0.1)
+    H.gamepadDown("PADDUP"); H.tick(0.1)
+    T.ok(P.focusing, "LB + Up does not start focus mode")
+    T.eq(H.overrides[P.frame].PADLSHOULDER, nil, "focus mode binds LB while the game holds it")
+    H.gamepadUp("PADDUP"); H.gamepadUp("PADLSHOULDER")
+    T.ok(firedUp(BAR.PADLSHOULDER), "LB's release does not reach the game")
+    T.ok(not firedUp(BAR.PADDUP), "Up's release reached the game (its press was Ding's)")
+    H.tick(0.1)
+    T.ok(H.overrides[P.frame].PADLSHOULDER, "LB not focus mode's once released")
+    -- A window closed while the button is still held: nothing bound afterwards.
+    P:StopFocus(); H.flush()
+    H.gamepadDown("PADLSHOULDER"); H.tick(0.1)
+    H.gamepadDown("PADDUP"); H.tick(0.1)
+    T.ok(P.focusing)
+    P:StopFocus(); H.flush()
+    H.gamepadUp("PADDUP"); H.gamepadUp("PADLSHOULDER"); H.tick(0.1)
+    T.eq(next(H.overrides), nil, "a binding set after the window closed")
+    T.eq(next(G.heldKeys), nil, "a held button still waited for")
 end)
 
 T.test("combat: the chord still runs (the frame cannot change), the second button's own action too", function()

@@ -593,10 +593,50 @@ local function navButton(key)
     return b
 end
 
-local function applyNav(owner, keys)
+local function buttonDown(button)
+    local ok, down = pcall(IsKeyDown, button)
+    return ok and down == true
+end
+
+-- Frames of Ding's reading the gamepad first: a window's, a chord's (below).
+local padInput, chordInput
+
+-- A button already down when a window takes the gamepad, whose press went to the game (RB of
+-- the RB + Up chord that opened it), stays the game's until it is released: its release goes to
+-- the binding in place then, and must reach the one that got its press (reported: the game kept
+-- RB held after RB + Up opened the settings). A press Ding took (a capture's `ours`, a chord's
+-- second button, the previous window's) keeps its release with Ding. G.heldKeys[key] = the
+-- window waiting for it; the driver binds it once up.
+G.heldKeys = {}
+
+local function dingPressed(key)
+    return (padInput and padInput.eaten[key]) or (chordInput and chordInput.eaten[key]) or false
+end
+
+local function applyNav(owner, keys, ours)
     for _, key in ipairs(keys) do
         navButton(key)
-        pcall(SetOverrideBindingClick, owner, true, key, "DingNav_" .. key)
+        if buttonDown(key) and not (ours and ours[key]) and not dingPressed(key) then
+            G.heldKeys[key] = owner
+        else
+            G.heldKeys[key] = nil
+            pcall(SetOverrideBindingClick, owner, true, key, "DingNav_" .. key)
+        end
+    end
+end
+
+-- The window's buttons still held when it took the gamepad, bound once released.
+local function bindReleased()
+    if not next(G.heldKeys) or InCombatLockdown() then return end
+    for key, owner in pairs(G.heldKeys) do
+        if owner ~= G.owner then
+            G.heldKeys[key] = nil
+        elseif not buttonDown(key) then
+            G.heldKeys[key] = nil
+            if not G:IsCapturing() and not G.redirected[key] then
+                pcall(SetOverrideBindingClick, owner, true, key, "DingNav_" .. key)
+            end
+        end
     end
 end
 
@@ -620,10 +660,10 @@ end
 -- cast the gamepad bar's spells; Easy Controller sets its bindings again a moment after
 -- Ding's). The override bindings stay under it, for a client where that frame would get
 -- nothing. Only the window's keys are kept; any other button goes on to the game.
-local padInput
 
 local function onWindowPress(button)
-    if not G.owner or G:IsCapturing() or not (G.keySet and G.keySet[button]) or G.redirected[button] then
+    if not G.owner or G:IsCapturing() or not (G.keySet and G.keySet[button]) or G.redirected[button]
+        or G.heldKeys[button] then
         return true
     end
     padInput.eaten[button] = true
@@ -685,12 +725,6 @@ function G:ChordAllowed(action)
 end
 
 local chordOn = {}       -- [chord] = true: both buttons down, its action run once
-local chordInput         -- the frame reading the buttons while a chord's first button is held
-
-local function buttonDown(button)
-    local ok, down = pcall(IsKeyDown, button)
-    return ok and down == true
-end
 
 local function chordsFree()
     if G.owner or G:IsCapturing() then return false end
@@ -776,6 +810,7 @@ end
 
 local driver = CreateFrame("Frame")
 driver:SetScript("OnUpdate", function(_, elapsed)
+    bindReleased()
     watchChords()
     local key = G.repeatKey
     if not key then return end
@@ -818,6 +853,9 @@ end
 
 function G:Release(owner)
     pcall(ClearOverrideBindings, owner)
+    for key, waiting in pairs(self.heldKeys) do
+        if waiting == owner then self.heldKeys[key] = nil end
+    end
     if self.owner == owner then
         self.owner, self.handler, self.repeatKey, self.keys = nil, nil, nil, nil
         self.keySet, self.redirected = nil, {}
@@ -879,11 +917,13 @@ function G:StopCapture(key)
     local frame = self.captureFrame
     if not frame or not frame:IsShown() then return end
     local opts = capture and capture.opts or {}
+    local held = capture and capture.held
     capture = nil
     setCaptureInput(frame, false)
     frame:Hide()
     if self.owner then
-        applyNav(self.owner, self.keys or NAV_KEYS)
+        -- The buttons still down here were pressed for the capture: their release stays Ding's.
+        applyNav(self.owner, self.keys or NAV_KEYS, held)
         setPadInput(true)
     end
     if opts.done then opts.done(key) end

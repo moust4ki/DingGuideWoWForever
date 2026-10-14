@@ -1856,8 +1856,9 @@ return function(opts)
     -- buttons first (Ding's capture first, then its window and chord frames: a handler returning
     -- false keeps the press, and its release comes back to that frame), then the override
     -- bindings (Ding's own clicks, then the others' commands), the game's gamepad interface's
-    -- (while it is on), the saved ones. H.fired(): the commands the game ran for them.
-    local padTaker, fired = {}, {}
+    -- (while it is on), the saved ones. H.fired(): the commands the game ran for them;
+    -- H.firedUp(): the commands that got a release (the binding in place when it is released).
+    local padTaker, fired, firedUp = {}, {}, {}
     local function padFrames()
         local list, capture = {}, _G.DingCaptureFrame
         if capture and capture.gamepadButtons and capture:IsShown() then list[1] = capture end
@@ -1873,6 +1874,14 @@ return function(opts)
             if map[key] then return _G[map[key]] end
         end
     end
+    -- The game's command on a button: another addon's override, the gamepad interface's, the
+    -- saved one.
+    local function gameCommand(button)
+        local command
+        for _, map in pairs(overrideActions) do command = command or map[button] end
+        if not command and gamepadInterface then command = contextBindings[button] end
+        return command or bindings[button]
+    end
     local function gamepadDown(button)
         padHeld[button] = true
         for _, f in ipairs(padFrames()) do
@@ -1886,10 +1895,7 @@ return function(opts)
         if b then
             b.scripts.OnClick(b, "LeftButton", true)
         else
-            local command
-            for _, map in pairs(overrideActions) do command = command or map[button] end
-            if not command and gamepadInterface then command = contextBindings[button] end
-            command = command or bindings[button]
+            local command = gameCommand(button)
             if command then fired[#fired + 1] = command end
         end
         flush()
@@ -1902,7 +1908,12 @@ return function(opts)
             if f.scripts.OnGamePadButtonUp then f.scripts.OnGamePadButtonUp(f, button) end
         else
             local b = dingClick(button)
-            if b then b.scripts.OnClick(b, "LeftButton", false) end
+            if b then
+                b.scripts.OnClick(b, "LeftButton", false)
+            else
+                local command = gameCommand(button)
+                if command then firedUp[#firedUp + 1] = command end
+            end
         end
         flush()
     end
@@ -2171,8 +2182,10 @@ return function(opts)
     end
     -- The commands the game ran for gamepad buttons in play (H.gamepadDown), and none again.
     function H.fired() return fired end
+    function H.firedUp() return firedUp end
     function H.clearFired()
         for i = #fired, 1, -1 do fired[i] = nil end
+        for i = #firedUp, 1, -1 do firedUp[i] = nil end
     end
     function H.cvarsSet() return cvarsSet end
     function H.setAddOnLoaded(name, on) loadedAddOns[name] = on and true or nil end

@@ -1392,7 +1392,10 @@ gamepad buttons). Every gamepad action therefore has an equivalent:
   a frame of its own first (`DingPadInput`, `OnGamePadButtonDown`), before any binding: neither
   the game's gamepad interface nor another addon's override bindings go before them (reported:
   in focus mode, Easy Controller on, the D-pad cast the gamepad bar's spells); only the
-  window's keys are kept, any other button goes on to the game. A confirms, B closes or cancels, Y resets to default or clears,
+  window's keys are kept, any other button goes on to the game. A button already down when the
+  window opens, whose press went to the game (RB of the RB + Up that opened it), stays the
+  game's until released (`Gamepad.heldKeys`): its release must reach the game, which kept RB
+  held otherwise (reported). A confirms, B closes or cancels, Y resets to default or clears,
   LB / RB change tab, the D-pad selects and adjusts (repeats when held). The window
   closes on entering combat.
 - Move mode for the guide window, the arrow and the item button with the D-pad (steps
