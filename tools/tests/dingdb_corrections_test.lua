@@ -107,6 +107,47 @@ return {
     T.ok(refused:find("corrections refused", 1, true), refused)
 end)
 
+-- write_leveling.lua, check_guides.lua and the route tests read the export through
+-- questiedb_export.lua loadCorrected: the guides are written and checked with the data the game has.
+T.test("the tools that write and check guides read the export with the corrections on top", function()
+    local X = dofile(tools .. "/questiedb_export.lua")
+    local QK = X.QUEST
+    local dir = base .. "/offline"
+    mkdir(dir)
+    writeFile(dir .. "/10_fix.lua", [[
+return {
+    quests = { [783] = { requiredLevel = 2, preQuestSingle = { 7 } },
+               [990001] = { name = "A Forever quest", questLevel = 10, startedBy = { { 823 } } } },
+    npcs = { [823] = { rank = 1, spawns = { [1429] = { 50, 50, 51.5, 52 } } },
+             [11867] = { weaponSkills = { 43 } } },
+    items = { [159] = false },
+    names = { frFR = { quests = { [990001] = "Une quête de Forever" } } },
+}]])
+    local raw = X.load(T.combined)
+    local db, corrected = X.loadCorrected(T.combined, dir)
+    T.eq(db.Quest[783][QK.requiredLevel], 2)
+    T.eq(db.Quest[783][QK.preQuestSingle][1], 7)
+    T.eq(db.Quest[783][QK.name], raw.Quest[783][QK.name], "the other fields stay")
+    T.eq(db.Quest[990001][QK.questLevel], 10)
+    T.eq(db.Quest[990001][QK.startedBy][1][1], 823)
+    T.eq(db.Npc[823][6], 1, "rank")
+    -- Spawns by UiMapID become the export's, by an AreaID of that map, with the same coordinates.
+    local area, points = next(db.Npc[823][X.NPC.spawns])
+    T.eq(X.areaToMap(T.combined)[area], 1429)
+    T.eq(next(db.Npc[823][X.NPC.spawns], area), nil, "one map")
+    T.eq(#points, 2)
+    T.eq(points[2][1], 51.5)
+    T.eq(points[2][2], 52)
+    for k in pairs(db.Npc[11867]) do T.eq(type(k), "number", "a field of DingDB's own stays out") end
+    T.eq(db.Npc[11867][X.NPC.name], raw.Npc[11867][X.NPC.name])
+    T.eq(db.Item[159], nil, "removed")
+    T.ok(corrected.quests[783] and corrected.quests[990001] and corrected.npcs[823] and corrected.items[159])
+    -- The shipped corrections, by default: Carnage needs Blisters on the Land.
+    local shipped = X.loadCorrected(T.combined)
+    T.eq(shipped.Quest[98283][QK.preQuestSingle][1], 275)
+    T.eq(raw.Quest[98283][QK.preQuestSingle], nil, "(the export does not know it)")
+end)
+
 T.test("the corrections shipped with Ding are valid", function()
     local report = run(table.concat({ quote(lua), quote(tools .. "/check_data.lua") }, " "))
     T.ok(report:find("0 error(s)", 1, true), report)

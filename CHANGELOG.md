@@ -1,5 +1,36 @@
 # Changelog
 
+## v1.6.0
+
+Nothing else to install: QuestieDB is no longer needed, and TomTom stays optional.
+
+- **Class quests**: a new pack, **Ding! - Class quests** (Settings > Guide, under "Class"),
+  with one guide for your class and side: its important quest chains in level order, from the
+  level they open. Druid: bear form, cure poison, aquatic form, Forever's Great Cat Spirit,
+  Torwa Pathfinder. Hunter: your first pet. Mage: the robes, Tabetha's wand, the Magecraft
+  chain. Paladin: Redemption, Verigan's Fist, the warhorse, the Mightstone, the charger.
+  Priest: your first robe and your race's prayers. Rogue: Pick Lock, your poisons, the Azure
+  Key. Shaman: the earth, fire, water and air totems. Warlock: the voidwalker, the succubus,
+  the felhunter, the felsteed, Niby's quests, the dreadsteed. Warrior: Defensive and Berserker
+  Stances, the Whirlwind weapon. Forever's own class quests are in: the Skyborne's, the
+  Forsaken paladins' story, the Alliance shamans' totems, the Human and Gnome hunters' pets,
+  the Syndicate of Ravenholdt for rogues...
+- Each chain says, under its first step, from which level it opens and what it is for ("From
+  level 10: the chain that teaches Bear Form"), and the step that teaches it says so. You only
+  see your own class's guide; pick your leveling guide again in Settings > Guide when you are
+  done. Quests inside a dungeon show when that dungeon is on in Settings > Route.
+- **Wetlands (27-29)**: Carnage, the last quest Rethiel the Greenwarden gives, now comes after
+  Blisters on the Land is turned in (he does not offer it before), and as an elite quest: it
+  shows only when **Elite quests** is on in Settings > Route.
+- A step you marked done by hand keeps its mark when a new version of Ding writes the guide again
+  and the step moves: the mark used to stay on the step number, and fell on another step
+  ("marked as done by hand" on a step you never touched).
+- A turn-in step passed because you already turned the quest in now says "already done"
+  instead of "it does not concern you now".
+- The ring around the arrow's target on the minimap sits on the target in a city's inside view
+  too (Ironforge): it used the outdoor scale there and only reached the target once you were
+  on it.
+
 ## v1.5.0
 
 Nothing else to install: QuestieDB is no longer needed, and TomTom stays optional.

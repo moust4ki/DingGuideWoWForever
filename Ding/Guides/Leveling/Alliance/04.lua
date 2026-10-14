@@ -76,7 +76,7 @@ Ding.RegisterGuide({
         { accept = 92744 }, -- level 15
         { complete = 92745 }, -- level 15
         { turnin = 92745 }, -- level 15
-        { accept = 93928, races = { "Dwarf", "Skyborne" }, why = { kind = "carry", quest = 93928, seconds = 274800, xp = 70 } }, -- level 15
+        { accept = 93928, races = { "Dwarf", "Skyborne" }, why = { kind = "carry", quest = 93928, seconds = 274980, xp = 70 } }, -- level 15
         { train = true, talk = 7312, races = { "Human", "Gnome" }, classes = { "MAGE" }, -- level 15
           note = "The NPC is indoors." },
         { train = true, talk = 5114, classes = { "WARRIOR" }, -- level 15

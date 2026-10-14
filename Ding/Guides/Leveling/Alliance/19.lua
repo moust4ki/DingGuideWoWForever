@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Alliance/19.lua.
--- Simulated (warrior): Human 37 (22%) -> 38 (14%) in 3 h 58, 13 quests turned in; Dwarf 37 (32%) -> 38 (14%) in 3 h 24, 13 quests turned in; NightElf 37 (35%) -> 38 (14%) in 3 h 11, 13 quests turned in; Gnome 37 (38%) -> 38 (14%) in 3 h 02, 13 quests turned in; Skyborne 37 (37%) -> 38 (14%) in 3 h 06, 13 quests turned in.
+-- Simulated (warrior): Human 37 (21%) -> 38 (14%) in 3 h 56, 13 quests turned in; Dwarf 37 (27%) -> 38 (14%) in 3 h 41, 13 quests turned in; NightElf 37 (31%) -> 38 (14%) in 3 h 28, 13 quests turned in; Gnome 37 (34%) -> 38 (14%) in 3 h 17, 13 quests turned in; Skyborne 37 (33%) -> 38 (14%) in 3 h 20, 13 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-a19-stranglethorn-vale",
     title    = "Stranglethorn Vale (37-38)",

@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Alliance/13.lua.
--- Simulated (warrior): Human 30 (4%) -> 31 (26%) in 4 h 01, 26 quests turned in; Dwarf 30 (10%) -> 31 (31%) in 4 h 01, 26 quests turned in; NightElf 30 (8%) -> 31 (36%) in 4 h 16, 26 quests turned in; Gnome 30 (10%) -> 31 (41%) in 4 h 19, 27 quests turned in; Skyborne 30 (5%) -> 31 (36%) in 4 h 19, 27 quests turned in.
+-- Simulated (warrior): Human 29 (96%) -> 31 (19%) in 4 h 01, 26 quests turned in; Dwarf 30 (2%) -> 31 (23%) in 4 h 01, 26 quests turned in; NightElf 29 (100%) -> 31 (29%) in 4 h 16, 26 quests turned in; Gnome 30 (2%) -> 31 (34%) in 4 h 19, 27 quests turned in; Skyborne 29 (96%) -> 31 (30%) in 4 h 19, 27 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-a13-stonetalon-mountains-and-ashenvale",
     title    = "Stonetalon and Ashenvale (29-30)",
@@ -13,12 +13,12 @@ Ding.RegisterGuide({
         [2925] = { kind = "detour", seconds = 60, xp = 200 },
     },
     steps    = {
-        { go = { 1442, 37.1, 8.1 }, text = "Travel to Stonetalon Peak", -- level 30
+        { go = { 1442, 37.1, 8.1 }, text = "Travel to Stonetalon Peak", -- level 29
           note = "Stonetalon Mountains: Stonetalon Peak, in the far north of the zone." },
-        { accept = 1057, sticky = 1057 }, -- level 30
-        { turnin = 79192 }, -- level 30
-        { accept = 79980 }, -- level 30
-        { turnin = 79980 }, -- level 30
+        { accept = 1057, sticky = 1057 }, -- level 29
+        { turnin = 79192 }, -- level 29
+        { accept = 79980 }, -- level 29
+        { turnin = 79980 }, -- level 29
         { complete = 1057 }, -- level 30
         { complete = 1057 }, -- level 30
         { complete = 1057 }, -- level 30
@@ -117,9 +117,9 @@ Ding.RegisterGuide({
           note = "Stand on the marked point, then apply the item." },
         { go = { 1440, 53.72, 73.91 }, text = "Obtain Furbolg Form" }, -- level 30
         { turnin = 1045, accept = 1046 }, -- level 30
-        { turnin = 1046, when = { item = 5462, log = 1046 }, -- level 31
+        { turnin = 1046, when = { item = 5462, log = 1046 }, -- level 30
           note = "The NPC is indoors." },
-        { turnin = 1032, when = { log = 1032 } }, -- level 31
+        { turnin = 1032, when = { log = 1032 } }, -- level 30
         { turnin = 1140 }, -- level 31
         { train = true, talk = 12042, races = { "NightElf" }, classes = { "DRUID" } }, -- level 31
         { go = { 1457, 32.08, 16.4 }, classes = { "ROGUE" }, text = "Step into the cavern within the trunk", -- level 31

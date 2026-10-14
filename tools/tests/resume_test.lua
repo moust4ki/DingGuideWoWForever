@@ -436,4 +436,98 @@ T.test("goals passed stay passed once their items are spent", function()
     T.eq(E.index, 2, "the collect step is to do again")
 end)
 
+---------------------------------------------------------------------------
+-- A new version of Ding writes a guide again. In game (14/10/2026): the Wetlands' Carnage moved
+-- further on, and the mark "done by hand" of its step fell on the step that took its number
+-- ("A Noble Brew", "marked as done by hand").
+---------------------------------------------------------------------------
+local V1, V2, CARNAGE = 900501, 900502, 900503
+Ding.RegisterGuide({ id = "t-version", title = "Version", races = { "NightElf" }, steps = {
+    { accept = { V1, V2 } },           -- 1
+    { accept = CARNAGE },              -- 2 marked done by hand
+    { complete = CARNAGE },            -- 3 marked done by hand
+    { complete = V1 },                 -- 4
+    { train = true },                  -- 5
+    { turnin = V1 },                   -- 6
+} })
+-- The same section in the next version: Carnage's steps further on.
+Ding.RegisterGuide({ id = "t-version-next", title = "Version", races = { "NightElf" }, steps = {
+    { accept = { V1, V2 } },           -- 1
+    { complete = V1 },                 -- 2
+    { train = true },                  -- 3
+    { turnin = V1 },                   -- 4
+    { accept = CARNAGE },              -- 5
+    { complete = CARNAGE },            -- 6
+} })
+
+-- Plays the first version up to step 4 (Carnage's two steps marked done by hand), then logs
+-- in with the next one. legacy: the marks were saved without their keys (Ding 1.5).
+local function updated(legacy, sameVersion)
+    T.reset({ level = 2 })
+    T.quests({ [V1] = "log", [V2] = "log" })
+    E:SetGuide("t-version", 2, true); H.flush()
+    H.tick(11)
+    T.eq(E.index, 2)
+    E:MarkDone(); H.flush()
+    E:MarkDone(); H.flush()
+    T.eq(E.index, 4, "premise: Carnage's steps marked done")
+    if legacy then Ding.char.markKeys, Ding.char.lastKey = {}, {} end
+    local guide = Ding:GetGuide("t-version")
+    local old = guide.steps
+    if not sameVersion then guide.steps = Ding:GetGuide("t-version-next").steps end
+    E.guide = nil
+    E:Start(); H.flush()
+    local marked = {}
+    for i in pairs(Ding.char.manual["t-version"] or {}) do marked[#marked + 1] = i end
+    table.sort(marked)
+    guide.steps = old
+    return table.concat(marked, ",")
+end
+
+T.test("a new version of a guide: the marks done by hand follow their steps", function()
+    T.eq(updated(), "5,6", "the marks stayed on the step numbers")
+    T.eq(E.index, 2, "a mark fell on the step that took its number")
+end)
+
+T.test("a new version of a guide: a mark saved without its key (Ding 1.5) is dropped", function()
+    T.eq(updated(true), "", "an old mark kept on a number that is now another step")
+    T.eq(E.index, 2)
+end)
+
+T.test("the same version: a mark saved without its key is kept, and gets its key", function()
+    T.eq(updated(true, true), "2,3")
+    T.eq(E.index, 4)
+    local keys = Ding.char.markKeys["t-version"]
+    T.ok(keys and keys[2] and keys[3], "no keys recorded for the old marks")
+end)
+
+T.test("a mark taken off loses its key", function()
+    updated(nil, true)
+    E:BrowseTo(3); H.flush()
+    E:Unmark(3); H.flush()
+    T.eq(Ding.char.markKeys["t-version"][3], nil)
+end)
+
+-- In game (14/10/2026): "The Cursed Crew" turned in, its turn-in step (`when = { log = q }`)
+-- was said "it does not concern you now".
+local W, W2 = 900511, 900512
+Ding.RegisterGuide({ id = "t-when-done", title = "When done", races = { "NightElf" }, steps = {
+    { accept = W },                          -- 1
+    { text = "Somewhere else" },             -- 2
+    { turnin = W, when = { log = W } },      -- 3
+    { accept = W2, when = { done = W } },    -- 4
+} })
+
+T.test("a turn-in passed because its quest is turned in is said done, not \"does not concern you\"", function()
+    load({ [W] = "ready" }, 2, "t-when-done")
+    afterResumeWindow()
+    T.eq(E.index, 2)
+    T.quests({ [W] = "turnedin" }); H.flush()
+    E:Next(); H.flush()
+    T.eq(E.index, 4)
+    local reason
+    for _, p in ipairs(E.passNotes or {}) do if p.index == 3 then reason = p.reason end end
+    T.eq(reason, "done")
+end)
+
 T.run()

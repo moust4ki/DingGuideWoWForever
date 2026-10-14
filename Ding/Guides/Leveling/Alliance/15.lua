@@ -2,7 +2,7 @@
 -- Forever export, then checked with tools/check_guides.lua. Edit the route, not this file:
 -- it is written again on each run. Quest ids only, names and places come from QuestieDB.
 -- French text: Ding/Locales/Guides/frFR/Leveling/Alliance/15.lua.
--- Simulated (warrior): Human 33 (0%) -> 34 (5%) in 2 h 40, 20 quests turned in; Dwarf 33 (16%) -> 34 (18%) in 2 h 42, 20 quests turned in; NightElf 33 (20%) -> 34 (23%) in 2 h 42, 20 quests turned in; Gnome 33 (24%) -> 34 (26%) in 2 h 42, 20 quests turned in; Skyborne 33 (17%) -> 34 (25%) in 2 h 42, 21 quests turned in.
+-- Simulated (warrior): Human 32 (94%) -> 33 (100%) in 2 h 40, 20 quests turned in; Dwarf 33 (9%) -> 34 (12%) in 2 h 42, 20 quests turned in; NightElf 33 (14%) -> 34 (17%) in 2 h 42, 20 quests turned in; Gnome 33 (18%) -> 34 (21%) in 2 h 42, 20 quests turned in; Skyborne 33 (12%) -> 34 (20%) in 2 h 42, 21 quests turned in.
 Ding.RegisterGuide({
     id       = "leveling-a15-hillsbrad-foothills-and-arathi-highlands",
     title    = "Hillsbrad and Arathi (32-33)",
@@ -21,20 +21,20 @@ Ding.RegisterGuide({
         [98459] = { kind = "away" },
     },
     steps    = {
-        { go = { 1424, 49.43, 55.53 }, text = "Travel to Southshore", -- level 33
+        { go = { 1424, 49.43, 55.53 }, text = "Travel to Southshore", -- level 32
           note = "Hillsbrad Foothills: Southshore, on the coast in the south." },
-        { accept = 565, when = { item = { { 3719, 1 }, { 2997, 1 } } } }, -- level 33
-        { talk = 2381, buy = { { 3713, 1, 2381 } }, -- level 33
+        { accept = 565, when = { item = { { 3719, 1 }, { 2997, 1 } } } }, -- level 32
+        { talk = 2381, buy = { { 3713, 1, 2381 } }, -- level 32
           note = "The NPC is indoors." },
-        { accept = 564 }, -- level 33
-        { turnin = 538 }, -- level 33
-        { sethearth = "Southshore", talk = 2352, -- level 33
+        { accept = 564 }, -- level 32
+        { turnin = 538 }, -- level 32
+        { sethearth = "Southshore", talk = 2352, -- level 32
           note = "The NPC is indoors." },
-        { accept = 536, -- level 33
+        { accept = 536, -- level 32
           note = "The NPC is indoors." },
-        { accept = 555, when = { item = 3713 }, -- level 33
+        { accept = 555, when = { item = 3713 }, -- level 32
           note = "The NPC is indoors." },
-        { turnin = 555, when = { item = 3713 }, -- level 33
+        { turnin = 555, when = { item = 3713 }, -- level 32
           note = "The NPC is indoors." },
         { complete = 536, -- level 33
           note = "You'll find extra ones swimming nearby as well." },
@@ -92,12 +92,12 @@ Ding.RegisterGuide({
         { turnin = 98313 }, -- level 33
         { turnin = 689, -- level 33
           note = "The NPC is indoors." },
-        { accept = 700, -- level 34
+        { accept = 700, -- level 33
           note = "Let the conversation play out. The NPC is indoors." },
-        { talk = 2461, bank = 3721, -- level 34
+        { talk = 2461, bank = 3721, -- level 33
           note = "The NPC is indoors. You need it later for \"Reassignment\": keep it in the bank to free a bag slot." },
-        { go = { 1455, 44.51, 49.54 }, text = "Stay on the trail" }, -- level 34
-        { turnin = 700 }, -- level 34
+        { go = { 1455, 44.51, 49.54 }, text = "Stay on the trail" }, -- level 33
+        { turnin = 700 }, -- level 33
         { turnin = 98300, races = { "Dwarf", "NightElf", "Gnome", "Skyborne" } }, -- level 34
     },
 })

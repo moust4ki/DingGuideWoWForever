@@ -393,6 +393,107 @@ local function missingOptionalQuest(step)
     return false
 end
 
+-- What a step is, whatever its number: its actions, quests, places and conditions, not its
+-- texts (a new version may reword them), with its rank among the steps alike (two visits to
+-- the trainer stay apart). A mark (done by hand, skipped) and the step a section was left on
+-- keep it (Ding.char.markKeys, Ding.char.lastKey): when a new version of Ding writes the guide
+-- again and the step moves, they move with it. In game, the Wetlands' Carnage step marked
+-- done by hand: the guide written again without it there, the mark fell on the step that
+-- took its number ("A Noble Brew", "marked as done by hand").
+local TEXT_KEYS = { note = true, why = true, text = true }
+local function serialize(v, out)
+    if type(v) ~= "table" then
+        out[#out + 1] = tostring(v)
+        return
+    end
+    local keys = {}
+    for k in pairs(v) do
+        if not TEXT_KEYS[k] then keys[#keys + 1] = k end
+    end
+    table.sort(keys, function(a, b) return tostring(a) < tostring(b) end)
+    out[#out + 1] = "{"
+    for _, k in ipairs(keys) do
+        out[#out + 1] = tostring(k) .. "="
+        serialize(v[k], out)
+        out[#out + 1] = ";"
+    end
+    out[#out + 1] = "}"
+end
+
+-- [steps table] = { byIndex = { [index] = key }, indexOf = { [key] = index }, version }:
+-- version changes with any step.
+local stepKeyCache = setmetatable({}, { __mode = "k" })
+local function stepKeys(guide)
+    local info = stepKeyCache[guide.steps]
+    if info then return info end
+    info = { byIndex = {}, indexOf = {} }
+    local seen, version = {}, #guide.steps
+    for i, step in ipairs(guide.steps) do
+        local out = {}
+        serialize(step, out)
+        local text, h = table.concat(out), 0
+        for c = 1, #text do h = (h * 31 + text:byte(c)) % 2147483647 end
+        seen[h] = (seen[h] or 0) + 1
+        local key = h .. "#" .. seen[h]
+        info.byIndex[i], info.indexOf[key] = key, i
+        version = (version * 31 + h) % 2147483647
+    end
+    info.version = version
+    stepKeyCache[guide.steps] = info
+    return info
+end
+
+local function markKeys(guide, create)
+    Ding.char.markKeys = Ding.char.markKeys or {}
+    local all = Ding.char.markKeys
+    if create and not all[guide.id] then all[guide.id] = {} end
+    return all[guide.id]
+end
+
+-- A mark set or taken off on a step of the active guide: its key follows.
+local function keepKey(index)
+    local guide = E.guide
+    if not guide then return end
+    if E:StepMark(index) then
+        markKeys(guide, true)[index] = stepKeys(guide).byIndex[index]
+    else
+        local keys = markKeys(guide, false)
+        if keys then keys[index] = nil end
+    end
+end
+
+-- A section taken up: its marks and the step it was left on follow their steps when a new
+-- version moved them. A mark saved before marks had keys (Ding 1.5) is kept by its number
+-- while the section is the one it was set in, and dropped when the section changed
+-- (E.changedGuide, at login): its number may now be another step.
+local function followSteps(guide)
+    local info = stepKeys(guide)
+    local keys = markKeys(guide, false)
+    local changed = E.changedGuide == guide.id
+    local newKeys = {}
+    for _, all in ipairs({ Ding.char.manual, Ding.char.skipped or {} }) do
+        local flags = all[guide.id]
+        if flags then
+            local moved = {}
+            for index in pairs(flags) do
+                local key = keys and keys[index]
+                if not key and not changed then key = info.byIndex[index] end
+                local at = key and info.indexOf[key]
+                if at then moved[at], newKeys[at] = true, key end
+            end
+            all[guide.id] = next(moved) and moved or nil
+        end
+    end
+    Ding.char.markKeys[guide.id] = next(newKeys) and newKeys or nil
+    -- The step the section was left on, saved with the version of the section it was in.
+    local lastKey = Ding.char.lastKey and Ding.char.lastKey[guide.id]
+    local last = Ding.char.lastStep and Ding.char.lastStep[guide.id]
+    if type(lastKey) == "table" and last and lastKey.version ~= info.version
+        and lastKey.key and info.indexOf[lastKey.key] then
+        Ding.char.lastStep[guide.id] = info.indexOf[lastKey.key]
+    end
+end
+
 local function manualFlags(create)
     local guide = E.guide
     if not guide then return nil end
@@ -409,6 +510,7 @@ end
 local function setManuallyDone(index, value)
     local flags = manualFlags(true)
     if flags then flags[index] = value or nil end
+    keepKey(index)
 end
 
 -- The inn of a `sethearth` step, bound during that step: the client's own name of it then
@@ -432,6 +534,7 @@ end
 local function setSkipped(index, value)
     local flags = skipFlags(true)
     if flags then flags[index] = value or nil end
+    keepKey(index)
 end
 
 -- How the player left a step by hand: "manual" (marked done), "skipped", or nil. The window
@@ -736,6 +839,9 @@ local function saveStep(index)
     if not guide then return end
     Ding.char.lastStep = Ding.char.lastStep or {}
     Ding.char.lastStep[guide.id] = math.max(index, E.resumeTo or 0)
+    local info = stepKeys(guide)
+    Ding.char.lastKey = Ding.char.lastKey or {}
+    Ding.char.lastKey[guide.id] = { key = info.byIndex[Ding.char.lastStep[guide.id]], version = info.version }
 end
 
 -- Resuming up to a step (E:Resume): saved per character, so a reload keeps it.
@@ -756,6 +862,8 @@ end
 -- guide) sent characters far ahead, past the quests, trainers and trips still to do
 -- (Redridge before Duskwood, then the Wetlands at level 24 before the route's Wetlands).
 function E:Resume(id, silent)
+    local guide = Ding:GetGuide(id)
+    if guide then followSteps(guide) end
     local last = Ding.char.lastStep and Ding.char.lastStep[id]
     return self:SetGuide(id, 1, silent, last)
 end
@@ -798,6 +906,7 @@ function E:SetGuide(id, index, silent, resumeTo)
         return false
     end
     endTrip()
+    followSteps(guide)
     self.guide = guide
     self.index = index or 1
     setResumeTo(resumeTo and resumeTo > self.index and resumeTo or nil)
@@ -880,7 +989,13 @@ end
 -- not hold), "done" (the game shows its quests done).
 local SEEN = 2    -- seconds on a step before the window has shown it (its hold is 1.5 s)
 local function passReason(step, index)
-    if not Ding:StepApplies(step) then return "notneeded" end
+    if not Ding:StepApplies(step) then
+        -- A step behind a condition the game no longer meets because its quest is done: a
+        -- turn-in `when = { log = q }` once q is turned in (out of the log) was said "it does
+        -- not concern you now" (in game, "The Cursed Crew" turned in, in the Wetlands).
+        if hasQuestActions(step) and questActionsDone(step) then return "done" end
+        return "notneeded"
+    end
     if isManuallyDone(index) then return step.go and "there" or "marked" end
     if step.optional and not questActionsDone(step) then return "optional" end
     if travelOnly(step) and pointlessTrip(index, 0) then return "trip" end
@@ -1113,7 +1228,9 @@ function E:Reset()
     if not self.guide then return end
     Ding.char.manual[self.guide.id] = nil
     if Ding.char.skipped then Ding.char.skipped[self.guide.id] = nil end
+    if Ding.char.markKeys then Ding.char.markKeys[self.guide.id] = nil end
     if Ding.char.lastStep then Ding.char.lastStep[self.guide.id] = nil end
+    if Ding.char.lastKey then Ding.char.lastKey[self.guide.id] = nil end
     self:Resume(self.guide.id, true)
 end
 
@@ -1137,7 +1254,9 @@ function E:Start()
     local guide = id and Ding:GetGuide(id)
     if guide and Ding.char.guideSig and Ding.char.guideSig ~= signature(guide) then
         -- The guide changed since the last session: its step numbers moved.
+        self.changedGuide = id
         self:Resume(id, true)
+        self.changedGuide = nil
     elseif guide then
         local resume = Ding.char.resumeTo
         self:SetGuide(id, Ding.char.step or 1, true, resume and resume.guide == id and resume.step or nil)

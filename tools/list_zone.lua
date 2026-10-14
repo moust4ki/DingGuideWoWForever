@@ -17,7 +17,7 @@ if not dir or not areaId or not raceBit then
     os.exit(2)
 end
 
-local db = X.load(dir)
+local db = X.loadCorrected(dir)
 
 local function spawnsIn(spawns)
     return type(spawns) == "table" and X.hasEntries(spawns[areaId])

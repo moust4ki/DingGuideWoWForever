@@ -14,7 +14,7 @@ STEP   < Étape 46 / 97 >   zone: Hurlevent
       | Quête de niveau 28, au-dessus du tien (27) : plus difficile, mais le guide la prévoit.
       |  
       | Pourquoi ?
-      | Le guide la rend plus tard, dans environ 11 h 48 : environ 1 200 XP.
+      | Le guide la rend plus tard, dans environ 11 h 36 : environ 1 200 XP.
       | Chiffres estimés par le guide.
       | Clic : la flèche y va.
  2  accept  [todo] red background, red "!" icon, text white
@@ -26,7 +26,7 @@ STEP   < Étape 46 / 97 >   zone: Hurlevent
       | Pas encore dans ton journal de quêtes.
       |  
       | Pourquoi ?
-      | Le guide la rend plus tard, dans environ 11 h 48 : environ 1 200 XP.
+      | Le guide la rend plus tard, dans environ 11 h 36 : environ 1 200 XP.
       | Chiffres estimés par le guide.
       | Clic : la flèche y va.
 

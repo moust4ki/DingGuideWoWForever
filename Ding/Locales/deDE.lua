@@ -543,6 +543,7 @@ Ding.Locales.deDE = {
     IMPORT_REPLACES = "ersetzt den importierten Leitfaden %s",
     IMPORT_TWICE = "Leitfaden-ID %s kommt zweimal vor",
     PACK_BY = "von %s",
+    PACK_CLASS = "Ding! - Klassenquests",
     PACK_ITEMS = "Ding! - Gegenstände",
     PACK_LEVELING = "Ding! - Stufenaufstieg",
     PACK_ZONES = "Ding! - Gebiete",
