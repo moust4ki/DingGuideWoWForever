@@ -738,12 +738,14 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   much"; a full redesign of the settings and the assistant comes later): the settings, the NPC
   directory and the setup assistant share their sizes (`UI.SIZE` in `UI/Widgets.lua`), about
   15 to 20 % tighter than above: title bars 28 (32), tab bars 28 (36 / 30), hint bars 26
-  (32 / 28), rows of one line 30 (36), of a label and its description 36 (44; the directory's
-  38), "More options" 28 (32), block headers 20 (24), a page's title 26 (30), padding 8 (12),
+  (32 / 28), rows of one line 30 (36), of a label and its description 38 (44; 36 in v1.4.0, the
+  label touched the frame), the directory's 38, "More options" 28 (32), block headers 20 (24), a page's title 26 (30), padding 8 (12),
   2 between rows (4); the sliders 66 high (78), the dropdown's field 28 (32) and its entries 24
   (28), the Appearance preview 86 (100), the settings' push buttons 22 (24), the assistant's 24
   (26). Texts are never cut (a description stays one line, as before), the focus rings keep
-  their 2 units, the rows stay as wide.
+  their 2 units, the rows stay as wide. On a row with a description, the label sits just above
+  the row's middle and the description just below it (2 apart), so the two lines are centered
+  on the row and on its check box whatever the font's real line heights (the user, v1.5.0).
 - **Size of the settings windows** (v1.4.0; the user's screen draws the 520-unit mockup window
   about 1.5 times bigger than the mockup they compared it with: the game's UI scale on a
   high-resolution screen): the Appearance tab's "Settings windows size" slider, under a

@@ -250,6 +250,39 @@ T.test("the windows share their sizes, a little denser than the design's first h
     T.ok(SIZE.row2 >= 16 + 2 + 14 + 2 * 2, "two lines do not fit in a row")
 end)
 
+-- In game (14/10/2026): on a row with a description, the label touched the row's frame and the
+-- two lines sat above the check box. The label and its description are centered on the row
+-- (and on its box), clear of the 2-unit focus ring.
+T.test("a row with a description: its two lines centered on the row and its box, off the frame", function()
+    start()
+    local problems = {}
+    for _, tab in ipairs(Cfg.TABS) do tab.built = nil end
+    for i, tab in ipairs(Cfg.TABS) do
+        Cfg:Open(i, 1); H.flush()
+        for _, row in ipairs(tab.rows or {}) do
+            if row.desc and row.desc:IsShown() and row.label:GetText() then
+                local r, a, b = Layout.rect(row), Layout.rect(row.label), Layout.rect(row.desc)
+                local middle, block = (r.top + r.bottom) / 2, (a.top + b.bottom) / 2
+                local name = ("%s %q"):format(tab.key, row.label:GetText())
+                if math.abs(block - middle) > 1.5 then
+                    problems[#problems + 1] = ("%s: lines centered %.1f off the row's middle"):format(name, block - middle)
+                end
+                if r.top - a.top < 4 or b.bottom - r.bottom < 4 then
+                    problems[#problems + 1] = ("%s: a line within 4 of the row's frame"):format(name)
+                end
+                if row.box then
+                    local box = Layout.rect(row.box)
+                    if math.abs((box.top + box.bottom) / 2 - block) > 1.5 then
+                        problems[#problems + 1] = ("%s: the box is not centered on the lines"):format(name)
+                    end
+                end
+            end
+        end
+    end
+    closeAll()
+    T.eq(table.concat(problems, "\n"), "", "rows with a description")
+end)
+
 ---------------------------------------------------------------------------
 -- The windows' size (Appearance)
 ---------------------------------------------------------------------------
