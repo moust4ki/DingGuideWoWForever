@@ -285,7 +285,11 @@ Contracts between modules:
   size, color, layer, surface)` ("dialog", "scene": the guide window, "card", "world": over the
   game, "chip"), `UI.SetFont(fs, weight, size)`, `UI.SetTitleFont(fs, role)` (the game's font or
   Noto Sans SemiBold, `UI.TITLE_ROLES`). The guide window's row cards: `UI.Card` (Ding's frame,
-  read like GameTooltip by the tests through `T.tip`); `Panel.HideCard(owner)`.
+  read like GameTooltip by the tests through `T.tip`); `Panel.HideCard(owner)`. Arrow skins:
+  `UI.ArrowSkins`, `UI.ArrowSkinOrder`, `UI.Theme.ArrowLook(id)` -> `{ skin, tint, backTint, disc }`
+  (its own theme's tints on its theme, else the accent; real colors never tinted),
+  `Arrow:SetSkin(id)`, `Arrow:PreviewSkin(id | nil)`, `Arrow:Skin()`. The pickers (themes,
+  arrows) are one card grid in Config.lua (`cardGrid`).
 - NPC directory: `Directory:Ids(kind)` (the NPC ids of the player's side; kinds "vendor",
   "repair", "food", "arrows", "bullets", "reagents", "poisons", "innkeeper", "flight", "trainer",
   "weapon:<skill line>", "profession:<key>", "trade", "bank", "auction", "stable"),
@@ -310,7 +314,9 @@ Contracts between modules:
   check writes its setting at once, through the same calls as the settings window.
 - `Ding.db` (DingDB, account): `panel` (position, `scale` 0.5-1.5, `width` 240-420, `locked`,
   `bgAlpha`, `compactInCombat`, `hideInInstance`, `keyHints`, `itemButton`), `arrow`
-  (position, `size` 40-80, `style`, `mode`, `tomtom`, `loop`: farming loop, `worldMap`: the
+  (position, `size` 40-80, `skin` (the arrow's look: "theme" | "halo" | "ardoise" | "bandes" |
+  "ding" | "classic", `UI.ArrowSkins`; the old `style` migrated), `mode`, `tomtom`, `loop`:
+  farming loop, `worldMap`: the
   target as the client's map waypoint), `item` (position of the item button),
   `minimap` (`shown`, `angle`), `ui` (`theme` (UI/Themes.lua, "halo"), `opacityTouched` (the
   opacity slider moved: it no longer follows the theme's default), `buttonStyle`, `sound`,

@@ -395,6 +395,25 @@ Reused as they are: `rr2_fill`, `rr3_fill`, `rr4_fill`, `rr6_fill`, `rr6_stroke1
   gamepad. Footer: `Y Default theme` only. A card's preview uses **its** theme's tokens, not
   the theme on screen.
 
+### Arrow picker (Settings › Arrow and maps; Yendi's request after the handoff)
+- Six cards in three columns, after "Show the arrow": **Theme's arrow** (`theme`, the default:
+  the active theme's skin), **Halo** (`arrow_halo_gold` / `arrow_halo_back`, real colors),
+  **Ardoise** (`arrow_slate`), **Bandes** (`arrow_band`, outlined ring and check), **Ding!**
+  (`arrow`) and **Minimap** (the game's minimap arrow, the former "Arrow style"), each usable
+  with any theme (`UI.ArrowSkins`; every theme's arrow is its skin). A card shows its skin in its
+  three states (on the way, behind, arrived) on our scene, 48 high.
+- Colors (`UI.Theme.ArrowLook`): on its own theme a skin takes that theme's tints (Ardoise's
+  light arrow, its dark disc under the ring); with another theme a tinted skin takes the accent
+  and `arrowBack`; Halo's real colors are never tinted; arrived: the skin's ring and check in
+  `done`.
+- The same interaction as the theme cards (one card grid, `cardGrid` in Config.lua): Left /
+  Right within a line, Up / Down between the two lines, then out of the cards; focusing a card
+  shows it on the **real arrow** (`Arrow:PreviewSkin`, the arrow stays on screen meanwhile, like
+  in move mode); A or a click saves (`Ding.db.arrow.skin`); leaving restores; Y: the theme's
+  arrow; footer `Y Default arrow` only. With the default places, the settings window covers the
+  arrow (both near the screen's center): the cards show each skin themselves.
+- Migration: `arrow.style` "classic" becomes the Minimap skin, "ding" the theme's arrow.
+
 ### Saved settings
 - `Ding.db.ui.theme` ("halo" by default, new and existing installs: settings layout 3),
   `Ding.db.ui.opacityTouched` (the player moved the opacity slider). The opacity stays

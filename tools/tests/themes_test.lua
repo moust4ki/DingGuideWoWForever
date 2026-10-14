@@ -1,6 +1,7 @@
 -- Themes (docs/UI-themes.md, UI/Themes.lua): four themes with every token, applied and
 -- previewed without rebuilding a frame, the picker in Settings > Appearance (gamepad and
 -- mouse, live preview, A or a click saves, leaving puts the saved theme back, Y: Halo), the
+-- arrow's skins and their picker in Settings > Arrow and maps (the same way), the
 -- opacity's default per theme, the window styles (feather, panel, bands), the chips, the fonts
 -- (the game's font for titles, outlined texts), the hover card, the gradients on every client,
 -- and no color of the old palette left in Ding/UI.
@@ -509,6 +510,180 @@ T.test("theme cards: 4 columns, 6 apart, a 34-high preview of our own scene with
     H.press("PADDRIGHT")
     T.ok(halo.bg.file == "soft_rect" and bandes.bg.gradient, "a card's preview follows the theme on screen")
     Cfg:Close(); H.flush()
+end)
+
+---------------------------------------------------------------------------
+-- The arrow picker (Settings > Arrow and maps)
+---------------------------------------------------------------------------
+local function arrowCards()
+    Cfg:Open("arrow", 1); H.flush()
+    H.focusOn(Cfg, function(r) return r.kind == "arrows" end, "the arrow cards")
+    return Cfg.focus
+end
+
+T.test("arrow skins: six cards in order (the theme's first), every texture shipped or the client's", function()
+    T.eq(table.concat(UI.ArrowSkinOrder, ","), "theme,halo,ardoise,bandes,ding,classic")
+    T.eq(Ding.DEFAULTS.arrow.skin, "theme")
+    for id, skin in pairs(UI.ArrowSkins) do
+        for _, key in ipairs({ "arrow", "arrowBack", "arrived", "arrivedCheck" }) do
+            local name = skin[key]
+            if not name:find("\\", 1, true) then
+                local file = io.open(tools .. "/../Ding/Media/Textures/" .. name .. ".tga", "rb")
+                T.ok(file, ("%s.%s = %s is not shipped"):format(id, key, name))
+                if file then file:close() end
+            end
+        end
+    end
+    for _, id in ipairs(UI.ArrowSkinOrder) do
+        local words = UI.ARROW_SKIN_NAMES[id]
+        T.ok(words and words[1] ~= "" and words[2] ~= "", id .. ": no name or description")
+    end
+    -- Each theme's arrow is its skin.
+    for _, id in ipairs(UI.ThemeOrder) do
+        local theme = UI.Themes[id]
+        T.eq(theme.tex.arrow, UI.ArrowSkins[theme.arrowSkin].arrow, id)
+    end
+end)
+
+T.test("arrow picker (gamepad): 3 columns, 2 lines; the D-pad previews on the real arrow, A saves, Y: the theme's", function()
+    start("halo")
+    local row = arrowCards()
+    T.eq(#row.cards, 6)
+    T.eq(row.index, 1, "the focus not on the saved skin")
+    T.ok(row.cards[1].active:IsShown(), "\"Active\" not on the theme's arrow")
+    T.eq(row.cards[2].points[1][4] - row.cards[1].points[1][4], row.cards[1]:GetWidth() + 6, "not 6 apart")
+    T.ok(row.cards[4].points[1][5] < row.cards[1].points[1][5], "the fourth card not on a second line")
+    local f = A.frame
+    H.press("PADDRIGHT"); H.press("PADDRIGHT")      -- Ardoise
+    T.eq(row.index, 3)
+    T.eq(f.arrow.texture, UI.TEX .. "arrow_slate", "no live preview on the arrow")
+    T.ok(f:IsShown(), "the arrow hidden during the preview")
+    T.eq(Ding.db.arrow.skin, "theme", "the preview saved")
+    H.press("PADDRIGHT")
+    T.eq(row.index, 3, "past the end of the line")
+    H.press("PADDDOWN")                             -- the line below: Minimap
+    T.eq(row.index, 6)
+    T.eq(Cfg.focus, row, "down left the cards from the first line")
+    T.eq(f.arrow.texture, "Interface\\Minimap\\MinimapArrow")
+    H.press("PADDLEFT")                             -- Ding
+    T.eq(f.arrow.texture, UI.TEX .. "arrow")
+    H.press("PAD1")
+    T.eq(Ding.db.arrow.skin, "ding", "A does not save")
+    T.ok(row.cards[5].active:IsShown() and not row.cards[1].active:IsShown(), "\"Active\" did not move")
+    H.press("PAD4")
+    T.eq(Ding.db.arrow.skin, "theme", "Y: not the theme's arrow")
+    T.eq(row.index, 1)
+    T.eq(Cfg.frame.help.list[1].label, L.HINT_ARROW_DEFAULT)
+    Cfg:Close(); H.flush()
+end)
+
+T.test("arrow picker: leaving the cards without A puts the saved skin back (up, down, LB / RB, B, closing)", function()
+    start("halo")
+    local f = A.frame
+    for _, key in ipairs({ "PADDUP", "PADRSHOULDER", "PADLSHOULDER", "PAD2" }) do
+        arrowCards()
+        H.press("PADDRIGHT")
+        T.eq(f.arrow.texture:match("arrow_halo_%a+$") ~= nil, true, "no preview")
+        H.press(key)
+        T.eq(A.previewSkin, nil, key .. " kept the preview")
+        T.eq(Ding.db.arrow.skin, "theme", key .. " saved the preview")
+        Cfg:Close(); H.flush()
+    end
+    -- Down from the second line leaves the cards.
+    local row = arrowCards()
+    H.press("PADDDOWN")
+    T.eq(row.index, 4)
+    H.press("PADDDOWN")
+    T.ok(Cfg.focus ~= row, "down does not leave the cards from the last line")
+    T.eq(A.previewSkin, nil)
+    Cfg:Close(); H.flush()
+    T.ok(not A.showing, "the arrow kept on screen after the picker")
+end)
+
+T.test("arrow picker (mouse): hovering a card previews it, leaving it restores, a click saves; no chips", function()
+    start("halo")
+    local getCVar = _G.GetCVar
+    _G.GetCVar = function(name) if name == "GamePadEnable" then return "0" end return getCVar(name) end
+    Cfg:Open("arrow", 1); H.flush()
+    local row
+    for _, r in ipairs(Cfg:BuildTab(Cfg.TAB.arrow).rows) do
+        if r.kind == "arrows" then row = r end
+    end
+    local card = row.cards[4]
+    card.scripts.OnEnter(card)
+    T.eq(A.previewSkin, "bandes")
+    T.eq(A.frame.arrow.texture, UI.TEX .. "arrow_band")
+    for _, c in ipairs(row.cards) do T.ok(not c.key:IsShown(), "a chip without a gamepad") end
+    card.scripts.OnLeave(card)
+    T.eq(A.previewSkin, nil, "leaving the card kept the preview")
+    card.scripts.OnEnter(card)
+    card.scripts.OnClick(card, "LeftButton")
+    T.eq(Ding.db.arrow.skin, "bandes")
+    card.scripts.OnLeave(card)
+    T.eq(A.frame.arrow.texture, UI.TEX .. "arrow_band", "leaving a saved card undid it")
+    Cfg:Close(); H.flush()
+    _G.GetCVar = getCVar
+end)
+
+T.test("arrow skins with every theme: their own tints on their theme, else the accent; Halo never tinted", function()
+    start("halo")
+    local f = A.frame
+    local function check(theme, skin, tint, back, ring)
+        Theme.Apply(theme)
+        A:SetSkin(skin)
+        A:SetState("route", true)
+        T.eq(UI.HexOf(f.arrow.vertexColor), tint, ("%s in %s: on the way"):format(skin, theme))
+        A:SetState("behind")
+        T.eq(UI.HexOf(f.arrow.vertexColor), back, ("%s in %s: behind"):format(skin, theme))
+        A:SetState("arrived")
+        T.eq(f.ring.texture, UI.TEX .. ring, ("%s in %s: arrived"):format(skin, theme))
+        T.eq(UI.HexOf(f.ring.vertexColor), UI.HexOf(C.done))
+    end
+    check("halo", "ardoise", "ffd100", "ffa35c", "ring")          -- Halo's accent and "turn around"
+    check("ardoise", "ardoise", "f2ede4", "ffb040", "ring")       -- its own tints
+    check("dingdark", "bandes", "5bb4ff", "e5676b", "ring_outlined")
+    check("bandes", "halo", "ffffff", "ffffff", "ring")           -- real colors
+    check("bandes", "theme", "63c2ff", "ff8e5e", "ring_outlined")
+    -- Ardoise's dark disc under the ring, wherever the skin goes.
+    Theme.Apply("halo")
+    A:SetSkin("ardoise")
+    A:SetState("arrived", true)
+    T.ok(f.arrivedBg.vertexColor[4] > 0, "the Ardoise skin lost its disc")
+    A:SetSkin("halo")
+    A:SetState("arrived", true)
+    T.eq(f.arrivedBg.vertexColor[4], 0, "a disc under Halo's ring")
+    A:SetSkin("theme")
+    A:SetState("route", true)
+end)
+
+T.test("arrow cards: each shows its skin in three states in the theme's colors; the first follows the theme", function()
+    start("halo")
+    local row = arrowCards()
+    local first, ardoise = row.cards[1].preview, row.cards[3].preview
+    T.eq(first.route.texture, UI.TEX .. "arrow_halo_gold")
+    T.eq(ardoise.route.texture, UI.TEX .. "arrow_slate")
+    T.eq(ardoise.back.texture, UI.TEX .. "arrow_slate")
+    T.eq(UI.HexOf(ardoise.route.vertexColor), "ffd100", "not in Halo's accent")
+    T.eq(UI.HexOf(ardoise.ring.vertexColor), UI.HexOf(C.done))
+    Theme.Apply("bandes", true)
+    T.eq(first.route.texture, UI.TEX .. "arrow_band", "the theme's card does not follow the theme")
+    T.eq(UI.HexOf(ardoise.route.vertexColor), "63c2ff")
+    Theme.Restore()
+    Cfg:Close(); H.flush()
+end)
+
+T.test("the arrow style before skins: the Minimap arrow stays, Ding's arrow becomes the theme's", function()
+    local db = { layout = 3, panel = {}, ui = {}, arrow = { style = "classic" } }
+    Ding.Migrate(db)
+    T.eq(db.arrow.skin, "classic")
+    T.eq(db.arrow.style, nil)
+    db = { layout = 3, panel = {}, ui = {}, arrow = { style = "ding", skin = "theme" } }
+    Ding.Migrate(db)
+    T.eq(db.arrow.skin, "theme")
+    T.eq(db.arrow.style, nil)
+    db.arrow.skin = "bandes"
+    Ding.Migrate(db)
+    T.eq(db.arrow.skin, "bandes", "a chosen skin replaced")
 end)
 
 ---------------------------------------------------------------------------

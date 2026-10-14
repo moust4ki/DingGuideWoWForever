@@ -34,11 +34,15 @@ local LOOP_RADIUS = 300         -- yards around the nearest spawn that make one 
 local LOOP_MERGE = 25           -- spawns closer than this are one stop
 local LOOP_REACH = 15           -- yards: the stop is reached, on to the next one
 local LOOP_MIN, LOOP_MAX = 3, 12 -- stops: fewer, no loop (the plain area); at most
--- Arrow textures, pointing up: the design's, or the game's minimap arrow.
-A.TEXTURES = {
-    ding = UI.TEX .. "arrow",
-    classic = "Interface\\Minimap\\MinimapArrow",
-}
+-- Arrow skins (UI.ArrowSkins, UI/Themes.lua): "theme" (the active theme's arrow, the default),
+-- "halo", "ardoise", "bandes", "ding", "classic" (the game's minimap arrow); textures point up.
+A.DEFAULT_SKIN = "theme"
+-- A skin's texture: a file of the kit, or a path of the client's own ("Interface\...").
+local function file(skin, key)
+    local name = skin[key]
+    return name:find("\\", 1, true) and name or UI.TEX .. name
+end
+A.SkinFile = file
 
 local atan2, sqrt, pi = math.atan2, math.sqrt, math.pi
 
@@ -168,23 +172,55 @@ function A:Create()
     self:Update()
 end
 
--- The arrow's textures: the theme's (route and behind; arrived ring and check), or the game's
--- minimap arrow (style "classic").
+-- The skin on screen: the one the picker shows, else the saved one (Ding.db.arrow.skin).
+function A:Skin()
+    local id = self.previewSkin or Ding.db.arrow.skin
+    return (id == "theme" or UI.ArrowSkins[id]) and id or self.DEFAULT_SKIN
+end
+
+-- The arrow's textures and tints in its state: the skin's (route and behind; arrived ring and
+-- check), in the theme's colors (UI.Theme.ArrowLook).
 function A:ApplyStyle()
     local f = self.frame
     if not f then return end
-    local tex = UI.Theme.current.tex
-    local classic = Ding.db.arrow.style == "classic" and self.TEXTURES.classic
-    local file = classic or UI.TEX .. (self.state == "behind" and tex.arrowBack or tex.arrow)
-    f.arrow:SetTexture(file)
-    f.shadow:SetTexture(file)
-    for _, t in ipairs({ f.ring, f.ringShadow }) do t:SetTexture(UI.TEX .. tex.arrived) end
-    for _, t in ipairs({ f.check, f.checkShadow }) do t:SetTexture(UI.TEX .. tex.arrivedCheck) end
+    local look = UI.Theme.ArrowLook(self:Skin())
+    local skin = look.skin
+    local arrow = file(skin, self.state == "behind" and "arrowBack" or "arrow")
+    f.arrow:SetTexture(arrow)
+    f.shadow:SetTexture(arrow)
+    for _, t in ipairs({ f.ring, f.ringShadow }) do t:SetTexture(file(skin, "arrived")) end
+    for _, t in ipairs({ f.check, f.checkShadow }) do t:SetTexture(file(skin, "arrivedCheck")) end
+    UI.Tint(f.arrow, self.state == "behind" and look.backTint or look.tint)
+    UI.Tint(f.arrivedBg, look.disc)
 end
 
-function A:SetStyle(style)
-    Ding.db.arrow.style = self.TEXTURES[style] and style or "ding"
+-- Saves the arrow's skin ("theme", a skin of UI.ArrowSkinOrder; unknown: "theme").
+function A:SetSkin(id)
+    Ding.db.arrow.skin = (id == "theme" or UI.ArrowSkins[id]) and id or self.DEFAULT_SKIN
+    self.previewSkin = nil
+    self:ShowPreview(false)
     self:ApplyStyle()
+end
+
+-- The picker shows skin `id` on the real arrow (nil: back to the saved one). While it does, the
+-- arrow stays on screen even without a target, like in move mode.
+function A:PreviewSkin(id)
+    self.previewSkin = id
+    self:ShowPreview(id ~= nil)
+    self:ApplyStyle()
+end
+
+function A:ShowPreview(on)
+    local f = self.frame
+    if not f then return end
+    if on and not self.showing then
+        self.showing = true
+        f:Show()
+        f:SetAlpha(1)
+    elseif not on and self.showing then
+        self.showing = false
+        self:Update()
+    end
 end
 
 function A:SetSize(size)
@@ -223,7 +259,6 @@ function A:SetState(state, force)
     f.arrow:SetShown(not arrived)
     f.shadow:SetShown(not arrived)
     self:ApplyStyle()
-    UI.Tint(f.arrow, state == "behind" and C.arrowBackTint or C.arrowTint)
     UI.Tint(f.ring, C.done)
     UI.Tint(f.check, C.done)
     -- Behind: the whole distance line in the "turn around" color.
@@ -318,7 +353,7 @@ function A:Update()
         UI.FadeIn(self.frame, 0.2)
     else
         if not (visible() and hasPoints) then Ding.TomTom:Clear() end
-        if not self.moving then UI.FadeOut(self.frame, 0.2) end
+        if not (self.moving or self.showing) then UI.FadeOut(self.frame, 0.2) end
     end
     self:Tick()
 end
@@ -525,7 +560,7 @@ function A:Tick()
         Ding.ItemButton:SetTarget(nil)
         f.target:Hide()
         self.shownPoint = nil
-        if not self.moving then UI.FadeOut(f, 0.2) end
+        if not (self.moving or self.showing) then UI.FadeOut(f, 0.2) end
         if self.hint then
             self.hint, Ding.Travel.leg = nil, nil
             if Ding.Panel and Ding.Panel.Update then Ding:Safe(Ding.Panel.Update, Ding.Panel) end

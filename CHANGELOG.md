@@ -22,6 +22,10 @@ Nothing else to install: QuestieDB is no longer needed, and TomTom stays optiona
   themes nothing still to do is red anymore (red reads as danger in the game).
 - The card shown when you hover a line of the guide window (X in focus mode) now has the
   theme's look.
+- **The arrow's look** has its own picker in Settings > Arrow and maps: the theme's arrow (the
+  default), Halo's gold arrow, Slate's, Bands', Ding!'s or the game's minimap arrow, with any
+  theme; the real arrow shows each one while you choose. If you had picked the minimap arrow,
+  you keep it.
 - The arrow says where under the target's name: the flight master and its zone, the zone of a
   target outside yours, or the stop of the farming loop ("Farming loop: stop 2 of 10").
 

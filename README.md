@@ -43,7 +43,8 @@ instead from the *Arrow* tab of the settings (off by default).
   choose: **Forever · Halo** (the default: no frame, a soft veil under the text, the game's
   gold), **Forever · Slate** (a dark panel with gold hairlines), **Forever · Bands** (a band
   behind each line, outlined text for light scenes) or **Ding dark** (Ding!'s original
-  look). The background's opacity follows the theme until you set your own.
+  look). The background's opacity follows the theme until you set your own. The arrow has its
+  own picker (*Arrow and maps*): the theme's arrow, or any of the others, with any theme.
 - **Guide window.** One line per action and objective, with counters (2/6), done / to do /
   not yet possible states and the guide's notes. Hover a line to see its quest (name, level,
   objectives); click it to send the arrow there. Right-click the window to mark the step as

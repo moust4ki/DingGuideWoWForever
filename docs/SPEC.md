@@ -1251,7 +1251,10 @@ textures and font flags, never a size nor a position.
     repair steps.
   - **Automation**: Quests (accept, turn in, rewards, skip gray), Merchant (sell gray,
     repair), Equipment (equip upgrades, talent build), Flights (take the flight).
-  - **Arrow and maps**: arrow, style, size, farming loop, move; the world map mark, the
+  - **Arrow and maps**: arrow, its **look** (six cards like the themes': the theme's arrow by
+    default, Halo, Ardoise, Bandes, Ding! or the game's minimap arrow, with any theme; focusing
+    one shows it on the real arrow, A or a click keeps it, leaving puts the kept one back, Y:
+    the theme's; `Ding.db.arrow.skin`), size, farming loop, move; the world map mark, the
     minimap pins; the target's skull; quest monsters (marks on the nameplates, the tooltip
     line, enemy nameplates farther); "More options" folded: orientation, TomTom, reset the
     arrow's position.

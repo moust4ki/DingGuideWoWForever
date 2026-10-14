@@ -411,8 +411,9 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
 - **Objective names**: they come from the client, in the singular ("Kill 6 Mottled Boar").
   In French, the past tense is « … : fait ».
 - **Settings not in the mockup**, built from the design's components:
-  - Arrow: show the arrow, TomTom arrow, size (40-80), style (Ding or the minimap arrow, as a
-    fallback), orientation (with the test question), move, default position;
+  - Arrow: show the arrow, TomTom arrow, size (40-80), its look (since v1.5.0 the arrow picker
+    of docs/UI-themes.md; the minimap arrow is one of its cards), orientation (with the test
+    question), move, default position;
   - Automation: accept, turn in, skip gray quests, collapse in combat, hide in dungeons,
     choose quest rewards, sell gray items, repair at merchants, mark the target (solo), then
     under the label "Steps the guide can offer": manage the hearthstone, death skips, dungeon

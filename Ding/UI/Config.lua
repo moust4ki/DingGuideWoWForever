@@ -160,7 +160,7 @@ local TAB_SETTINGS = {
     automation = { { "ui", "autoAccept" }, { "ui", "autoTurnin" }, { "ui", "offers" }, { "ui", "chooseReward" },
         { "ui", "skipGrey" }, { "ui", "sellGrey" }, { "ui", "repair" }, { "ui", "suggestGear" }, { "ui", "autoEquip" },
         { "ui", "autoFly" } },
-    arrow = { { "arrow", "shown" }, { "arrow", "style" }, { "arrow", "size" }, { "arrow", "loop" },
+    arrow = { { "arrow", "shown" }, { "arrow", "skin" }, { "arrow", "size" }, { "arrow", "loop" },
         { "arrow", "worldMap" }, { "minimap", "pins" }, { "ui", "markTarget" }, { "ui", "mobIcons" },
         { "ui", "mobTooltip" }, { "ui", "farPlates" }, { "arrow", "tomtom" }, { "arrow", "mode" } },
     appearance = { { "ui", "theme" }, { "ui", "opacityTouched" }, { "panel", "bgAlpha" }, { "panel", "scale" },
@@ -557,6 +557,288 @@ local function automationRows(canvas, width)
 end
 
 ---------------------------------------------------------------------------
+-- Picker cards (docs/UI-themes.md): the themes (Appearance) and the arrow's skins (Arrow and
+-- maps). A grid of cards, 6 apart, 4 below the row above. A card: padding 6, a preview (a scene
+-- of our own, theme_preview_bg, with what the card is), its name (12 SemiBold) with "Active"
+-- (11 SemiBold accent) or the A chip on the right, its description (11 Regular, wrapped).
+---------------------------------------------------------------------------
+local CARD = { gap = 6, top = 4, pad = 6, preview = 34, inner = 4, name = 16 }
+Cfg.CARD = CARD
+
+-- The scene behind a card's preview: the middle of the 256 x 64 texture, at its proportions.
+local function cardScene(card, width, height)
+    local p = CreateFrame("Frame", nil, card)
+    p:SetSize(width, height)
+    p:SetPoint("TOPLEFT", card, "TOPLEFT", CARD.pad, -CARD.pad)
+    local scene = p:CreateTexture(nil, "BACKGROUND")
+    scene:SetTexture(UI.TEX .. "theme_preview_bg")
+    scene:SetAllPoints(p)
+    local h = math.min(1, (height / width) * 4)
+    scene:SetTexCoord(0, 1, 0.5 - h / 2, 0.5 + h / 2)
+    p.scene = scene
+    return p
+end
+
+-- A grid of cards, one focusable row. D-pad left / right (and up / down between the grid's
+-- lines) move between cards and show the focused one live (spec.show); A or a click saves it
+-- (spec.save); leaving the cards (up, down, LB / RB, B, closing) without A puts the saved one
+-- back (spec.restore); Y saves spec.default. Mouse: hovering a card shows it, a click saves it,
+-- leaving the card puts the saved one back; no chips. Each action once: A is on the focused
+-- card, B on the title bar, LB / RB on the tabs, the footer keeps Y (spec.hint).
+-- spec: kind, label, ids, columns, previewHeight, preview(card, id, width, height) -> frame,
+-- name(id), desc(id), saved() -> id, show(id), restore(), save(id), default, hint
+local function cardGrid(canvas, width, spec)
+    local ids, columns = spec.ids, spec.columns
+    local cardWidth = math.floor((width - CARD.gap * (columns - 1)) / columns)
+    local previewHeight = spec.previewHeight or CARD.preview
+    local row = UI.BaseRow(canvas, Cfg, { label = spec.label or "" }, 10, width)
+    row.kind = spec.kind
+    row.label:Hide()
+    row.cards = {}
+    local function indexOf(id)
+        for i, other in ipairs(ids) do
+            if other == id then return i end
+        end
+        return 1
+    end
+    row.index = indexOf(spec.saved())
+
+    local tallest = 0
+    for i, id in ipairs(ids) do
+        local card = CreateFrame("Button", nil, row)
+        card:SetSize(cardWidth, 10)
+        card:RegisterForClicks("LeftButtonUp", "RightButtonUp")
+        card.id = id
+        card.bg = UI.Shape(card, "card", C.themeCardBg, "BACKGROUND"):Place(card)
+        card.focus = UI.Focus(card)
+        card.preview = spec.preview(card, id, cardWidth - 2 * CARD.pad, previewHeight)
+        local top = CARD.pad + previewHeight + CARD.inner
+        card.name = UI.Text(card, "semibold", 12, C.text)
+        card.name:SetPoint("TOPLEFT", card, "TOPLEFT", CARD.pad, -(top + 2))
+        card.name:SetText(spec.name(id))
+        card.active = UI.Text(card, "semibold", 11, C.accent)
+        card.active:SetJustifyH("RIGHT")
+        card.active:SetPoint("TOPRIGHT", card, "TOPRIGHT", -CARD.pad, -(top + 2))
+        card.active:SetText(L.THEME_ACTIVE)
+        card.key = UI.Glyph(card)
+        card.key:SetPoint("TOPRIGHT", card, "TOPRIGHT", -CARD.pad, -(top + 1))
+        card.key:SetKey("PAD1")
+        card.key:Hide()
+        card.desc = UI.Text(card, "regular", 11, C.secondary)
+        UI.Wrap(card.desc, 11)
+        card.desc:SetWidth(cardWidth - 2 * CARD.pad)
+        card.desc:SetPoint("TOPLEFT", card, "TOPLEFT", CARD.pad, -(top + CARD.name + CARD.inner))
+        card.desc:SetText(spec.desc(id))
+        tallest = math.max(tallest, top + CARD.name + CARD.inner + card.desc:GetStringHeight() + CARD.pad)
+        card:SetScript("OnEnter", function()
+            Cfg:SetFocus(row)
+            row:Show(i, true)
+        end)
+        card:SetScript("OnLeave", function()
+            if row.index == i and not row.saving then row:Show(indexOf(spec.saved()), true) end
+        end)
+        card:SetScript("OnClick", function(_, button)
+            Cfg:SetFocus(row)
+            if button == "RightButton" then return row:Reset() end
+            row.index = i
+            row:Activate()
+        end)
+        row.cards[i] = card
+    end
+    local lines = math.ceil(#ids / columns)
+    for i, card in ipairs(row.cards) do
+        card:SetHeight(tallest)
+        local col, line = (i - 1) % columns, math.floor((i - 1) / columns)
+        card:SetPoint("TOPLEFT", row, "TOPLEFT", col * (cardWidth + CARD.gap), -(CARD.top + line * (tallest + CARD.gap)))
+    end
+    row:SetHeight(CARD.top + lines * tallest + (lines - 1) * CARD.gap)
+
+    -- The cards' state: "Active" on the saved one, the focus on the focused card (A chip on a
+    -- card that A would save, with a gamepad).
+    function row:Refresh()
+        local saved = spec.saved()
+        local pad = Ding.Gamepad:Active()
+        for i, card in ipairs(self.cards) do
+            local focused = self.focused and self.index == i
+            card.focus:SetShown(focused)
+            local isActive = card.id == saved
+            card.active:SetShown(isActive)
+            local chip = focused and pad and not isActive
+            if chip then card.key:SetKey("PAD1") end
+            card.key:SetShown(chip and true or false)
+            local right = isActive and UI.Measure(card.active) or (chip and card.key:GetWidth() or 0)
+            card.name:SetWidth(math.max(20, cardWidth - 2 * CARD.pad - (right > 0 and right + 6 or 0)))
+        end
+    end
+
+    -- Card i focused; `preview`: shown on screen (the saved one: back to it).
+    function row:Show(i, preview)
+        self.index = math.max(1, math.min(#ids, i))
+        if preview then
+            if ids[self.index] == spec.saved() then spec.restore() else spec.show(ids[self.index]) end
+        end
+        self:Refresh()
+    end
+
+    function row:SetFocused(focused)
+        local was = self.focused
+        self.focused = focused
+        if focused and not was then self.index = indexOf(spec.saved()) end
+        if not focused and was then spec.restore() end
+        self:Refresh()
+    end
+    -- Left / right within a line; up / down between lines (true: moved; else the focus leaves).
+    local function column(i) return (i - 1) % columns end
+    function row:Left()
+        if column(self.index) > 0 then self:Show(self.index - 1, true) end
+    end
+    function row:Right()
+        if column(self.index) < columns - 1 and self.index < #ids then self:Show(self.index + 1, true) end
+    end
+    function row:Up()
+        if self.index <= columns then return false end
+        self:Show(self.index - columns, true)
+        return true
+    end
+    function row:Down()
+        local line = math.floor((self.index - 1) / columns)
+        if line >= lines - 1 then return false end
+        self:Show(math.min(#ids, self.index + columns), true)
+        return true
+    end
+    function row:Activate()
+        self.saving = true
+        spec.save(ids[self.index])
+        self.saving = false
+        self:Refresh()
+        Cfg:UpdateHelp()
+    end
+    function row:Reset()
+        self.index = indexOf(spec.default)
+        self:Activate()
+    end
+    function row:Hints() return { UI.Hint("PAD4", spec.hint) } end
+    function row:Tooltip() return spec.label end
+    row:Refresh()
+    return row
+end
+
+-- A theme's own look on its card: its tokens, not the theme on screen (a card shows its theme
+-- whatever is previewed). The bar: "Ding! Step 29 / 87", 10 Regular.
+local function themePreview(card, id, width, height)
+    local theme = UI.Themes[id]
+    local p = cardScene(card, width, height)
+    local TC, style = theme.C, theme.flags.windowStyle
+    local bar = CreateFrame("Frame", nil, p)
+    bar:SetPoint("LEFT", p, "LEFT", 10, 0)
+    bar.text = UI.Text(bar, "regular", 10, TC.text, "OVERLAY", "chip")
+    bar.text:SetPoint("LEFT", bar, "LEFT", 5, 0)
+    local current = Ding.Engine.guide and Ding.Engine:StepNumber(Ding.Engine.index) or 29
+    local total = Ding.Engine.guide and select(2, Ding.Engine:StepNumber(Ding.Engine.index)) or 87
+    bar.text:SetText("|cff" .. UI.HexOf(TC.accent) .. Ding.TITLE .. "|r " .. L.STEP_LABEL:format(current)
+        .. L.STEP_TOTAL:format(total))
+    local textWidth = UI.Measure(bar.text)
+    bar.text:SetWidth(textWidth + 1)
+    bar:SetSize(textWidth + (style == "bands" and 19 or 10), 14)
+    local radius = theme.radius.window > 0 and theme.radius.window or theme.radius.row
+    if style == "feather" then
+        local spec = UI.SLICES.soft_rect
+        bar.bg = UI.Slice(bar, "soft_rect", spec[1], spec[2], "BACKGROUND"):Place(bar, 6)
+        bar.bg:SetColor(TC.bg[1], TC.bg[2], TC.bg[3], theme.opacityDefault / 100)
+    else
+        local file = "rr" .. math.min(radius, 4) .. "_fill"
+        bar.bg = UI.Slice(bar, file, UI.SLICES[file][1], UI.SLICES[file][2], "BACKGROUND"):Place(bar)
+        if style == "bands" then
+            bar.bg:SetColor(TC.panelTitlebar)
+        else
+            bar.bg:SetColor(TC.bg[1], TC.bg[2], TC.bg[3], theme.opacityDefault / 100)
+        end
+        if theme.flags.windowBorder then
+            bar.border = UI.Slice(bar, "rr4_stroke1", 4, 32, "BORDER"):Place(bar)
+            bar.border:SetColor(TC.border)
+        end
+    end
+    p.bar = bar
+    return p
+end
+
+-- An arrow skin on its card, in its three states: on the way, behind, arrived (ring and check),
+-- in the colors it takes with the theme on screen (UI.Theme.ArrowLook; painted again with it).
+local ARROW_PREVIEW = { height = 48, arrow = 30, ring = 26, check = 12 }
+local function arrowPreview(card, id, width, height)
+    local p = cardScene(card, width, height)
+    local step = width / 3
+    local function icon(size, x, layer)
+        local t = p:CreateTexture(nil, "ARTWORK", nil, layer or 0)
+        t:SetSize(size, size)
+        t:SetPoint("CENTER", p, "LEFT", x, 0)
+        return t
+    end
+    p.route = icon(ARROW_PREVIEW.arrow, step / 2)
+    p.route:SetRotation(-0.42)
+    p.back = icon(ARROW_PREVIEW.arrow, step * 1.5)
+    p.back:SetRotation(math.pi - 0.5)
+    p.disc = icon(ARROW_PREVIEW.ring, step * 2.5, 1)
+    p.disc:SetTexture(UI.TEX .. "circle")
+    p.ring = icon(ARROW_PREVIEW.ring, step * 2.5, 2)
+    p.check = icon(ARROW_PREVIEW.check, step * 2.5, 3)
+    local function paint(self)
+        local look = UI.Theme.ArrowLook(id)
+        local file = Ding.Arrow.SkinFile
+        self.skin = look.id
+        self.route:SetTexture(file(look.skin, "arrow"))
+        self.back:SetTexture(file(look.skin, "arrowBack"))
+        self.ring:SetTexture(file(look.skin, "arrived"))
+        self.check:SetTexture(file(look.skin, "arrivedCheck"))
+        UI.Tint(self.route, look.tint)
+        UI.Tint(self.back, look.backTint)
+        UI.Tint(self.disc, look.disc)
+        UI.Tint(self.ring, C.done)
+        UI.Tint(self.check, C.done)
+    end
+    paint(p)
+    UI.Skin(p, paint)
+    return p
+end
+
+-- The theme picker (Appearance): one line of four cards; a card shows the theme on the guide
+-- window, the arrow and this window (UI.Theme.Apply(id, true)); Y: Halo.
+local function themeGrid(canvas, width)
+    local T = UI.Theme
+    return cardGrid(canvas, width, {
+        kind = "themes", label = L.THEME_HEADER, ids = UI.ThemeOrder, columns = #UI.ThemeOrder,
+        preview = themePreview,
+        name = function(id) return UI.Themes[id].name end,
+        desc = function(id) return UI.Themes[id].desc end,
+        saved = T.Saved,
+        show = function(id) T.Apply(id, true) end,
+        restore = T.Restore,
+        save = function(id) T.Apply(id) end,
+        default = T.DEFAULT, hint = L.HINT_THEME_DEFAULT,
+    })
+end
+
+-- The arrow picker (Arrow and maps): six skins in three columns, usable with any theme; a card
+-- shows its skin on the real arrow (Arrow:PreviewSkin); Y: the theme's arrow.
+local function arrowGrid(canvas, width)
+    local A = Ding.Arrow
+    return cardGrid(canvas, width, {
+        kind = "arrows", label = L.ARROW_SKIN, ids = UI.ArrowSkinOrder, columns = 3,
+        previewHeight = ARROW_PREVIEW.height, preview = arrowPreview,
+        name = function(id) return UI.ARROW_SKIN_NAMES[id][1] end,
+        desc = function(id) return UI.ARROW_SKIN_NAMES[id][2] end,
+        saved = function()
+            local id = Ding.db.arrow.skin
+            return (id == "theme" or UI.ArrowSkins[id]) and id or A.DEFAULT_SKIN
+        end,
+        show = function(id) A:PreviewSkin(id) end,
+        restore = function() A:PreviewSkin(nil) end,
+        save = function(id) A:SetSkin(id) end,
+        default = A.DEFAULT_SKIN, hint = L.HINT_ARROW_DEFAULT,
+    })
+end
+
+---------------------------------------------------------------------------
 -- Arrow and maps
 ---------------------------------------------------------------------------
 local function arrowRows(canvas, width)
@@ -568,12 +850,8 @@ local function arrowRows(canvas, width)
             get = function() return db.shown end,
             set = function(v) db.shown = v; A:Update() end,
         }, width),
-        UI.SelectorRow(canvas, Cfg, {
-            label = L.ARROW_STYLE, default = "ding",
-            values = { { "ding", L.ARROW_STYLE_DING }, { "classic", L.ARROW_STYLE_CLASSIC } },
-            get = function() return db.style end,
-            set = function(v) A:SetStyle(v) end,
-        }, width),
+        -- The arrow's look: six skins, shown live on the real arrow (arrowGrid).
+        arrowGrid(canvas, width),
         UI.SliderRow(canvas, Cfg, {
             label = L.ARROW_SIZE, min = 40, max = 80, step = 4, default = 56,
             format = function(v) return ("%d"):format(v) end,
@@ -713,182 +991,6 @@ end
 ---------------------------------------------------------------------------
 -- Appearance
 ---------------------------------------------------------------------------
--- Theme cards (docs/UI-themes.md): four columns, 6 apart, 4 below the header. A card: padding
--- 6, a 34-high preview (a scene of our own, theme_preview_bg, with a small bar in that card's
--- theme), its name (12 SemiBold) with "Active" (11 SemiBold accent) or the A chip on the right,
--- its description (11 Regular, wrapped).
-local CARD = { gap = 6, top = 4, pad = 6, preview = 34, inner = 4, name = 16 }
-Cfg.THEME_CARD = CARD
-
--- A theme's own look on its card: its tokens, not the theme on screen (a card shows its theme
--- whatever is previewed). The bar: "Ding! Step 29 / 87", 10 Regular.
-local function cardPreview(card, theme, width)
-    local p = CreateFrame("Frame", nil, card)
-    p:SetSize(width, CARD.preview)
-    p:SetPoint("TOPLEFT", card, "TOPLEFT", CARD.pad, -CARD.pad)
-    local scene = p:CreateTexture(nil, "BACKGROUND")
-    scene:SetTexture(UI.TEX .. "theme_preview_bg")
-    scene:SetAllPoints(p)
-    -- The middle of the 256 x 64 scene, at the card's proportions.
-    local h = math.min(1, (CARD.preview / width) * 4)
-    scene:SetTexCoord(0, 1, 0.5 - h / 2, 0.5 + h / 2)
-    p.scene = scene
-    local TC, style = theme.C, theme.flags.windowStyle
-    local bar = CreateFrame("Frame", nil, p)
-    bar:SetPoint("LEFT", p, "LEFT", 10, 0)
-    bar.text = UI.Text(bar, "regular", 10, TC.text, "OVERLAY", "chip")
-    bar.text:SetPoint("LEFT", bar, "LEFT", 5, 0)
-    local current = Ding.Engine.guide and Ding.Engine:StepNumber(Ding.Engine.index) or 29
-    local total = Ding.Engine.guide and select(2, Ding.Engine:StepNumber(Ding.Engine.index)) or 87
-    bar.text:SetText("|cff" .. UI.HexOf(TC.accent) .. Ding.TITLE .. "|r " .. L.STEP_LABEL:format(current)
-        .. L.STEP_TOTAL:format(total))
-    local textWidth = UI.Measure(bar.text)
-    bar.text:SetWidth(textWidth + 1)
-    bar:SetSize(textWidth + (style == "bands" and 19 or 10), 14)
-    local radius = theme.radius.window > 0 and theme.radius.window or theme.radius.row
-    if style == "feather" then
-        local spec = UI.SLICES.soft_rect
-        bar.bg = UI.Slice(bar, "soft_rect", spec[1], spec[2], "BACKGROUND"):Place(bar, 6)
-        bar.bg:SetColor(TC.bg[1], TC.bg[2], TC.bg[3], theme.opacityDefault / 100)
-    else
-        local file = "rr" .. math.min(radius, 4) .. "_fill"
-        bar.bg = UI.Slice(bar, file, UI.SLICES[file][1], UI.SLICES[file][2], "BACKGROUND"):Place(bar)
-        if style == "bands" then
-            bar.bg:SetColor(TC.panelTitlebar)
-        else
-            bar.bg:SetColor(TC.bg[1], TC.bg[2], TC.bg[3], theme.opacityDefault / 100)
-        end
-        if theme.flags.windowBorder then
-            bar.border = UI.Slice(bar, "rr4_stroke1", 4, 32, "BORDER"):Place(bar)
-            bar.border:SetColor(TC.border)
-        end
-    end
-    p.bar = bar
-    return p
-end
-
--- The theme picker: one focusable row of four cards. D-pad left / right move between cards and
--- show the focused theme live (guide window, arrow, this window: UI.Theme.Apply(id, true)); A
--- saves it; leaving the cards (up, down, LB / RB, B, closing) without A puts the saved theme
--- back; Y goes back to Halo. Mouse: hovering a card shows it, a click saves it, leaving the card
--- puts the saved one back; no chips.
-local function themeGrid(canvas, width)
-    local ids = UI.ThemeOrder
-    local T = UI.Theme
-    local cardWidth = math.floor((width - CARD.gap * (#ids - 1)) / #ids)
-    local row = UI.BaseRow(canvas, Cfg, { label = "" }, 10, width)
-    row.kind = "themes"
-    row.label:Hide()
-    row.cards = {}
-    local function savedIndex()
-        for i, id in ipairs(ids) do
-            if id == T.Saved() then return i end
-        end
-        return 1
-    end
-    row.index = savedIndex()
-
-    local tallest = 0
-    for i, id in ipairs(ids) do
-        local theme = UI.Themes[id]
-        local card = CreateFrame("Button", nil, row)
-        card:SetSize(cardWidth, 10)
-        card:SetPoint("TOPLEFT", row, "TOPLEFT", (i - 1) * (cardWidth + CARD.gap), -CARD.top)
-        card:RegisterForClicks("LeftButtonUp", "RightButtonUp")
-        card.id = id
-        card.bg = UI.Shape(card, "card", C.themeCardBg, "BACKGROUND"):Place(card)
-        card.focus = UI.Focus(card)
-        card.preview = cardPreview(card, theme, cardWidth - 2 * CARD.pad)
-        local top = CARD.pad + CARD.preview + CARD.inner
-        card.name = UI.Text(card, "semibold", 12, C.text)
-        card.name:SetPoint("TOPLEFT", card, "TOPLEFT", CARD.pad, -(top + 2))
-        card.name:SetText(theme.name)
-        card.active = UI.Text(card, "semibold", 11, C.accent)
-        card.active:SetJustifyH("RIGHT")
-        card.active:SetPoint("TOPRIGHT", card, "TOPRIGHT", -CARD.pad, -(top + 2))
-        card.active:SetText(L.THEME_ACTIVE)
-        card.key = UI.Glyph(card)
-        card.key:SetPoint("TOPRIGHT", card, "TOPRIGHT", -CARD.pad, -(top + 1))
-        card.key:SetKey("PAD1")
-        card.key:Hide()
-        card.desc = UI.Text(card, "regular", 11, C.secondary)
-        UI.Wrap(card.desc, 11)
-        card.desc:SetWidth(cardWidth - 2 * CARD.pad)
-        card.desc:SetPoint("TOPLEFT", card, "TOPLEFT", CARD.pad, -(top + CARD.name + CARD.inner))
-        card.desc:SetText(theme.desc)
-        tallest = math.max(tallest, top + CARD.name + CARD.inner + card.desc:GetStringHeight() + CARD.pad)
-        card:SetScript("OnEnter", function()
-            Cfg:SetFocus(row)
-            row:Show(i, true)
-        end)
-        card:SetScript("OnLeave", function()
-            if row.index == i and not row.saving then row:Show(savedIndex(), true) end
-        end)
-        card:SetScript("OnClick", function(_, button)
-            Cfg:SetFocus(row)
-            if button == "RightButton" then return row:Reset() end
-            row.index = i
-            row:Activate()
-        end)
-        row.cards[i] = card
-    end
-    for _, card in ipairs(row.cards) do card:SetHeight(tallest) end
-    row:SetHeight(CARD.top + tallest)
-
-    -- The cards' state: "Active" on the saved theme, the focus on the focused card (A chip on a
-    -- card that A would save, with a gamepad).
-    function row:Refresh()
-        local saved = T.Saved()
-        local pad = Ding.Gamepad:Active()
-        for i, card in ipairs(self.cards) do
-            local focused = self.focused and self.index == i
-            card.focus:SetShown(focused)
-            local isActive = card.id == saved
-            card.active:SetShown(isActive)
-            local chip = focused and pad and not isActive
-            if chip then card.key:SetKey("PAD1") end
-            card.key:SetShown(chip and true or false)
-            local right = isActive and UI.Measure(card.active) or (chip and card.key:GetWidth() or 0)
-            card.name:SetWidth(math.max(20, cardWidth - 2 * CARD.pad - (right > 0 and right + 6 or 0)))
-        end
-    end
-
-    -- Card i focused; `preview`: its theme on screen (the saved one: back to it).
-    function row:Show(i, preview)
-        self.index = math.max(1, math.min(#ids, i))
-        if preview then
-            if ids[self.index] == T.Saved() then T.Restore() else T.Apply(ids[self.index], true) end
-        end
-        self:Refresh()
-    end
-
-    function row:SetFocused(focused)
-        local was = self.focused
-        self.focused = focused
-        if focused and not was then self.index = savedIndex() end
-        if not focused and was then T.Restore() end
-        self:Refresh()
-    end
-    function row:Left() self:Show(self.index - 1, true) end
-    function row:Right() self:Show(self.index + 1, true) end
-    function row:Activate()
-        self.saving = true
-        T.Apply(ids[self.index])
-        self.saving = false
-        self:Refresh()
-        Cfg:UpdateHelp()
-    end
-    function row:Reset()
-        self.index = 1
-        self:Activate()
-    end
-    -- A is on the focused card, B on the title bar, LB / RB on the tabs: the footer keeps Y.
-    function row:Hints() return { UI.Hint("PAD4", L.HINT_THEME_DEFAULT) } end
-    function row:Tooltip() return L.THEME_HEADER end
-    row:Refresh()
-    return row
-end
-
 local function appearanceRows(canvas, width)
     local panel, ui = Ding.db.panel, Ding.db.ui
     local P = Ding.Panel
@@ -1510,9 +1612,10 @@ function Cfg:OnKey(key)
     elseif key == "PADRSHOULDER" then
         self:SelectTab(self.tab % #TABS + 1)
     elseif key == "PADDUP" then
-        self:MoveFocus(-1)
+        -- A grid of cards first moves between its own lines.
+        if not (row and row.cards and row:Up()) then self:MoveFocus(-1) end
     elseif key == "PADDDOWN" then
-        self:MoveFocus(1)
+        if not (row and row.cards and row:Down()) then self:MoveFocus(1) end
     elseif key == "PADDLEFT" then
         if row then row:Left() end
     elseif key == "PADDRIGHT" then

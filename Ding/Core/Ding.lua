@@ -31,7 +31,8 @@ local DEFAULTS = {
         hideInInstance = false, keyHints = true, itemButton = true, preview = 0, weaponReminder = true,
         why = true,      -- why the guide makes its choices: lines under surprising steps, tooltips (Core/Why.lua)
     },
-    arrow = { shown = true, point = "CENTER", x = 0, y = 120, size = 56, mode = 0, style = "ding", tomtom = false,
+    -- skin: the arrow's look (UI.ArrowSkins), "theme": the active theme's.
+    arrow = { shown = true, point = "CENTER", x = 0, y = 120, size = 56, mode = 0, skin = "theme", tomtom = false,
         loop = true, worldMap = true },
     item = { point = "BOTTOM", x = 0, y = 220 },
     minimap = { shown = true, angle = 200, pins = true },
@@ -101,6 +102,12 @@ end
 local LAYOUT = 3
 local OLD_OPACITY = 0.85      -- the background's default before themes
 local function migrate(db)
+    -- The arrow's style before the skins: the game's minimap arrow stays; Ding's arrow is now
+    -- the theme's.
+    if db.arrow and db.arrow.style ~= nil then
+        db.arrow.skin = db.arrow.style == "classic" and "classic" or "theme"
+        db.arrow.style = nil
+    end
     local layout = db.layout or 1
     if layout >= LAYOUT then return end
     if layout >= 2 then

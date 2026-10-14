@@ -222,6 +222,7 @@ local BANDES = {
 }
 
 -- Flags: what a theme draws differently (UI.Window, UI.Focus, UI.Glyph, fonts, the panel).
+-- tex: its chips and focus ring; its arrow's textures come from its arrow skin (below).
 --   windowStyle   "feather" | "panel" | "bands" (the guide window, the card; dialogs: panel
 --                 for bands)
 --   textShadow    { x, y } offset of a shadow on every text (C.textShadow), or nil
@@ -236,27 +237,21 @@ UI.Themes = {
         flags = { windowStyle = "feather", textShadow = { 0, -1 }, fontOutline = false, outlineBelow = 40,
             titleFont = "game", blockHeaderFont = "noto", focusChevron = false, arrowLabelPlate = false,
             stateRowBg = false },
-        tex = { arrow = "arrow_halo_gold", arrowBack = "arrow_halo_back", arrived = "ring",
-            arrivedCheck = "icon_check_large", chipDisc = "chip_disc_forever", chipPill = "chip_pill_forever",
-            focusRing = "rr4_stroke2" },
+        tex = { chipDisc = "chip_disc_forever", chipPill = "chip_pill_forever", focusRing = "rr4_stroke2" },
         radius = { window = 0, row = 3, control = 3, icon = 3, card = 4, chip = 3 },
     },
     ardoise = {
         id = "ardoise", name = L.THEME_ARDOISE, desc = L.THEME_ARDOISE_DESC, C = ARDOISE, opacityDefault = 80,
         flags = { windowStyle = "panel", textShadow = { 0, -1 }, fontOutline = false, titleFont = "game",
             blockHeaderFont = "game", focusChevron = true, arrowLabelPlate = true, stateRowBg = true },
-        tex = { arrow = "arrow_slate", arrowBack = "arrow_slate", arrived = "ring",
-            arrivedCheck = "icon_check_large", chipDisc = "chip_disc_forever", chipPill = "chip_pill_forever",
-            focusRing = "rr3_stroke15" },
+        tex = { chipDisc = "chip_disc_forever", chipPill = "chip_pill_forever", focusRing = "rr3_stroke15" },
         radius = { window = 3, row = 3, control = 3, icon = 3, card = 3, chip = 3 },
     },
     bandes = {
         id = "bandes", name = L.THEME_BANDES, desc = L.THEME_BANDES_DESC, C = BANDES, opacityDefault = 82,
         flags = { windowStyle = "bands", textShadow = nil, fontOutline = "OUTLINE", titleFont = "noto",
             blockHeaderFont = "noto", focusChevron = false, arrowLabelPlate = false, stateRowBg = true },
-        tex = { arrow = "arrow_band", arrowBack = "arrow_band", arrived = "ring_outlined",
-            arrivedCheck = "icon_check_large_outlined", chipDisc = "chip_ring", chipPill = "chip_pill_stroke",
-            focusRing = "rr2_stroke2" },
+        tex = { chipDisc = "chip_ring", chipPill = "chip_pill_stroke", focusRing = "rr2_stroke2" },
         radius = { window = 2, row = 2, control = 2, icon = 2, card = 2, chip = 3 },
     },
     dingdark = {
@@ -264,12 +259,44 @@ UI.Themes = {
         flags = { windowStyle = "panel", textShadow = nil, fontOutline = false, titleFont = "noto",
             blockHeaderFont = "noto", focusChevron = false, arrowLabelPlate = false, stateRowBg = true,
             windowBorder = true },
-        tex = { arrow = "arrow", arrowBack = "arrow", arrived = "ring", arrivedCheck = "icon_check_large",
-            chipDisc = "circle", chipPill = "rr3_fill", focusRing = "rr4_stroke2" },
+        tex = { chipDisc = "circle", chipPill = "rr3_fill", focusRing = "rr4_stroke2" },
         radius = { window = 6, row = 4, control = 4, icon = 3, card = 4, chip = 3 },
     },
 }
 UI.ThemeOrder = { "halo", "ardoise", "bandes", "dingdark" }
+
+-- Arrow skins (Settings > Arrow and maps): the arrow on the way, behind, and arrived (ring and
+-- check), usable with any theme. `native`: the theme it was drawn for, whose own tints it takes
+-- there (arrowTint, arrowBackTint, arrivedBg); with another theme a tinted skin takes that
+-- theme's accent and arrowBack. `realColors`: carries its own colors (never tinted). A path
+-- ("Interface\...") is the client's own texture (not shipped). "theme" (the default) is the
+-- active theme's skin.
+local WHITE = { 1, 1, 1, 1 }
+UI.ArrowSkins = {
+    halo = { arrow = "arrow_halo_gold", arrowBack = "arrow_halo_back", arrived = "ring",
+        arrivedCheck = "icon_check_large", native = "halo", realColors = true },
+    ardoise = { arrow = "arrow_slate", arrowBack = "arrow_slate", arrived = "ring", arrivedCheck = "icon_check_large",
+        native = "ardoise", disc = hex("#0E0B0880") },
+    bandes = { arrow = "arrow_band", arrowBack = "arrow_band", arrived = "ring_outlined",
+        arrivedCheck = "icon_check_large_outlined", native = "bandes" },
+    ding = { arrow = "arrow", arrowBack = "arrow", arrived = "ring", arrivedCheck = "icon_check_large",
+        native = "dingdark" },
+    classic = { arrow = "Interface\\Minimap\\MinimapArrow", arrowBack = "Interface\\Minimap\\MinimapArrow",
+        arrived = "ring", arrivedCheck = "icon_check_large" },
+}
+UI.ArrowSkinOrder = { "theme", "halo", "ardoise", "bandes", "ding", "classic" }
+UI.ARROW_SKIN_NAMES = {
+    theme = { L.ARROW_SKIN_THEME, L.ARROW_SKIN_THEME_DESC }, halo = { L.ARROW_SKIN_HALO, L.ARROW_SKIN_HALO_DESC },
+    ardoise = { L.ARROW_SKIN_ARDOISE, L.ARROW_SKIN_ARDOISE_DESC }, bandes = { L.ARROW_SKIN_BANDES, L.ARROW_SKIN_BANDES_DESC },
+    ding = { L.ARROW_SKIN_DING, L.ARROW_SKIN_DING_DESC }, classic = { L.ARROW_SKIN_CLASSIC, L.ARROW_SKIN_CLASSIC_DESC },
+}
+-- Each theme's arrow is its skin.
+local THEME_SKIN = { halo = "halo", ardoise = "ardoise", bandes = "bandes", dingdark = "ding" }
+for id, theme in pairs(UI.Themes) do
+    local skin = UI.ArrowSkins[THEME_SKIN[id]]
+    theme.arrowSkin = THEME_SKIN[id]
+    for _, key in ipairs({ "arrow", "arrowBack", "arrived", "arrivedCheck" }) do theme.tex[key] = skin[key] end
+end
 
 -- Slice margin and size of each texture a theme can name (UI.Slice).
 UI.SLICES = {
@@ -325,6 +352,26 @@ function Theme.SceneOutline()
     if flags.fontOutline then return flags.fontOutline end
     if flags.outlineBelow and Theme.Opacity() * 100 < flags.outlineBelow - 0.001 then return "OUTLINE" end
     return nil
+end
+
+-- The arrow's look for skin `id` ("theme" or unknown: the active theme's): { skin, tint,
+-- backTint, disc } (tokens). Its own theme's tints on its native theme, else the accent and the
+-- "turn around" color; a skin in real colors is never tinted.
+function Theme.ArrowLook(id)
+    local theme = Theme.current
+    local skinId = UI.ArrowSkins[id] and id or theme.arrowSkin
+    local skin = UI.ArrowSkins[skinId]
+    local native = skin.native == theme.id
+    local tint, backTint
+    if skin.realColors then
+        tint, backTint = WHITE, WHITE
+    elseif native then
+        tint, backTint = C.arrowTint, C.arrowBackTint
+    else
+        tint, backTint = C.accent, C.arrowBack
+    end
+    return { id = skinId, skin = skin, tint = tint, backTint = backTint,
+        disc = native and C.arrivedBg or skin.disc or NONE }
 end
 
 -- Bands (windowStyle "bands") follow the opacity slider: their alpha x setting / default.
