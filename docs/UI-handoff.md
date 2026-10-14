@@ -402,6 +402,18 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   stops in combat and when the settings open.
 - **Y resets to default** (sliders, choices) and clears a keybind; X is not used in the
   settings.
+- **Keybinds rows: combinations and words** (v1.5.0; reported in game: every button pressed
+  showed "RB"). A gamepad button is taken when it is released alone, so that a held button can
+  start a combination ("LT+A": the game binds a button with the buttons its gamepad settings
+  make Shift, Ctrl or Alt); B tapped cancels, B held one second is taken like any button. While
+  a button is awaited, a conflict settled or a button refused ("RB+Up: the game only combines a
+  button with LT or RT", "A belongs to the game's gamepad interface", "LT+X is used by Easy
+  Controller"), the words take the room beside the label on up to two lines of 11 Regular in
+  `accent` (the label then keeps at most 40 % of the row, its whole name back afterwards). An
+  action with several buttons of the kind shown (a key with the keyboard, a button with the
+  gamepad) shows the first with "and 2 more" in 11 Regular `text.secondary` before its chip; a
+  new button replaces them all, a key the keys (the other kind stays). The info line gives a
+  combination the player's settings allow as its example.
 - **Always nine-slice**: rounded shapes are cut by hand (`SetTexCoord`, one texel per unit);
   `SetTextureSliceMargins` is not used.
 - **No arrows or shapes in text**: Noto Sans has neither ← → nor ◂ ▸ ▴ ▾ nor ✕ □ △ ○.
@@ -759,6 +771,13 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   for this tab".
 
 ## To check in game (Forever 1.60)
+
+- Keybinds tab with the gamepad interface on: A alone, LT + A, LT + D-pad down, RT + X saved
+  and shown as pressed (`/dump GetBindingKey("DING_CONFIG")`), then working in play (a binding
+  of Ding against the game's own gamepad bindings: `GetBindingAction(key, false,
+  Enum.BindingContext.GamepadModeInGameCore)`); RB + Up refused in words; B tapped cancels, B
+  held binds B; the client's `OnGamePadButtonUp` reaching the capture frame; the two lines of
+  words beside the label in French and German.
 
 - Why the guide makes its choices: the line under the Duskwood step that turns in "The Legend of
   Stalvan" at Moonbrook (Leveling, Alliance section 11), at 240 and 300 wide; the "Why?" part of

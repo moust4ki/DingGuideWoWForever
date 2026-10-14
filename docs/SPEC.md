@@ -1384,7 +1384,26 @@ gamepad buttons). Every gamepad action therefore has an equivalent:
   of 5, 1 with LB, 20 with RB, the mouse works too), A saves, B cancels, Y restores the
   original position.
 - Binding a button from the Keybinds tab, with conflict detection; buttons are shown as
-  Xbox chips (A, LB, LT+Right) or PlayStation chips (symbols).
+  Xbox chips (A, LB, LT+Right) or PlayStation chips (symbols). The capture (`Gamepad:Capture`)
+  reads the buttons themselves, Ding's navigation bindings released until it ends, and lets
+  none through to the game:
+  - a button is taken when released alone; held, it can start a combination: the game binds a
+    button only with Shift, Ctrl or Alt, which its gamepad settings give to some buttons
+    (`GamePadEmulateShift` / `Ctrl` / `Alt`, LT and RT usually), so "LT+A" is taken when A goes
+    down and "RB+Up" is refused in words when RB is none of them (or that no button is one), the
+    wait going on;
+  - B tapped cancels, B held one second is taken; Escape, a fight (the window closes) or 20
+    seconds without a press cancel; a key of the keyboard is taken with its modifiers;
+  - in the way: another addon's override binding (named: Easy Controller, ConsolePort; it
+    would win over Ding's) or a button of the game's gamepad interface (its binding context
+    `GamepadModeInGameCore`, while it is on) is refused in words and never taken; a saved
+    binding of the game or of Ding is named and A replaces it, B keeps it;
+  - saved like the game's own Keybindings (the action's binding context): a gamepad button
+    replaces the action's gamepad buttons, a key its keys, the other kind stays; the game
+    refusing it is said, the old one kept. The row shows the kind of the input in use (the
+    gamepad's while one is active), "and 2 more" when an action has several; Y unbinds what it
+    shows. (Before v1.5.0 a new button was added beside the old ones and the row showed the
+    first: "RB" whatever was pressed.)
 - First launch: the setup assistant (Interface, above), then, unless the player chose the
   keyboard and the mouse there, the window opens on the bindings so the player can bind "Open
   Ding settings".

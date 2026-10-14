@@ -70,7 +70,11 @@ Ding/
                     UI.TitleFont), nine-slice kit shapes (UI.Shape, UI.Window), focus, gamepad
                     glyphs, rows, the hover card (UI.Card)
     Gamepad.lua     Ding.Gamepad: button names and glyphs, temporary bindings, move mode,
-                    binding capture
+                    binding capture (Capture({ done, refuse, say }): a button on its release,
+                    a combination with the game's modifier buttons, B held, keys), saved
+                    bindings (Bind: replaces the action's keys of that kind, BindingKeys,
+                    ShownKeys: the input in use's, WhoUses: an addon's override, the game's
+                    gamepad interface, a saved binding)
     Arrow.lua       Ding.Arrow: the design's arrow (on the way, behind, arrived), name,
                     distance, time; its loop runs on a separate frame (`go` steps validate
                     with the arrow hidden)

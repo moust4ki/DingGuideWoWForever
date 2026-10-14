@@ -1406,6 +1406,10 @@ function UI.PageTitleRow(parent, text, width, back)
 end
 
 -- A Ding key binding (DING_NEXT...): A waits for a button, Y clears it.
+-- The action's button (the gamepad's with a gamepad, else the keyboard's), "and 2 more" when
+-- it has several of that kind; while a button is awaited, a conflict settled or a button
+-- refused, the words for it on two lines beside the label (row:Tooltip() has them whole, and
+-- every key of the action).
 function UI.BindingRow(parent, owner, opts, width)
     local row = baseRow(parent, owner, opts, SIZE.row, width)
     row.kind = "binding"
@@ -1414,39 +1418,77 @@ function UI.BindingRow(parent, owner, opts, width)
     row.chip:SetPoint("RIGHT", row, "RIGHT", -8, 0)
     row.status = UI.Text(row, "regular", 11, C.disabled)
     row.status:SetJustifyH("RIGHT")
-    row.status:SetPoint("RIGHT", row, "RIGHT", -8, 0)
+    UI.Wrap(row.status, 11, 2)
+    local labelWidth = row.label:GetWidth()
+
+    local function message(self)
+        local G = Ding.Gamepad
+        if self.conflict then
+            return (G:Active() and L.BIND_CONFLICT or L.BIND_CONFLICT_MOUSE):format(self.conflict)
+        end
+        if self.notice then return self.notice end
+        if self.capturing then return G:Active() and L.BIND_WAIT_PAD or L.BIND_WAIT end
+        return nil
+    end
 
     local refresh = row.Refresh
     function row:Refresh()
         refresh(self)
         local G = Ding.Gamepad
-        local message, color
-        if self.conflict then
-            local text = Ding.Gamepad:Active() and L.BIND_CONFLICT or L.BIND_CONFLICT_MOUSE
-            message, color = text:format(self.conflict), C.accent
-        elseif self.capturing then
-            message, color = L.BIND_WAIT, C.accent
-        end
-        local key = not message and G:BindingKey(opts.action)
-        if key then
-            self.chip:SetKey(key)
-            self.chip.key = G:KeyName(key)
+        local text = message(self)
+        -- The kind of key just bound here (a key of the keyboard with a gamepad on), else the
+        -- input in use's.
+        local keys = text and {} or G:ShownKeys(opts.action, self.boundPad)
+        self.keys = keys
+        self.status:ClearAllPoints()
+        self.label:SetWidth(labelWidth)
+        if keys[1] then
+            self.chip:SetKey(keys[1])
+            self.chip.key = G:KeyName(keys[1])
             self.chip:Show()
-            self.status:Hide()
-        else
-            self.chip.key = nil
-            self.chip:Hide()
-            self.status:SetText(message or L.NOT_BOUND)
-            UI.Color(self.status, color or C.disabled)
-            self.status:Show()
+            self.status:SetPoint("RIGHT", self.chip, "LEFT", -6, 0)
+            self.status:SetWidth(0)
+            self.status:SetText(#keys > 1 and UI.More(#keys - 1) or "")
+            UI.Color(self.status, C.secondary)
+            self.status:SetShown(#keys > 1)
+            return
         end
+        self.chip.key = nil
+        self.chip:Hide()
+        -- Words take the room the label leaves, the label at most 40 % of the row while
+        -- they are there (cut, its whole name back afterwards).
+        local width = self:GetWidth()
+        local label = text and math.min(self.label:GetStringWidth(), math.floor(width * 0.4)) or labelWidth
+        if text then self.label:SetWidth(label) end
+        self.status:SetPoint("RIGHT", self, "RIGHT", -8, 0)
+        self.status:SetWidth(text and (width - 16 - label - 12) or 180)
+        self.status:SetText(text or L.NOT_BOUND)
+        UI.Color(self.status, text and C.accent or C.disabled)
+        self.status:Show()
     end
     function row:Activate() self.owner:StartCapture(self) end
+    function row:Cancel()
+        if self.notice and not self.capturing then
+            self.notice = nil
+            self:Refresh()
+        end
+    end
     function row:Reset()
-        Ding.Gamepad:Unbind(opts.action)
+        self.notice = nil
+        Ding.Gamepad:Unbind(opts.action, self.boundPad)
+        self.boundPad = nil
         self:Refresh()
     end
     function row:Hints() return { hint("PAD1", L.HINT_ASSIGN), hint("PAD4", L.HINT_UNBIND) } end
+    -- The tooltip: the words beside the label whole, or every button of the action.
+    function row:Tooltip()
+        local text = message(self)
+        if text then return opts.label, text end
+        local G, names = Ding.Gamepad, {}
+        for i, key in ipairs(G:BindingKeys(opts.action)) do names[i] = G:KeyName(key) end
+        if #names > 1 then return opts.label, L.BIND_ALL:format(table.concat(names, ", ")) end
+        return opts.label, nil
+    end
     row:Refresh()
     return row
 end

@@ -43,32 +43,66 @@ local FACE = {
 }
 -- Binding strings list modifiers in this order: ALT-CTRL-SHIFT-KEY.
 local MODIFIERS = {
-    { prefix = "ALT-", cvar = "GamePadEmulateAlt", text = "Alt" },
-    { prefix = "CTRL-", cvar = "GamePadEmulateCtrl", text = "Ctrl" },
-    { prefix = "SHIFT-", cvar = "GamePadEmulateShift", text = "Shift" },
+    { name = "ALT", prefix = "ALT-", cvar = "GamePadEmulateAlt", text = "Alt", down = "IsAltKeyDown" },
+    { name = "CTRL", prefix = "CTRL-", cvar = "GamePadEmulateCtrl", text = "Ctrl", down = "IsControlKeyDown" },
+    { name = "SHIFT", prefix = "SHIFT-", cvar = "GamePadEmulateShift", text = "Shift", down = "IsShiftKeyDown" },
 }
-local KEYBOARD_MODIFIERS = { LSHIFT = true, RSHIFT = true, LCTRL = true, RCTRL = true, LALT = true, RALT = true }
+-- Keys never taken alone by a capture: the modifiers themselves, the mouse's two buttons.
+local IGNORED_KEYS = {
+    LSHIFT = true, RSHIFT = true, LCTRL = true, RCTRL = true, LALT = true, RALT = true, LMETA = true,
+    RMETA = true, SHIFT = true, CTRL = true, ALT = true, META = true, UNKNOWN = true, BUTTON1 = true,
+    BUTTON2 = true,
+}
 
 local function style()
     return (Ding.db and Ding.db.ui.buttonStyle == "ps") and "ps" or "xbox"
 end
 
+-- A console variable, nil when empty or "none" (the client writes it in either case).
 local function cvar(name)
     local get = (C_CVar and C_CVar.GetCVar) or GetCVar
     if type(get) ~= "function" then return nil end
     local ok, value = pcall(get, name)
-    if ok and value and value ~= "" and value ~= "NONE" then return value end
+    if ok and type(value) == "string" and value ~= "" and value:upper() ~= "NONE" then return value end
     return nil
 end
 
--- Gamepad buttons that act as Shift / Ctrl / Alt (LT / RT by default).
-local function emulatedModifiers()
-    local set = {}
+-- The modifier a gamepad button acts as (the game's gamepad settings make LT Shift, for
+-- example), or nil.
+local function modifierOf(button)
+    for _, mod in ipairs(MODIFIERS) do
+        if cvar(mod.cvar) == button then return mod end
+    end
+    return nil
+end
+
+-- The gamepad buttons the game makes modifiers, in binding order ({ "PADRTRIGGER", "PADLTRIGGER" }).
+function G:ModifierButtons()
+    local list = {}
     for _, mod in ipairs(MODIFIERS) do
         local button = cvar(mod.cvar)
-        if button then set[button] = true end
+        if button then list[#list + 1] = button end
     end
-    return set
+    return list
+end
+
+-- The button or key of a binding without its modifiers: "SHIFT-PAD1" -> "PAD1".
+local function baseKey(key)
+    local rest, found = key, true
+    while found do
+        found = false
+        for _, prefix in ipairs({ "ALT-", "CTRL-", "SHIFT-", "META-" }) do
+            if rest:sub(1, #prefix) == prefix and #rest > #prefix then
+                rest, found = rest:sub(#prefix + 1), true
+            end
+        end
+    end
+    return rest
+end
+
+-- A gamepad button ("PAD1", "SHIFT-PADDUP"), not a key of the keyboard or the mouse.
+function G:IsPadKey(key)
+    return type(key) == "string" and baseKey(key):sub(1, 3) == "PAD"
 end
 
 -- Is a gamepad in use? The chips of the guide window hide without one.
@@ -102,10 +136,12 @@ end
 -- emulated by LT on a gamepad), or a word when a modifier has no gamepad button.
 local function splitKey(key)
     local parts, rest = {}, key
+    -- A key of the keyboard keeps its modifiers' names: "Ctrl+N", not "RT+N".
+    local pad = G:IsPadKey(key)
     for _, mod in ipairs(MODIFIERS) do
         if rest:sub(1, #mod.prefix) == mod.prefix then
             rest = rest:sub(#mod.prefix + 1)
-            parts[#parts + 1] = cvar(mod.cvar) or { word = mod.text }
+            parts[#parts + 1] = pad and cvar(mod.cvar) or { word = mod.text }
         end
     end
     parts[#parts + 1] = rest
@@ -150,15 +186,35 @@ function G:Glyph(key)
     return { face = false, parts = parts }
 end
 
-function G:BindingKey(action)
-    local ok, key = pcall(GetBindingKey, action)
-    if ok and type(key) == "string" and key ~= "" then return key end
-    return nil
+---------------------------------------------------------------------------
+-- Saved bindings. Like the game's own Keybindings: a binding of `action` goes in the action's
+-- binding context (C_KeyBindings.GetBindingContextForAction, when the client has it), a new
+-- button replaces the action's buttons and a new key its keys (the other kind stays: a
+-- player can have a key on the keyboard and a button on the gamepad for the same action).
+---------------------------------------------------------------------------
+local function contextOf(action)
+    if not (C_KeyBindings and C_KeyBindings.GetBindingContextForAction) then return nil end
+    local ok, context = pcall(C_KeyBindings.GetBindingContextForAction, action)
+    return ok and type(context) == "number" and context or nil
 end
 
-function G:BindingText(action)
-    local key = self:BindingKey(action)
-    return key and self:KeyName(key) or nil
+-- The game's gamepad interface keeps its buttons in a binding context of its own while it is
+-- on (WoW Forever: Enum.BindingContext.GamepadModeInGameCore); nil when off or unknown.
+local function gamepadContext()
+    local context = Enum and Enum.BindingContext and Enum.BindingContext.GamepadModeInGameCore
+    if type(context) ~= "number" or not (C_KeyBindings and C_KeyBindings.IsBindingContextActive) then return nil end
+    local ok, active = pcall(C_KeyBindings.IsBindingContextActive, context)
+    return ok and active == true and context or nil
+end
+
+local function setBinding(key, action, context)
+    local ok, result
+    if context then
+        ok, result = pcall(SetBinding, key, action, context)
+    else
+        ok, result = pcall(SetBinding, key, action)
+    end
+    return ok and result ~= false
 end
 
 local function saveBindings()
@@ -166,25 +222,125 @@ local function saveBindings()
     pcall(SaveBindings, ok and set or 1)
 end
 
-function G:Unbind(action)
-    local ok, keys = pcall(function() return { GetBindingKey(action) } end)
-    if not ok then return end
-    for _, key in ipairs(keys) do pcall(SetBinding, key) end
+-- Every key bound to `action`, in the order the game gives them (the order they were bound).
+function G:BindingKeys(action)
+    local context = contextOf(action)
+    local ok, keys = pcall(function()
+        if context then return { GetBindingKey(action, nil, context) } end
+        return { GetBindingKey(action) }
+    end)
+    local list = {}
+    if not ok then return list end
+    for _, key in ipairs(keys) do
+        if type(key) == "string" and key ~= "" then list[#list + 1] = key end
+    end
+    return list
+end
+
+-- The keys of `action` for the input in use: the gamepad's buttons while a gamepad is active,
+-- the keyboard's keys without one (`pad`: that kind instead); the other kind when that one
+-- has none.
+function G:ShownKeys(action, pad)
+    if pad == nil then pad = self:Active() end
+    local mine, other = {}, {}
+    for _, key in ipairs(self:BindingKeys(action)) do
+        if self:IsPadKey(key) == pad then mine[#mine + 1] = key else other[#other + 1] = key end
+    end
+    return #mine > 0 and mine or other
+end
+
+function G:BindingKey(action)
+    return self:ShownKeys(action)[1]
+end
+
+function G:BindingText(action)
+    local key = self:BindingKey(action)
+    return key and self:KeyName(key) or nil
+end
+
+-- Unbinds what the Keybinds row of `action` shows: its gamepad buttons, or its keys (`pad`:
+-- as G:ShownKeys).
+function G:Unbind(action, pad)
+    local context = contextOf(action)
+    for _, key in ipairs(self:ShownKeys(action, pad)) do setBinding(key, nil, context) end
     saveBindings()
 end
 
+-- Binds `key` to `action` in place of the action's keys of the same kind, and saves. False
+-- when the game refuses the key: the action keeps the keys it had.
 function G:Bind(action, key)
-    pcall(SetBinding, key, action)
+    local context = contextOf(action)
+    local pad, removed = self:IsPadKey(key), {}
+    for _, old in ipairs(self:BindingKeys(action)) do
+        if old ~= key and self:IsPadKey(old) == pad then
+            setBinding(old, nil, context)
+            removed[#removed + 1] = old
+        end
+    end
+    if not setBinding(key, action, context) then
+        for _, old in ipairs(removed) do setBinding(old, action, context) end
+        return false
+    end
     saveBindings()
+    return true
 end
 
--- Action currently bound to a key, other than `action` ("" or nil when free).
-function G:ConflictFor(action, key)
-    local ok, current = pcall(GetBindingAction, key)
-    if ok and type(current) == "string" and current ~= "" and current ~= action then
-        return current, _G["BINDING_NAME_" .. current] or current
+-- Addons known by the frames and commands of their override bindings.
+local ADDONS = {
+    { find = "controllerkeyboard", name = "Easy Controller" },
+    { find = "easycontroller", name = "Easy Controller" },
+    { find = "consoleport", name = "ConsolePort" },
+}
+
+local function bindingName(action)
+    local name = _G["BINDING_NAME_" .. action]
+    if type(name) == "string" and name ~= "" then return name end
+    return nil
+end
+
+local function actionAt(key, checkOverride, context)
+    local ok, action
+    if context then
+        ok, action = pcall(GetBindingAction, key, checkOverride, context)
+    else
+        ok, action = pcall(GetBindingAction, key, checkOverride)
+    end
+    return ok and type(action) == "string" and action or ""
+end
+
+-- Who else has `key`, the one that wins first, or nil:
+--   { kind = "addon", name }    another addon's override binding (Easy Controller...): it would
+--                               win over Ding's binding, which Ding never takes from it;
+--   { kind = "gamepad", name }  the game's gamepad interface (its own bindings, while it is on);
+--   { kind = "binding", name, action }  a saved binding of the game or of Ding, which A replaces.
+function G:WhoUses(action, key)
+    local saved = actionAt(key, false)
+    local over = actionAt(key, true)
+    -- Ding's own temporary bindings (the windows' navigation) are not in the way.
+    if over ~= "" and over ~= saved and over ~= action and not over:find("^CLICK Ding") then
+        local lower = over:lower()
+        for _, addon in ipairs(ADDONS) do
+            if lower:find(addon.find, 1, true) then return { kind = "addon", name = addon.name, action = over } end
+        end
+        return { kind = "addon", name = L.BIND_SOMEONE, action = over }
+    end
+    local context = gamepadContext()
+    local own = context and actionAt(key, false, context) or ""
+    if own ~= "" and own ~= saved and own ~= action then
+        return { kind = "gamepad", name = bindingName(own), action = own }
+    end
+    if saved ~= "" and saved ~= action then
+        return { kind = "binding", name = bindingName(saved) or saved, action = saved }
     end
     return nil
+end
+
+-- Why `key` cannot be taken for a Ding action, in words ("LT+A is used by Easy Controller…"),
+-- or nil when it can (free, or a saved binding A replaces).
+function G:TakenText(key, who)
+    if not who or who.kind == "binding" then return nil end
+    if who.kind == "gamepad" then return L.BIND_TAKEN_GAMEPAD:format(self:KeyName(key)) end
+    return L.BIND_TAKEN_ADDON:format(self:KeyName(key), who.name)
 end
 
 ---------------------------------------------------------------------------
@@ -368,13 +524,42 @@ function G:Release(owner)
 end
 
 ---------------------------------------------------------------------------
--- Capturing a button (key binding rows)
+-- Capturing a button, a combination or a key (key binding rows)
+--
+-- The capture reads the buttons themselves (OnGamePadButtonDown / Up, OnKeyDown), with
+-- Ding's navigation bindings released until it ends, and lets nothing through to the game.
+-- A gamepad button is taken on its release when it was pressed alone, so that a held button
+-- can start a combination: a second button while it is held makes "LT+A". The game binds a
+-- button with Shift, Ctrl or Alt only, which its gamepad settings give to some buttons
+-- (GamePadEmulateShift / Ctrl / Alt: LT, RT...): a combination is taken on its second
+-- button when the first is one of those, and refused in words otherwise.
+-- B tapped alone cancels; held HOLD_B seconds it is taken like any button. Escape cancels
+-- too, and so does a wait of CAPTURE_TIMEOUT seconds without a press.
 ---------------------------------------------------------------------------
-local function modifierPrefix()
+local HOLD_B, CAPTURE_TIMEOUT = 1, 20
+G.HOLD_B, G.CAPTURE_TIMEOUT = HOLD_B, CAPTURE_TIMEOUT
+
+local capture -- the capture in progress: { held = { [button] = time }, single, spoiled, last, opts }
+
+local function isDown(fnName)
+    local fn = _G[fnName]
+    if type(fn) ~= "function" then return false end
+    local ok, down = pcall(fn)
+    return ok and down == true
+end
+
+-- "ALT-CTRL-SHIFT-" as far as held: the keyboard's modifiers, and the gamepad buttons of
+-- `held` the game makes modifiers.
+local function modifierPrefix(held)
     local prefix = ""
-    if IsAltKeyDown and IsAltKeyDown() then prefix = prefix .. "ALT-" end
-    if IsControlKeyDown and IsControlKeyDown() then prefix = prefix .. "CTRL-" end
-    if IsShiftKeyDown and IsShiftKeyDown() then prefix = prefix .. "SHIFT-" end
+    for _, mod in ipairs(MODIFIERS) do
+        local down = isDown(mod.down)
+        if not down and held then
+            local button = cvar(mod.cvar)
+            down = button ~= nil and held[button] ~= nil
+        end
+        if down then prefix = prefix .. mod.prefix end
+    end
     return prefix
 end
 
@@ -387,39 +572,145 @@ end
 function G:StopCapture(key)
     local frame = self.captureFrame
     if not frame or not frame:IsShown() then return end
+    local opts = capture and capture.opts or {}
+    capture = nil
     setCaptureInput(frame, false)
     frame:Hide()
     if self.owner then applyNav(self.owner, self.keys or NAV_KEYS) end
-    local callback = self.captureCallback
-    self.captureCallback = nil
-    if callback then callback(key) end
+    if opts.done then opts.done(key) end
 end
 
-local function onCaptured(button)
-    if KEYBOARD_MODIFIERS[button] or emulatedModifiers()[button] then return end
-    local prefix = modifierPrefix()
-    -- B (or Escape) alone cancels, so B can only be bound with a modifier.
-    if prefix == "" and (button == "PAD2" or button == "ESCAPE") then
+-- A word on what was just pressed, the capture going on (a combination the game cannot make).
+local function say(text)
+    if capture and capture.opts.say then capture.opts.say(text) end
+end
+
+-- The key is taken, unless the caller refuses it (another addon has it...): it says why and
+-- the capture waits for another button.
+local function take(key)
+    local why = capture.opts.refuse and capture.opts.refuse(key)
+    if why then
+        say(why)
+        capture.spoiled = next(capture.held) ~= nil
+        return
+    end
+    G:StopCapture(key)
+end
+
+-- "RB + Up" refused: the game joins a button with its modifiers only (LT, RT...).
+local function comboText(first, button)
+    local combo = G:ButtonName(first) .. "+" .. G:ButtonName(button)
+    local mods = {}
+    for _, b in ipairs(G:ModifierButtons()) do mods[#mods + 1] = G:ButtonName(b) end
+    if #mods == 0 then return L.BIND_NO_MODIFIER:format(combo) end
+    return L.BIND_NOT_MODIFIER:format(combo, table.concat(mods, L.BIND_OR))
+end
+
+local function onPadDown(button)
+    local c = capture
+    if not c then return true end
+    c.last = GetTime()
+    if c.held[button] then return false end
+    local first
+    for b in pairs(c.held) do
+        if not modifierOf(b) then first = b end
+    end
+    c.held[button] = c.last
+    -- A modifier waits for the button it goes with; a button pressed after a refusal waits
+    -- for every button to be up.
+    if modifierOf(button) or c.spoiled then return false end
+    if first then
+        c.single, c.spoiled = nil, true
+        say(comboText(first, button))
+        return false
+    end
+    local prefix = modifierPrefix(c.held)
+    if prefix ~= "" then
+        take(prefix .. button)
+    else
+        c.single = button
+    end
+    return false
+end
+
+local function onPadUp(button)
+    local c = capture
+    if not c then return true end
+    c.held[button] = nil
+    if c.spoiled then
+        if not next(c.held) then c.spoiled = nil end
+        return false
+    end
+    if c.single == button then
+        c.single = nil
+        if button == "PAD2" then
+            G:StopCapture(nil)
+        else
+            take(modifierPrefix(c.held) .. button)
+        end
+    end
+    return false
+end
+
+local function onKeyDown(key)
+    local c = capture
+    if not c or type(key) ~= "string" then return end
+    -- Some clients send the gamepad's buttons here too: the same press is read once.
+    if G:IsPadKey(key) then
+        onPadDown(baseKey(key))
+        return
+    end
+    c.last = GetTime()
+    if IGNORED_KEYS[key] then return end
+    local prefix = modifierPrefix(c.held)
+    if key == "ESCAPE" and prefix == "" then
         G:StopCapture(nil)
         return
     end
-    G:StopCapture(prefix .. button)
+    take(prefix .. key)
 end
 
--- callback(key) with "SHIFT-PADDRIGHT"-like keys, or callback(nil) when cancelled.
-function G:Capture(callback)
+local function onKeyUp(key)
+    if not (capture and type(key) == "string" and G:IsPadKey(key)) then return end
+    if capture.held[baseKey(key)] then onPadUp(baseKey(key)) end
+end
+
+-- B held long enough is taken; a capture left alone ends.
+local function onCaptureUpdate()
+    local c = capture
+    if not c then return end
+    local now = GetTime()
+    if c.single == "PAD2" and c.held.PAD2 and now - c.held.PAD2 >= HOLD_B then
+        c.single = nil
+        take(modifierPrefix(c.held) .. "PAD2")
+    elseif now - c.last >= CAPTURE_TIMEOUT then
+        G:StopCapture(nil)
+    end
+end
+
+-- opts.done(key): the key taken ("SHIFT-PADDRIGHT"), nil when cancelled;
+-- opts.refuse(key) -> text or nil: why that key cannot be taken (the capture goes on);
+-- opts.say(text): a word for the player while the capture goes on.
+-- (A function alone is opts.done.)
+function G:Capture(opts)
+    if type(opts) == "function" then opts = { done = opts } end
     local frame = self.captureFrame
     if not frame then
         frame = CreateFrame("Frame", "DingCaptureFrame", UIParent)
         frame:SetAllPoints(UIParent)
         frame:SetFrameStrata("FULLSCREEN_DIALOG")
-        -- SetScript errors on script types the client does not know.
-        pcall(frame.SetScript, frame, "OnGamePadButtonDown", function(_, button) onCaptured(button) end)
-        pcall(frame.SetScript, frame, "OnKeyDown", function(_, key) onCaptured(key) end)
+        -- SetScript errors on script types the client does not know. A gamepad handler that
+        -- returns false keeps the button from the game.
+        pcall(frame.SetScript, frame, "OnGamePadButtonDown", function(_, button) return onPadDown(button) end)
+        pcall(frame.SetScript, frame, "OnGamePadButtonUp", function(_, button) return onPadUp(button) end)
+        pcall(frame.SetScript, frame, "OnKeyDown", function(_, key) onKeyDown(key) end)
+        pcall(frame.SetScript, frame, "OnKeyUp", function(_, key) onKeyUp(key) end)
+        frame:SetScript("OnUpdate", onCaptureUpdate)
         frame:Hide()
         self.captureFrame = frame
     end
-    self.captureCallback = callback
+    if frame:IsShown() then self:StopCapture(nil) end
+    capture = { held = {}, last = GetTime(), opts = opts }
     if self.owner then pcall(ClearOverrideBindings, self.owner) end
     frame:Show()
     setCaptureInput(frame, true)

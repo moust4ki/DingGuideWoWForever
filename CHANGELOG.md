@@ -30,6 +30,13 @@ Nothing else to install: QuestieDB is no longer needed, and TomTom stays optiona
   AddOns list.
 - The arrow says where under the target's name: the flight master and its zone, the zone of a
   target outside yours, or the stop of the farming loop ("Farming loop: stop 2 of 10").
+- **Keybinds with the gamepad fixed**: a button you bind now replaces the old one (it used to
+  be added beside it, and the row kept showing the first one, often "RB"). Combinations work:
+  hold LT (or another button the game's gamepad settings make Shift, Ctrl or Alt) and press A
+  for LT + A. A combination the game cannot make, a button the game's gamepad interface or
+  another addon (Easy Controller...) already uses, is explained in words. Tap B to cancel, hold
+  B to bind B itself. If an action of Ding! ended up on several buttons, its row says "and 2
+  more": bind it again, or press Y, to clean it up.
 
 ## v1.4.0
 

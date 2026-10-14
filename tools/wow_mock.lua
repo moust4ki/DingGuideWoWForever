@@ -55,6 +55,9 @@ return function(opts)
         self.mouse = v and true or false
         self.mouseClicks = self.mouse
     end
+    -- A frame that takes the gamepad's buttons or the keyboard (the key binding capture).
+    function Methods:EnableGamePadButton(v) self.gamepadButtons = v and true or false end
+    function Methods:EnableKeyboard(v) self.keyboard = v and true or false end
     function Methods:IsMouseEnabled() return self.mouse == true end
     -- Hover without taking the clicks (the minimap pins: the minimap keeps its clicks).
     function Methods:SetMouseClickEnabled(v) self.mouseClicks = v and true or false end
@@ -402,7 +405,14 @@ return function(opts)
     local inInstance = false
     local modifiers = {}
     local bindings = { ["SHIFT-PADDRIGHT"] = "DING_NEXT", ["SHIFT-PADDLEFT"] = "DING_PREV" }
+    local bindOrder, bindCount = {}, 0   -- [key] = n: GetBindingKey gives an action's keys in that order
     local overrides = {}       -- [owner] = { [key] = button name }
+    local overrideActions = {} -- [owner] = { [key] = command }: SetOverrideBinding
+    -- The game's gamepad interface (H.setGamepadInterface): its binding context, active while
+    -- it is on, and the buttons it binds there.
+    local GAMEPAD_CONTEXT = 9
+    local gamepadInterface, contextBindings = false, {}
+    local padHeld = {}         -- gamepad buttons held (H.padHold)
     local registered = {}      -- AddOns category
 
     local LOCALE = opts.locale or "frFR"
@@ -564,18 +574,53 @@ return function(opts)
     _G.geterrorhandler = function()
         return function(err) problem("Lua error (game error frame): " .. tostring(err)) end
     end
-    _G.GetBindingKey = function(action)
+    -- Bindings: the default context (`bindings`) and the gamepad interface's (context 9). An
+    -- action's keys come in the order they were bound, like the client's (a key a test put in
+    -- `bindings` by hand counts as the oldest).
+    local function contextMap(context)
+        if context == nil or context == 0 then return bindings end
+        assert(context == GAMEPAD_CONTEXT, "unknown binding context " .. tostring(context))
+        return contextBindings
+    end
+    _G.GetBindingKey = function(action, _, context)
         local keys = {}
-        for key, a in pairs(bindings) do if a == action then keys[#keys + 1] = key end end
-        table.sort(keys)
+        for key, a in pairs(contextMap(context)) do if a == action then keys[#keys + 1] = key end end
+        table.sort(keys, function(a, b)
+            local x, y = bindOrder[a] or 0, bindOrder[b] or 0
+            if x ~= y then return x < y end
+            return a < b
+        end)
         return unpack(keys)
     end
-    _G.GetBindingAction = function(key) return bindings[key] or "" end
-    _G.GetBindingText = function(key) return key end
-    _G.SetBinding = function(key, action)
-        assert(not inCombat, "SetBinding in combat")
-        bindings[key] = action
+    -- checkOverride: an override binding (any frame's) comes first, like in the client.
+    _G.GetBindingAction = function(key, checkOverride, context)
+        if checkOverride then
+            for _, map in pairs(overrides) do
+                if map[key] then return "CLICK " .. map[key] .. ":LeftButton" end
+            end
+            for _, map in pairs(overrideActions) do
+                if map[key] then return map[key] end
+            end
+        end
+        return contextMap(context)[key] or ""
     end
+    _G.GetBindingText = function(key) return key end
+    _G.SetBinding = function(key, action, context)
+        assert(not inCombat, "SetBinding in combat")
+        assert(type(key) == "string" and key ~= "", "SetBinding without a key")
+        local map = contextMap(context)
+        map[key] = action
+        bindCount = bindCount + 1
+        bindOrder[key] = action and bindCount or nil
+        return true
+    end
+    _G.C_KeyBindings = {
+        GetBindingContextForAction = function() return 0 end,
+        IsBindingContextActive = function(context) return gamepadInterface and context == GAMEPAD_CONTEXT end,
+    }
+    _G.Enum = _G.Enum or {}
+    _G.Enum.BindingContext = { None = 0, GamepadModeInGameCore = GAMEPAD_CONTEXT }
+    _G.IsKeyDown = function(key) return padHeld[key] == true end
     _G.SaveBindings = function(set) assert(set == 1 or set == 2, "binding set") end
     _G.GetCurrentBindingSet = function() return 2 end
     -- Console variables; SetCVar keeps a variable under the client's own maximum (the
@@ -690,9 +735,16 @@ return function(opts)
         IsEnabled = function() return _G.GetCVar("GamePadEnable") == "1" end,
         GetAllDeviceIDs = function() return padConnected and { 0 } or {} end,
     }
-    _G.IsShiftKeyDown = function() return modifiers.shift end
-    _G.IsControlKeyDown = function() return modifiers.ctrl end
-    _G.IsAltKeyDown = function() return modifiers.alt end
+    -- A modifier is down from the keyboard (a test's `modifiers`) or from the gamepad button the
+    -- game's settings make it (GamePadEmulateShift...) while that button is held.
+    local function modifierDown(name, cvar)
+        if modifiers[name] then return true end
+        local button = cvars[cvar]
+        return button ~= nil and padHeld[button] == true
+    end
+    _G.IsShiftKeyDown = function() return modifierDown("shift", "GamePadEmulateShift") end
+    _G.IsControlKeyDown = function() return modifierDown("ctrl", "GamePadEmulateCtrl") end
+    _G.IsAltKeyDown = function() return modifierDown("alt", "GamePadEmulateAlt") end
     _G.InCombatLockdown = function() return inCombat end
     _G.IsInInstance = function() return inInstance, inInstance and "party" or "none" end
     _G.SetOverrideBindingClick = function(owner, _, key, name)
@@ -701,9 +753,15 @@ return function(opts)
         overrides[owner] = overrides[owner] or {}
         overrides[owner][key] = name
     end
+    _G.SetOverrideBinding = function(owner, _, key, action)
+        assert(not inCombat, "override binding in combat")
+        overrideActions[owner] = overrideActions[owner] or {}
+        overrideActions[owner][key] = action
+    end
     _G.ClearOverrideBindings = function(owner)
         assert(not inCombat, "ClearOverrideBindings in combat")
         overrides[owner] = nil
+        overrideActions[owner] = nil
     end
     _G.UISpecialFrames = {}
     _G.PlaySound = function() end
@@ -1742,15 +1800,61 @@ return function(opts)
         flush()
     end
 
-    -- A button pressed while Ding waits for one (key binding capture).
-    local function padDown(button, mods)
+    -- The key binding capture: the gamepad's buttons and the keyboard go to Ding's capture frame
+    -- (OnGamePadButtonDown / Up, OnKeyDown / Up) while it waits; it must keep them from the game.
+    local function captureFrame(what)
         local f = _G.DingCaptureFrame
         if not (f and f:IsShown()) then
             problem("not waiting for a button")
-            return
+            return nil
         end
+        if what == "pad" and not f.gamepadButtons then problem("the capture does not take the gamepad's buttons") end
+        if what == "key" and not f.keyboard then problem("the capture does not take the keyboard") end
+        return f
+    end
+
+    -- A gamepad button pushed down (and kept down): to Ding's capture while it waits.
+    -- mods: keyboard modifiers held with it ({ shift = true }), kept until every button is up.
+    local function padHold(button, mods)
+        local f = captureFrame("pad")
+        if not f then return end
+        if mods then modifiers = mods end
+        padHeld[button] = true
+        if f.scripts.OnGamePadButtonDown(f, button) ~= false then
+            problem("the capture lets " .. button .. " through to the game")
+        end
+        flush()
+    end
+
+    -- A gamepad button let go: to the capture while it waits, else to the binding that has it.
+    local function padRelease(button)
+        padHeld[button] = nil
+        local f = _G.DingCaptureFrame
+        if f and f:IsShown() then
+            if f.scripts.OnGamePadButtonUp(f, button) ~= false then
+                problem("the capture lets " .. button .. " through to the game")
+            end
+        else
+            local b = boundButton(button)
+            if b then b.scripts.OnClick(b, "LeftButton", false) end
+        end
+        if not next(padHeld) then modifiers = {} end
+        flush()
+    end
+
+    -- A whole press of a gamepad button (down, then up) while Ding waits for one.
+    local function padDown(button, mods)
+        padHold(button, mods)
+        padRelease(button)
+    end
+
+    -- A key of the keyboard pressed (and let go) while Ding waits for one.
+    local function keyDown(key, mods)
+        local f = captureFrame("key")
+        if not f then return end
         modifiers = mods or {}
-        f.scripts.OnGamePadButtonDown(f, button)
+        f.scripts.OnKeyDown(f, key)
+        if f:IsShown() and f.scripts.OnKeyUp then f.scripts.OnKeyUp(f, key) end
         modifiers = {}
         flush()
     end
@@ -1783,7 +1887,9 @@ return function(opts)
         registered = registered, data = data, widgets = allWidgets,
         problem = problem, say = say, expect = expect, plain = plain, checkPanel = checkPanel,
         fire = fire, flush = flush, tick = tick, press = press, hold = hold, release = release,
-        padDown = padDown, focusOn = focusOn, selectTab = selectTab,
+        padDown = padDown, padHold = padHold, padRelease = padRelease, keyDown = keyDown,
+        focusOn = focusOn, selectTab = selectTab, overrideActions = overrideActions,
+        contextBindings = contextBindings,
         accept = accept, complete = complete, turnin = turnin, play = play, grindTo = grindTo, kill = kill,
     }
     function H.problems() return problems end
@@ -1990,6 +2096,14 @@ return function(opts)
     function H.clearRaidMarks() raidMarks = {} end
     function H.setInstance(v) inInstance = v end
     function H.setGamepadConnected(v) padConnected = v end
+    -- The game's gamepad interface on (its binding context active, with `keys` = { [key] =
+    -- command } bound there) or off.
+    function H.setGamepadInterface(on, keys)
+        gamepadInterface = on and true or false
+        for key in pairs(contextBindings) do contextBindings[key] = nil end
+        for key, command in pairs(keys or {}) do contextBindings[key] = command end
+    end
+    function H.setCVar(name, value) cvars[name] = value end
     -- A target (true, or its name), or none.
     function H.setTarget(v)
         hasTarget = v and true or false

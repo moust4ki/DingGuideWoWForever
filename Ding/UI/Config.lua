@@ -965,10 +965,18 @@ local BINDINGS = {
     { action = "DING_UNSKIP", label = L.BIND_UNSKIP },
 }
 
+-- How to bind, with a combination the game can make as the example ("LT+A": the first button
+-- its gamepad settings make Shift, Ctrl or Alt).
+local function bindingsInfo()
+    local modifier = G():ModifierButtons()[1]
+    if not modifier then return L.BINDINGS_INFO end
+    return L.BINDINGS_INFO_COMBO:format(G():KeyName(modifier) .. "+" .. G():KeyName("PAD1"))
+end
+
 local function bindingRows(canvas, width)
     local rows = {}
     if Cfg.welcome then rows[#rows + 1] = UI.BannerRow(canvas, L.WELCOME_TITLE, L.WELCOME_TEXT, width) end
-    rows[#rows + 1] = UI.InfoRow(canvas, L.BINDINGS_INFO, width)
+    rows[#rows + 1] = UI.InfoRow(canvas, bindingsInfo(), width)
     for _, b in ipairs(BINDINGS) do
         rows[#rows + 1] = UI.BindingRow(canvas, Cfg, { label = b.label, action = b.action }, width)
     end
@@ -1523,26 +1531,39 @@ end
 ---------------------------------------------------------------------------
 -- Key binding capture
 ---------------------------------------------------------------------------
+-- The row waits for a button, a combination or a key (Gamepad:Capture). A key another addon
+-- or the game's gamepad interface has is refused in words and the wait goes on; a saved
+-- binding in the way asks to be replaced; the game refusing the key says so.
 function Cfg:StartCapture(row)
     if InCombatLockdown() then return end
+    local action = row.opts.action
     self.capturing = row
-    row.capturing = true
+    row.capturing, row.notice = true, nil
     row:Refresh()
     self:UpdateHelp()
-    G():Capture(function(key)
-        row.capturing = false
-        self.capturing = nil
-        if key then
-            local _, name = G():ConflictFor(row.opts.action, key)
-            if name then
-                row.conflict = name
-                self.conflictRow, self.pendingKey = row, key
-            else
-                G():Bind(row.opts.action, key)
+    G():Capture({
+        refuse = function(key) return G():TakenText(key, G():WhoUses(action, key)) end,
+        say = function(text)
+            row.notice = text
+            row:Refresh()
+        end,
+        done = function(key)
+            row.capturing, row.notice = false, nil
+            self.capturing = nil
+            if key then
+                local who = G():WhoUses(action, key)
+                if who and who.kind == "binding" then
+                    row.conflict = who.name
+                    self.conflictRow, self.pendingKey = row, key
+                elseif G():Bind(action, key) then
+                    row.boundPad = G():IsPadKey(key)
+                else
+                    row.notice = L.BIND_REFUSED:format(G():KeyName(key))
+                end
             end
-        end
-        refreshAll()
-    end)
+            refreshAll()
+        end,
+    })
 end
 
 -- Mouse: a binding conflict waits for a click on its row (replace) or a right click
@@ -1565,7 +1586,13 @@ function Cfg:ResolveConflict(accept)
     self.conflictRow, self.pendingKey = nil, nil
     if not row then return end
     row.conflict = nil
-    if accept then G():Bind(row.opts.action, key) end
+    if accept then
+        if G():Bind(row.opts.action, key) then
+            row.boundPad = G():IsPadKey(key)
+        else
+            row.notice = L.BIND_REFUSED:format(G():KeyName(key))
+        end
+    end
     refreshAll()
 end
 
@@ -1670,6 +1697,8 @@ function Cfg:OnHide()
     end
     G():Release(self.frame)
     self.welcome = false
+    -- Next time, the Keybinds rows show the input in use's keys again.
+    for _, row in ipairs(TABS[BINDINGS_TAB].rows or {}) do row.boundPad = nil end
 end
 
 -- The window hides while the guide window, the arrow or the item button moves.
