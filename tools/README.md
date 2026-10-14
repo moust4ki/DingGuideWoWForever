@@ -9,6 +9,8 @@ the guides; nothing here is loaded by the game.
 | `check_guides.lua` | Replays the guides and checks quests, prerequisites, quest log |
 | `smoke_test.lua` | Runs the addon with a simulated WoW API and plays the guides |
 | `run_tests.lua` | Runs the unit tests in `tests/` |
+| `check_all.sh` | Bash: the whole suite in parallel (syntax, data, guides, translations, unit tests, smoke runs), `ALL GREEN` or `FAILURES` (section 9) |
+| `syntax.lua` | Parse-only check of the Lua files given, like `luac5.1 -p` (used by `check_all.sh`) |
 | `panel_snapshot.lua` | Writes the guide window as plain text for a scenario, in a language (section 5) |
 | `panel_scenarios.lua` | Shared module: the guide window's scenarios (Leveling guides, reports in game) |
 | `wow_mock.lua` | Shared module: simulated WoW API, in-memory QuestieDB, loading of Ding |
@@ -571,3 +573,94 @@ where more may be free (`--passes` runs at most, 5 by default). `--also` adds bo
 person chose. Then write the guides again (section 7, then `translate_guides.lua`) and check
 them. A free quest the route must keep out goes in its `exclude` list, with the reason:
 `write_leveling.lua` warns about every other one.
+
+## 9. Checking a change
+
+**While working**, run only what the change touches: the unit tests whose name matches
+(`lua5.1 tools/run_tests.lua $QDB engine`), `check_guides.lua` after a guide change, one smoke
+run. **Once before pushing**, the whole suite in parallel:
+
+```sh
+bash tools/check_all.sh
+```
+
+`tools/check_all.sh` runs every check below (syntax of every Lua file through `syntax.lua`,
+`check_data`, `check_guides` with and without the example pack, `translate_guides`, each unit
+test file, the twelve smoke runs) at the same time, longest first, then prints each failure
+with the end of its log and `ALL GREEN` or `FAILURES` (exit code 1). From the repository root,
+with Git Bash on Windows. Environment: `LUA` (the Lua 5.1 interpreter, default
+`/d/Dev/QuestieDB/tools/lua-binary/lua.exe`, else `lua5.1` when that file is missing), `QDB` (the
+export, default `../QuestieDB/src/corrections/Forever/combined`), `JOBS` (parallel processes,
+default the number of cores minus 2).
+
+The same checks one by one:
+
+Nothing runs in the game here: these commands are the only safety net.
+
+```sh
+# Syntax of all the Lua
+find Ding tools examples -name '*.lua' -print0 | xargs -0 -n1 luac5.1 -p
+
+# QuestieDB export (once, OUTSIDE the repository): the release Ding/DB was built from
+git clone --depth 1 --branch v1.0.6 https://github.com/Questie/QuestieDB.git ../QuestieDB
+(cd ../QuestieDB && lua5.1 tools/export-forever.lua --include-authored)
+
+# DingDB (Ding/DB) from that export and tools/data/corrections; the corrections alone
+lua5.1 tools/build_data.lua ../QuestieDB/src/corrections/Forever/combined --source "QuestieDB v1.0.6"
+lua5.1 tools/check_data.lua
+
+# Guide validation (non-zero exit code on errors)
+lua5.1 tools/check_guides.lua ../QuestieDB/src/corrections/Forever/combined
+lua5.1 tools/check_guides.lua ../QuestieDB/src/corrections/Forever/combined --addon examples/DingExamplePack
+
+# Unit tests (tools/tests/*_test.lua)
+lua5.1 tools/run_tests.lua ../QuestieDB/src/corrections/Forever/combined
+
+# Smoke test: loads the addon with a mocked WoW API and plays the guides
+lua5.1 tools/smoke_test.lua ../QuestieDB/src/corrections/Forever/combined --quiet
+lua5.1 tools/smoke_test.lua ../QuestieDB/src/corrections/Forever/combined --quiet --skip-optional
+lua5.1 tools/smoke_test.lua ../QuestieDB/src/corrections/Forever/combined --quiet --locale enUS
+lua5.1 tools/smoke_test.lua ../QuestieDB/src/corrections/Forever/combined --quiet --tomtom
+for l in deDE esES ptBR koKR zhCN zhTW; do lua5.1 tools/smoke_test.lua ../QuestieDB/src/corrections/Forever/combined --quiet --locale $l; done
+
+# Guide translations from tools/routes/locales/<locale>.lua (files and TOC)
+lua5.1 tools/translate_guides.lua
+
+# Free quests the Leveling routes leave out (write_leveling.lua warns about each one; --apply
+# adds them to the routes): tools/README.md, section 8
+lua5.1 tools/audit_free_quests.lua ../QuestieDB/src/corrections/Forever/combined
+
+# Kit texture missing from the handoff (once)
+python3 tools/media/textures.py Ding/Media/Textures
+
+# Quests of a zone for a race (141 = Teldrassil, 8 = Night Elf)
+lua5.1 tools/list_zone.lua ../QuestieDB/src/corrections/Forever/combined 141 8
+```
+
+The mocked API is in `tools/wow_mock.lua`: a new WoW function used by the addon must be
+added there (else an "unknown widget method" error or a missing global). Every feature comes
+with its unit tests and its scenario in the smoke test; the whole suite runs again before
+each delivery. The GitHub action `.github/workflows/tests.yml` runs these commands on every
+PR.
+
+## 10. Publishing
+
+CurseForge project `ding-xp-and-leveling-guide` (id 1739053, `## X-Curse-Project-ID` in the
+TOC). A `v*` tag pushed to GitHub (`v0.2.0`, `v0.2.0-beta1` for a beta file) starts
+`release.yml`: the whole suite, then the BigWigs packager builds the zip,
+`tools/check_package.py` checks it (a single `Ding/` folder, exactly the tracked files of
+`Ding/` plus the license and the changelog, version replaced, TOC files present, identical
+media), and only then it goes to CurseForge and to the GitHub releases (secret
+`CF_API_TOKEN`). Every PR builds and checks the same zip without uploading anything. The TOC
+keeps `## Version: @project-version@` (replaced by the tag; a copy of the repository calls
+itself "dev"). Before each tag, add the version's entry at the top of `CHANGELOG.md` (for
+players: it is the text published on CurseForge). Never push a tag without Yendi's
+agreement. Since v1.3.0 Ding carries its own game data: QuestieDB is no longer needed.
+
+What can only be validated in game: the arrow's orientation (`/ding arrowflip` or the Arrow
+tab), `QUEST_ACCEPTED` (a single `questID` argument on Forever) and the auto-advance, the
+rendering of the interface and the gamepad bindings, TomTom's API on Forever
+(`AddWaypoint`, `cleardistance = 0`), and the "to check in game" lists of
+`docs/UI-handoff.md` (TGA textures and kit fonts, nine-slice, masks, quest log objectives,
+focus mode, item button, minimap button, `C_GamePad`) and `docs/UI-themes.md` (gradients, the
+game's font on titles, light scenes at a low opacity).
