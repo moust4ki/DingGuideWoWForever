@@ -2,3 +2,5 @@
 *.tga binary
 *.ttf binary
 *.png binary
+# Shell scripts run by bash, also on Windows: always LF.
+*.sh text eol=lf
