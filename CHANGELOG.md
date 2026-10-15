@@ -15,9 +15,9 @@ Nothing else to install: QuestieDB is no longer needed, and TomTom stays optiona
 - Pick what went wrong among four ready answers (handy with a gamepad) and add your own words if
   you can type, then **Create the text**: 1. the address of the GitHub page to open, 2. the text
   to paste into it, each selected by its button for Ctrl+C (an addon cannot copy for you). Ding
-  keeps your last 20 reports in its
-  saved variables (`WTF\Account\<account>\SavedVariables\Ding.lua`), so a player without a
-  keyboard can send that file instead; "Restore all defaults" keeps them.
+  keeps your last 20 reports in its saved variables
+  (`WTF\Account\<account>\SavedVariables\Ding.lua`), so a player without a keyboard can send
+  that file instead; "Restore all defaults" keeps them.
 
 ## v1.7.1
 
