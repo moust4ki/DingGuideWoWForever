@@ -389,7 +389,7 @@ T.test("an install before themes: Halo for everyone, the old default opacity fol
     end
     local db = old(0.85)
     Ding.Migrate(db)
-    T.eq(db.layout, 3)
+    T.eq(db.layout, 4)
     T.eq(db.ui.theme, "halo")
     T.eq(db.panel.bgAlpha, 0.6, "the old default kept")
     T.ok(not db.ui.opacityTouched, "the old default counted as chosen")

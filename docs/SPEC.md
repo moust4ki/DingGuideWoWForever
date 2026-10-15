@@ -1098,7 +1098,7 @@ textures and font flags, never a size nor a position.
   dungeons", the arrow is also hidden in instances (`Panel:Visible`): with no position, it
   would only show its target's name and "?" there.
 - **Minimized version** (300 × 28): "3/42", the current objective and its counter, the
-  progress at the bottom; "done" in green for 1.5 s. Automatic in combat (configurable) or
+  progress at the bottom; "done" in green for 1.5 s. In combat when the option is on (off by default) or
   by binding.
 - **Arrow** (centered, 120 above): blue while on the way, red when the target is behind
   (more than 120°, "turn around"), a green "You're here" ring on arrival, which fades after

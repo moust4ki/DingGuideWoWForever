@@ -11,6 +11,9 @@ Nothing else to install: QuestieDB is no longer needed, and TomTom stays optiona
 - "Take this guide up where I am" keeps your place: it stops only on a quest of your log still
   to finish or a quest of the route you never took. With "Elite quests" turned on, it used to
   send you back to the first elite quest of the section.
+- The guide window stays as it is in combat: minimizing it there is now an option, off by
+  default (Settings > Appearance, "Minimize the guide in combat"). It was on for everyone: turn it
+  on again there if you liked it.
 
 ## v1.6.0
 
