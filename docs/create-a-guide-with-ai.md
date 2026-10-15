@@ -82,6 +82,7 @@ keys (the full list, with every option, is in [guide-packs.md, section 6](guide-
 | `note` | a text | not an action: a tip shown under the step |
 | `faction`, `races`, `classes` | as above | not an action: the step only exists for them |
 | `optional` | `true` | not an action: the step never blocks |
+| `floor` | `"up"`, `"top"` or `"down"` | not an action: the target is one floor up, at the top, one floor down (the arrow says it on arrival) |
 
 Ding writes the names of quests, NPCs and items itself, in the player's language: **a guide
 never writes names**, only ids. Your `title`, `text` and `note` are shown as you wrote them.
@@ -198,7 +199,8 @@ The format, a single guide:
 Step keys: accept / complete / turnin = quest id or { ids }; go = { uiMapId, x, y };
 level = number; kill = { { npcId, count } }; collect = { { itemId, count } };
 talk = npcId; object = objectId; useitem = itemId; text = "..."; note = "...";
-faction = "Alliance" / "Horde" (a step for one side only); optional = true.
+faction = "Alliance" / "Horde" (a step for one side only); optional = true;
+floor = "up" / "top" / "down" (the target is upstairs, at the top, downstairs).
 A step is done when all its actions are done. Never write names of quests, NPCs or
 items: Ding shows them from their ids.
 Allowed in the table: tables, texts in double quotes, numbers, true, false, -- comments.

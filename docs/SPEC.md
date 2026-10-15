@@ -198,6 +198,7 @@ Common options:
 | `faction` | `"Alliance"` or `"Horde"`: the step only appears for that side (`UnitFactionGroup`), in a guide for both sides |
 | `races`, `classes` | the step only appears for these races/classes |
 | `radius` | arrival radius of a `go` step, in yards (6 by default) |
+| `floor` | `"up"`, `"top"` or `"down"`: the step's target is one floor up, at the top, one floor down (the arrow says it near the target and on arrival, see "Floors") |
 | `use` | item id or list of item ids to offer in the item button (the first one owned) |
 | `sticky` | quest id or list: persistent objectives, see "Along the way" |
 | `dungeon` | dungeon name: the step's quests are done inside it |
@@ -1160,6 +1161,18 @@ textures and font flags, never a size nor a position.
   within 15 yards, then the one after, and around ("Young Nightsaber · farming loop: 2 of 6"). The loop
   stays while the nearest spawn is of the same monster near the loop and on the same step
   (`Arrow.farm`). A **ghost** is first led to its corpse.
+- **Floors** (Yendi's feedback: "You're here" in the middle of a building whose NPC is one
+  floor up): the game gives no height, neither for the player nor for a target, and the
+  minimap's floor icon cannot be read. A step's `floor` key says it ("up", "top", "down"): on
+  arrival the distance line reads "The NPC is one floor up" (an NPC: `point.npc`, not an area)
+  or "It's one floor up" (an object, a place, a monster), "… at the top", "… one floor down",
+  instead of "You're here" / "You're in the area", and the arrow stays (no fade after 3 s: the
+  player still has to find the stairs). Within 30 yards, the detail line adds "One floor up" /
+  "At the top" / "One floor down". Only for the step's own targets (`Arrow:Floor`: not the
+  corpse, a flight master on the way, a persistent objective or a `go` point). The leveling
+  generator writes the key from the route's note (`tools/guide_floor.lua`, an explicit table
+  of English phrases; a note that names two floors gets none), and `check_guides` warns when a
+  note names a floor that its step's key does not say.
 - **Cycle** (binding "Arrow: next target of the step", `DING_CYCLE`): the arrow goes to the
   target of the next row of the window that has one, in the rows' order (that of focus mode,
   whose focus follows), then back to the nearest of all (`Panel:CycleTarget`,

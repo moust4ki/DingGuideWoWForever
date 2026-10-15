@@ -44,7 +44,7 @@ local STEP_KEYS = {
     faction = "faction", use = "items", useitem = "items", equip = "items", destroy = "items",
     bank = "items", unbank = "items", keep = "items", kill = "npcPairs", collect = "itemPairs",
     buy = "buys", talk = "npcs", gossip = "index", object = "objects", spots = "points",
-    patrol = "points", revive = "revive", when = "when", why = "why",
+    patrol = "points", revive = "revive", when = "when", why = "why", floor = "floor",
 }
 local WHEN_KEYS = {
     done = "quests", notdone = "quests", log = "quests", notlog = "quests", ready = "quests",
@@ -69,6 +69,7 @@ local SAMPLES = {
     next = '"guide-id"', when = "{ done = 456 }", held = "{ { 5469, 4 } }", steps = "{ { accept = 456 } }",
     category = '"leveling" / "items"', guides = "{ { steps = { ... } } }", pack = '{ title = "text" }',
     why = '"text" / { kind = "detour", quest = 67, xp = 9000 }', leftOut = '{ [456] = "text" }',
+    floor = '"up" / "top" / "down"',
 }
 
 -- The order of the keys in an exported guide.
@@ -81,7 +82,7 @@ local STEP_ORDER = {
     "revive", "train", "fly", "vendor", "repair", "kill", "collect", "buy", "talk", "gossip", "useitem",
     "object", "equip", "destroy", "bank", "unbank", "abandon", "keep", "spots", "patrol", "use",
     "sticky", "noauto", "dungeon", "elite", "optional", "faction", "races", "classes", "when", "text",
-    "note", "why", "done", "notdone", "log", "notlog", "ready", "item", "noitem", "minlevel", "maxlevel",
+    "floor", "note", "why", "done", "notdone", "log", "notlog", "ready", "item", "noitem", "minlevel", "maxlevel",
 }
 
 ---------------------------------------------------------------------------
@@ -191,6 +192,8 @@ local function checkValue(kind, key, v, at, ctx)
         if not known then at("warning", L.IMPORT_CATEGORY:format(v)) end
     elseif kind == "faction" then
         if not FACTION_RACES[v] then expects() end
+    elseif kind == "floor" then
+        if v ~= "up" and v ~= "top" and v ~= "down" then expects() end
     elseif kind == "races" or kind == "classes" then
         local list = names(v)
         if not list then return expects() end
