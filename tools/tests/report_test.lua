@@ -9,6 +9,7 @@ local T = dofile(tools .. "/testlib.lua")(arg[1], { locale = "enUS" })
 local Layout = dofile(tools .. "/layout.lua")
 local Ding, H = T.Ding, T.H
 local E, P, L, R, W, G = Ding.Engine, Ding.Panel, Ding.L, Ding.Report, Ding.ReportWindow, Ding.Gamepad
+local UI = Ding.UI
 
 Ding.RegisterGuide({ id = "t-report", title = "Report test", steps = {
     { accept = 456 },
@@ -87,10 +88,16 @@ T.test("the guide window: a flag right beside the directory's pin, its tooltip i
     -- The title stops before the flag (its drag area too).
     T.ok(Layout.rect(f.title).right <= flag.left, "the title runs under the flag")
     T.ok(Layout.rect(f.titleArea).right <= flag.left, "the title's drag area covers the flag")
+    -- Its tooltip says it in words: a problem with this step, not a technical "bug".
     f.report.scripts.OnEnter(f.report)
     T.ok(GameTooltip:IsShown() and GameTooltip:GetOwner() == f.report, "no tooltip")
-    T.eq(GameTooltip.text, L.BIND_REPORT)
+    T.eq(GameTooltip.text, L.REPORT_BUTTON)
+    T.eq(L.REPORT_BUTTON, "Problem with this step?")
+    T.ok(table.concat(GameTooltip.lines or {}, "\n"):find(L.REPORT_BUTTON_TIP, 1, true), "no line under the tooltip's title")
+    T.ok(f.report.hover:IsShown() and f.report.bg:IsShown() and f.report.bg.token == UI.C.report,
+        "the warm fill does not stay under the mouse")
     f.report.scripts.OnLeave(f.report)
+    T.ok(not f.report.hover:IsShown() and not GameTooltip:IsShown(), "the hover stays")
     click(f.report)
     T.ok(W:IsShown(), "the flag does not open the window")
     click(f.report)
@@ -112,7 +119,7 @@ T.test("focus mode: up from the first row, the pin then the flag; left and right
     T.eq(P.focusIndex, -1, "the flag is not reached")
     T.ok(f.report.focus.ring:IsShown() and f.report.key:IsShown(), "the flag shows neither focus nor A")
     T.ok(not f.finder.focus.ring:IsShown() and not f.finder.key:IsShown(), "the pin keeps the focus")
-    T.ok(GameTooltip:IsShown() and GameTooltip:GetOwner() == f.report and GameTooltip.text == L.BIND_REPORT,
+    T.ok(GameTooltip:IsShown() and GameTooltip:GetOwner() == f.report and GameTooltip.text == L.REPORT_BUTTON,
         "the focused flag does not say what it is")
     -- The A chip sits left of both buttons, the title shortens for it.
     T.ok(Layout.rect(f.report.key).right <= Layout.rect(f.report).left, "the A chip covers the flag")
@@ -129,6 +136,52 @@ T.test("focus mode: up from the first row, the pin then the flag; left and right
     H.press("PADDUP"); H.press("PADDUP"); H.press("PAD1")
     T.ok(W:IsShown() and not P.focusing, "A on the flag does not open the window")
     W:Close(); H.flush()
+end)
+
+-- WCAG contrast of two colors (0-1 values).
+local function luminance(c)
+    local function channel(v) return v <= 0.03928 and v / 12.92 or ((v + 0.055) / 1.055) ^ 2.4 end
+    return 0.2126 * channel(c[1]) + 0.7152 * channel(c[2]) + 0.0722 * channel(c[3])
+end
+local function contrast(a, b)
+    local x, y = luminance(a), luminance(b)
+    if x < y then x, y = y, x end
+    return (x + 0.05) / (y + 0.05)
+end
+
+T.test("the flag stands out in every theme: a warm fill unlike the accent, a dark flag on it, the focus ring", function()
+    start()
+    local f = P.frame
+    for _, id in ipairs(UI.ThemeOrder) do
+        UI.Theme.Apply(id); H.flush()
+        local C = UI.C
+        T.ok(f.report.bg:IsShown() and f.report.bg.token == C.report, id .. ": no fill")
+        T.eq(UI.HexOf(f.report.bg.color), UI.HexOf(C.report), id .. ": the fill is not the theme's")
+        T.ok(C.report[1] >= 0.9 and C.report[1] > C.report[2] and C.report[2] > C.report[3], id .. ": not warm")
+        T.ok(math.abs(C.report[2] - C.accent[2]) > 0.2 or math.abs(C.report[3] - C.accent[3]) > 0.2,
+            id .. ": too close to the accent")
+        T.ok(contrast(C.report, C.onReport) >= 4.5, ("%s: the flag on its fill, %.1f:1"):format(id, contrast(C.report, C.onReport)))
+        T.ok(contrast(C.report, C.bg) >= 4.5, ("%s: the fill on the window, %.1f:1"):format(id, contrast(C.report, C.bg)))
+        T.ok(f.report.pole.dingPaint[2] == C.onReport and f.report.flag.dingPaint[2] == C.onReport, id .. ": the flag's ink")
+        P:StartFocus(); H.flush()
+        P.focusIndex = -1; P:Update()
+        T.ok(f.report.focus.ring:IsShown() and f.report.key:IsShown(), id .. ": no focus ring or A on the flag")
+        T.ok(f.report.bg:IsShown() and f.report.bg.token == C.report, id .. ": the fill goes with the focus")
+        P:StopFocus(); H.flush()
+    end
+    UI.Theme.Apply("halo"); H.flush()
+end)
+
+T.test("in words, a problem with the guide: never \"bug\" in what the player reads (the command apart)", function()
+    for _, name in ipairs({ "enUS", "frFR", "deDE", "esES", "ptBR", "koKR", "zhCN", "zhTW" }) do
+        local source = assert(io.open(tools .. "/../Ding/Locales/" .. name .. ".lua")):read("*a")
+        for key, value in source:gmatch('\n    (%u[%u_]*) = "([^\n]*)",') do
+            if key == "BIND_REPORT" or key:find("^REPORT_") then
+                T.ok(not value:lower():find("bug", 1, true), ("%s %s says bug: %s"):format(name, key, value))
+            end
+        end
+    end
+    T.eq(L.BIND_REPORT, "Report a problem with the guide")
 end)
 
 T.test("a key binding, its chord, a row in the Keybinds tab, /ding bug and the /ding help", function()

@@ -4,8 +4,8 @@
 
 Nothing else to install: QuestieDB is no longer needed, and TomTom stays optional.
 
-- **Report a problem**: a flag in the guide window's title bar, right beside the NPC
-  directory's pin (with a gamepad: up from the first line in focus mode), its own key binding
+- **Problem with this step?** An orange flag in the guide window's title bar, right beside the
+  NPC directory's pin (with a gamepad: up from the first line in focus mode), its own key binding
   (Settings > Keybinds, a button or two like the others) and `/ding bug`. A window shows in plain
   words what the report will contain: the guide, the step and its place in the guide's file,
   where you stand, your character's level, race, class and side, the step's quests and the ones

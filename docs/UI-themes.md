@@ -162,6 +162,8 @@ Keys are the previous handoff's, plus `quest`, `quest.above`, `link`, `card.bg`,
 | `on.accent` | `#17130E` | 0.090, 0.075, 0.055 | check on checked box |
 | `quest` | `#FFD100` | 1, 0.820, 0 | quest names in headers |
 | `quest.above` | `#FF9A3C` | 1, 0.604, 0.235 | quest above the player's level |
+| `report` | `#FF6A3D` | 1, 0.416, 0.239 | the guide window's "Problem with this step?" flag: its fill |
+| `on.report` | `#17130E` | 0.090, 0.075, 0.055 | the flag on that fill |
 | `link` | `#8CCBFF` | 0.549, 0.796, 1 | item / NPC / target names |
 | `done` | `#5FD068` | 0.373, 0.816, 0.408 | check glyph, counter, arrived |
 | `todo` | `#FFD100` | = accent | dot / diamond glyph, counter |
@@ -199,6 +201,8 @@ Arrow: `arrow_halo_gold.tga` (real colors, **not tinted**), behind `arrow_halo_b
 | `on.accent` | `#17130E` | 0.090, 0.075, 0.055 | |
 | `quest` | `#F5C842` | = accent | |
 | `quest.above` | `#FF9A3C` | 1, 0.604, 0.235 | |
+| `report` | `#FF6A3D` | 1, 0.416, 0.239 | |
+| `on.report` | `#17130E` | 0.090, 0.075, 0.055 | |
 | `link` | `#8CCBFF` | 0.549, 0.796, 1 | |
 | `done` | `#6FD36F` | 0.435, 0.827, 0.435 | |
 | `done.row.bg` | `#6FD36F21` | 0.435, 0.827, 0.435, 0.13 | |
@@ -242,6 +246,8 @@ Arrow: `arrow_slate.tga` tinted `#F2EDE4`, behind tinted `todo`; arrived `ring.t
 | `on.accent` | `#0A1118` | 0.039, 0.067, 0.094 | |
 | `quest` | `#FFD100` | 1, 0.820, 0 | the game's quest gold |
 | `quest.above` | `#FF9A3C` | | |
+| `report` | `#FF7A50` | 1, 0.478, 0.314 | |
+| `on.report` | `#0A1118` | 0.039, 0.067, 0.094 | |
 | `link` | `#63C2FF` | = accent | |
 | `done` | `#5ED38A` | 0.369, 0.827, 0.541 | |
 | `todo` | `#F5F7FA` | = text.primary | to-do glyph and counter |
@@ -253,7 +259,7 @@ Flags: `windowStyle="bands"`, `titleFont="noto"`, `fontOutline="OUTLINE"`, `text
 Arrow: `arrow_band.tga` tinted `accent`, behind tinted `arrow.back`; arrived `ring_outlined.tga` + `icon_check_large_outlined.tga` tinted `done` (the black outline stays black when tinted).
 
 ### `dingdark`
-The token table of `docs/UI-handoff.md`, unchanged, with flags `windowStyle="panel"`, `titleFont="noto"`, `stateRowBg=true`, everything else off, plus the new keys: `quest = accent`, `quest.above = #FF9A3C`, `link = accent`, `card.bg = bg.window` opaque, `card.text = #CCCCCC`, `notice.bg = #FFFFFF0A`, `arrow.sub = text.glyph`, `arrow.back = todo`, `chip.bg = surface.glyph`, `chip.text = text.glyph`, `line = divider`.
+The token table of `docs/UI-handoff.md`, unchanged, with flags `windowStyle="panel"`, `titleFont="noto"`, `stateRowBg=true`, everything else off, plus the new keys: `quest = accent`, `quest.above = #FF9A3C`, `link = accent`, `card.bg = bg.window` opaque, `card.text = #CCCCCC`, `notice.bg = #FFFFFF0A`, `arrow.sub = text.glyph`, `arrow.back = todo`, `chip.bg = surface.glyph`, `chip.text = text.glyph`, `line = divider`, `report = #FF7043`, `on.report = #140A06`.
 
 ---
 

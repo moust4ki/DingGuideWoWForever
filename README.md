@@ -88,8 +88,8 @@ instead from the *Arrow* tab of the settings (off by default).
   learned, the guide window says so, why, and which weapon master teaches it; right-click it
   (Left in focus mode) never to see that weapon suggested again.
 - **Report a problem.** An NPC missing, the arrow pointing to the wrong place, a quest not
-  offered? The flag in the guide window's title bar (beside the NPC directory's pin), its key
-  binding or `/ding bug` writes a precise report for you: the step, where you stand, your
+  offered? The orange flag in the guide window's title bar ("Problem with this step?", beside the
+  NPC directory's pin), its key binding or `/ding bug` writes a precise report for you: the step, where you stand, your
   quests and their counters, what the arrow points at, your route settings, never your
   character's name. See [Report a problem](#report-a-problem).
 - **Minimap button.** Left-click for the settings, right-click to show or hide the guide.
@@ -163,8 +163,9 @@ where you are) · `/ding scale <0.5-1.5>` · `/ding arrow` · `/ding arrowflip` 
 
 Something wrong with a step? Ding writes the report for you, in game:
 
-1. Open **Report a problem**: the flag in the guide window's title bar (beside the NPC
-   directory's pin; with a gamepad, up from the first line in focus mode), its key binding
+1. Open **Report a problem with the guide**: the orange flag in the guide window's title bar
+   ("Problem with this step?", beside the NPC directory's pin; with a gamepad, up from the first
+   line in focus mode), its key binding
    (*Keybinds* tab: a button or two, like the others) or `/ding bug`.
 2. The window shows what the report will contain: the guide, the step ("Step 19 / 161") and its
    place in the guide's file, where you stand, your character, the step's quests and their

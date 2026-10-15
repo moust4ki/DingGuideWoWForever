@@ -1311,9 +1311,15 @@ textures and font flags, never a size nor a position.
   - `/ding cancel` ("Trip cancelled: the arrow follows the guide again.", or "No trip in
     progress.").
   A weapon master's trainer window is not taken for the class trainer's (`Training:Record`).
-- **Report a problem** (binding "Report a problem", `DING_REPORT`, a chord like the others; the
-  guide window's flag, right beside the directory's pin; `/ding bug`; `Core/Report.lua` writes,
-  `UI/Report.lua` shows): players send precise reports the authors read on GitHub issues.
+- **Report a problem with the guide** (binding of that name, `DING_REPORT`, a chord like the
+  others; the guide window's flag, right beside the directory's pin; `/ding bug`;
+  `Core/Report.lua` writes, `UI/Report.lua` shows): players send precise reports the authors
+  read on GitHub issues. The flag must invite a press (Yendi): a warm fill of its own in every
+  theme (token `report`, the flag in `onReport`, both at least 4.5:1, unlike the accent), its
+  tooltip in words, "Problem with this step?" and a line under it ("Tell the people who make the
+  guide: Ding! writes the report for you."); never the word "bug" in what the player reads (the
+  command apart). Icon only: a word on it would cut the guide's title at the window's usual
+  widths.
   - What it holds, read when the window opens: the guide pack, the section (title and id), the
     step on screen (the held one while it shows) as the window numbers it ("Step 19 / 161") and
     its index in the guide's file, its summary (`Engine:Summary`) and its keys on one line
@@ -1329,7 +1335,7 @@ textures and font flags, never a size nor a position.
     deathSkip, skipGrey, serviceSteps, trainerSteps, flightSteps), the theme, TomTom on or off
     (and installed); Ding's version, the client's locale, its build (`GetBuildInfo`), the date
     and time in UTC. **Never** the character's name, the realm nor anything of the account.
-  - First page ("Ding! · Report a problem", a dialog like the directory): one sentence on what
+  - First page ("Ding! · Report a problem with the guide", a dialog like the directory): one sentence on what
     it is for and that nothing is sent by itself; "What the report will contain", one plain
     sentence per part (the step, where you are, your character, the quests with their counters
     and "and 2 more", the arrow, the settings, the versions, never your name); "What went

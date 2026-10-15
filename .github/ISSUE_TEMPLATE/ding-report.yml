@@ -5,7 +5,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        In game, open **Report a problem** in Ding!: the flag in the guide window's title bar, its key (Settings > Keybinds), or `/ding bug`. Pick what went wrong, add a few words if you can, then **Create the text** and copy it with Ctrl+C.
+        In game, open **Report a problem with the guide** in Ding!: the orange flag in the guide window's title bar ("Problem with this step?"), its key (Settings > Keybinds), or `/ding bug`. Pick what went wrong, add a few words if you can, then **Create the text** and copy it with Ctrl+C.
         The text's first line can be the title above. Without a keyboard, Ding! keeps your last 20 reports in `WTF\Account\<account>\SavedVariables\Ding.lua` (written when you log out or reload): you can attach that file instead.
   - type: textarea
     id: report

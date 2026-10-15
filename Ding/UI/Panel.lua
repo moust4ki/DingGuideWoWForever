@@ -1182,19 +1182,32 @@ function P:Create()
     f.finder.key = UI.Glyph(f)
     f.finder.key:Hide()
 
-    -- Report a problem (UI/Report.lua): a flag, left of the directory's pin. In focus mode,
-    -- above the pin (D-pad up again), or left of it. The A chip of either sits left of both.
-    f.report = UI.IconButton(f, 20)
+    -- "Problem with this step?" (UI/Report.lua), left of the directory's pin: a flag on a warm
+    -- fill that stands out in every theme (Yendi: players must feel invited to press it), its
+    -- tooltip in words (the color never says it alone). A lighter veil under the mouse. In focus
+    -- mode, above the pin (D-pad up again), or left of it. The A chip of either sits left of both.
+    f.report = UI.IconButton(f, 20, C.report)
     f.report:SetPoint("TOPRIGHT", f, "TOPRIGHT", -76, -2)
+    f.report.hover = UI.Shape(f.report, "row", C.hover, "BACKGROUND", 1):Place(f.report)
+    f.report.hover:Hide()
     local pole = f.report:CreateTexture(nil, "ARTWORK")
-    UI.Fill(pole, C.secondary)
+    UI.Fill(pole, C.onReport)
     pole:SetSize(1.5, 12)
     pole:SetPoint("CENTER", f.report, "CENTER", -3.5, 0)
     local flag = f.report:CreateTexture(nil, "ARTWORK")
-    UI.Fill(flag, C.secondary)
+    UI.Fill(flag, C.onReport)
     flag:SetSize(7, 5)
     flag:SetPoint("TOPLEFT", pole, "TOPRIGHT", 0, 0)
-    f.report.tooltip = L.BIND_REPORT
+    f.report.pole, f.report.flag = pole, flag
+    f.report.tooltip, f.report.tooltipLine = L.REPORT_BUTTON, L.REPORT_BUTTON_TIP
+    f.report:SetScript("OnEnter", function(self)
+        self.hover:Show()
+        P:ShowButtonTip(self)
+    end)
+    f.report:SetScript("OnLeave", function(self)
+        self.hover:Hide()
+        if GameTooltip:GetOwner() == self then GameTooltip:Hide() end
+    end)
     f.report:SetScript("OnClick", function() Ding.ReportWindow:Toggle() end)
     f.report.focus = UI.Focus(f.report, true)
     f.report.key = UI.Glyph(f)
@@ -2198,9 +2211,17 @@ function P:ShowFinderTip()
         if not (self.focusing and self.focusIndex == index) and GameTooltip:GetOwner() == b then GameTooltip:Hide() end
     end
     local b = self.focusing and buttons[self.focusIndex]
-    if not b then return end
+    if b then self:ShowButtonTip(b) end
+end
+
+-- A title bar button's name, and the line under it when it has one.
+function P:ShowButtonTip(b)
     GameTooltip:SetOwner(b, "ANCHOR_TOP")
     GameTooltip:SetText(b.tooltip)
+    if b.tooltipLine then
+        local c = C.secondary
+        GameTooltip:AddLine(b.tooltipLine, c[1], c[2], c[3], true)
+    end
     GameTooltip:Show()
 end
 
