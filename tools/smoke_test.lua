@@ -1819,6 +1819,8 @@ ok, err = pcall(function()
     scenarioCharacter()
     H.resetQuests()
     E.turnedIn, Ding.char.manual = {}, {}
+    -- A name of its own: the mock's default, "Player", is also a heading of the report.
+    player.name = "Zarvelline"
     player.level, player.map, player.x, player.y = 5, 1438, 58.7, 44
     E:SetGuide("smoke-report", 1, true)
     tick(1)
