@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.8.1
+
+Nothing else to install: QuestieDB is no longer needed, and TomTom stays optional.
+
+- Faster again: since v1.7.1, checking whether a quest objective is done rebuilt the list of
+  every place its monsters stand each time (on level steps, for each quest of your log). Ding
+  reads the objective's text first and keeps that list once built.
+
 ## v1.8.0
 
 Nothing else to install: QuestieDB is no longer needed, and TomTom stays optional.
