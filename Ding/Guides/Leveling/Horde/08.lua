@@ -88,7 +88,7 @@ Ding.RegisterGuide({
           note = "The target can be indoors or out." },
         { turnin = 846, accept = 849, -- level 25
           note = "The NPC patrols the road; look along it." },
-        { complete = 849, -- level 25
+        { complete = 849, floor = "up", -- level 25
           note = "The objective sits up on the raised deck. Keep some range when you use the item." },
         { turnin = 849, -- level 25
           note = "The NPC patrols the road; look along it." },

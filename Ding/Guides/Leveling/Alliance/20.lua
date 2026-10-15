@@ -18,7 +18,7 @@ Ding.RegisterGuide({
         [3628] = { kind = "prereq" },
     },
     steps    = {
-        { train = true, talk = 5498, races = { "Human", "Gnome" }, classes = { "MAGE" }, -- level 38
+        { train = true, floor = "top", talk = 5498, races = { "Human", "Gnome" }, classes = { "MAGE" }, -- level 38
           note = "Stormwind first, then the Swamp of Sorrows. The NPC waits on the tower's highest floor." },
         { go = { 1453, 50.55, 90.37 }, races = { "Human", "Gnome" }, classes = { "MAGE" }, text = "Head indoors" }, -- level 38
         { accept = 1260, races = { "Human", "Gnome", "Skyborne" }, classes = { "MAGE" }, -- level 38
@@ -26,13 +26,13 @@ Ding.RegisterGuide({
         { go = { 1453, 51.56, 73.67 }, races = { "Human", "Gnome" }, classes = { "MAGE" }, text = "Head indoors" }, -- level 38
         { accept = 1363, races = { "Human", "Gnome", "Skyborne" }, classes = { "MAGE" }, -- level 38
           note = "The NPC is indoors." },
-        { turnin = 1363, accept = 1364, races = { "Human", "Gnome", "Skyborne" }, classes = { "MAGE" }, -- level 38
+        { turnin = 1363, accept = 1364, floor = "up", races = { "Human", "Gnome", "Skyborne" }, classes = { "MAGE" }, -- level 38
           note = "The NPC is indoors, one floor up." },
         { go = { 1453, 51.56, 73.67 }, text = "Head indoors" }, -- level 38
         { accept = 1363, races = { "Dwarf", "NightElf" }, -- level 38
           note = "The NPC is indoors." },
         { accept = 1363, races = { "Human", "Gnome", "Skyborne" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "WARLOCK", "DRUID" } }, -- level 38
-        { turnin = 1363, races = { "Dwarf", "NightElf" }, -- level 38
+        { turnin = 1363, floor = "up", races = { "Dwarf", "NightElf" }, -- level 38
           note = "The NPC is indoors, one floor up." },
         { turnin = 1363, races = { "Human", "Gnome", "Skyborne" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "WARLOCK", "DRUID" } }, -- level 38
         { go = { 1453, 50.55, 90.37 }, text = "Head indoors" }, -- level 38
@@ -42,7 +42,7 @@ Ding.RegisterGuide({
         { go = { 1453, 42.29, 81.76 }, races = { "Human", "Gnome" }, classes = { "WARLOCK" }, text = "Head indoors", -- level 38
           note = "The NPC waits on the lower level, indoors." },
         { train = true, talk = 461, races = { "Human", "Gnome" }, classes = { "WARLOCK" } }, -- level 38
-        { vendor = true, talk = 5520, races = { "Human", "Gnome" }, classes = { "WARLOCK" }, -- level 38
+        { floor = "down", vendor = true, talk = 5520, races = { "Human", "Gnome" }, classes = { "WARLOCK" }, -- level 38
           note = "The NPC waits on the lower level, indoors." },
         { go = { 1453, 52.93, 51.05 }, races = { "Human", "Dwarf" }, classes = { "PALADIN" }, text = "Head indoors", -- level 38
           note = "The NPC is indoors." },
@@ -50,7 +50,7 @@ Ding.RegisterGuide({
         { go = { 1453, 52.93, 51.05 }, races = { "Human", "Dwarf", "NightElf" }, classes = { "PRIEST" }, text = "Head indoors", -- level 38
           note = "This one roams, so scan the surrounding area. The NPC is indoors." },
         { train = true, talk = 5484, races = { "Human", "Dwarf", "NightElf" }, classes = { "PRIEST" } }, -- level 38
-        { train = true, talk = 5479, classes = { "WARRIOR" }, -- level 38
+        { train = true, floor = "up", talk = 5479, classes = { "WARRIOR" }, -- level 38
           note = "The NPC is indoors, one floor up." },
         { train = true, talk = 918, classes = { "ROGUE" } }, -- level 38
         { accept = 1448, -- level 38
@@ -88,9 +88,9 @@ Ding.RegisterGuide({
           note = "Hunt the little winged dragonkin." },
         { level = 38, xp = 77300, patrol = { { 1435, 25.37, 49.15 }, { 1435, 28.64, 48.04 }, { 1435, 28.24, 52.15 }, { 1435, 30.16, 54.56 }, { 1435, 32.04, 50.84 }, { 1435, 34.64, 54.56 }, { 1435, 28.84, 60.56 }, { 1435, 27.56, 63.66 }, { 1435, 25.03, 61.65 }, { 1435, 24.35, 58.24 }, { 1435, 21.43, 59.04 }, { 1435, 21.94, 63.66 }, { 1435, 16.64, 56.85 }, { 1435, 16.23, 53.36 }, { 1435, 19.26, 53.15 }, { 1435, 25.46, 45.14 }, { 1435, 27.86, 43.43 }, { 1435, 21.44, 43.03 }, { 1435, 22.43, 37.16 }, { 1435, 32.84, 28.86 }, { 1435, 35.43, 30.55 }, { 1435, 37.55, 28.37 }, { 1435, 40.43, 29.76 }, { 1435, 43.66, 28.95 }, { 1435, 37.96, 32.77 }, { 1435, 38.85, 37.35 }, { 1435, 43.24, 43.16 }, { 1435, 38.44, 45.74 }, { 1435, 47.34, 34.83 } }, why = { kind = "level", levels = { 34, 43 } }, -- level 38
           note = "Together with the next turn-ins, this brings you to level 39." },
-        { turnin = 1116, -- level 38
+        { turnin = 1116, floor = "top", -- level 38
           note = "Climb to the highest floor of the building." },
-        { accept = 1117, why = { continent = true, kind = "carry", once = true, quest = 1117, seconds = 33300, short = true, xp = 3500 }, -- level 39
+        { accept = 1117, floor = "top", why = { continent = true, kind = "carry", once = true, quest = 1117, seconds = 33300, short = true, xp = 3500 }, -- level 39
           note = "Let the conversation play out. Climb to the highest floor of the building." },
         { collect = { { 5996, 2 } }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "MAGE" } }, -- level 39
         { talk = 15659 }, -- level 39

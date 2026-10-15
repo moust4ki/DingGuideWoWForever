@@ -77,11 +77,11 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { turnin = 4185, accept = 4186, when = { done = 4182 }, -- level 56
           note = "The NPC is indoors." },
-        { turnin = 6182, accept = 6183, -- level 56
+        { turnin = 6182, accept = 6183, floor = "up", -- level 56
           note = "The NPC is indoors, one floor up." },
-        { turnin = 6183, accept = 6184, why = { kind = "carry", quest = 6184, seconds = 19020, xp = 5000 }, -- level 56
+        { turnin = 6183, accept = 6184, floor = "up", why = { kind = "carry", quest = 6184, seconds = 19020, xp = 5000 }, -- level 56
           note = "The NPC is indoors, one floor up." },
-        { turnin = 5022, accept = 5048, -- level 56
+        { turnin = 5022, accept = 5048, floor = "up", -- level 56
           note = "The NPC is indoors, one floor up." },
         { turnin = 5048, accept = 5050, patrol = { { 1453, 60.22, 56.88 }, { 1453, 57.07, 62.4 }, { 1453, 58.52, 64.27 }, { 1453, 62.3, 61.28 }, { 1453, 64.33, 61.4 }, { 1453, 65.94, 64.29 }, { 1453, 64.26, 67.18 }, { 1453, 66.62, 71.15 }, { 1453, 63.94, 66.53 }, { 1453, 63.88, 66.47 }, { 1453, 62.71, 65.77 }, { 1453, 60.45, 67.07 }, { 1453, 59.08, 64.32 }, { 1453, 58.15, 64.39 }, { 1453, 57, 61.88 } }, why = { kind = "carry", once = true, quest = 5050, seconds = 19920, xp = 2600 }, -- level 56
           note = "The NPC is an elderly human lady. The NPC patrols a long route; look along it. If absent, she can be on the house's upper floor, at 52.4, 42.1 in Stormwind City." },

@@ -164,7 +164,7 @@ Ding.RegisterGuide({
         { accept = 96627, races = { "Human" } }, -- level 5
         { accept = 5623, classes = { "PRIEST" }, -- level 5
           note = "The NPC is indoors at street level." },
-        { turnin = 3905, when = { log = 3905 }, -- level 5
+        { turnin = 3905, floor = "top", when = { log = 3905 }, -- level 5
           note = "Climb to the highest floor of the building." },
         { accept = 2158 }, -- level 5
         { turnin = 96627, races = { "Human" } }, -- level 5
@@ -174,24 +174,24 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { turnin = 2158, -- level 6
           note = "The NPC is indoors." },
-        { train = true, talk = 906, classes = { "WARLOCK" }, -- level 6
+        { train = true, floor = "down", talk = 906, classes = { "WARLOCK" }, -- level 6
           note = "The NPC waits on the lower level, indoors." },
-        { vendor = true, talk = 6374, classes = { "WARLOCK" }, -- level 6
+        { floor = "down", vendor = true, talk = 6374, classes = { "WARLOCK" }, -- level 6
           note = "The NPC waits on the lower level, indoors." },
-        { train = true, talk = 328, classes = { "MAGE" }, -- level 6
+        { train = true, floor = "up", talk = 328, classes = { "MAGE" }, -- level 6
           note = "The NPC is indoors, one floor up." },
-        { turnin = 5623, accept = 5624, classes = { "PRIEST" }, -- level 6
+        { turnin = 5623, accept = 5624, floor = "up", classes = { "PRIEST" }, -- level 6
           note = "The NPC is indoors, one floor up." },
-        { train = true, talk = 377, classes = { "PRIEST" }, -- level 6
+        { train = true, floor = "up", talk = 377, classes = { "PRIEST" }, -- level 6
           note = "The NPC is indoors, one floor up." },
         { complete = 5624, classes = { "PRIEST" }, -- level 6
           note = "Heal Guard Roberts using Lesser Heal (Rank 2). Buff Guard Roberts with Power Word: Fortitude." },
-        { turnin = 5624, when = { ready = 5624 }, classes = { "PRIEST" }, -- level 6
+        { turnin = 5624, floor = "up", when = { ready = 5624 }, classes = { "PRIEST" }, -- level 6
           note = "The NPC is indoors, one floor up." },
-        { train = true, talk = 917, classes = { "ROGUE" }, -- level 6
+        { train = true, floor = "up", talk = 917, classes = { "ROGUE" }, -- level 6
           note = "The NPC is indoors, one floor up." },
         { go = { 1429, 43.36, 65.49 }, classes = { "WARRIOR", "ROGUE" }, text = "Learn First Aid from the trainer" }, -- level 6
-        { talk = 2329, classes = { "WARRIOR", "ROGUE" }, -- level 6
+        { floor = "up", talk = 2329, classes = { "WARRIOR", "ROGUE" }, -- level 6
           note = "The NPC is indoors, one floor up. Do it only if you can." },
         { train = true, talk = 927, classes = { "PALADIN" } }, -- level 6
         { train = true, talk = 913, classes = { "WARRIOR" } }, -- level 6
@@ -239,15 +239,15 @@ Ding.RegisterGuide({
         { complete = 99128, races = { "Human" } }, -- level 8
         { turnin = 99128, races = { "Human" } }, -- level 8
         { accept = 99129, races = { "Human" } }, -- level 8
-        { train = true, talk = 906, classes = { "WARLOCK" }, -- level 8
+        { train = true, floor = "down", talk = 906, classes = { "WARLOCK" }, -- level 8
           note = "The NPC waits on the lower level, indoors." },
-        { vendor = true, talk = 6374, classes = { "WARLOCK" }, -- level 8
+        { floor = "down", vendor = true, talk = 6374, classes = { "WARLOCK" }, -- level 8
           note = "The NPC waits on the lower level, indoors." },
-        { train = true, talk = 328, classes = { "MAGE" }, -- level 8
+        { train = true, floor = "up", talk = 328, classes = { "MAGE" }, -- level 8
           note = "The NPC is indoors, one floor up." },
-        { train = true, talk = 377, classes = { "PRIEST" }, -- level 8
+        { train = true, floor = "up", talk = 377, classes = { "PRIEST" }, -- level 8
           note = "The NPC is indoors, one floor up." },
-        { train = true, talk = 917, classes = { "ROGUE" }, -- level 8
+        { train = true, floor = "up", talk = 917, classes = { "ROGUE" }, -- level 8
           note = "The NPC is indoors, one floor up." },
         { train = true, talk = 927, classes = { "PALADIN" } }, -- level 8
         { train = true, talk = 913, classes = { "WARRIOR" } }, -- level 8
@@ -292,21 +292,21 @@ Ding.RegisterGuide({
         { turnin = { 39, 76 }, accept = 239 }, -- level 9
         { accept = 1097, -- level 10
           note = "The NPC is indoors." },
-        { train = true, talk = 906, classes = { "WARLOCK" }, -- level 10
+        { train = true, floor = "down", talk = 906, classes = { "WARLOCK" }, -- level 10
           note = "The NPC waits on the lower level, indoors." },
-        { accept = 1685, classes = { "WARLOCK" }, -- level 10
+        { accept = 1685, floor = "down", classes = { "WARLOCK" }, -- level 10
           note = "The NPC waits on the lower level, indoors." },
-        { vendor = true, talk = 6374, classes = { "WARLOCK" }, -- level 10
+        { floor = "down", vendor = true, talk = 6374, classes = { "WARLOCK" }, -- level 10
           note = "The NPC waits on the lower level, indoors." },
-        { train = true, talk = 328, classes = { "MAGE" }, -- level 10
+        { train = true, floor = "up", talk = 328, classes = { "MAGE" }, -- level 10
           note = "The NPC is indoors, one floor up." },
-        { train = true, talk = 377, classes = { "PRIEST" }, -- level 10
+        { train = true, floor = "up", talk = 377, classes = { "PRIEST" }, -- level 10
           note = "The NPC is indoors, one floor up." },
-        { accept = 5635, classes = { "PRIEST" }, -- level 10
+        { accept = 5635, floor = "up", classes = { "PRIEST" }, -- level 10
           note = "The NPC is indoors, one floor up." },
-        { train = true, talk = 917, classes = { "ROGUE" }, -- level 10
+        { train = true, floor = "up", talk = 917, classes = { "ROGUE" }, -- level 10
           note = "The NPC is indoors, one floor up." },
-        { accept = 2205, classes = { "ROGUE" }, -- level 10
+        { accept = 2205, floor = "up", classes = { "ROGUE" }, -- level 10
           note = "The NPC is indoors, one floor up." },
         { train = true, talk = 927, classes = { "PALADIN" } }, -- level 10
         { train = true, talk = 913, classes = { "WARRIOR" } }, -- level 10
@@ -344,22 +344,22 @@ Ding.RegisterGuide({
         { talk = 11867, classes = { "WARRIOR", "PALADIN", "ROGUE", "PRIEST", "MAGE", "WARLOCK" }, -- level 10
           note = "The NPC is indoors." },
         { go = { 1453, 42.28, 81.85 }, classes = { "WARLOCK" }, text = "Head indoors" }, -- level 10
-        { turnin = 1685, accept = 1688, classes = { "WARLOCK" }, -- level 10
+        { turnin = 1685, accept = 1688, floor = "down", classes = { "WARLOCK" }, -- level 10
           note = "The NPC waits on the lower level, indoors." },
         { level = 11, patrol = { { 1429, 70.25, 76.35 }, { 1429, 68.37, 75.46 }, { 1429, 68.23, 77.76 }, { 1429, 66.94, 80.17 }, { 1429, 68.44, 82.64 }, { 1429, 70.55, 80.55 }, { 1429, 72.06, 77.45 } }, why = { kind = "level", levels = { 10, 15 } } }, -- level 10
         { complete = 1688, classes = { "WARLOCK" }, -- level 10
           note = "The target is indoors." },
         { go = { 1453, 42.28, 81.85 }, classes = { "WARLOCK" }, text = "Head indoors" }, -- level 10
-        { turnin = 1688, when = { ready = 1688 }, classes = { "WARLOCK" }, -- level 10
+        { turnin = 1688, floor = "down", when = { ready = 1688 }, classes = { "WARLOCK" }, -- level 10
           note = "The NPC waits on the lower level, indoors." },
         { accept = 1689, when = { done = 1688 }, classes = { "WARLOCK" } }, -- level 10
-        { complete = 1689, useitem = 6928, when = { log = 1689 }, classes = { "WARLOCK" }, -- level 10
+        { complete = 1689, floor = "down", useitem = 6928, when = { log = 1689 }, classes = { "WARLOCK" }, -- level 10
           note = "Step onto the pink rune. Look within the tomb. The target is on the lower level, indoors." },
         { turnin = 1689, when = { ready = 1689 }, classes = { "WARLOCK" }, -- level 10
           note = "The NPC stands one level over the crypt. The NPC waits on the lower level, indoors." },
         { sethearth = "Stormwind City", talk = 6740, -- level 11
           note = "The NPC is indoors." },
-        { turnin = 2205, classes = { "ROGUE" }, -- level 11
+        { turnin = 2205, floor = "up", classes = { "ROGUE" }, -- level 11
           note = "The NPC is indoors, one floor up." },
         { turnin = 6281, accept = 6261, -- level 11
           note = "The NPC is indoors." },
@@ -382,7 +382,7 @@ Ding.RegisterGuide({
         { talk = 5514, buy = { { 2901, 1, 5514 } }, classes = { "WARRIOR", "PALADIN", "ROGUE" }, -- level 11
           note = "The NPC is indoors." },
         { go = { 1453, 59.3, 37.8 }, classes = { "WARRIOR", "PALADIN", "ROGUE" }, text = "Learn Mining from the trainer" }, -- level 11
-        { talk = 5513, classes = { "WARRIOR", "PALADIN", "ROGUE" }, -- level 11
+        { floor = "up", talk = 5513, classes = { "WARRIOR", "PALADIN", "ROGUE" }, -- level 11
           note = "The NPC waits indoors, a floor above the entrance." },
         { turnin = 1097, accept = 353, why = { kind = "carry", quest = 353, seconds = 6360, xp = 1100 }, -- level 11
           note = "The NPC is indoors." },
@@ -424,7 +424,7 @@ Ding.RegisterGuide({
         { turnin = 312, elite = true, sticky = 287, -- level 11
           note = "Steer clear of the elite yeti patrolling close by. The NPC is up on the summit." },
         { go = { 1426, 24.9, 50.94 }, text = "Go into the cavern" }, -- level 11
-        { complete = 287, -- level 11
+        { complete = 287, floor = "down", -- level 11
           note = "Head to the lower level of the cavern." },
         { complete = 287, -- level 11
           note = "Targets are in the cavern and around its entrance too." },
@@ -479,7 +479,7 @@ Ding.RegisterGuide({
         { complete = 417, -- level 12
           note = "The target is a pale bear. This one roams, so scan the surrounding area." },
         { turnin = 417 }, -- level 12
-        { turnin = 353, -- level 12
+        { turnin = 353, floor = "up", -- level 12
           note = "Cross the tunnel to reach the NPC. The NPC is indoors, one floor up." },
         { go = { 1432, 33.9, 50.98 }, fly = true, talk = 1572, text = "Fly to Thelsamar" }, -- level 12
         { accept = 418, -- level 12
@@ -488,7 +488,7 @@ Ding.RegisterGuide({
           note = "The NPC patrols a long route; look along it." },
         { complete = 416, -- level 12
           note = "The targets are rat-like humanoids." },
-        { turnin = 1339, accept = 1338, -- level 12
+        { turnin = 1339, accept = 1338, floor = "up", -- level 12
           note = "The NPC is indoors, one floor up." },
         { collect = { { 3172, 3 } }, keep = 3172 }, -- level 12
         { collect = { { 3174, 3 } }, keep = 3174, -- level 12
@@ -499,7 +499,7 @@ Ding.RegisterGuide({
         { turnin = 418, when = { ready = 418 }, -- level 12
           note = "The NPC is indoors." },
         { accept = 224 }, -- level 12
-        { accept = 267, sticky = 224, -- level 12
+        { accept = 267, floor = "up", sticky = 224, -- level 12
           note = "The NPC is indoors, one floor up." },
         { go = { 1432, 29.26, 66.68 }, text = "Take the road to where the trail starts" }, -- level 12
         { complete = 267 }, -- level 12
@@ -508,14 +508,14 @@ Ding.RegisterGuide({
           note = "A class quest coming up requires this." },
         { go = { 1432, 30.62, 69.75 }, text = "Exit Stonesplinter Valley, then stay on the road" }, -- level 13
         { turnin = 224 }, -- level 13
-        { turnin = 267, -- level 13
+        { turnin = 267, floor = "up", -- level 13
           note = "The NPC is indoors, one floor up." },
-        { train = true, talk = 5498, classes = { "MAGE" }, -- level 13
+        { train = true, floor = "top", talk = 5498, classes = { "MAGE" }, -- level 13
           note = "The NPC waits on the tower's highest floor." },
         { go = { 1453, 42.29, 81.76 }, classes = { "WARLOCK" }, text = "Head indoors", -- level 13
           note = "The NPC waits on the lower level, indoors." },
         { train = true, talk = 461, classes = { "WARLOCK" } }, -- level 13
-        { vendor = true, talk = 5520, classes = { "WARLOCK" }, -- level 13
+        { floor = "down", vendor = true, talk = 5520, classes = { "WARLOCK" }, -- level 13
           note = "The NPC waits on the lower level, indoors." },
         { go = { 1453, 52.93, 51.05 }, classes = { "PRIEST" }, text = "Head indoors", -- level 13
           note = "This one roams, so scan the surrounding area. The NPC is indoors." },
@@ -532,7 +532,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { turnin = 1338 }, -- level 13
         { accept = 94773, races = { "Human" }, classes = { "PRIEST" } }, -- level 13
-        { train = true, talk = 5479, classes = { "WARRIOR" }, -- level 13
+        { train = true, floor = "up", talk = 5479, classes = { "WARRIOR" }, -- level 13
           note = "The NPC is indoors, one floor up." },
         { train = true, talk = 918, classes = { "ROGUE" } }, -- level 13
         { turnin = 1643, accept = 1644, classes = { "PALADIN" } }, -- level 13

@@ -44,7 +44,7 @@ Ding.RegisterGuide({
         { turnin = 2974, accept = 2976, why = { kind = "carry", quest = 2976, seconds = 23100, xp = 4900 } }, -- level 43
         { destroy = 9460 }, -- level 43
         { sethearth = "Camp Mojache", talk = 7737 }, -- level 43
-        { vendor = true, talk = 9548, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, -- level 43
+        { floor = "up", vendor = true, talk = 9548, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, -- level 43
           note = "A lengthy grinding stretch is coming up. The NPC is upstairs, out on the balcony." },
         { complete = 7731, -- level 43
           note = "The target is a winged green bug, level 47. You can likely beat it at your current level. The target circles in the air, so search around." },
@@ -105,7 +105,7 @@ Ding.RegisterGuide({
         { train = true, talk = 3352, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, -- level 44
           note = "The NPC stands on the highest level of this structure." },
         { go = { 1454, 56.3, 56.99 }, text = "Climb the steps" }, -- level 44
-        { turnin = 7732, -- level 44
+        { turnin = 7732, floor = "up", -- level 44
           note = "The NPC is indoors, one floor up." },
         { talk = 3309, collect = { { 2725, 1 }, { 2728, 1 }, { 2730, 1 }, { 2732, 1 }, { 2734, 1 }, { 2735, 1 }, { 2738, 1 }, { 2740, 1 }, { 2742, 1 }, { 2744, 1 }, { 2745, 1 }, { 2748, 1 }, { 2749, 1 }, { 2750, 1 }, { 2751, 1 } }, -- level 44
           note = "If some pages are unavailable, go on without them. The NPC is indoors." },

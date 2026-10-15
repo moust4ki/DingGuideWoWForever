@@ -146,7 +146,7 @@ Ding.RegisterGuide({
         { turnin = 81, -- level 50
           note = "The NPC is indoors." },
         { turnin = 97242, races = { "Skyborne" } }, -- level 50
-        { turnin = 4300, -- level 50
+        { turnin = 4300, floor = "up", -- level 50
           note = "The NPC is upstairs, out on the balcony." },
         { train = true, talk = 3353, classes = { "WARRIOR" }, -- level 50
           note = "The NPC is indoors." },

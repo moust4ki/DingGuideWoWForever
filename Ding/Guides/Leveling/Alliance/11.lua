@@ -69,7 +69,7 @@ Ding.RegisterGuide({
         { turnin = 2360, accept = 2359, classes = { "ROGUE" } }, -- level 26
         { complete = 2359, classes = { "ROGUE" }, -- level 26
           note = "Rob one Malformed Defias Drone with Pickpocket. This one roams, so scan the surrounding area." },
-        { complete = 2359, classes = { "ROGUE" }, -- level 26
+        { complete = 2359, floor = "top", classes = { "ROGUE" }, -- level 26
           note = "Use Sap on Klaven Mortwake, then open the chest. Opening it puts a harmful effect on you. Climb to the highest floor of the building." },
         { turnin = 67, accept = 68, why = { back = true, chain = 11, kind = "detour", quest = 67, seconds = 300, short = true, xp = 13000 }, -- level 26
           note = "Be ready for a fight right away. The object is indoors." },
@@ -84,11 +84,11 @@ Ding.RegisterGuide({
         { collect = { { 15882, 1 } }, spots = { { 1436, 17.91, 33.06 } }, races = { "NightElf" }, classes = { "DRUID" }, -- level 26
           note = "Your targets sit below the water's surface." },
         { complete = 272, useitem = 15883, when = { log = 272 }, races = { "NightElf", "Skyborne" }, classes = { "DRUID" } }, -- level 26
-        { turnin = 272, when = { ready = 272 }, races = { "NightElf", "Skyborne" }, classes = { "DRUID" }, -- level 26
+        { turnin = 272, floor = "up", when = { ready = 272 }, races = { "NightElf", "Skyborne" }, classes = { "DRUID" }, -- level 26
           note = "The NPC is indoors, one floor up." },
         { accept = 5061, when = { done = 272 }, races = { "NightElf" }, classes = { "DRUID" } }, -- level 26
         { train = true, talk = 12042, races = { "NightElf" }, classes = { "DRUID" } }, -- level 26
-        { turnin = 5061, when = { log = 5061 }, races = { "NightElf" }, classes = { "DRUID" }, -- level 26
+        { turnin = 5061, floor = "top", when = { log = 5061 }, races = { "NightElf" }, classes = { "DRUID" }, -- level 26
           note = "Climb to the highest floor of the building." },
         { turnin = 5, accept = 93, -- level 26
           note = "The NPC is indoors." },
@@ -114,7 +114,7 @@ Ding.RegisterGuide({
         { turnin = 230, accept = 262 }, -- level 27
         { turnin = 69, accept = 70, -- level 27
           note = "The NPC is indoors." },
-        { complete = 70, -- level 27
+        { complete = 70, floor = "up", -- level 27
           note = "The object is indoors, one floor up." },
         { turnin = 95998, races = { "Human" } }, -- level 27
         { complete = 96606, races = { "NightElf" } }, -- level 27
@@ -124,36 +124,36 @@ Ding.RegisterGuide({
         { train = true, talk = 5492, races = { "Human", "Dwarf" }, classes = { "PALADIN" }, -- level 27
           note = "The NPC is indoors." },
         { train = true, talk = 918, classes = { "ROGUE" } }, -- level 27
-        { turnin = 2359, when = { ready = 2359 }, classes = { "ROGUE" }, -- level 27
+        { turnin = 2359, floor = "up", when = { ready = 2359 }, classes = { "ROGUE" }, -- level 27
           note = "The NPC is indoors, one floor up." },
         { accept = 2607, when = { done = 2359 }, classes = { "ROGUE" } }, -- level 27
-        { turnin = 2607, when = { log = 2607 }, classes = { "ROGUE" }, -- level 27
+        { turnin = 2607, floor = "down", when = { log = 2607 }, classes = { "ROGUE" }, -- level 27
           note = "The NPC waits on the lower level, indoors." },
         { accept = 2608, when = { done = 2607 }, classes = { "ROGUE" } }, -- level 27
         { complete = 2608, when = { log = 2608 }, classes = { "ROGUE" }, -- level 27
           note = "Let the conversation play out. Target Doc Mixilpixil, then take a seat." },
-        { turnin = 2608, when = { ready = 2608 }, classes = { "ROGUE" }, -- level 27
+        { turnin = 2608, floor = "down", when = { ready = 2608 }, classes = { "ROGUE" }, -- level 27
           note = "The NPC waits on the lower level, indoors." },
         { train = true, talk = 5515, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 27
           note = "The NPC is indoors." },
         { go = { 1453, 52.93, 51.05 }, races = { "Human", "Dwarf", "NightElf" }, classes = { "PRIEST" }, text = "Head indoors", -- level 27
           note = "This one roams, so scan the surrounding area. The NPC is indoors." },
         { train = true, talk = 5484, races = { "Human", "Dwarf", "NightElf" }, classes = { "PRIEST" } }, -- level 27
-        { train = true, talk = 5479, classes = { "WARRIOR" }, -- level 27
+        { train = true, floor = "up", talk = 5479, classes = { "WARRIOR" }, -- level 27
           note = "The NPC is indoors, one floor up." },
         { turnin = 70, accept = 72, why = { chain = 7, kind = "detour", quest = 72, quests = 11, seconds = 60, total = 14000, xp = 7900 } }, -- level 27
         { turnin = 72, accept = 74, why = { kind = "carry", quest = 74, seconds = 41760, xp = 1200 }, -- level 27
           note = "Be ready for a fight right away." },
         { go = { 1453, 42.28, 81.85 }, text = "Head indoors" }, -- level 27
         { accept = 335, races = { "Dwarf", "NightElf" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "WARLOCK", "DRUID" } }, -- level 27
-        { accept = 335, races = { "Human", "Gnome", "Skyborne" }, -- level 27
+        { accept = 335, floor = "down", races = { "Human", "Gnome", "Skyborne" }, -- level 27
           note = "The NPC waits on the lower level, indoors." },
         { go = { 1453, 42.29, 81.76 }, races = { "Human", "Gnome" }, classes = { "WARLOCK" }, text = "Head indoors", -- level 27
           note = "The NPC waits on the lower level, indoors." },
         { train = true, talk = 461, races = { "Human", "Gnome" }, classes = { "WARLOCK" } }, -- level 27
-        { vendor = true, talk = 5520, races = { "Human", "Gnome" }, classes = { "WARLOCK" }, -- level 27
+        { floor = "down", vendor = true, talk = 5520, races = { "Human", "Gnome" }, classes = { "WARLOCK" }, -- level 27
           note = "The NPC waits on the lower level, indoors." },
-        { train = true, talk = 5498, races = { "Human", "Gnome" }, classes = { "MAGE" }, -- level 27
+        { train = true, floor = "top", talk = 5498, races = { "Human", "Gnome" }, classes = { "MAGE" }, -- level 27
           note = "The NPC waits on the tower's highest floor." },
         { accept = 20 }, -- level 27
         { accept = { 127, 150 } }, -- level 27

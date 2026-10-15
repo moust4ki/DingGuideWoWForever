@@ -21,7 +21,7 @@ Ding.RegisterGuide({
         { accept = 472 }, -- level 28
         { turnin = 98197 }, -- level 28
         { accept = 98221 }, -- level 28
-        { accept = 464, -- level 28
+        { accept = 464, floor = "up", -- level 28
           note = "The NPC is indoors, one floor up." },
         { turnin = 281, accept = 284 }, -- level 28
         { turnin = 284, accept = 285 }, -- level 28
@@ -85,14 +85,14 @@ Ding.RegisterGuide({
         { turnin = 471 }, -- level 29
         { accept = 98240 }, -- level 29
         { turnin = 98072, races = { "Dwarf", "NightElf", "Gnome", "Skyborne" } }, -- level 29
-        { turnin = 464, accept = 465, -- level 29
+        { turnin = 464, accept = 465, floor = "up", -- level 29
           note = "The NPC is indoors, one floor up." },
         { accept = 98230 }, -- level 29
         { turnin = 98189, races = { "Dwarf", "NightElf", "Gnome", "Skyborne" } }, -- level 29
         { turnin = 98221 }, -- level 29
-        { complete = 290, when = { log = 290 }, -- level 29
+        { complete = 290, floor = "top", when = { log = 290 }, -- level 29
           note = "The target is up on the boat's top deck. Climb the incline at the rear." },
-        { turnin = 290, when = { log = 290 }, -- level 29
+        { turnin = 290, floor = "down", when = { log = 290 }, -- level 29
           note = "Go to the lowest deck of the ship. Your targets sit below the water's surface. Swim in via the gap at the base." },
         { accept = 292, when = { done = 290 } }, -- level 29
         { complete = 275, -- level 29
@@ -120,7 +120,7 @@ Ding.RegisterGuide({
         { accept = 631 }, -- level 29
         { turnin = 472 }, -- level 29
         { go = { 1437, 51.31, 8.08 }, text = "Take the door on the bridge, then descend the steps" }, -- level 29
-        { turnin = 631, accept = 632, -- level 29
+        { turnin = 631, accept = 632, floor = "down", -- level 29
           note = "Be ready for a fight right away. The object is on the lower level within the bridge." },
         { turnin = 632, accept = 633 }, -- level 29
         { go = { 1437, 50.6, 8.48 }, text = "Leap from the span and splash down below" }, -- level 29

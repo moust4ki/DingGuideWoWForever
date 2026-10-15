@@ -60,14 +60,14 @@ Ding.RegisterGuide({
         { accept = 3462, elite = true }, -- level 50
         { turnin = 3462, elite = true }, -- level 50
         { accept = 3463, elite = true }, -- level 50
-        { complete = 3463, elite = true, equip = 10515, -- level 50
+        { complete = 3463, elite = true, floor = "up", equip = 10515, -- level 50
           note = "The spot is at the tower's upper level. Beware, this foe is elite." },
-        { complete = 3463, elite = true, equip = 10515, -- level 50
+        { complete = 3463, elite = true, floor = "up", equip = 10515, -- level 50
           note = "The spot is at the tower's upper level. Beware, this foe is elite." },
-        { complete = 3463, elite = true, equip = 10515, -- level 50
+        { complete = 3463, elite = true, floor = "up", equip = 10515, -- level 50
           note = "The spot is at the tower's upper level. Beware, this foe is elite." },
         { go = { 1427, 52.52, 58.01 }, elite = true, text = "Walk over the rope bridge" }, -- level 50
-        { complete = 3463, elite = true, equip = 10515, -- level 50
+        { complete = 3463, elite = true, floor = "up", equip = 10515, -- level 50
           note = "The spot is at the tower's upper level. Beware, this foe is elite." },
         { turnin = 4451, accept = 4449, races = { "Gnome", "Skyborne" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" } }, -- level 50
         { turnin = 4451, accept = 4449, races = { "Human", "Dwarf" } }, -- level 50
@@ -111,16 +111,16 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { talk = 2455, bank = 10575, -- level 51
           note = "The NPC is indoors. You need it later for \"A Taste of Flame\": keep it in the bank to free a bag slot." },
-        { accept = 7791, when = { item = { 2592, 60 } }, -- level 51
+        { accept = 7791, floor = "up", when = { item = { 2592, 60 } }, -- level 51
           note = "The NPC is indoors, one floor up." },
         { turnin = 7791, when = { item = { 2592, 60 }, ready = 7791 } }, -- level 51
-        { accept = 7793, when = { item = { 4306, 60 } }, -- level 51
+        { accept = 7793, floor = "up", when = { item = { 4306, 60 } }, -- level 51
           note = "The NPC is indoors, one floor up." },
         { turnin = 7793, when = { item = { 4306, 60 }, ready = 7793 } }, -- level 51
-        { accept = 7794, when = { item = { 4338, 60 } }, -- level 51
+        { accept = 7794, floor = "up", when = { item = { 4338, 60 } }, -- level 51
           note = "The NPC is indoors, one floor up." },
         { turnin = 7794, when = { item = { 4338, 60 }, ready = 7794 } }, -- level 51
-        { accept = 7795, when = { done = { 7791, 7793, 7794 }, item = { 14047, 60 } }, -- level 51
+        { accept = 7795, floor = "up", when = { done = { 7791, 7793, 7794 }, item = { 14047, 60 } }, -- level 51
           note = "The NPC is indoors, one floor up." },
         { turnin = 7795, when = { done = { 7791, 7793, 7794 }, item = { 14047, 60 }, ready = 7795 } }, -- level 51
     },

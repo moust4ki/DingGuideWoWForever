@@ -27,7 +27,7 @@ Ding.RegisterGuide({
     steps    = {
         { go = { 1419, 67.57, 19.29 }, text = "Travel to Nethergarde Keep", -- level 51
           note = "Blasted Lands: Nethergarde Keep, in the north-east, then the Burning Steppes." },
-        { accept = 2783, -- level 51
+        { accept = 2783, floor = "top", -- level 51
           note = "The NPC waits on the tower's highest floor." },
         { turnin = 2783, accept = 2801, why = { back = true, kind = "detour", quest = 2783, quests = 2, seconds = 60, total = 5100, xp = 4500 } }, -- level 51
         { complete = 2801, talk = 7572 }, -- level 51

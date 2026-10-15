@@ -47,11 +47,11 @@ Ding.RegisterGuide({
           note = "Your objective lies in a little cavern. It wanders to the mouth of the cave." },
         { complete = 503, -- level 38
           note = "The targets are spread over several spots. The NPC is indoors. Look on the upper floor as well." },
-        { complete = 503, -- level 38
+        { complete = 503, floor = "up", -- level 38
           note = "The NPC is indoors, one floor up." },
-        { turnin = 503, accept = 506, -- level 38
+        { turnin = 503, accept = 506, floor = "up", -- level 38
           note = "The NPC is indoors, one floor up." },
-        { complete = 566, -- level 38
+        { complete = 566, floor = "down", -- level 38
           note = "The target is on the lower level, indoors. If it is not around, move on without it. No rush; you may complete this afterwards." },
         { turnin = 506, accept = 507, why = { back = true, chain = 2, kind = "detour", quest = 506, quests = 4, seconds = 300, short = true, total = 13000, xp = 10000 }, -- level 38
           note = "The NPC is indoors." },
@@ -59,9 +59,9 @@ Ding.RegisterGuide({
         { go = { 1416, 38.86, 39.49 }, text = "Climb the slope, then leap the wall" }, -- level 38
         { complete = 557 }, -- level 38
         { complete = 545 }, -- level 38
-        { complete = 507, -- level 39
+        { complete = 507, floor = "up", -- level 39
           note = "The target is indoors, one floor up. Beware of foes lurking in stealth." },
-        { turnin = 507, accept = 508, -- level 39
+        { turnin = 507, accept = 508, floor = "up", -- level 39
           note = "The NPC is indoors, one floor up." },
         { turnin = 545, why = { kind = "detour", quest = 508, quests = 3, seconds = 60, total = 8700, xp = 3900 }, -- level 39
           note = "The NPC is indoors." },
@@ -76,7 +76,7 @@ Ding.RegisterGuide({
           note = "The targets are kobolds. Additional ones are in the cavern up the trail. The following step takes place in the cave." },
         { go = { 1417, 80.95, 40.02 }, text = "Climb the trail to the cavern" }, -- level 39
         { go = { 1417, 82.62, 36.1 }, text = "Go into the cavern" }, -- level 39
-        { turnin = 642, accept = 651, -- level 39
+        { turnin = 642, accept = 651, floor = "up", -- level 39
           note = "Climb to the cave's upper level." },
         { go = { 1417, 82.75, 36.26 }, text = "Head out of the cave" }, -- level 39
         { accept = 79976 }, -- level 39

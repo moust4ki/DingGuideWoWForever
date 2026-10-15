@@ -41,7 +41,7 @@ Ding.RegisterGuide({
         { turnin = 5228, accept = 5229 }, -- level 56
         { complete = 5229, why = { back = true, chain = 8, kind = "detour", quest = 5229, quests = 14, seconds = 120, total = 62000, xp = 43000 } }, -- level 56
         { turnin = 5229, accept = 5230 }, -- level 56
-        { accept = 5021, -- level 56
+        { accept = 5021, floor = "up", -- level 56
           note = "The NPC is indoors, one floor up." },
         { turnin = 5021, accept = 5023, why = { kind = "carry", quest = 5023, seconds = 26880, xp = 2600 }, -- level 56
           note = "The object is indoors." },
@@ -55,10 +55,10 @@ Ding.RegisterGuide({
           note = "Look for a white set of bones. This one roams, so scan the surrounding area. The targets appear in several places." },
         { collect = { { 12739, 1 } }, -- level 56
           note = "Finish Locked Away to obtain this." },
-        { accept = 5060, -- level 56
+        { accept = 5060, floor = "up", -- level 56
           note = "The object is indoors, one floor up." },
         { turnin = 5060, when = { ready = 5060 } }, -- level 56
-        { accept = 4971, -- level 56
+        { accept = 4971, floor = "up", -- level 56
           note = "The NPC is indoors, one floor up." },
         { complete = 5098, elite = true, useitem = 12815, -- level 56
           note = "Stand at the watchtower's doorway. An elite foe waits indoors; stay clear of it." },
@@ -70,7 +70,7 @@ Ding.RegisterGuide({
           note = "Stand at the watchtower's doorway. An elite foe waits indoors; stay clear of it." },
         { complete = 5098, elite = true, useitem = 12815, -- level 56
           note = "Stand at the watchtower's doorway. An elite foe waits indoors; stay clear of it." },
-        { turnin = 4971, accept = 4972, -- level 56
+        { turnin = 4971, accept = 4972, floor = "up", -- level 56
           note = "The NPC is indoors, one floor up." },
         { complete = 4972, -- level 56
           note = "Look for little gray coffers of metal. The targets are in the ruined houses." },
@@ -136,7 +136,7 @@ Ding.RegisterGuide({
         { complete = 5211, talk = 11064, -- level 57
           note = "The targets are ghouls. Other undead compete for the same spawn points. The spirits rise where those foes die." },
         { go = { 1423, 23.38, 73.25 }, text = "Go down into the tomb" }, -- level 57
-        { complete = 6021, races = { "Skyborne" }, -- level 57
+        { complete = 6021, floor = "down", races = { "Skyborne" }, -- level 57
           note = "This is below ground, on the crypt's lower floor." },
         { turnin = 6022, elite = true, when = { item = 15448 } }, -- level 57
         { turnin = 6042 }, -- level 57
@@ -152,13 +152,13 @@ Ding.RegisterGuide({
           note = "Check each of the two floors indoors." },
         { accept = 5153, when = { done = 5152 } }, -- level 57
         { complete = 5153, when = { log = 5153 } }, -- level 57
-        { turnin = 4972, -- level 57
+        { turnin = 4972, floor = "up", -- level 57
           note = "The NPC is indoors, one floor up." },
         { turnin = 5153, when = { log = 5153 } }, -- level 57
         { accept = 5154, when = { done = 5153 } }, -- level 57
         { complete = 5154, when = { log = 5154 }, -- level 57
           note = "Move the camera close and check which book is genuine. Some books are traps that summon foes. The genuine book can look two ways:" },
-        { turnin = 5154, when = { log = 5154 }, -- level 57
+        { turnin = 5154, floor = "up", when = { log = 5154 }, -- level 57
           note = "The NPC is indoors, one floor up." },
         { accept = 5210, when = { done = 5154 } }, -- level 57
         { destroy = 15696 }, -- level 57
@@ -197,12 +197,12 @@ Ding.RegisterGuide({
         { accept = 5236, when = { done = 5235 }, why = { kind = "carry", quest = 5236, seconds = 18540, xp = 3100 } }, -- level 57
         { turnin = 5902, accept = 6390, why = { kind = "carry", quest = 6390, seconds = 18480, xp = 5700 }, -- level 57
           note = "The object is indoors. It shows up on top of the box." },
-        { turnin = 5050, accept = 5051, -- level 57
+        { turnin = 5050, accept = 5051, floor = "up", -- level 57
           note = "The NPC is indoors, one floor up." },
         { collect = { { 12722, 1 } }, spots = { { 1422, 38.03, 56.41 }, { 1422, 36.17, 57.43 }, { 1422, 36.15, 59.35 }, { 1422, 37.26, 55.35 } }, -- level 57
           note = "The target is a ghoul armed with a hayfork. This one roams, so scan the surrounding area. It can appear at this spot." },
         { complete = 5051, useitem = 12722 }, -- level 57
-        { turnin = 5051, when = { item = 12723 }, -- level 57
+        { turnin = 5051, floor = "up", when = { item = 12723 }, -- level 57
           note = "The NPC is indoors, one floor up." },
         { level = 58, patrol = { { 1422, 41.76, 62.04 }, { 1422, 44.76, 62.24 }, { 1422, 47.94, 63.04 }, { 1422, 45.66, 65.43 }, { 1422, 42.57, 66.96 }, { 1422, 39.35, 66.86 }, { 1422, 37.83, 70.45 }, { 1422, 40.97, 70.37 }, { 1422, 44.44, 69.83 }, { 1422, 46.94, 71.55 }, { 1422, 48.03, 68.17 }, { 1422, 44.24, 74.76 }, { 1422, 40.23, 73.75 } }, why = { kind = "level", levels = { 55, 60 } } }, -- level 57
         { turnin = 5236, when = { log = 5236 }, why = { kind = "detour", quest = 5238, quests = 3, seconds = 60, total = 18000, xp = 9300 } }, -- level 58

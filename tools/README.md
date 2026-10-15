@@ -33,6 +33,7 @@ the guides; nothing here is loaded by the game.
 | `media/textures.py` | Python 3, no dependencies: draws the kit texture missing from the handoff and puts the origin of the TGAs at the bottom (`python3 tools/media/textures.py Ding/Media/Textures`) |
 | `translate_guides.lua` | Writes the translations of each guide in the TOC, one per language (`Ding/Locales/Guides/<locale>/`), from the `routes/locales/<locale>.lua` dictionaries, and their lines in `Ding.toc` (`lua5.1 tools/translate_guides.lua [locale...]`); exit code 1 if a translation is missing |
 | `guide_texts.lua` | Shared module: language dictionaries, translation of a note sentence by sentence, writing of the translation files |
+| `guide_floor.lua` | Shared module: the floor a guide note names (`floor` key: "up", "top", "down"), from an explicit table of English phrases; used by `write_leveling.lua` and `check_guides.lua` |
 | `check_package.py` | Python 3, no dependencies: checks the zip built by the BigWigs packager before publishing (`python3 tools/check_package.py .release/Ding-*.zip`, from the repository root) |
 | `docs/icon/*.svg` | The icon's vector sources (logo, minimap button, gold arrow, CurseForge avatar): `logo64` / `logo32`, `minimap_icon64` / `minimap_icon32` and `arrow_gold` in `Ding/Media/Textures` are exports of them, in their own colors |
 

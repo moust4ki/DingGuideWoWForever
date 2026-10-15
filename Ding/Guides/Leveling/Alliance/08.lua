@@ -42,7 +42,7 @@ Ding.RegisterGuide({
         { complete = 6122, useitem = 15844, races = { "NightElf", "Skyborne" }, classes = { "DRUID" }, -- level 21
           note = "The spot is at the cave's mouth." },
         { go = { 1439, 55.01, 33.34 }, text = "Go into the cavern" }, -- level 21
-        { complete = 947, -- level 21
+        { complete = 947, floor = "up", -- level 21
           note = "Look for the brown fungi. Climb to the cave's upper level. Extra ones are below, in the side chambers." },
         { complete = 947, -- level 21
           note = "Gather the blue-capped fungi. Your targets are within the cavern." },

@@ -18,11 +18,11 @@ Ding.RegisterGuide({
           note = "The NPC is indoors at street level." },
         { accept = 605, -- level 35
           note = "The NPC is indoors at street level." },
-        { accept = { 201, 198, 616 }, -- level 35
+        { accept = { 201, 198, 616 }, floor = "top", -- level 35
           note = "Climb to the highest floor of the building." },
-        { accept = 213, -- level 35
+        { accept = 213, floor = "top", -- level 35
           note = "Climb to the highest floor of the building." },
-        { turnin = { 1181, 616 }, accept = { 1182, 578 }, -- level 35
+        { turnin = { 1181, 616 }, accept = { 1182, 578 }, floor = "up", -- level 35
           note = "The NPC is upstairs, out on the balcony." },
         { talk = 2625 }, -- level 35
         { bank = 5800, when = { log = 1112 }, -- level 35
@@ -34,7 +34,7 @@ Ding.RegisterGuide({
           note = "The NPC stands on the top tier of the pier. The NPC is indoors." },
         { go = { 1434, 27.5, 77.84 }, fly = true, talk = 2859, text = "Fly to Booty Bay", -- level 35
           note = "The NPC stands on the top tier of the pier. The NPC is upstairs, out on the balcony." },
-        { train = true, talk = 5498, races = { "Human", "Gnome" }, classes = { "MAGE" }, -- level 35
+        { train = true, floor = "top", talk = 5498, races = { "Human", "Gnome" }, classes = { "MAGE" }, -- level 35
           note = "The NPC waits on the tower's highest floor." },
         { turnin = 198, -- level 35
           note = "If he is absent, move on without him. You may come back for it another time." },
@@ -45,7 +45,7 @@ Ding.RegisterGuide({
         { accept = 186 }, -- level 35
         { accept = 191, sticky = { 204, 203 } }, -- level 35
         { complete = 204 }, -- level 35
-        { turnin = 200, accept = 328, -- level 35
+        { turnin = 200, accept = 328, floor = "up", -- level 35
           note = "The object is indoors, one floor up." },
         { complete = 204, keep = 2633, -- level 35
           note = "These foes heal both their allies and themselves." },
@@ -54,7 +54,7 @@ Ding.RegisterGuide({
           note = "When the targets run out, skip ahead. No rush; you may complete this afterwards." },
         { complete = 186 }, -- level 35
         { level = 35, sticky = 213, patrol = { { 1434, 46.35, 12.74 }, { 1434, 45.94, 15.25 }, { 1434, 46.43, 17.64 }, { 1434, 42.85, 14.97 }, { 1434, 44.03, 13.46 } } }, -- level 35
-        { collect = { { 5851, 1 } }, spots = { { 1434, 42.62, 18.29 } }, -- level 35
+        { floor = "up", collect = { { 5851, 1 } }, spots = { { 1434, 42.62, 18.29 } }, -- level 35
           note = "The objective sits up on the raised deck. The target is indoors." },
         { complete = 1182, -- level 35
           note = "The object is indoors." },
@@ -79,11 +79,11 @@ Ding.RegisterGuide({
         { turnin = 191 }, -- level 35
         { turnin = 605, -- level 35
           note = "The NPC is indoors at street level." },
-        { turnin = { 201, 210 }, -- level 35
+        { turnin = { 201, 210 }, floor = "top", -- level 35
           note = "Climb to the highest floor of the building." },
-        { turnin = 213, -- level 35
+        { turnin = 213, floor = "top", -- level 35
           note = "Climb to the highest floor of the building." },
-        { turnin = { 578, 1182 }, accept = 1183, why = { continent = true, kind = "carry", quest = 1183, seconds = 17040, xp = 700 }, -- level 35
+        { turnin = { 578, 1182 }, accept = 1183, floor = "up", why = { continent = true, kind = "carry", quest = 1183, seconds = 17040, xp = 700 }, -- level 35
           note = "The NPC is upstairs, out on the balcony." },
         { talk = 2625, bank = { 5852, 2719 }, -- level 35
           note = "You need them later for \"Goblin Sponsorship\" and \"The Hidden Key\": keep them in the bank to free bag slots." },
@@ -136,7 +136,7 @@ Ding.RegisterGuide({
         { go = { 1453, 42.29, 81.76 }, races = { "Human", "Gnome" }, classes = { "WARLOCK" }, text = "Head indoors", -- level 35
           note = "The NPC waits on the lower level, indoors." },
         { train = true, talk = 461, races = { "Human", "Gnome" }, classes = { "WARLOCK" } }, -- level 35
-        { vendor = true, talk = 5520, races = { "Human", "Gnome" }, classes = { "WARLOCK" }, -- level 35
+        { floor = "down", vendor = true, talk = 5520, races = { "Human", "Gnome" }, classes = { "WARLOCK" }, -- level 35
           note = "The NPC waits on the lower level, indoors." },
         { go = { 1453, 52.93, 51.05 }, races = { "Human", "Dwarf" }, classes = { "PALADIN" }, text = "Head indoors", -- level 35
           note = "The NPC is indoors." },
@@ -144,7 +144,7 @@ Ding.RegisterGuide({
         { go = { 1453, 52.93, 51.05 }, races = { "Human", "Dwarf", "NightElf" }, classes = { "PRIEST" }, text = "Head indoors", -- level 35
           note = "This one roams, so scan the surrounding area. The NPC is indoors." },
         { train = true, talk = 5484, races = { "Human", "Dwarf", "NightElf" }, classes = { "PRIEST" } }, -- level 35
-        { train = true, talk = 5479, classes = { "WARRIOR" }, -- level 35
+        { train = true, floor = "up", talk = 5479, classes = { "WARRIOR" }, -- level 35
           note = "The NPC is indoors, one floor up." },
         { train = true, talk = 918, classes = { "ROGUE" } }, -- level 35
         { train = true, talk = 5515, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 35

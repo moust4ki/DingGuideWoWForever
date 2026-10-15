@@ -47,7 +47,7 @@ Ding.RegisterGuide({
           note = "The targets are lobsters. Your targets sit below the water's surface." },
         { turnin = 1455, accept = 1456 }, -- level 36
         { turnin = 1465, accept = 1438, sticky = 1459 }, -- level 36
-        { complete = 5741, -- level 36
+        { complete = 5741, floor = "top", -- level 36
           note = "The target is on the tower's highest floor." },
         { turnin = 1438, accept = 1439, -- level 36
           note = "For this quest you guard an NPC on the move. If she is absent, wait for her to reappear. The NPC is indoors." },

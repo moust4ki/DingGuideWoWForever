@@ -57,9 +57,9 @@ Ding.RegisterGuide({
           note = "The NPC is indoors at street level." },
         { train = true, talk = 3594, classes = { "ROGUE" }, -- level 2
           note = "The NPC is indoors at street level." },
-        { turnin = 3119, classes = { "PRIEST" }, -- level 2
+        { turnin = 3119, floor = "up", classes = { "PRIEST" }, -- level 2
           note = "The NPC is indoors, one floor up." },
-        { train = true, talk = 3595, classes = { "PRIEST" }, -- level 2
+        { train = true, floor = "up", talk = 3595, classes = { "PRIEST" }, -- level 2
           note = "The NPC is indoors, one floor up." },
         { go = { 1438, 57.58, 41.68 }, classes = { "HUNTER" }, text = "Climb the big ramp" }, -- level 2
         { turnin = 3117, classes = { "HUNTER" }, -- level 2
@@ -96,7 +96,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors at street level." },
         { train = true, talk = 3594, classes = { "ROGUE" }, -- level 5
           note = "The NPC is indoors at street level." },
-        { train = true, talk = 3595, classes = { "PRIEST" }, -- level 5
+        { train = true, floor = "up", talk = 3595, classes = { "PRIEST" }, -- level 5
           note = "The NPC is indoors, one floor up." },
         { go = { 1438, 57.58, 41.68 }, classes = { "HUNTER" }, text = "Climb the big ramp", -- level 5
           note = "The NPC stands high in the great tree. The NPC stands in an adjoining chamber." },
@@ -112,7 +112,7 @@ Ding.RegisterGuide({
         { go = { 1438, 56.75, 31.36 }, text = "Go into the cavern" }, -- level 5
         { go = { 1438, 56.8, 28.9 }, text = "Take the trail downhill" }, -- level 5
         { go = { 1438, 55.71, 25.55 }, text = "Climb the trail" }, -- level 5
-        { complete = 917, -- level 5
+        { complete = 917, floor = "up", -- level 5
           note = "Climb to the cave's upper level." },
         { complete = 3521, -- level 5
           note = "Targets are in the cavern and around its entrance too." },
@@ -135,7 +135,7 @@ Ding.RegisterGuide({
         { deathskip = true, revive = { 1438, 58.72, 42.48 }, text = "Get yourself killed, then resurrect with the spirit healer" }, -- level 6
         { talk = 6491 }, -- level 6
         { go = { 1438, 56.72, 31.49 }, classes = { "PRIEST" }, text = "Head out of the cave" }, -- level 6
-        { accept = 5622, classes = { "PRIEST" }, -- level 6
+        { accept = 5622, floor = "up", classes = { "PRIEST" }, -- level 6
           note = "The NPC is indoors, one floor up." },
         { go = { 1438, 56.72, 31.49 }, text = "Head out of the cave" }, -- level 6
         { go = { 1438, 57.48, 41.68 }, text = "Climb the big ramp" }, -- level 6
@@ -154,12 +154,12 @@ Ding.RegisterGuide({
         { go = { 1438, 55.25, 56.78 }, classes = { "WARRIOR", "ROGUE" }, text = "Learn First Aid from the trainer" }, -- level 6
         { talk = 6094, classes = { "WARRIOR", "ROGUE" }, -- level 6
           note = "The NPC is indoors at street level. Do it only if you can." },
-        { accept = { 932, 2438 }, -- level 6
+        { accept = { 932, 2438 }, floor = "top", -- level 6
           note = "The NPC waits on the tower's highest floor." },
         { accept = 87288, races = { "NightElf" } }, -- level 6
         { train = true, talk = 3598, classes = { "WARRIOR" }, -- level 6
           note = "The NPC is indoors." },
-        { turnin = 2159, -- level 6
+        { turnin = 2159, floor = "up", -- level 6
           note = "The NPC is indoors, one floor up." },
         { train = true, talk = 3599, classes = { "ROGUE" }, -- level 6
           note = "The NPC is indoors." },
@@ -179,7 +179,7 @@ Ding.RegisterGuide({
         { complete = 918 }, -- level 6
         { turnin = { 918, 919 }, accept = 922, sticky = 488, why = { kind = "carry", quest = 922, seconds = 6840, xp = 300 } }, -- level 6
         { complete = 929, useitem = 5619 }, -- level 7
-        { turnin = 475, accept = 476, -- level 7
+        { turnin = 475, accept = 476, floor = "up", -- level 7
           note = "The NPC is indoors, one floor up." },
         { complete = 2438, -- level 7
           note = "The object is indoors." },
@@ -200,7 +200,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors at street level." },
         { train = true, talk = 3600, classes = { "PRIEST" }, -- level 8
           note = "The NPC is indoors at street level." },
-        { turnin = 2438, accept = 2459, -- level 8
+        { turnin = 2438, accept = 2459, floor = "top", -- level 8
           note = "The NPC waits on the tower's highest floor." },
         { accept = 99046, races = { "NightElf" } }, -- level 8
         { train = true, talk = 3598, classes = { "WARRIOR" }, -- level 8
@@ -228,7 +228,7 @@ Ding.RegisterGuide({
           note = "With the coming hand-ins, this gets you to level 9. Your targets are within the cavern." },
         { go = { 1438, 54.61, 52.48 }, text = "Head out of the cave" }, -- level 8
         { accept = 98391, races = { "NightElf" }, classes = { "PRIEST" } }, -- level 8
-        { turnin = { 932, 2459 }, -- level 8
+        { turnin = { 932, 2459 }, floor = "top", -- level 8
           note = "The NPC waits on the tower's highest floor." },
         { turnin = 87288, races = { "NightElf" } }, -- level 9
         { accept = 930 }, -- level 9
@@ -239,7 +239,7 @@ Ding.RegisterGuide({
         { deathskip = true, revive = { 1438, 56.26, 63.3 }, text = "Get yourself killed, then resurrect with the spirit healer" }, -- level 9
         { talk = 6491 }, -- level 9
         { turnin = 933, accept = 7383 }, -- level 9
-        { sethearth = "Dolanaar", talk = 6736, -- level 9
+        { sethearth = "Dolanaar", floor = "up", talk = 6736, -- level 9
           note = "The NPC is indoors, one floor up." },
         { accept = 487, patrol = { { 1438, 55.86, 58.25 }, { 1438, 55.53, 58.39 }, { 1438, 54.58, 58.54 }, { 1438, 53.92, 58.25 }, { 1438, 53.63, 57.55 }, { 1438, 52.97, 57.39 }, { 1438, 52.63, 56.69 }, { 1438, 52.3, 56.39 }, { 1438, 51.94, 56.35 }, { 1438, 51.66, 56.52 }, { 1438, 51.34, 56.61 }, { 1438, 50.97, 56.55 }, { 1438, 50.59, 56.14 }, { 1438, 50.37, 55.61 }, { 1438, 50.56, 54.48 }, { 1438, 50.4, 54.25 }, { 1438, 50.24, 53.83 } }, -- level 9
           note = "The NPC patrols the road; look along it." },
@@ -276,24 +276,24 @@ Ding.RegisterGuide({
         { go = { 1457, 32.08, 16.4 }, classes = { "ROGUE" }, text = "Step into the cavern within the trunk", -- level 10
           note = "The spot is on the lower floor of the hollow tree. Don't forget to train Pick Pocket. Keep it; an upcoming task asks for it." },
         { train = true, talk = 4163, classes = { "ROGUE" } }, -- level 10
-        { accept = 6071, classes = { "HUNTER" }, -- level 10
+        { accept = 6071, floor = "up", classes = { "HUNTER" }, -- level 10
           note = "The NPC is indoors, one floor up." },
-        { train = true, talk = 4146, classes = { "HUNTER" }, -- level 10
+        { train = true, floor = "up", talk = 4146, classes = { "HUNTER" }, -- level 10
           note = "The NPC is indoors, one floor up." },
         { train = true, talk = 4218, classes = { "DRUID" }, -- level 10
           note = "The NPC is indoors at street level." },
         { accept = 5921, classes = { "DRUID" }, -- level 10
           note = "The NPC is indoors, on the central storey." },
-        { turnin = 940, accept = 952, why = { kind = "carry", quest = 952, seconds = 63660, xp = 900 }, -- level 10
+        { turnin = 940, accept = 952, floor = "top", why = { kind = "carry", quest = 952, seconds = 63660, xp = 900 }, -- level 10
           note = "The NPC waits on the tower's highest floor." },
         { train = true, talk = 4091, classes = { "PRIEST" }, -- level 10
           note = "The NPC is indoors." },
-        { accept = 2518, -- level 10
+        { accept = 2518, floor = "up", -- level 10
           note = "The NPC is indoors, one floor up." },
-        { turnin = 5921, accept = 5929, classes = { "DRUID" }, -- level 10
+        { turnin = 5921, accept = 5929, floor = "up", classes = { "DRUID" }, -- level 10
           note = "The NPC is indoors, one floor up." },
         { complete = 5929, talk = 11956, classes = { "DRUID" } }, -- level 10
-        { turnin = 5929, when = { ready = 5929 }, classes = { "DRUID" }, -- level 10
+        { turnin = 5929, floor = "up", when = { ready = 5929 }, classes = { "DRUID" }, -- level 10
           note = "The NPC is indoors, one floor up." },
         { accept = 5931, when = { done = 5929 }, classes = { "DRUID" } }, -- level 10
         { go = { 1450, 48.06, 67.4 }, fly = true, talk = 10897, classes = { "DRUID" }, text = "Fly to Moonglade" }, -- level 10
@@ -381,17 +381,17 @@ Ding.RegisterGuide({
         { turnin = 5931, when = { log = 5931 }, classes = { "DRUID" }, -- level 11
           note = "The NPC is indoors, on the central storey." },
         { accept = 6001, when = { done = 5931 }, classes = { "DRUID" } }, -- level 11
-        { turnin = 935, -- level 11
+        { turnin = 935, floor = "top", -- level 11
           note = "The NPC waits on the tower's highest floor." },
         { turnin = 98391, races = { "NightElf" }, classes = { "PRIEST" } }, -- level 11
         { accept = 98046, races = { "NightElf" }, classes = { "PRIEST" } }, -- level 11
-        { turnin = 2518, accept = 2520, -- level 11
+        { turnin = 2518, accept = 2520, floor = "up", -- level 11
           note = "The NPC is indoors, one floor up." },
-        { turnin = 5629, classes = { "PRIEST" }, -- level 11
+        { turnin = 5629, floor = "up", classes = { "PRIEST" }, -- level 11
           note = "The NPC is indoors, one floor up." },
         { complete = 2520, useitem = 8155, -- level 11
           note = "The object is indoors." },
-        { turnin = 2520, -- level 11
+        { turnin = 2520, floor = "up", -- level 11
           note = "The NPC is indoors, one floor up." },
         { turnin = 98046, races = { "NightElf" }, classes = { "PRIEST" } }, -- level 11
         { turnin = 6344, accept = 6341 }, -- level 11
@@ -403,7 +403,7 @@ Ding.RegisterGuide({
         { talk = 4200, buy = { { 4592, 1, 4200 } }, classes = { "HUNTER" }, -- level 11
           note = "Your pet will need this food shortly." },
         { vendor = true, talk = 4200, classes = { "HUNTER" } }, -- level 11
-        { accept = 983, -- level 11
+        { accept = 983, floor = "up", -- level 11
           note = "The NPC is indoors, one floor up." },
         { go = { 1439, 38.13, 40.98 }, classes = { "WARRIOR", "ROGUE" }, text = "Learn Blacksmithing from the trainer" }, -- level 11
         { talk = 6299, classes = { "WARRIOR", "ROGUE" } }, -- level 11
@@ -441,7 +441,7 @@ Ding.RegisterGuide({
         { go = { 1457, 32.08, 16.4 }, classes = { "ROGUE" }, text = "Step into the cavern within the trunk", -- level 12
           note = "The spot is on the lower floor of the hollow tree." },
         { train = true, talk = 4163, classes = { "ROGUE" } }, -- level 12
-        { train = true, talk = 4146, classes = { "HUNTER" }, -- level 12
+        { train = true, floor = "up", talk = 4146, classes = { "HUNTER" }, -- level 12
           note = "The NPC is indoors, one floor up." },
         { train = true, talk = 10089, classes = { "HUNTER" }, -- level 12
           note = "The NPC stands on the highest level of this structure." },
@@ -520,7 +520,7 @@ Ding.RegisterGuide({
         { go = { 1432, 33.9, 50.98 }, fly = true, talk = 1572, text = "Fly to Thelsamar" }, -- level 13
         { accept = 1339, patrol = { { 1432, 32.7, 49.76 }, { 1432, 33.3, 49.22 }, { 1432, 33.91, 48.42 }, { 1432, 34.36, 47.6 }, { 1432, 34.87, 47 }, { 1432, 35.6, 46.71 }, { 1432, 36.12, 46.32 }, { 1432, 37.14, 45.96 }, { 1432, 37.26, 45.56 }, { 1432, 37.33, 44.48 }, { 1432, 37.23, 43.29 }, { 1432, 36.68, 42.04 } }, -- level 13
           note = "The NPC patrols a long route; look along it." },
-        { turnin = 1339, accept = 1338, -- level 13
+        { turnin = 1339, accept = 1338, floor = "up", -- level 13
           note = "The NPC is indoors, one floor up." },
         { go = { 1455, 61.12, 89.58 }, classes = { "WARRIOR" }, text = "Learn Two-Handed Axes and Two-Handed Maces at the weapon master" }, -- level 13
         { talk = 11865, classes = { "WARRIOR" }, -- level 13

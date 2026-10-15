@@ -34,14 +34,14 @@ Ding.RegisterGuide({
         { destroy = { 11445, 11511, 11516, 11515 } }, -- level 54
         { go = { 1448, 38.43, 59.8 }, text = "Go into Jaedenar" }, -- level 54
         { go = { 1448, 35.38, 58.65 }, text = "Go into the cavern" }, -- level 54
-        { complete = 5165, -- level 54
+        { complete = 5165, floor = "up", -- level 54
           note = "Go to the upper floor of the cavern." },
-        { complete = 5165, -- level 54
+        { complete = 5165, floor = "up", -- level 54
           note = "Go to the upper floor of the cavern." },
         { go = { 1448, 38.2, 54.11 }, text = "Circle the gap in the ground, then take the trail downward" }, -- level 54
-        { complete = 5165, -- level 54
+        { complete = 5165, floor = "down", -- level 54
           note = "The target is deep in the cave, on its lowest floor." },
-        { complete = 5165, -- level 54
+        { complete = 5165, floor = "down", -- level 54
           note = "The target is deep in the cave, on its lowest floor." },
         { accept = 5202, collect = { { 13140, 1 } }, useitem = 13140, -- level 54
           note = "Search the upper and lower floors of the cavern." },
@@ -141,12 +141,12 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { talk = 4209, collect = { { 10575, 1 }, { 12724, 1 }, { 10445, 1 }, { 11947, 6 }, { 11949, 6 } }, spots = { { 1457, 39.63, 41.95 } } }, -- level 56
         { train = true, talk = 4089, classes = { "WARRIOR" } }, -- level 56
-        { train = true, talk = 4146, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 56
+        { train = true, floor = "up", talk = 4146, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 56
           note = "The NPC is indoors, one floor up." },
         { go = { 1457, 32.08, 16.4 }, classes = { "ROGUE" }, text = "Step into the cavern within the trunk", -- level 56
           note = "The spot is on the lower floor of the hollow tree." },
         { train = true, talk = 4163, classes = { "ROGUE" } }, -- level 56
-        { turnin = 4902, -- level 56
+        { turnin = 4902, floor = "top", -- level 56
           note = "The NPC waits on the tower's highest floor." },
         { train = true, talk = 7312, races = { "Human", "Gnome" }, classes = { "MAGE" }, -- level 56
           note = "The NPC is indoors." },

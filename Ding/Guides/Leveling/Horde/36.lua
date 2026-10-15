@@ -89,7 +89,7 @@ Ding.RegisterGuide({
           note = "Look for it high on the clifftop." },
         { go = { 1449, 63.82, 16.4 }, text = "Go into the cavern" }, -- level 53
         { go = { 1449, 69.02, 17.56 }, text = "Climb the trail" }, -- level 53
-        { complete = 4301, -- level 53
+        { complete = 4301, floor = "up", -- level 53
           note = "This one roams, so scan the surrounding area. Climb to the cave's upper level." },
         { go = { 1449, 65.93, 16.72 }, text = "Take the trail through the cavern" }, -- level 53
         { turnin = 4243, -- level 53

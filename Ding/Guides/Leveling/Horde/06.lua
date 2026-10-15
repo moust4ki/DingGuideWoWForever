@@ -102,9 +102,9 @@ Ding.RegisterGuide({
           note = "Lean on Rupture for bonus damage. The target is indoors, on the central storey." },
         { complete = 2478, when = { log = 2478 }, races = { "Orc", "Scourge", "Troll", "Skyborne" }, classes = { "ROGUE" }, -- level 22
           note = "Eviscerate adds a burst of damage here. The objective is on the terrace above. The target is indoors, on the central storey." },
-        { complete = 2478, when = { log = 2478 }, races = { "Orc", "Scourge", "Troll", "Skyborne" }, classes = { "ROGUE" }, -- level 22
+        { complete = 2478, floor = "top", when = { log = 2478 }, races = { "Orc", "Scourge", "Troll", "Skyborne" }, classes = { "ROGUE" }, -- level 22
           note = "Open with Ambush for a bigger hit. Climb to the highest floor of the building." },
-        { complete = 2478, when = { log = 2478 }, races = { "Orc", "Scourge", "Troll", "Skyborne" }, classes = { "ROGUE" }, -- level 22
+        { complete = 2478, floor = "top", when = { log = 2478 }, races = { "Orc", "Scourge", "Troll", "Skyborne" }, classes = { "ROGUE" }, -- level 22
           note = "Use Pick Lock to open it. Climb to the highest floor of the building." },
         { turnin = 2478, when = { ready = 2478 }, races = { "Orc", "Scourge", "Troll", "Skyborne" }, classes = { "ROGUE" }, -- level 22
           note = "The quest giver waits in the tent. This NPC is found down in the Cleft of Shadow." },
