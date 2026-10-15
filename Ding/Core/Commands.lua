@@ -51,6 +51,10 @@ SlashCmdList.DING = function(input)
         else
             Ding:Print(L.TRIP_NONE)
         end
+    elseif cmd == "bug" or cmd == "report" then
+        -- Report a problem: what the guide shows and where the character stands, as a text for
+        -- GitHub (UI/Report.lua).
+        Ding.ReportWindow:Open()
     elseif cmd == "find" then
         -- The NPC directory's search: a service, a weapon, a profession or a name.
         Ding.Finder:Find(rest)

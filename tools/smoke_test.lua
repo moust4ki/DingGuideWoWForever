@@ -1808,5 +1808,47 @@ ok, err = pcall(function()
 end)
 if not ok then problem("why: " .. tostring(err)) end
 
+-- Report a problem with the gamepad alone: the guide window's flag (focus mode, up twice, A),
+-- a reason (A), "Create the text" (A); the text holds the step, the position and the
+-- objective's counter, never the character's name; it is kept; B closes, nothing left bound.
+ok, err = pcall(function()
+    local RW = Ding.ReportWindow
+    Ding.RegisterGuide({ id = "smoke-report", title = "Report", races = { "NightElf" }, steps = {
+        { accept = 456 }, { complete = 456 }, { turnin = 456 },
+    } })
+    scenarioCharacter()
+    H.resetQuests()
+    E.turnedIn, Ding.char.manual = {}, {}
+    -- A name of its own: the mock's default, "Player", is also a heading of the report.
+    player.name = "Zarvelline"
+    player.level, player.map, player.x, player.y = 5, 1438, 58.7, 44
+    E:SetGuide("smoke-report", 1, true)
+    tick(1)
+    H.accept(456); flush(); tick(1)
+    H.setObjective(456, 1, 2, 7)
+    fire("QUEST_LOG_UPDATE"); tick(1)
+    expect(E.index == 2, "report: not on the step that completes the quest")
+    local before = #db.reports
+    P:StartFocus()
+    P.focusIndex = 1; P:Update()
+    press("PADDUP"); press("PADDUP")
+    expect(P.focusIndex == -1, "report: the guide window's flag is not reached")
+    checkPanel("report: the flag focused")
+    press("PAD1")
+    expect(RW:IsShown(), "report: A on the flag does not open the window")
+    press("PAD1"); press("PAD1")
+    expect(RW.page == "done", "report: A on a reason, then on Create the text, does not make it")
+    local text = RW.frame.text:GetValue()
+    expect(text:find("index 2 of 3", 1, true), "report: no step in the text")
+    expect(text:find("Position: 58.7, 44.0", 1, true), "report: no position in the text")
+    expect(text:find("2/7", 1, true), "report: no objective counter in the text")
+    expect(not text:find(UnitName("player"), 1, true), "report: the character's name is in the text")
+    expect(#db.reports == math.min(before + 1, Ding.Report.KEEP), "report: not kept in DingDB.reports")
+    press("PAD2")
+    expect(not RW:IsShown(), "report: B does not close the window")
+    expect(next(overrides) == nil, "report: temporary bindings still active after closing")
+end)
+if not ok then problem("report: " .. tostring(err)) end
+
 print(("Result: %d problem(s)"):format(H.problems()))
 os.exit(H.problems() > 0 and 1 or 0)

@@ -546,6 +546,30 @@ Objective verbs: `Accept` · `Turn in` · `Kill` · `Collect` · `Use … on …
   title bar, left of minimize (a map pin: an 8-unit `text.secondary` circle with a 3-unit
   `bg` dot, over a 7-unit downward caret); tooltip "NPC directory". In focus mode, up from the
   first row: the outer focus ring around it and the A chip on its left (the title shortens).
+- **The guide window's "Report a problem" button** (not in the mockup): a 20 × 20 icon button
+  right beside the directory's pin, on its left (4 between them; the title and its drag area
+  stop 4 before it), always filled with the warm `report` token (#FF6A3D in Halo and Ardoise,
+  #FF7A50 in Bandes, #FF7043 in Ding dark: it must invite a press), a `hover` veil over it under
+  the mouse: a flag, a 1.5 × 12 `onReport` pole with a 7 × 5 `onReport` cloth at its top right;
+  tooltip "Problem with this step?" and, in `text.secondary` under it, "Tell the people who make
+  the guide: Ding! writes the report for you." In focus mode, up from the pin (or Left from it):
+  its outer focus ring; the A chip of the pin or the flag sits 6 left of the flag.
+- **Report a problem window** (not in the mockup): a dialog of Ding's, 560 wide, the shared
+  sizes (UI.SIZE), the title bar "Ding! · Report a problem with the guide" with the close cross and B beside it
+  (gamepad). First page, 12 from the edges: the intro (12 Regular `text`, wrapped), the block
+  titles "What the report will contain", "What went wrong?", "In your words (optional)" (11
+  SemiBold `text.muted`), the parts (11 Regular `text.secondary`, wrapped, 8 further in), the
+  four reasons as rows of the setup assistant's look (radio ring 16 `text.muted`, its 8-unit
+  `accent` dot and an `accent` ring when chosen, 12 Regular label, inset focus, A on the right),
+  the box (52 high, `bg.control`, outer focus ring when focused, its A chip at the right of its
+  title, a `text.muted` line in it while empty), then a status line when the window waits for the
+  keyboard. Second page, in the player's order: "1. Open this address on GitHub:" (12 Medium),
+  the link's one-line box (26 high, the address in 10 Regular: whole, with room), 12, "2. Copy
+  this text and paste it into the report:" (12 Medium), the read-only text box (196 high, 11
+  Regular `text.secondary`), the clipboard line and where the reports are kept (11
+  `text.secondary`). Footer 40 under a divider: buttons from the right (24 high, "Create the
+  text" or, first, "Select the link" in the accent, then "Select the text"), the mouse help on
+  the left without a gamepad. The window grows with its texts: none is ever cut.
 - **Information apart from the step** (Yendi's first rule for the window): after the step's own
   rows, a 1-unit `divider` line across the list, then a section title "Good to know" (11 SemiBold
   `text.muted`, no icon, padding 8 above, none below; "Next steps" has the same line and title),

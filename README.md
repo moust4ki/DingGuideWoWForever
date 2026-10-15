@@ -7,7 +7,7 @@ gamepad**.
 
 [Download on CurseForge](https://www.curseforge.com/wow/addons/ding-xp-and-leveling-guide)
 
-> **Version 1.7**, released during the Forever beta.
+> **Version 1.8**, released during the Forever beta.
 > **Alliance 1–60**: Human, Dwarf/Gnome and Night Elf starting zones up to level 20, then a
 > common route to 60. **Horde 1–60**: Orc/Troll, Tauren and Undead starting zones up to
 > level 20, then a common route to 60.
@@ -87,6 +87,11 @@ instead from the *Arrow* tab of the settings (off by default).
   NPC. When you carry (or a quest offers) a weapon your class can use but you have not
   learned, the guide window says so, why, and which weapon master teaches it; right-click it
   (Left in focus mode) never to see that weapon suggested again.
+- **Report a problem.** An NPC missing, the arrow pointing to the wrong place, a quest not
+  offered? The orange flag in the guide window's title bar ("Problem with this step?", beside the
+  NPC directory's pin), its key binding or `/ding bug` writes a precise report for you: the step, where you stand, your
+  quests and their counters, what the arrow points at, your route settings, never your
+  character's name. See [Report a problem](#report-a-problem).
 - **Minimap button.** Left-click for the settings, right-click to show or hide the guide.
 - **Community guides.** Ding runs other guides too: install a guide pack and pick it in the
   settings (*Guide* tab, first list), then its section in the second list. See
@@ -117,7 +122,7 @@ The guide window never takes a button away from the game. To browse it with the 
 bind "Browse the guide with the gamepad" (focus mode): the D-pad picks a line, A sends the
 arrow there (or uses the item), X shows its quest, LB / RB change steps, Y minimizes the
 window, B gives the gamepad back to the game. Up from the first line, the focus reaches the
-NPC directory's button.
+NPC directory's button, then the "Report a problem" flag beside it.
 
 The NPC directory (bind "NPC directory", or use the guide window's pin button): LB / RB change
 tabs, the D-pad picks, A opens a list or sends the arrow, B goes back or closes. To cancel a trip:
@@ -150,9 +155,32 @@ lifts, gates and tunnels near you, for testers; the arrow points at the n-th) ·
 text) · `/ding export [id]` (a guide as text) · `/ding find <text>` (the NPC directory: a service,
 a weapon, a profession or a name, in your game's language or in English, such as
 `/ding find gun`, `/ding find bank`, `/ding find Buliwyf`) · `/ding cancel` (end the directory's
-trip: the arrow follows the guide again) · `/ding next` · `/ding prev` · `/ding skip` · `/ding back` · `/ding reset` (take the guide up
+trip: the arrow follows the guide again) · `/ding bug` (report a problem) · `/ding next` · `/ding prev` · `/ding skip` · `/ding back` · `/ding reset` (take the guide up
 where you are) · `/ding scale <0.5-1.5>` · `/ding arrow` · `/ding arrowflip` ·
 `/ding minimap` · `/ding debug`
+
+## Report a problem
+
+Something wrong with a step? Ding writes the report for you, in game:
+
+1. Open **Report a problem with the guide**: the orange flag in the guide window's title bar
+   ("Problem with this step?", beside the NPC directory's pin; with a gamepad, up from the first
+   line in focus mode), its key binding
+   (*Keybinds* tab: a button or two, like the others) or `/ding bug`.
+2. The window shows what the report will contain: the guide, the step ("Step 19 / 161") and its
+   place in the guide's file, where you stand, your character, the step's quests and their
+   counters, what the arrow points at, the settings that change your route, Ding's and the
+   game's versions. Never your character's name, your realm or your account.
+3. Pick what went wrong ("The NPC is not there", "The arrow points to the wrong place", "The
+   quest is not offered", "Something else") and, if you can type, add a few words.
+4. **Create the text**: the window shows, in order, the address of a
+   [new report on GitHub](https://github.com/moust4ki/DingGuideWoWForever/issues/new?template=ding-report.yml)
+   to open, then the text to paste into it. Each has a button that selects it; copy with
+   Ctrl+C (an addon cannot copy for you). The text's first line can be the title.
+
+No keyboard at hand? Ding keeps your last 20 reports in
+`WTF\Account\<account>\SavedVariables\Ding.lua` (written when you log out or reload): send that
+file instead.
 
 ## Community guide packs
 
