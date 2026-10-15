@@ -1350,15 +1350,29 @@ local function objectiveDone(live, name)
     end
     return false
 end
-function E:ObjectiveDone(q, name) return objectiveDone(Compat.GetObjectives(q), name) end
+-- The objective of q for its target named `name`: matched like the arrow's (Data:MatchObjectives,
+-- by name, else by rank), so a monster without a name in the client's language counts too.
+function E:ObjectiveDone(q, name)
+    local targets, live = Ding.Data:ObjectiveTargets(q), Compat.GetObjectives(q)
+    local byTarget = Ding.Data:MatchObjectives(targets, live)
+    for i, target in ipairs(targets) do
+        if target.name == name then
+            local obj = byTarget[i] and live[byTarget[i]]
+            return obj ~= nil and obj.finished == true
+        end
+    end
+    return objectiveDone(live, name)
+end
 
 -- Objective targets of a quest that are not finished yet.
 local function pendingTargets(q)
     local targets = Ding.Data:ObjectiveTargets(q)
     local live = Compat.GetObjectives(q)
+    local byTarget = Ding.Data:MatchObjectives(targets, live)
     local pending = {}
-    for _, target in ipairs(targets) do
-        if not objectiveDone(live, target.name) then pending[#pending + 1] = target end
+    for i, target in ipairs(targets) do
+        local obj = byTarget[i] and live[byTarget[i]]
+        if not (obj and obj.finished == true) then pending[#pending + 1] = target end
     end
     if #pending == 0 then return targets end
     return pending

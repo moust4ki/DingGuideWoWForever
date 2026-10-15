@@ -62,16 +62,15 @@ end
 -- given, leaves out the targets it refuses (shared with Ding.QuestMobs).
 function AW:Objectives(q, accept)
     local out = {}
-    for i, obj in ipairs(Compat.GetObjectives(q)) do
+    local list, live = targets(q), Compat.GetObjectives(q)
+    -- By name, else by rank (Data:MatchObjectives): a monster without a name in the client's
+    -- language still gets its mark and counter.
+    local _, byLive = Ding.Data:MatchObjectives(list, live)
+    for i, obj in ipairs(live) do
         local text = obj.text and obj.text:lower()
-        if text and text ~= "" and not finished(obj) then
-            for _, target in ipairs(targets(q)) do
-                local name = target.name and target.name:lower()
-                if name and name ~= "" and text:find(name, 1, true) and (not accept or accept(target)) then
-                    out[#out + 1] = { index = i, objective = obj, target = target }
-                    break
-                end
-            end
+        local target = byLive[i] and list[byLive[i]]
+        if text and text ~= "" and not finished(obj) and target and (not accept or accept(target)) then
+            out[#out + 1] = { index = i, objective = obj, target = target }
         end
     end
     return out

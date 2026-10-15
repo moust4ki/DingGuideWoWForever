@@ -550,9 +550,13 @@ function P:PointsOf(row)
     if q then
         local points, all = {}, {}
         local wanted = row.target and row.target:lower()
-        for _, target in ipairs(D:ObjectiveTargets(q)) do
+        local list = D:ObjectiveTargets(q)
+        -- The row's objective (its index in the log): its target by name, else by rank.
+        local byLive = row.index and select(2, D:MatchObjectives(list, Compat.GetObjectives(q))) or {}
+        for i, target in ipairs(list) do
             local name = target.name and target.name:lower()
-            local match = wanted and name and (wanted:find(name, 1, true) or name:find(wanted, 1, true))
+            local match = (row.index and byLive[row.index] == i)
+                or (wanted and name and (wanted:find(name, 1, true) or name:find(wanted, 1, true)))
             for _, p in ipairs(target.points) do
                 all[#all + 1] = p
                 if match then points[#points + 1] = p end

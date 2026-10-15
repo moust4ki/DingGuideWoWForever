@@ -497,6 +497,42 @@ function D:ObjectiveTargets(questID)
     return targets
 end
 
+-- Which live objective (Compat.GetObjectives) each target of a quest is: by its name in the
+-- objective's text, else by rank among the objectives of its kind left over (DingDB lists a
+-- quest's monsters, objects and items in the client's order). The text is in the client's
+-- language, and a monster Forever added often has no name in DingDB but its English one: the
+-- French client writes "Néophyte al'aketh", Ding knew "Al'Aketh Neophyte", and the arrow kept
+-- leading to monsters already killed (in game, 15/10/2026, Thendal Grove). Returns
+-- byTarget[target index] = live index, byLive[live index] = target index.
+local LIVE_TYPE = { kill = "monster", drop = "item", object = "object", area = "event" }
+function D:MatchObjectives(targets, live)
+    local byTarget, byLive = {}, {}
+    for i, target in ipairs(targets) do
+        local name = target.name and target.name:lower()
+        if name and name ~= "" then
+            for j, obj in ipairs(live) do
+                local text = obj.text and obj.text:lower()
+                if not byLive[j] and text and text:find(name, 1, true) then
+                    byTarget[i], byLive[j] = j, i
+                    break
+                end
+            end
+        end
+    end
+    for i, target in ipairs(targets) do
+        if not byTarget[i] then
+            local want = LIVE_TYPE[target.kind]
+            for j, obj in ipairs(live) do
+                if not byLive[j] and want and (obj.type == nil or obj.type == want) then
+                    byTarget[i], byLive[j] = j, i
+                    break
+                end
+            end
+        end
+    end
+    return byTarget, byLive
+end
+
 ---------------------------------------------------------------------------
 -- Travel: flight masters and dungeon entrances
 ---------------------------------------------------------------------------
