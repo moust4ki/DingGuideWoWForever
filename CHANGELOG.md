@@ -35,6 +35,9 @@ Nothing else to install: QuestieDB is no longer needed, and TomTom stays optiona
 - The aids are on for a new install: the quest marks and counters above the monsters, the line
   in their tooltip, and enemy nameplates shown farther. The game hides the enemy nameplates
   until you press V: Ding shows them once so that its counters appear, and says so in the chat.
+- Upstairs and downstairs: when the NPC or the object waits on another floor, the arrow no
+  longer says "You're here" in the middle of the building. It says "The NPC is one floor up",
+  "at the top" or "one floor down", and stays on screen until you find the stairs.
 
 ## v1.6.0
 
