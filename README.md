@@ -7,7 +7,7 @@ gamepad**.
 
 [Download on CurseForge](https://www.curseforge.com/wow/addons/ding-xp-and-leveling-guide)
 
-> **Version 1.6**, released during the Forever beta.
+> **Version 1.7**, released during the Forever beta.
 > **Alliance 1–60**: Human, Dwarf/Gnome and Night Elf starting zones up to level 20, then a
 > common route to 60. **Horde 1–60**: Orc/Troll, Tauren and Undead starting zones up to
 > level 20, then a common route to 60.
