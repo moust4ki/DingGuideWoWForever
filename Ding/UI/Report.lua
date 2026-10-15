@@ -3,9 +3,10 @@
 -- contain, in plain words (the facts are read when the window opens: Core/Report.lua), what
 -- went wrong (four ready reasons: a gamepad types little) and the player's words (optional;
 -- the box takes the keyboard only once no other box has it: the game's chat above all). Then
--- "Create the text": the report in a read-only box, selected for Ctrl+C (an addon cannot write
--- the clipboard: the window says so), the link of the GitHub form to paste it into, and where
--- Ding keeps the last reports for a player without a keyboard (DingDB.reports).
+-- "Create the text": in the order the player goes (Yendi, in game), 1. the address of the
+-- GitHub form, whole on its line and selected first, 2. the report in a read-only box; each
+-- button selects its box for Ctrl+C (an addon cannot write the clipboard: the window says so);
+-- then where Ding keeps the last reports for a player without a keyboard (DingDB.reports).
 -- Gamepad (temporary bindings, out of combat only): the D-pad up / down between the reasons,
 -- the box and the buttons, left / right along the buttons, A picks or presses, Y selects the
 -- text, B closes. Each action shows once: A on the focused row or button, Y on "Select the
@@ -20,7 +21,8 @@ local W = {}
 Ding.ReportWindow = W
 
 local SIZE = UI.SIZE
-local WIDTH, TITLE, PAD, INSET, BUTTON = 520, SIZE.title, 12, SIZE.pad, SIZE.button
+-- 560 wide, as the import window: the GitHub address fits its box whole (LINK_FONT).
+local WIDTH, TITLE, PAD, INSET, BUTTON = 560, SIZE.title, 12, SIZE.pad, SIZE.button
 local EDGE, LINE = 8, 30                         -- the footer's margins; a hint line above the buttons
 local FOOTER = EDGE + BUTTON + EDGE
 local HEADER, GAP, ROW_GAP = 20, 4, SIZE.gap
@@ -28,6 +30,9 @@ local ROW_PAD, ROW_MIN = 6, 28                   -- a reason's margin above and 
 local ROW_WIDTH = WIDTH - 2 * INSET
 local MARK, CHIP = 8 + 16 + 10, 24               -- the radio mark before a reason; room for the A chip
 local COMMENT_HEIGHT, TEXT_HEIGHT, LINK_HEIGHT = 52, 196, 26
+-- The address in 10: 432 units in Noto Sans (475 in 11, which the game cut in a 520 window).
+local LINK_FONT = 10
+W.WIDTH, W.LINK_FONT = WIDTH, LINK_FONT
 local QUESTS_SHOWN = 3
 local KEYS = { "PADDUP", "PADDDOWN", "PADDLEFT", "PADDRIGHT", "PAD1", "PAD2", "PAD4", "PADFORWARD" }
 
@@ -127,7 +132,7 @@ local function textBox(parent, height, opts)
     end
     edit:SetAutoFocus(false)
     edit:SetMaxLetters(opts.readOnly and 0 or 500)
-    edit:SetFontObject(UI.Font("regular", 11))
+    edit:SetFontObject(UI.Font("regular", opts.size or 11))
     UI.Color(edit, opts.readOnly and C.secondary or C.text)
     if opts.placeholder then
         box.placeholder = UI.Text(box, "regular", 11, C.muted)
@@ -281,11 +286,11 @@ function W:Create()
     done:SetPoint("TOPLEFT", f, "TOPLEFT", 0, -(TITLE + 1))
     done:SetPoint("TOPRIGHT", f, "TOPRIGHT", 0, -(TITLE + 1))
     f.done = done
-    f.copy = paragraph(done, "medium", 12, C.text)
-    f.clipboard = paragraph(done, "regular", 11, C.secondary)
+    f.linkStep = paragraph(done, "medium", 12, C.text)
+    f.link = textBox(done, LINK_HEIGHT, { readOnly = true, single = true, size = LINK_FONT })
+    f.textStep = paragraph(done, "medium", 12, C.text)
     f.text = textBox(done, TEXT_HEIGHT, { readOnly = true })
-    f.paste = paragraph(done, "regular", 12, C.text)
-    f.link = textBox(done, LINK_HEIGHT, { readOnly = true, single = true })
+    f.clipboard = paragraph(done, "regular", 11, C.secondary)
     f.saved = paragraph(done, "regular", 11, C.secondary)
     f.doneStatus = paragraph(done, "regular", 11, C.secondary)
 
@@ -437,11 +442,11 @@ function W:LayoutDone()
     local f = self.frame
     local page = f.done
     local y = PAD
-    y = place(f.copy, page, y, L.REPORT_COPY) + 2
-    y = place(f.clipboard, page, y, L.REPORT_CLIPBOARD) + 8
-    y = placeBox(f.text, page, y) + 10
-    y = place(f.paste, page, y, L.REPORT_PASTE) + 6
-    y = placeBox(f.link, page, y) + 10
+    y = place(f.linkStep, page, y, L.REPORT_STEP_LINK) + 6
+    y = placeBox(f.link, page, y) + 12
+    y = place(f.textStep, page, y, L.REPORT_STEP_TEXT) + 6
+    y = placeBox(f.text, page, y) + 8
+    y = place(f.clipboard, page, y, L.REPORT_CLIPBOARD) + 6
     y = place(f.saved, page, y, L.REPORT_SAVED:format(R().KEEP, R().FILE))
     return status(f.doneStatus, page, y) + PAD
 end
@@ -599,7 +604,8 @@ function W:Activate()
     end
 end
 
--- "Create the text": the report written and kept, the text selected for Ctrl+C.
+-- "Create the text": the report written and kept; the address selected for Ctrl+C first (the
+-- page's first step), its button focused, then the text's.
 function W:Make()
     local f = self.frame
     local comment = f.comment:GetValue()
@@ -612,12 +618,12 @@ function W:Make()
     f.text:SetValue(self.made)
     f.link:SetValue(R().ISSUE_URL)
     self.actions = {
-        { label = L.REPORT_SELECT_TEXT, primary = true, key = "PAD4", run = function() W.frame.text:SelectAll() end },
-        { label = L.REPORT_SELECT_LINK, run = function() W.frame.link:SelectAll() end },
+        { label = L.REPORT_SELECT_LINK, primary = true, run = function() W.frame.link:SelectAll() end },
+        { label = L.REPORT_SELECT_TEXT, key = "PAD4", run = function() W.frame.text:SelectAll() end },
     }
     self.focus = 1
     self:Layout()
-    f.text:SelectAll()
+    f.link:SelectAll()
 end
 
 ---------------------------------------------------------------------------

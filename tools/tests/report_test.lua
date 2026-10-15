@@ -299,13 +299,22 @@ T.test("the text: title line, step, position, quests with counters, arrow, setti
     local arrow = text:match("%- Points to: ([^\n]*)")
     T.ok(arrow and arrow:find("UiMap 1438", 1, true) and arrow:find("yards away", 1, true),
         "the arrow's target: " .. tostring(arrow))
-    -- Selected for Ctrl+C, said in words; the link to paste it into, selectable too.
-    T.ok(f.text.edit:HasFocus() and f.text.edit.selection, "the text is not selected")
-    T.eq(f.copy:GetText(), L.REPORT_COPY)
-    T.ok(L.REPORT_COPY:find("Ctrl+C", 1, true))
-    T.eq(f.clipboard:GetText(), L.REPORT_CLIPBOARD)
+    -- In the player's order (Yendi): 1. the address, selected first; 2. the text; then how to
+    -- copy (said in words) and where the reports are kept. The buttons in the same order.
+    local function top(region) return Layout.rect(region).top end
+    T.eq(f.linkStep:GetText(), L.REPORT_STEP_LINK)
+    T.eq(f.textStep:GetText(), L.REPORT_STEP_TEXT)
+    T.ok(top(f.linkStep) > top(f.link) and top(f.link) > top(f.textStep) and top(f.textStep) > top(f.text)
+        and top(f.text) > top(f.clipboard) and top(f.clipboard) > top(f.saved), "not in the order: link, text, the rest")
     T.eq(f.link:GetValue(), "https://github.com/moust4ki/DingGuideWoWForever/issues/new?template=ding-report.yml")
+    T.ok(f.link.edit:HasFocus() and f.link.edit.selection, "the address is not selected first")
+    T.ok(L.REPORT_CLIPBOARD:find("Ctrl+C", 1, true), "how to copy is not said")
+    T.eq(f.clipboard:GetText(), L.REPORT_CLIPBOARD)
+    T.eq(W.actions[1].label, L.REPORT_SELECT_LINK, "the link's button is not first")
+    T.ok(Layout.rect(f.buttons[1]).right <= Layout.rect(f.buttons[2]).left, "the link's button is not on the left")
     click(f.buttons[2])
+    T.ok(f.text.edit:HasFocus() and f.text.edit.selection, "Select the text does not select it")
+    click(f.buttons[1])
     T.ok(f.link.edit:HasFocus() and f.link.edit.selection, "Select the link does not select it")
     T.ok(f.saved:GetText():find("WTF\\Account\\<account>\\SavedVariables\\Ding.lua", 1, true), "where the file is")
     -- Read-only: typing puts the text back.
@@ -345,20 +354,82 @@ T.test("with a gamepad: the reasons first, A picks one and goes on to Create, A 
     T.ok(text:find("**What went wrong:** The arrow points to the wrong place", 1, true), text)
     T.ok(not text:find("In the player's words", 1, true), "an empty comment is written")
     T.ok(text:match("^[^\n]*"):find(": The arrow points to the wrong place$"), "the title line lacks the reason")
-    -- Each action once: A on the focused button, Y on Select the text, B by the cross.
-    T.ok(chipsOn(f.buttons[1]).PAD1 and chipsOn(f.buttons[1]).PAD4, "A and Y not on Select the text")
-    T.ok(not anyKey(chipsOn(f.buttons[2])), "a chip on Select the link")
+    -- Each action once: A on the focused button (the link's, first), Y on Select the text, B by
+    -- the cross.
+    T.ok(chipsOn(f.buttons[1]).PAD1 and not chipsOn(f.buttons[1]).PAD4, "A not (alone) on Select the link")
+    T.ok(chipsOn(f.buttons[2]).PAD4 and not chipsOn(f.buttons[2]).PAD1, "Y not (alone) on Select the text")
+    T.ok(f.link.edit:HasFocus(), "the address is not selected first")
     T.ok(f.back:IsShown(), "no B by the close cross")
     T.eq(#(f.hints.list or {}), 0, "a hint repeats a button with a gamepad")
     H.press("PADDRIGHT")
-    T.ok(chipsOn(f.buttons[2]).PAD1 and not chipsOn(f.buttons[1]).PAD1, "D-pad right: A not on Select the link")
+    T.ok(chipsOn(f.buttons[2]).PAD1 and chipsOn(f.buttons[2]).PAD4 and not chipsOn(f.buttons[1]).PAD1,
+        "D-pad right: A not on Select the text")
     H.press("PAD1")
+    T.ok(f.text.edit:HasFocus(), "A on Select the text")
+    H.press("PADDLEFT"); H.press("PAD1")
     T.ok(f.link.edit:HasFocus(), "A on Select the link")
     H.press("PAD4")
     T.ok(f.text.edit:HasFocus() and f.text.edit.selection, "Y does not select the text")
     H.press("PAD2")
     T.ok(not W:IsShown(), "B does not close the window")
     T.eq(G.owner, nil, "the gamepad is not given back")
+end)
+
+-- The width of an ASCII text in a TrueType font at `size`: its glyphs' advances (tables cmap,
+-- format 4, and hmtx).
+local function fontWidth(path, text, size)
+    local data = assert(io.open(path, "rb")):read("*a")
+    local function u16(o) local a, b = data:byte(o + 1, o + 2); return a * 256 + b end
+    local function s16(o) local v = u16(o); return v >= 32768 and v - 65536 or v end
+    local function u32(o) return u16(o) * 65536 + u16(o + 2) end
+    local tables = {}
+    for i = 0, u16(4) - 1 do
+        local record = 12 + 16 * i
+        tables[data:sub(record + 1, record + 4)] = u32(record + 8)
+    end
+    local units, metrics, cmap = u16(tables.head + 18), u16(tables.hhea + 34), tables.cmap
+    local sub
+    for i = 0, u16(cmap + 2) - 1 do
+        local o = cmap + u32(cmap + 8 + 8 * i)
+        if not sub and u16(o) == 4 then sub = o end
+    end
+    local segments = u16(sub + 6) / 2
+    local function glyph(c)
+        for s = 0, segments - 1 do
+            if c <= u16(sub + 14 + 2 * s) then
+                local start = u16(sub + 16 + 2 * segments + 2 * s)
+                if c < start then return 0 end
+                local delta = s16(sub + 16 + 4 * segments + 2 * s)
+                local at = sub + 16 + 6 * segments + 2 * s
+                if u16(at) == 0 then return (c + delta) % 65536 end
+                local g = u16(at + u16(at) + 2 * (c - start))
+                return g == 0 and 0 or (g + delta) % 65536
+            end
+        end
+        return 0
+    end
+    local total = 0
+    for i = 1, #text do total = total + u16(tables.hmtx + 4 * math.min(glyph(text:byte(i)), metrics - 1)) end
+    return total * size / units
+end
+
+T.test("the GitHub address shows whole in its box (the game cut it): Noto Sans' widths, room to spare", function()
+    start()
+    W:Open(); H.flush()
+    W:Make(); H.flush()
+    local f = W.frame
+    local box = Layout.rect(f.link.edit)
+    local room = box.right - box.left
+    local font = tools .. "/../Ding/Media/Fonts/NotoSans-Regular.ttf"
+    local width = fontWidth(font, R.ISSUE_URL, W.LINK_FONT)
+    T.ok(width * 1.15 <= room, ("the address takes %.0f of %.0f units"):format(width, room))
+    -- What the game cut: the address in 11 in a 520 window's box (488).
+    T.ok(fontWidth(font, R.ISSUE_URL, 11) > 488 - 16, "the measure does not explain what the game cut")
+    -- The mock's measure (6 a character, wider than the font) fits too.
+    local fs = UI.Text(UIParent, "regular", W.LINK_FONT, UI.C.text)
+    fs:SetText(R.ISSUE_URL)
+    T.ok(fs:GetStringWidth() <= room, "the address does not fit the mock's measure")
+    W:Close(); H.flush()
 end)
 
 T.test("Something else with words: the title line takes the player's first words", function()

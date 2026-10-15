@@ -13,8 +13,9 @@ Nothing else to install: QuestieDB is no longer needed, and TomTom stays optiona
   that change your route, Ding's and the game's versions. Never your character's name, your
   realm or your account.
 - Pick what went wrong among four ready answers (handy with a gamepad) and add your own words if
-  you can type, then **Create the text**: it is selected for Ctrl+C (an addon cannot copy for
-  you), with the link of the GitHub page to paste it into. Ding keeps your last 20 reports in its
+  you can type, then **Create the text**: 1. the address of the GitHub page to open, 2. the text
+  to paste into it, each selected by its button for Ctrl+C (an addon cannot copy for you). Ding
+  keeps your last 20 reports in its
   saved variables (`WTF\Account\<account>\SavedVariables\Ding.lua`), so a player without a
   keyboard can send that file instead; "Restore all defaults" keeps them.
 

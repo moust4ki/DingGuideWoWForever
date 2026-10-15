@@ -173,9 +173,10 @@ Something wrong with a step? Ding writes the report for you, in game:
    game's versions. Never your character's name, your realm or your account.
 3. Pick what went wrong ("The NPC is not there", "The arrow points to the wrong place", "The
    quest is not offered", "Something else") and, if you can type, add a few words.
-4. **Create the text**: it is selected, copy it with Ctrl+C (an addon cannot copy for you), then
-   paste it into a [new report on GitHub](https://github.com/moust4ki/DingGuideWoWForever/issues/new?template=ding-report.yml)
-   (the window shows that link too). Its first line can be the title.
+4. **Create the text**: the window shows, in order, the address of a
+   [new report on GitHub](https://github.com/moust4ki/DingGuideWoWForever/issues/new?template=ding-report.yml)
+   to open, then the text to paste into it. Each has a button that selects it; copy with
+   Ctrl+C (an addon cannot copy for you). The text's first line can be the title.
 
 No keyboard at hand? Ding keeps your last 20 reports in
 `WTF\Account\<account>\SavedVariables\Ding.lua` (written when you log out or reload): send that

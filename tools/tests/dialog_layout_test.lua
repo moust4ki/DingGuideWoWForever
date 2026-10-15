@@ -252,8 +252,8 @@ local function checkReport(where, problems)
                         Layout.check(r, { ring = r.ring, label = r.label, A = r.key }))
                 end
             else
-                parts.copy, parts.clipboard, parts.text = f.copy, f.clipboard, f.text
-                parts.paste, parts.link, parts.saved = f.paste, f.link, f.saved
+                parts.linkStep, parts.link, parts.textStep = f.linkStep, f.link, f.textStep
+                parts.text, parts.clipboard, parts.saved = f.text, f.clipboard, f.saved
             end
             report(problems, where, ("page %d, focus on %d"):format(page, i), Layout.check(f, parts))
         end

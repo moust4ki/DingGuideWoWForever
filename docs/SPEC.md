@@ -1346,12 +1346,14 @@ textures and font flags, never a size nor a position.
     on to "Create the text" (a gamepad types little); the box is a stop too, A gives it the
     keyboard. Without one, the box takes the keyboard at once. A box never takes the keyboard
     from a box that is not Ding's (the chat's, after `/ding bug`): it waits, and a line says so.
-  - "Create the text": the report in a read-only box, selected, "The text is selected: Ctrl+C
-    to copy.", a line saying an addon cannot put text on the clipboard, the link of the GitHub
-    form (`.github/ISSUE_TEMPLATE/ding-report.yml`) in a one-line read-only box, and where the
-    reports are kept for a player without a keyboard (`WTF\Account\<account>\SavedVariables\
-    Ding.lua`, written when the player logs out or reloads). Buttons "Select the text" (Y) and
-    "Select the link".
+  - "Create the text", in the order the player goes (Yendi, in game): "1. Open this address on
+    GitHub:" and the GitHub form's address (`.github/ISSUE_TEMPLATE/ding-report.yml`) whole in a
+    one-line read-only box (10, the window 560 wide: in 11 the game cut it), selected first;
+    "2. Copy this text and paste it into the report:" and the report in a read-only box; a line
+    saying each button selects its box, then Ctrl+C copies it (an addon cannot put text on the
+    clipboard); where the reports are kept for a player without a keyboard
+    (`WTF\Account\<account>\SavedVariables\Ding.lua`, written when the player logs out or
+    reloads). Buttons in the same order: "Select the link" (focused), "Select the text" (Y).
   - The text: GitHub Markdown, English labels, the player's words as typed (a quote). Its first
     line is a title ("Ding! report: Step 19/161 of <section>: <reason>", the player's first words
     cut after a word near 60 characters when the reason is "Something else"), then "What went
