@@ -29,7 +29,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { accept = 2982, -- level 44
           note = "The NPC is indoors." },
-        { turnin = 4124, accept = 4125, -- level 44
+        { turnin = 4124, accept = 4125, floor = "up", -- level 44
           note = "The NPC is indoors, one floor up." },
         { turnin = 2866, accept = 2867, object = 142179, -- level 44
           note = "Position yourself in its center." },
@@ -59,13 +59,13 @@ Ding.RegisterGuide({
         { train = true, talk = 12042, races = { "NightElf" }, classes = { "DRUID" } }, -- level 46
         { train = true, talk = 7312, races = { "Human", "Gnome" }, classes = { "MAGE" }, -- level 46
           note = "The NPC is indoors." },
-        { turnin = 4127, accept = 4129, -- level 46
+        { turnin = 4127, accept = 4129, floor = "up", -- level 46
           note = "The NPC is indoors, one floor up." },
-        { turnin = 4129, -- level 46
+        { turnin = 4129, floor = "top", -- level 46
           note = "The NPC waits on the tower's highest floor." },
-        { accept = 4130, -- level 46
+        { accept = 4130, floor = "top", -- level 46
           note = "Let the conversation play out. The NPC waits on the tower's highest floor." },
-        { turnin = 4130, accept = 4131, -- level 46
+        { turnin = 4130, accept = 4131, floor = "up", -- level 46
           note = "The NPC is indoors, one floor up." },
         { turnin = 2870, accept = 2871, -- level 46
           note = "The NPC is indoors." },
@@ -137,17 +137,17 @@ Ding.RegisterGuide({
         { turnin = 2821 }, -- level 46
         { turnin = 2982, accept = 3445, why = { kind = "carry", quest = 3445, seconds = 71940, xp = 3700 }, -- level 46
           note = "The NPC is indoors." },
-        { turnin = 4265, accept = 4266, -- level 46
+        { turnin = 4265, accept = 4266, floor = "up", -- level 46
           note = "The NPC is indoors, one floor up." },
         { turnin = 4266, accept = 4267, -- level 46
           note = "The NPC is indoors." },
         { turnin = 3022, accept = 3661, -- level 46
           note = "The NPC is indoors." },
-        { turnin = 2939, -- level 46
+        { turnin = 2939, floor = "up", -- level 46
           note = "The NPC is indoors, one floor up." },
-        { accept = 2940, -- level 46
+        { accept = 2940, floor = "up", -- level 46
           note = "The object is indoors, one floor up." },
-        { turnin = 2940, accept = 2941, why = { kind = "carry", once = true, quest = 2941, seconds = 59700, xp = 1100 }, -- level 46
+        { turnin = 2940, accept = 2941, floor = "up", why = { kind = "carry", once = true, quest = 2941, seconds = 59700, xp = 1100 }, -- level 46
           note = "The NPC is indoors, one floor up." },
         { talk = 4209, bank = { 9329, 10699, 8564, 6258, 6259 }, -- level 46
           note = "You need them later for \"The Borrower\", \"Screecher Spirits\", \"The Super Egg-O-Matic\" and \"Rhapsody's Kalimdor Kocktail\": keep them in the bank to free bag slots." },
@@ -158,14 +158,14 @@ Ding.RegisterGuide({
         { go = { 1457, 32.08, 16.4 }, classes = { "ROGUE" }, text = "Step into the cavern within the trunk", -- level 46
           note = "The spot is on the lower floor of the hollow tree." },
         { train = true, talk = 4163, classes = { "ROGUE" } }, -- level 46
-        { train = true, talk = 4146, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 46
+        { train = true, floor = "up", talk = 4146, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 46
           note = "The NPC is indoors, one floor up." },
         { train = true, talk = 4089, classes = { "WARRIOR" } }, -- level 46
         { train = true, talk = 4091, races = { "Human", "Dwarf", "NightElf" }, classes = { "PRIEST" }, -- level 46
           note = "The NPC is indoors." },
-        { turnin = 4267, -- level 46
+        { turnin = 4267, floor = "up", -- level 46
           note = "The NPC is indoors, one floor up." },
-        { turnin = 2972, -- level 46
+        { turnin = 2972, floor = "up", -- level 46
           note = "The NPC is indoors, one floor up." },
         { train = true, talk = 5148, races = { "Human", "Dwarf" }, classes = { "PALADIN" }, -- level 46
           note = "The NPC is indoors." },
@@ -223,7 +223,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { train = true, talk = 5148, races = { "Human", "Dwarf" }, classes = { "PALADIN" }, -- level 48
           note = "The NPC is indoors." },
-        { vendor = true, talk = 5101, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 48
+        { floor = "down", vendor = true, talk = 5101, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 48
           note = "The NPC waits on the lower level, indoors. A lengthy stretch of quests is coming up. This vendor sells no arrows or bullets." },
     },
 })

@@ -30,7 +30,7 @@ Ding.RegisterGuide({
           note = "The targets are kobolds. Additional ones are in the cavern up the trail. Keep away from Hammerfall." },
         { go = { 1417, 80.95, 40.02 }, text = "Climb the trail to the cavern" }, -- level 39
         { go = { 1417, 82.62, 36.1 }, text = "Go into the cavern" }, -- level 39
-        { turnin = 642, accept = 651, -- level 39
+        { turnin = 642, accept = 651, floor = "up", -- level 39
           note = "Climb to the cave's upper level." },
         { go = { 1417, 82.75, 36.26 }, text = "Head out of the cave" }, -- level 39
         { accept = 79976 }, -- level 39

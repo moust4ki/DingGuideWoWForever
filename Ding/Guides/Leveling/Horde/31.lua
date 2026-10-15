@@ -25,7 +25,7 @@ Ding.RegisterGuide({
         { complete = 208, elite = true, -- level 50
           note = "The quarry is a pale tiger, an elite at 43. It calls 2 small adds of a lesser level; neither one is elite. When it drops to about 50% health." },
         { turnin = 208, elite = true }, -- level 50
-        { accept = 608, -- level 50
+        { accept = 608, floor = "up", -- level 50
           note = "The NPC is upstairs, out on the balcony." },
         { go = { 1434, 27.94, 73.5 }, text = "Take the passage out of Booty Bay" }, -- level 50
         { accept = 594, collect = { { 4098, 1 } }, useitem = 4098, -- level 50
@@ -48,15 +48,15 @@ Ding.RegisterGuide({
         { turnin = 594, -- level 50
           note = "If she is absent, wait for her to come back. Beware of foes lurking in stealth." },
         { go = { 1434, 29.51, 72.47 }, text = "Take the tunnel into Booty Bay" }, -- level 50
-        { turnin = 608, -- level 50
+        { turnin = 608, floor = "up", -- level 50
           note = "The NPC is upstairs, out on the balcony." },
         { accept = 2623, -- level 50
           note = "The NPC is indoors." },
-        { turnin = 1444, -- level 50
+        { turnin = 1444, floor = "up", -- level 50
           note = "The NPC is indoors, one floor up." },
         { go = { 1435, 66.33, 76.49 }, text = "Go into the cavern" }, -- level 50
         { go = { 1435, 64.03, 87.88 }, text = "Climb the trail" }, -- level 50
-        { complete = 2623, -- level 50
+        { complete = 2623, floor = "up", -- level 50
           note = "The target is a gray murloc. This one roams, so scan the surrounding area. Climb to the cave's upper level." },
         { go = { 1435, 66.33, 76.49 }, text = "Head out of the cave" }, -- level 50
         { turnin = 93176 }, -- level 50

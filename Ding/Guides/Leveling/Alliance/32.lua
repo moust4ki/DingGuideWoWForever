@@ -12,7 +12,7 @@ Ding.RegisterGuide({
     steps    = {
         { go = { 1434, 27.17, 77.01 }, text = "Travel to Booty Bay", -- level 49
           note = "Stranglethorn Vale: Booty Bay, at the southern tip." },
-        { accept = 608, -- level 49
+        { accept = 608, floor = "up", -- level 49
           note = "The NPC is upstairs, out on the balcony." },
         { turnin = 2874, -- level 49
           note = "The NPC is indoors." },
@@ -49,7 +49,7 @@ Ding.RegisterGuide({
         { turnin = 624, accept = 625, why = { back = true, chain = 2, kind = "detour", quest = 624, seconds = 840, short = true, xp = 10000 }, -- level 50
           note = "Look underneath the bridge. Your targets sit below the water's surface." },
         { turnin = 93176 }, -- level 50
-        { turnin = 608, -- level 50
+        { turnin = 608, floor = "up", -- level 50
           note = "The NPC is upstairs, out on the balcony." },
         { sethearth = "Booty Bay", talk = 6807, -- level 50
           note = "The NPC is indoors at street level." },

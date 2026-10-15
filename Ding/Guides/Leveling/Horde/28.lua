@@ -56,7 +56,7 @@ Ding.RegisterGuide({
         { complete = 1691, sticky = { 8365, 8366 }, -- level 46
           note = "These foes hide in stealth." },
         { go = { 1446, 68.56, 41.43 }, text = "Head down the passage that opens on Lost Rigger Cove" }, -- level 46
-        { complete = 2873, -- level 46
+        { complete = 2873, floor = "up", -- level 46
           note = "The object is indoors, one floor up." },
         { complete = 2875 }, -- level 46
         { accept = 2876, collect = { { 9276, 1 }, { 9250, 1 } }, useitem = { 9276, 9250 }, when = { maxlevel = 46 }, -- level 46
@@ -163,7 +163,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { turnin = 649, accept = 650, -- level 48
           note = "The NPC is indoors." },
-        { accept = 4300, -- level 48
+        { accept = 4300, floor = "up", -- level 48
           note = "The NPC is upstairs, out on the balcony." },
         { train = true, talk = 3353, classes = { "WARRIOR" }, -- level 48
           note = "The NPC is indoors." },

@@ -12,7 +12,7 @@ Ding.RegisterGuide({
     steps    = {
         { go = { 1439, 36.1, 44.93 }, text = "Travel to Auberdine", -- level 15
           note = "Darkshore: Auberdine, the port on the west coast." },
-        { accept = 983, races = { "Human", "Dwarf", "Gnome", "Skyborne" }, -- level 15
+        { accept = 983, floor = "up", races = { "Human", "Dwarf", "Gnome", "Skyborne" }, -- level 15
           note = "The NPC is indoors, one floor up." },
         { accept = 2118, races = { "Human", "Dwarf", "Gnome", "Skyborne" } }, -- level 15
         { accept = 984, races = { "Human", "Dwarf", "Gnome", "Skyborne" }, -- level 15
@@ -90,7 +90,7 @@ Ding.RegisterGuide({
         { accept = 6121, races = { "NightElf", "Skyborne" }, classes = { "DRUID" }, -- level 16
           note = "The NPC is indoors, on the central storey." },
         { accept = 26, races = { "NightElf" }, classes = { "DRUID" } }, -- level 16
-        { turnin = 6121, accept = 6122, races = { "NightElf", "Skyborne" }, classes = { "DRUID" }, -- level 16
+        { turnin = 6121, accept = 6122, floor = "up", races = { "NightElf", "Skyborne" }, classes = { "DRUID" }, -- level 16
           note = "The NPC is indoors, one floor up." },
         { turnin = 26, accept = 29, races = { "NightElf" }, classes = { "DRUID" } }, -- level 16
         { collect = { { 15877, 1 } }, spots = { { 1450, 54.73, 46.56 }, { 1450, 47.97, 47.15 }, { 1450, 50.05, 50.57 }, { 1450, 52.13, 53.34 }, { 1450, 52.86, 48.45 }, { 1450, 54.06, 49.97 }, { 1450, 54.14, 55.55 }, { 1450, 56.15, 53.57 }, { 1450, 58.35, 50.87 }, { 1450, 60.54, 58.33 } }, races = { "NightElf" }, classes = { "DRUID" }, -- level 16
@@ -105,7 +105,7 @@ Ding.RegisterGuide({
         { go = { 1457, 32.08, 16.4 }, classes = { "ROGUE" }, text = "Step into the cavern within the trunk", -- level 16
           note = "The spot is on the lower floor of the hollow tree." },
         { train = true, talk = 4163, classes = { "ROGUE" } }, -- level 16
-        { train = true, talk = 4146, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 16
+        { train = true, floor = "up", talk = 4146, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 16
           note = "The NPC is indoors, one floor up." },
         { train = true, talk = 4091, races = { "Human", "Dwarf", "NightElf" }, classes = { "PRIEST" }, -- level 16
           note = "The NPC is indoors." },
@@ -135,16 +135,16 @@ Ding.RegisterGuide({
         { turnin = 4813 }, -- level 17
         { turnin = 985, -- level 17
           note = "The NPC is indoors." },
-        { accept = 965, -- level 17
+        { accept = 965, floor = "up", -- level 17
           note = "The NPC is indoors, one floor up." },
         { accept = 982 }, -- level 17
         { turnin = 958, -- level 17
           note = "The NPC is indoors." },
         { accept = 97914, races = { "Human", "Dwarf", "Gnome", "Skyborne" }, why = { continent = true, kind = "carry", quest = 97914, seconds = 10260, xp = 800 } }, -- level 17
         { turnin = 957, when = { log = 957 } }, -- level 17
-        { complete = 982, -- level 17
+        { complete = 982, floor = "down", -- level 17
           note = "Go to the lowest deck of the wreck. Swim in by way of a porthole." },
-        { complete = 982, sticky = 1138, -- level 17
+        { complete = 982, floor = "down", sticky = 1138, -- level 17
           note = "Go to the lowest deck of the wreck. Swim in by way of a porthole." },
         { collect = { { 15883, 1 } }, spots = { { 1439, 48.83, 11.35 } }, races = { "NightElf" }, classes = { "DRUID" }, -- level 17
           note = "Your targets sit below the water's surface." },

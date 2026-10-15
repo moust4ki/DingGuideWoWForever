@@ -55,9 +55,9 @@ Ding.RegisterGuide({
         { turnin = 597, accept = 599 }, -- level 45
         { turnin = 607, accept = 609, -- level 45
           note = "The NPC is indoors." },
-        { accept = 587, -- level 45
+        { accept = 587, floor = "top", -- level 45
           note = "Climb to the highest floor of the building." },
-        { turnin = 599, accept = 604, -- level 45
+        { turnin = 599, accept = 604, floor = "up", -- level 45
           note = "The NPC waits on the house's upper-floor terrace." },
         { accept = 576, sticky = { 604, 576, 587 }, -- level 45
           note = "The NPC stands on the top tier of the pier." },
@@ -73,9 +73,9 @@ Ding.RegisterGuide({
         { turnin = 576, -- level 45
           note = "The NPC stands on the top tier of the pier." },
         { accept = 617 }, -- level 45
-        { turnin = 587, -- level 45
+        { turnin = 587, floor = "top", -- level 45
           note = "Climb to the highest floor of the building." },
-        { turnin = 604, -- level 45
+        { turnin = 604, floor = "up", -- level 45
           note = "The NPC is upstairs, out on the balcony." },
         { turnin = 571, accept = 573 }, -- level 45
         { go = { 1434, 39.08, 47.06 }, text = "Take the road until the trail starts" }, -- level 45

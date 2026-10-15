@@ -68,14 +68,14 @@ Ding.RegisterGuide({
         { accept = 3462, elite = true }, -- level 50
         { turnin = 3462, elite = true }, -- level 50
         { accept = 3463, elite = true }, -- level 50
-        { complete = 3463, elite = true, equip = 10515, -- level 50
+        { complete = 3463, elite = true, floor = "up", equip = 10515, -- level 50
           note = "The spot is at the tower's upper level. Beware, this foe is elite." },
-        { complete = 3463, elite = true, equip = 10515, -- level 50
+        { complete = 3463, elite = true, floor = "up", equip = 10515, -- level 50
           note = "The spot is at the tower's upper level. Beware, this foe is elite." },
-        { complete = 3463, elite = true, equip = 10515, -- level 50
+        { complete = 3463, elite = true, floor = "up", equip = 10515, -- level 50
           note = "The spot is at the tower's upper level. Beware, this foe is elite." },
         { go = { 1427, 52.52, 58.01 }, elite = true, text = "Walk over the rope bridge" }, -- level 50
-        { complete = 3463, elite = true, equip = 10515, -- level 50
+        { complete = 3463, elite = true, floor = "up", equip = 10515, -- level 50
           note = "The spot is at the tower's upper level. Beware, this foe is elite." },
         { turnin = 4451, sticky = 7724 }, -- level 50
         { go = { 1427, 66.74, 34.52 }, text = "Stay on the trail" }, -- level 51

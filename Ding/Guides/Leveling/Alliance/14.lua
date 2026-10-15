@@ -44,7 +44,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { turnin = 1241, accept = 1242, -- level 31
           note = "The NPC stands by the water's edge." },
-        { turnin = 1242, accept = 1243, -- level 31
+        { turnin = 1242, accept = 1243, floor = "up", -- level 31
           note = "The NPC is indoors, one floor up." },
         { talk = 2455, bank = 3712, -- level 31
           note = "The NPC is indoors. You need it later for \"Soothing Turtle Bisque\": keep it in the bank to free a bag slot." },
@@ -79,7 +79,7 @@ Ding.RegisterGuide({
           note = "The targets are worgen." },
         { complete = 221 }, -- level 31
         { turnin = 74, accept = 75, why = { back = true, chain = 5, kind = "detour", quest = 75, quests = 8, seconds = 360, short = true, total = 7700, xp = 6500 } }, -- level 31
-        { complete = 75, -- level 31
+        { complete = 75, floor = "up", -- level 31
           note = "Be ready for a fight right away. The object is indoors, one floor up." },
         { turnin = 75, accept = 78, why = { kind = "carry", quest = 78, seconds = 4440, xp = 600 } }, -- level 31
         { turnin = 91732, races = { "Human" } }, -- level 31
@@ -154,14 +154,14 @@ Ding.RegisterGuide({
           note = "This one roams, so scan the surrounding area." },
         { turnin = 223, -- level 32
           note = "The NPC is indoors." },
-        { train = true, talk = 5498, races = { "Human", "Gnome" }, classes = { "MAGE" }, -- level 32
+        { train = true, floor = "top", talk = 5498, races = { "Human", "Gnome" }, classes = { "MAGE" }, -- level 32
           note = "The NPC waits on the tower's highest floor." },
         { accept = 690, races = { "Human", "Gnome", "Skyborne" }, classes = { "MAGE" } }, -- level 32
         { go = { 1453, 50.56, 90.35 }, races = { "Human", "Gnome" }, classes = { "MAGE" }, text = "Head indoors" }, -- level 32
         { accept = 1301, races = { "Human", "Gnome", "Skyborne" }, classes = { "MAGE" }, -- level 32
           note = "The NPC is indoors." },
         { go = { 1453, 42.29, 81.76 }, races = { "Human", "Gnome" }, classes = { "MAGE" }, text = "Head indoors" }, -- level 32
-        { turnin = 335, accept = 336, races = { "Human", "Gnome", "Skyborne" }, classes = { "MAGE" }, -- level 32
+        { turnin = 335, accept = 336, floor = "down", races = { "Human", "Gnome", "Skyborne" }, classes = { "MAGE" }, -- level 32
           note = "The NPC waits on the lower level, indoors." },
         { collect = { { 5849, 1 } }, spots = { { 1453, 64.24, 80.81 } }, when = { log = 1179 }, races = { "Human", "Gnome" }, classes = { "MAGE" } }, -- level 32
         { collect = { { 5849, 1 } }, spots = { { 1453, 64.24, 80.81 } }, when = { done = 1179 }, races = { "Human", "Gnome" }, classes = { "MAGE" } }, -- level 32
@@ -171,7 +171,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { talk = 15659, buy = { { 3719, 1, 15659 }, { 2997, 1, 15659 } }, races = { "Human", "Gnome" }, classes = { "MAGE" }, -- level 32
           note = "Hang on to it; an upcoming quest uses it. The NPC is indoors." },
-        { turnin = 1245, accept = 1246, -- level 32
+        { turnin = 1245, accept = 1246, floor = "up", -- level 32
           note = "The NPC is indoors, one floor up." },
         { talk = 15659, buy = { { 3719, 1, 15659 }, { 2997, 1, 15659 } }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "WARLOCK", "DRUID" }, -- level 32
           note = "Hang on to it; an upcoming quest uses it. The NPC is indoors." },
@@ -187,12 +187,12 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { go = { 1453, 42.29, 81.76 }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "WARLOCK", "DRUID" }, text = "Head indoors" }, -- level 32
         { turnin = 78090, races = { "Human", "Dwarf" }, classes = { "PALADIN" } }, -- level 32
-        { turnin = 335, accept = 336, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "WARLOCK", "DRUID" }, -- level 32
+        { turnin = 335, accept = 336, floor = "down", classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "WARLOCK", "DRUID" }, -- level 32
           note = "The NPC waits on the lower level, indoors." },
         { go = { 1453, 42.29, 81.76 }, races = { "Human", "Gnome" }, classes = { "WARLOCK" }, text = "Head indoors", -- level 32
           note = "The NPC waits on the lower level, indoors." },
         { train = true, talk = 461, races = { "Human", "Gnome" }, classes = { "WARLOCK" } }, -- level 32
-        { vendor = true, talk = 5520, races = { "Human", "Gnome" }, classes = { "WARLOCK" }, -- level 32
+        { floor = "down", vendor = true, talk = 5520, races = { "Human", "Gnome" }, classes = { "WARLOCK" }, -- level 32
           note = "The NPC waits on the lower level, indoors." },
         { accept = 1798, races = { "Human", "Gnome", "Skyborne" }, classes = { "WARLOCK" }, -- level 32
           note = "The NPC is indoors." },
@@ -202,9 +202,9 @@ Ding.RegisterGuide({
         { go = { 1453, 52.93, 51.05 }, races = { "Human", "Dwarf", "NightElf" }, classes = { "PRIEST" }, text = "Head indoors", -- level 32
           note = "This one roams, so scan the surrounding area. The NPC is indoors." },
         { train = true, talk = 5484, races = { "Human", "Dwarf", "NightElf" }, classes = { "PRIEST" } }, -- level 32
-        { train = true, talk = 5479, classes = { "WARRIOR" }, -- level 32
+        { train = true, floor = "up", talk = 5479, classes = { "WARRIOR" }, -- level 32
           note = "The NPC is indoors, one floor up." },
-        { accept = 1718, classes = { "WARRIOR" }, why = { continent = true, kind = "carry", quest = 1718, seconds = 28380, xp = 600 }, -- level 32
+        { accept = 1718, floor = "up", classes = { "WARRIOR" }, why = { continent = true, kind = "carry", quest = 1718, seconds = 28380, xp = 600 }, -- level 32
           note = "The NPC is indoors, one floor up." },
         { train = true, talk = 918, classes = { "ROGUE" } }, -- level 32
         { train = true, talk = 5515, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 32
@@ -215,7 +215,7 @@ Ding.RegisterGuide({
           note = "Wait for the talking to finish" },
         { turnin = 1447, accept = 1247 }, -- level 32
         { turnin = 97220, races = { "NightElf" } }, -- level 32
-        { turnin = 1247, accept = 1248, -- level 32
+        { turnin = 1247, accept = 1248, floor = "up", -- level 32
           note = "The NPC is indoors, one floor up." },
         { go = { 1453, 73.19, 46.69 }, text = "Head indoors" }, -- level 32
         { turnin = 336, races = { "Dwarf", "NightElf" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "WARLOCK", "DRUID" } }, -- level 32

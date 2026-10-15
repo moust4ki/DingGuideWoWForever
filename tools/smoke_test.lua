@@ -1472,6 +1472,36 @@ ok, err = pcall(function()
 end)
 if not ok then problem("passage: " .. tostring(err)) end
 
+-- Floors: the mage trainer of Goldshire, upstairs in the inn. Near him the detail line says
+-- the floor; at his spot, "The NPC is one floor up" instead of "You're here", and it stays.
+ok, err = pcall(function()
+    Ding.RegisterGuide({ id = "smoke-floor", title = "Floor", races = { "Human" }, steps = {
+        { accept = 1860, floor = "up", note = "Zaldimar Wefhellt, the mage trainer of Goldshire, upstairs in the inn." },
+        { text = "End" },
+    } })
+    scenarioCharacter()
+    H.resetQuests()
+    E.turnedIn, Ding.char.manual = {}, {}
+    player.race, player.faction, player.class, player.level = "Human", "Alliance", "MAGE", 10
+    local giver = Ding.Data:StartPoints(1860)[1]
+    expect(giver, "floor: no giver for 1860")
+    player.map, player.x, player.y = giver.map, giver.x + 0.3, giver.y
+    Ding.Travel:Reset()
+    E:SetGuide("smoke-floor", 1, true)
+    tick(1)
+    local A, f = Ding.Arrow, Ding.Arrow.frame
+    expect(f.detail:IsShown() and tostring(f.detail:GetText()):find(L.FLOOR_NEAR_UP, 1, true),
+        "floor: the detail line does not say the floor near the NPC (" .. tostring(f.detail:GetText()) .. ")")
+    player.x = giver.x
+    tick(1)
+    expect(A.state == "arrived", "floor: not arrived at the NPC's spot")
+    expect(f.distance:GetText() == L.FLOOR_NPC_UP, "floor: " .. tostring(f.distance:GetText()))
+    tick(4)
+    expect(f:IsShown(), "floor: the arrow faded although the NPC is upstairs")
+    checkPanel("floor: arrived one floor down")
+end)
+if not ok then problem("floor: " .. tostring(err)) end
+
 -- Talents: with a free point, the build's next talent under the step, learned with A twice
 -- in focus mode.
 ok, err = pcall(function()

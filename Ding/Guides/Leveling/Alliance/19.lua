@@ -17,20 +17,20 @@ Ding.RegisterGuide({
         { talk = 2625 }, -- level 37
         { sethearth = "Booty Bay", talk = 6807, -- level 37
           note = "The NPC is indoors at street level." },
-        { turnin = 1115, -- level 37
+        { turnin = 1115, floor = "top", -- level 37
           note = "Climb to the highest floor of the building." },
-        { accept = 189, -- level 37
+        { accept = 189, floor = "top", -- level 37
           note = "Climb to the highest floor of the building." },
-        { accept = 601, -- level 37
+        { accept = 601, floor = "up", -- level 37
           note = "The NPC is upstairs, out on the balcony." },
         { accept = 577, -- level 37
           note = "The NPC stands on the top tier of the pier. The NPC is indoors." },
-        { train = true, talk = 5498, races = { "Human", "Gnome" }, classes = { "MAGE" }, -- level 37
+        { train = true, floor = "top", talk = 5498, races = { "Human", "Gnome" }, classes = { "MAGE" }, -- level 37
           note = "The NPC waits on the tower's highest floor." },
         { go = { 1453, 42.29, 81.76 }, races = { "Human", "Gnome" }, classes = { "WARLOCK" }, text = "Head indoors", -- level 37
           note = "The NPC waits on the lower level, indoors." },
         { train = true, talk = 461, races = { "Human", "Gnome" }, classes = { "WARLOCK" } }, -- level 37
-        { vendor = true, talk = 5520, races = { "Human", "Gnome" }, classes = { "WARLOCK" }, -- level 37
+        { floor = "down", vendor = true, talk = 5520, races = { "Human", "Gnome" }, classes = { "WARLOCK" }, -- level 37
           note = "The NPC waits on the lower level, indoors." },
         { go = { 1453, 52.93, 51.05 }, races = { "Human", "Dwarf" }, classes = { "PALADIN" }, text = "Head indoors", -- level 37
           note = "The NPC is indoors." },
@@ -38,7 +38,7 @@ Ding.RegisterGuide({
         { go = { 1453, 52.93, 51.05 }, races = { "Human", "Dwarf", "NightElf" }, classes = { "PRIEST" }, text = "Head indoors", -- level 37
           note = "This one roams, so scan the surrounding area. The NPC is indoors." },
         { train = true, talk = 5484, races = { "Human", "Dwarf", "NightElf" }, classes = { "PRIEST" } }, -- level 37
-        { train = true, talk = 5479, classes = { "WARRIOR" }, -- level 37
+        { train = true, floor = "up", talk = 5479, classes = { "WARRIOR" }, -- level 37
           note = "The NPC is indoors, one floor up." },
         { train = true, talk = 918, classes = { "ROGUE" } }, -- level 37
         { train = true, talk = 5515, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 37
@@ -47,12 +47,12 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { talk = 15659, collect = { { 4278, 4 } }, -- level 37
           note = "The NPC is indoors." },
-        { accept = 627, when = { item = { 4278, 4 } }, -- level 37
+        { accept = 627, floor = "top", when = { item = { 4278, 4 } }, -- level 37
           note = "Climb to the highest floor of the building." },
-        { turnin = 627, when = { log = 627, ready = 627 }, -- level 37
+        { turnin = 627, floor = "top", when = { log = 627, ready = 627 }, -- level 37
           note = "Climb to the highest floor of the building." },
         { accept = 622, when = { done = 627, log = 627 } }, -- level 37
-        { turnin = 627, when = { done = 627, ready = 627 }, -- level 37
+        { turnin = 627, floor = "top", when = { done = 627, ready = 627 }, -- level 37
           note = "Climb to the highest floor of the building." },
         { accept = 622, when = { done = 627 } }, -- level 37
         { accept = 207, elite = true }, -- level 37
@@ -64,7 +64,7 @@ Ding.RegisterGuide({
         { complete = 1712, keep = 3357, classes = { "WARRIOR" }, -- level 37
           note = "They compete for spawn points with the other Kurzen foes. A key class quest coming up requires this." },
         { go = { 1434, 45.88, 8.15 }, text = "Go into the cavern" }, -- level 37
-        { turnin = 328, accept = 329, -- level 37
+        { turnin = 328, accept = 329, floor = "down", -- level 37
           note = "Head to the lower level of the cavern." },
         { complete = 574, -- level 37
           note = "The targets are on the cave floor." },
@@ -103,11 +103,11 @@ Ding.RegisterGuide({
         { turnin = 330, accept = 331 }, -- level 38
         { turnin = 331 }, -- level 38
         { train = true, talk = 12042, races = { "NightElf" }, classes = { "DRUID" } }, -- level 38
-        { accept = 1116, -- level 38
+        { accept = 1116, floor = "top", -- level 38
           note = "Climb to the highest floor of the building." },
-        { turnin = 189, -- level 38
+        { turnin = 189, floor = "top", -- level 38
           note = "Climb to the highest floor of the building." },
-        { turnin = 601, accept = 602, why = { kind = "carry", quest = 602, seconds = 23940, xp = 1400 }, -- level 38
+        { turnin = 601, accept = 602, floor = "up", why = { kind = "carry", quest = 602, seconds = 23940, xp = 1400 }, -- level 38
           note = "The NPC is upstairs, out on the balcony." },
         { talk = 2625, bank = { 3960, 4306 }, -- level 38
           note = "You need them later for \"Magical Analysis\" and \"Caught!\": keep them in the bank to free bag slots." },

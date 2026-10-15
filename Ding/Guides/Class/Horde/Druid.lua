@@ -21,7 +21,7 @@ Ding.RegisterGuide({
           why = { text = "From level 10: the chain that teaches Bear Form.", short = true },
           note = "Turak Runetotem, in the Elder Rise of Thunder Bluff." },
         { turnin = 5922, accept = 5930, races = { "Tauren" },
-          note = "Dendrite Starblaze waits on the upper floor of the great house of Nighthaven." },
+          floor = "up", note = "Dendrite Starblaze waits on the upper floor of the great house of Nighthaven." },
         { complete = 5930, talk = 11956, races = { "Tauren" },
           note = "The Great Bear Spirit waits northwest of the village, up the hill path: listen to all it has to say." },
         { turnin = 5930, accept = 5932, races = { "Tauren" } },
@@ -47,7 +47,7 @@ Ding.RegisterGuide({
         { turnin = 94911, accept = 94913, races = { "Skyborne" },
           note = "Turak Runetotem, in the Elder Rise of Thunder Bluff." },
         { turnin = 94913, races = { "Skyborne" },
-          note = "Dendrite Starblaze waits on the upper floor of the great house of Nighthaven." },
+          floor = "up", note = "Dendrite Starblaze waits on the upper floor of the great house of Nighthaven." },
 
         -- Level 14: Cure Poison (Tauren).
         { accept = 6126, races = { "Tauren" },

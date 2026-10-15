@@ -24,7 +24,7 @@ Ding.RegisterGuide({
         { complete = 1364, -- level 43
           note = "Fight the elementals of the swamp. The item drops rarely." },
         { turnin = 1398, accept = 1425 }, -- level 43
-        { turnin = 1364, -- level 43
+        { turnin = 1364, floor = "top", -- level 43
           note = "The NPC waits on the tower's highest floor." },
         { turnin = 1425 }, -- level 43
         { go = { 1419, 65.5, 24.38 }, fly = true, talk = 8609, text = "Fly to Nethergarde Keep", -- level 43
@@ -36,7 +36,7 @@ Ding.RegisterGuide({
         { accept = 580, elite = true }, -- level 43
         { accept = 1119, when = { done = 621 }, -- level 43
           note = "The NPC is indoors at street level." },
-        { accept = 2864, -- level 43
+        { accept = 2864, floor = "top", -- level 43
           note = "Climb to the highest floor of the building." },
         { accept = 2872, -- level 43
           note = "The NPC is indoors." },

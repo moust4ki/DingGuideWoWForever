@@ -137,7 +137,7 @@ Ding.RegisterGuide({
         { turnin = 1013, dungeon = "Shadowfang Keep" }, -- level 24
         { useitem = 15883, when = { log = 30 }, races = { "Tauren", "Skyborne" }, classes = { "DRUID" } }, -- level 24
         { complete = 30, when = { log = 30 }, races = { "Tauren" }, classes = { "DRUID" } }, -- level 24
-        { turnin = 30, when = { ready = 30 }, races = { "Tauren" }, classes = { "DRUID" }, -- level 24
+        { turnin = 30, floor = "up", when = { ready = 30 }, races = { "Tauren" }, classes = { "DRUID" }, -- level 24
           note = "The NPC is indoors, one floor up." },
         { accept = 31, when = { done = 30 }, races = { "Tauren" }, classes = { "DRUID" } }, -- level 24
         { train = true, talk = 12042, races = { "Tauren" }, classes = { "DRUID" } }, -- level 24

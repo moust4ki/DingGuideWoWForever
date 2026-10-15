@@ -17,18 +17,18 @@ Ding.RegisterGuide({
           note = "Stormwind first, then Stranglethorn Vale." },
         { talk = 2461, collect = { { 4502, 1 }, { 5826, 1 } }, spots = { { 1455, 35.87, 60.19 } }, -- level 42
           note = "The NPC is indoors." },
-        { accept = 1477, why = { action = "accept", kind = "detour", quest = 1364, quests = 4, seconds = 180, total = 5800, xp = 3300 }, -- level 42
+        { accept = 1477, floor = "top", why = { action = "accept", kind = "detour", quest = 1364, quests = 4, seconds = 180, total = 5800, xp = 3300 }, -- level 42
           note = "The NPC waits on the tower's highest floor." },
         { turnin = 78148, races = { "Human" } }, -- level 42
         { accept = 79536 }, -- level 42
         { turnin = 79536 }, -- level 42
         { go = { 1453, 51.56, 73.67 }, text = "Head indoors" }, -- level 42
-        { accept = 1364, races = { "Dwarf", "NightElf" }, why = { kind = "carry", once = true, quest = 1364, seconds = 19500, xp = 3300 }, -- level 42
+        { accept = 1364, floor = "up", races = { "Dwarf", "NightElf" }, why = { kind = "carry", once = true, quest = 1364, seconds = 19500, xp = 3300 }, -- level 42
           note = "The NPC is indoors, one floor up." },
         { accept = 1364, races = { "Human", "Gnome", "Skyborne" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "WARLOCK", "DRUID" }, why = { kind = "carry", once = true, quest = 1364, seconds = 19500, xp = 3300 } }, -- level 42
-        { accept = 209, -- level 42
+        { accept = 209, floor = "top", -- level 42
           note = "Climb to the highest floor of the building." },
-        { turnin = 669, -- level 42
+        { turnin = 669, floor = "up", -- level 42
           note = "The NPC is upstairs, out on the balcony." },
         { turnin = 603, accept = 610, -- level 42
           note = "The NPC is indoors, on the central storey." },
@@ -53,7 +53,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { turnin = 610, accept = 611, -- level 42
           note = "The NPC is indoors, on the central storey." },
-        { turnin = 599, -- level 42
+        { turnin = 599, floor = "up", -- level 42
           note = "The NPC is upstairs, out on the balcony." },
         { accept = 617 }, -- level 42
         { go = { 1434, 27.94, 73.5 }, text = "Take the passage out of Booty Bay" }, -- level 42
@@ -84,13 +84,13 @@ Ding.RegisterGuide({
         { turnin = 600, -- level 42
           note = "The NPC is indoors at street level." },
         { turnin = 621, when = { ready = 621 } }, -- level 42
-        { accept = 587, -- level 42
+        { accept = 587, floor = "top", -- level 42
           note = "Climb to the highest floor of the building." },
-        { turnin = 209, -- level 42
+        { turnin = 209, floor = "top", -- level 42
           note = "Climb to the highest floor of the building." },
-        { accept = 604, -- level 42
+        { accept = 604, floor = "up", -- level 42
           note = "The NPC is upstairs, out on the balcony." },
-        { turnin = 611, -- level 42
+        { turnin = 611, floor = "up", -- level 42
           note = "The NPC is upstairs, out on the balcony." },
         { turnin = 617, accept = 623, why = { continent = true, kind = "carry", quest = 623, seconds = 10980, xp = 2700 } }, -- level 42
         { talk = 2625 }, -- level 42
@@ -140,9 +140,9 @@ Ding.RegisterGuide({
         { go = { 1434, 29.51, 72.47 }, text = "Take the tunnel into Booty Bay" }, -- level 43
         { turnin = 576, -- level 43
           note = "The NPC stands on the top tier of the pier." },
-        { turnin = 604, -- level 43
+        { turnin = 604, floor = "up", -- level 43
           note = "The NPC is upstairs, out on the balcony." },
-        { turnin = 587, -- level 43
+        { turnin = 587, floor = "top", -- level 43
           note = "Climb to the highest floor of the building." },
         { talk = 2625, collect = { { 2725, 1 }, { 2728, 1 }, { 2730, 1 }, { 2732, 1 }, { 2734, 1 }, { 2735, 1 }, { 2738, 1 }, { 2740, 1 }, { 2742, 1 }, { 2744, 1 }, { 2745, 1 }, { 2748, 1 }, { 2749, 1 }, { 2750, 1 }, { 2751, 1 } }, -- level 43
           note = "If some pages are unavailable, go on without them." },

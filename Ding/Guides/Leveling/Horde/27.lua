@@ -15,9 +15,9 @@ Ding.RegisterGuide({
         { accept = 2784 }, -- level 45
         { complete = 2784, talk = 7572 }, -- level 45
         { turnin = 2784, accept = 2621 }, -- level 45
-        { turnin = 2621, accept = 2622, -- level 45
+        { turnin = 2621, accept = 2622, floor = "up", -- level 45
           note = "The NPC is indoors, one floor up." },
-        { accept = 1429, why = { kind = "carry", quest = 1429, seconds = 62880, xp = 3800 }, -- level 45
+        { accept = 1429, floor = "up", why = { kind = "carry", quest = 1429, seconds = 62880, xp = 3800 }, -- level 45
           note = "The NPC is indoors, one floor up." },
         { turnin = 2622, -- level 45
           note = "The NPC is indoors." },

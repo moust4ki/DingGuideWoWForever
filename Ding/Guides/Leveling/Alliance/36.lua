@@ -36,7 +36,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { talk = 4209, bank = { 12724, 10444, 8526 }, -- level 52
           note = "The NPC is indoors. You need them later for \"Good Natured Emma\", \"Arcane Runes\" and \"Sprinkle's Secret Ingredient\": keep them in the bank to free bag slots." },
-        { turnin = 3790, accept = 3764, why = { chain = 1, kind = "detour", quest = 3764, seconds = 480, short = true, xp = 5200 }, -- level 52
+        { turnin = 3790, accept = 3764, floor = "top", why = { chain = 1, kind = "detour", quest = 3764, seconds = 480, short = true, xp = 5200 }, -- level 52
           note = "Climb to the highest floor of the building." },
         { turnin = 3764, when = { ready = 3764 }, -- level 52
           note = "The quest giver stands outdoors, not indoors." },

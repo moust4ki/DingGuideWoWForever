@@ -66,16 +66,16 @@ Ding.RegisterGuide({
           note = "Look for a white set of bones. This one roams, so scan the surrounding area. The targets appear in several places." },
         { collect = { { 12739, 1 } }, -- level 57
           note = "Finish Locked Away to obtain this." },
-        { accept = 5060, -- level 57
+        { accept = 5060, floor = "up", -- level 57
           note = "The object is indoors, one floor up." },
         { turnin = 5060, when = { ready = 5060 } }, -- level 57
         { complete = 5219 }, -- level 57
         { turnin = 5219, accept = 5220 }, -- level 57
-        { turnin = 5050, accept = 5051, -- level 57
+        { turnin = 5050, accept = 5051, floor = "up", -- level 57
           note = "The NPC is indoors, one floor up." },
         { complete = 5051, collect = { { 12722, 1 } }, useitem = 12722, -- level 57
           note = "The target is a ghoul armed with a pitchfork. This one roams, so scan the surrounding area. The targets appear in several places." },
-        { turnin = 5051, when = { item = 12723 }, -- level 57
+        { turnin = 5051, floor = "up", when = { item = 12723 }, -- level 57
           note = "The NPC is indoors, one floor up." },
         { complete = 5097, elite = true, useitem = 12815, -- level 57
           note = "Stand at the watchtower's doorway. An elite foe waits indoors; stay clear of it." },
@@ -131,7 +131,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { accept = 6164, -- level 58
           note = "The NPC is indoors." },
-        { complete = 6164, -- level 58
+        { complete = 6164, floor = "up", -- level 58
           note = "The object is indoors, one floor up." },
         { turnin = 6164, -- level 58
           note = "The NPC is indoors." },
@@ -139,7 +139,7 @@ Ding.RegisterGuide({
         { complete = 5211, talk = 11064, -- level 58
           note = "The targets are ghouls. Other undead compete for the same spawn points. The spirits rise where those foes die." },
         { go = { 1423, 23.38, 73.25 }, text = "Go down into the tomb" }, -- level 58
-        { complete = 6021, -- level 58
+        { complete = 6021, floor = "down", -- level 58
           note = "This is below ground, on the crypt's lower floor." },
         { turnin = { 5542, 5543, 5544 }, accept = 5742 }, -- level 58
         { complete = 5742, talk = 1855, -- level 58
@@ -157,7 +157,7 @@ Ding.RegisterGuide({
         { accept = 5153, when = { done = 5152 } }, -- level 58
         { complete = 5153, when = { log = 5153 } }, -- level 58
         { complete = 5537, elite = true }, -- level 58
-        { turnin = 5153, when = { log = 5153 }, -- level 58
+        { turnin = 5153, floor = "up", when = { log = 5153 }, -- level 58
           note = "The NPC is indoors, one floor up." },
         { accept = 4971 }, -- level 58
         { accept = 5154, when = { done = 5153 } }, -- level 58
@@ -165,14 +165,14 @@ Ding.RegisterGuide({
           note = "Move the camera close and check which book is genuine. Some books are traps that summon foes. The genuine book can look two ways:" },
         { complete = 4971, useitem = 12627, -- level 58
           note = "Close to the big buildings lit in blue. A new one may appear when one is killed." },
-        { turnin = 4971, accept = 4972, -- level 58
+        { turnin = 4971, accept = 4972, floor = "up", -- level 58
           note = "The NPC is indoors, one floor up." },
         { turnin = 5154, when = { log = 5154 } }, -- level 58
         { accept = 5210, when = { done = 5154 } }, -- level 58
         { destroy = 15696 }, -- level 58
         { complete = 4972, -- level 58
           note = "Look for little gray coffers of metal. The targets are in the ruined houses." },
-        { turnin = 4972, -- level 58
+        { turnin = 4972, floor = "up", -- level 58
           note = "The NPC is indoors, one floor up." },
         { turnin = 5537, elite = true }, -- level 58
         { turnin = 5211 }, -- level 58

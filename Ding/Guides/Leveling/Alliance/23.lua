@@ -65,7 +65,7 @@ Ding.RegisterGuide({
         { accept = 1052, dungeon = "Scarlet Monastery" }, -- level 41
         { turnin = 1466, accept = 1467 }, -- level 41
         { turnin = 93224 }, -- level 41
-        { turnin = 1052, accept = 1053, dungeon = "Scarlet Monastery", -- level 41
+        { turnin = 1052, accept = 1053, dungeon = "Scarlet Monastery", floor = "up", -- level 41
           note = "The NPC is indoors, one floor up." },
         { complete = 1053, dungeon = "Scarlet Monastery", -- level 41
           note = "Head into the Library wing. The target is the dungeon's opening boss." },
@@ -75,7 +75,7 @@ Ding.RegisterGuide({
           note = "This is in the Armory wing. The target is the dungeon's last boss." },
         { complete = 1053, dungeon = "Scarlet Monastery", -- level 41
           note = "Found in the Cathedral wing. The target is the dungeon's last boss." },
-        { turnin = 1053, dungeon = "Scarlet Monastery", -- level 41
+        { turnin = 1053, dungeon = "Scarlet Monastery", floor = "up", -- level 41
           note = "The NPC is indoors, one floor up." },
         { turnin = 1050, dungeon = "Scarlet Monastery", -- level 41
           note = "The NPC is indoors." },

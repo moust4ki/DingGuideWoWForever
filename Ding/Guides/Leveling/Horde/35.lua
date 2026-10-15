@@ -86,7 +86,7 @@ Ding.RegisterGuide({
         { turnin = 5157, accept = 5158, why = { kind = "carry", quest = 5158, seconds = 12300, xp = 2600 } }, -- level 53
         { turnin = 5156, -- level 53
           note = "The NPC is indoors." },
-        { turnin = 3541, accept = 3563, why = { kind = "carry", once = true, quest = 3563, seconds = 12600, xp = 3800 }, -- level 53
+        { turnin = 3541, accept = 3563, floor = "up", why = { kind = "carry", once = true, quest = 3563, seconds = 12600, xp = 3800 }, -- level 53
           note = "The NPC is upstairs, out on the balcony." },
         { talk = 8673, collect = { { 10561, 1 } }, -- level 53
           note = "The NPC is indoors. Hold on to it for a task in Un'Goro Crater later." },

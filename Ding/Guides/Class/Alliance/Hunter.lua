@@ -27,7 +27,7 @@ Ding.RegisterGuide({
           why = { text = "Turning this in teaches Tame Beast: you can now keep a pet.", short = true } },
         { turnin = 6103, races = { "NightElf" },
           why = { text = "Your pet can now learn new skills.", short = true },
-          note = "Jocaste, the hunter trainer of Darnassus, upstairs." },
+          floor = "up", note = "Jocaste, the hunter trainer of Darnassus, upstairs." },
 
         -- Level 10, Dwarves: Grif Wildheart, in Kharanos.
         { accept = 6064, races = { "Dwarf" },

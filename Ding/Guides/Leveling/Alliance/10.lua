@@ -33,9 +33,9 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { vendor = true, talk = 6382, races = { "Human", "Gnome" }, classes = { "WARLOCK" }, -- level 24
           note = "The NPC is indoors." },
-        { turnin = 968, when = { log = 968 }, why = { back = true, kind = "detour", quest = 968, seconds = 240, short = true, xp = 2000 }, -- level 24
+        { turnin = 968, floor = "down", when = { log = 968 }, why = { back = true, kind = "detour", quest = 968, seconds = 240, short = true, xp = 2000 }, -- level 24
           note = "The NPC waits on the lower level, indoors." },
-        { turnin = 971, dungeon = "Blackfathom Deeps", -- level 24
+        { turnin = 971, dungeon = "Blackfathom Deeps", floor = "down", -- level 24
           note = "The NPC waits on the lower level, indoors." },
         { accept = 463 }, -- level 24
         { accept = 288, when = { item = 2594 } }, -- level 24
@@ -43,9 +43,9 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { talk = 1464, buy = { { 2594, 1, 1464 } }, -- level 24
           note = "The NPC is indoors." },
-        { turnin = 942, accept = 943, when = { log = 942 }, -- level 24
+        { turnin = 942, accept = 943, floor = "up", when = { log = 942 }, -- level 24
           note = "The NPC is indoors, one floor up." },
-        { turnin = 942, accept = 943, when = { done = 942 }, -- level 24
+        { turnin = 942, accept = 943, floor = "up", when = { done = 942 }, -- level 24
           note = "The NPC is indoors, one floor up." },
         { turnin = 288, when = { item = 2594 } }, -- level 24
         { accept = 98282 }, -- level 24
@@ -84,7 +84,7 @@ Ding.RegisterGuide({
         { turnin = 276, accept = 277 }, -- level 25
         { complete = 470, -- level 25
           note = "Targets are both in the tomb and around it." },
-        { turnin = 943, when = { log = 943 }, -- level 25
+        { turnin = 943, floor = "up", when = { log = 943 }, -- level 25
           note = "The NPC is indoors, one floor up." },
         { turnin = 98282 }, -- level 25
         { turnin = 470 }, -- level 25
@@ -115,17 +115,17 @@ Ding.RegisterGuide({
           note = "The NPC is indoors. Buy it now; a task in Duskwood needs it before long." },
         { turnin = 1075, why = { kind = "detour", quest = 1075, seconds = 120, xp = 800 } }, -- level 25
         { accept = 78148, races = { "Human" } }, -- level 25
-        { talk = 2485, races = { "Human", "Gnome" }, classes = { "MAGE" }, -- level 25
+        { floor = "up", talk = 2485, races = { "Human", "Gnome" }, classes = { "MAGE" }, -- level 25
           note = "The NPC is on an upper floor of the tower." },
         { go = { 1453, 42.28, 81.85 }, races = { "Human", "Gnome" }, classes = { "WARLOCK" }, text = "Head indoors" }, -- level 25
-        { turnin = 1738, when = { ready = 1738 }, races = { "Human", "Gnome", "Skyborne" }, classes = { "WARLOCK" }, -- level 25
+        { turnin = 1738, floor = "down", when = { ready = 1738 }, races = { "Human", "Gnome", "Skyborne" }, classes = { "WARLOCK" }, -- level 25
           note = "The NPC waits on the lower level, indoors." },
         { accept = 1739, when = { done = 1738 }, races = { "Human", "Gnome", "Skyborne" }, classes = { "WARLOCK" } }, -- level 25
-        { complete = 1739, useitem = 6913, when = { log = 1739 }, races = { "Human", "Gnome", "Skyborne" }, classes = { "WARLOCK" }, -- level 25
+        { complete = 1739, floor = "down", useitem = 6913, when = { log = 1739 }, races = { "Human", "Gnome", "Skyborne" }, classes = { "WARLOCK" }, -- level 25
           note = "Step onto the pink rune. The spot is in the crypt under the building." },
         { turnin = 1739, when = { ready = 1739 }, races = { "Human", "Gnome", "Skyborne" }, classes = { "WARLOCK" }, -- level 25
           note = "The NPC waits on the lower level, indoors. The NPC stands one level over the crypt." },
-        { vendor = true, talk = 5520, races = { "Human", "Gnome" }, classes = { "WARLOCK" }, -- level 25
+        { floor = "down", vendor = true, talk = 5520, races = { "Human", "Gnome" }, classes = { "WARLOCK" }, -- level 25
           note = "The NPC waits on the lower level, indoors." },
     },
 })

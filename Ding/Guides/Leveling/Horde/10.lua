@@ -18,7 +18,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors. A lengthy stretch of quests is coming up." },
         { accept = 6541 }, -- level 26
         { turnin = 95494, races = { "Orc", "Scourge", "Tauren", "Troll" } }, -- level 26
-        { turnin = 6541, -- level 26
+        { turnin = 6541, floor = "up", -- level 26
           note = "The NPC is on the tower's middle floor." },
         { accept = 6504, when = { item = { { 16645, 1 }, { 16646, 1 }, { 16647, 1 }, { 16648, 1 }, { 16649, 1 }, { 16650, 1 }, { 16651, 1 }, { 16652, 1 }, { 16653, 1 }, { 16654, 1 }, { 16655, 1 }, { 16656, 1 } } } }, -- level 26
         { complete = 6504, useitem = 16645, when = { log = 6504 } }, -- level 26

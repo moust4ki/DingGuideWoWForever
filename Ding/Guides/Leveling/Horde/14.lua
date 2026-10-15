@@ -65,7 +65,7 @@ Ding.RegisterGuide({
         { turnin = 1148, accept = 1184, why = { chain = 7, kind = "detour", quest = 1178, quests = 11, seconds = 180, total = 12000, xp = 9700 } }, -- level 34
         { turnin = 97003 }, -- level 34
         { destroy = 5877 }, -- level 34
-        { turnin = 1178, accept = 1180, -- level 34
+        { turnin = 1178, accept = 1180, floor = "up", -- level 34
           note = "The NPC is indoors, one floor up." },
         { turnin = 96, when = { log = 96 }, races = { "Orc", "Tauren", "Troll", "Skyborne" }, classes = { "SHAMAN" } }, -- level 34
         { turnin = 1180, accept = 1181 }, -- level 34
@@ -73,11 +73,11 @@ Ding.RegisterGuide({
           note = "The NPC stands on the top tier of the pier. The NPC is indoors." },
         { accept = 605, -- level 34
           note = "The NPC is on the building's ground level." },
-        { turnin = 1115, accept = 201, -- level 34
+        { turnin = 1115, accept = 201, floor = "top", -- level 34
           note = "Climb to the highest floor of the building." },
-        { accept = { 189, 213 }, -- level 34
+        { accept = { 189, 213 }, floor = "top", -- level 34
           note = "Climb to the highest floor of the building." },
-        { turnin = 1181, accept = 1182, -- level 34
+        { turnin = 1181, accept = 1182, floor = "up", -- level 34
           note = "The NPC is upstairs, out on the balcony." },
         { go = { 1434, 26.84, 77.15 }, fly = true, talk = 2858, text = "Fly to Booty Bay", -- level 34
           note = "The NPC is upstairs, out on the balcony." },

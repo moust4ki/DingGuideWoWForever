@@ -285,16 +285,16 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { accept = 886, classes = { "DRUID" }, -- level 11
           note = "The NPC is indoors." },
-        { turnin = 5922, accept = 5930, classes = { "DRUID" }, -- level 11
+        { turnin = 5922, accept = 5930, floor = "up", classes = { "DRUID" }, -- level 11
           note = "The NPC is indoors, one floor up." },
         { complete = 5930, talk = 11956, classes = { "DRUID" } }, -- level 11
-        { turnin = 5930, when = { ready = 5930 }, classes = { "DRUID" }, -- level 11
+        { turnin = 5930, floor = "up", when = { ready = 5930 }, classes = { "DRUID" }, -- level 11
           note = "The NPC is indoors, one floor up." },
         { accept = 5932, when = { done = 5930 }, classes = { "DRUID" } }, -- level 11
         { turnin = 5932, when = { log = 5932 }, classes = { "DRUID" }, -- level 11
           note = "The NPC is indoors." },
         { accept = 6002, when = { done = 5932 }, classes = { "DRUID" } }, -- level 11
-        { turnin = 6363, accept = 6364, -- level 11
+        { turnin = 6363, accept = 6364, floor = "top", -- level 11
           note = "The NPC waits on the tower's highest floor." },
         { turnin = 98435 }, -- level 11
         { complete = 6002, talk = 12144, useitem = 15710, when = { log = 6002 }, classes = { "DRUID" }, -- level 11
@@ -311,12 +311,12 @@ Ding.RegisterGuide({
           note = "The NPC waits at the mountain's summit." },
         { complete = 1525, classes = { "SHAMAN" }, -- level 11
           note = "Kill Water Seekers and Thornweavers." },
-        { accept = 791, -- level 11
+        { accept = 791, floor = "top", -- level 11
           note = "The NPC waits on the tower's highest floor." },
         { accept = 96825, races = { "Tauren" } }, -- level 11
         { accept = 815, -- level 11
           note = "This one roams, so scan the surrounding area." },
-        { accept = { 784, 837 }, -- level 11
+        { accept = { 784, 837 }, floor = "up", -- level 11
           note = "The NPC is indoors, one floor up." },
         { accept = 99048, races = { "Tauren" } }, -- level 11
         { go = { 1411, 54.59, 38.82 }, classes = { "SHAMAN" }, text = "Climb the trail" }, -- level 11
@@ -334,7 +334,7 @@ Ding.RegisterGuide({
         { accept = 99049, races = { "Tauren" } }, -- level 11
         { complete = 99049, races = { "Tauren" } }, -- level 11
         { go = { 1411, 58.96, 58.33 }, text = "Head indoors" }, -- level 11
-        { complete = 784, collect = { { 4882, 1 } }, -- level 11
+        { complete = 784, floor = "up", collect = { { 4882, 1 } }, -- level 11
           note = "The target is indoors, one floor up. Consider bringing a group for this one." },
         { go = { 1411, 59.86, 57.81 }, text = "Stay on the trail and keep climbing the steps" }, -- level 11
         { collect = { { 4881, 1 } }, -- level 11
@@ -397,7 +397,7 @@ Ding.RegisterGuide({
         { turnin = 816, -- level 12
           note = "The NPC is indoors." },
         { level = 12, patrol = { { 1411, 42.46, 40.56 }, { 1411, 41.16, 37.84 }, { 1411, 44.46, 35.95 } } }, -- level 12
-        { turnin = 791, -- level 12
+        { turnin = 791, floor = "top", -- level 12
           note = "The NPC waits on the tower's highest floor." },
         { turnin = 815, -- level 12
           note = "This one roams, so scan the surrounding area." },
@@ -413,7 +413,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { train = true, talk = 3620, classes = { "HUNTER" }, -- level 13
           note = "The NPC is indoors." },
-        { turnin = { 784, 837, 830 }, accept = 831, -- level 13
+        { turnin = { 784, 837, 830 }, accept = 831, floor = "up", -- level 13
           note = "The NPC is indoors, one floor up." },
         { turnin = 96821, races = { "Tauren" } }, -- level 13
         { turnin = 823 }, -- level 13

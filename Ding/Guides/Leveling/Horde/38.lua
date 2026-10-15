@@ -21,14 +21,14 @@ Ding.RegisterGuide({
         { destroy = { 11516, 11511, 11515 } }, -- level 54
         { go = { 1448, 38.43, 59.8 }, text = "Go into Jaedenar" }, -- level 54
         { go = { 1448, 35.38, 58.65 }, text = "Go into the cavern" }, -- level 54
-        { complete = 5165, -- level 54
+        { complete = 5165, floor = "up", -- level 54
           note = "Go to the upper floor of the cavern." },
-        { complete = 5165, -- level 54
+        { complete = 5165, floor = "up", -- level 54
           note = "Go to the upper floor of the cavern." },
         { go = { 1448, 38.2, 54.11 }, text = "Circle the gap in the ground, then take the trail downward" }, -- level 54
-        { complete = 5165, -- level 54
+        { complete = 5165, floor = "down", -- level 54
           note = "The target is deep in the cave, on its lowest floor." },
-        { complete = 5165, -- level 54
+        { complete = 5165, floor = "down", -- level 54
           note = "The target is deep in the cave, on its lowest floor." },
         { accept = 5202, collect = { { 13140, 1 } }, useitem = 13140, -- level 54
           note = "Search the upper and lower floors of the cavern." },

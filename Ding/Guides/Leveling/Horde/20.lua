@@ -30,9 +30,9 @@ Ding.RegisterGuide({
           note = "The NPC stands on the top tier of the pier. The NPC is indoors." },
         { accept = 600, -- level 40
           note = "The NPC is indoors at street level." },
-        { accept = 209, -- level 40
+        { accept = 209, floor = "top", -- level 40
           note = "Climb to the highest floor of the building." },
-        { turnin = 669, -- level 40
+        { turnin = 669, floor = "up", -- level 40
           note = "The NPC is upstairs, out on the balcony." },
         { accept = 572 }, -- level 40
         { accept = 584 }, -- level 40
@@ -95,9 +95,9 @@ Ding.RegisterGuide({
           note = "The NPC is indoors at street level." },
         { sethearth = "Booty Bay", talk = 6807, -- level 41
           note = "The NPC is indoors at street level." },
-        { accept = 1116, -- level 41
+        { accept = 1116, floor = "top", -- level 41
           note = "Climb to the highest floor of the building." },
-        { turnin = 209, -- level 41
+        { turnin = 209, floor = "top", -- level 41
           note = "Climb to the highest floor of the building." },
         { turnin = 598, elite = true }, -- level 41
         { turnin = 585, accept = 1261, why = { continent = true, kind = "carry", quest = 1261, seconds = 16080, xp = 3200 } }, -- level 41
@@ -112,9 +112,9 @@ Ding.RegisterGuide({
         { accept = 698, -- level 41
           note = "The NPC is indoors." },
         { go = { 1435, 46.02, 54.87 }, fly = true, talk = 6026, text = "Flight master at Stonard" }, -- level 41
-        { turnin = 1420, -- level 41
+        { turnin = 1420, floor = "up", -- level 41
           note = "The NPC is indoors, one floor up." },
-        { accept = 1424, sticky = 698, -- level 41
+        { accept = 1424, floor = "up", sticky = 698, -- level 41
           note = "The NPC is indoors, one floor up." },
         { accept = 1392, collect = { { 6196, 1 } }, useitem = 6196, patrol = { { 1435, 32.23, 36.35 }, { 1435, 33.3, 40.48 }, { 1435, 33.55, 43.94 }, { 1435, 36.72, 46.24 }, { 1435, 37.96, 43.15 }, { 1435, 38.93, 35.49 }, { 1435, 40.17, 34.59 }, { 1435, 40.92, 32.28 }, { 1435, 42.33, 32.31 }, { 1435, 45.65, 36.53 }, { 1435, 46.33, 38.63 }, { 1435, 47.61, 38.16 }, { 1435, 53.06, 39.13 }, { 1435, 55.45, 37.4 }, { 1435, 55.84, 35.66 }, { 1435, 55.57, 34.03 } }, -- level 41
           note = "The target is a humanoid escorted by 2 guards. The target patrols a long route; look along it." },
@@ -133,16 +133,16 @@ Ding.RegisterGuide({
         { complete = 1424, -- level 41
           note = "Look for assorted little brown items. Your targets sit below the water's surface. Drop the Ground Clutter option down to 1." },
         { turnin = 698 }, -- level 41
-        { turnin = 1424, -- level 41
+        { turnin = 1424, floor = "up", -- level 41
           note = "The NPC is indoors, one floor up." },
         { turnin = 1389 }, -- level 41
         { complete = 1116, -- level 41
           note = "Hunt the little winged dragonkin." },
-        { turnin = 1116, -- level 41
+        { turnin = 1116, floor = "top", -- level 41
           note = "Climb to the highest floor of the building." },
-        { accept = { 1117, 2864 }, why = { continent = true, kind = "carry", quest = 1117, seconds = 6420, xp = 2800 }, -- level 41
+        { accept = { 1117, 2864 }, floor = "top", why = { continent = true, kind = "carry", quest = 1117, seconds = 6420, xp = 2800 }, -- level 41
           note = "Let the conversation play out. Climb to the highest floor of the building." },
-        { accept = 1183, why = { continent = true, kind = "carry", quest = 1183, seconds = 6540, xp = 700 }, -- level 41
+        { accept = 1183, floor = "up", why = { continent = true, kind = "carry", quest = 1183, seconds = 6540, xp = 700 }, -- level 41
           note = "The NPC is upstairs, out on the balcony." },
         { accept = 2872, why = { continent = true, kind = "carry", once = true, quest = 2872, seconds = 5160, short = true, xp = 400 }, -- level 41
           note = "The NPC is indoors." },

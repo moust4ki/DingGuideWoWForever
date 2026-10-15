@@ -43,7 +43,7 @@ Ding.RegisterGuide({
         { accept = 477 }, -- level 13
         { accept = 6321, races = { "Scourge" } }, -- level 14
         { go = { 1421, 43.04, 41.43 }, text = "Go down into the tomb" }, -- level 13
-        { turnin = 449, accept = { 3221, 437 }, -- level 13
+        { turnin = 449, accept = { 3221, 437 }, floor = "down", -- level 13
           note = "This is below ground, on the crypt's lower floor." },
         { accept = 91921 }, -- level 13
         { turnin = 3221, accept = { 1359, 447 }, why = { kind = "carry", quest = 447, seconds = 4980, xp = 900 }, -- level 13
@@ -57,9 +57,9 @@ Ding.RegisterGuide({
           note = "The targets are worgen." },
         { turnin = 421, accept = 422 }, -- level 13
         { go = { 1421, 49.8, 30.02 }, text = "Walk over the span" }, -- level 13
-        { complete = 422, -- level 13
+        { complete = 422, floor = "up", -- level 13
           note = "Be ready for a fight right away. The object is indoors, one floor up." },
-        { turnin = 430, when = { log = 430 }, -- level 13
+        { turnin = 430, floor = "up", when = { log = 430 }, -- level 13
           note = "The NPC is indoors, one floor up." },
         { turnin = 91921 }, -- level 13
         { accept = 425, when = { done = 430 }, -- level 13
@@ -79,7 +79,7 @@ Ding.RegisterGuide({
         { talk = 6491 }, -- level 13
         { turnin = 422, accept = 423 }, -- level 13
         { go = { 1421, 43.04, 41.43 }, text = "Go down into the tomb" }, -- level 13
-        { turnin = 437, accept = 438, -- level 13
+        { turnin = 437, accept = 438, floor = "down", -- level 13
           note = "This is below ground, on the crypt's lower floor." },
         { turnin = 438, accept = 439, object = 1593, sticky = 423 }, -- level 13
         { complete = 423, -- level 14
@@ -95,11 +95,11 @@ Ding.RegisterGuide({
         { turnin = { 423, 481 }, accept = 482 }, -- level 14
         { turnin = 482 }, -- level 14
         { go = { 1421, 43.04, 41.43 }, text = "Go down into the tomb" }, -- level 14
-        { turnin = 439, -- level 14
+        { turnin = 439, floor = "down", -- level 14
           note = "This is below ground, on the crypt's lower floor." },
-        { turnin = 6323, accept = 6322, races = { "Scourge" }, why = { back = true, chain = 1, kind = "detour", quest = 6322, quests = 4, seconds = 300, short = true, total = 1800, xp = 1300 }, -- level 15
+        { turnin = 6323, accept = 6322, floor = "up", races = { "Scourge" }, why = { back = true, chain = 1, kind = "detour", quest = 6322, quests = 4, seconds = 300, short = true, total = 1800, xp = 1300 }, -- level 15
           note = "The NPC is on Undercity's upper level." },
-        { turnin = 6322, accept = 6324, races = { "Scourge" }, -- level 15
+        { turnin = 6322, accept = 6324, floor = "up", races = { "Scourge" }, -- level 15
           note = "The NPC is on Undercity's upper level." },
         { accept = 97891, races = { "Scourge" } }, -- level 15
         { turnin = 6324, races = { "Scourge" }, why = { back = true, kind = "detour", quest = 6324, seconds = 300, short = true, xp = 1100 } }, -- level 15
@@ -109,7 +109,7 @@ Ding.RegisterGuide({
         { accept = 97891, races = { "Orc", "Tauren", "Troll", "Skyborne" } }, -- level 15
         { train = true, talk = 4608, races = { "Scourge", "Troll" }, classes = { "PRIEST" } }, -- level 15
         { train = true, talk = 4582, races = { "Orc", "Scourge", "Troll" }, classes = { "ROGUE" } }, -- level 15
-        { train = true, talk = 4568, races = { "Scourge", "Troll" }, classes = { "MAGE" }, -- level 15
+        { train = true, floor = "up", talk = 4568, races = { "Scourge", "Troll" }, classes = { "MAGE" }, -- level 15
           note = "The NPC is indoors, one floor up." },
         { train = true, talk = 4563, races = { "Orc", "Scourge" }, classes = { "WARLOCK" }, -- level 15
           note = "The NPC is indoors." },

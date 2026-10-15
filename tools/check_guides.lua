@@ -18,6 +18,7 @@
 local here = arg[0]:match("^(.*)[/\\]") or "."
 local root = here:match("^(.*)[/\\]tools$") or (here == "." and "..") or (here .. "/..")
 local X = dofile(here .. "/questiedb_export.lua")
+local Floor = dofile(here .. "/guide_floor.lua")
 local QK = X.QUEST
 
 local MAX_LOG = 20
@@ -37,6 +38,8 @@ local STEP_KEYS = {
     when = true, noauto = true, revive = true, patrol = true, xp = true,
     -- Why the guide plans the step (Ding/Core/Why.lua).
     why = true,
+    -- The target's floor, which the arrow says ("up", "top", "down").
+    floor = true,
 }
 local WHEN_KEYS = {
     done = true, notdone = true, log = true, notlog = true, ready = true, item = true, noitem = true,
@@ -419,6 +422,15 @@ function Ding.RegisterGuide(def)
                 report("error", at, "dungeon expects the dungeon's name")
             end
             if step.dungeon and step.elite then report("warning", at, "dungeon and elite on the same step") end
+            if step.floor ~= nil and not Floor.VALUES[step.floor] then
+                report("error", at, 'floor expects "up", "top" or "down"')
+            end
+            -- A note that names the target's floor (tools/guide_floor.lua), and a key that does
+            -- not say it: the arrow would say "You're here" downstairs.
+            local named = not step.go and Floor.of(step.note)
+            if named and step.floor ~= named then
+                report("warning", at, ('the note names a floor: floor = "%s"'):format(named))
+            end
             checkGoals(step, at)
             if step.why ~= nil then
                 checkReason(step.why, WHY_KEYS, WHY_KINDS, at, "why")

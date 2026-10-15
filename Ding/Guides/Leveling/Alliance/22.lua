@@ -31,7 +31,7 @@ Ding.RegisterGuide({
         { turnin = 4487, races = { "Human", "Gnome", "Skyborne" }, classes = { "WARLOCK" } }, -- level 40
         { accept = 4490, races = { "Human", "Gnome", "Skyborne" }, classes = { "WARLOCK" } }, -- level 40
         { turnin = 4490, races = { "Human", "Gnome", "Skyborne" }, classes = { "WARLOCK" } }, -- level 40
-        { accept = 1286, -- level 40
+        { accept = 1286, floor = "up", -- level 40
           note = "The NPC is indoors, one floor up." },
         { turnin = 1260, accept = 1204, -- level 40
           note = "The NPC is indoors." },
@@ -53,12 +53,12 @@ Ding.RegisterGuide({
         { destroy = 5884 }, -- level 40
         { turnin = 1177, -- level 40
           note = "Steer clear of Brackenwall Village." },
-        { turnin = 1286, accept = 1287, -- level 40
+        { turnin = 1286, accept = 1287, floor = "up", -- level 40
           note = "Speak with him once he gives up. The NPC is indoors, one floor up." },
         { complete = 1187 }, -- level 40
         { turnin = { 1204, 1222 }, accept = 1258, -- level 40
           note = "The NPC is indoors." },
-        { turnin = 1287, -- level 40
+        { turnin = 1287, floor = "up", -- level 40
           note = "The NPC is indoors, one floor up." },
     },
 })

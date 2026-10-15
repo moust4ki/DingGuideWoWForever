@@ -24,7 +24,7 @@ Ding.RegisterGuide({
           note = "These foes hide in stealth." },
         { vendor = true, talk = 8139, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" } }, -- level 49
         { go = { 1446, 68.56, 41.43 }, text = "Head down the passage that opens on Lost Rigger Cove" }, -- level 49
-        { complete = 2873, -- level 49
+        { complete = 2873, floor = "up", -- level 49
           note = "The object is indoors, one floor up." },
         { complete = 2875 }, -- level 49
         { accept = 2876, collect = { { 9276, 1 }, { 9250, 1 } }, useitem = { 9276, 9250 }, when = { maxlevel = 49 }, -- level 49
