@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.7.1
+
+Nothing else to install: QuestieDB is no longer needed, and TomTom stays optional.
+
+- The arrow no longer leads to monsters you have already killed enough of, when the game names
+  them in your language and Ding only knows their English name (Forever's own monsters, the
+  Skyborne start among them): it matches the quest's objectives by their order too. Their
+  marks and counters above the nameplates come back the same way.
+
 ## v1.7.0
 
 Nothing else to install: QuestieDB is no longer needed, and TomTom stays optional.
