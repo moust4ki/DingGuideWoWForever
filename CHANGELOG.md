@@ -1,5 +1,40 @@
 # Changelog
 
+## v1.7.0
+
+Nothing else to install: QuestieDB is no longer needed, and TomTom stays optional.
+
+- **Dungeon quests**: a new pack, **Ding! - Dungeon quests** (Settings > Guide, under
+  "Dungeons"), with one guide per dungeon for your side, listed by level (the ones above your
+  level are greyed, you can still pick them). Each guide takes you to every quest giver of that
+  dungeon and through the chains that lead to them, in an order that keeps the trips short, then
+  to the dungeon's entrance, then through the dungeon with a note for each quest (which boss or
+  monster drops what, where it waits), and back to the turn-ins and the quests they open. Every
+  dungeon from Ragefire Chasm, the Deadmines and Wailing Caverns to Blackrock Depths, Lower
+  Blackrock Spire, Dire Maul, Scholomance and Stratholme, and Forever's own: the Hall of Thanes,
+  the Ruins of Lordaeron, the Excavation Site of the Wetlands and the City of Dalaran.
+- The first step of each chain says what it brings (a weapon of your choice, armor of your
+  kind, a ring, a big amount of XP) and when it is long or far away; very long or far chains are
+  optional and say why. A quest that starts from a drop shows only once the drop is in your bags.
+  Raids, the Upper Spire and the level 60 armor-set chains are not in the pack.
+- A step that takes you to a dungeon's entrance now passes once you are inside: the game gives
+  no position in a dungeon, and the step stayed on screen for the whole run.
+- "Take this guide up where I am" keeps your place: it stops only on a quest of your log still
+  to finish or a quest of the route you never took. With "Elite quests" turned on, it used to
+  send you back to the first elite quest of the section.
+- The guide window stays as it is in combat: minimizing it there is now an option, off by
+  default (Settings > Appearance, "Minimize the guide in combat"). It was on for everyone: turn it
+  on again there if you liked it.
+- The arrow says "You're here" 6 yards from the place or the NPC (it was 10, and the arrow faded
+  while you still had a few steps to walk), and "You're in the area" 25 yards from the monsters
+  or the objects to gather (it was 40, more than an attack's reach).
+- The aids are on for a new install: the quest marks and counters above the monsters, the line
+  in their tooltip, and enemy nameplates shown farther. The game hides the enemy nameplates
+  until you press V: Ding shows them once so that its counters appear, and says so in the chat.
+- Upstairs and downstairs: when the NPC or the object waits on another floor, the arrow no
+  longer says "You're here" in the middle of the building. It says "The NPC is one floor up",
+  "at the top" or "one floor down", and stays on screen until you find the stairs.
+
 ## v1.6.1
 
 Nothing else to install: QuestieDB is no longer needed, and TomTom stays optional.

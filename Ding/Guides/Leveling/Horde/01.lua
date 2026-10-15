@@ -187,11 +187,11 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { sethearth = "Gallows' End Tavern", talk = 5688, -- level 6
           note = "The NPC is indoors." },
-        { turnin = 5651, accept = 5650, classes = { "PRIEST" }, -- level 6
+        { turnin = 5651, accept = 5650, floor = "up", classes = { "PRIEST" }, -- level 6
           note = "The NPC is indoors, one floor up." },
         { complete = 5650, classes = { "PRIEST" }, -- level 6
           note = "Heal Deathguard Kel with Lesser Heal (Rank 2). Buff Deathguard Kel with Power Word: Fortitude." },
-        { turnin = 5650, when = { ready = 5650 }, classes = { "PRIEST" }, -- level 6
+        { turnin = 5650, floor = "up", when = { ready = 5650 }, classes = { "PRIEST" }, -- level 6
           note = "The NPC is indoors, one floor up." },
         { complete = 367, -- level 6
           note = "The targets are gray, demon-like hounds." },
@@ -217,17 +217,17 @@ Ding.RegisterGuide({
           note = "The NPC patrols a long route; look along it." },
         { train = true, talk = 2131, classes = { "WARRIOR" }, -- level 7
           note = "The NPC is indoors." },
-        { turnin = 407, -- level 7
+        { turnin = 407, floor = "down", -- level 7
           note = "The NPC waits on the lower level, indoors." },
-        { train = true, talk = 2128, classes = { "MAGE" }, -- level 7
+        { train = true, floor = "up", talk = 2128, classes = { "MAGE" }, -- level 7
           note = "The NPC is indoors, one floor up." },
-        { train = true, talk = 2127, classes = { "WARLOCK" }, -- level 7
+        { train = true, floor = "up", talk = 2127, classes = { "WARLOCK" }, -- level 7
           note = "The NPC is indoors, one floor up." },
-        { vendor = true, talk = 5750, classes = { "WARLOCK" }, -- level 7
+        { floor = "up", vendor = true, talk = 5750, classes = { "WARLOCK" }, -- level 7
           note = "The NPC is indoors, one floor up." },
-        { train = true, talk = 2129, classes = { "PRIEST" }, -- level 7
+        { train = true, floor = "up", talk = 2129, classes = { "PRIEST" }, -- level 7
           note = "The NPC is indoors, one floor up." },
-        { train = true, talk = 2130, classes = { "ROGUE" }, -- level 7
+        { train = true, floor = "up", talk = 2130, classes = { "ROGUE" }, -- level 7
           note = "The NPC is indoors, one floor up." },
         { go = { 1411, 51.87, 40.83 }, classes = { "WARRIOR", "ROGUE" }, text = "Learn Mining from the trainer" }, -- level 8
         { talk = 3175, classes = { "WARRIOR", "ROGUE" } }, -- level 8
@@ -235,11 +235,11 @@ Ding.RegisterGuide({
         { accept = 96822, races = { "Scourge" } }, -- level 8
         { talk = 3174, classes = { "WARRIOR", "ROGUE" } }, -- level 8
         { talk = 3168, buy = { { 2901, 1, 3168 } }, classes = { "WARRIOR", "ROGUE" } }, -- level 8
-        { accept = 784, -- level 8
+        { accept = 784, floor = "up", -- level 8
           note = "The NPC is indoors, one floor up." },
         { accept = 96825, races = { "Scourge" } }, -- level 8
         { go = { 1411, 50.14, 42.95 }, text = "Climb the trail" }, -- level 8
-        { accept = 791, -- level 8
+        { accept = 791, floor = "top", -- level 8
           note = "The NPC waits on the tower's highest floor." },
         { complete = 96825, races = { "Scourge" } }, -- level 8
         { accept = 2161 }, -- level 8
@@ -269,7 +269,7 @@ Ding.RegisterGuide({
         { turnin = 786, sticky = { 791, 784 }, -- level 8
           note = "This one roams, so scan the surrounding area. The targets are spread over several spots." },
         { go = { 1411, 58.96, 58.33 }, text = "Head indoors" }, -- level 8
-        { complete = 784, collect = { { 4882, 1 } }, -- level 8
+        { complete = 784, floor = "up", collect = { { 4882, 1 } }, -- level 8
           note = "The target is indoors, one floor up. Consider bringing a group for this one." },
         { complete = 96822, races = { "Scourge" } }, -- level 8
         { go = { 1411, 59.86, 57.81 }, text = "Stay on the trail and keep climbing the steps" }, -- level 8
@@ -279,12 +279,12 @@ Ding.RegisterGuide({
         { complete = 791 }, -- level 8
         { complete = 784 }, -- level 8
         { turnin = 823 }, -- level 8
-        { turnin = { 784, 830 }, accept = { 825, 831, 837 }, why = { kind = "carry", quest = 831, seconds = 5580, xp = 600 }, -- level 9
+        { turnin = { 784, 830 }, accept = { 825, 831, 837 }, floor = "up", why = { kind = "carry", quest = 831, seconds = 5580, xp = 600 }, -- level 9
           note = "The NPC is indoors, one floor up." },
         { accept = 815, -- level 9
           note = "This one roams, so scan the surrounding area." },
         { go = { 1411, 50.14, 42.95 }, text = "Climb the trail" }, -- level 9
-        { turnin = 791, -- level 9
+        { turnin = 791, floor = "top", -- level 9
           note = "The NPC waits on the tower's highest floor." },
         { turnin = 2161, -- level 9
           note = "The NPC is indoors." },
@@ -320,7 +320,7 @@ Ding.RegisterGuide({
         { complete = 96821, races = { "Scourge" } }, -- level 10
         { train = true, talk = 5880, classes = { "MAGE" }, -- level 10
           note = "The NPC is indoors." },
-        { turnin = 825, -- level 10
+        { turnin = 825, floor = "up", -- level 10
           note = "The NPC is indoors, one floor up." },
         { accept = 96655, races = { "Scourge" } }, -- level 10
         { turnin = 815, -- level 10
@@ -332,7 +332,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { accept = 5660, classes = { "PRIEST" }, -- level 10
           note = "The NPC is indoors." },
-        { train = true, talk = 3170, classes = { "ROGUE" }, -- level 10
+        { train = true, floor = "up", talk = 3170, classes = { "ROGUE" }, -- level 10
           note = "The NPC is indoors, one floor up." },
         { train = true, talk = 3172, classes = { "WARLOCK" }, -- level 10
           note = "The NPC is out back, at the rear of the structure." },
@@ -342,7 +342,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { complete = 837 }, -- level 10
         { complete = 837 }, -- level 10
-        { turnin = 837, -- level 10
+        { turnin = 837, floor = "up", -- level 10
           note = "The NPC is indoors, one floor up." },
         { turnin = 96821, races = { "Scourge" } }, -- level 10
         { sethearth = "Razor Hill", talk = 6928, -- level 10
@@ -373,13 +373,13 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { accept = { 354, 362 }, -- level 11
           note = "The NPC is indoors." },
-        { accept = 1881, classes = { "MAGE" }, -- level 11
+        { accept = 1881, floor = "up", classes = { "MAGE" }, -- level 11
           note = "The NPC is indoors, one floor up." },
-        { accept = 375, -- level 11
+        { accept = 375, floor = "up", -- level 11
           note = "The NPC is indoors, one floor up." },
-        { accept = 1478, classes = { "WARLOCK" }, -- level 11
+        { accept = 1478, floor = "up", classes = { "WARLOCK" }, -- level 11
           note = "The NPC is indoors, one floor up." },
-        { accept = 1885, classes = { "ROGUE" }, -- level 11
+        { accept = 1885, floor = "up", classes = { "ROGUE" }, -- level 11
           note = "The NPC is indoors, one floor up." },
         { accept = 374 }, -- level 11
         { accept = 358, -- level 11
@@ -400,7 +400,7 @@ Ding.RegisterGuide({
         { go = { 1458, 57.26, 32.71 }, classes = { "ROGUE" }, text = "Learn Swords at the weapon master" }, -- level 11
         { talk = 11870, classes = { "ROGUE" } }, -- level 11
         { turnin = 5660, classes = { "PRIEST" } }, -- level 11
-        { turnin = 1881, accept = 1882, sticky = { 374, 370 }, classes = { "MAGE" }, -- level 11
+        { turnin = 1881, accept = 1882, floor = "up", sticky = { 374, 370 }, classes = { "MAGE" }, -- level 11
           note = "The NPC is indoors, one floor up." },
         { complete = 370, -- level 11
           note = "The target is indoors." },
@@ -455,21 +455,21 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { turnin = { 354, 362 }, accept = 355, -- level 12
           note = "The NPC is indoors." },
-        { turnin = 375, when = { item = 2320 }, -- level 12
+        { turnin = 375, floor = "up", when = { item = 2320 }, -- level 12
           note = "The NPC is indoors, one floor up." },
         { accept = 96895, races = { "Scourge" } }, -- level 12
         { accept = 99156, races = { "Scourge" } }, -- level 12
         { train = true, talk = 2131, classes = { "WARRIOR" }, -- level 12
           note = "The NPC is indoors." },
-        { train = true, talk = 2128, classes = { "MAGE" }, -- level 12
+        { train = true, floor = "up", talk = 2128, classes = { "MAGE" }, -- level 12
           note = "The NPC is indoors, one floor up." },
-        { train = true, talk = 2127, classes = { "WARLOCK" }, -- level 12
+        { train = true, floor = "up", talk = 2127, classes = { "WARLOCK" }, -- level 12
           note = "The NPC is indoors, one floor up." },
-        { vendor = true, talk = 5750, classes = { "WARLOCK" }, -- level 12
+        { floor = "up", vendor = true, talk = 5750, classes = { "WARLOCK" }, -- level 12
           note = "The NPC is indoors, one floor up." },
-        { train = true, talk = 2129, classes = { "PRIEST" }, -- level 12
+        { train = true, floor = "up", talk = 2129, classes = { "PRIEST" }, -- level 12
           note = "The NPC is indoors, one floor up." },
-        { train = true, talk = 2130, classes = { "ROGUE" }, -- level 12
+        { train = true, floor = "up", talk = 2130, classes = { "ROGUE" }, -- level 12
           note = "The NPC is indoors, one floor up." },
         { turnin = 359, accept = { 360, 356 }, sticky = 356 }, -- level 12
         { complete = 99142, races = { "Scourge" } }, -- level 13
@@ -498,12 +498,12 @@ Ding.RegisterGuide({
         { turnin = 99134, races = { "Scourge" } }, -- level 13
         { turnin = 369, accept = { 492, 445 }, -- level 13
           note = "The NPC is indoors." },
-        { turnin = 492, -- level 13
+        { turnin = 492, floor = "down", -- level 13
           note = "The NPC waits on the lower level, indoors." },
         { turnin = 96656, races = { "Scourge" } }, -- level 13
         { turnin = 86784, races = { "Scourge" } }, -- level 13
         { turnin = 99142, races = { "Scourge" } }, -- level 13
-        { turnin = 1882, when = { ready = 1882 }, classes = { "MAGE" }, -- level 13
+        { turnin = 1882, floor = "up", when = { ready = 1882 }, classes = { "MAGE" }, -- level 13
           note = "The NPC is indoors, one floor up." },
         { complete = 1886, talk = 6497, patrol = { { 1420, 61.52, 53.08 }, { 1420, 61.63, 53.32 }, { 1420, 61.59, 53.51 }, { 1420, 61.54, 53.89 }, { 1420, 61.77, 54.57 }, { 1420, 62, 55.21 }, { 1420, 62.19, 55.49 }, { 1420, 62.46, 55.62 }, { 1420, 62.65, 55.56 }, { 1420, 62.97, 55.59 }, { 1420, 63.14, 55.76 }, { 1420, 63.34, 56.37 }, { 1420, 63.57, 57.1 }, { 1420, 63.67, 57.71 }, { 1420, 63.78, 58.43 }, { 1420, 63.66, 58.83 }, { 1420, 63.45, 59.56 }, { 1420, 63.4, 59.95 }, { 1420, 63.14, 60.33 }, { 1420, 62.34, 60.95 }, { 1420, 61.68, 61.73 }, { 1420, 61.23, 62.11 }, { 1420, 60.72, 62.66 }, { 1420, 59.86, 63.18 }, { 1420, 59.26, 63.83 }, { 1420, 58.81, 64.14 }, { 1420, 58.43, 64.25 }, { 1420, 57.41, 64.6 }, { 1420, 56.92, 65.07 }, { 1420, 56.43, 65.46 }, { 1420, 56.09, 66.08 }, { 1420, 55.87, 66.51 }, { 1420, 55.59, 68.19 }, { 1420, 55.4, 69.31 }, { 1420, 55.24, 69.87 }, { 1420, 55.08, 70.73 }, { 1420, 54.88, 72.49 }, { 1420, 54.61, 73.96 }, { 1420, 54.31, 75.09 }, { 1421, 67.78, 4.88 }, { 1421, 67.32, 5.86 }, { 1421, 66.47, 7.02 }, { 1421, 65.74, 8 }, { 1421, 64.57, 8.86 }, { 1421, 63.36, 9.69 }, { 1421, 63.03, 10.03 }, { 1421, 61.77, 10.71 }, { 1421, 60.85, 11.24 }, { 1421, 59.05, 11.72 }, { 1421, 58.08, 12.17 }, { 1421, 57.25, 12.8 }, { 1421, 56.7, 13.49 }, { 1421, 55.46, 15.28 }, { 1421, 54.88, 16.53 }, { 1421, 53.88, 18.73 }, { 1421, 53.11, 20.58 }, { 1421, 51.98, 22.21 }, { 1421, 51.28, 23.76 }, { 1421, 50.69, 25.36 }, { 1421, 50.28, 26.24 }, { 1421, 50.04, 26.9 }, { 1421, 49.8, 28.72 }, { 1421, 49.8, 30.19 }, { 1421, 49.62, 32.34 }, { 1421, 49.79, 32.99 }, { 1421, 49.93, 33.89 }, { 1421, 50.28, 34.46 }, { 1421, 50.73, 35.02 }, { 1421, 51.03, 35.74 }, { 1421, 51.07, 36.39 }, { 1421, 50.99, 36.64 }, { 1421, 50.61, 37.14 }, { 1421, 49.79, 37.79 }, { 1421, 49.04, 38.33 }, { 1421, 48.32, 38.83 }, { 1421, 47.98, 39.17 }, { 1421, 47.46, 39.75 } }, classes = { "ROGUE" }, -- level 13
           note = "Fight undead foes. The target patrols the road from Brill to The Sepulcher. The target appears close to The Sepulcher, at 47.5, 39.8 in Silverpine Forest." },

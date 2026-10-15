@@ -18,10 +18,12 @@
 local here = arg[0]:match("^(.*)[/\\]") or "."
 local root = here:match("^(.*)[/\\]tools$") or (here == "." and "..") or (here .. "/..")
 local X = dofile(here .. "/questiedb_export.lua")
+local Floor = dofile(here .. "/guide_floor.lua")
 local QK = X.QUEST
 
 local MAX_LOG = 20
 local BUILTIN_PACK, ZONES_PACK, ITEMS_PACK, CLASS_PACK = "ding", "ding-zones", "ding-items", "ding-class"
+local DUNGEONS_PACK = "ding-dungeons"
 local STEP_KEYS = {
     accept = true, turnin = true, complete = true, go = true, level = true, sethearth = true,
     train = true, hearth = true, fly = true, text = true, note = true, optional = true,
@@ -36,6 +38,8 @@ local STEP_KEYS = {
     when = true, noauto = true, revive = true, patrol = true, xp = true,
     -- Why the guide plans the step (Ding/Core/Why.lua).
     why = true,
+    -- The target's floor, which the arrow says ("up", "top", "down").
+    floor = true,
 }
 local WHEN_KEYS = {
     done = true, notdone = true, log = true, notlog = true, ready = true, item = true, noitem = true,
@@ -62,7 +66,8 @@ local LEFT_KINDS = {
 local LEFT_KEYS = { kind = "kind", text = "text", quest = "id", xp = "number", seconds = "number", turnin = "flag" }
 local PACK_KEYS = { id = true, title = true, author = true, category = true }
 -- Ding.GUIDE_CATEGORIES (Core/Registry.lua).
-local CATEGORIES = { leveling = true, items = true, reputations = true, professions = true, class = true }
+local CATEGORIES = { leveling = true, items = true, reputations = true, professions = true, class = true,
+    dungeon = true }
 
 local function usage()
     io.stderr:write("usage: lua5.1 tools/check_guides.lua <combined dir> [guide.lua ...]\n"
@@ -104,7 +109,7 @@ end
 ---------------------------------------------------------------------------
 local guides, order = {}, {}
 local packs = { [BUILTIN_PACK] = { id = BUILTIN_PACK }, [ZONES_PACK] = { id = ZONES_PACK },
-    [ITEMS_PACK] = { id = ITEMS_PACK }, [CLASS_PACK] = { id = CLASS_PACK } }
+    [ITEMS_PACK] = { id = ITEMS_PACK }, [CLASS_PACK] = { id = CLASS_PACK }, [DUNGEONS_PACK] = { id = DUNGEONS_PACK } }
 -- Ids of Ding's own guides, with --addon (read only, not checked).
 local builtinIds = {}
 local readingBuiltin = false
@@ -137,7 +142,8 @@ function Ding.RegisterGuidePack(def)
         return
     end
     where = "pack " .. def.id
-    if def.id == BUILTIN_PACK or def.id == ZONES_PACK or def.id == ITEMS_PACK or def.id == CLASS_PACK then
+    if def.id == BUILTIN_PACK or def.id == ZONES_PACK or def.id == ITEMS_PACK or def.id == CLASS_PACK
+        or def.id == DUNGEONS_PACK then
         report("error", where, "this id is one of Ding's own packs: choose another one")
         return
     end
@@ -416,6 +422,15 @@ function Ding.RegisterGuide(def)
                 report("error", at, "dungeon expects the dungeon's name")
             end
             if step.dungeon and step.elite then report("warning", at, "dungeon and elite on the same step") end
+            if step.floor ~= nil and not Floor.VALUES[step.floor] then
+                report("error", at, 'floor expects "up", "top" or "down"')
+            end
+            -- A note that names the target's floor (tools/guide_floor.lua), and a key that does
+            -- not say it: the arrow would say "You're here" downstairs.
+            local named = not step.go and Floor.of(step.note)
+            if named and step.floor ~= named then
+                report("warning", at, ('the note names a floor: floor = "%s"'):format(named))
+            end
             checkGoals(step, at)
             if step.why ~= nil then
                 checkReason(step.why, WHY_KEYS, WHY_KINDS, at, "why")

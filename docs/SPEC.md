@@ -104,13 +104,15 @@ Getter semantics, the same for both sources (QuestieDB's `docs/api.md`):
 ## 2. Guide format
 
 A guide is a Lua file that calls `Ding.RegisterGuide`: it is a **section** of a **guide
-pack**. Ding ships four: **Ding! - Leveling** (id `ding`, the default, the pack of the guides
+pack**. Ding ships five: **Ding! - Leveling** (id `ding`, the default, the pack of the guides
 that have no `pack`: each section is a stretch of the Leveling routes, a race start then
 shared sections up to 60 over one or a few zones), **Ding! - Zones** (id `ding-zones`: one section per zone, the ids
 of Ding's first guides), **Ding! - Items** (id `ding-items`, category `items`: one section
 per item worth getting off the leveling route, for both sides: the Cozy Sleeping Bag first)
 and **Ding! - Class quests** (id `ding-class`, category `class`: one section per class and
-side, `Ding/Guides/Class/<Side>/<Class>.lua`, see "Class quests" below). A third-party addon provides a pack by declaring
+side, `Ding/Guides/Class/<Side>/<Class>.lua`, see "Class quests" below) and **Ding! - Dungeon
+quests** (id `ding-dungeons`, category `dungeon`: one section per dungeon and side,
+`Ding/Guides/Dungeons/<Side>/<NN>_<Name>.lua`, see "Dungeon quests" below). A third-party addon provides a pack by declaring
 `## Dependencies: Ding`, then calling `Ding.RegisterGuidePack({ id, title, author, category })` before
 its sections, which carry `pack = "<id>"`; like Ding, it must be released under GPL v3 (no
 exception: everything built on Ding stays free). The author documentation is
@@ -121,7 +123,7 @@ Registry rules: a pack id is unique (Ding's included); a section id is unique ac
 packs (a pack cannot take another pack's id, but may re-register its own section); an
 unknown `pack` is rejected; `next` may lead to a section of another pack (Ding's included).
 A pack's `category` (`Ding.GUIDE_CATEGORIES`: "leveling", the default, "items", "reputations",
-"professions", "class") groups it in the guide list, under a header that cannot be picked,
+"professions", "class", "dungeon") groups it in the guide list, under a header that cannot be picked,
 leveling first, empty categories left out; an unknown category is "leveling" (debug note,
 warning of the validator). Picking a pack again takes up the section the character last
 followed in it (`Ding.char.packGuide`) while it has quest work left at their level, else the
@@ -153,7 +155,7 @@ actions of a step run in order: turn in, then accept, then complete.
 | `turnin` | id or list of ids | the quest is turned in |
 | `accept` | id or list of ids | the quest is in the log (or already turned in) |
 | `complete` | id or list of ids | the quest's objectives are met (or it is turned in) |
-| `go` | `{ uiMapId, x, y }` (0-100) | the player is within `radius` meters (10 by default) |
+| `go` | `{ uiMapId, x, y }` (0-100) | the player is within `radius` meters (10 by default); a point at a dungeon's entrance (`Data:DungeonAtEntrance`, 1.5 % of the map) is also reached once the player is inside an instance (`Compat.InInstance`), where the game gives no position (`Engine` marks it done like a point reached) |
 | `level` | number | the player reaches that level (Ding shows the experience and kills left, and a monster to farm); `level = 12, xp = 4500` (plus that experience into level 12) or `level = 12.5` (that fraction of level 12's experience: `Grind:Into`, `Engine:LevelReached`) |
 | `sethearth` | inn name | the hearthstone is bound (`HEARTHSTONE_BOUND` event) |
 | `hearth` | `true` | the hearthstone is cast (`UNIT_SPELLCAST_SUCCEEDED`, spell 8690), or "Next" |
@@ -195,7 +197,8 @@ Common options:
 | `optional` | the step can be passed without blocking what follows |
 | `faction` | `"Alliance"` or `"Horde"`: the step only appears for that side (`UnitFactionGroup`), in a guide for both sides |
 | `races`, `classes` | the step only appears for these races/classes |
-| `radius` | arrival radius of a `go` step |
+| `radius` | arrival radius of a `go` step, in yards (6 by default) |
+| `floor` | `"up"`, `"top"` or `"down"`: the step's target is one floor up, at the top, one floor down (the arrow says it near the target and on arrival, see "Floors") |
 | `use` | item id or list of item ids to offer in the item button (the first one owned) |
 | `sticky` | quest id or list: persistent objectives, see "Along the way" |
 | `dungeon` | dungeon name: the step's quests are done inside it |
@@ -363,6 +366,48 @@ some races only in DingDB carries them itself (the Alliance paladins: Humans and
   the section list, the assistant, every quest, item and NPC in DingDB, every text in every
   language; the smoke test plays each one with the race of its side that has the most steps.
 
+### Dungeon quests (`Ding/Guides/Dungeons`)
+
+The pack **Ding! - Dungeon quests** (`Ding.DUNGEONS_PACK` = `ding-dungeons`, `builtin = 5`,
+category `dungeon`) holds one section per dungeon and side: `dungeon-<side>-<key>`
+(`Ding/Guides/Dungeons/<Side>/<NN>_<Name>.lua`, numbered by level, hand-finished from the drafts
+of `tools/draft_dungeon.lua`, English texts translated through `tools/routes/locales`). Each has
+`faction`, a title "<dungeon> (<min>-<max>)" from the levels the game recommends (Forever's own
+dungeons: the levels of their quests) and no `next`.
+
+- **Content**: every quest of the dungeon the side can take (filed under the dungeon, or with an
+  objective found only inside it), the chains that lead to them from where they start
+  (prerequisites, and breadcrumbs as optional steps), the quests a drop of the dungeon starts,
+  and the follow-ups the quest's ender gives (the chain's end, its reward). Order: the trips
+  before the dungeon form the shortest path found that ends at the entrance (flight paths,
+  boats, mount: `tools/route_travel.lua`), then a `go` step to the entrance (DingDB's), the
+  dungeon's quests in the order of its bosses, then the turn-ins from the entrance. A chain
+  that needs a second visit (a capital between Kharan's tale and the emperor) enters again.
+  Classic dungeons from Ragefire Chasm to Stratholme, Lower Blackrock Spire included, and
+  Forever's own (the Hall of Thanes, the Ruins of Lordaeron, Excavation Site: Wetlands, the City
+  of Dalaran). Left out: raids and their attunements, the Upper Spire (a raid of ten), the level
+  60 armor-set chains, the class books and librams of Dire Maul, profession and repeatable
+  quests, world drops, long class chains (Ding! - Class quests leads them), and quests whose
+  giver or ender DingDB does not know.
+- **Plain words**: the arrow does not work inside: every objective after the entrance has a
+  note saying where it is and which boss or monster drops what. The first step of each chain
+  says in its `why` (`short`) what it brings (an item for which kind of character, a big XP
+  reward, "about" figures), whether it is long or far, an elite or group fight; nothing the
+  data does not say. Very long or far chains are `optional` on every step and say why.
+- **Options**: the dungeon pack's steps carry neither `dungeon` nor `elite`: picking a dungeon's
+  guide is the choice (the Route options would hide the whole guide). A quest a drop starts has
+  `when = { item = id }` on its accept, then `when = { log }` / `{ done }` on what follows
+  (turn-in and next accept on separate steps): nothing blocks when the drop never came.
+- **Picking it**: `Engine:SetPack(Ding.DUNGEONS_PACK)` takes the dungeon of the character's level
+  and side (`Ding:SuggestGuide`); the Guide tab's section list shows the character's side only,
+  by level, the ones above the character's level greyed (they can still be picked); a dungeon
+  guide keeps its grey quests (`Engine:KeepsGrey`).
+- **Checks**: `tools/check_guides.lua` replays each guide for every race of its side (0 error);
+  `tools/tests/dungeon_quests_test.lua`: the pack, sides and level order, the section list, the
+  assistant, the entrance step passed from inside, a note on every step inside, every quest, item
+  and NPC in DingDB, every text in every language; `tools/smoke_test.lua --only dungeon-` plays
+  them all.
+
 ---
 
 ## 3. Engine
@@ -471,8 +516,12 @@ some races only in DingDB carries them itself (the Alliance paladins: Humans and
   (30 s) does: its sequel comes a moment later from the same NPC, and passing on would leave
   the steps that take and complete it behind. Then it carries on to the player's place. The steps left behind
   remain reachable through "back to a skipped step". "Take this guide up where I am" forgets
-  the marks and that place: what is not really done is to do again, the first step still to
-  do comes first (a quest skipped earlier included: "Skip" passes it). A character saved
+  the marks and keeps that place: it takes the section up from its start to there (a strict
+  resume) and stops on what is really left, a quest of the log with work left or a quest of
+  the route the character can still take (not optional, not behind an option, open to it
+  now); what the player left behind on purpose passes, the quests behind an option turned on
+  since included (in game: "Elite quests" turned on at step 38, the button used to send the
+  player back to step 5, an elite quest never taken). A character saved
   before v1.4.0 drops its resume in progress once and keeps the step it is on as its place
   (`Ding.MigrateChar`). A `sethearth` step whose bind happened during the step stays done while
   the hearthstone is bound there (`Ding.char.hearthInn`: the client's own name of the inn
@@ -1017,11 +1066,14 @@ plate keeps what it had, else its name is matched with the monsters Ding knows; 
 never marked. Nothing is protected: frames are only created, anchored, shown and hidden.
 
 Options (Arrow and maps tab, "Quest monsters"): marks on the plates (on), the tooltip line
-(on), **"Show enemy nameplates farther"** (off): the client's `nameplateMaxDistance` at its
+(on), **"Show enemy nameplates farther"** (on since v1.7.0): the client's `nameplateMaxDistance` at its
 maximum (Ding asks for 60 yards, the client keeps its own limit), the value before put back
 when the option goes off (`Ding.db.farPlatesFrom`, outside the settings, so that the tab's
 defaults and "Restore all defaults" put it back too); never changed in combat (after the
-fight). Turned on or off in the settings, the chat says the distance now.
+fight). Turned on or off in the settings, the chat says the distance now. The marks sit on
+the enemy nameplates, which the client hides until the player shows them (V): with the marks
+on, Ding shows them once (`nameplateShowEnemies`, out of combat), says so in the chat with how
+to hide them, and never again after (`Ding.db.platesShown`).
 
 ### Interface
 
@@ -1094,20 +1146,33 @@ textures and font flags, never a size nor a position.
   dungeons", the arrow is also hidden in instances (`Panel:Visible`): with no position, it
   would only show its target's name and "?" there.
 - **Minimized version** (300 × 28): "3/42", the current objective and its counter, the
-  progress at the bottom; "done" in green for 1.5 s. Automatic in combat (configurable) or
+  progress at the bottom; "done" in green for 1.5 s. In combat when the option is on (off by default) or
   by binding.
 - **Arrow** (centered, 120 above): blue while on the way, red when the target is behind
-  (more than 120°, "turn around"), a green "You're here" ring on arrival, which fades after
+  (more than 120°, "turn around"), a green "You're here" ring on arrival (6 yards from the
+  place or the NPC, a step's `radius` otherwise), which fades after
   3 s; beneath it, the target's name, the distance and the time to get there (speed measured
   from the player's movement). Size 40-80, not clickable (movable in move mode).
   Monsters to kill and items to collect form an **area**: "You're in the area" from within
-  40 m of a spawn, kept up to 60 m. In an area, the **farming loop** (option "Farming loop",
+  25 yards of a spawn (about an attack's reach), kept up to 40. In an area, the **farming loop** (option "Farming loop",
   Arrow and maps tab, `arrow.loop`, on by default): the spawns of the same monster or object within
   300 yards of the nearest one, one stop per 25 yards, at most 12, in nearest-neighbour order
   from there (3 stops at least, else the plain area); the arrow leads to the next stop, reached
   within 15 yards, then the one after, and around ("Young Nightsaber · farming loop: 2 of 6"). The loop
   stays while the nearest spawn is of the same monster near the loop and on the same step
   (`Arrow.farm`). A **ghost** is first led to its corpse.
+- **Floors** (Yendi's feedback: "You're here" in the middle of a building whose NPC is one
+  floor up): the game gives no height, neither for the player nor for a target, and the
+  minimap's floor icon cannot be read. A step's `floor` key says it ("up", "top", "down"): on
+  arrival the distance line reads "The NPC is one floor up" (an NPC: `point.npc`, not an area)
+  or "It's one floor up" (an object, a place, a monster), "… at the top", "… one floor down",
+  instead of "You're here" / "You're in the area", and the arrow stays (no fade after 3 s: the
+  player still has to find the stairs). Within 30 yards, the detail line adds "One floor up" /
+  "At the top" / "One floor down". Only for the step's own targets (`Arrow:Floor`: not the
+  corpse, a flight master on the way, a persistent objective or a `go` point). The leveling
+  generator writes the key from the route's note (`tools/guide_floor.lua`, an explicit table
+  of English phrases; a note that names two floors gets none), and `check_guides` warns when a
+  note names a floor that its step's key does not say.
 - **Cycle** (binding "Arrow: next target of the step", `DING_CYCLE`): the arrow goes to the
   target of the next row of the window that has one, in the rows' order (that of focus mode,
   whose focus follows), then back to the nearest of all (`Panel:CycleTarget`,

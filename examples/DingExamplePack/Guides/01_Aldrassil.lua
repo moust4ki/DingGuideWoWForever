@@ -15,7 +15,7 @@ Ding.RegisterGuide({
           note = "Young nightsabers and thistle boars all around the tree." },
         { turnin = 456, accept = 457 },
         { turnin = 458, accept = 459 },
-        { train = true,
+        { train = true, floor = "up",
           note = "Your class trainer is inside Aldrassil." },
         { complete = { 457, 459 },
           note = "Nightsabers and boars to the north, moss on the grells to the west." },

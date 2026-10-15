@@ -155,7 +155,9 @@ T.test("restarting clears the steps validated by hand", function()
     start(STEPS_1_TO_4, 2)
     E:Next(); T.H.flush()
     E:Reset(); T.H.flush()
-    T.eq(E.index, 5)
+    -- The mark goes; the step stays behind the player's place (no quest of the route to take
+    -- there): "Take this guide up where I am" does not send the player back to it.
+    T.eq(E.index, 6)
     T.ok(not (Ding.char.manual[G] and Ding.char.manual[G][5]), "manual flag kept")
 end)
 

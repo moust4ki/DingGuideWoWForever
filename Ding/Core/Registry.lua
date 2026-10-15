@@ -7,19 +7,22 @@ local _, Ding = ...
 local guides, order = {}, {}
 Ding.guides = guides
 
--- Guide packs: [id] = { id, title, author, builtin }. Ding ships four: "Leveling" (`ding`, the
+-- Guide packs: [id] = { id, title, author, builtin }. Ding ships five: "Leveling" (`ding`, the
 -- default, guides without `pack`: level brackets over several zones), "Zones" (one section
 -- per zone, `pack = "ding-zones"`), "Items" (one section per item worth getting off the
--- leveling route, `pack = "ding-items"`, category "items") and "Class quests" (one section per
--- class and side, `pack = "ding-class"`, category "class": a character only sees its own).
--- builtin: their order in the list.
-local BUILTIN, ZONES, ITEMS, CLASS = "ding", "ding-zones", "ding-items", "ding-class"
+-- leveling route, `pack = "ding-items"`, category "items"), "Class quests" (one section per
+-- class and side, `pack = "ding-class"`, category "class": a character only sees its own) and
+-- "Dungeon quests" (one section per dungeon and side, `pack = "ding-dungeons"`, category
+-- "dungeon": a character sees its side's). builtin: their order in the list.
+local BUILTIN, ZONES, ITEMS, CLASS, DUNGEONS = "ding", "ding-zones", "ding-items", "ding-class", "ding-dungeons"
 Ding.BUILTIN_PACK, Ding.ZONES_PACK, Ding.ITEMS_PACK, Ding.CLASS_PACK = BUILTIN, ZONES, ITEMS, CLASS
+Ding.DUNGEONS_PACK = DUNGEONS
 local packs = {
     [BUILTIN] = { id = BUILTIN, title = Ding.L.PACK_LEVELING, builtin = 1 },
     [ZONES] = { id = ZONES, title = Ding.L.PACK_ZONES, builtin = 2 },
     [ITEMS] = { id = ITEMS, title = Ding.L.PACK_ITEMS, builtin = 3, category = "items" },
     [CLASS] = { id = CLASS, title = Ding.L.PACK_CLASS, builtin = 4, category = "class" },
+    [DUNGEONS] = { id = DUNGEONS, title = Ding.L.PACK_DUNGEONS, builtin = 5, category = "dungeon" },
 }
 -- [guide id] = { [English text] = translated text }, for the client's language only.
 local translations = {}
@@ -99,7 +102,7 @@ function Ding.RegisterGuideTranslation(locale, guideId, map)
 end
 
 -- What a pack is for (`pack.category`, nil: "leveling"), in the order of the settings' list.
-Ding.GUIDE_CATEGORIES = { "leveling", "items", "reputations", "professions", "class" }
+Ding.GUIDE_CATEGORIES = { "leveling", "items", "reputations", "professions", "class", "dungeon" }
 
 -- A community pack, before its guides: { id, title, author, category }. The id is stable
 -- (a character remembers its pack) and unique among the installed packs. An unknown

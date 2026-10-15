@@ -147,13 +147,13 @@ Ding.RegisterGuide({
         { go = { 1457, 32.08, 16.4 }, classes = { "ROGUE" }, text = "Step into the cavern within the trunk", -- level 23
           note = "The spot is on the lower floor of the hollow tree." },
         { train = true, talk = 4163, classes = { "ROGUE" } }, -- level 23
-        { train = true, talk = 4146, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 23
+        { train = true, floor = "up", talk = 4146, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 23
           note = "The NPC is indoors, one floor up." },
         { train = true, talk = 4091, races = { "Human", "Dwarf", "NightElf" }, classes = { "PRIEST" }, -- level 23
           note = "The NPC is indoors." },
-        { accept = 1199, dungeon = "Blackfathom Deeps", -- level 23
+        { accept = 1199, dungeon = "Blackfathom Deeps", floor = "up", -- level 23
           note = "The NPC is indoors, one floor up." },
-        { accept = 1198, dungeon = "Blackfathom Deeps", -- level 23
+        { accept = 1198, dungeon = "Blackfathom Deeps", floor = "up", -- level 23
           note = "The NPC is indoors, one floor up." },
         { accept = 1275, dungeon = "Blackfathom Deeps" }, -- level 23
         { train = true, talk = 7312, races = { "Human", "Gnome" }, classes = { "MAGE" }, -- level 23
@@ -214,9 +214,9 @@ Ding.RegisterGuide({
         { complete = 1275, dungeon = "Blackfathom Deeps", -- level 24
           note = "Kill Fallenroot and Blackfathom foes. You'll find them all over the instance." },
         { turnin = 1275, dungeon = "Blackfathom Deeps" }, -- level 24
-        { turnin = 1199, dungeon = "Blackfathom Deeps", -- level 24
+        { turnin = 1199, dungeon = "Blackfathom Deeps", floor = "up", -- level 24
           note = "The NPC is indoors, one floor up." },
-        { turnin = 1200, dungeon = "Blackfathom Deeps", -- level 24
+        { turnin = 1200, dungeon = "Blackfathom Deeps", floor = "up", -- level 24
           note = "The NPC is indoors, one floor up." },
         { go = { 1447, 11.95, 77.54 }, fly = true, talk = 12577, text = "Fly to Talrendis Point", -- level 24
           note = "This trip is dangerous; move with great caution. Stay on the road and keep away from Horde NPCs. The Warsong Outriders riding along the road stay peaceful." },

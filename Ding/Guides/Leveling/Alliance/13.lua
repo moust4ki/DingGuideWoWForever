@@ -129,7 +129,7 @@ Ding.RegisterGuide({
         { train = true, talk = 4089, classes = { "WARRIOR" } }, -- level 31
         { go = { 1457, 56.08, 79.12 }, text = "Head up the incline" }, -- level 31
         { go = { 1457, 57.66, 77.28 }, text = "Walk over the span" }, -- level 31
-        { complete = 1038, -- level 31
+        { complete = 1038, floor = "up", -- level 31
           note = "The object is indoors, one floor up." },
         { talk = 4165, races = { "Human", "Gnome" }, classes = { "MAGE" }, -- level 31
           note = "The NPC is indoors." },
@@ -178,7 +178,7 @@ Ding.RegisterGuide({
           note = "Inside The Hall of Gears, stick to the top tiers. Take the trail southwest into The Dormitory. By the wall on The Dormitory's lower floor." },
         { dungeon = "Gnomeregan", collect = { { 6893, 1 } }, -- level 31
           note = "The target is the third boss you meet." },
-        { dungeon = "Gnomeregan", collect = { { 9281, 1 } }, -- level 31
+        { dungeon = "Gnomeregan", floor = "up", collect = { { 9281, 1 } }, -- level 31
           note = "The target sits on the raised deck beside Electrocutioner 6000." },
         { complete = 2930, dungeon = "Gnomeregan", races = { "Dwarf", "NightElf", "Gnome", "Skyborne" } }, -- level 31
         { complete = 2930, dungeon = "Gnomeregan", races = { "Human" }, classes = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "MAGE", "WARLOCK", "DRUID" }, -- level 31

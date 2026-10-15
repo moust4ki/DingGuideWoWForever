@@ -52,10 +52,10 @@ Ding.RegisterGuide({
         { turnin = 714, when = { item = 4389, log = 714 } }, -- level 39
         { accept = 715, when = { item = { { 929, 1 }, { 3823, 1 } } } }, -- level 39
         { turnin = 715, sticky = 710, when = { item = 929, log = 715 } }, -- level 39
-        { accept = 1419, -- level 39
+        { accept = 1419, floor = "top", -- level 39
           note = "The NPC waits on the tower's highest floor." },
         { go = { 1418, 4.05, 44.73 }, fly = true, talk = 2861, text = "Fly to Kargath" }, -- level 39
-        { accept = 2258, sticky = { 2258, 1419 }, -- level 39
+        { accept = 2258, floor = "up", sticky = { 2258, 1419 }, -- level 39
           note = "The NPC is indoors, one floor up." },
         { complete = 703, keep = 3404, sticky = 2258, -- level 39
           note = "A cluster of them gathers here. More of them dot the surroundings." },
@@ -75,13 +75,13 @@ Ding.RegisterGuide({
         { turnin = 1108 }, -- level 40
         { accept = 1137, why = { continent = true, kind = "carry", quest = 1137, seconds = 21240, xp = 1500 }, -- level 40
           note = "Wait for the talking to finish" },
-        { turnin = 1419, accept = 1420, why = { kind = "carry", quest = 1420, seconds = 11460, xp = 2400 }, -- level 40
+        { turnin = 1419, accept = 1420, floor = "top", why = { kind = "carry", quest = 1420, seconds = 11460, xp = 2400 }, -- level 40
           note = "The NPC waits on the tower's highest floor." },
-        { turnin = 2258, -- level 40
+        { turnin = 2258, floor = "up", -- level 40
           note = "The NPC is indoors, one floor up." },
         { destroy = 7846 }, -- level 40
         { train = true, talk = 12042, races = { "Tauren" }, classes = { "DRUID" } }, -- level 40
-        { talk = 5958, races = { "Scourge", "Troll" }, classes = { "MAGE" }, -- level 40
+        { floor = "up", talk = 5958, races = { "Scourge", "Troll" }, classes = { "MAGE" }, -- level 40
           note = "The NPC is indoors, one floor up." },
         { train = true, talk = 5883, races = { "Scourge", "Troll" }, classes = { "MAGE" }, -- level 40
           note = "The NPC is indoors." },

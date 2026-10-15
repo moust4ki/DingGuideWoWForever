@@ -184,13 +184,13 @@ Ding.RegisterGuide({
           note = "This one roams, so scan the surrounding area. The targets are spread over several spots." },
         { complete = 96821, races = { "Orc", "Troll" } }, -- level 7
         { turnin = 823 }, -- level 7
-        { accept = { 784, 837 }, -- level 7
+        { accept = { 784, 837 }, floor = "up", -- level 7
           note = "The NPC is indoors, one floor up." },
         { accept = 96825, races = { "Orc", "Troll" } }, -- level 7
         { accept = 815, -- level 7
           note = "This one roams, so scan the surrounding area." },
         { go = { 1411, 50.14, 42.95 }, text = "Climb the trail" }, -- level 7
-        { accept = 791, -- level 7
+        { accept = 791, floor = "top", -- level 7
           note = "The NPC waits on the tower's highest floor." },
         { turnin = 2161, -- level 7
           note = "The NPC is indoors." },
@@ -207,7 +207,7 @@ Ding.RegisterGuide({
         { turnin = 5648, sticky = { 791, 784 }, when = { ready = 5648 }, races = { "Troll" }, classes = { "PRIEST" }, -- level 7
           note = "The NPC is indoors." },
         { go = { 1411, 58.96, 58.33 }, text = "Head indoors" }, -- level 7
-        { complete = 784, collect = { { 4882, 1 } }, -- level 7
+        { complete = 784, floor = "up", collect = { { 4882, 1 } }, -- level 7
           note = "The target is indoors, one floor up. Consider bringing a group for this one." },
         { complete = 96822, races = { "Orc", "Troll" } }, -- level 7
         { go = { 1411, 59.86, 57.81 }, text = "Stay on the trail and keep climbing the steps" }, -- level 7
@@ -223,12 +223,12 @@ Ding.RegisterGuide({
         { talk = 6491 }, -- level 8
         { train = true, talk = 3171, classes = { "HUNTER" }, -- level 8
           note = "The NPC is indoors." },
-        { train = true, talk = 3170, classes = { "ROGUE" }, -- level 8
+        { train = true, floor = "up", talk = 3170, classes = { "ROGUE" }, -- level 8
           note = "The NPC is indoors, one floor up." },
-        { turnin = { 784, 830 }, accept = { 825, 831 }, why = { kind = "carry", quest = 831, seconds = 9720, xp = 600 }, -- level 8
+        { turnin = { 784, 830 }, accept = { 825, 831 }, floor = "up", why = { kind = "carry", quest = 831, seconds = 9720, xp = 600 }, -- level 8
           note = "The NPC is indoors, one floor up." },
         { go = { 1411, 50.14, 42.95 }, text = "Climb the trail" }, -- level 8
-        { turnin = 791, -- level 8
+        { turnin = 791, floor = "top", -- level 8
           note = "The NPC waits on the tower's highest floor." },
         { sethearth = "Razor Hill", talk = 6928, -- level 8
           note = "The NPC is indoors." },
@@ -279,7 +279,7 @@ Ding.RegisterGuide({
         { turnin = 99048, races = { "Orc", "Troll" } }, -- level 9
         { accept = 99049, races = { "Orc", "Troll" } }, -- level 9
         { complete = 99049, races = { "Orc", "Troll" } }, -- level 9
-        { turnin = 825, -- level 9
+        { turnin = 825, floor = "up", -- level 9
           note = "The NPC is indoors, one floor up." },
         { accept = 96655, races = { "Orc", "Troll" } }, -- level 9
         { turnin = 815, -- level 9
@@ -296,7 +296,7 @@ Ding.RegisterGuide({
           note = "Die to the monsters here on purpose. Dying costs you nothing this early. This is the quickest way over." },
         { deathskip = true, revive = { 1411, 53.55, 44.48 }, text = "Get yourself killed, then resurrect with the spirit healer" }, -- level 9
         { talk = 6491 }, -- level 9
-        { turnin = 837, -- level 9
+        { turnin = 837, floor = "up", -- level 9
           note = "The NPC is indoors, one floor up." },
         { turnin = 96821, races = { "Orc", "Troll" } }, -- level 10
         { turnin = 99049, races = { "Orc", "Troll" } }, -- level 10
@@ -304,7 +304,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { accept = 5654, races = { "Troll" }, classes = { "PRIEST" }, -- level 10
           note = "The NPC is indoors." },
-        { train = true, talk = 3170, classes = { "ROGUE" }, -- level 10
+        { train = true, floor = "up", talk = 3170, classes = { "ROGUE" }, -- level 10
           note = "The NPC is indoors, one floor up." },
         { train = true, talk = 3172, races = { "Orc" }, classes = { "WARLOCK" }, -- level 10
           note = "The NPC is out back, at the rear of the structure." },
@@ -446,11 +446,11 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { accept = { 354, 362 }, -- level 12
           note = "The NPC is indoors." },
-        { accept = 1881, races = { "Troll" }, classes = { "MAGE" }, -- level 12
+        { accept = 1881, floor = "up", races = { "Troll" }, classes = { "MAGE" }, -- level 12
           note = "The NPC is indoors, one floor up." },
-        { accept = 375, -- level 12
+        { accept = 375, floor = "up", -- level 12
           note = "The NPC is indoors, one floor up." },
-        { accept = 1478, races = { "Orc" }, classes = { "WARLOCK" }, -- level 12
+        { accept = 1478, floor = "up", races = { "Orc" }, classes = { "WARLOCK" }, -- level 12
           note = "The NPC is indoors, one floor up." },
         { accept = 358, -- level 12
           note = "The NPC is indoors." },
@@ -473,7 +473,7 @@ Ding.RegisterGuide({
         { turnin = 1478, races = { "Orc" }, classes = { "WARLOCK" } }, -- level 12
         { useitem = 6284, when = { log = 1471 }, races = { "Orc" }, classes = { "WARLOCK" }, -- level 12
           note = "Use the item at the pink marking." },
-        { turnin = 1881, accept = 1882, sticky = 367, races = { "Troll" }, classes = { "MAGE" }, -- level 12
+        { turnin = 1881, accept = 1882, floor = "up", sticky = 367, races = { "Troll" }, classes = { "MAGE" }, -- level 12
           note = "The NPC is indoors, one floor up." },
         { complete = 375 }, -- level 12
         { complete = 97558, races = { "Orc", "Troll" } }, -- level 12
@@ -483,7 +483,7 @@ Ding.RegisterGuide({
         { turnin = 367, accept = 368, -- level 12
           note = "The NPC is indoors." },
         { talk = 2118, buy = { { 2320, 1, 2118 } } }, -- level 12
-        { turnin = 375, when = { item = 2320 }, -- level 12
+        { turnin = 375, floor = "up", when = { item = 2320 }, -- level 12
           note = "The NPC is indoors, one floor up." },
         { complete = 86784, races = { "Orc", "Troll" } }, -- level 12
         { turnin = 86784, races = { "Orc", "Troll" } }, -- level 12
@@ -532,7 +532,7 @@ Ding.RegisterGuide({
           note = "Together with the next turn-ins, this brings you to level 13." },
         { turnin = 356 }, -- level 13
         { turnin = 99142, races = { "Orc", "Troll" } }, -- level 13
-        { turnin = 1882, when = { ready = 1882 }, races = { "Troll" }, classes = { "MAGE" }, -- level 13
+        { turnin = 1882, floor = "up", when = { ready = 1882 }, races = { "Troll" }, classes = { "MAGE" }, -- level 13
           note = "The NPC is indoors, one floor up." },
     },
 })

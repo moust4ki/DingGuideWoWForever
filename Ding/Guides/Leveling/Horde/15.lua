@@ -71,7 +71,7 @@ Ding.RegisterGuide({
         { talk = 11105, races = { "Orc", "Tauren", "Troll" }, classes = { "HUNTER" }, -- level 35
           note = "Release the short-term pet you tamed." },
         { turnin = 5501, sticky = 1435 }, -- level 35
-        { complete = 5741, -- level 35
+        { complete = 5741, floor = "top", -- level 35
           note = "The target is on the tower's highest floor." },
         { complete = 5381, object = 176581, -- level 35
           note = "Defeat every foe in this chamber before starting. The target is indoors." },

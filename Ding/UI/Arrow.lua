@@ -3,7 +3,8 @@
 -- clickable. Under it, what to take or the target's name, where (a detail line), then the
 -- distance and the time to get there. The theme's arrow on the way, its "turn around" arrow
 -- and color when the target is behind, a ring in the done color with "You're here" on arrival
--- (it fades after 3 s). Monsters to kill or things to gather
+-- (it fades after 3 s). A step whose target is on another floor (`floor`: the game gives no
+-- height) says it near the target and on arrival instead, and stays. Monsters to kill or things to gather
 -- make an area: the player is there as soon as they are among the spawns, and the arrow
 -- then leads from spawn to spawn in a loop (option, on by default). A ghost is led
 -- to their corpse first. With TomTom installed (and the setting on), TomTom's arrow shows
@@ -26,8 +27,14 @@ local BEHIND = 2 * math.pi / 3  -- more than 120 degrees off: "turn around"
 local ARRIVED_FADE = 3          -- seconds before the arrival ring fades
 local RUN_SPEED = 7             -- yards per second, for the time while standing still
 local MAX_SPEED = 60            -- faster is a teleport (hearthstone...), not a speed
-local AREA_ENTER, AREA_LEAVE = 40, 60  -- yards from the nearest spawn: in, then out of an area
+-- Yards from the nearest spawn: in, then out of a kill or gather area. About the reach of an
+-- attack (a tester: "in the area" 40 yards off, still a walk away from the monsters).
+local AREA_ENTER, AREA_LEAVE = 25, 40
+local ARRIVE = 6               -- yards from a place, an NPC: reached (Engine's DEFAULT_RADIUS)
 local CORPSE_RADIUS = 30        -- close enough to the corpse to come back to life
+local FLOOR_NEAR = 30           -- yards: closer, the detail line says the target's floor
+-- A step's `floor` (docs/guide-packs.md): the end of its texts' keys (L.FLOOR_NPC_UP...).
+local FLOORS = { up = "UP", top = "TOP", down = "DOWN" }
 local TARGET_NAMES = 3          -- names in the target binding's macro, nearest first
 -- Farming loop, in a kill or gather area: the spawns around the nearest one, in a loop.
 local LOOP_RADIUS = 300         -- yards around the nearest spawn that make one loop
@@ -550,11 +557,25 @@ local function target(self)
     return point, distance, otherContinent, true
 end
 
+-- The floor of what the arrow shows ("UP", "TOP", "DOWN"), or nil: only for the step's own
+-- targets (not a corpse, a flight master on the way, a persistent objective, a trip's point).
+function A:Floor(point, leg)
+    if not self.ofStep or point.corpse or point.low or point.isGo or (leg and leg.point) then return nil end
+    local step = Ding.Engine:CurrentStep()
+    return step and FLOORS[step.floor]
+end
+
+-- Arrived on a step with a floor: "The NPC is one floor up", or "It's one floor up" for an
+-- object, a place or a monster.
+function A.FloorArrived(floor, point)
+    return L[(point.npc and not point.area and "FLOOR_NPC_" or "FLOOR_IT_") .. floor]
+end
+
 function A:Tick()
     local f = self.frame
     if not self.point then
         local point, _, otherContinent, ofStep = target(self)
-        self.point, self.otherContinent = point, otherContinent
+        self.point, self.otherContinent, self.ofStep = point, otherContinent, ofStep
         if ofStep and point then self.follow = point.label end
     end
     local point = self.point
@@ -650,6 +671,12 @@ function A:Tick()
     else
         detail = zone
     end
+    -- Near the target, its floor: "One floor up".
+    local floor = self:Floor(point, leg)
+    if floor and distance and distance <= FLOOR_NEAR then
+        local near = L["FLOOR_NEAR_" .. floor]
+        detail = detail and (detail .. " · " .. near) or near
+    end
     self:SetLabel(hint or (farm and areaName) or point.label or "", detail, hint ~= nil)
     local key = targetName and Ding.Gamepad:BindingKey(Ding.ItemButton.TARGET_BINDING)
     if key then
@@ -670,9 +697,9 @@ function A:Tick()
         return
     end
 
-    local radius = (Ding.Engine:CurrentStep() or {}).radius or 10
+    local radius = (Ding.Engine:CurrentStep() or {}).radius or ARRIVE
     if leg and leg.point then
-        radius = 10
+        radius = ARRIVE
     elseif point.corpse then
         radius = CORPSE_RADIUS
     elseif farm then
@@ -684,12 +711,17 @@ function A:Tick()
     if distance <= radius then
         self.inArea = point.area and not point.corpse or false
         self:SetState("arrived")
-        f.distance:SetText(self.inArea and L.IN_AREA or L.ARRIVED)
+        f.distance:SetText(floor and A.FloorArrived(floor, point) or (self.inArea and L.IN_AREA or L.ARRIVED))
         f.eta:Hide()
-        -- The ring stays 3 s, then the arrow fades until the player moves away.
-        if not self.arrivedFaded and GetTime() - (self.arrivedAt or 0) >= ARRIVED_FADE then
+        -- The ring stays 3 s, then the arrow fades until the player moves away; on another
+        -- floor it stays: the player still has to find the stairs.
+        if not floor and not self.arrivedFaded and GetTime() - (self.arrivedAt or 0) >= ARRIVED_FADE then
             self.arrivedFaded = true
             UI.FadeOut(f, 0.3)
+        elseif floor and self.arrivedFaded then
+            -- Faded on the step before, at the same place: this one has a floor to say.
+            self.arrivedFaded = false
+            UI.FadeIn(f, 0.2)
         end
     else
         if not point.corpse and not farm then self.inArea = false end

@@ -30,7 +30,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { accept = 129, -- level 19
           note = "The NPC is indoors." },
-        { turnin = 65, accept = 132, -- level 19
+        { turnin = 65, accept = 132, floor = "up", -- level 19
           note = "The NPC is indoors, one floor up." },
         { accept = 92, -- level 19
           note = "The NPC is indoors." },
@@ -40,7 +40,7 @@ Ding.RegisterGuide({
         { turnin = 3741 }, -- level 19
         { turnin = 132, accept = 135, why = { chain = 4, kind = "detour", quest = 132, seconds = 180, xp = 4800 } }, -- level 19
         { turnin = 120, accept = 121, why = { back = true, chain = 3, kind = "detour", quest = 135, quests = 9, seconds = 600, short = true, total = 7200, xp = 4100 } }, -- level 19
-        { turnin = 135, accept = 141, -- level 19
+        { turnin = 135, accept = 141, floor = "up", -- level 19
           note = "The NPC is indoors, one floor up." },
         { accept = 97894, why = { continent = true, kind = "carry", quest = 97894, seconds = 9180, xp = 800 } }, -- level 19
         { accept = 97926, why = { continent = true, kind = "carry", quest = 97926, seconds = 19320, xp = 800 } }, -- level 19
@@ -87,11 +87,11 @@ Ding.RegisterGuide({
         { train = true, talk = 2879, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 20
           note = "The NPC is indoors." },
         { train = true, talk = 918, classes = { "ROGUE" } }, -- level 20
-        { accept = 2360, classes = { "ROGUE" }, -- level 20
+        { accept = 2360, floor = "up", classes = { "ROGUE" }, -- level 20
           note = "The NPC is indoors, one floor up." },
-        { accept = 2281, classes = { "ROGUE" }, -- level 20
+        { accept = 2281, floor = "up", classes = { "ROGUE" }, -- level 20
           note = "The NPC is indoors, one floor up." },
-        { train = true, talk = 5479, classes = { "WARRIOR" }, -- level 20
+        { train = true, floor = "up", talk = 5479, classes = { "WARRIOR" }, -- level 20
           note = "The NPC is indoors, one floor up." },
         { accept = { 167, 168 }, dungeon = "The Deadmines", -- level 20
           note = "The NPC is indoors." },
@@ -110,15 +110,15 @@ Ding.RegisterGuide({
           note = "This one roams, so scan the surrounding area. The NPC is indoors." },
         { train = true, talk = 5484, races = { "Human", "Dwarf", "NightElf" }, classes = { "PRIEST" } }, -- level 20
         { go = { 1453, 42.28, 81.85 }, races = { "Human", "Gnome" }, classes = { "WARLOCK" }, text = "Head indoors" }, -- level 20
-        { accept = 1716, races = { "Human", "Gnome", "Skyborne" }, classes = { "WARLOCK" }, -- level 20
+        { accept = 1716, floor = "down", races = { "Human", "Gnome", "Skyborne" }, classes = { "WARLOCK" }, -- level 20
           note = "The NPC waits on the lower level, indoors." },
-        { train = true, talk = 461, races = { "Human", "Gnome" }, classes = { "WARLOCK" }, -- level 20
+        { train = true, floor = "down", talk = 461, races = { "Human", "Gnome" }, classes = { "WARLOCK" }, -- level 20
           note = "The NPC waits on the lower level, indoors." },
-        { vendor = true, talk = 5520, races = { "Human", "Gnome" }, classes = { "WARLOCK" }, -- level 20
+        { floor = "down", vendor = true, talk = 5520, races = { "Human", "Gnome" }, classes = { "WARLOCK" }, -- level 20
           note = "The NPC waits on the lower level, indoors." },
-        { train = true, talk = 5498, races = { "Human", "Gnome" }, classes = { "MAGE" }, -- level 20
+        { train = true, floor = "top", talk = 5498, races = { "Human", "Gnome" }, classes = { "MAGE" }, -- level 20
           note = "The NPC waits on the tower's highest floor." },
-        { talk = 2485, races = { "Human", "Gnome" }, classes = { "MAGE" }, -- level 20
+        { floor = "up", talk = 2485, races = { "Human", "Gnome" }, classes = { "MAGE" }, -- level 20
           note = "The NPC is on an upper floor of the tower." },
         { train = true, talk = 5504, races = { "NightElf" }, classes = { "DRUID" } }, -- level 20
         { accept = 3765, why = { action = "accept", kind = "detour", quest = 3765, seconds = 180, xp = 1500 } }, -- level 20
@@ -127,7 +127,7 @@ Ding.RegisterGuide({
         { turnin = 91723, races = { "Human" } }, -- level 20
         { complete = 91732, races = { "Human" } }, -- level 20
         { complete = 91732, races = { "Dwarf", "Gnome" } }, -- level 20
-        { accept = 94, why = { kind = "carry", quest = 94, seconds = 63000, xp = 800 }, -- level 20
+        { accept = 94, floor = "top", why = { kind = "carry", quest = 94, seconds = 63000, xp = 800 }, -- level 20
           note = "The NPC waits on the tower's highest floor." },
         { complete = 91725, races = { "Human" } }, -- level 20
         { turnin = 91725, races = { "Human" } }, -- level 20
@@ -168,7 +168,7 @@ Ding.RegisterGuide({
         { turnin = 2282, when = { ready = 2282 }, classes = { "ROGUE" } }, -- level 20
         { destroy = 7907, classes = { "ROGUE" } }, -- level 20
         { accept = 166, dungeon = "The Deadmines" }, -- level 20
-        { accept = 214, dungeon = "The Deadmines", -- level 20
+        { accept = 214, dungeon = "The Deadmines", floor = "top", -- level 20
           note = "The NPC waits on the tower's highest floor." },
         { go = { 1436, 42.62, 71.67 }, dungeon = "The Deadmines", text = "Go inside and stay on the trail" }, -- level 20
         { complete = 167, dungeon = "The Deadmines", -- level 20
@@ -182,7 +182,7 @@ Ding.RegisterGuide({
         { complete = 214, dungeon = "The Deadmines", -- level 20
           note = "You'll find them all over the instance." },
         { turnin = 166, dungeon = "The Deadmines" }, -- level 20
-        { turnin = 214, dungeon = "The Deadmines", -- level 20
+        { turnin = 214, dungeon = "The Deadmines", floor = "top", -- level 20
           note = "The NPC waits on the tower's highest floor." },
         { accept = 373, dungeon = "The Deadmines", useitem = 2874 }, -- level 20
         { turnin = 373, dungeon = "The Deadmines", -- level 20

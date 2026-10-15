@@ -99,7 +99,7 @@ Ding.RegisterGuide({
         { accept = 4243 }, -- level 53
         { go = { 1449, 63.82, 16.4 }, text = "Go into the cavern" }, -- level 53
         { go = { 1449, 69.02, 17.56 }, text = "Climb the trail" }, -- level 53
-        { complete = 4301, -- level 53
+        { complete = 4301, floor = "up", -- level 53
           note = "This one roams, so scan the surrounding area. Climb to the cave's upper level." },
         { go = { 1449, 65.93, 16.72 }, text = "Take the trail through the cavern" }, -- level 53
         { turnin = 4243, -- level 53
@@ -149,14 +149,14 @@ Ding.RegisterGuide({
         { accept = 1047, patrol = { { 1457, 62.12, 40.42 }, { 1457, 61.83, 32.42 }, { 1457, 61.49, 26.42 }, { 1457, 60.4, 22.26 }, { 1457, 63.38, 18.74 }, { 1457, 65.27, 15.93 }, { 1457, 61.32, 10.37 }, { 1457, 57.12, 7.68 }, { 1457, 54.34, 10.01 }, { 1457, 53.69, 12.25 }, { 1457, 53.34, 15.52 }, { 1457, 51.44, 19.78 }, { 1457, 49.67, 18.8 }, { 1457, 45.03, 19.27 }, { 1457, 42.54, 18.4 }, { 1457, 38.54, 21.38 }, { 1457, 36.59, 13.47 }, { 1457, 35.25, 13.97 }, { 1457, 33.73, 16.03 }, { 1457, 35.22, 13.93 }, { 1457, 36.6, 13.48 }, { 1457, 37.52, 17.09 }, { 1457, 37.9, 20 }, { 1457, 40.84, 26.76 }, { 1457, 41.05, 31 }, { 1457, 39.54, 35.66 }, { 1457, 40.29, 38 }, { 1457, 43.27, 40.97 }, { 1457, 49.54, 41.14 }, { 1457, 56.82, 40.73 }, { 1457, 62.11, 40.72 }, { 1457, 62.11, 48.52 }, { 1457, 62.2, 54.73 }, { 1457, 63.92, 54.98 }, { 1457, 65.58, 55.54 }, { 1457, 67.49, 56.87 }, { 1457, 68, 58.87 }, { 1457, 67.59, 62.19 }, { 1457, 66.29, 65.08 }, { 1457, 65.21, 68.24 }, { 1457, 64.05, 71.27 }, { 1457, 62.6, 69.56 }, { 1457, 60.48, 66.34 }, { 1457, 59.5, 67.55 }, { 1457, 58.11, 68.45 }, { 1457, 56.85, 70.09 }, { 1457, 56.24, 72.12 }, { 1457, 53.62, 75.51 }, { 1457, 50.51, 75.84 }, { 1457, 50.09, 77.47 }, { 1457, 50.03, 80.44 }, { 1457, 49.64, 81.78 }, { 1457, 47.13, 81.95 }, { 1457, 45.86, 79.48 }, { 1457, 43.83, 76.48 }, { 1457, 41.93, 74.81 }, { 1457, 38.98, 73.92 }, { 1457, 38.93, 66.17 }, { 1457, 38.66, 57.48 }, { 1457, 38.68, 52.9 }, { 1457, 38.43, 46.94 }, { 1457, 37.21, 45.39 }, { 1457, 36.44, 43.38 }, { 1457, 35.96, 41.69 }, { 1457, 33.98, 41.55 }, { 1457, 31.27, 41.46 }, { 1457, 33.65, 41.28 }, { 1457, 36.03, 41 }, { 1457, 36.91, 39.31 }, { 1457, 39.36, 35.8 }, { 1457, 40.21, 37.86 }, { 1457, 41.49, 38.62 }, { 1457, 43.08, 40.73 }, { 1457, 46.25, 41.12 }, { 1457, 49.5, 41.07 }, { 1457, 53.93, 40.86 }, { 1457, 56.74, 40.73 }, { 1457, 62.09, 40.55 } }, -- level 53
           note = "The NPC patrols a long route; look along it." },
         { turnin = 98391, races = { "Dwarf", "Gnome", "Skyborne" }, classes = { "PRIEST" } }, -- level 53
-        { train = true, talk = 4146, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 53
+        { train = true, floor = "up", talk = 4146, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 53
           note = "The NPC is indoors, one floor up." },
         { train = true, talk = 10089, races = { "Dwarf", "NightElf" }, classes = { "HUNTER" }, -- level 53
           note = "The NPC stands on the highest level of this structure." },
         { go = { 1457, 32.08, 16.4 }, classes = { "ROGUE" }, text = "Step into the cavern within the trunk", -- level 53
           note = "The spot is on the lower floor of the hollow tree." },
         { train = true, talk = 4163, classes = { "ROGUE" } }, -- level 53
-        { turnin = 1047, accept = 6761, -- level 54
+        { turnin = 1047, accept = 6761, floor = "top", -- level 54
           note = "Climb to the highest floor of the building." },
         { accept = 3781, when = { done = 3764 } }, -- level 54
         { turnin = 6761, accept = 6762, why = { kind = "carry", quest = 6762, seconds = 128400, xp = 1400 }, -- level 54
@@ -164,7 +164,7 @@ Ding.RegisterGuide({
         { turnin = 3781, when = { log = 3781 } }, -- level 54
         { turnin = 978, accept = 979, -- level 54
           note = "The NPC is indoors." },
-        { accept = 5250, why = { kind = "carry", once = true, quest = 5250, seconds = 41040, xp = 600 }, -- level 54
+        { accept = 5250, floor = "up", why = { kind = "carry", once = true, quest = 5250, seconds = 41040, xp = 600 }, -- level 54
           note = "The NPC is indoors, one floor up." },
         { train = true, talk = 7312, races = { "Human", "Gnome" }, classes = { "MAGE" }, -- level 54
           note = "The NPC is indoors." },

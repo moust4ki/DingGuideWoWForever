@@ -17,15 +17,15 @@ Ding.RegisterGuide({
     steps    = {
         { go = { 1432, 37.24, 47.38 }, text = "Travel to Thelsamar", -- level 18
           note = "Loch Modan: Thelsamar, on the road in the west of the zone." },
-        { accept = 436, -- level 18
+        { accept = 436, floor = "down", -- level 18
           note = "The NPC waits on the lower level, indoors." },
         { turnin = 353, races = { "NightElf" } }, -- level 18
-        { accept = 307, -- level 18
+        { accept = 307, floor = "up", -- level 18
           note = "The NPC is indoors, one floor up." },
         { complete = 307, -- level 18
           note = "Search stacks of brown crates. The objective is underground, in the mine shaft." },
         { go = { 1432, 35.53, 18.8 }, text = "Exit the mine shaft" }, -- level 18
-        { turnin = 307, -- level 18
+        { turnin = 307, floor = "up", -- level 18
           note = "The NPC is indoors, one floor up." },
         { go = { 1432, 40.58, 13.67 }, text = "Head up the incline" }, -- level 18
         { accept = 250, -- level 18
@@ -52,7 +52,7 @@ Ding.RegisterGuide({
         { turnin = 297 }, -- level 19
         { accept = 86614 }, -- level 19
         { turnin = 86614 }, -- level 19
-        { turnin = 298, accept = 301, -- level 19
+        { turnin = 298, accept = 301, floor = "down", -- level 19
           note = "The NPC waits on the lower level, indoors." },
         { turnin = 301, why = { kind = "detour", quest = 301, seconds = 240, short = true, xp = 500 } }, -- level 19
     },

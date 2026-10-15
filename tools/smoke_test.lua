@@ -617,15 +617,22 @@ ok, err = pcall(function()
     press("PAD1"); press("PADDUP"); press("PAD1")
     expect(db.arrow.y == ay + 5, "the arrow does not move")
 
-    -- Combat: the window closes before the lockdown, the panel collapses.
+    -- Combat: the window closes before the lockdown; the panel stays as it is by default
+    -- (v1.7.0), and collapses with "Minimize the guide in combat" on.
+    expect(not db.panel.compactInCombat, "minimizing in combat is on by default")
     fire("PLAYER_REGEN_DISABLED"); H.setCombat(true)
     expect(not C.frame:IsShown() and next(overrides) == nil, "window or bindings still there in combat")
+    expect(not P.compact, "the panel minimizes in combat with the option off")
+    H.setCombat(false); fire("PLAYER_REGEN_ENABLED")
+    db.panel.compactInCombat = true
+    fire("PLAYER_REGEN_DISABLED"); H.setCombat(true)
     expect(P.compact and P.frame.h == 28, "the panel does not minimize in combat")
     checkPanel("in combat (minimized)")
     SlashCmdList.DING("config")
     expect(not C.frame:IsShown(), "the settings open in combat")
     H.setCombat(false); fire("PLAYER_REGEN_ENABLED")
     expect(not P.compact, "the panel does not come back after combat")
+    db.panel.compactInCombat = false
 
     -- Combat during the move mode cancels it without reopening the window.
     C:Open("appearance")
@@ -698,9 +705,10 @@ ok, err = pcall(function()
     for _, e in ipairs(C.dropdown.entries) do
         if e.header then headers[#headers + 1] = e.text end
     end
-    -- (Ding's own class pack, Ding! - Class quests, adds the third group.)
-    expect(table.concat(headers, ",") == L.CATEGORY_LEVELING .. "," .. L.CATEGORY_ITEMS .. "," .. L.CATEGORY_CLASS,
-        "guide list: the category headers are " .. table.concat(headers, ","))
+    -- (Ding's own class and dungeon packs, Ding! - Class quests and Ding! - Dungeon quests, add
+    -- the third and fourth groups.)
+    expect(table.concat(headers, ",") == L.CATEGORY_LEVELING .. "," .. L.CATEGORY_ITEMS .. "," .. L.CATEGORY_CLASS
+        .. "," .. L.CATEGORY_DUNGEON, "guide list: the category headers are " .. table.concat(headers, ","))
     press("PAD2")
     pick("smoke-items")
     expect(E.guide.id == "smoke-items-1", "guide list: item guide not loaded")
@@ -1463,6 +1471,36 @@ ok, err = pcall(function()
     expect(A.hint == nil, "passage: a hint left once there (" .. tostring(A.hint) .. ")")
 end)
 if not ok then problem("passage: " .. tostring(err)) end
+
+-- Floors: the mage trainer of Goldshire, upstairs in the inn. Near him the detail line says
+-- the floor; at his spot, "The NPC is one floor up" instead of "You're here", and it stays.
+ok, err = pcall(function()
+    Ding.RegisterGuide({ id = "smoke-floor", title = "Floor", races = { "Human" }, steps = {
+        { accept = 1860, floor = "up", note = "Zaldimar Wefhellt, the mage trainer of Goldshire, upstairs in the inn." },
+        { text = "End" },
+    } })
+    scenarioCharacter()
+    H.resetQuests()
+    E.turnedIn, Ding.char.manual = {}, {}
+    player.race, player.faction, player.class, player.level = "Human", "Alliance", "MAGE", 10
+    local giver = Ding.Data:StartPoints(1860)[1]
+    expect(giver, "floor: no giver for 1860")
+    player.map, player.x, player.y = giver.map, giver.x + 0.3, giver.y
+    Ding.Travel:Reset()
+    E:SetGuide("smoke-floor", 1, true)
+    tick(1)
+    local A, f = Ding.Arrow, Ding.Arrow.frame
+    expect(f.detail:IsShown() and tostring(f.detail:GetText()):find(L.FLOOR_NEAR_UP, 1, true),
+        "floor: the detail line does not say the floor near the NPC (" .. tostring(f.detail:GetText()) .. ")")
+    player.x = giver.x
+    tick(1)
+    expect(A.state == "arrived", "floor: not arrived at the NPC's spot")
+    expect(f.distance:GetText() == L.FLOOR_NPC_UP, "floor: " .. tostring(f.distance:GetText()))
+    tick(4)
+    expect(f:IsShown(), "floor: the arrow faded although the NPC is upstairs")
+    checkPanel("floor: arrived one floor down")
+end)
+if not ok then problem("floor: " .. tostring(err)) end
 
 -- Talents: with a free point, the build's next talent under the step, learned with A twice
 -- in focus mode.

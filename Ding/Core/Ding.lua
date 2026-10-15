@@ -27,7 +27,7 @@ Ding.version = (type(version) == "string" and version ~= "" and not version:find
 local DEFAULTS = {
     panel = {
         shown = true, point = "TOPRIGHT", x = -260, y = -220, scale = 1, width = 300,
-        locked = false, bgAlpha = 0.60, compactInCombat = true,
+        locked = false, bgAlpha = 0.60, compactInCombat = false,
         hideInInstance = false, keyHints = true, itemButton = true, preview = 0, weaponReminder = true,
         why = true,      -- why the guide makes its choices: lines under surprising steps, tooltips (Core/Why.lua)
     },
@@ -45,8 +45,9 @@ local DEFAULTS = {
         trainerSteps = true, flightSteps = true, autoEquip = false, autoFly = false,
         suggestGear = true,   -- a better piece of gear in the bags: row, banner, item button (Core/Gear.lua)
         -- Quest monsters (UI/QuestMobs.lua): marks on enemy nameplates, the tooltip line, and
-        -- the enemy nameplates' distance raised to the client's maximum.
-        mobIcons = true, mobTooltip = true, farPlates = false,
+        -- the enemy nameplates' distance raised to the client's maximum: every aid on for a new
+        -- install (Yendi's choice, v1.7.0).
+        mobIcons = true, mobTooltip = true, farPlates = true,
         dialogScale = 0.85,   -- the settings, the NPC directory, the setup assistant, import (UI.Dialog)
         -- The look (UI/Themes.lua); opacityTouched: the player moved the opacity slider, which
         -- then no longer follows the theme's default.
@@ -103,9 +104,9 @@ function Ding:ResetSettings()
     self.db.ui.welcomed, self.db.ui.setupDone = true, true
 end
 
--- Settings saved before the design (layout 1), then before themes (layout 2), in the current
--- shape, once.
-local LAYOUT = 3
+-- Settings saved before the design (layout 1), before themes (layout 2), before v1.7.0
+-- (layout 3), in the current shape, once.
+local LAYOUT = 4
 local OLD_OPACITY = 0.85      -- the background's default before themes
 local function migrate(db)
     -- The arrow's style before the skins: the game's minimap arrow stays; Ding's arrow is now
@@ -116,7 +117,7 @@ local function migrate(db)
     end
     local layout = db.layout or 1
     if layout >= LAYOUT then return end
-    if layout >= 2 then
+    if layout == 2 then
         -- v1.5.0: the Halo theme for everyone (the changelog says so). A background left at
         -- the old default follows the theme's; one the player chose is kept.
         local alpha = tonumber(db.panel.bgAlpha)
@@ -126,22 +127,24 @@ local function migrate(db)
             db.panel.bgAlpha = DEFAULTS.panel.bgAlpha
         end
         db.ui.theme = DEFAULTS.ui.theme
-        db.layout = LAYOUT
-        return
+    elseif layout < 2 then
+        local arrow = db.arrow
+        if arrow.point == "TOP" and arrow.x == 0 and arrow.y == -120 then
+            arrow.point, arrow.x, arrow.y = "CENTER", 0, 120
+        end
+        if tonumber(arrow.scale) then
+            arrow.size = math.max(40, math.min(80, math.floor(56 * arrow.scale / 4 + 0.5) * 4))
+        end
+        arrow.scale = nil
+        -- Ding's arrow first: TomTom's was the default before the design.
+        arrow.tomtom = false
+        db.panel.scale = math.max(0.5, math.min(1.5, tonumber(db.panel.scale) or 1))
+        db.panel.textSize = nil
+        db.ui.opacity = nil
     end
-    local arrow = db.arrow
-    if arrow.point == "TOP" and arrow.x == 0 and arrow.y == -120 then
-        arrow.point, arrow.x, arrow.y = "CENTER", 0, 120
-    end
-    if tonumber(arrow.scale) then
-        arrow.size = math.max(40, math.min(80, math.floor(56 * arrow.scale / 4 + 0.5) * 4))
-    end
-    arrow.scale = nil
-    -- Ding's arrow first: TomTom's was the default before the design.
-    arrow.tomtom = false
-    db.panel.scale = math.max(0.5, math.min(1.5, tonumber(db.panel.scale) or 1))
-    db.panel.textSize = nil
-    db.ui.opacity = nil
+    -- v1.7.0: the guide window stays as it is in combat (Yendi's choice, the changelog says
+    -- so); minimizing it there is an option, off. The old default, on, is dropped once.
+    db.panel.compactInCombat = false
     db.layout = LAYOUT
 end
 Ding.Migrate = migrate

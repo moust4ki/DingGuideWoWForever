@@ -38,7 +38,7 @@ Ding.RegisterGuide({
     steps    = {
         { go = { 1411, 50.84, 43.59 }, text = "Travel to Razor Hill", -- level 15
           note = "Durotar: Razor Hill first, then the Barrens: the Crossroads, and Stonetalon Mountains." },
-        { accept = 1859, races = { "Orc" }, classes = { "ROGUE" }, -- level 15
+        { accept = 1859, floor = "up", races = { "Orc" }, classes = { "ROGUE" }, -- level 15
           note = "The NPC is indoors, one floor up." },
         { accept = 840 }, -- level 15
         { accept = 97282, races = { "Skyborne" } }, -- level 15
@@ -59,7 +59,7 @@ Ding.RegisterGuide({
         { turnin = 6365, accept = 6384, races = { "Orc", "Troll" } }, -- level 15
         { turnin = 6384, accept = 6385, races = { "Orc", "Troll" }, why = { back = true, chain = 1, kind = "detour", quest = 6385, quests = 3, seconds = 360, short = true, total = 1700, xp = 1300 }, -- level 15
           note = "The NPC is indoors." },
-        { turnin = 6385, accept = 6386, races = { "Orc", "Troll" }, -- level 15
+        { turnin = 6385, accept = 6386, floor = "top", races = { "Orc", "Troll" }, -- level 15
           note = "The NPC waits on the tower's highest floor." },
         { turnin = 1859, races = { "Orc" }, classes = { "ROGUE" } }, -- level 15
         { accept = 1963, races = { "Orc", "Troll" }, classes = { "ROGUE" }, -- level 15
@@ -75,7 +75,7 @@ Ding.RegisterGuide({
         { useitem = 4926 }, -- level 15
         { complete = 844 }, -- level 15
         { turnin = 871, accept = { 872, 5041 } }, -- level 15
-        { accept = 867, -- level 15
+        { accept = 867, floor = "top", -- level 15
           note = "The NPC waits on the tower's highest floor." },
         { turnin = 844, accept = 845, sticky = { 5041, 872, 845, 869 } }, -- level 15
         { complete = 872, -- level 15
@@ -83,7 +83,7 @@ Ding.RegisterGuide({
         { complete = 5041, -- level 15
           note = "Search stacks of brown crates. The targets are spread over several spots." },
         { complete = 872, sticky = { 845, 869 } }, -- level 15
-        { accept = 887, -- level 15
+        { accept = 887, floor = "up", -- level 15
           note = "The NPC is indoors, one floor up." },
         { accept = 97253 }, -- level 15
         { go = { 1413, 63.03, 37.19 }, fly = true, talk = 16227, text = "Flight master in Ratchet" }, -- level 15
@@ -102,17 +102,17 @@ Ding.RegisterGuide({
         { sethearth = "Ratchet", talk = 6791, -- level 16
           note = "The NPC is indoors." },
         { talk = 3496, collect = { { 5063, 1 }, { 12708, 1 } }, spots = { { 1413, 62.58, 37.39 } } }, -- level 16
-        { turnin = { 887, 895 }, accept = 890, -- level 16
+        { turnin = { 887, 895 }, accept = 890, floor = "up", -- level 16
           note = "The NPC is indoors, one floor up." },
         { turnin = { 1492, 890 }, accept = { 892, 896 } }, -- level 16
         { turnin = 97253 }, -- level 16
-        { turnin = 892, accept = 888, -- level 16
+        { turnin = 892, accept = 888, floor = "up", -- level 16
           note = "The NPC is indoors, one floor up." },
         { turnin = { 872, 5041 }, sticky = { 821, 869 } }, -- level 16
         { complete = 845, -- level 16
           note = "The targets are the striped zhevras." },
         { turnin = 845, accept = 903 }, -- level 16
-        { accept = { 855, 850 }, sticky = { 848, 855 }, -- level 16
+        { accept = { 855, 850 }, floor = "up", sticky = { 848, 855 }, -- level 16
           note = "The NPC is indoors, one floor up." },
         { complete = 870, -- level 16
           note = "Go into the water beside the rock that bubbles. Your targets sit below the water's surface." },
@@ -121,7 +121,7 @@ Ding.RegisterGuide({
         { complete = 850, -- level 16
           note = "This one roams, so scan the surrounding area." },
         { turnin = 855, when = { ready = 855 } }, -- level 16
-        { turnin = 850, accept = 851, -- level 16
+        { turnin = 850, accept = 851, floor = "up", -- level 16
           note = "The NPC is indoors, one floor up." },
         { complete = { 821, 903 } }, -- level 16
         { complete = 867, -- level 17
@@ -154,7 +154,7 @@ Ding.RegisterGuide({
           note = "You need it later for \"Chen's Empty Keg\": keep it in the bank to free a bag slot." },
         { turnin = 902, accept = 3921 }, -- level 18
         { turnin = 848 }, -- level 18
-        { turnin = 867, -- level 18
+        { turnin = 867, floor = "top", -- level 18
           note = "The NPC waits on the tower's highest floor." },
         { accept = 875, elite = true }, -- level 18
         { turnin = 870, accept = 877 }, -- level 18
@@ -256,7 +256,7 @@ Ding.RegisterGuide({
         { destroy = 5068 }, -- level 19
         { turnin = 905, accept = 3261 }, -- level 19
         { turnin = 3281 }, -- level 19
-        { turnin = 851, accept = 852, -- level 19
+        { turnin = 851, accept = 852, floor = "up", -- level 19
           note = "The NPC is indoors, one floor up." },
         { complete = 876, elite = true }, -- level 19
         { turnin = 1061, accept = 1062, -- level 19
@@ -311,7 +311,7 @@ Ding.RegisterGuide({
           note = "The target is a raptor. It shows up a short way off." },
         { complete = 95494, races = { "Orc", "Scourge", "Tauren", "Troll" } }, -- level 20
         { turnin = 2381, when = { ready = 2381 }, races = { "Orc", "Scourge", "Troll", "Skyborne" }, classes = { "ROGUE" } }, -- level 20
-        { turnin = 888, -- level 20
+        { turnin = 888, floor = "up", -- level 20
           note = "The NPC is indoors, one floor up." },
         { turnin = 1094, accept = 1095, why = { kind = "carry", quest = 1095, seconds = 8100, xp = 1100 } }, -- level 20
         { talk = 3496, collect = { { 4894, 5 }, { 4893, 5 } }, spots = { { 1413, 62.58, 37.39 } } }, -- level 20
@@ -407,7 +407,7 @@ Ding.RegisterGuide({
         { accept = 914, dungeon = "Wailing Caverns" }, -- level 21
         { accept = 27, races = { "Tauren" }, classes = { "DRUID" }, -- level 21
           note = "The NPC is indoors." },
-        { turnin = 27, accept = 28, races = { "Tauren" }, classes = { "DRUID" }, -- level 21
+        { turnin = 27, accept = 28, floor = "up", races = { "Tauren" }, classes = { "DRUID" }, -- level 21
           note = "The NPC is indoors, one floor up." },
         { complete = 28, races = { "Tauren" }, classes = { "DRUID" }, -- level 21
           note = "The object is a vase woven from wicker. Your targets sit below the water's surface. They appear in scattered spots." },
@@ -500,7 +500,7 @@ Ding.RegisterGuide({
         { accept = 868, why = { chain = 7, kind = "detour", quest = 1062, quests = 13, seconds = 540, short = true, total = 18000, xp = 11000 } }, -- level 21
         { complete = 852, -- level 21
           note = "A centaur flanked by two bodyguards. This one roams, so scan the surrounding area." },
-        { turnin = 852, -- level 21
+        { turnin = 852, floor = "up", -- level 21
           note = "The NPC is indoors, one floor up." },
         { turnin = 1062 }, -- level 21
         { accept = { 1063, 1068 }, why = { kind = "carry", quest = 1063, seconds = 3900, xp = 700 }, -- level 21

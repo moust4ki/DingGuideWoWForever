@@ -16,6 +16,7 @@ the guides; nothing here is loaded by the game.
 | `wow_mock.lua` | Shared module: simulated WoW API, in-memory QuestieDB, loading of Ding |
 | `testlib.lua` | Shared module: small unit test framework |
 | `draft_guide.lua` | Writes the guides of a route (`routes/*.lua`) from the export |
+| `draft_dungeon.lua` | Drafts a guide of Ding! - Dungeon quests: a dungeon's quests for a side, their chains, an order that keeps the trips short (section 6) |
 | `build_data.lua` | Writes Ding's game database (`Ding/DB`) from a QuestieDB release (section 1) |
 | `check_data.lua` | Checks DingDB's corrections (`data/corrections/*.lua`, docs/dingdb.md) |
 | `audit_data.lua` | What the guides need that DingDB lacks (places of givers, NPCs, objectives) |
@@ -32,6 +33,7 @@ the guides; nothing here is loaded by the game.
 | `media/textures.py` | Python 3, no dependencies: draws the kit texture missing from the handoff and puts the origin of the TGAs at the bottom (`python3 tools/media/textures.py Ding/Media/Textures`) |
 | `translate_guides.lua` | Writes the translations of each guide in the TOC, one per language (`Ding/Locales/Guides/<locale>/`), from the `routes/locales/<locale>.lua` dictionaries, and their lines in `Ding.toc` (`lua5.1 tools/translate_guides.lua [locale...]`); exit code 1 if a translation is missing |
 | `guide_texts.lua` | Shared module: language dictionaries, translation of a note sentence by sentence, writing of the translation files |
+| `guide_floor.lua` | Shared module: the floor a guide note names (`floor` key: "up", "top", "down"), from an explicit table of English phrases; used by `write_leveling.lua` and `check_guides.lua` |
 | `check_package.py` | Python 3, no dependencies: checks the zip built by the BigWigs packager before publishing (`python3 tools/check_package.py .release/Ding-*.zip`, from the repository root) |
 | `docs/icon/*.svg` | The icon's vector sources (logo, minimap button, gold arrow, CurseForge avatar): `logo64` / `logo32`, `minimap_icon64` / `minimap_icon32` and `arrow_gold` in `Ding/Media/Textures` are exports of them, in their own colors |
 
@@ -166,6 +168,7 @@ lua5.1 tools/smoke_test.lua $QDB --skip-optional  # optional quests never start
 lua5.1 tools/smoke_test.lua $QDB --locale enUS    # English client (frFR by default)
 lua5.1 tools/smoke_test.lua $QDB --tomtom         # with a simulated TomTom (its arrow replaces Ding's)
 lua5.1 tools/smoke_test.lua $QDB --only class-    # only the chains whose id starts so (here: the class guides)
+lua5.1 tools/smoke_test.lua $QDB --only dungeon-  # the dungeon guides
 ```
 
 Loads the files of `Ding/Ding.toc` with a simulated WoW API (frames, quest log, maps) and a
@@ -409,6 +412,27 @@ The zone tracks:
 | `tauren.lua` | Tauren | Camp Narache, Mulgore, The Barrens (1-19) |
 | `undead.lua` | Undead | Deathknell, Tirisfal Glades, Silverpine Forest, The Barrens (1-20) |
 | `horde.lua` | all (Horde) | common trunk 19-60, from The Barrens to Silithus |
+
+**Ding! - Dungeon quests.** Its guides (`Ding/Guides/Dungeons/<Side>/NN_<Name>.lua`) are
+finished by hand from the drafts of `draft_dungeon.lua`:
+
+```sh
+lua5.1 tools/draft_dungeon.lua $QDB --list                       # the dungeons, quests per side
+lua5.1 tools/draft_dungeon.lua $QDB "The Deadmines" Alliance      # a draft on the standard output
+lua5.1 tools/draft_dungeon.lua $QDB 1584 Horde --level 55         # by AreaID, trips timed at 55
+```
+
+The tool picks the quests of the dungeon open to the side (filed under the dungeon or one of its
+other AreaIDs, or with an objective found only inside it), leaves out raids and their
+attunements, the level 60 armor-set chains, professions, repeatable and holiday quests and the
+long class chains (`RAID_QUESTS`, `SET_RANGES` and the rules at the top of the file), adds the
+prerequisites and the breadcrumbs (optional), the quests a drop of the dungeon starts and the
+follow-ups the ender gives, then orders the trips before the dungeon into one path that ends at
+the entrance and the trips after it into one path from the entrance (`route_travel.lua`, local
+search, fixed seed). Its comments name the NPCs, places, rewards and experience it read, to
+write the notes and `why` lines; a report lists what it left out and why. The finished guides
+are checked like the others (`check_guides.lua`, `tests/dungeon_quests_test.lua`, the smoke test
+with `--only dungeon-`) and translated through the dictionaries (`translate_guides.lua`).
 
 ## 7. Ding! - Leveling from the Leveling routes
 

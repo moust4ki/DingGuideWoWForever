@@ -33,8 +33,8 @@ format, with a prompt ready to copy.
 
 In Ding's settings (`/ding config`, or the minimap button), the **Guide** tab has two lists:
 
-- **Active guide**: one of Ding's own four guides ("Ding! - Leveling", the default, "Ding -
-  Zones", "Ding! - Items" and "Ding! - Class quests") or one of the installed packs, with its author and the levels it
+- **Active guide**: one of Ding's own five guides ("Ding! - Leveling", the default, "Ding -
+  Zones", "Ding! - Items", "Ding! - Class quests" and "Ding! - Dungeon quests") or one of the installed packs, with its author and the levels it
   covers for your character. A pack with nothing for your race or class is greyed (it can
   still be picked). The packs are grouped by [category](#4-the-pack-dingregisterguidepack):
   "Leveling (XP)" first, then "Items", and so on, each under a header that cannot be picked.
@@ -42,9 +42,11 @@ In Ding's settings (`/ding config`, or the minimap button), the **Guide** tab ha
   the route over one or a few zones ("Duskwood & Redridge Mountains (25-27)"); in Ding -
   Zones, a leveling zone ("Shadowglen (1-6)"); in Ding! - Items, an item worth getting off the
   route ("Cozy Sleeping Bag", a bedroll worth up to 3% more experience); in Ding! - Class
-  quests, the quests of your class ("Druid quests"), the only section listed for you; a pack
+  quests, the quests of your class ("Druid quests"), the only section listed for you; in Ding! -
+  Dungeon quests, a dungeon of your side ("The Deadmines (17-26)"), listed by level; a pack
   cuts its route as it likes. A pack of category `"class"` lists only the sections for the
-  character's own class and side.
+  character's own class and side, a pack of category `"dungeon"` only those of the character's
+  side.
 
 Picking a pack starts its section for your character and level, taken up where you really
 are (quests already done are passed). Going back to a pack you followed before (after an
@@ -112,10 +114,10 @@ Ding.RegisterGuidePack({
 
 | Field | Required | Meaning |
 | --- | --- | --- |
-| `id` | yes | Unique among the installed packs, and stable: each character remembers it. `ding`, `ding-zones`, `ding-items` and `ding-class` are Ding's own packs. |
+| `id` | yes | Unique among the installed packs, and stable: each character remembers it. `ding`, `ding-zones`, `ding-items`, `ding-class` and `ding-dungeons` are Ding's own packs. |
 | `title` | no | Name shown in the settings. Write it in English, or pick it with `GetLocale()`. |
 | `author` | no | Your name, shown after the title. |
-| `category` | no | What the pack is for, the group it is listed under: `"leveling"` (the default: a route for experience), `"items"` (a quest chain for an item, a toy, a bag…), `"reputations"`, `"professions"`, `"class"`. Any other value is listed under leveling (the validator warns). The player's option "Skip grey quests" only applies to leveling packs: the others are followed for their reward and keep every quest. |
+| `category` | no | What the pack is for, the group it is listed under: `"leveling"` (the default: a route for experience), `"items"` (a quest chain for an item, a toy, a bag…), `"reputations"`, `"professions"`, `"class"`, `"dungeon"` (one section per dungeon, the player's side only). Any other value is listed under leveling (the validator warns). The player's option "Skip grey quests" only applies to leveling packs: the others are followed for their reward and keep every quest. |
 
 Registering an id that is already taken is an error, shown by the game.
 
@@ -175,7 +177,7 @@ with the quest, NPC and item names from its game data: **a guide never writes na
 | `complete` | quest id or list of ids | the quest's objectives are done (or it is turned in) |
 | `turnin` | quest id or list of ids | the quest is turned in |
 | `level` | number | the character reaches this level (Ding shows the experience and the kills left, and sends the arrow to monsters of the character's level near your next steps). Inside a level: `level = 12, xp = 4500` (level 12 plus 4,500 experience into it), or `level = 12.5` (half-way through level 12) |
-| `go` | `{ uiMapId, x, y }`, x and y from 0 to 100 | the character is within `radius` yards (10 by default) |
+| `go` | `{ uiMapId, x, y }`, x and y from 0 to 100 | the character is within `radius` yards (10 by default); a point at a dungeon's entrance is also reached once the character is inside an instance (no position there) |
 | `sethearth` | name of the inn, as text | the player binds the hearthstone (the text names the inn). Only with the player's option "Manage the hearthstone" (on by default). |
 | `train` | `true` or a text | a class trainer's window, opened during the step, is closed, or a spell is learned during the step (or "next"); the arrow goes to the nearest trainer of the player's class. Only with the player's option "Class trainer steps" (on by default). |
 | `fly` | `true` or a text | a flight master's map opens, or a new flight path is discovered (or "next"); the arrow goes to the nearest flight master of the player's side. Only with the player's option "Flight path steps" (on by default). |
@@ -216,6 +218,7 @@ Options of a step:
 | `faction` | `"Alliance"` or `"Horde"`: in a section for both sides, the step only exists for that side (a race that picks its side on the way gets it once it has one). For a route that starts differently on each side and then goes on together. |
 | `races`, `classes` | The step only exists for these races or classes (same names as above). |
 | `radius` | Arrival distance of a `go` step, in yards. |
+| `floor` | `"up"` (one floor up, upstairs, a balcony), `"top"` (the highest floor of a tower or a building) or `"down"` (a lower floor, a cellar, below ground): where the step's target is. The game gives no height, so on arrival the arrow would say "You're here" one floor too low; with `floor` it says "The NPC is one floor up" (or "It's one floor up" for an object or a place) and stays, and within 30 yards it adds "One floor up". Leave it out when the target may be on several floors. Not for a `go` step. |
 | `use` | Item id or list of ids: the quest item button offers the first one in the bags. |
 | `sticky` | Quest id or list of ids: from this step on, the unfinished objectives of these quests stay listed under every following step ("Still to do"), and their monsters are low-priority arrow targets, while the quest is in the log and not ready. For a quest done a little at a time along the route: `{ accept = 456, sticky = 456 }`. |
 | `dungeon` | Name of the dungeon, as text: the step's quests are done inside it, with a group. The player chooses dungeon by dungeon in the settings (by default, the option "Dungeon quests", off): write **one exact name per dungeon, the same in every step of it** (in English: "The Deadmines"), since it is the name of that choice. |

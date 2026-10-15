@@ -276,7 +276,7 @@ T.test("enemy nameplates farther: the client's maximum, then the value before", 
     start()
     H.setCVarRaw(QM.DISTANCE_CVAR, "20")
     Ding.db.farPlatesFrom = nil
-    T.eq(Ding.db.ui.farPlates, false, "on by default")
+    T.eq(Ding.DEFAULTS.ui.farPlates, true, "off by default for a new install")
     local printed = {}
     local print0 = Ding.Print
     Ding.Print = function(_, msg) printed[#printed + 1] = msg end
@@ -304,11 +304,14 @@ T.test("enemy nameplates farther: the client's maximum, then the value before", 
     QM:ApplyDistance()
     T.eq(H.cvar(QM.DISTANCE_CVAR), "41")
     T.eq(Ding.db.farPlatesFrom, "20", "the value before was lost")
-    -- The tab's defaults: off, and the value before.
+    -- The tab's defaults: on (v1.7.0), the client's maximum.
     Cfg:TabDefaults("arrow")
     H.flush()
-    T.eq(Ding.db.ui.farPlates, false)
-    T.eq(H.cvar(QM.DISTANCE_CVAR), "20")
+    T.eq(Ding.db.ui.farPlates, true)
+    T.eq(H.cvar(QM.DISTANCE_CVAR), "41")
+    Ding.db.ui.farPlates = false
+    QM:ApplyDistance()
+    T.eq(H.cvar(QM.DISTANCE_CVAR), "20", "not put back")
     -- A client without the setting: said once, nothing set.
     H.setCVarRaw(QM.DISTANCE_CVAR, nil)
     Ding.db.ui.farPlates = true
@@ -320,6 +323,38 @@ T.test("enemy nameplates farther: the client's maximum, then the value before", 
     Ding.Print = print0
     Cfg:Close()
     H.flush()
+end)
+
+-- Testers saw no counter above the monsters: the client hides the enemy nameplates until V.
+T.test("enemy nameplates shown once for the marks, said in the chat, never forced again", function()
+    start()
+    Ding.db.platesShown = nil
+    H.setCVarRaw(QM.SHOW_CVAR, "0")
+    local printed = {}
+    local print0 = Ding.Print
+    Ding.Print = function(_, msg) printed[#printed + 1] = msg end
+    QM:ShowPlatesOnce()
+    T.eq(H.cvar(QM.SHOW_CVAR), "1", "the enemy nameplates stay hidden")
+    T.eq(printed[#printed], L.PLATES_SHOWN)
+    -- The player hides them again (V): Ding leaves them so, at the next login too.
+    H.setCVarRaw(QM.SHOW_CVAR, "0")
+    H.fire("PLAYER_LOGIN"); H.flush()
+    T.eq(H.cvar(QM.SHOW_CVAR), "0", "shown again against the player's choice")
+    -- In combat: once the fight is over; with the marks off: never.
+    Ding.db.platesShown = nil
+    H.setCombat(true)
+    QM:ShowPlatesOnce()
+    T.eq(H.cvar(QM.SHOW_CVAR), "0", "changed in combat")
+    H.setCombat(false)
+    H.fire("PLAYER_REGEN_ENABLED"); H.flush()
+    T.eq(H.cvar(QM.SHOW_CVAR), "1")
+    Ding.db.platesShown = nil
+    Ding.db.ui.mobIcons = false
+    H.setCVarRaw(QM.SHOW_CVAR, "0")
+    QM:ShowPlatesOnce()
+    T.eq(H.cvar(QM.SHOW_CVAR), "0", "shown with the marks off")
+    Ding.db.ui.mobIcons = true
+    Ding.Print = print0
 end)
 
 T.run()

@@ -22,7 +22,7 @@ Ding.RegisterGuide({
           note = "Silithus: Valor's Rest, in the north-east, then Cenarion Hold." },
         { turnin = 1124, accept = 1125, -- level 59
           note = "The NPC is indoors." },
-        { accept = 8277, -- level 59
+        { accept = 8277, floor = "up", -- level 59
           note = "This one roams, so scan the surrounding area. The NPC is indoors, one floor up." },
         { turnin = 8275, accept = 8280 }, -- level 59
         { go = { 1451, 50.52, 34.51 }, fly = true, talk = 15177, text = "Flight master at Cenarion Hold", -- level 59
@@ -43,7 +43,7 @@ Ding.RegisterGuide({
         { complete = 8277, -- level 59
           note = "Hunt spiders for it." },
         { complete = 8280 }, -- level 59
-        { turnin = 8277, accept = 8278, -- level 59
+        { turnin = 8277, accept = 8278, floor = "up", -- level 59
           note = "This one roams, so scan the surrounding area. The NPC is indoors, one floor up." },
         { turnin = 8280, accept = 8281 }, -- level 59
         { complete = 8284, -- level 59
@@ -75,7 +75,7 @@ Ding.RegisterGuide({
         { complete = 8281, -- level 59
           note = "Target the burrowing worms." },
         { turnin = 8281 }, -- level 59
-        { turnin = 8278, -- level 59
+        { turnin = 8278, floor = "up", -- level 59
           note = "This one roams, so scan the surrounding area. The NPC is indoors, one floor up." },
         { turnin = { 8287, 8304 }, -- level 59
           note = "The NPC is on the house's raised terrace." },

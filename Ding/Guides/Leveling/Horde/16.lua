@@ -76,7 +76,7 @@ Ding.RegisterGuide({
           note = "These foes hide in stealth. Tigers compete for the same spawn points." },
         { complete = 192, sticky = 213, -- level 37
           note = "These foes hide in stealth." },
-        { collect = { { 5851, 1 } }, spots = { { 1434, 42.62, 18.29 } }, -- level 37
+        { floor = "up", collect = { { 5851, 1 } }, spots = { { 1434, 42.62, 18.29 } }, -- level 37
           note = "The objective sits up on the raised deck. The target is indoors." },
         { complete = 1182, -- level 37
           note = "The object is indoors." },
@@ -88,13 +88,13 @@ Ding.RegisterGuide({
         { accept = 638, why = { kind = "carry", quest = 638, seconds = 16080, xp = 700 } }, -- level 37
         { turnin = 569 }, -- level 37
         { turnin = 570 }, -- level 37
-        { turnin = 1182, -- level 37
+        { turnin = 1182, floor = "up", -- level 37
           note = "The NPC is upstairs, out on the balcony." },
-        { turnin = { 189, 213 }, -- level 37
+        { turnin = { 189, 213 }, floor = "top", -- level 37
           note = "Climb to the highest floor of the building." },
-        { turnin = 201, -- level 37
+        { turnin = 201, floor = "top", -- level 37
           note = "Climb to the highest floor of the building." },
-        { turnin = 605, -- level 37
+        { turnin = 605, floor = "down", -- level 37
           note = "The NPC is on the building's lowest floor" },
         { turnin = 575, -- level 38
           note = "The NPC stands on the top tier of the pier. The NPC is indoors." },

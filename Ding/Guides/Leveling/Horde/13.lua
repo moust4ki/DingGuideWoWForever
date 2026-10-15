@@ -53,7 +53,7 @@ Ding.RegisterGuide({
         { turnin = 677 }, -- level 32
         { turnin = 509, accept = 513, why = { chain = 1, kind = "detour", quest = 509, seconds = 60, xp = 3500 }, -- level 32
           note = "The NPC is indoors." },
-        { train = true, talk = 4568, races = { "Scourge", "Troll" }, classes = { "MAGE" }, -- level 32
+        { train = true, floor = "up", talk = 4568, races = { "Scourge", "Troll" }, classes = { "MAGE" }, -- level 32
           note = "The NPC is indoors, one floor up." },
         { turnin = 1164 }, -- level 33
         { talk = 4549, collect = { { 5800, 1 }, { 5850, 1 } }, spots = { { 1458, 65.94, 44.78 } } }, -- level 33

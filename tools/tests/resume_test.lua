@@ -202,9 +202,10 @@ T.test("restart: the first step still to do, past the steps done", function()
     load({ [P1] = "turnedin", [P3] = "turnedin", [P4] = "log" }, 3, "t-where")
     E.index, E.hold = 1, true             -- the player went back to the start
     E:Reset(); H.flush()
-    -- The quests alone never pass a step: P2 was never taken, it is still to do.
+    -- The quests alone never pass a step: P2 was never taken, it is still to do. The place
+    -- the character was at stays its place (a strict resume up to it).
     T.eq(E.index, 4, "a step still to do passed on the quests alone")
-    T.eq(E.resumeTo, nil)
+    T.ok(E.resumeTo and E.resumeStrict, "the character's place forgotten")
     E:Skip(); H.flush()
     T.eq(E.index, 8, "the trainer and the steps done are not passed")
     T.ok(E:BackToIncomplete(), "the skipped step is no longer reachable")
@@ -400,10 +401,10 @@ T.test("sethearth: bound there during the step, it stays done when the guide is 
     -- "Take this guide up where I am" forgets the marks: the inn still holds.
     E:Reset(); H.flush()
     T.eq(E.index, 3, "Ding asks to bind the hearthstone again")
-    -- Bound elsewhere since: the step is to do again.
+    -- Bound elsewhere since: an inn left behind, the player chose another one.
     H.player.bind = "Darnassus"
     E:Reset(); H.flush()
-    T.eq(E.index, 2, "a hearthstone bound elsewhere still counts")
+    T.eq(E.index, 3, "sent back to an inn the player left behind")
     H.player.bind = nil
 end)
 
@@ -418,9 +419,48 @@ T.test("a step passed while its option was off stays passed when the section is 
     E:Resume("t-resume", true); H.flush()
     E:Resume("t-inn", true); H.flush()
     T.eq(E.index, 3, "back on a step the guide went past")
-    -- "Take this guide up where I am": what is not really done is to do again.
+    -- "Take this guide up where I am": a step behind an option turned on since stays behind.
     E:Reset(); H.flush()
-    T.eq(E.index, 2)
+    T.eq(E.index, 3, "sent back to a step behind an option turned on since")
+end)
+
+-- In game (15/10/2026): "Elite quests" turned on at step 38 of the Wetlands, then "Take this
+-- guide up where I am": the player was sent back to step 5, an elite quest never taken.
+local EL, N1, N2 = 900521, 900522, 900523
+Ding.RegisterGuide({ id = "t-reset-elite", title = "Reset", races = { "NightElf" }, steps = {
+    { accept = A },                     -- 1
+    { accept = EL, elite = true },      -- 2 an elite quest, never taken
+    { accept = N1 },                    -- 3
+    { train = true },                   -- 4 marked done by hand
+    { complete = A },                   -- 5 where the player is
+    { turnin = A },                     -- 6
+} })
+
+T.test("take the guide up where I am: elite quests left behind stay behind, the place holds", function()
+    T.reset({ level = 2 })
+    Ding.db.ui.elites = false
+    T.quests({ [A] = "log", [N1] = "turnedin" })
+    E:SetGuide("t-reset-elite", 4, true); H.flush()
+    H.tick(11)
+    E:MarkDone(); H.flush()
+    T.eq(E.index, 5, "premise: on the player's step")
+    Ding.db.ui.elites = true
+    E:Reset(); H.flush()
+    T.eq(E.index, 5, "sent back to an elite quest never taken")
+    Ding.db.ui.elites = false
+end)
+
+T.test("take the guide up where I am: a quest of the route never taken still stops it", function()
+    T.reset({ level = 2 })
+    T.quests({ [A] = "log" })
+    E:SetGuide("t-reset-elite", 5, true); H.flush()
+    H.tick(11)
+    T.eq(E.index, 5)
+    E:Reset(); H.flush()
+    T.eq(E.index, 3, "a quest of the route still to take passed")
+    -- Taken: the rest of what was left behind passes, up to the player's place.
+    T.quests({ [A] = "log", [N1] = "log" }); H.flush()
+    T.eq(E.index, 5, "not back at the player's place")
 end)
 
 T.test("goals passed stay passed once their items are spent", function()

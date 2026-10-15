@@ -108,9 +108,9 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { train = true, talk = 944, races = { "Gnome" }, classes = { "MAGE" }, -- level 4
           note = "The NPC is indoors." },
-        { turnin = 3115, accept = 1599, races = { "Gnome" }, classes = { "WARLOCK" }, -- level 4
+        { turnin = 3115, accept = 1599, floor = "up", races = { "Gnome" }, classes = { "WARLOCK" }, -- level 4
           note = "The NPC is indoors, one floor up." },
-        { train = true, talk = 460, races = { "Gnome" }, classes = { "WARLOCK" }, -- level 4
+        { train = true, floor = "up", talk = 460, races = { "Gnome" }, classes = { "WARLOCK" }, -- level 4
           note = "The NPC is indoors, one floor up." },
         { go = { 1426, 28.82, 69.03 }, text = "Step back outside" }, -- level 4
         { turnin = 170 }, -- level 4
@@ -124,7 +124,7 @@ Ding.RegisterGuide({
         { talk = 6491, races = { "Gnome" }, classes = { "WARLOCK" } }, -- level 4
         { go = { 1426, 26.84, 79.8 }, races = { "Gnome" }, classes = { "WARLOCK" }, text = "Head out of the cave" }, -- level 4
         { go = { 1426, 28.84, 69.11 }, races = { "Gnome" }, classes = { "WARLOCK" }, text = "Head indoors" }, -- level 4
-        { turnin = 1599, when = { ready = 1599 }, races = { "Gnome" }, classes = { "WARLOCK" }, -- level 4
+        { turnin = 1599, floor = "up", when = { ready = 1599 }, races = { "Gnome" }, classes = { "WARLOCK" }, -- level 4
           note = "The NPC is indoors, one floor up." },
         { vendor = true, talk = 6376, races = { "Gnome" }, classes = { "WARLOCK" } }, -- level 4
         { go = { 1426, 28.82, 69.03 }, text = "Step back outside" }, -- level 4
@@ -164,7 +164,7 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { train = true, talk = 944, races = { "Gnome" }, classes = { "MAGE" }, -- level 6
           note = "The NPC is indoors." },
-        { train = true, talk = 460, races = { "Gnome" }, classes = { "WARLOCK" }, -- level 6
+        { train = true, floor = "up", talk = 460, races = { "Gnome" }, classes = { "WARLOCK" }, -- level 6
           note = "The NPC is indoors, one floor up." },
         { go = { 1426, 28.84, 69.11 }, text = "Step back outside" }, -- level 6
         { turnin = 282, accept = 420 }, -- level 6
@@ -196,7 +196,7 @@ Ding.RegisterGuide({
         { accept = 5541 }, -- level 6
         { go = { 1426, 49.97, 50.25 }, classes = { "WARRIOR", "PALADIN", "ROGUE" }, text = "Learn Mining from the trainer" }, -- level 6
         { turnin = 96628, races = { "Dwarf", "Gnome" } }, -- level 6
-        { talk = 5392, sticky = 317, classes = { "WARRIOR", "PALADIN", "ROGUE" }, -- level 6
+        { floor = "down", talk = 5392, sticky = 317, classes = { "WARRIOR", "PALADIN", "ROGUE" }, -- level 6
           note = "The NPC waits on the lower level, indoors." },
         { complete = 5541 }, -- level 6
         { complete = 313, -- level 6
@@ -218,9 +218,9 @@ Ding.RegisterGuide({
         { train = true, talk = 1231, races = { "Dwarf" }, classes = { "HUNTER" } }, -- level 7
         { train = true, talk = 5612, races = { "Gnome" }, classes = { "WARLOCK" } }, -- level 7
         { vendor = true, talk = 6328, races = { "Gnome" }, classes = { "WARLOCK" } }, -- level 7
-        { train = true, talk = 1228, races = { "Gnome" }, classes = { "MAGE" }, -- level 7
+        { train = true, floor = "up", talk = 1228, races = { "Gnome" }, classes = { "MAGE" }, -- level 7
           note = "The NPC is indoors, one floor up." },
-        { train = true, talk = 1232, races = { "Dwarf" }, classes = { "PALADIN" }, -- level 7
+        { train = true, floor = "up", talk = 1232, races = { "Dwarf" }, classes = { "PALADIN" }, -- level 7
           note = "The NPC is indoors, one floor up." },
         { train = true, talk = 1226, races = { "Dwarf" }, classes = { "PRIEST" }, -- level 7
           note = "The NPC is indoors." },
@@ -258,14 +258,14 @@ Ding.RegisterGuide({
           note = "The NPC is indoors." },
         { talk = 1247, buy = { { 2686, 1, 1247 } }, -- level 8
           note = "The NPC is indoors." },
-        { turnin = 310, accept = 311, -- level 8
+        { turnin = 310, accept = 311, floor = "down", -- level 8
           note = "Give it a few seconds. The object is on the lower level, indoors." },
         { go = { 1426, 41.95, 47.28 }, text = "Stay on the trail" }, -- level 8
         { turnin = 311 }, -- level 8
         { turnin = { 319, 315 }, accept = { 320, 413 } }, -- level 8
         { level = 9, sticky = 287, patrol = { { 1426, 30.44, 42.25 }, { 1426, 28.05, 42.14 }, { 1426, 25.75, 46.37 }, { 1426, 28.65, 47.45 }, { 1426, 32.57, 47.84 }, { 1426, 35.43, 46.46 }, { 1426, 37.84, 42.37 }, { 1426, 31.56, 38.05 }, { 1426, 30.86, 35.37 }, { 1426, 34.54, 35.37 }, { 1426, 37.77, 34.44 }, { 1426, 34.54, 31.54 }, { 1426, 28.44, 52.65 }, { 1426, 26.35, 55.36 } } }, -- level 9
         { go = { 1426, 24.9, 50.94 }, text = "Go into the cavern" }, -- level 9
-        { complete = 287, -- level 9
+        { complete = 287, floor = "down", -- level 9
           note = "Head to the lower level of the cavern." },
         { complete = 287, -- level 9
           note = "Targets are in the cavern and around its entrance too." },
@@ -303,9 +303,9 @@ Ding.RegisterGuide({
         { turnin = 99162, races = { "Dwarf", "Gnome" } }, -- level 10
         { train = true, talk = 5612, races = { "Gnome" }, classes = { "WARLOCK" } }, -- level 10
         { vendor = true, talk = 6328, races = { "Gnome" }, classes = { "WARLOCK" } }, -- level 10
-        { train = true, talk = 1228, races = { "Gnome" }, classes = { "MAGE" }, -- level 10
+        { train = true, floor = "up", talk = 1228, races = { "Gnome" }, classes = { "MAGE" }, -- level 10
           note = "The NPC is indoors, one floor up." },
-        { train = true, talk = 1232, races = { "Dwarf" }, classes = { "PALADIN" }, -- level 10
+        { train = true, floor = "up", talk = 1232, races = { "Dwarf" }, classes = { "PALADIN" }, -- level 10
           note = "The NPC is indoors, one floor up." },
         { train = true, talk = 1226, races = { "Dwarf" }, classes = { "PRIEST" }, -- level 10
           note = "The NPC is indoors." },
@@ -361,12 +361,12 @@ Ding.RegisterGuide({
         { turnin = 413, accept = 414, -- level 10
           note = "Keep to the road as it crosses the underground passages." },
         { accept = 224 }, -- level 10
-        { accept = 267, -- level 10
+        { accept = 267, floor = "up", -- level 10
           note = "The NPC is indoors, one floor up." },
         { go = { 1432, 33.9, 50.98 }, fly = true, talk = 1572, text = "Fly to Thelsamar" }, -- level 10
         { turnin = 414, accept = 1339, patrol = { { 1432, 32.7, 49.76 }, { 1432, 33.3, 49.22 }, { 1432, 33.91, 48.42 }, { 1432, 34.36, 47.6 }, { 1432, 34.87, 47 }, { 1432, 35.6, 46.71 }, { 1432, 36.12, 46.32 }, { 1432, 37.14, 45.96 }, { 1432, 37.26, 45.56 }, { 1432, 37.33, 44.48 }, { 1432, 37.23, 43.29 }, { 1432, 36.68, 42.04 } }, -- level 10
           note = "The NPC patrols a long route; look along it." },
-        { turnin = 1339, accept = 1338, -- level 10
+        { turnin = 1339, accept = 1338, floor = "up", -- level 10
           note = "The NPC is indoors, one floor up." },
         { go = { 1432, 29.79, 16.03 }, deathskip = true, text = "Die on purpose at this spot", -- level 10
           note = "Die to the monsters here on purpose. This is the quickest way over." },
@@ -387,7 +387,7 @@ Ding.RegisterGuide({
         { go = { 1455, 44.51, 49.54 }, text = "Stay on the trail" }, -- level 11
         { turnin = 291 }, -- level 11
         { accept = 94817, races = { "Gnome" }, classes = { "PRIEST" } }, -- level 11
-        { turnin = 6391, accept = 6388, -- level 11
+        { turnin = 6391, accept = 6388, floor = "down", -- level 11
           note = "The NPC waits on the lower level, indoors." },
         { accept = 1715, races = { "Gnome" }, classes = { "WARLOCK" } }, -- level 11
         { turnin = 6388, accept = 6392, why = { kind = "carry", quest = 6392, seconds = 6600, xp = 1100 } }, -- level 11
@@ -404,7 +404,7 @@ Ding.RegisterGuide({
         { accept = 353, why = { kind = "carry", quest = 353, seconds = 7320, xp = 1100 }, -- level 11
           note = "The NPC is indoors." },
         { turnin = 1338 }, -- level 11
-        { accept = 1638, classes = { "WARRIOR" }, -- level 11
+        { accept = 1638, floor = "up", classes = { "WARRIOR" }, -- level 11
           note = "The NPC is indoors, one floor up." },
         { turnin = 1638, accept = 1639, classes = { "WARRIOR" }, -- level 11
           note = "The NPC is indoors." },
@@ -421,7 +421,7 @@ Ding.RegisterGuide({
         { turnin = 5637, races = { "Dwarf" }, classes = { "PRIEST" }, -- level 11
           note = "The NPC is indoors." },
         { go = { 1453, 42.28, 81.85 }, races = { "Gnome" }, classes = { "WARLOCK" }, text = "Head indoors" }, -- level 11
-        { turnin = 1715, accept = 1688, races = { "Gnome" }, classes = { "WARLOCK" }, -- level 11
+        { turnin = 1715, accept = 1688, floor = "down", races = { "Gnome" }, classes = { "WARLOCK" }, -- level 11
           note = "The NPC waits on the lower level, indoors." },
         { go = { 1453, 63.92, 69.12 }, classes = { "WARRIOR" }, text = "Learn Two-Handed Swords and Staves at the weapon master" }, -- level 11
         { go = { 1453, 63.92, 69.12 }, classes = { "PALADIN" }, text = "Learn Two-Handed Swords at the weapon master" }, -- level 11
@@ -489,16 +489,16 @@ Ding.RegisterGuide({
         { go = { 1453, 42.28, 81.85 }, races = { "Gnome" }, classes = { "WARLOCK" }, text = "Head indoors", -- level 12
           note = "The NPC waits on the lower level, indoors." },
         { train = true, talk = 461, races = { "Gnome" }, classes = { "WARLOCK" } }, -- level 12
-        { turnin = 1688, when = { ready = 1688 }, races = { "Gnome" }, classes = { "WARLOCK" }, -- level 12
+        { turnin = 1688, floor = "down", when = { ready = 1688 }, races = { "Gnome" }, classes = { "WARLOCK" }, -- level 12
           note = "The NPC waits on the lower level, indoors." },
         { accept = 1689, when = { done = 1688 }, races = { "Gnome" }, classes = { "WARLOCK" } }, -- level 12
-        { complete = 1689, useitem = 6928, when = { log = 1689 }, races = { "Gnome" }, classes = { "WARLOCK" }, -- level 12
+        { complete = 1689, floor = "down", useitem = 6928, when = { log = 1689 }, races = { "Gnome" }, classes = { "WARLOCK" }, -- level 12
           note = "Step onto the pink rune. Look within the tomb. The target is on the lower level, indoors." },
         { turnin = 1689, when = { ready = 1689 }, races = { "Gnome" }, classes = { "WARLOCK" }, -- level 12
           note = "The NPC stands one level over the crypt. The NPC waits on the lower level, indoors." },
-        { vendor = true, talk = 5520, races = { "Gnome" }, classes = { "WARLOCK" }, -- level 12
+        { floor = "down", vendor = true, talk = 5520, races = { "Gnome" }, classes = { "WARLOCK" }, -- level 12
           note = "The NPC waits on the lower level, indoors." },
-        { train = true, talk = 5498, races = { "Gnome" }, classes = { "MAGE" }, -- level 12
+        { train = true, floor = "top", talk = 5498, races = { "Gnome" }, classes = { "MAGE" }, -- level 12
           note = "The NPC waits on the tower's highest floor." },
         { train = true, talk = 5515, races = { "Dwarf" }, classes = { "HUNTER" }, -- level 12
           note = "The NPC is indoors." },
@@ -510,26 +510,26 @@ Ding.RegisterGuide({
         { go = { 1453, 52.93, 51.05 }, races = { "Dwarf" }, classes = { "PRIEST" }, text = "Head indoors", -- level 12
           note = "This one roams, so scan the surrounding area. The NPC is indoors." },
         { train = true, talk = 5484, races = { "Dwarf" }, classes = { "PRIEST" } }, -- level 12
-        { train = true, talk = 5479, classes = { "WARRIOR" }, -- level 12
+        { train = true, floor = "up", talk = 5479, classes = { "WARRIOR" }, -- level 12
           note = "The NPC is indoors, one floor up." },
         { train = true, talk = 918, classes = { "ROGUE" } }, -- level 12
         { accept = 2999, races = { "Dwarf" }, classes = { "PALADIN" }, -- level 12
           note = "The NPC is indoors." },
-        { turnin = 2999, accept = 1645, races = { "Dwarf" }, classes = { "PALADIN" }, -- level 12
+        { turnin = 2999, accept = 1645, floor = "up", races = { "Dwarf" }, classes = { "PALADIN" }, -- level 12
           note = "The NPC is indoors, one floor up." },
         { turnin = 1645, races = { "Dwarf" }, classes = { "PALADIN" } }, -- level 12
         { accept = 1646, useitem = 6916, races = { "Dwarf" }, classes = { "PALADIN" } }, -- level 12
-        { turnin = 1646, accept = 1647, races = { "Dwarf" }, classes = { "PALADIN" }, -- level 12
+        { turnin = 1646, accept = 1647, floor = "up", races = { "Dwarf" }, classes = { "PALADIN" }, -- level 12
           note = "The NPC is indoors, one floor up." },
         { turnin = 1647, accept = 1648, patrol = { { 1455, 21.81, 51.72 }, { 1455, 21.94, 54.69 }, { 1455, 22.76, 58.43 }, { 1455, 23.36, 61.85 }, { 1455, 23.69, 63.83 }, { 1455, 25.75, 67.94 }, { 1455, 27.51, 71.36 }, { 1455, 31.78, 78.22 }, { 1455, 36.28, 81.27 }, { 1455, 39.78, 83.19 }, { 1455, 42.89, 84.04 } }, races = { "Dwarf" }, classes = { "PALADIN" }, -- level 12
           note = "The NPC roams a wide loop; look along it." },
         { turnin = 1648, patrol = { { 1455, 21.81, 51.72 }, { 1455, 21.94, 54.69 }, { 1455, 22.76, 58.43 }, { 1455, 23.36, 61.85 }, { 1455, 23.69, 63.83 }, { 1455, 25.75, 67.94 }, { 1455, 27.51, 71.36 }, { 1455, 31.78, 78.22 }, { 1455, 36.28, 81.27 }, { 1455, 39.78, 83.19 }, { 1455, 42.89, 84.04 } }, when = { ready = 1648 }, races = { "Dwarf" }, classes = { "PALADIN" }, -- level 12
           note = "The NPC roams a wide loop; look along it. You likely gathered 10 Linen Cloth already." },
         { accept = 1778, when = { done = 1648 }, races = { "Dwarf" }, classes = { "PALADIN" } }, -- level 12
-        { turnin = 1778, when = { log = 1778 }, races = { "Dwarf" }, classes = { "PALADIN" }, -- level 12
+        { turnin = 1778, floor = "up", when = { log = 1778 }, races = { "Dwarf" }, classes = { "PALADIN" }, -- level 12
           note = "The NPC is indoors, one floor up." },
         { accept = 1779, when = { done = 1778 }, races = { "Dwarf" }, classes = { "PALADIN" } }, -- level 12
-        { turnin = 1779, when = { log = 1779 }, races = { "Dwarf" }, classes = { "PALADIN" }, -- level 12
+        { turnin = 1779, floor = "up", when = { log = 1779 }, races = { "Dwarf" }, classes = { "PALADIN" }, -- level 12
           note = "The NPC is indoors, one floor up." },
         { accept = 1783, when = { done = 1779 }, races = { "Dwarf" }, classes = { "PALADIN" } }, -- level 12
         { accept = 418, -- level 12
@@ -540,7 +540,7 @@ Ding.RegisterGuide({
           note = "The NPC can be indoors or out." },
         { complete = 416, -- level 12
           note = "The targets are rat-like humanoids." },
-        { turnin = 353, -- level 12
+        { turnin = 353, floor = "up", -- level 12
           note = "The NPC is indoors, one floor up." },
         { collect = { { 3172, 3 } }, keep = 3172 }, -- level 12
         { collect = { { 3174, 3 } }, keep = 3174, -- level 12
@@ -555,16 +555,16 @@ Ding.RegisterGuide({
         { complete = 224 }, -- level 13
         { go = { 1432, 30.62, 69.75 }, text = "Exit Stonesplinter Valley, then stay on the road" }, -- level 13
         { turnin = 224 }, -- level 13
-        { turnin = 267, -- level 13
+        { turnin = 267, floor = "up", -- level 13
           note = "The NPC is indoors, one floor up." },
         { turnin = 1783, useitem = 6866, when = { ready = 1783 }, races = { "Dwarf" }, classes = { "PALADIN" }, -- level 13
           note = "Narm Faulk lies dead; use the item on his body. Wait for the talking to finish" },
         { accept = 1784, when = { done = 1783 }, races = { "Dwarf" }, classes = { "PALADIN" } }, -- level 13
         { complete = 1784, when = { log = 1784 }, races = { "Dwarf" }, classes = { "PALADIN" } }, -- level 13
-        { turnin = 1784, when = { ready = 1784 }, races = { "Dwarf" }, classes = { "PALADIN" }, -- level 13
+        { turnin = 1784, floor = "up", when = { ready = 1784 }, races = { "Dwarf" }, classes = { "PALADIN" }, -- level 13
           note = "The NPC is indoors, one floor up." },
         { accept = 1785, when = { done = 1784 }, races = { "Dwarf" }, classes = { "PALADIN" } }, -- level 13
-        { turnin = 1785, when = { log = 1785 }, races = { "Dwarf" }, classes = { "PALADIN" }, -- level 13
+        { turnin = 1785, floor = "up", when = { log = 1785 }, races = { "Dwarf" }, classes = { "PALADIN" }, -- level 13
           note = "The NPC is indoors, one floor up." },
         { turnin = 39, why = { kind = "detour", quest = 39, quests = 2, seconds = 120, total = 1300, xp = 1100 } }, -- level 13
         { turnin = 94792, races = { "Dwarf", "Gnome" }, classes = { "HUNTER" } }, -- level 13

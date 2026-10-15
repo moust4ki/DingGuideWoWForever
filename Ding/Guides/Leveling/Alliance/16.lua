@@ -26,11 +26,11 @@ Ding.RegisterGuide({
         { sethearth = "Theramore Isle", talk = 6272, -- level 33
           note = "The NPC is indoors." },
         { accept = 1282 }, -- level 33
-        { turnin = 1302, -- level 33
+        { turnin = 1302, floor = "up", -- level 33
           note = "The NPC is indoors, one floor up." },
-        { turnin = 1264, accept = 1265, -- level 34
+        { turnin = 1264, accept = 1265, floor = "up", -- level 34
           note = "The NPC is indoors, one floor up." },
-        { turnin = 1282, -- level 34
+        { turnin = 1282, floor = "up", -- level 34
           note = "The NPC is indoors, one floor up." },
         { complete = 1265, -- level 34
           note = "The NPC is indoors." },
@@ -90,18 +90,18 @@ Ding.RegisterGuide({
         { turnin = 1135, -- level 34
           note = "The NPC is indoors." },
         { turnin = 1219, accept = 1220 }, -- level 34
-        { turnin = { 1220, 1252, 1253, 1284 }, accept = { 1259, 1319 }, -- level 34
+        { turnin = { 1220, 1252, 1253, 1284 }, accept = { 1259, 1319 }, floor = "up", -- level 34
           note = "The NPC is indoors, one floor up." },
-        { turnin = 1259, accept = 1285, -- level 34
+        { turnin = 1259, accept = 1285, floor = "up", -- level 34
           note = "The NPC is indoors, one floor up." },
-        { turnin = 1285, -- level 34
+        { turnin = 1285, floor = "up", -- level 34
           note = "The NPC is indoors, one floor up." },
         { turnin = 1319, accept = 1320, -- level 34
           note = "The NPC is indoors." },
-        { turnin = 1320, -- level 34
+        { turnin = 1320, floor = "up", -- level 34
           note = "The NPC is indoors, one floor up." },
         { go = { 1413, 63.03, 37.19 }, fly = true, talk = 16227, text = "Flight master in Ratchet" }, -- level 34
-        { turnin = 1178, accept = 1180, -- level 34
+        { turnin = 1178, accept = 1180, floor = "up", -- level 34
           note = "The NPC is indoors, one floor up." },
         { turnin = 1798, accept = 1758, races = { "Human", "Gnome", "Skyborne" }, classes = { "WARLOCK" } }, -- level 34
         { turnin = 1718, accept = 1719, classes = { "WARRIOR" } }, -- level 34

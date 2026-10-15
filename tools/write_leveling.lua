@@ -26,6 +26,8 @@
 -- 7. Reasons (tools/route_why.lua): a step whose choice surprises (a detour, a quest taken now
 --    or never) gets its `why`, measured on the simulation; the audit's verdicts on the quests
 --    the route leaves out become each section's `leftOut`. --why lists them.
+-- 8. Floors (tools/guide_floor.lua): a step whose note says the target is upstairs, at the top
+--    or downstairs gets `floor`, which the arrow says on arrival.
 -- Writes Ding/Guides/<file> and its translations (tools/routes/locales).
 local here = arg[0]:match("^(.*)[/\\]") or "."
 local root = here:match("^(.*)[/\\]tools$") or (here == "." and "..") or (here .. "/..")
@@ -38,6 +40,7 @@ local Texts = dofile(here .. "/guide_texts.lua")
 local Solver = dofile(here .. "/route_solver.lua")
 local Free = dofile(here .. "/route_free.lua")
 local Why = dofile(here .. "/route_why.lua")
+local Floor = dofile(here .. "/guide_floor.lua")
 local QK = X.QUEST
 local P = Model.PARAMS
 
@@ -2074,6 +2077,10 @@ for _, section in ipairs(sections) do
             if step.dungeon then parts[#parts + 1] = "dungeon = " .. quote(step.dungeon) end
             if step.elite then parts[#parts + 1] = "elite = true" end
             if step.optional then parts[#parts + 1] = "optional = true" end
+            -- The floor the route's note names (tools/guide_floor.lua): the arrow says it on
+            -- arrival. Not on a trip: its point is the way in, the note is for the next step.
+            local floor = not step.go and Floor.of(step.note)
+            if floor then parts[#parts + 1] = "floor = " .. quote(floor) end
             for _, k in ipairs(GOAL_KEYS) do
                 if step[k] ~= nil then parts[#parts + 1] = k .. " = " .. luaValue(step[k]) end
             end

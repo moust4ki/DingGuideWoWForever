@@ -727,13 +727,26 @@ T.test("old settings: arrow centered, size, scale, TomTom off, only once", funct
     T.eq(db.panel.scale, 1.5)
     T.eq(db.panel.textSize, nil)
     T.eq(db.ui.opacity, nil)
-    T.eq(db.layout, 3)
+    T.eq(db.layout, 4)
     db.arrow.tomtom = true
     Ding.Migrate(db)
     T.eq(db.arrow.tomtom, true, "migration replayed")
     local moved = { panel = {}, arrow = { point = "TOPLEFT", x = 40, y = -90, scale = 1 }, ui = {} }
     Ding.Migrate(moved)
     T.ok(moved.arrow.point == "TOPLEFT" and moved.arrow.x == 40 and moved.arrow.size == 56, "arrow moved by the player")
+end)
+
+-- v1.7.0 (Yendi's choice): the guide window stays as it is in combat; minimizing it there is
+-- an option, off. The old default, on, goes once; turned on again, it stays.
+T.test("in combat the window stays by default; settings from before v1.7.0 drop the old default once", function()
+    T.eq(Ding.DEFAULTS.panel.compactInCombat, false)
+    local db = { layout = 3, panel = { compactInCombat = true }, arrow = {}, ui = {} }
+    Ding.Migrate(db)
+    T.eq(db.panel.compactInCombat, false, "the old default kept")
+    T.eq(db.layout, 4)
+    db.panel.compactInCombat = true
+    Ding.Migrate(db)
+    T.eq(db.panel.compactInCombat, true, "a choice made since replaced")
 end)
 
 T.run()

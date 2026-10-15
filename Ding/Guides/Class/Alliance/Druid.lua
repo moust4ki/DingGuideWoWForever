@@ -19,9 +19,9 @@ Ding.RegisterGuide({
         { turnin = 5923, races = { "NightElf" }, optional = true },
         { accept = 5921, races = { "NightElf" },
           why = { text = "From level 10: the chain that teaches Bear Form.", short = true },
-          note = "Mathrengyl Bearwalker, upstairs in the Cenarion Enclave." },
+          floor = "up", note = "Mathrengyl Bearwalker, upstairs in the Cenarion Enclave." },
         { turnin = 5921, accept = 5929, races = { "NightElf" },
-          note = "Dendrite Starblaze waits on the upper floor of the great house of Nighthaven." },
+          floor = "up", note = "Dendrite Starblaze waits on the upper floor of the great house of Nighthaven." },
         { complete = 5929, talk = 11956, races = { "NightElf" },
           note = "The Great Bear Spirit waits northwest of the village, up the hill path: listen to all it has to say." },
         { turnin = 5929, accept = 5931, races = { "NightElf" } },
@@ -47,7 +47,7 @@ Ding.RegisterGuide({
         { turnin = 94912, accept = 94914, races = { "Skyborne" },
           note = "Sheldras Moontree, the druid trainer of Stormwind, in the park." },
         { turnin = 94914, races = { "Skyborne" },
-          note = "Dendrite Starblaze waits on the upper floor of the great house of Nighthaven." },
+          floor = "up", note = "Dendrite Starblaze waits on the upper floor of the great house of Nighthaven." },
 
         -- Level 14: Cure Poison (Night Elves).
         { accept = 6121, races = { "NightElf" },
@@ -105,7 +105,7 @@ Ding.RegisterGuide({
         { turnin = 98731, accept = 98397, races = { "NightElf" } },
         { turnin = 98738, accept = 98397, races = { "Skyborne" } },
         { turnin = 98397, races = { "NightElf", "Skyborne" },
-          note = "Mathrengyl Bearwalker, upstairs in the Cenarion Enclave of Darnassus." },
+          floor = "up", note = "Mathrengyl Bearwalker, upstairs in the Cenarion Enclave of Darnassus." },
 
         -- Level 50: Torwa Pathfinder, in Un'Goro Crater.
         { accept = 9063,

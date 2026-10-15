@@ -610,6 +610,26 @@ function D:DungeonEntrances(areaID)
     return out
 end
 
+-- The dungeon (AreaID) whose entrance lies at a point (a `go` step's { uiMapId, x, y }, within
+-- 1.5 % of the map), or nil.
+function D:DungeonAtEntrance(map, x, y)
+    local areas = {}
+    if self.backend == "ding" then
+        for area in pairs(DB.zones.dungeons) do areas[#areas + 1] = area end
+    else
+        local private = questieZones()
+        local dungeons = private and private.dungeons
+        for area in pairs(type(dungeons) == "table" and dungeons or {}) do areas[#areas + 1] = area end
+    end
+    table.sort(areas)
+    for _, area in ipairs(areas) do
+        for _, p in ipairs(self:DungeonEntrances(area)) do
+            if p.map == map and math.abs(p.x - x) <= 1.5 and math.abs(p.y - y) <= 1.5 then return area end
+        end
+    end
+    return nil
+end
+
 -- Items a quest's objectives ask for.
 function D:ObjectiveItems(questID)
     local out = {}
