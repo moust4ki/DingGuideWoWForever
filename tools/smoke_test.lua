@@ -617,15 +617,22 @@ ok, err = pcall(function()
     press("PAD1"); press("PADDUP"); press("PAD1")
     expect(db.arrow.y == ay + 5, "the arrow does not move")
 
-    -- Combat: the window closes before the lockdown, the panel collapses.
+    -- Combat: the window closes before the lockdown; the panel stays as it is by default
+    -- (v1.7.0), and collapses with "Minimize the guide in combat" on.
+    expect(not db.panel.compactInCombat, "minimizing in combat is on by default")
     fire("PLAYER_REGEN_DISABLED"); H.setCombat(true)
     expect(not C.frame:IsShown() and next(overrides) == nil, "window or bindings still there in combat")
+    expect(not P.compact, "the panel minimizes in combat with the option off")
+    H.setCombat(false); fire("PLAYER_REGEN_ENABLED")
+    db.panel.compactInCombat = true
+    fire("PLAYER_REGEN_DISABLED"); H.setCombat(true)
     expect(P.compact and P.frame.h == 28, "the panel does not minimize in combat")
     checkPanel("in combat (minimized)")
     SlashCmdList.DING("config")
     expect(not C.frame:IsShown(), "the settings open in combat")
     H.setCombat(false); fire("PLAYER_REGEN_ENABLED")
     expect(not P.compact, "the panel does not come back after combat")
+    db.panel.compactInCombat = false
 
     -- Combat during the move mode cancels it without reopening the window.
     C:Open("appearance")
