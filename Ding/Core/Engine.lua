@@ -1273,9 +1273,20 @@ function E:Start()
 end
 
 -- Re-evaluate after any game state change.
+-- A trip to a dungeon's entrance ends once the player is inside an instance: there the game
+-- gives no position, and the step would stay on screen for the whole run (the "Enter ..."
+-- steps of Ding! - Dungeon quests). Marked done like a point reached.
+local function enteredDungeon()
+    if E.hold or not Ding.Data.available then return end
+    local step = E:CurrentStep()
+    if not (step and step.go and not isManuallyDone(E.index) and Compat.InInstance()) then return end
+    if Ding.Data:DungeonAtEntrance(step.go[1], step.go[2], step.go[3]) then setManuallyDone(E.index, true) end
+end
+
 function E:Update()
     if not self.guide then return end
     local oldGuide, oldIndex = self.guide.id, self.index
+    enteredDungeon()
     local moved = self:Advance()
     if moved then
         Ding.Timing:Finish(oldGuide, oldIndex)
@@ -1979,6 +1990,7 @@ Ding:On("PLAYER_XP_UPDATE", function()
     if step and step.level then scheduleUpdate() end
 end)
 Ding:On("ZONE_CHANGED_NEW_AREA", scheduleUpdate)
+Ding:On("PLAYER_ENTERING_WORLD", scheduleUpdate)
 Ding:On("HEARTHSTONE_BOUND", function()
     local step = E:CurrentStep()
     if step and step.sethearth then
