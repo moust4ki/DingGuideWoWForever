@@ -1820,6 +1820,7 @@ ok, err = pcall(function()
     H.resetQuests()
     E.turnedIn, Ding.char.manual = {}, {}
     player.level, player.map, player.x, player.y = 5, 1438, 58.7, 44
+    player.name = "Thalindra"
     E:SetGuide("smoke-report", 1, true)
     tick(1)
     H.accept(456); flush(); tick(1)
@@ -1840,7 +1841,9 @@ ok, err = pcall(function()
     expect(text:find("index 2 of 3", 1, true), "report: no step in the text")
     expect(text:find("Position: 58.7, 44.0", 1, true), "report: no position in the text")
     expect(text:find("2/7", 1, true), "report: no objective counter in the text")
-    expect(not text:find(UnitName("player"), 1, true), "report: the character's name is in the text")
+    expect(UnitName("player") == "Thalindra" and not text:find("Thalindra", 1, true),
+        "report: the character's name is in the text")
+    player.name = nil
     expect(#db.reports == math.min(before + 1, Ding.Report.KEEP), "report: not kept in DingDB.reports")
     press("PAD2")
     expect(not RW:IsShown(), "report: B does not close the window")
