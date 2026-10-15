@@ -12,7 +12,8 @@ Ding/
   Ding.toc          load order; no hard dependency; optional: TomTom
   Bindings.xml      bindings DING_NEXT / DING_PREV / DING_TOGGLE / DING_CONFIG / DING_COMPACT,
                     DING_FOCUS (focus mode), DING_SKIP / DING_UNSKIP, DING_FINDER (NPC directory),
-                    DING_CYCLE (the arrow on the step's next target),
+                    DING_CYCLE (the arrow on the step's next target), DING_REPORT (report a
+                    problem),
                     CLICK DingItemButton:LeftButton (quest item), CLICK DingItemButton:Target
                     (target the arrow's NPC or monster: the same secure button, virtual button)
   Core/
@@ -58,6 +59,11 @@ Ding/
     Why.lua         Ding.Why: why the guide makes its choices, in plain words (a step's `why`, a
                     section's `leftOut`): a short line under a surprising step, the whole reason
                     on demand (row tooltips), why a quest is left out (Why:Quest)
+    Report.lua      Ding.Report: "Report a problem": the facts (Collect: the guide, the step on
+                    screen, the position, the step's quests and the log's quests the next 3
+                    steps name, the arrow's target, the route settings, the client; never the
+                    character's name nor the realm), the text (GitHub Markdown, English
+                    labels), the last 20 kept in DingDB.reports (not a setting)
     Commands.lua    /ding
   UI/
     Themes.lua      Ding.UI.Themes: the four themes (halo by default, ardoise, bandes,
@@ -108,6 +114,9 @@ Ding/
     Setup.lua       Ding.Setup: the setup assistant, four screens of choices (Setup.SCREENS), once
                     per account at the first launch (Setup:FirstLaunch), again from the Guide tab
                     or /ding intro
+    Report.lua      Ding.ReportWindow: "Report a problem" (DING_REPORT, /ding bug, the guide
+                    window's flag): what the report holds in plain words, four ready reasons,
+                    the player's words; then the text selected for Ctrl+C and the GitHub link
   Locales/
     enUS.lua        interface texts in English (reference, default language)
     <locale>.lua    interface texts of one language (frFR, deDE, esES, ptBR, koKR, zhCN, zhTW)
@@ -354,7 +363,8 @@ Contracts between modules:
   `timings`, `flightTimes` (`["<from npc>:<to npc>"] = { seconds, count }`, flights measured),
   `imported` (`[pack id] = { pack, guides, at }`: guides imported as text, kept by "restore
   all defaults"), `chords` (`[action] = "PADLSHOULDER+PADDUP"`: Ding's gamepad chords, kept by
-  "restore all defaults"),
+  "restore all defaults"), `reports` (the last 20 of "Report a problem", oldest first:
+  `{ at, title, text }`, kept by "restore all defaults": Core/Report.lua),
   `debug`,
   `layout` (settings version: `Ding.Migrate`; 3: themes, Halo for everyone). Defaults:
   `Ding.DEFAULTS`.

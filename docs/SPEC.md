@@ -1311,6 +1311,48 @@ textures and font flags, never a size nor a position.
   - `/ding cancel` ("Trip cancelled: the arrow follows the guide again.", or "No trip in
     progress.").
   A weapon master's trainer window is not taken for the class trainer's (`Training:Record`).
+- **Report a problem** (binding "Report a problem", `DING_REPORT`, a chord like the others; the
+  guide window's flag, right beside the directory's pin; `/ding bug`; `Core/Report.lua` writes,
+  `UI/Report.lua` shows): players send precise reports the authors read on GitHub issues.
+  - What it holds, read when the window opens: the guide pack, the section (title and id), the
+    step on screen (the held one while it shows) as the window numbers it ("Step 19 / 161") and
+    its index in the guide's file, its summary (`Engine:Summary`) and its keys on one line
+    (`Import:StepText`: the step as a guide writes it, without text, note and why); the player's
+    UiMap (id and name), sub-zone, x and y (one decimal), level, race, class, side; the step's
+    quests (accept, complete, turnin) whatever their state, then the quests of the log that the
+    next 3 steps name (`Engine:NextSteps`), each with its id, English name (`Data:
+    QuestEnglishName`, and the client's when it differs), level, state (in the log, ready to
+    turn in, turned in, not in the log), where the guide names it, and its objectives as the
+    client gives them (text, have / need, done); what the arrow shows (the point: label, NPC or
+    object id, map, x, y, yards away or unknown; the travel hint, the directory's trip, hidden),
+    the step's number of candidate points; the route options (elites, dungeons, hearth,
+    deathSkip, skipGrey, serviceSteps, trainerSteps, flightSteps), the theme, TomTom on or off
+    (and installed); Ding's version, the client's locale, its build (`GetBuildInfo`), the date
+    and time in UTC. **Never** the character's name, the realm nor anything of the account.
+  - First page ("Ding! · Report a problem", a dialog like the directory): one sentence on what
+    it is for and that nothing is sent by itself; "What the report will contain", one plain
+    sentence per part (the step, where you are, your character, the quests with their counters
+    and "and 2 more", the arrow, the settings, the versions, never your name); "What went
+    wrong?", four ready reasons with a radio ring (a dot when chosen: never color alone): "The
+    NPC is not there", "The arrow points to the wrong place", "The quest is not offered",
+    "Something else"; "In your words (optional)", a box with a line in it while empty; "Create
+    the text" (accent). With a gamepad the reasons come first: A picks one and the focus goes
+    on to "Create the text" (a gamepad types little); the box is a stop too, A gives it the
+    keyboard. Without one, the box takes the keyboard at once. A box never takes the keyboard
+    from a box that is not Ding's (the chat's, after `/ding bug`): it waits, and a line says so.
+  - "Create the text": the report in a read-only box, selected, "The text is selected: Ctrl+C
+    to copy.", a line saying an addon cannot put text on the clipboard, the link of the GitHub
+    form (`.github/ISSUE_TEMPLATE/ding-report.yml`) in a one-line read-only box, and where the
+    reports are kept for a player without a keyboard (`WTF\Account\<account>\SavedVariables\
+    Ding.lua`, written when the player logs out or reloads). Buttons "Select the text" (Y) and
+    "Select the link".
+  - The text: GitHub Markdown, English labels, the player's words as typed (a quote). Its first
+    line is a title ("Ding! report: Step 19/161 of <section>: <reason>", the player's first words
+    cut after a word near 60 characters when the reason is "Something else"), then "What went
+    wrong", the words, and sections Guide, Player, Quests, Arrow, Settings, Client. No raw "|"
+    (the box would read an escape).
+  - Kept: each text made goes to `DingDB.reports` (`{ at, title, text }`), the last 20, the
+    oldest out first; not a setting: "Restore all defaults" keeps them.
 - **Weapon to learn** (guide window, option "Remind me of weapons to learn" in the Guide tab,
   on by default): a row "Weapon to learn: Guns — Buliwyf Stonehand, Ironforge" (the weapon
   master the fewest seconds away) only when the player has such a weapon in hand: in the bags,
@@ -1516,8 +1558,9 @@ gamepad buttons). Every gamepad action therefore has an equivalent:
 
 - Game bindings: next / previous step, show the guide, minimize the guide, open the
   settings, use the quest item, target the arrow's NPC or monster, browse the guide (focus
-  mode), skip the step, go back to a skipped step, the NPC directory, the arrow on the step's next target. They work in combat,
-  except opening the settings, focus mode and the NPC directory.
+  mode), skip the step, go back to a skipped step, the NPC directory, the arrow on the step's next target,
+  report a problem. They work in combat, except opening the settings, focus mode, the NPC
+  directory and the report window.
 - No window captures a button permanently: the guide window stays displayed without
   taking anything away from the game.
 - Focus mode of the guide window: the D-pad moves through the lines, A points the arrow at
@@ -1526,11 +1569,12 @@ gamepad buttons). Every gamepad action therefore has an equivalent:
   On a talent suggestion, A twice learns the talent. Right, on a row with a quest, finds that
   quest in the guide; Left drops the offer. Up from the first line, the focus goes to the
   NPC directory's button of the title bar (outer focus ring, A beside it): A opens the
-  directory.
+  directory. Up again (or Left), the "Report a problem" flag beside it (Right goes back to the
+  pin): A opens the report window. The A chip of either sits left of the flag.
   Only these buttons are taken; the mode stops in combat.
 - Settings window: temporary bindings (`SetOverrideBindingClick`) set when it opens
   and removed when it closes. Every Ding window that takes the gamepad (settings, setup
-  assistant, NPC directory, import / export, focus mode, move mode) also reads its buttons with
+  assistant, NPC directory, import / export, report a problem, focus mode, move mode) also reads its buttons with
   a frame of its own first (`DingPadInput`, `OnGamePadButtonDown`), before any binding: neither
   the game's gamepad interface nor another addon's override bindings go before them (reported:
   in focus mode, Easy Controller on, the D-pad cast the gamepad bar's spells); only the
