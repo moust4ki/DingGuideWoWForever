@@ -104,13 +104,15 @@ Getter semantics, the same for both sources (QuestieDB's `docs/api.md`):
 ## 2. Guide format
 
 A guide is a Lua file that calls `Ding.RegisterGuide`: it is a **section** of a **guide
-pack**. Ding ships four: **Ding! - Leveling** (id `ding`, the default, the pack of the guides
+pack**. Ding ships five: **Ding! - Leveling** (id `ding`, the default, the pack of the guides
 that have no `pack`: each section is a stretch of the Leveling routes, a race start then
 shared sections up to 60 over one or a few zones), **Ding! - Zones** (id `ding-zones`: one section per zone, the ids
 of Ding's first guides), **Ding! - Items** (id `ding-items`, category `items`: one section
 per item worth getting off the leveling route, for both sides: the Cozy Sleeping Bag first)
 and **Ding! - Class quests** (id `ding-class`, category `class`: one section per class and
-side, `Ding/Guides/Class/<Side>/<Class>.lua`, see "Class quests" below). A third-party addon provides a pack by declaring
+side, `Ding/Guides/Class/<Side>/<Class>.lua`, see "Class quests" below) and **Ding! - Dungeon
+quests** (id `ding-dungeons`, category `dungeon`: one section per dungeon and side,
+`Ding/Guides/Dungeons/<Side>/<NN>_<Name>.lua`, see "Dungeon quests" below). A third-party addon provides a pack by declaring
 `## Dependencies: Ding`, then calling `Ding.RegisterGuidePack({ id, title, author, category })` before
 its sections, which carry `pack = "<id>"`; like Ding, it must be released under GPL v3 (no
 exception: everything built on Ding stays free). The author documentation is
@@ -121,7 +123,7 @@ Registry rules: a pack id is unique (Ding's included); a section id is unique ac
 packs (a pack cannot take another pack's id, but may re-register its own section); an
 unknown `pack` is rejected; `next` may lead to a section of another pack (Ding's included).
 A pack's `category` (`Ding.GUIDE_CATEGORIES`: "leveling", the default, "items", "reputations",
-"professions", "class") groups it in the guide list, under a header that cannot be picked,
+"professions", "class", "dungeon") groups it in the guide list, under a header that cannot be picked,
 leveling first, empty categories left out; an unknown category is "leveling" (debug note,
 warning of the validator). Picking a pack again takes up the section the character last
 followed in it (`Ding.char.packGuide`) while it has quest work left at their level, else the
@@ -153,7 +155,7 @@ actions of a step run in order: turn in, then accept, then complete.
 | `turnin` | id or list of ids | the quest is turned in |
 | `accept` | id or list of ids | the quest is in the log (or already turned in) |
 | `complete` | id or list of ids | the quest's objectives are met (or it is turned in) |
-| `go` | `{ uiMapId, x, y }` (0-100) | the player is within `radius` meters (10 by default) |
+| `go` | `{ uiMapId, x, y }` (0-100) | the player is within `radius` meters (10 by default); a point at a dungeon's entrance (`Data:DungeonAtEntrance`, 1.5 % of the map) is also reached once the player is inside an instance (`Compat.InInstance`), where the game gives no position (`Engine` marks it done like a point reached) |
 | `level` | number | the player reaches that level (Ding shows the experience and kills left, and a monster to farm); `level = 12, xp = 4500` (plus that experience into level 12) or `level = 12.5` (that fraction of level 12's experience: `Grind:Into`, `Engine:LevelReached`) |
 | `sethearth` | inn name | the hearthstone is bound (`HEARTHSTONE_BOUND` event) |
 | `hearth` | `true` | the hearthstone is cast (`UNIT_SPELLCAST_SUCCEEDED`, spell 8690), or "Next" |
@@ -362,6 +364,48 @@ some races only in DingDB carries them itself (the Alliance paladins: Humans and
   `tools/tests/class_quests_test.lua`: one section per class and side, the right class only,
   the section list, the assistant, every quest, item and NPC in DingDB, every text in every
   language; the smoke test plays each one with the race of its side that has the most steps.
+
+### Dungeon quests (`Ding/Guides/Dungeons`)
+
+The pack **Ding! - Dungeon quests** (`Ding.DUNGEONS_PACK` = `ding-dungeons`, `builtin = 5`,
+category `dungeon`) holds one section per dungeon and side: `dungeon-<side>-<key>`
+(`Ding/Guides/Dungeons/<Side>/<NN>_<Name>.lua`, numbered by level, hand-finished from the drafts
+of `tools/draft_dungeon.lua`, English texts translated through `tools/routes/locales`). Each has
+`faction`, a title "<dungeon> (<min>-<max>)" from the levels the game recommends (Forever's own
+dungeons: the levels of their quests) and no `next`.
+
+- **Content**: every quest of the dungeon the side can take (filed under the dungeon, or with an
+  objective found only inside it), the chains that lead to them from where they start
+  (prerequisites, and breadcrumbs as optional steps), the quests a drop of the dungeon starts,
+  and the follow-ups the quest's ender gives (the chain's end, its reward). Order: the trips
+  before the dungeon form the shortest path found that ends at the entrance (flight paths,
+  boats, mount: `tools/route_travel.lua`), then a `go` step to the entrance (DingDB's), the
+  dungeon's quests in the order of its bosses, then the turn-ins from the entrance. A chain
+  that needs a second visit (a capital between Kharan's tale and the emperor) enters again.
+  Classic dungeons from Ragefire Chasm to Stratholme, Lower Blackrock Spire included, and
+  Forever's own (the Hall of Thanes, the Ruins of Lordaeron, Excavation Site: Wetlands, the City
+  of Dalaran). Left out: raids and their attunements, the Upper Spire (a raid of ten), the level
+  60 armor-set chains, the class books and librams of Dire Maul, profession and repeatable
+  quests, world drops, long class chains (Ding! - Class quests leads them), and quests whose
+  giver or ender DingDB does not know.
+- **Plain words**: the arrow does not work inside: every objective after the entrance has a
+  note saying where it is and which boss or monster drops what. The first step of each chain
+  says in its `why` (`short`) what it brings (an item for which kind of character, a big XP
+  reward, "about" figures), whether it is long or far, an elite or group fight; nothing the
+  data does not say. Very long or far chains are `optional` on every step and say why.
+- **Options**: the dungeon pack's steps carry neither `dungeon` nor `elite`: picking a dungeon's
+  guide is the choice (the Route options would hide the whole guide). A quest a drop starts has
+  `when = { item = id }` on its accept, then `when = { log }` / `{ done }` on what follows
+  (turn-in and next accept on separate steps): nothing blocks when the drop never came.
+- **Picking it**: `Engine:SetPack(Ding.DUNGEONS_PACK)` takes the dungeon of the character's level
+  and side (`Ding:SuggestGuide`); the Guide tab's section list shows the character's side only,
+  by level, the ones above the character's level greyed (they can still be picked); a dungeon
+  guide keeps its grey quests (`Engine:KeepsGrey`).
+- **Checks**: `tools/check_guides.lua` replays each guide for every race of its side (0 error);
+  `tools/tests/dungeon_quests_test.lua`: the pack, sides and level order, the section list, the
+  assistant, the entrance step passed from inside, a note on every step inside, every quest, item
+  and NPC in DingDB, every text in every language; `tools/smoke_test.lua --only dungeon-` plays
+  them all.
 
 ---
 

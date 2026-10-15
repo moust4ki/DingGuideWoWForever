@@ -38,6 +38,13 @@ instead from the *Arrow* tab of the settings (off by default).
   Skyborne, the Forsaken paladins, the Alliance shamans...). Each chain says from which level
   it opens and what it teaches; you only see your class. Steps inside a dungeon show with the
   *Dungeon quests* option of the *Route* tab.
+- **Dungeon quests.** A separate pack, *Ding! - Dungeon quests* (*Guide* tab, under
+  "Dungeons"): one guide per dungeon for your side, listed by level. It takes you to every quest
+  giver of the dungeon and through the chains that lead to them, then to the entrance, through
+  the dungeon with a note for each quest (which boss drops what, where it waits), and back to the
+  turn-ins. From Ragefire Chasm and the Deadmines to Scholomance and Stratholme, with Forever's
+  own dungeons (the Hall of Thanes, the Ruins of Lordaeron, the Excavation Site, the City of
+  Dalaran). Each chain says what it brings and when it is long or far; raids are not in it.
 - **A setup assistant** at the first launch: four short screens, a few choices each, the
   recommended ones already selected. How you play (gamepad or keyboard and mouse), what Ding
   does for you (quests, gray items, repairs), your route (hearthstone, group quests, death
