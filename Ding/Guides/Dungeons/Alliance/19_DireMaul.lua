@@ -1,0 +1,88 @@
+-- Dire Maul, Alliance, "Ding! - Dungeon quests": the capitals' heralds' lead to Feathermoon
+-- (optional), Feathermoon's two quests and Azj'Tordin in Feralas, Rabine Saturna's Felvine between
+-- Moonglade and Silithus (optional), the three wings of Dire Maul, then the turn-ins; the tribute
+-- run's quests and the Gordok Ogre Suit optional. Left out: the class books, the librams and
+-- Quel'Serrar (they need raids or rare materials), the level 60 armor-set chains, the class quests
+-- (with Ding! - Class quests) and the repeatable ones. Drafted with tools/draft_dungeon.lua,
+-- finished by hand; quest ids and chains checked against DingDB (tools/check_guides.lua).
+-- Texts are in English, translated in Locales/Guides/<locale>/Dungeons/Alliance/19_DireMaul.lua.
+Ding.RegisterGuide({
+    id       = "dungeon-alliance-diremaul",
+    pack     = "ding-dungeons",
+    title    = "Dire Maul (55-60)",
+    faction  = "Alliance",
+    minLevel = 55, maxLevel = 60,
+    steps    = {
+        { accept = 7494, optional = true,
+          why = { text = "Optional: a lead to Feathermoon Stronghold, about 1,500 XP.", short = true },
+          note = "A herald of your capital: Crier Goodman in Stormwind, Courier Hammerfall in Ironforge, Herald Moonstalker in Darnassus." },
+        { turnin = 7494, optional = true,
+          note = "Latronicus Moonspear, at Feathermoon Stronghold, in Feralas." },
+        { accept = { 7488, 7482 },
+          why = { text = "Lethtendris's Web brings a dagger; Elven Legends, about 8,300 XP for a search in the library.", short = true },
+          note = "Latronicus Moonspear and Scholar Runethorn, at Feathermoon Stronghold." },
+        { accept = 7441,
+          why = { text = "Reward: a two-handed sword or leather boots; Pusillin also drops the Crescent Key, which opens the west and north wings.", short = true },
+          note = "Azj'Tordin, at Lariss Pavilion, in the east of Feralas." },
+
+        -- Moonglade and Silithus: the Felvine (optional).
+        { accept = 5527, optional = true,
+          why = { text = "Optional: a reliquary in Silithus for Rabine Saturna in Moonglade, then a shard of the Felvine: a shield or an off-hand lexicon.", short = true },
+          note = "Rabine Saturna, in Nighthaven, in Moonglade." },
+        { complete = 5527, optional = true,
+          note = "The Reliquary of Purity lies in the ruins of Southwind Village, in Silithus." },
+        { turnin = 5527, accept = 5526, optional = true,
+          note = "Rabine Saturna, in Nighthaven." },
+
+        -- Dire Maul.
+        { go = { 1444, 59.20, 45.10 }, radius = 30, text = "Enter Dire Maul",
+          note = "The ruins of Dire Maul stand in the middle of Feralas; the east, west and north wings each have their own door." },
+        { complete = 7441,
+          note = "East: talk to Pusillin each time he stops; he runs five times, then fights on a small platform up a ramp and drops the book." },
+        { complete = 7488,
+          note = "East: Lethtendris waits on the upper level of the room left of the ramps between the Hidden Reach and the Warpwood Quarter." },
+        { complete = 5526, optional = true,
+          note = "East: kill Zevrim Thornhoof, then Ironbark the Redeemed, in the Conservatory, opens the door to Alzzin the Wildshaper; after Alzzin, use the reliquary by the twisted vine." },
+        { accept = 7461,
+          why = { text = "About 9,950 XP; its treasure, a chest in the library, brings a two-handed mace, a mail helm or leather boots.", short = true },
+          note = "West: the Shen'dralar Ancient stands above the platform over Tendris Warpwood." },
+        { complete = 7461,
+          note = "West: destroy the five pylons of the Capital Gardens, the Court of the Highborne and the Prison; Immol'thar waits in the Prison, behind Tendris (the Crescent Key opens it); Prince Tortheldrin, under the entry platform of the Athenaeum." },
+        { turnin = 7461, accept = 7462 },
+        { turnin = 7462,
+          note = "West: the treasure is a big stone chest under the ramp of the Athenaeum." },
+        { complete = 7482,
+          note = "West: through the Conservatory Door (the Crescent Key opens it), the remains lie by a dead elf and a bookcase, in the north of the Athenaeum." },
+        { accept = 5525,
+          why = { text = "About 6,600 XP for a key the Gordok guards carry.", short = true },
+          note = "North: Knot Thimblejack is chained in the north-east corner of the Halls of Destruction." },
+        { accept = 5518, optional = true,
+          why = { text = "Optional: the Gordok Ogre Suit needs runecloth, rugged leather and rune threads.", short = true } },
+        { complete = 5525,
+          note = "North: the Gordok guards Mol'dar, Slip'kik and Fengus, and Captain Kromcrush, carry the shackle key." },
+        { turnin = 5525,
+          note = "Knot Thimblejack." },
+        { complete = 5518, optional = true,
+          note = "North: the ogre tannin lies up the ramp above Knot, in the north-west corner: one per group." },
+        { turnin = 5518, optional = true },
+        { accept = 7703, optional = true,
+          why = { text = "Optional, after a tribute run (King Gordok dead, his guards alive): gloves of any kind.", short = true },
+          note = "North: Captain Kromcrush, once King Gordok is dead." },
+        { complete = 7703, optional = true,
+          note = "The Gauntlet of Gordok Might lies in the Prince's chest, in the Athenaeum of the west wing." },
+        { turnin = 7703, optional = true },
+        { accept = 5528, optional = true,
+          note = "North: Stomper Kreeg, after a tribute run." },
+        { turnin = 5528, optional = true },
+
+        -- Turn-ins: Feralas, Moonglade.
+        { turnin = 7441,
+          note = "Azj'Tordin, at Lariss Pavilion." },
+        { turnin = 7488,
+          note = "Latronicus Moonspear, at Feathermoon Stronghold." },
+        { turnin = 7482,
+          note = "Scholar Runethorn, at Feathermoon Stronghold." },
+        { turnin = 5526, optional = true,
+          note = "Rabine Saturna, in Nighthaven, in Moonglade." },
+    },
+})
