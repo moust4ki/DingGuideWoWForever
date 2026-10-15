@@ -107,27 +107,34 @@ function R:Compare(link, equipLoc)
 end
 
 -- The reward to take: { index, link, reason = "upgrade" | "price", gain } or nil; also nil
--- (with `missing` true) while the client has not loaded every item.
+-- (with `missing` true) while the client has not loaded every item. Only what the class can
+-- wear (Gear:CanWear: its armor and weapons, at its level) is an upgrade, whatever the quest
+-- window's "usable" flag says (reported: a druid's reward taken in mail). For the price, the
+-- most expensive of what the class can use; a piece it cannot wear only when nothing else is.
 function R:Best()
     local choices = Compat.RewardChoices()
     if #choices < 2 then return nil end
-    local upgrade, price
+    local upgrade, price, priceAny
     for _, c in ipairs(choices) do
         local info = c.link and Compat.ItemInfo(c.link)
         if not info then return nil, true end
-        local slots = c.usable and SLOTS[info.equipLoc]
-        if slots then
+        local gear = SLOTS[info.equipLoc] ~= nil
+        local wearable = gear and c.usable and Ding.Gear:CanWear(c.link, info)
+        if wearable then
             local before, slot = equippedScore(self, info.equipLoc)
             local gain = self:Score(c.link, slot) - before
             if gain >= MIN_GAIN and (not upgrade or gain > upgrade.gain) then
                 upgrade = { index = c.index, link = c.link, reason = "upgrade", gain = gain }
             end
         end
-        if not price or info.sellPrice > price.sellPrice then
-            price = { index = c.index, link = c.link, reason = "price", sellPrice = info.sellPrice }
+        local entry = { index = c.index, link = c.link, reason = "price", sellPrice = info.sellPrice }
+        if wearable or not gear then
+            if not price or info.sellPrice > price.sellPrice then price = entry end
+        elseif not priceAny or info.sellPrice > priceAny.sellPrice then
+            priceAny = entry
         end
     end
-    return upgrade or price
+    return upgrade or price or priceAny
 end
 
 local function wanted()
@@ -150,7 +157,11 @@ function R:OnComplete(retried)
     end
     self.best, self.last = best, best
     if Ding.RewardHint then Ding:Safe(Ding.RewardHint.Show, Ding.RewardHint, best) end
-    if wanted() then Compat.Call("GetQuestReward", best.index) end
+    if wanted() then
+        -- Taken for the player: the chat says which and why (the quest window closes at once).
+        Ding:Print((best.reason == "upgrade" and Ding.L.REWARD_UPGRADE or Ding.L.REWARD_PRICE):format(best.link or "?"))
+        Compat.Call("GetQuestReward", best.index)
+    end
 end
 
 Ding:On("QUEST_COMPLETE", function() R:OnComplete() end)

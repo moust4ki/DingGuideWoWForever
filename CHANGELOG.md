@@ -27,6 +27,9 @@ Nothing else to install: QuestieDB is no longer needed, and TomTom stays optiona
   them in your language and Ding only knows their English name (Forever's own monsters, the
   Skyborne start among them): it matches the quest's objectives by their order too. Their
   marks and counters above the nameplates come back the same way.
+- "Choose quest rewards" never takes a piece your class cannot wear (a druid's reward was taken
+  in mail): only what you can wear counts as an upgrade, and when none is, the reward that
+  sells for the most among what you can use. The chat says which reward Ding took and why.
 
 ## v1.7.0
 
