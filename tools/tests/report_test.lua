@@ -361,9 +361,13 @@ T.test("with a gamepad: the reasons first, A picks one and goes on to Create, A 
     T.ok(f.link.edit:HasFocus(), "the address is not selected first")
     T.ok(f.back:IsShown(), "no B by the close cross")
     T.eq(#(f.hints.list or {}), 0, "a hint repeats a button with a gamepad")
+    -- Focused, Select the text shows A alone (in game: "A Y Select the text"); Y comes back once
+    -- the focus leaves, and still selects the text meanwhile. Its width does not move.
+    local width = f.buttons[2]:GetWidth()
     H.press("PADDRIGHT")
-    T.ok(chipsOn(f.buttons[2]).PAD1 and chipsOn(f.buttons[2]).PAD4 and not chipsOn(f.buttons[1]).PAD1,
-        "D-pad right: A not on Select the text")
+    T.ok(chipsOn(f.buttons[2]).PAD1 and not chipsOn(f.buttons[2]).PAD4, "focused: not A alone on Select the text")
+    T.ok(not anyKey(chipsOn(f.buttons[1])), "a chip left on Select the link")
+    T.eq(f.buttons[2]:GetWidth(), width, "Select the text changes size with the focus")
     H.press("PAD1")
     T.ok(f.text.edit:HasFocus(), "A on Select the text")
     H.press("PADDLEFT"); H.press("PAD1")

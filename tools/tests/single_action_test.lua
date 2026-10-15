@@ -398,7 +398,16 @@ local function checkReport(where)
         end
         T.eq(count.PAD1, 1, where .. ": A")
         T.eq(count.PAD2, 1, where .. ": B")
-        T.eq(count.PAD4, Rep.page == "done" and 1 or nil, where .. ": Y")
+        -- Y on Select the text, unless A is on it: one glyph per control (in game, focused: "A Y
+        -- Select the text").
+        local textButton = Rep.page == "done" and buttons[2] or nil
+        local yShown = textButton and not textButton.keys.PAD1
+        T.eq(count.PAD4, yShown and 1 or nil, where .. ": Y")
+        for _, b in ipairs(buttons) do
+            local n = 0
+            for _ in pairs(b.keys) do n = n + 1 end
+            T.ok(n <= 1, ("%s: %d glyphs on %s"):format(where, n, b.label or "a control"))
+        end
         T.eq(#hintsOf(f.hints), 0, where .. ": a hint with a gamepad")
     else
         mouseOnly(where, f.hints, buttons)
@@ -417,9 +426,18 @@ T.test("report a problem: A where the focus is, Y on Select the text, B by the c
     -- A on a reason goes on to Create the text, A there makes it.
     H.press("PAD1"); H.press("PAD1"); H.flush()
     T.eq(Rep.page, "done", "A on Create the text")
-    checkReport("report's text")
-    H.press("PADDRIGHT")
     checkReport("report's text, the link's button focused")
+    H.press("PADDRIGHT")
+    checkReport("report's text, the text's button focused")
+    local b = Rep.frame.buttons[2]
+    T.ok(chipsOn(b).PAD1 and not chipsOn(b).PAD4, "focused: Select the text shows more than A")
+    -- The mouse over it: the same, A alone there, Y nowhere.
+    Rep.frame.buttons[1].scripts.OnEnter(Rep.frame.buttons[1])
+    b.scripts.OnEnter(b)
+    checkReport("report's text, the mouse over Select the text")
+    T.ok(chipsOn(b).PAD1 and not chipsOn(b).PAD4, "hovered: Select the text shows more than A")
+    H.press("PADDLEFT")
+    T.ok(chipsOn(b).PAD4 and not chipsOn(b).PAD1, "the focus gone: Y does not come back on Select the text")
     pad(false)
     checkReport("report's text, unplugged")
     closeAll()
@@ -487,6 +505,8 @@ T.test("every language: import, export, settings buttons and move mode fit, game
             checkReport(where .. ", report")
             Rep:Make(); H.flush()
             checkReport(where .. ", report's text")
+            Rep:FocusButton(2)
+            checkReport(where .. ", report's text, Select the text focused")
             closeAll()
         end
     end

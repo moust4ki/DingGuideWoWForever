@@ -9,9 +9,10 @@
 -- then where Ding keeps the last reports for a player without a keyboard (DingDB.reports).
 -- Gamepad (temporary bindings, out of combat only): the D-pad up / down between the reasons,
 -- the box and the buttons, left / right along the buttons, A picks or presses, Y selects the
--- text, B closes. Each action shows once: A on the focused row or button, Y on "Select the
--- text", B by the close cross; the footer is the mouse help without a gamepad. Mouse: hover and
--- click, right click or Esc closes.
+-- text, B closes. Each action shows once, one glyph per control: A on the focused row or
+-- button, Y on "Select the text" while the focus is elsewhere, B by the close cross; the
+-- footer is the mouse help without a gamepad. Mouse: hover and click, right click or Esc
+-- closes.
 local _, Ding = ...
 local L = Ding.L
 local UI = Ding.UI
@@ -488,7 +489,8 @@ function W:LayoutButtons()
         b.text:SetText(action.label)
         b.bg:SetColor(action.primary and C.accent or C.control)
         UI.Color(b.text, action.primary and C.onAccent or C.text)
-        local room = pad and UI.KeysWidth({ "PAD1", action.key }) or 0
+        -- One chip at a time (W:ShowFocus): room for the wider of A and its own key.
+        local room = pad and math.max(UI.KeysWidth({ "PAD1" }), UI.KeysWidth(action.key and { action.key })) or 0
         b:SetWidth(math.max(96, UI.Measure(b.text) + 28 + room))
         b:ClearAllPoints()
         b:SetPoint("BOTTOMRIGHT", f, "BOTTOMRIGHT", x, EDGE)
@@ -552,7 +554,7 @@ function W:FocusButton(index)
 end
 
 -- The focus ring and the A chip where the focus is (A only with a gamepad), the buttons' own
--- chips (Y on "Select the text").
+-- chips elsewhere (Y on "Select the text" while it has not the focus).
 function W:ShowFocus()
     local f = self.frame
     local pad = G():Active()
@@ -569,9 +571,14 @@ function W:ShowFocus()
         local action = self.actions and self.actions[i]
         local focused = stop.kind == "button" and stop.i == i and b:IsShown()
         b.focus:SetShown(pad and focused)
+        -- One glyph per control (Yendi, in game: "A Y Select the text"): A while it has the
+        -- focus, its own key (Y) once the focus leaves; that key still works meanwhile.
         local keys = {}
-        if pad and focused then keys[#keys + 1] = "PAD1" end
-        if pad and action and action.key then keys[#keys + 1] = action.key end
+        if pad and focused then
+            keys[1] = "PAD1"
+        elseif pad and action and action.key then
+            keys[1] = action.key
+        end
         UI.ButtonKeys(b, keys, action and action.primary)
     end
 end
