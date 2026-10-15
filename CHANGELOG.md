@@ -20,6 +20,15 @@ Nothing else to install: QuestieDB is no longer needed, and TomTom stays optiona
 - A step that takes you to a dungeon's entrance now passes once you are inside: the game gives
   no position in a dungeon, and the step stayed on screen for the whole run.
 
+## v1.6.1
+
+Nothing else to install: QuestieDB is no longer needed, and TomTom stays optional.
+
+- Gamepad: while you hold the first button of one of Ding's combinations (RB of RB + Up), the
+  game's own combinations work again: LB + RB + Left / Right (the action bar's pages), LB + RB +
+  Down (the chat)... Ding kept every button while it waited for the second one. With a Ding
+  window open, the buttons the window does not use go on to the game too.
+
 ## v1.6.0
 
 Nothing else to install: QuestieDB is no longer needed, and TomTom stays optional.
