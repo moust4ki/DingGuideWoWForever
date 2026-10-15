@@ -509,6 +509,9 @@ return function(opts)
     _G.UnitRace = function() return player.race, player.race end
     _G.UnitClass = function() return player.class, player.class end
     _G.UnitFactionGroup = function() return player.faction end
+    -- The client's version, build, build date, interface; the realm (never in a report of Ding's).
+    _G.GetBuildInfo = function() return "1.60.0", "61234", "Oct 1 2026", 16001 end
+    _G.GetRealmName = function() return "Forever Realm" end
     -- Font objects; NumberFontNormalLarge is left out on purpose to exercise the fallback.
     local function fontObject(size) return { GetFont = function() return "Fonts\\FRIZQT__.TTF", size, "" end } end
     for name, size in pairs({ GameFontNormal = 12, GameFontHighlight = 12, GameFontHighlightSmall = 10,
@@ -925,7 +928,7 @@ return function(opts)
         if plateUnits[unit] then return plateUnits[unit].name end
         if unit == "target" then return targetName end
         if unit == "npc" then return npcName end
-        if unit == "player" then return "Player" end
+        if unit == "player" then return player.name or "Player" end
         return nil
     end
     _G.IsInGroup = function() return inGroup end

@@ -165,6 +165,14 @@ function D:QuestName(questID)
     return get("Quest", "name", questID) or string.format(L.UNKNOWN_QUEST, questID)
 end
 
+-- Its name in English whatever the client's language (the bug reports, read by the guide's
+-- authors: Core/Report.lua).
+function D:QuestEnglishName(questID)
+    local name = raw("Quest", "name", questID)
+    if type(name) == "string" and name ~= "" then return name end
+    return self:QuestName(questID)
+end
+
 function D:QuestRequiredLevel(questID)
     return get("Quest", "requiredLevel", questID) or 0
 end

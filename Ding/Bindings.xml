@@ -29,6 +29,9 @@
     <Binding name="DING_CYCLE" category="ADDONS">
         Ding.Panel:CycleTarget()
     </Binding>
+    <Binding name="DING_REPORT" category="ADDONS">
+        Ding.ReportWindow:Toggle()
+    </Binding>
     <Binding name="CLICK DingItemButton:LeftButton" category="ADDONS"/>
     <Binding name="CLICK DingItemButton:Target" category="ADDONS"/>
 </Bindings>

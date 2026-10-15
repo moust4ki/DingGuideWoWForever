@@ -65,6 +65,9 @@ local DD = {
     todoBorder = { 0.898, 0.404, 0.420, 0.5 },
     -- A quest above the player's level (quest.above): shown, never held back.
     above = hex("#FF9A3C"),
+    -- "Report a problem" (the guide window's button): a warm fill that stands out in every theme,
+    -- the flag on it in a dark ink; its tooltip says it in words.
+    report = hex("#FF7043"), onReport = hex("#140A06"),
     -- A step the player left by hand: marked done (violet) or skipped (amber).
     manual = { 0.655, 0.545, 0.980, 1 },
     manualIconBg = { 0.655, 0.545, 0.980, 0.2 },
@@ -123,6 +126,7 @@ local HALO = {
     done = hex("#5FD068"), doneIconBg = NONE, doneRowBg = NONE,
     todo = hex("#FFD100"), todoIconBg = NONE, todoRowBg = NONE, todoBorder = hex("#FFD10080"),
     above = hex("#FF9A3C"),
+    report = hex("#FF6A3D"), onReport = hex("#17130E"),
     -- Not in the handoff (later visual pass): violet and teal, apart from gold and green.
     manual = hex("#B49CFF"), manualIconBg = NONE, manualRowBg = NONE,
     skipped = hex("#5CC8D6"), skippedIconBg = NONE, skippedRowBg = NONE,
@@ -160,6 +164,7 @@ local ARDOISE = {
     -- Amber, not red.
     todo = hex("#FFB040"), todoIconBg = hex("#FFB0403D"), todoRowBg = hex("#FFB04033"), todoBorder = hex("#FFB04080"),
     above = hex("#FF9A3C"),
+    report = hex("#FF6A3D"), onReport = hex("#17130E"),
     manual = hex("#B49CFF"), manualIconBg = hex("#B49CFF38"), manualRowBg = hex("#B49CFF21"),
     skipped = hex("#5CC8D6"), skippedIconBg = hex("#5CC8D638"), skippedRowBg = hex("#5CC8D621"),
     impossibleIconBg = hex("#FFFFFF0D"), otherIconBg = hex("#FFFFFF12"), previewIconBg = hex("#FFFFFF0D"),
@@ -201,6 +206,7 @@ local BANDES = {
     todo = hex("#F5F7FA"), todoIconBg = NONE, todoRowBg = grad(hex("#12283EEB"), hex("#12283E8C")),
     todoBorder = hex("#F5F7FA80"),
     above = hex("#FF9A3C"),
+    report = hex("#FF7A50"), onReport = hex("#0A1118"),
     manual = hex("#B49CFF"), manualIconBg = NONE, manualRowBg = grad(hex("#2C2148D1"), hex("#0406095C")),
     skipped = hex("#E8C547"), skippedIconBg = NONE, skippedRowBg = grad(hex("#3A3010D1"), hex("#0406095C")),
     impossibleIconBg = NONE, otherIconBg = NONE, previewIconBg = NONE,

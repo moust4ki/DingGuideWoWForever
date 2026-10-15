@@ -965,6 +965,7 @@ local BINDINGS = {
     { action = "CLICK DingItemButton:LeftButton", label = L.BIND_ITEM },
     { action = "CLICK DingItemButton:Target", label = L.BIND_TARGET },
     { action = "DING_FINDER", label = L.BIND_FINDER },
+    { action = "DING_REPORT", label = L.BIND_REPORT },
     { action = "DING_CYCLE", label = L.BIND_CYCLE },
     { action = "DING_FOCUS", label = L.BIND_FOCUS },
     { action = "DING_TOGGLE", label = L.BIND_TOGGLE },

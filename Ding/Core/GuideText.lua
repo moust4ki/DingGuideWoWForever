@@ -285,7 +285,8 @@ end
 -- values under that key (the steps' keys); opts.compact: one line; opts.layout: [key] =
 -- "lines" (a list, one value per line, each on one line: the steps) or "blocks" (a list, one
 -- value per line, each laid out like the whole: the guides of a pack). The whole is one
--- entry per line; any other table is on one line.
+-- entry per line (opts.inline: on one line, spaced like a step); any other table is on one
+-- line.
 local function ranks(list)
     local rank = {}
     for i, k in ipairs(list or {}) do rank[k] = i end
@@ -332,5 +333,5 @@ function T.Write(value, opts)
         return "{\n" .. inner .. table.concat(parts, ",\n" .. inner) .. ",\n" .. indent .. "}"
     end
 
-    return write(value, "", "block", rootRank)
+    return write(value, "", not opts.inline and "block" or nil, rootRank)
 end

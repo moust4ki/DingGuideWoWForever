@@ -58,6 +58,9 @@ local DEFAULTS = {
     -- [action] = "PADLSHOULDER+PADDUP": gamepad chords Ding watches itself (UI/Gamepad.lua);
     -- kept by "Restore all defaults", like the game's key bindings.
     chords = {},
+    -- The last reports of "Report a problem" (Core/Report.lua), oldest first: { at, title, text }.
+    -- Not a setting: "Restore all defaults" keeps them.
+    reports = {},
 }
 Ding.DEFAULTS = DEFAULTS
 local SETTINGS = { "panel", "arrow", "item", "minimap", "ui" }

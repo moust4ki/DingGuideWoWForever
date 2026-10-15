@@ -1,5 +1,24 @@
 # Changelog
 
+## v1.8.0
+
+Nothing else to install: QuestieDB is no longer needed, and TomTom stays optional.
+
+- **Problem with this step?** An orange flag in the guide window's title bar, right beside the
+  NPC directory's pin (with a gamepad: up from the first line in focus mode), its own key binding
+  (Settings > Keybinds, a button or two like the others) and `/ding bug`. A window shows in plain
+  words what the report will contain: the guide, the step and its place in the guide's file,
+  where you stand, your character's level, race, class and side, the step's quests and the ones
+  of your log the next steps need, with their counters, what the arrow points at, the settings
+  that change your route, Ding's and the game's versions. Never your character's name, your
+  realm or your account.
+- Pick what went wrong among four ready answers (handy with a gamepad) and add your own words if
+  you can type, then **Create the text**: 1. the address of the GitHub page to open, 2. the text
+  to paste into it, each selected by its button for Ctrl+C (an addon cannot copy for you). Ding
+  keeps your last 20 reports in its
+  saved variables (`WTF\Account\<account>\SavedVariables\Ding.lua`), so a player without a
+  keyboard can send that file instead; "Restore all defaults" keeps them.
+
 ## v1.7.1
 
 Nothing else to install: QuestieDB is no longer needed, and TomTom stays optional.
