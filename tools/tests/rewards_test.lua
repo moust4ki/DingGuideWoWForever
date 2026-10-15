@@ -257,4 +257,35 @@ T.test("cleanup: a log almost full points out the quests that can go, A or a cli
     E:Refresh()
 end)
 
+-- Reported: a druid's reward taken in mail. The quest window's "usable" flag is not enough: only
+-- what the class can wear is an upgrade, and the price goes to what it can use first.
+local MAIL_CHEST, LEATHER_CHEST, CLOTH_CHEST = 900021, 900022, 900023
+T.test("a druid: never a mail piece, as an upgrade or for its price, when it can use another", function()
+    H.setItemInfo(MAIL_CHEST, { name = "Mail Chest", equipLoc = "INVTYPE_CHEST", sellPrice = 300, classID = 4, subclassID = 3,
+        stats = { ITEM_MOD_STRENGTH_SHORT = 12, ITEM_MOD_STAMINA_SHORT = 8, RESISTANCE0_NAME = 300 } })
+    H.setItemInfo(LEATHER_CHEST, { name = "Leather Chest", equipLoc = "INVTYPE_CHEST", sellPrice = 60, classID = 4, subclassID = 2,
+        stats = { ITEM_MOD_STRENGTH_SHORT = 4, ITEM_MOD_STAMINA_SHORT = 3, RESISTANCE0_NAME = 90 } })
+    H.setItemInfo(CLOTH_CHEST, { name = "Cloth Chest", equipLoc = "INVTYPE_CHEST", sellPrice = 40, classID = 4, subclassID = 1,
+        stats = { ITEM_MOD_SPIRIT_SHORT = 1 } })
+    local printed = {}
+    local print0 = Ding.Print
+    Ding.Print = function(_, msg) printed[#printed + 1] = msg end
+    start("DRUID", { MAIL_CHEST, LEATHER_CHEST }, { choose = true })
+    T.eq(R.last.index, 2, "the mail chest chosen for a druid")
+    T.eq(R.last.reason, "upgrade")
+    T.ok(calls():find("reward 456 2", 1, true), "the leather chest not taken: " .. calls())
+    T.ok(printed[#printed] and printed[#printed]:find("Leather Chest", 1, true), "the chat does not say which reward")
+    -- No upgrade among them: the price of what a druid can wear, not the mail's.
+    start("DRUID", { MAIL_CHEST, CLOTH_CHEST }, { choose = true })
+    T.eq(R.last.index, 2, "the mail chest taken for its price")
+    T.eq(R.last.reason, "price")
+    -- Only pieces it cannot wear: the most expensive still.
+    start("DRUID", { MAIL_CHEST, RED_CHEST })
+    T.eq(R.last.index, 1)
+    -- A warrior takes the mail chest.
+    start("WARRIOR", { MAIL_CHEST, LEATHER_CHEST })
+    T.eq(R.last.index, 1)
+    Ding.Print = print0
+end)
+
 T.run()
