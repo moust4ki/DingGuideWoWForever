@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.6.1
+
+Nothing else to install: QuestieDB is no longer needed, and TomTom stays optional.
+
+- Gamepad: while you hold the first button of one of Ding's combinations (RB of RB + Up), the
+  game's own combinations work again: LB + RB + Left / Right (the action bar's pages), LB + RB +
+  Down (the chat)... Ding kept every button while it waited for the second one. With a Ding
+  window open, the buttons the window does not use go on to the game too.
+
 ## v1.6.0
 
 Nothing else to install: QuestieDB is no longer needed, and TomTom stays optional.
