@@ -4522,4 +4522,1753 @@ return {
         "콜만 파딩은 브릴 여관에 있습니다.",
     ["The four heirlooms lie in the crypt of the Agamand Mills, in the northwest of Tirisfal Glades."] =
         "가보 네 개는 티리스팔 숲 북서쪽, 아가만드 방앗간의 지하 묘실에 있습니다.",
+    -- Ding! - Dungeon quests (hand-written guides)
+    ["The Hall of Thanes"] =
+        "영주의 전당",
+    ["Afadra Dunwall and Thom Filch, in the west of Ironforge."] =
+        "Afadra Dunwall과 Thom Filch는 아이언포지 서쪽에 있습니다.",
+    ["Two quests of the hall: a leather belt or mail bracers, cloth gloves or an off-hand tome."] =
+        "전당의 퀘스트 두 개: 가죽 허리띠 또는 사슬 손목보호구, 천 장갑 또는 보조장비 고서.",
+    ["The Dark Iron spies of the east of Dun Morogh may drop a Dark Iron map: read it."] =
+        "던 모로 동쪽의 검은무쇠단 비밀요원이 검은무쇠단 지도를 떨어뜨릴 수 있습니다: 지도를 읽으세요.",
+    ["The Dark Iron map opens Old Ironforge Incursion: a gun, a wand or a two-handed mace."] =
+        "검은무쇠단 지도는 Old Ironforge Incursion 퀘스트로 이어집니다: 총, 마법봉 또는 양손 둔기.",
+    ["Earthseer Farsen, in the east of Dun Morogh."] =
+        "Earthseer Farsen은 던 모로 동쪽에 있습니다.",
+    ["Enter the Hall of Thanes"] =
+        "영주의 전당에 들어가세요",
+    ["The hall lies beneath Old Ironforge, in the west of the city."] =
+        "전당은 도시 서쪽, 옛 아이언포지 아래에 있습니다.",
+    ["Kill the enraged apparitions and the tormented souls of the hall, then put the spirit of Anvilmar to rest."] =
+        "전당의 성난 망령과 고통받는 영혼을 처치한 다음, 앤빌마의 영혼을 잠재우세요.",
+    ["The dwarven heirlooms lie around the hall."] =
+        "드워프 가보는 전당 곳곳에 있습니다.",
+    ["The Treaty of Understanding lies in the hall: take it, then read it."] =
+        "Treaty of Understanding은 전당 안에 있습니다: 집어서 읽으세요.",
+    ["Durgen Dirgehammer carries the head the quest asks for."] =
+        "Durgen Dirgehammer가 퀘스트에 필요한 머리를 가지고 있습니다.",
+    ["Afadra Dunwall and Thom Filch, in Ironforge."] =
+        "Afadra Dunwall과 Thom Filch는 아이언포지에 있습니다.",
+    ["King Magni Bronzebeard, in the High Seat of Ironforge."] =
+        "국왕 마그니 브론즈비어드는 아이언포지의 왕좌의 방에 있습니다.",
+    ["King Magni Bronzebeard."] =
+        "국왕 마그니 브론즈비어드.",
+    ["Wailing Caverns"] =
+        "통곡의 동굴",
+    ["Mebok Mizzyrix, in Ratchet."] =
+        "메보크 미지릭스는 톱니항에 있습니다.",
+    ["Raptor Horns opens Smart Drinks, a quest of the caverns."] =
+        "랩터 뿔은 동굴 퀘스트인 영리해지는 음료로 이어집니다.",
+    ["Crane Operator Bigglefuzz, on the docks of Ratchet."] =
+        "기중기 기사 비글퍼즈는 톱니항 부두에 있습니다.",
+    ["The sunscale raptors roam the plains between the Crossroads and Ratchet."] =
+        "열대초원랩터가 크로스로드와 톱니항 사이의 평원을 돌아다닙니다.",
+    ["Nalpak and Ebru stand in a cave on the caverns' hill: climb the hill from the east, follow the trail and drop onto the rock ledge."] =
+        "날팍과 에브루는 동굴 언덕의 작은 굴 안에 있습니다: 동쪽에서 언덕을 올라 오솔길을 따라간 다음 바위 턱으로 뛰어내리세요.",
+    ["Two quests of the deviate creatures; their rewards include a bag, leather leggings, mail gauntlets or a wand."] =
+        "돌연변이 생물 퀘스트 두 개. 보상으로 가방, 가죽 다리보호구, 사슬 건틀릿 또는 마법봉이 있습니다.",
+    ["Mad Magglish, a goblin who stays hidden, walks the caves around the dungeon's door."] =
+        "숨어 지내는 고블린인 광기의 매글리시는 던전 입구 주변의 동굴을 돌아다닙니다.",
+    ["Enter Wailing Caverns"] =
+        "통곡의 동굴에 들어가세요",
+    ["The mouth of the caverns opens on the hill above the Lushwater Oasis."] =
+        "동굴 입구는 생명의 오아시스 위쪽 언덕에 있습니다.",
+    ["Every deviate creature drops hides: raptors, lashers and snakes, from the first halls on."] =
+        "모든 돌연변이 생물이 통가죽을 떨어뜨립니다: 첫 구역부터 랩터, 덩굴손, 뱀이 나옵니다.",
+    ["The ectoplasms, living oozes of the caverns, drop the essence."] =
+        "동굴에 사는 수액괴물인 세포괴물이 정수를 떨어뜨립니다.",
+    ["Ravagers and vipers fill the first halls; shamblers and dreadfangs come further in."] =
+        "첫 구역에는 약탈자랩터와 독사가 가득하고, 더 안쪽에는 늪괴물과 송곳니천둥매가 나옵니다.",
+    ["Mutanus the Devourer may drop the Glowing Shard: he appears after the Disciple of Naralex's ritual, which starts once the four Fanglords are dead."] =
+        "걸신들린 무타누스가 빛나는 조각을 떨어뜨릴 수 있습니다: 무타누스는 나랄렉스의 신도가 올리는 의식 뒤에 나타나며, 의식은 송곳니 군주 넷이 모두 죽으면 시작됩니다.",
+    ["Nalpak and Ebru, in their cave on the caverns' hill."] =
+        "날팍과 에브루는 동굴 언덕의 작은 굴 안에 있습니다.",
+    ["Mebok Mizzyrix and Crane Operator Bigglefuzz, in Ratchet."] =
+        "메보크 미지릭스와 기중기 기사 비글퍼즈는 톱니항에 있습니다.",
+    ["Sputtervalve, in Ratchet, knows what the shard is."] =
+        "톱니항의 스퍼터밸브가 조각의 정체를 알고 있습니다.",
+    ["Falla Sagewind, on top of the caverns' hill."] =
+        "팔라 세이지윈드는 동굴 언덕 꼭대기에 있습니다.",
+    ["Mathrengyl Bearwalker, in the Cenarion Enclave of Darnassus."] =
+        "마스렌길 베어워커는 다르나서스의 세나리온 자치령에 있습니다.",
+    ["The Deadmines"] =
+        "죽음의 폐광",
+    ["Wilder Thistlenettle, in the Dwarven District of Stormwind."] =
+        "빌더 시슬네틀은 스톰윈드의 드워프 지구에 있습니다.",
+    ["Two quests of the mine under Moonbrook; their rewards include a two-handed axe and cloth, leather or mail armor."] =
+        "달빛시내 마을 아래 광산의 퀘스트 두 개. 보상으로 양손 도끼와 천, 가죽 또는 사슬 방어구가 있습니다.",
+    ["Shoni the Shilent, in the Dwarven District."] =
+        "소리없는 쇼니는 드워프 지구에 있습니다.",
+    ["Reward: armor of leather or mail, or a wand."] =
+        "보상: 가죽 또는 사슬 방어구, 또는 마법봉.",
+    ["Gryan Stoutmantle, in the tower of Sentinel Hill, in Westfall."] =
+        "그라이언 스타우트맨틀은 서부 몰락지대 감시의 언덕의 탑에 있습니다.",
+    ["A long chain of six quests between Westfall, Redridge and Stormwind: it leads to VanCleef, whose head brings mail leggings, a leather tunic or a staff."] =
+        "서부 몰락지대, 붉은마루 산맥, 스톰윈드를 오가는 퀘스트 6개짜리 긴 연계 퀘스트: 밴클리프로 이어지며, 그의 머리를 가져가면 사슬 다리보호구, 가죽 튜닉 또는 지팡이를 받습니다.",
+    ["Alba Fairmoon, south-west of Sentinel Hill."] =
+        "Alba Fairmoon은 감시의 언덕 남서쪽에 있습니다.",
+    ["A quest of the mine under Moonbrook, ended at the Deadmines' exit."] =
+        "달빛시내 마을 아래 광산의 퀘스트로, 죽음의 폐광 출구에서 완료합니다.",
+    ["Wiley the Black, in the inn of Lakeshire, in Redridge."] =
+        "악당 와일리는 붉은마루 산맥 레이크샤이어의 여관에 있습니다.",
+    ["Gryan Stoutmantle, at Sentinel Hill."] =
+        "그라이언 스타우트맨틀은 감시의 언덕에 있습니다.",
+    ["Master Mathias Shaw, in the SI:7 house of Old Town, in Stormwind."] =
+        "단장 마티아스 쇼는 스톰윈드 구 시가지의 SI:7 건물에 있습니다.",
+    ["The Defias Messenger walks the road to Moonbrook; he carries the message."] =
+        "데피아즈단 전령이 달빛시내 마을로 가는 길을 걸어 다닙니다. 전령이 전갈을 가지고 있습니다.",
+    ["Follow the Defias Traitor to Moonbrook; Defias attack on the way."] =
+        "데피아즈단 변절자를 따라 달빛시내 마을로 가세요. 가는 길에 데피아즈단이 공격해 옵니다.",
+    ["Scout Riell, at the top of the Sentinel Hill tower."] =
+        "정찰병 리엘은 감시의 언덕 탑 꼭대기에 있습니다.",
+    ["Reward: a weapon of your choice."] =
+        "보상: 원하는 무기.",
+    ["Go down into the mine under Moonbrook"] =
+        "달빛시내 마을 아래 광산으로 내려가세요",
+    ["The mine opens inside a house in the middle of Moonbrook."] =
+        "광산 입구는 달빛시내 마을 한가운데의 집 안에 있습니다.",
+    ["Foreman Thistlenettle and the undead miners roam the mine's tunnels, before the dungeon's door."] =
+        "현장감독 시슬네틀과 언데드 광부들이 던전 입구 앞의 광산 굴을 돌아다닙니다.",
+    ["Plant the explosives by the forge hidden in the Deadmines."] =
+        "죽음의 폐광에 숨겨진 용광로 옆에 폭약을 설치하세요.",
+    ["Every Defias of the dungeon may drop a bandana."] =
+        "던전의 데피아즈단은 누구나 복면을 떨어뜨릴 수 있습니다.",
+    ["Sneed's Shredder, the second boss, in the goblins' lumber cave, drops the Gnoam Sprecklesprocket."] =
+        "고블린 벌목 동굴에 있는 두 번째 우두머리 스니드의 벌목기가 노암 톱니구동장치를 떨어뜨립니다.",
+    ["Edwin VanCleef, the last boss, waits on the deck of the Defias ship at the end of the cave."] =
+        "마지막 우두머리 에드윈 밴클리프는 동굴 끝, 데피아즈단 배의 갑판에서 기다립니다.",
+    ["VanCleef drops a letter: read it to take its quest."] =
+        "밴클리프가 편지를 떨어뜨립니다: 편지를 읽어 퀘스트를 받으세요.",
+    ["Alba Fairmoon waits at the Deadmines' exit, on the coast south-west of Moonbrook."] =
+        "Alba Fairmoon은 달빛시내 마을 남서쪽 해안, 죽음의 폐광 출구에서 기다립니다.",
+    ["Use her detonator, then tell her."] =
+        "그녀의 기폭 장치를 사용한 다음 그녀에게 알리세요.",
+    ["Gryan Stoutmantle and Scout Riell, in the Sentinel Hill tower."] =
+        "그라이언 스타우트맨틀과 정찰병 리엘은 감시의 언덕 탑에 있습니다.",
+    ["Baros Alexston, in the City Hall of the Cathedral Square."] =
+        "바로스 알렉스턴은 대성당 광장의 시청에 있습니다.",
+    ["Bazil Thredd leads to the Stockade's riots."] =
+        "바질 스레드 퀘스트는 지하감옥 폭동으로 이어집니다.",
+    ["Warden Thelwater, at the door of the Stockade, in Stormwind."] =
+        "교도소장 델워터는 스톰윈드의 지하감옥 입구에 있습니다.",
+    ["Ruins of Lordaeron"] =
+        "로데론의 폐허",
+    ["Enter the Ruins of Lordaeron"] =
+        "로데론의 폐허에 들어가세요",
+    ["The ruins rise above Undercity, in Tirisfal Glades: Horde land, keep your guard up."] =
+        "폐허는 티리스팔 숲의 언더시티 위에 있습니다: 호드 지역이니 경계를 늦추지 마세요.",
+    ["The undead of the ruins may drop a bloodied insignia: read it."] =
+        "폐허의 언데드가 피 묻은 휘장을 떨어뜨릴 수 있습니다: 휘장을 읽으세요.",
+    ["Reward: leather leggings or mail armor."] =
+        "보상: 가죽 다리보호구 또는 사슬 방어구.",
+    ["Ten insignias, from the undead of the ruins."] =
+        "폐허의 언데드에게서 얻는 휘장 10개.",
+    ["The Crest of Lordaeron lies in the ruins: take it, then read it."] =
+        "Crest of Lordaeron은 폐허 안에 있습니다: 집어서 읽으세요.",
+    ["Reward: a small sack of gems."] =
+        "보상: 작은 보석 자루.",
+    ["Edward Heartweaver's last letter lies in the ruins: read it."] =
+        "Edward Heartweaver의 마지막 편지가 폐허 안에 있습니다: 편지를 읽으세요.",
+    ["General Marcus Jonathan, at the gate of Stormwind."] =
+        "장군 마커스 조나단은 스톰윈드 정문에 있습니다.",
+    ["Lady Dena Kennedy, in Stormwind."] =
+        "Lady Dena Kennedy는 스톰윈드에 있습니다.",
+    ["Orphan Matron Nightingale, at the orphanage of Stormwind."] =
+        "보육원 원장님 나이팅게일은 스톰윈드 보육원에 있습니다.",
+    ["Blackfathom Deeps"] =
+        "검은심연의 나락",
+    ["Argos Nightwhisper, in Stormwind."] =
+        "아르고스 나이트위스퍼는 스톰윈드에 있습니다.",
+    ["Optional: a lead to Auberdine, worth about 1,450 XP once there."] =
+        "선택 사항: 아우버다인으로 안내하는 퀘스트로, 도착하면 약 1,450 경험치를 줍니다.",
+    ["Gerrig Bonegrip, in the Forlorn Cavern of Ironforge."] =
+        "게릭 본그립은 아이언포지의 쓸쓸한 뒷골목에 있습니다.",
+    ["Reward: a ring."] =
+        "보상: 반지.",
+    ["Gershala Nightwhisper, in Auberdine, in Darkshore."] =
+        "게르샬라 나이트위스퍼는 어둠의 해안의 아우버다인에 있습니다.",
+    ["Gershala Nightwhisper, in Auberdine."] =
+        "게르샬라 나이트위스퍼는 아우버다인에 있습니다.",
+    ["Reward: cloth, leather or mail armor."] =
+        "보상: 천, 가죽 또는 사슬 방어구.",
+    ["Argent Guard Manados and Dawnwatcher Shaedlass, in Darnassus."] =
+        "은빛경비병 마나도스와 새벽감시자 섀드라스는 다르나서스에 있습니다.",
+    ["Two quests of the Argent Dawn: the second leads to Twilight Lord Kelris and a wand, a shield or leather armor."] =
+        "은빛 여명회의 퀘스트 두 개: 두 번째 퀘스트는 황혼의 군주 켈리스로 이어지며, 마법봉, 방패 또는 가죽 방어구를 줍니다.",
+    ["Enter Blackfathom Deeps"] =
+        "검은심연의 나락에 들어가세요",
+    ["The deeps open in ruins half under water, on the coast of Ashenvale's Zoram Strand."] =
+        "나락 입구는 잿빛 골짜기 조람 해안의, 반쯤 물에 잠긴 폐허에 있습니다.",
+    ["The Blackfathom and Fallenroot creatures carry the brain stems, from the cave before the dungeon's door on."] =
+        "검은심연과 썩은뿌리 생물이 뇌간을 가지고 있습니다. 던전 입구 앞 동굴부터 나옵니다.",
+    ["The manuscript lies in a chest under the water, by Ghamoo-ra, the first boss, in the Pool of Ask'ar."] =
+        "초본은 아스카르 웅덩이의 첫 번째 우두머리 가무라 옆, 물속 상자 안에 있습니다.",
+    ["Argent Guard Thaelrid waits in an underwater cave south-west of the Pool of Ask'ar."] =
+        "은빛경비병 타엘리드는 아스카르 웅덩이 남서쪽의 물속 동굴에서 기다립니다.",
+    ["Every Twilight cultist of the deeps may drop a pendant."] =
+        "나락의 황혼의망치단 이교도는 누구나 펜던트를 떨어뜨릴 수 있습니다.",
+    ["Twilight Lord Kelris, the fourth boss, holds the Moonshrine Sanctum."] =
+        "네 번째 우두머리 황혼의 군주 켈리스가 달의 성소를 지키고 있습니다.",
+    ["Argent Guard Manados, in Darnassus."] =
+        "은빛경비병 마나도스는 다르나서스에 있습니다.",
+    ["Dawnwatcher Selgorm, beside him in Darnassus."] =
+        "새벽감시자 셀고름은 다르나서스에서 그 옆에 있습니다.",
+    ["The Stockade"] =
+        "스톰윈드 지하감옥",
+    ["Motley Garmason, at Dun Modr, in the north of the Wetlands."] =
+        "모틀리 가마슨은 저습지 북쪽의 던 모드르에 있습니다.",
+    ["Far north in the Wetlands: it opens The Fury Runs Deep, whose reward is a two-handed mace or a leather belt."] =
+        "저습지 북쪽 끝에 있습니다: 격노 퀘스트로 이어지며, 그 보상은 양손 둔기 또는 가죽 허리띠입니다.",
+    ["The Dark Iron dwarves camp around Dun Modr."] =
+        "검은무쇠단 드워프가 던 모드르 주변에서 야영하고 있습니다.",
+    ["Guard Berton, in Lakeshire, in Redridge."] =
+        "경비병 베르턴은 붉은마루 산맥의 레이크샤이어에 있습니다.",
+    ["Reward: a staff, a sword or a two-handed mace."] =
+        "보상: 지팡이, 검 또는 양손 둔기.",
+    ["Councilman Millstipe, in the town hall of Darkshire, in Duskwood."] =
+        "원로 밀스타이프는 그늘숲 다크샤이어의 마을 회관에 있습니다.",
+    ["Nikova Raskol, in Old Town, in Stormwind."] =
+        "니코바 라스콜은 스톰윈드 구 시가지에 있습니다.",
+    ["Warden Thelwater, at the door of the Stockade."] =
+        "교도소장 델워터는 지하감옥 입구에 있습니다.",
+    ["Warden Thelwater asks for Bazil Thredd's head."] =
+        "교도소장 델워터가 바질 스레드의 머리를 요구합니다.",
+    ["Enter the Stockade"] =
+        "지하감옥에 들어가세요",
+    ["The prison's door is by Warden Thelwater, in Stormwind."] =
+        "감옥 입구는 스톰윈드의 교도소장 델워터 옆에 있습니다.",
+    ["Targorr the Dread, the first boss, sits in a cell near the start."] =
+        "첫 번째 우두머리 흉악범 타고르는 입구 근처의 감방에 있습니다.",
+    ["Kam Deepfury: go north, then east; he waits in the second small cell on the left."] =
+        "캄 딥퓨리: 북쪽으로 간 다음 동쪽으로 가세요. 왼쪽 두 번째 작은 감방에서 기다립니다.",
+    ["Bazil Thredd waits at the end of the east corridor."] =
+        "바질 스레드는 동쪽 복도 끝에서 기다립니다.",
+    ["Dextren Ward waits at the end of the west corridor."] =
+        "덱스트렌 워드는 서쪽 복도 끝에서 기다립니다.",
+    ["The prisoners, convicts and insurgents fill every cell; the Defias among them drop the bandanas."] =
+        "복역수, 무기징역수, 반역자가 모든 감방을 채우고 있습니다. 그중 데피아즈단이 복면을 떨어뜨립니다.",
+    ["Optional: nine more quests in Stormwind; the last brings a ring and about 3,750 XP."] =
+        "선택 사항: 스톰윈드에서 퀘스트 9개가 더 이어집니다. 마지막 퀘스트에서 반지와 약 3,750 경험치를 받습니다.",
+    ["Baros Alexston, in the City Hall."] =
+        "바로스 알렉스턴은 시청에 있습니다.",
+    ["Master Mathias Shaw, in the SI:7 house of Old Town."] =
+        "단장 마티아스 쇼는 구 시가지의 SI:7 건물에 있습니다.",
+    ["Elling Trias, in the cheese shop of the Trade District."] =
+        "엘링 트리아스는 상업 지구의 치즈 가게에 있습니다.",
+    ["Tyrion, near Stormwind Keep."] =
+        "티리온은 스톰윈드 왕궁 근처에 있습니다.",
+    ["Three silk cloth, and two of Clara's fresh apples, from a basket north-west of Goldshire, in Elwynn Forest."] =
+        "비단 옷감 3개, 그리고 엘윈 숲 골드샤이어 북서쪽의 바구니에서 얻는 클라라의 싱싱한 사과 2개.",
+    ["Wait in the garden by Stormwind Keep until Lord Gregor Lescovar and Marzon the Silent Blade have talked, then defeat both."] =
+        "스톰윈드 왕궁 옆 정원에서 그레골 라스코발 경과 소리없는검객 마르존이 대화를 마칠 때까지 기다린 다음, 둘 다 처치하세요.",
+    ["Elling Trias, in the cheese shop."] =
+        "엘링 트리아스는 치즈 가게에 있습니다.",
+    ["Master Mathias Shaw, in the SI:7 house."] =
+        "단장 마티아스 쇼는 SI:7 건물에 있습니다.",
+    ["Lady Katrana Prestor, beside the king in Stormwind Keep."] =
+        "여군주 카트라나 프레스톨은 스톰윈드 왕궁에서 국왕 옆에 있습니다.",
+    ["Nikova Raskol, in Old Town."] =
+        "니코바 라스콜은 구 시가지에 있습니다.",
+    ["Guard Berton, in Lakeshire."] =
+        "경비병 베르턴은 레이크샤이어에 있습니다.",
+    ["Councilman Millstipe, in Darkshire."] =
+        "원로 밀스타이프는 다크샤이어에 있습니다.",
+    ["Motley Garmason, at Dun Modr."] =
+        "모틀리 가마슨은 던 모드르에 있습니다.",
+    ["Excavation Site: Wetlands"] =
+        "발굴 현장: 저습지",
+    ["James Halloran, the tanner of Menethil Harbor, in the Wetlands."] =
+        "제임스 할로란은 저습지 메네실 항구의 무두장이입니다.",
+    ["Caitlin Grassman, in Menethil Harbor."] =
+        "케이틀린 그라스만은 메네실 항구에 있습니다.",
+    ["Optional: the guide does not know yet who ends this search; its follow-up brings a satchel of potions."] =
+        "선택 사항: 이 수색을 누구에게 완료하는지 가이드가 아직 모릅니다. 후속 퀘스트에서 물약 가방을 받습니다.",
+    ["Rethiel the Greenwarden, in the middle of the Wetlands."] =
+        "신록의수호자 레시엘은 저습지 한가운데에 있습니다.",
+    ["Reward: an axe, and about 3,200 XP."] =
+        "보상: 도끼, 그리고 약 3,200 경험치.",
+    ["Dorin Songblade, the armorer of Lakeshire, in Redridge."] =
+        "도린 송블레이드는 붉은마루 산맥 레이크샤이어의 방어구 제작자입니다.",
+    ["Optional: the guide does not know yet who ends this search."] =
+        "선택 사항: 이 수색을 누구에게 완료하는지 가이드가 아직 모릅니다.",
+    ["Enter the Excavation Site"] =
+        "발굴 현장에 들어가세요",
+    ["The excavation site opens by the dig in the middle of the Wetlands."] =
+        "발굴 현장 입구는 저습지 한가운데의 발굴지 옆에 있습니다.",
+    ["Four thicket raptor hides, from the raptors of the site."] =
+        "발굴 현장의 랩터에게서 얻는 덤불 랩터 가죽 4개.",
+    ["A Highland Horror carries the root core."] =
+        "Highland Horror가 뿌리 핵을 가지고 있습니다.",
+    ["Ardin Grassman, somewhere in the site."] =
+        "Ardin Grassman은 발굴 현장 어딘가에 있습니다.",
+    ["Daewyn, somewhere in the site."] =
+        "Daewyn은 발굴 현장 어딘가에 있습니다.",
+    ["The relic guardians may drop a Titan relic: read it."] =
+        "유물 수호자가 티탄 유물을 떨어뜨릴 수 있습니다: 유물을 읽으세요.",
+    ["The Titan relic leads to Ironforge's explorers: a staff or a two-handed mace."] =
+        "티탄 유물은 아이언포지의 탐험가들에게로 이어집니다: 지팡이 또는 양손 둔기.",
+    ["Prospector Whelgar, at his excavation camp in the Wetlands."] =
+        "발굴조사단장 웰가르는 저습지의 자기 발굴 야영지에 있습니다.",
+    ["Rethiel the Greenwarden."] =
+        "신록의수호자 레시엘.",
+    ["James Halloran, in Menethil Harbor."] =
+        "제임스 할로란은 메네실 항구에 있습니다.",
+    ["Dorin Songblade, in Lakeshire."] =
+        "도린 송블레이드는 레이크샤이어에 있습니다.",
+    ["High Explorer Magellas, in the Hall of Explorers of Ironforge."] =
+        "선임탐험가 마겔라스는 아이언포지의 탐험가의 전당에 있습니다.",
+    ["Gnomeregan"] =
+        "놈리건",
+    ["Shoni the Shilent, in the Dwarven District of Stormwind."] =
+        "소리없는 쇼니는 스톰윈드의 드워프 지구에 있습니다.",
+    ["Reward: cloth or leather gloves, or an axe."] =
+        "보상: 천 또는 가죽 장갑, 또는 도끼.",
+    ["Brother Sarno, in the Cathedral of Light."] =
+        "수사 세르노는 빛의 대성당에 있습니다.",
+    ["Optional: a lead to Tinkmaster Overspark in Ironforge."] =
+        "선택 사항: 아이언포지의 수석땜장이 오버스파크에게 안내하는 퀘스트.",
+    ["Tinkmaster Overspark, in Tinker Town, in Ironforge."] =
+        "수석땜장이 오버스파크는 아이언포지의 땜장이 마을에 있습니다.",
+    ["Tinkmaster Overspark, in Tinker Town."] =
+        "수석땜장이 오버스파크는 땜장이 마을에 있습니다.",
+    ["Master Mechanic Castpipe, Klockmort Spannerspan and High Tinker Mekkatorque, in Tinker Town."] =
+        "수석수리공 캐스트파이프, 클락몰트 스패너스판, 땜장이왕 멕카토크는 땜장이 마을에 있습니다.",
+    ["Tinker Town's quests: Data Rescue brings a two-handed mace or a cloak, The Grand Betrayal cloth, leather or mail armor."] =
+        "땜장이 마을의 퀘스트: 자료 회수에서는 양손 둔기 또는 망토를, 대배반에서는 천, 가죽 또는 사슬 방어구를 받습니다.",
+    ["Gnoarn, in Tinker Town."] =
+        "노아른은 땜장이 마을에 있습니다.",
+    ["Ozzie Togglevolt, in Kharanos, in Dun Morogh."] =
+        "오지 토글볼트는 던 모로의 카라노스에 있습니다.",
+    ["Use the empty phial on the irradiated troggs that roam the gates of Gnomeregan."] =
+        "놈리건 입구를 돌아다니는 오염된 트로그에게 빈 채집병을 사용하세요.",
+    ["Back to Ozzie Togglevolt, in Kharanos."] =
+        "카라노스의 오지 토글볼트에게 돌아가세요.",
+    ["Enter Gnomeregan"] =
+        "놈리건에 들어가세요",
+    ["The gates of Gnomeregan stand in the west of Dun Morogh."] =
+        "놈리건 입구는 던 모로 서쪽에 있습니다.",
+    ["Techbot, the first boss, waits just inside: he drops the memory core."] =
+        "첫 번째 우두머리 첨단로봇은 입구 바로 안쪽에서 기다립니다: 기억회로를 떨어뜨립니다.",
+    ["The tall, square machines of the city hold the artificials; every mechanical creature may drop the guts."] =
+        "도시의 키 큰 네모난 기계 안에 인공장치가 들어 있습니다. 기계 생물은 누구나 부속품을 떨어뜨릴 수 있습니다.",
+    ["Use the heavy phial on a living irradiated slime, in the lower Hall of Gears; the fallout does not last long."] =
+        "톱니바퀴 전당 아래층에서 살아 있는 방사능 진흙괴물에게 무거운 채집병을 사용하세요. 폐기물은 오래가지 않습니다.",
+    ["The addled leper gnomes drop the white card; the four Matrix Punchographs, from A to D, turn it yellow, blue, red, then prismatic: A on the way in, B at the bottom of the Dormitory, C on the Launch Bay's platform (Electrocutioner 6000's key opens it), D in the lower Engineering Labs."] =
+        "정신이상의 오염된 노움이 흰색 카드를 떨어뜨립니다. A부터 D까지 네 대의 Matrix Punchograph가 카드를 차례로 노란색, 파란색, 빨간색, 마지막으로 오색으로 바꿉니다: A는 들어가는 길에, B는 기숙사 맨 아래에, C는 발사대의 단 위에 (기계화 문지기 6000의 열쇠로 열립니다), D는 기계공학 연구실 아래층에 있습니다.",
+    ["Kernobee, a gnome held inside the city."] =
+        "케르노비는 도시 안에 붙잡혀 있는 노움입니다.",
+    ["Optional: an escort, turned in at Booty Bay, far away; it rewards bracers or shoulders."] =
+        "선택 사항: 호위 퀘스트로, 멀리 떨어진 무법항에서 완료합니다. 보상은 손목보호구 또는 어깨보호구입니다.",
+    ["Lead Kernobee to the Clean Zone, by the dungeon's back door."] =
+        "케르노비를 던전 뒷문 옆의 정화 구역까지 데려가세요.",
+    ["The Dark Iron agents may drop a grimy ring: use it."] =
+        "검은무쇠단 첩보원이 꼬질꼬질한 반지를 떨어뜨릴 수 있습니다: 반지를 사용하세요.",
+    ["Put it in the Sparklematic 5200, a cleaning machine of the city."] =
+        "도시의 세척 기계인 삐까뻔쩍세척기 5200에 반지를 넣으세요.",
+    ["Mekgineer Thermaplugg, the last boss, waits in the Tinkers' Court."] =
+        "마지막 우두머리 멕기니어 텔마플러그는 땜장이 궁정에서 기다립니다.",
+    ["Ozzie Togglevolt, in Kharanos."] =
+        "오지 토글볼트는 카라노스에 있습니다.",
+    ["Tinker Town, in Ironforge."] =
+        "아이언포지의 땜장이 마을.",
+    ["Talvash del Kissel, in the Mystic Ward of Ironforge."] =
+        "탈바쉬 델 키젤은 아이언포지의 마법 지구에 있습니다.",
+    ["A gold ring, for a silver bar, a moss agate and 30 silver."] =
+        "금반지: 은 주괴, 이끼 마노, 30실버를 내고 받습니다.",
+    ["A silver bar and a moss agate: from mining, or the auction house."] =
+        "은 주괴와 이끼 마노: 채광으로 얻거나 경매장에서 사세요.",
+    ["Scooty, the goblin engineer of Booty Bay, in Stranglethorn Vale."] =
+        "스쿠티는 가시덤불 골짜기 무법항의 고블린 기술자입니다.",
+    ["Razorfen Kraul"] =
+        "가시덩굴 우리",
+    ["Veyric Thunderhame, in the north-east of Arathi Highlands."] =
+        "Veyric Thunderhame은 아라시 고원 북동쪽에 있습니다.",
+    ["Shamans: Charlga Razorflank carries the note this quest asks for."] =
+        "주술사: 서슬깃 차를가가 이 퀘스트에 필요한 쪽지를 가지고 있습니다.",
+    ["Reward: a small container of gems."] =
+        "보상: 작은 보석 상자.",
+    ["Take the crate with holes and the owner's manual beside Mebok, and read the manual."] =
+        "메보크 옆의 구멍 난 상자와 사용 설명서를 챙기고, 설명서를 읽으세요.",
+    ["The journal lies by a body in the north-west of Thousand Needles, below the Great Lift: read it."] =
+        "일지는 버섯구름 봉우리 북서쪽, 구름 승강장 아래의 시체 옆에 있습니다: 일지를 읽으세요.",
+    ["Henrig Lonebrow's journal opens The Crone of the Kraul: cloth shoulders, mail belt or a shield."] =
+        "헨리그 론브로우의 일지는 가시덩굴 우리의 대모 퀘스트로 이어집니다: 천 어깨보호구, 사슬 허리띠 또는 방패.",
+    ["Falfindel Waywarder, at Thalanaar, on the eastern edge of Feralas."] =
+        "팔핀델 웨이워더는 페랄라스 동쪽 끝의 탈라나르에 있습니다.",
+    ["Enter Razorfen Kraul"] =
+        "가시덩굴 우리에 들어가세요",
+    ["The kraul's thorny mound rises in the far south of the Barrens."] =
+        "가시덩굴 우리의 가시 언덕은 불모의 땅 남쪽 끝에 솟아 있습니다.",
+    ["Past Overlord Ramtusk, open the crate to call the gopher and use the stick on it: it digs up the tubers."] =
+        "대군주 램터스크를 지나 상자를 열어 땅다람쥐를 부르고, 땅다람쥐에게 막대를 사용하세요: 덩이줄기를 파냅니다.",
+    ["Charlga Razorflank, the last boss, holds the top of the kraul."] =
+        "마지막 우두머리 서슬깃 차를가가 가시덩굴 우리 꼭대기를 지키고 있습니다.",
+    ["Heralath Fallowbrook lies in the tent on the left, below Charlga Razorflank's platform."] =
+        "헤랄라스 팰로우브룩은 서슬깃 차를가의 단 아래, 왼쪽 천막 안에 누워 있습니다.",
+    ["Reward: boots of leather or mail, or a cloak."] =
+        "보상: 가죽 또는 사슬 장화, 또는 망토.",
+    ["Willix the Importer waits beside Heralath's tent."] =
+        "수입업자 윌릭스는 헤랄라스의 천막 옆에서 기다립니다.",
+    ["Reward: a ring of your choice."] =
+        "보상: 원하는 반지.",
+    ["Lead Willix back to the entrance; quilboar attack on the way."] =
+        "윌릭스를 입구까지 데려가세요. 가는 길에 가시멧돼지가 공격해 옵니다.",
+    ["Every Razorfen quilboar may drop Treshala's pendant."] =
+        "가시덩굴일족 가시멧돼지는 누구나 트레샬라의 펜던트를 떨어뜨릴 수 있습니다.",
+    ["Falfindel Waywarder, at Thalanaar."] =
+        "팔핀델 웨이워더는 탈라나르에 있습니다.",
+    ["Treshala Fallowbrook, in Darnassus."] =
+        "트레샬라 팰로우브룩은 다르나서스에 있습니다.",
+    ["Veyric Thunderhame, in Arathi Highlands."] =
+        "Veyric Thunderhame은 아라시 고원에 있습니다.",
+    ["City of Dalaran"] =
+        "달라란 시",
+    ["Shylamiir, the herbalism trainer of Stormwind, and High Sorcerer Andromath, in the Mage Quarter."] =
+        "스톰윈드의 약초채집 상급자 샤이라미르와 고위마술사 안드로매스는 마법사 지구에 있습니다.",
+    ["Two quests of the city from Stormwind: the blossom brings a cloak or a mail belt."] =
+        "스톰윈드에서 받는 도시 퀘스트 두 개: 꽃 퀘스트에서 망토 또는 사슬 허리띠를 받습니다.",
+    ["Emissary Jacques, in Hillsbrad Foothills."] =
+        "Emissary Jacques는 힐스브래드 구릉지에 있습니다.",
+    ["The Image of Archmage Modera, by the walls of Dalaran, at the eastern edge of Silverpine Forest."] =
+        "Image of Archmage Modera는 은빛소나무 숲 동쪽 끝, 달라란 성벽 옆에 있습니다.",
+    ["The Image of Archmage Modera."] =
+        "Image of Archmage Modera.",
+    ["Archmage Modera's quests: a pendant or an off-hand rod, and an introduction to the Kirin Tor."] =
+        "Archmage Modera의 퀘스트: 펜던트 또는 보조장비 마법봉, 그리고 키린 토 소개.",
+    ["Enter the City of Dalaran"] =
+        "달라란 시에 들어가세요",
+    ["The city lies under its dome, in the west of the Alterac Mountains."] =
+        "도시는 알터랙 산맥 서쪽, 돔 아래에 있습니다.",
+    ["Eight seeking remnants, eight saturated remnants and eight mana echoes, inside the city."] =
+        "도시 안의 추적하는 잔재 8마리, 포화된 잔재 8마리, 마나 메아리 8마리.",
+    ["The arcane mote, inside the city."] =
+        "도시 안의 비전 티끌.",
+    ["A fel infused blossom, inside the city."] =
+        "도시 안의 지옥 기운이 깃든 꽃.",
+    ["The mana elemental, inside the city."] =
+        "도시 안의 마나 정령.",
+    ["Archmage Celindra, in the City of Dalaran."] =
+        "Archmage Celindra는 달라란 시에 있습니다.",
+    ["The Image of Archmage Modera, by the walls of Dalaran."] =
+        "Image of Archmage Modera는 달라란 성벽 옆에 있습니다.",
+    ["Shylamiir and High Sorcerer Andromath, in Stormwind."] =
+        "샤이라미르와 고위마술사 안드로매스는 스톰윈드에 있습니다.",
+    ["Scarlet Monastery"] =
+        "붉은십자군 수도원",
+    ["Brother Crowley, in the Cathedral of Light of Stormwind."] =
+        "수사 크롤리는 스톰윈드의 빛의 대성당에 있습니다.",
+    ["Optional: a lead to Brother Anton in Desolace."] =
+        "선택 사항: 잊혀진 땅의 수사 안톤에게 안내하는 퀘스트.",
+    ["Librarian Mae Paledust, in the Hall of Explorers of Ironforge."] =
+        "사서 메이 페일더스트는 아이언포지의 탐험가의 전당에 있습니다.",
+    ["Reward: a necklace, and about 3,550 XP."] =
+        "보상: 목걸이, 그리고 약 3,550 경험치.",
+    ["Brother Anton, at Nijel's Point, in Desolace."] =
+        "수사 안톤은 잊혀진 땅의 나이젤의 야영지에 있습니다.",
+    ["Brother Anton, at Nijel's Point."] =
+        "수사 안톤은 나이젤의 야영지에 있습니다.",
+    ["Down the Scarlet Path, in Desolace then Southshore, opens In the Name of the Light: a weapon or an off-hand orb, and about 4,700 XP."] =
+        "잊혀진 땅에서 사우스쇼어로 이어지는 붉은십자군의 길은 빛의 이름으로! 퀘스트로 이어집니다: 무기 또는 보조장비 보주, 그리고 약 4,700 경험치.",
+    ["The undead ravagers roam the south-east of Desolace."] =
+        "언데드 약탈자가 잊혀진 땅 남동쪽을 돌아다닙니다.",
+    ["Raleigh the Devout, in the inn of Southshore, in Hillsbrad Foothills."] =
+        "경건한 신자 랄레이는 힐스브래드 구릉지 사우스쇼어의 여관에 있습니다.",
+    ["Magus Olvek, in the west of the Alterac Mountains."] =
+        "Magus Olvek은 알터랙 산맥 서쪽에 있습니다.",
+    ["About 3,200 XP."] =
+        "약 3,200 경험치.",
+    ["Enter the Scarlet Monastery"] =
+        "붉은십자군 수도원에 들어가세요",
+    ["The monastery stands in the far east of Tirisfal Glades; its four wings, Graveyard, Library, Armory and Cathedral, each have their own door."] =
+        "수도원은 티리스팔 숲 동쪽 끝에 있습니다. 묘지, 도서관, 무기고, 대성당 네 구역에는 각각 입구가 따로 있습니다.",
+    ["Magus Olvek's book lies somewhere in the monastery."] =
+        "Magus Olvek의 책은 수도원 어딘가에 있습니다.",
+    ["Library: the book lies on the floor under a window, on the left of the room after the Gallery of Treasures."] =
+        "도서관: 책은 보물 전시실 다음 방 왼쪽, 창문 아래 바닥에 있습니다.",
+    ["Houndmaster Loksey, the Library's first boss; Herod, the Armory's only boss; Scarlet Commander Mograine and High Inquisitor Whitemane, at the end of the Cathedral. Arcanist Doan's chest, at the end of the Library, holds the Scarlet Key that opens the Armory and the Cathedral."] =
+        "도서관의 첫 번째 우두머리는 사냥개조련사 록시, 무기고의 유일한 우두머리는 헤로드, 대성당 끝에는 붉은십자군 사령관 모그레인과 종교재판관 화이트메인이 있습니다. 도서관 끝에 있는 신비술사 도안의 상자에 무기고와 대성당을 여는 붉은십자군 열쇠가 들어 있습니다.",
+    ["Magus Olvek, in the Alterac Mountains."] =
+        "Magus Olvek은 알터랙 산맥에 있습니다.",
+    ["Raleigh the Devout, in Southshore."] =
+        "경건한 신자 랄레이는 사우스쇼어에 있습니다.",
+    ["Librarian Mae Paledust, in Ironforge."] =
+        "사서 메이 페일더스트는 아이언포지에 있습니다.",
+    ["Razorfen Downs"] =
+        "가시덩굴 구릉",
+    ["Archbishop Benedictus, in the Cathedral of Light of Stormwind."] =
+        "대주교 베네딕투스는 스톰윈드의 빛의 대성당에 있습니다.",
+    ["Reward: a sword or a talisman, and about 4,300 XP."] =
+        "보상: 검 또는 부적, 그리고 약 4,300 경험치.",
+    ["Myriam Moonsinger, outside Razorfen Downs, in the far south of the Barrens."] =
+        "미리암 문싱어는 불모의 땅 남쪽 끝, 가시덩굴 구릉 밖에 있습니다.",
+    ["About 3,450 XP, without entering the downs."] =
+        "약 3,450 경험치. 구릉 안에 들어가지 않아도 됩니다.",
+    ["The Razorfen battleguards, thornweavers and Death's Head cultists guard the slopes before the downs."] =
+        "가시덩굴일족 전투호위병, 가시마술사, 죽음의 머리교 신도가 구릉 앞 비탈을 지키고 있습니다.",
+    ["Myriam Moonsinger."] =
+        "미리암 문싱어.",
+    ["Enter Razorfen Downs"] =
+        "가시덩굴 구릉에 들어가세요",
+    ["The downs' entrance is by Myriam Moonsinger, at the foot of the great thorn mound."] =
+        "구릉 입구는 거대한 가시 언덕 기슭, 미리암 문싱어 옆에 있습니다.",
+    ["Belnistrasz waits in the Holding Pen, on the north side of the Murder Pens; taking his second quest starts his ritual at once."] =
+        "벨리스트라즈는 학살의 우리 북쪽의 감금 우리에서 기다립니다. 그의 두 번째 퀘스트를 받으면 바로 의식이 시작됩니다.",
+    ["Belnistrasz's ritual: a ring, and about 4,250 XP."] =
+        "벨리스트라즈의 의식: 반지, 그리고 약 4,250 경험치.",
+    ["Defend Belnistrasz while he works: waves of quilboar and undead come. Then use his brazier, in the same room."] =
+        "벨리스트라즈가 의식을 진행하는 동안 그를 지키세요: 가시멧돼지와 언데드가 차례로 몰려옵니다. 그런 다음 같은 방에 있는 그의 화로를 사용하세요.",
+    ["Amnennar the Coldbringer, the last boss, waits at the top of the Spiral of Thorns."] =
+        "마지막 우두머리 혹한의 암네나르는 가시 나선 꼭대기에서 기다립니다.",
+    ["Archbishop Benedictus, in Stormwind."] =
+        "대주교 베네딕투스는 스톰윈드에 있습니다.",
+    ["Uldaman"] =
+        "울다만",
+    ["Prospector Stormpike, in the Hall of Explorers of Ironforge."] =
+        "발굴조사단장 스톰파이크는 아이언포지의 탐험가의 전당에 있습니다.",
+    ["The Lost Dwarves leads to the Hidden Chamber: a two-handed axe or a lodestar, and about 3,900 XP."] =
+        "길 잃은 드워프는 비밀 석실 퀘스트로 이어집니다: 양손 도끼 또는 등불, 그리고 약 3,900 경험치.",
+    ["Krom Stoutarm, in the Hall of Explorers."] =
+        "크롬 스타우트암은 탐험가의 전당에 있습니다.",
+    ["About 3,600 XP for a chest at Uldaman's gates."] =
+        "울다만 입구의 상자 하나로 약 3,600 경험치.",
+    ["Prospector Ironband, at his excavation site in the south-east of Loch Modan."] =
+        "발굴조사단장 아이언밴드는 모단 호수 남동쪽의 자기 발굴 현장에 있습니다.",
+    ["Find Agmond leads to Agmond's Fate: gloves of cloth, leather or mail."] =
+        "아그몬드 찾기는 아그몬드의 운명 퀘스트로 이어집니다: 천, 가죽 또는 사슬 장갑.",
+    ["Ghak Healtouch, in Thelsamar."] =
+        "가크 힐터치는 텔사마에 있습니다.",
+    ["It opens Uldaman Reagent Run: restorative potions and about 3,450 XP."] =
+        "울다만에서 재료 찾기 퀘스트로 이어집니다: 회복 물약, 그리고 약 3,450 경험치.",
+    ["Rigglefuzz, in the middle of the Badlands."] =
+        "리글퍼즈는 황야의 땅 한가운데에 있습니다.",
+    ["Reward: leather or mail bracers, cloth boots or a shield."] =
+        "보상: 가죽 또는 사슬 손목보호구, 천 장화 또는 방패.",
+    ["Theldurin the Lost, in the south of the Badlands."] =
+        "실성한 텔두린은 황야의 땅 남쪽에 있습니다.",
+    ["Reward: a cloth robe."] =
+        "보상: 천 로브.",
+    ["A crumpled map lies on the ground in the north of the Badlands."] =
+        "구겨진 지도가 황야의 땅 북쪽 땅바닥에 떨어져 있습니다.",
+    ["A long chain of nine quests between the Badlands and Ironforge: it ends inside Uldaman with the Lost Tablets of Will, a medal and about 5,850 XP."] =
+        "황야의 땅과 아이언포지를 오가는 퀘스트 9개짜리 긴 연계 퀘스트: 울다만 안에서 잃어버린 결의의 서판으로 끝나며, 메달과 약 5,850 경험치를 받습니다.",
+    ["Prospector Ryedol, a short walk south of the map."] =
+        "발굴조사단장 라이돌은 지도에서 남쪽으로 조금 걸어가면 있습니다.",
+    ["A battered dwarven skeleton lies in the middle of the Badlands."] =
+        "황야의 땅 한가운데에 낡은 드워프 해골이 놓여 있습니다.",
+    ["Murdaloc and the Stonevault troggs camp just south of the skeleton."] =
+        "멀달록과 바위동굴일족 트로그가 해골 바로 남쪽에서 야영하고 있습니다.",
+    ["The buzzards and crag coyotes of the Badlands drop the gizzards and fangs."] =
+        "황야의 땅의 대머리수리와 바위산코요테가 모래주머니와 송곳니를 떨어뜨립니다.",
+    ["Hammertoe Grez, by the gates of Uldaman, in the north of the Badlands."] =
+        "해머토 그레즈는 황야의 땅 북쪽, 울다만 입구 옆에 있습니다.",
+    ["Magregan Deepshadow, a Shadowforge dwarf by the gates, carries the amulet; the tablet lies in an ancient chest close by."] =
+        "입구 옆의 어둠괴철로단 드워프 마그레간 딥섀도가 아뮬렛을 가지고 있고, 서판은 근처의 고대 상자 안에 있습니다.",
+    ["The Shadowforge dwarves around the gates drop the power stones."] =
+        "입구 주변의 어둠괴철로단 드워프가 마력석을 떨어뜨립니다.",
+    ["The Shadowforge dwarves may also drop a shattered necklace: use it."] =
+        "어둠괴철로단 드워프는 부서진 목걸이도 떨어뜨릴 수 있습니다: 목걸이를 사용하세요.",
+    ["Hammertoe Grez."] =
+        "해머토 그레즈.",
+    ["Prospector Ryedol."] =
+        "발굴조사단장 라이돌.",
+    ["Theldurin the Lost."] =
+        "실성한 텔두린.",
+    ["Prospector Ironband, in Loch Modan."] =
+        "발굴조사단장 아이언밴드는 모단 호수에 있습니다.",
+    ["Historian Karnik, in the Hall of Explorers of Ironforge."] =
+        "역사학자 카르닉은 아이언포지의 탐험가의 전당에 있습니다.",
+    ["Advisor Belgrum, in the Hall of Explorers."] =
+        "조언자 벨그룸은 탐험가의 전당에 있습니다.",
+    ["Historian Karnik."] =
+        "역사학자 카르닉.",
+    ["Talvash's chain ends inside Uldaman with a necklace and about 5,600 XP."] =
+        "탈바쉬의 연계 퀘스트는 울다만 안에서 끝나며, 목걸이와 약 5,600 경험치를 줍니다.",
+    ["Five silver bars: from mining, or the auction house."] =
+        "은 주괴 5개: 채광으로 얻거나 경매장에서 사세요.",
+    ["Ambassador Infernus walks with the Dark Iron dwarves south of Uldaman's gates."] =
+        "사자 인페르누스는 울다만 입구 남쪽에서 검은무쇠단 드워프와 함께 돌아다닙니다.",
+    ["Krom Stoutarm's chest stands in the dig south-west of Uldaman's gates."] =
+        "크롬 스타우트암의 상자는 울다만 입구 남서쪽의 발굴지에 있습니다.",
+    ["Carved stone urns lie around the dig and inside Uldaman."] =
+        "조각된 돌 항아리는 발굴지 주변과 울다만 안에 있습니다.",
+    ["Magenta cap clusters grow on the cave walls, south-west of the gates and inside."] =
+        "자홍색 버섯 덩어리는 입구 남서쪽과 던전 안의 동굴 벽에서 자랍니다.",
+    ["Advisor Belgrum, in the Hall of Explorers of Ironforge."] =
+        "조언자 벨그룸은 아이언포지의 탐험가의 전당에 있습니다.",
+    ["Enter Uldaman"] =
+        "울다만에 들어가세요",
+    ["The dungeon's door is at the back of the cave by Hammertoe Grez's dig."] =
+        "던전 입구는 해머토 그레즈의 발굴지 옆 동굴 안쪽 끝에 있습니다.",
+    ["A dead paladin rests just off the first great hall, down its second right-hand passage."] =
+        "죽은 성기사는 첫 번째 큰 전당에서 오른쪽 두 번째 통로로 조금 들어간 곳에 누워 있습니다.",
+    ["Baelog, the first boss, in Dig Two: the left corridor, then the room to the south."] =
+        "첫 번째 우두머리 밸로그는 제2 발굴지에 있습니다: 왼쪽 복도로 간 다음 남쪽 방으로 가세요.",
+    ["The Tablet of Will stands against a wall of Dig Three."] =
+        "결의의 서판은 제3 발굴지의 벽에 기대어 서 있습니다.",
+    ["The Gni'kiv Medallion lies in Baelog's chest, Revelosh drops the Shaft of Tsol: join them into the Staff of Prehistoria, use it in the Map Chamber, then step into Ironaya's room."] =
+        "그니키브 메달은 밸로그의 상자 안에 있고, 레벨로쉬가 티솔의 자루를 떨어뜨립니다: 둘을 합쳐 잃어버린 역사의 지팡이를 만들고, 지도의 방에서 사용한 다음 아이로나야의 방으로 들어가세요.",
+    ["The topaz is in a conspicuous urn south-east of Dig Two, the ruby in a stone chest north-west of Dig Three (it calls monsters), the sapphire on Grimlok at the end of the Stone Vault."] =
+        "토파즈는 제2 발굴지 남동쪽의 눈에 띄는 항아리 안에, 루비는 제3 발굴지 북서쪽의 돌 상자 안에 (몬스터를 불러냅니다), 사파이어는 돌 금고 끝의 그림로크에게 있습니다.",
+    ["Use Talvash's phial at his scrying bowl, in the dungeon."] =
+        "던전 안에 있는 탈바쉬의 점술 그릇에서 탈바쉬의 약병을 사용하세요.",
+    ["Archaedas, the last boss, guards the Hall of the Crafters: he drops the power source."] =
+        "마지막 우두머리 아카에다스가 장인의 전당을 지키고 있습니다: 마력원천을 떨어뜨립니다.",
+    ["The Discs of Norgannon, in the room behind Archaedas."] =
+        "아카에다스 뒤쪽 방에 있는 노르간논의 원반.",
+    ["Optional: the Discs of Norgannon, behind Archaedas, tell their story; it ends in Ironforge with potions or a bag."] =
+        "선택 사항: 아카에다스 뒤의 노르간논의 원반이 이야기를 들려줍니다. 아이언포지에서 끝나며 물약 또는 가방을 받습니다.",
+    ["Prospector Stormpike and Krom Stoutarm, in the Hall of Explorers of Ironforge."] =
+        "발굴조사단장 스톰파이크와 크롬 스타우트암은 아이언포지의 탐험가의 전당에 있습니다.",
+    ["Talvash del Kissel, in the Mystic Ward."] =
+        "탈바쉬 델 키젤은 마법 지구에 있습니다.",
+    ["High Explorer Magellas, in the Hall of Explorers."] =
+        "선임탐험가 마겔라스는 탐험가의 전당에 있습니다.",
+    ["Dinita Stonemantle, in Ironforge."] =
+        "디니타 스톤맨틀은 아이언포지에 있습니다.",
+    ["Zul'Farrak"] =
+        "줄파락",
+    ["Gryphon Master Talonaxe, at Aerie Peak, in the Hinterlands."] =
+        "그리핀 조련사 탈론액스는 동부 내륙지의 맹금의 봉우리에 있습니다.",
+    ["Optional: a chain of seven quests between the Hinterlands, the Blasted Lands and the city; the last one, an elite fight to the top of Jintha'Alor, brings a mace or leather leggings."] =
+        "선택 사항: 동부 내륙지, 저주받은 땅, 그리고 이 도시를 오가는 퀘스트 7개짜리 연계 퀘스트. 마지막 퀘스트는 진타알로 꼭대기까지 정예와 싸우며 올라가야 하며, 둔기 또는 가죽 다리보호구를 줍니다.",
+    ["The Witherbark cages stand in the troll camps of the south-west of the Hinterlands."] =
+        "마른나무껍질부족 우리는 동부 내륙지 남서쪽의 트롤 야영지에 있습니다.",
+    ["Search the Altar of Zul, in the middle of the trolls' ruins in the south of the Hinterlands."] =
+        "동부 내륙지 남쪽 트롤 폐허 한가운데의 줄의 제단을 조사하세요.",
+    ["Thadius Grimshade, at the top of Nethergarde Keep, in the Blasted Lands."] =
+        "샤디우스 그림섀이드는 저주받은 땅 네더가드 요새 꼭대기에 있습니다.",
+    ["Your mage trainer, in a capital."] =
+        "대도시의 마법사 상급자.",
+    ["Tabetha, in her house in the middle of Dustwallow Marsh."] =
+        "타베사는 먼지진흙 습지대 한가운데의 자기 집에 있습니다.",
+    ["Reward: a staff or plate shoulders."] =
+        "보상: 지팡이 또는 판금 어깨보호구.",
+    ["Wizzle Brassbolts, at the racetrack of the Shimmering Flats, in Thousand Needles."] =
+        "위즐 브라스볼츠는 버섯구름 봉우리 소금 평원의 경주로에 있습니다.",
+    ["Reward: a carrot on a stick, which makes your mount faster."] =
+        "보상: 탈것을 더 빠르게 해 주는 당근 달린 지팡이.",
+    ["Tran'rek, Trenton Lighthammer and Chief Engineer Bilgewhizzle, in Gadgetzan, in Tanaris."] =
+        "트란렉, 트렌튼 라이트해머, 선임기술자 빌지위즐은 타나리스의 가젯잔에 있습니다.",
+    ["Gadgetzan's quests: the Divino-matic Rod brings a ring or a leather helm; the other two, about 3,900 XP each."] =
+        "가젯잔의 퀘스트: 자동 탐사막대 퀘스트에서는 반지 또는 가죽 투구를, 나머지 두 퀘스트에서는 각각 약 3,900 경험치를 받습니다.",
+    ["Yeh'kinya, at Steamwheedle Port, on the east coast of Tanaris."] =
+        "예킨야는 타나리스 동쪽 해안의 스팀휘들 항구에 있습니다.",
+    ["It opens The Prophecy of Mosh'aru, about 5,250 XP."] =
+        "모쉬아루의 예언 퀘스트로 이어집니다. 약 5,250 경험치.",
+    ["Kill the vale screechers of Feralas and use Yeh'kinya's bramble on their bodies."] =
+        "페랄라스의 계곡천둥매를 처치하고 그 시체에 예킨야의 나뭇가지를 사용하세요.",
+    ["Yeh'kinya, at Steamwheedle Port."] =
+        "예킨야는 스팀휘들 항구에 있습니다.",
+    ["Enter Zul'Farrak"] =
+        "줄파락에 들어가세요",
+    ["The city's gate is in the north-west of Tanaris."] =
+        "도시 입구는 타나리스 북서쪽에 있습니다.",
+    ["The scarabs drop the shells; most of them crowd Theka the Martyr's chamber."] =
+        "왕쇠똥구리가 껍질을 떨어뜨립니다. 대부분 순교자 데카의 방에 몰려 있습니다.",
+    ["Theka the Martyr, the second boss, in the scarabs' room to the north, holds the first tablet; Hydromancer Velratha, by the pool to the south-east, the second."] =
+        "북쪽 왕쇠똥구리 방의 두 번째 우두머리 순교자 데카가 첫 번째 서판을, 남동쪽 연못가의 유체술사 벨라타가 두 번째 서판을 가지고 있습니다.",
+    ["Hydromancer Velratha also wears the Tiara of the Deep."] =
+        "유체술사 벨라타는 심연의 티아라도 쓰고 있습니다.",
+    ["Gahz'rilla rises from the pool when its gong is struck with the Mallet of Zul'Farrak, made in the Hinterlands: one of the group needs it."] =
+        "동부 내륙지에서 만드는 줄파락의 나무망치로 징을 울리면 가즈릴라가 연못에서 솟아오릅니다: 파티원 중 한 명은 망치가 있어야 합니다.",
+    ["Nekrum Gutchewer joins the fight at the top of the pyramid, when the prisoners are freed."] =
+        "피라미드 꼭대기에서 포로들이 풀려나면 네크룸 거트츄어가 싸움에 끼어듭니다.",
+    ["Sergeant Bly, one of the prisoners at the top of the pyramid: free them, defend them, then he turns on you."] =
+        "하사관 블라이는 피라미드 꼭대기에 있는 포로 중 한 명입니다: 포로들을 풀어 주고 지켜 주면, 그 뒤에 블라이가 덤벼듭니다.",
+    ["Every troll of the city may drop a troll temper; it can take more than one run."] =
+        "도시의 트롤은 누구나 트롤 경화제를 떨어뜨릴 수 있습니다. 한 번 도는 것으로는 부족할 수 있습니다.",
+    ["Tran'rek, Trenton Lighthammer and Chief Engineer Bilgewhizzle, in Gadgetzan."] =
+        "트란렉, 트렌튼 라이트해머, 선임기술자 빌지위즐은 가젯잔에 있습니다.",
+    ["Optional: an egg in the Hinterlands; it opens The God Hakkar, a quest of the Temple of Atal'Hakkar."] =
+        "선택 사항: 동부 내륙지의 알. 아탈학카르 신전 퀘스트인 학카르의 화신으로 이어집니다.",
+    ["Wizzle Brassbolts, at the Shimmering Flats."] =
+        "위즐 브라스볼츠는 소금 평원에 있습니다.",
+    ["Tabetha, in Dustwallow Marsh."] =
+        "타베사는 먼지진흙 습지대에 있습니다.",
+    ["Thadius Grimshade, in Nethergarde Keep."] =
+        "샤디우스 그림섀이드는 네더가드 요새에 있습니다.",
+    ["Wait while Thadius Grimshade performs his divination."] =
+        "샤디우스 그림섀이드가 점을 치는 동안 기다리세요.",
+    ["Gryphon Master Talonaxe, at Aerie Peak."] =
+        "그리핀 조련사 탈론액스는 맹금의 봉우리에 있습니다.",
+    ["Vile Priestess Hexx, at the top of Jintha'Alor, carries the key to Sharpbeak's cage: elite trolls all the way up."] =
+        "진타알로 꼭대기의 타락한 여사제 헥스가 뾰족부리의 우리 열쇠를 가지고 있습니다: 올라가는 길 내내 정예 트롤이 있습니다.",
+    ["The Ancient Egg lies at the top of Jintha'Alor too."] =
+        "고대의 알도 진타알로 꼭대기에 있습니다.",
+    ["Gryphon Master Talonaxe."] =
+        "그리핀 조련사 탈론액스.",
+    ["Maraudon"] =
+        "마라우돈",
+    ["Archmage Tervosh, in his tower in Theramore, in Dustwallow Marsh."] =
+        "대마법사 테르보쉬는 먼지진흙 습지대 테라모어의 자기 탑에 있습니다.",
+    ["Reward: a pendant of your choice."] =
+        "보상: 원하는 펜던트.",
+    ["Talendria and Keeper Marandis, at Nijel's Point, in the north of Desolace."] =
+        "탈렌드리아와 수호자 마란디스는 잊혀진 땅 북쪽의 나이젤의 야영지에 있습니다.",
+    ["Nijel's Point's two quests: a ring, plate gauntlets or a leather belt; then Theradras's end brings a sword, a staff or a bow."] =
+        "나이젤의 야영지의 퀘스트 두 개: 반지, 판금 건틀릿 또는 가죽 허리띠. 그다음 테라드라스를 쓰러뜨리면 검, 지팡이 또는 활을 받습니다.",
+    ["Willow, in the middle of Desolace."] =
+        "윌로우는 잊혀진 땅 한가운데에 있습니다.",
+    ["Reward: cloth, leather, mail or plate armor."] =
+        "보상: 천, 가죽, 사슬 또는 판금 방어구.",
+    ["The Centaur Pariah, an outcast in the south of Desolace."] =
+        "켄타우로스 추방자는 잊혀진 땅 남쪽에 사는 외톨이입니다.",
+    ["About 5,450 XP."] =
+        "약 5,450 경험치.",
+    ["Cavindra, on the path to Maraudon, in the west of Desolace."] =
+        "카빈드라는 잊혀진 땅 서쪽, 마라우돈으로 가는 길에 있습니다.",
+    ["Legends of Maraudon leads to the Scepter of Celebras, a shortcut into the inner falls."] =
+        "마라우돈의 전설은 셀레브라스의 홀로 이어집니다. 셀레브라스의 홀은 안쪽 폭포로 가는 지름길입니다.",
+    ["Enter Maraudon"] =
+        "마라우돈에 들어가세요",
+    ["Maraudon's caves open in the west of Desolace; inside, an orange and a purple wing lead down to the inner falls."] =
+        "마라우돈의 동굴 입구는 잊혀진 땅 서쪽에 있습니다. 안에서는 주황색 구역과 보라색 구역이 아래쪽의 안쪽 폭포로 이어집니다.",
+    ["The Shadowshard elementals of the outer caves drop the fragments."] =
+        "바깥 동굴의 음영석정령이 조각을 떨어뜨립니다.",
+    ["Fill the vial at the orange crystal pool, in the caves before the Orange wing; in the wing, use it on the stumps with red tops: the Noxxious scions come out."] =
+        "주황색 구역 앞 동굴의 주황색 수정 웅덩이에서 약병을 채우세요. 구역 안에서 윗부분이 붉은 그루터기에 약병을 사용하면 녹시온의 후예가 나옵니다.",
+    ["Every creature of Maraudon may drop a crystal carving."] =
+        "마라우돈의 생물은 누구나 수정 조각품을 떨어뜨릴 수 있습니다.",
+    ["Use the Amulet of Spirits on the Spirit of Veng, who walks the Orange wing, then kill Veng; then on the Spirit of Maraudos in the Purple wing's grotto, then kill Maraudos. Join the two gems."] =
+        "주황색 구역을 돌아다니는 벵의 영혼에게 영혼의 아뮬렛을 사용한 다음 벵을 처치하세요. 이어서 보라색 구역 동굴의 마라우도스의 영혼에게 사용한 다음 마라우도스를 처치하세요. 보석 두 개를 합치세요.",
+    ["Noxxion, the Orange wing's first boss, drops the rod; Lord Vyletongue, in a small room north of his seat in the Purple wing, the diamond."] =
+        "주황색 구역의 첫 번째 우두머리 녹시온이 막대를 떨어뜨립니다. 보라색 구역에서 자기 자리 북쪽의 작은 방에 있는 군주 바일텅이 다이아몬드를 떨어뜨립니다.",
+    ["Kill Celebras the Cursed, on the island of the Poison Falls: Celebras the Redeemed appears."] =
+        "독의 폭포 섬에 있는 저주받은 셀레브라스를 처치하세요: 회복된 셀레브라스가 나타납니다.",
+    ["Follow Celebras to his stone and wait for his incantation."] =
+        "셀레브라스를 따라 그의 돌까지 간 다음 주문을 마칠 때까지 기다리세요.",
+    ["Celebras the Redeemed, by his stone."] =
+        "회복된 셀레브라스는 자기 돌 옆에 있습니다.",
+    ["Princess Theradras, the last boss, waits at the end of Zaetar's Grave, south and down the waterfall."] =
+        "마지막 우두머리 공주 테라드라스는 남쪽 폭포 아래, 재타르의 무덤 끝에서 기다립니다.",
+    ["Zaetar's Spirit appears in the middle of Theradras's room."] =
+        "테라드라스의 방 한가운데에 재타르의 영혼이 나타납니다.",
+    ["About 6,100 XP; the seed goes to Moonglade."] =
+        "약 6,100 경험치. 씨앗은 달의 숲으로 가져갑니다.",
+    ["The Centaur Pariah, in the south of Desolace."] =
+        "켄타우로스 추방자는 잊혀진 땅 남쪽에 있습니다.",
+    ["Talendria and Keeper Marandis, at Nijel's Point."] =
+        "탈렌드리아와 수호자 마란디스는 나이젤의 야영지에 있습니다.",
+    ["Archmage Tervosh, in Theramore."] =
+        "대마법사 테르보쉬는 테라모어에 있습니다.",
+    ["Keeper Remulos, at the Shrine of Remulos, in Moonglade."] =
+        "수호자 레물로스는 달의 숲의 레물로스의 제단에 있습니다.",
+    ["The Temple of Atal'Hakkar"] =
+        "아탈학카르 신전",
+    ["Brohann Caskbelly, in the Dwarven District of Stormwind."] =
+        "브로한 캐스크벨리는 스톰윈드의 드워프 지구에 있습니다.",
+    ["Optional: a chain of eight quests from Stormwind to the Hinterlands, Tanaris and Feralas; it opens Into the Temple of Atal'Hakkar, a talisman and about 7,100 XP."] =
+        "선택 사항: 스톰윈드에서 동부 내륙지, 타나리스, 페랄라스로 이어지는 퀘스트 8개짜리 연계 퀘스트. '아탈학카르 신전으로' 퀘스트로 이어지며, 부적과 약 7,100 경험치를 줍니다.",
+    ["Find the temple: the ruins in the Pool of Tears, in the east of the Swamp of Sorrows."] =
+        "신전을 찾으세요: 슬픔의 늪 동쪽, 눈물의 연못에 있는 폐허입니다.",
+    ["Brohann Caskbelly, in Stormwind."] =
+        "브로한 캐스크벨리는 스톰윈드에 있습니다.",
+    ["Falstad Wildhammer, at Aerie Peak, in the Hinterlands."] =
+        "폴스타트 와일드해머는 동부 내륙지의 맹금의 봉우리에 있습니다.",
+    ["Rhapsody Shindigger, on the road east of Aerie Peak."] =
+        "랩소디 신디거는 맹금의 봉우리 동쪽 길가에 있습니다.",
+    ["The Atal'ai Exile, in the south of the Hinterlands."] =
+        "추방된 아탈라이트롤은 동부 내륙지 남쪽에 있습니다.",
+    ["Reward: cloth leggings or a mail helm, and about 6,550 XP."] =
+        "보상: 천 다리보호구 또는 사슬 투구, 그리고 약 6,550 경험치.",
+    ["Muigin, at Marshal's Refuge, in Un'Goro Crater."] =
+        "무이긴은 운고로 분화구의 마샬의 야영지에 있습니다.",
+    ["Muigin's chain leads to the temple's haze."] =
+        "무이긴의 연계 퀘스트는 신전의 아지랑이로 이어집니다.",
+    ["The bloodpetal plants of Un'Goro drop the petals."] =
+        "운고로의 붉은꽃잎덩굴손이 꽃잎을 떨어뜨립니다.",
+    ["Gregan Brewspewer, in the north of Feralas."] =
+        "그레간 브루스퓨는 페랄라스 북쪽에 있습니다.",
+    ["Angelas Moonbreeze, at Feathermoon Stronghold, in Feralas."] =
+        "안젤라스 문브리즈는 페랄라스의 페더문 요새에 있습니다.",
+    ["Marvon's chain opens two quests of the temple; one rewards a Hakkari urn."] =
+        "마본의 연계 퀘스트는 신전 퀘스트 두 개로 이어집니다. 그중 하나의 보상은 학카르의 단지입니다.",
+    ["Groddoc and ironfur livers in Feralas, roc gizzards in Tanaris."] =
+        "그로독 고릴라 간과 무쇠곰 간은 페랄라스에서, 로크 모래주머니는 타나리스에서 얻습니다.",
+    ["Marvon Rivetseeker, in Tanaris, south of Gadgetzan."] =
+        "마본 리벳시커는 타나리스, 가젯잔 남쪽에 있습니다.",
+    ["Marvon's chest, in his old workshop in Ratchet, holds the stone circle."] =
+        "톱니항에 있는 마본의 옛 작업장의 궤짝에 돌무리가 들어 있습니다.",
+    ["Marvon Rivetseeker, in Tanaris."] =
+        "마본 리벳시커는 타나리스에 있습니다.",
+    ["Yeh'kinya, at Steamwheedle Port, in Tanaris."] =
+        "예킨야는 타나리스의 스팀휘들 항구에 있습니다.",
+    ["The Ancient Egg lies at the top of Jintha'Alor, in the Hinterlands, among elite trolls."] =
+        "고대의 알은 동부 내륙지 진타알로 꼭대기, 정예 트롤들 사이에 있습니다.",
+    ["Reward: a plate helm, a cloth circlet or a dagger, and about 7,900 XP."] =
+        "보상: 판금 투구, 천 머리장식 또는 단검, 그리고 약 7,900 경험치.",
+    ["Rhapsody Shindigger, in the Hinterlands."] =
+        "랩소디 신디거는 동부 내륙지에 있습니다.",
+    ["The Atal'ai tablets lie in the ruins around the Pool of Tears, and inside the temple."] =
+        "아탈라이 서판은 눈물의 연못 주변 폐허와 신전 안에 있습니다.",
+    ["Enter the Temple of Atal'Hakkar"] =
+        "아탈학카르 신전에 들어가세요",
+    ["The temple lies sunken in the Pool of Tears, in the east of the Swamp of Sorrows: swim down to the ruins' stairs."] =
+        "신전은 슬픔의 늪 동쪽의 눈물의 연못에 가라앉아 있습니다: 폐허의 계단까지 헤엄쳐 내려가세요.",
+    ["The murk worms, deep lurkers and oozes of the temple drop the haze."] =
+        "신전의 진흙미늘벌레, 지하껍질괴물, 수액괴물이 아지랑이를 떨어뜨립니다.",
+    ["Hall of Serpents: use the six statues in this order: south, north, south-west, south-east, north-west, north-east; Atal'alarion appears. The Idol of Hakkar stands in the middle of the Pit of Refuse."] =
+        "뱀의 전당: 석상 여섯 개를 남쪽, 북쪽, 남서쪽, 남동쪽, 북서쪽, 북동쪽 순서로 사용하세요. 아탈알라리온이 나타납니다. 학카르 신상은 쓰레기 구덩이 한가운데에 있습니다.",
+    ["Climb the stairs of the Pit of Refuse: the Altar of Hakkar waits up there."] =
+        "쓰레기 구덩이의 계단을 올라가세요: 위에 학카르 제단이 있습니다.",
+    ["Kill the six troll elites on the balconies first: Jammal'an's barrier falls; he waits south-east of the Pit of Sacrifice."] =
+        "먼저 발코니의 정예 트롤 여섯을 처치하세요: 잠말란의 보호막이 사라집니다. 잠말란은 희생의 구덩이 남동쪽에서 기다립니다.",
+    ["The Shade of Eranikus, at the end of the south path, may drop his essence: use it."] =
+        "남쪽 길 끝의 에라니쿠스의 사령이 정수를 떨어뜨릴 수 있습니다: 정수를 사용하세요.",
+    ["The Essence Font, in the north-east corner of his room."] =
+        "그의 방 북동쪽 구석에 있는 정수의 샘.",
+    ["Use the Oathstone of Ysera's Dragonflight it gives you."] =
+        "거기서 받은 이세라 용군단의 서약의 돌을 사용하세요.",
+    ["Keep the Chained Essence of Eranikus, the font's reward: Itharius asks for it."] =
+        "정수의 샘의 보상인 속박된 에라니쿠스의 정수를 버리지 말고 가지고 있으세요: 이타리우스가 요구합니다.",
+    ["Use the Egg of Hakkar by the skeleton in the Sanctum of the Fallen God, south-west: Hakkari bloodkeepers come, their blood puts out the four eternal flames, then the Avatar of Hakkar comes; his essence fills the egg."] =
+        "남서쪽 몰락한 신의 성소에 있는 해골 옆에서 학카르의 알을 사용하세요: 학카르 수호천둥매가 몰려오고, 그 피로 영원의 불꽃 네 개를 끄면 학카르의 화신이 나타납니다. 화신의 정수가 알을 채웁니다.",
+    ["Itharius, a green dragon in the south-west of the Swamp of Sorrows."] =
+        "이타리우스는 슬픔의 늪 남서쪽에 있는 녹색용입니다.",
+    ["The Atal'ai Exile, in the Hinterlands."] =
+        "추방된 아탈라이트롤은 동부 내륙지에 있습니다.",
+    ["The beasts of Un'Goro drop the bloodpetal sprouts."] =
+        "운고로의 야수가 붉은꽃잎 씨앗을 떨어뜨립니다.",
+    ["Umbranse the Spiritspeaker, in the east of Winterspring."] =
+        "영매 엄브런스는 여명의 설원 동쪽에 있습니다.",
+    ["Blackrock Depths"] =
+        "검은바위 나락",
+    ["Royal Historian Archesonus, in the Hall of Explorers of Ironforge."] =
+        "왕실사학자 아케소누스는 아이언포지의 탐험가의 전당에 있습니다.",
+    ["The royal historian's chain leads to Kharan Mighthammer, then to the emperor and the princess: King Magni's reward and about 9,650 XP at its end."] =
+        "왕실사학자의 연계 퀘스트는 카란 마이트해머로, 이어서 제왕과 공주로 이어집니다: 끝에 국왕 마그니의 보상과 약 9,650 경험치를 받습니다.",
+    ["Listen to the royal historian."] =
+        "왕실사학자의 이야기를 들으세요.",
+    ["Ragnar Thunderbrew, in Kharanos, in Dun Morogh."] =
+        "라그나르 썬더브루는 던 모로의 카라노스에 있습니다.",
+    ["Reward: a two-handed axe or a mace, or dark dwarven lager."] =
+        "보상: 양손 도끼 또는 둔기, 또는 검은 드워프 맥주.",
+    ["Kalaran Windblade, in the middle of the Searing Gorge."] =
+        "칼라란 윈드블레이드는 이글거리는 협곡 한가운데에 있습니다.",
+    ["Optional: ten quests in the Searing Gorge before A Taste of Flame, which brings a cloth cape or sash or leather shoulders."] =
+        "선택 사항: 화염의 맛 전에 이글거리는 협곡에서 퀘스트 10개를 합니다. 화염의 맛에서는 천 망토나 장식띠, 또는 가죽 어깨보호구를 받습니다.",
+    ["Listen to Kalaran Windblade's story."] =
+        "칼라란 윈드블레이드의 이야기를 들으세요.",
+    ["The fire elementals of the Searing Gorge drop the hearts of flame; the golems, the oil."] =
+        "이글거리는 협곡의 불의 정령이 화염의 심장을, 골렘이 기름을 떨어뜨립니다.",
+    ["The Dark Iron dwarves of the gorge carry the thorium plated daggers."] =
+        "협곡의 검은무쇠단 드워프가 토륨 도금 단검을 가지고 있습니다.",
+    ["The Twilight cultists of the gorge carry the symbols of Ragnaros."] =
+        "협곡의 황혼의망치단 이교도가 라그나로스의 상징을 가지고 있습니다.",
+    ["Listen to Kalaran Windblade."] =
+        "칼라란 윈드블레이드의 이야기를 들으세요.",
+    ["Use the Torch of Retribution beside Kalaran."] =
+        "칼라란 옆의 응보의 횃불을 사용하세요.",
+    ["Squire Maltrake, beside Kalaran."] =
+        "수습기사 몰트레이크는 칼라란 옆에 있습니다.",
+    ["Light the four sentry braziers on the Dark Iron watchtowers of the gorge."] =
+        "협곡의 검은무쇠단 감시탑에 있는 감시의 화롯불 네 개에 불을 붙이세요.",
+    ["The Hoard of the Black Dragonflight, beside Squire Maltrake."] =
+        "수습기사 몰트레이크 옆의 검은용군단의 보물.",
+    ["The ghost of Franclorn Forgewright, inside Blackrock Mountain, by the way down to the depths."] =
+        "프랑클론 포지라이트의 유령은 검은바위 산 안, 나락으로 내려가는 길 옆에 있습니다.",
+    ["Franclorn's quest brings the Shadowforge Key, which opens doors of the depths."] =
+        "프랑클론의 퀘스트에서 나락의 문을 여는 어둠괴철로단 열쇠를 받습니다.",
+    ["Use the Thaurissan relic in the ruins of Thaurissan, in the middle of the Burning Steppes."] =
+        "불타는 평원 한가운데의 타우릿산의 폐허에서 타우릿산 유물을 사용하세요.",
+    ["Yuka Screwspigot and Maxwort Uberglint, at Flame Crest, in the north of the Burning Steppes."] =
+        "유카 스크류스피곳과 맥스워트 우버글린트는 불타는 평원 북쪽의 화염 마루에 있습니다.",
+    ["Flame Crest's two quests: Ribbly's head brings leather shoulders, cloth boots or mail armor."] =
+        "화염 마루의 퀘스트 두 개: 리블리의 머리를 가져가면 가죽 어깨보호구, 천 장화 또는 사슬 방어구를 받습니다.",
+    ["Jalinda Sprig and Oralius, at Morgan's Vigil, in the east of the Burning Steppes."] =
+        "잘린다 스프리그와 랄리우스는 불타는 평원 동쪽의 모건의 터에 있습니다.",
+    ["Morgan's Vigil's quests: Incendius! brings armor of any kind, The Good Stuff a fanny pack of loot."] =
+        "모건의 터의 퀘스트: 인센디우스!에서는 종류를 가리지 않는 방어구를, 좋은 물건에서는 전리품이 든 벨트주머니를 받습니다.",
+    ["Cyrus Therepentous, in the far east of the Burning Steppes."] =
+        "키루스 테레펜터스는 불타는 평원 동쪽 끝에 있습니다.",
+    ["A frenzied black drake of the steppes drops the molt; then talk to Cyrus."] =
+        "평원의 광포한 검은 비룡이 허물을 떨어뜨립니다. 그런 다음 키루스와 대화하세요.",
+    ["Helendis Riverhorn, at Morgan's Vigil."] =
+        "헬렌디스 리버혼은 모건의 터에 있습니다.",
+    ["Optional: eight quests between the steppes, Lakeshire and Stormwind before Marshal Windsor, whose Jail Break! brings a sword or a dagger among its rewards, and about 7,750 XP."] =
+        "선택 사항: 치안대장 윈저에 앞서 평원, 레이크샤이어, 스톰윈드를 오가는 퀘스트 8개를 합니다. 윈저의 탈옥! 보상 중에는 검 또는 단검이 있으며, 약 7,750 경험치를 줍니다.",
+    ["The black dragonkin of the steppes' north."] =
+        "평원 북쪽의 검은용족.",
+    ["Magistrate Solomon, in the town hall of Lakeshire, in Redridge."] =
+        "집정관 솔로몬은 붉은마루 산맥 레이크샤이어의 마을 회관에 있습니다.",
+    ["Highlord Bolvar Fordragon, in Stormwind Keep."] =
+        "대영주 볼바르 폴드라곤은 스톰윈드 왕궁에 있습니다.",
+    ["Talk to Lady Katrana Prestor, beside the king."] =
+        "국왕 옆의 여군주 카트라나 프레스톨과 대화하세요.",
+    ["Magistrate Solomon, in Lakeshire."] =
+        "집정관 솔로몬은 레이크샤이어에 있습니다.",
+    ["Marshal Maxwell, at Morgan's Vigil."] =
+        "치안대장 맥스웰은 모건의 터에 있습니다.",
+    ["Talk to Ragged John, at Flame Crest."] =
+        "화염 마루의 털보 존과 대화하세요.",
+    ["Royal Historian Archesonus, in Ironforge."] =
+        "왕실사학자 아케소누스는 아이언포지에 있습니다.",
+    ["Overmaster Pyron walks the bottom of Blackrock Mountain, before the depths' door."] =
+        "멸망의 파이론은 검은바위 산 아래쪽, 나락 입구 앞을 돌아다닙니다.",
+    ["Enter Blackrock Depths"] =
+        "검은바위 나락에 들어가세요",
+    ["Blackrock Mountain opens in the west of the Burning Steppes; inside, the depths' door is at the bottom of the mountain."] =
+        "검은바위 산 입구는 불타는 평원 서쪽에 있습니다. 산 안에서 나락 입구는 산 맨 아래에 있습니다.",
+    ["High Interrogator Gerstahn, in a back room on the right of the Detention Block, carries the cell key; Kharan Mighthammer sits in the second cell on the right of the tunnel."] =
+        "감금 구역 오른쪽 안쪽 방의 대심문관 게르스탄이 감방 열쇠를 가지고 있습니다. 카란 마이트해머는 통로 오른쪽 두 번째 감방에 있습니다.",
+    ["Let Kharan tell his story."] =
+        "카란이 이야기를 마칠 때까지 들으세요.",
+    ["Marshal Windsor, two cells further."] =
+        "치안대장 윈저는 감방 두 칸 더 안쪽에 있습니다.",
+    ["The Anvilrage dwarves of the first rooms may drop a crumpled note: read it."] =
+        "첫 방들의 성난모루단 드워프가 꼬깃꼬깃한 쪽지를 떨어뜨릴 수 있습니다: 쪽지를 읽으세요.",
+    ["Marshal Windsor, in his cell."] =
+        "치안대장 윈저는 자기 감방에 있습니다.",
+    ["Fineous Darkvire, in the lower Hall of Crafting, carries Ironfel; the Monument of Franclorn Forgewright stands at the dead end past the Shrine of Thaurissan."] =
+        "제작의 전당 아래층의 파이너스 다크바이어가 무쇠지옥을 가지고 있습니다. 프랑클론 포지라이트의 기념비는 타우릿산의 제단을 지나 막다른 곳에 있습니다.",
+    ["The Monument of Franclorn Forgewright."] =
+        "프랑클론 포지라이트의 기념비.",
+    ["Bael'Gar waits at the end of the Dark Iron Highway: use Cyrus's molt on his body."] =
+        "밸가르는 검은무쇠 대로 끝에서 기다립니다: 그의 시체에 키루스의 허물을 사용하세요.",
+    ["General Angerforge, down the stairs of the West Garrison, and Golem Lord Argelmach, in the Manufactory, carry Windsor's lost information."] =
+        "서부 주둔지 계단 아래의 사령관 앵거포지와 제조소의 골렘 군주 아젤마크가 윈저의 잃어버린 정보를 가지고 있습니다.",
+    ["Free Marshal Windsor and follow him through the Detention Block and the Halls of the Law."] =
+        "치안대장 윈저를 풀어 주고 감금 구역과 법의 전당을 지나 그를 따라가세요.",
+    ["Mistress Nagmara, in the Grim Guzzler tavern."] =
+        "지배인 나그마라는 험상궂은 주정뱅이 선술집에 있습니다.",
+    ["Optional: Mistress Nagmara's love potion needs herbs, silver veins of giants and water of Un'Goro's hot springs; it brings cloth bracers or a leather belt."] =
+        "선택 사항: 지배인 나그마라의 사랑의 묘약에는 약초, 거인의 은 광석, 운고로 온천의 물이 필요합니다. 천 손목보호구 또는 가죽 허리띠를 받습니다.",
+    ["Ribbly Screwspigot sits at the bottom of the Grim Guzzler: talk to him, then fight him."] =
+        "리블리 스크류스피곳은 험상궂은 주정뱅이 선술집 아래층에 있습니다: 대화한 다음 싸우세요.",
+    ["Break the three Thunderbrew lager kegs in a side room of the lower Grim Guzzler: Hurley Blackbreath comes."] =
+        "험상궂은 주정뱅이 선술집 아래층 옆방의 썬더브루 맥주통 세 개를 부수세요: 헐레이 블랙브레스가 나타납니다.",
+    ["The relic coffer keys drop from the dwarves; the twelve coffers of the Black Vault call Watchman Doomgrip, who opens the Heart's vault."] =
+        "드워프가 유물 금고 열쇠를 떨어뜨립니다. 검은 금고의 금고 열두 개를 열면 보초 둠그립이 나타나며, 그가 산의 정수가 든 금고를 엽니다.",
+    ["The Anvilrage dwarves drop the fanny packs."] =
+        "성난모루단 드워프가 벨트주머니를 떨어뜨립니다.",
+    ["King Magni Bronzebeard, in Ironforge."] =
+        "국왕 마그니 브론즈비어드는 아이언포지에 있습니다.",
+    ["Jalinda Sprig, at Morgan's Vigil."] =
+        "잘린다 스프리그는 모건의 터에 있습니다.",
+    ["Gromsblood, from herbalism or the auction house; giant silver veins from the giants of Azshara; the vial filled at the Golakka Hot Springs of Un'Goro Crater."] =
+        "그롬의 피는 약초채집으로 얻거나 경매장에서 사고, 거대한 은 광석은 아즈샤라의 거인에게서 얻고, 약병은 운고로 분화구의 골락카 간헐천에서 채웁니다.",
+    ["Enter Blackrock Depths again"] =
+        "다시 검은바위 나락에 들어가세요",
+    ["Lord Incendius waits at the Black Anvil, in Shadowforge City."] =
+        "불의군주 인센디우스는 어둠괴철로 도시의 검은 모루에서 기다립니다.",
+    ["Mistress Nagmara, in the Grim Guzzler."] =
+        "지배인 나그마라는 험상궂은 주정뱅이 선술집에 있습니다.",
+    ["Emperor Dagran Thaurissan, the last boss, sits in the Imperial Seat: keep Princess Moira alive while you fight him."] =
+        "마지막 우두머리 제왕 다그란 타우릿산은 제왕의 왕좌에 앉아 있습니다: 그와 싸우는 동안 공주 모이라가 죽지 않게 하세요.",
+    ["Princess Moira Bronzebeard, in the Imperial Seat."] =
+        "공주 모이라 브론즈비어드는 제왕의 왕좌에 있습니다.",
+    ["Yuka Screwspigot and Maxwort Uberglint, at Flame Crest."] =
+        "유카 스크류스피곳과 맥스워트 우버글린트는 화염 마루에 있습니다.",
+    ["Cyrus Therepentous, in the far east of the steppes."] =
+        "키루스 테레펜터스는 평원 동쪽 끝에 있습니다.",
+    ["Jalinda Sprig and Oralius, at Morgan's Vigil."] =
+        "잘린다 스프리그와 랄리우스는 모건의 터에 있습니다.",
+    ["Marshal Maxwell."] =
+        "치안대장 맥스웰.",
+    ["Ragnar Thunderbrew, in Kharanos."] =
+        "라그나르 썬더브루는 카라노스에 있습니다.",
+    ["Blackrock Spire"] =
+        "검은바위 첨탑",
+    ["Prospector Ironboot, at Steamwheedle Port, in Tanaris."] =
+        "발굴조사단장 아이언부트는 타나리스의 스팀휘들 항구에 있습니다.",
+    ["Yeh'kinya's chain from Zul'Farrak and the sunken temple goes on: two tablets in the Eastern Plaguelands, two inside the spire, then a cloak."] =
+        "줄파락과 가라앉은 사원에서 이어진 예킨야의 연계 퀘스트가 계속됩니다: 동부 역병지대에서 서판 두 개, 첨탑 안에서 두 개를 찾은 다음 망토를 받습니다.",
+    ["The third and fourth tablets lie in the troll ruins of the north of the Eastern Plaguelands."] =
+        "세 번째와 네 번째 서판은 동부 역병지대 북쪽의 트롤 폐허에 있습니다.",
+    ["Prospector Ironboot, at Steamwheedle Port."] =
+        "발굴조사단장 아이언부트는 스팀휘들 항구에 있습니다.",
+    ["Kibler, at Flame Crest, in the north of the Burning Steppes."] =
+        "키블러는 불타는 평원 북쪽의 화염 마루에 있습니다.",
+    ["Kibler's two quests: a worg pup or a smolderweb spider, pets that follow you."] =
+        "키블러의 퀘스트 두 개: 따라다니는 애완동물인 새끼 검은늑대 또는 불그물거미.",
+    ["Ragged John, at Flame Crest."] =
+        "털보 존은 화염 마루에 있습니다.",
+    ["Reward: Ragged John's neverending cup, and about 9,950 XP."] =
+        "보상: 털보 존의 마법 술잔, 그리고 약 9,950 경험치.",
+    ["Helendis Riverhorn, at Morgan's Vigil, in the east of the Burning Steppes."] =
+        "헬렌디스 리버혼은 불타는 평원 동쪽의 모건의 터에 있습니다.",
+    ["Reward: a cloth robe, a leather jerkin or a mail breastplate."] =
+        "보상: 천 로브, 가죽 조끼 또는 사슬 흉갑.",
+    ["Enter Blackrock Spire"] =
+        "검은바위 첨탑에 들어가세요",
+    ["Blackrock Mountain opens in the west of the Burning Steppes; inside, the spire's door is at the top of the mountain."] =
+        "검은바위 산 입구는 불타는 평원 서쪽에 있습니다. 산 안에서 첨탑 입구는 산 꼭대기에 있습니다.",
+    ["Warosh, a troll who walks near the spire's entrance."] =
+        "와로쉬는 첨탑 입구 근처를 걸어 다니는 트롤입니다.",
+    ["Reward: a charm, after a fight with Urok Doomhowl."] =
+        "보상: 우로크 둠하울과 싸운 뒤 받는 부적.",
+    ["Vaelan, a Scarshield infiltrator, stands up the ramp near the spire's entrance."] =
+        "방패부대 잠입자인 밸란은 첨탑 입구 근처의 비탈길 위에 서 있습니다.",
+    ["Optional: the Seal of Ascension, the key to the Upper Spire, a raid of ten; its last part is in Dustwallow Marsh."] =
+        "선택 사항: 10인 공격대 던전인 검은바위 첨탑 상층의 열쇠, 승천의 인장. 마지막 단계는 먼지진흙 습지대에서 진행합니다.",
+    ["Bijou hides down in the trench after Hordemar City's second bridge."] =
+        "비쥬는 호드마르 시의 두 번째 다리를 지나 참호 아래에 숨어 있습니다.",
+    ["Bijou's chain leads to Maxwell's Mission: armor of any kind, after a second visit."] =
+        "비쥬의 연계 퀘스트는 맥스웰의 임무로 이어집니다: 두 번째로 방문한 뒤 종류를 가리지 않는 방어구를 받습니다.",
+    ["Her belongings lie in a chest on the bottom tier of Hordemar City; it can also stand as far as the Skitterweb Tunnels."] =
+        "그녀의 소지품은 호드마르 시 맨 아래층의 상자 안에 있습니다. 상자가 멀리 잰걸음거미 굴에 있을 수도 있습니다.",
+    ["Back to Bijou."] =
+        "비쥬에게 돌아가세요.",
+    ["The fifth tablet hangs on a wall of Shadow Hunter Vosh'gajin's room, the sixth on a wall of War Master Voone's room."] =
+        "다섯 번째 서판은 어둠사냥꾼 보쉬가진의 방 벽에, 여섯 번째 서판은 대장군 부네의 방 벽에 걸려 있습니다.",
+    ["Take the Roughshod Pike from a weapon rack on the left wall after Hordemar City's second bridge, join it to Highlord Omokk's head, and use it on the skull pile up the ramp past Mother Smolderweb: ogres come, then Urok Doomhowl."] =
+        "호드마르 시의 두 번째 다리를 지나 왼쪽 벽의 무기 거치대에서 날카로운 장창을 가져가 대군주 오모크의 머리와 합친 다음, 여왕 불그물거미를 지나 비탈길 위의 해골 더미에 사용하세요: 오우거들이 나온 다음 우로크 둠하울이 나옵니다.",
+    ["The spire spider eggs lie in the upper Skitterweb Tunnels."] =
+        "첨탑 거미알은 잰걸음거미 굴 위쪽에 있습니다.",
+    ["Use the empty cage on a Bloodaxe worg pup, in Halycon's room."] =
+        "할리콘의 방에서 도끼부대 새끼 검은늑대에게 빈 우리를 사용하세요.",
+    ["Halycon, the worgs' mother, holds Halycon's Lair."] =
+        "검은늑대의 어미 할리콘이 할리콘의 굴을 지키고 있습니다.",
+    ["The Scarshield dwarves drop the unadorned seal; Highlord Omokk, north of Mok'Doom, may drop the Spirestone gem, War Master Voone, at the bottom of Tazz'Alaor, the Smolderthorn gem, and Overlord Wyrmthalak, the last boss, the Bloodaxe gem."] =
+        "방패부대 드워프가 가공하지 않은 인장을 떨어뜨립니다. 목둠 북쪽의 대군주 오모크는 뾰족바위일족 보석을, 타즈알라오르 아래쪽의 대장군 부네는 가시불꽃부족 보석을, 마지막 우두머리 대군주 웜타라크는 도끼부대 보석을 떨어뜨릴 수 있습니다.",
+    ["Vaelan, near the entrance."] =
+        "밸란은 입구 근처에 있습니다.",
+    ["Warosh, near the entrance."] =
+        "와로쉬는 입구 근처에 있습니다.",
+    ["Let Mother Smolderweb poison you and do not cure it: the poison must last until Ragged John, at Flame Crest."] =
+        "여왕 불그물거미의 독에 걸린 다음 치료하지 마세요: 화염 마루의 털보 존에게 갈 때까지 독이 남아 있어야 합니다.",
+    ["Enter Blackrock Spire again"] =
+        "다시 검은바위 첨탑에 들어가세요",
+    ["Highlord Omokk, north of Mok'Doom; War Master Voone, at the bottom of Tazz'Alaor; Overlord Wyrmthalak, the last boss, in the Chamber of Battle."] =
+        "대군주 오모크는 목둠 북쪽에, 대장군 부네는 타즈알라오르 아래쪽에, 마지막 우두머리 대군주 웜타라크는 전투의 방에 있습니다.",
+    ["Kibler and Ragged John, at Flame Crest."] =
+        "키블러와 털보 존은 화염 마루에 있습니다.",
+    ["Helendis Riverhorn and Marshal Maxwell, at Morgan's Vigil."] =
+        "헬렌디스 리버혼과 치안대장 맥스웰은 모건의 터에 있습니다.",
+    ["Beat Emberstrife, a dragon of the Wyrmbog in Dustwallow Marsh, until his will breaks, then place the seal before him."] =
+        "먼지진흙 습지대 용의 늪에 사는 용 엠버스트라이프의 의지가 꺾일 때까지 싸운 다음, 그 앞에 인장을 놓으세요.",
+    ["Vaelan, near the spire's entrance."] =
+        "밸란은 첨탑 입구 근처에 있습니다.",
+    ["Yeh'kinya, beside him."] =
+        "예킨야는 그 옆에 있습니다.",
+    ["Dire Maul"] =
+        "혈투의 전장",
+    ["A herald of your capital: Crier Goodman in Stormwind, Courier Hammerfall in Ironforge, Herald Moonstalker in Darnassus."] =
+        "대도시의 전령: 스톰윈드의 포고꾼 굿맨, 아이언포지의 급사 해머폴, 다르나서스의 전령 문스토커.",
+    ["Optional: a lead to Feathermoon Stronghold, about 1,500 XP."] =
+        "선택 사항: 페더문 요새로 안내하는 퀘스트, 약 1,500 경험치.",
+    ["Latronicus Moonspear, at Feathermoon Stronghold, in Feralas."] =
+        "라트로니쿠스 문스피어는 페랄라스의 페더문 요새에 있습니다.",
+    ["Latronicus Moonspear and Scholar Runethorn, at Feathermoon Stronghold."] =
+        "라트로니쿠스 문스피어와 학자 룬쏜은 페더문 요새에 있습니다.",
+    ["Lethtendris's Web brings a dagger; Elven Legends, about 8,300 XP for a search in the library."] =
+        "레스텐드리스의 그물에서는 단검을 받고, 엘프의 전설에서는 도서관을 조사해 약 8,300 경험치를 받습니다.",
+    ["Azj'Tordin, at Lariss Pavilion, in the east of Feralas."] =
+        "아즈토르딘은 페랄라스 동쪽의 라리스 정자에 있습니다.",
+    ["Reward: a two-handed sword or leather boots; Pusillin also drops the Crescent Key, which opens the west and north wings."] =
+        "보상: 양손 검 또는 가죽 장화. 푸실린은 서쪽과 북쪽 구역을 여는 초승달 열쇠도 떨어뜨립니다.",
+    ["Rabine Saturna, in Nighthaven, in Moonglade."] =
+        "라빈 사투르나는 달의 숲의 나이트헤이븐에 있습니다.",
+    ["Optional: a reliquary in Silithus for Rabine Saturna in Moonglade, then a shard of the Felvine: a shield or an off-hand lexicon."] =
+        "선택 사항: 실리더스의 성물함을 달의 숲의 라빈 사투르나에게 가져간 다음, 악령덩굴 조각을 가져갑니다: 방패 또는 보조장비 사전.",
+    ["The Reliquary of Purity lies in the ruins of Southwind Village, in Silithus."] =
+        "정화의 성물함은 실리더스의 남풍 마을 폐허에 있습니다.",
+    ["Rabine Saturna, in Nighthaven."] =
+        "라빈 사투르나는 나이트헤이븐에 있습니다.",
+    ["Enter Dire Maul"] =
+        "혈투의 전장에 들어가세요",
+    ["The ruins of Dire Maul stand in the middle of Feralas; the east, west and north wings each have their own door."] =
+        "혈투의 전장 폐허는 페랄라스 한가운데에 있습니다. 동쪽, 서쪽, 북쪽 구역에는 각각 입구가 따로 있습니다.",
+    ["East: talk to Pusillin each time he stops; he runs five times, then fights on a small platform up a ramp and drops the book."] =
+        "동쪽: 푸실린이 멈출 때마다 말을 거세요. 다섯 번 도망친 다음 비탈길 위의 작은 단에서 싸우며, 책을 떨어뜨립니다.",
+    ["East: Lethtendris waits on the upper level of the room left of the ramps between the Hidden Reach and the Warpwood Quarter."] =
+        "동쪽: 레스텐드리스는 숨겨진 구역과 굽이나무 지구 사이 비탈길 왼쪽 방의 위층에서 기다립니다.",
+    ["East: kill Zevrim Thornhoof, then Ironbark the Redeemed, in the Conservatory, opens the door to Alzzin the Wildshaper; after Alzzin, use the reliquary by the twisted vine."] =
+        "동쪽: 제브림 쏜후프를 처치하면 온실의 회복된 무쇠껍질이 칼날바람 알진에게 가는 문을 엽니다. 알진을 처치한 뒤 뒤틀린 덩굴 옆에서 성물함을 사용하세요.",
+    ["West: the Shen'dralar Ancient stands above the platform over Tendris Warpwood."] =
+        "서쪽: 셴드랄라 고대인은 굽이나무 텐드리스가 있는 단 위쪽에 서 있습니다.",
+    ["About 9,950 XP; its treasure, a chest in the library, brings a two-handed mace, a mail helm or leather boots."] =
+        "약 9,950 경험치. 도서관에 있는 보물 상자에서 양손 둔기, 사슬 투구 또는 가죽 장화를 얻습니다.",
+    ["West: destroy the five pylons of the Capital Gardens, the Court of the Highborne and the Prison; Immol'thar waits in the Prison, behind Tendris (the Crescent Key opens it); Prince Tortheldrin, under the entry platform of the Athenaeum."] =
+        "서쪽: 수도 정원, 명가 궁정, 감옥에 있는 수정탑 다섯 개를 파괴하세요. 이몰타르는 텐드리스 뒤쪽 감옥에서 기다리고 (초승달 열쇠로 엽니다), 왕자 토르텔드린은 학술원 입구 단 아래에 있습니다.",
+    ["West: the treasure is a big stone chest under the ramp of the Athenaeum."] =
+        "서쪽: 보물은 학술원 비탈길 아래의 커다란 돌 상자입니다.",
+    ["West: through the Conservatory Door (the Crescent Key opens it), the remains lie by a dead elf and a bookcase, in the north of the Athenaeum."] =
+        "서쪽: 온실 문 (초승달 열쇠로 엽니다)을 지나면, 학술원 북쪽의 죽은 엘프와 책장 옆에 유해가 있습니다.",
+    ["North: Knot Thimblejack is chained in the north-east corner of the Halls of Destruction."] =
+        "북쪽: 노트 팀블잭은 파괴의 전당 북동쪽 구석에 사슬로 묶여 있습니다.",
+    ["About 6,600 XP for a key the Gordok guards carry."] =
+        "고르독 경비병이 가진 열쇠 하나로 약 6,600 경험치.",
+    ["Optional: the Gordok Ogre Suit needs runecloth, rugged leather and rune threads."] =
+        "선택 사항: 고르독 오우거 위장복에는 룬무늬 옷감, 질긴 가죽, 룬 실이 필요합니다.",
+    ["North: the Gordok guards Mol'dar, Slip'kik and Fengus, and Captain Kromcrush, carry the shackle key."] =
+        "북쪽: 고르독 경비병 몰다르, 슬립킥, 펜구스와 대장 크롬크러쉬가 족쇄 열쇠를 가지고 있습니다.",
+    ["Knot Thimblejack."] =
+        "노트 팀블잭.",
+    ["North: the ogre tannin lies up the ramp above Knot, in the north-west corner: one per group."] =
+        "북쪽: 오우거 무두질 약품은 노트 위쪽 비탈길 위, 북서쪽 구석에 있습니다: 파티당 하나뿐입니다.",
+    ["North: Captain Kromcrush, once King Gordok is dead."] =
+        "북쪽: 왕 고르독이 죽은 뒤의 대장 크롬크러쉬.",
+    ["Optional, after a tribute run (King Gordok dead, his guards alive): gloves of any kind."] =
+        "선택 사항, 공물 공략 뒤 (왕 고르독은 죽고 경비병은 살아 있는 상태): 종류를 가리지 않는 장갑.",
+    ["The Gauntlet of Gordok Might lies in the Prince's chest, in the Athenaeum of the west wing."] =
+        "권력의 고르독 건틀릿은 서쪽 구역 학술원에 있는 왕자의 상자 안에 있습니다.",
+    ["North: Stomper Kreeg, after a tribute run."] =
+        "북쪽: 공물 공략 뒤의 천둥발 크리그.",
+    ["Azj'Tordin, at Lariss Pavilion."] =
+        "아즈토르딘은 라리스 정자에 있습니다.",
+    ["Latronicus Moonspear, at Feathermoon Stronghold."] =
+        "라트로니쿠스 문스피어는 페더문 요새에 있습니다.",
+    ["Scholar Runethorn, at Feathermoon Stronghold."] =
+        "학자 룬쏜은 페더문 요새에 있습니다.",
+    ["Scholomance"] =
+        "스칼로맨스",
+    ["Commander Ashlam Valorfist, at Chillwind Camp, in the Western Plaguelands."] =
+        "사령관 아쉬람 발러피스트는 서부 역병지대의 서리바람 야영지에 있습니다.",
+    ["Optional: the chain of the Skeleton Key, which opens Scholomance's door: one key per group is enough. It goes through the Plaguelands, Gadgetzan and Un'Goro."] =
+        "선택 사항: 스칼로맨스의 문을 여는 해골 열쇠 연계 퀘스트: 열쇠는 파티당 하나면 충분합니다. 역병지대, 가젯잔, 운고로를 거칩니다.",
+    ["The skeletal flayers and slavering ghouls of Sorrow Hill, in the south of the Western Plaguelands."] =
+        "서부 역병지대 남쪽 슬픔의 언덕의 해골 타작꾼과 걸신들린 구울.",
+    ["Mark the four watchtowers of Andorhal with the beacon torch, standing in each doorway."] =
+        "안도할의 감시탑 네 곳의 출입구에 각각 서서 신호 횃불로 표시하세요.",
+    ["Alchemist Arbington, at Chillwind Camp."] =
+        "연금술사 알빙턴은 서리바람 야영지에 있습니다.",
+    ["The undead of the Western Plaguelands drop the skeletal fragments."] =
+        "서부 역병지대의 언데드가 해골 파편을 떨어뜨립니다.",
+    ["Krinkle Goodsteel, in Gadgetzan, in Tanaris: bring 15 gold."] =
+        "크린클 굿스틸은 타나리스의 가젯잔에 있습니다: 15골드를 챙겨 가세요.",
+    ["Bring two thorium bars to the top of Fire Plume Ridge, in Un'Goro Crater, and use the mold by the lava lake."] =
+        "토륨 주괴 2개를 운고로 분화구 불기둥 마루 꼭대기로 가져가 용암 호수 옆에서 거푸집을 사용하세요.",
+    ["Araj the Summoner stands in the middle of Andorhal."] =
+        "소환사 아라즈는 안도할 한가운데에 서 있습니다.",
+    ["Betina Bigglezink, at Light's Hope Chapel, in the Eastern Plaguelands."] =
+        "베티나 비글징크는 동부 역병지대의 희망의 빛 예배당에 있습니다.",
+    ["About 6,200 XP; a hatchling may drop a scale that starts another quest."] =
+        "약 6,200 경험치. 새끼용이 다른 퀘스트를 시작하는 비늘을 떨어뜨릴 수 있습니다.",
+    ["Weldon Barov, at Chillwind Camp."] =
+        "웰던 바로브는 서리바람 야영지에 있습니다.",
+    ["The Barov fortune: four deeds inside the school; its follow-up sends you to kill Alexi Barov in the Horde's Bulwark."] =
+        "바로브 가문의 재산: 학교 안의 증서 네 장. 후속 퀘스트에서는 호드의 보루에 있는 알렉시 바로브를 처치하러 갑니다.",
+    ["Eva Sarkhoff, in Caer Darrow, on the island of Darrowmere Lake."] =
+        "에바 사크호프는 다로우미어 호수 섬의 카엘 다로우에 있습니다.",
+    ["Eva Sarkhoff's chain: three parts inside the school, then Kirtonos the Herald and a sword or an off-hand item among its rewards."] =
+        "에바 사크호프의 연계 퀘스트: 학교 안에서 세 단계를 진행한 다음 사자 키르토노스로 이어지며, 보상 중에는 검 또는 보조장비가 있습니다.",
+    ["Enter Scholomance"] =
+        "스칼로맨스에 들어가세요",
+    ["The school stands on the island of Caer Darrow, in Darrowmere Lake, in the south-east of the Western Plaguelands."] =
+        "학교는 서부 역병지대 남동쪽, 다로우미어 호수의 카엘 다로우 섬에 있습니다.",
+    ["The deeds: Southshore's on a table north-east of the Reliquary; Tarren Mill's on a table on the left at the entry of the Great Ossuary; Brill's on a ledge south-west of the Laboratory; Caer Darrow's on a table east of the Barov Family Vault."] =
+        "증서: 사우스쇼어 증서는 성유물 보관실 북동쪽 탁자 위에, 타렌 밀농장 증서는 대납골당 입구 왼쪽 탁자 위에, 브릴 증서는 실험실 남서쪽 선반 위에, 카엘 다로우 증서는 바로브 가문 납골당 동쪽 탁자 위에 있습니다.",
+    ["The plagued hatchlings fill a room of the Great Ossuary."] =
+        "역병 걸린 작은 새끼용이 대납골당의 한 방을 가득 채우고 있습니다.",
+    ["A hatchling may drop a healthy dragon scale: use it."] =
+        "새끼용이 건강한 용 비늘을 떨어뜨릴 수 있습니다: 비늘을 사용하세요.",
+    ["Doctor Theolen Krastinov, in the east of the upper Headmaster's Study: kill him, then burn the two piles of remains, to the north and the south-east of his room."] =
+        "학자 테올렌 크라스티노브는 교장의 연구실 위층 동쪽에 있습니다: 그를 처치한 다음, 그의 방 북쪽과 남동쪽에 있는 유해 더미 두 개를 태우세요.",
+    ["Eva Sarkhoff, in Caer Darrow."] =
+        "에바 사크호프는 카엘 다로우에 있습니다.",
+    ["Enter Scholomance again"] =
+        "다시 스칼로맨스에 들어가세요",
+    ["Jandice Barov waits in the north-east of the room down the stairs, on the right of the second big room."] =
+        "잔다이스 바로브는 두 번째 큰 방 오른쪽의 계단 아래 방, 그 북동쪽에서 기다립니다.",
+    ["Rattlegore, at the bottom of the Great Ossuary, drops the Viewing Room key; put the Blood of Innocents in the brazier on the balcony on the right of the Chamber of Summoning: Kirtonos the Herald comes."] =
+        "대납골당 맨 아래의 들창어금니가 강당 열쇠를 떨어뜨립니다. 소환의 방 오른쪽 발코니의 화로에 순결한 피를 넣으세요: 사자 키르토노스가 나타납니다.",
+    ["Betina Bigglezink, at Light's Hope Chapel."] =
+        "베티나 비글징크는 희망의 빛 예배당에 있습니다.",
+    ["Optional: an assassination in the other side's camp, among its guards; it brings the Barov Peasant Caller."] =
+        "선택 사항: 상대 진영의 야영지에서 경비병들 사이에 있는 대상을 암살하는 퀘스트로, 바로브의 종을 줍니다.",
+    ["Alexi Barov stands among the guards of the Bulwark, the Horde's camp in the north of the Western Plaguelands."] =
+        "알렉시 바로브는 서부 역병지대 북쪽의 호드 야영지인 보루의 경비병들 사이에 서 있습니다.",
+    ["Magistrate Marduke, in Caer Darrow."] =
+        "집정관 마르듀크는 카엘 다로우에 있습니다.",
+    ["Optional: a chain through Stromgarde, Light's Hope and the Baron's room of Stratholme, back to the school's last boss; it brings a sword, a dagger, a cloth crown or a shield and about 9,950 XP."] =
+        "선택 사항: 스트롬가드, 희망의 빛, 스트라솔름의 남작의 방을 거쳐 학교의 마지막 우두머리에게 돌아오는 연계 퀘스트. 검, 단검, 천 왕관 또는 방패와 약 9,950 경험치를 줍니다.",
+    ["The Keepsake of Remembrance lies in the ruins of Stromgarde, in Arathi Highlands."] =
+        "추억의 유품은 아라시 고원의 스트롬가드 폐허에 있습니다.",
+    ["Leonid Barthalomew the Revered, at Light's Hope Chapel."] =
+        "존경받는 리어니드 바돌로매는 희망의 빛 예배당에 있습니다.",
+    ["Stratholme: place the keepsake on the unholy ground of Baron Rivendare's room."] =
+        "스트라솔름: 남작 리븐데어의 방에 있는 부정한 땅에 유품을 놓으세요.",
+    ["Ras Frostwhisper waits in the Laboratory: use the Soulbound Keepsake on him."] =
+        "라스 프로스트위스퍼는 실험실에서 기다립니다: 그에게 영혼이 씌인 유품을 사용하세요.",
+    ["Stratholme"] =
+        "스트라솔름",
+    ["Smokey LaRue and Leonid Barthalomew the Revered, at Light's Hope Chapel, in the east of the Eastern Plaguelands."] =
+        "스모키 라루와 존경받는 리어니드 바돌로매는 동부 역병지대 동쪽의 희망의 빛 예배당에 있습니다.",
+    ["Smokey LaRue's tobacco brings a lighter (a trinket); Leonid's holy water, a cloth crown, a ring or potions."] =
+        "스모키 라루의 담배 퀘스트에서는 라이터 (장신구)를, 리어니드의 성수 퀘스트에서는 천 왕관, 반지 또는 물약을 받습니다.",
+    ["Betina's flesh samples open The Active Agent: a choice of two trinkets."] =
+        "베티나의 살점 표본 퀘스트는 활성 역병 인자로 이어집니다: 장신구 두 개 중 하나를 고릅니다.",
+    ["Duke Nicholas Zverenhoff, at Light's Hope Chapel."] =
+        "공작 니콜라스 즈바른호프는 희망의 빛 예배당에 있습니다.",
+    ["Duke Nicholas's chain leads to Balnazzar, then Baron Rivendare, then the Argent Hold: a sword, a staff or a shield."] =
+        "공작 니콜라스의 연계 퀘스트는 발나자르, 남작 리븐데어, 그리고 여명회의 궤로 이어집니다: 검, 지팡이 또는 방패.",
+    ["Caretaker Alen, at Light's Hope Chapel."] =
+        "관리인 알렌은 희망의 빛 예배당에 있습니다.",
+    ["Egan's restless souls bring about 8,300 XP."] =
+        "에간의 잠 못드는 영혼 퀘스트로 약 8,300 경험치를 받습니다.",
+    ["Tirion Fordring, in his hut by the lake on the western edge of the Eastern Plaguelands."] =
+        "티리온 폴드링은 동부 역병지대 서쪽 끝 호숫가의 자기 오두막에 있습니다.",
+    ["Optional: Tirion Fordring's long chain across both Plaguelands and Caer Darrow; its painting hangs in the city, and its end, In Dreams, brings armor, a warhammer or jewelry and about 9,950 XP."] =
+        "선택 사항: 두 역병지대와 카엘 다로우를 오가는 티리온 폴드링의 긴 연계 퀘스트. 연계에 필요한 그림은 도시 안에 걸려 있으며, 마지막 퀘스트인 탤런의 꿈에서 방어구, 전투망치 또는 장신구와 약 9,950 경험치를 받습니다.",
+    ["The plaguehounds, plaguebats and carrion grubs of the Eastern Plaguelands."] =
+        "동부 역병지대의 역병사냥개, 역병박쥐, 청소부구더기.",
+    ["Listen to Tirion Fordring."] =
+        "티리온 폴드링의 이야기를 들으세요.",
+    ["Taelan's hammer lies in the Undercroft, at the southern end of the Eastern Plaguelands."] =
+        "탤런의 망치는 동부 역병지대 남쪽 끝의 지하 납골당에 있습니다.",
+    ["The Symbol of Lost Honor lies in Northdale, in the north-east of the Eastern Plaguelands."] =
+        "실추된 명예의 상징은 동부 역병지대 북동쪽의 노스데일에 있습니다.",
+    ["Artist Renfray, in Caer Darrow, in the Western Plaguelands."] =
+        "화가 렌프레이는 서부 역병지대의 카엘 다로우에 있습니다.",
+    ["Egan, by the road to Stratholme's gate, in the north-west of the Eastern Plaguelands."] =
+        "에간은 동부 역병지대 북서쪽, 스트라솔름 정문으로 가는 길가에 있습니다.",
+    ["Enter Stratholme"] =
+        "스트라솔름에 들어가세요",
+    ["The city's main gate, in the north of the Eastern Plaguelands, opens on the Scarlet side."] =
+        "동부 역병지대 북쪽에 있는 도시 정문은 붉은십자군 쪽으로 이어집니다.",
+    ["King's Square: take the box of tobacco in Ezra Grimm's smoke shop; Ezra Grimm comes for it."] =
+        "왕의 광장: 에즈라 그림의 담배 가게에서 담배 상자를 가져가세요. 에즈라 그림이 담배를 찾으러 나타납니다.",
+    ["The supply crates along the city's walls hold the holy water; some call monsters."] =
+        "도시 성벽을 따라 놓인 보급품 상자에 성수가 들어 있습니다. 몇몇은 몬스터를 불러냅니다.",
+    ["Every creature of the city may drop a flesh sample."] =
+        "도시의 생물은 누구나 살점 표본을 떨어뜨릴 수 있습니다.",
+    ["Use Egan's blaster on the spectral citizens, then again on the restless souls that break free."] =
+        "시민의 유령에게 에간의 제령포를 사용한 다음, 풀려난 잠 못드는 영혼에게 다시 사용하세요.",
+    ["Archivist Galford waits near the end of the Scarlet Bastion: kill him and burn the book on his table."] =
+        "기록관 갈포드는 붉은십자군 요새 끝 근처에서 기다립니다: 그를 처치하고 탁자 위의 책을 태우세요.",
+    ["The painting hangs in Galford's room."] =
+        "그림은 갈포드의 방에 걸려 있습니다.",
+    ["Balnazzar, at the end of the Scarlet Bastion, drops his head: use it."] =
+        "붉은십자군 요새 끝의 발나자르가 자기 머리를 떨어뜨립니다: 머리를 사용하세요.",
+    ["Aurius waits in a chapel by the service entrance, the other gate of the city."] =
+        "아우리우스는 도시의 또 다른 문인 공무용 입구 옆 예배당에서 기다립니다.",
+    ["Optional: Aurius's medallion makes him join the fight against Baron Rivendare: a choice of two trinkets."] =
+        "선택 사항: 아우리우스에게 메달을 주면 그가 남작 리븐데어와의 싸움에 함께합니다: 장신구 두 개 중 하나를 고릅니다.",
+    ["The medallion lies in Malor's strongbox, in Malor the Zealous's room of the Hall of Lights: the Scarlet Key, or a rogue, opens the Bastion's door."] =
+        "메달은 빛의 전당에 있는 광신자 말로의 방, 말로의 금고 안에 있습니다: 요새의 문은 붉은십자군 열쇠나 도적이 열 수 있습니다.",
+    ["Aurius, in his chapel."] =
+        "아우리우스는 자기 예배당에 있습니다.",
+    ["Smokey LaRue and Leonid Barthalomew the Revered, at Light's Hope Chapel."] =
+        "스모키 라루와 존경받는 리어니드 바돌로매는 희망의 빛 예배당에 있습니다.",
+    ["Enter Stratholme by the service entrance"] =
+        "공무용 입구로 스트라솔름에 들어가세요",
+    ["The service entrance, east of the main gate, opens on the side of Baron Rivendare."] =
+        "정문 동쪽의 공무용 입구는 남작 리븐데어 쪽으로 이어집니다.",
+    ["The new Scourge data lies in one of the three ziggurats of the Gauntlet."] =
+        "새 스컬지 자료는 시련의 길에 있는 지구라트 세 곳 중 한 곳에 있습니다.",
+    ["Baron Rivendare waits downstairs in the building of Slaughter Square."] =
+        "남작 리븐데어는 학살의 광장 건물 아래층에서 기다립니다.",
+    ["Aurius appears in the Baron's room and fights at your side."] =
+        "아우리우스가 남작의 방에 나타나 함께 싸웁니다.",
+    ["Lord Maxwell Tyrosus, inside Light's Hope Chapel."] =
+        "맥스웰 티로서스 경은 희망의 빛 예배당 안에 있습니다.",
+    ["Open the Argent Hold, inside the chapel."] =
+        "예배당 안의 여명회의 궤를 여세요.",
+    ["Egan, by the road to Stratholme."] =
+        "에간은 스트라솔름으로 가는 길가에 있습니다.",
+    ["Tirion Fordring, in his hut."] =
+        "티리온 폴드링은 자기 오두막에 있습니다.",
+    ["Myranda the Hag, at Uther's Tomb, in the Western Plaguelands."] =
+        "노파 미란다는 서부 역병지대의 우서의 무덤에 있습니다.",
+    ["Under Myranda's Scarlet illusion, walk into Hearthglen and give Tirion's gift to Highlord Taelan Fordring."] =
+        "미란다의 붉은십자군 환영을 쓴 채 하스글렌으로 걸어 들어가 대영주 탤런 폴드링에게 티리온의 선물을 주세요.",
+    ["Lead Taelan Fordring out of Hearthglen; the Scarlet give chase."] =
+        "탤런 폴드링을 하스글렌 밖으로 데려가세요. 붉은십자군이 뒤쫓아옵니다.",
+    ["Tirion Fordring."] =
+        "티리온 폴드링.",
+    ["Ragefire Chasm"] =
+        "성난불길 협곡",
+    ["Rahauro, on the Elder Rise of Thunder Bluff."] =
+        "라하우로는 썬더 블러프의 장로의 봉우리에 있습니다.",
+    ["The lost satchel's quest ends with bracers of cloth, leather or mail."] =
+        "잃어버린 가방 퀘스트는 천, 가죽 또는 사슬 손목보호구로 끝납니다.",
+    ["Varimathras, beside Sylvanas in the Royal Quarter of Undercity."] =
+        "바리마트라스는 언더시티 왕실 지구의 실바나스 옆에 있습니다.",
+    ["Optional: given in Undercity, a zeppelin ride each way. Rewards leggings of cloth, leather or mail."] =
+        "선택 사항: 언더시티에서 받는 퀘스트로, 오갈 때 비행선을 타야 합니다. 보상은 천, 가죽 또는 사슬 다리보호구입니다.",
+    ["Thrall, in Grommash Hold, in the Valley of Wisdom."] =
+        "스랄은 지혜의 골짜기의 그롬마쉬 요새에 있습니다.",
+    ["Thrall's chain of four quests ends with a weapon of your choice."] =
+        "스랄의 퀘스트 4개짜리 연계 퀘스트는 원하는 무기로 끝납니다.",
+    ["The Burning Blade cultists of the Cleft of Shadow carry the insignia."] =
+        "어둠의 틈의 불타는칼날단 이교도가 휘장을 가지고 있습니다.",
+    ["Talk to Neeru Fireblade, in the Darkbriar Lodge of the Cleft of Shadow."] =
+        "어둠의 틈 어둠찔레 오두막의 네루 파이어블레이드와 대화하세요.",
+    ["Neeru Fireblade also asks for the heart of the chasm's beast."] =
+        "네루 파이어블레이드는 협곡에 사는 야수의 심장도 요구합니다.",
+    ["Back to Thrall, in Grommash Hold."] =
+        "그롬마쉬 요새의 스랄에게 돌아가세요.",
+    ["Enter Ragefire Chasm"] =
+        "성난불길 협곡에 들어가세요",
+    ["The entrance is a cave in the Cleft of Shadow, in the middle of Orgrimmar."] =
+        "입구는 오그리마 한가운데, 어둠의 틈에 있는 동굴입니다.",
+    ["Ragefire troggs and their shamans fill the first caves."] =
+        "첫 동굴들은 성난불길 트로그와 그 주술사로 가득합니다.",
+    ["Maur Grimtotem's body lies in a small cave on the right, past the big trogg cave."] =
+        "마우르 그림토템의 시체는 큰 트로그 동굴을 지나 오른쪽의 작은 동굴에 있습니다.",
+    ["The Searing Blade cultists and warlocks carry both books."] =
+        "이글거리는 칼날단 이교도와 흑마법사가 책 두 권을 모두 가지고 있습니다.",
+    ["Taragaman the Hungerer, the chasm's second boss, guards a lava cave."] =
+        "협곡의 두 번째 우두머리 욕망의 타라가만이 용암 동굴을 지키고 있습니다.",
+    ["Jergosh the Invoker is the third boss; Bazzalan waits at the very end of the chasm."] =
+        "기원사 제로쉬는 세 번째 우두머리입니다. 바잘란은 협곡 맨 끝에서 기다립니다.",
+    ["Thrall, in Grommash Hold."] =
+        "스랄은 그롬마쉬 요새에 있습니다.",
+    ["Neeru Fireblade, in the Cleft of Shadow."] =
+        "네루 파이어블레이드는 어둠의 틈에 있습니다.",
+    ["Your reward: an axe, a mace, a dagger or a staff of Orgrimmar."] =
+        "보상: 오그리마의 도끼, 둔기, 단검 또는 지팡이.",
+    ["Varimathras, in the Royal Quarter of Undercity."] =
+        "바리마트라스는 언더시티의 왕실 지구에 있습니다.",
+    ["Tonga Runetotem, at the Crossroads."] =
+        "통가 룬토템은 크로스로드에 있습니다.",
+    ["Tonga's three oases open Leaders of the Fang, the caverns' main quest: a weapon of your choice."] =
+        "통가의 오아시스 퀘스트 세 개는 동굴의 주요 퀘스트인 송곳니의 드루이드 우두머리로 이어집니다: 원하는 무기.",
+    ["The Forgotten Pools lie north-west of the Crossroads, north of the caverns' hill."] =
+        "잊혀진 웅덩이는 크로스로드 북서쪽, 동굴 언덕 북쪽에 있습니다.",
+    ["The Stagnant Oasis lies south-east of the Crossroads: use the bubbling fissure in its water."] =
+        "죽은 오아시스는 크로스로드 남동쪽에 있습니다: 물속의 거품 나는 균열을 사용하세요.",
+    ["The snapjaw turtles of the Lushwater Oasis, at the foot of the caverns' hill."] =
+        "동굴 언덕 기슭, 생명의 오아시스의 무쇠턱거북.",
+    ["Apothecary Zamah, in the Pools of Vision under the Spirit Rise."] =
+        "연금술사 자마는 정기의 봉우리 아래 예언의 웅덩이에 있습니다.",
+    ["Reward: a piece of cloth, leather or mail armor."] =
+        "보상: 천, 가죽 또는 사슬 방어구 하나.",
+    ["Arch Druid Hamuul Runetotem, on the Elder Rise."] =
+        "대드루이드 하뮬 룬토템은 장로의 봉우리에 있습니다.",
+    ["Nara Wildmane, on the Elder Rise."] =
+        "나라 와일드메인은 장로의 봉우리에 있습니다.",
+    ["Serpentbloom: small green shrubs with violet flowers, in the caves before the door and inside."] =
+        "불뱀꽃: 보라색 꽃이 핀 작은 초록 덤불로, 입구 앞 동굴과 던전 안에 있습니다.",
+    ["The four Fanglords each drop a gem: Lady Anacondra and Lord Cobrahn first, then Lord Pythas, and Lord Serpentis last."] =
+        "송곳니 군주 넷이 각각 보석을 떨어뜨립니다: 먼저 여군주 아나콘드라와 군주 코브란, 그다음 군주 피타스, 마지막으로 군주 서펜티스.",
+    ["Nara Wildmane, on the Elder Rise of Thunder Bluff."] =
+        "나라 와일드메인은 썬더 블러프의 장로의 봉우리에 있습니다.",
+    ["Your reward: a staff, a mace or a sword."] =
+        "보상: 지팡이, 둔기 또는 검.",
+    ["Apothecary Zamah, in the Pools of Vision."] =
+        "연금술사 자마는 예언의 웅덩이에 있습니다.",
+    ["Tabitha Heartweaver, at the Sepulcher, in Silverpine Forest."] =
+        "Tabitha Heartweaver는 은빛소나무 숲의 공동묘지에 있습니다.",
+    ["Reward: a dagger or cloth cuffs."] =
+        "보상: 단검 또는 천 손목보호구.",
+    ["Deathguard Kristof, in Brill, in Tirisfal Glades."] =
+        "Deathguard Kristof는 티리스팔 숲의 브릴에 있습니다.",
+    ["Reward: a two-handed axe or a staff."] =
+        "보상: 양손 도끼 또는 지팡이.",
+    ["Morbin Lightbane, in Undercity."] =
+        "Morbin Lightbane은 언더시티에 있습니다.",
+    ["Reward: leather armor or a mace."] =
+        "보상: 가죽 방어구 또는 둔기.",
+    ["Theodore Griffs, in Undercity."] =
+        "시어도어 그리프스는 언더시티에 있습니다.",
+    ["Reward: cloth gloves or a sword."] =
+        "보상: 천 장갑 또는 검.",
+    ["The ruins rise above Undercity, in Tirisfal Glades."] =
+        "폐허는 티리스팔 숲의 언더시티 위에 있습니다.",
+    ["Look for Edward Heartweaver in the ruins."] =
+        "폐허에서 Edward Heartweaver를 찾으세요.",
+    ["Twenty-five intact limbs, from the undead of the ruins."] =
+        "폐허의 언데드에게서 얻는 온전한 팔다리 25개.",
+    ["Rath'mael waits in the ruins."] =
+        "Rath'mael은 폐허에서 기다립니다.",
+    ["Witherfang carries the highly toxic strain."] =
+        "Witherfang이 맹독성 균주를 가지고 있습니다.",
+    ["The Baron may drop an abominable head: read it."] =
+        "남작이 흉측한 머리를 떨어뜨릴 수 있습니다: 머리를 읽으세요.",
+    ["Oran Snakewrithe, in Undercity."] =
+        "오란 스네이크레이드는 언더시티에 있습니다.",
+    ["Master Apothecary Faranell, in the Apothecarium of Undercity."] =
+        "수석 연금술사 파라넬은 언더시티의 연금술 실험실에 있습니다.",
+    ["Optional: Faranell's Unending Torment goes on in Undercity; its last part has a two-handed sword among its rewards."] =
+        "선택 사항: 파라넬의 Unending Torment 퀘스트는 언더시티에서 계속됩니다. 마지막 단계의 보상 중에는 양손 검이 있습니다.",
+    ["A toxic skullcap from Tawny Grisette in the Trade Quarter, blisterweed near the herbalism trainer, and an essence of agony from the poison vendor of the Rogues' Quarter."] =
+        "상업 지구의 타우니 그리제트에게서 독성 해골버섯, 약초채집 상급자 근처에서 물집풀, 도적 지구의 독 상인에게서 고통의 정수.",
+    ["Inject the hissing serum into the system above Othmar's body."] =
+        "Othmar의 몸 위에 있는 장치에 쉭쉭거리는 혈청을 주입하세요.",
+    ["Bring the Baron's head to Othmar's body, the unfinished abomination."] =
+        "남작의 머리를 미완성 누더기골렘인 Othmar의 몸으로 가져가세요.",
+    ["Master Apothecary Faranell."] =
+        "수석 연금술사 파라넬.",
+    ["Deathguard Kristof, in Brill."] =
+        "Deathguard Kristof는 브릴에 있습니다.",
+    ["Tabitha Heartweaver, at the Sepulcher."] =
+        "Tabitha Heartweaver는 공동묘지에 있습니다.",
+    ["Shadowfang Keep"] =
+        "그림자송곳니 성채",
+    ["Keeper Bel'dugur, in Undercity."] =
+        "관리인 벨두거는 언더시티에 있습니다.",
+    ["Dalar Dawnweaver, at the Sepulcher, in Silverpine Forest."] =
+        "달라 던위버는 은빛소나무 숲의 공동묘지에 있습니다.",
+    ["Reward: a ring and about 3,300 XP."] =
+        "보상: 반지와 약 3,300 경험치.",
+    ["High Executor Hadrec, at the Sepulcher."] =
+        "고위집행관 하드렉은 공동묘지에 있습니다.",
+    ["Reward: shoulders of cloth, leather or mail."] =
+        "보상: 천, 가죽 또는 사슬 어깨보호구.",
+    ["Enter Shadowfang Keep"] =
+        "그림자송곳니 성채에 들어가세요",
+    ["The keep stands south of the Sepulcher."] =
+        "성채는 공동묘지 남쪽에 있습니다.",
+    ["Deathstalker Vincent lies in the courtyard: Deathstalker Adamant, freed after Rethilgore, opens its door."] =
+        "죽음의추적자 빈센트는 안뜰에 쓰러져 있습니다: 레실고어를 처치한 뒤 풀려난 죽음의추적자 아다만트가 안뜰 문을 엽니다.",
+    ["The Book of Ur, a blue book, stands on a bookshelf on the left of Fenrus the Devourer's room."] =
+        "파란 책인 우르의 책은 파멸의 펜루스의 방 왼쪽 책장에 꽂혀 있습니다.",
+    ["Archmage Arugal, the last boss, waits at the top of the keep."] =
+        "마지막 우두머리 대마법사 아루갈은 성채 꼭대기에서 기다립니다.",
+    ["Dalar Dawnweaver, at the Sepulcher."] =
+        "달라 던위버는 공동묘지에 있습니다.",
+    ["Tsunaman, at Sun Rock Retreat, in Stonetalon Mountains."] =
+        "츄나만은 돌발톱 산맥의 해바위 야영지에 있습니다.",
+    ["Optional: a lead from Stonetalon to Zoram'gar Outpost."] =
+        "선택 사항: 돌발톱에서 조람가르 전초기지로 안내하는 퀘스트.",
+    ["Je'neu Sancrea, at Zoram'gar Outpost, on Ashenvale's coast."] =
+        "제네우 생크리는 잿빛 골짜기 해안의 조람가르 전초기지에 있습니다.",
+    ["Je'neu Sancrea, at Zoram'gar Outpost."] =
+        "제네우 생크리는 조람가르 전초기지에 있습니다.",
+    ["The Earthen Ring's quests: Amongst the Ruins wakes Baron Aquanis, whose drop starts a quest with a sword among its rewards."] =
+        "대지 고리회의 퀘스트: 폐허 사이로를 하면 군주 아쿠아니스가 깨어나며, 그가 떨어뜨리는 물건으로 시작하는 퀘스트의 보상 중에는 검이 있습니다.",
+    ["The deeps open in ruins half under water, on the coast of Zoram Strand."] =
+        "나락 입구는 조람 해안의, 반쯤 물에 잠긴 폐허에 있습니다.",
+    ["The Sapphires of Aku'Mai grow on the walls of the cave before the dungeon's door."] =
+        "아쿠마이의 사파이어는 던전 입구 앞 동굴 벽에서 자랍니다.",
+    ["The Blackfathom tide priestesses of that cave may drop a damp note: read it."] =
+        "그 동굴의 검은심연의 바다여사제가 젖은 쪽지를 떨어뜨릴 수 있습니다: 쪽지를 읽으세요.",
+    ["Back to Je'neu Sancrea, at Zoram'gar Outpost, before the dungeon."] =
+        "던전에 들어가기 전에 조람가르 전초기지의 제네우 생크리에게 돌아가세요.",
+    ["Reward: a wand, a shield or leather armor."] =
+        "보상: 마법봉, 방패 또는 가죽 방어구.",
+    ["Lorgus Jett walks the nooks on the west side, south of the Pool of Ask'ar."] =
+        "로구스 제트는 아스카르 웅덩이 남쪽, 서쪽의 구석진 곳들을 돌아다닙니다.",
+    ["The Fathom Stone lies under the water in the middle of the Moonshrine Ruins, under the walkway before Kelris; taking its core wakes Baron Aquanis."] =
+        "심연의 돌은 켈리스 앞 통로 아래, 달의 신전 폐허 한가운데의 물속에 있습니다. 그 핵을 가져가면 군주 아쿠아니스가 깨어납니다.",
+    ["Baron Aquanis may drop a Strange Water Globe: use it."] =
+        "군주 아쿠아니스가 이상한 물구슬을 떨어뜨릴 수 있습니다: 물구슬을 사용하세요.",
+    ["Bashana Runetotem, on the Elder Rise of Thunder Bluff."] =
+        "바샤나 룬토템은 썬더 블러프의 장로의 봉우리에 있습니다.",
+    ["Borstan, the meat vendor of Orgrimmar."] =
+        "보르스탄은 오그리마의 고기 상인입니다.",
+    ["Reward: a dagger or a satchel of potions."] =
+        "보상: 단검 또는 물약 가방.",
+    ["Zaruk, at Hammerfall, in Arathi Highlands."] =
+        "자루크는 아라시 고원의 해머폴에 있습니다.",
+    ["Dragonmaw Rumors leads to Open the Maw, inside the site."] =
+        "Dragonmaw Rumors는 발굴 현장 안에서 하는 Open the Maw 퀘스트로 이어집니다.",
+    ["The Deathstalker Agent hides in the hills above the Dragonmaw camp, in the Wetlands."] =
+        "죽음의 추적자는 저습지 용아귀부족 야영지 위쪽 언덕에 숨어 있습니다.",
+    ["Thicket raptor meat, from the raptors of the site."] =
+        "발굴 현장의 랩터에게서 얻는 덤불 랩터 고기.",
+    ["The Dragonmaw forces of the site, their thaumaturgists among them."] =
+        "발굴 현장의 용아귀부족 병력으로, 기적술사도 포함됩니다.",
+    ["The Titan relic leads to the Earthen Ring: a staff or a two-handed mace."] =
+        "티탄 유물은 대지 고리회로 이어집니다: 지팡이 또는 양손 둔기.",
+    ["The Deathstalker Agent, above the Dragonmaw camp."] =
+        "죽음의 추적자는 용아귀부족 야영지 위쪽에 있습니다.",
+    ["Borstan, in Orgrimmar."] =
+        "보르스탄은 오그리마에 있습니다.",
+    ["Muln Earthfury, on the Skywatcher Plateau, in the north-west of Mulgore."] =
+        "Muln Earthfury는 멀고어 북서쪽의 하늘감시자 고원에 있습니다.",
+    ["Nogg, in his machine shop in the Valley of Honor of Orgrimmar."] =
+        "노그는 오그리마 명예의 골짜기에 있는 자기 기계 공작소에 있습니다.",
+    ["Sovik, beside Nogg."] =
+        "소빅은 노그 옆에 있습니다.",
+    ["Scooty's transponder sends you straight to Gnomeregan, far in Dun Morogh, and stays yours."] =
+        "스쿠티의 전송기는 멀리 던 모로에 있는 놈리건으로 곧장 보내 주며, 계속 가지고 있을 수 있습니다.",
+    ["Wait for Scooty to set up the transponder."] =
+        "스쿠티가 전송기를 설치할 때까지 기다리세요.",
+    ["The transponder leaves you by the gates of Gnomeregan, in the west of Dun Morogh."] =
+        "전송기를 쓰면 던 모로 서쪽, 놈리건 입구 옆에 도착합니다.",
+    ["Optional: an escort, turned in at Booty Bay; it rewards bracers or shoulders."] =
+        "선택 사항: 호위 퀘스트로, 무법항에서 완료합니다. 보상은 손목보호구 또는 어깨보호구입니다.",
+    ["The last boss, Mekgineer Thermaplugg, carries the code of his safe, set in the far wall of the Tinkers' Court next to the third pillar counting from the right."] =
+        "마지막 우두머리 멕기니어 텔마플러그가 금고 비밀번호를 가지고 있습니다. 금고는 땜장이 궁정 안쪽 벽, 오른쪽에서 세 번째 기둥 옆에 있습니다.",
+    ["Scooty, in Booty Bay."] =
+        "스쿠티는 무법항에 있습니다.",
+    ["Nogg, in Orgrimmar."] =
+        "노그는 오그리마에 있습니다.",
+    ["It opens Hearts of Zeal, a quest of the Scarlet Monastery."] =
+        "붉은십자군 수도원 퀘스트인 열정의 증거로 이어집니다.",
+    ["Auld Stonespire, in Thunder Bluff."] =
+        "아울드 스톤스파이어는 썬더 블러프에 있습니다.",
+    ["Reward: cloth shoulders, a mail belt or a shield, and about 4,050 XP."] =
+        "보상: 천 어깨보호구, 사슬 허리띠 또는 방패, 그리고 약 4,050 경험치.",
+    ["Rau Cliffrunner, at Freewind Post, in Thousand Needles."] =
+        "라우 클리프러너는 버섯구름 봉우리의 높새바람 봉우리에 있습니다.",
+    ["The kraul bats of the cave west of the bridges drop the guano."] =
+        "다리 서쪽 동굴의 동굴박쥐가 배설물을 떨어뜨립니다.",
+    ["Charlga may drop a small scroll: read it."] =
+        "차를가가 작은 두루마리를 떨어뜨릴 수 있습니다: 두루마리를 읽으세요.",
+    ["Willix the Importer waits in a tent below Charlga's platform."] =
+        "수입업자 윌릭스는 차를가의 단 아래 천막에서 기다립니다.",
+    ["Master Apothecary Faranell, in Undercity."] =
+        "수석 연금술사 파라넬은 언더시티에 있습니다.",
+    ["It opens An Unholy Alliance, a quest of Razorfen Downs."] =
+        "가시덩굴 구릉 퀘스트인 사악한 동맹으로 이어집니다.",
+    ["Doctor Martin Felben, in the Apothecarium of Undercity."] =
+        "박사 마틴 펠벤은 언더시티의 연금술 실험실에 있습니다.",
+    ["Reward: a wand or a cloak."] =
+        "보상: 마법봉 또는 망토.",
+    ["Melisara and Magus Wordeen Voidglare, in Tarren Mill, in Hillsbrad Foothills."] =
+        "멜리사라와 학자 워딘 보이드글레어는 힐스브래드 구릉지의 타렌 밀농장에 있습니다.",
+    ["Tarren Mill's quests: The Grave Knight brings leather boots or mail bracers."] =
+        "타렌 밀농장의 퀘스트: The Grave Knight에서 가죽 장화 또는 사슬 손목보호구를 받습니다.",
+    ["Reward: a staff or mail shoulders."] =
+        "보상: 지팡이 또는 사슬 어깨보호구.",
+    ["Atrexis the Grave Knight, inside the city."] =
+        "도시 안의 Atrexis the Grave Knight.",
+    ["Six cracked sentry cores, from the fragmented sentries of the city."] =
+        "도시의 조각난 파수병에게서 얻는 금 간 파수병 핵 6개.",
+    ["Magus Wordeen Voidglare and Melisara, in Tarren Mill."] =
+        "학자 워딘 보이드글레어와 멜리사라는 타렌 밀농장에 있습니다.",
+    ["Doctor Martin Felben, in Undercity."] =
+        "박사 마틴 펠벤은 언더시티에 있습니다.",
+    ["Dorn Plainstalker, in Thousand Needles."] =
+        "도른 플레인스토커는 버섯구름 봉우리에 있습니다.",
+    ["Optional: a chain of ten quests through Thousand Needles, Stonetalon, Ashenvale and Undercity, up to a book of the monastery; it ends with a mace or a wand and about 4,200 XP."] =
+        "선택 사항: 버섯구름 봉우리, 돌발톱, 잿빛 골짜기, 언더시티를 거쳐 수도원의 책까지 이어지는 퀘스트 10개짜리 연계 퀘스트. 끝에 둔기 또는 마법봉과 약 4,200 경험치를 받습니다.",
+    ["Leap from the wooden planks over the canyon, in the west of Thousand Needles."] =
+        "버섯구름 봉우리 서쪽, 협곡 위의 나무 발판에서 뛰어내리세요.",
+    ["Grenka Bloodscreech, a harpy of the west of Thousand Needles."] =
+        "그렌카 블러드스크리치는 버섯구름 봉우리 서쪽의 하피입니다.",
+    ["Rok'Alim the Pounder, an elemental of the north-west of Thousand Needles."] =
+        "돌주먹 로크알림은 버섯구름 봉우리 북서쪽의 정령입니다.",
+    ["Braug Dimspirit, in the east of Stonetalon Mountains."] =
+        "브라우그 딤스피릿은 돌발톱 산맥 동쪽에 있습니다.",
+    ["The Legacy of the Aspects, a book in the south-east of Ashenvale."] =
+        "잿빛 골짜기 남동쪽에 있는 책, 고대의 유산.",
+    ["Braug Dimspirit, in Stonetalon."] =
+        "브라우그 딤스피릿은 돌발톱에 있습니다.",
+    ["Braug Dimspirit asks a question: give him the right answer."] =
+        "브라우그 딤스피릿이 질문을 합니다: 올바른 답을 고르세요.",
+    ["Sage Truthseeker, in Thunder Bluff."] =
+        "현자 트루스시커는 썬더 블러프에 있습니다.",
+    ["Reward: a shield or an off-hand orb, and about 3,550 XP."] =
+        "보상: 방패 또는 보조장비 보주, 그리고 약 3,550 경험치.",
+    ["Parqual Fintallas, in Undercity."] =
+        "파쿠알 핀탈라스는 언더시티에 있습니다.",
+    ["Reward: a sword, an off-hand cane or a necklace, and about 5,150 XP."] =
+        "보상: 검, 보조장비 지팡이 또는 목걸이, 그리고 약 5,150 경험치.",
+    ["Master Apothecary Faranell, in the Apothecarium."] =
+        "수석 연금술사 파라넬은 연금술 실험실에 있습니다.",
+    ["Graveyard: Vorrel Sengutz lies on a table on the right of the Chamber of Atonement, by Interrogator Vishas."] =
+        "묘지: 보렐 센구츠는 속죄의 방 오른쪽, 심문관 비샤스 옆의 탁자 위에 누워 있습니다.",
+    ["Reward: a cloth cape or shoulders, or leather boots; the ring it asks for is in the Alterac Mountains."] =
+        "보상: 천 망토 또는 어깨보호구, 또는 가죽 장화. 퀘스트에 필요한 반지는 알터랙 산맥에 있습니다.",
+    ["Every Scarlet of the monastery may drop a heart."] =
+        "수도원의 붉은십자군은 누구나 심장을 떨어뜨릴 수 있습니다.",
+    ["Library: the book rests on a table, in the first side room on the left as you walk the Gallery of Treasures."] =
+        "도서관: 책은 보물 전시실을 따라가다 왼쪽 첫 번째 곁방의 탁자 위에 있습니다.",
+    ["Library: the Compendium stands on a bookcase on the left wall at the entrance of the Athenaeum."] =
+        "도서관: 타락의 개요는 학술원 입구 왼쪽 벽의 책장에 꽂혀 있습니다.",
+    ["Parqual Fintallas asks a question: give him the right answer."] =
+        "파쿠알 핀탈라스가 질문을 합니다: 올바른 답을 고르세요.",
+    ["Varimathras, in the Royal Quarter."] =
+        "바리마트라스는 왕실 지구에 있습니다.",
+    ["Nancy Vishas, an elite, keeps the ring in a house of the Alterac Mountains."] =
+        "정예인 낸시 비샤스가 알터랙 산맥의 한 집에서 반지를 가지고 있습니다.",
+    ["Monika Sengutz, in Tarren Mill, in Hillsbrad Foothills."] =
+        "모니카 센구츠는 힐스브래드 구릉지의 타렌 밀농장에 있습니다.",
+    ["Andrew Brownell, in Undercity."] =
+        "앤드류 브로넬은 언더시티에 있습니다.",
+    ["Reward: a mace, a gun, a cloth robe or a leather chest."] =
+        "보상: 둔기, 총, 천 로브 또는 가죽 가슴보호구.",
+    ["Ambassador Malcin walks among the quilboar outside the downs."] =
+        "사절 말킨은 구릉 밖의 가시멧돼지들 사이를 돌아다닙니다.",
+    ["Patrick Garrett, in Undercity."] =
+        "패트릭 가레트는 언더시티에 있습니다.",
+    ["Dran Droffers, in the Drag of Orgrimmar."] =
+        "드란 드로퍼스는 오그리마의 골목길에 있습니다.",
+    ["Dran Droffers's chain goes back and forth between Orgrimmar, Kargath and Uldaman: it ends with a necklace and about 5,600 XP."] =
+        "드란 드로퍼스의 연계 퀘스트는 오그리마, 카르가스, 울다만을 오갑니다: 끝에 목걸이와 약 5,600 경험치를 받습니다.",
+    ["Jarkal Mossmeld, at Kargath, in the west of the Badlands."] =
+        "자칼 모스멜드는 황야의 땅 서쪽의 카르가스에 있습니다.",
+    ["The tablet lies in an ancient chest by the gates of Uldaman, in the north of the Badlands."] =
+        "서판은 황야의 땅 북쪽, 울다만 입구 옆의 고대 상자 안에 있습니다.",
+    ["The Shadowforge dwarves around the gates drop the power stones and the shattered necklace."] =
+        "입구 주변의 어둠괴철로단 드워프가 마력석과 부서진 목걸이를 떨어뜨립니다.",
+    ["The Garrett family chest stands in the dig west of Uldaman's gates."] =
+        "가레트 가문의 상자는 울다만 입구 서쪽의 발굴지에 있습니다.",
+    ["Jarkal Mossmeld, at Kargath."] =
+        "자칼 모스멜드는 카르가스에 있습니다.",
+    ["Dran Droffers, in Orgrimmar."] =
+        "드란 드로퍼스는 오그리마에 있습니다.",
+    ["Magenta cap clusters grow on the cave walls, south-west of Uldaman's gates and inside."] =
+        "자홍색 버섯 덩어리는 울다만 입구 남서쪽과 던전 안의 동굴 벽에서 자랍니다.",
+    ["The dungeon's door is at the back of the cave by the dig at Uldaman's gates."] =
+        "던전 입구는 울다만 입구의 발굴지 옆 동굴 안쪽 끝에 있습니다.",
+    ["A dead paladin rests just off the first great hall, down its second right-hand passage; then head out for Kargath."] =
+        "죽은 성기사는 첫 번째 큰 전당에서 오른쪽 두 번째 통로로 조금 들어간 곳에 누워 있습니다. 그런 다음 밖으로 나가 카르가스로 향하세요.",
+    ["Enter Uldaman again"] =
+        "다시 울다만에 들어가세요",
+    ["The topaz is in a conspicuous urn south-east of Dig Two, the ruby in a stone chest north-west of Dig Three (it calls monsters), the sapphire on Grimlok at the end of the Stone Vault; Archaedas, the last boss, in the Hall of the Crafters, drops the power source."] =
+        "토파즈는 제2 발굴지 남동쪽의 눈에 띄는 항아리 안에, 루비는 제3 발굴지 북서쪽의 돌 상자 안에 (몬스터를 불러냅니다), 사파이어는 돌 금고 끝의 그림로크에게 있습니다. 장인의 전당에 있는 마지막 우두머리 아카에다스가 마력원천을 떨어뜨립니다.",
+    ["Optional: the Discs of Norgannon, behind Archaedas, tell their story; it ends in Thunder Bluff with potions or a bag."] =
+        "선택 사항: 아카에다스 뒤의 노르간논의 원반이 이야기를 들려줍니다. 썬더 블러프에서 끝나며 물약 또는 가방을 받습니다.",
+    ["Bena Winterhoof, in Thunder Bluff."] =
+        "베나 윈터후프는 썬더 블러프에 있습니다.",
+    ["Venom bottles stand in the Witherbark trolls' camps of the south-west of the Hinterlands."] =
+        "독병은 동부 내륙지 남서쪽의 마른나무껍질부족 트롤 야영지에 있습니다.",
+    ["Optional: a chain of six quests between the Hinterlands, Tarren Mill, Durotar and the city; it ends with a shield, a mail chest or a cloth robe."] =
+        "선택 사항: 동부 내륙지, 타렌 밀농장, 듀로타, 그리고 이 도시를 오가는 퀘스트 6개짜리 연계 퀘스트. 끝에 방패, 사슬 가슴보호구 또는 천 로브를 받습니다.",
+    ["Apothecary Lydon, in Tarren Mill, in Hillsbrad Foothills."] =
+        "연금술사 라이던은 힐스브래드 구릉지의 타렌 밀농장에 있습니다.",
+    ["The Witherbark broodguards, spiders of the Hinterlands' troll camps, carry the sacs."] =
+        "동부 내륙지 트롤 야영지의 거미인 마른나무껍질부족 혈거미가 주머니를 가지고 있습니다.",
+    ["Apothecary Lydon, in Tarren Mill."] =
+        "연금술사 라이던은 타렌 밀농장에 있습니다.",
+    ["Master Gadrin, in Sen'jin Village, in Durotar."] =
+        "장로 가드린은 듀로타의 센진 마을에 있습니다.",
+    ["A tablet stands in the middle of the scarabs' chamber: read the spider god's name on it."] =
+        "왕쇠똥구리 방 한가운데에 서판이 있습니다: 서판에 적힌 거미 신의 이름을 읽으세요.",
+    ["Master Gadrin, in Sen'jin Village."] =
+        "장로 가드린은 센진 마을에 있습니다.",
+    ["Defeat Shadra at her altar of Shadra'Alor, in the south-west of the Hinterlands, and take her venom."] =
+        "동부 내륙지 남서쪽 샤드라알로의 제단에서 샤드라를 쓰러뜨리고 그 독을 얻으세요.",
+    ["Uthel'nay, in the Valley of Spirits of Orgrimmar."] =
+        "우텔나이는 오그리마의 정기의 골짜기에 있습니다.",
+    ["Vark Battlescar and Selendra, at Shadowprey Village, on the west coast of Desolace."] =
+        "바르크 배틀스카와 셀렌드라는 잊혀진 땅 서쪽 해안의 그늘수렵 마을에 있습니다.",
+    ["Shadowprey Village's two quests: a ring, plate gauntlets or a leather belt; then Theradras's end brings a sword, a staff or a bow."] =
+        "그늘수렵 마을의 퀘스트 두 개: 반지, 판금 건틀릿 또는 가죽 허리띠. 그다음 테라드라스를 쓰러뜨리면 검, 지팡이 또는 활을 받습니다.",
+    ["Vark Battlescar and Selendra, at Shadowprey Village."] =
+        "바르크 배틀스카와 셀렌드라는 그늘수렵 마을에 있습니다.",
+    ["Uthel'nay, in Orgrimmar."] =
+        "우텔나이는 오그리마에 있습니다.",
+    ["Fel'zerul, in Stonard, in the Swamp of Sorrows."] =
+        "펠제룰은 슬픔의 늪의 스토나드에 있습니다.",
+    ["Fel'zerul's chain goes to the Hinterlands and back: it opens The Temple of Atal'Hakkar, a talisman and about 5,900 XP."] =
+        "펠제룰의 연계 퀘스트는 동부 내륙지에 다녀오는 여정입니다: 아탈학카르 신전 퀘스트로 이어지며, 부적과 약 5,900 경험치를 줍니다.",
+    ["The Atal'ai artifacts lie in the ruins around the Pool of Tears, in the east of the swamp."] =
+        "아탈라이 유물은 늪 동쪽, 눈물의 연못 주변 폐허에 있습니다.",
+    ["Fel'zerul, in Stonard."] =
+        "펠제룰은 스토나드에 있습니다.",
+    ["Jammal'an the Prophet: cloth leggings or a mail helm, and about 6,550 XP."] =
+        "예언자 잠말란: 천 다리보호구 또는 사슬 투구, 그리고 약 6,550 경험치.",
+    ["Witch Doctor Uzer'i, at Camp Mojache, in Feralas."] =
+        "의술사 우제리는 페랄라스의 모자케 야영지에 있습니다.",
+    ["Larion, at Marshal's Refuge, in Un'Goro Crater."] =
+        "라리온은 운고로 분화구의 마샬의 야영지에 있습니다.",
+    ["Larion's chain leads to the temple's haze; its end brings a bloodpetal zapper."] =
+        "라리온의 연계 퀘스트는 신전의 아지랑이로 이어지며, 끝에 붉은꽃잎 구제장치를 받습니다.",
+    ["The bloodpetal plants of Un'Goro."] =
+        "운고로의 붉은꽃잎덩굴손.",
+    ["Liv Rizzlefix, in Ratchet."] =
+        "리브 리즐픽스는 톱니항에 있습니다.",
+    ["Every Atal'ai troll of the temple may drop a fetish."] =
+        "신전의 아탈라이 트롤은 누구나 우상을 떨어뜨릴 수 있습니다.",
+    ["Apothecary Zinge, in the Apothecarium of Undercity."] =
+        "연금술사 진게는 언더시티의 연금술 실험실에 있습니다.",
+    ["Optional: a lead from Undercity to Vivian Lagrave, at Kargath."] =
+        "선택 사항: 언더시티에서 카르가스의 비비안 라그레이브에게 안내하는 퀘스트.",
+    ["Shadowmage Vivian Lagrave, at Kargath, in the west of the Badlands."] =
+        "어둠마법사 비비안 라그레이브는 황야의 땅 서쪽의 카르가스에 있습니다.",
+    ["Shadowmage Vivian Lagrave, at Kargath."] =
+        "어둠마법사 비비안 라그레이브는 카르가스에 있습니다.",
+    ["Reward: a two-handed axe, a mace or potions."] =
+        "보상: 양손 도끼, 둔기 또는 물약.",
+    ["Thunderheart, at Kargath."] =
+        "썬더하트는 카르가스에 있습니다.",
+    ["Thunderheart's chain: Disharmony of Fire brings armor of any kind, and opens Commander Gor'shak and The Last Element."] =
+        "썬더하트의 연계 퀘스트: 불의 부조화에서 종류를 가리지 않는 방어구를 받고, 사령관 고르샤크와 마지막 원소 퀘스트로 이어집니다.",
+    ["Hierophant Theodora Mulvadania, at Kargath."] =
+        "제사장 테오도라 뮬바다니아는 카르가스에 있습니다.",
+    ["The Rise of the Machines ends inside the depths with armor of any kind, and about 6,200 XP."] =
+        "기계들의 봉기는 나락 안에서 끝나며, 종류를 가리지 않는 방어구와 약 6,200 경험치를 줍니다.",
+    ["The WANTED poster, at Kargath."] =
+        "카르가스의 현상수배 벽보.",
+    ["The wanted posters lead to General Angerforge, and a medallion."] =
+        "현상수배 벽보는 사령관 앵거포지로 이어지며, 메달을 줍니다.",
+    ["The war reavers and obsidian elementals of the Badlands drop the shards."] =
+        "황야의 땅의 전투절단기와 흑요석 정령이 파편을 떨어뜨립니다.",
+    ["Lotwil Veriatus, in the west of the Badlands."] =
+        "로트윌 베리아투스는 황야의 땅 서쪽에 있습니다.",
+    ["Galamav the Marksman, at Kargath."] =
+        "명사수 갈라마브는 카르가스에 있습니다.",
+    ["Commander Gor'shak's chain leads to Thrall, the emperor and the princess: about 9,950 XP at its end, and Thrall's reward."] =
+        "사령관 고르샤크의 연계 퀘스트는 스랄, 제왕, 공주로 이어집니다: 끝에 약 9,950 경험치와 스랄의 보상을 받습니다.",
+    ["Blackrock Mountain opens in the south of the Searing Gorge; inside, the depths' door is at the bottom of the mountain."] =
+        "검은바위 산 입구는 이글거리는 협곡 남쪽에 있습니다. 산 안에서 나락 입구는 산 맨 아래에 있습니다.",
+    ["High Interrogator Gerstahn, in a back room on the right of the Detention Block, carries the cell key; Commander Gor'shak sits in the first cell on the left of the tunnel."] =
+        "감금 구역 오른쪽 안쪽 방의 대심문관 게르스탄이 감방 열쇠를 가지고 있습니다. 사령관 고르샤크는 통로 왼쪽 첫 번째 감방에 있습니다.",
+    ["Defend Gor'shak against two waves of guards."] =
+        "두 차례 몰려오는 경비병으로부터 고르샤크를 지키세요.",
+    ["Talk to Kharan Mighthammer, in the first cell on the left across the hallway."] =
+        "복도 건너편 왼쪽 첫 번째 감방의 카란 마이트해머와 대화하세요.",
+    ["The Anvilrage guardsmen, wardens and footmen of the Detention Block and the halls."] =
+        "감금 구역과 전당들의 성난모루단 경비병, 교도관, 보병.",
+    ["Lord Incendius waits at the Black Anvil, in Shadowforge City: he carries the Tablet of Kurniya."] =
+        "불의군주 인센디우스는 어둠괴철로 도시의 검은 모루에서 기다립니다: 쿠르니야의 서판을 가지고 있습니다.",
+    ["Golem Lord Argelmach waits in the Manufactory; his golems and constructs drop the cores and the essences."] =
+        "골렘 군주 아젤마크는 제조소에서 기다립니다. 그의 골렘과 피조물이 핵과 정수를 떨어뜨립니다.",
+    ["Warlord Goretooth, at Kargath."] =
+        "장군 고어투스는 카르가스에 있습니다.",
+    ["The KILL ON SIGHT poster, at Kargath."] =
+        "카르가스의 사살 지령 벽보.",
+    ["Thrall, in Grommash Hold, in Orgrimmar."] =
+        "스랄은 오그리마의 그롬마쉬 요새에 있습니다.",
+    ["The Anvilrage medics, soldiers and officers of the halls."] =
+        "전당들의 성난모루단 간호병, 병사, 장교.",
+    ["Warlord Goretooth, then Lexlort, at Kargath."] =
+        "카르가스의 장군 고어투스, 그다음 렉스로트.",
+    ["Grark Lorkrub, held in the Blackrock Stronghold of the Burning Steppes."] =
+        "그랄크 로크럽은 불타는 평원의 검은바위 요새에 붙잡혀 있습니다.",
+    ["Optional: an escort in the Burning Steppes, then a third visit for General Angerforge: a medallion and about 7,750 XP."] =
+        "선택 사항: 불타는 평원에서 호위를 한 다음, 사령관 앵거포지를 잡으러 세 번째로 방문합니다: 메달과 약 7,750 경험치.",
+    ["Bind Grark Lorkrub with the shackles and lead him through Blackrock Mountain to the Searing Gorge."] =
+        "족쇄로 그랄크 로크럽을 묶고 검은바위 산을 지나 이글거리는 협곡까지 데려가세요.",
+    ["Lexlort, then Warlord Goretooth, at Kargath."] =
+        "카르가스의 렉스로트, 그다음 장군 고어투스.",
+    ["Enter Blackrock Depths a third time"] =
+        "세 번째로 검은바위 나락에 들어가세요",
+    ["General Angerforge waits down the stairs of the West Garrison."] =
+        "사령관 앵거포지는 서부 주둔지 계단 아래에서 기다립니다.",
+    ["Galamav the Marksman, at Kargath, in the west of the Badlands."] =
+        "명사수 갈라마브는 황야의 땅 서쪽의 카르가스에 있습니다.",
+    ["Lexlort, at Kargath."] =
+        "렉스로트는 카르가스에 있습니다.",
+    ["Lexlort's chain: Bijou's report brings cloth gloves or a mail belt."] =
+        "렉스로트의 연계 퀘스트: 비쥬의 보고서를 가져가면 천 장갑 또는 사슬 허리띠를 받습니다.",
+    ["Reward: armor of any kind, for the spire's three generals and their documents."] =
+        "보상: 종류를 가리지 않는 방어구. 첨탑의 장군 셋과 그들의 문서가 대상입니다.",
+    ["Blackrock Mountain opens in the south of the Searing Gorge; inside, the spire's door is at the top of the mountain."] =
+        "검은바위 산 입구는 이글거리는 협곡 남쪽에 있습니다. 산 안에서 첨탑 입구는 산 꼭대기에 있습니다.",
+    ["Highlord Omokk, north of Mok'Doom; War Master Voone, at the bottom of Tazz'Alaor; Overlord Wyrmthalak, the last boss, in the Chamber of Battle. The documents lie in one of their rooms, or by Urok's tribute pile."] =
+        "대군주 오모크는 목둠 북쪽에, 대장군 부네는 타즈알라오르 아래쪽에, 마지막 우두머리 대군주 웜타라크는 전투의 방에 있습니다. 문서는 이들의 방 중 한 곳이나 우로크의 공물 더미 옆에 있습니다.",
+    ["Galamav the Marksman, Lexlort and Warlord Goretooth, at Kargath."] =
+        "명사수 갈라마브, 렉스로트, 장군 고어투스는 카르가스에 있습니다.",
+    ["A herald of your capital: Harbinger Balthazad, Warcaller Gorlach or Bluff Runner Windstrider."] =
+        "대도시의 전령: 선구자 발타자드, 징집관 고를라취 또는 포고꾼 윈드스트라이더.",
+    ["Optional: a lead to Camp Mojache, about 1,500 XP."] =
+        "선택 사항: 모자케 야영지로 안내하는 퀘스트, 약 1,500 경험치.",
+    ["Talo Thornhoof, at Camp Mojache, in Feralas."] =
+        "탈로 쏜후프는 페랄라스의 모자케 야영지에 있습니다.",
+    ["Talo Thornhoof and Sage Korolusk, at Camp Mojache."] =
+        "탈로 쏜후프와 현자 코로루스크는 모자케 야영지에 있습니다.",
+    ["Talo Thornhoof, at Camp Mojache."] =
+        "탈로 쏜후프는 모자케 야영지에 있습니다.",
+    ["Sage Korolusk, at Camp Mojache."] =
+        "현자 코로루스크는 모자케 야영지에 있습니다.",
+    ["Harbinger Balthazad, in the Valley of Honor of Orgrimmar."] =
+        "선구자 발타자드는 오그리마의 명예의 골짜기에 있습니다.",
+    ["High Executor Derrington, at the Bulwark, in the Western Plaguelands."] =
+        "고위집행관 델링턴은 서부 역병지대의 보루에 있습니다.",
+    ["Burn the Scarlet command tent between Felstone Field and Dalson's Tears, and plant the Scourge banner there."] =
+        "펠스톤 농장과 달슨의 눈물 사이에 있는 붉은십자군 지휘 천막을 불태우고, 그곳에 스컬지 깃발을 꽂으세요.",
+    ["Apothecary Dithers, at the Bulwark."] =
+        "연금술사 디더스는 보루에 있습니다.",
+    ["Apothecary Dithers, at the Bulwark, in the Western Plaguelands."] =
+        "연금술사 디더스는 서부 역병지대의 보루에 있습니다.",
+    ["Alexi Barov, at the Bulwark."] =
+        "알렉시 바로브는 보루에 있습니다.",
+    ["The Barov fortune: four deeds inside the school; its follow-up sends you to kill Weldon Barov in the Alliance's Chillwind Camp."] =
+        "바로브 가문의 재산: 학교 안의 증서 네 장. 후속 퀘스트에서는 얼라이언스의 서리바람 야영지에 있는 웰던 바로브를 처치하러 갑니다.",
+    ["Weldon Barov stands among the guards of Chillwind Camp, the Alliance's camp in the west of the Western Plaguelands."] =
+        "웰던 바로브는 서부 역병지대 서쪽의 얼라이언스 야영지인 서리바람 야영지의 경비병들 사이에 서 있습니다.",
+    ["Nathanos Blightcaller, at Marris Stead, in the south-west of the Eastern Plaguelands."] =
+        "나타노스 블라이트콜러는 동부 역병지대 남서쪽의 마리스 농장에 있습니다.",
+    ["Optional: Nathanos Blightcaller's chain in the Eastern Plaguelands, up to Ramstein the Gorger inside the city: about 6,600 XP at its end."] =
+        "선택 사항: 동부 역병지대에서 진행하는 나타노스 블라이트콜러의 연계 퀘스트로, 도시 안의 먹보 람스타인까지 이어집니다: 끝에 약 6,600 경험치를 받습니다.",
+    ["Corin's Crossing, to the east: collect the living rot in ten minutes, then grind it with the mortar."] =
+        "동쪽의 코린의 교차로: 10분 안에 살아 있는 부패물을 모은 다음 막자사발로 빻으세요.",
+    ["The plaguebats of the Eastern Plaguelands."] =
+        "동부 역병지대의 역병박쥐.",
+    ["The Quel'Thalas Registry lies in the Quel'Lithien lodge, on the northern border."] =
+        "쿠엘탈라스 기록부는 북쪽 경계의 쿠엘리시엔 오두막에 있습니다.",
+    ["Duskwing, a bat, roams the country; Borelgore walks the northern wastes."] =
+        "박쥐인 그늘날개는 일대를 돌아다니고, 피고름구더기는 북쪽 황무지를 돌아다닙니다.",
+    ["Ramstein the Gorger comes into Slaughter Square once it is cleared."] =
+        "학살의 광장을 정리하면 먹보 람스타인이 광장으로 들어옵니다.",
+    ["Nathanos Blightcaller, at Marris Stead."] =
+        "나타노스 블라이트콜러는 마리스 농장에 있습니다.",
 }

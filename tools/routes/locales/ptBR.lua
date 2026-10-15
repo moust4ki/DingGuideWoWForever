@@ -4522,4 +4522,1753 @@ return {
         "Eurico Palhares, na estalagem de Montalvo.",
     ["The four heirlooms lie in the crypt of the Agamand Mills, in the northwest of Tirisfal Glades."] =
         "As quatro relíquias de família ficam na cripta de Agamand Mills, no noroeste das Clareiras de Tirisfal.",
+    -- Ding! - Dungeon quests (hand-written guides)
+    ["The Hall of Thanes"] =
+        "Salão dos Thanes",
+    ["Afadra Dunwall and Thom Filch, in the west of Ironforge."] =
+        "Afadra Dunwall e Thom Filch, no oeste de Altaforja.",
+    ["Two quests of the hall: a leather belt or mail bracers, cloth gloves or an off-hand tome."] =
+        "Duas missões do salão: um cinto de couro ou braçadeiras de malha, luvas de tecido ou um tomo de mão secundária.",
+    ["The Dark Iron spies of the east of Dun Morogh may drop a Dark Iron map: read it."] =
+        "Os Espiões Ferro Negro do leste de Dun Morogh podem soltar um mapa Ferro Negro: leia-o.",
+    ["The Dark Iron map opens Old Ironforge Incursion: a gun, a wand or a two-handed mace."] =
+        "O mapa Ferro Negro abre \"Old Ironforge Incursion\": uma arma de fogo, uma varinha ou uma maça de duas mãos.",
+    ["Earthseer Farsen, in the east of Dun Morogh."] =
+        "Earthseer Farsen, no leste de Dun Morogh.",
+    ["Enter the Hall of Thanes"] =
+        "Entre no Salão dos Thanes",
+    ["The hall lies beneath Old Ironforge, in the west of the city."] =
+        "O salão fica sob a Velha Altaforja, no oeste da cidade.",
+    ["Kill the enraged apparitions and the tormented souls of the hall, then put the spirit of Anvilmar to rest."] =
+        "Mate as aparições enfurecidas e as almas atormentadas do salão, depois dê descanso ao espírito de Anvilmar.",
+    ["The dwarven heirlooms lie around the hall."] =
+        "As relíquias de família anãs ficam espalhadas pelo salão.",
+    ["The Treaty of Understanding lies in the hall: take it, then read it."] =
+        "O Treaty of Understanding fica no salão: pegue-o e depois leia-o.",
+    ["Durgen Dirgehammer carries the head the quest asks for."] =
+        "Durgen Dirgehammer carrega a cabeça que a missão pede.",
+    ["Afadra Dunwall and Thom Filch, in Ironforge."] =
+        "Afadra Dunwall e Thom Filch, em Altaforja.",
+    ["King Magni Bronzebeard, in the High Seat of Ironforge."] =
+        "Rei Magni Barbabronze, na Sala do Trono de Altaforja.",
+    ["King Magni Bronzebeard."] =
+        "Rei Magni Barbabronze.",
+    ["Wailing Caverns"] =
+        "Caverna Ululante",
+    ["Mebok Mizzyrix, in Ratchet."] =
+        "Cáliper Porcatraca, em Vila Catraca.",
+    ["Raptor Horns opens Smart Drinks, a quest of the caverns."] =
+        "\"Chifres de raptor\" abre \"Bebidas inteligentes\", uma missão das cavernas.",
+    ["Crane Operator Bigglefuzz, on the docks of Ratchet."] =
+        "Operador de Grua Mafuá, nas docas de Vila Catraca.",
+    ["The sunscale raptors roam the plains between the Crossroads and Ratchet."] =
+        "Os raptores Heliéscamo vagam pelas planícies entre a Encruzilhada e Vila Catraca.",
+    ["Nalpak and Ebru stand in a cave on the caverns' hill: climb the hill from the east, follow the trail and drop onto the rock ledge."] =
+        "Nalpak e Ebru ficam numa caverna no morro das cavernas: suba o morro pelo leste, siga a trilha e salte para a saliência de rocha.",
+    ["Two quests of the deviate creatures; their rewards include a bag, leather leggings, mail gauntlets or a wand."] =
+        "Duas missões das criaturas anormais; as recompensas incluem uma bolsa, perneiras de couro, manoplas de malha ou uma varinha.",
+    ["Mad Magglish, a goblin who stays hidden, walks the caves around the dungeon's door."] =
+        "Maluc Insano, um goblin que fica escondido, anda pelas cavernas em volta da porta da masmorra.",
+    ["Enter Wailing Caverns"] =
+        "Entre na Caverna Ululante",
+    ["The mouth of the caverns opens on the hill above the Lushwater Oasis."] =
+        "A boca das cavernas se abre no morro acima do Oásis das Águas Claras.",
+    ["Every deviate creature drops hides: raptors, lashers and snakes, from the first halls on."] =
+        "Toda criatura anormal solta pelegos: raptores, dioneias e serpentes, desde os primeiros salões.",
+    ["The ectoplasms, living oozes of the caverns, drop the essence."] =
+        "Os ectoplasmas, gosmas vivas das cavernas, soltam a essência.",
+    ["Ravagers and vipers fill the first halls; shamblers and dreadfangs come further in."] =
+        "Assoladores e víboras ocupam os primeiros salões; trôpegos e presáteras aparecem mais adiante.",
+    ["Mutanus the Devourer may drop the Glowing Shard: he appears after the Disciple of Naralex's ritual, which starts once the four Fanglords are dead."] =
+        "Mutanus, o Devorador, pode soltar o Estilhaço Chamejante: ele aparece depois do ritual do Discípulo de Naralex, que começa assim que os quatro Lordes da Presa estiverem mortos.",
+    ["Nalpak and Ebru, in their cave on the caverns' hill."] =
+        "Nalpak e Ebru, na caverna deles no morro das cavernas.",
+    ["Mebok Mizzyrix and Crane Operator Bigglefuzz, in Ratchet."] =
+        "Cáliper Porcatraca e Operador de Grua Mafuá, em Vila Catraca.",
+    ["Sputtervalve, in Ratchet, knows what the shard is."] =
+        "Cobogó, em Vila Catraca, sabe o que é o estilhaço.",
+    ["Falla Sagewind, on top of the caverns' hill."] =
+        "Falla Vento Sábio, no alto do morro das cavernas.",
+    ["Mathrengyl Bearwalker, in the Cenarion Enclave of Darnassus."] =
+        "Mathrengyl Ursivagus, no Enclave Cenariano de Darnassus.",
+    ["The Deadmines"] =
+        "Minas Mortas",
+    ["Wilder Thistlenettle, in the Dwarven District of Stormwind."] =
+        "Wilder Urtigão, no Distrito dos Anões de Ventobravo.",
+    ["Two quests of the mine under Moonbrook; their rewards include a two-handed axe and cloth, leather or mail armor."] =
+        "Duas missões da mina sob o Arroio da Lua; as recompensas incluem um machado de duas mãos e armadura de tecido, couro ou malha.",
+    ["Shoni the Shilent, in the Dwarven District."] =
+        "Shoni, a Shilenchiosa, no Distrito dos Anões.",
+    ["Reward: armor of leather or mail, or a wand."] =
+        "Recompensa: armadura de couro ou de malha, ou uma varinha.",
+    ["Gryan Stoutmantle, in the tower of Sentinel Hill, in Westfall."] =
+        "Miguel Mantoforte, na torre do Morro da Sentinela, em Cerro Oeste.",
+    ["A long chain of six quests between Westfall, Redridge and Stormwind: it leads to VanCleef, whose head brings mail leggings, a leather tunic or a staff."] =
+        "Uma longa série de seis missões entre Cerro Oeste, Cristarrubra e Ventobravo: ela leva a VanCleef, cuja cabeça rende perneiras de malha, uma túnica de couro ou um cajado.",
+    ["Alba Fairmoon, south-west of Sentinel Hill."] =
+        "Alba Fairmoon, a sudoeste do Morro da Sentinela.",
+    ["A quest of the mine under Moonbrook, ended at the Deadmines' exit."] =
+        "Uma missão da mina sob o Arroio da Lua, entregue na saída das Minas Mortas.",
+    ["Wiley the Black, in the inn of Lakeshire, in Redridge."] =
+        "Wiley, o Negro, na estalagem de Vila Plácida, em Cristarrubra.",
+    ["Gryan Stoutmantle, at Sentinel Hill."] =
+        "Miguel Mantoforte, no Morro da Sentinela.",
+    ["Master Mathias Shaw, in the SI:7 house of Old Town, in Stormwind."] =
+        "Mestre Mathias Shaw, na casa da AVIN na Cidade Velha, em Ventobravo.",
+    ["The Defias Messenger walks the road to Moonbrook; he carries the message."] =
+        "O Mensageiro Défias percorre a estrada para o Arroio da Lua; ele carrega a mensagem.",
+    ["Follow the Defias Traitor to Moonbrook; Defias attack on the way."] =
+        "Siga o Traidor Défias até o Arroio da Lua; Défias atacam no caminho.",
+    ["Scout Riell, at the top of the Sentinel Hill tower."] =
+        "Batedora Riell, no alto da torre do Morro da Sentinela.",
+    ["Reward: a weapon of your choice."] =
+        "Recompensa: uma arma à sua escolha.",
+    ["Go down into the mine under Moonbrook"] =
+        "Desça até a mina sob o Arroio da Lua",
+    ["The mine opens inside a house in the middle of Moonbrook."] =
+        "A mina se abre dentro de uma casa no meio do Arroio da Lua.",
+    ["Foreman Thistlenettle and the undead miners roam the mine's tunnels, before the dungeon's door."] =
+        "O Encarregado Cardurtiga e os mineradores mortos-vivos rondam os túneis da mina, antes da porta da masmorra.",
+    ["Plant the explosives by the forge hidden in the Deadmines."] =
+        "Plante os explosivos junto à forja escondida nas Minas Mortas.",
+    ["Every Defias of the dungeon may drop a bandana."] =
+        "Todo Défias da masmorra pode soltar uma bandana.",
+    ["Sneed's Shredder, the second boss, in the goblins' lumber cave, drops the Gnoam Sprecklesprocket."] =
+        "O Retalhador do Sneed, o segundo chefe, na caverna da serraria dos goblins, solta o Engrenotreco Gnomo.",
+    ["Edwin VanCleef, the last boss, waits on the deck of the Defias ship at the end of the cave."] =
+        "Edwin VanCleef, o último chefe, espera no convés do navio Défias, no fim da caverna.",
+    ["VanCleef drops a letter: read it to take its quest."] =
+        "VanCleef solta uma carta: leia-a para pegar a missão dela.",
+    ["Alba Fairmoon waits at the Deadmines' exit, on the coast south-west of Moonbrook."] =
+        "Alba Fairmoon espera na saída das Minas Mortas, na costa a sudoeste do Arroio da Lua.",
+    ["Use her detonator, then tell her."] =
+        "Use o detonador dela, depois avise-a.",
+    ["Gryan Stoutmantle and Scout Riell, in the Sentinel Hill tower."] =
+        "Miguel Mantoforte e Batedora Riell, na torre do Morro da Sentinela.",
+    ["Baros Alexston, in the City Hall of the Cathedral Square."] =
+        "Baros Aleixo, na Prefeitura da Praça da Catedral.",
+    ["Bazil Thredd leads to the Stockade's riots."] =
+        "Basílio Taborda leva à rebelião no Cárcere.",
+    ["Warden Thelwater, at the door of the Stockade, in Stormwind."] =
+        "Carcereiro-chefe Thelágua, na porta do Cárcere, em Ventobravo.",
+    ["Ruins of Lordaeron"] =
+        "Ruínas de Lordaeron",
+    ["Enter the Ruins of Lordaeron"] =
+        "Entre nas Ruínas de Lordaeron",
+    ["The ruins rise above Undercity, in Tirisfal Glades: Horde land, keep your guard up."] =
+        "As ruínas se erguem acima da Cidade Baixa, nas Clareiras de Tirisfal: território da Horda, fique atento.",
+    ["The undead of the ruins may drop a bloodied insignia: read it."] =
+        "Os mortos-vivos das ruínas podem soltar uma insígnia ensanguentada: leia-a.",
+    ["Reward: leather leggings or mail armor."] =
+        "Recompensa: perneiras de couro ou armadura de malha.",
+    ["Ten insignias, from the undead of the ruins."] =
+        "Dez insígnias, dos mortos-vivos das ruínas.",
+    ["The Crest of Lordaeron lies in the ruins: take it, then read it."] =
+        "O Crest of Lordaeron fica nas ruínas: pegue-o e depois leia-o.",
+    ["Reward: a small sack of gems."] =
+        "Recompensa: um saquinho de gemas.",
+    ["Edward Heartweaver's last letter lies in the ruins: read it."] =
+        "A última carta de Edward Heartweaver fica nas ruínas: leia-a.",
+    ["General Marcus Jonathan, at the gate of Stormwind."] =
+        "General Marcus Jonas, no portão de Ventobravo.",
+    ["Lady Dena Kennedy, in Stormwind."] =
+        "Lady Dena Kennedy, em Ventobravo.",
+    ["Orphan Matron Nightingale, at the orphanage of Stormwind."] =
+        "Matriarca Ananéri, no orfanato de Ventobravo.",
+    ["Blackfathom Deeps"] =
+        "Profundezas Negras",
+    ["Argos Nightwhisper, in Stormwind."] =
+        "Argos Umbrurmúrio, em Ventobravo.",
+    ["Optional: a lead to Auberdine, worth about 1,450 XP once there."] =
+        "Opcional: um encaminhamento para Auberdine, que rende cerca de 1.450 de XP ao chegar lá.",
+    ["Gerrig Bonegrip, in the Forlorn Cavern of Ironforge."] =
+        "Gerrig Agarrosso, na Caverna Esquecida de Altaforja.",
+    ["Reward: a ring."] =
+        "Recompensa: um anel.",
+    ["Gershala Nightwhisper, in Auberdine, in Darkshore."] =
+        "Gershala Umbrurmúrio, em Auberdine, na Costa Negra.",
+    ["Gershala Nightwhisper, in Auberdine."] =
+        "Gershala Umbrurmúrio, em Auberdine.",
+    ["Reward: cloth, leather or mail armor."] =
+        "Recompensa: armadura de tecido, couro ou malha.",
+    ["Argent Guard Manados and Dawnwatcher Shaedlass, in Darnassus."] =
+        "Guarda Argênteo Manados e Vigilalva Saedlass, em Darnassus.",
+    ["Two quests of the Argent Dawn: the second leads to Twilight Lord Kelris and a wand, a shield or leather armor."] =
+        "Duas missões da Aurora Argêntea: a segunda leva ao Senhor do Crepúsculo Kelris e a uma varinha, um escudo ou armadura de couro.",
+    ["Enter Blackfathom Deeps"] =
+        "Entre nas Profundezas Negras",
+    ["The deeps open in ruins half under water, on the coast of Ashenvale's Zoram Strand."] =
+        "As profundezas se abrem em ruínas meio submersas, na costa da Praia de Zoram, no Vale Gris.",
+    ["The Blackfathom and Fallenroot creatures carry the brain stems, from the cave before the dungeon's door on."] =
+        "As criaturas Satíricon e das Profundezas Negras carregam os troncos encefálicos, desde a caverna antes da porta da masmorra.",
+    ["The manuscript lies in a chest under the water, by Ghamoo-ra, the first boss, in the Pool of Ask'ar."] =
+        "O manuscrito fica num baú debaixo d'água, junto a Ghamoo-ra, o primeiro chefe, no Pool of Ask'ar.",
+    ["Argent Guard Thaelrid waits in an underwater cave south-west of the Pool of Ask'ar."] =
+        "O Guarda Argênteo Thaelrid espera numa caverna submersa a sudoeste do Pool of Ask'ar.",
+    ["Every Twilight cultist of the deeps may drop a pendant."] =
+        "Todo sectário do Crepúsculo das profundezas pode soltar um pingente.",
+    ["Twilight Lord Kelris, the fourth boss, holds the Moonshrine Sanctum."] =
+        "O Senhor do Crepúsculo Kelris, o quarto chefe, ocupa o Moonshrine Sanctum.",
+    ["Argent Guard Manados, in Darnassus."] =
+        "Guarda Argênteo Manados, em Darnassus.",
+    ["Dawnwatcher Selgorm, beside him in Darnassus."] =
+        "Vigilalva Selgorm, ao lado dele em Darnassus.",
+    ["The Stockade"] =
+        "O Cárcere",
+    ["Motley Garmason, at Dun Modr, in the north of the Wetlands."] =
+        "Rocio Garmason, em Dun Modr, no norte do Pantanal.",
+    ["Far north in the Wetlands: it opens The Fury Runs Deep, whose reward is a two-handed mace or a leather belt."] =
+        "No extremo norte do Pantanal: ela abre \"Fúria profunda\", cuja recompensa é uma maça de duas mãos ou um cinto de couro.",
+    ["The Dark Iron dwarves camp around Dun Modr."] =
+        "Os anões Ferro Negro acampam em volta de Dun Modr.",
+    ["Guard Berton, in Lakeshire, in Redridge."] =
+        "Guarda Berto, em Vila Plácida, em Cristarrubra.",
+    ["Reward: a staff, a sword or a two-handed mace."] =
+        "Recompensa: um cajado, uma espada ou uma maça de duas mãos.",
+    ["Councilman Millstipe, in the town hall of Darkshire, in Duskwood."] =
+        "Conselheiro Millstipe, na prefeitura de Vila Sombria, na Floresta do Crepúsculo.",
+    ["Nikova Raskol, in Old Town, in Stormwind."] =
+        "Nikova Raskol, na Cidade Velha, em Ventobravo.",
+    ["Warden Thelwater, at the door of the Stockade."] =
+        "Carcereiro-chefe Thelágua, na porta do Cárcere.",
+    ["Warden Thelwater asks for Bazil Thredd's head."] =
+        "O Carcereiro-chefe Thelágua pede a cabeça de Basílio Taborda.",
+    ["Enter the Stockade"] =
+        "Entre no Cárcere",
+    ["The prison's door is by Warden Thelwater, in Stormwind."] =
+        "A porta da prisão fica junto ao Carcereiro-chefe Thelágua, em Ventobravo.",
+    ["Targorr the Dread, the first boss, sits in a cell near the start."] =
+        "Targorr, o Horror, o primeiro chefe, fica numa cela perto do início.",
+    ["Kam Deepfury: go north, then east; he waits in the second small cell on the left."] =
+        "Kam Fundafúria: vá para o norte, depois para o leste; ele espera na segunda cela pequena à esquerda.",
+    ["Bazil Thredd waits at the end of the east corridor."] =
+        "Basílio Taborda espera no fim do corredor leste.",
+    ["Dextren Ward waits at the end of the west corridor."] =
+        "Flávio Lúcio espera no fim do corredor oeste.",
+    ["The prisoners, convicts and insurgents fill every cell; the Defias among them drop the bandanas."] =
+        "Os prisioneiros, condenados e insurgentes ocupam todas as celas; os Défias entre eles soltam as bandanas.",
+    ["Optional: nine more quests in Stormwind; the last brings a ring and about 3,750 XP."] =
+        "Opcional: mais nove missões em Ventobravo; a última rende um anel e cerca de 3.750 de XP.",
+    ["Baros Alexston, in the City Hall."] =
+        "Baros Aleixo, na Prefeitura.",
+    ["Master Mathias Shaw, in the SI:7 house of Old Town."] =
+        "Mestre Mathias Shaw, na casa da AVIN na Cidade Velha.",
+    ["Elling Trias, in the cheese shop of the Trade District."] =
+        "Elling Trias, na queijaria do Distrito Comercial.",
+    ["Tyrion, near Stormwind Keep."] =
+        "Tyrion, perto da Bastilha Ventobravo.",
+    ["Three silk cloth, and two of Clara's fresh apples, from a basket north-west of Goldshire, in Elwynn Forest."] =
+        "Três peças de Seda e duas Maçãs Frescas da Clara, tiradas de um cesto a noroeste de Vila d'Ouro, na Floresta de Elwynn.",
+    ["Wait in the garden by Stormwind Keep until Lord Gregor Lescovar and Marzon the Silent Blade have talked, then defeat both."] =
+        "Espere no jardim junto à Bastilha Ventobravo até Lorde Gregor Lescobar e Marzon, a Lâmina Silente, terminarem de conversar, depois derrote os dois.",
+    ["Elling Trias, in the cheese shop."] =
+        "Elling Trias, na queijaria.",
+    ["Master Mathias Shaw, in the SI:7 house."] =
+        "Mestre Mathias Shaw, na casa da AVIN.",
+    ["Lady Katrana Prestor, beside the king in Stormwind Keep."] =
+        "Lady Katrana Prestor, ao lado do rei na Bastilha Ventobravo.",
+    ["Nikova Raskol, in Old Town."] =
+        "Nikova Raskol, na Cidade Velha.",
+    ["Guard Berton, in Lakeshire."] =
+        "Guarda Berto, em Vila Plácida.",
+    ["Councilman Millstipe, in Darkshire."] =
+        "Conselheiro Millstipe, em Vila Sombria.",
+    ["Motley Garmason, at Dun Modr."] =
+        "Rocio Garmason, em Dun Modr.",
+    ["Excavation Site: Wetlands"] =
+        "Sítio de Escavação: Pantanal",
+    ["James Halloran, the tanner of Menethil Harbor, in the Wetlands."] =
+        "Iago Halberque, o curtidor do Porto de Menethil, no Pantanal.",
+    ["Caitlin Grassman, in Menethil Harbor."] =
+        "Tina Pastofino, no Porto de Menethil.",
+    ["Optional: the guide does not know yet who ends this search; its follow-up brings a satchel of potions."] =
+        "Opcional: o guia ainda não sabe quem encerra esta busca; a continuação dela rende uma bolsa de poções.",
+    ["Rethiel the Greenwarden, in the middle of the Wetlands."] =
+        "Rethiel, o Verdião, no meio do Pantanal.",
+    ["Reward: an axe, and about 3,200 XP."] =
+        "Recompensa: um machado, e cerca de 3.200 de XP.",
+    ["Dorin Songblade, the armorer of Lakeshire, in Redridge."] =
+        "Dorin Espada-cantante, o armeiro de Vila Plácida, em Cristarrubra.",
+    ["Optional: the guide does not know yet who ends this search."] =
+        "Opcional: o guia ainda não sabe quem encerra esta busca.",
+    ["Enter the Excavation Site"] =
+        "Entre no Sítio de Escavação",
+    ["The excavation site opens by the dig in the middle of the Wetlands."] =
+        "O sítio de escavação se abre junto às escavações, no meio do Pantanal.",
+    ["Four thicket raptor hides, from the raptors of the site."] =
+        "Quatro peles de raptor do matagal, dos raptores do sítio.",
+    ["A Highland Horror carries the root core."] =
+        "Um Highland Horror carrega o núcleo de raiz.",
+    ["Ardin Grassman, somewhere in the site."] =
+        "Ardin Grassman, em algum lugar do sítio.",
+    ["Daewyn, somewhere in the site."] =
+        "Daewyn, em algum lugar do sítio.",
+    ["The relic guardians may drop a Titan relic: read it."] =
+        "Os guardiões de relíquias podem soltar uma relíquia titânica: leia-a.",
+    ["The Titan relic leads to Ironforge's explorers: a staff or a two-handed mace."] =
+        "A relíquia titânica leva aos exploradores de Altaforja: um cajado ou uma maça de duas mãos.",
+    ["Prospector Whelgar, at his excavation camp in the Wetlands."] =
+        "Prospector Whelgar, no acampamento de escavação dele no Pantanal.",
+    ["Rethiel the Greenwarden."] =
+        "Rethiel, o Verdião.",
+    ["James Halloran, in Menethil Harbor."] =
+        "Iago Halberque, no Porto de Menethil.",
+    ["Dorin Songblade, in Lakeshire."] =
+        "Dorin Espada-cantante, em Vila Plácida.",
+    ["High Explorer Magellas, in the Hall of Explorers of Ironforge."] =
+        "Alto-explorador Magellas, no Salão dos Exploradores de Altaforja.",
+    ["Gnomeregan"] =
+        "Gnomeregan",
+    ["Shoni the Shilent, in the Dwarven District of Stormwind."] =
+        "Shoni, a Shilenchiosa, no Distrito dos Anões de Ventobravo.",
+    ["Reward: cloth or leather gloves, or an axe."] =
+        "Recompensa: luvas de tecido ou de couro, ou um machado.",
+    ["Brother Sarno, in the Cathedral of Light."] =
+        "Irmão Sarmo, na Catedral da Luz.",
+    ["Optional: a lead to Tinkmaster Overspark in Ironforge."] =
+        "Opcional: um encaminhamento para o Mestre-faz-tudo Superchispa, em Altaforja.",
+    ["Tinkmaster Overspark, in Tinker Town, in Ironforge."] =
+        "Mestre-faz-tudo Superchispa, no Beco da Gambiarra, em Altaforja.",
+    ["Tinkmaster Overspark, in Tinker Town."] =
+        "Mestre-faz-tudo Superchispa, no Beco da Gambiarra.",
+    ["Master Mechanic Castpipe, Klockmort Spannerspan and High Tinker Mekkatorque, in Tinker Town."] =
+        "Mestre Mecânico Fundecano, Cronomorfus Espanafuso e Grão-faz-tudo Mekkatorque, no Beco da Gambiarra.",
+    ["Tinker Town's quests: Data Rescue brings a two-handed mace or a cloak, The Grand Betrayal cloth, leather or mail armor."] =
+        "As missões do Beco da Gambiarra: \"O resgate dos dados\" rende uma maça de duas mãos ou uma capa; \"A grande traição\", armadura de tecido, couro ou malha.",
+    ["Gnoarn, in Tinker Town."] =
+        "Gnoarn, no Beco da Gambiarra.",
+    ["Ozzie Togglevolt, in Kharanos, in Dun Morogh."] =
+        "Ozzie Mudavolt, em Kharanos, em Dun Morogh.",
+    ["Use the empty phial on the irradiated troggs that roam the gates of Gnomeregan."] =
+        "Use o coletor vazio nos troggs irradiados que rondam os portões de Gnomeregan.",
+    ["Back to Ozzie Togglevolt, in Kharanos."] =
+        "De volta a Ozzie Mudavolt, em Kharanos.",
+    ["Enter Gnomeregan"] =
+        "Entre em Gnomeregan",
+    ["The gates of Gnomeregan stand in the west of Dun Morogh."] =
+        "Os portões de Gnomeregan ficam no oeste de Dun Morogh.",
+    ["Techbot, the first boss, waits just inside: he drops the memory core."] =
+        "Tecnobô, o primeiro chefe, espera logo depois da entrada: ele solta o núcleo de memória.",
+    ["The tall, square machines of the city hold the artificials; every mechanical creature may drop the guts."] =
+        "As máquinas altas e quadradas da cidade guardam os artifícios; toda criatura mecânica pode soltar as tripas.",
+    ["Use the heavy phial on a living irradiated slime, in the lower Hall of Gears; the fallout does not last long."] =
+        "Use o coletor pesado num visgo irradiado vivo, na parte de baixo do Hall of Gears; o resíduo não dura muito.",
+    ["The addled leper gnomes drop the white card; the four Matrix Punchographs, from A to D, turn it yellow, blue, red, then prismatic: A on the way in, B at the bottom of the Dormitory, C on the Launch Bay's platform (Electrocutioner 6000's key opens it), D in the lower Engineering Labs."] =
+        "Os gnomos leprosos atordoados soltam o cartão branco; as quatro Matrizes Perfuradoras, de A a D, o deixam amarelo, azul, vermelho e depois prismático: A no caminho de entrada, B no fundo do Dormitório, C na plataforma da Launch Bay (a chave do Eletrocutor 6000 a abre), D na parte de baixo dos Engineering Labs.",
+    ["Kernobee, a gnome held inside the city."] =
+        "Kernobill, um gnomo preso dentro da cidade.",
+    ["Optional: an escort, turned in at Booty Bay, far away; it rewards bracers or shoulders."] =
+        "Opcional: uma escolta, entregue na Angra do Butim, bem longe daqui; ela rende braçadeiras ou ombreiras.",
+    ["Lead Kernobee to the Clean Zone, by the dungeon's back door."] =
+        "Leve Kernobill até a Clean Zone, junto à porta dos fundos da masmorra.",
+    ["The Dark Iron agents may drop a grimy ring: use it."] =
+        "Os Agentes Ferro Negro podem soltar um anel encardido: use-o.",
+    ["Put it in the Sparklematic 5200, a cleaning machine of the city."] =
+        "Coloque-o na Brastematic 5200, uma máquina de limpeza da cidade.",
+    ["Mekgineer Thermaplugg, the last boss, waits in the Tinkers' Court."] =
+        "Mecangenheiro Termaplugue, o último chefe, espera no Tinkers' Court.",
+    ["Ozzie Togglevolt, in Kharanos."] =
+        "Ozzie Mudavolt, em Kharanos.",
+    ["Tinker Town, in Ironforge."] =
+        "Beco da Gambiarra, em Altaforja.",
+    ["Talvash del Kissel, in the Mystic Ward of Ironforge."] =
+        "Didiê Du Mocó, na Ala Mística de Altaforja.",
+    ["A gold ring, for a silver bar, a moss agate and 30 silver."] =
+        "Um anel de ouro, em troca de uma Barra de Prata, uma Ágata Musgosa e 30 de prata.",
+    ["A silver bar and a moss agate: from mining, or the auction house."] =
+        "Uma Barra de Prata e uma Ágata Musgosa: da mineração, ou da casa de leilões.",
+    ["Scooty, the goblin engineer of Booty Bay, in Stranglethorn Vale."] =
+        "Scooty, o engenheiro goblin da Angra do Butim, na Selva do Espinhaço.",
+    ["Razorfen Kraul"] =
+        "Urzal dos Tuscos",
+    ["Veyric Thunderhame, in the north-east of Arathi Highlands."] =
+        "Veyric Thunderhame, no nordeste do Planalto Arathi.",
+    ["Shamans: Charlga Razorflank carries the note this quest asks for."] =
+        "Xamãs: Charlga Talhaflanco carrega o bilhete que esta missão pede.",
+    ["Reward: a small container of gems."] =
+        "Recompensa: um pequeno recipiente de gemas.",
+    ["Take the crate with holes and the owner's manual beside Mebok, and read the manual."] =
+        "Pegue o caixote com furos e o manual do proprietário ao lado de Cáliper, e leia o manual.",
+    ["The journal lies by a body in the north-west of Thousand Needles, below the Great Lift: read it."] =
+        "O diário fica junto a um corpo no noroeste de Mil Agulhas, abaixo do Grande Elevador: leia-o.",
+    ["Henrig Lonebrow's journal opens The Crone of the Kraul: cloth shoulders, mail belt or a shield."] =
+        "O Diário de Henrig Monocelha abre \"A bruxa má do Urzal\": ombreiras de tecido, cinto de malha ou um escudo.",
+    ["Falfindel Waywarder, at Thalanaar, on the eastern edge of Feralas."] =
+        "Falfindel Trilhemas, em Thalanaar, na borda leste de Feralas.",
+    ["Enter Razorfen Kraul"] =
+        "Entre no Urzal dos Tuscos",
+    ["The kraul's thorny mound rises in the far south of the Barrens."] =
+        "O morro espinhoso do Urzal se ergue no extremo sul dos Sertões.",
+    ["Past Overlord Ramtusk, open the crate to call the gopher and use the stick on it: it digs up the tubers."] =
+        "Depois do Lorde Supremo Marretusco, abra o caixote para chamar a marmota e use o bastão nela: ela desenterra os tubérculos.",
+    ["Charlga Razorflank, the last boss, holds the top of the kraul."] =
+        "Charlga Talhaflanco, a última chefe, ocupa o topo do Urzal.",
+    ["Heralath Fallowbrook lies in the tent on the left, below Charlga Razorflank's platform."] =
+        "Heralath Corregofulvo jaz na tenda à esquerda, abaixo da plataforma de Charlga Talhaflanco.",
+    ["Reward: boots of leather or mail, or a cloak."] =
+        "Recompensa: botas de couro ou de malha, ou uma capa.",
+    ["Willix the Importer waits beside Heralath's tent."] =
+        "O Importador Willix espera ao lado da tenda de Heralath.",
+    ["Reward: a ring of your choice."] =
+        "Recompensa: um anel à sua escolha.",
+    ["Lead Willix back to the entrance; quilboar attack on the way."] =
+        "Leve Willix de volta à entrada; javatuscos atacam no caminho.",
+    ["Every Razorfen quilboar may drop Treshala's pendant."] =
+        "Todo javatusco do Urzal pode soltar o pingente de Treshala.",
+    ["Falfindel Waywarder, at Thalanaar."] =
+        "Falfindel Trilhemas, em Thalanaar.",
+    ["Treshala Fallowbrook, in Darnassus."] =
+        "Treshala Corregofulvo, em Darnassus.",
+    ["Veyric Thunderhame, in Arathi Highlands."] =
+        "Veyric Thunderhame, no Planalto Arathi.",
+    ["City of Dalaran"] =
+        "Cidade de Dalaran",
+    ["Shylamiir, the herbalism trainer of Stormwind, and High Sorcerer Andromath, in the Mage Quarter."] =
+        "Shylamiir, a instrutora de herborismo de Ventobravo, e Grão-Feiticeiro Andromath, no Distrito dos Magos.",
+    ["Two quests of the city from Stormwind: the blossom brings a cloak or a mail belt."] =
+        "Duas missões da cidade a partir de Ventobravo: a flor rende uma capa ou um cinto de malha.",
+    ["Emissary Jacques, in Hillsbrad Foothills."] =
+        "Emissary Jacques, no Contraforte de Eira dos Montes.",
+    ["The Image of Archmage Modera, by the walls of Dalaran, at the eastern edge of Silverpine Forest."] =
+        "Image of Archmage Modera, junto às muralhas de Dalaran, na borda leste da Floresta de Pinhaprata.",
+    ["The Image of Archmage Modera."] =
+        "Image of Archmage Modera.",
+    ["Archmage Modera's quests: a pendant or an off-hand rod, and an introduction to the Kirin Tor."] =
+        "As missões de Archmage Modera: um pingente ou um bastão de mão secundária, e uma apresentação ao Kirin Tor.",
+    ["Enter the City of Dalaran"] =
+        "Entre na Cidade de Dalaran",
+    ["The city lies under its dome, in the west of the Alterac Mountains."] =
+        "A cidade fica sob a sua cúpula, no oeste das Montanhas de Alterac.",
+    ["Eight seeking remnants, eight saturated remnants and eight mana echoes, inside the city."] =
+        "Oito remanescentes buscadores, oito remanescentes saturados e oito ecos de mana, dentro da cidade.",
+    ["The arcane mote, inside the city."] =
+        "A partícula arcana, dentro da cidade.",
+    ["A fel infused blossom, inside the city."] =
+        "Uma flor imbuída de energia vil, dentro da cidade.",
+    ["The mana elemental, inside the city."] =
+        "O elemental de mana, dentro da cidade.",
+    ["Archmage Celindra, in the City of Dalaran."] =
+        "Archmage Celindra, na Cidade de Dalaran.",
+    ["The Image of Archmage Modera, by the walls of Dalaran."] =
+        "Image of Archmage Modera, junto às muralhas de Dalaran.",
+    ["Shylamiir and High Sorcerer Andromath, in Stormwind."] =
+        "Shylamiir e Grão-Feiticeiro Andromath, em Ventobravo.",
+    ["Scarlet Monastery"] =
+        "Monastério Escarlate",
+    ["Brother Crowley, in the Cathedral of Light of Stormwind."] =
+        "Irmão Crowley, na Catedral da Luz de Ventobravo.",
+    ["Optional: a lead to Brother Anton in Desolace."] =
+        "Opcional: um encaminhamento para o Irmão Anton, em Desolação.",
+    ["Librarian Mae Paledust, in the Hall of Explorers of Ironforge."] =
+        "Bibliotecária Maé Palidopó, no Salão dos Exploradores de Altaforja.",
+    ["Reward: a necklace, and about 3,550 XP."] =
+        "Recompensa: um colar, e cerca de 3.550 de XP.",
+    ["Brother Anton, at Nijel's Point, in Desolace."] =
+        "Irmão Anton, no Posto do Nijel, em Desolação.",
+    ["Brother Anton, at Nijel's Point."] =
+        "Irmão Anton, no Posto do Nijel.",
+    ["Down the Scarlet Path, in Desolace then Southshore, opens In the Name of the Light: a weapon or an off-hand orb, and about 4,700 XP."] =
+        "\"No caminho Escarlate\", em Desolação e depois na Costa Sul, abre \"Em nome da Luz\": uma arma ou um orbe de mão secundária, e cerca de 4.700 de XP.",
+    ["The undead ravagers roam the south-east of Desolace."] =
+        "Os assoladores mortos-vivos rondam o sudeste de Desolação.",
+    ["Raleigh the Devout, in the inn of Southshore, in Hillsbrad Foothills."] =
+        "Raul, o Devotado, na estalagem da Costa Sul, no Contraforte de Eira dos Montes.",
+    ["Magus Olvek, in the west of the Alterac Mountains."] =
+        "Magus Olvek, no oeste das Montanhas de Alterac.",
+    ["About 3,200 XP."] =
+        "Cerca de 3.200 de XP.",
+    ["Enter the Scarlet Monastery"] =
+        "Entre no Monastério Escarlate",
+    ["The monastery stands in the far east of Tirisfal Glades; its four wings, Graveyard, Library, Armory and Cathedral, each have their own door."] =
+        "O monastério fica no extremo leste das Clareiras de Tirisfal; cada uma das suas quatro alas, Cemitério, Biblioteca, Arsenal e Catedral, tem a própria porta.",
+    ["Magus Olvek's book lies somewhere in the monastery."] =
+        "O livro de Magus Olvek fica em algum lugar do monastério.",
+    ["Library: the book lies on the floor under a window, on the left of the room after the Gallery of Treasures."] =
+        "Biblioteca: o livro fica no chão, sob uma janela, à esquerda da sala depois da Gallery of Treasures.",
+    ["Houndmaster Loksey, the Library's first boss; Herod, the Armory's only boss; Scarlet Commander Mograine and High Inquisitor Whitemane, at the end of the Cathedral. Arcanist Doan's chest, at the end of the Library, holds the Scarlet Key that opens the Armory and the Cathedral."] =
+        "Mestre de Matilha Lobato, o primeiro chefe da Biblioteca; Herodes, o único chefe do Arsenal; Comandante Escarlate Mograine e Alta-inquisidora Cristalba, no fim da Catedral. O baú do Arcanista Doan, no fim da Biblioteca, guarda a Chave Escarlate, que abre o Arsenal e a Catedral.",
+    ["Magus Olvek, in the Alterac Mountains."] =
+        "Magus Olvek, nas Montanhas de Alterac.",
+    ["Raleigh the Devout, in Southshore."] =
+        "Raul, o Devotado, na Costa Sul.",
+    ["Librarian Mae Paledust, in Ironforge."] =
+        "Bibliotecária Maé Palidopó, em Altaforja.",
+    ["Razorfen Downs"] =
+        "Urzal dos Mortos",
+    ["Archbishop Benedictus, in the Cathedral of Light of Stormwind."] =
+        "Arcebispo Benedictus, na Catedral da Luz de Ventobravo.",
+    ["Reward: a sword or a talisman, and about 4,300 XP."] =
+        "Recompensa: uma espada ou um talismã, e cerca de 4.300 de XP.",
+    ["Myriam Moonsinger, outside Razorfen Downs, in the far south of the Barrens."] =
+        "Mírian Lunacanto, do lado de fora do Urzal dos Mortos, no extremo sul dos Sertões.",
+    ["About 3,450 XP, without entering the downs."] =
+        "Cerca de 3.450 de XP, sem entrar no Urzal.",
+    ["The Razorfen battleguards, thornweavers and Death's Head cultists guard the slopes before the downs."] =
+        "Os guerreiros e tecespinhos do Urzal e os sectários da Cabeça da Morte guardam as encostas antes do Urzal.",
+    ["Myriam Moonsinger."] =
+        "Mírian Lunacanto.",
+    ["Enter Razorfen Downs"] =
+        "Entre no Urzal dos Mortos",
+    ["The downs' entrance is by Myriam Moonsinger, at the foot of the great thorn mound."] =
+        "A entrada do Urzal fica junto a Mírian Lunacanto, ao pé do grande morro de espinhos.",
+    ["Belnistrasz waits in the Holding Pen, on the north side of the Murder Pens; taking his second quest starts his ritual at once."] =
+        "Belnistrasz espera no Holding Pen, no lado norte dos Murder Pens; pegar a segunda missão dele inicia o ritual na hora.",
+    ["Belnistrasz's ritual: a ring, and about 4,250 XP."] =
+        "O ritual de Belnistrasz: um anel, e cerca de 4.250 de XP.",
+    ["Defend Belnistrasz while he works: waves of quilboar and undead come. Then use his brazier, in the same room."] =
+        "Defenda Belnistrasz enquanto ele trabalha: vêm ondas de javatuscos e mortos-vivos. Depois use o braseiro dele, na mesma sala.",
+    ["Amnennar the Coldbringer, the last boss, waits at the top of the Spiral of Thorns."] =
+        "Amnennar, o Frigífero, o último chefe, espera no topo do Spiral of Thorns.",
+    ["Archbishop Benedictus, in Stormwind."] =
+        "Arcebispo Benedictus, em Ventobravo.",
+    ["Uldaman"] =
+        "Uldaman",
+    ["Prospector Stormpike, in the Hall of Explorers of Ironforge."] =
+        "Prospector Lançatroz, no Salão dos Exploradores de Altaforja.",
+    ["The Lost Dwarves leads to the Hidden Chamber: a two-handed axe or a lodestar, and about 3,900 XP."] =
+        "\"Os anões perdidos\" leva a \"A câmara oculta\": um machado de duas mãos ou uma estrela-guia, e cerca de 3.900 de XP.",
+    ["Krom Stoutarm, in the Hall of Explorers."] =
+        "Krom Braçoforte, no Salão dos Exploradores.",
+    ["About 3,600 XP for a chest at Uldaman's gates."] =
+        "Cerca de 3.600 de XP por um baú junto aos portões de Uldaman.",
+    ["Prospector Ironband, at his excavation site in the south-east of Loch Modan."] =
+        "Prospector Bandaferro, no sítio de escavação dele, no sudeste de Loch Modan.",
+    ["Find Agmond leads to Agmond's Fate: gloves of cloth, leather or mail."] =
+        "\"Encontre Agmundo\" leva a \"O destino de Agmundo\": luvas de tecido, couro ou malha.",
+    ["Ghak Healtouch, in Thelsamar."] =
+        "Ghak Toquecura, em Thelsamar.",
+    ["It opens Uldaman Reagent Run: restorative potions and about 3,450 XP."] =
+        "Ela abre \"Busca pelos reagentes de Uldaman\": poções restauradoras e cerca de 3.450 de XP.",
+    ["Rigglefuzz, in the middle of the Badlands."] =
+        "Bertolezo, no meio dos Ermos.",
+    ["Reward: leather or mail bracers, cloth boots or a shield."] =
+        "Recompensa: braçadeiras de couro ou de malha, botas de tecido ou um escudo.",
+    ["Theldurin the Lost, in the south of the Badlands."] =
+        "Theldurin, o Perdido, no sul dos Ermos.",
+    ["Reward: a cloth robe."] =
+        "Recompensa: uma veste de tecido.",
+    ["A crumpled map lies on the ground in the north of the Badlands."] =
+        "Um mapa amassado está no chão, no norte dos Ermos.",
+    ["A long chain of nine quests between the Badlands and Ironforge: it ends inside Uldaman with the Lost Tablets of Will, a medal and about 5,850 XP."] =
+        "Uma longa série de nove missões entre os Ermos e Altaforja: ela termina dentro de Uldaman com \"As tabuletas perdidas da vontade\", uma medalha e cerca de 5.850 de XP.",
+    ["Prospector Ryedol, a short walk south of the map."] =
+        "Prospector Ryedol, a uma curta caminhada ao sul do mapa.",
+    ["A battered dwarven skeleton lies in the middle of the Badlands."] =
+        "Um esqueleto de anão danificado está no meio dos Ermos.",
+    ["Murdaloc and the Stonevault troggs camp just south of the skeleton."] =
+        "Murdaloc e os troggs da Abóbada de Pedra acampam logo ao sul do esqueleto.",
+    ["The buzzards and crag coyotes of the Badlands drop the gizzards and fangs."] =
+        "Os urubus e os coiotes do rochedo dos Ermos soltam as moelas e as presas.",
+    ["Hammertoe Grez, by the gates of Uldaman, in the north of the Badlands."] =
+        "Grez Pé-de-malho, junto aos portões de Uldaman, no norte dos Ermos.",
+    ["Magregan Deepshadow, a Shadowforge dwarf by the gates, carries the amulet; the tablet lies in an ancient chest close by."] =
+        "Magregan Sombrafunda, um anão de Umbraforja perto dos portões, carrega o amuleto; a tabuleta fica num baú antigo ali perto.",
+    ["The Shadowforge dwarves around the gates drop the power stones."] =
+        "Os anões de Umbraforja em volta dos portões soltam as pedras de energia.",
+    ["The Shadowforge dwarves may also drop a shattered necklace: use it."] =
+        "Os anões de Umbraforja também podem soltar um colar estilhaçado: use-o.",
+    ["Hammertoe Grez."] =
+        "Grez Pé-de-malho.",
+    ["Prospector Ryedol."] =
+        "Prospector Ryedol.",
+    ["Theldurin the Lost."] =
+        "Theldurin, o Perdido.",
+    ["Prospector Ironband, in Loch Modan."] =
+        "Prospector Bandaferro, em Loch Modan.",
+    ["Historian Karnik, in the Hall of Explorers of Ironforge."] =
+        "Historiador Karnik, no Salão dos Exploradores de Altaforja.",
+    ["Advisor Belgrum, in the Hall of Explorers."] =
+        "Conselheiro Belgrum, no Salão dos Exploradores.",
+    ["Historian Karnik."] =
+        "Historiador Karnik.",
+    ["Talvash's chain ends inside Uldaman with a necklace and about 5,600 XP."] =
+        "A série de missões de Didiê termina dentro de Uldaman com um colar e cerca de 5.600 de XP.",
+    ["Five silver bars: from mining, or the auction house."] =
+        "Cinco Barras de Prata: da mineração, ou da casa de leilões.",
+    ["Ambassador Infernus walks with the Dark Iron dwarves south of Uldaman's gates."] =
+        "O Embaixador Infernus anda com os anões Ferro Negro ao sul dos portões de Uldaman.",
+    ["Krom Stoutarm's chest stands in the dig south-west of Uldaman's gates."] =
+        "O baú de Krom Braçoforte fica na escavação a sudoeste dos portões de Uldaman.",
+    ["Carved stone urns lie around the dig and inside Uldaman."] =
+        "Urnas de pedra com gravuras ficam espalhadas pela escavação e dentro de Uldaman.",
+    ["Magenta cap clusters grow on the cave walls, south-west of the gates and inside."] =
+        "Colônias de Campânulas Magenta crescem nas paredes da caverna, a sudoeste dos portões e lá dentro.",
+    ["Advisor Belgrum, in the Hall of Explorers of Ironforge."] =
+        "Conselheiro Belgrum, no Salão dos Exploradores de Altaforja.",
+    ["Enter Uldaman"] =
+        "Entre em Uldaman",
+    ["The dungeon's door is at the back of the cave by Hammertoe Grez's dig."] =
+        "A porta da masmorra fica no fundo da caverna junto à escavação de Grez Pé-de-malho.",
+    ["A dead paladin rests just off the first great hall, down its second right-hand passage."] =
+        "Um paladino morto repousa logo ao lado do primeiro grande salão, descendo a segunda passagem à direita.",
+    ["Baelog, the first boss, in Dig Two: the left corridor, then the room to the south."] =
+        "Baelog, o primeiro chefe, em Dig Two: o corredor da esquerda, depois a sala ao sul.",
+    ["The Tablet of Will stands against a wall of Dig Three."] =
+        "A Tabuleta da Vontade fica encostada numa parede de Dig Three.",
+    ["The Gni'kiv Medallion lies in Baelog's chest, Revelosh drops the Shaft of Tsol: join them into the Staff of Prehistoria, use it in the Map Chamber, then step into Ironaya's room."] =
+        "O Medalhão de Gni'kiv fica no baú de Baelog, Revelosh solta o Bastão de Tsol: junte os dois no Cajado da Pré-história, use-o na Map Chamber, depois entre na sala de Ferronaya.",
+    ["The topaz is in a conspicuous urn south-east of Dig Two, the ruby in a stone chest north-west of Dig Three (it calls monsters), the sapphire on Grimlok at the end of the Stone Vault."] =
+        "O topázio está numa Urna Evidente a sudeste de Dig Two, o rubi num baú de pedra a noroeste de Dig Three (ele chama monstros), a safira com Grimlok, no fim da Stone Vault.",
+    ["Use Talvash's phial at his scrying bowl, in the dungeon."] =
+        "Use o frasco de Didiê na bacia de vidência dele, dentro da masmorra.",
+    ["Archaedas, the last boss, guards the Hall of the Crafters: he drops the power source."] =
+        "Arkhaedas, o último chefe, guarda o Hall of the Crafters: ele solta a fonte de força.",
+    ["The Discs of Norgannon, in the room behind Archaedas."] =
+        "Os Discos de Norgannon, na sala atrás de Arkhaedas.",
+    ["Optional: the Discs of Norgannon, behind Archaedas, tell their story; it ends in Ironforge with potions or a bag."] =
+        "Opcional: os Discos de Norgannon, atrás de Arkhaedas, contam a história deles; ela termina em Altaforja com poções ou uma bolsa.",
+    ["Prospector Stormpike and Krom Stoutarm, in the Hall of Explorers of Ironforge."] =
+        "Prospector Lançatroz e Krom Braçoforte, no Salão dos Exploradores de Altaforja.",
+    ["Talvash del Kissel, in the Mystic Ward."] =
+        "Didiê Du Mocó, na Ala Mística.",
+    ["High Explorer Magellas, in the Hall of Explorers."] =
+        "Alto-explorador Magellas, no Salão dos Exploradores.",
+    ["Dinita Stonemantle, in Ironforge."] =
+        "Dinita Itamanto, em Altaforja.",
+    ["Zul'Farrak"] =
+        "Zul'Farrak",
+    ["Gryphon Master Talonaxe, at Aerie Peak, in the Hinterlands."] =
+        "Mestre de Grifos Garra-de-acha, no Ninho da Águia, nas Terras Agrestes.",
+    ["Optional: a chain of seven quests between the Hinterlands, the Blasted Lands and the city; the last one, an elite fight to the top of Jintha'Alor, brings a mace or leather leggings."] =
+        "Opcional: uma série de sete missões entre as Terras Agrestes, a Barreira do Inferno e a cidade; a última, uma luta de elite até o topo de Jintha'Alor, rende uma maça ou perneiras de couro.",
+    ["The Witherbark cages stand in the troll camps of the south-west of the Hinterlands."] =
+        "As jaulas Cascasseca ficam nos acampamentos trolls do sudoeste das Terras Agrestes.",
+    ["Search the Altar of Zul, in the middle of the trolls' ruins in the south of the Hinterlands."] =
+        "Examine o Altar de Zul, no meio das ruínas dos trolls, no sul das Terras Agrestes.",
+    ["Thadius Grimshade, at the top of Nethergarde Keep, in the Blasted Lands."] =
+        "Tádius Sombraustera, no alto da Bastilha de Etergarde, na Barreira do Inferno.",
+    ["Your mage trainer, in a capital."] =
+        "Seu instrutor de magos, numa capital.",
+    ["Tabetha, in her house in the middle of Dustwallow Marsh."] =
+        "Tabetha, na casa dela no meio do Pântano Vadeoso.",
+    ["Reward: a staff or plate shoulders."] =
+        "Recompensa: um cajado ou ombreiras de placas.",
+    ["Wizzle Brassbolts, at the racetrack of the Shimmering Flats, in Thousand Needles."] =
+        "Capu Latafuso, na pista de corrida do Salar Cintilante, em Mil Agulhas.",
+    ["Reward: a carrot on a stick, which makes your mount faster."] =
+        "Recompensa: O Burro e a Cenoura, que deixa sua montaria mais rápida.",
+    ["Tran'rek, Trenton Lighthammer and Chief Engineer Bilgewhizzle, in Gadgetzan, in Tanaris."] =
+        "Tran'rek, Trenton Lumartelo e Engenheiro-chefe Silvadágua, em Geringontzan, em Tanaris.",
+    ["Gadgetzan's quests: the Divino-matic Rod brings a ring or a leather helm; the other two, about 3,900 XP each."] =
+        "As missões de Geringontzan: o Bastão Divinomático rende um anel ou um elmo de couro; as outras duas, cerca de 3.900 de XP cada.",
+    ["Yeh'kinya, at Steamwheedle Port, on the east coast of Tanaris."] =
+        "Yeh'kinya, no Porto de Bondebico, na costa leste de Tanaris.",
+    ["It opens The Prophecy of Mosh'aru, about 5,250 XP."] =
+        "Ela abre \"A profecia de Mosh'aru\", cerca de 5.250 de XP.",
+    ["Kill the vale screechers of Feralas and use Yeh'kinya's bramble on their bodies."] =
+        "Mate os guinchadores do vale de Feralas e use a morácea de Yeh'kinya nos corpos deles.",
+    ["Yeh'kinya, at Steamwheedle Port."] =
+        "Yeh'kinya, no Porto de Bondebico.",
+    ["Enter Zul'Farrak"] =
+        "Entre em Zul'Farrak",
+    ["The city's gate is in the north-west of Tanaris."] =
+        "O portão da cidade fica no noroeste de Tanaris.",
+    ["The scarabs drop the shells; most of them crowd Theka the Martyr's chamber."] =
+        "Os escaravelhos soltam as couraças; a maioria deles se amontoa na câmara de Theka, o Mártir.",
+    ["Theka the Martyr, the second boss, in the scarabs' room to the north, holds the first tablet; Hydromancer Velratha, by the pool to the south-east, the second."] =
+        "Theka, o Mártir, o segundo chefe, na sala dos escaravelhos ao norte, carrega a primeira tabuleta; Hidromante Velratha, junto ao lago a sudeste, a segunda.",
+    ["Hydromancer Velratha also wears the Tiara of the Deep."] =
+        "A Hidromante Velratha também usa a Tiara das Profundezas.",
+    ["Gahz'rilla rises from the pool when its gong is struck with the Mallet of Zul'Farrak, made in the Hinterlands: one of the group needs it."] =
+        "Gahz'rilla surge do lago quando o gongo dele é tocado com a Marreta de Zul'Farrak, feita nas Terras Agrestes: alguém do grupo precisa tê-la.",
+    ["Nekrum Gutchewer joins the fight at the top of the pyramid, when the prisoners are freed."] =
+        "Nekrum Cometripas entra na luta no topo da pirâmide, quando os prisioneiros são libertados.",
+    ["Sergeant Bly, one of the prisoners at the top of the pyramid: free them, defend them, then he turns on you."] =
+        "Sargento Bly, um dos prisioneiros no topo da pirâmide: liberte-os, defenda-os, depois ele se volta contra você.",
+    ["Every troll of the city may drop a troll temper; it can take more than one run."] =
+        "Todo troll da cidade pode soltar uma têmpera de troll; pode ser preciso mais de uma visita.",
+    ["Tran'rek, Trenton Lighthammer and Chief Engineer Bilgewhizzle, in Gadgetzan."] =
+        "Tran'rek, Trenton Lumartelo e Engenheiro-chefe Silvadágua, em Geringontzan.",
+    ["Optional: an egg in the Hinterlands; it opens The God Hakkar, a quest of the Temple of Atal'Hakkar."] =
+        "Opcional: um ovo nas Terras Agrestes; ele abre \"O deus Hakkar\", uma missão do Templo de Atal'Hakkar.",
+    ["Wizzle Brassbolts, at the Shimmering Flats."] =
+        "Capu Latafuso, no Salar Cintilante.",
+    ["Tabetha, in Dustwallow Marsh."] =
+        "Tabetha, no Pântano Vadeoso.",
+    ["Thadius Grimshade, in Nethergarde Keep."] =
+        "Tádius Sombraustera, na Bastilha de Etergarde.",
+    ["Wait while Thadius Grimshade performs his divination."] =
+        "Espere enquanto Tádius Sombraustera realiza a divinação dele.",
+    ["Gryphon Master Talonaxe, at Aerie Peak."] =
+        "Mestre de Grifos Garra-de-acha, no Ninho da Águia.",
+    ["Vile Priestess Hexx, at the top of Jintha'Alor, carries the key to Sharpbeak's cage: elite trolls all the way up."] =
+        "A Sacerdotisa Torpe Bagata, no topo de Jintha'Alor, carrega a chave da jaula de Bicoafiado: trolls de elite por todo o caminho até lá em cima.",
+    ["The Ancient Egg lies at the top of Jintha'Alor too."] =
+        "O Ovo Velho também fica no topo de Jintha'Alor.",
+    ["Gryphon Master Talonaxe."] =
+        "Mestre de Grifos Garra-de-acha.",
+    ["Maraudon"] =
+        "Maraudon",
+    ["Archmage Tervosh, in his tower in Theramore, in Dustwallow Marsh."] =
+        "Arquimago Tervosh, na torre dele em Theramore, no Pântano Vadeoso.",
+    ["Reward: a pendant of your choice."] =
+        "Recompensa: um pingente à sua escolha.",
+    ["Talendria and Keeper Marandis, at Nijel's Point, in the north of Desolace."] =
+        "Talendria e Guardião Marandis, no Posto do Nijel, no norte de Desolação.",
+    ["Nijel's Point's two quests: a ring, plate gauntlets or a leather belt; then Theradras's end brings a sword, a staff or a bow."] =
+        "As duas missões do Posto do Nijel: um anel, manoplas de placas ou um cinto de couro; depois, o fim de Theradras rende uma espada, um cajado ou um arco.",
+    ["Willow, in the middle of Desolace."] =
+        "Faia, no meio de Desolação.",
+    ["Reward: cloth, leather, mail or plate armor."] =
+        "Recompensa: armadura de tecido, couro, malha ou placas.",
+    ["The Centaur Pariah, an outcast in the south of Desolace."] =
+        "O Centauro Pária, um excluído no sul de Desolação.",
+    ["About 5,450 XP."] =
+        "Cerca de 5.450 de XP.",
+    ["Cavindra, on the path to Maraudon, in the west of Desolace."] =
+        "Cavindra, no caminho para Maraudon, no oeste de Desolação.",
+    ["Legends of Maraudon leads to the Scepter of Celebras, a shortcut into the inner falls."] =
+        "\"Lendas de Maraudon\" leva ao Cetro de Celebras, um atalho para as cachoeiras internas.",
+    ["Enter Maraudon"] =
+        "Entre em Maraudon",
+    ["Maraudon's caves open in the west of Desolace; inside, an orange and a purple wing lead down to the inner falls."] =
+        "As cavernas de Maraudon se abrem no oeste de Desolação; lá dentro, uma ala laranja e uma ala roxa descem até as cachoeiras internas.",
+    ["The Shadowshard elementals of the outer caves drop the fragments."] =
+        "Os elementais Lascanegra das cavernas externas soltam os fragmentos.",
+    ["Fill the vial at the orange crystal pool, in the caves before the Orange wing; in the wing, use it on the stumps with red tops: the Noxxious scions come out."] =
+        "Encha a ampola na poça de cristal laranja, nas cavernas antes da ala Laranja; na ala, use-a nos tocos de topo vermelho: os Rebentos Tóxxicos saem deles.",
+    ["Every creature of Maraudon may drop a crystal carving."] =
+        "Toda criatura de Maraudon pode soltar um entalhe de cristal.",
+    ["Use the Amulet of Spirits on the Spirit of Veng, who walks the Orange wing, then kill Veng; then on the Spirit of Maraudos in the Purple wing's grotto, then kill Maraudos. Join the two gems."] =
+        "Use o Amuleto dos Espíritos no Espírito de Veng, que anda pela ala Laranja, depois mate Veng; depois no Espírito de Maraudos, na gruta da ala Roxa, depois mate Maraudos. Junte as duas gemas.",
+    ["Noxxion, the Orange wing's first boss, drops the rod; Lord Vyletongue, in a small room north of his seat in the Purple wing, the diamond."] =
+        "Tóxxico, o primeiro chefe da ala Laranja, solta o bastão; Lorde Torpelíngua, numa salinha ao norte do trono dele na ala Roxa, o diamante.",
+    ["Kill Celebras the Cursed, on the island of the Poison Falls: Celebras the Redeemed appears."] =
+        "Mate Celebras, o Amaldiçoado, na ilha das Poison Falls: Celebras, o Redimido, aparece.",
+    ["Follow Celebras to his stone and wait for his incantation."] =
+        "Siga Celebras até a pedra dele e espere o encantamento dele.",
+    ["Celebras the Redeemed, by his stone."] =
+        "Celebras, o Redimido, junto à pedra dele.",
+    ["Princess Theradras, the last boss, waits at the end of Zaetar's Grave, south and down the waterfall."] =
+        "A Princesa Theradras, a última chefe, espera no fim de Zaetar's Grave, ao sul e descendo a cachoeira.",
+    ["Zaetar's Spirit appears in the middle of Theradras's room."] =
+        "O Espírito de Zaetar aparece no meio da sala de Theradras.",
+    ["About 6,100 XP; the seed goes to Moonglade."] =
+        "Cerca de 6.100 de XP; a semente vai para a Clareira da Lua.",
+    ["The Centaur Pariah, in the south of Desolace."] =
+        "O Centauro Pária, no sul de Desolação.",
+    ["Talendria and Keeper Marandis, at Nijel's Point."] =
+        "Talendria e Guardião Marandis, no Posto do Nijel.",
+    ["Archmage Tervosh, in Theramore."] =
+        "Arquimago Tervosh, em Theramore.",
+    ["Keeper Remulos, at the Shrine of Remulos, in Moonglade."] =
+        "Guardião Remulos, no Santuário de Remulos, na Clareira da Lua.",
+    ["The Temple of Atal'Hakkar"] =
+        "Templo de Atal'Hakkar",
+    ["Brohann Caskbelly, in the Dwarven District of Stormwind."] =
+        "Brohann Barrilga, no Distrito dos Anões de Ventobravo.",
+    ["Optional: a chain of eight quests from Stormwind to the Hinterlands, Tanaris and Feralas; it opens Into the Temple of Atal'Hakkar, a talisman and about 7,100 XP."] =
+        "Opcional: uma série de oito missões de Ventobravo às Terras Agrestes, a Tanaris e a Feralas; ela abre \"No templo de Atal'Hakkar\", um talismã e cerca de 7.100 de XP.",
+    ["Find the temple: the ruins in the Pool of Tears, in the east of the Swamp of Sorrows."] =
+        "Encontre o templo: as ruínas no Poço de Lágrimas, no leste do Pântano das Mágoas.",
+    ["Brohann Caskbelly, in Stormwind."] =
+        "Brohann Barrilga, em Ventobravo.",
+    ["Falstad Wildhammer, at Aerie Peak, in the Hinterlands."] =
+        "Falstad Martelo Feroz, no Ninho da Águia, nas Terras Agrestes.",
+    ["Rhapsody Shindigger, on the road east of Aerie Peak."] =
+        "Rapsódico Festanjeiro, na estrada a leste do Ninho da Águia.",
+    ["The Atal'ai Exile, in the south of the Hinterlands."] =
+        "O Exilado Atal'ai, no sul das Terras Agrestes.",
+    ["Reward: cloth leggings or a mail helm, and about 6,550 XP."] =
+        "Recompensa: perneiras de tecido ou um elmo de malha, e cerca de 6.550 de XP.",
+    ["Muigin, at Marshal's Refuge, in Un'Goro Crater."] =
+        "Melco, no Refúgio do Marshal, na Cratera Un'Goro.",
+    ["Muigin's chain leads to the temple's haze."] =
+        "A série de missões de Melco leva à bruma do templo.",
+    ["The bloodpetal plants of Un'Goro drop the petals."] =
+        "As plantas Pétala Sangrenta de Un'Goro soltam as pétalas.",
+    ["Gregan Brewspewer, in the north of Feralas."] =
+        "Gregan Cospechope, no norte de Feralas.",
+    ["Angelas Moonbreeze, at Feathermoon Stronghold, in Feralas."] =
+        "Ângela Brisaluna, no Domínio de Plumaluna, em Feralas.",
+    ["Marvon's chain opens two quests of the temple; one rewards a Hakkari urn."] =
+        "A série de missões de Marlon abre duas missões do templo; uma delas rende uma Urna Hakkari.",
+    ["Groddoc and ironfur livers in Feralas, roc gizzards in Tanaris."] =
+        "Fígados de groddoc e de veloférreo em Feralas, moelas de roca em Tanaris.",
+    ["Marvon Rivetseeker, in Tanaris, south of Gadgetzan."] =
+        "Marlon Catarrebite, em Tanaris, ao sul de Geringontzan.",
+    ["Marvon's chest, in his old workshop in Ratchet, holds the stone circle."] =
+        "O baú de Marlon, na antiga oficina dele em Vila Catraca, guarda o círculo de pedra.",
+    ["Marvon Rivetseeker, in Tanaris."] =
+        "Marlon Catarrebite, em Tanaris.",
+    ["Yeh'kinya, at Steamwheedle Port, in Tanaris."] =
+        "Yeh'kinya, no Porto de Bondebico, em Tanaris.",
+    ["The Ancient Egg lies at the top of Jintha'Alor, in the Hinterlands, among elite trolls."] =
+        "O Ovo Velho fica no topo de Jintha'Alor, nas Terras Agrestes, entre trolls de elite.",
+    ["Reward: a plate helm, a cloth circlet or a dagger, and about 7,900 XP."] =
+        "Recompensa: um elmo de placas, um diadema de tecido ou uma adaga, e cerca de 7.900 de XP.",
+    ["Rhapsody Shindigger, in the Hinterlands."] =
+        "Rapsódico Festanjeiro, nas Terras Agrestes.",
+    ["The Atal'ai tablets lie in the ruins around the Pool of Tears, and inside the temple."] =
+        "As tabuletas Atal'ai ficam nas ruínas em volta do Poço de Lágrimas e dentro do templo.",
+    ["Enter the Temple of Atal'Hakkar"] =
+        "Entre no Templo de Atal'Hakkar",
+    ["The temple lies sunken in the Pool of Tears, in the east of the Swamp of Sorrows: swim down to the ruins' stairs."] =
+        "O templo jaz submerso no Poço de Lágrimas, no leste do Pântano das Mágoas: nade até a escadaria das ruínas.",
+    ["The murk worms, deep lurkers and oozes of the temple drop the haze."] =
+        "Os vermes do lodo, os tocaieiros do abismo e as gosmas do templo soltam a bruma.",
+    ["Hall of Serpents: use the six statues in this order: south, north, south-west, south-east, north-west, north-east; Atal'alarion appears. The Idol of Hakkar stands in the middle of the Pit of Refuse."] =
+        "Hall of Serpents: use as seis estátuas nesta ordem: sul, norte, sudoeste, sudeste, noroeste, nordeste; Atal'alarion aparece. O Ídolo de Hakkar fica no meio do Pit of Refuse.",
+    ["Climb the stairs of the Pit of Refuse: the Altar of Hakkar waits up there."] =
+        "Suba a escadaria do Pit of Refuse: o Altar de Hakkar espera lá em cima.",
+    ["Kill the six troll elites on the balconies first: Jammal'an's barrier falls; he waits south-east of the Pit of Sacrifice."] =
+        "Mate primeiro os seis trolls de elite nas sacadas: a barreira de Jammal'an cai; ele espera a sudeste do Pit of Sacrifice.",
+    ["The Shade of Eranikus, at the end of the south path, may drop his essence: use it."] =
+        "O Vulto de Erânicos, no fim do caminho sul, pode soltar a essência dele: use-a.",
+    ["The Essence Font, in the north-east corner of his room."] =
+        "A Fonte de Essência, no canto nordeste da sala dele.",
+    ["Use the Oathstone of Ysera's Dragonflight it gives you."] =
+        "Use a Pedra do Juramento da Revoada de Ysera que ela dá a você.",
+    ["Keep the Chained Essence of Eranikus, the font's reward: Itharius asks for it."] =
+        "Guarde a Essência Acorrentada de Erânicos, a recompensa da fonte: Itharius pede por ela.",
+    ["Use the Egg of Hakkar by the skeleton in the Sanctum of the Fallen God, south-west: Hakkari bloodkeepers come, their blood puts out the four eternal flames, then the Avatar of Hakkar comes; his essence fills the egg."] =
+        "Use o Ovo de Hakkar junto ao esqueleto no Sacrário do Deus Caído, a sudoeste: guardiões de sangue Hakkari aparecem, o sangue deles apaga as quatro chamas eternas, depois o Avatar de Hakkar aparece; a essência dele enche o ovo.",
+    ["Itharius, a green dragon in the south-west of the Swamp of Sorrows."] =
+        "Itharius, um dragão verde no sudoeste do Pântano das Mágoas.",
+    ["The Atal'ai Exile, in the Hinterlands."] =
+        "O Exilado Atal'ai, nas Terras Agrestes.",
+    ["The beasts of Un'Goro drop the bloodpetal sprouts."] =
+        "As feras de Un'Goro soltam os brotos de Pétala Sangrenta.",
+    ["Umbranse the Spiritspeaker, in the east of Winterspring."] =
+        "Umbranse, o Médium, no leste de Hibérnia.",
+    ["Blackrock Depths"] =
+        "Abismo Rocha Negra",
+    ["Royal Historian Archesonus, in the Hall of Explorers of Ironforge."] =
+        "Historiadora Real Arquefilis, no Salão dos Exploradores de Altaforja.",
+    ["The royal historian's chain leads to Kharan Mighthammer, then to the emperor and the princess: King Magni's reward and about 9,650 XP at its end."] =
+        "A série de missões da historiadora real leva a Kharan Feromalho, depois ao imperador e à princesa: a recompensa do Rei Magni e cerca de 9.650 de XP no fim.",
+    ["Listen to the royal historian."] =
+        "Ouça a historiadora real.",
+    ["Ragnar Thunderbrew, in Kharanos, in Dun Morogh."] =
+        "Ragnar Cervaforte, em Kharanos, em Dun Morogh.",
+    ["Reward: a two-handed axe or a mace, or dark dwarven lager."] =
+        "Recompensa: um machado de duas mãos ou uma maça, ou Cerveja Escura dos Anões.",
+    ["Kalaran Windblade, in the middle of the Searing Gorge."] =
+        "Kalaran Finalâmina, no meio da Garganta Abrasadora.",
+    ["Optional: ten quests in the Searing Gorge before A Taste of Flame, which brings a cloth cape or sash or leather shoulders."] =
+        "Opcional: dez missões na Garganta Abrasadora antes de \"O gosto das chamas\", que rende uma capa ou uma faixa de tecido, ou ombreiras de couro.",
+    ["Listen to Kalaran Windblade's story."] =
+        "Ouça a história de Kalaran Finalâmina.",
+    ["The fire elementals of the Searing Gorge drop the hearts of flame; the golems, the oil."] =
+        "Os elementais do fogo da Garganta Abrasadora soltam os corações das chamas; os golens, o óleo.",
+    ["The Dark Iron dwarves of the gorge carry the thorium plated daggers."] =
+        "Os anões Ferro Negro da garganta carregam os punhais de placas de tório.",
+    ["The Twilight cultists of the gorge carry the symbols of Ragnaros."] =
+        "Os sectários do Crepúsculo da garganta carregam os símbolos de Ragnaros.",
+    ["Listen to Kalaran Windblade."] =
+        "Ouça Kalaran Finalâmina.",
+    ["Use the Torch of Retribution beside Kalaran."] =
+        "Use a Tocha da Retribuição ao lado de Kalaran.",
+    ["Squire Maltrake, beside Kalaran."] =
+        "Escudeiro Maltraque, ao lado de Kalaran.",
+    ["Light the four sentry braziers on the Dark Iron watchtowers of the gorge."] =
+        "Acenda os quatro braseiros sentinela nas torres de vigia Ferro Negro da garganta.",
+    ["The Hoard of the Black Dragonflight, beside Squire Maltrake."] =
+        "O Tesouro da Revoada Negra, ao lado do Escudeiro Maltraque.",
+    ["The ghost of Franclorn Forgewright, inside Blackrock Mountain, by the way down to the depths."] =
+        "O fantasma de Franclorn Forjífice, dentro da Montanha Rocha Negra, junto ao caminho que desce até o Abismo.",
+    ["Franclorn's quest brings the Shadowforge Key, which opens doors of the depths."] =
+        "A missão de Franclorn rende a Chave de Umbraforja, que abre portas do Abismo.",
+    ["Use the Thaurissan relic in the ruins of Thaurissan, in the middle of the Burning Steppes."] =
+        "Use a Relíquia Thaurissana nas Ruínas de Thaurissan, no meio das Estepes Ardentes.",
+    ["Yuka Screwspigot and Maxwort Uberglint, at Flame Crest, in the north of the Burning Steppes."] =
+        "Yuka Parafuseta e Maxwort Uberraio, no Monte Candente, no norte das Estepes Ardentes.",
+    ["Flame Crest's two quests: Ribbly's head brings leather shoulders, cloth boots or mail armor."] =
+        "As duas missões do Monte Candente: a cabeça de Ribas rende ombreiras de couro, botas de tecido ou armadura de malha.",
+    ["Jalinda Sprig and Oralius, at Morgan's Vigil, in the east of the Burning Steppes."] =
+        "Jalinda Ramo e Oralius, na Vigia de Morgan, no leste das Estepes Ardentes.",
+    ["Morgan's Vigil's quests: Incendius! brings armor of any kind, The Good Stuff a fanny pack of loot."] =
+        "As missões da Vigia de Morgan: \"Incendius!\" rende armadura de qualquer tipo; \"Produto de primeira\", uma pochete cheia de espólios.",
+    ["Cyrus Therepentous, in the far east of the Burning Steppes."] =
+        "Ciro Terepento, no extremo leste das Estepes Ardentes.",
+    ["A frenzied black drake of the steppes drops the molt; then talk to Cyrus."] =
+        "Um draco negro frenético das estepes solta a muda de pele; depois fale com Ciro.",
+    ["Helendis Riverhorn, at Morgan's Vigil."] =
+        "Helendis Flumicórnio, na Vigia de Morgan.",
+    ["Optional: eight quests between the steppes, Lakeshire and Stormwind before Marshal Windsor, whose Jail Break! brings a sword or a dagger among its rewards, and about 7,750 XP."] =
+        "Opcional: oito missões entre as estepes, Vila Plácida e Ventobravo antes do Marechal Vilasboas, cuja missão \"Fuga da prisão!\" rende uma espada ou uma adaga entre as recompensas, e cerca de 7.750 de XP.",
+    ["The black dragonkin of the steppes' north."] =
+        "Os dracônicos negros do norte das estepes.",
+    ["Magistrate Solomon, in the town hall of Lakeshire, in Redridge."] =
+        "Magistrado Salomão, na prefeitura de Vila Plácida, em Cristarrubra.",
+    ["Highlord Bolvar Fordragon, in Stormwind Keep."] =
+        "Grão-lorde Bolvar Fordragon, na Bastilha Ventobravo.",
+    ["Talk to Lady Katrana Prestor, beside the king."] =
+        "Fale com Lady Katrana Prestor, ao lado do rei.",
+    ["Magistrate Solomon, in Lakeshire."] =
+        "Magistrado Salomão, em Vila Plácida.",
+    ["Marshal Maxwell, at Morgan's Vigil."] =
+        "Oficial Maxwell, na Vigia de Morgan.",
+    ["Talk to Ragged John, at Flame Crest."] =
+        "Fale com João Roto, no Monte Candente.",
+    ["Royal Historian Archesonus, in Ironforge."] =
+        "Historiadora Real Arquefilis, em Altaforja.",
+    ["Overmaster Pyron walks the bottom of Blackrock Mountain, before the depths' door."] =
+        "O Mestre Supremo Piro anda pelo fundo da Montanha Rocha Negra, antes da porta do Abismo.",
+    ["Enter Blackrock Depths"] =
+        "Entre no Abismo Rocha Negra",
+    ["Blackrock Mountain opens in the west of the Burning Steppes; inside, the depths' door is at the bottom of the mountain."] =
+        "A Montanha Rocha Negra se abre no oeste das Estepes Ardentes; lá dentro, a porta do Abismo fica no fundo da montanha.",
+    ["High Interrogator Gerstahn, in a back room on the right of the Detention Block, carries the cell key; Kharan Mighthammer sits in the second cell on the right of the tunnel."] =
+        "A Suprema Interrogadora Gerstahn, numa sala dos fundos à direita do Detention Block, carrega a chave das celas; Kharan Feromalho fica na segunda cela à direita do túnel.",
+    ["Let Kharan tell his story."] =
+        "Deixe Kharan contar a história dele.",
+    ["Marshal Windsor, two cells further."] =
+        "Marechal Vilasboas, duas celas adiante.",
+    ["The Anvilrage dwarves of the first rooms may drop a crumpled note: read it."] =
+        "Os anões Furiadastra das primeiras salas podem soltar um bilhete amassado: leia-o.",
+    ["Marshal Windsor, in his cell."] =
+        "Marechal Vilasboas, na cela dele.",
+    ["Fineous Darkvire, in the lower Hall of Crafting, carries Ironfel; the Monument of Franclorn Forgewright stands at the dead end past the Shrine of Thaurissan."] =
+        "Fineous Forçanegra, na parte de baixo do Salão da Criação, carrega Ferrovil; o Monumento de Franclorn Forjífice fica no beco sem saída depois do Santuário de Thaurissan.",
+    ["The Monument of Franclorn Forgewright."] =
+        "O Monumento de Franclorn Forjífice.",
+    ["Bael'Gar waits at the end of the Dark Iron Highway: use Cyrus's molt on his body."] =
+        "Bael'gar espera no fim da Dark Iron Highway: use a muda de pele de Ciro no corpo dele.",
+    ["General Angerforge, down the stairs of the West Garrison, and Golem Lord Argelmach, in the Manufactory, carry Windsor's lost information."] =
+        "O General Forjaversa, descendo as escadas da Guarnição Oeste, e o Lorde Golem Argelmach, na Fábrica, carregam as informações perdidas de Vilasboas.",
+    ["Free Marshal Windsor and follow him through the Detention Block and the Halls of the Law."] =
+        "Liberte o Marechal Vilasboas e siga-o pelo Detention Block e pelos Halls of the Law.",
+    ["Mistress Nagmara, in the Grim Guzzler tavern."] =
+        "Lady Nagmara, na taverna do Glutão Implacável.",
+    ["Optional: Mistress Nagmara's love potion needs herbs, silver veins of giants and water of Un'Goro's hot springs; it brings cloth bracers or a leather belt."] =
+        "Opcional: a poção do amor de Lady Nagmara pede ervas, veios de prata dos gigantes e água das fontes termais de Un'Goro; ela rende braçadeiras de tecido ou um cinto de couro.",
+    ["Ribbly Screwspigot sits at the bottom of the Grim Guzzler: talk to him, then fight him."] =
+        "Ribas Parafuseta fica no fundo do Glutão Implacável: fale com ele, depois lute com ele.",
+    ["Break the three Thunderbrew lager kegs in a side room of the lower Grim Guzzler: Hurley Blackbreath comes."] =
+        "Quebre os três Barris de Cervaforte numa sala lateral da parte de baixo do Glutão Implacável: Hurley Bafonegro aparece.",
+    ["The relic coffer keys drop from the dwarves; the twelve coffers of the Black Vault call Watchman Doomgrip, who opens the Heart's vault."] =
+        "As chaves da arca de relíquias caem dos anões; as doze arcas do Black Vault chamam o Vigia Gadanho, que abre o cofre do Coração.",
+    ["The Anvilrage dwarves drop the fanny packs."] =
+        "Os anões Furiadastra soltam as pochetes.",
+    ["King Magni Bronzebeard, in Ironforge."] =
+        "Rei Magni Barbabronze, em Altaforja.",
+    ["Jalinda Sprig, at Morgan's Vigil."] =
+        "Jalinda Ramo, na Vigia de Morgan.",
+    ["Gromsblood, from herbalism or the auction house; giant silver veins from the giants of Azshara; the vial filled at the Golakka Hot Springs of Un'Goro Crater."] =
+        "Sangue-de-grom, colhido com Herborismo ou comprado na casa de leilões; veios de prata gigantes, dos gigantes de Azshara; a ampola, enchida na Fonte de Golakka, na Cratera Un'Goro.",
+    ["Enter Blackrock Depths again"] =
+        "Entre de novo no Abismo Rocha Negra",
+    ["Lord Incendius waits at the Black Anvil, in Shadowforge City."] =
+        "Lorde Incendius espera na Bigorna Negra, na Cidade de Umbraforja.",
+    ["Mistress Nagmara, in the Grim Guzzler."] =
+        "Lady Nagmara, no Glutão Implacável.",
+    ["Emperor Dagran Thaurissan, the last boss, sits in the Imperial Seat: keep Princess Moira alive while you fight him."] =
+        "O Imperador Dagran Thaurissan, o último chefe, fica no Imperial Seat: mantenha a Princesa Moira viva enquanto luta com ele.",
+    ["Princess Moira Bronzebeard, in the Imperial Seat."] =
+        "Princesa Moira Barbabronze, no Imperial Seat.",
+    ["Yuka Screwspigot and Maxwort Uberglint, at Flame Crest."] =
+        "Yuka Parafuseta e Maxwort Uberraio, no Monte Candente.",
+    ["Cyrus Therepentous, in the far east of the steppes."] =
+        "Ciro Terepento, no extremo leste das estepes.",
+    ["Jalinda Sprig and Oralius, at Morgan's Vigil."] =
+        "Jalinda Ramo e Oralius, na Vigia de Morgan.",
+    ["Marshal Maxwell."] =
+        "Oficial Maxwell.",
+    ["Ragnar Thunderbrew, in Kharanos."] =
+        "Ragnar Cervaforte, em Kharanos.",
+    ["Blackrock Spire"] =
+        "Pico da Rocha Negra",
+    ["Prospector Ironboot, at Steamwheedle Port, in Tanaris."] =
+        "Prospector Botaférrea, no Porto de Bondebico, em Tanaris.",
+    ["Yeh'kinya's chain from Zul'Farrak and the sunken temple goes on: two tablets in the Eastern Plaguelands, two inside the spire, then a cloak."] =
+        "A série de missões de Yeh'kinya que vem de Zul'Farrak e do templo submerso continua: duas tabuletas nas Terras Pestilentas Orientais, duas dentro do pico, depois uma capa.",
+    ["The third and fourth tablets lie in the troll ruins of the north of the Eastern Plaguelands."] =
+        "A terceira e a quarta tabuletas ficam nas ruínas trolls do norte das Terras Pestilentas Orientais.",
+    ["Prospector Ironboot, at Steamwheedle Port."] =
+        "Prospector Botaférrea, no Porto de Bondebico.",
+    ["Kibler, at Flame Crest, in the north of the Burning Steppes."] =
+        "Kibler, no Monte Candente, no norte das Estepes Ardentes.",
+    ["Kibler's two quests: a worg pup or a smolderweb spider, pets that follow you."] =
+        "As duas missões de Kibler: um filhote de worg ou uma aranha Queimateia, mascotes que seguem você.",
+    ["Ragged John, at Flame Crest."] =
+        "João Roto, no Monte Candente.",
+    ["Reward: Ragged John's neverending cup, and about 9,950 XP."] =
+        "Recompensa: a Caneca Interminável do João Roto, e cerca de 9.950 de XP.",
+    ["Helendis Riverhorn, at Morgan's Vigil, in the east of the Burning Steppes."] =
+        "Helendis Flumicórnio, na Vigia de Morgan, no leste das Estepes Ardentes.",
+    ["Reward: a cloth robe, a leather jerkin or a mail breastplate."] =
+        "Recompensa: uma veste de tecido, um gibão de couro ou um peitoral de malha.",
+    ["Enter Blackrock Spire"] =
+        "Entre no Pico da Rocha Negra",
+    ["Blackrock Mountain opens in the west of the Burning Steppes; inside, the spire's door is at the top of the mountain."] =
+        "A Montanha Rocha Negra se abre no oeste das Estepes Ardentes; lá dentro, a porta do Pico fica no topo da montanha.",
+    ["Warosh, a troll who walks near the spire's entrance."] =
+        "Warosh, um troll que anda perto da entrada do Pico.",
+    ["Reward: a charm, after a fight with Urok Doomhowl."] =
+        "Recompensa: um amuleto, depois de uma luta com Urok Uivo-da-ruína.",
+    ["Vaelan, a Scarshield infiltrator, stands up the ramp near the spire's entrance."] =
+        "Vaelan, um infiltrador Escudo Marcado, fica no alto da rampa perto da entrada do Pico.",
+    ["Optional: the Seal of Ascension, the key to the Upper Spire, a raid of ten; its last part is in Dustwallow Marsh."] =
+        "Opcional: o Selo da Ascensão, a chave do Pico Superior, uma raide de dez; a última parte fica no Pântano Vadeoso.",
+    ["Bijou hides down in the trench after Hordemar City's second bridge."] =
+        "Biju se esconde lá embaixo, na trincheira depois da segunda ponte de Hordemar City.",
+    ["Bijou's chain leads to Maxwell's Mission: armor of any kind, after a second visit."] =
+        "A série de missões de Biju leva a \"A missão de Maxwell\": armadura de qualquer tipo, depois de uma segunda visita.",
+    ["Her belongings lie in a chest on the bottom tier of Hordemar City; it can also stand as far as the Skitterweb Tunnels."] =
+        "Os pertences dela ficam num baú no nível mais baixo de Hordemar City; ele também pode estar mais longe, nos Túneis Tremeteia.",
+    ["Back to Bijou."] =
+        "De volta a Biju.",
+    ["The fifth tablet hangs on a wall of Shadow Hunter Vosh'gajin's room, the sixth on a wall of War Master Voone's room."] =
+        "A quinta tabuleta fica pendurada numa parede da sala da Caçadora Sombria Vosh'gajin, a sexta numa parede da sala do Senhor da Guerra Voone.",
+    ["Take the Roughshod Pike from a weapon rack on the left wall after Hordemar City's second bridge, join it to Highlord Omokk's head, and use it on the skull pile up the ramp past Mother Smolderweb: ogres come, then Urok Doomhowl."] =
+        "Pegue o Pique da Brutalidade num suporte de armas na parede esquerda, depois da segunda ponte de Hordemar City, junte-o à cabeça do Grão-lorde Omokk e use-o na pilha de crânios no alto da rampa, depois da Mãe Queimateia: ogros aparecem, depois Urok Uivo-da-ruína.",
+    ["The spire spider eggs lie in the upper Skitterweb Tunnels."] =
+        "Os Ovos de Aranha do Pináculo ficam na parte de cima dos Túneis Tremeteia.",
+    ["Use the empty cage on a Bloodaxe worg pup, in Halycon's room."] =
+        "Use a jaula vazia num Filhote de Worg Machado Sangrento, na sala de Halycon.",
+    ["Halycon, the worgs' mother, holds Halycon's Lair."] =
+        "Halycon, a mãe dos worgs, ocupa Halycon's Lair.",
+    ["The Scarshield dwarves drop the unadorned seal; Highlord Omokk, north of Mok'Doom, may drop the Spirestone gem, War Master Voone, at the bottom of Tazz'Alaor, the Smolderthorn gem, and Overlord Wyrmthalak, the last boss, the Bloodaxe gem."] =
+        "Os anões Escudo Marcado soltam o selo sem adorno; o Grão-lorde Omokk, ao norte de Mok'Doom, pode soltar a Gema de Agulhapétrea; o Senhor da Guerra Voone, no fundo de Tazz'Alaor, a Gema de Espinho Fúmeo; e o Lorde Supremo Wyrmthalak, o último chefe, a Gema de Machado Sangrento.",
+    ["Vaelan, near the entrance."] =
+        "Vaelan, perto da entrada.",
+    ["Warosh, near the entrance."] =
+        "Warosh, perto da entrada.",
+    ["Let Mother Smolderweb poison you and do not cure it: the poison must last until Ragged John, at Flame Crest."] =
+        "Deixe a Mãe Queimateia envenenar você e não se cure: o veneno precisa durar até chegar a João Roto, no Monte Candente.",
+    ["Enter Blackrock Spire again"] =
+        "Entre de novo no Pico da Rocha Negra",
+    ["Highlord Omokk, north of Mok'Doom; War Master Voone, at the bottom of Tazz'Alaor; Overlord Wyrmthalak, the last boss, in the Chamber of Battle."] =
+        "Grão-lorde Omokk, ao norte de Mok'Doom; Senhor da Guerra Voone, no fundo de Tazz'Alaor; Lorde Supremo Wyrmthalak, o último chefe, na Chamber of Battle.",
+    ["Kibler and Ragged John, at Flame Crest."] =
+        "Kibler e João Roto, no Monte Candente.",
+    ["Helendis Riverhorn and Marshal Maxwell, at Morgan's Vigil."] =
+        "Helendis Flumicórnio e Oficial Maxwell, na Vigia de Morgan.",
+    ["Beat Emberstrife, a dragon of the Wyrmbog in Dustwallow Marsh, until his will breaks, then place the seal before him."] =
+        "Bata em Ardeluta, um dragão do Pântano da Serpe, no Pântano Vadeoso, até a vontade dele ceder, depois coloque o selo diante dele.",
+    ["Vaelan, near the spire's entrance."] =
+        "Vaelan, perto da entrada do Pico.",
+    ["Yeh'kinya, beside him."] =
+        "Yeh'kinya, ao lado dele.",
+    ["Dire Maul"] =
+        "Gládio Cruel",
+    ["A herald of your capital: Crier Goodman in Stormwind, Courier Hammerfall in Ironforge, Herald Moonstalker in Darnassus."] =
+        "Um arauto da sua capital: Brados Bonhomme em Ventobravo, Mensageiro Desçomalho em Altaforja, Arauto Espreitaluna em Darnassus.",
+    ["Optional: a lead to Feathermoon Stronghold, about 1,500 XP."] =
+        "Opcional: um encaminhamento para o Domínio de Plumaluna, cerca de 1.500 de XP.",
+    ["Latronicus Moonspear, at Feathermoon Stronghold, in Feralas."] =
+        "Latrônicus Lunalança, no Domínio de Plumaluna, em Feralas.",
+    ["Latronicus Moonspear and Scholar Runethorn, at Feathermoon Stronghold."] =
+        "Latrônicus Lunalança e Erudita Runacardos, no Domínio de Plumaluna.",
+    ["Lethtendris's Web brings a dagger; Elven Legends, about 8,300 XP for a search in the library."] =
+        "\"A teia de Letendris\" rende uma adaga; \"Lendas élficas\", cerca de 8.300 de XP por uma busca na biblioteca.",
+    ["Azj'Tordin, at Lariss Pavilion, in the east of Feralas."] =
+        "Azj'Tordin, no Pavilhão Lariss, no leste de Feralas.",
+    ["Reward: a two-handed sword or leather boots; Pusillin also drops the Crescent Key, which opens the west and north wings."] =
+        "Recompensa: uma espada de duas mãos ou botas de couro; Pusillin também solta a Chave do Crescente, que abre as alas oeste e norte.",
+    ["Rabine Saturna, in Nighthaven, in Moonglade."] =
+        "Ravine Saturna, em Refúgio Noturno, na Clareira da Lua.",
+    ["Optional: a reliquary in Silithus for Rabine Saturna in Moonglade, then a shard of the Felvine: a shield or an off-hand lexicon."] =
+        "Opcional: um relicário em Silithus para Ravine Saturna, na Clareira da Lua, depois uma lasca da Vinhavil: um escudo ou um léxico de mão secundária.",
+    ["The Reliquary of Purity lies in the ruins of Southwind Village, in Silithus."] =
+        "O Relicário da Pureza fica nas ruínas da Vila do Vento Sul, em Silithus.",
+    ["Rabine Saturna, in Nighthaven."] =
+        "Ravine Saturna, em Refúgio Noturno.",
+    ["Enter Dire Maul"] =
+        "Entre no Gládio Cruel",
+    ["The ruins of Dire Maul stand in the middle of Feralas; the east, west and north wings each have their own door."] =
+        "As ruínas do Gládio Cruel ficam no meio de Feralas; as alas leste, oeste e norte têm cada uma a própria porta.",
+    ["East: talk to Pusillin each time he stops; he runs five times, then fights on a small platform up a ramp and drops the book."] =
+        "Leste: fale com Pusillin cada vez que ele parar; ele foge cinco vezes, depois luta numa pequena plataforma no alto de uma rampa e solta o livro.",
+    ["East: Lethtendris waits on the upper level of the room left of the ramps between the Hidden Reach and the Warpwood Quarter."] =
+        "Leste: Letendris espera no nível superior da sala à esquerda das rampas entre o Hidden Reach e o Distrito Lenhatorta.",
+    ["East: kill Zevrim Thornhoof, then Ironbark the Redeemed, in the Conservatory, opens the door to Alzzin the Wildshaper; after Alzzin, use the reliquary by the twisted vine."] =
+        "Leste: mate Zevrim Cascardo; depois Cascaferro, o Redimido, no Conservatory, abre a porta para Azzin, o Selvamorfo; depois de Azzin, use o relicário junto à vinha retorcida.",
+    ["West: the Shen'dralar Ancient stands above the platform over Tendris Warpwood."] =
+        "Oeste: a Anciã Shen'dralar fica acima da plataforma sobre Gavíneo Lenhatorta.",
+    ["About 9,950 XP; its treasure, a chest in the library, brings a two-handed mace, a mail helm or leather boots."] =
+        "Cerca de 9.950 de XP; o tesouro, um baú na biblioteca, rende uma maça de duas mãos, um elmo de malha ou botas de couro.",
+    ["West: destroy the five pylons of the Capital Gardens, the Court of the Highborne and the Prison; Immol'thar waits in the Prison, behind Tendris (the Crescent Key opens it); Prince Tortheldrin, under the entry platform of the Athenaeum."] =
+        "Oeste: destrua os cinco pilares de força dos Jardins Capitais, da Court of the Highborne e da Prisão; Immol'thar espera na Prisão, atrás de Gavíneo (a Chave do Crescente a abre); o Príncipe Tortheldrin, sob a plataforma de entrada do Ateneu.",
+    ["West: the treasure is a big stone chest under the ramp of the Athenaeum."] =
+        "Oeste: o tesouro é um grande baú de pedra sob a rampa do Ateneu.",
+    ["West: through the Conservatory Door (the Crescent Key opens it), the remains lie by a dead elf and a bookcase, in the north of the Athenaeum."] =
+        "Oeste: passando pela porta do Conservatory (a Chave do Crescente a abre), os restos ficam junto a um elfo morto e a uma estante, no norte do Ateneu.",
+    ["North: Knot Thimblejack is chained in the north-east corner of the Halls of Destruction."] =
+        "Norte: Fiapo Agulhacerta está acorrentado no canto nordeste dos Halls of Destruction.",
+    ["About 6,600 XP for a key the Gordok guards carry."] =
+        "Cerca de 6.600 de XP por uma chave que os guardas Gordok carregam.",
+    ["Optional: the Gordok Ogre Suit needs runecloth, rugged leather and rune threads."] =
+        "Opcional: o Traje de Ogro Gordok pede runatrama, couro rústico e fios rúnicos.",
+    ["North: the Gordok guards Mol'dar, Slip'kik and Fengus, and Captain Kromcrush, carry the shackle key."] =
+        "Norte: os guardas Gordok Mol'dar, Kishutt e Fengus, e o Capitão Kebrapaw, carregam a chave dos grilhões.",
+    ["Knot Thimblejack."] =
+        "Fiapo Agulhacerta.",
+    ["North: the ogre tannin lies up the ramp above Knot, in the north-west corner: one per group."] =
+        "Norte: o tanino ôgrico fica no alto da rampa acima de Fiapo, no canto noroeste: um por grupo.",
+    ["North: Captain Kromcrush, once King Gordok is dead."] =
+        "Norte: Capitão Kebrapaw, depois que o Rei Gordok estiver morto.",
+    ["Optional, after a tribute run (King Gordok dead, his guards alive): gloves of any kind."] =
+        "Opcional, depois de uma visita de tributo (Rei Gordok morto, os guardas dele vivos): luvas de qualquer tipo.",
+    ["The Gauntlet of Gordok Might lies in the Prince's chest, in the Athenaeum of the west wing."] =
+        "As Manoplas do Poder de Gordok ficam no baú do Príncipe, no Ateneu da ala oeste.",
+    ["North: Stomper Kreeg, after a tribute run."] =
+        "Norte: Pisoteador Kreeg, depois de uma visita de tributo.",
+    ["Azj'Tordin, at Lariss Pavilion."] =
+        "Azj'Tordin, no Pavilhão Lariss.",
+    ["Latronicus Moonspear, at Feathermoon Stronghold."] =
+        "Latrônicus Lunalança, no Domínio de Plumaluna.",
+    ["Scholar Runethorn, at Feathermoon Stronghold."] =
+        "Erudita Runacardos, no Domínio de Plumaluna.",
+    ["Scholomance"] =
+        "Scolomântia",
+    ["Commander Ashlam Valorfist, at Chillwind Camp, in the Western Plaguelands."] =
+        "Comandante Ashlam Punhobom, no Acampamento Ventogelante, nas Terras Pestilentas Ocidentais.",
+    ["Optional: the chain of the Skeleton Key, which opens Scholomance's door: one key per group is enough. It goes through the Plaguelands, Gadgetzan and Un'Goro."] =
+        "Opcional: a série de missões da Chave-mestra, que abre a porta da Scolomântia: uma chave por grupo basta. Ela passa pelas Terras Pestilentas, por Geringontzan e por Un'Goro.",
+    ["The skeletal flayers and slavering ghouls of Sorrow Hill, in the south of the Western Plaguelands."] =
+        "Os esfoladores descarnados e os carniçais salivantes da Colina do Pesar, no sul das Terras Pestilentas Ocidentais.",
+    ["Mark the four watchtowers of Andorhal with the beacon torch, standing in each doorway."] =
+        "Marque as quatro torres de vigia de Andorhal com a tocha sinalizadora, parado na entrada de cada uma.",
+    ["Alchemist Arbington, at Chillwind Camp."] =
+        "Alquimista Arvignon, no Acampamento Ventogelante.",
+    ["The undead of the Western Plaguelands drop the skeletal fragments."] =
+        "Os mortos-vivos das Terras Pestilentas Ocidentais soltam os fragmentos de ossos.",
+    ["Krinkle Goodsteel, in Gadgetzan, in Tanaris: bring 15 gold."] =
+        "Rugov A. Massoaço, em Geringontzan, em Tanaris: leve 15 de ouro.",
+    ["Bring two thorium bars to the top of Fire Plume Ridge, in Un'Goro Crater, and use the mold by the lava lake."] =
+        "Leve duas barras de tório até o topo do Pico Penacho de Fogo, na Cratera Un'Goro, e use o molde junto ao lago de lava.",
+    ["Araj the Summoner stands in the middle of Andorhal."] =
+        "Araj, o Evocador, fica no meio de Andorhal.",
+    ["Betina Bigglezink, at Light's Hope Chapel, in the Eastern Plaguelands."] =
+        "Betina Bigozinco, na Capela Esperança da Luz, nas Terras Pestilentas Orientais.",
+    ["About 6,200 XP; a hatchling may drop a scale that starts another quest."] =
+        "Cerca de 6.200 de XP; um filhote pode soltar uma escama que inicia outra missão.",
+    ["Weldon Barov, at Chillwind Camp."] =
+        "Weldon Barov, no Acampamento Ventogelante.",
+    ["The Barov fortune: four deeds inside the school; its follow-up sends you to kill Alexi Barov in the Horde's Bulwark."] =
+        "A fortuna dos Barov: quatro escrituras dentro da escola; a continuação manda você matar Alexei Barov no Baluarte da Horda.",
+    ["Eva Sarkhoff, in Caer Darrow, on the island of Darrowmere Lake."] =
+        "Eva Sarkhoff, em Castro das Flechas, na ilha do Lago das Flechas.",
+    ["Eva Sarkhoff's chain: three parts inside the school, then Kirtonos the Herald and a sword or an off-hand item among its rewards."] =
+        "A série de missões de Eva Sarkhoff: três partes dentro da escola, depois Kirtonos, o Arauto, e uma espada ou um item de mão secundária entre as recompensas.",
+    ["Enter Scholomance"] =
+        "Entre na Scolomântia",
+    ["The school stands on the island of Caer Darrow, in Darrowmere Lake, in the south-east of the Western Plaguelands."] =
+        "A escola fica na ilha de Castro das Flechas, no Lago das Flechas, no sudeste das Terras Pestilentas Ocidentais.",
+    ["The deeds: Southshore's on a table north-east of the Reliquary; Tarren Mill's on a table on the left at the entry of the Great Ossuary; Brill's on a ledge south-west of the Laboratory; Caer Darrow's on a table east of the Barov Family Vault."] =
+        "As escrituras: a da Costa Sul, numa mesa a nordeste do Reliquary; a da Serraria Tarren, numa mesa à esquerda na entrada do Grande Ossário; a de Montalvo, numa saliência a sudoeste do Laboratory; a de Castro das Flechas, numa mesa a leste do Barov Family Vault.",
+    ["The plagued hatchlings fill a room of the Great Ossuary."] =
+        "Os filhotes pestilentos ocupam uma sala do Grande Ossário.",
+    ["A hatchling may drop a healthy dragon scale: use it."] =
+        "Um filhote pode soltar uma Escama de Dragão Saudável: use-a.",
+    ["Doctor Theolen Krastinov, in the east of the upper Headmaster's Study: kill him, then burn the two piles of remains, to the north and the south-east of his room."] =
+        "Doutor Theolen Krastinov, no leste da parte de cima do Headmaster's Study: mate-o, depois queime as duas pilhas de restos mortais, ao norte e a sudeste da sala dele.",
+    ["Eva Sarkhoff, in Caer Darrow."] =
+        "Eva Sarkhoff, em Castro das Flechas.",
+    ["Enter Scholomance again"] =
+        "Entre de novo na Scolomântia",
+    ["Jandice Barov waits in the north-east of the room down the stairs, on the right of the second big room."] =
+        "Janice Barov espera no nordeste da sala ao pé da escada, à direita da segunda sala grande.",
+    ["Rattlegore, at the bottom of the Great Ossuary, drops the Viewing Room key; put the Blood of Innocents in the brazier on the balcony on the right of the Chamber of Summoning: Kirtonos the Herald comes."] =
+        "Ossorrange, no fundo do Grande Ossário, solta a Chave da Sala de Exibição; coloque o Sangue dos Inocentes no braseiro da sacada à direita da Chamber of Summoning: Kirtonos, o Arauto, aparece.",
+    ["Betina Bigglezink, at Light's Hope Chapel."] =
+        "Betina Bigozinco, na Capela Esperança da Luz.",
+    ["Optional: an assassination in the other side's camp, among its guards; it brings the Barov Peasant Caller."] =
+        "Opcional: um assassinato no acampamento da outra facção, no meio dos guardas dele; ele rende o Convocador de Serviçais de Barov.",
+    ["Alexi Barov stands among the guards of the Bulwark, the Horde's camp in the north of the Western Plaguelands."] =
+        "Alexei Barov fica entre os guardas do Baluarte, o acampamento da Horda no norte das Terras Pestilentas Ocidentais.",
+    ["Magistrate Marduke, in Caer Darrow."] =
+        "Magistrado Marduque, em Castro das Flechas.",
+    ["Optional: a chain through Stromgarde, Light's Hope and the Baron's room of Stratholme, back to the school's last boss; it brings a sword, a dagger, a cloth crown or a shield and about 9,950 XP."] =
+        "Opcional: uma série de missões que passa por Stromgarde, pela Esperança da Luz e pela sala do Barão em Stratholme, e volta ao último chefe da escola; ela rende uma espada, uma adaga, uma coroa de tecido ou um escudo e cerca de 9.950 de XP.",
+    ["The Keepsake of Remembrance lies in the ruins of Stromgarde, in Arathi Highlands."] =
+        "O Livro de Recordações fica nas ruínas de Stromgarde, no Planalto Arathi.",
+    ["Leonid Barthalomew the Revered, at Light's Hope Chapel."] =
+        "Leonid Bartolomeu, o Venerado, na Capela Esperança da Luz.",
+    ["Stratholme: place the keepsake on the unholy ground of Baron Rivendare's room."] =
+        "Stratholme: coloque o Livro de Recordações no solo profano da sala do Barão Rivendare.",
+    ["Ras Frostwhisper waits in the Laboratory: use the Soulbound Keepsake on him."] =
+        "Ras Friomúrmuro espera no Laboratory: use a Lembrança Vinculada nele.",
+    ["Stratholme"] =
+        "Stratholme",
+    ["Smokey LaRue and Leonid Barthalomew the Revered, at Light's Hope Chapel, in the east of the Eastern Plaguelands."] =
+        "Leandro Leonardo e Leonid Bartolomeu, o Venerado, na Capela Esperança da Luz, no leste das Terras Pestilentas Orientais.",
+    ["Smokey LaRue's tobacco brings a lighter (a trinket); Leonid's holy water, a cloth crown, a ring or potions."] =
+        "O tabaco de Leandro Leonardo rende um isqueiro (um berloque); a água benta de Leonid, uma coroa de tecido, um anel ou poções.",
+    ["Betina's flesh samples open The Active Agent: a choice of two trinkets."] =
+        "As amostras de carne de Betina abrem \"O agente ativo\": dois berloques à escolha.",
+    ["Duke Nicholas Zverenhoff, at Light's Hope Chapel."] =
+        "Duque Nicolau Zverenhoff, na Capela Esperança da Luz.",
+    ["Duke Nicholas's chain leads to Balnazzar, then Baron Rivendare, then the Argent Hold: a sword, a staff or a shield."] =
+        "A série de missões do Duque Nicolau leva a Balnazzar, depois ao Barão Rivendare, depois ao Castelo Violeta: uma espada, um cajado ou um escudo.",
+    ["Caretaker Alen, at Light's Hope Chapel."] =
+        "Zelador Alen, na Capela Esperança da Luz.",
+    ["Egan's restless souls bring about 8,300 XP."] =
+        "\"As almas inquietas\", de Egan, rende cerca de 8.300 de XP.",
+    ["Tirion Fordring, in his hut by the lake on the western edge of the Eastern Plaguelands."] =
+        "Tirion Fordring, na cabana dele junto ao lago, na borda oeste das Terras Pestilentas Orientais.",
+    ["Optional: Tirion Fordring's long chain across both Plaguelands and Caer Darrow; its painting hangs in the city, and its end, In Dreams, brings armor, a warhammer or jewelry and about 9,950 XP."] =
+        "Opcional: a longa série de missões de Tirion Fordring pelas duas Terras Pestilentas e por Castro das Flechas; o quadro dela fica pendurado na cidade, e o fim, \"No mundo dos sonhos\", rende armadura, um martelo de guerra ou joias e cerca de 9.950 de XP.",
+    ["The plaguehounds, plaguebats and carrion grubs of the Eastern Plaguelands."] =
+        "Os cães pestilentos, os quirópragos e os vermes carniceiros das Terras Pestilentas Orientais.",
+    ["Listen to Tirion Fordring."] =
+        "Ouça Tirion Fordring.",
+    ["Taelan's hammer lies in the Undercroft, at the southern end of the Eastern Plaguelands."] =
+        "O Martelo de Taelan fica na Chácara Secreta, no extremo sul das Terras Pestilentas Orientais.",
+    ["The Symbol of Lost Honor lies in Northdale, in the north-east of the Eastern Plaguelands."] =
+        "O Símbolo da Honra Perdida fica no Vilarejo do Norte, no nordeste das Terras Pestilentas Orientais.",
+    ["Artist Renfray, in Caer Darrow, in the Western Plaguelands."] =
+        "Artista Renée, em Castro das Flechas, nas Terras Pestilentas Ocidentais.",
+    ["Egan, by the road to Stratholme's gate, in the north-west of the Eastern Plaguelands."] =
+        "Egan, junto à estrada para o portão de Stratholme, no noroeste das Terras Pestilentas Orientais.",
+    ["Enter Stratholme"] =
+        "Entre em Stratholme",
+    ["The city's main gate, in the north of the Eastern Plaguelands, opens on the Scarlet side."] =
+        "O portão principal da cidade, no norte das Terras Pestilentas Orientais, dá para o lado Escarlate.",
+    ["King's Square: take the box of tobacco in Ezra Grimm's smoke shop; Ezra Grimm comes for it."] =
+        "King's Square: pegue a caixa de tabaco na tabacaria de Ezra Carranca; Ezra Carranca vem atrás dela.",
+    ["The supply crates along the city's walls hold the holy water; some call monsters."] =
+        "Os caixotes de suprimentos ao longo das muralhas da cidade guardam a água benta; alguns chamam monstros.",
+    ["Every creature of the city may drop a flesh sample."] =
+        "Toda criatura da cidade pode soltar uma amostra de carne.",
+    ["Use Egan's blaster on the spectral citizens, then again on the restless souls that break free."] =
+        "Use o Canhão de Ectoplasma do Egan nos cidadãos espectrais, depois de novo nas almas inquietas que se libertam.",
+    ["Archivist Galford waits near the end of the Scarlet Bastion: kill him and burn the book on his table."] =
+        "O Arquivista Galford espera perto do fim do Bastião Escarlate: mate-o e queime o livro na mesa dele.",
+    ["The painting hangs in Galford's room."] =
+        "O quadro fica pendurado na sala de Galford.",
+    ["Balnazzar, at the end of the Scarlet Bastion, drops his head: use it."] =
+        "Balnazzar, no fim do Bastião Escarlate, solta a cabeça dele: use-a.",
+    ["Aurius waits in a chapel by the service entrance, the other gate of the city."] =
+        "Aurius espera numa capela junto à entrada de serviço, o outro portão da cidade.",
+    ["Optional: Aurius's medallion makes him join the fight against Baron Rivendare: a choice of two trinkets."] =
+        "Opcional: o medalhão de Aurius faz com que ele entre na luta contra o Barão Rivendare: dois berloques à escolha.",
+    ["The medallion lies in Malor's strongbox, in Malor the Zealous's room of the Hall of Lights: the Scarlet Key, or a rogue, opens the Bastion's door."] =
+        "O medalhão fica no Cofre de Malor, na sala de Malor, o Zeloso, no Hall of Lights: a Chave Escarlate, ou um ladino, abre a porta do Bastião.",
+    ["Aurius, in his chapel."] =
+        "Aurius, na capela dele.",
+    ["Smokey LaRue and Leonid Barthalomew the Revered, at Light's Hope Chapel."] =
+        "Leandro Leonardo e Leonid Bartolomeu, o Venerado, na Capela Esperança da Luz.",
+    ["Enter Stratholme by the service entrance"] =
+        "Entre em Stratholme pela entrada de serviço",
+    ["The service entrance, east of the main gate, opens on the side of Baron Rivendare."] =
+        "A entrada de serviço, a leste do portão principal, dá para o lado do Barão Rivendare.",
+    ["The new Scourge data lies in one of the three ziggurats of the Gauntlet."] =
+        "Os novos Dados do Flagelo ficam num dos três zigurates do Gauntlet.",
+    ["Baron Rivendare waits downstairs in the building of Slaughter Square."] =
+        "O Barão Rivendare espera no andar de baixo do prédio da Slaughter Square.",
+    ["Aurius appears in the Baron's room and fights at your side."] =
+        "Aurius aparece na sala do Barão e luta ao seu lado.",
+    ["Lord Maxwell Tyrosus, inside Light's Hope Chapel."] =
+        "Lorde Maximiliano Tyrosus, dentro da Capela Esperança da Luz.",
+    ["Open the Argent Hold, inside the chapel."] =
+        "Abra o Castelo Violeta, dentro da capela.",
+    ["Egan, by the road to Stratholme."] =
+        "Egan, junto à estrada para Stratholme.",
+    ["Tirion Fordring, in his hut."] =
+        "Tirion Fordring, na cabana dele.",
+    ["Myranda the Hag, at Uther's Tomb, in the Western Plaguelands."] =
+        "Myranda, a Bruxa Velha, na Tumba de Uther, nas Terras Pestilentas Ocidentais.",
+    ["Under Myranda's Scarlet illusion, walk into Hearthglen and give Tirion's gift to Highlord Taelan Fordring."] =
+        "Sob a Ilusão Escarlate de Myranda, entre em Amparo e entregue a Dádiva de Tirion ao Grão-lorde Taelan Fordring.",
+    ["Lead Taelan Fordring out of Hearthglen; the Scarlet give chase."] =
+        "Leve Taelan Fordring para fora de Amparo; os Escarlates partem em perseguição.",
+    ["Tirion Fordring."] =
+        "Tirion Fordring.",
+    ["Ragefire Chasm"] =
+        "Cavernas Ígneas",
+    ["Rahauro, on the Elder Rise of Thunder Bluff."] =
+        "Rahauro, no Platô dos Anciãos do Penhasco do Trovão.",
+    ["The lost satchel's quest ends with bracers of cloth, leather or mail."] =
+        "A missão da algibeira perdida termina com braçadeiras de tecido, couro ou malha.",
+    ["Varimathras, beside Sylvanas in the Royal Quarter of Undercity."] =
+        "Varimatras, ao lado de Sylvana, no Distrito Real da Cidade Baixa.",
+    ["Optional: given in Undercity, a zeppelin ride each way. Rewards leggings of cloth, leather or mail."] =
+        "Opcional: dada na Cidade Baixa, uma viagem de zepelim na ida e outra na volta. Rende perneiras de tecido, couro ou malha.",
+    ["Thrall, in Grommash Hold, in the Valley of Wisdom."] =
+        "Thrall, no Castelo Grommash, no Vale da Sabedoria.",
+    ["Thrall's chain of four quests ends with a weapon of your choice."] =
+        "A série de quatro missões de Thrall termina com uma arma à sua escolha.",
+    ["The Burning Blade cultists of the Cleft of Shadow carry the insignia."] =
+        "Os sectários da Lâmina Ardente do Antro das Sombras carregam a insígnia.",
+    ["Talk to Neeru Fireblade, in the Darkbriar Lodge of the Cleft of Shadow."] =
+        "Fale com Neeru Cortafogo, no Salão Agulhas Negras do Antro das Sombras.",
+    ["Neeru Fireblade also asks for the heart of the chasm's beast."] =
+        "Neeru Cortafogo também pede o coração da fera das Cavernas.",
+    ["Back to Thrall, in Grommash Hold."] =
+        "De volta a Thrall, no Castelo Grommash.",
+    ["Enter Ragefire Chasm"] =
+        "Entre nas Cavernas Ígneas",
+    ["The entrance is a cave in the Cleft of Shadow, in the middle of Orgrimmar."] =
+        "A entrada é uma caverna no Antro das Sombras, no meio de Orgrimmar.",
+    ["Ragefire troggs and their shamans fill the first caves."] =
+        "Troggs Iraflama e os xamãs deles ocupam as primeiras cavernas.",
+    ["Maur Grimtotem's body lies in a small cave on the right, past the big trogg cave."] =
+        "O corpo de Mauren Temível Totem fica numa pequena caverna à direita, depois da grande caverna dos troggs.",
+    ["The Searing Blade cultists and warlocks carry both books."] =
+        "Os sectários e os bruxos da Lâmina Calcinante carregam os dois livros.",
+    ["Taragaman the Hungerer, the chasm's second boss, guards a lava cave."] =
+        "Taragaman, o Famélico, o segundo chefe das Cavernas, guarda uma caverna de lava.",
+    ["Jergosh the Invoker is the third boss; Bazzalan waits at the very end of the chasm."] =
+        "Jergosh, o Invocador, é o terceiro chefe; Bazzalan espera bem no fim das Cavernas.",
+    ["Thrall, in Grommash Hold."] =
+        "Thrall, no Castelo Grommash.",
+    ["Neeru Fireblade, in the Cleft of Shadow."] =
+        "Neeru Cortafogo, no Antro das Sombras.",
+    ["Your reward: an axe, a mace, a dagger or a staff of Orgrimmar."] =
+        "Sua recompensa: um machado, uma maça, uma adaga ou um cajado de Orgrimmar.",
+    ["Varimathras, in the Royal Quarter of Undercity."] =
+        "Varimatras, no Distrito Real da Cidade Baixa.",
+    ["Tonga Runetotem, at the Crossroads."] =
+        "Tonga Runa Totem, na Encruzilhada.",
+    ["Tonga's three oases open Leaders of the Fang, the caverns' main quest: a weapon of your choice."] =
+        "Os três oásis de Tonga abrem \"Líderes da Presa\", a principal missão das cavernas: uma arma à sua escolha.",
+    ["The Forgotten Pools lie north-west of the Crossroads, north of the caverns' hill."] =
+        "Os Charcos Esquecidos ficam a noroeste da Encruzilhada, ao norte do morro das cavernas.",
+    ["The Stagnant Oasis lies south-east of the Crossroads: use the bubbling fissure in its water."] =
+        "O Oásis Estagnado fica a sudeste da Encruzilhada: use a rachadura borbulhante na água dele.",
+    ["The snapjaw turtles of the Lushwater Oasis, at the foot of the caverns' hill."] =
+        "As tartarugas mordeliscas do Oásis das Águas Claras, ao pé do morro das cavernas.",
+    ["Apothecary Zamah, in the Pools of Vision under the Spirit Rise."] =
+        "Boticário Zaqueu, nos Poços das Visões, sob o Platô dos Espíritos.",
+    ["Reward: a piece of cloth, leather or mail armor."] =
+        "Recompensa: uma peça de armadura de tecido, couro ou malha.",
+    ["Arch Druid Hamuul Runetotem, on the Elder Rise."] =
+        "Arquidruida Hamuul Runa Totem, no Platô dos Anciãos.",
+    ["Nara Wildmane, on the Elder Rise."] =
+        "Nara Juba Agreste, no Platô dos Anciãos.",
+    ["Serpentbloom: small green shrubs with violet flowers, in the caves before the door and inside."] =
+        "Ofídea: pequenos arbustos verdes com flores violeta, nas cavernas antes da porta e lá dentro.",
+    ["The four Fanglords each drop a gem: Lady Anacondra and Lord Cobrahn first, then Lord Pythas, and Lord Serpentis last."] =
+        "Os quatro Lordes da Presa soltam uma gema cada: Lady Sucurina e Lorde Cobrahn primeiro, depois Lorde Pítias, e Lorde Serpentis por último.",
+    ["Nara Wildmane, on the Elder Rise of Thunder Bluff."] =
+        "Nara Juba Agreste, no Platô dos Anciãos do Penhasco do Trovão.",
+    ["Your reward: a staff, a mace or a sword."] =
+        "Sua recompensa: um cajado, uma maça ou uma espada.",
+    ["Apothecary Zamah, in the Pools of Vision."] =
+        "Boticário Zaqueu, nos Poços das Visões.",
+    ["Tabitha Heartweaver, at the Sepulcher, in Silverpine Forest."] =
+        "Tabitha Heartweaver, no Sepulcro, na Floresta de Pinhaprata.",
+    ["Reward: a dagger or cloth cuffs."] =
+        "Recompensa: uma adaga ou punhos de tecido.",
+    ["Deathguard Kristof, in Brill, in Tirisfal Glades."] =
+        "Deathguard Kristof, em Montalvo, nas Clareiras de Tirisfal.",
+    ["Reward: a two-handed axe or a staff."] =
+        "Recompensa: um machado de duas mãos ou um cajado.",
+    ["Morbin Lightbane, in Undercity."] =
+        "Morbin Lightbane, na Cidade Baixa.",
+    ["Reward: leather armor or a mace."] =
+        "Recompensa: armadura de couro ou uma maça.",
+    ["Theodore Griffs, in Undercity."] =
+        "Teodoro Chaves, na Cidade Baixa.",
+    ["Reward: cloth gloves or a sword."] =
+        "Recompensa: luvas de tecido ou uma espada.",
+    ["The ruins rise above Undercity, in Tirisfal Glades."] =
+        "As ruínas se erguem acima da Cidade Baixa, nas Clareiras de Tirisfal.",
+    ["Look for Edward Heartweaver in the ruins."] =
+        "Procure Edward Heartweaver nas ruínas.",
+    ["Twenty-five intact limbs, from the undead of the ruins."] =
+        "Vinte e cinco membros intactos, dos mortos-vivos das ruínas.",
+    ["Rath'mael waits in the ruins."] =
+        "Rath'mael espera nas ruínas.",
+    ["Witherfang carries the highly toxic strain."] =
+        "Witherfang carrega a cepa altamente tóxica.",
+    ["The Baron may drop an abominable head: read it."] =
+        "O Barão pode soltar uma cabeça abominável: leia-a.",
+    ["Oran Snakewrithe, in Undercity."] =
+        "Urraca Convulserpe, na Cidade Baixa.",
+    ["Master Apothecary Faranell, in the Apothecarium of Undercity."] =
+        "Mestre-boticário Faranello, no Boticarium da Cidade Baixa.",
+    ["Optional: Faranell's Unending Torment goes on in Undercity; its last part has a two-handed sword among its rewards."] =
+        "Opcional: \"Unending Torment\", de Faranello, continua na Cidade Baixa; a última parte tem uma espada de duas mãos entre as recompensas.",
+    ["A toxic skullcap from Tawny Grisette in the Trade Quarter, blisterweed near the herbalism trainer, and an essence of agony from the poison vendor of the Rogues' Quarter."] =
+        "Um cogumelo-caveira tóxico de Clorinda Grisette, no Centro Comercial, erva-bolha perto do instrutor de herborismo e uma Essência da Agonia do vendedor de venenos do Distrito dos Ladinos.",
+    ["Inject the hissing serum into the system above Othmar's body."] =
+        "Injete o soro sibilante no sistema acima do corpo de Othmar.",
+    ["Bring the Baron's head to Othmar's body, the unfinished abomination."] =
+        "Leve a cabeça do Barão até o corpo de Othmar, a abominação inacabada.",
+    ["Master Apothecary Faranell."] =
+        "Mestre-boticário Faranello.",
+    ["Deathguard Kristof, in Brill."] =
+        "Deathguard Kristof, em Montalvo.",
+    ["Tabitha Heartweaver, at the Sepulcher."] =
+        "Tabitha Heartweaver, no Sepulcro.",
+    ["Shadowfang Keep"] =
+        "Bastilha da Presa Negra",
+    ["Keeper Bel'dugur, in Undercity."] =
+        "Guardião Bel'dugur, na Cidade Baixa.",
+    ["Dalar Dawnweaver, at the Sepulcher, in Silverpine Forest."] =
+        "Dalar Tessalba, no Sepulcro, na Floresta de Pinhaprata.",
+    ["Reward: a ring and about 3,300 XP."] =
+        "Recompensa: um anel e cerca de 3.300 de XP.",
+    ["High Executor Hadrec, at the Sepulcher."] =
+        "Alto-executor Hadrec, no Sepulcro.",
+    ["Reward: shoulders of cloth, leather or mail."] =
+        "Recompensa: ombreiras de tecido, couro ou malha.",
+    ["Enter Shadowfang Keep"] =
+        "Entre na Bastilha da Presa Negra",
+    ["The keep stands south of the Sepulcher."] =
+        "A bastilha fica ao sul do Sepulcro.",
+    ["Deathstalker Vincent lies in the courtyard: Deathstalker Adamant, freed after Rethilgore, opens its door."] =
+        "O Sicário Vicente jaz no pátio: o Sicário Admeto, libertado depois de Rethilgore, abre a porta do pátio.",
+    ["The Book of Ur, a blue book, stands on a bookshelf on the left of Fenrus the Devourer's room."] =
+        "O Livro de Ur, um livro azul, fica numa estante à esquerda da sala de Fenrus, o Devorador.",
+    ["Archmage Arugal, the last boss, waits at the top of the keep."] =
+        "Arquimago Arugal, o último chefe, espera no topo da bastilha.",
+    ["Dalar Dawnweaver, at the Sepulcher."] =
+        "Dalar Tessalba, no Sepulcro.",
+    ["Tsunaman, at Sun Rock Retreat, in Stonetalon Mountains."] =
+        "Tsunomem, no Retiro Rocha do Sol, na Cordilheira das Torres de Pedra.",
+    ["Optional: a lead from Stonetalon to Zoram'gar Outpost."] =
+        "Opcional: um encaminhamento das Torres de Pedra até o Assentamento Zoram'gar.",
+    ["Je'neu Sancrea, at Zoram'gar Outpost, on Ashenvale's coast."] =
+        "Je'neu Sancrea, no Assentamento Zoram'gar, na costa do Vale Gris.",
+    ["Je'neu Sancrea, at Zoram'gar Outpost."] =
+        "Je'neu Sancrea, no Assentamento Zoram'gar.",
+    ["The Earthen Ring's quests: Amongst the Ruins wakes Baron Aquanis, whose drop starts a quest with a sword among its rewards."] =
+        "As missões da Harmonia Telúrica: \"Nas ruínas\" desperta o Barão Aquanis, cujo saque inicia uma missão com uma espada entre as recompensas.",
+    ["The deeps open in ruins half under water, on the coast of Zoram Strand."] =
+        "As profundezas se abrem em ruínas meio submersas, na costa da Praia de Zoram.",
+    ["The Sapphires of Aku'Mai grow on the walls of the cave before the dungeon's door."] =
+        "As Safiras de Aku'Mai crescem nas paredes da caverna antes da porta da masmorra.",
+    ["The Blackfathom tide priestesses of that cave may drop a damp note: read it."] =
+        "As Sacerdotisas da Maré das Profundezas Negras dessa caverna podem soltar um Bilhete Úmido: leia-o.",
+    ["Back to Je'neu Sancrea, at Zoram'gar Outpost, before the dungeon."] =
+        "De volta a Je'neu Sancrea, no Assentamento Zoram'gar, antes da masmorra.",
+    ["Reward: a wand, a shield or leather armor."] =
+        "Recompensa: uma varinha, um escudo ou armadura de couro.",
+    ["Lorgus Jett walks the nooks on the west side, south of the Pool of Ask'ar."] =
+        "Lorgus Jett anda pelos recantos do lado oeste, ao sul do Pool of Ask'ar.",
+    ["The Fathom Stone lies under the water in the middle of the Moonshrine Ruins, under the walkway before Kelris; taking its core wakes Baron Aquanis."] =
+        "A Pedra das Profundezas fica debaixo d'água no meio das Ruínas do Sacrário Lunar, sob a passarela antes de Kelris; pegar o núcleo dela desperta o Barão Aquanis.",
+    ["Baron Aquanis may drop a Strange Water Globe: use it."] =
+        "O Barão Aquanis pode soltar um Globo d'Água Estranho: use-o.",
+    ["Bashana Runetotem, on the Elder Rise of Thunder Bluff."] =
+        "Bashana Runa Totem, no Platô dos Anciãos do Penhasco do Trovão.",
+    ["Borstan, the meat vendor of Orgrimmar."] =
+        "Borsgan, o vendedor de carnes de Orgrimmar.",
+    ["Reward: a dagger or a satchel of potions."] =
+        "Recompensa: uma adaga ou uma bolsa de poções.",
+    ["Zaruk, at Hammerfall, in Arathi Highlands."] =
+        "Zaruk, em Ruína do Martelo, no Planalto Arathi.",
+    ["Dragonmaw Rumors leads to Open the Maw, inside the site."] =
+        "\"Dragonmaw Rumors\" leva a \"Open the Maw\", dentro do sítio.",
+    ["The Deathstalker Agent hides in the hills above the Dragonmaw camp, in the Wetlands."] =
+        "A Agente Sicária se esconde nas colinas acima do acampamento Presa do Dragão, no Pantanal.",
+    ["Thicket raptor meat, from the raptors of the site."] =
+        "Carne de raptor do matagal, dos raptores do sítio.",
+    ["The Dragonmaw forces of the site, their thaumaturgists among them."] =
+        "As forças Presa do Dragão do sítio, entre elas os taumaturgos.",
+    ["The Titan relic leads to the Earthen Ring: a staff or a two-handed mace."] =
+        "A relíquia titânica leva à Harmonia Telúrica: um cajado ou uma maça de duas mãos.",
+    ["The Deathstalker Agent, above the Dragonmaw camp."] =
+        "A Agente Sicária, acima do acampamento Presa do Dragão.",
+    ["Borstan, in Orgrimmar."] =
+        "Borsgan, em Orgrimmar.",
+    ["Muln Earthfury, on the Skywatcher Plateau, in the north-west of Mulgore."] =
+        "Muln Earthfury, no Skywatcher Plateau, no noroeste de Mulgore.",
+    ["Nogg, in his machine shop in the Valley of Honor of Orgrimmar."] =
+        "Nogg, na oficina de máquinas dele no Vale da Honra de Orgrimmar.",
+    ["Sovik, beside Nogg."] =
+        "Sovik, ao lado de Nogg.",
+    ["Scooty's transponder sends you straight to Gnomeregan, far in Dun Morogh, and stays yours."] =
+        "O transponder do Scooty manda você direto para Gnomeregan, lá longe em Dun Morogh, e continua sendo seu.",
+    ["Wait for Scooty to set up the transponder."] =
+        "Espere o Scooty instalar o transponder.",
+    ["The transponder leaves you by the gates of Gnomeregan, in the west of Dun Morogh."] =
+        "O transponder deixa você junto aos portões de Gnomeregan, no oeste de Dun Morogh.",
+    ["Optional: an escort, turned in at Booty Bay; it rewards bracers or shoulders."] =
+        "Opcional: uma escolta, entregue na Angra do Butim; ela rende braçadeiras ou ombreiras.",
+    ["The last boss, Mekgineer Thermaplugg, carries the code of his safe, set in the far wall of the Tinkers' Court next to the third pillar counting from the right."] =
+        "O último chefe, Mecangenheiro Termaplugue, carrega o código do cofre dele, embutido na parede do fundo do Tinkers' Court, ao lado do terceiro pilar contando da direita.",
+    ["Scooty, in Booty Bay."] =
+        "Scooty, na Angra do Butim.",
+    ["Nogg, in Orgrimmar."] =
+        "Nogg, em Orgrimmar.",
+    ["It opens Hearts of Zeal, a quest of the Scarlet Monastery."] =
+        "Ela abre \"Corações do fanatismo\", uma missão do Monastério Escarlate.",
+    ["Auld Stonespire, in Thunder Bluff."] =
+        "Auld Agulha de Pedra, no Penhasco do Trovão.",
+    ["Reward: cloth shoulders, a mail belt or a shield, and about 4,050 XP."] =
+        "Recompensa: ombreiras de tecido, um cinto de malha ou um escudo, e cerca de 4.050 de XP.",
+    ["Rau Cliffrunner, at Freewind Post, in Thousand Needles."] =
+        "Rau Corta Montes, na Aldeia Vento Livre, em Mil Agulhas.",
+    ["The kraul bats of the cave west of the bridges drop the guano."] =
+        "Os morcegos do Urzal da caverna a oeste das pontes soltam o guano.",
+    ["Charlga may drop a small scroll: read it."] =
+        "Charlga pode soltar um pergaminho pequeno: leia-o.",
+    ["Willix the Importer waits in a tent below Charlga's platform."] =
+        "O Importador Willix espera numa tenda abaixo da plataforma de Charlga.",
+    ["Master Apothecary Faranell, in Undercity."] =
+        "Mestre-boticário Faranello, na Cidade Baixa.",
+    ["It opens An Unholy Alliance, a quest of Razorfen Downs."] =
+        "Ela abre \"Uma aliança profana\", uma missão do Urzal dos Mortos.",
+    ["Doctor Martin Felben, in the Apothecarium of Undercity."] =
+        "Doutor Martinho Nunes, no Boticarium da Cidade Baixa.",
+    ["Reward: a wand or a cloak."] =
+        "Recompensa: uma varinha ou uma capa.",
+    ["Melisara and Magus Wordeen Voidglare, in Tarren Mill, in Hillsbrad Foothills."] =
+        "Melissara e Magus Ordínio Olharvazio, na Serraria Tarren, no Contraforte de Eira dos Montes.",
+    ["Tarren Mill's quests: The Grave Knight brings leather boots or mail bracers."] =
+        "As missões da Serraria Tarren: \"The Grave Knight\" rende botas de couro ou braçadeiras de malha.",
+    ["Reward: a staff or mail shoulders."] =
+        "Recompensa: um cajado ou ombreiras de malha.",
+    ["Atrexis the Grave Knight, inside the city."] =
+        "Atrexis the Grave Knight, dentro da cidade.",
+    ["Six cracked sentry cores, from the fragmented sentries of the city."] =
+        "Seis núcleos de sentinela rachados, das sentinelas fragmentadas da cidade.",
+    ["Magus Wordeen Voidglare and Melisara, in Tarren Mill."] =
+        "Magus Ordínio Olharvazio e Melissara, na Serraria Tarren.",
+    ["Doctor Martin Felben, in Undercity."] =
+        "Doutor Martinho Nunes, na Cidade Baixa.",
+    ["Dorn Plainstalker, in Thousand Needles."] =
+        "Dorn Espreitaprados, em Mil Agulhas.",
+    ["Optional: a chain of ten quests through Thousand Needles, Stonetalon, Ashenvale and Undercity, up to a book of the monastery; it ends with a mace or a wand and about 4,200 XP."] =
+        "Opcional: uma série de dez missões por Mil Agulhas, pelas Torres de Pedra, pelo Vale Gris e pela Cidade Baixa, até um livro do monastério; ela termina com uma maça ou uma varinha e cerca de 4.200 de XP.",
+    ["Leap from the wooden planks over the canyon, in the west of Thousand Needles."] =
+        "Salte das tábuas de madeira sobre o cânion, no oeste de Mil Agulhas.",
+    ["Grenka Bloodscreech, a harpy of the west of Thousand Needles."] =
+        "Grenka Sangrunhidos, uma harpia do oeste de Mil Agulhas.",
+    ["Rok'Alim the Pounder, an elemental of the north-west of Thousand Needles."] =
+        "Petra'lim, o Batedor, um elemental do noroeste de Mil Agulhas.",
+    ["Braug Dimspirit, in the east of Stonetalon Mountains."] =
+        "Braug Espírito Turvo, no leste da Cordilheira das Torres de Pedra.",
+    ["The Legacy of the Aspects, a book in the south-east of Ashenvale."] =
+        "O Legado dos Aspectos, um livro no sudeste do Vale Gris.",
+    ["Braug Dimspirit, in Stonetalon."] =
+        "Braug Espírito Turvo, nas Torres de Pedra.",
+    ["Braug Dimspirit asks a question: give him the right answer."] =
+        "Braug Espírito Turvo faz uma pergunta: dê a ele a resposta certa.",
+    ["Sage Truthseeker, in Thunder Bluff."] =
+        "Sábio Devoto da Verdade, no Penhasco do Trovão.",
+    ["Reward: a shield or an off-hand orb, and about 3,550 XP."] =
+        "Recompensa: um escudo ou um orbe de mão secundária, e cerca de 3.550 de XP.",
+    ["Parqual Fintallas, in Undercity."] =
+        "Pasqual Fintallas, na Cidade Baixa.",
+    ["Reward: a sword, an off-hand cane or a necklace, and about 5,150 XP."] =
+        "Recompensa: uma espada, uma bengala de mão secundária ou um colar, e cerca de 5.150 de XP.",
+    ["Master Apothecary Faranell, in the Apothecarium."] =
+        "Mestre-boticário Faranello, no Boticarium.",
+    ["Graveyard: Vorrel Sengutz lies on a table on the right of the Chamber of Atonement, by Interrogator Vishas."] =
+        "Cemitério: Vorrel Sentripaz jaz numa mesa à direita da Chamber of Atonement, junto ao Interrogador Vishas.",
+    ["Reward: a cloth cape or shoulders, or leather boots; the ring it asks for is in the Alterac Mountains."] =
+        "Recompensa: uma capa ou ombreiras de tecido, ou botas de couro; o anel que ela pede fica nas Montanhas de Alterac.",
+    ["Every Scarlet of the monastery may drop a heart."] =
+        "Todo Escarlate do monastério pode soltar um coração.",
+    ["Library: the book rests on a table, in the first side room on the left as you walk the Gallery of Treasures."] =
+        "Biblioteca: o livro está numa mesa, na primeira sala lateral à esquerda de quem percorre a Gallery of Treasures.",
+    ["Library: the Compendium stands on a bookcase on the left wall at the entrance of the Athenaeum."] =
+        "Biblioteca: o Compêndio fica numa estante na parede esquerda, na entrada do Ateneu.",
+    ["Parqual Fintallas asks a question: give him the right answer."] =
+        "Pasqual Fintallas faz uma pergunta: dê a ele a resposta certa.",
+    ["Varimathras, in the Royal Quarter."] =
+        "Varimatras, no Distrito Real.",
+    ["Nancy Vishas, an elite, keeps the ring in a house of the Alterac Mountains."] =
+        "Nancy Visas, uma inimiga de elite, guarda o anel numa casa das Montanhas de Alterac.",
+    ["Monika Sengutz, in Tarren Mill, in Hillsbrad Foothills."] =
+        "Mônica Sentripaz, na Serraria Tarren, no Contraforte de Eira dos Montes.",
+    ["Andrew Brownell, in Undercity."] =
+        "André Rosado, na Cidade Baixa.",
+    ["Reward: a mace, a gun, a cloth robe or a leather chest."] =
+        "Recompensa: uma maça, uma arma de fogo, uma veste de tecido ou um peitoral de couro.",
+    ["Ambassador Malcin walks among the quilboar outside the downs."] =
+        "O Embaixador Malcin anda entre os javatuscos do lado de fora do Urzal.",
+    ["Patrick Garrett, in Undercity."] =
+        "Patrício Garreta, na Cidade Baixa.",
+    ["Dran Droffers, in the Drag of Orgrimmar."] =
+        "Dran Droffers, no Bazar de Orgrimmar.",
+    ["Dran Droffers's chain goes back and forth between Orgrimmar, Kargath and Uldaman: it ends with a necklace and about 5,600 XP."] =
+        "A série de missões de Dran Droffers vai e volta entre Orgrimmar, Karrath e Uldaman: ela termina com um colar e cerca de 5.600 de XP.",
+    ["Jarkal Mossmeld, at Kargath, in the west of the Badlands."] =
+        "Jarkal Limuno, em Karrath, no oeste dos Ermos.",
+    ["The tablet lies in an ancient chest by the gates of Uldaman, in the north of the Badlands."] =
+        "A tabuleta fica num baú antigo junto aos portões de Uldaman, no norte dos Ermos.",
+    ["The Shadowforge dwarves around the gates drop the power stones and the shattered necklace."] =
+        "Os anões de Umbraforja em volta dos portões soltam as pedras de energia e o colar estilhaçado.",
+    ["The Garrett family chest stands in the dig west of Uldaman's gates."] =
+        "O baú da família Garreta fica na escavação a oeste dos portões de Uldaman.",
+    ["Jarkal Mossmeld, at Kargath."] =
+        "Jarkal Limuno, em Karrath.",
+    ["Dran Droffers, in Orgrimmar."] =
+        "Dran Droffers, em Orgrimmar.",
+    ["Magenta cap clusters grow on the cave walls, south-west of Uldaman's gates and inside."] =
+        "Colônias de Campânulas Magenta crescem nas paredes da caverna, a sudoeste dos portões de Uldaman e lá dentro.",
+    ["The dungeon's door is at the back of the cave by the dig at Uldaman's gates."] =
+        "A porta da masmorra fica no fundo da caverna junto à escavação dos portões de Uldaman.",
+    ["A dead paladin rests just off the first great hall, down its second right-hand passage; then head out for Kargath."] =
+        "Um paladino morto repousa logo ao lado do primeiro grande salão, descendo a segunda passagem à direita; depois siga para Karrath.",
+    ["Enter Uldaman again"] =
+        "Entre de novo em Uldaman",
+    ["The topaz is in a conspicuous urn south-east of Dig Two, the ruby in a stone chest north-west of Dig Three (it calls monsters), the sapphire on Grimlok at the end of the Stone Vault; Archaedas, the last boss, in the Hall of the Crafters, drops the power source."] =
+        "O topázio está numa Urna Evidente a sudeste de Dig Two, o rubi num baú de pedra a noroeste de Dig Three (ele chama monstros), a safira com Grimlok, no fim da Stone Vault; Arkhaedas, o último chefe, no Hall of the Crafters, solta a fonte de força.",
+    ["Optional: the Discs of Norgannon, behind Archaedas, tell their story; it ends in Thunder Bluff with potions or a bag."] =
+        "Opcional: os Discos de Norgannon, atrás de Arkhaedas, contam a história deles; ela termina no Penhasco do Trovão com poções ou uma bolsa.",
+    ["Bena Winterhoof, in Thunder Bluff."] =
+        "Bena Casco Invernal, no Penhasco do Trovão.",
+    ["Venom bottles stand in the Witherbark trolls' camps of the south-west of the Hinterlands."] =
+        "Garrafas de Peçonha ficam nos acampamentos dos trolls Cascasseca, no sudoeste das Terras Agrestes.",
+    ["Optional: a chain of six quests between the Hinterlands, Tarren Mill, Durotar and the city; it ends with a shield, a mail chest or a cloth robe."] =
+        "Opcional: uma série de seis missões entre as Terras Agrestes, a Serraria Tarren, Durotar e a cidade; ela termina com um escudo, um peitoral de malha ou uma veste de tecido.",
+    ["Apothecary Lydon, in Tarren Mill, in Hillsbrad Foothills."] =
+        "Boticário Lindolfo, na Serraria Tarren, no Contraforte de Eira dos Montes.",
+    ["The Witherbark broodguards, spiders of the Hinterlands' troll camps, carry the sacs."] =
+        "Os guarda-proles Cascasseca, aranhas dos acampamentos trolls das Terras Agrestes, carregam as vesículas.",
+    ["Apothecary Lydon, in Tarren Mill."] =
+        "Boticário Lindolfo, na Serraria Tarren.",
+    ["Master Gadrin, in Sen'jin Village, in Durotar."] =
+        "Mestre Gadrin, na Aldeia Sen'jin, em Durotar.",
+    ["A tablet stands in the middle of the scarabs' chamber: read the spider god's name on it."] =
+        "Uma tabuleta fica no meio da câmara dos escaravelhos: leia nela o nome da deusa aranha.",
+    ["Master Gadrin, in Sen'jin Village."] =
+        "Mestre Gadrin, na Aldeia Sen'jin.",
+    ["Defeat Shadra at her altar of Shadra'Alor, in the south-west of the Hinterlands, and take her venom."] =
+        "Derrote Shadra no altar dela, em Shadra'Alor, no sudoeste das Terras Agrestes, e pegue a peçonha dela.",
+    ["Uthel'nay, in the Valley of Spirits of Orgrimmar."] =
+        "Uthel'nay, no Vale dos Espíritos de Orgrimmar.",
+    ["Vark Battlescar and Selendra, at Shadowprey Village, on the west coast of Desolace."] =
+        "Vark Chaga de Guerra e Selendra, na Aldeia Pescassombra, na costa oeste de Desolação.",
+    ["Shadowprey Village's two quests: a ring, plate gauntlets or a leather belt; then Theradras's end brings a sword, a staff or a bow."] =
+        "As duas missões da Aldeia Pescassombra: um anel, manoplas de placas ou um cinto de couro; depois, o fim de Theradras rende uma espada, um cajado ou um arco.",
+    ["Vark Battlescar and Selendra, at Shadowprey Village."] =
+        "Vark Chaga de Guerra e Selendra, na Aldeia Pescassombra.",
+    ["Uthel'nay, in Orgrimmar."] =
+        "Uthel'nay, em Orgrimmar.",
+    ["Fel'zerul, in Stonard, in the Swamp of Sorrows."] =
+        "Vil'zerul, em Pedregal, no Pântano das Mágoas.",
+    ["Fel'zerul's chain goes to the Hinterlands and back: it opens The Temple of Atal'Hakkar, a talisman and about 5,900 XP."] =
+        "A série de missões de Vil'zerul vai às Terras Agrestes e volta: ela abre \"O templo de Atal'Hakkar\", um talismã e cerca de 5.900 de XP.",
+    ["The Atal'ai artifacts lie in the ruins around the Pool of Tears, in the east of the swamp."] =
+        "Os artefatos Atal'ai ficam nas ruínas em volta do Poço de Lágrimas, no leste do pântano.",
+    ["Fel'zerul, in Stonard."] =
+        "Vil'zerul, em Pedregal.",
+    ["Jammal'an the Prophet: cloth leggings or a mail helm, and about 6,550 XP."] =
+        "\"Jammal'an, o Profeta\": perneiras de tecido ou um elmo de malha, e cerca de 6.550 de XP.",
+    ["Witch Doctor Uzer'i, at Camp Mojache, in Feralas."] =
+        "Mandingueiro Uzer'i, na Aldeia Mojache, em Feralas.",
+    ["Larion, at Marshal's Refuge, in Un'Goro Crater."] =
+        "Lário, no Refúgio do Marshal, na Cratera Un'Goro.",
+    ["Larion's chain leads to the temple's haze; its end brings a bloodpetal zapper."] =
+        "A série de missões de Lário leva à bruma do templo; o fim dela rende uma Fulminadora de Pétala Sangrenta.",
+    ["The bloodpetal plants of Un'Goro."] =
+        "As plantas Pétala Sangrenta de Un'Goro.",
+    ["Liv Rizzlefix, in Ratchet."] =
+        "Fanny Quito, em Vila Catraca.",
+    ["Every Atal'ai troll of the temple may drop a fetish."] =
+        "Todo troll Atal'ai do templo pode soltar um fetiche.",
+    ["Apothecary Zinge, in the Apothecarium of Undercity."] =
+        "Boticária Zilda, no Boticarium da Cidade Baixa.",
+    ["Optional: a lead from Undercity to Vivian Lagrave, at Kargath."] =
+        "Opcional: um encaminhamento da Cidade Baixa até Vivian Latumba, em Karrath.",
+    ["Shadowmage Vivian Lagrave, at Kargath, in the west of the Badlands."] =
+        "Umbramante Vivian Latumba, em Karrath, no oeste dos Ermos.",
+    ["Shadowmage Vivian Lagrave, at Kargath."] =
+        "Umbramante Vivian Latumba, em Karrath.",
+    ["Reward: a two-handed axe, a mace or potions."] =
+        "Recompensa: um machado de duas mãos, uma maça ou poções.",
+    ["Thunderheart, at Kargath."] =
+        "Coração Trovejante, em Karrath.",
+    ["Thunderheart's chain: Disharmony of Fire brings armor of any kind, and opens Commander Gor'shak and The Last Element."] =
+        "A série de missões de Coração Trovejante: \"Desarmonia do fogo\" rende armadura de qualquer tipo e abre \"Comandante Gor'shak\" e \"O último elemento\".",
+    ["Hierophant Theodora Mulvadania, at Kargath."] =
+        "Hierofante Theodora Malvadania, em Karrath.",
+    ["The Rise of the Machines ends inside the depths with armor of any kind, and about 6,200 XP."] =
+        "\"O levante das máquinas\" termina dentro do Abismo com armadura de qualquer tipo, e cerca de 6.200 de XP.",
+    ["The WANTED poster, at Kargath."] =
+        "O cartaz PROCURA-SE, em Karrath.",
+    ["The wanted posters lead to General Angerforge, and a medallion."] =
+        "Os cartazes de procurado levam ao General Forjaversa e a um medalhão.",
+    ["The war reavers and obsidian elementals of the Badlands drop the shards."] =
+        "Os aniquiladores de guerra e os elementais obsidianos dos Ermos soltam os estilhaços.",
+    ["Lotwil Veriatus, in the west of the Badlands."] =
+        "Lotwil Viriato, no oeste dos Ermos.",
+    ["Galamav the Marksman, at Kargath."] =
+        "Galamav, o Atirador Perito, em Karrath.",
+    ["Commander Gor'shak's chain leads to Thrall, the emperor and the princess: about 9,950 XP at its end, and Thrall's reward."] =
+        "A série de missões do Comandante Gor'shak leva a Thrall, ao imperador e à princesa: cerca de 9.950 de XP no fim, e a recompensa de Thrall.",
+    ["Blackrock Mountain opens in the south of the Searing Gorge; inside, the depths' door is at the bottom of the mountain."] =
+        "A Montanha Rocha Negra se abre no sul da Garganta Abrasadora; lá dentro, a porta do Abismo fica no fundo da montanha.",
+    ["High Interrogator Gerstahn, in a back room on the right of the Detention Block, carries the cell key; Commander Gor'shak sits in the first cell on the left of the tunnel."] =
+        "A Suprema Interrogadora Gerstahn, numa sala dos fundos à direita do Detention Block, carrega a chave das celas; o Comandante Gor'shak fica na primeira cela à esquerda do túnel.",
+    ["Defend Gor'shak against two waves of guards."] =
+        "Defenda Gor'shak contra duas ondas de guardas.",
+    ["Talk to Kharan Mighthammer, in the first cell on the left across the hallway."] =
+        "Fale com Kharan Feromalho, na primeira cela à esquerda, do outro lado do corredor.",
+    ["The Anvilrage guardsmen, wardens and footmen of the Detention Block and the halls."] =
+        "Os guardas, carcereiros e soldados rasos Furiadastra do Detention Block e dos salões.",
+    ["Lord Incendius waits at the Black Anvil, in Shadowforge City: he carries the Tablet of Kurniya."] =
+        "Lorde Incendius espera na Bigorna Negra, na Cidade de Umbraforja: ele carrega a Tabuleta de Kurniya.",
+    ["Golem Lord Argelmach waits in the Manufactory; his golems and constructs drop the cores and the essences."] =
+        "O Lorde Golem Argelmach espera na Fábrica; os golens e constructos dele soltam os núcleos e as essências.",
+    ["Warlord Goretooth, at Kargath."] =
+        "Senhor da Guerra Trincador, em Karrath.",
+    ["The KILL ON SIGHT poster, at Kargath."] =
+        "O cartaz SE VIR, MATE, em Karrath.",
+    ["Thrall, in Grommash Hold, in Orgrimmar."] =
+        "Thrall, no Castelo Grommash, em Orgrimmar.",
+    ["The Anvilrage medics, soldiers and officers of the halls."] =
+        "Os socorristas, soldados e oficiais Furiadastra dos salões.",
+    ["Warlord Goretooth, then Lexlort, at Kargath."] =
+        "Senhor da Guerra Trincador, depois Lexlort, em Karrath.",
+    ["Grark Lorkrub, held in the Blackrock Stronghold of the Burning Steppes."] =
+        "Grark Lorkrub, preso na Blackrock Stronghold, nas Estepes Ardentes.",
+    ["Optional: an escort in the Burning Steppes, then a third visit for General Angerforge: a medallion and about 7,750 XP."] =
+        "Opcional: uma escolta nas Estepes Ardentes, depois uma terceira visita pelo General Forjaversa: um medalhão e cerca de 7.750 de XP.",
+    ["Bind Grark Lorkrub with the shackles and lead him through Blackrock Mountain to the Searing Gorge."] =
+        "Prenda Grark Lorkrub com os grilhões e leve-o pela Montanha Rocha Negra até a Garganta Abrasadora.",
+    ["Lexlort, then Warlord Goretooth, at Kargath."] =
+        "Lexlort, depois Senhor da Guerra Trincador, em Karrath.",
+    ["Enter Blackrock Depths a third time"] =
+        "Entre no Abismo Rocha Negra pela terceira vez",
+    ["General Angerforge waits down the stairs of the West Garrison."] =
+        "O General Forjaversa espera descendo as escadas da Guarnição Oeste.",
+    ["Galamav the Marksman, at Kargath, in the west of the Badlands."] =
+        "Galamav, o Atirador Perito, em Karrath, no oeste dos Ermos.",
+    ["Lexlort, at Kargath."] =
+        "Lexlort, em Karrath.",
+    ["Lexlort's chain: Bijou's report brings cloth gloves or a mail belt."] =
+        "A série de missões de Lexlort: o relatório de Biju rende luvas de tecido ou um cinto de malha.",
+    ["Reward: armor of any kind, for the spire's three generals and their documents."] =
+        "Recompensa: armadura de qualquer tipo, pelos três generais do Pico e pelos documentos deles.",
+    ["Blackrock Mountain opens in the south of the Searing Gorge; inside, the spire's door is at the top of the mountain."] =
+        "A Montanha Rocha Negra se abre no sul da Garganta Abrasadora; lá dentro, a porta do Pico fica no topo da montanha.",
+    ["Highlord Omokk, north of Mok'Doom; War Master Voone, at the bottom of Tazz'Alaor; Overlord Wyrmthalak, the last boss, in the Chamber of Battle. The documents lie in one of their rooms, or by Urok's tribute pile."] =
+        "Grão-lorde Omokk, ao norte de Mok'Doom; Senhor da Guerra Voone, no fundo de Tazz'Alaor; Lorde Supremo Wyrmthalak, o último chefe, na Chamber of Battle. Os documentos ficam numa das salas deles, ou junto à pilha de tributo de Urok.",
+    ["Galamav the Marksman, Lexlort and Warlord Goretooth, at Kargath."] =
+        "Galamav, o Atirador Perito, Lexlort e Senhor da Guerra Trincador, em Karrath.",
+    ["A herald of your capital: Harbinger Balthazad, Warcaller Gorlach or Bluff Runner Windstrider."] =
+        "Um arauto da sua capital: Emissário Baltazar, Belarauto Garganto ou Mensageiro do Penhasco Andaventos.",
+    ["Optional: a lead to Camp Mojache, about 1,500 XP."] =
+        "Opcional: um encaminhamento para a Aldeia Mojache, cerca de 1.500 de XP.",
+    ["Talo Thornhoof, at Camp Mojache, in Feralas."] =
+        "Talo Casco de Espinhos, na Aldeia Mojache, em Feralas.",
+    ["Talo Thornhoof and Sage Korolusk, at Camp Mojache."] =
+        "Talo Casco de Espinhos e Sábio Korolusk, na Aldeia Mojache.",
+    ["Talo Thornhoof, at Camp Mojache."] =
+        "Talo Casco de Espinhos, na Aldeia Mojache.",
+    ["Sage Korolusk, at Camp Mojache."] =
+        "Sábio Korolusk, na Aldeia Mojache.",
+    ["Harbinger Balthazad, in the Valley of Honor of Orgrimmar."] =
+        "Emissário Baltazar, no Vale da Honra de Orgrimmar.",
+    ["High Executor Derrington, at the Bulwark, in the Western Plaguelands."] =
+        "Alto-executor Arcabuz, no Baluarte, nas Terras Pestilentas Ocidentais.",
+    ["Burn the Scarlet command tent between Felstone Field and Dalson's Tears, and plant the Scourge banner there."] =
+        "Queime a tenda de comando Escarlate entre o Campo Pedravil e as Lágrimas de Dalson, e plante ali o estandarte do Flagelo.",
+    ["Apothecary Dithers, at the Bulwark."] =
+        "Boticário Trépido, no Baluarte.",
+    ["Apothecary Dithers, at the Bulwark, in the Western Plaguelands."] =
+        "Boticário Trépido, no Baluarte, nas Terras Pestilentas Ocidentais.",
+    ["Alexi Barov, at the Bulwark."] =
+        "Alexei Barov, no Baluarte.",
+    ["The Barov fortune: four deeds inside the school; its follow-up sends you to kill Weldon Barov in the Alliance's Chillwind Camp."] =
+        "A fortuna dos Barov: quatro escrituras dentro da escola; a continuação manda você matar Weldon Barov no Acampamento Ventogelante, da Aliança.",
+    ["Weldon Barov stands among the guards of Chillwind Camp, the Alliance's camp in the west of the Western Plaguelands."] =
+        "Weldon Barov fica entre os guardas do Acampamento Ventogelante, o acampamento da Aliança no oeste das Terras Pestilentas Ocidentais.",
+    ["Nathanos Blightcaller, at Marris Stead, in the south-west of the Eastern Plaguelands."] =
+        "Nathanos Arauto da Praga, no Sítio dos Marris, no sudoeste das Terras Pestilentas Orientais.",
+    ["Optional: Nathanos Blightcaller's chain in the Eastern Plaguelands, up to Ramstein the Gorger inside the city: about 6,600 XP at its end."] =
+        "Opcional: a série de missões de Nathanos Arauto da Praga nas Terras Pestilentas Orientais, até Ramstein, o Devorador, dentro da cidade: cerca de 6.600 de XP no fim.",
+    ["Corin's Crossing, to the east: collect the living rot in ten minutes, then grind it with the mortar."] =
+        "Cruzamento de Corin, a leste: colete a putrefação viva em dez minutos, depois moa-a com o almofariz.",
+    ["The plaguebats of the Eastern Plaguelands."] =
+        "Os quirópragos das Terras Pestilentas Orientais.",
+    ["The Quel'Thalas Registry lies in the Quel'Lithien lodge, on the northern border."] =
+        "Os Arquivos de Quel'Thalas ficam no Abrigo Quel'Lithien, na fronteira norte.",
+    ["Duskwing, a bat, roams the country; Borelgore walks the northern wastes."] =
+        "Quiroscuro, um morcego, ronda a região; Brocassangre anda pelos descampados do norte.",
+    ["Ramstein the Gorger comes into Slaughter Square once it is cleared."] =
+        "Ramstein, o Devorador, entra na Slaughter Square assim que ela é limpa.",
+    ["Nathanos Blightcaller, at Marris Stead."] =
+        "Nathanos Arauto da Praga, no Sítio dos Marris.",
 }

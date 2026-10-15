@@ -4523,4 +4523,1753 @@ return {
         "库勒曼·法席恩，在布瑞尔的旅店里。",
     ["The four heirlooms lie in the crypt of the Agamand Mills, in the northwest of Tirisfal Glades."] =
         "四件传家宝在提瑞斯法林地西北部阿加曼德磨坊的地穴里。",
+    -- Ding! - Dungeon quests (hand-written guides)
+    ["The Hall of Thanes"] =
+        "领主大厅",
+    ["Afadra Dunwall and Thom Filch, in the west of Ironforge."] =
+        "Afadra Dunwall和Thom Filch，在铁炉堡西部。",
+    ["Two quests of the hall: a leather belt or mail bracers, cloth gloves or an off-hand tome."] =
+        "大厅的两个任务：一条皮甲腰带或一副锁甲护腕，一副布甲手套或一本副手典籍。",
+    ["The Dark Iron spies of the east of Dun Morogh may drop a Dark Iron map: read it."] =
+        "丹莫罗东部的黑铁间谍可能掉落一张黑铁地图：阅读它。",
+    ["The Dark Iron map opens Old Ironforge Incursion: a gun, a wand or a two-handed mace."] =
+        "黑铁地图开启任务“Old Ironforge Incursion”：一把枪、一根魔杖或一把双手锤。",
+    ["Earthseer Farsen, in the east of Dun Morogh."] =
+        "Earthseer Farsen，在丹莫罗东部。",
+    ["Enter the Hall of Thanes"] =
+        "进入领主大厅",
+    ["The hall lies beneath Old Ironforge, in the west of the city."] =
+        "大厅位于旧铁炉堡下方，在城市西部。",
+    ["Kill the enraged apparitions and the tormented souls of the hall, then put the spirit of Anvilmar to rest."] =
+        "击杀大厅里的狂怒幽灵和受折磨的灵魂，然后让安威玛尔之魂安息。",
+    ["The dwarven heirlooms lie around the hall."] =
+        "矮人传家宝散落在大厅各处。",
+    ["The Treaty of Understanding lies in the hall: take it, then read it."] =
+        "Treaty of Understanding在大厅里：拿起它，然后阅读。",
+    ["Durgen Dirgehammer carries the head the quest asks for."] =
+        "Durgen Dirgehammer身上有任务所需的头颅。",
+    ["Afadra Dunwall and Thom Filch, in Ironforge."] =
+        "Afadra Dunwall和Thom Filch，在铁炉堡。",
+    ["King Magni Bronzebeard, in the High Seat of Ironforge."] =
+        "国王麦格尼·铜须，在铁炉堡的王座大厅。",
+    ["King Magni Bronzebeard."] =
+        "国王麦格尼·铜须。",
+    ["Wailing Caverns"] =
+        "哀嚎洞穴",
+    ["Mebok Mizzyrix, in Ratchet."] =
+        "麦伯克·米希瑞克斯，在棘齿城。",
+    ["Raptor Horns opens Smart Drinks, a quest of the caverns."] =
+        "“迅猛龙角”开启“智慧饮料”，这是洞穴里的一个任务。",
+    ["Crane Operator Bigglefuzz, on the docks of Ratchet."] =
+        "起重机操作员比戈弗兹，在棘齿城的码头上。",
+    ["The sunscale raptors roam the plains between the Crossroads and Ratchet."] =
+        "赤鳞迅猛龙在十字路口和棘齿城之间的平原上游荡。",
+    ["Nalpak and Ebru stand in a cave on the caverns' hill: climb the hill from the east, follow the trail and drop onto the rock ledge."] =
+        "纳尔帕克和厄布鲁站在洞穴所在山丘上的一个山洞里：从东边爬上山丘，沿小路走，然后跳到岩架上。",
+    ["Two quests of the deviate creatures; their rewards include a bag, leather leggings, mail gauntlets or a wand."] =
+        "两个关于变异生物的任务；奖励包括一个背包、一条皮甲护腿、一副锁甲护手或一根魔杖。",
+    ["Mad Magglish, a goblin who stays hidden, walks the caves around the dungeon's door."] =
+        "疯狂的马格利什是一个一直隐身的地精，在副本入口周围的洞穴里走动。",
+    ["Enter Wailing Caverns"] =
+        "进入哀嚎洞穴",
+    ["The mouth of the caverns opens on the hill above the Lushwater Oasis."] =
+        "洞穴入口在甜水绿洲上方的山丘上。",
+    ["Every deviate creature drops hides: raptors, lashers and snakes, from the first halls on."] =
+        "每种变异生物都会掉落皮革：迅猛龙、鞭笞者和蛇，从最初的几个大厅就开始有。",
+    ["The ectoplasms, living oozes of the caverns, drop the essence."] =
+        "大型软浆怪是洞穴里会活动的软泥，掉落香精。",
+    ["Ravagers and vipers fill the first halls; shamblers and dreadfangs come further in."] =
+        "破坏者和飞蛇遍布最初的几个大厅；蹒跚者和尖牙风蛇在更深处。",
+    ["Mutanus the Devourer may drop the Glowing Shard: he appears after the Disciple of Naralex's ritual, which starts once the four Fanglords are dead."] =
+        "吞噬者穆坦努斯可能掉落发光的碎片：他会在纳拉雷克斯的信徒举行仪式后出现，而仪式要等四个尖牙领主都死后才会开始。",
+    ["Nalpak and Ebru, in their cave on the caverns' hill."] =
+        "纳尔帕克和厄布鲁，在洞穴所在山丘上他们的山洞里。",
+    ["Mebok Mizzyrix and Crane Operator Bigglefuzz, in Ratchet."] =
+        "麦伯克·米希瑞克斯和起重机操作员比戈弗兹，在棘齿城。",
+    ["Sputtervalve, in Ratchet, knows what the shard is."] =
+        "斯布特瓦夫，在棘齿城，他知道这块碎片是什么。",
+    ["Falla Sagewind, on top of the caverns' hill."] =
+        "菲拉·古风，在洞穴所在山丘的顶上。",
+    ["Mathrengyl Bearwalker, in the Cenarion Enclave of Darnassus."] =
+        "玛斯雷·驭熊者，在达纳苏斯的塞纳里奥区。",
+    ["The Deadmines"] =
+        "死亡矿井",
+    ["Wilder Thistlenettle, in the Dwarven District of Stormwind."] =
+        "维尔德·蓟草，在暴风城的矮人区。",
+    ["Two quests of the mine under Moonbrook; their rewards include a two-handed axe and cloth, leather or mail armor."] =
+        "月溪镇地下矿井的两个任务；奖励包括一把双手斧，以及布甲、皮甲或锁甲护甲。",
+    ["Shoni the Shilent, in the Dwarven District."] =
+        "沉默的舒尼，在矮人区。",
+    ["Reward: armor of leather or mail, or a wand."] =
+        "奖励：皮甲或锁甲护甲，或一根魔杖。",
+    ["Gryan Stoutmantle, in the tower of Sentinel Hill, in Westfall."] =
+        "格里安·斯托曼，在西部荒野哨兵岭的塔楼里。",
+    ["A long chain of six quests between Westfall, Redridge and Stormwind: it leads to VanCleef, whose head brings mail leggings, a leather tunic or a staff."] =
+        "一条在西部荒野、赤脊山和暴风城之间的六个任务的长任务线：它最终指向范克里夫，他的头颅可以换来一条锁甲护腿、一件皮甲外衣或一根法杖。",
+    ["Alba Fairmoon, south-west of Sentinel Hill."] =
+        "Alba Fairmoon，在哨兵岭西南。",
+    ["A quest of the mine under Moonbrook, ended at the Deadmines' exit."] =
+        "月溪镇地下矿井的一个任务，在死亡矿井的出口交付。",
+    ["Wiley the Black, in the inn of Lakeshire, in Redridge."] =
+        "黑衣威利，在赤脊山湖畔镇的旅店里。",
+    ["Gryan Stoutmantle, at Sentinel Hill."] =
+        "格里安·斯托曼，在哨兵岭。",
+    ["Master Mathias Shaw, in the SI:7 house of Old Town, in Stormwind."] =
+        "马迪亚斯·肖尔，在暴风城旧城区的军情七处总部。",
+    ["The Defias Messenger walks the road to Moonbrook; he carries the message."] =
+        "迪菲亚信使走在通往月溪镇的路上；他身上带着情报。",
+    ["Follow the Defias Traitor to Moonbrook; Defias attack on the way."] =
+        "跟随迪菲亚叛徒前往月溪镇；路上迪菲亚会发动攻击。",
+    ["Scout Riell, at the top of the Sentinel Hill tower."] =
+        "哨兵瑞尔，在哨兵岭塔楼的顶层。",
+    ["Reward: a weapon of your choice."] =
+        "奖励：一件自选的武器。",
+    ["Go down into the mine under Moonbrook"] =
+        "下到月溪镇地下的矿井",
+    ["The mine opens inside a house in the middle of Moonbrook."] =
+        "矿井入口在月溪镇中央的一栋房子里。",
+    ["Foreman Thistlenettle and the undead miners roam the mine's tunnels, before the dungeon's door."] =
+        "工头希斯耐特和亡灵矿工在矿井的隧道里游荡，就在副本入口之前。",
+    ["Plant the explosives by the forge hidden in the Deadmines."] =
+        "在死亡矿井中隐藏的熔炉旁安放炸药。",
+    ["Every Defias of the dungeon may drop a bandana."] =
+        "副本里的每个迪菲亚都可能掉落一条面罩。",
+    ["Sneed's Shredder, the second boss, in the goblins' lumber cave, drops the Gnoam Sprecklesprocket."] =
+        "斯尼德的伐木机，第二个首领，在地精的伐木洞穴里，掉落小型高能发动机。",
+    ["Edwin VanCleef, the last boss, waits on the deck of the Defias ship at the end of the cave."] =
+        "艾德温·范克里夫，最终首领，在洞穴尽头迪菲亚船只的甲板上等候。",
+    ["VanCleef drops a letter: read it to take its quest."] =
+        "范克里夫掉落一封信：阅读它以接取它的任务。",
+    ["Alba Fairmoon waits at the Deadmines' exit, on the coast south-west of Moonbrook."] =
+        "Alba Fairmoon在死亡矿井的出口等候，就在月溪镇西南的海岸上。",
+    ["Use her detonator, then tell her."] =
+        "使用她的引爆器，然后告诉她。",
+    ["Gryan Stoutmantle and Scout Riell, in the Sentinel Hill tower."] =
+        "格里安·斯托曼和哨兵瑞尔，在哨兵岭的塔楼里。",
+    ["Baros Alexston, in the City Hall of the Cathedral Square."] =
+        "巴隆斯·阿历克斯顿，在教堂广场的市政厅。",
+    ["Bazil Thredd leads to the Stockade's riots."] =
+        "任务“巴吉尔·特雷德”会引向暴风城监狱的暴动。",
+    ["Warden Thelwater, at the door of the Stockade, in Stormwind."] =
+        "典狱官塞尔沃特，在暴风城的监狱门口。",
+    ["Ruins of Lordaeron"] =
+        "洛丹伦废墟",
+    ["Enter the Ruins of Lordaeron"] =
+        "进入洛丹伦废墟",
+    ["The ruins rise above Undercity, in Tirisfal Glades: Horde land, keep your guard up."] =
+        "废墟矗立在提瑞斯法林地的幽暗城上方：部落领地，保持警惕。",
+    ["The undead of the ruins may drop a bloodied insignia: read it."] =
+        "废墟中的亡灵可能掉落一枚染血的徽记：阅读它。",
+    ["Reward: leather leggings or mail armor."] =
+        "奖励：一条皮甲护腿或锁甲护甲。",
+    ["Ten insignias, from the undead of the ruins."] =
+        "十枚徽记，来自废墟中的亡灵。",
+    ["The Crest of Lordaeron lies in the ruins: take it, then read it."] =
+        "Crest of Lordaeron在废墟里：拿起它，然后阅读。",
+    ["Reward: a small sack of gems."] =
+        "奖励：一小袋宝石。",
+    ["Edward Heartweaver's last letter lies in the ruins: read it."] =
+        "Edward Heartweaver的最后一封信在废墟里：阅读它。",
+    ["General Marcus Jonathan, at the gate of Stormwind."] =
+        "马库斯·乔纳森将军，在暴风城大门。",
+    ["Lady Dena Kennedy, in Stormwind."] =
+        "Lady Dena Kennedy，在暴风城。",
+    ["Orphan Matron Nightingale, at the orphanage of Stormwind."] =
+        "孤儿监护员奈丁加尔，在暴风城的孤儿院。",
+    ["Blackfathom Deeps"] =
+        "黑暗深渊",
+    ["Argos Nightwhisper, in Stormwind."] =
+        "阿古斯·夜语，在暴风城。",
+    ["Optional: a lead to Auberdine, worth about 1,450 XP once there."] =
+        "可选：一条通往奥伯丁的线索，到达后约值1450点经验。",
+    ["Gerrig Bonegrip, in the Forlorn Cavern of Ironforge."] =
+        "葛利·硬骨，在铁炉堡的荒弃的洞穴。",
+    ["Reward: a ring."] =
+        "奖励：一枚戒指。",
+    ["Gershala Nightwhisper, in Auberdine, in Darkshore."] =
+        "戈沙拉·夜语，在黑海岸的奥伯丁。",
+    ["Gershala Nightwhisper, in Auberdine."] =
+        "戈沙拉·夜语，在奥伯丁。",
+    ["Reward: cloth, leather or mail armor."] =
+        "奖励：布甲、皮甲或锁甲护甲。",
+    ["Argent Guard Manados and Dawnwatcher Shaedlass, in Darnassus."] =
+        "银月守卫玛纳杜斯和哨兵山德拉斯，在达纳苏斯。",
+    ["Two quests of the Argent Dawn: the second leads to Twilight Lord Kelris and a wand, a shield or leather armor."] =
+        "银色黎明的两个任务：第二个会引向梦游者克尔里斯，奖励一根魔杖、一面盾牌或皮甲护甲。",
+    ["Enter Blackfathom Deeps"] =
+        "进入黑暗深渊",
+    ["The deeps open in ruins half under water, on the coast of Ashenvale's Zoram Strand."] =
+        "深渊入口在半没于水中的废墟里，位于灰谷的佐拉姆海岸。",
+    ["The Blackfathom and Fallenroot creatures carry the brain stems, from the cave before the dungeon's door on."] =
+        "黑暗深渊和腐根的生物身上有脑干，从副本入口前的洞穴开始就有。",
+    ["The manuscript lies in a chest under the water, by Ghamoo-ra, the first boss, in the Pool of Ask'ar."] =
+        "手稿在水下的一个箱子里，就在第一个首领加摩拉旁边，位于阿斯卡之池。",
+    ["Argent Guard Thaelrid waits in an underwater cave south-west of the Pool of Ask'ar."] =
+        "银月守卫塞尔瑞德在阿斯卡之池西南的一个水下洞穴里等候。",
+    ["Every Twilight cultist of the deeps may drop a pendant."] =
+        "深渊里的每个暮光信徒都可能掉落一个坠饰。",
+    ["Twilight Lord Kelris, the fourth boss, holds the Moonshrine Sanctum."] =
+        "梦游者克尔里斯，第四个首领，占据着月神圣殿。",
+    ["Argent Guard Manados, in Darnassus."] =
+        "银月守卫玛纳杜斯，在达纳苏斯。",
+    ["Dawnwatcher Selgorm, beside him in Darnassus."] =
+        "哨兵塞尔高姆，在达纳苏斯他的旁边。",
+    ["The Stockade"] =
+        "暴风城监狱",
+    ["Motley Garmason, at Dun Modr, in the north of the Wetlands."] =
+        "莫特雷·加玛森，在湿地北部的丹莫德。",
+    ["Far north in the Wetlands: it opens The Fury Runs Deep, whose reward is a two-handed mace or a leather belt."] =
+        "在湿地的最北边：它开启“卡姆·深怒”，奖励是一把双手锤或一条皮甲腰带。",
+    ["The Dark Iron dwarves camp around Dun Modr."] =
+        "黑铁矮人在丹莫德周围扎营。",
+    ["Guard Berton, in Lakeshire, in Redridge."] =
+        "卫兵伯尔顿，在赤脊山的湖畔镇。",
+    ["Reward: a staff, a sword or a two-handed mace."] =
+        "奖励：一根法杖、一把剑或一把双手锤。",
+    ["Councilman Millstipe, in the town hall of Darkshire, in Duskwood."] =
+        "议员米尔斯迪普，在暮色森林夜色镇的镇公所里。",
+    ["Nikova Raskol, in Old Town, in Stormwind."] =
+        "尼科瓦·拉斯克，在暴风城的旧城区。",
+    ["Warden Thelwater, at the door of the Stockade."] =
+        "典狱官塞尔沃特，在监狱门口。",
+    ["Warden Thelwater asks for Bazil Thredd's head."] =
+        "典狱官塞尔沃特要巴基尔·斯瑞德的头颅。",
+    ["Enter the Stockade"] =
+        "进入暴风城监狱",
+    ["The prison's door is by Warden Thelwater, in Stormwind."] =
+        "监狱的门就在典狱官塞尔沃特旁边，位于暴风城。",
+    ["Targorr the Dread, the first boss, sits in a cell near the start."] =
+        "可怕的塔格尔，第一个首领，在入口附近的一间牢房里。",
+    ["Kam Deepfury: go north, then east; he waits in the second small cell on the left."] =
+        "卡姆·深怒：向北走，再向东走；他在左边第二间小牢房里等候。",
+    ["Bazil Thredd waits at the end of the east corridor."] =
+        "巴基尔·斯瑞德在东侧走廊的尽头等候。",
+    ["Dextren Ward waits at the end of the west corridor."] =
+        "迪克斯特·瓦德在西侧走廊的尽头等候。",
+    ["The prisoners, convicts and insurgents fill every cell; the Defias among them drop the bandanas."] =
+        "囚犯、罪犯和暴徒挤满了每一间牢房；其中的迪菲亚会掉落面罩。",
+    ["Optional: nine more quests in Stormwind; the last brings a ring and about 3,750 XP."] =
+        "可选：暴风城还有九个任务；最后一个奖励一枚戒指和约3750点经验。",
+    ["Baros Alexston, in the City Hall."] =
+        "巴隆斯·阿历克斯顿，在市政厅。",
+    ["Master Mathias Shaw, in the SI:7 house of Old Town."] =
+        "马迪亚斯·肖尔，在旧城区的军情七处总部。",
+    ["Elling Trias, in the cheese shop of the Trade District."] =
+        "埃林·提亚斯，在贸易区的奶酪店里。",
+    ["Tyrion, near Stormwind Keep."] =
+        "泰里恩，在暴风城城堡附近。",
+    ["Three silk cloth, and two of Clara's fresh apples, from a basket north-west of Goldshire, in Elwynn Forest."] =
+        "三块丝绸，以及两个克拉拉的新鲜苹果，苹果在艾尔文森林闪金镇西北的一个篮子里。",
+    ["Wait in the garden by Stormwind Keep until Lord Gregor Lescovar and Marzon the Silent Blade have talked, then defeat both."] =
+        "在暴风城城堡旁的花园里等候，直到葛瑞格·莱斯科瓦公爵和沉默之刃马尔松谈完话，然后击败他们两个。",
+    ["Elling Trias, in the cheese shop."] =
+        "埃林·提亚斯，在奶酪店里。",
+    ["Master Mathias Shaw, in the SI:7 house."] =
+        "马迪亚斯·肖尔，在军情七处总部。",
+    ["Lady Katrana Prestor, beside the king in Stormwind Keep."] =
+        "女伯爵卡特拉娜·普瑞斯托，在暴风城城堡的国王身边。",
+    ["Nikova Raskol, in Old Town."] =
+        "尼科瓦·拉斯克，在旧城区。",
+    ["Guard Berton, in Lakeshire."] =
+        "卫兵伯尔顿，在湖畔镇。",
+    ["Councilman Millstipe, in Darkshire."] =
+        "议员米尔斯迪普，在夜色镇。",
+    ["Motley Garmason, at Dun Modr."] =
+        "莫特雷·加玛森，在丹莫德。",
+    ["Excavation Site: Wetlands"] =
+        "挖掘场：湿地",
+    ["James Halloran, the tanner of Menethil Harbor, in the Wetlands."] =
+        "詹姆斯·哈洛兰，湿地米奈希尔港的制皮匠。",
+    ["Caitlin Grassman, in Menethil Harbor."] =
+        "凯特林·格拉斯曼，在米奈希尔港。",
+    ["Optional: the guide does not know yet who ends this search; its follow-up brings a satchel of potions."] =
+        "可选：本指南还不知道这次寻找由谁来完成；它的后续任务奖励一包药水。",
+    ["Rethiel the Greenwarden, in the middle of the Wetlands."] =
+        "绿色守卫者雷希耶尔，在湿地中部。",
+    ["Reward: an axe, and about 3,200 XP."] =
+        "奖励：一把斧子，以及约3200点经验。",
+    ["Dorin Songblade, the armorer of Lakeshire, in Redridge."] =
+        "多林·桑布雷德，赤脊山湖畔镇的护甲商。",
+    ["Optional: the guide does not know yet who ends this search."] =
+        "可选：本指南还不知道这次寻找由谁来完成。",
+    ["Enter the Excavation Site"] =
+        "进入挖掘场",
+    ["The excavation site opens by the dig in the middle of the Wetlands."] =
+        "挖掘场的入口在湿地中部的挖掘点旁。",
+    ["Four thicket raptor hides, from the raptors of the site."] =
+        "四张灌木迅猛龙皮，来自挖掘场的迅猛龙。",
+    ["A Highland Horror carries the root core."] =
+        "一只Highland Horror身上有根核。",
+    ["Ardin Grassman, somewhere in the site."] =
+        "Ardin Grassman，在挖掘场的某处。",
+    ["Daewyn, somewhere in the site."] =
+        "Daewyn，在挖掘场的某处。",
+    ["The relic guardians may drop a Titan relic: read it."] =
+        "遗物守护者可能掉落一件泰坦遗物：阅读它。",
+    ["The Titan relic leads to Ironforge's explorers: a staff or a two-handed mace."] =
+        "泰坦遗物会把你引向铁炉堡的探险家：一根法杖或一把双手锤。",
+    ["Prospector Whelgar, at his excavation camp in the Wetlands."] =
+        "勘察员维尔加，在湿地他的挖掘营地。",
+    ["Rethiel the Greenwarden."] =
+        "绿色守卫者雷希耶尔。",
+    ["James Halloran, in Menethil Harbor."] =
+        "詹姆斯·哈洛兰，在米奈希尔港。",
+    ["Dorin Songblade, in Lakeshire."] =
+        "多林·桑布雷德，在湖畔镇。",
+    ["High Explorer Magellas, in the Hall of Explorers of Ironforge."] =
+        "资深探险家麦格拉斯，在铁炉堡的探险者大厅。",
+    ["Gnomeregan"] =
+        "诺莫瑞根",
+    ["Shoni the Shilent, in the Dwarven District of Stormwind."] =
+        "沉默的舒尼，在暴风城的矮人区。",
+    ["Reward: cloth or leather gloves, or an axe."] =
+        "奖励：一副布甲或皮甲手套，或一把斧子。",
+    ["Brother Sarno, in the Cathedral of Light."] =
+        "萨尔努修士，在光明大教堂。",
+    ["Optional: a lead to Tinkmaster Overspark in Ironforge."] =
+        "可选：一条通往铁炉堡工匠大师欧沃斯巴克的线索。",
+    ["Tinkmaster Overspark, in Tinker Town, in Ironforge."] =
+        "工匠大师欧沃斯巴克，在铁炉堡的侏儒区。",
+    ["Tinkmaster Overspark, in Tinker Town."] =
+        "工匠大师欧沃斯巴克，在侏儒区。",
+    ["Master Mechanic Castpipe, Klockmort Spannerspan and High Tinker Mekkatorque, in Tinker Town."] =
+        "大机械师卡斯派普、科罗莫特·钢尺和大工匠梅卡托克，在侏儒区。",
+    ["Tinker Town's quests: Data Rescue brings a two-handed mace or a cloak, The Grand Betrayal cloth, leather or mail armor."] =
+        "侏儒区的任务：“抢救数据”奖励一把双手锤或一件披风，“大叛徒”奖励布甲、皮甲或锁甲护甲。",
+    ["Gnoarn, in Tinker Town."] =
+        "诺恩，在侏儒区。",
+    ["Ozzie Togglevolt, in Kharanos, in Dun Morogh."] =
+        "奥齐·电环，在丹莫罗的卡拉诺斯。",
+    ["Use the empty phial on the irradiated troggs that roam the gates of Gnomeregan."] =
+        "对在诺莫瑞根大门附近游荡的辐射穴居人使用空瓶。",
+    ["Back to Ozzie Togglevolt, in Kharanos."] =
+        "回到卡拉诺斯的奥齐·电环处。",
+    ["Enter Gnomeregan"] =
+        "进入诺莫瑞根",
+    ["The gates of Gnomeregan stand in the west of Dun Morogh."] =
+        "诺莫瑞根的大门位于丹莫罗西部。",
+    ["Techbot, the first boss, waits just inside: he drops the memory core."] =
+        "尖端机器人，第一个首领，就在入口内侧等候：他掉落存储器核心。",
+    ["The tall, square machines of the city hold the artificials; every mechanical creature may drop the guts."] =
+        "城里那些高大的方形机器里有基础模组；每个机械生物都可能掉落机械内胆。",
+    ["Use the heavy phial on a living irradiated slime, in the lower Hall of Gears; the fallout does not last long."] =
+        "在齿轮大厅下层，对一只活着的辐射泥浆怪使用沉重的铅瓶；辐射尘持续不了多久。",
+    ["The addled leper gnomes drop the white card; the four Matrix Punchographs, from A to D, turn it yellow, blue, red, then prismatic: A on the way in, B at the bottom of the Dormitory, C on the Launch Bay's platform (Electrocutioner 6000's key opens it), D in the lower Engineering Labs."] =
+        "迷糊的麻疯侏儒掉落白色卡片；四台矩阵式打孔计算机从A到D依次把它变成黄色、蓝色、红色，最后变成棱彩色：A在进去的路上，B在宿舍区底部，C在发射台的平台上（用电刑器6000型的钥匙打开），D在工程实验室下层。",
+    ["Kernobee, a gnome held inside the city."] =
+        "克努比，一个被关在城里的侏儒。",
+    ["Optional: an escort, turned in at Booty Bay, far away; it rewards bracers or shoulders."] =
+        "可选：一个护送任务，要到遥远的藏宝海湾交付；奖励护腕或护肩。",
+    ["Lead Kernobee to the Clean Zone, by the dungeon's back door."] =
+        "把克努比带到副本后门旁的清洁区。",
+    ["The Dark Iron agents may drop a grimy ring: use it."] =
+        "黑铁密探可能掉落一枚脏兮兮的戒指：使用它。",
+    ["Put it in the Sparklematic 5200, a cleaning machine of the city."] =
+        "把它放进城里的清洁机器超级清洁器5200型。",
+    ["Mekgineer Thermaplugg, the last boss, waits in the Tinkers' Court."] =
+        "麦克尼尔·瑟玛普拉格，最终首领，在工匠议会等候。",
+    ["Ozzie Togglevolt, in Kharanos."] =
+        "奥齐·电环，在卡拉诺斯。",
+    ["Tinker Town, in Ironforge."] =
+        "侏儒区，在铁炉堡。",
+    ["Talvash del Kissel, in the Mystic Ward of Ironforge."] =
+        "塔瓦斯德·基瑟尔，在铁炉堡的秘法区。",
+    ["A gold ring, for a silver bar, a moss agate and 30 silver."] =
+        "一枚金戒指，需要一块银锭、一块绿玛瑙和30银币。",
+    ["A silver bar and a moss agate: from mining, or the auction house."] =
+        "一块银锭和一块绿玛瑙：来自采矿或拍卖行。",
+    ["Scooty, the goblin engineer of Booty Bay, in Stranglethorn Vale."] =
+        "斯库提，荆棘谷藏宝海湾的地精工程师。",
+    ["Razorfen Kraul"] =
+        "剃刀沼泽",
+    ["Veyric Thunderhame, in the north-east of Arathi Highlands."] =
+        "Veyric Thunderhame，在阿拉希高地东北部。",
+    ["Shamans: Charlga Razorflank carries the note this quest asks for."] =
+        "萨满祭司：卡尔加·刺肋身上有这个任务需要的字条。",
+    ["Reward: a small container of gems."] =
+        "奖励：一个装宝石的小容器。",
+    ["Take the crate with holes and the owner's manual beside Mebok, and read the manual."] =
+        "拿取麦伯克旁边的开孔的箱子和地鼠训练手册，并阅读手册。",
+    ["The journal lies by a body in the north-west of Thousand Needles, below the Great Lift: read it."] =
+        "日记在千针石林西北部大升降梯下方的一具尸体旁：阅读它。",
+    ["Henrig Lonebrow's journal opens The Crone of the Kraul: cloth shoulders, mail belt or a shield."] =
+        "亨里格·独眉的日记开启“卡尔加·刺肋”：布甲护肩、锁甲腰带或一面盾牌。",
+    ["Falfindel Waywarder, at Thalanaar, on the eastern edge of Feralas."] =
+        "法芬德尔，在菲拉斯东部边缘的萨兰纳尔。",
+    ["Enter Razorfen Kraul"] =
+        "进入剃刀沼泽",
+    ["The kraul's thorny mound rises in the far south of the Barrens."] =
+        "剃刀沼泽的荆棘土丘耸立在贫瘠之地的最南端。",
+    ["Past Overlord Ramtusk, open the crate to call the gopher and use the stick on it: it digs up the tubers."] =
+        "过了主宰拉姆塔斯之后，打开箱子召唤地鼠，并对它使用指挥棒：它会挖出蓝叶薯。",
+    ["Charlga Razorflank, the last boss, holds the top of the kraul."] =
+        "卡尔加·刺肋，最终首领，占据着剃刀沼泽的顶部。",
+    ["Heralath Fallowbrook lies in the tent on the left, below Charlga Razorflank's platform."] =
+        "赫尔拉斯·静水躺在卡尔加·刺肋平台下方左边的帐篷里。",
+    ["Reward: boots of leather or mail, or a cloak."] =
+        "奖励：一双皮甲或锁甲靴子，或一件披风。",
+    ["Willix the Importer waits beside Heralath's tent."] =
+        "进口商威利克斯在赫尔拉斯的帐篷旁等候。",
+    ["Reward: a ring of your choice."] =
+        "奖励：一枚自选的戒指。",
+    ["Lead Willix back to the entrance; quilboar attack on the way."] =
+        "把威利克斯带回入口；路上野猪人会发动攻击。",
+    ["Every Razorfen quilboar may drop Treshala's pendant."] =
+        "每个剃刀沼泽野猪人都可能掉落塔莎拉的坠饰。",
+    ["Falfindel Waywarder, at Thalanaar."] =
+        "法芬德尔，在萨兰纳尔。",
+    ["Treshala Fallowbrook, in Darnassus."] =
+        "塔莎拉·静水，在达纳苏斯。",
+    ["Veyric Thunderhame, in Arathi Highlands."] =
+        "Veyric Thunderhame，在阿拉希高地。",
+    ["City of Dalaran"] =
+        "达拉然城",
+    ["Shylamiir, the herbalism trainer of Stormwind, and High Sorcerer Andromath, in the Mage Quarter."] =
+        "莎拉米尔，暴风城的草药学训练师，以及高阶巫师安多玛斯，都在法师区。",
+    ["Two quests of the city from Stormwind: the blossom brings a cloak or a mail belt."] =
+        "暴风城给出的两个城内任务：花朵那个任务奖励一件披风或一条锁甲腰带。",
+    ["Emissary Jacques, in Hillsbrad Foothills."] =
+        "Emissary Jacques，在希尔斯布莱德丘陵。",
+    ["The Image of Archmage Modera, by the walls of Dalaran, at the eastern edge of Silverpine Forest."] =
+        "Image of Archmage Modera，在银松森林东部边缘的达拉然城墙旁。",
+    ["The Image of Archmage Modera."] =
+        "Image of Archmage Modera。",
+    ["Archmage Modera's quests: a pendant or an off-hand rod, and an introduction to the Kirin Tor."] =
+        "Archmage Modera的任务：一个坠饰或一根副手魔棒，以及被引荐给肯瑞托。",
+    ["Enter the City of Dalaran"] =
+        "进入达拉然城",
+    ["The city lies under its dome, in the west of the Alterac Mountains."] =
+        "这座城市位于奥特兰克山脉西部，笼罩在它的穹顶之下。",
+    ["Eight seeking remnants, eight saturated remnants and eight mana echoes, inside the city."] =
+        "八个寻觅残余、八个饱和残余和八个法力回响，都在城内。",
+    ["The arcane mote, inside the city."] =
+        "奥术微粒，在城内。",
+    ["A fel infused blossom, inside the city."] =
+        "一朵注入邪能的花朵，在城内。",
+    ["The mana elemental, inside the city."] =
+        "法力元素，在城内。",
+    ["Archmage Celindra, in the City of Dalaran."] =
+        "Archmage Celindra，在达拉然城。",
+    ["The Image of Archmage Modera, by the walls of Dalaran."] =
+        "Image of Archmage Modera，在达拉然城墙旁。",
+    ["Shylamiir and High Sorcerer Andromath, in Stormwind."] =
+        "莎拉米尔和高阶巫师安多玛斯，在暴风城。",
+    ["Scarlet Monastery"] =
+        "血色修道院",
+    ["Brother Crowley, in the Cathedral of Light of Stormwind."] =
+        "克罗雷修士，在暴风城的光明大教堂。",
+    ["Optional: a lead to Brother Anton in Desolace."] =
+        "可选：一条通往凄凉之地安东修士的线索。",
+    ["Librarian Mae Paledust, in the Hall of Explorers of Ironforge."] =
+        "图书馆员麦伊·苍尘，在铁炉堡的探险者大厅。",
+    ["Reward: a necklace, and about 3,550 XP."] =
+        "奖励：一条项链，以及约3550点经验。",
+    ["Brother Anton, at Nijel's Point, in Desolace."] =
+        "安东修士，在凄凉之地的尼耶尔前哨站。",
+    ["Brother Anton, at Nijel's Point."] =
+        "安东修士，在尼耶尔前哨站。",
+    ["Down the Scarlet Path, in Desolace then Southshore, opens In the Name of the Light: a weapon or an off-hand orb, and about 4,700 XP."] =
+        "“血色之路”先在凄凉之地、再到南海镇，开启“以圣光之名”：一件武器或一个副手宝珠，以及约4700点经验。",
+    ["The undead ravagers roam the south-east of Desolace."] =
+        "亡灵劫掠者在凄凉之地东南部游荡。",
+    ["Raleigh the Devout, in the inn of Southshore, in Hillsbrad Foothills."] =
+        "虔诚的莱雷恩，在希尔斯布莱德丘陵南海镇的旅店里。",
+    ["Magus Olvek, in the west of the Alterac Mountains."] =
+        "Magus Olvek，在奥特兰克山脉西部。",
+    ["About 3,200 XP."] =
+        "约3200点经验。",
+    ["Enter the Scarlet Monastery"] =
+        "进入血色修道院",
+    ["The monastery stands in the far east of Tirisfal Glades; its four wings, Graveyard, Library, Armory and Cathedral, each have their own door."] =
+        "修道院位于提瑞斯法林地的最东端；它的四个区域，墓地、图书馆、军械库和大教堂，各有自己的大门。",
+    ["Magus Olvek's book lies somewhere in the monastery."] =
+        "Magus Olvek的书在修道院里的某处。",
+    ["Library: the book lies on the floor under a window, on the left of the room after the Gallery of Treasures."] =
+        "图书馆：书放在一扇窗户下的地板上，位于珍宝陈列室之后那个房间的左侧。",
+    ["Houndmaster Loksey, the Library's first boss; Herod, the Armory's only boss; Scarlet Commander Mograine and High Inquisitor Whitemane, at the end of the Cathedral. Arcanist Doan's chest, at the end of the Library, holds the Scarlet Key that opens the Armory and the Cathedral."] =
+        "驯犬者洛克希，图书馆的第一个首领；赫洛德，军械库唯一的首领；血色十字军指挥官莫格莱尼和大检察官怀特迈恩，在大教堂的尽头。图书馆尽头奥法师杜安的箱子里有血色十字军钥匙，可以打开军械库和大教堂。",
+    ["Magus Olvek, in the Alterac Mountains."] =
+        "Magus Olvek，在奥特兰克山脉。",
+    ["Raleigh the Devout, in Southshore."] =
+        "虔诚的莱雷恩，在南海镇。",
+    ["Librarian Mae Paledust, in Ironforge."] =
+        "图书馆员麦伊·苍尘，在铁炉堡。",
+    ["Razorfen Downs"] =
+        "剃刀高地",
+    ["Archbishop Benedictus, in the Cathedral of Light of Stormwind."] =
+        "大主教本尼迪塔斯，在暴风城的光明大教堂。",
+    ["Reward: a sword or a talisman, and about 4,300 XP."] =
+        "奖励：一把剑或一个护符，以及约4300点经验。",
+    ["Myriam Moonsinger, outside Razorfen Downs, in the far south of the Barrens."] =
+        "麦雷姆·月歌，在贫瘠之地最南端的剃刀高地外面。",
+    ["About 3,450 XP, without entering the downs."] =
+        "约3450点经验，无需进入剃刀高地。",
+    ["The Razorfen battleguards, thornweavers and Death's Head cultists guard the slopes before the downs."] =
+        "剃刀沼泽护卫者、织棘者和亡首教徒守卫着剃刀高地前的山坡。",
+    ["Myriam Moonsinger."] =
+        "麦雷姆·月歌。",
+    ["Enter Razorfen Downs"] =
+        "进入剃刀高地",
+    ["The downs' entrance is by Myriam Moonsinger, at the foot of the great thorn mound."] =
+        "剃刀高地的入口在麦雷姆·月歌旁边，位于巨大荆棘土丘的脚下。",
+    ["Belnistrasz waits in the Holding Pen, on the north side of the Murder Pens; taking his second quest starts his ritual at once."] =
+        "奔尼斯特拉兹在杀戮围栏北侧的关押栏里等候；接取他的第二个任务会立刻开始他的仪式。",
+    ["Belnistrasz's ritual: a ring, and about 4,250 XP."] =
+        "奔尼斯特拉兹的仪式：一枚戒指，以及约4250点经验。",
+    ["Defend Belnistrasz while he works: waves of quilboar and undead come. Then use his brazier, in the same room."] =
+        "在奔尼斯特拉兹施法时保护他：野猪人和亡灵会一波波袭来。然后使用同一个房间里他的火盆。",
+    ["Amnennar the Coldbringer, the last boss, waits at the top of the Spiral of Thorns."] =
+        "寒冰之王亚门纳尔，最终首领，在荆棘螺旋的顶端等候。",
+    ["Archbishop Benedictus, in Stormwind."] =
+        "大主教本尼迪塔斯，在暴风城。",
+    ["Uldaman"] =
+        "奥达曼",
+    ["Prospector Stormpike, in the Hall of Explorers of Ironforge."] =
+        "勘察员塔伯斯·雷矛，在铁炉堡的探险者大厅。",
+    ["The Lost Dwarves leads to the Hidden Chamber: a two-handed axe or a lodestar, and about 3,900 XP."] =
+        "“失踪的矮人”会引向“密室”：一把双手斧或一个探险者联盟徽章，以及约3900点经验。",
+    ["Krom Stoutarm, in the Hall of Explorers."] =
+        "克罗姆·粗臂，在探险者大厅。",
+    ["About 3,600 XP for a chest at Uldaman's gates."] =
+        "在奥达曼大门处找到一个箱子，约3600点经验。",
+    ["Prospector Ironband, at his excavation site in the south-east of Loch Modan."] =
+        "勘察员基恩萨·铁环，在洛克莫丹东南部他的挖掘场。",
+    ["Find Agmond leads to Agmond's Fate: gloves of cloth, leather or mail."] =
+        "“寻找阿戈莫德”会引向“阿戈莫德的命运”：一副布甲、皮甲或锁甲手套。",
+    ["Ghak Healtouch, in Thelsamar."] =
+        "加克，在塞尔萨玛。",
+    ["It opens Uldaman Reagent Run: restorative potions and about 3,450 XP."] =
+        "它开启“奥达曼的蘑菇”：滋补药剂和约3450点经验。",
+    ["Rigglefuzz, in the middle of the Badlands."] =
+        "里格弗兹，在荒芜之地中部。",
+    ["Reward: leather or mail bracers, cloth boots or a shield."] =
+        "奖励：一副皮甲或锁甲护腕、一双布甲靴子或一面盾牌。",
+    ["Theldurin the Lost, in the south of the Badlands."] =
+        "迷失者塞尔杜林，在荒芜之地南部。",
+    ["Reward: a cloth robe."] =
+        "奖励：一件布甲长袍。",
+    ["A crumpled map lies on the ground in the north of the Badlands."] =
+        "一张弄皱的地图躺在荒芜之地北部的地上。",
+    ["A long chain of nine quests between the Badlands and Ironforge: it ends inside Uldaman with the Lost Tablets of Will, a medal and about 5,850 XP."] =
+        "一条在荒芜之地和铁炉堡之间的九个任务的长任务线：它在奥达曼里以“意志石板”结束，奖励一枚勋章和约5850点经验。",
+    ["Prospector Ryedol, a short walk south of the map."] =
+        "勘察员雷杜尔，在地图以南不远处。",
+    ["A battered dwarven skeleton lies in the middle of the Badlands."] =
+        "一具残破的矮人骸骨躺在荒芜之地中部。",
+    ["Murdaloc and the Stonevault troggs camp just south of the skeleton."] =
+        "莫达洛克和石窟穴居人在骸骨南边不远处扎营。",
+    ["The buzzards and crag coyotes of the Badlands drop the gizzards and fangs."] =
+        "荒芜之地的秃鹫和峭壁山狗掉落胃囊和牙齿。",
+    ["Hammertoe Grez, by the gates of Uldaman, in the north of the Badlands."] =
+        "铁趾格雷兹，在荒芜之地北部的奥达曼大门旁。",
+    ["Magregan Deepshadow, a Shadowforge dwarf by the gates, carries the amulet; the tablet lies in an ancient chest close by."] =
+        "马格雷甘·深影是大门旁的一个暗炉矮人，身上有护符；石板在附近的一个古代储物箱里。",
+    ["The Shadowforge dwarves around the gates drop the power stones."] =
+        "大门周围的暗炉矮人掉落能量石。",
+    ["The Shadowforge dwarves may also drop a shattered necklace: use it."] =
+        "暗炉矮人也可能掉落一条破碎的项链：使用它。",
+    ["Hammertoe Grez."] =
+        "铁趾格雷兹。",
+    ["Prospector Ryedol."] =
+        "勘察员雷杜尔。",
+    ["Theldurin the Lost."] =
+        "迷失者塞尔杜林。",
+    ["Prospector Ironband, in Loch Modan."] =
+        "勘察员基恩萨·铁环，在洛克莫丹。",
+    ["Historian Karnik, in the Hall of Explorers of Ironforge."] =
+        "史学家卡尼克，在铁炉堡的探险者大厅。",
+    ["Advisor Belgrum, in the Hall of Explorers."] =
+        "顾问贝尔格拉姆，在探险者大厅。",
+    ["Historian Karnik."] =
+        "史学家卡尼克。",
+    ["Talvash's chain ends inside Uldaman with a necklace and about 5,600 XP."] =
+        "塔瓦斯德的任务线在奥达曼里结束，奖励一条项链和约5600点经验。",
+    ["Five silver bars: from mining, or the auction house."] =
+        "五块银锭：来自采矿或拍卖行。",
+    ["Ambassador Infernus walks with the Dark Iron dwarves south of Uldaman's gates."] =
+        "因弗努斯大使和黑铁矮人一起在奥达曼大门以南走动。",
+    ["Krom Stoutarm's chest stands in the dig south-west of Uldaman's gates."] =
+        "克罗姆·粗臂的箱子在奥达曼大门西南的挖掘点里。",
+    ["Carved stone urns lie around the dig and inside Uldaman."] =
+        "雕纹石罐散落在挖掘点周围和奥达曼里面。",
+    ["Magenta cap clusters grow on the cave walls, south-west of the gates and inside."] =
+        "紫色蘑菇长在大门西南的洞穴墙壁上，副本里面也有。",
+    ["Advisor Belgrum, in the Hall of Explorers of Ironforge."] =
+        "顾问贝尔格拉姆，在铁炉堡的探险者大厅。",
+    ["Enter Uldaman"] =
+        "进入奥达曼",
+    ["The dungeon's door is at the back of the cave by Hammertoe Grez's dig."] =
+        "副本的入口在铁趾格雷兹挖掘点旁那个洞穴的深处。",
+    ["A dead paladin rests just off the first great hall, down its second right-hand passage."] =
+        "一位死去的圣骑士躺在第一个大厅旁边，沿右手边第二条通道下去就是。",
+    ["Baelog, the first boss, in Dig Two: the left corridor, then the room to the south."] =
+        "巴尔洛戈，第一个首领，在二号挖掘场：走左边的走廊，然后进入南边的房间。",
+    ["The Tablet of Will stands against a wall of Dig Three."] =
+        "意志石板靠在三号挖掘场的一面墙边。",
+    ["The Gni'kiv Medallion lies in Baelog's chest, Revelosh drops the Shaft of Tsol: join them into the Staff of Prehistoria, use it in the Map Chamber, then step into Ironaya's room."] =
+        "尼基夫徽章在巴尔洛戈的箱子里，鲁维罗什掉落索尔之杖：把它们合成史前法杖，在地图室使用它，然后走进艾隆纳亚的房间。",
+    ["The topaz is in a conspicuous urn south-east of Dig Two, the ruby in a stone chest north-west of Dig Three (it calls monsters), the sapphire on Grimlok at the end of the Stone Vault."] =
+        "黄宝石在二号挖掘场东南的一个显眼的石罐里，红宝石在三号挖掘场西北的一个石箱里（会召唤怪物），蓝宝石在石窟尽头的格瑞姆洛克身上。",
+    ["Use Talvash's phial at his scrying bowl, in the dungeon."] =
+        "在副本里塔瓦斯德的占卜之碗处使用他的占卜之瓶。",
+    ["Archaedas, the last boss, guards the Hall of the Crafters: he drops the power source."] =
+        "阿扎达斯，最终首领，守卫着工匠大厅：他掉落能量源。",
+    ["The Discs of Norgannon, in the room behind Archaedas."] =
+        "诺甘农圆盘，在阿扎达斯身后的房间里。",
+    ["Optional: the Discs of Norgannon, behind Archaedas, tell their story; it ends in Ironforge with potions or a bag."] =
+        "可选：阿扎达斯身后的诺甘农圆盘会讲述它们的故事；这个任务在铁炉堡结束，奖励药水或一个背包。",
+    ["Prospector Stormpike and Krom Stoutarm, in the Hall of Explorers of Ironforge."] =
+        "勘察员塔伯斯·雷矛和克罗姆·粗臂，在铁炉堡的探险者大厅。",
+    ["Talvash del Kissel, in the Mystic Ward."] =
+        "塔瓦斯德·基瑟尔，在秘法区。",
+    ["High Explorer Magellas, in the Hall of Explorers."] =
+        "资深探险家麦格拉斯，在探险者大厅。",
+    ["Dinita Stonemantle, in Ironforge."] =
+        "丁尼塔·石衣，在铁炉堡。",
+    ["Zul'Farrak"] =
+        "祖尔法拉克",
+    ["Gryphon Master Talonaxe, at Aerie Peak, in the Hinterlands."] =
+        "狮鹫管理员沙拉克·鹰斧，在辛特兰的鹰巢山。",
+    ["Optional: a chain of seven quests between the Hinterlands, the Blasted Lands and the city; the last one, an elite fight to the top of Jintha'Alor, brings a mace or leather leggings."] =
+        "可选：一条在辛特兰、诅咒之地和这座城市之间的七个任务的任务线；最后一个任务要与精英一路战斗到辛萨罗的顶端，奖励一把锤或一条皮甲护腿。",
+    ["The Witherbark cages stand in the troll camps of the south-west of the Hinterlands."] =
+        "枯木牢笼位于辛特兰西南部的巨魔营地里。",
+    ["Search the Altar of Zul, in the middle of the trolls' ruins in the south of the Hinterlands."] =
+        "搜索祖尔祭坛，它位于辛特兰南部巨魔废墟的中央。",
+    ["Thadius Grimshade, at the top of Nethergarde Keep, in the Blasted Lands."] =
+        "萨迪斯·格希德，在诅咒之地守望堡的顶层。",
+    ["Your mage trainer, in a capital."] =
+        "你的法师训练师，在一座主城里。",
+    ["Tabetha, in her house in the middle of Dustwallow Marsh."] =
+        "塔贝萨，在尘泥沼泽中部她的房子里。",
+    ["Reward: a staff or plate shoulders."] =
+        "奖励：一根法杖或一副板甲护肩。",
+    ["Wizzle Brassbolts, at the racetrack of the Shimmering Flats, in Thousand Needles."] =
+        "维兹尔·铜栓，在千针石林闪光平原的赛道。",
+    ["Reward: a carrot on a stick, which makes your mount faster."] =
+        "奖励：棍子上的胡萝卜，它能让你的坐骑跑得更快。",
+    ["Tran'rek, Trenton Lighthammer and Chief Engineer Bilgewhizzle, in Gadgetzan, in Tanaris."] =
+        "特兰雷克、特伦顿·轻锤和首席工程师沙克斯·比格维兹，在塔纳利斯的加基森。",
+    ["Gadgetzan's quests: the Divino-matic Rod brings a ring or a leather helm; the other two, about 3,900 XP each."] =
+        "加基森的任务：“探水棒”奖励一枚戒指或一顶皮甲头盔；另外两个各约3900点经验。",
+    ["Yeh'kinya, at Steamwheedle Port, on the east coast of Tanaris."] =
+        "叶基亚，在塔纳利斯东海岸的热砂港。",
+    ["It opens The Prophecy of Mosh'aru, about 5,250 XP."] =
+        "它开启“摩沙鲁的预言”，约5250点经验。",
+    ["Kill the vale screechers of Feralas and use Yeh'kinya's bramble on their bodies."] =
+        "击杀菲拉斯的山谷尖啸者，并对它们的尸体使用叶基亚的树枝。",
+    ["Yeh'kinya, at Steamwheedle Port."] =
+        "叶基亚，在热砂港。",
+    ["Enter Zul'Farrak"] =
+        "进入祖尔法拉克",
+    ["The city's gate is in the north-west of Tanaris."] =
+        "这座城市的大门在塔纳利斯西北部。",
+    ["The scarabs drop the shells; most of them crowd Theka the Martyr's chamber."] =
+        "圣甲虫掉落甲壳；它们大多挤在殉教者塞卡的房间里。",
+    ["Theka the Martyr, the second boss, in the scarabs' room to the north, holds the first tablet; Hydromancer Velratha, by the pool to the south-east, the second."] =
+        "殉教者塞卡，第二个首领，在北边的圣甲虫房间里，持有第一块石板；水占师维蕾萨在东南边的水池旁，持有第二块。",
+    ["Hydromancer Velratha also wears the Tiara of the Deep."] =
+        "水占师维蕾萨还戴着深渊皇冠。",
+    ["Gahz'rilla rises from the pool when its gong is struck with the Mallet of Zul'Farrak, made in the Hinterlands: one of the group needs it."] =
+        "用在辛特兰制作的祖尔法拉克之槌敲响水池的锣，加兹瑞拉就会从水池中升起：队伍中需要有一人持有它。",
+    ["Nekrum Gutchewer joins the fight at the top of the pyramid, when the prisoners are freed."] =
+        "释放囚犯后，耐克鲁姆会在金字塔顶端加入战斗。",
+    ["Sergeant Bly, one of the prisoners at the top of the pyramid: free them, defend them, then he turns on you."] =
+        "布莱中士，金字塔顶端的囚犯之一：释放他们，保护他们，然后他会转而攻击你。",
+    ["Every troll of the city may drop a troll temper; it can take more than one run."] =
+        "城里的每个巨魔都可能掉落巨魔调和剂；可能需要刷不止一次副本。",
+    ["Tran'rek, Trenton Lighthammer and Chief Engineer Bilgewhizzle, in Gadgetzan."] =
+        "特兰雷克、特伦顿·轻锤和首席工程师沙克斯·比格维兹，在加基森。",
+    ["Optional: an egg in the Hinterlands; it opens The God Hakkar, a quest of the Temple of Atal'Hakkar."] =
+        "可选：辛特兰的一枚蛋；它开启“神灵哈卡”，这是阿塔哈卡神庙的一个任务。",
+    ["Wizzle Brassbolts, at the Shimmering Flats."] =
+        "维兹尔·铜栓，在闪光平原。",
+    ["Tabetha, in Dustwallow Marsh."] =
+        "塔贝萨，在尘泥沼泽。",
+    ["Thadius Grimshade, in Nethergarde Keep."] =
+        "萨迪斯·格希德，在守望堡。",
+    ["Wait while Thadius Grimshade performs his divination."] =
+        "等待萨迪斯·格希德进行占卜。",
+    ["Gryphon Master Talonaxe, at Aerie Peak."] =
+        "狮鹫管理员沙拉克·鹰斧，在鹰巢山。",
+    ["Vile Priestess Hexx, at the top of Jintha'Alor, carries the key to Sharpbeak's cage: elite trolls all the way up."] =
+        "邪恶祭司海克斯在辛萨罗顶端，身上有沙普比克的笼子的钥匙：一路上都是精英巨魔。",
+    ["The Ancient Egg lies at the top of Jintha'Alor too."] =
+        "远古之卵也在辛萨罗的顶端。",
+    ["Gryphon Master Talonaxe."] =
+        "狮鹫管理员沙拉克·鹰斧。",
+    ["Maraudon"] =
+        "玛拉顿",
+    ["Archmage Tervosh, in his tower in Theramore, in Dustwallow Marsh."] =
+        "大法师特沃什，在尘泥沼泽塞拉摩他的塔里。",
+    ["Reward: a pendant of your choice."] =
+        "奖励：一个自选的坠饰。",
+    ["Talendria and Keeper Marandis, at Nijel's Point, in the north of Desolace."] =
+        "塔琳德莉亚和守护者玛兰迪斯，在凄凉之地北部的尼耶尔前哨站。",
+    ["Nijel's Point's two quests: a ring, plate gauntlets or a leather belt; then Theradras's end brings a sword, a staff or a bow."] =
+        "尼耶尔前哨站的两个任务：一枚戒指、一副板甲护手或一条皮甲腰带；然后终结瑟莱德丝可获得一把剑、一根法杖或一把弓。",
+    ["Willow, in the middle of Desolace."] =
+        "维洛，在凄凉之地中部。",
+    ["Reward: cloth, leather, mail or plate armor."] =
+        "奖励：布甲、皮甲、锁甲或板甲护甲。",
+    ["The Centaur Pariah, an outcast in the south of Desolace."] =
+        "半人马贱民，凄凉之地南部的一个被放逐者。",
+    ["About 5,450 XP."] =
+        "约5450点经验。",
+    ["Cavindra, on the path to Maraudon, in the west of Desolace."] =
+        "凯雯德拉，在凄凉之地西部通往玛拉顿的小路上。",
+    ["Legends of Maraudon leads to the Scepter of Celebras, a shortcut into the inner falls."] =
+        "“玛拉顿的传说”会引向塞雷布拉斯节杖，这是通往内部瀑布区的捷径。",
+    ["Enter Maraudon"] =
+        "进入玛拉顿",
+    ["Maraudon's caves open in the west of Desolace; inside, an orange and a purple wing lead down to the inner falls."] =
+        "玛拉顿的洞穴入口在凄凉之地西部；里面有橙色和紫色两个区域，向下通往内部瀑布区。",
+    ["The Shadowshard elementals of the outer caves drop the fragments."] =
+        "外围洞穴的暗影碎片元素掉落残片。",
+    ["Fill the vial at the orange crystal pool, in the caves before the Orange wing; in the wing, use it on the stumps with red tops: the Noxxious scions come out."] =
+        "在橙色区域前面洞穴里的橙色水晶池装满小瓶；在该区域里，对顶部是红色的树桩使用它：诺克赛恩幼体会钻出来。",
+    ["Every creature of Maraudon may drop a crystal carving."] =
+        "玛拉顿的每个生物都可能掉落水晶雕像。",
+    ["Use the Amulet of Spirits on the Spirit of Veng, who walks the Orange wing, then kill Veng; then on the Spirit of Maraudos in the Purple wing's grotto, then kill Maraudos. Join the two gems."] =
+        "对在橙色区域走动的温格之魂使用灵魂坠饰，然后击杀温格；再对紫色区域洞室里的玛劳杜斯之魂使用它，然后击杀玛拉多斯。将两颗宝石合在一起。",
+    ["Noxxion, the Orange wing's first boss, drops the rod; Lord Vyletongue, in a small room north of his seat in the Purple wing, the diamond."] =
+        "诺克赛恩，橙色区域的第一个首领，掉落魔棒；维利塔恩在紫色区域他的座位北边的一个小房间里，掉落钻石。",
+    ["Kill Celebras the Cursed, on the island of the Poison Falls: Celebras the Redeemed appears."] =
+        "击杀剧毒瀑布小岛上的被诅咒的塞雷布拉斯：赎罪的塞雷布拉斯会出现。",
+    ["Follow Celebras to his stone and wait for his incantation."] =
+        "跟随塞雷布拉斯到他的石头旁，等待他念完咒语。",
+    ["Celebras the Redeemed, by his stone."] =
+        "赎罪的塞雷布拉斯，在他的石头旁。",
+    ["Princess Theradras, the last boss, waits at the end of Zaetar's Grave, south and down the waterfall."] =
+        "瑟莱德丝公主，最终首领，在扎尔塔之墓的尽头等候，往南沿瀑布下去。",
+    ["Zaetar's Spirit appears in the middle of Theradras's room."] =
+        "扎尔塔的灵魂会在瑟莱德丝房间的中央出现。",
+    ["About 6,100 XP; the seed goes to Moonglade."] =
+        "约6100点经验；种子要送到月光林地。",
+    ["The Centaur Pariah, in the south of Desolace."] =
+        "半人马贱民，在凄凉之地南部。",
+    ["Talendria and Keeper Marandis, at Nijel's Point."] =
+        "塔琳德莉亚和守护者玛兰迪斯，在尼耶尔前哨站。",
+    ["Archmage Tervosh, in Theramore."] =
+        "大法师特沃什，在塞拉摩。",
+    ["Keeper Remulos, at the Shrine of Remulos, in Moonglade."] =
+        "守护者雷姆洛斯，在月光林地的雷姆洛斯神殿。",
+    ["The Temple of Atal'Hakkar"] =
+        "阿塔哈卡神庙",
+    ["Brohann Caskbelly, in the Dwarven District of Stormwind."] =
+        "布罗哈恩·铁桶，在暴风城的矮人区。",
+    ["Optional: a chain of eight quests from Stormwind to the Hinterlands, Tanaris and Feralas; it opens Into the Temple of Atal'Hakkar, a talisman and about 7,100 XP."] =
+        "可选：一条从暴风城到辛特兰、塔纳利斯和菲拉斯的八个任务的任务线；它开启“进入阿塔哈卡神庙”，奖励一个护符和约7100点经验。",
+    ["Find the temple: the ruins in the Pool of Tears, in the east of the Swamp of Sorrows."] =
+        "找到神庙：在悲伤沼泽东部泪水之池中的废墟。",
+    ["Brohann Caskbelly, in Stormwind."] =
+        "布罗哈恩·铁桶，在暴风城。",
+    ["Falstad Wildhammer, at Aerie Peak, in the Hinterlands."] =
+        "弗斯塔德·蛮锤，在辛特兰的鹰巢山。",
+    ["Rhapsody Shindigger, on the road east of Aerie Peak."] =
+        "拉普索迪·铁铲，在鹰巢山以东的路上。",
+    ["The Atal'ai Exile, in the south of the Hinterlands."] =
+        "阿塔莱流放者，在辛特兰南部。",
+    ["Reward: cloth leggings or a mail helm, and about 6,550 XP."] =
+        "奖励：一条布甲护腿或一顶锁甲头盔，以及约6550点经验。",
+    ["Muigin, at Marshal's Refuge, in Un'Goro Crater."] =
+        "穆尔金，在安戈洛环形山的马绍尔营地。",
+    ["Muigin's chain leads to the temple's haze."] =
+        "穆尔金的任务线会引向神庙里的阿塔莱之雾。",
+    ["The bloodpetal plants of Un'Goro drop the petals."] =
+        "安戈洛的血瓣花植物掉落花瓣。",
+    ["Gregan Brewspewer, in the north of Feralas."] =
+        "格雷甘·山酒，在菲拉斯北部。",
+    ["Angelas Moonbreeze, at Feathermoon Stronghold, in Feralas."] =
+        "安吉拉斯·月风，在菲拉斯的羽月要塞。",
+    ["Marvon's chain opens two quests of the temple; one rewards a Hakkari urn."] =
+        "玛尔冯的任务线开启神庙的两个任务；其中一个奖励哈卡莱骨灰。",
+    ["Groddoc and ironfur livers in Feralas, roc gizzards in Tanaris."] =
+        "在菲拉斯获取格罗多克猩猩和铁鬃熊的肝脏，在塔纳利斯获取大鹏的砂囊。",
+    ["Marvon Rivetseeker, in Tanaris, south of Gadgetzan."] =
+        "玛尔冯·瑞文斯克，在塔纳利斯，加基森以南。",
+    ["Marvon's chest, in his old workshop in Ratchet, holds the stone circle."] =
+        "玛尔冯在棘齿城旧工作室里的箱子里装着石环。",
+    ["Marvon Rivetseeker, in Tanaris."] =
+        "玛尔冯·瑞文斯克，在塔纳利斯。",
+    ["Yeh'kinya, at Steamwheedle Port, in Tanaris."] =
+        "叶基亚，在塔纳利斯的热砂港。",
+    ["The Ancient Egg lies at the top of Jintha'Alor, in the Hinterlands, among elite trolls."] =
+        "远古之卵在辛特兰辛萨罗的顶端，周围都是精英巨魔。",
+    ["Reward: a plate helm, a cloth circlet or a dagger, and about 7,900 XP."] =
+        "奖励：一顶板甲头盔、一个布甲头环或一把匕首，以及约7900点经验。",
+    ["Rhapsody Shindigger, in the Hinterlands."] =
+        "拉普索迪·铁铲，在辛特兰。",
+    ["The Atal'ai tablets lie in the ruins around the Pool of Tears, and inside the temple."] =
+        "阿塔莱石板散落在泪水之池周围的废墟中，以及神庙里面。",
+    ["Enter the Temple of Atal'Hakkar"] =
+        "进入阿塔哈卡神庙",
+    ["The temple lies sunken in the Pool of Tears, in the east of the Swamp of Sorrows: swim down to the ruins' stairs."] =
+        "神庙沉没在悲伤沼泽东部的泪水之池中：游下去，找到废墟的台阶。",
+    ["The murk worms, deep lurkers and oozes of the temple drop the haze."] =
+        "神庙里的黑暗虫、深渊潜伏者和软泥怪掉落阿塔莱之雾。",
+    ["Hall of Serpents: use the six statues in this order: south, north, south-west, south-east, north-west, north-east; Atal'alarion appears. The Idol of Hakkar stands in the middle of the Pit of Refuse."] =
+        "毒蛇大厅：按以下顺序使用六座雕像：南、北、西南、东南、西北、东北；阿塔拉利恩会出现。哈卡神像位于废料坑的中央。",
+    ["Climb the stairs of the Pit of Refuse: the Altar of Hakkar waits up there."] =
+        "爬上废料坑的台阶：哈卡祭坛就在上面。",
+    ["Kill the six troll elites on the balconies first: Jammal'an's barrier falls; he waits south-east of the Pit of Sacrifice."] =
+        "先击杀阳台上的六个巨魔精英：迦玛兰的屏障就会消失；他在献祭之坑东南等候。",
+    ["The Shade of Eranikus, at the end of the south path, may drop his essence: use it."] =
+        "伊兰尼库斯的阴影在南边小路的尽头，可能掉落他的精华：使用它。",
+    ["The Essence Font, in the north-east corner of his room."] =
+        "精华之泉，在他房间的东北角。",
+    ["Use the Oathstone of Ysera's Dragonflight it gives you."] =
+        "使用它给你的伊瑟拉巨龙军团的誓言石。",
+    ["Keep the Chained Essence of Eranikus, the font's reward: Itharius asks for it."] =
+        "留着精华之泉奖励的被禁锢的伊兰尼库斯精华：伊萨里奥斯需要它。",
+    ["Use the Egg of Hakkar by the skeleton in the Sanctum of the Fallen God, south-west: Hakkari bloodkeepers come, their blood puts out the four eternal flames, then the Avatar of Hakkar comes; his essence fills the egg."] =
+        "在西南边堕落之神圣殿里的骸骨旁使用哈卡之卵：哈卡莱护血者会出现，它们的血会熄灭四团永恒之火，然后哈卡的化身会出现；他的精华会注满这枚蛋。",
+    ["Itharius, a green dragon in the south-west of the Swamp of Sorrows."] =
+        "伊萨里奥斯，悲伤沼泽西南部的一条绿龙。",
+    ["The Atal'ai Exile, in the Hinterlands."] =
+        "阿塔莱流放者，在辛特兰。",
+    ["The beasts of Un'Goro drop the bloodpetal sprouts."] =
+        "安戈洛的野兽掉落血瓣花苗。",
+    ["Umbranse the Spiritspeaker, in the east of Winterspring."] =
+        "灵语者阿姆布兰希，在冬泉谷东部。",
+    ["Blackrock Depths"] =
+        "黑石深渊",
+    ["Royal Historian Archesonus, in the Hall of Explorers of Ironforge."] =
+        "皇家历史学家阿克瑟努斯，在铁炉堡的探险者大厅。",
+    ["The royal historian's chain leads to Kharan Mighthammer, then to the emperor and the princess: King Magni's reward and about 9,650 XP at its end."] =
+        "皇家历史学家的任务线会引向卡兰·巨锤，然后是大帝和公主：最后可以获得国王麦格尼的奖励和约9650点经验。",
+    ["Listen to the royal historian."] =
+        "听皇家历史学家讲述。",
+    ["Ragnar Thunderbrew, in Kharanos, in Dun Morogh."] =
+        "拉格纳·雷酒，在丹莫罗的卡拉诺斯。",
+    ["Reward: a two-handed axe or a mace, or dark dwarven lager."] =
+        "奖励：一把双手斧或一把锤，或矮人黑啤酒。",
+    ["Kalaran Windblade, in the middle of the Searing Gorge."] =
+        "卡拉然·温布雷，在灼热峡谷中部。",
+    ["Optional: ten quests in the Searing Gorge before A Taste of Flame, which brings a cloth cape or sash or leather shoulders."] =
+        "可选：在“烈焰精华”之前，要先完成灼热峡谷的十个任务；它奖励一件布甲披风、一条布甲腰带或一副皮甲护肩。",
+    ["Listen to Kalaran Windblade's story."] =
+        "听卡拉然·温布雷讲他的故事。",
+    ["The fire elementals of the Searing Gorge drop the hearts of flame; the golems, the oil."] =
+        "灼热峡谷的火元素掉落烈焰之心；傀儡掉落傀儡之油。",
+    ["The Dark Iron dwarves of the gorge carry the thorium plated daggers."] =
+        "峡谷中的黑铁矮人身上有瑟银匕首。",
+    ["The Twilight cultists of the gorge carry the symbols of Ragnaros."] =
+        "峡谷中的暮光信徒身上有拉格纳罗斯符记。",
+    ["Listen to Kalaran Windblade."] =
+        "听卡拉然·温布雷讲述。",
+    ["Use the Torch of Retribution beside Kalaran."] =
+        "使用卡拉然身边的惩戒火炬。",
+    ["Squire Maltrake, beside Kalaran."] =
+        "侍卫玛特拉克，在卡拉然身边。",
+    ["Light the four sentry braziers on the Dark Iron watchtowers of the gorge."] =
+        "点燃峡谷中黑铁瞭望塔上的四个哨岗火盆。",
+    ["The Hoard of the Black Dragonflight, beside Squire Maltrake."] =
+        "黑龙的财宝，在侍卫玛特拉克身边。",
+    ["The ghost of Franclorn Forgewright, inside Blackrock Mountain, by the way down to the depths."] =
+        "弗兰克罗恩·铸铁的鬼魂，在黑石山里，位于通往深渊的下行路旁。",
+    ["Franclorn's quest brings the Shadowforge Key, which opens doors of the depths."] =
+        "弗兰克罗恩的任务奖励暗炉钥匙，它能打开深渊里的一些门。",
+    ["Use the Thaurissan relic in the ruins of Thaurissan, in the middle of the Burning Steppes."] =
+        "在燃烧平原中部的索瑞森废墟使用索瑞森遗物。",
+    ["Yuka Screwspigot and Maxwort Uberglint, at Flame Crest, in the north of the Burning Steppes."] =
+        "尤卡·斯库比格特和麦克斯沃特·尤博格林，在燃烧平原北部的烈焰峰。",
+    ["Flame Crest's two quests: Ribbly's head brings leather shoulders, cloth boots or mail armor."] =
+        "烈焰峰的两个任务：雷布里的头颅可换来一副皮甲护肩、一双布甲靴子或锁甲护甲。",
+    ["Jalinda Sprig and Oralius, at Morgan's Vigil, in the east of the Burning Steppes."] =
+        "加琳达和奥拉留斯，在燃烧平原东部的摩根的岗哨。",
+    ["Morgan's Vigil's quests: Incendius! brings armor of any kind, The Good Stuff a fanny pack of loot."] =
+        "摩根的岗哨的任务：“伊森迪奥斯！”奖励任意类型的护甲，“好东西”奖励一个装满战利品的挎包。",
+    ["Cyrus Therepentous, in the far east of the Burning Steppes."] =
+        "塞勒斯·萨雷芬图斯，在燃烧平原最东端。",
+    ["A frenzied black drake of the steppes drops the molt; then talk to Cyrus."] =
+        "燃烧平原上的狂乱的黑色幼龙掉落黑龙皮；然后与塞勒斯交谈。",
+    ["Helendis Riverhorn, at Morgan's Vigil."] =
+        "赫林迪斯·河角，在摩根的岗哨。",
+    ["Optional: eight quests between the steppes, Lakeshire and Stormwind before Marshal Windsor, whose Jail Break! brings a sword or a dagger among its rewards, and about 7,750 XP."] =
+        "可选：在温德索尔元帅之前，要先在燃烧平原、湖畔镇和暴风城之间完成八个任务；他的“冲破牢笼！”奖励中有一把剑或一把匕首，另有约7750点经验。",
+    ["The black dragonkin of the steppes' north."] =
+        "燃烧平原北部的黑龙。",
+    ["Magistrate Solomon, in the town hall of Lakeshire, in Redridge."] =
+        "所罗门镇长，在赤脊山湖畔镇的镇公所里。",
+    ["Highlord Bolvar Fordragon, in Stormwind Keep."] =
+        "伯瓦尔·弗塔根公爵，在暴风城城堡。",
+    ["Talk to Lady Katrana Prestor, beside the king."] =
+        "与国王身边的女伯爵卡特拉娜·普瑞斯托交谈。",
+    ["Magistrate Solomon, in Lakeshire."] =
+        "所罗门镇长，在湖畔镇。",
+    ["Marshal Maxwell, at Morgan's Vigil."] =
+        "麦克斯韦尔元帅，在摩根的岗哨。",
+    ["Talk to Ragged John, at Flame Crest."] =
+        "与烈焰峰的狼狈不堪的约翰交谈。",
+    ["Royal Historian Archesonus, in Ironforge."] =
+        "皇家历史学家阿克瑟努斯，在铁炉堡。",
+    ["Overmaster Pyron walks the bottom of Blackrock Mountain, before the depths' door."] =
+        "征服者派隆在黑石山底部走动，就在深渊的入口前。",
+    ["Enter Blackrock Depths"] =
+        "进入黑石深渊",
+    ["Blackrock Mountain opens in the west of the Burning Steppes; inside, the depths' door is at the bottom of the mountain."] =
+        "黑石山的入口在燃烧平原西部；进去后，深渊的入口在山的底部。",
+    ["High Interrogator Gerstahn, in a back room on the right of the Detention Block, carries the cell key; Kharan Mighthammer sits in the second cell on the right of the tunnel."] =
+        "审讯官格斯塔恩在禁闭室右边的一个后屋里，身上有牢房钥匙；卡兰·巨锤坐在通道右边的第二间牢房里。",
+    ["Let Kharan tell his story."] =
+        "让卡兰讲完他的故事。",
+    ["Marshal Windsor, two cells further."] =
+        "温德索尔元帅，再往前两间牢房。",
+    ["The Anvilrage dwarves of the first rooms may drop a crumpled note: read it."] =
+        "最初几个房间里的铁怒矮人可能掉落一张皱巴巴的便笺：阅读它。",
+    ["Marshal Windsor, in his cell."] =
+        "温德索尔元帅，在他的牢房里。",
+    ["Fineous Darkvire, in the lower Hall of Crafting, carries Ironfel; the Monument of Franclorn Forgewright stands at the dead end past the Shrine of Thaurissan."] =
+        "弗诺斯·达克维尔在锻造大厅下层，身上有铁胆之锤；弗兰克罗恩·铸铁的雕像位于索瑞森神殿后面的死路尽头。",
+    ["The Monument of Franclorn Forgewright."] =
+        "弗兰克罗恩·铸铁的雕像。",
+    ["Bael'Gar waits at the end of the Dark Iron Highway: use Cyrus's molt on his body."] =
+        "贝尔加在黑铁大道的尽头等候：对他的尸体使用塞勒斯给的黑龙皮。",
+    ["General Angerforge, down the stairs of the West Garrison, and Golem Lord Argelmach, in the Manufactory, carry Windsor's lost information."] =
+        "安格弗将军在西部要塞的楼梯下，傀儡统帅阿格曼奇在制造厂，他们身上有温德索尔丢失的情报。",
+    ["Free Marshal Windsor and follow him through the Detention Block and the Halls of the Law."] =
+        "救出温德索尔元帅，并跟随他穿过禁闭室和律法大厅。",
+    ["Mistress Nagmara, in the Grim Guzzler tavern."] =
+        "娜玛拉小姐，在黑铁酒吧。",
+    ["Optional: Mistress Nagmara's love potion needs herbs, silver veins of giants and water of Un'Goro's hot springs; it brings cloth bracers or a leather belt."] =
+        "可选：娜玛拉小姐的爱情药水需要草药、巨人身上的巨型银矿以及安戈洛温泉的水；它奖励一副布甲护腕或一条皮甲腰带。",
+    ["Ribbly Screwspigot sits at the bottom of the Grim Guzzler: talk to him, then fight him."] =
+        "雷布里·斯库比格特坐在黑铁酒吧的底层：先与他交谈，然后与他战斗。",
+    ["Break the three Thunderbrew lager kegs in a side room of the lower Grim Guzzler: Hurley Blackbreath comes."] =
+        "打破黑铁酒吧下层侧室里的三桶雷霆啤酒：霍尔雷·黑须会出现。",
+    ["The relic coffer keys drop from the dwarves; the twelve coffers of the Black Vault call Watchman Doomgrip, who opens the Heart's vault."] =
+        "遗物宝箱钥匙由矮人掉落；打开黑色宝库的十二个宝箱会引来卫兵杜格瑞普，他会打开放着山脉之心的宝库。",
+    ["The Anvilrage dwarves drop the fanny packs."] =
+        "铁怒矮人掉落挎包。",
+    ["King Magni Bronzebeard, in Ironforge."] =
+        "国王麦格尼·铜须，在铁炉堡。",
+    ["Jalinda Sprig, at Morgan's Vigil."] =
+        "加琳达，在摩根的岗哨。",
+    ["Gromsblood, from herbalism or the auction house; giant silver veins from the giants of Azshara; the vial filled at the Golakka Hot Springs of Un'Goro Crater."] =
+        "格罗姆之血，来自草药学或拍卖行；巨型银矿来自艾萨拉的巨人；小瓶在安戈洛环形山的葛拉卡温泉装满。",
+    ["Enter Blackrock Depths again"] =
+        "再次进入黑石深渊",
+    ["Lord Incendius waits at the Black Anvil, in Shadowforge City."] =
+        "伊森迪奥斯在暗炉城的黑铁砧处等候。",
+    ["Mistress Nagmara, in the Grim Guzzler."] =
+        "娜玛拉小姐，在黑铁酒吧。",
+    ["Emperor Dagran Thaurissan, the last boss, sits in the Imperial Seat: keep Princess Moira alive while you fight him."] =
+        "达格兰·索瑞森大帝，最终首领，坐在帝国王座：与他战斗时要保住茉艾拉公主的性命。",
+    ["Princess Moira Bronzebeard, in the Imperial Seat."] =
+        "铁炉堡公主茉艾拉·铜须，在帝国王座。",
+    ["Yuka Screwspigot and Maxwort Uberglint, at Flame Crest."] =
+        "尤卡·斯库比格特和麦克斯沃特·尤博格林，在烈焰峰。",
+    ["Cyrus Therepentous, in the far east of the steppes."] =
+        "塞勒斯·萨雷芬图斯，在燃烧平原最东端。",
+    ["Jalinda Sprig and Oralius, at Morgan's Vigil."] =
+        "加琳达和奥拉留斯，在摩根的岗哨。",
+    ["Marshal Maxwell."] =
+        "麦克斯韦尔元帅。",
+    ["Ragnar Thunderbrew, in Kharanos."] =
+        "拉格纳·雷酒，在卡拉诺斯。",
+    ["Blackrock Spire"] =
+        "黑石塔",
+    ["Prospector Ironboot, at Steamwheedle Port, in Tanaris."] =
+        "勘查员詹斯·铁靴，在塔纳利斯的热砂港。",
+    ["Yeh'kinya's chain from Zul'Farrak and the sunken temple goes on: two tablets in the Eastern Plaguelands, two inside the spire, then a cloak."] =
+        "叶基亚从祖尔法拉克和沉没的神庙延续下来的任务线还在继续：东瘟疫之地的两块石板，黑石塔里的两块，然后是一件披风。",
+    ["The third and fourth tablets lie in the troll ruins of the north of the Eastern Plaguelands."] =
+        "第三和第四块石板在东瘟疫之地北部的巨魔废墟里。",
+    ["Prospector Ironboot, at Steamwheedle Port."] =
+        "勘查员詹斯·铁靴，在热砂港。",
+    ["Kibler, at Flame Crest, in the north of the Burning Steppes."] =
+        "基布雷尔，在燃烧平原北部的烈焰峰。",
+    ["Kibler's two quests: a worg pup or a smolderweb spider, pets that follow you."] =
+        "基布雷尔的两个任务：一只座狼幼崽或一只烟网蜘蛛，都是会跟着你的宠物。",
+    ["Ragged John, at Flame Crest."] =
+        "狼狈不堪的约翰，在烈焰峰。",
+    ["Reward: Ragged John's neverending cup, and about 9,950 XP."] =
+        "奖励：约翰的无尽之杯，以及约9950点经验。",
+    ["Helendis Riverhorn, at Morgan's Vigil, in the east of the Burning Steppes."] =
+        "赫林迪斯·河角，在燃烧平原东部的摩根的岗哨。",
+    ["Reward: a cloth robe, a leather jerkin or a mail breastplate."] =
+        "奖励：一件布甲长袍、一件皮甲短上衣或一件锁甲胸甲。",
+    ["Enter Blackrock Spire"] =
+        "进入黑石塔",
+    ["Blackrock Mountain opens in the west of the Burning Steppes; inside, the spire's door is at the top of the mountain."] =
+        "黑石山的入口在燃烧平原西部；进去后，黑石塔的入口在山的顶部。",
+    ["Warosh, a troll who walks near the spire's entrance."] =
+        "瓦罗什，一个在黑石塔入口附近走动的巨魔。",
+    ["Reward: a charm, after a fight with Urok Doomhowl."] =
+        "奖励：一个护符，要先与乌洛克战斗。",
+    ["Vaelan, a Scarshield infiltrator, stands up the ramp near the spire's entrance."] =
+        "维埃兰，一个裂盾渗透者，站在黑石塔入口附近的坡道上方。",
+    ["Optional: the Seal of Ascension, the key to the Upper Spire, a raid of ten; its last part is in Dustwallow Marsh."] =
+        "可选：晋升印章，黑石塔上层的钥匙，那是十人团队副本；它的最后一部分在尘泥沼泽。",
+    ["Bijou hides down in the trench after Hordemar City's second bridge."] =
+        "比修躲在霍德玛尔城第二座桥之后的沟里。",
+    ["Bijou's chain leads to Maxwell's Mission: armor of any kind, after a second visit."] =
+        "比修的任务线会引向“麦克斯韦尔的任务”：任意类型的护甲，需要第二次进入。",
+    ["Her belongings lie in a chest on the bottom tier of Hordemar City; it can also stand as far as the Skitterweb Tunnels."] =
+        "她的装置在霍德玛尔城最底层的一个箱子里；箱子也可能远在蛛网隧道。",
+    ["Back to Bijou."] =
+        "回到比修那里。",
+    ["The fifth tablet hangs on a wall of Shadow Hunter Vosh'gajin's room, the sixth on a wall of War Master Voone's room."] =
+        "第五块石板挂在暗影猎手沃什加斯房间的墙上，第六块挂在指挥官沃恩房间的墙上。",
+    ["Take the Roughshod Pike from a weapon rack on the left wall after Hordemar City's second bridge, join it to Highlord Omokk's head, and use it on the skull pile up the ramp past Mother Smolderweb: ogres come, then Urok Doomhowl."] =
+        "从霍德玛尔城第二座桥之后左墙的武器架上拿取尖锐长矛，将它与欧莫克大王的头颅合在一起，然后在烟网蛛后之后坡道上方的头骨堆上使用它：食人魔会出现，然后是乌洛克。",
+    ["The spire spider eggs lie in the upper Skitterweb Tunnels."] =
+        "尖塔蜘蛛卵在蛛网隧道上层。",
+    ["Use the empty cage on a Bloodaxe worg pup, in Halycon's room."] =
+        "在哈雷肯的房间里，对一只血斧座狼幼崽使用空笼子。",
+    ["Halycon, the worgs' mother, holds Halycon's Lair."] =
+        "哈雷肯，座狼的母亲，占据着哈雷肯之巢。",
+    ["The Scarshield dwarves drop the unadorned seal; Highlord Omokk, north of Mok'Doom, may drop the Spirestone gem, War Master Voone, at the bottom of Tazz'Alaor, the Smolderthorn gem, and Overlord Wyrmthalak, the last boss, the Bloodaxe gem."] =
+        "裂盾矮人掉落原始晋升印章；莫克杜姆北边的欧莫克大王可能掉落尖石宝钻，塔兹拉尔底部的指挥官沃恩可能掉落燃棘宝钻，最终首领维姆萨拉克可能掉落血斧宝钻。",
+    ["Vaelan, near the entrance."] =
+        "维埃兰，在入口附近。",
+    ["Warosh, near the entrance."] =
+        "瓦罗什，在入口附近。",
+    ["Let Mother Smolderweb poison you and do not cure it: the poison must last until Ragged John, at Flame Crest."] =
+        "让烟网蛛后对你下毒，不要解毒：毒必须一直保持到你见到烈焰峰的狼狈不堪的约翰。",
+    ["Enter Blackrock Spire again"] =
+        "再次进入黑石塔",
+    ["Highlord Omokk, north of Mok'Doom; War Master Voone, at the bottom of Tazz'Alaor; Overlord Wyrmthalak, the last boss, in the Chamber of Battle."] =
+        "欧莫克大王，在莫克杜姆北边；指挥官沃恩，在塔兹拉尔底部；维姆萨拉克，最终首领，在战斗大厅。",
+    ["Kibler and Ragged John, at Flame Crest."] =
+        "基布雷尔和狼狈不堪的约翰，在烈焰峰。",
+    ["Helendis Riverhorn and Marshal Maxwell, at Morgan's Vigil."] =
+        "赫林迪斯·河角和麦克斯韦尔元帅，在摩根的岗哨。",
+    ["Beat Emberstrife, a dragon of the Wyrmbog in Dustwallow Marsh, until his will breaks, then place the seal before him."] =
+        "击打尘泥沼泽巨龙沼泽中的巨龙埃博斯塔夫，直到他的意志崩溃，然后把印章放在他面前。",
+    ["Vaelan, near the spire's entrance."] =
+        "维埃兰，在黑石塔入口附近。",
+    ["Yeh'kinya, beside him."] =
+        "叶基亚，在他旁边。",
+    ["Dire Maul"] =
+        "厄运之槌",
+    ["A herald of your capital: Crier Goodman in Stormwind, Courier Hammerfall in Ironforge, Herald Moonstalker in Darnassus."] =
+        "你所在主城的传令官：暴风城的公告员古德曼、铁炉堡的信使考雷·落锤、达纳苏斯的赫拉德·月行者。",
+    ["Optional: a lead to Feathermoon Stronghold, about 1,500 XP."] =
+        "可选：一条通往羽月要塞的线索，约1500点经验。",
+    ["Latronicus Moonspear, at Feathermoon Stronghold, in Feralas."] =
+        "拉托尼库斯·月矛，在菲拉斯的羽月要塞。",
+    ["Latronicus Moonspear and Scholar Runethorn, at Feathermoon Stronghold."] =
+        "拉托尼库斯·月矛和学者卢索恩·纹角，在羽月要塞。",
+    ["Lethtendris's Web brings a dagger; Elven Legends, about 8,300 XP for a search in the library."] =
+        "“蕾瑟塔蒂丝的网”奖励一把匕首；“精灵的传说”只需在图书馆里搜寻一番，约8300点经验。",
+    ["Azj'Tordin, at Lariss Pavilion, in the east of Feralas."] =
+        "埃斯托尔迪，在菲拉斯东部的拉瑞斯小亭。",
+    ["Reward: a two-handed sword or leather boots; Pusillin also drops the Crescent Key, which opens the west and north wings."] =
+        "奖励：一把双手剑或一双皮甲靴子；普希林还会掉落月牙钥匙，它能打开西区和北区。",
+    ["Rabine Saturna, in Nighthaven, in Moonglade."] =
+        "拉比恩·萨图纳，在月光林地的永夜港。",
+    ["Optional: a reliquary in Silithus for Rabine Saturna in Moonglade, then a shard of the Felvine: a shield or an off-hand lexicon."] =
+        "可选：为月光林地的拉比恩·萨图纳取回希利苏斯的一个圣匣，然后是一块魔藤碎片：一面盾牌或一本副手辞典。",
+    ["The Reliquary of Purity lies in the ruins of Southwind Village, in Silithus."] =
+        "净化之匣在希利苏斯的南风村废墟里。",
+    ["Rabine Saturna, in Nighthaven."] =
+        "拉比恩·萨图纳，在永夜港。",
+    ["Enter Dire Maul"] =
+        "进入厄运之槌",
+    ["The ruins of Dire Maul stand in the middle of Feralas; the east, west and north wings each have their own door."] =
+        "厄运之槌的废墟位于菲拉斯中部；东区、西区和北区各有自己的大门。",
+    ["East: talk to Pusillin each time he stops; he runs five times, then fights on a small platform up a ramp and drops the book."] =
+        "东区：每次普希林停下来时都与他交谈；他会跑五次，然后在一条坡道上方的小平台上战斗，并掉落那本书。",
+    ["East: Lethtendris waits on the upper level of the room left of the ramps between the Hidden Reach and the Warpwood Quarter."] =
+        "东区：蕾瑟塔蒂丝在隐匿之地和扭木广场之间坡道左边那个房间的上层等候。",
+    ["East: kill Zevrim Thornhoof, then Ironbark the Redeemed, in the Conservatory, opens the door to Alzzin the Wildshaper; after Alzzin, use the reliquary by the twisted vine."] =
+        "东区：击杀瑟雷姆·刺蹄，之后温室里的赎罪的埃隆巴克会打开通往奥兹恩的门；击败奥兹恩后，在扭曲的藤蔓旁使用圣匣。",
+    ["West: the Shen'dralar Ancient stands above the platform over Tendris Warpwood."] =
+        "西区：辛德拉古灵站在特迪斯·扭木上方那个平台的更高处。",
+    ["About 9,950 XP; its treasure, a chest in the library, brings a two-handed mace, a mail helm or leather boots."] =
+        "约9950点经验；它的宝藏是图书馆里的一个箱子，可以获得一把双手锤、一顶锁甲头盔或一双皮甲靴子。",
+    ["West: destroy the five pylons of the Capital Gardens, the Court of the Highborne and the Prison; Immol'thar waits in the Prison, behind Tendris (the Crescent Key opens it); Prince Tortheldrin, under the entry platform of the Athenaeum."] =
+        "西区：摧毁首都花园、上层精灵庭院和监狱里的五座水晶塔；伊莫塔尔在特迪斯后面的监狱里等候（用月牙钥匙打开）；托塞德林王子在藏书馆入口平台的下方。",
+    ["West: the treasure is a big stone chest under the ramp of the Athenaeum."] =
+        "西区：宝藏是藏书馆坡道下的一个大石箱。",
+    ["West: through the Conservatory Door (the Crescent Key opens it), the remains lie by a dead elf and a bookcase, in the north of the Athenaeum."] =
+        "西区：穿过温室之门（用月牙钥匙打开），遗骸在藏书馆北部的一具精灵尸体和一个书架旁。",
+    ["North: Knot Thimblejack is chained in the north-east corner of the Halls of Destruction."] =
+        "北区：诺特·希姆加克被锁在毁灭大厅的东北角。",
+    ["About 6,600 XP for a key the Gordok guards carry."] =
+        "约6600点经验，需要戈多克卫兵身上的一把钥匙。",
+    ["Optional: the Gordok Ogre Suit needs runecloth, rugged leather and rune threads."] =
+        "可选：戈多克食人魔装需要符文布、硬甲皮和符文线。",
+    ["North: the Gordok guards Mol'dar, Slip'kik and Fengus, and Captain Kromcrush, carry the shackle key."] =
+        "北区：戈多克卫兵摩尔达、斯里基克和芬古斯，以及克罗卡斯，身上有镣铐钥匙。",
+    ["Knot Thimblejack."] =
+        "诺特·希姆加克。",
+    ["North: the ogre tannin lies up the ramp above Knot, in the north-west corner: one per group."] =
+        "北区：食人魔鞣酸在诺特上方坡道的西北角：每队只有一份。",
+    ["North: Captain Kromcrush, once King Gordok is dead."] =
+        "北区：克罗卡斯，在戈多克大王死后。",
+    ["Optional, after a tribute run (King Gordok dead, his guards alive): gloves of any kind."] =
+        "可选，在完成贡品模式之后（戈多克大王死亡，他的卫兵存活）：任意类型的手套。",
+    ["The Gauntlet of Gordok Might lies in the Prince's chest, in the Athenaeum of the west wing."] =
+        "戈多克力量护手在王子的箱子里，位于西区的藏书馆。",
+    ["North: Stomper Kreeg, after a tribute run."] =
+        "北区：践踏者克雷格，在完成贡品模式之后。",
+    ["Azj'Tordin, at Lariss Pavilion."] =
+        "埃斯托尔迪，在拉瑞斯小亭。",
+    ["Latronicus Moonspear, at Feathermoon Stronghold."] =
+        "拉托尼库斯·月矛，在羽月要塞。",
+    ["Scholar Runethorn, at Feathermoon Stronghold."] =
+        "学者卢索恩·纹角，在羽月要塞。",
+    ["Scholomance"] =
+        "通灵学院",
+    ["Commander Ashlam Valorfist, at Chillwind Camp, in the Western Plaguelands."] =
+        "指挥官阿什拉姆·瓦罗菲斯特，在西瘟疫之地的冰风岗。",
+    ["Optional: the chain of the Skeleton Key, which opens Scholomance's door: one key per group is enough. It goes through the Plaguelands, Gadgetzan and Un'Goro."] =
+        "可选：骷髅钥匙的任务线，这把钥匙能打开通灵学院的大门：每队有一把就够了。任务线途经瘟疫之地、加基森和安戈洛。",
+    ["The skeletal flayers and slavering ghouls of Sorrow Hill, in the south of the Western Plaguelands."] =
+        "西瘟疫之地南部悲伤山的骷髅剥皮者和被奴役的食尸鬼。",
+    ["Mark the four watchtowers of Andorhal with the beacon torch, standing in each doorway."] =
+        "用信号火炬标记安多哈尔的四座瞭望塔，要站在每座塔的门口。",
+    ["Alchemist Arbington, at Chillwind Camp."] =
+        "化学家阿尔比顿，在冰风岗。",
+    ["The undead of the Western Plaguelands drop the skeletal fragments."] =
+        "西瘟疫之地的亡灵掉落骸骨碎片。",
+    ["Krinkle Goodsteel, in Gadgetzan, in Tanaris: bring 15 gold."] =
+        "克林科·古德斯迪尔，在塔纳利斯的加基森：带上15金币。",
+    ["Bring two thorium bars to the top of Fire Plume Ridge, in Un'Goro Crater, and use the mold by the lava lake."] =
+        "带两块瑟银锭到安戈洛环形山的火羽山顶，在熔岩湖边使用模具。",
+    ["Araj the Summoner stands in the middle of Andorhal."] =
+        "召唤者阿拉基站在安多哈尔的中央。",
+    ["Betina Bigglezink, at Light's Hope Chapel, in the Eastern Plaguelands."] =
+        "贝蒂娜·比格辛克，在东瘟疫之地的圣光之愿礼拜堂。",
+    ["About 6,200 XP; a hatchling may drop a scale that starts another quest."] =
+        "约6200点经验；龙崽可能掉落一片鳞片，它会开启另一个任务。",
+    ["Weldon Barov, at Chillwind Camp."] =
+        "维尔顿·巴罗夫，在冰风岗。",
+    ["The Barov fortune: four deeds inside the school; its follow-up sends you to kill Alexi Barov in the Horde's Bulwark."] =
+        "巴罗夫家族的财产：学院里的四张地契；后续任务会派你去部落的亡灵壁垒击杀阿莱克斯·巴罗夫。",
+    ["Eva Sarkhoff, in Caer Darrow, on the island of Darrowmere Lake."] =
+        "艾瓦·萨克霍夫，在达隆米尔湖岛上的凯尔达隆。",
+    ["Eva Sarkhoff's chain: three parts inside the school, then Kirtonos the Herald and a sword or an off-hand item among its rewards."] =
+        "艾瓦·萨克霍夫的任务线：学院里的三个部分，然后是传令官基尔图诺斯，奖励中有一把剑或一件副手物品。",
+    ["Enter Scholomance"] =
+        "进入通灵学院",
+    ["The school stands on the island of Caer Darrow, in Darrowmere Lake, in the south-east of the Western Plaguelands."] =
+        "学院位于西瘟疫之地东南部达隆米尔湖中的凯尔达隆岛上。",
+    ["The deeds: Southshore's on a table north-east of the Reliquary; Tarren Mill's on a table on the left at the entry of the Great Ossuary; Brill's on a ledge south-west of the Laboratory; Caer Darrow's on a table east of the Barov Family Vault."] =
+        "地契：南海镇的在圣物室东北的一张桌子上；塔伦米尔的在大藏骨堂入口左边的一张桌子上；布瑞尔的在实验室西南的一个壁架上；凯尔达隆的在巴罗夫家族宝库以东的一张桌子上。",
+    ["The plagued hatchlings fill a room of the Great Ossuary."] =
+        "瘟疫龙崽挤满了大藏骨堂的一个房间。",
+    ["A hatchling may drop a healthy dragon scale: use it."] =
+        "龙崽可能掉落健康的龙鳞：使用它。",
+    ["Doctor Theolen Krastinov, in the east of the upper Headmaster's Study: kill him, then burn the two piles of remains, to the north and the south-east of his room."] =
+        "瑟尔林·卡斯迪诺夫教授，在院长办公室上层的东边：击杀他，然后烧掉他房间北边和东南边的两堆遗骸。",
+    ["Eva Sarkhoff, in Caer Darrow."] =
+        "艾瓦·萨克霍夫，在凯尔达隆。",
+    ["Enter Scholomance again"] =
+        "再次进入通灵学院",
+    ["Jandice Barov waits in the north-east of the room down the stairs, on the right of the second big room."] =
+        "詹迪斯·巴罗夫在第二个大房间右边楼梯下那个房间的东北角等候。",
+    ["Rattlegore, at the bottom of the Great Ossuary, drops the Viewing Room key; put the Blood of Innocents in the brazier on the balcony on the right of the Chamber of Summoning: Kirtonos the Herald comes."] =
+        "血骨傀儡在大藏骨堂底部，掉落观察室钥匙；把无辜者之血放进召唤大厅右边阳台上的火盆：传令官基尔图诺斯会出现。",
+    ["Betina Bigglezink, at Light's Hope Chapel."] =
+        "贝蒂娜·比格辛克，在圣光之愿礼拜堂。",
+    ["Optional: an assassination in the other side's camp, among its guards; it brings the Barov Peasant Caller."] =
+        "可选：到敌对阵营的营地里，在守卫之间完成一次刺杀；奖励巴罗夫管家铃。",
+    ["Alexi Barov stands among the guards of the Bulwark, the Horde's camp in the north of the Western Plaguelands."] =
+        "阿莱克斯·巴罗夫站在亡灵壁垒的守卫之间，那是部落在西瘟疫之地北部的营地。",
+    ["Magistrate Marduke, in Caer Darrow."] =
+        "马杜克镇长，在凯尔达隆。",
+    ["Optional: a chain through Stromgarde, Light's Hope and the Baron's room of Stratholme, back to the school's last boss; it brings a sword, a dagger, a cloth crown or a shield and about 9,950 XP."] =
+        "可选：一条途经激流堡、圣光之愿礼拜堂和斯坦索姆男爵房间的任务线，最后回到学院的最终首领；奖励一把剑、一把匕首、一顶布甲头冠或一面盾牌，以及约9950点经验。",
+    ["The Keepsake of Remembrance lies in the ruins of Stromgarde, in Arathi Highlands."] =
+        "巫妖生前的遗物在阿拉希高地的激流堡废墟里。",
+    ["Leonid Barthalomew the Revered, at Light's Hope Chapel."] =
+        "莱尼德·巴萨罗梅，在圣光之愿礼拜堂。",
+    ["Stratholme: place the keepsake on the unholy ground of Baron Rivendare's room."] =
+        "斯坦索姆：把遗物放在瑞文戴尔男爵房间的邪恶之地上。",
+    ["Ras Frostwhisper waits in the Laboratory: use the Soulbound Keepsake on him."] =
+        "莱斯·霜语在实验室里等候：对他使用禁锢灵魂的遗物。",
+    ["Stratholme"] =
+        "斯坦索姆",
+    ["Smokey LaRue and Leonid Barthalomew the Revered, at Light's Hope Chapel, in the east of the Eastern Plaguelands."] =
+        "烟鬼拉鲁恩和莱尼德·巴萨罗梅，在东瘟疫之地东部的圣光之愿礼拜堂。",
+    ["Smokey LaRue's tobacco brings a lighter (a trinket); Leonid's holy water, a cloth crown, a ring or potions."] =
+        "烟鬼拉鲁恩的烟草任务奖励一个打火器（饰品）；莱尼德的圣水任务奖励一顶布甲头冠、一枚戒指或药水。",
+    ["Betina's flesh samples open The Active Agent: a choice of two trinkets."] =
+        "贝蒂娜的肉块任务开启“活跃的探子”：两件饰品任选其一。",
+    ["Duke Nicholas Zverenhoff, at Light's Hope Chapel."] =
+        "尼古拉斯·瑟伦霍夫公爵，在圣光之愿礼拜堂。",
+    ["Duke Nicholas's chain leads to Balnazzar, then Baron Rivendare, then the Argent Hold: a sword, a staff or a shield."] =
+        "尼古拉斯公爵的任务线会引向巴纳扎尔，然后是瑞文戴尔男爵，最后是银色黎明宝箱：一把剑、一根法杖或一面盾牌。",
+    ["Caretaker Alen, at Light's Hope Chapel."] =
+        "护理者奥林，在圣光之愿礼拜堂。",
+    ["Egan's restless souls bring about 8,300 XP."] =
+        "埃根的“永不安息的灵魂”约8300点经验。",
+    ["Tirion Fordring, in his hut by the lake on the western edge of the Eastern Plaguelands."] =
+        "提里奥·弗丁，在东瘟疫之地西部边缘湖边他的小屋里。",
+    ["Optional: Tirion Fordring's long chain across both Plaguelands and Caer Darrow; its painting hangs in the city, and its end, In Dreams, brings armor, a warhammer or jewelry and about 9,950 XP."] =
+        "可选：提里奥·弗丁的长任务线，横跨东西瘟疫之地和凯尔达隆；其中的画挂在这座城市里，最后的“在梦中”奖励护甲、一把战锤或首饰，以及约9950点经验。",
+    ["The plaguehounds, plaguebats and carrion grubs of the Eastern Plaguelands."] =
+        "东瘟疫之地的瘟疫犬、瘟疫蝙蝠和腐肉虫。",
+    ["Listen to Tirion Fordring."] =
+        "听提里奥·弗丁讲述。",
+    ["Taelan's hammer lies in the Undercroft, at the southern end of the Eastern Plaguelands."] =
+        "泰兰之锤在东瘟疫之地最南端的地窖里。",
+    ["The Symbol of Lost Honor lies in Northdale, in the north-east of the Eastern Plaguelands."] =
+        "失落荣耀的象征在东瘟疫之地东北部的北谷。",
+    ["Artist Renfray, in Caer Darrow, in the Western Plaguelands."] =
+        "画家瑞弗蕾，在西瘟疫之地的凯尔达隆。",
+    ["Egan, by the road to Stratholme's gate, in the north-west of the Eastern Plaguelands."] =
+        "埃根，在东瘟疫之地西北部通往斯坦索姆大门的路边。",
+    ["Enter Stratholme"] =
+        "进入斯坦索姆",
+    ["The city's main gate, in the north of the Eastern Plaguelands, opens on the Scarlet side."] =
+        "这座城市的正门在东瘟疫之地北部，通往血色十字军那一侧。",
+    ["King's Square: take the box of tobacco in Ezra Grimm's smoke shop; Ezra Grimm comes for it."] =
+        "国王广场：拿走艾兹拉·格里姆烟草店里的那盒烟草；艾兹拉·格里姆会过来抢。",
+    ["The supply crates along the city's walls hold the holy water; some call monsters."] =
+        "沿城墙摆放的补给箱里有圣水；有些会招来怪物。",
+    ["Every creature of the city may drop a flesh sample."] =
+        "城里的每个生物都可能掉落瘟疫肉块。",
+    ["Use Egan's blaster on the spectral citizens, then again on the restless souls that break free."] =
+        "对鬼魂市民使用埃根的冲击器，然后对挣脱出来的永不安息的灵魂再使用一次。",
+    ["Archivist Galford waits near the end of the Scarlet Bastion: kill him and burn the book on his table."] =
+        "档案管理员加尔福特在血色堡垒尽头附近等候：击杀他，并烧掉他桌上的书。",
+    ["The painting hangs in Galford's room."] =
+        "画挂在加尔福特的房间里。",
+    ["Balnazzar, at the end of the Scarlet Bastion, drops his head: use it."] =
+        "巴纳扎尔在血色堡垒的尽头，掉落他的头颅：使用它。",
+    ["Aurius waits in a chapel by the service entrance, the other gate of the city."] =
+        "奥里克斯在后门旁的一座礼拜堂里等候，后门是这座城市的另一个入口。",
+    ["Optional: Aurius's medallion makes him join the fight against Baron Rivendare: a choice of two trinkets."] =
+        "可选：奥里克斯的奖章会让他加入对瑞文戴尔男爵的战斗：两件饰品任选其一。",
+    ["The medallion lies in Malor's strongbox, in Malor the Zealous's room of the Hall of Lights: the Scarlet Key, or a rogue, opens the Bastion's door."] =
+        "奖章在玛洛尔的保险箱里，位于圣光大厅中狂热的玛洛尔的房间：用血色十字军钥匙或由潜行者打开堡垒的大门。",
+    ["Aurius, in his chapel."] =
+        "奥里克斯，在他的礼拜堂里。",
+    ["Smokey LaRue and Leonid Barthalomew the Revered, at Light's Hope Chapel."] =
+        "烟鬼拉鲁恩和莱尼德·巴萨罗梅，在圣光之愿礼拜堂。",
+    ["Enter Stratholme by the service entrance"] =
+        "从后门进入斯坦索姆",
+    ["The service entrance, east of the main gate, opens on the side of Baron Rivendare."] =
+        "后门在正门以东，通往瑞文戴尔男爵那一侧。",
+    ["The new Scourge data lies in one of the three ziggurats of the Gauntlet."] =
+        "新的天灾军团档案在长街三座通灵塔中的一座里。",
+    ["Baron Rivendare waits downstairs in the building of Slaughter Square."] =
+        "瑞文戴尔男爵在屠宰广场那栋建筑的楼下等候。",
+    ["Aurius appears in the Baron's room and fights at your side."] =
+        "奥里克斯会在男爵的房间里出现，并在你身边作战。",
+    ["Lord Maxwell Tyrosus, inside Light's Hope Chapel."] =
+        "玛克斯韦尔·泰罗索斯男爵，在圣光之愿礼拜堂里面。",
+    ["Open the Argent Hold, inside the chapel."] =
+        "打开礼拜堂里面的银色黎明宝箱。",
+    ["Egan, by the road to Stratholme."] =
+        "埃根，在通往斯坦索姆的路边。",
+    ["Tirion Fordring, in his hut."] =
+        "提里奥·弗丁，在他的小屋里。",
+    ["Myranda the Hag, at Uther's Tomb, in the Western Plaguelands."] =
+        "巫女麦兰达，在西瘟疫之地的乌瑟尔之墓。",
+    ["Under Myranda's Scarlet illusion, walk into Hearthglen and give Tirion's gift to Highlord Taelan Fordring."] =
+        "在麦兰达的血色十字军幻象掩护下，走进壁炉谷，把提里奥的礼物交给大领主泰兰·弗丁。",
+    ["Lead Taelan Fordring out of Hearthglen; the Scarlet give chase."] =
+        "带领泰兰·弗丁离开壁炉谷；血色十字军会追上来。",
+    ["Tirion Fordring."] =
+        "提里奥·弗丁。",
+    ["Ragefire Chasm"] =
+        "怒焰裂谷",
+    ["Rahauro, on the Elder Rise of Thunder Bluff."] =
+        "拉哈罗，在雷霆崖的长者高地。",
+    ["The lost satchel's quest ends with bracers of cloth, leather or mail."] =
+        "寻找背包的任务最后奖励一副布甲、皮甲或锁甲护腕。",
+    ["Varimathras, beside Sylvanas in the Royal Quarter of Undercity."] =
+        "瓦里玛萨斯，在幽暗城皇家区的希尔瓦娜斯身边。",
+    ["Optional: given in Undercity, a zeppelin ride each way. Rewards leggings of cloth, leather or mail."] =
+        "可选：在幽暗城接取，来回各要乘一次飞艇。奖励一条布甲、皮甲或锁甲护腿。",
+    ["Thrall, in Grommash Hold, in the Valley of Wisdom."] =
+        "萨尔，在智慧谷的格罗玛什要塞。",
+    ["Thrall's chain of four quests ends with a weapon of your choice."] =
+        "萨尔的四个任务的任务线最后奖励一件自选的武器。",
+    ["The Burning Blade cultists of the Cleft of Shadow carry the insignia."] =
+        "暗影裂口的火刃祭司身上有徽记。",
+    ["Talk to Neeru Fireblade, in the Darkbriar Lodge of the Cleft of Shadow."] =
+        "与暗影裂口黑棘小屋里的尼尔鲁·火刃交谈。",
+    ["Neeru Fireblade also asks for the heart of the chasm's beast."] =
+        "尼尔鲁·火刃还要裂谷中那头野兽的心脏。",
+    ["Back to Thrall, in Grommash Hold."] =
+        "回到格罗玛什要塞的萨尔处。",
+    ["Enter Ragefire Chasm"] =
+        "进入怒焰裂谷",
+    ["The entrance is a cave in the Cleft of Shadow, in the middle of Orgrimmar."] =
+        "入口是奥格瑞玛中部暗影裂口里的一个洞穴。",
+    ["Ragefire troggs and their shamans fill the first caves."] =
+        "怒焰穴居人和它们的萨满祭司遍布最初的几个洞穴。",
+    ["Maur Grimtotem's body lies in a small cave on the right, past the big trogg cave."] =
+        "玛尔·恐怖图腾的尸体在右边的一个小洞穴里，过了那个大的穴居人洞穴就是。",
+    ["The Searing Blade cultists and warlocks carry both books."] =
+        "燃刃信徒和燃刃术士身上有这两本书。",
+    ["Taragaman the Hungerer, the chasm's second boss, guards a lava cave."] =
+        "饥饿者塔拉加曼，裂谷的第二个首领，守卫着一个熔岩洞穴。",
+    ["Jergosh the Invoker is the third boss; Bazzalan waits at the very end of the chasm."] =
+        "祈求者耶戈什是第三个首领；巴扎兰在裂谷的最深处等候。",
+    ["Thrall, in Grommash Hold."] =
+        "萨尔，在格罗玛什要塞。",
+    ["Neeru Fireblade, in the Cleft of Shadow."] =
+        "尼尔鲁·火刃，在暗影裂口。",
+    ["Your reward: an axe, a mace, a dagger or a staff of Orgrimmar."] =
+        "奖励：一把奥格瑞玛的斧、锤、匕首或法杖。",
+    ["Varimathras, in the Royal Quarter of Undercity."] =
+        "瓦里玛萨斯，在幽暗城的皇家区。",
+    ["Tonga Runetotem, at the Crossroads."] =
+        "图加·符文图腾，在十字路口。",
+    ["Tonga's three oases open Leaders of the Fang, the caverns' main quest: a weapon of your choice."] =
+        "图加的三个绿洲任务开启洞穴的主要任务“尖牙德鲁伊”：一件自选的武器。",
+    ["The Forgotten Pools lie north-west of the Crossroads, north of the caverns' hill."] =
+        "遗忘之池在十字路口西北，位于洞穴所在山丘的北边。",
+    ["The Stagnant Oasis lies south-east of the Crossroads: use the bubbling fissure in its water."] =
+        "死水绿洲在十字路口东南：使用水中的冒泡的裂隙。",
+    ["The snapjaw turtles of the Lushwater Oasis, at the foot of the caverns' hill."] =
+        "甜水绿洲的钳嘴龟，在洞穴所在山丘的脚下。",
+    ["Apothecary Zamah, in the Pools of Vision under the Spirit Rise."] =
+        "药剂师扎玛，在灵魂高地下方的预见之池。",
+    ["Reward: a piece of cloth, leather or mail armor."] =
+        "奖励：一件布甲、皮甲或锁甲护甲。",
+    ["Arch Druid Hamuul Runetotem, on the Elder Rise."] =
+        "大德鲁伊哈缪尔·符文图腾，在长者高地。",
+    ["Nara Wildmane, on the Elder Rise."] =
+        "纳拉·蛮鬃，在长者高地。",
+    ["Serpentbloom: small green shrubs with violet flowers, in the caves before the door and inside."] =
+        "毒蛇花：开着紫色花朵的绿色小灌木，在副本入口前的洞穴里和副本里面。",
+    ["The four Fanglords each drop a gem: Lady Anacondra and Lord Cobrahn first, then Lord Pythas, and Lord Serpentis last."] =
+        "四个尖牙领主各掉落一颗宝石：先是安娜科德拉和考布莱恩，然后是皮萨斯，最后是瑟芬迪斯。",
+    ["Nara Wildmane, on the Elder Rise of Thunder Bluff."] =
+        "纳拉·蛮鬃，在雷霆崖的长者高地。",
+    ["Your reward: a staff, a mace or a sword."] =
+        "奖励：一根法杖、一把锤或一把剑。",
+    ["Apothecary Zamah, in the Pools of Vision."] =
+        "药剂师扎玛，在预见之池。",
+    ["Tabitha Heartweaver, at the Sepulcher, in Silverpine Forest."] =
+        "Tabitha Heartweaver，在银松森林的瑟伯切尔。",
+    ["Reward: a dagger or cloth cuffs."] =
+        "奖励：一把匕首或一副布甲护腕。",
+    ["Deathguard Kristof, in Brill, in Tirisfal Glades."] =
+        "Deathguard Kristof，在提瑞斯法林地的布瑞尔。",
+    ["Reward: a two-handed axe or a staff."] =
+        "奖励：一把双手斧或一根法杖。",
+    ["Morbin Lightbane, in Undercity."] =
+        "Morbin Lightbane，在幽暗城。",
+    ["Reward: leather armor or a mace."] =
+        "奖励：皮甲护甲或一把锤。",
+    ["Theodore Griffs, in Undercity."] =
+        "萨多雷·格雷夫，在幽暗城。",
+    ["Reward: cloth gloves or a sword."] =
+        "奖励：一副布甲手套或一把剑。",
+    ["The ruins rise above Undercity, in Tirisfal Glades."] =
+        "废墟矗立在提瑞斯法林地的幽暗城上方。",
+    ["Look for Edward Heartweaver in the ruins."] =
+        "在废墟里寻找Edward Heartweaver。",
+    ["Twenty-five intact limbs, from the undead of the ruins."] =
+        "二十五条完整的肢体，来自废墟中的亡灵。",
+    ["Rath'mael waits in the ruins."] =
+        "Rath'mael在废墟里等候。",
+    ["Witherfang carries the highly toxic strain."] =
+        "Witherfang身上有剧毒菌株。",
+    ["The Baron may drop an abominable head: read it."] =
+        "The Baron可能掉落一颗憎恶的头颅：阅读它。",
+    ["Oran Snakewrithe, in Undercity."] =
+        "奥兰·斯内克威瑟，在幽暗城。",
+    ["Master Apothecary Faranell, in the Apothecarium of Undercity."] =
+        "大药剂师法拉尼尔，在幽暗城的炼金房。",
+    ["Optional: Faranell's Unending Torment goes on in Undercity; its last part has a two-handed sword among its rewards."] =
+        "可选：法拉尼尔的“Unending Torment”在幽暗城继续进行；最后一部分的奖励中有一把双手剑。",
+    ["A toxic skullcap from Tawny Grisette in the Trade Quarter, blisterweed near the herbalism trainer, and an essence of agony from the poison vendor of the Rogues' Quarter."] =
+        "一份剧毒头盖菇，从商业区的塔文·格瑞斯特那里获得；疱疹草，在草药学训练师附近；一份苦楚精华，从盗贼区的毒药商那里获得。",
+    ["Inject the hissing serum into the system above Othmar's body."] =
+        "把嘶嘶作响的血清注入Othmar尸体上方的装置。",
+    ["Bring the Baron's head to Othmar's body, the unfinished abomination."] =
+        "把The Baron的头颅带到Othmar的尸体处，那是一只尚未完成的憎恶。",
+    ["Master Apothecary Faranell."] =
+        "大药剂师法拉尼尔。",
+    ["Deathguard Kristof, in Brill."] =
+        "Deathguard Kristof，在布瑞尔。",
+    ["Tabitha Heartweaver, at the Sepulcher."] =
+        "Tabitha Heartweaver，在瑟伯切尔。",
+    ["Shadowfang Keep"] =
+        "影牙城堡",
+    ["Keeper Bel'dugur, in Undercity."] =
+        "看守者贝尔杜加，在幽暗城。",
+    ["Dalar Dawnweaver, at the Sepulcher, in Silverpine Forest."] =
+        "达拉尔·道恩维沃尔，在银松森林的瑟伯切尔。",
+    ["Reward: a ring and about 3,300 XP."] =
+        "奖励：一枚戒指和约3300点经验。",
+    ["High Executor Hadrec, at the Sepulcher."] =
+        "高级执行官哈德瑞克，在瑟伯切尔。",
+    ["Reward: shoulders of cloth, leather or mail."] =
+        "奖励：一副布甲、皮甲或锁甲护肩。",
+    ["Enter Shadowfang Keep"] =
+        "进入影牙城堡",
+    ["The keep stands south of the Sepulcher."] =
+        "城堡位于瑟伯切尔以南。",
+    ["Deathstalker Vincent lies in the courtyard: Deathstalker Adamant, freed after Rethilgore, opens its door."] =
+        "亡灵哨兵文森特躺在庭院里：击败雷希戈尔后救出的亡灵哨兵阿达曼特会打开庭院的门。",
+    ["The Book of Ur, a blue book, stands on a bookshelf on the left of Fenrus the Devourer's room."] =
+        "乌尔之书是一本蓝色的书，放在吞噬者芬鲁斯房间左边的书架上。",
+    ["Archmage Arugal, the last boss, waits at the top of the keep."] =
+        "大法师阿鲁高，最终首领，在城堡顶层等候。",
+    ["Dalar Dawnweaver, at the Sepulcher."] =
+        "达拉尔·道恩维沃尔，在瑟伯切尔。",
+    ["Tsunaman, at Sun Rock Retreat, in Stonetalon Mountains."] =
+        "苏纳曼，在石爪山脉的烈日石居。",
+    ["Optional: a lead from Stonetalon to Zoram'gar Outpost."] =
+        "可选：一条从石爪山脉通往佐拉姆加前哨站的线索。",
+    ["Je'neu Sancrea, at Zoram'gar Outpost, on Ashenvale's coast."] =
+        "耶努萨克雷，在灰谷海岸的佐拉姆加前哨站。",
+    ["Je'neu Sancrea, at Zoram'gar Outpost."] =
+        "耶努萨克雷，在佐拉姆加前哨站。",
+    ["The Earthen Ring's quests: Amongst the Ruins wakes Baron Aquanis, whose drop starts a quest with a sword among its rewards."] =
+        "陶土议会的任务：“废墟之间”会唤醒阿奎尼斯男爵，他掉落的物品会开启一个任务，奖励中有一把剑。",
+    ["The deeps open in ruins half under water, on the coast of Zoram Strand."] =
+        "深渊入口在半没于水中的废墟里，位于佐拉姆海岸。",
+    ["The Sapphires of Aku'Mai grow on the walls of the cave before the dungeon's door."] =
+        "阿库麦尔蓝宝石长在副本入口前那个洞穴的墙壁上。",
+    ["The Blackfathom tide priestesses of that cave may drop a damp note: read it."] =
+        "那个洞穴里的黑暗深渊海潮祭司可能掉落一张潮湿的便笺：阅读它。",
+    ["Back to Je'neu Sancrea, at Zoram'gar Outpost, before the dungeon."] =
+        "进入副本前，先回到佐拉姆加前哨站的耶努萨克雷处。",
+    ["Reward: a wand, a shield or leather armor."] =
+        "奖励：一根魔杖、一面盾牌或皮甲护甲。",
+    ["Lorgus Jett walks the nooks on the west side, south of the Pool of Ask'ar."] =
+        "洛古斯·杰特在阿斯卡之池以南西侧的角落里走动。",
+    ["The Fathom Stone lies under the water in the middle of the Moonshrine Ruins, under the walkway before Kelris; taking its core wakes Baron Aquanis."] =
+        "深渊之石在月神殿废墟中央的水下，位于克尔里斯前方的走道下面；取走深渊之核会唤醒阿奎尼斯男爵。",
+    ["Baron Aquanis may drop a Strange Water Globe: use it."] =
+        "阿奎尼斯男爵可能掉落奇怪的水球：使用它。",
+    ["Bashana Runetotem, on the Elder Rise of Thunder Bluff."] =
+        "巴珊娜·符文图腾，在雷霆崖的长者高地。",
+    ["Borstan, the meat vendor of Orgrimmar."] =
+        "博斯坦，奥格瑞玛的肉商。",
+    ["Reward: a dagger or a satchel of potions."] =
+        "奖励：一把匕首或一包药水。",
+    ["Zaruk, at Hammerfall, in Arathi Highlands."] =
+        "萨鲁克，在阿拉希高地的落锤镇。",
+    ["Dragonmaw Rumors leads to Open the Maw, inside the site."] =
+        "“Dragonmaw Rumors”会引向挖掘场里的“Open the Maw”。",
+    ["The Deathstalker Agent hides in the hills above the Dragonmaw camp, in the Wetlands."] =
+        "亡灵卫兵密探躲在湿地龙喉营地上方的山丘里。",
+    ["Thicket raptor meat, from the raptors of the site."] =
+        "灌木迅猛龙肉，来自挖掘场的迅猛龙。",
+    ["The Dragonmaw forces of the site, their thaumaturgists among them."] =
+        "挖掘场的龙喉部队，其中包括他们的奇术师。",
+    ["The Titan relic leads to the Earthen Ring: a staff or a two-handed mace."] =
+        "泰坦遗物会把你引向陶土议会：一根法杖或一把双手锤。",
+    ["The Deathstalker Agent, above the Dragonmaw camp."] =
+        "亡灵卫兵密探，在龙喉营地上方。",
+    ["Borstan, in Orgrimmar."] =
+        "博斯坦，在奥格瑞玛。",
+    ["Muln Earthfury, on the Skywatcher Plateau, in the north-west of Mulgore."] =
+        "Muln Earthfury，在莫高雷西北部的Skywatcher Plateau。",
+    ["Nogg, in his machine shop in the Valley of Honor of Orgrimmar."] =
+        "诺格，在奥格瑞玛荣誉谷他的机械店里。",
+    ["Sovik, beside Nogg."] =
+        "索维克，在诺格旁边。",
+    ["Scooty's transponder sends you straight to Gnomeregan, far in Dun Morogh, and stays yours."] =
+        "斯库提的地精传送器会把你直接传送到遥远的丹莫罗的诺莫瑞根，而且传送器之后一直归你所有。",
+    ["Wait for Scooty to set up the transponder."] =
+        "等待斯库提设置好传送器。",
+    ["The transponder leaves you by the gates of Gnomeregan, in the west of Dun Morogh."] =
+        "传送器会把你送到丹莫罗西部的诺莫瑞根大门旁。",
+    ["Optional: an escort, turned in at Booty Bay; it rewards bracers or shoulders."] =
+        "可选：一个护送任务，在藏宝海湾交付；奖励护腕或护肩。",
+    ["The last boss, Mekgineer Thermaplugg, carries the code of his safe, set in the far wall of the Tinkers' Court next to the third pillar counting from the right."] =
+        "最终首领麦克尼尔·瑟玛普拉格身上有他保险箱的密码，保险箱嵌在工匠议会远端的墙上，在从右数第三根柱子旁边。",
+    ["Scooty, in Booty Bay."] =
+        "斯库提，在藏宝海湾。",
+    ["Nogg, in Orgrimmar."] =
+        "诺格，在奥格瑞玛。",
+    ["It opens Hearts of Zeal, a quest of the Scarlet Monastery."] =
+        "它开启“狂热之心”，这是血色修道院的一个任务。",
+    ["Auld Stonespire, in Thunder Bluff."] =
+        "奥尔德·石塔，在雷霆崖。",
+    ["Reward: cloth shoulders, a mail belt or a shield, and about 4,050 XP."] =
+        "奖励：一副布甲护肩、一条锁甲腰带或一面盾牌，以及约4050点经验。",
+    ["Rau Cliffrunner, at Freewind Post, in Thousand Needles."] =
+        "劳恩·峭壁行者，在千针石林的乱风岗。",
+    ["The kraul bats of the cave west of the bridges drop the guano."] =
+        "桥梁以西洞穴里的沼泽蝙蝠掉落粪便。",
+    ["Charlga may drop a small scroll: read it."] =
+        "卡尔加可能掉落一个小卷轴：阅读它。",
+    ["Willix the Importer waits in a tent below Charlga's platform."] =
+        "进口商威利克斯在卡尔加平台下方的一顶帐篷里等候。",
+    ["Master Apothecary Faranell, in Undercity."] =
+        "大药剂师法拉尼尔，在幽暗城。",
+    ["It opens An Unholy Alliance, a quest of Razorfen Downs."] =
+        "它开启“邪恶的盟友”，这是剃刀高地的一个任务。",
+    ["Doctor Martin Felben, in the Apothecarium of Undercity."] =
+        "马丁·费尔本，在幽暗城的炼金房。",
+    ["Reward: a wand or a cloak."] =
+        "奖励：一根魔杖或一件披风。",
+    ["Melisara and Magus Wordeen Voidglare, in Tarren Mill, in Hillsbrad Foothills."] =
+        "梅里萨拉和大法师沃迪恩·伍德格莱尔，在希尔斯布莱德丘陵的塔伦米尔。",
+    ["Tarren Mill's quests: The Grave Knight brings leather boots or mail bracers."] =
+        "塔伦米尔的任务：“The Grave Knight”奖励一双皮甲靴子或一副锁甲护腕。",
+    ["Reward: a staff or mail shoulders."] =
+        "奖励：一根法杖或一副锁甲护肩。",
+    ["Atrexis the Grave Knight, inside the city."] =
+        "Atrexis the Grave Knight，在城内。",
+    ["Six cracked sentry cores, from the fragmented sentries of the city."] =
+        "六个破裂的哨兵核心，来自城里的破碎哨兵。",
+    ["Magus Wordeen Voidglare and Melisara, in Tarren Mill."] =
+        "大法师沃迪恩·伍德格莱尔和梅里萨拉，在塔伦米尔。",
+    ["Doctor Martin Felben, in Undercity."] =
+        "马丁·费尔本，在幽暗城。",
+    ["Dorn Plainstalker, in Thousand Needles."] =
+        "多恩·平原行者，在千针石林。",
+    ["Optional: a chain of ten quests through Thousand Needles, Stonetalon, Ashenvale and Undercity, up to a book of the monastery; it ends with a mace or a wand and about 4,200 XP."] =
+        "可选：一条途经千针石林、石爪山脉、灰谷和幽暗城的十个任务的任务线，直到修道院里的一本书；最后奖励一把锤或一根魔杖，以及约4200点经验。",
+    ["Leap from the wooden planks over the canyon, in the west of Thousand Needles."] =
+        "在千针石林西部，从峡谷上方的木板上跳下去。",
+    ["Grenka Bloodscreech, a harpy of the west of Thousand Needles."] =
+        "格林卡·血啸，千针石林西部的一只鹰身人。",
+    ["Rok'Alim the Pounder, an elemental of the north-west of Thousand Needles."] =
+        "罗卡里姆，千针石林西北部的一个元素生物。",
+    ["Braug Dimspirit, in the east of Stonetalon Mountains."] =
+        "布劳格·幽魂，在石爪山脉东部。",
+    ["The Legacy of the Aspects, a book in the south-east of Ashenvale."] =
+        "巨龙的遗产，灰谷东南部的一本书。",
+    ["Braug Dimspirit, in Stonetalon."] =
+        "布劳格·幽魂，在石爪山脉。",
+    ["Braug Dimspirit asks a question: give him the right answer."] =
+        "布劳格·幽魂会问一个问题：给出正确的答案。",
+    ["Sage Truthseeker, in Thunder Bluff."] =
+        "圣者图希克，在雷霆崖。",
+    ["Reward: a shield or an off-hand orb, and about 3,550 XP."] =
+        "奖励：一面盾牌或一个副手宝珠，以及约3550点经验。",
+    ["Parqual Fintallas, in Undercity."] =
+        "帕科瓦·芬塔拉斯，在幽暗城。",
+    ["Reward: a sword, an off-hand cane or a necklace, and about 5,150 XP."] =
+        "奖励：一把剑、一根副手手杖或一条项链，以及约5150点经验。",
+    ["Master Apothecary Faranell, in the Apothecarium."] =
+        "大药剂师法拉尼尔，在炼金房。",
+    ["Graveyard: Vorrel Sengutz lies on a table on the right of the Chamber of Atonement, by Interrogator Vishas."] =
+        "墓地：沃瑞尔·森加斯躺在赎罪大厅右边的一张桌子上，就在审讯员韦沙斯旁边。",
+    ["Reward: a cloth cape or shoulders, or leather boots; the ring it asks for is in the Alterac Mountains."] =
+        "奖励：一件布甲披风或一副布甲护肩，或一双皮甲靴子；任务需要的戒指在奥特兰克山脉。",
+    ["Every Scarlet of the monastery may drop a heart."] =
+        "修道院里的每个血色十字军成员都可能掉落心脏。",
+    ["Library: the book rests on a table, in the first side room on the left as you walk the Gallery of Treasures."] =
+        "图书馆：书放在一张桌子上，在你走过珍宝陈列室时左手边的第一个侧室里。",
+    ["Library: the Compendium stands on a bookcase on the left wall at the entrance of the Athenaeum."] =
+        "图书馆：堕落者纲要在藏书馆入口处左墙的书架上。",
+    ["Parqual Fintallas asks a question: give him the right answer."] =
+        "帕科瓦·芬塔拉斯会问一个问题：给出正确的答案。",
+    ["Varimathras, in the Royal Quarter."] =
+        "瓦里玛萨斯，在皇家区。",
+    ["Nancy Vishas, an elite, keeps the ring in a house of the Alterac Mountains."] =
+        "南希·韦沙斯是一个精英，她把戒指放在奥特兰克山脉的一栋房子里。",
+    ["Monika Sengutz, in Tarren Mill, in Hillsbrad Foothills."] =
+        "莫尼卡·森古特斯，在希尔斯布莱德丘陵的塔伦米尔。",
+    ["Andrew Brownell, in Undercity."] =
+        "安德鲁·布隆奈尔，在幽暗城。",
+    ["Reward: a mace, a gun, a cloth robe or a leather chest."] =
+        "奖励：一把锤、一把枪、一件布甲长袍或一件皮甲胸甲。",
+    ["Ambassador Malcin walks among the quilboar outside the downs."] =
+        "玛克林大使在剃刀高地外面的野猪人之间走动。",
+    ["Patrick Garrett, in Undercity."] =
+        "帕特里克·加瑞特，在幽暗城。",
+    ["Dran Droffers, in the Drag of Orgrimmar."] =
+        "德兰·杜佛斯，在奥格瑞玛的暗巷区。",
+    ["Dran Droffers's chain goes back and forth between Orgrimmar, Kargath and Uldaman: it ends with a necklace and about 5,600 XP."] =
+        "德兰·杜佛斯的任务线在奥格瑞玛、卡加斯和奥达曼之间来回往返：最后奖励一条项链和约5600点经验。",
+    ["Jarkal Mossmeld, at Kargath, in the west of the Badlands."] =
+        "加卡尔，在荒芜之地西部的卡加斯。",
+    ["The tablet lies in an ancient chest by the gates of Uldaman, in the north of the Badlands."] =
+        "石板在荒芜之地北部奥达曼大门旁的一个古代储物箱里。",
+    ["The Shadowforge dwarves around the gates drop the power stones and the shattered necklace."] =
+        "大门周围的暗炉矮人掉落能量石和破碎的项链。",
+    ["The Garrett family chest stands in the dig west of Uldaman's gates."] =
+        "加勒特的宝箱在奥达曼大门以西的挖掘点里。",
+    ["Jarkal Mossmeld, at Kargath."] =
+        "加卡尔，在卡加斯。",
+    ["Dran Droffers, in Orgrimmar."] =
+        "德兰·杜佛斯，在奥格瑞玛。",
+    ["Magenta cap clusters grow on the cave walls, south-west of Uldaman's gates and inside."] =
+        "紫色蘑菇长在奥达曼大门西南的洞穴墙壁上，副本里面也有。",
+    ["The dungeon's door is at the back of the cave by the dig at Uldaman's gates."] =
+        "副本的入口在奥达曼大门处挖掘点旁那个洞穴的深处。",
+    ["A dead paladin rests just off the first great hall, down its second right-hand passage; then head out for Kargath."] =
+        "一位死去的圣骑士躺在第一个大厅旁边，沿右手边第二条通道下去就是；然后出发前往卡加斯。",
+    ["Enter Uldaman again"] =
+        "再次进入奥达曼",
+    ["The topaz is in a conspicuous urn south-east of Dig Two, the ruby in a stone chest north-west of Dig Three (it calls monsters), the sapphire on Grimlok at the end of the Stone Vault; Archaedas, the last boss, in the Hall of the Crafters, drops the power source."] =
+        "黄宝石在二号挖掘场东南的一个显眼的石罐里，红宝石在三号挖掘场西北的一个石箱里（会召唤怪物），蓝宝石在石窟尽头的格瑞姆洛克身上；最终首领阿扎达斯在工匠大厅，掉落能量源。",
+    ["Optional: the Discs of Norgannon, behind Archaedas, tell their story; it ends in Thunder Bluff with potions or a bag."] =
+        "可选：阿扎达斯身后的诺甘农圆盘会讲述它们的故事；这个任务在雷霆崖结束，奖励药水或一个背包。",
+    ["Bena Winterhoof, in Thunder Bluff."] =
+        "本娜·冰蹄，在雷霆崖。",
+    ["Venom bottles stand in the Witherbark trolls' camps of the south-west of the Hinterlands."] =
+        "毒液瓶放在辛特兰西南部枯木巨魔的营地里。",
+    ["Optional: a chain of six quests between the Hinterlands, Tarren Mill, Durotar and the city; it ends with a shield, a mail chest or a cloth robe."] =
+        "可选：一条在辛特兰、塔伦米尔、杜隆塔尔和这座城市之间的六个任务的任务线；最后奖励一面盾牌、一件锁甲胸甲或一件布甲长袍。",
+    ["Apothecary Lydon, in Tarren Mill, in Hillsbrad Foothills."] =
+        "药剂师林度恩，在希尔斯布莱德丘陵的塔伦米尔。",
+    ["The Witherbark broodguards, spiders of the Hinterlands' troll camps, carry the sacs."] =
+        "枯木巢穴守卫是辛特兰巨魔营地里的蜘蛛，身上有囊。",
+    ["Apothecary Lydon, in Tarren Mill."] =
+        "药剂师林度恩，在塔伦米尔。",
+    ["Master Gadrin, in Sen'jin Village, in Durotar."] =
+        "加德林大师，在杜隆塔尔的森金村。",
+    ["A tablet stands in the middle of the scarabs' chamber: read the spider god's name on it."] =
+        "圣甲虫房间的中央立着一块石板：读出上面蜘蛛之神的名字。",
+    ["Master Gadrin, in Sen'jin Village."] =
+        "加德林大师，在森金村。",
+    ["Defeat Shadra at her altar of Shadra'Alor, in the south-west of the Hinterlands, and take her venom."] =
+        "在辛特兰西南部沙德拉洛她的祭坛击败沙德拉，并取得她的毒液。",
+    ["Uthel'nay, in the Valley of Spirits of Orgrimmar."] =
+        "尤塞尔奈，在奥格瑞玛的精神谷。",
+    ["Vark Battlescar and Selendra, at Shadowprey Village, on the west coast of Desolace."] =
+        "瓦克·战痕和瑟琳德拉，在凄凉之地西海岸的葬影村。",
+    ["Shadowprey Village's two quests: a ring, plate gauntlets or a leather belt; then Theradras's end brings a sword, a staff or a bow."] =
+        "葬影村的两个任务：一枚戒指、一副板甲护手或一条皮甲腰带；然后终结瑟莱德丝可获得一把剑、一根法杖或一把弓。",
+    ["Vark Battlescar and Selendra, at Shadowprey Village."] =
+        "瓦克·战痕和瑟琳德拉，在葬影村。",
+    ["Uthel'nay, in Orgrimmar."] =
+        "尤塞尔奈，在奥格瑞玛。",
+    ["Fel'zerul, in Stonard, in the Swamp of Sorrows."] =
+        "费泽鲁尔，在悲伤沼泽的斯通纳德。",
+    ["Fel'zerul's chain goes to the Hinterlands and back: it opens The Temple of Atal'Hakkar, a talisman and about 5,900 XP."] =
+        "费泽鲁尔的任务线要去辛特兰再回来：它开启“阿塔哈卡神庙”，奖励一个护符和约5900点经验。",
+    ["The Atal'ai artifacts lie in the ruins around the Pool of Tears, in the east of the swamp."] =
+        "阿塔莱神器散落在沼泽东部泪水之池周围的废墟中。",
+    ["Fel'zerul, in Stonard."] =
+        "费泽鲁尔，在斯通纳德。",
+    ["Jammal'an the Prophet: cloth leggings or a mail helm, and about 6,550 XP."] =
+        "“预言者迦玛兰”：一条布甲护腿或一顶锁甲头盔，以及约6550点经验。",
+    ["Witch Doctor Uzer'i, at Camp Mojache, in Feralas."] =
+        "巫医尤克里，在菲拉斯的莫沙彻营地。",
+    ["Larion, at Marshal's Refuge, in Un'Goro Crater."] =
+        "拉瑞安，在安戈洛环形山的马绍尔营地。",
+    ["Larion's chain leads to the temple's haze; its end brings a bloodpetal zapper."] =
+        "拉瑞安的任务线会引向神庙里的阿塔莱之雾；最后奖励血瓣花除草器。",
+    ["The bloodpetal plants of Un'Goro."] =
+        "安戈洛的血瓣花植物。",
+    ["Liv Rizzlefix, in Ratchet."] =
+        "莉芙·雷兹菲克斯，在棘齿城。",
+    ["Every Atal'ai troll of the temple may drop a fetish."] =
+        "神庙里的每个阿塔莱巨魔都可能掉落神像。",
+    ["Apothecary Zinge, in the Apothecarium of Undercity."] =
+        "药剂师金格，在幽暗城的炼金房。",
+    ["Optional: a lead from Undercity to Vivian Lagrave, at Kargath."] =
+        "可选：一条从幽暗城通往卡加斯的薇薇安·拉格雷的线索。",
+    ["Shadowmage Vivian Lagrave, at Kargath, in the west of the Badlands."] =
+        "暗法师薇薇安·拉格雷，在荒芜之地西部的卡加斯。",
+    ["Shadowmage Vivian Lagrave, at Kargath."] =
+        "暗法师薇薇安·拉格雷，在卡加斯。",
+    ["Reward: a two-handed axe, a mace or potions."] =
+        "奖励：一把双手斧、一把锤或药水。",
+    ["Thunderheart, at Kargath."] =
+        "桑德哈特，在卡加斯。",
+    ["Thunderheart's chain: Disharmony of Fire brings armor of any kind, and opens Commander Gor'shak and The Last Element."] =
+        "桑德哈特的任务线：“不和谐的火焰”奖励任意类型的护甲，并开启“指挥官哥沙克”和“最后的元素”。",
+    ["Hierophant Theodora Mulvadania, at Kargath."] =
+        "塞朵拉·穆瓦丹尼，在卡加斯。",
+    ["The Rise of the Machines ends inside the depths with armor of any kind, and about 6,200 XP."] =
+        "“机器的崛起”在深渊里结束，奖励任意类型的护甲和约6200点经验。",
+    ["The WANTED poster, at Kargath."] =
+        "通缉告示，在卡加斯。",
+    ["The wanted posters lead to General Angerforge, and a medallion."] =
+        "通缉告示会引向安格弗将军，并奖励一枚奖章。",
+    ["The war reavers and obsidian elementals of the Badlands drop the shards."] =
+        "荒芜之地的战争掠夺者和黑曜石元素掉落碎片。",
+    ["Lotwil Veriatus, in the west of the Badlands."] =
+        "鲁特维尔·沃拉图斯，在荒芜之地西部。",
+    ["Galamav the Marksman, at Kargath."] =
+        "神射手贾拉玛弗，在卡加斯。",
+    ["Commander Gor'shak's chain leads to Thrall, the emperor and the princess: about 9,950 XP at its end, and Thrall's reward."] =
+        "指挥官哥沙克的任务线会引向萨尔、大帝和公主：最后约9950点经验，以及萨尔的奖励。",
+    ["Blackrock Mountain opens in the south of the Searing Gorge; inside, the depths' door is at the bottom of the mountain."] =
+        "黑石山的入口在灼热峡谷南部；进去后，深渊的入口在山的底部。",
+    ["High Interrogator Gerstahn, in a back room on the right of the Detention Block, carries the cell key; Commander Gor'shak sits in the first cell on the left of the tunnel."] =
+        "审讯官格斯塔恩在禁闭室右边的一个后屋里，身上有牢房钥匙；指挥官哥沙克坐在通道左边的第一间牢房里。",
+    ["Defend Gor'shak against two waves of guards."] =
+        "保护哥沙克，抵御两波守卫。",
+    ["Talk to Kharan Mighthammer, in the first cell on the left across the hallway."] =
+        "与走廊对面左边第一间牢房里的卡兰·巨锤交谈。",
+    ["The Anvilrage guardsmen, wardens and footmen of the Detention Block and the halls."] =
+        "禁闭室和各个大厅里的铁怒卫士、铁怒狱卒和铁怒步兵。",
+    ["Lord Incendius waits at the Black Anvil, in Shadowforge City: he carries the Tablet of Kurniya."] =
+        "伊森迪奥斯在暗炉城的黑铁砧处等候：他身上有库尔尼亚石板。",
+    ["Golem Lord Argelmach waits in the Manufactory; his golems and constructs drop the cores and the essences."] =
+        "傀儡统帅阿格曼奇在制造厂等候；他的傀儡和构造体掉落核心和精华。",
+    ["Warlord Goretooth, at Kargath."] =
+        "军官高图斯，在卡加斯。",
+    ["The KILL ON SIGHT poster, at Kargath."] =
+        "格杀勿论告示，在卡加斯。",
+    ["Thrall, in Grommash Hold, in Orgrimmar."] =
+        "萨尔，在奥格瑞玛的格罗玛什要塞。",
+    ["The Anvilrage medics, soldiers and officers of the halls."] =
+        "各个大厅里的铁怒医师、铁怒士兵和铁怒军官。",
+    ["Warlord Goretooth, then Lexlort, at Kargath."] =
+        "军官高图斯，然后是雷克斯洛特，在卡加斯。",
+    ["Grark Lorkrub, held in the Blackrock Stronghold of the Burning Steppes."] =
+        "格拉克·洛克鲁布，被关押在燃烧平原的黑石要塞。",
+    ["Optional: an escort in the Burning Steppes, then a third visit for General Angerforge: a medallion and about 7,750 XP."] =
+        "可选：燃烧平原的一个护送任务，然后第三次进入深渊对付安格弗将军：一枚奖章和约7750点经验。",
+    ["Bind Grark Lorkrub with the shackles and lead him through Blackrock Mountain to the Searing Gorge."] =
+        "用镣铐锁住格拉克·洛克鲁布，带他穿过黑石山前往灼热峡谷。",
+    ["Lexlort, then Warlord Goretooth, at Kargath."] =
+        "雷克斯洛特，然后是军官高图斯，在卡加斯。",
+    ["Enter Blackrock Depths a third time"] =
+        "第三次进入黑石深渊",
+    ["General Angerforge waits down the stairs of the West Garrison."] =
+        "安格弗将军在西部要塞的楼梯下等候。",
+    ["Galamav the Marksman, at Kargath, in the west of the Badlands."] =
+        "神射手贾拉玛弗，在荒芜之地西部的卡加斯。",
+    ["Lexlort, at Kargath."] =
+        "雷克斯洛特，在卡加斯。",
+    ["Lexlort's chain: Bijou's report brings cloth gloves or a mail belt."] =
+        "雷克斯洛特的任务线：比修的报告奖励一副布甲手套或一条锁甲腰带。",
+    ["Reward: armor of any kind, for the spire's three generals and their documents."] =
+        "奖励：任意类型的护甲，需要击败黑石塔的三名将领并取得他们的文件。",
+    ["Blackrock Mountain opens in the south of the Searing Gorge; inside, the spire's door is at the top of the mountain."] =
+        "黑石山的入口在灼热峡谷南部；进去后，黑石塔的入口在山的顶部。",
+    ["Highlord Omokk, north of Mok'Doom; War Master Voone, at the bottom of Tazz'Alaor; Overlord Wyrmthalak, the last boss, in the Chamber of Battle. The documents lie in one of their rooms, or by Urok's tribute pile."] =
+        "欧莫克大王，在莫克杜姆北边；指挥官沃恩，在塔兹拉尔底部；维姆萨拉克，最终首领，在战斗大厅。文件在他们其中一人的房间里，或在乌洛克的贡品堆旁。",
+    ["Galamav the Marksman, Lexlort and Warlord Goretooth, at Kargath."] =
+        "神射手贾拉玛弗、雷克斯洛特和军官高图斯，在卡加斯。",
+    ["A herald of your capital: Harbinger Balthazad, Warcaller Gorlach or Bluff Runner Windstrider."] =
+        "你所在主城的传令官：预言者巴萨扎德、公告员高拉克或雷霆崖信使斯塔德尔。",
+    ["Optional: a lead to Camp Mojache, about 1,500 XP."] =
+        "可选：一条通往莫沙彻营地的线索，约1500点经验。",
+    ["Talo Thornhoof, at Camp Mojache, in Feralas."] =
+        "塔罗·刺蹄，在菲拉斯的莫沙彻营地。",
+    ["Talo Thornhoof and Sage Korolusk, at Camp Mojache."] =
+        "塔罗·刺蹄和先知科鲁拉克，在莫沙彻营地。",
+    ["Talo Thornhoof, at Camp Mojache."] =
+        "塔罗·刺蹄，在莫沙彻营地。",
+    ["Sage Korolusk, at Camp Mojache."] =
+        "先知科鲁拉克，在莫沙彻营地。",
+    ["Harbinger Balthazad, in the Valley of Honor of Orgrimmar."] =
+        "预言者巴萨扎德，在奥格瑞玛的荣誉谷。",
+    ["High Executor Derrington, at the Bulwark, in the Western Plaguelands."] =
+        "高级执行官德灵顿，在西瘟疫之地的亡灵壁垒。",
+    ["Burn the Scarlet command tent between Felstone Field and Dalson's Tears, and plant the Scourge banner there."] =
+        "烧掉费尔斯通农场和达尔松之泪之间的血色十字军指挥帐篷，并在那里插上天灾战旗。",
+    ["Apothecary Dithers, at the Bulwark."] =
+        "药剂师迪瑟斯，在亡灵壁垒。",
+    ["Apothecary Dithers, at the Bulwark, in the Western Plaguelands."] =
+        "药剂师迪瑟斯，在西瘟疫之地的亡灵壁垒。",
+    ["Alexi Barov, at the Bulwark."] =
+        "阿莱克斯·巴罗夫，在亡灵壁垒。",
+    ["The Barov fortune: four deeds inside the school; its follow-up sends you to kill Weldon Barov in the Alliance's Chillwind Camp."] =
+        "巴罗夫家族的财产：学院里的四张地契；后续任务会派你去联盟的冰风岗击杀维尔顿·巴罗夫。",
+    ["Weldon Barov stands among the guards of Chillwind Camp, the Alliance's camp in the west of the Western Plaguelands."] =
+        "维尔顿·巴罗夫站在冰风岗的守卫之间，那是联盟在西瘟疫之地西部的营地。",
+    ["Nathanos Blightcaller, at Marris Stead, in the south-west of the Eastern Plaguelands."] =
+        "纳萨诺斯·凋零者，在东瘟疫之地西南部的马瑞斯农场。",
+    ["Optional: Nathanos Blightcaller's chain in the Eastern Plaguelands, up to Ramstein the Gorger inside the city: about 6,600 XP at its end."] =
+        "可选：纳萨诺斯·凋零者在东瘟疫之地的任务线，一直到城里的吞咽者拉姆斯登：最后约6600点经验。",
+    ["Corin's Crossing, to the east: collect the living rot in ten minutes, then grind it with the mortar."] =
+        "东边的考林路口：在十分钟内收集生命腐质，然后用研钵把它磨碎。",
+    ["The plaguebats of the Eastern Plaguelands."] =
+        "东瘟疫之地的瘟疫蝙蝠。",
+    ["The Quel'Thalas Registry lies in the Quel'Lithien lodge, on the northern border."] =
+        "奎尔萨拉斯名册在北部边境的奎尔林斯小屋里。",
+    ["Duskwing, a bat, roams the country; Borelgore walks the northern wastes."] =
+        "暗翼蝠是一只蝙蝠，在这片地区游荡；淤血虫在北部荒野中走动。",
+    ["Ramstein the Gorger comes into Slaughter Square once it is cleared."] =
+        "屠宰广场被清空后，吞咽者拉姆斯登会进入那里。",
+    ["Nathanos Blightcaller, at Marris Stead."] =
+        "纳萨诺斯·凋零者，在马瑞斯农场。",
 }
