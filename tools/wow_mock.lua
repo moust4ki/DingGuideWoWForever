@@ -36,11 +36,15 @@ return function(opts)
         "SetCheckedTexture", "UnregisterEvent", "SetBlendMode",
         "SetOrientation", "SetThumbTexture", "SetValueStep", "SetObeyStepOnDrag", "EnableMouseWheel",
         "RegisterForClicks", "EnableGamePadButton", "EnableKeyboard",
-        "SetPropagateKeyboardInput", "SetShadowOffset", "SetShadowColor", "SetSpacing", "AddMaskTexture" }) do
+        "SetShadowOffset", "SetShadowColor", "SetSpacing", "AddMaskTexture" }) do
         Methods[m] = noop
     end
     -- Kept for the layout tests (tools/layout.lua) and the windows kept on the screen.
     function Methods:SetJustifyH(justify) self.justifyH = justify end
+    -- The client lets a key or a gamepad button go on past a frame that read it when the frame
+    -- propagates its input as its handler ends (off by default); a handler's return value is not
+    -- read.
+    function Methods:SetPropagateKeyboardInput(v) self.propagateKeyboard = v and true or false end
     function Methods:SetClampedToScreen(v) self.clamped = v and true or false end
     function Methods:SetVertexColor(r, g, b, a)
         assert(type(r) == "number" and type(g) == "number" and type(b) == "number", "SetVertexColor(r, g, b[, a])")
@@ -1824,7 +1828,8 @@ return function(opts)
         if not f then return end
         if mods then modifiers = mods end
         padHeld[button] = true
-        if f.scripts.OnGamePadButtonDown(f, button) ~= false then
+        f.scripts.OnGamePadButtonDown(f, button)
+        if f.propagateKeyboard then
             problem("the capture lets " .. button .. " through to the game")
         end
         flush()
@@ -1835,7 +1840,8 @@ return function(opts)
         padHeld[button] = nil
         local f = _G.DingCaptureFrame
         if f and f:IsShown() then
-            if f.scripts.OnGamePadButtonUp(f, button) ~= false then
+            f.scripts.OnGamePadButtonUp(f, button)
+            if f.propagateKeyboard then
                 problem("the capture lets " .. button .. " through to the game")
             end
         else
@@ -1853,8 +1859,9 @@ return function(opts)
     end
 
     -- The client's way with a gamepad button in play: the shown frames that take the gamepad's
-    -- buttons first (Ding's capture first, then its window and chord frames: a handler returning
-    -- false keeps the press, and its release comes back to that frame), then the override
+    -- buttons first (Ding's capture first, then its window and chord frames: a frame that does not
+    -- propagate its input as its handler ends keeps the press, and its release comes back to
+    -- that frame), then the override
     -- bindings (Ding's own clicks, then the others' commands), the game's gamepad interface's
     -- (while it is on), the saved ones. H.fired(): the commands the game ran for them;
     -- H.firedUp(): the commands that got a release (the binding in place when it is released).
@@ -1885,7 +1892,8 @@ return function(opts)
     local function gamepadDown(button)
         padHeld[button] = true
         for _, f in ipairs(padFrames()) do
-            if f.scripts.OnGamePadButtonDown(f, button) == false then
+            f.scripts.OnGamePadButtonDown(f, button)
+            if not f.propagateKeyboard then
                 padTaker[button] = f
                 flush()
                 return

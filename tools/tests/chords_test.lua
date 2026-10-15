@@ -89,6 +89,29 @@ T.test("LB held + Up runs the action once, the game's Up does not; Up alone goes
     T.ok(fired(BAR.PADDDOWN), "Down kept from the game while LB is held")
 end)
 
+-- Reported 15/10/2026: with RB held (RB + Up, the default chord) the game's own combinations
+-- died: LB + RB + Right / Left (the action bar's pages), LB + RB + Down (the chat). The frame
+-- that watches for the chord's second button kept every button: the client reads its input
+-- propagation, never a handler's return value.
+T.test("RB held for a chord: every other button still reaches the game", function()
+    start()
+    H.setGamepadInterface(true, { PADRSHOULDER = "GAMEPADRIGHTTARGETMODIFIER", PADLSHOULDER = "GAMEPADLEFTTARGETMODIFIER",
+        PADDRIGHT = "NEXTACTIONPAGE", PADDLEFT = "PREVIOUSACTIONPAGE", PADDDOWN = "OPENCHAT", PADDUP = "GAMEPADACTIONBUTTON5" })
+    Ding.db.chords.DING_CONFIG = "PADRSHOULDER+PADDUP"
+    H.gamepadDown("PADRSHOULDER"); H.tick(0.1)
+    T.ok(chordInputOn(), "premise: the chord frame reads the gamepad while RB is held")
+    H.gamepadDown("PADLSHOULDER"); H.tick(0.1)
+    H.gamepadPress("PADDRIGHT"); H.tick(0.1)
+    H.gamepadPress("PADDLEFT"); H.tick(0.1)
+    H.gamepadPress("PADDDOWN"); H.tick(0.1)
+    H.gamepadUp("PADLSHOULDER"); H.gamepadUp("PADRSHOULDER"); H.tick(0.1)
+    T.ok(fired("GAMEPADLEFTTARGETMODIFIER"), "LB kept from the game while RB is held")
+    T.ok(fired("NEXTACTIONPAGE") and fired("PREVIOUSACTIONPAGE"), "the action bar's pages kept from the game")
+    T.ok(fired("OPENCHAT"), "the chat's combination kept from the game")
+    T.ok(not (Cfg.frame and Cfg.frame:IsShown()), "the settings opened without Up")
+    if Cfg.frame and Cfg.frame:IsShown() then Cfg:Close() end
+end)
+
 T.test("RB + Up (the default) opens the settings; while a Ding window is open chords do nothing", function()
     start()
     Ding.db.ui.configChordDone, Ding.db.ui.configKeyDone = nil, nil
