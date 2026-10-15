@@ -30,7 +30,7 @@ Ding.RegisterGuide({
           why = { text = "From level 10: the chain that teaches Defensive Stance.", short = true },
           note = "Granis Swiftaxe, the warrior trainer of Kharanos." },
         { turnin = 1679, accept = 1678, races = { "Dwarf", "Gnome" },
-          note = "Muren Stormpike, upstairs in the Hall of Arms of Ironforge." },
+          floor = "up", note = "Muren Stormpike, upstairs in the Hall of Arms of Ironforge." },
         { complete = 1678, races = { "Dwarf", "Gnome" },
           note = "Vejrek waits in a Frostmane hut in the west of Dun Morogh." },
         { turnin = 1678, races = { "Dwarf", "Gnome" },

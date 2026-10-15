@@ -58,7 +58,7 @@ Ding.RegisterGuide({
         { complete = 8234,
           note = "The Timbermaw shamans of northern Azshara carry the bag." },
         { turnin = 8234, accept = 8235,
-          note = "Archmage Xylem, at the top of his tower in Azshara: Sanath Lim-yo, at its foot, sends you up." },
+          floor = "top", note = "Archmage Xylem, at the top of his tower in Azshara: Sanath Lim-yo, at its foot, sends you up." },
         { complete = 8235,
           note = "The Forest Oozes of northeastern Azshara carry the fragments." },
         { turnin = 8235 },
