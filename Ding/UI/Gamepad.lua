@@ -601,6 +601,17 @@ end
 -- Frames of Ding's reading the gamepad first: a window's, a chord's (below).
 local padInput, chordInput
 
+-- Whether the button a frame of Ding's just read goes on to the game: the client reads the
+-- frame's keyboard propagation (SetPropagateKeyboardInput, the gamepad's buttons included) as
+-- its handler ends, never the handler's return value. Without it every button was kept: with
+-- RB held (the first button of RB + Up) the game's own combinations died, LB + RB + Left /
+-- Right (action bar pages) or + Down (the chat) included (reported 15/10/2026). Out of combat
+-- only: the client refuses the change in a fight (the frames are then as they were set).
+local function passOn(frame, pass)
+    if not frame or not frame.SetPropagateKeyboardInput or InCombatLockdown() then return end
+    pcall(frame.SetPropagateKeyboardInput, frame, pass and true or false)
+end
+
 -- A button already down when a window takes the gamepad, whose press went to the game (RB of
 -- the RB + Up chord that opened it), stays the game's until it is released: its release goes to
 -- the binding in place then, and must reach the one that got its press (reported: the game kept
@@ -664,16 +675,22 @@ end
 local function onWindowPress(button)
     if not G.owner or G:IsCapturing() or not (G.keySet and G.keySet[button]) or G.redirected[button]
         or G.heldKeys[button] then
+        passOn(padInput, true)
         return true
     end
     padInput.eaten[button] = true
+    passOn(padInput, false)
     G:Dispatch(button, true)
     return false
 end
 
 local function onWindowRelease(button)
-    if not padInput.eaten[button] then return true end
+    if not padInput.eaten[button] then
+        passOn(padInput, true)
+        return true
+    end
     padInput.eaten[button] = nil
+    passOn(padInput, false)
     G:Dispatch(button, false)
     return false
 end
@@ -690,6 +707,7 @@ local function setPadInput(on)
         pcall(padInput.SetScript, padInput, "OnGamePadButtonUp", function(_, button) return onWindowRelease(button) end)
     end
     padInput.eaten = {}
+    passOn(padInput, true)
     padInput:SetShown(on)
     if padInput.EnableGamePadButton then pcall(padInput.EnableGamePadButton, padInput, on) end
 end
@@ -746,21 +764,28 @@ local function runChord(action, key)
 end
 
 local function onChordPress(button)
-    if not chordsFree() then return true end
-    for action, key in pairs(Ding.db and Ding.db.chords or {}) do
-        local hold, press = chordParts(key)
-        if press == button and hold ~= button and buttonDown(hold) then
-            chordInput.eaten[button] = true
-            runChord(action, key)
-            return false
+    if chordsFree() then
+        for action, key in pairs(Ding.db and Ding.db.chords or {}) do
+            local hold, press = chordParts(key)
+            if press == button and hold ~= button and buttonDown(hold) then
+                chordInput.eaten[button] = true
+                passOn(chordInput, false)
+                runChord(action, key)
+                return false
+            end
         end
     end
+    passOn(chordInput, true)
     return true
 end
 
 local function onChordRelease(button)
-    if not chordInput.eaten[button] then return true end
+    if not chordInput.eaten[button] then
+        passOn(chordInput, true)
+        return true
+    end
     chordInput.eaten[button] = nil
+    passOn(chordInput, false)
     return false
 end
 
@@ -781,6 +806,7 @@ local function setChordInput(on, force)
     -- A second button kept from the game: its release comes back to this frame first.
     if not on and next(chordInput.eaten) and not force then return end
     if not on then chordInput.eaten = {} end
+    passOn(chordInput, true)
     chordInput:SetShown(on)
     if chordInput.EnableGamePadButton then pcall(chordInput.EnableGamePadButton, chordInput, on) end
 end
