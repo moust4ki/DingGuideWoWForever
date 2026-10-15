@@ -19,10 +19,6 @@ Nothing else to install: QuestieDB is no longer needed, and TomTom stays optiona
   Raids, the Upper Spire and the level 60 armor-set chains are not in the pack.
 - A step that takes you to a dungeon's entrance now passes once you are inside: the game gives
   no position in a dungeon, and the step stayed on screen for the whole run.
-- Gamepad: while you hold the first button of one of Ding's combinations (RB of RB + Up), the
-  game's own combinations work again: LB + RB + Left / Right (the action bar's pages), LB + RB +
-  Down (the chat)... Ding kept every button while it waited for the second one. With a Ding
-  window open, the buttons the window does not use go on to the game too.
 - "Take this guide up where I am" keeps your place: it stops only on a quest of your log still
   to finish or a quest of the route you never took. With "Elite quests" turned on, it used to
   send you back to the first elite quest of the section.
@@ -35,6 +31,15 @@ Nothing else to install: QuestieDB is no longer needed, and TomTom stays optiona
 - The aids are on for a new install: the quest marks and counters above the monsters, the line
   in their tooltip, and enemy nameplates shown farther. The game hides the enemy nameplates
   until you press V: Ding shows them once so that its counters appear, and says so in the chat.
+
+## v1.6.1
+
+Nothing else to install: QuestieDB is no longer needed, and TomTom stays optional.
+
+- Gamepad: while you hold the first button of one of Ding's combinations (RB of RB + Up), the
+  game's own combinations work again: LB + RB + Left / Right (the action bar's pages), LB + RB +
+  Down (the chat)... Ding kept every button while it waited for the second one. With a Ding
+  window open, the buttons the window does not use go on to the game too.
 
 ## v1.6.0
 
