@@ -632,6 +632,21 @@ end
 ---------------------------------------------------------------------------
 local ID_KINDS = { quests = true, items = true, npcs = true, objects = true }
 
+-- A step as written in a guide; `without`: keys left out.
+local function exportStep(step, without)
+    local s = {}
+    for key, v in pairs(step) do
+        local kind = not (without and without[key]) and STEP_KEYS[key] or nil
+        -- One id alone, as guides are written (the registry made it a list).
+        if ID_KINDS[kind] and type(v) == "table" and #v == 1 and type(v[1]) == "number" then
+            s[key] = v[1]
+        elseif kind then
+            s[key] = copy(v)
+        end
+    end
+    return s
+end
+
 local function exportGuide(guide, pack, inPack)
     local out = {}
     for _, key in ipairs({ "id", "title", "faction", "races", "classes", "minLevel", "maxLevel", "next" }) do
@@ -639,20 +654,15 @@ local function exportGuide(guide, pack, inPack)
     end
     if not inPack and pack and pack.category and pack.category ~= "leveling" then out.category = pack.category end
     out.steps = {}
-    for i, step in ipairs(guide.steps) do
-        local s = {}
-        for key, v in pairs(step) do
-            local kind = STEP_KEYS[key]
-            -- One id alone, as guides are written (the registry made it a list).
-            if ID_KINDS[kind] and type(v) == "table" and #v == 1 and type(v[1]) == "number" then
-                s[key] = v[1]
-            elseif kind then
-                s[key] = copy(v)
-            end
-        end
-        out.steps[i] = s
-    end
+    for i, step in ipairs(guide.steps) do out.steps[i] = exportStep(step) end
     return out
+end
+
+-- A step's keys on one line, as a guide writes them, without its texts (text, note, why):
+-- "{ turnin = 783, accept = 7, go = { 1429, 48.2, 41.6 } }" (the bug reports: Core/Report.lua).
+local PROSE = { text = true, note = true, why = true }
+function I:StepText(step)
+    return Text.Write(exportStep(step, PROSE), { inline = true, order = STEP_ORDER })
 end
 
 -- A pack (by its id) or a guide (by its id; the active one by default) as text, in full or

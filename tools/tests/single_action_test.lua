@@ -3,12 +3,13 @@
 -- button). With a gamepad, a button carries its chips (A on the focused one, B on the one
 -- that closes, Y where a button selects) and the hint bar keeps only what has no button;
 -- without one, the buttons alone and the mouse help. Checked in every window with a hint bar
--- (import / export, settings, move mode, the NPC directory), gamepad plugged in and not, while
--- it is plugged in or out, and in every language (buttons and hints fit).
+-- (import / export, settings, move mode, the NPC directory, report a problem), gamepad plugged
+-- in and not, while it is plugged in or out, and in every language (buttons and hints fit).
 local tools = (arg[0]:match("^(.*)[/\\]") or ".") .. "/.."
 local T = dofile(tools .. "/testlib.lua")(arg[1])
 local Ding, H = T.Ding, T.H
 local Cfg, G, W, F, L = Ding.Config, Ding.Gamepad, Ding.ImportWindow, Ding.Finder, Ding.L
+local Rep = Ding.ReportWindow
 local root = tools .. "/.."
 
 local GUIDE = [[{ id = "t-once", title = "Once", minLevel = 1, maxLevel = 10,
@@ -24,6 +25,7 @@ local function closeAll()
     if G:IsMoving() then G:CancelMove() end
     if W.frame then W:Close() end
     if F.frame then F:Close() end
+    Rep:Close()
     Cfg:Close()
     H.flush()
 end
@@ -368,6 +370,62 @@ T.test("NPC directory: A on the focused row, B on the cross or the list's title,
 end)
 
 ---------------------------------------------------------------------------
+-- Report a problem
+---------------------------------------------------------------------------
+-- What carries a chip: the reasons, the box's title, the buttons, B by the close cross.
+local function reportButtons()
+    local f, out = Rep.frame, {}
+    for i, b in ipairs(f.buttons) do
+        if b:IsShown() then out[#out + 1] = { label = Rep.actions[i].label, keys = chipsOn(b), button = b } end
+    end
+    for _, r in ipairs(f.reasons) do
+        out[#out + 1] = { label = r.label:GetText(), keys = r.key:IsShown() and { [r.key.key or "PAD1"] = true } or {} }
+    end
+    out[#out + 1] = { keys = f.commentKey:IsShown() and { PAD1 = true } or {} }
+    out[#out + 1] = { keys = f.back:IsShown() and { PAD2 = true } or {} }
+    return out
+end
+
+-- With a gamepad each key shows once (A where the focus is, B by the cross, Y on Select the
+-- text), no hint; without one, no chip and the mouse help. The buttons fit beside the help.
+local function checkReport(where)
+    local f = Rep.frame
+    local buttons = reportButtons()
+    if G:Active() then
+        local count = {}
+        for _, b in ipairs(buttons) do
+            for key in pairs(b.keys) do count[key] = (count[key] or 0) + 1 end
+        end
+        T.eq(count.PAD1, 1, where .. ": A")
+        T.eq(count.PAD2, 1, where .. ": B")
+        T.eq(count.PAD4, Rep.page == "done" and 1 or nil, where .. ": Y")
+        T.eq(#hintsOf(f.hints), 0, where .. ": a hint with a gamepad")
+    else
+        mouseOnly(where, f.hints, buttons)
+    end
+    T.eq(f.hints.shown, #f.hints.list, where .. ": a hint left out")
+end
+
+T.test("report a problem: A where the focus is, Y on Select the text, B by the cross; the mouse help without", function()
+    start()
+    Rep:Open(); H.flush()
+    checkReport("report")
+    for _ = 1, #Rep:Stops() do
+        H.press("PADDDOWN")
+        checkReport("report, focus on " .. Rep.focus)
+    end
+    -- A on a reason goes on to Create the text, A there makes it.
+    H.press("PAD1"); H.press("PAD1"); H.flush()
+    T.eq(Rep.page, "done", "A on Create the text")
+    checkReport("report's text")
+    H.press("PADDRIGHT")
+    checkReport("report's text, the link's button focused")
+    pad(false)
+    checkReport("report's text, unplugged")
+    closeAll()
+end)
+
+---------------------------------------------------------------------------
 -- Every language: the buttons, their chips and the hints fit
 ---------------------------------------------------------------------------
 local function loadStrings(name)
@@ -424,6 +482,11 @@ T.test("every language: import, export, settings buttons and move mode fit, game
             closeAll()
             startMove()
             checkPlate(where .. ", move")
+            closeAll()
+            Rep:Open(); H.flush()
+            checkReport(where .. ", report")
+            Rep:Make(); H.flush()
+            checkReport(where .. ", report's text")
             closeAll()
         end
     end

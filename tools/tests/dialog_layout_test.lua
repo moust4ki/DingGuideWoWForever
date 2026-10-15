@@ -1,5 +1,5 @@
 -- Ding's dialog windows (the NPC directory, the settings, the setup assistant, import /
--- export): on every row, in every language, gamepad on and off, nothing overlaps (the A chip, a
+-- export, report a problem): on every row, in every language, gamepad on and off, nothing overlaps (the A chip, a
 -- time, a caret, a value, a text) and nothing leaves its row (tools/layout.lua places the
 -- mocked widgets); the sizes the windows share (UI.SIZE, a little denser than the design's
 -- first handoff at the user's request); their size setting (Appearance tab, 60 % to 120 %,
@@ -10,7 +10,7 @@ local T = dofile(tools .. "/testlib.lua")(arg[1], { locale = "enUS" })
 local Layout = dofile(tools .. "/layout.lua")
 local Ding, H = T.Ding, T.H
 local UI, L = Ding.UI, Ding.L
-local F, Cfg, S, W = Ding.Finder, Ding.Config, Ding.Setup, Ding.ImportWindow
+local F, Cfg, S, W, Rep = Ding.Finder, Ding.Config, Ding.Setup, Ding.ImportWindow, Ding.ReportWindow
 
 Ding.RegisterGuide({ id = "t-layout", title = "Layout", steps = {
     { accept = 456 },
@@ -25,6 +25,7 @@ end
 
 local function closeAll()
     if W.frame then W:Close() end
+    if Rep.frame then Rep:Close() end
     if F.frame then F:Close() end
     if S:IsShown() then S:Close(true) end
     Cfg:Close()
@@ -227,6 +228,48 @@ T.test("setup assistant, every language, gamepad and mouse: nothing overlaps on 
 end)
 
 ---------------------------------------------------------------------------
+-- Report a problem
+---------------------------------------------------------------------------
+-- Both pages: every text and box inside the window, none over another (the texts wrap whole,
+-- the window grows with them), each reason's ring, words and A chip on its row, the buttons
+-- and the footer's help apart; with each stop focused in turn.
+local function checkReport(where, problems)
+    Rep:Open(); H.flush()
+    local f = Rep.frame
+    for page = 1, 2 do
+        for i = 1, #Rep:Stops() do
+            Rep:SetFocus(i)
+            local parts = { title = f.title, back = f.back, close = f.close, hints = f.hints }
+            for n, b in ipairs(f.buttons) do parts["button " .. n] = b end
+            if page == 1 then
+                parts.intro, parts.contains, parts.what = f.intro, f.containsTitle, f.whatTitle
+                parts.commentTitle, parts.commentKey, parts.comment = f.commentTitle, f.commentKey, f.comment
+                parts.status = f.formStatus
+                for n, fs in ipairs(f.parts) do parts["part " .. n] = fs end
+                for n, r in ipairs(f.reasons) do
+                    parts["reason " .. n] = r
+                    report(problems, where, ("reason %d %q (focus on %d)"):format(n, r.label:GetText() or "", i),
+                        Layout.check(r, { ring = r.ring, label = r.label, A = r.key }))
+                end
+            else
+                parts.copy, parts.clipboard, parts.text = f.copy, f.clipboard, f.text
+                parts.paste, parts.link, parts.saved = f.paste, f.link, f.saved
+            end
+            report(problems, where, ("page %d, focus on %d"):format(page, i), Layout.check(f, parts))
+        end
+        if page == 1 then Rep:Make(); H.flush() end
+    end
+    Rep:Close(); H.flush()
+end
+
+T.test("report a problem, every language, gamepad and mouse: nothing overlaps, nothing leaves the window", function()
+    start()
+    local problems = {}
+    everyLanguage(function(where) checkReport(where, problems) end)
+    none(problems, "overlaps in the report window")
+end)
+
+---------------------------------------------------------------------------
 -- Shared sizes
 ---------------------------------------------------------------------------
 T.test("the windows share their sizes, a little denser than the design's first handoff", function()
@@ -292,6 +335,7 @@ local function dialogs()
         { "directory", function() F:Open(1) end, function() return F.frame end, 80 },
         { "setup assistant", function() S:Open() end, function() return S.frame end, 40 },
         { "import", function() W:Open("import") end, function() return W.frame end, 40 },
+        { "report a problem", function() Rep:Open() end, function() return Rep.frame end, 40 },
     }
 end
 

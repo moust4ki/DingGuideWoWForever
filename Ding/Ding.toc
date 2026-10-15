@@ -61,6 +61,7 @@ Core\Rewards.lua
 Core\GuideText.lua
 Core\Import.lua
 Core\Why.lua
+Core\Report.lua
 UI\Themes.lua
 UI\Widgets.lua
 UI\Gamepad.lua
@@ -78,6 +79,7 @@ UI\MinimapPins.lua
 UI\QuestMobs.lua
 UI\Config.lua
 UI\Setup.lua
+UI\Report.lua
 Core\Commands.lua
 
 Guides\Leveling\Alliance\01.lua

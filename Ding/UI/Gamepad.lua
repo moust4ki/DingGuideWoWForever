@@ -734,6 +734,7 @@ local CHORD_RUN = {
     DING_UNSKIP = function() Ding.Panel:BackToSkipped() end,
     DING_FINDER = function() Ding.Finder:Toggle() end,
     DING_CYCLE = function() Ding.Panel:CycleTarget() end,
+    DING_REPORT = function() Ding.ReportWindow:Toggle() end,
 }
 G.CHORD_RUN = CHORD_RUN
 
@@ -1300,6 +1301,8 @@ local function gamepadChanged()
     if F and F.frame and F.frame:IsShown() then Ding:Safe(F.Layout, F) end
     local S = Ding.Setup
     if S and S:IsShown() then Ding:Safe(S.Layout, S) end
+    local Report = Ding.ReportWindow
+    if Report and Report:IsShown() then Ding:Safe(Report.Refresh, Report) end
     if G.moving then Ding:Safe(plateHelp, G.plate) end
     if Ding.Panel and Ding.Panel.Update then Ding:Safe(Ding.Panel.Update, Ding.Panel) end
 end

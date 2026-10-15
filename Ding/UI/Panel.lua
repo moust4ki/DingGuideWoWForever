@@ -1180,8 +1180,27 @@ function P:Create()
     f.finder:SetScript("OnClick", function() Ding.Finder:Toggle() end)
     f.finder.focus = UI.Focus(f.finder, true)
     f.finder.key = UI.Glyph(f)
-    f.finder.key:SetPoint("RIGHT", f.finder, "LEFT", -6, 0)
     f.finder.key:Hide()
+
+    -- Report a problem (UI/Report.lua): a flag, left of the directory's pin. In focus mode,
+    -- above the pin (D-pad up again), or left of it. The A chip of either sits left of both.
+    f.report = UI.IconButton(f, 20)
+    f.report:SetPoint("TOPRIGHT", f, "TOPRIGHT", -76, -2)
+    local pole = f.report:CreateTexture(nil, "ARTWORK")
+    UI.Fill(pole, C.secondary)
+    pole:SetSize(1.5, 12)
+    pole:SetPoint("CENTER", f.report, "CENTER", -3.5, 0)
+    local flag = f.report:CreateTexture(nil, "ARTWORK")
+    UI.Fill(flag, C.secondary)
+    flag:SetSize(7, 5)
+    flag:SetPoint("TOPLEFT", pole, "TOPRIGHT", 0, 0)
+    f.report.tooltip = L.BIND_REPORT
+    f.report:SetScript("OnClick", function() Ding.ReportWindow:Toggle() end)
+    f.report.focus = UI.Focus(f.report, true)
+    f.report.key = UI.Glyph(f)
+    f.report.key:SetPoint("RIGHT", f.report, "LEFT", -6, 0)
+    f.report.key:Hide()
+    f.finder.key:SetPoint("RIGHT", f.report, "LEFT", -6, 0)
 
     -- The title in the theme's title font (the game's own in Halo and Ardoise), one line.
     f.title = text(f, "semibold", 12, C.text)
@@ -1190,7 +1209,7 @@ function P:Create()
     -- The title area drags the window; its tooltip gives the full guide name.
     f.titleArea = CreateFrame("Button", nil, f)
     f.titleArea:SetPoint("TOPLEFT", f, "TOPLEFT", 28, 0)
-    f.titleArea:SetPoint("BOTTOMRIGHT", f, "TOPRIGHT", -76, -TITLE_HEIGHT)
+    f.titleArea:SetPoint("BOTTOMRIGHT", f, "TOPRIGHT", -100, -TITLE_HEIGHT)
     f.titleArea:RegisterForDrag("LeftButton")
     f.titleArea:SetScript("OnDragStart", startDrag)
     f.titleArea:SetScript("OnDragStop", stopDrag)
@@ -1934,21 +1953,32 @@ local function layoutRow(f, i, data, y, width)
     return height
 end
 
+-- The title bar's buttons focus mode reaches: [0] the directory's, above the first row; [-1]
+-- the report's, above it.
+local function headerButtons(f) return { [0] = f.finder, [-1] = f.report } end
+
 function P:LayoutFull()
     local f, db, E = self.frame, Ding.db.panel, Ding.Engine
     local width, guide, held = db.width, E.guide, self.holding
     f.mini:Hide()
-    for _, region in ipairs({ f.menu, f.close, f.minimize, f.finder, f.title, f.titleArea, f.titleDivider,
+    for _, region in ipairs({ f.menu, f.close, f.minimize, f.finder, f.report, f.title, f.titleArea, f.titleDivider,
         f.stepDivider, f.prev, f.next, f.stepText, f.stepTotal, f.zone }) do
         region:Show()
     end
-    -- In focus mode, the directory's button can take the focus (above the first row): A on it.
-    local onFinder = self.focusing and self.focusIndex == 0
-    f.finder.focus:SetShown(onFinder)
-    local finderKey = onFinder and Ding.Gamepad:Active()
-    if finderKey then f.finder.key:SetKey("PAD1") end
-    f.finder.key:SetShown(finderKey and true or false)
-    f.title:SetWidth(width - 28 - 76 - (finderKey and (f.finder.key:GetWidth() + 6) or 0))
+    -- In focus mode, the title bar's buttons can take the focus (the directory's above the first
+    -- row, the report's above it): A on the focused one, the title shortens for the chip.
+    local chipWidth = 0
+    for index, b in pairs(headerButtons(f)) do
+        local on = self.focusing and self.focusIndex == index
+        b.focus:SetShown(on)
+        local key = on and Ding.Gamepad:Active()
+        if key then
+            b.key:SetKey("PAD1")
+            chipWidth = b.key:GetWidth() + 6
+        end
+        b.key:SetShown(key and true or false)
+    end
+    f.title:SetWidth(width - 28 - 100 - chipWidth)
     f.title:SetText(UI.Colored("accent", Ding.TITLE) .. UI.Colored("disabled", " · ") .. (guide and guide.title or L.GUIDE_NONE))
 
     -- Step bar
@@ -1992,7 +2022,7 @@ function P:LayoutFull()
     self.rowsShown = rows
     if self.focusing then
         -- The step may have changed under the focus: keep it on a row, and A on its target.
-        self.focusIndex = clamp(self.focusIndex or 1, self.focusIndex == 0 and 0 or 1, math.max(1, #rows))
+        self.focusIndex = clamp(self.focusIndex or 1, math.min(1, self.focusIndex or 1), math.max(1, #rows))
         syncItemKey()
     end
     y = -LIST_TOP - LIST_PAD
@@ -2031,8 +2061,9 @@ function P:LayoutCompact()
     local f, E = self.frame, Ding.Engine
     local width, m = Ding.db.panel.width, f.mini
     f.finder.key:Hide()
+    f.report.key:Hide()
     f.focusHints:Hide()
-    for _, region in ipairs({ f.menu, f.close, f.minimize, f.finder, f.title, f.titleArea, f.titleDivider,
+    for _, region in ipairs({ f.menu, f.close, f.minimize, f.finder, f.report, f.title, f.titleArea, f.titleDivider,
         f.stepDivider, f.prev, f.next, f.stepText, f.stepTotal, f.zone, f.lb, f.rb, f.trackHolder, f.fillHolder }) do
         region:Hide()
     end
@@ -2151,7 +2182,7 @@ end
 -- The focus mode's hint bar: A (what it does on that row), X (its card), B (leave).
 function P:FocusHints()
     local list = {}
-    local row = self.focusIndex ~= 0 and self.rowsShown and self.rowsShown[self.focusIndex] or nil
+    local row = self.focusIndex > 0 and self.rowsShown and self.rowsShown[self.focusIndex] or nil
     local a = self:FocusAction(row)
     if a then list[#list + 1] = UI.Hint("PAD1", a) end
     if self:HasCard(row) then list[#list + 1] = UI.Hint("PAD3", L.FOCUS_DETAIL) end
@@ -2159,15 +2190,17 @@ function P:FocusHints()
     return list
 end
 
--- The directory's button focused (above the first row): its name, as the mouse's hover says it.
+-- A title bar button focused (the directory's above the first row, the report's above it):
+-- its name, as the mouse's hover says it.
 function P:ShowFinderTip()
-    local b = self.frame.finder
-    if not (self.focusing and self.focusIndex == 0) then
-        if GameTooltip:GetOwner() == b then GameTooltip:Hide() end
-        return
+    local buttons = headerButtons(self.frame)
+    for index, b in pairs(buttons) do
+        if not (self.focusing and self.focusIndex == index) and GameTooltip:GetOwner() == b then GameTooltip:Hide() end
     end
+    local b = self.focusing and buttons[self.focusIndex]
+    if not b then return end
     GameTooltip:SetOwner(b, "ANCHOR_TOP")
-    GameTooltip:SetText(L.BIND_FINDER)
+    GameTooltip:SetText(b.tooltip)
     GameTooltip:Show()
 end
 
@@ -2194,6 +2227,7 @@ function P:StopFocus()
     self.focusing = false
     for _, row in ipairs(self.frame.rows) do hideQuest(row) end
     hideQuest(self.frame.finder)
+    hideQuest(self.frame.report)
     Ding.Gamepad:Release(self.frame)
     self:Update()
 end
@@ -2207,8 +2241,8 @@ function P:OnFocusKey(key)
     if key == "PADDUP" or key == "PADDDOWN" then
         if count > 0 then
             for _, row in ipairs(self.frame.rows) do hideQuest(row) end
-            -- Above the first row: the directory's button.
-            self.focusIndex = clamp((self.focusIndex or 1) + (key == "PADDUP" and -1 or 1), 0, count)
+            -- Above the first row: the directory's button, then the report's.
+            self.focusIndex = clamp((self.focusIndex or 1) + (key == "PADDUP" and -1 or 1), -1, count)
             syncItemKey()
             self:Update()
             self:ShowFinderTip()
@@ -2217,6 +2251,10 @@ function P:OnFocusKey(key)
         if self.focusIndex == 0 then
             self:StopFocus()
             return Ding.Finder:Open()
+        end
+        if self.focusIndex == -1 then
+            self:StopFocus()
+            return Ding.ReportWindow:Open()
         end
         self:Aim(self.rowsShown and self.rowsShown[self.focusIndex])
     elseif key == "PAD3" then
@@ -2231,6 +2269,11 @@ function P:OnFocusKey(key)
         self:SetCompact(true)
     elseif key == "PAD2" or key == "PADFORWARD" then
         self:StopFocus()
+    elseif (key == "PADDLEFT" or key == "PADDRIGHT") and (self.focusIndex or 1) <= 0 then
+        -- In the title bar: the report's button left of the directory's.
+        self.focusIndex = key == "PADDLEFT" and -1 or 0
+        self:Update()
+        self:ShowFinderTip()
     elseif key == "PADDLEFT" then
         -- On a gear upgrade: not wanted. On a weapon to learn: never again. On a jump offer:
         -- never mind.
