@@ -195,7 +195,7 @@ Common options:
 | `optional` | the step can be passed without blocking what follows |
 | `faction` | `"Alliance"` or `"Horde"`: the step only appears for that side (`UnitFactionGroup`), in a guide for both sides |
 | `races`, `classes` | the step only appears for these races/classes |
-| `radius` | arrival radius of a `go` step |
+| `radius` | arrival radius of a `go` step, in yards (6 by default) |
 | `use` | item id or list of item ids to offer in the item button (the first one owned) |
 | `sticky` | quest id or list: persistent objectives, see "Along the way" |
 | `dungeon` | dungeon name: the step's quests are done inside it |
@@ -1021,11 +1021,14 @@ plate keeps what it had, else its name is matched with the monsters Ding knows; 
 never marked. Nothing is protected: frames are only created, anchored, shown and hidden.
 
 Options (Arrow and maps tab, "Quest monsters"): marks on the plates (on), the tooltip line
-(on), **"Show enemy nameplates farther"** (off): the client's `nameplateMaxDistance` at its
+(on), **"Show enemy nameplates farther"** (on since v1.7.0): the client's `nameplateMaxDistance` at its
 maximum (Ding asks for 60 yards, the client keeps its own limit), the value before put back
 when the option goes off (`Ding.db.farPlatesFrom`, outside the settings, so that the tab's
 defaults and "Restore all defaults" put it back too); never changed in combat (after the
-fight). Turned on or off in the settings, the chat says the distance now.
+fight). Turned on or off in the settings, the chat says the distance now. The marks sit on
+the enemy nameplates, which the client hides until the player shows them (V): with the marks
+on, Ding shows them once (`nameplateShowEnemies`, out of combat), says so in the chat with how
+to hide them, and never again after (`Ding.db.platesShown`).
 
 ### Interface
 
@@ -1101,11 +1104,12 @@ textures and font flags, never a size nor a position.
   progress at the bottom; "done" in green for 1.5 s. In combat when the option is on (off by default) or
   by binding.
 - **Arrow** (centered, 120 above): blue while on the way, red when the target is behind
-  (more than 120°, "turn around"), a green "You're here" ring on arrival, which fades after
+  (more than 120°, "turn around"), a green "You're here" ring on arrival (6 yards from the
+  place or the NPC, a step's `radius` otherwise), which fades after
   3 s; beneath it, the target's name, the distance and the time to get there (speed measured
   from the player's movement). Size 40-80, not clickable (movable in move mode).
   Monsters to kill and items to collect form an **area**: "You're in the area" from within
-  40 m of a spawn, kept up to 60 m. In an area, the **farming loop** (option "Farming loop",
+  25 yards of a spawn (about an attack's reach), kept up to 40. In an area, the **farming loop** (option "Farming loop",
   Arrow and maps tab, `arrow.loop`, on by default): the spawns of the same monster or object within
   300 yards of the nearest one, one stop per 25 yards, at most 12, in nearest-neighbour order
   from there (3 stops at least, else the plain area); the arrow leads to the next stop, reached

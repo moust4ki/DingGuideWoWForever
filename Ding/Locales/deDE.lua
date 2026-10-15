@@ -610,6 +610,7 @@ Ding.Locales.deDE = {
     FAR_PLATES = "Feindliche Namensplaketten von weiter weg",
     FAR_PLATES_DESC = "Größte Distanz des Spiels; aus: wieder wie vorher.",
     FAR_PLATES_SET = "Feindliche Namensplaketten bis %d Meter.",
+    PLATES_SHOWN = "Ding! zeigt die feindlichen Namensplaketten: Seine Questmarken und Zähler sitzen darüber. Deine Taste für Namensplaketten (V) blendet sie wieder aus.",
     FAR_PLATES_NONE = "Das Spiel hat keine Einstellung für die Plakettendistanz.",
     OPT_SERVICE = "Händler- und Reparaturschritte",
     OPT_SERVICE_DESC = "Schritte, die dich zu einem Händler schicken.",

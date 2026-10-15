@@ -45,8 +45,9 @@ local DEFAULTS = {
         trainerSteps = true, flightSteps = true, autoEquip = false, autoFly = false,
         suggestGear = true,   -- a better piece of gear in the bags: row, banner, item button (Core/Gear.lua)
         -- Quest monsters (UI/QuestMobs.lua): marks on enemy nameplates, the tooltip line, and
-        -- the enemy nameplates' distance raised to the client's maximum.
-        mobIcons = true, mobTooltip = true, farPlates = false,
+        -- the enemy nameplates' distance raised to the client's maximum: every aid on for a new
+        -- install (Yendi's choice, v1.7.0).
+        mobIcons = true, mobTooltip = true, farPlates = true,
         dialogScale = 0.85,   -- the settings, the NPC directory, the setup assistant, import (UI.Dialog)
         -- The look (UI/Themes.lua); opacityTouched: the player moved the opacity slider, which
         -- then no longer follows the theme's default.

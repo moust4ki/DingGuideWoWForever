@@ -26,7 +26,10 @@ local BEHIND = 2 * math.pi / 3  -- more than 120 degrees off: "turn around"
 local ARRIVED_FADE = 3          -- seconds before the arrival ring fades
 local RUN_SPEED = 7             -- yards per second, for the time while standing still
 local MAX_SPEED = 60            -- faster is a teleport (hearthstone...), not a speed
-local AREA_ENTER, AREA_LEAVE = 40, 60  -- yards from the nearest spawn: in, then out of an area
+-- Yards from the nearest spawn: in, then out of a kill or gather area. About the reach of an
+-- attack (a tester: "in the area" 40 yards off, still a walk away from the monsters).
+local AREA_ENTER, AREA_LEAVE = 25, 40
+local ARRIVE = 6               -- yards from a place, an NPC: reached (Engine's DEFAULT_RADIUS)
 local CORPSE_RADIUS = 30        -- close enough to the corpse to come back to life
 local TARGET_NAMES = 3          -- names in the target binding's macro, nearest first
 -- Farming loop, in a kill or gather area: the spawns around the nearest one, in a loop.
@@ -670,9 +673,9 @@ function A:Tick()
         return
     end
 
-    local radius = (Ding.Engine:CurrentStep() or {}).radius or 10
+    local radius = (Ding.Engine:CurrentStep() or {}).radius or ARRIVE
     if leg and leg.point then
-        radius = 10
+        radius = ARRIVE
     elseif point.corpse then
         radius = CORPSE_RADIUS
     elseif farm then

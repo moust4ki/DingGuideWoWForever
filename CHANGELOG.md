@@ -14,6 +14,12 @@ Nothing else to install: QuestieDB is no longer needed, and TomTom stays optiona
 - The guide window stays as it is in combat: minimizing it there is now an option, off by
   default (Settings > Appearance, "Minimize the guide in combat"). It was on for everyone: turn it
   on again there if you liked it.
+- The arrow says "You're here" 6 yards from the place or the NPC (it was 10, and the arrow faded
+  while you still had a few steps to walk), and "You're in the area" 25 yards from the monsters
+  or the objects to gather (it was 40, more than an attack's reach).
+- The aids are on for a new install: the quest marks and counters above the monsters, the line
+  in their tooltip, and enemy nameplates shown farther. The game hides the enemy nameplates
+  until you press V: Ding shows them once so that its counters appear, and says so in the chat.
 
 ## v1.6.0
 

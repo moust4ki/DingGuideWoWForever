@@ -611,6 +611,7 @@ Ding.Locales.ptBR = {
     FAR_PLATES = "Ver as placas inimigas de mais longe",
     FAR_PLATES_DESC = "A distância máxima do jogo; desligado, volta ao que era.",
     FAR_PLATES_SET = "Placas de identificação inimigas até %d metros.",
+    PLATES_SHOWN = "Ding! mostra as placas de identificação inimigas: suas marcas e contadores de missão ficam acima delas. Seu atalho de placas (V) as esconde de novo.",
     FAR_PLATES_NONE = "O jogo não tem ajuste de distância das placas.",
     OPT_SERVICE = "Etapas de vendedor e reparo",
     OPT_SERVICE_DESC = "Etapas que levam você a um vendedor.",

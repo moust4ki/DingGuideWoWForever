@@ -611,6 +611,7 @@ Ding.Locales.zhCN = {
     FAR_PLATES = "更远显示敌方姓名板",
     FAR_PLATES_DESC = "游戏的最大距离；关闭后恢复原值。",
     FAR_PLATES_SET = "敌方姓名板显示距离：%d码。",
+    PLATES_SHOWN = "Ding! 已显示敌方姓名板：任务标记和计数会显示在上方。按姓名板快捷键（V）可再次隐藏。",
     FAR_PLATES_NONE = "游戏没有姓名板距离设置。",
     OPT_SERVICE = "商人和修理步骤",
     OPT_SERVICE_DESC = "让你去找商人的步骤。",

@@ -14,7 +14,9 @@ E.hold = false     -- true after /ding prev: stay on the shown step until "next"
 E.finished = false
 E.logReady = false -- the client has sent the quest log (it comes a moment after login)
 
-local DEFAULT_RADIUS = 10       -- yards
+-- Yards from a step's place that reach it: about the distance to speak to an NPC (a tester:
+-- "you're here" at 10 yards, a few more steps to walk without the arrow).
+local DEFAULT_RADIUS = 6        -- yards
 local LOOKAHEAD = 5             -- steps checked to detect progress past manual steps
 local RESUME_WINDOW = 10        -- seconds after loading a guide where it resyncs on turn-ins
 local START_TIMEOUT = 5         -- seconds the engine waits for the quest log at login

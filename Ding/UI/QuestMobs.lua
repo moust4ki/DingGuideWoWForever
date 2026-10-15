@@ -25,8 +25,9 @@ local HEIGHT = 18             -- the mark's height (units of the plate)
 local MAX_LINES = 3           -- tooltip lines at most
 local MAX_PLATES = 40         -- nameplate unit tokens looked at when the plates are read again
 local DISTANCE_CVAR = "nameplateMaxDistance"
+local SHOW_CVAR = "nameplateShowEnemies"
 local FAR_DISTANCE = 60       -- yards asked for: the client keeps its own maximum
-QM.DISTANCE_CVAR, QM.FAR_DISTANCE = DISTANCE_CVAR, FAR_DISTANCE
+QM.DISTANCE_CVAR, QM.FAR_DISTANCE, QM.SHOW_CVAR = DISTANCE_CVAR, FAR_DISTANCE, SHOW_CVAR
 
 -- [npc id] = entries, best first: { kind = "kill" | "drop" | "accept" | "turnin", quest,
 -- label, have, need, current, enemy }. `enemy`: the mark goes on a monster (kill, drop),
@@ -400,11 +401,25 @@ function QM:ApplyDistance(announce)
     end
 end
 
+-- The marks sit on the enemy nameplates, which the client hides until the player shows them
+-- (V): with the marks on, Ding shows them once, out of combat, and says so in the chat with
+-- how to hide them again; never again after (Ding.db.platesShown, outside the settings: the
+-- player's own choice of V stays theirs). Testers saw no counter above the monsters.
+function QM:ShowPlatesOnce()
+    local db = Ding.db
+    if not db or db.platesShown or ui().mobIcons == false or InCombatLockdown() then return end
+    db.platesShown = true
+    local now = Compat.GetCVar(SHOW_CVAR)
+    if now == nil or tostring(now) == "1" then return end
+    if Compat.SetCVar(SHOW_CVAR, "1") then Ding:Print(L.PLATES_SHOWN) end
+end
+
 -- After a change of the options (Config): the marks, the tooltip's entries and the distance.
 function QM:Apply(announce)
     self:Refresh()
     if ui().mobIcons ~= false then self:ReadPlates() end
     self:ApplyDistance(announce)
+    self:ShowPlatesOnce()
 end
 
 ---------------------------------------------------------------------------
@@ -414,9 +429,11 @@ Ding:On("NAME_PLATE_UNIT_ADDED", function(_, unit) QM:Added(unit) end)
 Ding:On("NAME_PLATE_UNIT_REMOVED", function(_, unit) QM:Removed(unit) end)
 Ding:On("PLAYER_REGEN_ENABLED", function()
     if QM.distancePending ~= nil then QM:ApplyDistance(QM.distancePending) end
+    QM:ShowPlatesOnce()
 end)
 Ding:On("PLAYER_LOGIN", function()
     QM:ApplyDistance()
+    QM:ShowPlatesOnce()
     QM:ReadPlates()
 end)
 -- Without a guide the engine refreshes nothing: the log is read here.

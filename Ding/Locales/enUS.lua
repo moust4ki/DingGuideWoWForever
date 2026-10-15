@@ -611,6 +611,7 @@ Ding.Locales.enUS = {
     FAR_PLATES = "Show enemy nameplates farther",
     FAR_PLATES_DESC = "The game's longest distance; back as before when off.",
     FAR_PLATES_SET = "Enemy nameplates shown up to %d yards.",
+    PLATES_SHOWN = "Ding! shows the enemy nameplates: its quest marks and counters sit above them. Your nameplates key (V) hides them again.",
     FAR_PLATES_NONE = "The game has no nameplate distance setting.",
     OPT_SERVICE = "Vendor and repair steps",
     OPT_SERVICE_DESC = "Steps that send you to a merchant.",

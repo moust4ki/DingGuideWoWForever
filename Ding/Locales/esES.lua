@@ -613,6 +613,7 @@ Ding.Locales.esES = {
     FAR_PLATES = "Ver las placas enemigas desde más lejos",
     FAR_PLATES_DESC = "La distancia máxima del juego; al quitarlo, como antes.",
     FAR_PLATES_SET = "Placas de nombre enemigas hasta %d metros.",
+    PLATES_SHOWN = "Ding! muestra las placas de nombre enemigas: sus marcas y contadores de misión se colocan encima. Tu atajo de placas de nombre (V) las vuelve a ocultar.",
     FAR_PLATES_NONE = "El juego no tiene ajuste de distancia de las placas.",
     OPT_SERVICE = "Pasos de vendedor y reparación",
     OPT_SERVICE_DESC = "Pasos que te llevan a un vendedor.",

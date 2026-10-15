@@ -611,6 +611,7 @@ Ding.Locales.koKR = {
     FAR_PLATES = "적 이름표를 더 멀리서 표시",
     FAR_PLATES_DESC = "게임의 최대 거리. 끄면 이전 값으로.",
     FAR_PLATES_SET = "적 이름표 표시 거리: %d미터.",
+    PLATES_SHOWN = "Ding!이 적 이름표를 표시합니다. 퀘스트 표시와 카운터가 그 위에 나타납니다. 이름표 단축키(V)로 다시 숨길 수 있습니다.",
     FAR_PLATES_NONE = "이 게임에는 이름표 거리 설정이 없습니다.",
     OPT_SERVICE = "상인 및 수리 단계",
     OPT_SERVICE_DESC = "상인에게 보내는 단계.",

@@ -611,6 +611,7 @@ Ding.Locales.zhTW = {
     FAR_PLATES = "更遠顯示敵方名條",
     FAR_PLATES_DESC = "遊戲的最大距離；關閉後恢復原值。",
     FAR_PLATES_SET = "敵方名條顯示距離：%d碼。",
+    PLATES_SHOWN = "Ding! 已顯示敵方名條：任務標記與計數會顯示在上方。按名條快捷鍵（V）可再次隱藏。",
     FAR_PLATES_NONE = "遊戲沒有名條距離設定。",
     OPT_SERVICE = "商人和修理步驟",
     OPT_SERVICE_DESC = "讓你去找商人的步驟。",

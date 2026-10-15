@@ -608,6 +608,7 @@ Ding.Locales.frFR = {
     FAR_PLATES = "Voir les plaques ennemies de plus loin",
     FAR_PLATES_DESC = "La distance maximale du jeu ; comme avant si décoché.",
     FAR_PLATES_SET = "Plaques de nom ennemies affichées jusqu'à %d mètres.",
+    PLATES_SHOWN = "Ding! affiche les barres de nom des ennemis : ses marques et compteurs de quête s'y placent. Ton raccourci des barres de nom (V) les masque à nouveau.",
     FAR_PLATES_NONE = "Le jeu n'a pas de réglage de distance des plaques de nom.",
     OPT_SERVICE = "Étapes marchand et réparation",
     OPT_SERVICE_DESC = "Étapes qui t'envoient chez un marchand.",
