@@ -387,7 +387,9 @@ T.test("objectives and item sources: areas; quest givers: a point", function()
     for _, p in ipairs(D:StartPoints(456)) do T.ok(not p.area, "quest giver marked as an area") end
 end)
 
-T.test("hunting area: arrived among the spawns (40), up to 60, without flickering", function()
+-- A tester: "in the area" at 40 yards, still a walk away from the monsters. Now about an
+-- attack's reach: in at 25 yards, out past 40.
+T.test("hunting area: arrived among the spawns (25), up to 40, without flickering", function()
     done()
     start()
     A:Focus({ { map = 1438, x = 50, y = 50, label = "Boars", area = true } })
@@ -395,18 +397,31 @@ T.test("hunting area: arrived among the spawns (40), up to 60, without flickerin
     H.tick(0.1)
     T.eq(A.state, "arrived")
     T.eq(f.distance:GetText(), Ding.L.IN_AREA)
-    H.player.x = 50.9                     -- 46 yards: still in the area
+    H.player.x = 50.6                     -- 31 yards: still in the area
     H.tick(0.1)
-    T.eq(A.state, "arrived", "left the area at 46 m")
-    H.player.x = 51.5                     -- 77 yards: out of it
+    T.eq(A.state, "arrived", "left the area at 31 yards")
+    H.player.x = 51.0                     -- 51 yards: out of it
     H.tick(0.1)
-    T.ok(A.state ~= "arrived", "still in the area at 77 m")
-    H.player.x = 50.9                     -- 46 yards from outside: not in yet
+    T.ok(A.state ~= "arrived", "still in the area at 51 yards")
+    H.player.x = 50.6                     -- 31 yards from outside: not in yet
     H.tick(0.1)
-    T.ok(A.state ~= "arrived", "entered the area at 46 m")
-    H.player.x = 50.7                     -- 36 yards: in
+    T.ok(A.state ~= "arrived", "entered the area at 31 yards")
+    H.player.x = 50.4                     -- 20 yards: in
     H.tick(0.1)
-    T.eq(A.state, "arrived", "not entered at 36 m")
+    T.eq(A.state, "arrived", "not entered at 20 yards")
+end)
+
+T.test("a place or an NPC: \"you're here\" at 6 yards, not at 10", function()
+    done()
+    start()
+    A:Focus({ { map = 1438, x = 50, y = 50, label = "Conservator Ilthalaine", npc = 2079 } })
+    H.player.x, H.player.y = 50.18, 50    -- 9 yards
+    H.tick(0.1)
+    T.ok(A.state ~= "arrived", "arrived 9 yards away")
+    H.player.x = 50.1                     -- 5 yards
+    H.tick(0.1)
+    T.eq(A.state, "arrived", "not arrived 5 yards away")
+    T.eq(f.distance:GetText(), Ding.L.ARRIVED)
 end)
 
 -- Two objectives side by side (spiders east, skeletons west, about 100 yards apart): walking
