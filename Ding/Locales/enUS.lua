@@ -63,6 +63,17 @@ Ding.Locales.enUS = {
     IN_DUNGEON = "%s, in %s",
     ARRIVED = "You’re here",
     IN_AREA = "You’re in the area",
+    -- The arrow, on a step whose target is on another floor (step key `floor`): arrived, then
+    -- near it (the detail line).
+    FLOOR_NPC_UP = "The NPC is one floor up",
+    FLOOR_NPC_TOP = "The NPC is at the top",
+    FLOOR_NPC_DOWN = "The NPC is one floor down",
+    FLOOR_IT_UP = "It's one floor up",
+    FLOOR_IT_TOP = "It's at the top",
+    FLOOR_IT_DOWN = "It's one floor down",
+    FLOOR_NEAR_UP = "One floor up",
+    FLOOR_NEAR_TOP = "At the top",
+    FLOOR_NEAR_DOWN = "One floor down",
     CORPSE = "Your corpse",
     TURN_AROUND = "turn around",
     YARDS = "%s yd",
