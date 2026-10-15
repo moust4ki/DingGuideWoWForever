@@ -1350,10 +1350,32 @@ local function objectiveDone(live, name)
     end
     return false
 end
+-- DingDB's targets of a quest, kept for matching only (their names and kinds, never handed
+-- out): building them reads every spawn, and ObjectiveDone runs for each objective of each
+-- quest a level step weighs (v1.7.1 built them each time: the smoke runs took 3.5 times as long).
+local matchTargets = {}
+local function targetsForMatch(q)
+    local list = matchTargets[q]
+    if not list then
+        list = Ding.Data:ObjectiveTargets(q)
+        matchTargets[q] = list
+    end
+    return list
+end
+
 -- The objective of q for its target named `name`: matched like the arrow's (Data:MatchObjectives,
 -- by name, else by rank), so a monster without a name in the client's language counts too.
 function E:ObjectiveDone(q, name)
-    local targets, live = Ding.Data:ObjectiveTargets(q), Compat.GetObjectives(q)
+    local live = Compat.GetObjectives(q)
+    -- The name in the objective's text first: no list to build.
+    local lname = lower(name)
+    if lname then
+        for _, obj in ipairs(live) do
+            local text = lower(obj.text)
+            if text and text:find(lname, 1, true) then return obj.finished == true end
+        end
+    end
+    local targets = targetsForMatch(q)
     local byTarget = Ding.Data:MatchObjectives(targets, live)
     for i, target in ipairs(targets) do
         if target.name == name then
