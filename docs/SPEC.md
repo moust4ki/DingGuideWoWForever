@@ -471,8 +471,12 @@ some races only in DingDB carries them itself (the Alliance paladins: Humans and
   (30 s) does: its sequel comes a moment later from the same NPC, and passing on would leave
   the steps that take and complete it behind. Then it carries on to the player's place. The steps left behind
   remain reachable through "back to a skipped step". "Take this guide up where I am" forgets
-  the marks and that place: what is not really done is to do again, the first step still to
-  do comes first (a quest skipped earlier included: "Skip" passes it). A character saved
+  the marks and keeps that place: it takes the section up from its start to there (a strict
+  resume) and stops on what is really left, a quest of the log with work left or a quest of
+  the route the character can still take (not optional, not behind an option, open to it
+  now); what the player left behind on purpose passes, the quests behind an option turned on
+  since included (in game: "Elite quests" turned on at step 38, the button used to send the
+  player back to step 5, an elite quest never taken). A character saved
   before v1.4.0 drops its resume in progress once and keeps the step it is on as its place
   (`Ding.MigrateChar`). A `sethearth` step whose bind happened during the step stays done while
   the hearthstone is bound there (`Ding.char.hearthInn`: the client's own name of the inn

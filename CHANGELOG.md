@@ -8,6 +8,9 @@ Nothing else to install: QuestieDB is no longer needed, and TomTom stays optiona
   game's own combinations work again: LB + RB + Left / Right (the action bar's pages), LB + RB +
   Down (the chat)... Ding kept every button while it waited for the second one. With a Ding
   window open, the buttons the window does not use go on to the game too.
+- "Take this guide up where I am" keeps your place: it stops only on a quest of your log still
+  to finish or a quest of the route you never took. With "Elite quests" turned on, it used to
+  send you back to the first elite quest of the section.
 
 ## v1.6.0
 

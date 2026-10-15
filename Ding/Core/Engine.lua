@@ -845,9 +845,11 @@ local function saveStep(index)
 end
 
 -- Resuming up to a step (E:Resume): saved per character, so a reload keeps it.
-local function setResumeTo(step)
+-- strict: a resume of "take this guide up where I am" (E:Reset, E:LeftBehind).
+local function setResumeTo(step, strict)
     E.resumeTo = step
-    Ding.char.resumeTo = step and E.guide and { guide = E.guide.id, step = step } or nil
+    E.resumeStrict = step and strict and true or nil
+    Ding.char.resumeTo = step and E.guide and { guide = E.guide.id, step = step, strict = E.resumeStrict } or nil
 end
 
 ---------------------------------------------------------------------------
@@ -861,11 +863,11 @@ end
 -- the quests alone: quests done out of the guide's order (a zone done earlier, in another
 -- guide) sent characters far ahead, past the quests, trainers and trips still to do
 -- (Redridge before Duskwood, then the Wetlands at level 24 before the route's Wetlands).
-function E:Resume(id, silent)
+function E:Resume(id, silent, strict)
     local guide = Ding:GetGuide(id)
     if guide then followSteps(guide) end
     local last = Ding.char.lastStep and Ding.char.lastStep[id]
-    return self:SetGuide(id, 1, silent, last)
+    return self:SetGuide(id, 1, silent, last, strict)
 end
 
 -- Switches to a guide pack: the section the character last followed in it (Ding.char.packGuide)
@@ -898,8 +900,8 @@ local function endTrip()
     return true
 end
 
--- resumeTo: optional, see E:Resume.
-function E:SetGuide(id, index, silent, resumeTo)
+-- resumeTo, strict: optional, see E:Resume and E:Reset.
+function E:SetGuide(id, index, silent, resumeTo, strict)
     local guide = Ding:GetGuide(id)
     if not guide then
         Ding:Print(L.GUIDE_UNKNOWN:format(tostring(id)))
@@ -909,7 +911,7 @@ function E:SetGuide(id, index, silent, resumeTo)
     followSteps(guide)
     self.guide = guide
     self.index = index or 1
-    setResumeTo(resumeTo and resumeTo > self.index and resumeTo or nil)
+    setResumeTo(resumeTo and resumeTo > self.index and resumeTo or nil, strict)
     self.skipNotes, self.passNotes = nil, nil
     self.hold = false
     self.finished = false
@@ -973,13 +975,30 @@ local function turnedInHere(step)
     return false
 end
 
+-- "Take this guide up where I am" (E:Reset) stops on a quest of the route the character can
+-- still take: not behind an option (an elite, a dungeon's, turned on since), not optional, open
+-- to it now (level, prerequisites). What the player left behind on purpose passes.
+local function stillToTake(step)
+    if step.optional or step.dungeon then return false end
+    for _, o in ipairs(STEP_OPTIONS) do
+        if step[o.key] then return false end
+    end
+    for _, q in ipairs(step.accept or {}) do
+        if not isAccepted(q) and not tooLow(q) and not isGrey(q) and not missingPrereq(q) then return true end
+    end
+    return false
+end
+
 -- Resuming: a step the player left behind (no work left on a quest in the log, before the
 -- player's place) is passed. Not one where the player just turned a quest in: its next quest
 -- comes a moment later, from the same NPC (in game, "Ormer's Revenge" turned in, its sequel
 -- not taken yet: the resume passed the step that takes it and the one that completes it).
 function E:LeftBehind(step, index)
-    return self.resumeTo ~= nil and index < self.resumeTo and logKnown() and not backlog(step)
-        and not turnedInHere(step)
+    if not (self.resumeTo ~= nil and index < self.resumeTo and logKnown() and not backlog(step)
+        and not turnedInHere(step)) then
+        return false
+    end
+    return not (self.resumeStrict and stillToTake(step))
 end
 
 -- Why the guide passed a step for the character by itself, in a word the window says
@@ -1221,17 +1240,24 @@ function E:Prev()
     self:Refresh()
 end
 
--- "Take this guide up where I am": forgets the steps validated by hand or skipped (what
--- is not really done is to do again), then finds the player's place again from their
--- quests, instead of starting over at step 1.
+-- "Take this guide up where I am": forgets the steps validated by hand or skipped, then takes
+-- the section up from its start to the character's place (a strict resume, E:LeftBehind): it
+-- stops on what is really left there, a quest of the log with work left or a quest of the
+-- route still to take; what the player left behind on purpose passes, the quests behind an
+-- option turned on since included. In game (15/10/2026): "Elite quests" turned on, the button
+-- sent the player from step 38 back to step 5, an elite quest never taken.
 function E:Reset()
     if not self.guide then return end
-    Ding.char.manual[self.guide.id] = nil
-    if Ding.char.skipped then Ding.char.skipped[self.guide.id] = nil end
-    if Ding.char.markKeys then Ding.char.markKeys[self.guide.id] = nil end
-    if Ding.char.lastStep then Ding.char.lastStep[self.guide.id] = nil end
-    if Ding.char.lastKey then Ding.char.lastKey[self.guide.id] = nil end
-    self:Resume(self.guide.id, true)
+    local id = self.guide.id
+    local place = math.max(Ding.char.lastStep and Ding.char.lastStep[id] or 1,
+        self.browseFrom or 1, self.index or 1)
+    Ding.char.manual[id] = nil
+    if Ding.char.skipped then Ding.char.skipped[id] = nil end
+    if Ding.char.markKeys then Ding.char.markKeys[id] = nil end
+    Ding.char.lastStep = Ding.char.lastStep or {}
+    Ding.char.lastStep[id] = place
+    if Ding.char.lastKey then Ding.char.lastKey[id] = nil end
+    self:Resume(id, true, true)
 end
 
 -- At login the quest log arrives a moment later: the player is placed once it is there
@@ -1259,7 +1285,8 @@ function E:Start()
         self.changedGuide = nil
     elseif guide then
         local resume = Ding.char.resumeTo
-        self:SetGuide(id, Ding.char.step or 1, true, resume and resume.guide == id and resume.step or nil)
+        local mine = resume and resume.guide == id
+        self:SetGuide(id, Ding.char.step or 1, true, mine and resume.step or nil, mine and resume.strict)
     else
         -- New character, or its guide is gone (a pack disabled or updated): a section of
         -- the character's pack when it is still there and has one for them, else Ding's.
