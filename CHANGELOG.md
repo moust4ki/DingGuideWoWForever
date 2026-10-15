@@ -4,6 +4,21 @@
 
 Nothing else to install: QuestieDB is no longer needed, and TomTom stays optional.
 
+- **Dungeon quests**: a new pack, **Ding! - Dungeon quests** (Settings > Guide, under
+  "Dungeons"), with one guide per dungeon for your side, listed by level (the ones above your
+  level are greyed, you can still pick them). Each guide takes you to every quest giver of that
+  dungeon and through the chains that lead to them, in an order that keeps the trips short, then
+  to the dungeon's entrance, then through the dungeon with a note for each quest (which boss or
+  monster drops what, where it waits), and back to the turn-ins and the quests they open. Every
+  dungeon from Ragefire Chasm, the Deadmines and Wailing Caverns to Blackrock Depths, Lower
+  Blackrock Spire, Dire Maul, Scholomance and Stratholme, and Forever's own: the Hall of Thanes,
+  the Ruins of Lordaeron, the Excavation Site of the Wetlands and the City of Dalaran.
+- The first step of each chain says what it brings (a weapon of your choice, armor of your
+  kind, a ring, a big amount of XP) and when it is long or far away; very long or far chains are
+  optional and say why. A quest that starts from a drop shows only once the drop is in your bags.
+  Raids, the Upper Spire and the level 60 armor-set chains are not in the pack.
+- A step that takes you to a dungeon's entrance now passes once you are inside: the game gives
+  no position in a dungeon, and the step stayed on screen for the whole run.
 - Gamepad: while you hold the first button of one of Ding's combinations (RB of RB + Up), the
   game's own combinations work again: LB + RB + Left / Right (the action bar's pages), LB + RB +
   Down (the chat)... Ding kept every button while it waited for the second one. With a Ding

@@ -40,7 +40,7 @@ Two shapes. One guide:
 {
     id       = "my-bag",              -- optional: Ding makes one ("user-...") if missing or taken
     title    = "Cozy Sleeping Bag",   -- the name in Ding's guide list
-    category = "items",               -- "leveling" (default), "items", "reputations", "professions", "class"
+    category = "items",               -- "leveling" (default), "items", "reputations", "professions", "class", "dungeon"
     faction  = "Alliance",            -- optional: "Alliance" or "Horde"
     races    = { "NightElf" },        -- optional: Human, Dwarf, NightElf, Gnome, Orc, Scourge, Tauren, Troll
     classes  = { "HUNTER" },          -- optional: WARRIOR, PALADIN, HUNTER, ROGUE, PRIEST, SHAMAN, MAGE, WARLOCK, DRUID

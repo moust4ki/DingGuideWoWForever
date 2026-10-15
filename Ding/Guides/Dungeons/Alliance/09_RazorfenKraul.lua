@@ -1,0 +1,58 @@
+-- Razorfen Kraul, Alliance, "Ding! - Dungeon quests": Mebok Mizzyrix's tubers in Ratchet,
+-- Henrig Lonebrow's journal in Thousand Needles (it opens The Crone of the Kraul at Thalanaar),
+-- the shamans' Elemental Aid in Arathi, the kraul, then the turn-ins. The warriors' Fire Hardened
+-- Mail, a long armor chain, stays out (Ding! - Class quests leaves it out too). Drafted with
+-- tools/draft_dungeon.lua, finished by hand; quest ids and chains checked against DingDB
+-- (tools/check_guides.lua).
+-- Texts are in English, translated in Locales/Guides/<locale>/Dungeons/Alliance/09_RazorfenKraul.lua.
+Ding.RegisterGuide({
+    id       = "dungeon-alliance-kraul",
+    pack     = "ding-dungeons",
+    title    = "Razorfen Kraul (29-38)",
+    faction  = "Alliance",
+    minLevel = 29, maxLevel = 38,
+    steps    = {
+        { accept = 96264, classes = { "SHAMAN" },
+          why = { text = "Shamans: Charlga Razorflank carries the note this quest asks for.", short = true },
+          note = "Veyric Thunderhame, in the north-east of Arathi Highlands." },
+        { accept = 1221,
+          why = { text = "Reward: a small container of gems.", short = true },
+          note = "Mebok Mizzyrix, in Ratchet." },
+        { collect = { { 5880, 1 }, { 5897, 1 } },
+          note = "Take the crate with holes and the owner's manual beside Mebok, and read the manual." },
+        { accept = 1100, use = 5791,
+          why = { text = "Henrig Lonebrow's journal opens The Crone of the Kraul: cloth shoulders, mail belt or a shield.", short = true },
+          note = "The journal lies by a body in the north-west of Thousand Needles, below the Great Lift: read it." },
+        { turnin = 1100, accept = 1101,
+          note = "Falfindel Waywarder, at Thalanaar, on the eastern edge of Feralas." },
+
+        { go = { 1413, 42.90, 90.20 }, radius = 30, text = "Enter Razorfen Kraul",
+          note = "The kraul's thorny mound rises in the far south of the Barrens." },
+        { complete = 1221,
+          note = "Past Overlord Ramtusk, open the crate to call the gopher and use the stick on it: it digs up the tubers." },
+        { complete = 1101,
+          note = "Charlga Razorflank, the last boss, holds the top of the kraul." },
+        { complete = 96264, classes = { "SHAMAN" },
+          note = "Charlga Razorflank, the last boss, holds the top of the kraul." },
+        { accept = 1142,
+          why = { text = "Reward: boots of leather or mail, or a cloak.", short = true },
+          note = "Heralath Fallowbrook lies in the tent on the left, below Charlga Razorflank's platform." },
+        { accept = 1144,
+          why = { text = "Reward: a ring of your choice.", short = true },
+          note = "Willix the Importer waits beside Heralath's tent." },
+        { complete = 1144,
+          note = "Lead Willix back to the entrance; quilboar attack on the way." },
+        { turnin = 1144 },
+        { complete = 1142,
+          note = "Every Razorfen quilboar may drop Treshala's pendant." },
+
+        { turnin = 1221,
+          note = "Mebok Mizzyrix, in Ratchet." },
+        { turnin = 1101,
+          note = "Falfindel Waywarder, at Thalanaar." },
+        { turnin = 1142,
+          note = "Treshala Fallowbrook, in Darnassus." },
+        { turnin = 96264, classes = { "SHAMAN" },
+          note = "Veyric Thunderhame, in Arathi Highlands." },
+    },
+})

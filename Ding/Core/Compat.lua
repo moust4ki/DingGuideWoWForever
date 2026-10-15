@@ -594,6 +594,12 @@ function C.TargetName()
     return type(name) == "string" and name or nil
 end
 
+-- Inside an instance (a dungeon, a raid, a battleground): the game gives no position there.
+function C.InInstance()
+    local ok, inside = safe(IsInInstance)
+    return ok and plain(inside) and true or false
+end
+
 function C.InGroup()
     local ok, group = safe(IsInGroup)
     if ok then return plain(group) and true or false end

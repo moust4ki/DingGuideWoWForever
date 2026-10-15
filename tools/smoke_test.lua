@@ -705,9 +705,10 @@ ok, err = pcall(function()
     for _, e in ipairs(C.dropdown.entries) do
         if e.header then headers[#headers + 1] = e.text end
     end
-    -- (Ding's own class pack, Ding! - Class quests, adds the third group.)
-    expect(table.concat(headers, ",") == L.CATEGORY_LEVELING .. "," .. L.CATEGORY_ITEMS .. "," .. L.CATEGORY_CLASS,
-        "guide list: the category headers are " .. table.concat(headers, ","))
+    -- (Ding's own class and dungeon packs, Ding! - Class quests and Ding! - Dungeon quests, add
+    -- the third and fourth groups.)
+    expect(table.concat(headers, ",") == L.CATEGORY_LEVELING .. "," .. L.CATEGORY_ITEMS .. "," .. L.CATEGORY_CLASS
+        .. "," .. L.CATEGORY_DUNGEON, "guide list: the category headers are " .. table.concat(headers, ","))
     press("PAD2")
     pick("smoke-items")
     expect(E.guide.id == "smoke-items-1", "guide list: item guide not loaded")
